@@ -58,6 +58,18 @@ android {
     }
 }
 
+android.sourceSets.sideload.java.srcDir 'src/nonPlay/java'
+
+// Explicit local companion build: separate app/data, with no upstream APK updater.
+if (project.findProperty('garmin') == 'true') {
+    android.productFlavors.create('garmin') {
+        dimension = "channel"
+        applicationIdSuffix ".garmin"
+        buildConfigField "String", "CHANNEL", '"garmin"'
+    }
+    android.sourceSets.garmin.java.srcDir 'src/nonPlay/java'
+}
+
 repositories {
     flatDir{
         dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
@@ -76,7 +88,9 @@ dependencies {
     // build only. The sideloaded APK has no Play Store behind it and keeps its built-in ones.
     playImplementation "com.google.android.play:asset-delivery:$assetDeliveryVersion"
     implementation project(':capacitor-android')
+    implementation "com.garmin.connectiq:ciq-companion-app-sdk:2.4.0@aar"
     testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.json:json:20250517"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')

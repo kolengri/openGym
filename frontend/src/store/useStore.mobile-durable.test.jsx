@@ -9,7 +9,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 const h = vi.hoisted(() => {
   vi.stubEnv('VITE_MOBILE', '1')
-  return { files: new Map() }
+  return { files: new Map(), failWrite: false }
 })
 vi.mock('@capacitor/filesystem', () => ({
   Directory: { Data: 'DATA', Documents: 'DOCUMENTS', Cache: 'CACHE' },
@@ -20,7 +20,7 @@ vi.mock('@capacitor/filesystem', () => ({
       if (!h.files.has(k)) throw new Error('File does not exist')
       return { data: h.files.get(k) }
     },
-    writeFile: async ({ path, directory, data }) => { h.files.set(directory + '/' + path, data); return { uri: 'file://' + path } },
+    writeFile: async ({ path, directory, data }) => { if (h.failWrite) throw new Error('disk full'); h.files.set(directory + '/' + path, data); return { uri: 'file://' + path } },
     rename: async ({ from, to, directory }) => { h.files.set(directory + '/' + to, h.files.get(directory + '/' + from)); h.files.delete(directory + '/' + from) },
   },
 }))
@@ -66,7 +66,7 @@ afterEach(async () => {
 
 // Each test loads the store afresh: slow on a busy machine, so a longer limit than the default.
 describe('a phone with no server', { timeout: 30000 }, () => {
-  beforeEach(() => { h.files.clear() })
+  beforeEach(() => { h.files.clear(); h.failWrite = false })
 
   it('a ticked set is in the file at once, not after the usual wait', async () => {
     await localPhone()
@@ -109,6 +109,63 @@ describe('a phone with no server', { timeout: 30000 }, () => {
     expect(readFile('opengym-state.json').restSec).not.toBe(75)
     await useStore.getState().saveNow()
     expect(readFile('opengym-state.json').restSec).toBe(75)
+  })
+
+  it('saveNow reports a disk failure so a native command cannot be acknowledged away', async () => {
+    await localPhone()
+    const useStore = await freshStore()
+    await useStore.getState().boot()
+    h.failWrite = true
+    await expect(useStore.getState().saveNow()).rejects.toThrow('disk full')
+    h.failWrite = false
+    // A rejected strict write does not poison the serialized mirror queue.
+    await expect(useStore.getState().saveNow()).resolves.toBeUndefined()
+  })
+
+  it('replays a Garmin command after failed state writes and restart before acknowledging it', async () => {
+    await localPhone()
+    let useStore = await freshStore()
+    await useStore.getState().boot()
+    await useStore.getState().saveNow()
+    let watch = await import('../lib/watch-sync.js')
+    const event = { id: 'synthetic-install:1', type: 'setDone', wid: 'run', exId: '0025', entryIdx: 0, setIdx: 0, at: Date.now(), w: 60, r: 8 }
+    const p = { drain: async () => ({ events: [event] }), ack: vi.fn(async () => {}) }
+    watch._setWatchPluginForTest(p, () => useStore.getState(), { garmin: true })
+    const nativeSetItem = localStorage.setItem.bind(localStorage)
+    const writes = vi.spyOn(localStorage, 'setItem').mockImplementation((key, value) => {
+      if (key === 'gym_state_v1') throw new Error('state storage full')
+      nativeSetItem(key, value) // Small independent keys can still succeed.
+    })
+    h.failWrite = true
+    const unbind = watch.bindWatchActions({ setDone: () => useStore.getState().update(s => { s.active.entries[0].sets[0].done = true }) })
+    await watch.drainWatchEvents()
+    await tick()
+    expect(p.ack).not.toHaveBeenCalled()
+    expect(readFile('opengym-state.json').active.entries[0].sets[0].done).toBe(false)
+    expect(JSON.parse(localStorage.getItem('gym_state_v1')).active.entries[0].sets[0].done).toBe(false)
+    expect(localStorage.getItem('gym_watch_applied')).toBeNull()
+    unbind()
+    writes.mockRestore()
+    h.failWrite = false
+
+    // Process memory is lost; both surviving durable copies still contain the unfinished set.
+    useStore = await freshStore()
+    await useStore.getState().boot()
+    expect(useStore.getState().S.active.entries[0].sets[0].done).toBe(false)
+    watch = await import('../lib/watch-sync.js')
+    const apply = vi.fn(() => useStore.getState().update(s => { s.active.entries[0].sets[0].done = true }))
+    watch._setWatchPluginForTest(p, () => useStore.getState(), { garmin: true })
+    const stop = watch.bindWatchActions({ setDone: apply })
+    await watch.drainWatchEvents()
+    expect(apply).toHaveBeenCalledTimes(1)
+    expect(p.ack).toHaveBeenCalledTimes(1)
+    expect(readFile('opengym-state.json').active.entries[0].sets[0].done).toBe(true)
+    expect(readFile('opengym-state.json').garminAppliedEvents).toContain(event.id)
+    // A lost acknowledgement retries the durable fence without applying the action twice.
+    await watch.drainWatchEvents()
+    expect(apply).toHaveBeenCalledTimes(1)
+    expect(p.ack).toHaveBeenCalledTimes(2)
+    stop()
   })
 
   it('going to the background (Capacitor\'s pause) writes a change still waiting', async () => {

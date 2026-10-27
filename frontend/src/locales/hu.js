@@ -2591,4 +2591,30 @@ export default {
   'Just for this phone. Some home screens take a moment to catch up.': 'Csak ezen a telefonon. Néhány kezdőképernyőnek kell egy pillanat, mire észreveszi.',
   'The icon could not be changed.': 'Nem sikerült megváltoztatni az ikont.',
   'Try the Halloween app icon': 'Próbáld ki a halloweeni alkalmazásikont',
+  // Garmin companion (English fallback where a translation is not yet available).
+  "Garmin": "Garmin",
+  "Garmin Connect must be installed and paired with your watch.": "Garmin Connect must be installed and paired with your watch.",
+  "Garmin connection failed. Try again.": "Garmin connection failed. Try again.",
+  "Install the openGym companion on your watch, then connect below.": "Install the openGym companion on your watch, then connect below.",
+  "Local Bluetooth sync. Your workout log is never sent to GitHub.": "Local Bluetooth sync. Your workout log is never sent to GitHub.",
+  "No Garmin watches found. Pair your watch in Garmin Connect, then try again.": "No Garmin watches found. Pair your watch in Garmin Connect, then try again.",
+  "Paused on Garmin": "Paused on Garmin",
+  "Recordings sync from Garmin Connect to Strava when those accounts are linked.": "Recordings sync from Garmin Connect to Strava when those accounts are linked.",
+  "Refresh devices": "Refresh devices",
+  "Select a watch": "Select a watch",
+  "The watch keeps your session. Actions sync when openGym resumes.": "The watch keeps your session. Actions sync when openGym resumes.",
+  "The watch sends live heart rate and saves an average and maximum for each set.": "The watch sends live heart rate and saves an average and maximum for each set.",
+  "Watch disconnected. Actions will sync after reconnection.": "Watch disconnected. Actions will sync after reconnection.",
+  "While the phone is locked": "While the phone is locked",
+  "{0} bpm": "{0} bpm",
+
+  "Resume Garmin workout": "Resume Garmin workout",
+
+
+  "Strava exports": "Strava exports",
+  "Include weights in Strava exports": "Include weights in Strava exports",
+  "Only affects files from Export for Strava (.fit). Garmin Connect syncing to Strava uses its own data.": "Only affects files from Export for Strava (.fit). Garmin Connect syncing to Strava uses its own data.",
+  "Export for Strava (.fit)": "Export for Strava (.fit)",
+  "Upload this file to Strava manually. Heart-rate samples are not included.": "Upload this file to Strava manually. Heart-rate samples are not included.",
+  "Saved. Upload this file to Strava.": "Saved. Upload this file to Strava.",
 }

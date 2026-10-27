@@ -14,10 +14,10 @@
 // openGym keeps a tick time per set (`at`, since v1.3.x), not a start and an end, so when a set
 // started is estimated from how long it lasts: its minutes or seconds when it has them, a few
 // seconds a rep when it does not. Workouts from before the tick was kept spread their sets over
-// the session. No heart rate, no calories: openGym never had them.
+// the session. Heart-rate records and calories are not exported.
 import { exOr } from './exercises.js'
 import { modeOf, workoutAt } from './history.js'
-import { isSideSet, dropsOf } from './workout-model.js'
+import { isSideSet, dropsOf, modeForSet } from './workout-model.js'
 
 /* ------------------------------------------------------------- the container -- */
 
@@ -222,9 +222,9 @@ function itemsOf(w, exOf) {
   ;(w?.entries || []).forEach(entry => {
     if (!entry?.id) return
     const ex = exOf(entry.id)
-    const mode = modeOf({ ...(entry.target || {}), id: entry.id })
-    const category = fitCategory(ex, mode)
-    const push = (row, at, chained) => {
+    const target = { ...(entry.target || {}), mode: modeOf({ ...(entry.target || {}), id: entry.id }) }
+    const push = (row, at, chained, mode = modeForSet(row, target)) => {
+      const category = fitCategory(ex, mode)
       const reps = Math.round(Number(row.r) || 0)
       const sec = Number(row.sec) || 0
       const min = Number(row.min) || 0
@@ -244,7 +244,7 @@ function itemsOf(w, exOf) {
       const rows = isSideSet(s) ? [s.sides.L, s.sides.R].filter(x => x?.done === true) : s.done === true ? [s] : []
       for (const row of rows) {
         push(row, Number.isFinite(row.at) ? row.at : s.at, false)
-        for (const d of dropsOf(row)) if (Number(d?.r) > 0) push({ ...d, w: Number(d.w) || 0 }, null, true)
+        for (const d of dropsOf(row)) if (Number(d?.r) > 0) push({ ...d, w: Number(d.w) || 0 }, null, true, modeForSet(row, target))
       }
     }
   })
@@ -297,8 +297,9 @@ function serialOf(w) {
 /**
  * The FIT messages for a finished workout `w`. `unit` is the profile's weight unit (weights are
  * stored in it, FIT wants kilograms), `version` the app's ("1.4.0"), `exOf(id)` the exercise.
+ * Set includeWeights to false to omit both weight fields from every set, including rests.
  */
-export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr } = {}) {
+export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr, includeWeights = true } = {}) {
   const startMs = workoutAt(w)
   if (!Number.isFinite(startMs)) throw new Error('This workout has no date')
   let endMs = Number.isFinite(w?.end) && w.end > startMs ? w.end : startMs
@@ -352,11 +353,11 @@ export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr }
       [254, 'uint32', fitTime(e)],          // timestamp: when the set ended
       [0, 'uint32', e - s],                 // duration, ms (scale 1000)
       [3, 'uint16', x?.reps ?? undefined],  // repetitions
-      [4, 'uint16', x && x.w != null && x.mode !== 'cardio' ? kg(x.w) * 16 : undefined],   // weight, kg (scale 16)
+      includeWeights && [4, 'uint16', x && x.w != null && x.mode !== 'cardio' ? kg(x.w) * 16 : undefined],   // weight, kg (scale 16)
       [5, 'uint8', type],                   // set_type: 0 rest, 1 active
       [6, 'uint32', fitTime(s)],            // start_time
       [7, 'uint16', x ? x.category : undefined],
-      [9, 'uint16', x && x.w != null ? (unit === 'lb' ? 2 : 1) : undefined],   // weight_display_unit
+      includeWeights && [9, 'uint16', x && x.w != null ? (unit === 'lb' ? 2 : 1) : undefined],   // weight_display_unit
       [10, 'uint16', index++],              // message_index
     ] })
     let prevEnd = null

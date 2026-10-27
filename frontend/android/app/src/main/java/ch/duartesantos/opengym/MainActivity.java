@@ -27,6 +27,7 @@ public class MainActivity extends BridgeActivity {
     public void onCreate(Bundle savedInstanceState) {
         registerPlugin(HealthConnectPlugin.class);
         registerPlugin(ChannelPlugin.class);
+        registerPlugin(GarminBridgePlugin.class);
         FlavorPlugins.register(this);
         registerPlugin(PrintPlugin.class);
         registerPlugin(RestAlertPlugin.class);

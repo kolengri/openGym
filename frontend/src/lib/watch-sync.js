@@ -29,6 +29,7 @@ import { todayISO, exerciseNameText } from './format.js'
 import { sanitizeHr } from './heart-rate.js'
 import { readWatchPrefs, settingsForWatch, writeWatchStatus, onWatchPrefs } from './watch-settings.js'
 import { plannedType } from './health-connect.js'
+import { garminPlugin, garminSnapshot, garminError, onGarminChange, configureGarmin, receiveGarminHeartRate, isGarminEvent } from './garmin-sync.js'
 
 export const SNAPSHOT_VERSION = 1
 const APPLIED_KEY = 'gym_watch_applied'
@@ -220,11 +221,14 @@ let handlers = null      // the workout screen's: setDone, finish, discard
 let appHandlers = null   // the app's: start
 const readApplied = () => { try { return JSON.parse(localStorage.getItem(APPLIED_KEY)) || [] } catch { return [] } }
 const writeApplied = ids => { try { localStorage.setItem(APPLIED_KEY, JSON.stringify(ids.slice(-APPLIED_MAX))) } catch { /* the queue's ack is what counts */ } }
+const garminApplied = S => (Array.isArray(S?.garminAppliedEvents) ? S.garminAppliedEvents : [])
+  .filter(id => typeof id === 'string' && id.length > 0 && id.length <= 128).slice(-APPLIED_MAX)
 
 /** The entry an event means: by position when it still holds that exercise, else by the exercise. */
 function entryIndexOf (A, ev) {
-  if (A.entries[ev.entryIdx] && A.entries[ev.entryIdx].id === ev.exId) return ev.entryIdx
-  return A.entries.findIndex(e => e.id === ev.exId)
+  const matches = e => e && String(e.id) === String(ev.exId)
+  if (matches(A.entries[ev.entryIdx])) return ev.entryIdx
+  return A.entries.findIndex(matches)
 }
 
 /**
@@ -244,9 +248,9 @@ function entryIndexOf (A, ev) {
  * not open opens it (appHandlers.openWorkout), and the queue drains once it is there. Of two
  * changes of the same set, the later one (`at`) wins.
  */
-export function applyEvents (events, getState) {
+export function applyEvents (events, getState, { appliedIds = null, persistApplied = true } = {}) {
   if (!Array.isArray(events)) return []
-  const applied = readApplied()
+  const applied = appliedIds === null ? readApplied() : [...appliedIds]
   const done = []
   for (const ev of events) {
     if (!ev || typeof ev.id !== 'string') continue
@@ -278,7 +282,14 @@ export function applyEvents (events, getState) {
       }
       const idx = entryIndexOf(A, ev)
       const set = idx >= 0 ? A.entries[idx].sets?.[ev.setIdx] : null
-      if (set) handlers.setDone(idx, ev.setIdx, { w: num(ev.w), r: num(ev.r), at: num(ev.at), hr: sanitizeHr(ev.hr), ...extraOf(ev) })
+      if (set) handlers.setDone(idx, ev.setIdx, { w: num(ev.w), r: num(ev.r), at: num(ev.at), hr: sanitizeHr(ev.hr), ...extraOf(ev), ...(ev.source === 'garmin' ? { source: 'garmin' } : {}) })
+    } else if (['selectExercise', 'pause', 'skipRest'].includes(ev.type) && A && ev.wid === A.id) {
+      if (!appHandlers) break
+      if (ev.type === 'selectExercise') {
+        const idx = entryIndexOf(A, ev)
+        if (idx >= 0) appHandlers.selectExercise?.(idx)
+      } else if (ev.type === 'pause' && typeof ev.paused === 'boolean') appHandlers.pause?.(ev.paused, ev.source === 'garmin' ? { rest: ev.rest } : undefined)
+      else if (ev.type === 'skipRest') appHandlers.skipRest?.()
     } else if (ev.type === 'weighIn') {
       // The weigh-in the watch asks for before a workout it starts: a body weight entry on its
       // day, as the phone's own check-in makes one (today's replaces today's).
@@ -316,7 +327,7 @@ export function applyEvents (events, getState) {
     applied.push(ev.id)
     done.push(ev.id)
   }
-  writeApplied(applied)
+  if (persistApplied) writeApplied(applied)
   return done
 }
 
@@ -333,12 +344,19 @@ let pluginP = null
 // Inside an object: a Capacitor plugin proxy answers `then`, so a promise must never resolve with
 // the bare proxy (lib/rest-alert.js, the Coach hang #42).
 const watchPlugin = () => pluginP || (pluginP = (async () => {
-  if (!MOBILE || (await nativePlatform()) !== 'ios') return null
+  if (!MOBILE) return null
+  const platform = await nativePlatform()
+  if (platform === 'android') {
+    const p = await garminPlugin()
+    return p ? { WatchBridge: p.bridge, garmin: true } : null
+  }
+  if (platform !== 'ios') return null
   const { registerPlugin } = await import('@capacitor/core')
   return { WatchBridge: registerPlugin('WatchBridge') }
 })().catch(() => null))
 
 let getStateRef = null
+let getTimerRef = null
 let draining = null
 // The store has its copy back (boot's finishBoot: the file mirror, the server's pull). Before that,
 // S can be the empty copy a WebView whose storage was evicted starts with: a tick would find no
@@ -357,9 +375,32 @@ export function drainWatchEvents () {
       const p = await watchPlugin()
       if (!p || !getStateRef || !storeReady()) return []
       const { events = [] } = (await p.WatchBridge.drain()) || {}
-      const done = applyEvents(events, getStateRef)
-      if (done.length) await getStateRef()?.saveNow?.()
-      if (done.length) await p.WatchBridge.ack({ ids: done })
+      const accepted = p.garmin ? events.filter(isGarminEvent).map(ev => ({ ...ev, source: 'garmin' })) : events
+      const rejected = p.garmin ? events.filter(ev => !isGarminEvent(ev) && typeof ev?.id === 'string').map(ev => ev.id) : []
+      // Garmin's replay fence belongs in the SAME durable workout snapshot. A separate small
+      // localStorage ledger can succeed while both workout writes fail, losing an action on reboot.
+      const oldIds = p.garmin ? garminApplied(getStateRef().S) : null
+      const done = [...applyEvents(accepted, getStateRef, p.garmin ? { appliedIds: oldIds, persistApplied: false } : {}), ...rejected]
+      if (done.length) {
+        const store = getStateRef()
+        if (p.garmin) {
+          if (typeof store.update !== 'function' || typeof store.saveNow !== 'function') throw new Error('Garmin requires durable workout storage')
+          store.update(s => { s.garminAppliedEvents = [...new Set([...garminApplied(s), ...done])].slice(-APPLIED_MAX) })
+          await getStateRef().saveNow()
+        } else await store?.saveNow?.()
+      }
+      if (done.length) {
+        if (p.garmin) {
+          const S = getStateRef().S
+          const snap = buildSnapshot(S)
+          snap.discarded = discardedFor()
+          snap.settings = { restHaptics: readWatchPrefs().restHaptics }
+          // Ack and the post-apply snapshot are one causal fence; an older in-flight snapshot
+          // must never undo a set once the watch has discarded its local event.
+          const json = JSON.stringify(garminSnapshot(snap, { timer: getTimerRef?.(), paused: S.active?.watchPaused, sourceActive: S.active, warmupRestSec: S.warmupRestSec }))
+          await p.WatchBridge.ack({ ids: done, json })
+        } else await p.WatchBridge.ack({ ids: done })
+      }
       return done
     } catch { return [] } finally { draining = null }
   })()
@@ -489,6 +530,7 @@ export async function startWatchSync ({ useStore, useUI }) {
   const p = await watchPlugin()
   if (!p) return () => {}
   getStateRef = () => useStore.getState()
+  getTimerRef = () => useUI.getState().timer
   let lastSent = null, lastClips = null, tm = null
   // The ready sessions only change with the plan, the log or the day: built again only then.
   let readyKey = null, ready = null
@@ -505,7 +547,7 @@ export async function startWatchSync ({ useStore, useUI }) {
   let linked = false
   const checkLink = async () => {
     const was = linked
-    try { const st = await p.WatchBridge.status(); linked = !!(st && st.paired && st.installed) } catch { linked = false }
+    try { const st = await p.WatchBridge.status(); linked = !!(st && st.paired && st.installed && (!p.garmin || st.enabled)) } catch { linked = false }
     // A watch that is new here (the app just installed on it, or reinstalled): it has nothing yet,
     // so the snapshot goes again even when it is the same as the last one sent.
     if (linked && !was) lastSent = null
@@ -515,9 +557,11 @@ export async function startWatchSync ({ useStore, useUI }) {
   // Apple Health on the watch follows the phone's own Apple Health switch (Settings → Data).
   let healthOn = false, offHealth = () => {}
   try {
-    const hs = await import('./health-sync.js')
-    healthOn = !!(await hs.loadHealth())?.on
-    offHealth = hs.onHealthChange(h => { if (!!h?.on !== healthOn) { healthOn = !!h?.on; schedule() } })
+    if (!p.garmin) {
+      const hs = await import('./health-sync.js')
+      healthOn = !!(await hs.loadHealth())?.on
+      offHealth = hs.onHealthChange(h => { if (!!h?.on !== healthOn) { healthOn = !!h?.on; schedule() } })
+    }
   } catch { /* no Apple Health here: the watch measures nothing */ }
   const send = async () => {
     tm = null
@@ -525,10 +569,10 @@ export async function startWatchSync ({ useStore, useUI }) {
     if (!linked || !storeReady()) return
     try {
       const S = useStore.getState().S
-      const prefs = readWatchPrefs()
+      const prefs = p.garmin ? { ...readWatchPrefs(), enabled: true, autoShow: false } : readWatchPrefs()
       // Settings → Apple Watch: off, the watch is told there is nothing (no workout, nothing ready).
       const snap = prefs.enabled
-        ? buildSnapshot(S, { timer: useUI.getState().timer, ready: readyFor(S) })
+        ? buildSnapshot(S, { timer: useUI.getState().timer, ready: p.garmin ? null : readyFor(S) })
         : { v: SNAPSHOT_VERSION, unit: S.unit === 'lb' ? 'lb' : 'kg', active: null, ready: null }
       snap.settings = { ...settingsForWatch(prefs, healthOn), ...watchExtras(S) }
       // With Apple Health on: the deleted workouts, so the watch removes the copies it saved.
@@ -536,13 +580,17 @@ export async function startWatchSync ({ useStore, useUI }) {
       // Discarded here: the watch drops its Apple Health workout instead of saving it (#776).
       const discarded = discardedFor()
       if (discarded.length) snap.discarded = discarded
-      const json = JSON.stringify(fitSnapshot(snap))
+      // The saved-workout editor is never a live watch session.
+      if (p.garmin && (S.active?.editingWorkoutId || S.active?.backfill)) return
+      const json = JSON.stringify(p.garmin
+        ? garminSnapshot(snap, { timer: useUI.getState().timer, paused: S.active?.watchPaused, sourceActive: S.active, warmupRestSec: S.warmupRestSec })
+        : fitSnapshot(snap))
       if (json !== lastSent) {
         const r = await p.WatchBridge.sendSnapshot({ json })
-        if (r && r.sent) lastSent = json
+        if (r && r.sent) { lastSent = json; if (p.garmin) garminError(null) }
       }
       // The workout's animations, once per workout and exercise (the native side remembers).
-      const clips = prefs.enabled ? clipsFor(S) : []
+      const clips = !p.garmin && prefs.enabled ? clipsFor(S) : []
       const key = S.active ? S.active.id + '|' + clips.map(c => c.exId).join(',') : ''
       if (clips.length && key !== lastClips) {
         await p.WatchBridge.sendClips({ wid: S.active.id, clips })
@@ -552,21 +600,30 @@ export async function startWatchSync ({ useStore, useUI }) {
         lastClips = null
         await p.WatchBridge.dropClips?.()
       }
-    } catch { /* no watch, or not now: the next change tries again */ }
+    } catch (error) { if (p.garmin) garminError(error) }
   }
   const schedule = () => { if (!linked) return; clearTimeout(tm); tm = setTimeout(send, SEND_DEBOUNCE_MS) }
   const offStore = useStore.subscribe((s, prev) => {
+    // A local/remote profile switch must never hand the previous user's session to the watch.
+    if (p.garmin && prev.ready !== false && s.user?.id !== prev.user?.id) {
+      linked = false
+      clearTimeout(tm)
+      configureGarmin({ enabled: false }).catch(garminError)
+      return
+    }
     // Boot done: what the watch sent meanwhile is applied now, and the watch hears the real state.
     if (s.ready && !prev.ready) { drainWatchEvents(); schedule() }
     if (s.S === prev.S) return
     schedule()
     // A workout started on the phone: the watch app opens with it (HealthKit's startWatchApp).
-    if (linked && shouldOpenOnWatch(prev.S?.active, s.S?.active)) Promise.resolve().then(() => p.WatchBridge.openOnWatch({ type: plannedType(s.S.active.entries) || undefined })).catch(() => {})
+    if (!p.garmin && linked && shouldOpenOnWatch(prev.S?.active, s.S?.active)) Promise.resolve().then(() => p.WatchBridge.openOnWatch({ type: plannedType(s.S.active.entries) || undefined })).catch(() => {})
   })
   // The rest as the watch needs it changes when it starts, stops or is paused, not every second.
   const restOf = t => (t ? `${t.endsAt}|${!!t.paused}|${!!t.ready}` : '')
   const offUI = useUI.subscribe((s, prev) => { if (s.timer !== prev.timer && restOf(s.timer) !== restOf(prev.timer)) schedule() })
   const offPrefs = onWatchPrefs(() => schedule())
+  const offGarmin = p.garmin ? onGarminChange(kind => { if (kind === 'config') checkLink().then(() => { lastSent = null; schedule() }) }) : () => {}
+  const subHr = p.garmin ? await p.WatchBridge.addListener('heartRate', ev => { receiveGarminHeartRate(ev, useStore.getState().S.active?.id) }) : null
   // The watch speaks the app's language, not its own system's: told again when it changes (the
   // exercise names in the snapshot change with it too).
   let offLang = () => {}
@@ -584,12 +641,12 @@ export async function startWatchSync ({ useStore, useUI }) {
   if (!linked) await checkLink()
   schedule()
   drainWatchEvents()
-  return () => { offStore(); offUI(); offPrefs(); offHealth(); offLang(); sub?.remove?.(); subLink?.remove?.(); document.removeEventListener('visibilitychange', onVisible); clearTimeout(tm) }
+  return () => { offStore(); offUI(); offPrefs(); offGarmin(); offHealth(); offLang(); sub?.remove?.(); subLink?.remove?.(); subHr?.remove?.(); document.removeEventListener('visibilitychange', onVisible); clearTimeout(tm) }
 }
 
 // Test seams.
-export function _setWatchPluginForTest (plugin, getState) { pluginP = Promise.resolve(plugin ? { WatchBridge: plugin } : null); getStateRef = getState || null }
-export function _resetWatchSync () { startedOnWatch.clear(); handlers = null; appHandlers = null; pluginP = null; getStateRef = null; draining = null }
+export function _setWatchPluginForTest (plugin, getState, { garmin = false } = {}) { pluginP = Promise.resolve(plugin ? { WatchBridge: plugin, garmin } : null); getStateRef = getState || null }
+export function _resetWatchSync () { startedOnWatch.clear(); handlers = null; appHandlers = null; pluginP = null; getStateRef = null; getTimerRef = null; draining = null }
 
 /**
  * Writes `fields` (heart rate) onto one set: in the running session when it is that workout, else in
@@ -618,7 +675,7 @@ export function patchSetIn (s, { wid, exId, entryIdx, setIdx, side = null }, fie
   }
   const find = w => {
     if (!w || !Array.isArray(w.entries)) return null
-    const i = w.entries[entryIdx] && w.entries[entryIdx].id === exId ? entryIdx : w.entries.findIndex(e => e && e.id === exId)
+    const i = entryIndexOf(w, { exId, entryIdx })
     return i >= 0 ? w.entries[i].sets?.[setIdx] || null : null
   }
   if (s.active && s.active.id === wid) {

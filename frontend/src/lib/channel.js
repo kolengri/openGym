@@ -17,7 +17,7 @@ export function getChannel() {
     if (platform !== 'android') return 'web'
     try {
       const { channel } = await registerPlugin('Channel').get()
-      return channel === 'play' ? 'play' : 'sideload'
+      return channel === 'garmin' ? 'garmin' : channel === 'play' ? 'play' : 'sideload'
     } catch {
       return 'sideload'
     }

@@ -8,7 +8,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 
 /**
  * The sharper exercise animations as asset packs (frontend lib/anim-packs.js), in the sideloaded
- * APK: it has no Play Store behind it to deliver them, so there are none. Every call answers
+ * and Garmin APKs: they have no Play Store behind them to deliver these packs. Every call answers
  * "unavailable" and the app shows the animations built into it (240 px in the release APK). The
  * Google Play build has the real one (src/play, Play Asset Delivery); the interface is the iOS
  * plugin's, so the page needs no Android branch.

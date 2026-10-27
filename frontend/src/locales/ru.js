@@ -2592,4 +2592,30 @@ export default {
   'Just for this phone. Some home screens take a moment to catch up.': 'Только для этого телефона. Некоторым рабочим столам нужна минутка, чтобы заметить.',
   'The icon could not be changed.': 'Не удалось сменить значок.',
   'Try the Halloween app icon': 'Попробуй хеллоуинский значок приложения',
+  // Garmin companion.
+  "Garmin": "Garmin",
+  "Garmin Connect must be installed and paired with your watch.": "Установите Garmin Connect и подключите к нему часы.",
+  "Garmin connection failed. Try again.": "Не удалось подключиться к Garmin. Попробуйте ещё раз.",
+  "Install the openGym companion on your watch, then connect below.": "Установите приложение openGym на часы, затем подключите их ниже.",
+  "Local Bluetooth sync. Your workout log is never sent to GitHub.": "Локальная синхронизация по Bluetooth. Журнал тренировок не отправляется на GitHub.",
+  "No Garmin watches found. Pair your watch in Garmin Connect, then try again.": "Часы Garmin не найдены. Подключите их в Garmin Connect и попробуйте ещё раз.",
+  "Paused on Garmin": "Пауза на Garmin",
+  "Recordings sync from Garmin Connect to Strava when those accounts are linked.": "Записи передаются из Garmin Connect в Strava, если эти аккаунты связаны.",
+  "Refresh devices": "Обновить список часов",
+  "Select a watch": "Выберите часы",
+  "The watch keeps your session. Actions sync when openGym resumes.": "Часы продолжают тренировку. Действия синхронизируются, когда openGym возобновит работу.",
+  "The watch sends live heart rate and saves an average and maximum for each set.": "Часы передают текущий пульс и сохраняют средний и максимальный пульс каждого подхода.",
+  "Watch disconnected. Actions will sync after reconnection.": "Связь с часами потеряна. Действия синхронизируются после подключения.",
+  "While the phone is locked": "Когда телефон заблокирован",
+  "{0} bpm": "{0} уд/мин",
+
+  "Resume Garmin workout": "Продолжить тренировку Garmin",
+
+
+  "Strava exports": "Экспорт для Strava",
+  "Include weights in Strava exports": "Включать веса в экспорт для Strava",
+  "Only affects files from Export for Strava (.fit). Garmin Connect syncing to Strava uses its own data.": "Применяется только к файлам «Экспорт для Strava (.fit)». Синхронизация Garmin Connect со Strava использует свои данные.",
+  "Export for Strava (.fit)": "Экспорт для Strava (.fit)",
+  "Upload this file to Strava manually. Heart-rate samples are not included.": "Загрузите этот файл в Strava вручную. Запись пульса не включена.",
+  "Saved. Upload this file to Strava.": "Сохранено. Загрузите этот файл в Strava.",
 }

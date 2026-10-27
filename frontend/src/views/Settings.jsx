@@ -55,6 +55,7 @@ import { PAGES, ROOT_GROUPS, pageVisible, searchSettings, pageTrail } from './se
 import { platformNow } from '../lib/platform-now.js'
 import { pathBefore } from '../lib/nav.js'
 import WatchSettingsPage from './WatchSettings.jsx'
+import GarminSettingsPage from './GarminSettings.jsx'
 import { reportSheet } from '../components/ReportSheet.jsx'
 import { csvExportSheet } from '../components/CsvExportSheet.jsx'
 import GymReminderPage, { GymEditPage } from './GymReminder.jsx'
@@ -81,7 +82,7 @@ export function SettingsRoute() {
   // `ios` now, not after an async platform check: the Apple Watch page is iPhone only, and a route
   // that did not know yet sent every visit to it straight back to the root.
   // (Unknown counts as yes inside the phone app: the page itself then says there is no watch.)
-  const ctx = { user: useStore(s => s.user), mobile: MOBILE, ios: MOBILE && platformNow() !== 'android' }
+  const ctx = { user: useStore(s => s.user), mobile: MOBILE, ios: MOBILE && platformNow() !== 'android', android: MOBILE && platformNow() === 'android' }
   if (page && (!PAGES[page] || !pageVisible(PAGES[page].parent || page, ctx) || !pageVisible(page, ctx))) return <Navigate to="/settings" replace />
   if (page === 'coach') return <Navigate to="/coach/setup" replace />
   return <Settings key={page || 'root'} page={page || null} find={loc.state?.find || null} via={loc.state?.via || null} entryKey={loc.key} />
@@ -453,6 +454,7 @@ export default function Settings({ page = null, find = null, via = null, entryKe
     data: () => '',
     about: () => 'v' + __APP_VERSION__,
     watch: () => '',
+    garmin: () => '',
   }
 
   const open = id => {
@@ -506,6 +508,7 @@ export default function Settings({ page = null, find = null, via = null, entryKe
 
   const pages = {
     watch: () => <WatchSettingsPage />,
+    garmin: () => <GarminSettingsPage />,
     gym: () => <GymReminderPage />,
     'gym-edit': () => <GymEditPage />,
     workout: () => <>
@@ -926,6 +929,12 @@ export default function Settings({ page = null, find = null, via = null, entryKe
         </Row>}
         {/* Android only: the system folder picker (#161). iOS shows Documents in Files already. */}
         {MOBILE && android && S.autoBackup && <BackupFolderRow />}
+      </Section>
+      <Section title={t('Strava exports')} footer={t('Only affects files from Export for Strava (.fit). Garmin Connect syncing to Strava uses its own data.')}>
+        <Row icon="share" iconTint="var(--blue)" title={t('Include weights in Strava exports')}>
+          <Switch aria-label={t('Include weights in Strava exports')} checked={S.stravaShareWeights === true}
+            onChange={v => update(s => { s.stravaShareWeights = v })} />
+        </Row>
       </Section>
       {MOBILE && <HealthConnectCard S={S} toast={toast} android={android} />}
       <Section title={t('Bring data in')}>

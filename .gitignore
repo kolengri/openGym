@@ -8,6 +8,38 @@ data/
 
 # Local config
 .env
+.env.*
+!.env.example
+
+# Personal exports, local verification artifacts, device identifiers and signing material.
+/artifacts/
+/.local/
+.grepai/
+*.keystore
+*.jks
+*.p12
+*.p8
+*.pem
+*.der
+*.key
+opengym-state*.json
+opengym-remote*.json
+garmin-session*.json
+garmin-events*.json
+*.fit
+*.tcx
+*.gpx
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.apk
+*.aab
+*.prg
+*.iq
+/backups/
+/exports/
 
 # Build output / deps
 frontend/dist/

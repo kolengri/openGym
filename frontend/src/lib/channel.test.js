@@ -25,6 +25,12 @@ beforeEach(() => {
 })
 
 describe('install channel', () => {
+  it('the Garmin fork never installs an upstream APK over its own build', async () => {
+    h.answer = { channel: 'garmin' }
+    const { getChannel, selfUpdates } = await import('./channel.js')
+    expect(await getChannel()).toBe('garmin')
+    expect(await selfUpdates()).toBe(false)
+  })
   it('the APK from GitHub updates itself', async () => {
     const { getChannel, selfUpdates } = await import('./channel.js')
     expect(await getChannel()).toBe('sideload')

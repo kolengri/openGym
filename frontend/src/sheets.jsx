@@ -63,6 +63,7 @@ import { isFav, toggleFav, sortFavouritesFirst, sortYoursFirst } from './lib/fav
 import { buildSessionEntries, buildPlannedEntry, buildSessionEntry, plannedConfigOf } from './lib/session-start.js'
 import { finishCompare, finishCardio } from './lib/finish-compare.js'
 import { workoutFit, fitFileName } from './lib/fit-export.js'
+import { stravaWorkoutFit } from './lib/strava-export.js'
 import { joinSessionNoProg } from './lib/session-noprog.js'
 import { buildCombinedEntries, deriveSessionName } from './lib/session-merge.js'
 import { workoutsOn, backfillStart, backfillEnd, completeBackfill, historyAsOf, sessionHistory } from './lib/backfill.js'
@@ -2834,6 +2835,13 @@ function WorkoutDetail({ w, close }) {
     catch (e) { toast(t('Could not create the file')); return }
     saveFitFile(new Blob([bytes], { type: 'application/vnd.ant.fit' }), fitFileName(rec))
   }
+  const exportStravaFit = () => {
+    const rec = st.workouts.find(x => sameWorkout(x, w)) || w
+    let bytes
+    try { bytes = stravaWorkoutFit(rec, st, { unit: st.unit, version: __APP_VERSION__ }) }
+    catch (e) { toast(t('Could not create the file')); return }
+    saveFitFile(new Blob([bytes], { type: 'application/vnd.ant.fit' }), fitFileName(rec).replace(/\.fit$/, '-strava.fit'), t('Saved. Upload this file to Strava.'))
+  }
   const saveAsPdf = () => {
     saveNote()
     const rec = { ...(st.workouts.find(x => sameWorkout(x, w)) || w), note: note.trim() }
@@ -2924,6 +2932,9 @@ function WorkoutDetail({ w, close }) {
     <Button icon="note" onClick={saveAsPdf}>{t('Save as PDF')}</Button>
     <div style={{ height: 8 }} />
     <Button icon="download" onClick={exportFit}>{t('Export as .fit file')}</Button>
+    <div style={{ height: 8 }} />
+    <Button icon="download" onClick={exportStravaFit}>{t('Export for Strava (.fit)')}</Button>
+    <div className="small dim" style={{ marginTop: 6 }}>{t('Upload this file to Strava manually. Heart-rate samples are not included.')}</div>
     <div style={{ height: 10 }} />
     {/* Matched the way the edits above are, not by id: a workout from before ids has none, and
         filtering on `x.id !== undefined` took every other one of them with it. */}
@@ -2999,10 +3010,10 @@ async function workoutCardImage(model, { map, body }) {
 }
 // The .fit file goes out the way a backup does: the share sheet in the phone app (Files, Drive,
 // Garmin Connect itself), a download in the browser.
-async function saveFitFile(blob, name) {
+async function saveFitFile(blob, name, message = t('Saved. Garmin Connect can take it from here.')) {
   if (MOBILE) { try { await shareExportBlob(blob, name) } catch (e) { /* share sheet dismissed */ } return }
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); URL.revokeObjectURL(a.href)
-  toast(t('Saved. Garmin Connect can take it from here.'))
+  toast(message)
 }
 // The phone app goes through the OS share sheet the way a backup does; a browser that can share
 // files (most phones) opens its own; anything else saves the picture as a download.

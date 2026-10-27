@@ -6,6 +6,7 @@ import {
   fitCrc, fitTime, FIT_EPOCH_OFFSET, encodeFit, workoutFitMessages, workoutFit, fitFileName,
   fitCategory, cardioSport, CATEGORY, SPORT, SUB_SPORT, MSG,
 } from './fit-export.js'
+import { stravaWorkoutFit, stravaSharesWeights } from './strava-export.js'
 import { EXIDX } from './exercises.js'
 
 /* ---------------------------------------------------------------- decoder -- */
@@ -165,6 +166,37 @@ const strength = {
     { id: TREADMILL, target: { mode: 'cardio' }, sets: [{ min: 20, speed: 6, incline: 8, done: true, at: T0 + min(45) }] },
   ],
 }
+
+describe('explicit modes in imported history', () => {
+  const exOf = () => ({ n: 'Synthetic custom exercise', bp: 'abs', tg: 'abs' })
+  it('keeps mixed row modes, measured durations and exact completion ticks without an entry target', () => {
+    const w = { start: T0, end: T0 + min(20), entries: [{ id: 'synthetic-import', sets: [
+      { mode: 'reps', w: 10, r: 5, done: true, at: T0 + min(1) },
+      { mode: 'time', w: 0, sec: 30, done: true, at: T0 + min(3) },
+      { mode: 'cardio', min: 10, speed: 12, done: true, at: T0 + min(15) },
+    ] }] }
+    const d = decode(workoutFit(w, { exOf }))
+    const active = of(d, MSG.set).filter(s => s[5] === 1)
+    expect(active.map(s => s[0])).toEqual([15000, 30000, 600000])
+    expect(active.map(s => s[3])).toEqual([5, 0xFFFF, 0xFFFF])
+    expect(active.map(s => s[254])).toEqual([1, 3, 15].map(n => fitTime(T0 + min(n))))
+    expect(active[2][7]).toBe(CATEGORY.cardio)
+    expect(of(d, MSG.session)[0][9]).toBe(200000)
+  })
+  it('uses explicit cardio rows for a cardio session and explicit rep rows for their drops', () => {
+    const cardio = { start: T0, end: T0 + min(10), entries: [{ id: 'synthetic-import', sets: [
+      { mode: 'cardio', min: 10, speed: 12, done: true, at: T0 + min(10) },
+    ] }] }
+    const d = decode(workoutFit(cardio, { exOf }))
+    expect(of(d, MSG.set)).toHaveLength(0)
+    expect(of(d, MSG.session)[0][6]).toBe(SUB_SPORT.cardioTraining)
+    expect(of(d, MSG.lap)[0][9]).toBe(200000)
+    const mixed = { start: T0, end: T0 + min(5), entries: [{ id: 'synthetic-import', target: { mode: 'time' }, sets: [
+      { mode: 'reps', w: 10, r: 5, done: true, at: T0 + min(1), type: 'dropset', drops: [{ w: 5, r: 4 }] },
+    ] }] }
+    expect(of(decode(workoutFit(mixed, { exOf })), MSG.set).filter(s => s[5] === 1).map(s => s[3])).toEqual([5, 4])
+  })
+})
 
 describe('a strength workout as FIT', () => {
   const d = decode(workoutFit(strength, { unit: 'kg', version: '1.4.0' }))
@@ -348,5 +380,55 @@ describe('categories and sports', () => {
     const local = new Date(2026, 9, 9, 18, 5).getTime()
     expect(fitFileName({ start: local })).toBe('opengym-2026-10-09-1805.fit')
     expect(fitFileName({})).toBe('opengym-workout.fit')
+  })
+})
+
+
+describe('Strava FIT weight privacy', () => {
+  const privateWorkout = { ...strength, name: '120 kg workout', vol: 123456,
+    bodyWeight: 87, note: 'Private weight: 120 kg',
+    entries: strength.entries.map(e => ({ ...e, note: 'Private exercise weight' })),
+  }
+  const stripWeights = decoded => decoded.messages.map(({ global, f }) => ({
+    global, f: global === MSG.set ? Object.fromEntries(Object.entries(f).filter(([n]) => !['4', '9'].includes(n))) : f,
+  }))
+  const garmin = decode(workoutFit(privateWorkout))
+
+  it.each([undefined, {}, { stravaShareWeights: false }, { stravaShareWeights: 'true' }, { stravaShareWeights: 1 }])(
+    'omits both weight fields unless explicitly opted in: %j', state => {
+      expect(stravaSharesWeights(state)).toBe(false)
+      // Caller options cannot bypass the profile preference.
+      const bytes = stravaWorkoutFit(privateWorkout, state, { includeWeights: true })
+      const decoded = decode(bytes)
+      expect(fitCrc(bytes)).toBe(0)
+      for (const set of of(decoded, MSG.set)) {
+        expect(set).not.toHaveProperty('4')
+        expect(set).not.toHaveProperty('9')
+      }
+      // The full decoded file is exactly the Garmin file minus weight fields: no notes,
+      // body mass, volume, derived weight totals or invented heart-rate records are added.
+      expect(decoded.messages.map(({ global, f }) => ({ global, f }))).toEqual(stripWeights(garmin))
+      expect(of(decoded, MSG.set).filter(s => s[5] === 1).map(s => s[3])).toEqual([8, 8, 6, 6, 10, 9, 0xFFFF, 0xFFFF])
+    },
+  )
+
+  it('includes weights after opt-in and removes them again after opt-out without changing the record', () => {
+    const before = structuredClone(privateWorkout)
+    const state = {}
+    const first = stravaWorkoutFit(privateWorkout, state)
+    state.stravaShareWeights = true
+    expect(stravaSharesWeights(state)).toBe(true)
+    expect(stravaWorkoutFit(privateWorkout, state)).toEqual(workoutFit(privateWorkout))
+    state.stravaShareWeights = false
+    expect(stravaWorkoutFit(privateWorkout, state)).toEqual(first)
+    expect(privateWorkout).toEqual(before)
+    expect(of(garmin, MSG.set).filter(s => s[5] === 1).slice(0, 4).map(s => [s[4], s[3], s[7], s[9]]))
+      .toEqual([[640, 8, 0, 1], [960, 8, 0, 1], [960, 6, 0, 1], [720, 6, 0, 1]])
+  })
+
+  it('supports explicit omission through the existing encoder without changing its default', () => {
+    const omitted = decode(workoutFit(privateWorkout, { includeWeights: false, unit: 'lb' }))
+    expect(of(omitted, MSG.set).every(s => !('4' in s) && !('9' in s))).toBe(true)
+    expect(workoutFit(privateWorkout, { includeWeights: true })).toEqual(workoutFit(privateWorkout))
   })
 })

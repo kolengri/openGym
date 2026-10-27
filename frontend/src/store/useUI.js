@@ -305,6 +305,22 @@ export const useUI = create((set, get) => ({
     bookRestEnd(endsAt, sec, kind)
     runRest(set, get)
   },
+  // A Garmin pause carries its resulting rest, timestamped on the watch. Receipt time may be
+  // minutes later, even after the phone's old timer expired. Restore that absolute state once.
+  setWatchRest(rest) {
+    get().stopRest()
+    if (!rest) return
+    const left = rest.paused ? rest.left : Math.max(0, Math.ceil((rest.endsAt - Date.now()) / 1000))
+    if (!(left > 0) || !Number.isFinite(left) || left > 86400) return
+    get().abandonWork()
+    const timer = { left, total: Math.max(left, Number(rest.total) || left), endsAt: rest.endsAt,
+      ...(rest.forIdx != null ? { forIdx: rest.forIdx } : {}), ...(rest.forSet != null ? { forSet: rest.forSet } : {}),
+      ...(rest.paused ? { paused: true } : {}), ...(rest.kind === 'switch' ? { kind: 'switch' } : {}) }
+    pageHiddenAt = document.hidden ? Date.now() : null
+    set({ timer })
+    if (timer.paused) holdRestAlert(left, timer.total)
+    else { bookRestEnd(timer.endsAt, timer.total, timer.kind); runRest(set, get) }
+  },
   // Holding the rest where it is — a longer break than planned, a machine to wait for, a phone
   // call (#193). Paused time does not count: the countdown stops, and so does everything that
   // would announce its end — the server's push and the alert this tab shows are cancelled, not

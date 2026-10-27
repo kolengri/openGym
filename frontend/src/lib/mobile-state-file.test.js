@@ -31,6 +31,13 @@ beforeEach(async () => {
 })
 
 describe('the state file', () => {
+  it('strict saves reject when neither durable write can land', async () => {
+    h.failWrite.add('opengym-state.next.json')
+    h.failWrite.add('opengym-state.json')
+    await expect(M.nativeSave({ _ts: 1 }, { strict: true })).rejects.toThrow('No space left')
+    // Ordinary autosaves retain their existing best-effort behavior.
+    await expect(M.nativeSave({ _ts: 1 })).resolves.toBeUndefined()
+  })
   it('lands under its own name, with nothing left beside it', async () => {
     await M.nativeSave({ _ts: 1, workouts: ['a'] })
     expect([...h.files.keys()]).toEqual(['opengym-state.json'])

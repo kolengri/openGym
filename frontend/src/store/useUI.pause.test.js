@@ -54,6 +54,38 @@ describe('pausing the rest timer', () => {
     expect(chime).toHaveBeenCalledTimes(1)
   })
 
+  it('restores an offline Garmin pause even after the phone rest has expired', () => {
+    const start = Date.now()
+    useUI.getState().startRest(90, 0)
+    vi.advanceTimersByTime(180000)
+    chime.mockClear()
+    useUI.getState().setWatchRest({ paused: true, left: 70, total: 90, endsAt: start + 90000, forIdx: 0, forSet: 1 })
+    expect(useUI.getState().timer).toMatchObject({ paused: true, left: 70, total: 90, forIdx: 0, forSet: 1 })
+    vi.advanceTimersByTime(30000)
+    expect(useUI.getState().timer.left).toBe(70)
+    expect(chime).not.toHaveBeenCalled()
+  })
+
+  it('subtracts delivery latency from an offline Garmin resume and preserves its original end', () => {
+    const start = Date.now()
+    vi.advanceTimersByTime(60000)
+    // Set at t0, pause at t20, resume at t40: the 90s rest ends at t110.
+    useUI.getState().setWatchRest({ paused: false, left: 70, total: 90, endsAt: start + 110000 })
+    expect(useUI.getState().timer).toMatchObject({ left: 50, total: 90, endsAt: start + 110000 })
+    vi.advanceTimersByTime(49000)
+    expect(useUI.getState().timer.left).toBe(1)
+  })
+
+  it('does not restart expired or absent watch rests or sound a delayed completion', () => {
+    useUI.getState().startRest(90)
+    useUI.getState().setWatchRest({ paused: false, left: 70, total: 90, endsAt: Date.now() - 1 })
+    expect(useUI.getState().timer).toBeNull()
+    expect(chime).not.toHaveBeenCalled()
+    useUI.getState().startRest(90)
+    useUI.getState().setWatchRest(null)
+    expect(useUI.getState().timer).toBeNull()
+  })
+
   it('cancels the push booked for the old end and books it again on resume', () => {
     useUI.getState().startRest(90)
     expect(posts('/api/push/rest-timer').map(b => b.seconds)).toEqual([90])

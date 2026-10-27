@@ -40,6 +40,22 @@ afterEach(() => {
 })
 
 describe('a set ticked on the watch', () => {
+  it('resumes a Garmin pause from the phone and resumes the rest timer', () => {
+    act(() => {
+      useStore.getState().update(s => { s.active.watchPaused = true })
+      useUI.getState().startRest(90, 0)
+      useUI.getState().pauseRest()
+    })
+    act(() => container.querySelector('[aria-label="Resume Garmin workout"]').click())
+    expect(useStore.getState().S.active.watchPaused).toBe(false)
+    expect(useUI.getState().timer.paused).not.toBe(true)
+  })
+
+  it('does not start an expired rest when an offline Garmin tick arrives late', () => {
+    act(() => applyEvents([{ id: 'late-garmin', type: 'setDone', source: 'garmin', wid: 'w-watch', exId: '0025', entryIdx: 0, setIdx: 0, at: Date.now() - 180000 }], () => useStore.getState()))
+    expect(useStore.getState().S.active.entries[0].sets[0].done).toBe(true)
+    expect(useUI.getState().timer).toBeNull()
+  })
   it('takes the watch\'s numbers, is ticked by the screen\'s own tick, and starts the rest', () => {
     const ev = { id: 'e1', type: 'setDone', wid: 'w-watch', exId: '0025', entryIdx: 0, setIdx: 0, w: 62.5, r: 7, at: 1 }
     act(() => { applyEvents([ev, ev], () => useStore.getState()) })

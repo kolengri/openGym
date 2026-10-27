@@ -2341,3 +2341,7 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .gym-radius-row>:first-child{flex:1}
 .gym-radius-val{min-width:64px;text-align:end;font-variant-numeric:tabular-nums;color:var(--label-2)}
 .gym-actions{display:flex;flex-direction:column;gap:10px;margin:4px 0 30px}
+.garmin-live{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 12px;margin-bottom:10px;border-radius:var(--r);background:var(--surface);font-variant-numeric:tabular-nums}
+.garmin-live>span{display:inline-flex;align-items:center;gap:6px;font-size:13px}
+.garmin-live .icn{width:16px;height:16px;color:var(--red)}
+.garmin-actions{display:flex;flex-direction:column;gap:8px;padding:8px 12px}
