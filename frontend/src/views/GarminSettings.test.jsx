@@ -4,17 +4,17 @@ import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import GarminSettingsPage from './GarminSettings.jsx'
 
-const h = vi.hoisted(() => ({ status: { available: true, enabled: false }, devices: [{ id: 'synthetic', name: 'tactix test' }], configure: vi.fn(), open: vi.fn() }))
+const h = vi.hoisted(() => ({ status: { available: true, enabled: false }, devices: [{ id: 'synthetic', name: 'tactix test' }], configure: vi.fn(), open: vi.fn(), store: vi.fn() }))
 vi.mock('../lib/garmin-sync.js', () => ({
   garminStatus: async () => h.status, garminDevices: async () => h.devices,
   configureGarmin: (...args) => h.configure(...args), onGarminChange: () => () => {},
-  garminPlugin: async () => ({ bridge: { openOnWatch: h.open } }),
+  garminPlugin: async () => ({ bridge: { openOnWatch: h.open, openStore: h.store } }),
 }))
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 let host, root
 beforeEach(() => {
   h.status = { available: true, enabled: false }; h.devices = [{ id: 'synthetic', name: 'tactix test' }]
-  h.configure.mockReset(); h.open.mockReset()
+  h.configure.mockReset(); h.open.mockReset(); h.store.mockReset()
   h.configure.mockImplementation(async ({ enabled }) => { h.status = { ...h.status, enabled, installed: true, connected: enabled } })
   host = document.createElement('div'); document.body.append(host); root = createRoot(host)
 })
@@ -27,6 +27,8 @@ describe('Garmin connection settings', () => {
     await render()
     expect(h.configure).not.toHaveBeenCalled()
     expect(button('Connect').disabled).toBe(false)
+    await act(async () => button('Install on the watch').click())
+    expect(h.store).toHaveBeenCalledOnce()
     await act(async () => button('Connect').click())
     expect(h.configure).toHaveBeenCalledExactlyOnceWith({ enabled: true, deviceId: 'synthetic' })
     expect(button('Disconnect')).toBeTruthy()
@@ -47,6 +49,8 @@ describe('Garmin connection settings', () => {
     await act(async () => button('Connect').click())
     expect(host.querySelector('[role="alert"]').textContent).toBe('Test connection refused')
     expect(button('Connect').disabled).toBe(false)
+    await act(async () => button('Install on the watch').click())
+    expect(h.store).toHaveBeenCalledOnce()
     await act(async () => button('Connect').click())
     expect(host.querySelector('[role="alert"]')).toBeNull()
   })

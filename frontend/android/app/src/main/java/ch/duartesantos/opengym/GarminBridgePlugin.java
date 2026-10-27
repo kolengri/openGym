@@ -205,6 +205,18 @@ public class GarminBridgePlugin extends Plugin {
         });
     }
 
+    @PluginMethod public void openStore(PluginCall call) {
+        dispatch(() -> {
+            startSdk();
+            if (!ready) { call.reject("Garmin Connect is starting; try again"); return; }
+            try {
+                // Store IDs differ from the manifest UUID used for local communication.
+                sdk.openStore("10ea70db-ee8f-4811-9b65-ec251468afae");
+                call.resolve(new JSObject().put("requested", true));
+            } catch (Exception ignored) { call.reject("Could not open the Garmin installation page"); }
+        });
+    }
+
     private void startSdk() {
         if (ready || destroyed) return;
         if (initializing) {

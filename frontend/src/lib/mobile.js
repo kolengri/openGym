@@ -290,11 +290,16 @@ export function onAppActive(cb) {
 
 // WKWebView can't do blob-URL downloads, so the backup goes out through the OS share sheet
 // (Files, AirDrop, mail, …) from a temp file instead.
-export async function shareExport(json, filename) {
+export async function shareExport(json, filename, { shouldShare = () => true } = {}) {
+  if (!shouldShare()) return false
   const { Filesystem, Directory, Encoding } = await import('@capacitor/filesystem')
+  if (!shouldShare()) return false
   const { Share } = await import('@capacitor/share')
+  if (!shouldShare()) return false
   const w = await Filesystem.writeFile({ path: filename, directory: Directory.Cache, data: json, encoding: Encoding.UTF8 })
+  if (!shouldShare()) return false
   await Share.share({ title: filename, url: w.uri })
+  return true
 }
 
 // The same for a binary export — the backup with photos and videos (lib/backup-media.js). The

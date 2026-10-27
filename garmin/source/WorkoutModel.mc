@@ -1,4 +1,5 @@
 import Toybox.Lang;
+import Toybox.Cryptography;
 
 // All durable state lives in one journal transaction. No transport callback mutates
 // the outbox: only an application-level acknowledgement does that.
@@ -192,6 +193,7 @@ class WorkoutModel {
         }
         data["outbox"] = remaining;
         project();
+        alignTimer(now);
         return true;
     }
     function queue(type, fields, now) {
@@ -362,7 +364,31 @@ class WorkoutModel {
         if (GymData.is(mode,"time")) { return c["side"] == null && GymData.value(row["sec"], 1, 86400); }
         return GymData.is(mode,"reps") && GymData.value(row["r"], 1, 10000);
     }
-    function identity(c) { return wid() + ":" + c["entryIdx"].toString() + ":" + c["setIdx"].toString() + ":" + (c["side"] == null ? "" : c["side"]); }
+    function rowTarget(row) {
+        var result = "";
+        var fields = ["w","r","sec","warmup","unsupported"];
+        for (var i=0;i<fields.size();i++) { var value = row[fields[i]]; result += (value == null ? "~" : value.toString())+";"; }
+        if (row["sides"] != null) { result += "L="+rowTarget(row["sides"]["L"])+"R="+rowTarget(row["sides"]["R"]); }
+        return result;
+    }
+    function identity(c) {
+        // A local measurement belongs to the exercise and planned row layout, not just
+        // mutable array indices. Ignore completion/HR timestamps and pause/rest state.
+        var target = wid()+":"+c["entryIdx"].toString()+":"+c["setIdx"].toString()+":"+(c["side"] == null ? "" : c["side"])+":"+state["unit"];
+        var entries = active()["entries"];
+        for (var i=0;i<entries.size();i++) {
+            var e = entries[i];
+            target += "|"+e["id"].length().toString()+":"+e["id"]+":"+e["mode"]+":"+e["sets"].size().toString();
+        }
+        var rows = c["entry"]["sets"];
+        for (var j=0;j<rows.size();j++) { target += "|"+rowTarget(rows[j]); }
+        // Keep persisted timing/HR keys bounded even for the largest permitted plan.
+        var hash = new Cryptography.Hash({:algorithm=>Cryptography.HASH_SHA256});
+        var input = []b; input.addAll(target.toUtf8Array());
+        hash.update(input); var bytes = hash.digest(); var key = "";
+        for (var b=0;b<bytes.size();b++) { key += bytes[b].format("%02x"); }
+        return key;
+    }
     function alignTimer(now) {
         var c = current();
         var timing = data["timing"];
@@ -376,7 +402,14 @@ class WorkoutModel {
     }
     function startTimed(now) {
         var c = current();
-        if (!supported(c) || !GymData.is(c["entry"]["mode"],"time") || paused() || restLeft(now) > 0) { error = "Timed set unavailable"; return false; }
+        if (c == null || !GymData.is(c["entry"]["mode"],"time")) { error = "Timed set unavailable"; return false; }
+        return startSet(now);
+    }
+    function startSet(now) {
+        error = null;
+        var c = current();
+        if (!supported(c) || paused() || restLeft(now) > 0) { error = "Set unavailable"; return false; }
+        if (data["timing"] != null) { error = "Set already started"; return false; }
         data["timing"] = {"key"=>identity(c), "start"=>now, "elapsed"=>0, "pausedAt"=>null};
         return true;
     }

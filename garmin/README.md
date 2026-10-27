@@ -68,16 +68,41 @@ the physical Bluetooth transport.
 
 ## Watch controls
 
-- **START** completes the next unfinished set. For a timed set, the first press
-  starts a local timer; the next press records actual elapsed seconds.
-- **DOWN** selects the next exercise, using an absolute, retry-safe selection.
-- **MENU** or **BACK** opens pause/resume, skip rest, next exercise, finish,
-  discard, reconnect, and exit actions.
-- **Finish & save** and **Discard workout** both require explicit confirmation.
-  The confirmation is bound to that workout ID, so a changed phone workout cannot
-  be accidentally ended by an old confirmation.
-- Rest counts down from timestamps while disconnected. Pausing freezes rest and
-  timed sets. A rest-complete vibration respects the phone's haptic setting.
+The `0.1.0-beta.2` dashboard shows current sensor HR even without a workout
+(`HR --` until a valid reading arrives). Start a workout on the phone to populate
+exercise, current set, weight and reps. Idle explicitly says **No workout
+connected / Start on phone**; its visible **Menu** offers status, reconnect and exit.
+
+- Tap **Start set** to start an explicit local elapsed `mm:ss` timer, for reps or
+  timed sets. Tap **Complete set** to record completion. Rep-set timing is a local
+  display only; it does not add seconds or a start event to the phone protocol.
+- The large timer panel shows **REST** with remaining `mm:ss` during rest and
+  **SET TIME** with elapsed `mm:ss` during a started set. Timed rows also show
+  their target. Both timers freeze on pause, and set timing survives restart and
+  same-set phone snapshots. Changing the exercise or planned row layout clears
+  local timing and per-set HR, including replacements at unchanged array indices.
+- Tap **Next ex** to select the next exercise. After the final exercise is
+  complete, the primary button becomes **Finish workout**, requiring confirmation.
+- Tap the visible **Menu** for pause/resume, skip rest, next exercise,
+  finish/save, discard, recording/sync status, reconnect and exit.
+- **START** retains its shortcut: complete the next unfinished rep set, or start
+  then complete a timed set. **DOWN** selects the next exercise. **MENU** or
+  **BACK** opens the menu. Physical keys remain available when touch is disabled
+  in the watch's system settings.
+- Workout menu actions and finish/discard/exit confirmations are bound to the
+  workout ID at opening. An old menu cannot control a replacement workout.
+  Status and reconnect remain available after a workout changes.
+- Rest expiry and timed-set target expiry each produce one dismissible on-screen
+  alert and a vibration when the phone's `restHaptics` setting allows it. Dismiss
+  with the visible button or a physical key; dismissal never completes a set.
+  A timed set continues measuring after its target until explicitly completed.
+  Expired rest recovered when opening the app does not produce a stale alert.
+
+The dashboard uses the reference's divided, high-contrast layout with real workout
+and sensor values, rather than invented calorie, temperature or HR-zone metrics.
+Native FIT recording status and pending command count are available in **Menu →
+Status**. The source's beta version label does not update the Connect IQ dashboard
+listing by itself; the owner must select the matching version for a later upload.
 
 Per-side rep sets tick L and R independently and show the side. Warmup rows retain
 their label. The companion refuses rows marked `unsupported` (for example a drop

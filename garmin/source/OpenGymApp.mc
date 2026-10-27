@@ -18,13 +18,16 @@ class OpenGymApp extends Application.AppBase {
     var recordingWid = null;
     var recordingStatus = "";
     var heartRate = null;
+    var viewWidth = null;
+    var viewHeight = null;
     var busy = false;
     var tickTimer;
     var lastHrAt = 0l;
     var lastSendAt = 0l;
     var lastHelloAt = 0l;
     var lastPersistAt = 0l;
-    var lastRest = 0;
+    var alerts;
+    var timerAlert = null;
     var sender;
     var txStarted = 0l;
     var store;
@@ -47,6 +50,7 @@ class OpenGymApp extends Application.AppBase {
             model = new WorkoutModel(null, "recovery");
         }
         if (!storageFatal) { persist(); }
+        alerts = new WorkoutAlerts();
         sender = new GymConnectionListener(self);
         Communications.registerForPhoneAppMessages(method(:onPhone));
         Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
@@ -68,7 +72,8 @@ class OpenGymApp extends Application.AppBase {
         if (storageFatal) { return false; }
         var previous = GymData.copy(model.data);
         var ok = false;
-        if (type.equals("setDone")) { ok = model.setDone(now()); }
+        if (type.equals("startSet")) { ok = model.startSet(now()); }
+        else if (type.equals("setDone")) { ok = model.setDone(now()); }
         else if (type.equals("next")) { ok = model.next(now()); }
         else if (type.equals("pause")) { ok = model.pause(now()); }
         else { ok = model.queue(type, {}, now()); }
@@ -77,7 +82,7 @@ class OpenGymApp extends Application.AppBase {
             model = new WorkoutModel(previous, "");
             ok = false;
         }
-        if (ok) { reconcileRecording(); flush(); }
+        if (ok) { timerAlert = null; reconcileRecording(); updateAlerts(now()); flush(); }
         WatchUi.requestUpdate();
         return ok;
     }
@@ -92,6 +97,7 @@ class OpenGymApp extends Application.AppBase {
         notice = model.error;
         if (ok && !persist()) { model = new WorkoutModel(previous, ""); }
         reconcileRecording();
+        updateAlerts(now());
         WatchUi.requestUpdate();
     }
     function send(payload) {
@@ -115,16 +121,20 @@ class OpenGymApp extends Application.AppBase {
         if (!busy && at - lastHelloAt >= 30000) {
             if (send({"v"=>1, "kind"=>"hello"})) { lastHelloAt = at; }
         } else if (!busy && at - lastSendAt >= 5000) { flush(); }
-        var rest = model.restLeft(at);
-        if (lastRest > 0 && rest == 0 && !model.paused() && model.active() != null) {
+        updateAlerts(at);
+        if (at - lastPersistAt >= 15000 && model.active() != null) { persist(); lastPersistAt = at; }
+        WatchUi.requestUpdate();
+    }
+    function updateAlerts(at) {
+        if (timerAlert != null && !alerts.valid(timerAlert,model)) { timerAlert = null; }
+        var alert = alerts.poll(model,at);
+        if (alert != null) {
+            timerAlert = alert;
             var settings = model.state["settings"];
             if (settings == null || settings["restHaptics"] != false) {
                 try { Attention.vibrate([new Attention.VibeProfile(75, 350), new Attention.VibeProfile(0, 150), new Attention.VibeProfile(75, 350)]); } catch (ex) {}
             }
         }
-        lastRest = rest;
-        if (at - lastPersistAt >= 15000 && model.active() != null) { persist(); lastPersistAt = at; }
-        WatchUi.requestUpdate();
     }
     function onSensor(info as Sensor.Info) as Void {
         var bpm = info.heartRate;
@@ -132,6 +142,7 @@ class OpenGymApp extends Application.AppBase {
         heartRate = bpm;
         var at = now();
         model.sample(bpm, at);
+        WatchUi.requestUpdate();
         if (model.wid() != null && at - lastHrAt >= 5000 && !busy && model.data["outbox"].size() == 0) {
             if (send({"v"=>1, "kind"=>"hr", "wid"=>model.wid(), "bpm"=>bpm, "at"=>at})) { lastHrAt = at; }
         }

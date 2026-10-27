@@ -1,6 +1,6 @@
 # Garmin companion protocol
 
-The Android app and Connect IQ watch app communicate locally through Garmin's Android companion SDK and Garmin Connect. No workout data is sent to GitHub or an openGym server by this integration. It is off until enabled in Settings. Garmin Connect's own activity upload and an explicitly linked Strava account are independent services.
+The Android app and Connect IQ watch app communicate locally through Garmin's Android companion SDK and Garmin Connect. No workout data is sent to GitHub or an openGym server by this integration. It is off until enabled in Settings. The optional direct Garmin Connect uploader is a separate native plugin, documented below; an explicitly linked Strava account remains an independent service.
 
 Application ID (Connect IQ UUID without hyphens): `6fcd6528636d4cc39c3ad1e317d7524a`.
 
@@ -40,3 +40,13 @@ Emit `watchState` when link status changes, `watchEvent` after a durable command
 ## Acceptance
 
 Test duplicate/retried/out-of-order messages, old workout IDs, reboot/reconnect persistence, stale and oversized snapshots, no link and disabled link, malformed fields, and finish/discard confirmation. Commands have to work with Android asleep by local watch execution and eventual replay; immediate Android UI updates are best effort while its WebView is suspended. Physically validate background connection, FIT appearance in Garmin Connect and Strava transfer on the owner's tactix 8 before claiming device verification.
+
+## Optional Garmin Connect cloud upload
+
+`GarminCloud` exposes `status`, `connect`, `disconnect` and `upload({sessionId,workoutId,filename,base64,retryUnknown?})`. Credentials never enter the bridge response. A random session generation binds each JS job and native receipt to one completed login. Receipt identity survives disconnect and reauthentication; another generation cannot consume or replay it. Durable login nonces fence credential saving and activity callbacks against cancellation/profile changes. Explicit retry permission is consumed in the saved JS job before one native attempt, so restart cannot authorize another attempt. The native client accepts bounded CRC-valid FIT activity files only, uses the fixed ordinary HTTPS upload endpoint, disables redirects, and treats potentially transmitted failures as `unknown_result`.
+
+The no-backup encrypted store commits an in-flight marker before POST and a receipt after explicit success/duplicate confirmation. Only an explicit `retryUnknown` permits replay of an ambiguous same-content request; content changes cannot overwrite a receipt. Safe pre-transmission `network_error` jobs may retry when the app resumes or connectivity returns. JS strictly saves the workout and upload intent before calling native code. Plain imported history is never scanned for upload.
+
+The phone supplies `settings.recording=false` while automatic cloud upload is enabled. This suppresses the separate watch-native recording while preserving controls and HR telemetry. FIT HR records use only actual received observations. Changing upload recording mode during an active workout is disabled in settings. The weight-sharing consent is captured when queueing and can only narrow before transmission. Physical authentication, Bluetooth gaps, endpoint acceptance and Garmin-to-Strava forwarding are separate unverified acceptance checks until measured on the owner's device.
+
+Health reads use `healthMetrics()` and `readHealthMetric({sessionId,date,metric})`. The native catalog has 56 fixed read-only categories; its own profile prerequisite remains native. Dates, hosts, routes, response bytes/complexity and recursive credential removal are enforced natively. JS batches at most seven days serially, guards every asynchronous boundary against profile/connection changes, supports cancellation and stops on authentication/rate-limit errors. Each successful raw payload is atomically archived in a separate per-profile/day/metric file; unsuccessful later reads do not replace it. The workout state receives only verified dateRange weigh-ins via the existing health merge policy. Raw archives have their own explicit export and do not enter the server-synced workout state.

@@ -2,11 +2,18 @@
 // those as .3 and .8. The setting adds precision that is already in the number — it changes
 // nothing about what is stored.
 import { describe, it, expect, afterEach } from 'vitest'
-import { fmtNum, setWeightDecimals, weightDecimals } from './format.js'
+import { fmtNum, fmtBodyWeight, setWeightDecimals, weightDecimals } from './format.js'
 
 afterEach(() => setWeightDecimals(1))
 
 describe('weight decimals', () => {
+  it('always rounds body mass to tenths while preserving quarter plates', () => {
+    setWeightDecimals(2)
+    expect(fmtBodyWeight(78.257)).toBe('78.3')
+    expect(fmtBodyWeight(0.03)).toBe('0')
+    expect(fmtBodyWeight(-0.03)).toBe('0')
+    expect(fmtNum(20.25)).toBe('20.25')
+  })
   it('rounds to one decimal by default, exactly as before', () => {
     expect(weightDecimals()).toBe(1)
     expect(fmtNum(62.75)).toBe('62.8')

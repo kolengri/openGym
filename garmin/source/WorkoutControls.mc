@@ -1,0 +1,94 @@
+import Toybox.Lang;
+
+// Rendering and hit testing share these rectangles, including on round displays.
+module WorkoutControls {
+    function rect(id, w, h) {
+        if (id.equals("primary")) { return [(w*0.18).toNumber(), (h*0.64).toNumber(), (w*0.64).toNumber(), (h*0.13).toNumber()]; }
+        if (id.equals("next")) { return [(w*0.20).toNumber(), (h*0.79).toNumber(), (w*0.29).toNumber(), (h*0.11).toNumber()]; }
+        return [(w*0.51).toNumber(), (h*0.79).toNumber(), (w*0.29).toNumber(), (h*0.11).toNumber()];
+    }
+    function contains(r, x, y) { return x >= r[0] && y >= r[1] && x < r[0]+r[2] && y < r[1]+r[3]; }
+    function hit(w, h, x, y, active, modal) {
+        if (contains(rect("primary",w,h),x,y) && (active || modal)) { return modal ? "dismiss" : "primary"; }
+        if (!modal && contains(rect("menu",w,h),x,y)) { return "menu"; }
+        if (!modal && active && contains(rect("next",w,h),x,y)) { return "next"; }
+        return null;
+    }
+    function primary(model, at) {
+        if (model.active() == null) { return null; }
+        if (model.paused()) { return "pause"; }
+        if (model.restLeft(at) > 0) { return "skipRest"; }
+        var c = model.current();
+        if (c == null) { return model.active()["cur"] == model.active()["entries"].size()-1 ? "finish" : "next"; }
+        if (!model.supported(c)) { return null; }
+        return model.data["timing"] == null ? "startSet" : "setDone";
+    }
+    function label(action) {
+        if (action == null) { return "Use phone"; }
+        if (action.equals("pause")) { return "Resume"; }
+        if (action.equals("skipRest")) { return "Skip rest"; }
+        if (action.equals("finish")) { return "Finish workout"; }
+        if (action.equals("next")) { return "Next exercise"; }
+        return action.equals("startSet") ? "Start set" : "Complete set";
+    }
+    function clock(seconds) {
+        seconds = (seconds < 0 ? 0 : seconds).toNumber();
+        return (seconds/60).toNumber().format("%02d")+":"+(seconds%60).format("%02d");
+    }
+}
+
+// Ephemeral notification state never completes a set or queues a command.
+// Reconciliation can replace dictionaries; use workout/set identity, not objects.
+class WorkoutAlerts {
+    var restKey = null; var restDeadline = null; var restPaused = false;
+    var restArmed = false; var restFired = false;
+    var timedKey = null; var timedTarget = null; var timedFired = false;
+    function initialize() {}
+    function token(value) { return value == null ? "" : value.toString(); }
+    function restIdentity(model) {
+        var a = model.active();
+        if (a == null || a["rest"] == null) { return null; }
+        var r = a["rest"];
+        var at = null;
+        if (r["forIdx"] != null && r["forSet"] != null && r["forSet"] < a["entries"][r["forIdx"]]["sets"].size()) { at = a["entries"][r["forIdx"]]["sets"][r["forSet"]]["at"]; }
+        return model.wid()+":"+token(r["forIdx"])+":"+token(r["forSet"])+":"+token(r["total"])+":"+token(r["kind"])+":"+token(at);
+    }
+    function valid(alert, model) {
+        if (alert == null || !GymData.is(model.wid(),alert["wid"])) { return false; }
+        if (alert["kind"].equals("rest")) { return GymData.is(restIdentity(model),alert["key"]) && model.active()["rest"]["endsAt"] == alert["endsAt"]; }
+        var t = model.data["timing"];
+        var c = model.current();
+        return t != null && c != null && GymData.is(t["key"],alert["key"]) && c["row"]["sec"] == alert["target"];
+    }
+    function poll(model, at) {
+        var result = null;
+        var key = restIdentity(model);
+        if (key == null) {
+            restKey = null; restDeadline = null; restArmed = false; restFired = false; restPaused = false;
+        } else {
+            var r = model.active()["rest"];
+            var p = model.paused() || r["paused"] == true;
+            // A moved running deadline is a new rest. A pause/resume moves the
+            // deadline too, but must retain the already-delivered alert fence.
+            if (!GymData.is(key,restKey) || (!restPaused && !p && restDeadline != r["endsAt"])) {
+                restArmed = false; restFired = false;
+            }
+            restKey = key; restDeadline = r["endsAt"]; restPaused = p;
+            if (model.restLeft(at) > 0) { restArmed = true; }
+            if (restArmed && !restFired && !p && model.restLeft(at) == 0) {
+                restFired = true;
+                result = {"kind"=>"rest", "wid"=>model.wid(), "key"=>key, "endsAt"=>r["endsAt"]};
+            }
+        }
+        var t = model.data["timing"]; var c = model.current();
+        key = t == null ? null : t["key"];
+        var target = c == null ? null : c["row"]["sec"];
+        if (!GymData.is(key,timedKey) || timedTarget != target) { timedKey = key; timedTarget = target; timedFired = false; }
+        if (t != null && c != null && model.supported(c) && GymData.is(c["entry"]["mode"],"time") &&
+            !model.paused() && !timedFired && model.elapsed(at) >= c["row"]["sec"]) {
+            timedFired = true;
+            result = {"kind"=>"timed", "wid"=>model.wid(), "key"=>key, "target"=>target};
+        }
+        return result;
+    }
+}

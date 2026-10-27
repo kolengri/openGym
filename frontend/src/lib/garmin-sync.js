@@ -66,9 +66,9 @@ export const garminHeartRate = (wid, now = Date.now()) => heartRate?.wid === wid
 // Allowlist the existing snapshot. Even an accidentally added credential/history field must not
 // cross this boundary. Never trim running sets to fit; an incomplete plan could log the wrong set.
 const pick = (v, keys) => Object.fromEntries(keys.filter(k => v?.[k] !== undefined).map(k => [k, v[k]]))
-export function garminSnapshot(snapshot, { timer = null, paused = false, sourceActive = null, warmupRestSec = null } = {}) {
+export function garminSnapshot(snapshot, { timer = null, paused = false, sourceActive = null, warmupRestSec = null, recording = true } = {}) {
   const out = pick(snapshot, ['v', 'unit', 'restSec', 'discarded'])
-  out.settings = { recording: true, restHaptics: snapshot.settings?.restHaptics !== false }
+  out.settings = { recording: recording !== false, restHaptics: snapshot.settings?.restHaptics !== false }
   const active = snapshot.active
   out.active = active ? pick(active, ['id', 'name', 'start', 'unit', 'cur', 'restSec', 'healthType']) : null
   if (out.active) {

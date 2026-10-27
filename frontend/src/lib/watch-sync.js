@@ -27,6 +27,7 @@ import { sessionHistory } from './backfill.js'
 import { buildCombinedEntries, deriveSessionName } from './session-merge.js'
 import { todayISO, exerciseNameText } from './format.js'
 import { sanitizeHr } from './heart-rate.js'
+import { appendGarminCloudHeartRate } from './garmin-cloud.js'
 import { readWatchPrefs, settingsForWatch, writeWatchStatus, onWatchPrefs } from './watch-settings.js'
 import { plannedType } from './health-connect.js'
 import { garminPlugin, garminSnapshot, garminError, onGarminChange, configureGarmin, receiveGarminHeartRate, isGarminEvent } from './garmin-sync.js'
@@ -397,7 +398,7 @@ export function drainWatchEvents () {
           snap.settings = { restHaptics: readWatchPrefs().restHaptics }
           // Ack and the post-apply snapshot are one causal fence; an older in-flight snapshot
           // must never undo a set once the watch has discarded its local event.
-          const json = JSON.stringify(garminSnapshot(snap, { timer: getTimerRef?.(), paused: S.active?.watchPaused, sourceActive: S.active, warmupRestSec: S.warmupRestSec }))
+          const json = JSON.stringify(garminSnapshot(snap, { timer: getTimerRef?.(), paused: S.active?.watchPaused, sourceActive: S.active, warmupRestSec: S.warmupRestSec, recording: S.garminCloudAuto !== true }))
           await p.WatchBridge.ack({ ids: done, json })
         } else await p.WatchBridge.ack({ ids: done })
       }
@@ -430,7 +431,7 @@ export const OPEN_ON_WATCH_WINDOW_MS = 2 * 60 * 1000
  */
 export function shouldOpenOnWatch (prev, next, { prefs = readWatchPrefs(), now = Date.now(), fromWatch = startedOnWatch } = {}) {
   if (!next || !next.id || (prev && prev.id === next.id)) return false
-  if (!prefs.enabled || !prefs.autoShow || next.backfill || fromWatch.has(next.id)) return false
+  if (!prefs.enabled || !prefs.autoShow || next.backfill || next.editingWorkoutId || fromWatch.has(next.id)) return false
   const start = Number(next.start)
   return Number.isFinite(start) && start > 0 && Math.abs(now - start) <= OPEN_ON_WATCH_WINDOW_MS
 }
@@ -583,7 +584,7 @@ export async function startWatchSync ({ useStore, useUI }) {
       // The saved-workout editor is never a live watch session.
       if (p.garmin && (S.active?.editingWorkoutId || S.active?.backfill)) return
       const json = JSON.stringify(p.garmin
-        ? garminSnapshot(snap, { timer: useUI.getState().timer, paused: S.active?.watchPaused, sourceActive: S.active, warmupRestSec: S.warmupRestSec })
+        ? garminSnapshot(snap, { timer: useUI.getState().timer, paused: S.active?.watchPaused, sourceActive: S.active, warmupRestSec: S.warmupRestSec, recording: S.garminCloudAuto !== true })
         : fitSnapshot(snap))
       if (json !== lastSent) {
         const r = await p.WatchBridge.sendSnapshot({ json })
@@ -615,15 +616,28 @@ export async function startWatchSync ({ useStore, useUI }) {
     if (s.ready && !prev.ready) { drainWatchEvents(); schedule() }
     if (s.S === prev.S) return
     schedule()
-    // A workout started on the phone: the watch app opens with it (HealthKit's startWatchApp).
-    if (!p.garmin && linked && shouldOpenOnWatch(prev.S?.active, s.S?.active)) Promise.resolve().then(() => p.WatchBridge.openOnWatch({ type: plannedType(s.S.active.entries) || undefined })).catch(() => {})
+    // Request launch once for a new live phone workout; restoring a profile is not a start.
+    const open = linked && (p.garmin ? prev.ready !== false && s.ready !== false && shouldOpenOnWatch(prev.S?.active, s.S?.active,
+      { prefs: { enabled: true, autoShow: true } }) : shouldOpenOnWatch(prev.S?.active, s.S?.active))
+    if (open) {
+      const owner = s.user?.id, wid = s.S.active.id
+      Promise.resolve().then(() => {
+        const current = useStore.getState()
+        if (!linked || current.user?.id !== owner || current.S.active?.id !== wid) return
+        return p.WatchBridge.openOnWatch(p.garmin ? {} : { type: plannedType(s.S.active.entries) || undefined })
+      }).catch(error => { if (p.garmin) garminError(error) })
+    }
   })
   // The rest as the watch needs it changes when it starts, stops or is paused, not every second.
   const restOf = t => (t ? `${t.endsAt}|${!!t.paused}|${!!t.ready}` : '')
   const offUI = useUI.subscribe((s, prev) => { if (s.timer !== prev.timer && restOf(s.timer) !== restOf(prev.timer)) schedule() })
   const offPrefs = onWatchPrefs(() => schedule())
   const offGarmin = p.garmin ? onGarminChange(kind => { if (kind === 'config') checkLink().then(() => { lastSent = null; schedule() }) }) : () => {}
-  const subHr = p.garmin ? await p.WatchBridge.addListener('heartRate', ev => { receiveGarminHeartRate(ev, useStore.getState().S.active?.id) }) : null
+  const subHr = p.garmin ? await p.WatchBridge.addListener('heartRate', ev => {
+    if (receiveGarminHeartRate(ev, useStore.getState().S.active?.id) && useStore.getState().S.garminCloudAuto === true) {
+      useStore.getState().update(s => { appendGarminCloudHeartRate(s, ev) })
+    }
+  }) : null
   // The watch speaks the app's language, not its own system's: told again when it changes (the
   // exercise names in the snapshot change with it too).
   let offLang = () => {}

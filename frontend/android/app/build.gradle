@@ -65,6 +65,8 @@ if (project.findProperty('garmin') == 'true') {
     android.productFlavors.create('garmin') {
         dimension = "channel"
         applicationIdSuffix ".garmin"
+        versionCode 29
+        versionName "1.4.3-garmin.2"
         buildConfigField "String", "CHANNEL", '"garmin"'
     }
     android.sourceSets.garmin.java.srcDir 'src/nonPlay/java'

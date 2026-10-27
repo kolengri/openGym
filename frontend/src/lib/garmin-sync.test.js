@@ -187,6 +187,32 @@ describe('Garmin commands', () => {
 })
 
 describe('explicit connection', () => {
+  it('automatically requests watch launch once for a new phone workout, excluding restores and editors', async () => {
+    let state = { ready: true, S: { unit: 'kg', routines: [], workouts: [], active: null }, user: null }, listener
+    const bridge = {
+      status: async () => ({ paired: true, installed: true, enabled: true }),
+      openOnWatch: vi.fn(async () => ({ requested: true })),
+      addListener: async () => ({ remove() {} }), drain: async () => ({ events: [] }), sendSnapshot: async () => ({ sent: true }),
+    }
+    _setWatchPluginForTest(bridge, () => state, { garmin: true })
+    const stop = await startWatchSync({
+      useStore: { getState: () => state, subscribe: fn => { listener = fn; return () => {} } },
+      useUI: { getState: () => ({ timer: null }), subscribe: () => () => {} },
+    })
+    const emit = patch => { const previous = state; state = { ...state, ...patch }; listener(state, previous) }
+    const active = extra => ({ ...snapshot().active, id: 'new-' + Math.random(), start: Date.now(), ...extra })
+    try {
+      emit({ S: { ...state.S, active: active() } }); await Promise.resolve()
+      expect(bridge.openOnWatch).toHaveBeenCalledExactlyOnceWith({})
+      emit({ S: { ...state.S } }); await Promise.resolve()
+      expect(bridge.openOnWatch).toHaveBeenCalledOnce()
+      emit({ S: { ...state.S, active: active({ backfill: true }) } })
+      emit({ S: { ...state.S, active: active({ editingWorkoutId: 'saved' }) } })
+      emit({ ready: false, S: { ...state.S, active: null } })
+      emit({ ready: true, S: { ...state.S, active: active() } }); await Promise.resolve()
+      expect(bridge.openOnWatch).toHaveBeenCalledOnce()
+    } finally { stop() }
+  })
   it('keeps the link during owner restoration, but disables it on a live account switch', async () => {
     let state = { ready: false, S: { unit: 'kg', routines: [], workouts: [], active: null }, user: null }
     let listener

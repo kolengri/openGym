@@ -124,6 +124,8 @@ export function buildCompletedWorkout(active, { end = Date.now(), prs = [], snap
     bw: active.bw,
     entries,
     prs,
+    ...(Array.isArray(active.garminHrSamples) && active.garminHrSamples.length ? { garminHrSamples: active.garminHrSamples.slice(-7200).map(row => [...row]) } : {}),
+    ...(active.garminHrTruncated === true ? { garminHrTruncated: true } : {}),
     ...(allNoProg ? { excludeFromProgression: true } : {}),
     ...(sessionNote ? { note: sessionNote } : {}),
   }

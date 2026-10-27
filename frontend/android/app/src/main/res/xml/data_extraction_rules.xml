@@ -7,11 +7,15 @@
      reminder's places (opengym_gym_reminder.xml, #614) stay out of both too: they never leave the phone. -->
 <data-extraction-rules>
     <cloud-backup>
+        <!-- Credentials in the official Garmin sign-in WebView must not migrate. -->
+        <exclude domain="root" path="app_webview/" />
         <exclude domain="file" path="opengym-media/" />
+        <exclude domain="file" path="opengym-garmin-health/" />
         <exclude domain="file" path="opengym-remote.json" />
         <exclude domain="sharedpref" path="opengym_gym_reminder.xml" />
     </cloud-backup>
     <device-transfer>
+        <exclude domain="root" path="app_webview/" />
         <exclude domain="file" path="opengym-remote.json" />
         <exclude domain="sharedpref" path="opengym_gym_reminder.xml" />
     </device-transfer>

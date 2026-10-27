@@ -14,10 +14,11 @@
 // openGym keeps a tick time per set (`at`, since v1.3.x), not a start and an end, so when a set
 // started is estimated from how long it lasts: its minutes or seconds when it has them, a few
 // seconds a rep when it does not. Workouts from before the tick was kept spread their sets over
-// the session. Heart-rate records and calories are not exported.
+// the session. Observed heart-rate samples can be supplied explicitly; calories are not exported.
 import { exOr } from './exercises.js'
 import { modeOf, workoutAt } from './history.js'
 import { isSideSet, dropsOf, modeForSet } from './workout-model.js'
+import { cleanSamples } from './heart-rate.js'
 
 /* ------------------------------------------------------------- the container -- */
 
@@ -130,7 +131,7 @@ export function encodeFit(messages) {
 
 /* ------------------------------------------------------- the FIT profile bits -- */
 
-export const MSG = { fileId: 0, session: 18, lap: 19, event: 21, deviceInfo: 23, activity: 34, fileCreator: 49, set: 225 }
+export const MSG = { fileId: 0, session: 18, lap: 19, record: 20, event: 21, deviceInfo: 23, activity: 34, fileCreator: 49, set: 225 }
 export const SPORT = { generic: 0, running: 1, cycling: 2, fitnessEquipment: 4, training: 10, walking: 11, rowing: 15 }
 export const SUB_SPORT = { generic: 0, treadmill: 1, indoorCycling: 6, indoorRowing: 14, elliptical: 15, stairClimbing: 16, strengthTraining: 20, cardioTraining: 26 }
 const MANUFACTURER_DEVELOPMENT = 255
@@ -299,7 +300,7 @@ function serialOf(w) {
  * stored in it, FIT wants kilograms), `version` the app's ("1.4.0"), `exOf(id)` the exercise.
  * Set includeWeights to false to omit both weight fields from every set, including rests.
  */
-export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr, includeWeights = true } = {}) {
+export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr, includeWeights = true, heartRateSamples = null } = {}) {
   const startMs = workoutAt(w)
   if (!Number.isFinite(startMs)) throw new Error('This workout has no date')
   let endMs = Number.isFinite(w?.end) && w.end > startMs ? w.end : startMs
@@ -339,6 +340,16 @@ export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr, 
     [253, 'uint32', T0], [0, 'uint8', 0], [2, 'uint16', MANUFACTURER_DEVELOPMENT], [3, 'uint32z', serial],
     [4, 'uint16', 0], [5, 'uint16', swVersion], [27, 'string', 'openGym', 16],
   ] })
+
+  // Only observed readings supplied explicitly by the cloud upload path. Keep gaps and
+  // exclude unrelated times; ordinary exports remain unchanged without this option.
+  const seenHr = new Set()
+  for (const [at, bpm] of cleanSamples(Array.isArray(heartRateSamples) ? heartRateSamples.slice(-7200) : [])) {
+    const timestamp = fitTime(at)
+    if (at < startMs || at > endMs || seenHr.has(timestamp)) continue
+    seenHr.add(timestamp)
+    msgs.push({ global: MSG.record, fields: [[253, 'uint32', timestamp], [3, 'uint8', bpm]] })
+  }
 
   const laps = []
   if (cardioOnly) {

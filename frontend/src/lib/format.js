@@ -75,6 +75,8 @@ export const fmtNum = n => {
   // `+ 0` turns a -0 into 0: a change that rounds away ("-0.03") printed "-0".
   return formatter(Intl.NumberFormat, dateLocale(), decimals === 2 ? NUM_2 : NUM_1).format(Math.round(n * p) / p + 0)
 }
+// Body mass has its own fixed precision, independent of quarter-plate display settings.
+export const fmtBodyWeight = n => formatter(Intl.NumberFormat, dateLocale(), NUM_1).format(Math.round(n * 10) / 10 + 0)
 const NUM_1 = { maximumFractionDigits: 1 }
 const NUM_2 = { maximumFractionDigits: 2 }
 // Plate sizes keep their quarter: 1.25 and 21.25 are real numbers on a plate and a bar.

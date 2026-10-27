@@ -60,7 +60,7 @@ describe('Strava file export controls', () => {
     const toggle = host.querySelector('[role="switch"][aria-label="Include weights in Strava exports"]')
     expect(toggle).not.toBeNull()
     expect(toggle.getAttribute('aria-checked')).toBe('false')
-    expect(host.textContent).toContain('Garmin Connect syncing to Strava uses its own data.')
+    expect(host.textContent).toContain('Applies to Strava FIT files and openGym uploads to Garmin Connect.')
     const before = structuredClone(useStore.getState().S.workouts)
     await act(async () => { toggle.click() })
     expect(toggle.getAttribute('aria-checked')).toBe('true')

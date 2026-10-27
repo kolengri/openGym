@@ -167,6 +167,16 @@ const strength = {
   ],
 }
 
+it('includes only explicitly supplied observed HR ticks and leaves gaps and weights absent', () => {
+  const samples = [[T0 - 1000, 90], [T0 + 5000, 110], [T0 + 55000, 140], [T0 + 55001, 141], [strength.end + 1000, 120], [T0 + 60000, 0]]
+  const bytes = stravaWorkoutFit(strength, {}, { heartRateSamples: samples })
+  const d = decode(bytes)
+  expect(fitCrc(bytes)).toBe(0)
+  expect(of(d, MSG.record)).toEqual([{ 253: fitTime(T0 + 5000), 3: 110 }, { 253: fitTime(T0 + 55000), 3: 140 }])
+  expect(of(d, MSG.set).every(s => !(4 in s))).toBe(true)
+  expect(of(decode(workoutFit(strength)), MSG.record)).toEqual([])
+})
+
 describe('explicit modes in imported history', () => {
   const exOf = () => ({ n: 'Synthetic custom exercise', bp: 'abs', tg: 'abs' })
   it('keeps mixed row modes, measured durations and exact completion ticks without an entry target', () => {

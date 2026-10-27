@@ -19,6 +19,7 @@ import { initBackButton } from './lib/back.js'
 import { installEdgeSwipeBack, BACK_PREVIEW_EVENT } from './lib/edge-swipe-back.js'
 import { pageMotion } from './lib/page-motion.js'
 import { startWatchSync, bindWatchAppActions, patchSetIn } from './lib/watch-sync.js'
+import { startGarminCloudSync } from './lib/garmin-cloud.js'
 import { stampWorkout } from './lib/sync-merge.js'
 import { logWeighIn } from './lib/bodyweight.js'
 import { startWidgetSync } from './lib/widgets.js'
@@ -420,6 +421,12 @@ export default function App() {
       openWorkout: () => { if (!String(window.location.hash || '').startsWith('#/workout')) navToWorkout() },
     })
     return () => { gone = true; stop?.(); unbind() }
+  }, [])
+  useEffect(() => {
+    if (!MOBILE) return
+    let stopped = false, stop = null
+    startGarminCloudSync(useStore).then(fn => { if (stopped) fn(); else stop = fn }).catch(() => {})
+    return () => { stopped = true; stop?.() }
   }, [])
   // iPhone app: the Home Screen widgets and the workout's Live Activity (lib/widgets.js,
   // lib/live-activity.js). Nothing at all on the web or on Android.

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { t } from '../lib/i18n.js'
 import { Button, Row, Section, SelectRow } from '../components/ui.jsx'
 import { configureGarmin, garminDevices, garminStatus, onGarminChange } from '../lib/garmin-sync.js'
+import GarminCloudSettings from '../components/GarminCloudSettings.jsx'
 
 export default function GarminSettingsPage() {
   const [status, setStatus] = useState(null)
@@ -41,11 +42,19 @@ export default function GarminSettingsPage() {
 
   return <>
     <Section footer={t('Local Bluetooth sync. Your workout log is never sent to GitHub.')}>
-      <Row icon="watch" title={t('Garmin')} subtitle={line} value={status?.deviceName || ''} />
+      <Row icon="watch" title={t('Garmin')} subtitle={line} />
+      {status?.deviceName && <p className="small muted" style={{ padding: '0 16px', overflowWrap: 'anywhere' }}>{status.deviceName}</p>}
       {!status?.enabled && devices.length > 0 && <SelectRow icon="watch" title={t('Select a watch')} value={selected}
         options={devices.map(d => ({ value: d.id, label: d.name }))} onChange={setSelected} />}
       {!status?.enabled && status?.available && !devices.length && <p className="muted small">{t('No Garmin watches found. Pair your watch in Garmin Connect, then try again.')}</p>}
       <div className="garmin-actions">
+        <Button disabled={busy || !status?.available} onClick={async () => {
+          try {
+            const { garminPlugin } = await import('../lib/garmin-sync.js')
+            const p = await garminPlugin()
+            await p?.bridge.openStore()
+          } catch { setError(t('Garmin connection failed. Try again.')) }
+        }}>{t('Install on the watch')}</Button>
         <Button disabled={busy || (!status?.enabled && (!selected || !status?.available))} onClick={() => connect(!status?.enabled)}>
           {status?.enabled ? t('Disconnect') : t('Connect')}
         </Button>
@@ -58,8 +67,10 @@ export default function GarminSettingsPage() {
           await p?.bridge.openOnWatch()
         } catch { setError(t('Garmin connection failed. Try again.')) }
       }}>{t('Open on the watch')}</Button>}
-      {(error || status?.error) && <p className="muted small" role="alert">{error || status.error}</p>}
+      {(error || status?.error) && <p className="muted small" role="alert">{error || t(status.installed === false
+        ? 'Install the openGym companion on your watch, then connect below.' : 'Garmin connection failed. Try again.')}</p>}
     </Section>
+    <GarminCloudSettings />
     <Section footer={t('Recordings sync from Garmin Connect to Strava when those accounts are linked.')}>
       <Row icon="heart" title={t('Heart rate')} subtitle={t('The watch sends live heart rate and saves an average and maximum for each set.')} />
       <Row icon="phoneScreen" title={t('While the phone is locked')} subtitle={t('The watch keeps your session. Actions sync when openGym resumes.')} />

@@ -55,6 +55,14 @@ afterEach(() => {
 })
 
 describe('finishing while a timed hold runs', () => {
+  it('durably saves the new cloud-upload intent with the completed workout', () => {
+    install([{ w: 40, r: 5, done: true }])
+    useStore.getState().update(s => { s.garminCloudAuto = true; s.garminCloudSessionId = 'synthetic-session' })
+    act(() => finishWorkout())
+    expect(S().workouts[0].garminCloudUpload).toMatchObject({ status: 'pending', sessionId: 'synthetic-session', shareWeights: false })
+    expect(JSON.parse(localStorage.getItem('gym_state_v1')).workouts[0].garminCloudUpload.status).toBe('pending')
+  })
+
   it('stops the hold, which then never calls back into the finished workout', () => {
     install([{ w: 40, r: 5, done: true }])
     const held = holdInto(0)

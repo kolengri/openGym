@@ -28,6 +28,7 @@ public class MainActivity extends BridgeActivity {
         registerPlugin(HealthConnectPlugin.class);
         registerPlugin(ChannelPlugin.class);
         registerPlugin(GarminBridgePlugin.class);
+        registerPlugin(GarminCloudPlugin.class);
         FlavorPlugins.register(this);
         registerPlugin(PrintPlugin.class);
         registerPlugin(RestAlertPlugin.class);

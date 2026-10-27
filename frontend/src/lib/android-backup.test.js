@@ -29,10 +29,24 @@ describe('Android backup rules', () => {
     // An <include> would turn either list into an allowlist and drop everything else.
     expect(legacy).not.toMatch(/<include/)
     expect(modern).not.toMatch(/<include/)
-    // Device transfer takes everything but the pairing and the gym reminder's places.
+    // Device transfer also excludes the Garmin login WebView's authentication storage.
     const transfer = modern.match(/<device-transfer>([\s\S]*?)<\/device-transfer>/)?.[1] || ''
     expect(transfer).not.toMatch(EXCLUDE)
-    expect(transfer.match(/<exclude/g)).toHaveLength(2)
+    expect(transfer.match(/<exclude/g)).toHaveLength(3)
+  })
+
+  it('keeps Garmin WebView authentication out of every backup and transfer', () => {
+    const WEBVIEW = /<exclude\s+domain="root"\s+path="app_webview\/"\s*\/>/
+    expect(legacy).toMatch(WEBVIEW)
+    expect(modern.match(/<cloud-backup>([\s\S]*?)<\/cloud-backup>/)?.[1]).toMatch(WEBVIEW)
+    expect(modern.match(/<device-transfer>([\s\S]*?)<\/device-transfer>/)?.[1]).toMatch(WEBVIEW)
+  })
+
+  it('excludes dense Garmin health archives from cloud backup while retaining device transfer', () => {
+    const HEALTH = /<exclude\s+domain="file"\s+path="opengym-garmin-health\/"\s*\/>/
+    expect(legacy).toMatch(HEALTH)
+    expect(modern.match(/<cloud-backup>([\s\S]*?)<\/cloud-backup>/)?.[1]).toMatch(HEALTH)
+    expect(modern.match(/<device-transfer>([\s\S]*?)<\/device-transfer>/)?.[1]).not.toMatch(HEALTH)
   })
 
   it('the gym reminder\'s places (#614) never leave the phone: out of every backup and transfer', () => {

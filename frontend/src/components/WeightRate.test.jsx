@@ -25,7 +25,8 @@ const type = (input, value) => act(() => {
 })
 
 // Losing 0.1 kg a day, weighed every other day for three weeks: -0.7 kg a week, about -0.85 %.
-const days = i => isoOf(new Date(Date.now() - i * 86400000))
+// Calendar days, not 24-hour offsets: near midnight a DST transition otherwise skips a date.
+const days = i => { const now = new Date(); return isoOf(new Date(now.getFullYear(), now.getMonth(), now.getDate() - i, 12)) }
 const cut = Array.from({ length: 11 }, (_, k) => ({ d: days(20 - 2 * k), w: Math.round((84 - 0.2 * k) * 10) / 10, t: 1 }))
 const install = patch => useStore.setState({ S: { ...structuredClone(DEF), unit: 'kg', bodyweight: cut, ...patch }, user: null })
 const Card = () => { const S = useStore(s => s.S); return <WeightRate S={S} /> }

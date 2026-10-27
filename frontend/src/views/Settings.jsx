@@ -930,7 +930,7 @@ export default function Settings({ page = null, find = null, via = null, entryKe
         {/* Android only: the system folder picker (#161). iOS shows Documents in Files already. */}
         {MOBILE && android && S.autoBackup && <BackupFolderRow />}
       </Section>
-      <Section title={t('Strava exports')} footer={t('Only affects files from Export for Strava (.fit). Garmin Connect syncing to Strava uses its own data.')}>
+      <Section title={t('Strava exports')} footer={t('Applies to Strava FIT files and openGym uploads to Garmin Connect. Recordings uploaded by other apps use their own data.')}>
         <Row icon="share" iconTint="var(--blue)" title={t('Include weights in Strava exports')}>
           <Switch aria-label={t('Include weights in Strava exports')} checked={S.stravaShareWeights === true}
             onChange={v => update(s => { s.stravaShareWeights = v })} />
