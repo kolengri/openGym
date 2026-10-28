@@ -65,7 +65,7 @@ let info: [String: Any] = [
     "file": output.path, "frames": frames.count, "width": width, "height": height,
     "fps": track.nominalFrameRate, "duration_seconds": asset.duration.seconds,
     "audio": !asset.tracks(withMediaType: .audio).isEmpty,
-    "bytes": (try Data(contentsOf: output)).count, "renderer": "Three.js", "encoder": "AVFoundation H.264"
+    "bytes": (try Data(contentsOf: output)).count, "renderer": ProcessInfo.processInfo.environment["EXERCISE_RENDERER"] ?? "Three.js", "encoder": "AVFoundation H.264"
 ]
 let json = try JSONSerialization.data(withJSONObject: info, options: [.prettyPrinted, .sortedKeys])
 try json.write(to: output.deletingPathExtension().appendingPathExtension("json"))
