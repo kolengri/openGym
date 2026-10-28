@@ -68,10 +68,11 @@ the physical Bluetooth transport.
 
 ## Watch controls
 
-The `0.1.0-beta.2` dashboard shows current sensor HR even without a workout
+The dashboard shows current sensor HR even without a workout
 (`HR --` until a valid reading arrives). Start a workout on the phone to populate
 exercise, current set, weight and reps. Idle explicitly says **No workout
-connected / Start on phone**; its visible **Menu** offers status, reconnect and exit.
+connected / Start on phone**. The physical **MENU** or **BACK** key opens status,
+reconnect and exit; there is no on-screen Menu button.
 
 - Tap **Start set** to start an explicit local elapsed `mm:ss` timer, for reps or
   timed sets. Tap **Complete set** to record completion. Rep-set timing is a local
@@ -83,7 +84,7 @@ connected / Start on phone**; its visible **Menu** offers status, reconnect and 
   local timing and per-set HR, including replacements at unchanged array indices.
 - Tap **Next ex** to select the next exercise. After the final exercise is
   complete, the primary button becomes **Finish workout**, requiring confirmation.
-- Tap the visible **Menu** for pause/resume, skip rest, next exercise,
+- Press the physical **MENU** or **BACK** key for pause/resume, skip rest, next exercise,
   finish/save, discard, recording/sync status, reconnect and exit.
 - **START** retains its shortcut: complete the next unfinished rep set, or start
   then complete a timed set. **DOWN** selects the next exercise. **MENU** or

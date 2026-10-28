@@ -297,8 +297,9 @@ function touchUsesDrawnBoundsForBothDevicesAndIgnoresBackground(logger) {
         var next = WorkoutControls.rect("next",w,w);
         Test.assert(WorkoutControls.hit(w,w,next[0],next[1],true,true) == null);
         Test.assertEqual(WorkoutControls.hit(w,w,next[0],next[1],true,false),"next");
-        var menu = WorkoutControls.rect("menu",w,w);
-        Test.assertEqual(WorkoutControls.hit(w,w,menu[0],menu[1],false,false),"menu");
+        Test.assert(WorkoutControls.rect("menu",w,w) == null);
+        Test.assert(WorkoutControls.hit(w,w,next[0],next[1],false,false) == null);
+        Test.assert(WorkoutControls.hit(w,w,(w*0.82).toNumber(),(w*0.82).toNumber(),true,false) == null);
     }
     Test.assertEqual(WorkoutControls.clock(65),"01:05");
     Test.assertEqual(WorkoutControls.clock(0),"00:00");
@@ -307,7 +308,7 @@ function touchUsesDrawnBoundsForBothDevicesAndIgnoresBackground(logger) {
 
 (:test)
 function allButtonCornersFitRoundScreenWithAnInset(logger) {
-    var sizes = [280,454]; var ids = ["primary","next","menu"];
+    var sizes = [280,454]; var ids = ["primary","next"];
     for (var i=0;i<sizes.size();i++) {
         var w = sizes[i]; var center = w/2.0; var radius = w*0.48;
         for (var j=0;j<ids.size();j++) {
@@ -336,8 +337,9 @@ function actualTouchDelegateStartsCompletesDismissesAndKeepsConfirmation(logger)
     app.notice = "Test notice";
     Test.assert(delegate.onSelect()); Test.assert(app.notice == null); Test.assertEqual(app.calls.size(),count);
     Test.assert(delegate.tapAt(x,y)); Test.assertEqual(app.calls[count],"skipRest");
-    var r = WorkoutControls.rect("menu",280,280);
-    Test.assert(delegate.tapAt(r[0]+1,r[1]+1)); Test.assertEqual(delegate.menus,1);
+    var r = WorkoutControls.rect("next",280,280);
+    Test.assert(delegate.tapAt(r[0]+1,r[1]+1)); Test.assertEqual(delegate.menus,0);
+    Test.assertEqual(app.calls[app.calls.size()-1],"next");
     Test.assert(!delegate.tapAt(140,140));
     app.model.active()["cur"] = 1; app.model.active()["rest"] = null;
     app.model.current()["row"]["done"] = true;

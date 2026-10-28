@@ -4,13 +4,12 @@ import Toybox.Lang;
 module WorkoutControls {
     function rect(id, w, h) {
         if (id.equals("primary")) { return [(w*0.18).toNumber(), (h*0.64).toNumber(), (w*0.64).toNumber(), (h*0.13).toNumber()]; }
-        if (id.equals("next")) { return [(w*0.23).toNumber(), (h*0.78).toNumber(), (w*0.25).toNumber(), (h*0.10).toNumber()]; }
-        return [(w*0.52).toNumber(), (h*0.78).toNumber(), (w*0.25).toNumber(), (h*0.10).toNumber()];
+        if (id.equals("next")) { return [(w*0.26).toNumber(), (h*0.78).toNumber(), (w*0.48).toNumber(), (h*0.10).toNumber()]; }
+        return null;
     }
     function contains(r, x, y) { return x >= r[0] && y >= r[1] && x < r[0]+r[2] && y < r[1]+r[3]; }
     function hit(w, h, x, y, active, modal) {
         if (contains(rect("primary",w,h),x,y) && (active || modal)) { return modal ? "dismiss" : "primary"; }
-        if (!modal && contains(rect("menu",w,h),x,y)) { return "menu"; }
         if (!modal && active && contains(rect("next",w,h),x,y)) { return "next"; }
         return null;
     }

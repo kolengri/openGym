@@ -59,7 +59,6 @@ class WorkoutView extends WatchUi.View {
             line(dc,h*0.49,"Start on phone",Graphics.FONT_SMALL,Graphics.COLOR_WHITE);
             line(dc,h*0.63,app.recordingStatus,tiny,Graphics.COLOR_LT_GRAY);
             line(dc,h*0.70,WatchUi.loadResource(Rez.Strings.AppVersion)+" | Q "+model.data["outbox"].size().toString(),tiny,Graphics.COLOR_LT_GRAY);
-            button(dc,"menu","Menu",true,false);
             return;
         }
         var e = a["entries"][a["cur"]]; var c = model.current();
@@ -91,7 +90,6 @@ class WorkoutView extends WatchUi.View {
         var command = WorkoutControls.primary(model,at);
         button(dc,"primary",WorkoutControls.label(command),command != null,true);
         button(dc,"next","Next ex",true,false);
-        button(dc,"menu","Menu",true,false);
     }
 }
 
@@ -125,7 +123,6 @@ class WorkoutDelegate extends WatchUi.InputDelegate {
         var hit = WorkoutControls.hit(app.viewWidth,app.viewHeight,x,y,app.model.active() != null,app.notice != null || app.timerAlert != null);
         if (hit == null) { return false; }
         if (hit.equals("dismiss")) { return dismiss(); }
-        if (hit.equals("menu")) { return onMenu(); }
         if (hit.equals("next")) { app.action("next"); return true; }
         var command = WorkoutControls.primary(app.model,app.now());
         if (command != null) {
