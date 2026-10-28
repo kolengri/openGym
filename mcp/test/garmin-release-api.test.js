@@ -20,6 +20,7 @@ async function fixture() {
   const session = new GarminSession(file)
   await session.import([cookie(), cookie('sso', 'sso-only', 'sso.garmin.com')])
   let version = '0.1.0-beta.2'
+  let binaryVersion = version
   const metadata = {
     betaApp: true, shadowApp: false, devEmail: 'fixture@example.test', category: '277', paymentModel: 0,
     requestingTips: false, requiringExternalSubscription: false,
@@ -38,7 +39,7 @@ async function fixture() {
     if (u.pathname.includes('appsLibraryExternalServices')) return response({ id: APP_ID, developerId: 'owner-fixture', betaApp: true, latestExternalVersion: version })
     if (u.pathname.endsWith('/metadata')) {
       expect(u.searchParams.get('isShadowApp')).toBe('false')
-      return response({ ...metadata, appIqFileInfoResult: info(version) })
+      return response({ ...metadata, appIqFileInfoResult: info(binaryVersion) })
     }
     if (u.pathname.endsWith('/validate')) {
       const { newAppVersion, ...validationInfo } = info(u.searchParams.get('appVersion'))
@@ -49,19 +50,21 @@ async function fixture() {
       expect(u.searchParams.get('juniorAppUpdate')).toBe('false')
       const body = JSON.parse(options.body)
       expect(body.tempFileId).toBe('temporary-fixture')
-      version = body.appVersion
+      binaryVersion = body.appVersion
       return response('', 200)
     }
     if (options.method === 'PUT') {
       const changes = JSON.parse(await options.body.get('appMetadata').text())
       Object.assign(metadata, changes)
+      version = binaryVersion
       return response('', 200)
     }
     throw new Error('Unexpected HTTP request')
   })
-  const api = new GarminApi(file, { fetchImpl: fetch, writeImpl: fetch })
+  const wait = vi.fn(async () => {})
+  const api = new GarminApi(file, { fetchImpl: fetch, writeImpl: fetch, waitImpl: wait })
   const deploy = overrides => api.deploy({ version: '0.1.0-beta.3', expectedCurrentVersion: '0.1.0-beta.2', releaseNotes: 'Round controls and touch', bytes: Buffer.from('fixture IQ bytes'), beforeUpload: vi.fn(), ...overrides })
-  return { dir, file, session, api, fetch, metadata, writes, deploy }
+  return { dir, file, session, api, fetch, metadata, writes, deploy, wait }
 }
 
 describe('HTTP cookie session', () => {
@@ -215,6 +218,47 @@ describe('direct API deployment', () => {
     })
     await expect(f.deploy()).rejects.toMatchObject({ code: 'REMOTE_VERSION_MISMATCH' })
     expect(f.writes.map(x => x.options.method)).toEqual(['POST', 'POST'])
+  })
+  it('retries only GET verification while the Store summary lags the completed details', async () => {
+    const f = await fixture(), original = f.fetch.getMockImplementation()
+    let staleReads = 0
+    f.fetch.mockImplementation(async (url, options) => {
+      const r = await original(url, options)
+      if (options.method === 'GET') expect(options.headers['Cache-Control']).toBe('no-cache')
+      if (f.writes.length === 3 && new URL(url).pathname.includes('appsLibraryExternalServices') && staleReads++ < 2) {
+        const data = await r.json(); data.latestExternalVersion = '0.1.0-beta.2'; return response(data)
+      }
+      return r
+    })
+    expect(await f.deploy()).toMatchObject({ version: '0.1.0-beta.3' })
+    expect(f.wait.mock.calls).toEqual([[1000], [2000]])
+    expect(f.writes.map(x => x.options.method)).toEqual(['POST', 'POST', 'PUT'])
+  })
+  it('bounds stale final evidence without replaying any completed write', async () => {
+    const f = await fixture(), original = f.fetch.getMockImplementation()
+    f.fetch.mockImplementation(async (url, options) => {
+      const r = await original(url, options)
+      if (f.writes.length === 3 && new URL(url).pathname.endsWith('/metadata')) {
+        const data = await r.json(); data.localizedAppModel[0].appWhatsNew = 'Old notes'; return response(data)
+      }
+      return r
+    })
+    await expect(f.deploy()).rejects.toMatchObject({ code: 'INVALID_EVIDENCE' })
+    expect(f.wait.mock.calls.map(x => x[0])).toEqual([1000, 2000, 4000, 8000, 15000, 30000])
+    expect(f.writes).toHaveLength(3)
+  })
+  it('fails immediately if ownership changes during final verification', async () => {
+    const f = await fixture(), original = f.fetch.getMockImplementation()
+    f.fetch.mockImplementation(async (url, options) => {
+      const r = await original(url, options)
+      if (f.writes.length === 3 && new URL(url).pathname.includes('appsLibraryExternalServices')) {
+        const data = await r.json(); data.developerId = 'another-owner'; return response(data)
+      }
+      return r
+    })
+    await expect(f.deploy()).rejects.toMatchObject({ code: 'OWNER_MISMATCH' })
+    expect(f.wait).not.toHaveBeenCalled()
+    expect(f.writes).toHaveLength(3)
   })
   it.each([401, 403, 500, 302])('never replays a write or starts renewal after publication status %s', async status => {
     const f = await fixture(), original = f.fetch.getMockImplementation()

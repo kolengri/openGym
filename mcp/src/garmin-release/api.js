@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { open, rename, lstat, unlink } from 'node:fs/promises'
 import { randomUUID } from 'node:crypto'
+import { setTimeout as wait } from 'node:timers/promises'
 import { Cookie, CookieJar } from 'tough-cookie'
 import { APP_ID, MANIFEST_ID, versionSchema, fail } from './contract.js'
 import { directory, readFileSafe } from './artifact.js'
@@ -109,10 +110,11 @@ function validManifest(info) {
 }
 
 export class GarminApi {
-  constructor(sessionFile, { fetchImpl = globalThis.fetch, writeImpl = writeOnce } = {}) {
+  constructor(sessionFile, { fetchImpl = globalThis.fetch, writeImpl = writeOnce, waitImpl = wait } = {}) {
     this.session = new GarminSession(sessionFile)
     this.fetch = fetchImpl
     this.write = writeImpl
+    this.wait = waitImpl
   }
 
   async request(url, { method = 'GET', body, headers = {} } = {}) {
@@ -122,7 +124,7 @@ export class GarminApi {
     const send = method === 'GET' ? this.fetch : this.write
     const response = await send(u.href, {
       method, body, redirect: 'manual', signal: AbortSignal.timeout(30000),
-      headers: { Accept: 'application/json', ...headers, ...(cookies ? { Cookie: cookies } : {}), ...(method !== 'GET' ? { Origin: ORIGIN, 'X-Correlation-Id': randomUUID() } : {}) }
+      headers: { Accept: 'application/json', ...(method === 'GET' ? { 'Cache-Control': 'no-cache', Pragma: 'no-cache' } : {}), ...headers, ...(cookies ? { Cookie: cookies } : {}), ...(method !== 'GET' ? { Origin: ORIGIN, 'X-Correlation-Id': randomUUID() } : {}) }
     })
     const setCookies = response.headers.getSetCookie()
     try {
@@ -176,16 +178,22 @@ export class GarminApi {
     return user.userId
   }
 
-  async inspectLoaded() {
+  async inspectLoaded({ previousVersion, publishedVersion } = {}) {
     const owner = await this.authenticatedUser()
     const app = this.json(await this.request(APP))
     const metadataPath = `${USER}/${owner}/apps/${APP_ID}/metadata?isShadowApp=false`
     const metadata = this.json(await this.request(metadataPath))
     if (app.id !== APP_ID || app.developerId !== owner || app.betaApp !== true || metadata.betaApp !== true || metadata.shadowApp !== false) fail('OWNER_MISMATCH', 'The existing owner beta identity or visibility changed.')
     const version = versionSchema.safeParse(app.latestExternalVersion)
-    if (!version.success || !validManifest(metadata.appIqFileInfoResult) || metadata.appIqFileInfoResult.newAppVersion !== version.data) fail('REMOTE_VERSION_MISMATCH', 'Garmin beta version or signed manifest identity could not be verified.')
+    const metadataVersion = metadata.appIqFileInfoResult?.newAppVersion
+    // Between the successful version POST and details PUT, Garmin exposes the
+    // new signed binary in metadata but still lists the previous public version.
+    // Only the post-POST caller supplies this exact, already accepted transition.
+    const transitioning = version.success && publishedVersion !== undefined && previousVersion !== undefined &&
+      version.data === previousVersion && metadataVersion === publishedVersion
+    if (!version.success || !validManifest(metadata.appIqFileInfoResult) || (metadataVersion !== version.data && !transitioning)) fail('REMOTE_VERSION_MISMATCH', 'Garmin beta version or signed manifest identity could not be verified.')
     if (!Array.isArray(metadata.localizedAppModel) || !metadata.localizedAppModel.some(x => x.appLocale === 'en')) fail('INVALID_RESPONSE', 'The existing English beta localization is missing.')
-    return { owner, metadata, version: version.data, pending: app.hasVersionPendingScan === true }
+    return { owner, metadata, version: transitioning ? publishedVersion : version.data, pending: app.hasVersionPendingScan === true }
   }
 
   async inspect() {
@@ -214,7 +222,7 @@ export class GarminApi {
     })
     if (published.status < 200 || published.status >= 300) fail('GARMIN_HTTP_ERROR', 'Garmin did not confirm the version publication. Automatic retry is blocked.')
     // Refresh metadata after publication; preserve existing localization and settings.
-    const fresh = await this.inspectLoaded()
+    const fresh = await this.inspectLoaded({ previousVersion: initial.version, publishedVersion: version })
     if (fresh.owner !== initial.owner || fresh.version !== version) fail('REMOTE_VERSION_MISMATCH', 'Garmin has not confirmed the new beta version under the original owner.')
     const metadata = Object.fromEntries(writableFields.filter(key => Object.hasOwn(fresh.metadata, key)).map(key => [key, fresh.metadata[key]]))
     metadata.localizedAppModel = fresh.metadata.localizedAppModel.map(item => item.appLocale === 'en' ? { ...item, appWhatsNew: releaseNotes } : item)
@@ -224,8 +232,16 @@ export class GarminApi {
     detail.append('appMetadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }))
     const updated = await this.request(appPath, { method: 'PUT', body: detail })
     if (updated.status < 200 || updated.status >= 300) fail('GARMIN_HTTP_ERROR', 'The beta version may be published but its release notes were not confirmed. Automatic retry is blocked.')
-    const final = await this.inspectLoaded()
-    if (final.owner !== initial.owner || final.version !== version || final.metadata.localizedAppModel.find(x => x.appLocale === 'en')?.appWhatsNew !== releaseNotes) fail('INVALID_EVIDENCE', 'Garmin did not confirm the updated beta and release notes.')
-    return { appId: APP_ID, version, ownerOnlyBeta: true, transport: 'http' }
+    // Only read verification may repeat: the Store summary can lag its metadata.
+    // A failed write never enters this loop and all writes remain single-dispatch.
+    for (const delay of [0, 1000, 2000, 4000, 8000, 15000, 30000]) {
+      if (delay) await this.wait(delay)
+      let final
+      try { final = await this.inspectLoaded() }
+      catch (error) { if (error.code === 'REMOTE_VERSION_MISMATCH') continue; throw error }
+      if (final.owner !== initial.owner || ![initial.version, version].includes(final.version)) fail('INVALID_EVIDENCE', 'The beta owner or version changed during final verification.')
+      if (final.version === version && final.metadata.localizedAppModel.find(x => x.appLocale === 'en')?.appWhatsNew === releaseNotes) return { appId: APP_ID, version, ownerOnlyBeta: true, transport: 'http' }
+    }
+    fail('INVALID_EVIDENCE', 'Garmin did not confirm the updated beta and release notes within the bounded verification period. Writes will not be repeated.')
   }
 }

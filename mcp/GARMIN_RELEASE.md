@@ -89,13 +89,22 @@ confirmation. Setup/checking never submits.
    verified through the subsequent app/metadata GETs.
 4. POST `{tempFileId,appVersion}` to the owner's app `/version` endpoint with
    `locale=en-US&juniorAppUpdate=false`.
-5. GET fresh metadata; PUT the update form's writable fields as multipart
+5. GET fresh metadata. Immediately after the successful version POST, the signed
+   binary metadata may show the requested version while the app summary still
+   shows the exact previous version. Accept only that specific transition at this
+   point; owner/beta/signature fences remain. PUT the writable fields as multipart
    `appMetadata`, changing only English `appWhatsNew`, temporary ID and version.
    Preserve other translations, descriptions, beta flags and settings. Omit
    read-only media/file metadata; no screenshot operations are performed.
-6. GET owner/app/metadata again to verify the new beta and release notes.
+6. GET owner/app/metadata again to verify the new beta and release notes. Requests
+   ask for uncached responses. Only these final reads may repeat, with at most
+   seven checks and 60 seconds of backoff for propagation. Ownership/auth failures
+   stop immediately. No write repeats. Allow at least a 180-second tool timeout
+   in the calling client; individual HTTP requests remain limited to 30 seconds.
 
-The version POST precedes details, as in Garmin's uploader. A later failure may
+The version POST precedes details, as in Garmin's uploader. Final success still
+requires matching app-summary and signed-metadata versions plus saved notes.
+A later failure may
 mean the version exists but notes were not saved. The attempt is uncertain, not a
 success or an automatic retry. GETs do not establish completed scanning or watch
 installation. Writes are never retried, redirected or replayed after renewal.

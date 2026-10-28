@@ -65,12 +65,13 @@ async function releaseFixture(failureTarget, kind) {
   const home = await mkdtemp(path.join(RELEASE_HOME, 'tests/wire-'))
   homes.push(home)
   let remoteVersion = BASE_VERSION
+  let binaryVersion = remoteVersion
   const metadata = { betaApp: true, shadowApp: false, localizedAppModel: [{ appLocale: 'en', appWhatsNew: 'old notes' }] }
   const fetchGet = vi.fn(async url => {
     const u = new URL(url)
     if (u.pathname.endsWith('/developers')) return Response.json({ userId: 'wire-fixture-owner', developer: true })
     if (u.pathname.includes('/appsLibraryExternalServices/')) return Response.json({ id: APP_ID, developerId: 'wire-fixture-owner', betaApp: true, latestExternalVersion: remoteVersion })
-    if (u.pathname.endsWith('/metadata')) return Response.json({ ...metadata, appIqFileInfoResult: signedInfo(remoteVersion) })
+    if (u.pathname.endsWith('/metadata')) return Response.json({ ...metadata, appIqFileInfoResult: signedInfo(binaryVersion) })
     throw new Error('Unexpected GET')
   })
   const wire = wireTransport(async request => {
@@ -80,9 +81,10 @@ async function releaseFixture(failureTarget, kind) {
       const { newAppVersion, ...validationInfo } = signedInfo(VERSION)
       return { body: JSON.stringify({ validationResult: {}, tempFileId: 'wire-temporary-id', iqFileInfoResult: validationInfo }) }
     }
-    if (target === 'publication') { remoteVersion = JSON.parse(request.body.toString()).appVersion; return {} }
+    if (target === 'publication') { binaryVersion = JSON.parse(request.body.toString()).appVersion; return {} }
     const form = await new Response(request.body, { headers: request.headers }).formData()
     Object.assign(metadata, JSON.parse(await form.get('appMetadata').text()))
+    remoteVersion = binaryVersion
     return {}
   })
   const apiFactory = file => new GarminApi(file, { fetchImpl: fetchGet, writeImpl: wire.send })
