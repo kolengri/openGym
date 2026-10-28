@@ -6,16 +6,20 @@ import { todayISO } from '../lib/format.js'
 import { shareExport } from '../lib/mobile.js'
 import { garminHealthMetrics } from '../lib/garmin-cloud.js'
 import { garminHealthArchive, healthDays, healthDisplayRows, syncGarminHealth } from '../lib/garmin-health.js'
+import GarminHealthSummary from './GarminHealthSummary.jsx'
 
 export default function GarminHealthSettings({ connected }) {
   const owner = useStore(s => s.user?.id ?? null)
+  const unit = useStore(s => s.S.unit)
   const [start, setStart] = useState(todayISO)
   const [end, setEnd] = useState(todayISO)
   const [catalog, setCatalog] = useState([])
   const [busy, setBusy] = useState(false)
   const [progress, setProgress] = useState(null)
   const [error, setError] = useState(null)
-  const [records, setRecords] = useState([])
+  const [saved, setSaved] = useState(null)
+  const records = saved?.owner === owner && saved.date === end ? saved.records : []
+  const loading = !saved || saved.owner !== owner || saved.date !== end
   const controller = useRef(null)
   const mounted = useRef(true)
   useEffect(() => {
@@ -23,13 +27,13 @@ export default function GarminHealthSettings({ connected }) {
     garminHealthMetrics().then(c => { if (mounted.current) setCatalog(c?.metrics || []) }).catch(() => {})
     return () => { mounted.current = false; controller.current?.abort() }
   }, [])
-  useEffect(() => { controller.current?.abort(); setRecords([]); setProgress(null) }, [owner])
+  useEffect(() => { controller.current?.abort(); setSaved(null); setProgress(null) }, [owner])
   useEffect(() => {
     let stopped = false
-    setRecords([])
+    setSaved(null)
     Promise.all(catalog.map(async m => ({ label: m.label, ...(await garminHealthArchive.read(owner, end, m.id)) })))
-      .then(rows => { if (!stopped) setRecords(rows.filter(r => r.status === 'available')) })
-      .catch(() => { if (!stopped) setError('storage_error') })
+      .then(rows => { if (!stopped) setSaved({ owner, date: end, records: rows.filter(r => r.status === 'available') }) })
+      .catch(() => { if (!stopped) { setSaved({ owner, date: end, records: [] }); setError('storage_error') } })
     return () => { stopped = true }
   }, [owner, end, catalog, busy])
   const read = async () => {
@@ -79,6 +83,7 @@ export default function GarminHealthSettings({ connected }) {
     {busy && controller.current && <Button onClick={() => controller.current.abort()}>{t('Cancel')}</Button>}
     {progress && <p className="small" role="status">{progress.date} · {t(progress.label)} · {progress.completed}/{progress.total}<br />{t('Available: {0}. No data: {1}. Errors: {2}. Weigh-ins added: {3}.', progress.available, progress.unavailable, progress.error, progress.weighIns)}</p>}
     {error && <p className="small muted" role="alert">{t(message)}</p>}
+    <GarminHealthSummary records={records} unit={unit} date={end} loading={loading} />
     {records.length > 0 && <>
       <h4>{t('Saved readings')} · {end}</h4>
       {records.map(record => <details key={record.metric} style={{ marginBottom: 10 }}>

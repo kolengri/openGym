@@ -23,12 +23,12 @@ module WorkoutControls {
         return model.data["timing"] == null ? "startSet" : "setDone";
     }
     function label(action) {
-        if (action == null) { return "Use phone"; }
-        if (action.equals("pause")) { return "Resume"; }
-        if (action.equals("skipRest")) { return "Skip rest"; }
-        if (action.equals("finish")) { return "Finish workout"; }
-        if (action.equals("next")) { return "Next exercise"; }
-        return action.equals("startSet") ? "Start set" : "Complete set";
+        if (action == null) { return GymUi.string(Rez.Strings.UsePhone); }
+        if (action.equals("pause")) { return GymUi.string(Rez.Strings.Resume); }
+        if (action.equals("skipRest")) { return GymUi.string(Rez.Strings.SkipRest); }
+        if (action.equals("finish")) { return GymUi.string(Rez.Strings.FinishWorkout); }
+        if (action.equals("next")) { return GymUi.string(Rez.Strings.NextExercise); }
+        return action.equals("startSet") ? GymUi.string(Rez.Strings.StartSet) : GymUi.string(Rez.Strings.CompleteSet);
     }
     function clock(seconds) {
         seconds = (seconds < 0 ? 0 : seconds).toNumber();

@@ -2711,4 +2711,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "手錶應用程式已連線",
+  "Watch Bluetooth connected": "手錶已透過藍牙連線",
+  "Watch app is not responding": "手錶應用程式沒有回應",
+  "Waiting for openGym on the watch": "正在等候手錶上的 openGym",
+  "Workout confirmed on the watch": "已在手錶上確認訓練",
+  "Waiting for workout confirmation": "正在等候訓練確認",
+  "Last watch reply: {0}": "手錶上次回應：{0}",
+  "Last workout confirmation: {0}": "上次訓練確認：{0}",
+  "No watch reply yet": "手錶尚未回應",
+  "{0} commands waiting on the watch": "手錶上有 {0} 個待處理指令",
+  "{0} commands waiting on the phone": "手機上有 {0} 個待處理指令",
+  "Heart rate data is stale": "心率資料已過期",
+  "Heart rate unavailable": "無法取得心率",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "請在手錶上開啟 openGym，並貼合手腕佩戴以接收心率。",
+  "Garmin link error": "Garmin 連線錯誤",
+  "Garmin connection": "Garmin 連線",
+  "Health overview": "健康概覽",
+  "Saved on this phone for {0}.": "已在此手機上儲存 {0} 的資料。",
+  "Choose a date to view saved readings.": "請選擇日期以查看已儲存的測量值。",
+  "No saved reading": "沒有已儲存的測量值",
+  "Last night average": "昨夜平均值",
+  "Unit not verified; original Garmin value.": "單位尚未確認；顯示 Garmin 原始值。",
+
 }

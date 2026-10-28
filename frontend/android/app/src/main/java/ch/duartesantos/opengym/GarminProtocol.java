@@ -131,7 +131,14 @@ final class GarminProtocol {
         wire(message);
         integer(message, "v", 1, 1);
         String kind = string(message, "kind", 16);
-        if (kind.equals("hello")) return new JSONObject().put("v", 1).put("kind", "hello");
+        if (kind.equals("hello")) {
+            JSONObject hello = new JSONObject().put("v", 1).put("kind", "hello");
+            // Optional diagnostics preserve compatibility with v1 watch apps.
+            if (message.has("seq")) { integer(message, "seq", -1, MAX_SAFE_INTEGER); hello.put("seq", message.get("seq")); }
+            if (message.has("pending")) { integer(message, "pending", 0, 256); hello.put("pending", message.get("pending")); }
+            if (message.has("wid")) hello.put("wid", message.isNull("wid") ? JSONObject.NULL : id(message.get("wid")));
+            return hello;
+        }
         if (kind.equals("hr")) {
             id(message.get("wid"));
             integer(message, "at", 1, MAX_SAFE_INTEGER);

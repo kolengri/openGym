@@ -2765,4 +2765,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "Klockappen är ansluten",
+  "Watch Bluetooth connected": "Klockan är ansluten via Bluetooth",
+  "Watch app is not responding": "Klockappen svarar inte",
+  "Waiting for openGym on the watch": "Väntar på openGym på klockan",
+  "Workout confirmed on the watch": "Träningspasset bekräftat på klockan",
+  "Waiting for workout confirmation": "Väntar på bekräftelse av träningspasset",
+  "Last watch reply: {0}": "Senaste svar från klockan: {0}",
+  "Last workout confirmation: {0}": "Senaste träningsbekräftelse: {0}",
+  "No watch reply yet": "Inget svar från klockan ännu",
+  "{0} commands waiting on the watch": "{0} kommandon väntar på klockan",
+  "{0} commands waiting on the phone": "{0} kommandon väntar på telefonen",
+  "Heart rate data is stale": "Pulsdata är inaktuella",
+  "Heart rate unavailable": "Puls är inte tillgänglig",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "Öppna openGym på klockan och bär den tätt mot handleden för att ta emot pulsdata.",
+  "Garmin link error": "Anslutningsfel för Garmin",
+  "Garmin connection": "Garmin-anslutning",
+  "Health overview": "Hälsoöversikt",
+  "Saved on this phone for {0}.": "Sparat på den här telefonen för {0}.",
+  "Choose a date to view saved readings.": "Välj ett datum för att visa sparade mätningar.",
+  "No saved reading": "Ingen sparad mätning",
+  "Last night average": "Genomsnitt för förra natten",
+  "Unit not verified; original Garmin value.": "Måttenheten är inte verifierad; ursprungligt Garmin-värde.",
+
 }

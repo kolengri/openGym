@@ -2718,4 +2718,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "Application de la montre connectée",
+  "Watch Bluetooth connected": "Montre connectée en Bluetooth",
+  "Watch app is not responding": "L’application de la montre ne répond pas",
+  "Waiting for openGym on the watch": "En attente d’openGym sur la montre",
+  "Workout confirmed on the watch": "Entraînement confirmé sur la montre",
+  "Waiting for workout confirmation": "En attente de confirmation de l’entraînement",
+  "Last watch reply: {0}": "Dernière réponse de la montre : {0}",
+  "Last workout confirmation: {0}": "Dernière confirmation d’entraînement : {0}",
+  "No watch reply yet": "Aucune réponse de la montre pour le moment",
+  "{0} commands waiting on the watch": "{0} commandes en attente sur la montre",
+  "{0} commands waiting on the phone": "{0} commandes en attente sur le téléphone",
+  "Heart rate data is stale": "Les données de fréquence cardiaque sont anciennes",
+  "Heart rate unavailable": "Fréquence cardiaque indisponible",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "Ouvre openGym sur la montre et porte-la bien ajustée pour recevoir la fréquence cardiaque.",
+  "Garmin link error": "Erreur de connexion Garmin",
+  "Garmin connection": "Connexion Garmin",
+  "Health overview": "Aperçu de la santé",
+  "Saved on this phone for {0}.": "Enregistré sur ce téléphone pour le {0}.",
+  "Choose a date to view saved readings.": "Choisis une date pour consulter les mesures enregistrées.",
+  "No saved reading": "Aucune mesure enregistrée",
+  "Last night average": "Moyenne de la nuit dernière",
+  "Unit not verified; original Garmin value.": "Unité non vérifiée ; valeur Garmin d’origine.",
+
 }

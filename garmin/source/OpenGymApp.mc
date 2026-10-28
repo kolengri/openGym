@@ -93,16 +93,24 @@ class OpenGymApp extends Application.AppBase {
         WatchUi.requestUpdate();
         return ok;
     }
-    function onPhone(msg as Communications.PhoneAppMessage) as Void {
+    function onPhone(msg as Communications.PhoneAppMessage) as Void { receive(msg.data); }
+    function receive(payload) {
         if (storageFatal) { return; }
-        var payload = msg.data;
         if (!(payload instanceof Dictionary) || payload["v"] != 1) { return; }
         var previous = GymData.copy(model.data);
+        var reported = hello();
         var ok = false;
         if (GymData.is(payload["kind"],"snapshot")) { ok = model.snapshot(payload, now()); }
         else if (GymData.is(payload["kind"],"ack")) { ok = model.acknowledge(payload, now()); }
         notice = model.error;
-        if (ok && !persist()) { model = new WorkoutModel(previous, ""); }
+        if (ok && !persist()) { model = new WorkoutModel(previous, ""); ok = false; }
+        // The phone replays retained ACKs for every hello. Only changed applied
+        // state needs a prompt reply; duplicate ACKs keep the normal deadline.
+        if (ok) {
+            var current = hello();
+            var sameWid = (reported["wid"] == null && current["wid"] == null) || GymData.is(reported["wid"], current["wid"]);
+            if (reported["seq"] != current["seq"] || !sameWid || reported["pending"] != current["pending"]) { lastHelloAt = 0l; }
+        }
         reconcileRecording();
         updateAlerts(now());
         WatchUi.requestUpdate();
@@ -120,13 +128,18 @@ class OpenGymApp extends Application.AppBase {
             if (send({"v"=>1, "kind"=>"events", "events"=>model.batch()})) { lastSendAt = now(); }
         }
     }
+    // Optional status fields preserve the existing v1 hello/phone compatibility.
+    function hello() {
+        return {"v"=>1, "kind"=>"hello", "seq"=>model.data["seq"],
+            "wid"=>model.wid(), "pending"=>model.data["outbox"].size()};
+    }
     function tick() as Void {
         var at = now();
         if (recording != null && (model.wid() == null || !recordingWid.equals(model.wid()))) { reconcileRecording(); }
         // Recover transport if the phone vanished without a callback.
         if (busy && at - txStarted > 15000) { busy = false; }
         if (!busy && at - lastHelloAt >= 30000) {
-            if (send({"v"=>1, "kind"=>"hello"})) { lastHelloAt = at; }
+            if (send(hello())) { lastHelloAt = at; }
         } else if (!busy && at - lastSendAt >= 5000) { flush(); }
         updateAlerts(at);
         if (at - lastPersistAt >= 15000 && model.active() != null) { persist(); lastPersistAt = at; }

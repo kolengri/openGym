@@ -1,5 +1,21 @@
 // Russian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  'Watch app connected': 'Приложение на часах подключено',
+  "Watch Bluetooth connected": "Часы подключены по Bluetooth",
+  "Watch app is not responding": "Приложение на часах не отвечает",
+  "Waiting for openGym on the watch": "Ожидаем openGym на часах",
+  "Workout confirmed on the watch": "Тренировка подтверждена на часах",
+  "Waiting for workout confirmation": "Ожидаем подтверждения тренировки",
+  "Last watch reply: {0}": "Последний ответ часов: {0}",
+  "Last workout confirmation: {0}": "Последнее подтверждение тренировки: {0}",
+  "No watch reply yet": "Ответа от приложения на часах пока нет",
+  "{0} commands waiting on the watch": "Ожидают отправки с часов: {0}",
+  "{0} commands waiting on the phone": "Ожидают обработки на телефоне: {0}",
+  "Heart rate data is stale": "Данные пульса устарели",
+  "Heart rate unavailable": "Нет данных пульса",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "Откройте openGym на часах и проверьте, что ремешок плотно прилегает к руке.",
+  "Garmin link error": "Ошибка связи с Garmin",
+  "Garmin connection": "Связь с Garmin",
   'Workout changed. Reopen the weight calculator.': 'Тренировка изменилась. Откройте калькулятор веса заново.',
   'No saved health readings in this period.': 'За этот период нет сохранённых показателей здоровья.',
   'Confirm': 'Подтвердить',
@@ -2721,5 +2737,12 @@ export default {
   "The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.": "Локальный журнал выгрузок Garmin требует проверки. Повторный вход не сбрасывает защиту от дубликатов.",
 
   'Install on the watch': 'Установить на часы',
+
+  'Health overview': 'Обзор здоровья',
+  'Saved on this phone for {0}.': 'Сохранено на этом телефоне за {0}.',
+  'Choose a date to view saved readings.': 'Выберите дату для просмотра сохранённых измерений.',
+  'No saved reading': 'Нет сохранённого измерения',
+  'Last night average': 'Среднее за ночь',
+  'Unit not verified; original Garmin value.': 'Единица не подтверждена; исходное значение Garmin.',
 
 }

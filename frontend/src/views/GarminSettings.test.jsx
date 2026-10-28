@@ -8,6 +8,7 @@ const h = vi.hoisted(() => ({ status: { available: true, enabled: false }, devic
 vi.mock('../lib/garmin-sync.js', () => ({
   garminStatus: async () => h.status, garminDevices: async () => h.devices,
   configureGarmin: (...args) => h.configure(...args), onGarminChange: () => () => {},
+  garminConnection: () => h.status,
   garminPlugin: async () => ({ bridge: { openOnWatch: h.open, openStore: h.store } }),
 }))
 globalThis.IS_REACT_ACT_ENVIRONMENT = true

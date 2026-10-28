@@ -53,6 +53,7 @@ public class GarminBridgePlugin extends Plugin {
     private long generation, lastHrAt = -5000, sendStarted, sendToken, initStarted;
     private volatile long sdkGeneration;
     private String error, lastStatus;
+    private final GarminLinkTelemetry telemetry = new GarminLinkTelemetry();
 
     @Override
     public void load() {
@@ -96,7 +97,7 @@ public class GarminBridgePlugin extends Plugin {
     }
 
     @PluginMethod public void status(PluginCall call) {
-        dispatch(() -> call.resolve(state()));
+        dispatch(() -> call.resolve(detailedState()));
     }
 
     @PluginMethod public void devices(PluginCall call) {
@@ -142,7 +143,7 @@ public class GarminBridgePlugin extends Plugin {
                 else stopSdk();
                 scheduleRetry();
                 changed();
-                call.resolve(state());
+                call.resolve(detailedState());
             } catch (Exception e) { reject(call, e); }
         });
     }
@@ -154,6 +155,7 @@ public class GarminBridgePlugin extends Plugin {
                 if (!store.enabled()) { call.resolve(new JSObject().put("sent", false)); return; }
                 store.setSnapshot(call.getString("json"));
                 flush();
+                diagnosticsChanged();
                 call.resolve(new JSObject().put("sent", ready && connected && installed && !store.pending()));
             } catch (Exception e) { reject(call, e); }
         });
@@ -177,6 +179,7 @@ public class GarminBridgePlugin extends Plugin {
                 store.acknowledge(ids, call.getString("json"));
                 for (int i = 0; i < ids.length(); i++) requestAck(ids.getString(i));
                 flush();
+                diagnosticsChanged();
                 call.resolve();
             } catch (Exception e) { reject(call, e); }
         });
@@ -378,6 +381,8 @@ public class GarminBridgePlugin extends Plugin {
                         break;
                     default: break;
                 }
+                telemetry.receive(message, store.diagnosticTarget(), store.pendingCount(), System.currentTimeMillis());
+                diagnosticsChanged();
             } catch (Exception e) { error = safeError(e); changed(); }
         }
     }
@@ -449,6 +454,7 @@ public class GarminBridgePlugin extends Plugin {
 
     private void unregister() {
         generation++;
+        telemetry.reset();
         sendToken++;
         if (sdk != null && ready) {
             try { sdk.unregisterAllForEvents(); } catch (Exception ignored) { }
@@ -480,11 +486,23 @@ public class GarminBridgePlugin extends Plugin {
     private JSObject state() {
         JSObject result = new JSObject().put("available", available()).put("activated", ready)
             .put("enabled", store != null && store.enabled()).put("paired", selected != null)
-            .put("installed", installed).put("connected", connected);
+            .put("installed", installed).put("connected", connected).put("linkEpoch", generation);
         if (store != null && store.enabled()) result.put("deviceId", store.deviceId());
         if (selected != null) result.put("deviceName", selected.getFriendlyName());
         if (error != null) result.put("error", error);
         return result;
+    }
+
+    private JSObject detailedState() {
+        JSObject result = state();
+        try { result.put("diagnostics", telemetry.status(store == null ? null : store.diagnosticTarget(), store == null ? 0 : store.pendingCount())); }
+        catch (Exception ignored) { /* No diagnostic may alter workout persistence. */ }
+        return result;
+    }
+
+    private void diagnosticsChanged() {
+        // Separate from watchState: a heartbeat must not trigger snapshot resend loops.
+        notifyListeners("watchDiagnostics", detailedState());
     }
 
     private void changed() {

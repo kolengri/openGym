@@ -62,6 +62,14 @@ final class GarminLinkStore {
     boolean enabled() { return state.optBoolean("enabled", false); }
     String deviceId() { return state.optString("deviceId", ""); }
     boolean pending() { return state.optJSONArray("events").length() > 0; }
+    int pendingCount() { return state.optJSONArray("events").length(); }
+    JSONObject diagnosticTarget() throws Exception {
+        JSONObject snapshot = state.optJSONObject("snapshot");
+        if (snapshot == null) return null;
+        JSONObject active = snapshot.getJSONObject("state").optJSONObject("active");
+        return new JSONObject().put("seq", snapshot.getLong("seq"))
+            .put("wid", active == null ? JSONObject.NULL : active.get("id"));
+    }
     JSONArray events() throws Exception { return new JSONArray(state.getJSONArray("events").toString()); }
     JSONObject snapshot() throws Exception {
         if (pending() || state.optBoolean("dirty") || !state.has("snapshot")) return null;

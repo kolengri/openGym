@@ -10,15 +10,22 @@ import { iq, VERSION } from './garmin-release-fixture.js'
 const homes = []
 afterEach(async () => { for (const home of homes.splice(0)) await rm(home, { recursive: true, force: true }) })
 
-async function fixture(apiDeploy = async ({ beforeUpload, version }) => {
-  await beforeUpload()
-  return { appId: APP_ID, version, ownerOnlyBeta: true }
-}) {
+async function accepted(args, afterIntent = async () => {}) {
+  await args.beforeUpload({ owner: 'owner-fixture', previousVersion: args.expectedCurrentVersion, releaseNotes: args.releaseNotes })
+  await afterIntent()
+  await args.checkpoint({ phase: 'validated', tempFileId: 'temporary-fixture' })
+  await args.checkpoint({ phase: 'version_accepted' })
+  await args.checkpoint({ phase: 'details_accepted' })
+  return { appId: APP_ID, version: args.version, ownerOnlyBeta: true, state: 'awaiting_confirmation' }
+}
+
+async function fixture(apiDeploy = accepted) {
   await directory(path.join(RELEASE_HOME, 'tests'))
   const home = await mkdtemp(path.join(RELEASE_HOME, 'tests/service-'))
   homes.push(home)
   const deploy = vi.fn(apiDeploy)
-  const service = new ReleaseService({ home, enabled: true, apiFactory: () => ({ deploy }) })
+  const verify = vi.fn(async ({ version }) => ({ appId: APP_ID, version, ownerOnlyBeta: true, state: 'deployed' }))
+  const service = new ReleaseService({ home, enabled: true, apiFactory: () => ({ deploy, verify }) })
   await service.init()
   await new GarminSession(service.sessionFile).import([{ name: 'session', value: 'fixture-only', domain: 'apps.garmin.com', path: '/', secure: true, httpOnly: true, expires: -1 }])
   await service.writeJson(path.join(service.privateDir, 'session-ready.json'), { appId: APP_ID })
@@ -26,7 +33,7 @@ async function fixture(apiDeploy = async ({ beforeUpload, version }) => {
   await writeFile(path.join(home, 'inbox', `opengym-garmin-${VERSION}.iq`), bytes)
   const request = { appId: APP_ID, version: VERSION, sha256: hash }
   const deployment = { ...request, expectedCurrentVersion: BASE_VERSION, confirmOwnerOnlyBeta: true, confirmSubmissionTerms: true, releaseNotes: 'Fix beta watch controls.' }
-  return { home, service, deploy, request, deployment, bytes }
+  return { home, service, deploy, verify, request, deployment, bytes }
 }
 
 describe('IQ boundary', () => {
@@ -123,11 +130,9 @@ describe('offline preparation and fixed target', () => {
 
 describe('deployment intent and retry boundaries', () => {
   it('persists upload intent before exposing bytes and replays only an identical verified success', async () => {
-    const f = await fixture(async ({ beforeUpload, version, bytes }) => {
-      await beforeUpload()
-      expect(await f.service.readJson(path.join(f.service.releaseDir(VERSION), 'journal.json'))).toMatchObject({ state: 'uploading', sha256: sha256(bytes) })
-      return { appId: APP_ID, version, ownerOnlyBeta: true }
-    })
+    const f = await fixture(args => accepted(args, async () => {
+      expect(await f.service.readJson(path.join(f.service.releaseDir(VERSION), 'journal.json'))).toMatchObject({ state: 'uploading', sha256: sha256(args.bytes) })
+    }))
     await f.service.prepare(f.request)
     const result = await f.service.deploy(f.deployment)
     expect(result).toMatchObject({ state: 'deployed', ownerOnlyBeta: true, ...f.request })
@@ -181,7 +186,7 @@ describe('deployment intent and retry boundaries', () => {
     await f.service.prepare(f.request)
     await expect(f.service.deploy(f.deployment)).rejects.toThrow('Login required')
     expect(await f.service.status({ version: VERSION })).toMatchObject({ state: 'prepared' })
-    f.deploy.mockImplementationOnce(async ({ beforeUpload, version }) => { await beforeUpload(); return { appId: APP_ID, version, ownerOnlyBeta: true } })
+    f.deploy.mockImplementationOnce(accepted)
     expect(await f.service.deploy(f.deployment)).toMatchObject({ state: 'deployed' })
   })
   it('refuses disabled, unpaired, unconfirmed and non-increasing deployments', async () => {
@@ -210,10 +215,7 @@ describe('deployment intent and retry boundaries', () => {
     let entered, finish
     const ready = new Promise(resolve => { entered = resolve })
     const wait = new Promise(resolve => { finish = resolve })
-    const f = await fixture(async ({ beforeUpload, version }) => {
-      await beforeUpload(); entered(); await wait
-      return { appId: APP_ID, version, ownerOnlyBeta: true }
-    })
+    const f = await fixture(args => accepted(args, async () => { entered(); await wait }))
     await f.service.prepare(f.request)
     const first = f.service.deploy(f.deployment)
     await ready

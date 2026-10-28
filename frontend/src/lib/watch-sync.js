@@ -30,7 +30,7 @@ import { sanitizeHr } from './heart-rate.js'
 import { appendGarminCloudHeartRate } from './garmin-cloud.js'
 import { readWatchPrefs, settingsForWatch, writeWatchStatus, onWatchPrefs } from './watch-settings.js'
 import { plannedType } from './health-connect.js'
-import { garminPlugin, garminSnapshot, garminError, onGarminChange, configureGarmin, receiveGarminHeartRate, isGarminEvent } from './garmin-sync.js'
+import { garminPlugin, garminSnapshot, garminError, onGarminChange, configureGarmin, receiveGarminHeartRate, receiveGarminStatus, isGarminEvent } from './garmin-sync.js'
 
 export const SNAPSHOT_VERSION = 1
 const APPLIED_KEY = 'gym_watch_applied'
@@ -548,7 +548,7 @@ export async function startWatchSync ({ useStore, useUI }) {
   let linked = false
   const checkLink = async () => {
     const was = linked
-    try { const st = await p.WatchBridge.status(); linked = !!(st && st.paired && st.installed && (!p.garmin || st.enabled)) } catch { linked = false }
+    try { const st = await p.WatchBridge.status(); if (p.garmin) receiveGarminStatus(st); linked = !!(st && st.paired && st.installed && (!p.garmin || st.enabled)) } catch { linked = false }
     // A watch that is new here (the app just installed on it, or reinstalled): it has nothing yet,
     // so the snapshot goes again even when it is the same as the last one sent.
     if (linked && !was) lastSent = null
@@ -638,6 +638,7 @@ export async function startWatchSync ({ useStore, useUI }) {
       useStore.getState().update(s => { appendGarminCloudHeartRate(s, ev) })
     }
   }) : null
+  const subDiagnostics = p.garmin ? await p.WatchBridge.addListener('watchDiagnostics', receiveGarminStatus) : null
   // The watch speaks the app's language, not its own system's: told again when it changes (the
   // exercise names in the snapshot change with it too).
   let offLang = () => {}
@@ -646,7 +647,7 @@ export async function startWatchSync ({ useStore, useUI }) {
   // The link itself changed (the session finished activating after launch, a watch was paired, the
   // app was installed on it): asked again, and the snapshot sent when there is a watch now.
   // Sent again even when unchanged: a reinstalled watch app starts with nothing.
-  const subLink = await Promise.resolve(p.WatchBridge.addListener('watchState', () => { checkLink().then(() => { lastSent = null; schedule() }) })).catch(() => null)
+  const subLink = await Promise.resolve(p.WatchBridge.addListener('watchState', st => { if (p.garmin) receiveGarminStatus(st); checkLink().then(() => { lastSent = null; schedule() }) })).catch(() => null)
   const onVisible = () => { if (document.visibilityState === 'visible') { drainWatchEvents(); checkLink().then(() => schedule()) } }
   document.addEventListener('visibilitychange', onVisible)
   // Asked once more now that the listeners are there: the link may have come up (watchState) while
@@ -655,7 +656,7 @@ export async function startWatchSync ({ useStore, useUI }) {
   if (!linked) await checkLink()
   schedule()
   drainWatchEvents()
-  return () => { offStore(); offUI(); offPrefs(); offGarmin(); offHealth(); offLang(); sub?.remove?.(); subLink?.remove?.(); subHr?.remove?.(); document.removeEventListener('visibilitychange', onVisible); clearTimeout(tm) }
+  return () => { offStore(); offUI(); offPrefs(); offGarmin(); offHealth(); offLang(); sub?.remove?.(); subLink?.remove?.(); subHr?.remove?.(); subDiagnostics?.remove?.(); document.removeEventListener('visibilitychange', onVisible); clearTimeout(tm) }
 }
 
 // Test seams.

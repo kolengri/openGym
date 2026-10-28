@@ -1,0 +1,8 @@
+.garmin-health-summary { margin-top: 20px; }
+.garmin-health-summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 12px 0 20px; }
+.garmin-health-summary-card { min-width: 0; padding: 14px; background: var(--surface-2); border-radius: var(--r); overflow-wrap: anywhere; }
+.garmin-health-summary-card dt { color: var(--label-2); font-size: 12px; line-height: 1.4; }
+.garmin-health-summary-card dd { margin: 0; }
+.garmin-health-summary-card .garmin-health-summary-value { margin-top: 8px; font-size: 20px; font-weight: 600; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.garmin-health-summary-card .garmin-health-summary-meta { display: flex; flex-direction: column; gap: 3px; margin-top: 8px; color: var(--label-2); font-size: 12px; line-height: 1.4; }
+@media (max-width: 340px) { .garmin-health-summary-grid { grid-template-columns: minmax(0, 1fr); } }

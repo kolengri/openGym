@@ -2729,4 +2729,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "เชื่อมต่อแอปบนนาฬิกาแล้ว",
+  "Watch Bluetooth connected": "เชื่อมต่อนาฬิกาผ่าน Bluetooth แล้ว",
+  "Watch app is not responding": "แอปบนนาฬิกาไม่ตอบสนอง",
+  "Waiting for openGym on the watch": "กำลังรอ openGym บนนาฬิกา",
+  "Workout confirmed on the watch": "ยืนยันการออกกำลังกายบนนาฬิกาแล้ว",
+  "Waiting for workout confirmation": "กำลังรอการยืนยันการออกกำลังกาย",
+  "Last watch reply: {0}": "การตอบกลับล่าสุดจากนาฬิกา: {0}",
+  "Last workout confirmation: {0}": "การยืนยันการออกกำลังกายล่าสุด: {0}",
+  "No watch reply yet": "ยังไม่มีการตอบกลับจากนาฬิกา",
+  "{0} commands waiting on the watch": "มีคำสั่ง {0} รายการรอบนนาฬิกา",
+  "{0} commands waiting on the phone": "มีคำสั่ง {0} รายการรอบนโทรศัพท์",
+  "Heart rate data is stale": "ข้อมูลอัตราการเต้นของหัวใจเก่าแล้ว",
+  "Heart rate unavailable": "ไม่มีข้อมูลอัตราการเต้นของหัวใจ",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "เปิด openGym บนนาฬิกาและสวมให้กระชับเพื่อรับข้อมูลอัตราการเต้นของหัวใจ",
+  "Garmin link error": "ข้อผิดพลาดในการเชื่อมต่อ Garmin",
+  "Garmin connection": "การเชื่อมต่อ Garmin",
+  "Health overview": "ภาพรวมสุขภาพ",
+  "Saved on this phone for {0}.": "บันทึกไว้ในโทรศัพท์นี้สำหรับวันที่ {0}",
+  "Choose a date to view saved readings.": "เลือกวันที่เพื่อดูค่าที่บันทึกไว้",
+  "No saved reading": "ไม่มีค่าที่บันทึกไว้",
+  "Last night average": "ค่าเฉลี่ยเมื่อคืน",
+  "Unit not verified; original Garmin value.": "ยังไม่ได้ยืนยันหน่วย เป็นค่าดั้งเดิมจาก Garmin",
+
 }

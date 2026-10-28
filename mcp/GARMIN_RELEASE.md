@@ -63,6 +63,7 @@ is performed. Renewal cannot be guaranteed when Garmin requires a human.
 | --- | --- |
 | `garmin_release_status` | Offline jar and journal readiness; no network. |
 | `garmin_release_check` | Verify authenticated owner, fixed beta, signed manifest and current version via GET. May renew/persist the session. No upload. |
+| `garmin_release_verify` | GET-only final verification of the specific durable accepted submission, with optional `version`. May renew/persist cookies and update local confirmation journals. Works with deployment disabled; never submits or recovers ambiguous writes. |
 | `garmin_release_prepare` | Validate and snapshot the fixed versioned inbox IQ; no network. |
 | `garmin_release_deploy` | Publish a prepared owner-beta update with confirmations and durable duplicate protection. |
 
@@ -89,27 +90,75 @@ confirmation. Setup/checking never submits.
    verified through the subsequent app/metadata GETs.
 4. POST `{tempFileId,appVersion}` to the owner's app `/version` endpoint with
    `locale=en-US&juniorAppUpdate=false`.
-5. GET fresh metadata. Immediately after the successful version POST, the signed
+5. Persist successful validation (including its private temporary file ID) and
+   version-POST checkpoints before proceeding. GET fresh metadata. After the successful version POST, the signed
    binary metadata may show the requested version while the app summary still
    shows the exact previous version. Accept only that specific transition at this
    point; owner/beta/signature fences remain. PUT the writable fields as multipart
    `appMetadata`, changing only English `appWhatsNew`, temporary ID and version.
    Preserve other translations, descriptions, beta flags and settings. Omit
    read-only media/file metadata; no screenshot operations are performed.
-6. GET owner/app/metadata again to verify the new beta and release notes. Requests
-   ask for uncached responses. Only these final reads may repeat, with at most
-   seven checks and 60 seconds of backoff for propagation. Ownership/auth failures
-   stop immediately. No write repeats. Allow at least a 180-second tool timeout
-   in the calling client; individual HTTP requests remain limited to 30 seconds.
+6. After a confirmed 2xx details PUT, durably record `details_accepted` and
+   `awaiting_confirmation`. Make one immediate owner/app/metadata verification
+   pass, asking for uncached responses. Return either strict `deployed` success
+   or `awaiting_confirmation` with a safe verification status/error. The MCP call
+   does not wait through the Store propagation window. Allow at least a
+   180-second tool timeout for submission; each HTTP request is limited to 30 seconds.
 
 The version POST precedes details, as in Garmin's uploader. Final success still
 requires matching app-summary and signed-metadata versions plus saved notes.
-A later failure may
-mean the version exists but notes were not saved. The attempt is uncertain, not a
-success or an automatic retry. GETs do not establish completed scanning or watch
-installation. Writes are never retried, redirected or replayed after renewal.
+A failure before both write acknowledgements are durable may mean the version
+exists but notes were not saved. That attempt remains `uncertain`. Once both
+acknowledgements are durable, a later GET failure or lagging summary leaves
+`awaiting_confirmation`, with an explicit verification error when appropriate.
+GETs do not establish completed scanning or watch installation. Writes are never
+retried, redirected or replayed after renewal, HTTP 421, restart or reconnection.
 
-An uncertain attempt blocks that version and later versions across restarts.
+### Pending confirmation and the stdio monitor
+
+Prior beta.4/beta.5 release observations supplied for this change showed roughly
+15 minutes from intent to coherent Store summary and metadata. Accepted writes
+therefore have a separate durable pending state; lag does not imply write ambiguity.
+
+The stdio server automatically schedules GET-only confirmation for the one active
+pending release on startup and after deploy/verify calls, even when deployment is
+disabled. Normal checks are about 60 seconds apart. Transient read failures back
+off to 120 then 240 seconds. Polling ends at the original durable deadline, 25
+minutes after details acceptance; restarting does not extend it. Each whole
+inspection, including SSO renewal, has a 90-second abort budget capped by the
+remaining automatic window. Its local checkpoint may finish after that deadline. There is one timer and
+one inspection at a time. Each inspection acquires the existing process lock;
+sleeping holds no lock. A busy lock skips the check; a crash lock is never cleared
+automatically. Closing stdio stops future checks; an in-flight inspection may
+finish its local checkpoint.
+
+The exact previous-summary/requested-signed-metadata pair is allowed only with
+durable accepted-write proof and exact English notes, as pending evidence. Only
+coherent requested summary and signed metadata, original owner, pinned app and
+manifest, beta/non-shadow flags and exact saved English notes can finalize success.
+Changed owner, visibility, version, signature or notes stop automatic monitoring
+with a verification error. Authentication handoff also stops it. Renew/import the
+session outside this MCP when required, then explicitly call
+`garmin_release_verify` to check again and resume eligible monitoring. It accepts
+`{}` or `{ "version": "0.1.0-beta.6" }` selecting the active pending version only.
+
+At timeout the release remains pending with `verification.status: "timed_out"`;
+no new release may be deployed. A later explicit verify performs one GET inspection
+and can finalize strict evidence, but does not grant another automatic polling
+window. `garmin_release_status` stays offline and reports the last durable
+verification plus local monitor state; it never triggers a check.
+
+Journals retain schema version 1 with additive request identity, phase checkpoints
+and verification fields. The original request hash and prepared-artifact identity
+are unchanged. Both active and per-version records must agree and contain durable
+accepted-write proof for verification. Missing/inconsistent proof blocks network
+verification. Legacy `uploading`/`uncertain` records are never inferred to be accepted
+from GETs. Legacy verified successes remain idempotent. The prepared receipt is
+not required for pending GET verification; losing it never permits another write.
+Private owner IDs, temporary IDs, notes, cookie values and raw bodies are excluded
+from tool outputs and errors.
+
+An uncertain or awaiting-confirmation attempt blocks that version and later versions across restarts.
 An identical verified success returns its receipt without another POST. One
 process lock serializes import/check, preparation and deployment. Inspect a stale
 crash lock before removing it. Never delete journals to retry an uncertain upload;
@@ -145,8 +194,9 @@ npm test
 npm run check:node-loadable
 ```
 
-Coverage includes synthetic real IQs, real Node stdio discovery, multipart/JSON
+Coverage includes synthetic real IQs, isolated real Node stdio discovery, multipart/JSON
 contracts, owner/version/signature fences, preserved metadata, cookie rotation and
 expiry, scoped redirects, challenge handoff, response bounds, durable uncertain
-attempts and transactional preparation. Mocks do not prove live deployment or
+attempts, durable accepted confirmation, restart resumption, monitor spacing,
+backoff/timeout/stop, lock contention and transactional preparation. Mocks do not prove live deployment or
 successful expired-session renewal.

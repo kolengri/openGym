@@ -2773,4 +2773,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "تطبيق الساعة متصل",
+  "Watch Bluetooth connected": "الساعة متصلة عبر البلوتوث",
+  "Watch app is not responding": "تطبيق الساعة لا يستجيب",
+  "Waiting for openGym on the watch": "بانتظار openGym على الساعة",
+  "Workout confirmed on the watch": "تم تأكيد التمرين على الساعة",
+  "Waiting for workout confirmation": "بانتظار تأكيد التمرين",
+  "Last watch reply: {0}": "آخر رد من الساعة: {0}",
+  "Last workout confirmation: {0}": "آخر تأكيد للتمرين: {0}",
+  "No watch reply yet": "لم يصل رد من الساعة بعد",
+  "{0} commands waiting on the watch": "{0} أوامر قيد الانتظار على الساعة",
+  "{0} commands waiting on the phone": "{0} أوامر قيد الانتظار على الهاتف",
+  "Heart rate data is stale": "بيانات معدل ضربات القلب قديمة",
+  "Heart rate unavailable": "معدل ضربات القلب غير متاح",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "افتح openGym على الساعة وارتدِها بإحكام لتلقي معدل ضربات القلب.",
+  "Garmin link error": "خطأ في الاتصال بـ Garmin",
+  "Garmin connection": "اتصال Garmin",
+  "Health overview": "نظرة عامة على الصحة",
+  "Saved on this phone for {0}.": "محفوظ على هذا الهاتف ليوم {0}.",
+  "Choose a date to view saved readings.": "اختر تاريخًا لعرض القراءات المحفوظة.",
+  "No saved reading": "لا توجد قراءة محفوظة",
+  "Last night average": "متوسط الليلة الماضية",
+  "Unit not verified; original Garmin value.": "لم يتم التحقق من الوحدة؛ هذه قيمة Garmin الأصلية.",
+
 }

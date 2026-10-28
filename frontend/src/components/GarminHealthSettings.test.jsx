@@ -42,6 +42,26 @@ it('keeps reading disabled before an explicit Garmin connection', async () => {
   expect(button('Read Garmin health data').disabled).toBe(true)
   expect(bridge.readHealthMetric).not.toHaveBeenCalled()
 })
+it('shows archived health cards while disconnected without starting health requests', async () => {
+  rows.set(todayISO() + 'body_composition', { date: todayISO(), metric: 'body_composition', status: 'available', data: { dateWeightList: [{ date: '2026-10-19T12:00:00', weight: 78257 }] } })
+  await act(async () => root.render(<GarminHealthSettings connected={false} />))
+  expect(host.querySelector('.garmin-health-summary').textContent).toContain('78.3 kg')
+  expect(host.querySelector('time').dateTime).toBe('2026-10-19')
+  expect(host.querySelector('details').textContent).toContain('date Weight List')
+  expect(bridge.readHealthMetric).not.toHaveBeenCalled()
+  await act(async () => useStore.setState({ S: { ...useStore.getState().S, unit: 'lb' } }))
+  expect(host.querySelector('.garmin-health-summary').textContent).toContain('172.5 lb')
+})
+it('clears another profile’s cards while its archive read is pending and ignores a late previous result', async () => {
+  const hold = deferred()
+  garminHealthArchive.read.mockImplementation(owner => owner === null ? hold.promise : Promise.resolve(undefined))
+  await act(async () => root.render(<GarminHealthSettings connected={false} />))
+  await act(async () => useStore.setState({ user: { id: 'other' } }))
+  await act(async () => hold.resolve({ date: todayISO(), metric: 'body_composition', status: 'available', data: { dateWeightList: [{ date: Date.now(), weight: 78257 }] } }))
+  expect(host.querySelector('.garmin-health-summary').textContent).not.toContain('78.3')
+  expect(host.querySelector('.garmin-health-summary').textContent.match(/No saved reading/g)).toHaveLength(4)
+  expect(bridge.readHealthMetric).not.toHaveBeenCalled()
+})
 const deferred = () => { let resolve; const promise = new Promise(r => { resolve = r }); return { promise, resolve } }
 it('exports earlier saved days even when the final day has no readings', async () => {
   const end = todayISO(), day = new Date(Date.parse(end) - 86400000).toISOString().slice(0, 10)

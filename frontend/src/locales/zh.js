@@ -2718,4 +2718,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "手表应用已连接",
+  "Watch Bluetooth connected": "手表已通过蓝牙连接",
+  "Watch app is not responding": "手表应用无响应",
+  "Waiting for openGym on the watch": "正在等待手表上的 openGym",
+  "Workout confirmed on the watch": "已在手表上确认训练",
+  "Waiting for workout confirmation": "正在等待训练确认",
+  "Last watch reply: {0}": "手表上次回复：{0}",
+  "Last workout confirmation: {0}": "上次训练确认：{0}",
+  "No watch reply yet": "手表尚未回复",
+  "{0} commands waiting on the watch": "手表上有 {0} 条待处理命令",
+  "{0} commands waiting on the phone": "手机上有 {0} 条待处理命令",
+  "Heart rate data is stale": "心率数据已过期",
+  "Heart rate unavailable": "无法获取心率",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "请在手表上打开 openGym，并贴合手腕佩戴以接收心率。",
+  "Garmin link error": "Garmin 连接错误",
+  "Garmin connection": "Garmin 连接",
+  "Health overview": "健康概览",
+  "Saved on this phone for {0}.": "已在此手机上保存 {0} 的数据。",
+  "Choose a date to view saved readings.": "请选择日期以查看已保存的测量值。",
+  "No saved reading": "没有已保存的测量值",
+  "Last night average": "昨夜平均值",
+  "Unit not verified; original Garmin value.": "单位尚未确认；显示 Garmin 原始值。",
+
 }

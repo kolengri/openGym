@@ -69,7 +69,13 @@ the physical Bluetooth transport.
 ## Watch controls
 
 The dashboard shows current sensor HR even without a workout
-(`HR --` until a valid reading arrives). Start a workout on the phone to populate
+(`HR --` until a valid reading arrives). The watch locale selects Russian labels
+when set to Russian, with English as the fallback for other locales. Exercise
+names retain the phone's text and use up to two measured lines, with an ellipsis
+when the remaining name exceeds the round display's available width. A `+N`
+header suffix shows pending watch commands; **Status** in the menu provides the
+queue details. The compact Russian HR label **ЧСС** is used when space requires it.
+Start a workout on the phone to populate
 exercise, current set, weight and reps. Idle explicitly says **No workout
 connected / Start on phone**. The physical **MENU** or **BACK** key opens status,
 reconnect and exit; there is no on-screen Menu button.

@@ -2718,4 +2718,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "घड़ी का ऐप कनेक्ट है",
+  "Watch Bluetooth connected": "घड़ी ब्लूटूथ से कनेक्ट है",
+  "Watch app is not responding": "घड़ी का ऐप जवाब नहीं दे रहा",
+  "Waiting for openGym on the watch": "घड़ी पर openGym की प्रतीक्षा है",
+  "Workout confirmed on the watch": "घड़ी पर वर्कआउट की पुष्टि हुई",
+  "Waiting for workout confirmation": "वर्कआउट की पुष्टि की प्रतीक्षा है",
+  "Last watch reply: {0}": "घड़ी का आखिरी जवाब: {0}",
+  "Last workout confirmation: {0}": "वर्कआउट की आखिरी पुष्टि: {0}",
+  "No watch reply yet": "घड़ी से अभी तक कोई जवाब नहीं आया",
+  "{0} commands waiting on the watch": "घड़ी पर {0} कमांड लंबित हैं",
+  "{0} commands waiting on the phone": "फ़ोन पर {0} कमांड लंबित हैं",
+  "Heart rate data is stale": "हृदय गति का डेटा पुराना है",
+  "Heart rate unavailable": "हृदय गति उपलब्ध नहीं है",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "हृदय गति पाने के लिए घड़ी पर openGym खोलें और घड़ी को कलाई पर ठीक से कसकर पहनें।",
+  "Garmin link error": "Garmin कनेक्शन में त्रुटि",
+  "Garmin connection": "Garmin कनेक्शन",
+  "Health overview": "स्वास्थ्य का सारांश",
+  "Saved on this phone for {0}.": "{0} के लिए इस फ़ोन पर सहेजा गया।",
+  "Choose a date to view saved readings.": "सहेजे गए माप देखने के लिए तारीख चुनें।",
+  "No saved reading": "कोई सहेजा गया माप नहीं",
+  "Last night average": "पिछली रात का औसत",
+  "Unit not verified; original Garmin value.": "इकाई सत्यापित नहीं है; Garmin का मूल मान।",
+
 }

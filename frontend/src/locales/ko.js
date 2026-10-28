@@ -2718,4 +2718,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "시계 앱 연결됨",
+  "Watch Bluetooth connected": "시계 Bluetooth 연결됨",
+  "Watch app is not responding": "시계 앱이 응답하지 않습니다",
+  "Waiting for openGym on the watch": "시계의 openGym을 기다리는 중",
+  "Workout confirmed on the watch": "시계에서 운동 확인됨",
+  "Waiting for workout confirmation": "운동 확인을 기다리는 중",
+  "Last watch reply: {0}": "시계의 마지막 응답: {0}",
+  "Last workout confirmation: {0}": "마지막 운동 확인: {0}",
+  "No watch reply yet": "아직 시계 응답이 없습니다",
+  "{0} commands waiting on the watch": "시계에서 명령 {0}개 대기 중",
+  "{0} commands waiting on the phone": "휴대전화에서 명령 {0}개 대기 중",
+  "Heart rate data is stale": "심박수 데이터가 오래되었습니다",
+  "Heart rate unavailable": "심박수를 사용할 수 없습니다",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "심박수를 받으려면 시계에서 openGym을 열고 손목에 꼭 맞게 착용하세요.",
+  "Garmin link error": "Garmin 연결 오류",
+  "Garmin connection": "Garmin 연결",
+  "Health overview": "건강 요약",
+  "Saved on this phone for {0}.": "{0}에 해당하는 데이터가 이 휴대전화에 저장되어 있습니다.",
+  "Choose a date to view saved readings.": "저장된 측정값을 보려면 날짜를 선택하세요.",
+  "No saved reading": "저장된 측정값 없음",
+  "Last night average": "지난밤 평균",
+  "Unit not verified; original Garmin value.": "단위가 확인되지 않았습니다. Garmin의 원래 값입니다.",
+
 }

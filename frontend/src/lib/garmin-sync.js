@@ -9,7 +9,8 @@ export const GARMIN_APP_ID = '6fcd6528636d4cc39c3ad1e317d7524a'
 export const GARMIN_SNAPSHOT_MAX = 12 * 1024
 export const GARMIN_HR_MAX_AGE = 15000
 const listeners = new Set()
-let pluginP = null, heartRate = null, linkError = null
+let pluginP = null, heartRate = null, linkError = null, linkState = null, configEpoch = 0, configuring = false
+export const GARMIN_REPLY_MAX_AGE = 45000
 const changed = (kind = 'config') => { for (const fn of listeners) fn(kind) }
 export const onGarminChange = fn => { listeners.add(fn); return () => listeners.delete(fn) }
 
@@ -20,10 +21,39 @@ export const garminPlugin = () => pluginP || (pluginP = (async () => {
 })().catch(() => null))
 
 export async function garminStatus() {
+  const epoch = configEpoch
   const p = await garminPlugin()
   if (!p) return { available: false, enabled: false, paired: false, installed: false, connected: false }
   const status = await p.bridge.status()
+  if (epoch === configEpoch && !configuring) receiveGarminStatus(status)
   return { ...status, error: linkError || status?.error || null }
+}
+
+// Session-scoped native diagnostics never enter the workout database or snapshot.
+export function receiveGarminStatus(status) {
+  if (configuring || !status || typeof status !== 'object') return
+  if (Number.isFinite(linkState?.linkEpoch) && (!Number.isFinite(status.linkEpoch) || status.linkEpoch < linkState.linkEpoch)) return
+  if (JSON.stringify(status) === JSON.stringify(linkState)) return
+  linkState = status
+  changed('status')
+}
+
+export function garminConnection(wid, now = Date.now()) {
+  const status = linkState
+  const diagnostics = status?.diagnostics || {}
+  const same = !!wid && diagnostics.workoutId === wid
+  const recent = Number.isFinite(diagnostics.lastMessageAt) && diagnostics.lastMessageAt > 0 &&
+    now >= diagnostics.lastMessageAt && now - diagnostics.lastMessageAt <= GARMIN_REPLY_MAX_AGE
+  return { ...status, error: linkError || status?.error || null,
+    hasWorkout: !!wid,
+    replying: !!status?.connected && recent,
+    confirmed: same && recent && !!status?.connected && diagnostics.snapshotConfirmed === true,
+    lastMessageAt: diagnostics.lastMessageAt || null,
+    lastConfirmedAt: same ? diagnostics.lastConfirmedAt || null : null,
+    watchPending: same && Number.isInteger(diagnostics.watchPending) && diagnostics.watchPending >= 0 ? diagnostics.watchPending : null,
+    phonePending: same && Number.isInteger(diagnostics.phonePending) && diagnostics.phonePending >= 0 ? diagnostics.phonePending : null,
+    sample: garminHeartRate(wid, now), hadSample: heartRate?.wid === wid,
+  }
 }
 
 export async function garminDevices() {
@@ -36,11 +66,17 @@ export async function garminDevices() {
 export async function configureGarmin(config) {
   const p = await garminPlugin()
   if (!p) throw new Error('Garmin is available in the Android app only.')
-  const status = await p.bridge.configure(config)
+  const epoch = ++configEpoch
+  configuring = true
+  linkState = null
   heartRate = null
   linkError = null
-  changed()
-  return status
+  changed('status')
+  try {
+    const status = await p.bridge.configure(config)
+    if (epoch === configEpoch) { configuring = false; receiveGarminStatus(status); changed() }
+    return status
+  } finally { if (epoch === configEpoch) configuring = false }
 }
 
 export function garminError(error) {
@@ -129,4 +165,4 @@ export function isGarminEvent(ev) {
 }
 
 export function _setGarminPluginForTest(bridge) { pluginP = Promise.resolve(bridge ? { bridge } : null) }
-export function _resetGarminForTest() { pluginP = null; heartRate = null; linkError = null; listeners.clear() }
+export function _resetGarminForTest() { pluginP = null; heartRate = null; linkError = null; linkState = null; configuring = false; configEpoch++; listeners.clear() }

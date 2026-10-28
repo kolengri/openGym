@@ -61,10 +61,11 @@ async function fixture() {
     }
     throw new Error('Unexpected HTTP request')
   })
-  const wait = vi.fn(async () => {})
-  const api = new GarminApi(file, { fetchImpl: fetch, writeImpl: fetch, waitImpl: wait })
-  const deploy = overrides => api.deploy({ version: '0.1.0-beta.3', expectedCurrentVersion: '0.1.0-beta.2', releaseNotes: 'Round controls and touch', bytes: Buffer.from('fixture IQ bytes'), beforeUpload: vi.fn(), ...overrides })
-  return { dir, file, session, api, fetch, metadata, writes, deploy, wait }
+  const api = new GarminApi(file, { fetchImpl: fetch, writeImpl: fetch })
+  const proof = { owner: 'owner-fixture', previousVersion: '0.1.0-beta.2', version: '0.1.0-beta.3', releaseNotes: 'Round controls and touch' }
+  const submit = overrides => api.deploy({ version: proof.version, expectedCurrentVersion: proof.previousVersion, releaseNotes: proof.releaseNotes, bytes: Buffer.from('fixture IQ bytes'), beforeUpload: vi.fn(), ...overrides })
+  const deploy = async overrides => { await submit(overrides); return api.verify(proof) }
+  return { dir, file, session, api, fetch, metadata, writes, deploy, submit, proof }
 }
 
 describe('HTTP cookie session', () => {
@@ -219,7 +220,7 @@ describe('direct API deployment', () => {
     await expect(f.deploy()).rejects.toMatchObject({ code: 'REMOTE_VERSION_MISMATCH' })
     expect(f.writes.map(x => x.options.method)).toEqual(['POST', 'POST'])
   })
-  it('retries only GET verification while the Store summary lags the completed details', async () => {
+  it('returns pending promptly while the Store summary lags and finalizes only coherent GET evidence', async () => {
     const f = await fixture(), original = f.fetch.getMockImplementation()
     let staleReads = 0
     f.fetch.mockImplementation(async (url, options) => {
@@ -230,11 +231,13 @@ describe('direct API deployment', () => {
       }
       return r
     })
-    expect(await f.deploy()).toMatchObject({ version: '0.1.0-beta.3' })
-    expect(f.wait.mock.calls).toEqual([[1000], [2000]])
+    expect(await f.deploy()).toMatchObject({ version: '0.1.0-beta.3', state: 'awaiting_confirmation' })
+    expect(staleReads).toBe(1)
+    expect(await f.api.verify(f.proof)).toMatchObject({ state: 'awaiting_confirmation' })
+    expect(await f.api.verify(f.proof)).toMatchObject({ state: 'deployed' })
     expect(f.writes.map(x => x.options.method)).toEqual(['POST', 'POST', 'PUT'])
   })
-  it('bounds stale final evidence without replaying any completed write', async () => {
+  it('rejects changed final notes without replaying any completed write', async () => {
     const f = await fixture(), original = f.fetch.getMockImplementation()
     f.fetch.mockImplementation(async (url, options) => {
       const r = await original(url, options)
@@ -243,8 +246,7 @@ describe('direct API deployment', () => {
       }
       return r
     })
-    await expect(f.deploy()).rejects.toMatchObject({ code: 'INVALID_EVIDENCE' })
-    expect(f.wait.mock.calls.map(x => x[0])).toEqual([1000, 2000, 4000, 8000, 15000, 30000])
+    await expect(f.deploy()).rejects.toMatchObject({ code: 'NOTES_MISMATCH' })
     expect(f.writes).toHaveLength(3)
   })
   it('fails immediately if ownership changes during final verification', async () => {
@@ -257,8 +259,22 @@ describe('direct API deployment', () => {
       return r
     })
     await expect(f.deploy()).rejects.toMatchObject({ code: 'OWNER_MISMATCH' })
-    expect(f.wait).not.toHaveBeenCalled()
     expect(f.writes).toHaveLength(3)
+  })
+  it('propagates the whole verification abort budget through GET-only SSO renewal', async () => {
+    const f = await fixture()
+    await f.submit()
+    const controller = new AbortController()
+    f.fetch.mockImplementation(async (url, options) => {
+      expect(options.method).toBe('GET')
+      if (new URL(url).pathname.endsWith('/developers')) return response('', 401)
+      expect(new URL(url).pathname).toBe('/login')
+      controller.abort()
+      expect(options.signal.aborted).toBe(true)
+      options.signal.throwIfAborted()
+    })
+    await expect(f.api.verify(f.proof, { signal: controller.signal })).rejects.toMatchObject({ name: 'AbortError' })
+    expect(f.writes.map(x => x.options.method)).toEqual(['POST', 'POST', 'PUT'])
   })
   it.each([401, 403, 500, 302])('never replays a write or starts renewal after publication status %s', async status => {
     const f = await fixture(), original = f.fetch.getMockImplementation()

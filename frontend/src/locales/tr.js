@@ -2718,4 +2718,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "Saat uygulaması bağlı",
+  "Watch Bluetooth connected": "Saat Bluetooth ile bağlı",
+  "Watch app is not responding": "Saat uygulaması yanıt vermiyor",
+  "Waiting for openGym on the watch": "Saatteki openGym bekleniyor",
+  "Workout confirmed on the watch": "Antrenman saatte doğrulandı",
+  "Waiting for workout confirmation": "Antrenman doğrulaması bekleniyor",
+  "Last watch reply: {0}": "Saatin son yanıtı: {0}",
+  "Last workout confirmation: {0}": "Son antrenman doğrulaması: {0}",
+  "No watch reply yet": "Saatten henüz yanıt yok",
+  "{0} commands waiting on the watch": "Saatte bekleyen komut sayısı: {0}",
+  "{0} commands waiting on the phone": "Telefonda bekleyen komut sayısı: {0}",
+  "Heart rate data is stale": "Nabız verileri güncel değil",
+  "Heart rate unavailable": "Nabız verisi yok",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "Nabız verisi almak için saatte openGym’i açın ve saati bileğinize tam oturacak şekilde takın.",
+  "Garmin link error": "Garmin bağlantı hatası",
+  "Garmin connection": "Garmin bağlantısı",
+  "Health overview": "Sağlık özeti",
+  "Saved on this phone for {0}.": "{0} için bu telefona kaydedildi.",
+  "Choose a date to view saved readings.": "Kayıtlı ölçümleri görmek için bir tarih seçin.",
+  "No saved reading": "Kayıtlı ölçüm yok",
+  "Last night average": "Geçen gecenin ortalaması",
+  "Unit not verified; original Garmin value.": "Birim doğrulanmadı; orijinal Garmin değeri.",
+
 }

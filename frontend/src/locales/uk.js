@@ -2715,4 +2715,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "Застосунок на годиннику підключено",
+  "Watch Bluetooth connected": "Годинник підключено через Bluetooth",
+  "Watch app is not responding": "Застосунок на годиннику не відповідає",
+  "Waiting for openGym on the watch": "Очікуємо openGym на годиннику",
+  "Workout confirmed on the watch": "Тренування підтверджено на годиннику",
+  "Waiting for workout confirmation": "Очікуємо підтвердження тренування",
+  "Last watch reply: {0}": "Остання відповідь годинника: {0}",
+  "Last workout confirmation: {0}": "Останнє підтвердження тренування: {0}",
+  "No watch reply yet": "Відповіді годинника поки немає",
+  "{0} commands waiting on the watch": "Команд в очікуванні на годиннику: {0}",
+  "{0} commands waiting on the phone": "Команд в очікуванні на телефоні: {0}",
+  "Heart rate data is stale": "Дані пульсу застаріли",
+  "Heart rate unavailable": "Дані пульсу недоступні",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "Відкрийте openGym на годиннику та щільно закріпіть його на зап’ясті, щоб отримувати дані пульсу.",
+  "Garmin link error": "Помилка зв’язку з Garmin",
+  "Garmin connection": "Зв’язок із Garmin",
+  "Health overview": "Огляд здоров’я",
+  "Saved on this phone for {0}.": "Збережено на цьому телефоні за {0}.",
+  "Choose a date to view saved readings.": "Виберіть дату, щоб переглянути збережені вимірювання.",
+  "No saved reading": "Немає збереженого вимірювання",
+  "Last night average": "Середнє за минулу ніч",
+  "Unit not verified; original Garmin value.": "Одиницю вимірювання не підтверджено; початкове значення Garmin.",
+
 }

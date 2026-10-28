@@ -2721,4 +2721,29 @@ export default {
 
   'Install on the watch': 'Install on the watch',
 
+
+  // Garmin connection diagnostics and archived health overview.
+  "Watch app connected": "Az óra alkalmazása csatlakoztatva",
+  "Watch Bluetooth connected": "Az óra Bluetooth-kapcsolata aktív",
+  "Watch app is not responding": "Az óra alkalmazása nem válaszol",
+  "Waiting for openGym on the watch": "Várakozás az órán futó openGymre",
+  "Workout confirmed on the watch": "Az edzés megerősítve az órán",
+  "Waiting for workout confirmation": "Várakozás az edzés megerősítésére",
+  "Last watch reply: {0}": "Az óra utolsó válasza: {0}",
+  "Last workout confirmation: {0}": "Utolsó edzésmegerősítés: {0}",
+  "No watch reply yet": "Még nem érkezett válasz az óráról",
+  "{0} commands waiting on the watch": "{0} parancs várakozik az órán",
+  "{0} commands waiting on the phone": "{0} parancs várakozik a telefonon",
+  "Heart rate data is stale": "A pulzusadatok elavultak",
+  "Heart rate unavailable": "Pulzusadat nem érhető el",
+  "Open openGym on the watch and wear it snugly to receive heart rate.": "Nyisd meg az openGymet az órán, és viseld az órát szorosan a pulzusadatok fogadásához.",
+  "Garmin link error": "Garmin-kapcsolati hiba",
+  "Garmin connection": "Garmin-kapcsolat",
+  "Health overview": "Egészségügyi áttekintés",
+  "Saved on this phone for {0}.": "Ezen a telefonon mentve erre a napra: {0}.",
+  "Choose a date to view saved readings.": "Válassz dátumot a mentett mérések megtekintéséhez.",
+  "No saved reading": "Nincs mentett mérés",
+  "Last night average": "Előző éjszakai átlag",
+  "Unit not verified; original Garmin value.": "A mértékegység nincs ellenőrizve; eredeti Garmin-érték.",
+
 }
