@@ -307,6 +307,22 @@ function touchUsesDrawnBoundsForBothDevicesAndIgnoresBackground(logger) {
 }
 
 (:test)
+function decimalLabelsRemoveFloatNoiseWithoutChangingStoredValues(logger) {
+    var values = [7.5,7.5.toDouble(),7,7l,0,0.0,7.25,7.75,7.5000001,16.5346696635.toDouble(),9999.999.toDouble(),-0.001];
+    var expected = ["7.5","7.5","7","7","0","0","7.25","7.75","7.5","16.53","10000","0"];
+    for (var i=0;i<values.size();i++) { Test.assertEqual(WorkoutControls.decimal(values[i]),expected[i]); }
+    var model = WorkoutFixtures.model();
+    var row = model.current()["row"];
+    row["w"] = 16.5346696635.toDouble();
+    var original = row["w"];
+    Test.assertEqual(WorkoutControls.decimal(row["w"]),"16.53");
+    Test.assertEqual(row["w"],original);
+    Test.assertEqual(WorkoutControls.decimal(12.0),"12");
+    Test.assertEqual(WorkoutControls.clock(65.9),"01:05");
+    return true;
+}
+
+(:test)
 function allButtonCornersFitRoundScreenWithAnInset(logger) {
     var sizes = [280,454]; var ids = ["primary","next"];
     for (var i=0;i<sizes.size();i++) {

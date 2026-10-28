@@ -34,7 +34,7 @@ class WorkoutView extends WatchUi.View {
         // The reference's divided dashboard, using measured HR and workout data.
         dc.setColor(green,Graphics.COLOR_TRANSPARENT);
         dc.drawLine(w*0.40,h*0.055,w*0.60,h*0.055);
-        var hrLabel = "HR "+(app.heartRate == null ? "--" : app.heartRate.toString());
+        var hrLabel = "HR "+(app.heartRate == null ? "--" : WorkoutControls.decimal(app.heartRate));
         if (app.model.data["outbox"].size() > 0) { hrLabel += "  Syncing"; }
         line(dc,h*0.075,hrLabel,Graphics.FONT_MEDIUM,Graphics.COLOR_WHITE);
         dc.setColor(Graphics.COLOR_DK_GRAY,Graphics.COLOR_TRANSPARENT);
@@ -73,8 +73,8 @@ class WorkoutView extends WatchUi.View {
         if (c != null) {
             var row = c["side"] == null ? c["row"] : c["row"]["sides"][c["side"]];
             label = (c["row"]["warmup"] == true ? "WARM " : "SET ")+(c["setIdx"]+1).toString()+" / "+e["sets"].size().toString()+(c["side"] == null ? "" : " "+c["side"]);
-            value = row["w"] == null ? "BW" : row["w"].toString()+" "+model.state["unit"];
-            detail = GymData.is(e["mode"],"time") ? (c["row"]["sec"] == null ? "Target --:--" : "Target "+WorkoutControls.clock(c["row"]["sec"])) : (row["r"] == null ? "?" : row["r"].toString())+" reps";
+            value = row["w"] == null ? "BW" : WorkoutControls.decimal(row["w"])+" "+model.state["unit"];
+            detail = GymData.is(e["mode"],"time") ? (c["row"]["sec"] == null ? "Target --:--" : "Target "+WorkoutControls.clock(c["row"]["sec"])) : (row["r"] == null ? "?" : WorkoutControls.decimal(row["r"]))+" reps";
         }
         text(dc,left,h*0.36,label,tiny,Graphics.COLOR_LT_GRAY,width);
         text(dc,left,h*0.425,value,Graphics.FONT_SMALL,Graphics.COLOR_WHITE,width);

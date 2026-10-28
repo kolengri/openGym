@@ -34,6 +34,15 @@ module WorkoutControls {
         seconds = (seconds < 0 ? 0 : seconds).toNumber();
         return (seconds/60).toNumber().format("%02d")+":"+(seconds%60).format("%02d");
     }
+    // Display precision only: keep stored loads and command payloads unchanged.
+    function decimal(value) {
+        var text = value.toDouble().format("%.2f");
+        while (text.length() > 1 && text.substring(text.length()-1,text.length()).equals("0")) {
+            text = text.substring(0,text.length()-1);
+        }
+        if (text.substring(text.length()-1,text.length()).equals(".")) { text = text.substring(0,text.length()-1); }
+        return text.equals("-0") ? "0" : text;
+    }
 }
 
 // Ephemeral notification state never completes a set or queues a command.
