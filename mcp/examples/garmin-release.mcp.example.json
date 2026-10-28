@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "opengym-garmin-release": {
+      "command": "node",
+      "args": ["/absolute/path/to/openGym/mcp/src/garmin-release/server.js"],
+      "env": {
+        "GARMIN_RELEASE_ENABLE_DEPLOY": "0"
+      }
+    }
+  }
+}

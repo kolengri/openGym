@@ -1,5 +1,9 @@
 # openGym MCP server
 
+For Garmin beta deployment without workout-data access, use the separate
+[owner-only beta release entrypoint](GARMIN_RELEASE.md). Its configuration and tools
+are independent of the workout server described below.
+
 A [Model Context Protocol](https://modelcontextprotocol.io) bridge that lets an external LLM
 application (Claude Desktop, Cursor, Cline, Continue, etc.) read your openGym profile —
 routines, workouts, body-weight log, estimated 1RMs, and muscle balance — directly from your

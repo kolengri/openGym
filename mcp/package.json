@@ -7,15 +7,21 @@
   "license": "AGPL-3.0-or-later",
   "main": "src/index.js",
   "bin": {
-    "opengym-mcp": "src/index.js"
+    "opengym-mcp": "src/index.js",
+    "opengym-garmin-release-mcp": "src/garmin-release/server.js"
   },
   "scripts": {
     "start": "node src/index.js",
+    "start:garmin-release": "node src/garmin-release/server.js",
+    "garmin-release:session": "node scripts/garmin-release-session.mjs",
+    "test:garmin-release": "vitest run test/garmin-release*.test.js",
     "test": "vitest run",
     "check:node-loadable": "node scripts/check-node-loadable.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",
+    "fast-xml-parser": "5.11.2",
+    "playwright": "1.64.1",
     "zod": "^4.6.7"
   },
   "devDependencies": {

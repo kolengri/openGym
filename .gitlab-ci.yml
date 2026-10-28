@@ -198,6 +198,8 @@ test:frontend:
 test:mcp:
   extends: .node
   stage: test
+  variables:
+    GARMIN_RELEASE_7ZZ: /usr/bin/7zz
   cache:
     key:
       files:
@@ -206,6 +208,8 @@ test:mcp:
     paths:
       - mcp/.npm
   script:
+    - apk add --no-cache 7zip
+    - test -x "$GARMIN_RELEASE_7ZZ"
     # log_workout's end-to-end test drives the real api/server.js: the api's dependencies too
     # (as test:api installs them), or that test fails here rather than skipping.
     - (cd api && npm ci --cache ../mcp/.npm --prefer-offline --omit=optional)
