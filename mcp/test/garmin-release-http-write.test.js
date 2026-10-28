@@ -76,7 +76,10 @@ async function releaseFixture(failureTarget, kind) {
   const wire = wireTransport(async request => {
     const target = request.target.includes('/validate?') ? 'validation' : request.target.includes('/version?') ? 'publication' : 'metadata'
     if (target === failureTarget) return kind === 'drop' ? { drop: true } : { status: 421, body: 'Misdirected' }
-    if (target === 'validation') return { body: JSON.stringify({ tempFileId: 'wire-temporary-id', iqFileInfoResult: signedInfo(VERSION) }) }
+    if (target === 'validation') {
+      const { newAppVersion, ...validationInfo } = signedInfo(VERSION)
+      return { body: JSON.stringify({ validationResult: {}, tempFileId: 'wire-temporary-id', iqFileInfoResult: validationInfo }) }
+    }
     if (target === 'publication') { remoteVersion = JSON.parse(request.body.toString()).appVersion; return {} }
     const form = await new Response(request.body, { headers: request.headers }).formData()
     Object.assign(metadata, JSON.parse(await form.get('appMetadata').text()))

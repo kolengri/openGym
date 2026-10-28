@@ -84,7 +84,9 @@ confirmation. Setup/checking never submits.
 2. Persist app-wide and per-version intent before the first POST.
 3. POST multipart `appBinaryFile` to `/api/ciq-developerservices/iqFiles/validate`
    with `isNewAppVersion=true`, version and app ID. Require the expected signed
-   manifest/version and temporary file ID.
+   manifest identity and temporary file ID. The live validation response does not
+   contain `newAppVersion`; version assignment occurs in the next POST and is
+   verified through the subsequent app/metadata GETs.
 4. POST `{tempFileId,appVersion}` to the owner's app `/version` endpoint with
    `locale=en-US&juniorAppUpdate=false`.
 5. GET fresh metadata; PUT the update form's writable fields as multipart

@@ -103,9 +103,9 @@ const writableFields = [
   'videoUrl', 'paymentModel', 'pricingPartNumber', 'requiringExternalSubscription', 'requestingTips'
 ]
 
-function validManifest(info, version) {
+function validManifest(info) {
   return info?.manifestAppId?.replaceAll('-', '').toLowerCase() === MANIFEST_ID &&
-    info.signatureCheckSuccessFul === true && info.appType === 'Device App' && info.newAppVersion === version
+    info.signatureCheckSuccessFul === true && info.appType === 'Device App'
 }
 
 export class GarminApi {
@@ -183,7 +183,7 @@ export class GarminApi {
     const metadata = this.json(await this.request(metadataPath))
     if (app.id !== APP_ID || app.developerId !== owner || app.betaApp !== true || metadata.betaApp !== true || metadata.shadowApp !== false) fail('OWNER_MISMATCH', 'The existing owner beta identity or visibility changed.')
     const version = versionSchema.safeParse(app.latestExternalVersion)
-    if (!version.success || !validManifest(metadata.appIqFileInfoResult, version.data)) fail('REMOTE_VERSION_MISMATCH', 'Garmin beta version or signed manifest identity could not be verified.')
+    if (!version.success || !validManifest(metadata.appIqFileInfoResult) || metadata.appIqFileInfoResult.newAppVersion !== version.data) fail('REMOTE_VERSION_MISMATCH', 'Garmin beta version or signed manifest identity could not be verified.')
     if (!Array.isArray(metadata.localizedAppModel) || !metadata.localizedAppModel.some(x => x.appLocale === 'en')) fail('INVALID_RESPONSE', 'The existing English beta localization is missing.')
     return { owner, metadata, version: version.data, pending: app.hasVersionPendingScan === true }
   }
@@ -203,7 +203,9 @@ export class GarminApi {
     const binary = new FormData()
     binary.append('appBinaryFile', new Blob([bytes]), `opengym-garmin-${version}.iq`)
     const validation = this.json(await this.request(`/api/ciq-developerservices/iqFiles/validate?${new URLSearchParams({ isNewAppVersion: 'true', appVersion: version, appId: APP_ID })}`, { method: 'POST', body: binary }))
-    if (typeof validation.tempFileId !== 'string' || !/^[a-zA-Z0-9_-]{1,200}$/.test(validation.tempFileId) || !validManifest(validation.iqFileInfoResult, version)) fail('INVALID_RESPONSE', 'Garmin did not validate the expected signed beta artifact.')
+    // The live validation response has no newAppVersion. Store version is assigned
+    // by our explicit version POST and verified through app/metadata GETs afterward.
+    if (typeof validation.tempFileId !== 'string' || !/^[a-zA-Z0-9_-]{1,200}$/.test(validation.tempFileId) || !validManifest(validation.iqFileInfoResult)) fail('INVALID_RESPONSE', 'Garmin did not validate the expected signed beta artifact.')
     const appPath = `${USER}/${initial.owner}/apps/${APP_ID}`
     // Never renew/replay a write, even if an access session expires between steps.
     const published = await this.request(`${appPath}/version?locale=en-US&juniorAppUpdate=false`, {

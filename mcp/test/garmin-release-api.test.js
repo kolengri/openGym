@@ -40,7 +40,10 @@ async function fixture() {
       expect(u.searchParams.get('isShadowApp')).toBe('false')
       return response({ ...metadata, appIqFileInfoResult: info(version) })
     }
-    if (u.pathname.endsWith('/validate')) return response({ tempFileId: 'temporary-fixture', iqFileInfoResult: info(u.searchParams.get('appVersion')) })
+    if (u.pathname.endsWith('/validate')) {
+      const { newAppVersion, ...validationInfo } = info(u.searchParams.get('appVersion'))
+      return response({ validationResult: {}, tempFileId: 'temporary-fixture', iqFileInfoResult: validationInfo })
+    }
     if (u.pathname.endsWith('/version')) {
       expect(options.headers['Content-Type']).toBe('application/json')
       expect(u.searchParams.get('juniorAppUpdate')).toBe('false')
@@ -150,7 +153,7 @@ describe('HTTP authentication renewal', () => {
 })
 
 describe('direct API deployment', () => {
-  it('validates, publishes and updates release notes while preserving metadata and translations', async () => {
+  it('accepts unversioned IQ validation and verifies the published version while preserving metadata and translations', async () => {
     const f = await fixture(), beforeUpload = vi.fn()
     const original = f.fetch.getMockImplementation()
     f.fetch.mockImplementation(async (url, options) => {
@@ -198,6 +201,20 @@ describe('direct API deployment', () => {
     })
     await expect(f.deploy()).rejects.toMatchObject({ code: 'INVALID_RESPONSE' })
     expect(f.writes).toHaveLength(1)
+  })
+  it('still rejects a mismatched published metadata version after unversioned validation', async () => {
+    const f = await fixture(), original = f.fetch.getMockImplementation()
+    f.fetch.mockImplementation(async (url, options) => {
+      const r = await original(url, options)
+      if (f.writes.length >= 2 && new URL(url).pathname.endsWith('/metadata')) {
+        const data = await r.json()
+        data.appIqFileInfoResult.newAppVersion = '0.1.0-beta.2'
+        return response(data)
+      }
+      return r
+    })
+    await expect(f.deploy()).rejects.toMatchObject({ code: 'REMOTE_VERSION_MISMATCH' })
+    expect(f.writes.map(x => x.options.method)).toEqual(['POST', 'POST'])
   })
   it.each([401, 403, 500, 302])('never replays a write or starts renewal after publication status %s', async status => {
     const f = await fixture(), original = f.fetch.getMockImplementation()
