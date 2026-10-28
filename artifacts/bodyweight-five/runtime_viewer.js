@@ -61,14 +61,18 @@ async function main() {
  const controls = new OrbitControls(camera, canvas);
  controls.enablePan = false;
  controls.enableDamping = false;
+ controls.minZoom = .65;
+ controls.maxZoom = 2.5;
  const mixer = new THREE.AnimationMixer(gltf.scene);
  const clips = new Map(gltf.animations.map(clip => [clip.name, clip]));
  let selected = '5965', time = 0, playing = true, highlight = true, last = performance.now();
  let viewMode = 'default', viewportEntries = [], poseEvaluations = 0, lastRenderCalls = 0;
+ let dualOrbit = null;
  const toThree = ([x, y, z]) => [x, z, -y];
  function configureCamera(targetCamera, preset) {
   targetCamera.left = targetCamera.bottom = -preset.scale / 2;
   targetCamera.right = targetCamera.top = preset.scale / 2;
+  targetCamera.zoom = 1;
   targetCamera.updateProjectionMatrix();
   targetCamera.position.set(...preset.position);
   targetCamera.lookAt(...preset.target);
@@ -94,15 +98,22 @@ async function main() {
   renderer.setViewport(0, 0, canvas.width, canvas.height);
  }
  function view(kind = 'default') {
+  dualOrbit = null;
   viewMode = kind;
   const shots = presets();
   shots.forEach((shot, index) => configureCamera(recommendedCameras[index], shot));
   const dual = kind === 'default';
   stage.dataset.layout = dual ? 'dual' : 'single';
   renderer.setSize(dual ? 1296 : 640, 640, false);
-  controls.enabled = !dual;
+  controls.enabled = true;
   if (dual) {
    viewportEntries = recommendedCameras.map((shotCamera, index) => ({camera: shotCamera, x: index * 656, width: 640}));
+   controls.object = recommendedCameras[0];
+   controls.target.set(...shots[0].target);
+   controls.update();
+   dualOrbit = {firstQuaternion: recommendedCameras[0].quaternion.clone(),
+    secondTarget: new THREE.Vector3(...shots[1].target),
+    secondOffset: recommendedCameras[1].position.clone().sub(new THREE.Vector3(...shots[1].target))};
   } else {
    let shot;
    if (kind === 'primary' || kind === 'detail') shot = shots[kind === 'primary' ? 0 : 1];
@@ -111,6 +122,7 @@ async function main() {
    else if (kind === 'muscles') shot = {position: [0, 4.5, 3.5], target: [0, .35, .05], scale: 1.95};
    else shot = {position: [0, .9, 6], target: [0, .9, 0], scale: 2.2};
    configureCamera(camera, shot);
+   controls.object = camera;
    controls.target.set(...shot.target);
    controls.update();
    viewportEntries = [{camera, x: 0, width: 640}];
@@ -187,8 +199,18 @@ async function main() {
  document.querySelector('#background').onchange = event => setBackground(event.target.value);
  document.querySelector('#highlight').onchange = event => {highlight = event.target.checked; material(); renderViews();};
  document.querySelector('#play').onclick = () => setPlaying(!playing);
+ document.querySelector('#reset-view').onclick = () => {document.querySelector('#view').value = 'default'; view();};
  document.querySelector('#timeline').oninput = event => {setPlaying(false); pose(Number(event.target.value));};
- controls.addEventListener('change', renderViews);
+ controls.addEventListener('change', () => {
+  if (dualOrbit) {
+   const rotation = recommendedCameras[0].quaternion.clone().multiply(dualOrbit.firstQuaternion.clone().invert());
+   recommendedCameras[1].position.copy(dualOrbit.secondOffset).applyQuaternion(rotation).add(dualOrbit.secondTarget);
+   recommendedCameras[1].zoom = recommendedCameras[0].zoom;
+   recommendedCameras[1].lookAt(dualOrbit.secondTarget);
+   recommendedCameras[1].updateProjectionMatrix();
+  }
+  renderViews();
+ });
  window.setRuntimeClip = id => {setPlaying(false); return select(id);};
  window.renderRuntimeFrame = value => {setPlaying(false); pose(value);};
  window.runtimeProbe = () => {
@@ -202,9 +224,9 @@ async function main() {
    contextAlpha: renderer.getContextAttributes().alpha, clearAlpha: renderer.getClearAlpha(), cornerAlpha,
    background: stage.dataset.background, cssBackground: getComputedStyle(stage).backgroundColor, cssBackgroundImage: getComputedStyle(stage).backgroundImage,
    canvasCssBackground: getComputedStyle(canvas).backgroundColor, viewMode, viewportCount: viewportEntries.length,
-   viewportCameras: viewportEntries.map(entry => ({position: entry.camera.position.toArray(), width: entry.width, x: entry.x})),
+   viewportCameras: viewportEntries.map(entry => ({position: entry.camera.position.toArray(), zoom: entry.camera.zoom, width: entry.width, x: entry.x})),
    poseEvaluations, renderCalls: lastRenderCalls, modelInstances: scene.children.filter(child => child === gltf.scene).length,
-   mixerRootIsModel: mixer.getRoot() === gltf.scene, orbitEnabled: controls.enabled,
+   mixerRootIsModel: mixer.getRoot() === gltf.scene, orbitEnabled: controls.enabled, panEnabled: controls.enablePan, playing, animationTime: time,
    selected, activeTextureId, textureLoading, loadedTextureCount: 1 + Number(activeTexture !== null), gpuTextureCount: renderer.info.memory.textures,
    textureSize: [neutralTexture.image.width, neutralTexture.image.height],
    atlasUvChannel, materialUvChannels: [...new Set(materials().map(item => item.map.channel))]

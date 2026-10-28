@@ -12,6 +12,8 @@ The source checks find **1,290 source-complete storyboards** and **4,342 canonic
 - [coverage-report.json](coverage-report.json): counts, source hashes, checks and limitations.
 - [review-queue.json](review-queue.json): canonical review items with evidence.
 - [First five readable samples](selected-first-five.md) and [full sample JSON](selected-first-five.json).
+- [Production guide](production-guide.md) and [generation contract](generation-contract.json): known failures, prevention, remediation and observable acceptance requirements for every future animation. Source completeness is not animation approval.
+- `prepare_generation.py --exercise 0001`: assemble a canonical exercise's complete source brief, aliases, constraints, open findings, selected pilot choices and muscle mappings into `artifacts/exercise-generation/0001.json` before authoring. Use `--require-ready` to reject known/source blockers; a packet never implies production approval.
 - [Third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Reproduce

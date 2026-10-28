@@ -16,13 +16,13 @@
   "files": [
     {
       "path": "artifacts/exercise-animation-briefs/.gitignore",
-      "bytes": 118,
-      "sha256": "1131f6466c57d764dbc2eaa484b264afb7144241992b9234bf1bf090ade20409"
+      "bytes": 131,
+      "sha256": "a6af317add5da3939d9fbd11dbf776fa8a1f36b95daebb9e6520c971f7e59dd1"
     },
     {
       "path": "artifacts/exercise-animation-briefs/README.md",
-      "bytes": 7167,
-      "sha256": "d183d43cae868546e26402a3fc55cc54a7ca42b954bd62a92c4bffd30d8c5afd"
+      "bytes": 7758,
+      "sha256": "63bef0084316dca18153fccf961f48ae44343b15f07c4c0dd8dfca671d0eb097"
     },
     {
       "path": "artifacts/exercise-animation-briefs/THIRD_PARTY_NOTICES.md",
@@ -53,6 +53,11 @@
       "path": "artifacts/exercise-animation-briefs/check-index.mjs",
       "bytes": 3008,
       "sha256": "00fb4131fe438d14d5a89b1ce7191089d2ce7f06bd50024537255a300b23a73a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/check_generation.py",
+      "bytes": 2781,
+      "sha256": "b01dd00ec0925974f7969c9f3b67ee7cc99a82cabe77304c7031e8b9e6d787be"
     },
     {
       "path": "artifacts/exercise-animation-briefs/check_reproducibility.py",
@@ -636,8 +641,18 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generate.py",
-      "bytes": 69467,
-      "sha256": "64d3bbcebe11be007dd4f56351e2622571296603313c7604e2081dbacdc83d48"
+      "bytes": 70058,
+      "sha256": "3b171adc2950ac5307496ae5413983eacb1269230d980c39499abb3d1c3a0277"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/generation-contract.json",
+      "bytes": 56061,
+      "sha256": "20835c505607a9ae0925dfa9e7f26b3194b3a6e49533579b5c4774ba427b4005"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/generation-verification.json",
+      "bytes": 361,
+      "sha256": "bf074f5692d6d12d3517e580ae49293d9fb0136b4fb55097dee1384d16b39e0f"
     },
     {
       "path": "artifacts/exercise-animation-briefs/index-desktop.png",
@@ -660,9 +675,19 @@
       "sha256": "86a8ad2b98ddeb9e8383a3947f0fcfd0d2e40e3332e0b3391fe8534a1e4dcf3d"
     },
     {
+      "path": "artifacts/exercise-animation-briefs/prepare_generation.py",
+      "bytes": 4641,
+      "sha256": "3d6a60c0a4600b088d58a7f992e56ee8485aa84effb373b19d70fdaa9268f127"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/production-guide.md",
+      "bytes": 24044,
+      "sha256": "3c64a01134856de1fb16c15b8122b06f9fd0f07460ced93da13f1772adc42158"
+    },
+    {
       "path": "artifacts/exercise-animation-briefs/reproducibility.json",
       "bytes": 385,
-      "sha256": "7075e9604b134e828b057dda5612ffea808bd8e6bb6d47a3c51c6c5e7252a58a"
+      "sha256": "0060af2c7c8e566fb9a0beb0ced7bd2e403f07287889f3b101e444ef09083169"
     },
     {
       "path": "artifacts/exercise-animation-briefs/review-queue.json",

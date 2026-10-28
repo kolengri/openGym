@@ -36,7 +36,7 @@ row('pectorals|chest',group('chest'))
 row('upper chest',starts('pectoralis_clavicular'))
 row('delts|deltoids|shoulders',group('deltoids'))
 row('rear deltoids',starts('deltoid_posterior'))
-row('biceps',starts('biceps'))
+row('biceps',[key for key in meta if key.split('.')[0]=='biceps'])
 row('brachialis',starts('brachialis_visible'),'partial_surface','Only the lateral visible strip is shown; the remaining brachialis lies deep to biceps.')
 row('triceps',group('triceps'))
 row('forearm|forearms|grip muscles|wrists',group('forearm'),'group_proxy','Forearm compartment proxy; hand intrinsic muscles and wrist joints are not painted.')
@@ -71,6 +71,8 @@ row('hands|feet|ankles|ankle stabilizers',[],'unsupported','No defensible indivi
 source=json.loads((P/'catalogue-strings.json').read_text())
 assert set(source['names'])<=set(rows),sorted(set(source['names'])-set(rows))
 assert all(k in weights for r in rows.values() for k in r['regions'])
+assert set(rows['biceps']['regions'])=={'biceps.L','biceps.R'}
+assert not any(meta[key]['group']=='hamstring' for key in rows['biceps']['regions'])
 region_counts={k:{**meta[k],'weighted_vertices':int((v>.01).sum()),'core_vertices':int((v>.5).sum()),'max_weight':float(v.max())} for k,v in weights.items()}
 empty=[k for k,v in weights.items() if not np.any(v>.1)]
 assert not empty,empty
@@ -154,6 +156,6 @@ try:atlas.apply(body,strength=float('nan'))
 except ValueError:nan_rejected=True
 else:raise AssertionError('NaN strength accepted')
 report={'blender':bpy.app.version_string,'catalogue_records':source['canonical_exercise_count'],'distinct_names':len(source['names']),'mapped_names':len(rows),'regions':len(weights),'nonempty_regions':len(weights)-len(empty),'original_vertex_count':len(body.data.vertices),'original_face_count':len(body.data.polygons),'triangles':sum(len(p.vertices)-2 for p in body.data.polygons),'topology_and_coordinates_unchanged':before==after,'rest_sha256':before,'deterministic_colors':True,'strict_unknown_rejected':unknown_rejected,'nan_strength_rejected':nan_rejected,'no_extra_surface_meshes':len([o for o in scene.objects if o.type=='MESH'])==1,'rendered_pngs':renders,'exported_textures':[str(Path(p).relative_to(P)) for p in texture_exports],'packed_texture':True,'elapsed_seconds':round(time.perf_counter()-start,3),'claim':'Illustrative surface masks; not anatomical segmentation or EMG.'}
-report.update({'all_region_weights_finite':all(np.isfinite(v).all() for v in weights.values()),'all_catalogue_names_resolve':True,'mapping_semantic_references_valid':True,'schema_validation':'JSON parsed and required keys/statuses/references checked with standard library; no third-party JSON Schema validator installed.'})
+report.update({'all_region_weights_finite':all(np.isfinite(v).all() for v in weights.values()),'all_catalogue_names_resolve':True,'mapping_references_valid':True,'biceps_excludes_biceps_femoris':True,'schema_validation':'JSON parsed and required keys/statuses/references checked with standard library; no third-party JSON Schema validator installed.'})
 report.update({'inactive_vertex_colors_uniform':True,'inactive_texture_pixels_uniform':True,'unselected_vertex_and_texture_colors_unchanged':True,'selected_fiber_detail_retained':True,'show_inactive_anatomy_default':False,'optional_detailed_neutral_available':True,'global_shader_bump':False,'lighting':lighting_report})
 (P/'verification.json').write_text(json.dumps(report,indent=2));print(json.dumps(report))

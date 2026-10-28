@@ -4,6 +4,15 @@ from pathlib import Path
 from mathutils import Vector, Matrix, Quaternion
 
 P = Path(__file__).resolve().parent
+sys.path.insert(0,str(P.parent/'exercise-animation-briefs'))
+from prepare_generation import known_open_issues
+generation_issues=[issue for issue in known_open_issues(['5965','5915','5887','0001','9066']) if issue.get('blocks_generation',True)]
+args=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+if generation_issues and '--allow-known-issues' not in args:
+    raise RuntimeError('Known animation defects require remediation before regeneration: '+
+        ', '.join(issue['id'] for issue in generation_issues)+
+        '. Read artifacts/exercise-animation-briefs/production-guide.md. '+
+        'For an explicit remediation draft only, append -- --allow-known-issues; this is not approval.')
 bpy.ops.wm.open_mainfile(filepath=str(P.parent/'human-animation-base/professional-motion.blend'))
 body = bpy.data.objects['SK_BlenderStudioHuman']
 rig = bpy.data.objects['RIG_BlenderStudioHuman']

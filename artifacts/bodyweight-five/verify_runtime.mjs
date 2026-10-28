@@ -34,7 +34,7 @@ try {
   await page.evaluate(id => window.setRuntimeClip(id), id);
   const selected = await page.evaluate(() => window.runtimeProbe());
   assertRendering(selected);
-  if (selected.viewMode !== 'default' || selected.viewportCount !== 2 || selected.renderCalls !== 2 || selected.orbitEnabled) throw Error('Expected two recommended synchronized viewports for ' + id);
+  if (selected.viewMode !== 'default' || selected.viewportCount !== 2 || selected.renderCalls !== 2 || !selected.orbitEnabled || selected.panEnabled) throw Error('Expected two rotatable recommended synchronized viewports for ' + id);
   for (let index = 0; index < 2; index++) {
    const [x, y, z] = cameras[id][index].position;
    const expected = [x, z, -y];

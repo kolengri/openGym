@@ -4,13 +4,25 @@ Editable motion and runtime assets for catalogue IDs 5965, 5915, 5887, 0001 and 
 
 The accepted Blender Studio CC0 continuous human has 51 bones, including 30 articulated finger bones. All five actions are authored from catalogue text and explicitly recorded staging choices. They contain no earlier captured squat motion. No GymVisual media was used.
 
+## Open findings and generation input
+
+These are review prototypes. Exercise **0001 remains blocked on reported floor-contact readability and unnatural hand/head/arm placement**. The earlier global minimum-Z and bone-loop checks did not validate the pelvis support patch or natural arm pose. `situp-contact-investigation.json` records named surface proxies and elbow-angle measurements, without claiming anatomical approval. Do not lower the whole body to fix one proxy gap; solve pelvis/heel contacts together while checking back clearance and skin deformation.
+
+Read `../exercise-animation-briefs/production-guide.md` and prepare the exercise's evidence/constraints packet before authoring:
+
+```sh
+python3 artifacts/exercise-animation-briefs/prepare_generation.py --exercise 0001
+```
+
+`build_motion.py` now refuses to regenerate known blocking defects by default. An explicit remediation-only draft may append `-- --allow-known-issues`; the flag does not resolve or approve an issue. The existing videos/GLB are retained to make the reported defects reviewable. The review player now opens recommended views and supports linked one-finger orbit, two-finger pinch zoom and camera reset without pausing animation. `touch-verification.json` records Chromium mobile touch emulation; physical-device and actual app integration remain unverified.
+
 ## Deliverables
 
 - `bodyweight-five.glb`: the application asset, one continuous skin, 21,160 triangles, 51 bones, five actions and one material. The neutral skin is uniform gray.
 - `runtime-muscles.json`: 96 sparse illustrative region weights and all 57 catalogue muscle-name mappings. `_SOURCE_INDEX` connects original vertices across glTF UV splits.
 - `web-textures/`: neutral and five activation states at 2048×1024. Only selected muscles contain drawn detail. Native Blender textures remain 4096×2048.
 - `camera-presets.json`: two complementary views per movement. They expose different muscle groups instead of duplicating mirrored left/right views.
-- `threejs-viewer.html`: locally generated self-contained interactive viewer. One model/mixer drives both recommended views. A single view can be selected and rotated. The canvas has real alpha transparency; its background is CSS only.
+- `threejs-viewer.html`: locally generated self-contained interactive viewer. One model/mixer drives both recommended views. Finger/mouse orbit and pinch zoom affect both complementary cameras; reset restores their presets. A single view can also be selected. The canvas has real alpha transparency; its background is CSS only.
 - `bodyweight-five-highlight.blend`: editable five-action source with the packed neutral atlas. The reusable atlas retains all 96 masks separately.
 - `ID.webm`: transparent VP9-alpha master, 1536×768, two synchronized 768px views, 30 fps.
 - `ID.mp4`: white-background H.264 fallback with the same views/timing. MP4 does not preserve transparency.
