@@ -1,0 +1,132 @@
+{
+  "exercise_id": "0001",
+  "source": "artifacts/bodyweight-five/bodyweight-five.blend",
+  "source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "freeze": "Measured candidate copied byte-for-byte to the raw authoring source. No new corrective, rest/binding edit or other action rewrite.",
+  "proof_scope": "Temporary checker ground and solid native skin, not delivery lighting/material or a video render.",
+  "frames_checked": [
+    0,
+    15,
+    30,
+    50,
+    60,
+    70,
+    90,
+    105,
+    120
+  ],
+  "paths_checked": [
+    "native_with_original_corrective_and_one_subdivision",
+    "pure_linear_armature_only"
+  ],
+  "geometry_qa": {
+    "native_pass": true,
+    "native_errors": 0,
+    "native_back_to_back_warnings": 14,
+    "linear_pass": true,
+    "linear_errors": 0,
+    "linear_back_to_back_warnings": 0
+  },
+  "source_invariants": {
+    "vertices": 10582,
+    "polygons": 10590,
+    "bones": 51,
+    "binding_rest_uv_unchanged": true,
+    "other_four_action_payloads_byte_identical": true
+  },
+  "tolerance_basis": "Illustration authoring QA only; declared patch and clearance thresholds in landmarks.json. Native pelvic closest gap 6.0\u20138.4 mm; linear maximum whole-skin floor penetration 1.76 mm inside the declared 4 mm band. Not clinical landmarks or physical collision certification.",
+  "material_warning_resolution": "Primary atlas/export stage assigns the delivered material. Raw Workbench source warning remains documented.",
+  "contract_issues_closed": false,
+  "remaining_primary_work": [
+    "Final source/native multi-angle and wire review",
+    "Final exported GLB same-source-index support and signed hand/head measurements",
+    "Selected 0001 render/export and retained-other-four baseline comparison"
+  ],
+  "curated_files": [
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/proof-side-000.png",
+      "sha256": "ee8bc9d79140e294c8aa8bbe96bd49abdc9c3138b3ed8afafbf9e0c7e62ad4d2",
+      "bytes": 728071
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/proof-side-030.png",
+      "sha256": "afbc8755251ad897825a8ee3675ddec42bec53d5e71579e9081a25f415bec158",
+      "bytes": 741725
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/proof-side-060.png",
+      "sha256": "2d63350bf4527659d3126e82e77f511743939f89301156042d2b63afd47b506b",
+      "bytes": 747137
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/proof-oblique-000.png",
+      "sha256": "dc35c7de7a71e30219564dedddaf758c40d7c50c5a28d76f7815a834727922af",
+      "bytes": 818100
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/proof-oblique-030.png",
+      "sha256": "236cf6eeb6090bcd440501a5df0788c100d1e20ee4269fc157484f191aecb334",
+      "bytes": 839498
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/proof-oblique-060.png",
+      "sha256": "2fed160896683d678e48bfdce4a106e1a89b6534c9e84bd7b01718a7b08ff2fb",
+      "bytes": 846986
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/source-identity.json",
+      "sha256": "5b0fd1c51bce15fffbb199871231ecca5d75a6232579a8b1058891d24abf7a58",
+      "bytes": 1926
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/landmarks.json",
+      "sha256": "eabc61325f8f48ae46aa1315bf4bae18b7b907470dc2c6f5e52d15059198539d",
+      "bytes": 567514
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/contact-report.json",
+      "sha256": "e898aced98ce1c1db6973c22624acc41becf8298c2281bc1783db2decd559563",
+      "bytes": 107641
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/asset-qa.json",
+      "sha256": "043fb19f99825beddef8827352271902421687ffbbe2101000f1e6fa2e05dffe",
+      "bytes": 2139
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/pose-verification.json",
+      "sha256": "b65b5c99f2cf9a2618193c6a95b7ff0a609646286772d0ba59cb539a3f2601c3",
+      "bytes": 3964
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/pose-samples.json",
+      "sha256": "d68a1ee208e270bec02d2482d5d5604c10dbf2b305ccf54f8826ca6074a78c07",
+      "bytes": 29543
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/warning-correspondence.json",
+      "sha256": "00c988789de7658a0c427fe23011c5de20d030e3a2b0b7f4ed0a395908401165",
+      "bytes": 21917
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/rebuild_situp.py",
+      "sha256": "a74305d55afa8f6625ce1aaa134826e2bc19768f7ff0608febbc056e3c5f2fbe",
+      "bytes": 4509
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/render_proof.py",
+      "sha256": "e29de9ac7d44a5eeafbda3cf513083d96f3e558d581f6a66644b70f62e3f6adb",
+      "bytes": 2854
+    },
+    {
+      "path": "artifacts/bodyweight-five/situp-repair/classify_warnings.py",
+      "sha256": "1d24b48fe725ac2e8c02b739264d6722071457a6dad514cfa82f6b20a58c961b",
+      "bytes": 3048
+    }
+  ],
+  "exclude": [
+    "situp-repair/trials/",
+    "situp-repair/__pycache__/",
+    "*.blend1"
+  ]
+}

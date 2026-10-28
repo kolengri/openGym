@@ -1,0 +1,93 @@
+{
+  "status": "open_visual_defect",
+  "exercise_id": "0001",
+  "user_report": [
+    "Pelvis and feet do not read as sharing a floor plane.",
+    "Hand/head placement and arm bend look unnatural."
+  ],
+  "interpretation": "Contact proxy minima and joint angles are measurements, not acceptance. Contact area, named support landmarks, palm/head clearance, wrist orientation and camera floor readability remain unvalidated.",
+  "samples": [
+    {
+      "frame": 0,
+      "contacts": {
+        "LeftGluteSurface": {
+          "minimum_z_m": 0.06544885784387589,
+          "fraction_within_1cm_of_floor": 0.0,
+          "scope": "Illustrative glute region proxy; not a verified ischial contact landmark."
+        },
+        "LeftFootSurface": {
+          "minimum_z_m": 0.003276800736784935,
+          "fraction_within_1cm_of_floor": 0.09012276785714286
+        },
+        "RightGluteSurface": {
+          "minimum_z_m": 0.0652623102068901,
+          "fraction_within_1cm_of_floor": 0.0,
+          "scope": "Illustrative glute region proxy; not a verified ischial contact landmark."
+        },
+        "RightFootSurface": {
+          "minimum_z_m": 0.0032761639449745417,
+          "fraction_within_1cm_of_floor": 0.09037656903765691
+        }
+      },
+      "joint_measurements": {
+        "LeftElbowInternalDegrees": 50.04941667165694,
+        "RightElbowInternalDegrees": 50.04943033203528
+      }
+    },
+    {
+      "frame": 30,
+      "contacts": {
+        "LeftGluteSurface": {
+          "minimum_z_m": 0.06392897665500641,
+          "fraction_within_1cm_of_floor": 0.0,
+          "scope": "Illustrative glute region proxy; not a verified ischial contact landmark."
+        },
+        "LeftFootSurface": {
+          "minimum_z_m": 0.003277215640991926,
+          "fraction_within_1cm_of_floor": 0.09012276785714286
+        },
+        "RightGluteSurface": {
+          "minimum_z_m": 0.06375139951705933,
+          "fraction_within_1cm_of_floor": 0.0,
+          "scope": "Illustrative glute region proxy; not a verified ischial contact landmark."
+        },
+        "RightFootSurface": {
+          "minimum_z_m": 0.0032762049231678247,
+          "fraction_within_1cm_of_floor": 0.09037656903765691
+        }
+      },
+      "joint_measurements": {
+        "LeftElbowInternalDegrees": 50.04943033203528,
+        "RightElbowInternalDegrees": 50.04944399241362
+      }
+    },
+    {
+      "frame": 60,
+      "contacts": {
+        "LeftGluteSurface": {
+          "minimum_z_m": 0.06303177028894424,
+          "fraction_within_1cm_of_floor": 0.0,
+          "scope": "Illustrative glute region proxy; not a verified ischial contact landmark."
+        },
+        "LeftFootSurface": {
+          "minimum_z_m": 0.003277192823588848,
+          "fraction_within_1cm_of_floor": 0.09012276785714286
+        },
+        "RightGluteSurface": {
+          "minimum_z_m": 0.06286037713289261,
+          "fraction_within_1cm_of_floor": 0.0,
+          "scope": "Illustrative glute region proxy; not a verified ischial contact landmark."
+        },
+        "RightFootSurface": {
+          "minimum_z_m": 0.003276058007031679,
+          "fraction_within_1cm_of_floor": 0.09037656903765691
+        }
+      },
+      "joint_measurements": {
+        "LeftElbowInternalDegrees": 50.04944399241362,
+        "RightElbowInternalDegrees": 50.04944399241362
+      }
+    }
+  ],
+  "not_biomechanically_approved": true
+}

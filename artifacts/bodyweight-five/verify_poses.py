@@ -1,11 +1,17 @@
 """Check delivered rig poses, floor contacts, loop seams and skin topology."""
-import bpy,json,sys,math
+import bpy,json,sys,math,argparse,hashlib
 from pathlib import Path
 import numpy as np
 P=Path(__file__).resolve().parent
-bpy.ops.wm.open_mainfile(filepath=str(P/'bodyweight-five.blend'))
+sys.path.insert(0,str(P))
+args=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+parser=argparse.ArgumentParser();parser.add_argument('--exercise',nargs='+');parser.add_argument('--output-dir',type=Path,default=P);parser.add_argument('--source',type=Path,default=P/'bodyweight-five.blend');options=parser.parse_args(args)
+bpy.ops.wm.open_mainfile(filepath=str(options.source))
 body=bpy.data.objects['SK_BlenderStudioHuman'];rig=bpy.data.objects['RIG_BlenderStudioHuman'];scene=bpy.context.scene
 clips=json.loads((P/'clips.json').read_text());reports=[];samples=[]
+if options.exercise:clips=[item for item in clips if item['id'] in options.exercise]
+if not clips:raise ValueError('No selected exercise clips')
+options.output_dir.mkdir(parents=True,exist_ok=True)
 for item in clips:
     rig.animation_data.action=bpy.data.actions[item['action']];n=item['frames'];poses=[];positions={}
     indices=sorted({0,n//4,n//2,3*n//4,n}|({2,10,17,21} if item['id']=='9066' else set()))
@@ -28,6 +34,12 @@ for item in clips:
     loop=max((np.array(positions[0][name])-positions[n][name]).dot(np.array(positions[0][name])-positions[n][name])**.5 for name in positions[0])
     assert loop<.0001,(item['id'],'loop',loop)
     entry={'id':item['id'],'loop_max_joint_translation_error_m':float(loop),'poses':poses}
+    if item['id']=='0001':
+        import inspect_situp_contacts
+        contact_report=inspect_situp_contacts.measure(body,rig,scene)
+        (options.output_dir/'contact-report.json').write_text(json.dumps(contact_report,indent=2)+'\n')
+        assert contact_report['checks_pass'],contact_report['failures']
+        entry['authored_surface_contact_checks']={'pass':True,'paths':['native','linear_cage'],'samples':len(contact_report['samples']),'landmarks':'situp-repair/landmarks.json','issues_closed':False}
     if item['id']=='5915':
         scene.frame_set(n//2+1);bpy.context.view_layer.update()
         arm={}
@@ -54,7 +66,25 @@ sys.path.insert(0,str(Path.home()/'.codex/skills/blender-asset-qa/scripts'));imp
 scene.frame_set(1)
 qa=qa_check.run(objects=[body.name],profile='game')
 assert qa['pass'],qa
-(P/'asset-qa.json').write_text(json.dumps(qa,indent=2)+'\n')
-(P/'pose-samples.json').write_text(json.dumps(samples,indent=2)+'\n')
-(P/'pose-verification.json').write_text(json.dumps({'ok':True,'scope':'Five sampled poses per clip, evaluated skin floor bounds, exact loop joint closure; not a coaching/biomechanical certification.','clips':reports},indent=2)+'\n')
-print('Verified floor bounds, joint loops and chaturanga forearms for five clips')
+if any(item['id']=='0001' for item in clips):
+    qa_action=rig.animation_data.action
+    if qa_action.name!='Exercise_0001':
+        rig.animation_data.action=bpy.data.actions['Exercise_0001'];scene.frame_set(1);bpy.context.view_layer.update()
+        situp_native_qa=qa_check.run(objects=[body.name],profile='game')
+        assert situp_native_qa['pass'],situp_native_qa
+        qa['situp_native']=situp_native_qa
+    modifier_visibility=[(modifier,modifier.show_viewport) for modifier in body.modifiers]
+    try:
+        for modifier,_ in modifier_visibility:modifier.show_viewport=modifier.type=='ARMATURE'
+        bpy.context.view_layer.update()
+        linear_qa=qa_check.run(objects=[body.name],profile='game')
+        assert linear_qa['pass'],linear_qa
+        qa['linear_cage']=linear_qa
+    finally:
+        for modifier,visible in modifier_visibility:modifier.show_viewport=visible
+        rig.animation_data.action=qa_action
+        bpy.context.view_layer.update()
+(options.output_dir/'asset-qa.json').write_text(json.dumps(qa,indent=2)+'\n')
+(options.output_dir/'pose-samples.json').write_text(json.dumps(samples,indent=2)+'\n')
+(options.output_dir/'pose-verification.json').write_text(json.dumps({'ok':True,'source_blend_sha256':hashlib.sha256(options.source.read_bytes()).hexdigest(),'scope':'Selected sampled poses, evaluated skin floor bounds and exact loop joint closure; 0001 additionally checks authored pelvic/heel/sole/head/hand surface patches on native and linear skin. Not a coaching/biomechanical certification or issue closure.','clips':reports},indent=2)+'\n')
+print('Verified selected clip floor bounds, joint loops and exercise-specific contact checks:',','.join(item['id'] for item in clips))

@@ -6,6 +6,8 @@ import CryptoKit
 
 let root = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
 let clips = try JSONSerialization.jsonObject(with: Data(contentsOf: root.appendingPathComponent("clips.json"))) as! [[String: Any]]
+let selected = Set(CommandLine.arguments.dropFirst(2))
+guard selected.isSubset(of: Set(clips.map { $0["id"] as! String })) else { fatalError("Unknown clip selection") }
 func writePNG(_ image: CGImage, _ url: URL) {
     let output = CGImageDestinationCreateWithURL(url as CFURL, "public.png" as CFString, 1, nil)!
     CGImageDestinationAddImage(output, image, nil)
@@ -27,8 +29,14 @@ func difference(_ a: [UInt8], _ b: [UInt8]) -> Double {
     return Double(sum) / Double(160 * 160 * 3 * 255)
 }
 var reports: [[String: Any]] = []
+if !selected.isEmpty, let data = try? Data(contentsOf: root.appendingPathComponent("video-review.json")),
+   let previous = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+   let rows = previous["clips"] as? [[String: Any]] {
+    reports = rows.filter { !selected.contains($0["id"] as! String) }
+}
 for clip in clips {
     let id = clip["id"] as! String, count = clip["frames"] as! Int
+    if !selected.isEmpty && !selected.contains(id) { continue }
     let expected = clip["duration"] as! Double
     let url = root.appendingPathComponent(id + ".mp4"), data = try Data(contentsOf: url)
     let asset = AVURLAsset(url: url)
@@ -67,6 +75,6 @@ for clip in clips {
         "max_adjacent_frame_rgb_difference": maximum, "decoded_sample_frames": samples.sorted()])
     print("Decoded \(id): \(count) frames; wrap \(wrap), largest adjacent change \(maximum)")
 }
-let report: [String: Any] = ["ok": true, "scope": "Actual delivered MP4 metadata and every frame decoded; pixel loop check is not a biomechanics certification", "clips": reports]
+let report: [String: Any] = ["ok": true, "scope": "Actual delivered MP4 metadata and every frame decoded; unchanged clips retain prior hash-bound receipts; pixel loop check is not a biomechanics certification", "revalidated_ids": selected.isEmpty ? clips.map { $0["id"] as! String } : selected.sorted(), "clips": reports]
 try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
     .write(to: root.appendingPathComponent("video-review.json"))

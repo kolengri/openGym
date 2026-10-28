@@ -1217,11 +1217,15 @@
     }
   },
   "per_exercise_overrides": {
-    "status": "open_visual_defects_not_fixed",
+    "status": "repaired_candidate_awaiting_user_review",
     "source_refs": [
       "source_0001",
       "situp_investigation",
-      "pilot_clips"
+      "pilot_clips",
+      "situp_landmarks",
+      "situp_candidate_checks",
+      "situp_runtime_surface_checks",
+      "situp_candidate_proof"
     ],
     "required_open_issue_ids": [
       "OPEN-0001-CONTACTS",
@@ -1233,8 +1237,19 @@
       "reviewed pelvic support patch"
     ],
     "joint_note": "Catalogue torso target is approximately45degrees; define its reference plane as an explicit authoring choice. This is not a validated hip/lumbar joint limit.",
-    "measurement_note": "Current elbow internal angle about50.0494degrees is unapproved; proxy glute floor gaps are not whole-pelvis clearance.",
-    "forbidden_shortcut": "No blanket whole-body downward translation based on glute-proxy minima."
+    "measurement_note": "Earlier elbow internal angle about50.0494degrees was unapproved; the original proxy-gap diagnosis is retained separately. The repaired candidate uses authored original-vertex support/clearance patches with a43.67degree hip-to-neck top inclination. Native and actualGLB surfaces must pass their scoped checks; user review remains pending.",
+    "forbidden_shortcut": "No blanket whole-body downward translation based on glute-proxy minima.",
+    "candidate_authoring_choices": {
+      "top_hold_normalized_interval": [
+        0.42,
+        0.58
+      ],
+      "pelvis_foot_solver": "Hip path and torso curl are authored with independently planted footIK; lumbar clearance checked.",
+      "hands": "Open elbows, separated hands behind the head, revised wrist spacing/head rest/finger bend; fingertips near posterior scalp without a neck-pull grip.",
+      "source_blend_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+      "landmark_status": "Authored illustrative skin patches, not clinical ischial landmarks.",
+      "review_status": "awaiting_user_review"
+    }
   },
   "known_open_issues": [
     {
@@ -1261,10 +1276,28 @@
           "source_ref": "pose_checks",
           "path": "../bodyweight-five/pose-verification.json",
           "summary": "Sampled global/body and coarse hand/foot bounds plus exact joint loop closure do not certify pelvic contact."
+        },
+        {
+          "source_ref": "situp_candidate_checks",
+          "path": "../bodyweight-five/situp-repair/contact-report.json",
+          "summary": "Repaired review candidate:18native/linear phase samples, authored pelvic/heel/sole/lumbar patches and signed palm/fingertip/head clearance. Source binding and other four actions unchanged."
+        },
+        {
+          "source_ref": "situp_runtime_surface_checks",
+          "path": "../bodyweight-five/situp-repair/runtime-contact-report.json",
+          "summary": "The exact deliveredGLB must pass original-index support comparisons and signed nearest distances to its actual exported head triangles; joint-only matching is insufficient."
         }
       ],
       "validated_fix": false,
-      "remediation_draft_exception": "Only an explicitly authorized remediation draft may use the existing entrypoint override; it does not close this issue."
+      "remediation_draft_exception": "Only an explicitly authorized remediation draft may use the existing entrypoint override; it does not close this issue.",
+      "candidate_review": {
+        "status": "scoped_checks_and_primary_visual_review_completed_before_delivery; user_review_pending",
+        "native_and_linear_source_ref": "situp_candidate_checks",
+        "actual_exported_skin_source_ref": "situp_runtime_surface_checks",
+        "proof_source_ref": "situp_candidate_proof",
+        "batch_source_ref": "review_batch_001",
+        "does_not_close_issue": true
+      }
     },
     {
       "id": "OPEN-0001-HAND-HEAD-POSE",
@@ -1294,9 +1327,27 @@
         {
           "source_ref": "pose_samples",
           "path": "../bodyweight-five/pose-samples.json"
+        },
+        {
+          "source_ref": "situp_candidate_checks",
+          "path": "../bodyweight-five/situp-repair/contact-report.json",
+          "summary": "Repaired review candidate:18native/linear phase samples, authored pelvic/heel/sole/lumbar patches and signed palm/fingertip/head clearance. Source binding and other four actions unchanged."
+        },
+        {
+          "source_ref": "situp_runtime_surface_checks",
+          "path": "../bodyweight-five/situp-repair/runtime-contact-report.json",
+          "summary": "The exact deliveredGLB must pass original-index support comparisons and signed nearest distances to its actual exported head triangles; joint-only matching is insufficient."
         }
       ],
-      "validated_fix": false
+      "validated_fix": false,
+      "candidate_review": {
+        "status": "scoped_checks_and_primary_visual_review_completed_before_delivery; user_review_pending",
+        "native_and_linear_source_ref": "situp_candidate_checks",
+        "actual_exported_skin_source_ref": "situp_runtime_surface_checks",
+        "proof_source_ref": "situp_candidate_proof",
+        "batch_source_ref": "review_batch_001",
+        "does_not_close_issue": true
+      }
     },
     {
       "id": "OPEN-PLAYBACK-TOUCH-RESET",
@@ -1514,6 +1565,30 @@
     "atlas_asset_qa": {
       "path": "../mannequin-muscle-atlas/asset-qa.json",
       "path_base": "generation-contract.json directory"
+    },
+    "situp_landmarks": {
+      "path": "../bodyweight-five/situp-repair/landmarks.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_candidate_checks": {
+      "path": "../bodyweight-five/situp-repair/contact-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_runtime_surface_checks": {
+      "path": "../bodyweight-five/situp-repair/runtime-contact-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_candidate_proof": {
+      "path": "../bodyweight-five/situp-repair/proof-manifest.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "review_batch_001": {
+      "path": "../exercise-batches/batch-001/manifest.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "original_situp_investigation": {
+      "path": "../exercise-batches/batch-001/previous-situp-contact-investigation.json",
+      "path_base": "generation-contract.json directory"
     }
   },
   "input_files": [
@@ -1523,7 +1598,7 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generation-contract.json",
-      "sha256": "20835c505607a9ae0925dfa9e7f26b3194b3a6e49533579b5c4774ba427b4005"
+      "sha256": "fda4cfe1776900b2bfc5723d7bb8e49477cf5a959558d774607c86445b56746d"
     },
     {
       "path": "artifacts/exercise-animation-briefs/selected-first-five.json",

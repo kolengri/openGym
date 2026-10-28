@@ -6,7 +6,9 @@ The accepted Blender Studio CC0 continuous human has 51 bones, including 30 arti
 
 ## Open findings and generation input
 
-These are review prototypes. Exercise **0001 remains blocked on reported floor-contact readability and unnatural hand/head/arm placement**. The earlier global minimum-Z and bone-loop checks did not validate the pelvis support patch or natural arm pose. `situp-contact-investigation.json` records named surface proxies and elbow-angle measurements, without claiming anatomical approval. Do not lower the whole body to fix one proxy gap; solve pelvis/heel contacts together while checking back clearance and skin deformation.
+These are review prototypes. [Review batch 001](../exercise-batches/batch-001/README.md) contains a repaired **0001 candidate for user review**. The hip path, planted-foot IK, torso curl, head rest, wrist spacing and finger bend were solved together. The original floor/arm report is retained in `situp-contact-investigation.json` and the batch baseline. Known issues remain open until the corrected candidate is reviewed; a numerical pass is not production approval.
+
+`situp-repair/landmarks.json` freezes authored original-vertex pelvic, heel, sole, lumbar, hand, fingertip and head patches, phase samples and tolerances. These are illustrative skin landmarks rather than clinical ischial landmarks. `situp-repair/contact-report.json` measures native corrective/subdivided skin and the pure linear cage separately. `situp-repair/runtime-contact-report.json` checks the actual loaded GLB surface, exported head triangles and UV seam copies. The earlier global minimum-Z and bone-loop checks did not cover these contacts.
 
 Read `../exercise-animation-briefs/production-guide.md` and prepare the exercise's evidence/constraints packet before authoring:
 
@@ -14,7 +16,7 @@ Read `../exercise-animation-briefs/production-guide.md` and prepare the exercise
 python3 artifacts/exercise-animation-briefs/prepare_generation.py --exercise 0001
 ```
 
-`build_motion.py` now refuses to regenerate known blocking defects by default. An explicit remediation-only draft may append `-- --allow-known-issues`; the flag does not resolve or approve an issue. The existing videos/GLB are retained to make the reported defects reviewable. The review player now opens recommended views and supports linked one-finger orbit, two-finger pinch zoom and camera reset without pausing animation. `touch-verification.json` records Chromium mobile touch emulation; physical-device and actual app integration remain unverified.
+`build_motion.py` now refuses to regenerate known blocking defects by default. An explicit remediation-only draft may append `-- --allow-known-issues`; the flag does not resolve or approve an issue. The first review batch replaces only the 0001 video. The other four media files and sampled poses are unchanged from the recorded baseline; its immutable archive preserves the version under review. The review player now opens recommended views and supports linked one-finger orbit, two-finger pinch zoom and camera reset without pausing animation. `touch-verification.json` records Chromium mobile touch emulation; physical-device and actual app integration remain unverified.
 
 ## Deliverables
 
@@ -65,6 +67,15 @@ python3 artifacts/bodyweight-five/build_review_page.py
 node artifacts/bodyweight-five/check_review_page.mjs
 ```
 
-Encoding uses installed FFmpeg/libvpx. `pose-verification.json` checks sampled evaluated floor contacts, exact joint loop closure, chaturanga forearms and the hop's loaded knee/flight. `video-review.json` decodes every MP4 frame and checks metadata/loop continuity. `transparency-verification.json` decodes every WebM frame through libvpx and checks real transparent background/opaque body pixels. `runtime-verification.json` compares loaded Three.js bone poses to Blender, including actual transparent-canvas and shadow checks. These receipts do not certify biomechanics or exercise coaching.
+Encoding uses installed FFmpeg/libvpx. `pose-verification.json` checks sampled evaluated floor contacts, exact joint loop closure, chaturanga forearms and the hop's loaded knee/flight. `video-review.json` decodes every MP4 frame and checks metadata/loop continuity. `transparency-verification.json` decodes every WebM frame through libvpx and checks real transparent background/opaque body pixels. `runtime-verification.json` compares loaded Three.js bone poses to Blender, including actual transparent-canvas and shadow checks. `verify_situp_runtime.mjs` additionally compares original-index support patches to the linear-cage reference and checks signed hand/head clearance on the actual exported triangles. These receipts do not certify biomechanics or exercise coaching.
 
 The GLB uses the original cage/linear skinning; Blender renders additionally use corrective smoothing and one sculpt subdivision, so native renders have finer geometry. The self-contained viewer is locally ignored to avoid committing a duplicate of the assets. The application can load the GLB and companion resources directly instead of embedding base64 data.
+
+The repaired pose's native QA has 84,680 triangles, one connected skin and zero
+errors. Fourteen hidden back-to-back triangle pairs are accepted: seven source
+mouth pairs, two source toe-fold pairs and five right axillary/medial upper-arm
+fold pairs introduced by the raised-arm pose. They are folded skin, not duplicate
+clothing or overlapping hands; `situp-repair/warning-correspondence.json` records
+their source correspondence and locations. The checked linear cage has 21,160
+triangles and no such pairs. The raw Workbench material warning is resolved when
+the delivery stage assigns the neutral/activation atlas material.

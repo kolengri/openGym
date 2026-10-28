@@ -1,6 +1,9 @@
 {
   "ok": true,
-  "scope": "Actual libvpx-vp9 decoding of every WebM master and preview; empty corners have alpha0 and body has opaque pixels.",
+  "revalidated_ids": [
+    "0001"
+  ],
+  "scope": "Actual libvpx-vp9 decoding of every WebM master and preview; unchanged clips retain prior hash-bound receipts; empty corners have alpha0 and body has opaque pixels.",
   "clips": [
     {
       "file": "5965.webm",
@@ -195,70 +198,6 @@
       ]
     },
     {
-      "file": "0001.webm",
-      "sha256": "d242ff94aa7b7dee275087f6a4ba45e8b0ff806265a7d914b417a5872debae3c",
-      "width": 1536,
-      "height": 768,
-      "fps": 30,
-      "all_frames_decoded": 120,
-      "corner_alpha": 0,
-      "opaque_body": true,
-      "samples": [
-        {
-          "frame": 0,
-          "fully_transparent_fraction": 0.8989910549587674
-        },
-        {
-          "frame": 30,
-          "fully_transparent_fraction": 0.8903961181640625
-        },
-        {
-          "frame": 60,
-          "fully_transparent_fraction": 0.8882726033528646
-        },
-        {
-          "frame": 90,
-          "fully_transparent_fraction": 0.8907445271809896
-        },
-        {
-          "frame": 119,
-          "fully_transparent_fraction": 0.8983222113715278
-        }
-      ]
-    },
-    {
-      "file": "0001-preview.webm",
-      "sha256": "9254fd1656ddc259c39e3ce0afbdfc15d12d6b68d6e45a9274bb6c2e3b8d8142",
-      "width": 640,
-      "height": 320,
-      "fps": 15,
-      "all_frames_decoded": 60,
-      "corner_alpha": 0,
-      "opaque_body": true,
-      "samples": [
-        {
-          "frame": 0,
-          "fully_transparent_fraction": 0.8899853515625
-        },
-        {
-          "frame": 15,
-          "fully_transparent_fraction": 0.88029296875
-        },
-        {
-          "frame": 30,
-          "fully_transparent_fraction": 0.8782958984375
-        },
-        {
-          "frame": 45,
-          "fully_transparent_fraction": 0.879990234375
-        },
-        {
-          "frame": 59,
-          "fully_transparent_fraction": 0.88892578125
-        }
-      ]
-    },
-    {
       "file": "9066.webm",
       "sha256": "973e6e41b6cdd23497197ca5b3de843770281cb2f18fb68afd677382198f3b5a",
       "width": 1536,
@@ -319,6 +258,70 @@
         {
           "frame": 95,
           "fully_transparent_fraction": 0.8798388671875
+        }
+      ]
+    },
+    {
+      "file": "0001.webm",
+      "sha256": "6a68e28af16361d081f4f8a7be7e5931588ac8b97a695a42a96e42c98ea686d6",
+      "width": 1536,
+      "height": 768,
+      "fps": 30,
+      "all_frames_decoded": 120,
+      "corner_alpha": 0,
+      "opaque_body": true,
+      "samples": [
+        {
+          "frame": 0,
+          "fully_transparent_fraction": 0.8965208265516493
+        },
+        {
+          "frame": 30,
+          "fully_transparent_fraction": 0.8856294420030382
+        },
+        {
+          "frame": 60,
+          "fully_transparent_fraction": 0.8857371012369791
+        },
+        {
+          "frame": 90,
+          "fully_transparent_fraction": 0.8855294121636285
+        },
+        {
+          "frame": 119,
+          "fully_transparent_fraction": 0.8955807156032987
+        }
+      ]
+    },
+    {
+      "file": "0001-preview.webm",
+      "sha256": "577a009e719286208e968b562fc511a36c9432f65fdf8dbfc9a3f0c18e2b7ba6",
+      "width": 640,
+      "height": 320,
+      "fps": 15,
+      "all_frames_decoded": 60,
+      "corner_alpha": 0,
+      "opaque_body": true,
+      "samples": [
+        {
+          "frame": 0,
+          "fully_transparent_fraction": 0.8871826171875
+        },
+        {
+          "frame": 15,
+          "fully_transparent_fraction": 0.8729248046875
+        },
+        {
+          "frame": 30,
+          "fully_transparent_fraction": 0.8731982421875
+        },
+        {
+          "frame": 45,
+          "fully_transparent_fraction": 0.874970703125
+        },
+        {
+          "frame": 59,
+          "fully_transparent_fraction": 0.88669921875
         }
       ]
     }

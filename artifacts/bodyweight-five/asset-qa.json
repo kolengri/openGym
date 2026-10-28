@@ -4,16 +4,15 @@
   "errors": [],
   "warnings": [
     "SK_BlenderStudioHuman: missing/empty material slot",
-    "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
-    "asset lowest point z=0.0033 (not resting on ground plane z=0)"
+    "hidden back-to-back faces: SK_BlenderStudioHuman (14 pairs) - delete to save tris"
   ],
-  "ground_z": 0.0033,
+  "ground_z": 0.0008,
   "zfighting": [],
   "floating": [],
   "back_to_back": [
     {
       "where": "SK_BlenderStudioHuman",
-      "tri_pairs": 9
+      "tri_pairs": 14
     }
   ],
   "enclosed": [],
@@ -46,6 +45,50 @@
       "uv_zero_area_faces": 0,
       "uv_overlap_pct": 0.0,
       "uv_coverage_pct": 47.2
+    }
+  },
+  "linear_cage": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "SK_BlenderStudioHuman: missing/empty material slot"
+    ],
+    "ground_z": -0.0018,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "SK_BlenderStudioHuman": {
+        "verts": 10582,
+        "faces": 10590,
+        "tris": 21160,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 0,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0,
+        "uv_maps": 1,
+        "uv_oob_pct": 84.1,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.0,
+        "uv_coverage_pct": 47.2
+      }
     }
   }
 }

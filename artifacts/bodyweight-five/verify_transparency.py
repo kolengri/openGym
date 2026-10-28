@@ -1,13 +1,18 @@
 """Decode every delivered VP9-alpha frame and verify real transparent pixels."""
 from fractions import Fraction
+import argparse
 import hashlib
 import json
 from pathlib import Path
 import subprocess
 
 P=Path(__file__).resolve().parent
+parser=argparse.ArgumentParser();parser.add_argument('--exercise',nargs='+');args=parser.parse_args()
+items=json.loads((P/'clips.json').read_text());selected=set(args.exercise or [item['id'] for item in items])
+if selected-{item['id'] for item in items}:parser.error('Unknown clip selection')
 reports=[]
-for clip in json.loads((P/'clips.json').read_text()):
+for clip in items:
+    if clip['id'] not in selected:continue
     for preview in [False,True]:
         path=P/(clip['id']+('-preview' if preview else '')+'.webm')
         meta=json.loads(subprocess.check_output(['/opt/homebrew/bin/ffprobe','-v','error',
@@ -40,7 +45,10 @@ for clip in json.loads((P/'clips.json').read_text()):
         reports.append(dict(file=path.name,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                             width=width,height=height,fps=fps,all_frames_decoded=decoded,
                             corner_alpha=0,opaque_body=True,samples=samples))
-(P/'transparency-verification.json').write_text(json.dumps(dict(ok=True,
-    scope='Actual libvpx-vp9 decoding of every WebM master and preview; empty corners have alpha0 and body has opaque pixels.',
+if (P/'transparency-verification.json').exists():
+    prior=json.loads((P/'transparency-verification.json').read_text())
+    reports=[record for record in prior['clips'] if Path(record['file']).stem.split('-')[0] not in selected]+reports
+(P/'transparency-verification.json').write_text(json.dumps(dict(ok=True,revalidated_ids=sorted(selected),
+    scope='Actual libvpx-vp9 decoding of every WebM master and preview; unchanged clips retain prior hash-bound receipts; empty corners have alpha0 and body has opaque pixels.',
     clips=reports),indent=2)+'\n')
 print('Verified alpha and decoded',sum(r['all_frames_decoded'] for r in reports),'frames across',len(reports),'WebM files')

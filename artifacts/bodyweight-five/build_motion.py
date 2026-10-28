@@ -170,9 +170,12 @@ def make_pose(item,u):
             wrists[side]=V((sign*.205,-.35,palm_height(side,hq)));hands[side]=(hdir,hnormal)
             poles[side]=V((sign*.27,-.20,.20));leg_poles[side]=V((sign*.16,.05,.10))
     elif name=='0001':
-        curl=cycle(u);root=V((0,.05,.17));pelvis=-90+12*curl;spine=-90+35*curl;chest=-90+47*curl;neck=-88+47*curl
+        # A short top hold and a pelvic/upper-back support pose are authored
+        # together; heels remain independently planted while the knees solve.
+        curl=ease(u/.42) if u<.42 else 1.0 if u<.58 else ease((1-u)/.42)
+        root=V((0,.05,.108));pelvis=-90+10*curl;spine=-89+44*curl;chest=-89+59*curl;neck=-91+61*curl
         for side,sign in [('Left',1),('Right',-1)]:
-            q=foot_rotation(side);feet[side]=(V((sign*.16,-.53,sole_height(side,q))),q)
+            q=foot_rotation(side);feet[side]=(V((sign*.16,-.51,sole_height(side,q)-.0015)),q)
             leg_poles[side]=V((sign*.15,-.20,.70))
     else:
         path=[(0,0),(0,-.20),(0,0),(.20,0),(0,0),(0,.20),(0,0),(-.20,0),(0,0)]
@@ -209,9 +212,9 @@ def make_pose(item,u):
         if name=='0001':
             head_center=desired['Head']@rest['Head'].inverted()@V((0,.01,1.68))
             back=rx(neck)@V((0,1,0));up=rx(neck)@V((0,0,1))
-            wrists[side]=head_center+V((sign*.12,0,0))+back*.068-up*.025
-            hands[side]=(V((-sign,.05,0)), -back)
-            poles[side]=armhead+V((sign*.65,0,0))+back*.05+up*.1
+            wrists[side]=head_center+V((sign*.220,0,0))+back*.114+up*.025
+            hands[side]=(V((-sign,0,0))+up*.05, -back)
+            poles[side]=armhead+V((sign*.65,0,0))+back*.025+up*.025
         elbow,wrist=two_joint(armhead,wrists[side],length[side+'Arm'],length[side+'ForeArm'],poles.get(side,armhead+V((sign*.30,.15,-.2))))
         target_errors[name]['hands']=max(target_errors[name]['hands'],(wrist-wrists[side]).length)
         desired[side+'Arm']=Matrix.Translation(armhead)@orient(side+'Arm',elbow-armhead).to_matrix().to_4x4()
@@ -232,7 +235,7 @@ def make_pose(item,u):
         axis=rest[bone].to_3x3().inverted()@long.cross(normal).normalized()
         if name in ['5965','9066']:angle=([65,80,45] if digit=='Thumb' else [55,72,40])[index]
         elif name in ['5915','5887']:angle=0
-        else:angle=[10,12,5][index]
+        else:angle=[3,8,5][index]
         desired[bone]=parent_matrix@rest[bone]@Quaternion(axis,math.radians(angle)).to_matrix().to_4x4()
     for pb in rig.pose.bones:
         parent=pb.parent.name if pb.parent else None

@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { chromium } from '../first-exercise-3d/runtime/node_modules/playwright-core/index.mjs';
 
-const root = path.dirname(fileURLToPath(import.meta.url));
+const root = process.argv[2] ? path.resolve(process.argv[2]) : path.dirname(fileURLToPath(import.meta.url));
 const browser = await chromium.launch({
   executablePath: '/Users/kolengri/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell',
   args: ['--use-angle=metal'],

@@ -213,6 +213,29 @@ async function main() {
  });
  window.setRuntimeClip = id => {setPlaying(false); return select(id);};
  window.renderRuntimeFrame = value => {setPlaying(false); pose(value);};
+ window.runtimeSurfaceProbe = (indices, triangleIndices = []) => {
+  const requested = new Set(indices), triangleVertices = new Set(triangleIndices), vertices = {}, triangles = [], point = new THREE.Vector3();
+  let minimumFloorHeight = Infinity, maximumSeamSpread = 0;
+  gltf.scene.updateMatrixWorld(true);
+  for (const mesh of meshes) {
+   const source = mesh.geometry.getAttribute('_source_index');
+   for (let index = 0; index < source.count; index++) {
+    mesh.getVertexPosition(index, point).applyMatrix4(mesh.matrixWorld);
+    minimumFloorHeight = Math.min(minimumFloorHeight, point.y);
+    const original = Math.round(source.getX(index));
+    if (!requested.has(original)) continue;
+    if (vertices[original]) maximumSeamSpread = Math.max(maximumSeamSpread, point.distanceTo(new THREE.Vector3().fromArray(vertices[original])));
+    else vertices[original] = point.toArray();
+   }
+   const indexBuffer = mesh.geometry.index;
+   for (let index = 0; index < (indexBuffer?.count ?? source.count); index += 3) {
+    const face = [0, 1, 2].map(offset => Math.round(source.getX(indexBuffer ? indexBuffer.getX(index + offset) : index + offset)));
+    if (face.every(original => triangleVertices.has(original))) triangles.push(face);
+   }
+  }
+  if (Object.keys(vertices).length !== requested.size) throw Error('Missing source vertices in exported skin');
+  return {vertices, triangles, minimumFloorHeight, maximumSeamSpread};
+ };
  window.runtimeProbe = () => {
   const gl = renderer.getContext(), pixel = new Uint8Array(4);
   const corners = [[0, 0], [canvas.width - 1, 0], [0, canvas.height - 1], [canvas.width - 1, canvas.height - 1]];

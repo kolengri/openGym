@@ -1,0 +1,496 @@
+{
+  "ok": true,
+  "exercise_id": "0001",
+  "model_sha256": "57c22f5285db503cf2e7a7d561fa6fb62bda40cd6e7e7e7ab930decfecd7fd45",
+  "landmarks_sha256": "eabc61325f8f48ae46aa1315bf4bae18b7b907470dc2c6f5e52d15059198539d",
+  "scope": "Actual loaded GLB, Three.js CPU skinning with exported four-bone weights and _SOURCE_INDEX. Native linear-cage contact comparison; nearest signed distances to actual exported head triangles. Nine authored phase samples, not continuous collision or biomechanics certification.",
+  "samples": [
+    {
+      "frame": 0,
+      "minimum_floor_height_m": -0.0017571380855156138,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0018890443253185688,
+          "fraction_within_contact_band": 0.5
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.0016991939106660633,
+          "fraction_within_contact_band": 0.5
+        },
+        "heel_L": {
+          "minimum_m": 0.0010134168774341386,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.0017420169131058662,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.0010321798863494654,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.0017411622416993154,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.026245859703574244,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.0072448855016630275,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.007124100193688556,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.0072448855016630275,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.007124100193688556,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "minimum_floor_height_m": 0.000992343918036358,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0011803039823316606,
+          "fraction_within_contact_band": 0.5
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.000992343918036358,
+          "fraction_within_contact_band": 0.5
+        },
+        "heel_L": {
+          "minimum_m": 0.001043175347623256,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.0017414695020929757,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.0010616942452026821,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.0017405930983076419,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.028318958727174263,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.007244847721491815,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.00712406263658836,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.007244847721491815,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.00712406263658836,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "minimum_floor_height_m": -0.0002714482733892406,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.00008791489432725605,
+          "fraction_within_contact_band": 0.5
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0002714482733892406,
+          "fraction_within_contact_band": 0.5
+        },
+        "heel_L": {
+          "minimum_m": 0.0011081174151689637,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.001741925678147686,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.00112623130544419,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.0017410372023215794,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03249776343950304,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.007244790601062816,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.007124005688209425,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.007244790601062816,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.007124005688209425,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 50,
+      "minimum_floor_height_m": -0.00116517776304192,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.0009859868441291085,
+          "fraction_within_contact_band": 0.75
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.00116517776304192,
+          "fraction_within_contact_band": 0.75
+        },
+        "heel_L": {
+          "minimum_m": 0.0011659236538715625,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.001741781141580358,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.0011837048742935558,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.001740963277955432,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.037348380648351484,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.007244970125310583,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.007124185106782887,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.007244970125310583,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.007124185106782887,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "minimum_floor_height_m": -0.0011655781545077627,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.0009863995045492056,
+          "fraction_within_contact_band": 0.75
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0011655781545077627,
+          "fraction_within_contact_band": 0.75
+        },
+        "heel_L": {
+          "minimum_m": 0.001166071102014458,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.00174197401332291,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.0011839915246100972,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.0017413425419957093,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03735122169211845,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.007244809174100745,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.007124024326694417,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.007244809174100745,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.007124024326694417,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 70,
+      "minimum_floor_height_m": -0.0011651777511898812,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.0009859868322472612,
+          "fraction_within_contact_band": 0.75
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0011651777511898812,
+          "fraction_within_contact_band": 0.75
+        },
+        "heel_L": {
+          "minimum_m": 0.0011659236528746854,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.0017417811413870693,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.0011837048733757583,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.001740963277767496,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03734838056947933,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.0072449701244954295,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.007124185105971432,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.0072449701244954295,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.007124185105971432,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "minimum_floor_height_m": -0.0002714482733892406,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.00008791489432725605,
+          "fraction_within_contact_band": 0.5
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0002714482733892406,
+          "fraction_within_contact_band": 0.5
+        },
+        "heel_L": {
+          "minimum_m": 0.0011081174151689637,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.001741925678147686,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.00112623130544419,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.0017410372023215794,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03249776343950304,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.007244790601062816,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.007124005688209425,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.007244790601062816,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.007124005688209425,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "minimum_floor_height_m": 0.000992343918036358,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0011803039823316606,
+          "fraction_within_contact_band": 0.5
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.000992343918036358,
+          "fraction_within_contact_band": 0.5
+        },
+        "heel_L": {
+          "minimum_m": 0.001043175347623256,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.0017414695020929757,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.0010616942452026821,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.0017405930983076419,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.028318958727174263,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.007244847721491815,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.00712406263658836,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.007244847721491815,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.00712406263658836,
+          "deepest_penetration_m": 0
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "minimum_floor_height_m": -0.0017571691753535401,
+      "maximum_uv_seam_spread_m": 0,
+      "head_triangles": 6123,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0018890603967581681,
+          "fraction_within_contact_band": 0.5
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.0016992117027494107,
+          "fraction_within_contact_band": 0.5
+        },
+        "heel_L": {
+          "minimum_m": 0.0010134555501793946,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_L": {
+          "minimum_m": 0.0017420639367189074,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "heel_R": {
+          "minimum_m": 0.0010322854111869313,
+          "fraction_within_contact_band": 0.8333333333333334
+        },
+        "sole_R": {
+          "minimum_m": 0.0017412874041717297,
+          "fraction_within_contact_band": 0.8085106382978723
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.026245840300229233,
+          "fraction_within_contact_band": 0
+        }
+      },
+      "head_clearances": {
+        "hand_L": {
+          "minimum_signed_distance_m": 0.007244878906377777,
+          "deepest_penetration_m": 0
+        },
+        "hand_R": {
+          "minimum_signed_distance_m": 0.007124093605970169,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_L": {
+          "minimum_signed_distance_m": 0.007244878906377777,
+          "deepest_penetration_m": 0
+        },
+        "fingertips_R": {
+          "minimum_signed_distance_m": 0.007124093605970169,
+          "deepest_penetration_m": 0
+        }
+      }
+    }
+  ],
+  "contract_issues_closed": false
+}

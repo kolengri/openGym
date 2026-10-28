@@ -1370,6 +1370,30 @@
     "atlas_asset_qa": {
       "path": "../mannequin-muscle-atlas/asset-qa.json",
       "path_base": "generation-contract.json directory"
+    },
+    "situp_landmarks": {
+      "path": "../bodyweight-five/situp-repair/landmarks.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_candidate_checks": {
+      "path": "../bodyweight-five/situp-repair/contact-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_runtime_surface_checks": {
+      "path": "../bodyweight-five/situp-repair/runtime-contact-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_candidate_proof": {
+      "path": "../bodyweight-five/situp-repair/proof-manifest.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "review_batch_001": {
+      "path": "../exercise-batches/batch-001/manifest.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "original_situp_investigation": {
+      "path": "../exercise-batches/batch-001/previous-situp-contact-investigation.json",
+      "path_base": "generation-contract.json directory"
     }
   },
   "input_files": [
@@ -1379,7 +1403,7 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generation-contract.json",
-      "sha256": "20835c505607a9ae0925dfa9e7f26b3194b3a6e49533579b5c4774ba427b4005"
+      "sha256": "fda4cfe1776900b2bfc5723d7bb8e49477cf5a959558d774607c86445b56746d"
     },
     {
       "path": "artifacts/exercise-animation-briefs/selected-first-five.json",

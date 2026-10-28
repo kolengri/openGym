@@ -1,0 +1,2812 @@
+{
+  "exercise_id": "0001",
+  "status": "measured_candidate_requires_primary_review",
+  "checks_pass": true,
+  "failures": [],
+  "native_modifiers": [
+    {
+      "name": "Armature",
+      "type": "ARMATURE",
+      "viewport": true,
+      "render": true,
+      "levels": null,
+      "render_levels": null
+    },
+    {
+      "name": "JointSurfaceCorrective",
+      "type": "CORRECTIVE_SMOOTH",
+      "viewport": true,
+      "render": true,
+      "levels": null,
+      "render_levels": null
+    },
+    {
+      "name": "Multires",
+      "type": "MULTIRES",
+      "viewport": true,
+      "render": true,
+      "levels": 1,
+      "render_levels": 1
+    }
+  ],
+  "landmarks_path": "situp-repair/landmarks.json",
+  "source_blend_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "authoring_script_sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c",
+  "scope": "Authored original-index surface patches at start/raising/top-hold/lowering/end; native skin and pure linear Armature cage separately. Closest-surface signed palm/fingertip/head distances, not bone-distance substitutes. Sampled paths, not continuous collision certification.",
+  "samples": [
+    {
+      "path": "native",
+      "frame": 0,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.0007910357089713216,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.008345224894583225,
+          "p10_m": 0.009490057826042175,
+          "median_m": 0.01929391175508499,
+          "p90_m": 0.03465121611952782,
+          "maximum_m": 0.039970897138118744,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.2857142857142857,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.008160040713846684,
+          "p10_m": 0.009178364649415016,
+          "median_m": 0.019207967445254326,
+          "p90_m": 0.03463741019368172,
+          "maximum_m": 0.03992395102977753,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.2857142857142857,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_L": {
+          "minimum_m": 0.0007910357089713216,
+          "p10_m": 0.0017951607005670667,
+          "median_m": 0.006050573196262121,
+          "p90_m": 0.016113530844449997,
+          "maximum_m": 0.027198893949389458,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_L": {
+          "minimum_m": 0.0017773937433958054,
+          "p10_m": 0.0036967871710658073,
+          "median_m": 0.00939222052693367,
+          "p90_m": 0.013718261383473873,
+          "maximum_m": 0.016480401158332825,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_R": {
+          "minimum_m": 0.0008502140990458429,
+          "p10_m": 0.0018273454625159502,
+          "median_m": 0.006057315971702337,
+          "p90_m": 0.016309913247823715,
+          "maximum_m": 0.027253154665231705,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_R": {
+          "minimum_m": 0.0017762989737093449,
+          "p10_m": 0.003695491701364517,
+          "median_m": 0.009390383958816528,
+          "p90_m": 0.013716711662709713,
+          "maximum_m": 0.01648174226284027,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.02322438172996044,
+          "p10_m": 0.029062367975711823,
+          "median_m": 0.037546370178461075,
+          "p90_m": 0.04503466561436653,
+          "maximum_m": 0.05000390112400055,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861882492899895,
+          "p10_m": 0.07073938623070716,
+          "median_m": 0.10090912505984306,
+          "p90_m": 0.14945518076419828,
+          "maximum_m": 0.17973406612873077,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0025761378929018974
+        },
+        "palm_R": {
+          "minimum_m": 0.05866246297955513,
+          "p10_m": 0.07069998979568481,
+          "median_m": 0.10101237520575523,
+          "p90_m": 0.14950631409883497,
+          "maximum_m": 0.17968785762786865,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0028763925656676292
+        },
+        "hand_L": {
+          "minimum_m": 0.006398776546120644,
+          "p10_m": 0.019158126041293144,
+          "median_m": 0.06985407695174217,
+          "p90_m": 0.1348026677966118,
+          "maximum_m": 0.17973406612873077,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0025761378929018974
+        },
+        "hand_R": {
+          "minimum_m": 0.006283019669353962,
+          "p10_m": 0.019084223732352256,
+          "median_m": 0.06991580501198769,
+          "p90_m": 0.13474758714437488,
+          "maximum_m": 0.17968785762786865,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0028763925656676292
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398776546120644,
+          "p10_m": 0.01065551619976759,
+          "median_m": 0.01668329071253538,
+          "p90_m": 0.0522274985909462,
+          "maximum_m": 0.056234210729599,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.027367575094103813
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006283019669353962,
+          "p10_m": 0.010456593707203865,
+          "median_m": 0.016431044787168503,
+          "p90_m": 0.05216146744787693,
+          "maximum_m": 0.05627080798149109,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.02750672586262226
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.019355736672878265,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.71857638605289,
+        "Right_elbow_internal_degrees": 64.71857638605289,
+        "torso_hip_to_neck_inclination_degrees": 0.7499650148032955
+      },
+      "largest_limb_sample_step_m": 0.0
+    },
+    {
+      "path": "native",
+      "frame": 15,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.0008169242064468563,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.007665336597710848,
+          "p10_m": 0.008848600089550018,
+          "median_m": 0.018371064215898514,
+          "p90_m": 0.03355376794934273,
+          "maximum_m": 0.03890256583690643,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.3333333333333333,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0012312765466049314
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.007485250011086464,
+          "p10_m": 0.008540692739188671,
+          "median_m": 0.01829155907034874,
+          "p90_m": 0.03354204446077347,
+          "maximum_m": 0.038858361542224884,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.38095238095238093,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0012281016679480672
+        },
+        "heel_L": {
+          "minimum_m": 0.0008169242064468563,
+          "p10_m": 0.0018204697407782078,
+          "median_m": 0.006080953404307365,
+          "p90_m": 0.016126085072755814,
+          "maximum_m": 0.027216628193855286,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.30553108244203e-05
+        },
+        "sole_L": {
+          "minimum_m": 0.0017774237785488367,
+          "p10_m": 0.0036968134809285402,
+          "median_m": 0.009392239153385162,
+          "p90_m": 0.013718289323151112,
+          "maximum_m": 0.01648043282330036,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.8128045553567063e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0008780710631981492,
+          "p10_m": 0.001852158224210143,
+          "median_m": 0.006077106576412916,
+          "p90_m": 0.016323428601026535,
+          "maximum_m": 0.027270490303635597,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.22439105832018e-05
+        },
+        "sole_R": {
+          "minimum_m": 0.0017759125912562013,
+          "p10_m": 0.0036950937937945127,
+          "median_m": 0.009389964863657951,
+          "p90_m": 0.013716306537389755,
+          "maximum_m": 0.016481339931488037,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.884864389012364e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.0243400689214468,
+          "p10_m": 0.03630436956882477,
+          "median_m": 0.05169538035988808,
+          "p90_m": 0.06357339024543762,
+          "maximum_m": 0.07109247148036957,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.008696958422660828
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861860141158104,
+          "p10_m": 0.07073914483189583,
+          "median_m": 0.10090895369648933,
+          "p90_m": 0.14928110539913178,
+          "maximum_m": 0.18028795719146729,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14015181362628937
+        },
+        "palm_R": {
+          "minimum_m": 0.058662209659814835,
+          "p10_m": 0.07069978192448616,
+          "median_m": 0.10101214051246643,
+          "p90_m": 0.1492963030934334,
+          "maximum_m": 0.1803305298089981,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.1403023898601532
+        },
+        "hand_L": {
+          "minimum_m": 0.006398537661880255,
+          "p10_m": 0.01915784887969494,
+          "median_m": 0.06985389068722725,
+          "p90_m": 0.13443971276283267,
+          "maximum_m": 0.18028795719146729,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14015181362628937
+        },
+        "hand_R": {
+          "minimum_m": 0.006283033173531294,
+          "p10_m": 0.019084027409553526,
+          "median_m": 0.06991557031869888,
+          "p90_m": 0.13449910879135135,
+          "maximum_m": 0.1803305298089981,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.1403023898601532
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398537661880255,
+          "p10_m": 0.0106552978977561,
+          "median_m": 0.01668297965079546,
+          "p90_m": 0.05222717560827732,
+          "maximum_m": 0.056233908981084824,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.17292916774749756
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006283033173531294,
+          "p10_m": 0.010456604789942503,
+          "median_m": 0.016430899500846863,
+          "p90_m": 0.0521607905626297,
+          "maximum_m": 0.05627016723155975,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.17373165488243103
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.019355179741978645,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.70234785658494,
+        "Right_elbow_internal_degrees": 64.70234785658494,
+        "torso_hip_to_neck_inclination_degrees": 9.837510895508329
+      },
+      "largest_limb_sample_step_m": 0.1384921371936798
+    },
+    {
+      "path": "native",
+      "frame": 30,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.0008723149076104164,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.006638591177761555,
+          "p10_m": 0.007902171462774277,
+          "median_m": 0.01672600395977497,
+          "p90_m": 0.0314372219145298,
+          "maximum_m": 0.03683307021856308,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.42857142857142855,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.003911976236850023
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.006465984042733908,
+          "p10_m": 0.007600142154842615,
+          "median_m": 0.01665564998984337,
+          "p90_m": 0.03142903745174408,
+          "maximum_m": 0.036793302744627,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.42857142857142855,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.003899299306795001
+        },
+        "heel_L": {
+          "minimum_m": 0.0008723149076104164,
+          "p10_m": 0.0018707604613155127,
+          "median_m": 0.006145707797259092,
+          "p90_m": 0.016153158619999886,
+          "maximum_m": 0.02725447155535221,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00025850298698060215
+        },
+        "sole_L": {
+          "minimum_m": 0.0017775370506569743,
+          "p10_m": 0.0036969268694519997,
+          "median_m": 0.009392770007252693,
+          "p90_m": 0.013718408532440662,
+          "maximum_m": 0.016480544582009315,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 4.76837158203125e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0009386613382957876,
+          "p10_m": 0.001906301244162023,
+          "median_m": 0.006141609977930784,
+          "p90_m": 0.016353555023670197,
+          "maximum_m": 0.027308549731969833,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0002566772454883903
+        },
+        "sole_R": {
+          "minimum_m": 0.0017763216746971011,
+          "p10_m": 0.0036955121904611588,
+          "median_m": 0.009390406310558319,
+          "p90_m": 0.013716738671064377,
+          "maximum_m": 0.01648176833987236,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 6.583547929039923e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.02786681242287159,
+          "p10_m": 0.04409857094287872,
+          "median_m": 0.07938861101865768,
+          "p90_m": 0.11553086340427399,
+          "maximum_m": 0.13402041792869568,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.020714282989501953
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861852318048477,
+          "p10_m": 0.07073909044265747,
+          "median_m": 0.10090894252061844,
+          "p90_m": 0.14860004037618635,
+          "maximum_m": 0.18065354228019714,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3980388343334198
+        },
+        "palm_R": {
+          "minimum_m": 0.05866200849413872,
+          "p10_m": 0.07069977596402169,
+          "median_m": 0.1010122038424015,
+          "p90_m": 0.14850377291440964,
+          "maximum_m": 0.1809190958738327,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3981275260448456
+        },
+        "hand_L": {
+          "minimum_m": 0.006398291327059269,
+          "p10_m": 0.01915775388479233,
+          "median_m": 0.06985383108258247,
+          "p90_m": 0.13422482907772065,
+          "maximum_m": 0.18065354228019714,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.39782264828681946
+        },
+        "hand_R": {
+          "minimum_m": 0.006282934453338385,
+          "p10_m": 0.01908383406698704,
+          "median_m": 0.06991544365882874,
+          "p90_m": 0.13429444879293445,
+          "maximum_m": 0.1809190958738327,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3980683386325836
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398291327059269,
+          "p10_m": 0.010655115824192762,
+          "median_m": 0.016683044843375683,
+          "p90_m": 0.05222720392048359,
+          "maximum_m": 0.05623402073979378,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42018216848373413
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006282934453338385,
+          "p10_m": 0.010456460714340211,
+          "median_m": 0.016430635005235672,
+          "p90_m": 0.05216104574501514,
+          "maximum_m": 0.056270286440849304,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42169490456581116
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.019355278462171555,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.67025962786423,
+        "Right_elbow_internal_degrees": 64.67025962786423,
+        "torso_hip_to_neck_inclination_degrees": 28.15466765740342
+      },
+      "largest_limb_sample_step_m": 0.2769736349582672
+    },
+    {
+      "path": "native",
+      "frame": 50,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.000921836995985359,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.006152186542749405,
+          "p10_m": 0.007508990820497274,
+          "median_m": 0.015365831553936005,
+          "p90_m": 0.02976749651134014,
+          "maximum_m": 0.03519119694828987,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.47619047619047616,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.006321590859442949
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.005982626229524612,
+          "p10_m": 0.00735982321202755,
+          "median_m": 0.015244657173752785,
+          "p90_m": 0.029761435464024544,
+          "maximum_m": 0.03515376150608063,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.47619047619047616,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00629893783479929
+        },
+        "heel_L": {
+          "minimum_m": 0.000921836995985359,
+          "p10_m": 0.0019092283910140395,
+          "median_m": 0.006203348748385906,
+          "p90_m": 0.016178587451577187,
+          "maximum_m": 0.02728808857500553,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0004133257898502052
+        },
+        "sole_L": {
+          "minimum_m": 0.0017773094587028027,
+          "p10_m": 0.003696693340316415,
+          "median_m": 0.009395998902618885,
+          "p90_m": 0.013718169182538986,
+          "maximum_m": 0.016480308026075363,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.344650268554688e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0009923845063894987,
+          "p10_m": 0.0019543131347745657,
+          "median_m": 0.006198635324835777,
+          "p90_m": 0.016380203887820244,
+          "maximum_m": 0.02734196186065674,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0004108184075448662
+        },
+        "sole_R": {
+          "minimum_m": 0.0017759292386472225,
+          "p10_m": 0.0036951086949557066,
+          "median_m": 0.009390142746269703,
+          "p90_m": 0.013716327026486397,
+          "maximum_m": 0.016481366008520126,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 5.415910777628596e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03214132785797119,
+          "p10_m": 0.05269685760140419,
+          "median_m": 0.1050727516412735,
+          "p90_m": 0.16384398937225342,
+          "maximum_m": 0.18756480515003204,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.024150073528289795
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861866846680641,
+          "p10_m": 0.07073929458856583,
+          "median_m": 0.10090907290577888,
+          "p90_m": 0.14902513921260835,
+          "maximum_m": 0.17900657653808594,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.575259804725647
+        },
+        "palm_R": {
+          "minimum_m": 0.05866231396794319,
+          "p10_m": 0.07069994881749153,
+          "median_m": 0.10101235657930374,
+          "p90_m": 0.14869223833084105,
+          "maximum_m": 0.17943279445171356,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.575291097164154
+        },
+        "hand_L": {
+          "minimum_m": 0.006398715078830719,
+          "p10_m": 0.019158149510622023,
+          "median_m": 0.06985399127006531,
+          "p90_m": 0.13451077789068225,
+          "maximum_m": 0.17900657653808594,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5709848999977112
+        },
+        "hand_R": {
+          "minimum_m": 0.006283220835030079,
+          "p10_m": 0.019084158726036547,
+          "median_m": 0.06991572678089142,
+          "p90_m": 0.1345405399799347,
+          "maximum_m": 0.17943279445171356,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5709745287895203
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398715078830719,
+          "p10_m": 0.010655492451041937,
+          "median_m": 0.016683186404407024,
+          "p90_m": 0.052227511256933215,
+          "maximum_m": 0.05623442307114601,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5870463252067566
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006283220835030079,
+          "p10_m": 0.010456792172044517,
+          "median_m": 0.016431019641458988,
+          "p90_m": 0.05216133967041969,
+          "maximum_m": 0.056270625442266464,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5873610973358154
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.01935560442507267,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.6437516636954,
+        "Right_elbow_internal_degrees": 64.6437516636954,
+        "torso_hip_to_neck_inclination_degrees": 43.65703320930444
+      },
+      "largest_limb_sample_step_m": 0.23179298639297485
+    },
+    {
+      "path": "native",
+      "frame": 60,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.0009220799547620118,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.006151995155960321,
+          "p10_m": 0.0075087458826601505,
+          "median_m": 0.01536511443555355,
+          "p90_m": 0.0297666285187006,
+          "maximum_m": 0.035190336406230927,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.47619047619047616,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.006322900298982859
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.005982438568025827,
+          "p10_m": 0.007359582930803299,
+          "median_m": 0.01524392794817686,
+          "p90_m": 0.029760556295514107,
+          "maximum_m": 0.035152893513441086,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.47619047619047616,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.006300232373178005
+        },
+        "heel_L": {
+          "minimum_m": 0.0009220799547620118,
+          "p10_m": 0.001909460755996406,
+          "median_m": 0.006203601136803627,
+          "p90_m": 0.016178810968995094,
+          "maximum_m": 0.027288323268294334,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00041357765439897776
+        },
+        "sole_L": {
+          "minimum_m": 0.0017775704618543386,
+          "p10_m": 0.0036969613283872604,
+          "median_m": 0.009396277368068695,
+          "p90_m": 0.013718435540795326,
+          "maximum_m": 0.01648056134581566,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.0812329946929822e-06
+        },
+        "heel_R": {
+          "minimum_m": 0.000992614426650107,
+          "p10_m": 0.0019545399118214846,
+          "median_m": 0.006198869552463293,
+          "p90_m": 0.01638040877878666,
+          "maximum_m": 0.02734217420220375,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00041120254900306463
+        },
+        "sole_R": {
+          "minimum_m": 0.0017761560156941414,
+          "p10_m": 0.0036953468807041645,
+          "median_m": 0.009390382096171379,
+          "p90_m": 0.013716571033000946,
+          "maximum_m": 0.016481593251228333,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 9.578560593581642e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03214384242892265,
+          "p10_m": 0.05270181968808174,
+          "median_m": 0.10508707165718079,
+          "p90_m": 0.16386917233467102,
+          "maximum_m": 0.18759219348430634,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.024150118231773376
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861874669790268,
+          "p10_m": 0.07073932960629463,
+          "median_m": 0.10090891644358635,
+          "p90_m": 0.14902665168046952,
+          "maximum_m": 0.17900484800338745,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5753378868103027
+        },
+        "palm_R": {
+          "minimum_m": 0.058662302792072296,
+          "p10_m": 0.07069981768727303,
+          "median_m": 0.1010122150182724,
+          "p90_m": 0.14869282990694047,
+          "maximum_m": 0.17943133413791656,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5753693580627441
+        },
+        "hand_L": {
+          "minimum_m": 0.006398599129170179,
+          "p10_m": 0.019157837703824045,
+          "median_m": 0.06985395774245262,
+          "p90_m": 0.1345113962888718,
+          "maximum_m": 0.17900484800338745,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5710487365722656
+        },
+        "hand_R": {
+          "minimum_m": 0.006283074617385864,
+          "p10_m": 0.01908401194959879,
+          "median_m": 0.06991566345095634,
+          "p90_m": 0.1345412850379944,
+          "maximum_m": 0.17943133413791656,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5710386037826538
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398599129170179,
+          "p10_m": 0.010655307676643133,
+          "median_m": 0.01668301597237587,
+          "p90_m": 0.05222699381411076,
+          "maximum_m": 0.056233759969472885,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5871192812919617
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006283074617385864,
+          "p10_m": 0.010456595476716757,
+          "median_m": 0.016430986113846302,
+          "p90_m": 0.05216112062335014,
+          "maximum_m": 0.05627044662833214,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5874334573745728
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.019355757161974907,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.64371751274955,
+        "Right_elbow_internal_degrees": 64.64371751274955,
+        "torso_hip_to_neck_inclination_degrees": 43.66518720506931
+      },
+      "largest_limb_sample_step_m": 0.00012167835666332394
+    },
+    {
+      "path": "native",
+      "frame": 70,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.000921836995985359,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.006152186542749405,
+          "p10_m": 0.007508990820497274,
+          "median_m": 0.015365831553936005,
+          "p90_m": 0.02976749651134014,
+          "maximum_m": 0.03519119694828987,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.47619047619047616,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.006321590859442949
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.005982626229524612,
+          "p10_m": 0.00735982321202755,
+          "median_m": 0.015244657173752785,
+          "p90_m": 0.029761435464024544,
+          "maximum_m": 0.03515376150608063,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.47619047619047616,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00629893783479929
+        },
+        "heel_L": {
+          "minimum_m": 0.000921836995985359,
+          "p10_m": 0.0019092283910140395,
+          "median_m": 0.006203348748385906,
+          "p90_m": 0.016178587451577187,
+          "maximum_m": 0.02728808857500553,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0004133257898502052
+        },
+        "sole_L": {
+          "minimum_m": 0.0017773094587028027,
+          "p10_m": 0.003696693340316415,
+          "median_m": 0.009395998902618885,
+          "p90_m": 0.013718169182538986,
+          "maximum_m": 0.016480308026075363,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.344650268554688e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0009923845063894987,
+          "p10_m": 0.0019543131347745657,
+          "median_m": 0.006198635324835777,
+          "p90_m": 0.016380203887820244,
+          "maximum_m": 0.02734196186065674,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0004108184075448662
+        },
+        "sole_R": {
+          "minimum_m": 0.0017759292386472225,
+          "p10_m": 0.0036951086949557066,
+          "median_m": 0.009390142746269703,
+          "p90_m": 0.013716327026486397,
+          "maximum_m": 0.016481366008520126,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 5.415910777628596e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03214132785797119,
+          "p10_m": 0.05269685760140419,
+          "median_m": 0.1050727516412735,
+          "p90_m": 0.16384398937225342,
+          "maximum_m": 0.18756480515003204,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.024150073528289795
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861866846680641,
+          "p10_m": 0.07073929458856583,
+          "median_m": 0.10090907290577888,
+          "p90_m": 0.14902513921260835,
+          "maximum_m": 0.17900657653808594,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.575259804725647
+        },
+        "palm_R": {
+          "minimum_m": 0.05866231396794319,
+          "p10_m": 0.07069994881749153,
+          "median_m": 0.10101235657930374,
+          "p90_m": 0.14869223833084105,
+          "maximum_m": 0.17943279445171356,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.575291097164154
+        },
+        "hand_L": {
+          "minimum_m": 0.006398715078830719,
+          "p10_m": 0.019158149510622023,
+          "median_m": 0.06985399127006531,
+          "p90_m": 0.13451077789068225,
+          "maximum_m": 0.17900657653808594,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5709848999977112
+        },
+        "hand_R": {
+          "minimum_m": 0.006283220835030079,
+          "p10_m": 0.019084158726036547,
+          "median_m": 0.06991572678089142,
+          "p90_m": 0.1345405399799347,
+          "maximum_m": 0.17943279445171356,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5709745287895203
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398715078830719,
+          "p10_m": 0.010655492451041937,
+          "median_m": 0.016683186404407024,
+          "p90_m": 0.052227511256933215,
+          "maximum_m": 0.05623442307114601,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5870463252067566
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006283220835030079,
+          "p10_m": 0.010456792172044517,
+          "median_m": 0.016431019641458988,
+          "p90_m": 0.05216133967041969,
+          "maximum_m": 0.056270625442266464,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5873610973358154
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.01935560442507267,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.6437516636954,
+        "Right_elbow_internal_degrees": 64.6437516636954,
+        "torso_hip_to_neck_inclination_degrees": 43.65703320930444
+      },
+      "largest_limb_sample_step_m": 0.00012167835666332394
+    },
+    {
+      "path": "native",
+      "frame": 90,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.0008723149076104164,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.006638591177761555,
+          "p10_m": 0.007902171462774277,
+          "median_m": 0.01672600395977497,
+          "p90_m": 0.0314372219145298,
+          "maximum_m": 0.03683307021856308,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.42857142857142855,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.003911976236850023
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.006465984042733908,
+          "p10_m": 0.007600142154842615,
+          "median_m": 0.01665564998984337,
+          "p90_m": 0.03142903745174408,
+          "maximum_m": 0.036793302744627,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.42857142857142855,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.003899299306795001
+        },
+        "heel_L": {
+          "minimum_m": 0.0008723149076104164,
+          "p10_m": 0.0018707604613155127,
+          "median_m": 0.006145707797259092,
+          "p90_m": 0.016153158619999886,
+          "maximum_m": 0.02725447155535221,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00025850298698060215
+        },
+        "sole_L": {
+          "minimum_m": 0.0017775370506569743,
+          "p10_m": 0.0036969268694519997,
+          "median_m": 0.009392770007252693,
+          "p90_m": 0.013718408532440662,
+          "maximum_m": 0.016480544582009315,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 4.76837158203125e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0009386613382957876,
+          "p10_m": 0.001906301244162023,
+          "median_m": 0.006141609977930784,
+          "p90_m": 0.016353555023670197,
+          "maximum_m": 0.027308549731969833,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.780952380952381,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0002566772454883903
+        },
+        "sole_R": {
+          "minimum_m": 0.0017763216746971011,
+          "p10_m": 0.0036955121904611588,
+          "median_m": 0.009390406310558319,
+          "p90_m": 0.013716738671064377,
+          "maximum_m": 0.01648176833987236,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 6.583547929039923e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.02786681242287159,
+          "p10_m": 0.04409857094287872,
+          "median_m": 0.07938861101865768,
+          "p90_m": 0.11553086340427399,
+          "maximum_m": 0.13402041792869568,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.020714282989501953
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861852318048477,
+          "p10_m": 0.07073909044265747,
+          "median_m": 0.10090894252061844,
+          "p90_m": 0.14860004037618635,
+          "maximum_m": 0.18065354228019714,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3980388343334198
+        },
+        "palm_R": {
+          "minimum_m": 0.05866200849413872,
+          "p10_m": 0.07069977596402169,
+          "median_m": 0.1010122038424015,
+          "p90_m": 0.14850377291440964,
+          "maximum_m": 0.1809190958738327,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3981275260448456
+        },
+        "hand_L": {
+          "minimum_m": 0.006398291327059269,
+          "p10_m": 0.01915775388479233,
+          "median_m": 0.06985383108258247,
+          "p90_m": 0.13422482907772065,
+          "maximum_m": 0.18065354228019714,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.39782264828681946
+        },
+        "hand_R": {
+          "minimum_m": 0.006282934453338385,
+          "p10_m": 0.01908383406698704,
+          "median_m": 0.06991544365882874,
+          "p90_m": 0.13429444879293445,
+          "maximum_m": 0.1809190958738327,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3980683386325836
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398291327059269,
+          "p10_m": 0.010655115824192762,
+          "median_m": 0.016683044843375683,
+          "p90_m": 0.05222720392048359,
+          "maximum_m": 0.05623402073979378,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42018216848373413
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006282934453338385,
+          "p10_m": 0.010456460714340211,
+          "median_m": 0.016430635005235672,
+          "p90_m": 0.05216104574501514,
+          "maximum_m": 0.056270286440849304,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42169490456581116
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.019355278462171555,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.67025962786423,
+        "Right_elbow_internal_degrees": 64.67025962786423,
+        "torso_hip_to_neck_inclination_degrees": 28.15466765740342
+      },
+      "largest_limb_sample_step_m": 0.23179298639297485
+    },
+    {
+      "path": "native",
+      "frame": 105,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.0008169242064468563,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.007665336597710848,
+          "p10_m": 0.008848600089550018,
+          "median_m": 0.018371064215898514,
+          "p90_m": 0.03355376794934273,
+          "maximum_m": 0.03890256583690643,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.3333333333333333,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0012312765466049314
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.007485250011086464,
+          "p10_m": 0.008540692739188671,
+          "median_m": 0.01829155907034874,
+          "p90_m": 0.03354204446077347,
+          "maximum_m": 0.038858361542224884,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.38095238095238093,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0012281016679480672
+        },
+        "heel_L": {
+          "minimum_m": 0.0008169242064468563,
+          "p10_m": 0.0018204697407782078,
+          "median_m": 0.006080953404307365,
+          "p90_m": 0.016126085072755814,
+          "maximum_m": 0.027216628193855286,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.30553108244203e-05
+        },
+        "sole_L": {
+          "minimum_m": 0.0017774237785488367,
+          "p10_m": 0.0036968134809285402,
+          "median_m": 0.009392239153385162,
+          "p90_m": 0.013718289323151112,
+          "maximum_m": 0.01648043282330036,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.8128045553567063e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0008780710631981492,
+          "p10_m": 0.001852158224210143,
+          "median_m": 0.006077106576412916,
+          "p90_m": 0.016323428601026535,
+          "maximum_m": 0.027270490303635597,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.22439105832018e-05
+        },
+        "sole_R": {
+          "minimum_m": 0.0017759125912562013,
+          "p10_m": 0.0036950937937945127,
+          "median_m": 0.009389964863657951,
+          "p90_m": 0.013716306537389755,
+          "maximum_m": 0.016481339931488037,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.884864389012364e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.0243400689214468,
+          "p10_m": 0.03630436956882477,
+          "median_m": 0.05169538035988808,
+          "p90_m": 0.06357339024543762,
+          "maximum_m": 0.07109247148036957,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.008696958422660828
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861860141158104,
+          "p10_m": 0.07073914483189583,
+          "median_m": 0.10090895369648933,
+          "p90_m": 0.14928110539913178,
+          "maximum_m": 0.18028795719146729,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14015181362628937
+        },
+        "palm_R": {
+          "minimum_m": 0.058662209659814835,
+          "p10_m": 0.07069978192448616,
+          "median_m": 0.10101214051246643,
+          "p90_m": 0.1492963030934334,
+          "maximum_m": 0.1803305298089981,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.1403023898601532
+        },
+        "hand_L": {
+          "minimum_m": 0.006398537661880255,
+          "p10_m": 0.01915784887969494,
+          "median_m": 0.06985389068722725,
+          "p90_m": 0.13443971276283267,
+          "maximum_m": 0.18028795719146729,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14015181362628937
+        },
+        "hand_R": {
+          "minimum_m": 0.006283033173531294,
+          "p10_m": 0.019084027409553526,
+          "median_m": 0.06991557031869888,
+          "p90_m": 0.13449910879135135,
+          "maximum_m": 0.1803305298089981,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.1403023898601532
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398537661880255,
+          "p10_m": 0.0106552978977561,
+          "median_m": 0.01668297965079546,
+          "p90_m": 0.05222717560827732,
+          "maximum_m": 0.056233908981084824,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.17292916774749756
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006283033173531294,
+          "p10_m": 0.010456604789942503,
+          "median_m": 0.016430899500846863,
+          "p90_m": 0.0521607905626297,
+          "maximum_m": 0.05627016723155975,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.17373165488243103
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.019355179741978645,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.70234785658494,
+        "Right_elbow_internal_degrees": 64.70234785658494,
+        "torso_hip_to_neck_inclination_degrees": 9.837510895508329
+      },
+      "largest_limb_sample_step_m": 0.2769736349582672
+    },
+    {
+      "path": "native",
+      "frame": 120,
+      "evaluated_vertices": 42342,
+      "body_minimum_z_m": 0.0007910357089713216,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.008345224894583225,
+          "p10_m": 0.009490057826042175,
+          "median_m": 0.01929391175508499,
+          "p90_m": 0.03465121611952782,
+          "maximum_m": 0.039970897138118744,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.2857142857142857,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.008160040713846684,
+          "p10_m": 0.009178364649415016,
+          "median_m": 0.019207967445254326,
+          "p90_m": 0.03463741019368172,
+          "maximum_m": 0.03992395102977753,
+          "sampled_vertices": 21,
+          "fraction_within_contact_band": 0.2857142857142857,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_L": {
+          "minimum_m": 0.0007910357089713216,
+          "p10_m": 0.0017951607005670667,
+          "median_m": 0.006050573196262121,
+          "p90_m": 0.016113530844449997,
+          "maximum_m": 0.027198893949389458,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_L": {
+          "minimum_m": 0.0017773937433958054,
+          "p10_m": 0.0036967871710658073,
+          "median_m": 0.00939222052693367,
+          "p90_m": 0.013718261383473873,
+          "maximum_m": 0.016480401158332825,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_R": {
+          "minimum_m": 0.0008502140990458429,
+          "p10_m": 0.0018273454625159502,
+          "median_m": 0.006057315971702337,
+          "p90_m": 0.016309913247823715,
+          "maximum_m": 0.027253154665231705,
+          "sampled_vertices": 315,
+          "fraction_within_contact_band": 0.7841269841269841,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_R": {
+          "minimum_m": 0.0017762989737093449,
+          "p10_m": 0.003695491701364517,
+          "median_m": 0.009390383958816528,
+          "p90_m": 0.013716711662709713,
+          "maximum_m": 0.01648174226284027,
+          "sampled_vertices": 644,
+          "fraction_within_contact_band": 0.7236024844720497,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.02322438172996044,
+          "p10_m": 0.029062367975711823,
+          "median_m": 0.037546370178461075,
+          "p90_m": 0.04503466561436653,
+          "maximum_m": 0.05000390112400055,
+          "sampled_vertices": 167,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.05861882492899895,
+          "p10_m": 0.07073938623070716,
+          "median_m": 0.10090912505984306,
+          "p90_m": 0.14945518076419828,
+          "maximum_m": 0.17973406612873077,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0025761378929018974
+        },
+        "palm_R": {
+          "minimum_m": 0.05866246297955513,
+          "p10_m": 0.07069998979568481,
+          "median_m": 0.10101237520575523,
+          "p90_m": 0.14950631409883497,
+          "maximum_m": 0.17968785762786865,
+          "sampled_vertices": 1228,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0028763925656676292
+        },
+        "hand_L": {
+          "minimum_m": 0.006398776546120644,
+          "p10_m": 0.019158126041293144,
+          "median_m": 0.06985407695174217,
+          "p90_m": 0.1348026677966118,
+          "maximum_m": 0.17973406612873077,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0025761378929018974
+        },
+        "hand_R": {
+          "minimum_m": 0.006283019669353962,
+          "p10_m": 0.019084223732352256,
+          "median_m": 0.06991580501198769,
+          "p90_m": 0.13474758714437488,
+          "maximum_m": 0.17968785762786865,
+          "sampled_vertices": 2528,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0028763925656676292
+        },
+        "fingertips_L": {
+          "minimum_m": 0.006398776546120644,
+          "p10_m": 0.01065551619976759,
+          "median_m": 0.01668329071253538,
+          "p90_m": 0.0522274985909462,
+          "maximum_m": 0.056234210729599,
+          "sampled_vertices": 328,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.027367575094103813
+        },
+        "fingertips_R": {
+          "minimum_m": 0.006283019669353962,
+          "p10_m": 0.010456593707203865,
+          "median_m": 0.016431044787168503,
+          "p90_m": 0.05216146744787693,
+          "maximum_m": 0.05627080798149109,
+          "sampled_vertices": 324,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.02750672586262226
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.019355736672878265,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.71857638605289,
+        "Right_elbow_internal_degrees": 64.71857638605289,
+        "torso_hip_to_neck_inclination_degrees": 0.7499650148032955
+      },
+      "largest_limb_sample_step_m": 0.1384921371936798
+    },
+    {
+      "path": "linear_cage",
+      "frame": 0,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": -0.0017570257186889648,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0018889904022216797,
+          "p10_m": 0.004201448056846857,
+          "median_m": 0.012720882892608643,
+          "p90_m": 0.022777067497372627,
+          "maximum_m": 0.025748133659362793,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.001699209213256836,
+          "p10_m": 0.003994393162429333,
+          "median_m": 0.012535125017166138,
+          "p90_m": 0.022717246785759926,
+          "maximum_m": 0.025715887546539307,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_L": {
+          "minimum_m": 0.0010139613877981901,
+          "p10_m": 0.001989971147850156,
+          "median_m": 0.005816692486405373,
+          "p90_m": 0.01453698705881834,
+          "maximum_m": 0.024314677342772484,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_L": {
+          "minimum_m": 0.0017427048878744245,
+          "p10_m": 0.003547522472217679,
+          "median_m": 0.00856178067624569,
+          "p90_m": 0.012910223565995693,
+          "maximum_m": 0.013768641278147697,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_R": {
+          "minimum_m": 0.0010325228795409203,
+          "p10_m": 0.002065628068521619,
+          "median_m": 0.005804133601486683,
+          "p90_m": 0.014586827717721462,
+          "maximum_m": 0.024337412789463997,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_R": {
+          "minimum_m": 0.0017416417831555009,
+          "p10_m": 0.0035452451556921005,
+          "median_m": 0.008560054935514927,
+          "p90_m": 0.012908984906971455,
+          "maximum_m": 0.013737000524997711,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.026245832443237305,
+          "p10_m": 0.029569387435913086,
+          "median_m": 0.03741741180419922,
+          "p90_m": 0.04612964391708374,
+          "maximum_m": 0.051355838775634766,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.06020279973745346,
+          "p10_m": 0.07310105562210083,
+          "median_m": 0.10201937332749367,
+          "p90_m": 0.14740174263715744,
+          "maximum_m": 0.17340995371341705,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.00261002779006958
+        },
+        "palm_R": {
+          "minimum_m": 0.06006759777665138,
+          "p10_m": 0.07304312735795974,
+          "median_m": 0.1020781546831131,
+          "p90_m": 0.14746510982513428,
+          "maximum_m": 0.17338420450687408,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0028187036514282227
+        },
+        "hand_L": {
+          "minimum_m": 0.007241971790790558,
+          "p10_m": 0.018562621623277667,
+          "median_m": 0.07076697796583176,
+          "p90_m": 0.1365157276391983,
+          "maximum_m": 0.17340995371341705,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.00261002779006958
+        },
+        "hand_R": {
+          "minimum_m": 0.007118739187717438,
+          "p10_m": 0.0184221588075161,
+          "median_m": 0.07079333811998367,
+          "p90_m": 0.13662907779216765,
+          "maximum_m": 0.17338420450687408,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.003084421157836914
+        },
+        "fingertips_L": {
+          "minimum_m": 0.007241971790790558,
+          "p10_m": 0.011598022095859051,
+          "median_m": 0.016400616616010666,
+          "p90_m": 0.052077133953571324,
+          "maximum_m": 0.05490240827202797,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.02814328670501709
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007118739187717438,
+          "p10_m": 0.011342694144695997,
+          "median_m": 0.016162949614226818,
+          "p90_m": 0.052138554677367215,
+          "maximum_m": 0.054965790361166,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.028254270553588867
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.02059367299079895,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.71857638605289,
+        "Right_elbow_internal_degrees": 64.71857638605289,
+        "torso_hip_to_neck_inclination_degrees": 0.7499650148032955
+      },
+      "largest_limb_sample_step_m": 0.0
+    },
+    {
+      "path": "linear_cage",
+      "frame": 15,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": 0.000992417335510254,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0011802911758422852,
+          "p10_m": 0.0034408748615533113,
+          "median_m": 0.011741191148757935,
+          "p90_m": 0.021747151389718056,
+          "maximum_m": 0.024738729000091553,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0009100869065150619
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.000992417335510254,
+          "p10_m": 0.003238856792449951,
+          "median_m": 0.01156151294708252,
+          "p90_m": 0.021687112748622894,
+          "maximum_m": 0.024706244468688965,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0009091348620131612
+        },
+        "heel_L": {
+          "minimum_m": 0.0010442149359732866,
+          "p10_m": 0.002008713549003005,
+          "median_m": 0.005853893235325813,
+          "p90_m": 0.014554258435964584,
+          "maximum_m": 0.02433636412024498,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.604868344264105e-05
+        },
+        "sole_L": {
+          "minimum_m": 0.0017427337588742375,
+          "p10_m": 0.003547548782080412,
+          "median_m": 0.008561816066503525,
+          "p90_m": 0.012910254299640656,
+          "maximum_m": 0.013774547725915909,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.4901161193847656e-08
+        },
+        "heel_R": {
+          "minimum_m": 0.001062213210389018,
+          "p10_m": 0.0020945414435118437,
+          "median_m": 0.005840761587023735,
+          "p90_m": 0.014603574760258198,
+          "maximum_m": 0.024358591064810753,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.535545930499211e-05
+        },
+        "sole_R": {
+          "minimum_m": 0.0017412554007023573,
+          "p10_m": 0.003544849343597889,
+          "median_m": 0.008559677749872208,
+          "p90_m": 0.012908588163554668,
+          "maximum_m": 0.01374239195138216,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 3.579381768759049e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.02831888198852539,
+          "p10_m": 0.03809398412704468,
+          "median_m": 0.05223715305328369,
+          "p90_m": 0.061268627643585205,
+          "maximum_m": 0.07024037837982178,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.008871197700500488
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.06020256504416466,
+          "p10_m": 0.07310086414217949,
+          "median_m": 0.10201916098594666,
+          "p90_m": 0.14742289930582048,
+          "maximum_m": 0.17374277114868164,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.13996577262878418
+        },
+        "palm_R": {
+          "minimum_m": 0.06006729602813721,
+          "p10_m": 0.07304284498095512,
+          "median_m": 0.10207799822092056,
+          "p90_m": 0.14749128520488738,
+          "maximum_m": 0.17371146380901337,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14005601406097412
+        },
+        "hand_L": {
+          "minimum_m": 0.0072418153285980225,
+          "p10_m": 0.018562340363860133,
+          "median_m": 0.07076679170131683,
+          "p90_m": 0.13640388548374174,
+          "maximum_m": 0.17374277114868164,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14066416025161743
+        },
+        "hand_R": {
+          "minimum_m": 0.007118784822523594,
+          "p10_m": 0.01842210926115513,
+          "median_m": 0.07079293578863144,
+          "p90_m": 0.1365194946527481,
+          "maximum_m": 0.17371146380901337,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14082902669906616
+        },
+        "fingertips_L": {
+          "minimum_m": 0.0072418153285980225,
+          "p10_m": 0.011597865633666516,
+          "median_m": 0.01640036702156067,
+          "p90_m": 0.05207677632570267,
+          "maximum_m": 0.054902058094739914,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.17411327362060547
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007118784822523594,
+          "p10_m": 0.011342708952724934,
+          "median_m": 0.016162886284291744,
+          "p90_m": 0.05213783271610737,
+          "maximum_m": 0.054965145885944366,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.1751875877380371
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.02059313654899597,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.70234785658494,
+        "Right_elbow_internal_degrees": 64.70234785658494,
+        "torso_hip_to_neck_inclination_degrees": 9.837510895508329
+      },
+      "largest_limb_sample_step_m": 0.1384921371936798
+    },
+    {
+      "path": "linear_cage",
+      "frame": 30,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": -0.0002714395523071289,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -8.791685104370117e-05,
+          "p10_m": 0.0020786465611308813,
+          "median_m": 0.009918361902236938,
+          "p90_m": 0.01975374110043049,
+          "maximum_m": 0.022775590419769287,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 8.791685104370117e-05,
+          "tangential_centroid_displacement_m": 0.002874690108001232
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0002714395523071289,
+          "p10_m": 0.0018845738377422094,
+          "median_m": 0.009746789932250977,
+          "p90_m": 0.019693413749337196,
+          "maximum_m": 0.022742748260498047,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0002714395523071289,
+          "tangential_centroid_displacement_m": 0.002870142227038741
+        },
+        "heel_L": {
+          "minimum_m": 0.0011088508181273937,
+          "p10_m": 0.002049027243629098,
+          "median_m": 0.005933111533522606,
+          "p90_m": 0.014591298997402191,
+          "maximum_m": 0.02438257448375225,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0002680816687643528
+        },
+        "sole_L": {
+          "minimum_m": 0.0017428449355065823,
+          "p10_m": 0.003547663800418377,
+          "median_m": 0.00856192409992218,
+          "p90_m": 0.012910368852317333,
+          "maximum_m": 0.01378707680851221,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.1920928955078125e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0011267142836004496,
+          "p10_m": 0.002157379873096943,
+          "median_m": 0.00591982901096344,
+          "p90_m": 0.014640558511018753,
+          "maximum_m": 0.024404797703027725,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00026664594770409167
+        },
+        "sole_R": {
+          "minimum_m": 0.0017416615737602115,
+          "p10_m": 0.0035452658776193857,
+          "median_m": 0.008560080081224442,
+          "p90_m": 0.012909010984003544,
+          "maximum_m": 0.01375495083630085,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 9.541398782175747e-08
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03249776363372803,
+          "p10_m": 0.046946942806243896,
+          "median_m": 0.08274173736572266,
+          "p90_m": 0.11230015754699707,
+          "maximum_m": 0.12753117084503174,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.021638542413711548
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.06020255386829376,
+          "p10_m": 0.07310089394450188,
+          "median_m": 0.10201916471123695,
+          "p90_m": 0.14738200455904008,
+          "maximum_m": 0.17378665506839752,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.39824116230010986
+        },
+        "palm_R": {
+          "minimum_m": 0.06006723642349243,
+          "p10_m": 0.07304289415478707,
+          "median_m": 0.10207794979214668,
+          "p90_m": 0.1473870351910591,
+          "maximum_m": 0.1737416535615921,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.398274302482605
+        },
+        "hand_L": {
+          "minimum_m": 0.007241538260132074,
+          "p10_m": 0.018562241271138192,
+          "median_m": 0.07076659798622131,
+          "p90_m": 0.13652575016021729,
+          "maximum_m": 0.17378665506839752,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3982583284378052
+        },
+        "hand_R": {
+          "minimum_m": 0.007118603214621544,
+          "p10_m": 0.018421923369169237,
+          "median_m": 0.07079292088747025,
+          "p90_m": 0.13666114807128907,
+          "maximum_m": 0.1737416535615921,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3983798623085022
+        },
+        "fingertips_L": {
+          "minimum_m": 0.007241538260132074,
+          "p10_m": 0.011597659438848495,
+          "median_m": 0.016400206834077835,
+          "p90_m": 0.05207694321870804,
+          "maximum_m": 0.05490223318338394,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42115283012390137
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007118603214621544,
+          "p10_m": 0.011342573631554841,
+          "median_m": 0.0161626897752285,
+          "p90_m": 0.05213810913264751,
+          "maximum_m": 0.05496537312865257,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42246270179748535
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.020593225955963135,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.67025962786423,
+        "Right_elbow_internal_degrees": 64.67025962786423,
+        "torso_hip_to_neck_inclination_degrees": 28.15466765740342
+      },
+      "largest_limb_sample_step_m": 0.2769736349582672
+    },
+    {
+      "path": "linear_cage",
+      "frame": 50,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": -0.0011650323867797852,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.0009859800338745117,
+          "p10_m": 0.001116245985031128,
+          "median_m": 0.008553147315979004,
+          "p90_m": 0.01816854253411293,
+          "maximum_m": 0.02120441198348999,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.75,
+          "deepest_penetration_m": 0.0009859800338745117,
+          "tangential_centroid_displacement_m": 0.004647540394216776
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0011650323867797852,
+          "p10_m": 0.0009264471009373665,
+          "median_m": 0.00838354229927063,
+          "p90_m": 0.018108336254954338,
+          "maximum_m": 0.0211716890335083,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.75,
+          "deepest_penetration_m": 0.0011650323867797852,
+          "tangential_centroid_displacement_m": 0.004639066755771637
+        },
+        "heel_L": {
+          "minimum_m": 0.0011665639467537403,
+          "p10_m": 0.002085254294797778,
+          "median_m": 0.006003584712743759,
+          "p90_m": 0.014624448493123055,
+          "maximum_m": 0.024423614144325256,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00042890440090559423
+        },
+        "sole_L": {
+          "minimum_m": 0.0017426148988306522,
+          "p10_m": 0.003547429107129574,
+          "median_m": 0.00856170617043972,
+          "p90_m": 0.012910138815641403,
+          "maximum_m": 0.013797890394926071,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.2287812012345967e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0011839193757623434,
+          "p10_m": 0.0021975981071591377,
+          "median_m": 0.005989778786897659,
+          "p90_m": 0.014673266559839249,
+          "maximum_m": 0.024445440620183945,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00042653907439671457
+        },
+        "sole_R": {
+          "minimum_m": 0.0017412671586498618,
+          "p10_m": 0.0035448626149445772,
+          "median_m": 0.0085596963763237,
+          "p90_m": 0.01290860679000616,
+          "maximum_m": 0.01376538909971714,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 2.98395519848782e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.037348389625549316,
+          "p10_m": 0.05644720792770386,
+          "median_m": 0.10950589179992676,
+          "p90_m": 0.16097629070281982,
+          "maximum_m": 0.1771252155303955,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.02609167993068695
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.060202788561582565,
+          "p10_m": 0.0731010988354683,
+          "median_m": 0.102019302546978,
+          "p90_m": 0.1469300091266632,
+          "maximum_m": 0.17273519933223724,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5753029584884644
+        },
+        "palm_R": {
+          "minimum_m": 0.06006743013858795,
+          "p10_m": 0.0730430506169796,
+          "median_m": 0.10207803547382355,
+          "p90_m": 0.14700238704681398,
+          "maximum_m": 0.17280566692352295,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5753302574157715
+        },
+        "hand_L": {
+          "minimum_m": 0.0072418940253555775,
+          "p10_m": 0.018562523275613786,
+          "median_m": 0.07076692581176758,
+          "p90_m": 0.13686496913433074,
+          "maximum_m": 0.17273519933223724,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5713061690330505
+        },
+        "hand_R": {
+          "minimum_m": 0.007119024638086557,
+          "p10_m": 0.018422281369566917,
+          "median_m": 0.07079324126243591,
+          "p90_m": 0.1367596060037613,
+          "maximum_m": 0.17280566692352295,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5709507465362549
+        },
+        "fingertips_L": {
+          "minimum_m": 0.0072418940253555775,
+          "p10_m": 0.011598038487136364,
+          "median_m": 0.016400625929236412,
+          "p90_m": 0.05207714661955834,
+          "maximum_m": 0.05490253493189812,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5879675149917603
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007119024638086557,
+          "p10_m": 0.011342896148562431,
+          "median_m": 0.016163062304258347,
+          "p90_m": 0.05213841795921326,
+          "maximum_m": 0.05496571585536003,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5880602598190308
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.02059352397918701,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.6437516636954,
+        "Right_elbow_internal_degrees": 64.6437516636954,
+        "torso_hip_to_neck_inclination_degrees": 43.65703320930444
+      },
+      "largest_limb_sample_step_m": 0.23179298639297485
+    },
+    {
+      "path": "linear_cage",
+      "frame": 60,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": -0.0011655092239379883,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.0009864568710327148,
+          "p10_m": 0.0011157155968248844,
+          "median_m": 0.0085524320602417,
+          "p90_m": 0.01816776767373085,
+          "maximum_m": 0.02120363712310791,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.75,
+          "deepest_penetration_m": 0.0009864568710327148,
+          "tangential_centroid_displacement_m": 0.004648516420274973
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0011655092239379883,
+          "p10_m": 0.0009259344078600407,
+          "median_m": 0.008382856845855713,
+          "p90_m": 0.018107518553733826,
+          "maximum_m": 0.021170854568481445,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.75,
+          "deepest_penetration_m": 0.0011655092239379883,
+          "tangential_centroid_displacement_m": 0.004640031605958939
+        },
+        "heel_L": {
+          "minimum_m": 0.0011668152874335647,
+          "p10_m": 0.0020854820031672716,
+          "median_m": 0.0060038454830646515,
+          "p90_m": 0.01462467759847641,
+          "maximum_m": 0.024423854425549507,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0004291781224310398
+        },
+        "sole_L": {
+          "minimum_m": 0.0017428759019821882,
+          "p10_m": 0.003547695465385914,
+          "median_m": 0.008561952970921993,
+          "p90_m": 0.012910399585962296,
+          "maximum_m": 0.013798132538795471,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 3.588674815091508e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0011841511586681008,
+          "p10_m": 0.0021978167351335287,
+          "median_m": 0.0059900181367993355,
+          "p90_m": 0.014673479832708836,
+          "maximum_m": 0.024445660412311554,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00042681087506935
+        },
+        "sole_R": {
+          "minimum_m": 0.001741494401358068,
+          "p10_m": 0.003545099403709173,
+          "median_m": 0.008559911511838436,
+          "p90_m": 0.012908845208585262,
+          "maximum_m": 0.013765588402748108,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.4057727071303816e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.037351250648498535,
+          "p10_m": 0.05645263195037842,
+          "median_m": 0.10952043533325195,
+          "p90_m": 0.16100358963012695,
+          "maximum_m": 0.17715084552764893,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.02609233558177948
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.06020268425345421,
+          "p10_m": 0.07310087084770203,
+          "median_m": 0.10201927274465561,
+          "p90_m": 0.14692990481853485,
+          "maximum_m": 0.17273421585559845,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5753811597824097
+        },
+        "palm_R": {
+          "minimum_m": 0.060067351907491684,
+          "p10_m": 0.07304298728704453,
+          "median_m": 0.10207803174853325,
+          "p90_m": 0.14700226485729218,
+          "maximum_m": 0.17280463874340057,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5754084587097168
+        },
+        "hand_L": {
+          "minimum_m": 0.007241725921630859,
+          "p10_m": 0.01856234781444073,
+          "median_m": 0.07076682895421982,
+          "p90_m": 0.1368649125099182,
+          "maximum_m": 0.17273421585559845,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5713699460029602
+        },
+        "hand_R": {
+          "minimum_m": 0.007118759211152792,
+          "p10_m": 0.01842210330069065,
+          "median_m": 0.07079295068979263,
+          "p90_m": 0.1367594361305237,
+          "maximum_m": 0.17280463874340057,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5710148811340332
+        },
+        "fingertips_L": {
+          "minimum_m": 0.007241725921630859,
+          "p10_m": 0.011597804725170135,
+          "median_m": 0.01640038937330246,
+          "p90_m": 0.05207669660449028,
+          "maximum_m": 0.05490202084183693,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5880405902862549
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007118759211152792,
+          "p10_m": 0.01134267235174775,
+          "median_m": 0.016162903048098087,
+          "p90_m": 0.05213819667696953,
+          "maximum_m": 0.05496542528271675,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5881330966949463
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.020593702793121338,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.64371751274955,
+        "Right_elbow_internal_degrees": 64.64371751274955,
+        "torso_hip_to_neck_inclination_degrees": 43.66518720506931
+      },
+      "largest_limb_sample_step_m": 0.00012167835666332394
+    },
+    {
+      "path": "linear_cage",
+      "frame": 70,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": -0.0011650323867797852,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -0.0009859800338745117,
+          "p10_m": 0.001116245985031128,
+          "median_m": 0.008553147315979004,
+          "p90_m": 0.01816854253411293,
+          "maximum_m": 0.02120441198348999,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.75,
+          "deepest_penetration_m": 0.0009859800338745117,
+          "tangential_centroid_displacement_m": 0.004647540394216776
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0011650323867797852,
+          "p10_m": 0.0009264471009373665,
+          "median_m": 0.00838354229927063,
+          "p90_m": 0.018108336254954338,
+          "maximum_m": 0.0211716890335083,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.75,
+          "deepest_penetration_m": 0.0011650323867797852,
+          "tangential_centroid_displacement_m": 0.004639066755771637
+        },
+        "heel_L": {
+          "minimum_m": 0.0011665639467537403,
+          "p10_m": 0.002085254294797778,
+          "median_m": 0.006003584712743759,
+          "p90_m": 0.014624448493123055,
+          "maximum_m": 0.024423614144325256,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00042890440090559423
+        },
+        "sole_L": {
+          "minimum_m": 0.0017426148988306522,
+          "p10_m": 0.003547429107129574,
+          "median_m": 0.00856170617043972,
+          "p90_m": 0.012910138815641403,
+          "maximum_m": 0.013797890394926071,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.2287812012345967e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0011839193757623434,
+          "p10_m": 0.0021975981071591377,
+          "median_m": 0.005989778786897659,
+          "p90_m": 0.014673266559839249,
+          "maximum_m": 0.024445440620183945,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00042653907439671457
+        },
+        "sole_R": {
+          "minimum_m": 0.0017412671586498618,
+          "p10_m": 0.0035448626149445772,
+          "median_m": 0.0085596963763237,
+          "p90_m": 0.01290860679000616,
+          "maximum_m": 0.01376538909971714,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 2.98395519848782e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.037348389625549316,
+          "p10_m": 0.05644720792770386,
+          "median_m": 0.10950589179992676,
+          "p90_m": 0.16097629070281982,
+          "maximum_m": 0.1771252155303955,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.02609167993068695
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.060202788561582565,
+          "p10_m": 0.0731010988354683,
+          "median_m": 0.102019302546978,
+          "p90_m": 0.1469300091266632,
+          "maximum_m": 0.17273519933223724,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5753029584884644
+        },
+        "palm_R": {
+          "minimum_m": 0.06006743013858795,
+          "p10_m": 0.0730430506169796,
+          "median_m": 0.10207803547382355,
+          "p90_m": 0.14700238704681398,
+          "maximum_m": 0.17280566692352295,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5753302574157715
+        },
+        "hand_L": {
+          "minimum_m": 0.0072418940253555775,
+          "p10_m": 0.018562523275613786,
+          "median_m": 0.07076692581176758,
+          "p90_m": 0.13686496913433074,
+          "maximum_m": 0.17273519933223724,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5713061690330505
+        },
+        "hand_R": {
+          "minimum_m": 0.007119024638086557,
+          "p10_m": 0.018422281369566917,
+          "median_m": 0.07079324126243591,
+          "p90_m": 0.1367596060037613,
+          "maximum_m": 0.17280566692352295,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5709507465362549
+        },
+        "fingertips_L": {
+          "minimum_m": 0.0072418940253555775,
+          "p10_m": 0.011598038487136364,
+          "median_m": 0.016400625929236412,
+          "p90_m": 0.05207714661955834,
+          "maximum_m": 0.05490253493189812,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5879675149917603
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007119024638086557,
+          "p10_m": 0.011342896148562431,
+          "median_m": 0.016163062304258347,
+          "p90_m": 0.05213841795921326,
+          "maximum_m": 0.05496571585536003,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.5880602598190308
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.02059352397918701,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.6437516636954,
+        "Right_elbow_internal_degrees": 64.6437516636954,
+        "torso_hip_to_neck_inclination_degrees": 43.65703320930444
+      },
+      "largest_limb_sample_step_m": 0.00012167835666332394
+    },
+    {
+      "path": "linear_cage",
+      "frame": 90,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": -0.0002714395523071289,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": -8.791685104370117e-05,
+          "p10_m": 0.0020786465611308813,
+          "median_m": 0.009918361902236938,
+          "p90_m": 0.01975374110043049,
+          "maximum_m": 0.022775590419769287,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 8.791685104370117e-05,
+          "tangential_centroid_displacement_m": 0.002874690108001232
+        },
+        "pelvic_support_R": {
+          "minimum_m": -0.0002714395523071289,
+          "p10_m": 0.0018845738377422094,
+          "median_m": 0.009746789932250977,
+          "p90_m": 0.019693413749337196,
+          "maximum_m": 0.022742748260498047,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0002714395523071289,
+          "tangential_centroid_displacement_m": 0.002870142227038741
+        },
+        "heel_L": {
+          "minimum_m": 0.0011088508181273937,
+          "p10_m": 0.002049027243629098,
+          "median_m": 0.005933111533522606,
+          "p90_m": 0.014591298997402191,
+          "maximum_m": 0.02438257448375225,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0002680816687643528
+        },
+        "sole_L": {
+          "minimum_m": 0.0017428449355065823,
+          "p10_m": 0.003547663800418377,
+          "median_m": 0.00856192409992218,
+          "p90_m": 0.012910368852317333,
+          "maximum_m": 0.01378707680851221,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.1920928955078125e-07
+        },
+        "heel_R": {
+          "minimum_m": 0.0011267142836004496,
+          "p10_m": 0.002157379873096943,
+          "median_m": 0.00591982901096344,
+          "p90_m": 0.014640558511018753,
+          "maximum_m": 0.024404797703027725,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.00026664594770409167
+        },
+        "sole_R": {
+          "minimum_m": 0.0017416615737602115,
+          "p10_m": 0.0035452658776193857,
+          "median_m": 0.008560080081224442,
+          "p90_m": 0.012909010984003544,
+          "maximum_m": 0.01375495083630085,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 9.541398782175747e-08
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.03249776363372803,
+          "p10_m": 0.046946942806243896,
+          "median_m": 0.08274173736572266,
+          "p90_m": 0.11230015754699707,
+          "maximum_m": 0.12753117084503174,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.021638542413711548
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.06020255386829376,
+          "p10_m": 0.07310089394450188,
+          "median_m": 0.10201916471123695,
+          "p90_m": 0.14738200455904008,
+          "maximum_m": 0.17378665506839752,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.39824116230010986
+        },
+        "palm_R": {
+          "minimum_m": 0.06006723642349243,
+          "p10_m": 0.07304289415478707,
+          "median_m": 0.10207794979214668,
+          "p90_m": 0.1473870351910591,
+          "maximum_m": 0.1737416535615921,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.398274302482605
+        },
+        "hand_L": {
+          "minimum_m": 0.007241538260132074,
+          "p10_m": 0.018562241271138192,
+          "median_m": 0.07076659798622131,
+          "p90_m": 0.13652575016021729,
+          "maximum_m": 0.17378665506839752,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3982583284378052
+        },
+        "hand_R": {
+          "minimum_m": 0.007118603214621544,
+          "p10_m": 0.018421923369169237,
+          "median_m": 0.07079292088747025,
+          "p90_m": 0.13666114807128907,
+          "maximum_m": 0.1737416535615921,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.3983798623085022
+        },
+        "fingertips_L": {
+          "minimum_m": 0.007241538260132074,
+          "p10_m": 0.011597659438848495,
+          "median_m": 0.016400206834077835,
+          "p90_m": 0.05207694321870804,
+          "maximum_m": 0.05490223318338394,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42115283012390137
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007118603214621544,
+          "p10_m": 0.011342573631554841,
+          "median_m": 0.0161626897752285,
+          "p90_m": 0.05213810913264751,
+          "maximum_m": 0.05496537312865257,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.42246270179748535
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.020593225955963135,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.67025962786423,
+        "Right_elbow_internal_degrees": 64.67025962786423,
+        "torso_hip_to_neck_inclination_degrees": 28.15466765740342
+      },
+      "largest_limb_sample_step_m": 0.23179298639297485
+    },
+    {
+      "path": "linear_cage",
+      "frame": 105,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": 0.000992417335510254,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0011802911758422852,
+          "p10_m": 0.0034408748615533113,
+          "median_m": 0.011741191148757935,
+          "p90_m": 0.021747151389718056,
+          "maximum_m": 0.024738729000091553,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0009100869065150619
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.000992417335510254,
+          "p10_m": 0.003238856792449951,
+          "median_m": 0.01156151294708252,
+          "p90_m": 0.021687112748622894,
+          "maximum_m": 0.024706244468688965,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0009091348620131612
+        },
+        "heel_L": {
+          "minimum_m": 0.0010442149359732866,
+          "p10_m": 0.002008713549003005,
+          "median_m": 0.005853893235325813,
+          "p90_m": 0.014554258435964584,
+          "maximum_m": 0.02433636412024498,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.604868344264105e-05
+        },
+        "sole_L": {
+          "minimum_m": 0.0017427337588742375,
+          "p10_m": 0.003547548782080412,
+          "median_m": 0.008561816066503525,
+          "p90_m": 0.012910254299640656,
+          "maximum_m": 0.013774547725915909,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 1.4901161193847656e-08
+        },
+        "heel_R": {
+          "minimum_m": 0.001062213210389018,
+          "p10_m": 0.0020945414435118437,
+          "median_m": 0.005840761587023735,
+          "p90_m": 0.014603574760258198,
+          "maximum_m": 0.024358591064810753,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 8.535545930499211e-05
+        },
+        "sole_R": {
+          "minimum_m": 0.0017412554007023573,
+          "p10_m": 0.003544849343597889,
+          "median_m": 0.008559677749872208,
+          "p90_m": 0.012908588163554668,
+          "maximum_m": 0.01374239195138216,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 3.579381768759049e-07
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.02831888198852539,
+          "p10_m": 0.03809398412704468,
+          "median_m": 0.05223715305328369,
+          "p90_m": 0.061268627643585205,
+          "maximum_m": 0.07024037837982178,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.008871197700500488
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.06020256504416466,
+          "p10_m": 0.07310086414217949,
+          "median_m": 0.10201916098594666,
+          "p90_m": 0.14742289930582048,
+          "maximum_m": 0.17374277114868164,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.13996577262878418
+        },
+        "palm_R": {
+          "minimum_m": 0.06006729602813721,
+          "p10_m": 0.07304284498095512,
+          "median_m": 0.10207799822092056,
+          "p90_m": 0.14749128520488738,
+          "maximum_m": 0.17371146380901337,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14005601406097412
+        },
+        "hand_L": {
+          "minimum_m": 0.0072418153285980225,
+          "p10_m": 0.018562340363860133,
+          "median_m": 0.07076679170131683,
+          "p90_m": 0.13640388548374174,
+          "maximum_m": 0.17374277114868164,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14066416025161743
+        },
+        "hand_R": {
+          "minimum_m": 0.007118784822523594,
+          "p10_m": 0.01842210926115513,
+          "median_m": 0.07079293578863144,
+          "p90_m": 0.1365194946527481,
+          "maximum_m": 0.17371146380901337,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.14082902669906616
+        },
+        "fingertips_L": {
+          "minimum_m": 0.0072418153285980225,
+          "p10_m": 0.011597865633666516,
+          "median_m": 0.01640036702156067,
+          "p90_m": 0.05207677632570267,
+          "maximum_m": 0.054902058094739914,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.17411327362060547
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007118784822523594,
+          "p10_m": 0.011342708952724934,
+          "median_m": 0.016162886284291744,
+          "p90_m": 0.05213783271610737,
+          "maximum_m": 0.054965145885944366,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.1751875877380371
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.02059313654899597,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.70234785658494,
+        "Right_elbow_internal_degrees": 64.70234785658494,
+        "torso_hip_to_neck_inclination_degrees": 9.837510895508329
+      },
+      "largest_limb_sample_step_m": 0.2769736349582672
+    },
+    {
+      "path": "linear_cage",
+      "frame": 120,
+      "evaluated_vertices": 10582,
+      "body_minimum_z_m": -0.0017570257186889648,
+      "contacts": {
+        "pelvic_support_L": {
+          "minimum_m": 0.0018889904022216797,
+          "p10_m": 0.004201448056846857,
+          "median_m": 0.012720882892608643,
+          "p90_m": 0.022777067497372627,
+          "maximum_m": 0.025748133659362793,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "pelvic_support_R": {
+          "minimum_m": 0.001699209213256836,
+          "p10_m": 0.003994393162429333,
+          "median_m": 0.012535125017166138,
+          "p90_m": 0.022717246785759926,
+          "maximum_m": 0.025715887546539307,
+          "sampled_vertices": 4,
+          "fraction_within_contact_band": 0.5,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_L": {
+          "minimum_m": 0.0010139613877981901,
+          "p10_m": 0.001989971147850156,
+          "median_m": 0.005816692486405373,
+          "p90_m": 0.01453698705881834,
+          "maximum_m": 0.024314677342772484,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_L": {
+          "minimum_m": 0.0017427048878744245,
+          "p10_m": 0.003547522472217679,
+          "median_m": 0.00856178067624569,
+          "p90_m": 0.012910223565995693,
+          "maximum_m": 0.013768641278147697,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "heel_R": {
+          "minimum_m": 0.0010325228795409203,
+          "p10_m": 0.002065628068521619,
+          "median_m": 0.005804133601486683,
+          "p90_m": 0.014586827717721462,
+          "maximum_m": 0.024337412789463997,
+          "sampled_vertices": 72,
+          "fraction_within_contact_band": 0.8333333333333334,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "sole_R": {
+          "minimum_m": 0.0017416417831555009,
+          "p10_m": 0.0035452451556921005,
+          "median_m": 0.008560054935514927,
+          "p90_m": 0.012908984906971455,
+          "maximum_m": 0.013737000524997711,
+          "sampled_vertices": 141,
+          "fraction_within_contact_band": 0.8085106382978723,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        },
+        "lumbar_clearance": {
+          "minimum_m": 0.026245832443237305,
+          "p10_m": 0.029569387435913086,
+          "median_m": 0.03741741180419922,
+          "p90_m": 0.04612964391708374,
+          "maximum_m": 0.051355838775634766,
+          "sampled_vertices": 36,
+          "fraction_within_contact_band": 0.0,
+          "deepest_penetration_m": 0.0,
+          "tangential_centroid_displacement_m": 0.0
+        }
+      },
+      "head_clearances": {
+        "palm_L": {
+          "minimum_m": 0.06020279973745346,
+          "p10_m": 0.07310105562210083,
+          "median_m": 0.10201937332749367,
+          "p90_m": 0.14740174263715744,
+          "maximum_m": 0.17340995371341705,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.00261002779006958
+        },
+        "palm_R": {
+          "minimum_m": 0.06006759777665138,
+          "p10_m": 0.07304312735795974,
+          "median_m": 0.1020781546831131,
+          "p90_m": 0.14746510982513428,
+          "maximum_m": 0.17338420450687408,
+          "sampled_vertices": 288,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.0028187036514282227
+        },
+        "hand_L": {
+          "minimum_m": 0.007241971790790558,
+          "p10_m": 0.018562621623277667,
+          "median_m": 0.07076697796583176,
+          "p90_m": 0.1365157276391983,
+          "maximum_m": 0.17340995371341705,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.00261002779006958
+        },
+        "hand_R": {
+          "minimum_m": 0.007118739187717438,
+          "p10_m": 0.0184221588075161,
+          "median_m": 0.07079333811998367,
+          "p90_m": 0.13662907779216765,
+          "maximum_m": 0.17338420450687408,
+          "sampled_vertices": 569,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.003084421157836914
+        },
+        "fingertips_L": {
+          "minimum_m": 0.007241971790790558,
+          "p10_m": 0.011598022095859051,
+          "median_m": 0.016400616616010666,
+          "p90_m": 0.052077133953571324,
+          "maximum_m": 0.05490240827202797,
+          "sampled_vertices": 75,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.02814328670501709
+        },
+        "fingertips_R": {
+          "minimum_m": 0.007118739187717438,
+          "p10_m": 0.011342694144695997,
+          "median_m": 0.016162949614226818,
+          "p90_m": 0.052138554677367215,
+          "maximum_m": 0.054965790361166,
+          "sampled_vertices": 74,
+          "deepest_penetration_m": 0.0,
+          "floor_minimum_m": 0.028254270553588867
+        }
+      },
+      "opposing_hands_lateral_separation_m": 0.02059367299079895,
+      "joint_angles": {
+        "Left_elbow_internal_degrees": 64.71857638605289,
+        "Right_elbow_internal_degrees": 64.71857638605289,
+        "torso_hip_to_neck_inclination_degrees": 0.7499650148032955
+      },
+      "largest_limb_sample_step_m": 0.1384921371936798
+    }
+  ],
+  "not_biomechanically_approved": true,
+  "contract_issues_closed": false
+}

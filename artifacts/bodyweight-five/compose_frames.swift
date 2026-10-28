@@ -4,6 +4,8 @@ import ImageIO
 
 let root = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
 let clips = try JSONSerialization.jsonObject(with: Data(contentsOf: root.appendingPathComponent("clips.json"))) as! [[String: Any]]
+let selected = Set(CommandLine.arguments.dropFirst(2))
+guard selected.isSubset(of: Set(clips.map { $0["id"] as! String })) else { fatalError("Unknown clip selection") }
 func load(_ url: URL) -> CGImage {
     guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
           let image = CGImageSourceCreateImageAtIndex(source, 0, nil) else { fatalError("Unreadable frame: \(url.path)") }
@@ -24,6 +26,7 @@ func context(_ width: Int, _ height: Int) -> CGContext {
 }
 for clip in clips {
     let id = clip["id"] as! String, count = clip["frames"] as! Int
+    if !selected.isEmpty && !selected.contains(id) { continue }
     let auxiliary: String? = "detail"
     let combined = root.appendingPathComponent("combined-frames-" + id, isDirectory: true)
     let preview = root.appendingPathComponent("preview-frames-" + id, isDirectory: true)
