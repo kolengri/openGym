@@ -1,5 +1,7 @@
 # Five equipment-free exercise animations
 
+Current application delivery is live **GLB + Three.js**. New video generation is disabled. These video files describe historical batch001; the current style trial is the [live chaturanga heat-zone example](../chaturanga-heatmap/README.md), awaiting user confirmation.
+
 Editable motion and runtime assets for catalogue IDs 5965, 5915, 5887, 0001 and 9066, the first equipment-free entries in alphabetical order after excluding undeclared supports such as boxes or cones. Floor/ground is the only support.
 
 The accepted Blender Studio CC0 continuous human has 51 bones, including 30 articulated finger bones. All five actions are authored from catalogue text and explicitly recorded staging choices. They contain no earlier captured squat motion. No GymVisual media was used.

@@ -2,6 +2,8 @@
 
 This guide and [generation-contract.json](generation-contract.json) apply to every future exercise animation. They combine the catalogue evidence, source gaps, explicit authoring choices and lessons from the five bodyweight prototypes. The [packet preparer](prepare_generation.py) puts applicable baseline requirements, the full canonical brief, aliases, selected overrides and open issues into the exercise's generation context **before** authoring. Read that packet when authoring; a link to this document alone is insufficient.
 
+**Current delivery decision:** use live GLB + Three.js in the application. Do not generate videos or image-frame sequences. [Chaturanga heat-zone example](../chaturanga-heatmap/README.md) is the only current style trial; wait for user confirmation before applying it to other exercises. Existing video batches remain historical.
+
 The contract governs review batches. [Batch 001](../exercise-batches/batch-001/README.md) replaces 0001 with a repaired candidate and retains the other four published clips. The floor/hand issues remain open pending user review. Authored support patches, native/linear measurements and actual GLB surface checks supplement the earlier global-floor/bone checks; scoped passes do not grant production approval.
 
 The integration is **contract + per-exercise packet preparation + the existing first-five entrypoint guard**. Packet preparation carries the constraints into generation context; the guard rejects known blocking issues before opening the Blender source. Neither is an automatic rig/contact solver or proof that all catalogue exercises are valid.
@@ -67,60 +69,37 @@ Joint targets must state angle convention and reference frame: bone-local, segme
 
 ## Runtime, export and playback acceptance
 
-Use the [existing runtime](../bodyweight-five/runtime_viewer.js) and [checks](../bodyweight-five/verify_runtime.mjs) as the implementation analogue. Preserve its texture channel/cache, shared animation update and transparent canvas. The required playback behavior is implemented in that review player and covered by [touch-verification.json](../bodyweight-five/touch-verification.json): recommended dual views, finger orbit, pinch zoom, reset to recommended cameras, no panning and continued animation. This is actual Chromium/Metal **mobile emulation**, not physical iOS/Android or real application integration evidence. Keep that remaining integration/device scope open; do not rely on an older orbit-only flag or mislabel the new emulation receipt as a device pass.
+Use the [existing runtime](../bodyweight-five/runtime_viewer.js) and [checks](../bodyweight-five/verify_runtime.mjs) as the implementation analogue. Preserve its shared animation update, camera interaction and transparent canvas. The new heat candidate uses source-index scalar attributes with zero color textures; retain atlas channel/cache rules only for bitmap paths. The required playback behavior is implemented in that review player and covered by [touch-verification.json](../bodyweight-five/touch-verification.json): recommended dual views, finger orbit, pinch zoom, reset to recommended cameras, no panning and continued animation. This is actual Chromium/Metal **mobile emulation**, not physical iOS/Android or real application integration evidence. Keep that remaining integration/device scope open; do not rely on an older orbit-only flag or mislabel the new emulation receipt as a device pass.
 
 Use [camera-presets.json](../bodyweight-five/camera-presets.json) as current pilot camera data, not universal camera coordinates. View coverage must mention selected visible atlas regions, working side and phase. Mirror images are not complementary coverage. A single interactive view can be enough for a simple case; additional synchronized views are needed where important muscles or contacts remain hidden.
 
-Runtime textures are currently 2048×1024; the native atlas is 4096×2048. Replacing a map must preserve the material's atlas UV channel rather than resetting to channel 0. A fixed exercise can use a fixed activation state. Dynamic highlight strength is art direction and must not be presented as measured physiological recruitment.
+The chaturanga heat candidate diffuses selected role fields along the original surface, giving a warm center and soft falloff on neutral skin. It replaces painted muscle fibers/outlines in this trial. Strength and phase variation are art direction rather than physiological recruitment measurements. The candidate uses no color textures; any later bitmap mode must preserve the exported UV channel and its resource cache. Stretch styling is outside this chaturanga trial.
 
-Validate the exact delivered files and runtime resources, recording their hashes, decoded frame count, dimensions, frame rate, silent audio state, alpha/fallback behavior and loop result. Current short previews are not real-time prescriptions for the catalogue's hold durations. Numerical receipts and visual reviews must name the asset revision, runtime/native path, frames and scope they actually inspected.
+Validate the exact model/runtime resources and their hashes, live pose/loop/endpoint-resume behavior, alpha, controls and zero video/media requests. Decode/frame-count requirements apply only to historical video artifacts. Current short previews are not real-time prescriptions for the catalogue's hold durations. Numerical receipts and visual reviews must name the asset revision, runtime/native path, frames and scope they actually inspected.
 
-## Existing reproduction commands
+## Current prototype and generation context
 
-Run from the repository root. These commands reproduce the artifact pipeline. Current user authorization covers batches of five for review; finish and present one batch before continuing with later feedback. Select only the commands needed after an authorized change, and carry the contract/intake into that change.
-
-Prepare full canonical context, including an alias request:
+Prepare the source/constraint packet before authoring:
 
 ```sh
-python3 artifacts/exercise-animation-briefs/prepare_generation.py --exercise 0001 0004
+python3 artifacts/exercise-animation-briefs/prepare_generation.py --exercise 5915
 ```
 
-The default output directory is `artifacts/exercise-generation`; `--output-dir PATH` selects another destination. Request 0004 resolves to canonical 5266. `--require-ready` writes the packets and then exits 2 if a source blocker or blocking known issue remains. It never means production approval. The 0001 packet must retain `OPEN-0001-CONTACTS` and `OPEN-0001-HAND-HEAD-POSE`; expanded playback evidence is also open but does not itself block clip authoring. The selected 5965 pilot interpretation does not erase its canonical source-pattern gap.
+Packets include `delivery_policy` and `visualization_policy`, including the no-video decision and confirmation boundary. Alias/source handling, all21baseline requirements and known blocking issues remain in force. `0001` still retains its two open review issues; its repaired candidate is not automatically approved. The `5965` pilot interpretation does not erase its canonical source gap.
 
-Normalize/check source briefs:
+Build/check only the authorized chaturanga live example:
 
 ```sh
-python3 artifacts/exercise-animation-briefs/generate.py
-python3 artifacts/exercise-animation-briefs/verify.py
+node artifacts/chaturanga-heatmap/build.mjs
+node artifacts/chaturanga-heatmap/verify.mjs
+node artifacts/chaturanga-heatmap/build.mjs
+node artifacts/chaturanga-heatmap/verify-inline.mjs
 ```
 
-For an authorized change to the current five-clip pilot, the [existing recipe](../bodyweight-five/README.md) uses:
+These reuse the exact existing GLB action. Motion authoring and Blender export are needed only when an authorized exercise changes the motion/geometry. The known-issue authoring preflight still refuses blocking defects unless an explicitly authorized remediation draft uses `--allow-known-issues`. That override does not close or approve issues.
 
-```sh
-blender -b -t 4 --python-exit-code 1 -P artifacts/bodyweight-five/build_motion.py
-python3 artifacts/bodyweight-five/shot_plan.py
-blender -b -t 4 --python-exit-code 1 -P artifacts/bodyweight-five/verify_poses.py
-blender -b -t 4 --python-exit-code 1 -P artifacts/bodyweight-five/render_five.py
-python3 artifacts/bodyweight-five/encode_five.py
-swift artifacts/bodyweight-five/review_videos.swift artifacts/bodyweight-five
-python3 artifacts/bodyweight-five/verify_transparency.py
-cp artifacts/bodyweight-five/bodyweight-five-highlight.blend artifacts/bodyweight-five/runtime-source.blend
-blender -b -t 4 --python-exit-code 1 -P artifacts/bodyweight-five/export_runtime.py
-node artifacts/bodyweight-five/build_runtime_viewer.mjs
-node artifacts/bodyweight-five/verify_runtime.mjs
-node artifacts/bodyweight-five/check_touch.mjs
-```
+Historical video recipes and receipts remain in `../bodyweight-five/` for provenance. Do not invoke their render/encode scripts under the current live-animation request. Current verification concerns the actual WebGL scene, selected heat fields, source pose parity, transparent canvas and controls, including resume after seeking exactly to the action endpoint.
 
-Ordinary first-five regeneration is currently rejected because 0001 has blocking known issues. For an **explicitly authorized remediation draft**, the existing entrypoint supports this override:
+## Review handoff
 
-```sh
-blender -b -t 4 --python-exit-code 1 -P artifacts/bodyweight-five/build_motion.py -- --allow-known-issues
-```
-
-The override permits a draft repair attempt; it does not close issues, relax acceptance, approve the pose or turn the other four clips into certified motion.
-
-These existing checks are necessary evidence for their respective changes, but do not implement or replace the new per-contact-patch, exercise-specific pose, visibility or touch-playback acceptance described here. Do not interpret a successful old command as closure of an issue outside its scope. No additional paid service, publication, global preference change or whole-catalogue render is required by this contract.
-
-## Frozen review batches
-
-Keep an immutable batch under `artifacts/exercise-batches/batch-NNN/`, including IDs, intake packets, exact media/model resources, SHA-256 manifest and review status. Revisions retain the old diagnosis and source revision. For a bounded repair, render/encode/decode only changed clips and retain earlier receipts only when unchanged media hashes and action/pose identity match. `render_five.py -- --exercise ID`, `encode_five.py --exercise ID`, `review_videos.swift ROOT ID` and `verify_transparency.py --exercise ID` support this selective path. Re-export and verify the shared GLB after action changes. The batch remains `awaiting_user_review` when sent; the next five incorporate the user's comments.
+Keep the model/runtime, context and exact hashes under `artifacts/<task>/`, and show the live example for user review. Preserve frozen batch001 and its original diagnosis; do not regenerate its videos. The heat prototype remains `awaiting_user_confirmation`; continue other exercises after the user confirms this direction. This scope uses no paid generation service and does not publish or deploy the application.

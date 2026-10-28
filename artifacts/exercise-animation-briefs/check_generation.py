@@ -19,6 +19,8 @@ assert packets['0001']['readiness']['status']=='blocked'
 assert set(packets['0001']['readiness']['blocking_issue_ids'])=={'OPEN-0001-CONTACTS','OPEN-0001-HAND-HEAD-POSE'}
 assert packets['5915']['readiness']['status']=='requires_review'
 assert all(len(packet['baseline_requirements'])==21 and packet['not_production_approved'] for packet in packets.values())
+assert all(packet['delivery_policy']['generate_video'] is False for packet in packets.values())
+assert packets['5915']['per_exercise_overrides']['heat_zone_candidate']['rollout_to_other_exercises'] is False
 for packet in packets.values():
     for source in packet['input_files']:
         assert hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest()==source['sha256']

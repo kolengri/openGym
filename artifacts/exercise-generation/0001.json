@@ -452,6 +452,25 @@
     }
   },
   "selected_pilot_authoring_override": null,
+  "delivery_policy": {
+    "application_format": "GLB + Three.js live animation",
+    "generate_video": false,
+    "generate_frame_sequences": false,
+    "existing_video_artifacts": "Historical batch001 only; preserve without regeneration.",
+    "current_request_scope": [
+      "5915"
+    ],
+    "further_exercises": "Wait for user approval of the chaturanga heat-zone example."
+  },
+  "visualization_policy": {
+    "candidate": "surface_heat_zone",
+    "status": "awaiting_user_confirmation",
+    "exercise_id": "5915",
+    "inactive_body": "Uniform neutral skin; no painted muscle fibers or hard region boundaries.",
+    "main_additional": "Diffuse heat cue from selected source regions; stronger main areas and softer additional areas.",
+    "phase_strength": "Small authored artistic emphasis; no measured physiological recruitment claim.",
+    "stretch_palette": "Not exercised by5915; define when an applicable exercise is reviewed."
+  },
   "baseline_requirements": [
     {
       "id": "INTAKE-IDENTITY",
@@ -681,7 +700,7 @@
       "id": "MUSCLE-ROLES-AND-LATERALITY",
       "applies_to": "all_canonical_exercises_and_resolved_aliases",
       "requirement": "Retain catalogue labels; explicitly record illustrative main/additional/stretch overrides and actual anatomical L/R sides per phase. Keep inactive skin uniformly neutral with no inactive fibers.",
-      "acceptance_check": "Only selected working/support/stretch regions receive role detail; red main, amber additional and cyan stretch are not EMG or measured instantaneous recruitment.",
+      "acceptance_check": "Retain source main/additional/stretch semantics and anatomical sides. Heat-zone5915candidate uses soft warm intensity without painted muscle contours; inactive areas remain neutral. Role colors and artistic phase emphasis are not EMG or measured instantaneous recruitment.",
       "evidence": [
         {
           "source_ref": "atlas_readme",
@@ -698,6 +717,10 @@
         {
           "source_ref": "render_report",
           "path": "../bodyweight-five/render-report.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
         }
       ],
       "current_evidence_status": "current_neutral_and_selection_checks_measured_per_exercise_review_required",
@@ -768,8 +791,8 @@
     {
       "id": "RUNTIME-ATLAS-UV",
       "applies_to": "all_canonical_exercises_and_resolved_aliases",
-      "requirement": "Preserve atlas UV channel 1 on every replacement runtime texture and retain source-index correspondence across glTF UV splits.",
-      "acceptance_check": "Loaded material maps report channel 1; original-source vertex lookup resolves; selected pixels stay on their intended deformed regions.",
+      "requirement": "Retain original-source correspondence across glTF UV splits. If bitmap atlases are used, preserve their exported UV channel1; source-index heat attributes do not require color textures.",
+      "acceptance_check": "Texture paths report the correct atlas channel when used; heat-field paths resolve _SOURCE_INDEX and share scalar values across seam copies. Selected fields follow the deformed skin.",
       "evidence": [
         {
           "source_ref": "runtime_checks",
@@ -790,8 +813,8 @@
     {
       "id": "RUNTIME-RESOURCE-REUSE",
       "applies_to": "all_canonical_exercises_and_resolved_aliases",
-      "requirement": "Use 2048x1024 runtime atlases with a lazy neutral/active color cache, disposal and stale-load protection. Share one rig/skeleton/mixer update across synchronized views.",
-      "acceptance_check": "Probe actual runtime dimensions, loaded color states and stale switches; one model/skeleton/mixer and one pose update per frame; distinguish skeleton/internal GPU textures from color cache.",
+      "requirement": "Share one rig/skeleton/mixer update across synchronized views. Reuse a surface scalar attribute for the heat candidate, with no color textures. Legacy bitmap paths use2048x1024 atlases with a lazy neutral/active cache, disposal and stale-load protection.",
+      "acceptance_check": "Probe one model/skeleton/mixer and one pose update for all views. The heat candidate uses zero color textures; bitmap paths retain at most neutral/current color states. Distinguish internal bone textures from color textures.",
       "evidence": [
         {
           "source_ref": "runtime_checks",
@@ -800,6 +823,10 @@
         {
           "source_ref": "runtime_budget",
           "path": "../bodyweight-five/runtime-budget.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
         }
       ],
       "current_evidence_status": "current_two_color_cache_and_shared_mixer_measured",
@@ -830,8 +857,8 @@
     {
       "id": "OUTPUT-TRUE-ALPHA",
       "applies_to": "all_canonical_exercises_and_resolved_aliases",
-      "requirement": "Require actual transparent canvas and WebM-alpha masters; MP4 is explicitly an opaque fallback. CSS checker/white/dark backgrounds are not alpha evidence.",
-      "acceptance_check": "Verify alpha context, null scene background, zero clear alpha and empty corner pixels; decode actual WebM frames with alpha and confirm opaque body; label MP4 fallback correctly.",
+      "requirement": "Deliver live GLB + Three.js with a genuinely transparent canvas. Do not generate videos or frame sequences for the current application workflow. CSS backgrounds are independently selectable.",
+      "acceptance_check": "Verify alpha context, null scene background, zero clear alpha and empty corner pixels in the actual live canvas; no video elements or media requests. Old WebM/MP4 receipts are historical only.",
       "evidence": [
         {
           "source_ref": "runtime_checks",
@@ -848,16 +875,20 @@
         {
           "source_ref": "decoded_video_checks",
           "path": "../bodyweight-five/video-review.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
         }
       ],
-      "current_evidence_status": "current_canvas_and_decoded_webm_alpha_measured",
+      "current_evidence_status": "live_heat_canvas_verified; legacy_video_receipts_historical",
       "automatic_production_approval": false
     },
     {
       "id": "OUTPUT-LOOP-AND-DECODE",
       "applies_to": "all_canonical_exercises_and_resolved_aliases",
-      "requirement": "Check root/joint/contact continuity and appropriate velocity across loop boundaries, then decode the actual delivered files and inspect seam motion.",
-      "acceptance_check": "Record hashes, frame count/rate, dimensions, duration, audio state, decoded frames and seam comparison; a bone endpoint or encoder flag alone cannot pass.",
+      "requirement": "Check actual GLB pose/contact continuity and live-loop playback, including resume after seeking to the endpoint. Do not encode or decode new videos for this workflow.",
+      "acceptance_check": "Record exact model/runtime hashes, action duration, sampled pose parity and loop/restart interaction in Three.js. Confirm zero video outputs/requests. Historical decode receipts do not replace live runtime checks.",
       "evidence": [
         {
           "source_ref": "pose_checks",
@@ -874,9 +905,13 @@
         {
           "source_ref": "encoding_report",
           "path": "../bodyweight-five/encoding-report.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
         }
       ],
-      "current_evidence_status": "current_sampled_bone_and_decoded_pixel_checks_measured",
+      "current_evidence_status": "live_chaturanga_pose_loop_and_endpoint_resume_verified",
       "automatic_production_approval": false
     },
     {
@@ -1165,7 +1200,7 @@
         2048,
         1024
       ],
-      "color_cache": "lazy_neutral_and_active",
+      "color_cache": "none_for_heat_field; lazy_neutral_active_only_for_legacy_bitmap_mode",
       "stale_switch_guard": true,
       "model_instances": 1,
       "mixer_instances": 1,
@@ -1185,6 +1220,13 @@
         "motion_continues": true,
         "panning_enabled": false,
         "evidence_status": "not_run"
+      },
+      "surface_heat_field": {
+        "status": "candidate_awaiting_confirmation",
+        "original_vertex_attribute": "_SOURCE_INDEX",
+        "color_textures": 0,
+        "hard_painted_muscle_boundaries": false,
+        "phase_intensity_is_measured": false
       }
     },
     "exports": [
@@ -1214,6 +1256,16 @@
       "decoded_output_review": "not_run",
       "open_issue_ids": [],
       "evidence": []
+    },
+    "delivery_policy": {
+      "application_format": "GLB + Three.js live animation",
+      "generate_video": false,
+      "generate_frame_sequences": false,
+      "existing_video_artifacts": "Historical batch001 only; preserve without regeneration.",
+      "current_request_scope": [
+        "5915"
+      ],
+      "further_exercises": "Wait for user approval of the chaturanga heat-zone example."
     }
   },
   "per_exercise_overrides": {
@@ -1589,6 +1641,22 @@
     "original_situp_investigation": {
       "path": "../exercise-batches/batch-001/previous-situp-contact-investigation.json",
       "path_base": "generation-contract.json directory"
+    },
+    "heat_demo": {
+      "path": "../chaturanga-heatmap/README.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "heat_checks": {
+      "path": "../chaturanga-heatmap/verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "heat_inline_checks": {
+      "path": "../chaturanga-heatmap/inline-verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "heat_build": {
+      "path": "../chaturanga-heatmap/build-manifest.json",
+      "path_base": "generation-contract.json directory"
     }
   },
   "input_files": [
@@ -1598,7 +1666,7 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generation-contract.json",
-      "sha256": "fda4cfe1776900b2bfc5723d7bb8e49477cf5a959558d774607c86445b56746d"
+      "sha256": "6db82b00f2feb4af3d574a74223487ecb133daa3719860705a36530a7b9bf25e"
     },
     {
       "path": "artifacts/exercise-animation-briefs/selected-first-five.json",

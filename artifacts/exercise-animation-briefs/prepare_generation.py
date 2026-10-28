@@ -50,6 +50,8 @@ def prepare(exercise_ids,output_dir):
                        'source_blockers':blockers,'known_open_issue_ids':[issue['id'] for issue in issues],
                        'blocking_issue_ids':[issue['id'] for issue in blocking]},
             source_brief=brief,selected_pilot_authoring_override=pilots.get(canonical_id),
+            delivery_policy=contract.get('delivery_policy',{}),
+            visualization_policy=contract.get('visualization_policy',{}),
             baseline_requirements=contract['baseline_requirements'],
             evidence_status_policy=contract['evidence_status_policy'],
             per_exercise_intake_template=contract['per_exercise_intake_template'],
