@@ -7,6 +7,23 @@ import {createHeatMaterial} from '../../chaturanga-heatmap/heat-material.js';
 async function main() {
  const config = JSON.parse(document.querySelector('#heat-data').textContent);
  const stage = document.querySelector('#stage'), canvas = document.querySelector('canvas');
+ function describe(item) {
+  document.querySelector('#exercise-title').textContent = item.title;
+  document.querySelector('#exercise-description').textContent = item.description;
+  document.querySelector('#movement-note').textContent = item.note;
+  document.querySelector('#main-zone').textContent = item.mainLabel;
+  document.querySelector('#additional-zone').textContent = item.additionalLabel;
+  document.querySelector('#legend').dataset.mode = item.displayMode;
+  canvas.setAttribute('aria-label', item.title + ' · живая 3D-анимация с мягкими зонами мышц');
+ }
+ describe(config.exercises[0]);
+ document.querySelector('#view').value = config.exercises[0].displayMode === 'stretch' ? 'dual' : 'front';
+ for (const item of config.exercises) {
+  const button = document.createElement('button'); button.type = 'button'; button.dataset.id = item.id;
+  button.textContent = item.shortTitle; button.disabled = true;
+  button.setAttribute('aria-pressed', String(item.id === config.exercises[0].id));
+  button.onclick = () => select(item.id); document.querySelector('#exercises').append(button);
+ }
  const renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true, preserveDrawingBuffer: true});
  renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setClearColor(0x000000, 0);
  renderer.shadowMap.enabled = false; renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -92,23 +109,13 @@ async function main() {
   meshes.forEach((mesh, index) => mesh.geometry.setAttribute('heatZone', fields[index].attribute));
   const palette = exercise.displayMode === 'stretch' ? ['#72b4cf', '#2297c3', '#b1f2f3'] : ['#f7a64b', '#f24720', '#ffe09a'];
   ['heatAmber', 'heatRed', 'heatCore'].forEach((name, i) => uniforms[name].value.set(palette[i]));
-  document.querySelector('#exercise-title').textContent = exercise.title;
-  document.querySelector('#exercise-description').textContent = exercise.description;
-  document.querySelector('#movement-note').textContent = exercise.note;
-  document.querySelector('#main-zone').textContent = exercise.mainLabel;
-  document.querySelector('#additional-zone').textContent = exercise.additionalLabel;
-  document.querySelector('#legend').dataset.mode = exercise.displayMode;
+  describe(exercise);
   mode = exercise.displayMode === 'stretch' ? 'dual' : 'front';
   document.querySelector('#view').value = mode;
   document.querySelector('#timeline').max = String(clip.duration);
   document.querySelectorAll('#exercises button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.id === id)));
   playing = true; document.querySelector('#play').textContent = 'Пауза';
   reset(); pose(0);
- }
- for (const exercise of config.exercises) {
-  const button = document.createElement('button'); button.type = 'button'; button.dataset.id = exercise.id;
-  button.textContent = exercise.shortTitle; button.setAttribute('aria-pressed', 'false');
-  button.onclick = () => select(exercise.id); document.querySelector('#exercises').append(button);
  }
  controls.addEventListener('change', () => {
   if (linked) {
@@ -127,6 +134,7 @@ async function main() {
  document.querySelector('#timeline').oninput = event => {playing = false; document.querySelector('#play').textContent = 'Продолжить'; pose(Number(event.target.value));};
  new ResizeObserver(layout).observe(stage);
  select(config.exercises[0].id); document.querySelector('#loading').hidden = true; document.querySelector('#poster')?.remove();
+ document.querySelectorAll('#exercises button').forEach(button => {button.disabled = false;});
  window.heatReady = true; window.heatSelect = select;
  window.heatFrame = value => {playing = false; document.querySelector('#play').textContent = 'Продолжить'; pose(value);};
  window.heatProbe = () => {
