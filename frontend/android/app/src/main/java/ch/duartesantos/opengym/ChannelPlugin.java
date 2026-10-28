@@ -18,6 +18,8 @@ public class ChannelPlugin extends Plugin {
     public void get(PluginCall call) {
         JSObject ret = new JSObject();
         ret.put("channel", BuildConfig.CHANNEL);
+        ret.put("versionCode", BuildConfig.VERSION_CODE);
+        ret.put("packageName", getContext().getPackageName());
         call.resolve(ret);
     }
 }

@@ -32,7 +32,7 @@ import { getMediaStatus, subscribeMediaStatus, pendingRefCount } from '../lib/me
 import { limitsFrom, fmtMB, MB } from '../lib/media-limits.js'
 import { setRestAccent } from '../lib/rest-alert.js'
 import { CUSTOM, accentKey, adjustedIn, applyAccent, cleanHex, inkOn, isGrey } from '../lib/accent.js'
-import { checkForUpdate, downloadAndInstall, fetchChecksum, forgetDownloadedUpdate, RELEASES_PAGE } from '../lib/update.js'
+import { checkForUpdate, resetUpdateCheck, downloadAndInstall, fetchChecksum, forgetDownloadedUpdate, RELEASES_PAGE } from '../lib/update.js'
 import { APK_VARIANT, VARIANT_NAMES } from '../lib/apk-variant.js'
 import { BUILTIN_PX } from '../lib/anim-quality.js'
 import { selfUpdates } from '../lib/channel.js'
@@ -181,6 +181,7 @@ export default function Settings({ page = null, find = null, via = null, entryKe
   const [ios, setIos] = useState(() => MOBILE && platformNow() === 'ios')   // the iPhone app: Settings → Apple Watch
   const [selfUpdate, setSelfUpdate] = useState(false)   // the sideloaded APK, which updates itself
   const [checking, setChecking] = useState(false)
+  const updateRequest = useRef(0)
   // Where auto-backup writes on this Android phone, for the Auto-backup row's own subtitle.
   const [backupDir] = useBackupFolder(MOBILE && android && !!S.autoBackup)
 
@@ -191,15 +192,25 @@ export default function Settings({ page = null, find = null, via = null, entryKe
     // from even asking (and from calling GitHub on every Settings visit). Only the pages
     // that show it ask: the root (for nothing but `android`) skips the release check.
     // The Google Play build is updated by Play (lib/channel.js): no update row there either.
+    const request = ++updateRequest.current
+    const current = () => request === updateRequest.current
+    setChecking(false)
     if (!MOBILE) return
     isAndroid().then(async ok => {
+      if (!current()) return
       setAndroid(ok)
       setIos(!ok)
       const own = ok && await selfUpdates()
+      if (!current()) return
       setSelfUpdate(own)
       // Nothing newer: an update APK still in the cache is the one already installed.
-      if (own && page === 'about') checkForUpdate().then(info => { setUpdateInfo(info); if (!info?.hasUpdate) forgetDownloadedUpdate() }).catch(() => {})
+      if (own && page === 'about') checkForUpdate().then(info => {
+        if (!current()) return
+        setUpdateInfo(info)
+        if (!info?.hasUpdate) forgetDownloadedUpdate()
+      }).catch(() => {})
     })
+    return () => { ++updateRequest.current }
   }, [page])
 
   // A search hit: scroll its row (or button) into view and flash it once. A row that shows only
@@ -238,15 +249,18 @@ export default function Settings({ page = null, find = null, via = null, entryKe
   // reach GitHub, and a person who taps "Check for updates" deserves an answer either way.
   const checkNow = async () => {
     if (checking) return
+    const request = ++updateRequest.current
     setChecking(true)
+    resetUpdateCheck()
     try {
       const info = await checkForUpdate()
+      if (request !== updateRequest.current) return
       setUpdateInfo(info)
       if (!info.hasUpdate) { toast(t('You have the latest version.')); forgetDownloadedUpdate() }
     } catch {
-      toast(t('Couldn’t check for updates. Are you online?'))
+      if (request === updateRequest.current) toast(t('Couldn’t check for updates. Are you online?'))
     }
-    setChecking(false)
+    if (request === updateRequest.current) setChecking(false)
   }
 
   const onUpdateRowClick = () => {
@@ -284,7 +298,7 @@ export default function Settings({ page = null, find = null, via = null, entryKe
       })
     } else {
       // Update available but no APK asset — open the releases page
-      window.open(RELEASES_PAGE, '_blank', 'noopener')
+      window.open(updateInfo.releasesPage || RELEASES_PAGE, '_blank', 'noopener')
     }
   }
 

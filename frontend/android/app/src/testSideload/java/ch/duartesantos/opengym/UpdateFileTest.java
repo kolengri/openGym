@@ -7,6 +7,17 @@ import org.junit.Test;
 
 public class UpdateFileTest {
     @Test
+    public void requiresANewerVersionOfTheSamePackage() {
+        String own = "ch.duartesantos.opengym.garmin.test";
+        assertTrue(UpdateFile.isUpgrade(own, own, 33, 34));
+        assertFalse(UpdateFile.isUpgrade(own, "ch.duartesantos.opengym", 33, 99));
+        assertFalse(UpdateFile.isUpgrade(own, own, 33, 33));
+        assertFalse(UpdateFile.isUpgrade(own, own, 33, 32));
+        assertFalse(UpdateFile.isUpgrade(own, null, 33, 34));
+        assertFalse(UpdateFile.isUpgrade(null, own, 33, 34));
+        assertFalse(UpdateFile.isUpgrade(own, own, 0, 34));
+    }
+    @Test
     public void onlyTheUpdatersOwnFileName() {
         assertTrue(UpdateFile.nameOk("opengym-update.apk"));
         assertTrue(UpdateFile.nameOk("opengym-update-360.apk"));

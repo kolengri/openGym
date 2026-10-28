@@ -23,4 +23,9 @@ final class UpdateFile {
     static boolean hashOk(String sha256) {
         return sha256 != null && SHA256.matcher(sha256).matches();
     }
+
+    static boolean isUpgrade(String installedPackage, String archivePackage, long installedVersion, long archiveVersion) {
+        return installedPackage != null && installedPackage.equals(archivePackage) &&
+                installedVersion > 0 && archiveVersion > installedVersion;
+    }
 }

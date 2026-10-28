@@ -60,16 +60,17 @@ android {
 
 android.sourceSets.sideload.java.srcDir 'src/nonPlay/java'
 
-// Explicit local companion build: separate app/data, with no upstream APK updater.
+// Explicit companion build: separate app/data and its own fork update feed.
 if (project.findProperty('garmin') == 'true') {
     android.productFlavors.create('garmin') {
         dimension = "channel"
         applicationIdSuffix ".garmin"
-        versionCode 32
-        versionName "1.4.3-garmin.5"
+        versionCode 33
+        versionName "1.4.3-garmin.6"
         buildConfigField "String", "CHANNEL", '"garmin"'
     }
     android.sourceSets.garmin.java.srcDir 'src/nonPlay/java'
+    android.sourceSets.testGarmin.java.srcDir 'src/testSideload/java'
 }
 
 repositories {
