@@ -1,0 +1,37 @@
+{
+  "status": "offline_candidate_accepted_for_user_review",
+  "not_production_approved": true,
+  "exercise_ids": [
+    "5265",
+    "4007",
+    "6428",
+    "10565",
+    "6560"
+  ],
+  "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+  "camera_presets_sha256": "d051c4816c1d33ea4040660069549057866c67a2bb6bba985827f177b755a394",
+  "visual_evidence": {
+    "review-5265.png": "c173f18b8bbebd03c19e2ea85a21e1f6cd86919e714d770d33a156de75e124f3",
+    "review-4007.png": "4c8a16e308497824923bc54df04d281aa037acafce94d1632b768fd8797cd89a",
+    "review-6428.png": "36b88515f0538fb6d28308b31d754aff39821f821208ca3ba69be0051c7a7338",
+    "review-10565.png": "0918584f9080fbb86cc72c763224a418b5976b1d161e23013c257238300449fc",
+    "review-6560.png": "6a3da4791fa114c2eecb9db65de1bfbde4f979eee1812179696231a1a71c1fea",
+    "mobile.png": "fce52b1755c1167ac055b762b2fb8c5dcdfb3542e6bddd2497d5e3ebbec85fa5"
+  },
+  "primary_visual_review": "Actual final Three.js screenshots inspected for all five motions plus mobile. Higher abdominal views expose load zones; opposite90/90 views expose the selected left glute and right anterior hip. Continuous body, neutral inactive surfaces and distinct raised/planted heel-touch variants retained.",
+  "corrected_findings": [
+    "Bicycle torso yaw reversed to approach the opposite knee; actual GLB cross-body checks pass at both peaks.",
+    "Heel-touch relaxed and reaching finger clearance corrected and sampled against skin.",
+    "90/90 pelvic/spinal hinge and simultaneous original-index floor patches corrected.",
+    "90/90 runtime cameras refined to reveal the selected anatomical side."
+  ],
+  "checks": [
+    "../../bodyweight-next-five/qa-review.json",
+    "verification.json",
+    "../../exercise-animation-briefs/generation-verification.json",
+    "../../exercise-reuse-plan/verification.json"
+  ],
+  "accepted_native_warnings": "Nine inherited hidden mouth/toe opposing pairs and three native axillary pairs at one6428peak are retained to preserve original topology/binding. Linear GLB has no corresponding back-to-back warnings.",
+  "contact_scope": "Artist-authored support patches,12mm curved-contact band and4mm maximum floor penetration. Sampled illustration QA; physical-device/application integration and user acceptance remain separate.",
+  "independent_code_review": "Exempt isolated media/artifact/research scope; no production application code changed."
+}

@@ -7,6 +7,8 @@
   "readiness": {
     "status": "blocked",
     "source_blockers": [],
+    "unresolved_source_blockers": [],
+    "authored_source_resolutions": {},
     "known_open_issue_ids": [
       "OPEN-0001-CONTACTS",
       "OPEN-0001-HAND-HEAD-POSE",
@@ -458,18 +460,30 @@
     "generate_frame_sequences": false,
     "existing_video_artifacts": "Historical batch001 only; preserve without regeneration.",
     "current_request_scope": [
-      "5915"
+      "5265",
+      "4007",
+      "6428",
+      "10565",
+      "6560"
     ],
-    "further_exercises": "Wait for user approval of the chaturanga heat-zone example."
+    "further_exercises": "The user approved the5915 soft heat-zone style and authorized the next five equipment-free exercises. Review this batch before further rollout."
   },
   "visualization_policy": {
     "candidate": "surface_heat_zone",
-    "status": "awaiting_user_confirmation",
+    "status": "user_approved_for_next_five",
     "exercise_id": "5915",
     "inactive_body": "Uniform neutral skin; no painted muscle fibers or hard region boundaries.",
     "main_additional": "Diffuse heat cue from selected source regions; stronger main areas and softer additional areas.",
     "phase_strength": "Small authored artistic emphasis; no measured physiological recruitment claim.",
-    "stretch_palette": "Not exercised by5915; define when an applicable exercise is reviewed."
+    "stretch_palette": "Diffuse cyan for stretching exercises; keep source training labels separate from contraction/load claims. No measured force, temperature or EMG interpretation.",
+    "approved_style_exercise_id": "5915",
+    "current_batch": [
+      "5265",
+      "4007",
+      "6428",
+      "10565",
+      "6560"
+    ]
   },
   "baseline_requirements": [
     {
@@ -1666,7 +1680,7 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generation-contract.json",
-      "sha256": "6db82b00f2feb4af3d574a74223487ecb133daa3719860705a36530a7b9bf25e"
+      "sha256": "4bc911135bda9e89c45386de604c6b882d07c77451fe9ad6344ab065467affdd"
     },
     {
       "path": "artifacts/exercise-animation-briefs/selected-first-five.json",

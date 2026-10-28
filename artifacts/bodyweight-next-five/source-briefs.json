@@ -1,0 +1,2207 @@
+{
+  "10565": {
+    "schema_version": "1.0.0",
+    "id": "10565",
+    "canonical_id": "10565",
+    "record_kind": "canonical",
+    "name": "90 to 90 press stretch",
+    "category": "stretching",
+    "body_part": "upper legs",
+    "status": "needs_review",
+    "animation_ready": false,
+    "starting_position": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Sit tall.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "Sit in a 90-degree hip position and press forward to stretch the glutes and hips. It improves hip rotation.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/description",
+              "quote": "Sit in a 90-degree hip position and press forward to stretch the glutes and hips. It improves hip rotation."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "movement": {
+      "status": "source_steps_present",
+      "phases": [
+        {
+          "text": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Sit tall.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Hinge forward over the front shin with a flat back.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/2",
+              "quote": "Hinge forward over the front shin with a flat back."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Hold for 20-30 seconds.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/3",
+              "quote": "Hold for 20-30 seconds."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "setup_or_position",
+            "hold_or_constraint",
+            "timing_or_repetition"
+          ]
+        },
+        {
+          "text": "Switch sides and repeat.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/4",
+              "quote": "Switch sides and repeat."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "return_or_side_change",
+            "timing_or_repetition"
+          ]
+        }
+      ],
+      "phase_interpretation": "Ordered original instruction steps with heuristic tags; a step can combine setup, motion and constraints. Not generated keyframes."
+    },
+    "arms_hands": {
+      "status": "missing_in_source",
+      "cues": [],
+      "missing_detail": "Initial and/or moving arm/hand placement is not specified in the source steps.",
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "legs_feet": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "Sit in a 90-degree hip position and press forward to stretch the glutes and hips. It improves hip rotation.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/description",
+              "quote": "Sit in a 90-degree hip position and press forward to stretch the glutes and hips. It improves hip rotation."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "equipment_scene": {
+      "declared_equipment": {
+        "value": "body weight",
+        "evidence": [
+          {
+            "path": "catalogue/exercises/10565.json",
+            "pointer": "/equipment",
+            "quote": "body weight"
+          }
+        ]
+      },
+      "needs": {
+        "value": [],
+        "evidence": []
+      },
+      "props": [],
+      "contacts": {
+        "status": "source_cues_present",
+        "cues": [
+          {
+            "text": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side.",
+            "evidence": [
+              {
+                "path": "catalogue/exercises/10565.json",
+                "pointer": "/instructions/0",
+                "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+              }
+            ],
+            "step_number": 1,
+            "tags": [
+              "setup_or_position"
+            ]
+          }
+        ],
+        "missing_detail": null,
+        "context_cues": [],
+        "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+      },
+      "prop_summary": "no_prop_documented_in_text",
+      "equipment_free_candidate": true,
+      "interpretation": "Body weight describes resistance, not scene contents. Inventory is a candidate list, not verified geometry. Floor/ground contacts are retained even for equipment-free candidates."
+    },
+    "muscles": {
+      "primary": [
+        {
+          "name": "glutes",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/target",
+              "quote": "glutes"
+            }
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "hip flexors",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/secondaryMuscles/0",
+              "quote": "hip flexors"
+            }
+          ]
+        },
+        {
+          "name": "adductors",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/secondaryMuscles/1",
+              "quote": "adductors"
+            }
+          ]
+        },
+        {
+          "name": "lower back",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/secondaryMuscles/2",
+              "quote": "lower back"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Source training labels, not measured activation, contraction intensity, or necessarily anatomical muscles (for example cardiovascular system, ankles, core)."
+    },
+    "source_constraints": {
+      "hold": false,
+      "hold_explicit": false,
+      "timing_and_ranges": [
+        {
+          "text": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Hold for 20-30 seconds.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/3",
+              "quote": "Hold for 20-30 seconds."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "setup_or_position",
+            "hold_or_constraint",
+            "timing_or_repetition"
+          ]
+        }
+      ],
+      "interpretation": "Retain source timing/range cues. No universal tempo, joint angle, side order or anatomical precision is invented."
+    },
+    "review_reasons": [
+      {
+        "code": "arms_hands_missing",
+        "message": "No explicit arm/hand cue was found in the instruction steps.",
+        "evidence": []
+      }
+    ],
+    "production_review_required": [
+      "Approve complete contact/pose geometry, range of motion and timing for this individual exercise.",
+      "Approve safe joint motion and visible primary/secondary muscle highlights; text labels do not supply muscle activation curves."
+    ],
+    "source": {
+      "path": "catalogue/exercises/10565.json",
+      "sha256": "4f028037f23841c7e58a49f5873e0d1b6a2963ea3196ee518b41757d1c5fed69",
+      "text_source": "opengym",
+      "original_record": {
+        "id": "10565",
+        "name": "90 to 90 press stretch",
+        "bodyPart": "upper legs",
+        "equipment": "body weight",
+        "target": "glutes",
+        "secondaryMuscles": [
+          "hip flexors",
+          "adductors",
+          "lower back"
+        ],
+        "category": "stretching",
+        "description": "Sit in a 90-degree hip position and press forward to stretch the glutes and hips. It improves hip rotation.",
+        "instructions": [
+          "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side.",
+          "Sit tall.",
+          "Hinge forward over the front shin with a flat back.",
+          "Hold for 20-30 seconds.",
+          "Switch sides and repeat."
+        ],
+        "textSource": "opengym"
+      }
+    },
+    "derivation": "Deterministic text extraction with heuristic cue classification and separately labeled reversible authored staging. Source cues are quoted; props are adjudicated conservatively. No licensed images or videos were read.",
+    "source_completeness": {
+      "status": "needs_review",
+      "review_reason_count": 1
+    },
+    "authored_staging": {
+      "pose_class": "seated",
+      "pose_choice_basis": "source_classification",
+      "starting_position": {
+        "proposal": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side. Sit tall.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            },
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "arms_hands": {
+        "proposal": "Rest relaxed hands beside the thighs until the source's arm movement begins; use documented handles or loads when present.",
+        "status": "authored_from_source_posture",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            }
+          ],
+          "rationale": "Initial arm position was not explicit; this is a neutral staging choice compatible with the inferred support pose."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "legs_feet": {
+        "proposal": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "equipment_contacts": {
+        "proposal": "Retain every explicit contact in equipment_scene.contacts. Use only the documented prop choices: no additional prop is established. Do not assign unknown apparatus dimensions, pad settings, attachment heights or load values.",
+        "status": "authored_scene_blocking",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/10565.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+            }
+          ],
+          "rationale": "Scene support follows the source posture; unsupported inventory candidates are excluded from this proposal, not silently asserted."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "movement_policy": "Use the complete ordered source phases and retain all individual constraints. No missing footfall sequence, load path, apparatus setting, timing or joint range is invented by these placement proposals.",
+      "status": "proposal_ready_for_review",
+      "blockers": [],
+      "interpretation": "Usable blocking proposals where source posture/contact allows them; authored placements are reversible choices, not verified exercise mechanics or production-ready animation."
+    },
+    "storyboard_readiness": {
+      "status": "proposal_ready_for_review",
+      "blockers": []
+    }
+  },
+  "4007": {
+    "schema_version": "1.0.0",
+    "id": "4007",
+    "canonical_id": "4007",
+    "record_kind": "canonical",
+    "name": "90 degree heel touch",
+    "category": "calisthenics",
+    "body_part": "waist",
+    "status": "needs_review",
+    "animation_ready": false,
+    "starting_position": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Lie with your legs up and knees bent at 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "Lie with legs raised and reach toward your heels. It works the abs and obliques.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/description",
+              "quote": "Lie with legs raised and reach toward your heels. It works the abs and obliques."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "movement": {
+      "status": "source_steps_present",
+      "phases": [
+        {
+          "text": "Lie with your legs up and knees bent at 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Lift your shoulders.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/1",
+              "quote": "Lift your shoulders."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Reach one hand toward the heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/2",
+              "quote": "Reach one hand toward the heel."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Switch sides.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/3",
+              "quote": "Switch sides."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "return_or_side_change"
+          ]
+        },
+        {
+          "text": "Keep your legs still.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/4",
+              "quote": "Keep your legs still."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "hold_or_constraint"
+          ]
+        }
+      ],
+      "phase_interpretation": "Ordered original instruction steps with heuristic tags; a step can combine setup, motion and constraints. Not generated keyframes."
+    },
+    "arms_hands": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Lift your shoulders.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/1",
+              "quote": "Lift your shoulders."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Reach one hand toward the heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/2",
+              "quote": "Reach one hand toward the heel."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "legs_feet": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Lie with your legs up and knees bent at 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Reach one hand toward the heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/2",
+              "quote": "Reach one hand toward the heel."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Keep your legs still.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/4",
+              "quote": "Keep your legs still."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "hold_or_constraint"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "90 degree heel touch",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/name",
+              "quote": "90 degree heel touch"
+            }
+          ],
+          "source_field": "name"
+        },
+        {
+          "text": "Lie with legs raised and reach toward your heels. It works the abs and obliques.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/description",
+              "quote": "Lie with legs raised and reach toward your heels. It works the abs and obliques."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "equipment_scene": {
+      "declared_equipment": {
+        "value": "body weight",
+        "evidence": [
+          {
+            "path": "catalogue/exercises/4007.json",
+            "pointer": "/equipment",
+            "quote": "body weight"
+          }
+        ]
+      },
+      "needs": {
+        "value": [],
+        "evidence": []
+      },
+      "props": [],
+      "contacts": {
+        "status": "missing_in_source",
+        "cues": [],
+        "missing_detail": "No explicit scene contact cue identified; absence is not proof of free-space motion.",
+        "context_cues": [],
+        "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+      },
+      "prop_summary": "no_prop_documented_in_text",
+      "equipment_free_candidate": true,
+      "interpretation": "Body weight describes resistance, not scene contents. Inventory is a candidate list, not verified geometry. Floor/ground contacts are retained even for equipment-free candidates."
+    },
+    "muscles": {
+      "primary": [
+        {
+          "name": "abs",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/target",
+              "quote": "abs"
+            }
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "obliques",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/secondaryMuscles/0",
+              "quote": "obliques"
+            }
+          ]
+        },
+        {
+          "name": "hip flexors",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/secondaryMuscles/1",
+              "quote": "hip flexors"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Source training labels, not measured activation, contraction intensity, or necessarily anatomical muscles (for example cardiovascular system, ankles, core)."
+    },
+    "source_constraints": {
+      "hold": false,
+      "hold_explicit": false,
+      "timing_and_ranges": [
+        {
+          "text": "Lie with your legs up and knees bent at 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "interpretation": "Retain source timing/range cues. No universal tempo, joint angle, side order or anatomical precision is invented."
+    },
+    "review_reasons": [
+      {
+        "code": "starting_arms_hands_missing",
+        "message": "Arm/hand movement cues exist, but initial hand placement or arm position is not explicitly stated.",
+        "evidence": []
+      }
+    ],
+    "production_review_required": [
+      "Approve complete contact/pose geometry, range of motion and timing for this individual exercise.",
+      "Approve safe joint motion and visible primary/secondary muscle highlights; text labels do not supply muscle activation curves."
+    ],
+    "source": {
+      "path": "catalogue/exercises/4007.json",
+      "sha256": "1505d0544c302d4320d809a3e9f502d889000c29602dc4dffa11ce9e0a06dff5",
+      "text_source": "opengym",
+      "original_record": {
+        "id": "4007",
+        "name": "90 degree heel touch",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+          "obliques",
+          "hip flexors"
+        ],
+        "category": "calisthenics",
+        "description": "Lie with legs raised and reach toward your heels. It works the abs and obliques.",
+        "instructions": [
+          "Lie with your legs up and knees bent at 90 degrees.",
+          "Lift your shoulders.",
+          "Reach one hand toward the heel.",
+          "Switch sides.",
+          "Keep your legs still."
+        ],
+        "textSource": "opengym"
+      }
+    },
+    "derivation": "Deterministic text extraction with heuristic cue classification and separately labeled reversible authored staging. Source cues are quoted; props are adjudicated conservatively. No licensed images or videos were read.",
+    "source_completeness": {
+      "status": "needs_review",
+      "review_reason_count": 1
+    },
+    "authored_staging": {
+      "pose_class": "supported_lying",
+      "pose_choice_basis": "source_classification",
+      "starting_position": {
+        "proposal": "Lie with your legs up and knees bent at 90 degrees.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "arms_hands": {
+        "proposal": "Use the source's load/control contact and moving-arm cues as the initial blocking guide; keep wrists neutral and leave an unstated grip orientation for owner review.",
+        "status": "authored_from_source_posture",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "rationale": "Initial arm position was not explicit; this is a neutral staging choice compatible with the inferred support pose."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "legs_feet": {
+        "proposal": "Lie with your legs up and knees bent at 90 degrees.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "equipment_contacts": {
+        "proposal": "Retain every explicit contact in equipment_scene.contacts. Use only the documented prop choices: no additional prop is established. Do not assign unknown apparatus dimensions, pad settings, attachment heights or load values.",
+        "status": "authored_scene_blocking",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/4007.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie with your legs up and knees bent at 90 degrees."
+            }
+          ],
+          "rationale": "Scene support follows the source posture; unsupported inventory candidates are excluded from this proposal, not silently asserted."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "movement_policy": "Use the complete ordered source phases and retain all individual constraints. No missing footfall sequence, load path, apparatus setting, timing or joint range is invented by these placement proposals.",
+      "status": "proposal_ready_for_review",
+      "blockers": [],
+      "interpretation": "Usable blocking proposals where source posture/contact allows them; authored placements are reversible choices, not verified exercise mechanics or production-ready animation."
+    },
+    "storyboard_readiness": {
+      "status": "proposal_ready_for_review",
+      "blockers": []
+    }
+  },
+  "5265": {
+    "schema_version": "1.0.0",
+    "id": "5265",
+    "canonical_id": "5265",
+    "record_kind": "canonical",
+    "name": "45 degree bicycle twisting crunch",
+    "category": "calisthenics",
+    "body_part": "waist",
+    "status": "source_complete_for_storyboard",
+    "animation_ready": false,
+    "starting_position": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Sit and lean back to about 45 degrees with your feet raised.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit and lean back to about 45 degrees with your feet raised."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position",
+            "movement",
+            "return_or_side_change"
+          ]
+        },
+        {
+          "text": "Place your hands behind your head.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/1",
+              "quote": "Place your hands behind your head."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "movement": {
+      "status": "source_steps_present",
+      "phases": [
+        {
+          "text": "Sit and lean back to about 45 degrees with your feet raised.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit and lean back to about 45 degrees with your feet raised."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position",
+            "movement",
+            "return_or_side_change"
+          ]
+        },
+        {
+          "text": "Place your hands behind your head.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/1",
+              "quote": "Place your hands behind your head."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Bring one knee in as you twist the opposite elbow toward it.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/2",
+              "quote": "Bring one knee in as you twist the opposite elbow toward it."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Alternate sides in a pedalling motion.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/3",
+              "quote": "Alternate sides in a pedalling motion."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "return_or_side_change"
+          ]
+        },
+        {
+          "text": "Keep your chest lifted and your core tight.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/4",
+              "quote": "Keep your chest lifted and your core tight."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "hold_or_constraint"
+          ]
+        }
+      ],
+      "phase_interpretation": "Ordered original instruction steps with heuristic tags; a step can combine setup, motion and constraints. Not generated keyframes."
+    },
+    "arms_hands": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Place your hands behind your head.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/1",
+              "quote": "Place your hands behind your head."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Bring one knee in as you twist the opposite elbow toward it.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/2",
+              "quote": "Bring one knee in as you twist the opposite elbow toward it."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "legs_feet": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Sit and lean back to about 45 degrees with your feet raised.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit and lean back to about 45 degrees with your feet raised."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position",
+            "movement",
+            "return_or_side_change"
+          ]
+        },
+        {
+          "text": "Bring one knee in as you twist the opposite elbow toward it.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/2",
+              "quote": "Bring one knee in as you twist the opposite elbow toward it."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "equipment_scene": {
+      "declared_equipment": {
+        "value": "body weight",
+        "evidence": [
+          {
+            "path": "catalogue/exercises/5265.json",
+            "pointer": "/equipment",
+            "quote": "body weight"
+          }
+        ]
+      },
+      "needs": {
+        "value": [],
+        "evidence": []
+      },
+      "props": [],
+      "contacts": {
+        "status": "missing_in_source",
+        "cues": [],
+        "missing_detail": "No explicit scene contact cue identified; absence is not proof of free-space motion.",
+        "context_cues": [],
+        "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+      },
+      "prop_summary": "no_prop_documented_in_text",
+      "equipment_free_candidate": true,
+      "interpretation": "Body weight describes resistance, not scene contents. Inventory is a candidate list, not verified geometry. Floor/ground contacts are retained even for equipment-free candidates."
+    },
+    "muscles": {
+      "primary": [
+        {
+          "name": "abs",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/target",
+              "quote": "abs"
+            }
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "obliques",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/secondaryMuscles/0",
+              "quote": "obliques"
+            }
+          ]
+        },
+        {
+          "name": "hip flexors",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/secondaryMuscles/1",
+              "quote": "hip flexors"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Source training labels, not measured activation, contraction intensity, or necessarily anatomical muscles (for example cardiovascular system, ankles, core)."
+    },
+    "source_constraints": {
+      "hold": false,
+      "hold_explicit": false,
+      "timing_and_ranges": [
+        {
+          "text": "Sit and lean back to about 45 degrees with your feet raised.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit and lean back to about 45 degrees with your feet raised."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position",
+            "movement",
+            "return_or_side_change"
+          ]
+        }
+      ],
+      "interpretation": "Retain source timing/range cues. No universal tempo, joint angle, side order or anatomical precision is invented."
+    },
+    "review_reasons": [],
+    "production_review_required": [
+      "Approve complete contact/pose geometry, range of motion and timing for this individual exercise.",
+      "Approve safe joint motion and visible primary/secondary muscle highlights; text labels do not supply muscle activation curves."
+    ],
+    "source": {
+      "path": "catalogue/exercises/5265.json",
+      "sha256": "acc64656157e1ad2bdb97374171d83f622a4abcba54a0d566afa287aadbab925",
+      "text_source": "opengym",
+      "original_record": {
+        "id": "5265",
+        "name": "45 degree bicycle twisting crunch",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+          "obliques",
+          "hip flexors"
+        ],
+        "category": "calisthenics",
+        "description": "A twisting bicycle crunch with the torso leaning back at 45 degrees. It strongly targets the abs and obliques.",
+        "instructions": [
+          "Sit and lean back to about 45 degrees with your feet raised.",
+          "Place your hands behind your head.",
+          "Bring one knee in as you twist the opposite elbow toward it.",
+          "Alternate sides in a pedalling motion.",
+          "Keep your chest lifted and your core tight."
+        ],
+        "femaleVariant": "1185",
+        "textSource": "opengym"
+      }
+    },
+    "derivation": "Deterministic text extraction with heuristic cue classification and separately labeled reversible authored staging. Source cues are quoted; props are adjudicated conservatively. No licensed images or videos were read.",
+    "source_completeness": {
+      "status": "source_complete_for_storyboard",
+      "review_reason_count": 0
+    },
+    "authored_staging": {
+      "pose_class": "unresolved",
+      "pose_choice_basis": "source_classification",
+      "starting_position": {
+        "proposal": "Sit and lean back to about 45 degrees with your feet raised. Place your hands behind your head.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit and lean back to about 45 degrees with your feet raised."
+            },
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/1",
+              "quote": "Place your hands behind your head."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "arms_hands": {
+        "proposal": "Place your hands behind your head.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/1",
+              "quote": "Place your hands behind your head."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "legs_feet": {
+        "proposal": "Sit and lean back to about 45 degrees with your feet raised.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/5265.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit and lean back to about 45 degrees with your feet raised."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "equipment_contacts": {
+        "proposal": "Retain every explicit contact in equipment_scene.contacts. Use only the documented prop choices: no additional prop is established. Do not assign unknown apparatus dimensions, pad settings, attachment heights or load values.",
+        "status": "authored_scene_blocking",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [],
+          "rationale": "Scene support follows the source posture; unsupported inventory candidates are excluded from this proposal, not silently asserted."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "movement_policy": "Use the complete ordered source phases and retain all individual constraints. No missing footfall sequence, load path, apparatus setting, timing or joint range is invented by these placement proposals.",
+      "status": "blocked_on_source_resolution",
+      "blockers": [
+        "initial_body_support_unresolved"
+      ],
+      "interpretation": "Usable blocking proposals where source posture/contact allows them; authored placements are reversible choices, not verified exercise mechanics or production-ready animation."
+    },
+    "storyboard_readiness": {
+      "status": "blocked_on_source_resolution",
+      "blockers": [
+        "initial_body_support_unresolved"
+      ]
+    }
+  },
+  "6428": {
+    "schema_version": "1.0.0",
+    "id": "6428",
+    "canonical_id": "6428",
+    "record_kind": "canonical",
+    "name": "90 degree heel touch v. 2",
+    "category": "calisthenics",
+    "body_part": "waist",
+    "status": "needs_review",
+    "animation_ready": false,
+    "starting_position": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Lie on your back with knees bent and feet flat.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie on your back with knees bent and feet flat."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "Lying on your back with your knees bent, you reach side to side to tap your heels, working your obliques.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/description",
+              "quote": "Lying on your back with your knees bent, you reach side to side to tap your heels, working your obliques."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "movement": {
+      "status": "source_steps_present",
+      "phases": [
+        {
+          "text": "Lie on your back with knees bent and feet flat.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie on your back with knees bent and feet flat."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Lift your shoulders slightly off the floor.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/1",
+              "quote": "Lift your shoulders slightly off the floor."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Reach your right hand toward your right heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/2",
+              "quote": "Reach your right hand toward your right heel."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Switch and reach your left hand to your left heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/3",
+              "quote": "Switch and reach your left hand to your left heel."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "movement",
+            "return_or_side_change"
+          ]
+        },
+        {
+          "text": "Keep your core tight and continue alternating.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/4",
+              "quote": "Keep your core tight and continue alternating."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "hold_or_constraint",
+            "return_or_side_change"
+          ]
+        }
+      ],
+      "phase_interpretation": "Ordered original instruction steps with heuristic tags; a step can combine setup, motion and constraints. Not generated keyframes."
+    },
+    "arms_hands": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Lift your shoulders slightly off the floor.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/1",
+              "quote": "Lift your shoulders slightly off the floor."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Reach your right hand toward your right heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/2",
+              "quote": "Reach your right hand toward your right heel."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Switch and reach your left hand to your left heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/3",
+              "quote": "Switch and reach your left hand to your left heel."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "movement",
+            "return_or_side_change"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "legs_feet": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Lie on your back with knees bent and feet flat.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie on your back with knees bent and feet flat."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Reach your right hand toward your right heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/2",
+              "quote": "Reach your right hand toward your right heel."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Switch and reach your left hand to your left heel.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/3",
+              "quote": "Switch and reach your left hand to your left heel."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "movement",
+            "return_or_side_change"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "90 degree heel touch v. 2",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/name",
+              "quote": "90 degree heel touch v. 2"
+            }
+          ],
+          "source_field": "name"
+        },
+        {
+          "text": "Lying on your back with your knees bent, you reach side to side to tap your heels, working your obliques.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/description",
+              "quote": "Lying on your back with your knees bent, you reach side to side to tap your heels, working your obliques."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "equipment_scene": {
+      "declared_equipment": {
+        "value": "body weight",
+        "evidence": [
+          {
+            "path": "catalogue/exercises/6428.json",
+            "pointer": "/equipment",
+            "quote": "body weight"
+          }
+        ]
+      },
+      "needs": {
+        "value": [],
+        "evidence": []
+      },
+      "props": [],
+      "contacts": {
+        "status": "missing_in_source",
+        "cues": [],
+        "missing_detail": "No explicit scene contact cue identified; absence is not proof of free-space motion.",
+        "context_cues": [],
+        "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+      },
+      "prop_summary": "no_prop_documented_in_text",
+      "equipment_free_candidate": true,
+      "interpretation": "Body weight describes resistance, not scene contents. Inventory is a candidate list, not verified geometry. Floor/ground contacts are retained even for equipment-free candidates."
+    },
+    "muscles": {
+      "primary": [
+        {
+          "name": "abs",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/target",
+              "quote": "abs"
+            }
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "obliques",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/secondaryMuscles/0",
+              "quote": "obliques"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Source training labels, not measured activation, contraction intensity, or necessarily anatomical muscles (for example cardiovascular system, ankles, core)."
+    },
+    "source_constraints": {
+      "hold": false,
+      "hold_explicit": false,
+      "timing_and_ranges": [],
+      "interpretation": "Retain source timing/range cues. No universal tempo, joint angle, side order or anatomical precision is invented."
+    },
+    "review_reasons": [
+      {
+        "code": "starting_arms_hands_missing",
+        "message": "Arm/hand movement cues exist, but initial hand placement or arm position is not explicitly stated.",
+        "evidence": []
+      }
+    ],
+    "production_review_required": [
+      "Approve complete contact/pose geometry, range of motion and timing for this individual exercise.",
+      "Approve safe joint motion and visible primary/secondary muscle highlights; text labels do not supply muscle activation curves."
+    ],
+    "source": {
+      "path": "catalogue/exercises/6428.json",
+      "sha256": "3cd9d85b21ba3caccbaba67161a28e1785e102969920c6a7f53c192914eea66f",
+      "text_source": "opengym",
+      "original_record": {
+        "id": "6428",
+        "name": "90 degree heel touch v. 2",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+          "obliques"
+        ],
+        "category": "calisthenics",
+        "description": "Lying on your back with your knees bent, you reach side to side to tap your heels, working your obliques.",
+        "instructions": [
+          "Lie on your back with knees bent and feet flat.",
+          "Lift your shoulders slightly off the floor.",
+          "Reach your right hand toward your right heel.",
+          "Switch and reach your left hand to your left heel.",
+          "Keep your core tight and continue alternating."
+        ],
+        "textSource": "opengym"
+      }
+    },
+    "derivation": "Deterministic text extraction with heuristic cue classification and separately labeled reversible authored staging. Source cues are quoted; props are adjudicated conservatively. No licensed images or videos were read.",
+    "source_completeness": {
+      "status": "needs_review",
+      "review_reason_count": 1
+    },
+    "authored_staging": {
+      "pose_class": "supine",
+      "pose_choice_basis": "source_classification",
+      "starting_position": {
+        "proposal": "Lie on your back with knees bent and feet flat.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie on your back with knees bent and feet flat."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "arms_hands": {
+        "proposal": "Rest the arms beside the torso with relaxed hands on the documented support surface; this is a balance/staging choice, not an added pressing action.",
+        "status": "authored_from_source_posture",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie on your back with knees bent and feet flat."
+            }
+          ],
+          "rationale": "Initial arm position was not explicit; this is a neutral staging choice compatible with the inferred support pose."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "legs_feet": {
+        "proposal": "Lie on your back with knees bent and feet flat.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie on your back with knees bent and feet flat."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "equipment_contacts": {
+        "proposal": "Retain every explicit contact in equipment_scene.contacts. Use only the documented prop choices: no additional prop is established. Do not assign unknown apparatus dimensions, pad settings, attachment heights or load values.",
+        "status": "authored_scene_blocking",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6428.json",
+              "pointer": "/instructions/0",
+              "quote": "Lie on your back with knees bent and feet flat."
+            }
+          ],
+          "rationale": "Scene support follows the source posture; unsupported inventory candidates are excluded from this proposal, not silently asserted."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "movement_policy": "Use the complete ordered source phases and retain all individual constraints. No missing footfall sequence, load path, apparatus setting, timing or joint range is invented by these placement proposals.",
+      "status": "proposal_ready_for_review",
+      "blockers": [],
+      "interpretation": "Usable blocking proposals where source posture/contact allows them; authored placements are reversible choices, not verified exercise mechanics or production-ready animation."
+    },
+    "storyboard_readiness": {
+      "status": "proposal_ready_for_review",
+      "blockers": []
+    }
+  },
+  "6560": {
+    "schema_version": "1.0.0",
+    "id": "6560",
+    "canonical_id": "6560",
+    "record_kind": "canonical",
+    "name": "90 to 90 stretch",
+    "category": "stretching",
+    "body_part": "upper legs",
+    "status": "source_complete_for_storyboard",
+    "animation_ready": false,
+    "starting_position": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Sit tall with your hands on the floor.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall with your hands on the floor."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "A seated hip stretch with both legs bent at right angles. It loosens the hip rotators and the glutes.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/description",
+              "quote": "A seated hip stretch with both legs bent at right angles. It loosens the hip rotators and the glutes."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "movement": {
+      "status": "source_steps_present",
+      "phases": [
+        {
+          "text": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Sit tall with your hands on the floor.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall with your hands on the floor."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Hinge forward over the front shin until you feel a stretch in the hip.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/2",
+              "quote": "Hinge forward over the front shin until you feel a stretch in the hip."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Hold for 20-30 seconds, breathing calmly.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/3",
+              "quote": "Hold for 20-30 seconds, breathing calmly."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "setup_or_position",
+            "hold_or_constraint",
+            "timing_or_repetition"
+          ]
+        },
+        {
+          "text": "Come back up slowly.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/4",
+              "quote": "Come back up slowly."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "timing_or_repetition"
+          ]
+        },
+        {
+          "text": "Switch sides.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/5",
+              "quote": "Switch sides."
+            }
+          ],
+          "step_number": 6,
+          "tags": [
+            "return_or_side_change"
+          ]
+        }
+      ],
+      "phase_interpretation": "Ordered original instruction steps with heuristic tags; a step can combine setup, motion and constraints. Not generated keyframes."
+    },
+    "arms_hands": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Sit tall with your hands on the floor.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall with your hands on the floor."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "legs_feet": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Hinge forward over the front shin until you feel a stretch in the hip.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/2",
+              "quote": "Hinge forward over the front shin until you feel a stretch in the hip."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "movement"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "A seated hip stretch with both legs bent at right angles. It loosens the hip rotators and the glutes.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/description",
+              "quote": "A seated hip stretch with both legs bent at right angles. It loosens the hip rotators and the glutes."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "equipment_scene": {
+      "declared_equipment": {
+        "value": "body weight",
+        "evidence": [
+          {
+            "path": "catalogue/exercises/6560.json",
+            "pointer": "/equipment",
+            "quote": "body weight"
+          }
+        ]
+      },
+      "needs": {
+        "value": [],
+        "evidence": []
+      },
+      "props": [],
+      "contacts": {
+        "status": "source_cues_present",
+        "cues": [
+          {
+            "text": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees.",
+            "evidence": [
+              {
+                "path": "catalogue/exercises/6560.json",
+                "pointer": "/instructions/0",
+                "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+              }
+            ],
+            "step_number": 1,
+            "tags": [
+              "setup_or_position"
+            ]
+          },
+          {
+            "text": "Sit tall with your hands on the floor.",
+            "evidence": [
+              {
+                "path": "catalogue/exercises/6560.json",
+                "pointer": "/instructions/1",
+                "quote": "Sit tall with your hands on the floor."
+              }
+            ],
+            "step_number": 2,
+            "tags": [
+              "setup_or_position"
+            ]
+          }
+        ],
+        "missing_detail": null,
+        "context_cues": [],
+        "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+      },
+      "prop_summary": "no_prop_documented_in_text",
+      "equipment_free_candidate": true,
+      "interpretation": "Body weight describes resistance, not scene contents. Inventory is a candidate list, not verified geometry. Floor/ground contacts are retained even for equipment-free candidates."
+    },
+    "muscles": {
+      "primary": [
+        {
+          "name": "glutes",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/target",
+              "quote": "glutes"
+            }
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "hip flexors",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/secondaryMuscles/0",
+              "quote": "hip flexors"
+            }
+          ]
+        },
+        {
+          "name": "adductors",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/secondaryMuscles/1",
+              "quote": "adductors"
+            }
+          ]
+        },
+        {
+          "name": "lower back",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/secondaryMuscles/2",
+              "quote": "lower back"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Source training labels, not measured activation, contraction intensity, or necessarily anatomical muscles (for example cardiovascular system, ankles, core)."
+    },
+    "source_constraints": {
+      "hold": false,
+      "hold_explicit": false,
+      "timing_and_ranges": [
+        {
+          "text": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Hold for 20-30 seconds, breathing calmly.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/3",
+              "quote": "Hold for 20-30 seconds, breathing calmly."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "setup_or_position",
+            "hold_or_constraint",
+            "timing_or_repetition"
+          ]
+        },
+        {
+          "text": "Come back up slowly.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/4",
+              "quote": "Come back up slowly."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "timing_or_repetition"
+          ]
+        }
+      ],
+      "interpretation": "Retain source timing/range cues. No universal tempo, joint angle, side order or anatomical precision is invented."
+    },
+    "review_reasons": [],
+    "production_review_required": [
+      "Approve complete contact/pose geometry, range of motion and timing for this individual exercise.",
+      "Approve safe joint motion and visible primary/secondary muscle highlights; text labels do not supply muscle activation curves."
+    ],
+    "source": {
+      "path": "catalogue/exercises/6560.json",
+      "sha256": "537d7285af59957a4d9eaa3606d7da3c273d9e871844c326d5d499dda5b5417b",
+      "text_source": "opengym",
+      "original_record": {
+        "id": "6560",
+        "name": "90 to 90 stretch",
+        "bodyPart": "upper legs",
+        "equipment": "body weight",
+        "target": "glutes",
+        "secondaryMuscles": [
+          "hip flexors",
+          "adductors",
+          "lower back"
+        ],
+        "category": "stretching",
+        "description": "A seated hip stretch with both legs bent at right angles. It loosens the hip rotators and the glutes.",
+        "instructions": [
+          "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees.",
+          "Sit tall with your hands on the floor.",
+          "Hinge forward over the front shin until you feel a stretch in the hip.",
+          "Hold for 20-30 seconds, breathing calmly.",
+          "Come back up slowly.",
+          "Switch sides."
+        ],
+        "textSource": "opengym"
+      }
+    },
+    "derivation": "Deterministic text extraction with heuristic cue classification and separately labeled reversible authored staging. Source cues are quoted; props are adjudicated conservatively. No licensed images or videos were read.",
+    "source_completeness": {
+      "status": "source_complete_for_storyboard",
+      "review_reason_count": 0
+    },
+    "authored_staging": {
+      "pose_class": "seated",
+      "pose_choice_basis": "source_classification",
+      "starting_position": {
+        "proposal": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees. Sit tall with your hands on the floor.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+            },
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall with your hands on the floor."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "arms_hands": {
+        "proposal": "Sit tall with your hands on the floor.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/1",
+              "quote": "Sit tall with your hands on the floor."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "legs_feet": {
+        "proposal": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "equipment_contacts": {
+        "proposal": "Retain every explicit contact in equipment_scene.contacts. Use only the documented prop choices: no additional prop is established. Do not assign unknown apparatus dimensions, pad settings, attachment heights or load values.",
+        "status": "authored_scene_blocking",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/6560.json",
+              "pointer": "/instructions/0",
+              "quote": "Sit on the floor with one leg bent in front and the other bent out to the side, both at about 90 degrees."
+            }
+          ],
+          "rationale": "Scene support follows the source posture; unsupported inventory candidates are excluded from this proposal, not silently asserted."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "movement_policy": "Use the complete ordered source phases and retain all individual constraints. No missing footfall sequence, load path, apparatus setting, timing or joint range is invented by these placement proposals.",
+      "status": "proposal_ready_for_review",
+      "blockers": [],
+      "interpretation": "Usable blocking proposals where source posture/contact allows them; authored placements are reversible choices, not verified exercise mechanics or production-ready animation."
+    },
+    "storyboard_readiness": {
+      "status": "proposal_ready_for_review",
+      "blockers": []
+    }
+  }
+}

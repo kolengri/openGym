@@ -20,7 +20,16 @@ assert set(packets['0001']['readiness']['blocking_issue_ids'])=={'OPEN-0001-CONT
 assert packets['5915']['readiness']['status']=='requires_review'
 assert all(len(packet['baseline_requirements'])==21 and packet['not_production_approved'] for packet in packets.values())
 assert all(packet['delivery_policy']['generate_video'] is False for packet in packets.values())
-assert packets['5915']['per_exercise_overrides']['heat_zone_candidate']['rollout_to_other_exercises'] is False
+assert packets['5915']['per_exercise_overrides']['heat_zone_candidate']['rollout_to_other_exercises'] is True
+assert packets['5915']['visualization_policy']['status']=='user_approved_for_next_five'
+next_out=ROOT/'artifacts/exercise-batches/batch-002/contexts'
+next_batch=invoke([sys.executable,str(HERE/'prepare_generation.py'),'--exercise','5265','4007','6428','10565','6560','--output-dir',str(next_out),'--require-ready'])
+assert next_batch.returncode==0,next_batch.stderr
+bicycle=json.loads((next_out/'5265.json').read_text())
+assert bicycle['readiness']['status']=='requires_review'
+assert bicycle['readiness']['source_blockers']==['initial_body_support_unresolved']
+assert bicycle['readiness']['unresolved_source_blockers']==[]
+assert bicycle['readiness']['authored_source_resolutions']['initial_body_support_unresolved']['status']=='authored_resolution_for_prototype'
 for packet in packets.values():
     for source in packet['input_files']:
         assert hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest()==source['sha256']

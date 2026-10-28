@@ -2,7 +2,7 @@
 
 This guide and [generation-contract.json](generation-contract.json) apply to every future exercise animation. They combine the catalogue evidence, source gaps, explicit authoring choices and lessons from the five bodyweight prototypes. The [packet preparer](prepare_generation.py) puts applicable baseline requirements, the full canonical brief, aliases, selected overrides and open issues into the exercise's generation context **before** authoring. Read that packet when authoring; a link to this document alone is insufficient.
 
-**Current delivery decision:** use live GLB + Three.js in the application. Do not generate videos or image-frame sequences. [Chaturanga heat-zone example](../chaturanga-heatmap/README.md) is the only current style trial; wait for user confirmation before applying it to other exercises. Existing video batches remain historical.
+**Current delivery decision:** use live GLB + Three.js in the application. Do not generate videos or image-frame sequences. The user approved the [chaturanga heat-zone style](../chaturanga-heatmap/README.md) for the next five equipment-free exercises:5265,4007,6428,10565 and6560. Their motions remain candidates for user review. Stretching uses soft cyan cues, distinct from warm load emphasis. Existing video batches remain historical.
 
 The contract governs review batches. [Batch 001](../exercise-batches/batch-001/README.md) replaces 0001 with a repaired candidate and retains the other four published clips. The floor/hand issues remain open pending user review. Authored support patches, native/linear measurements and actual GLB surface checks supplement the earlier global-floor/bone checks; scoped passes do not grant production approval.
 

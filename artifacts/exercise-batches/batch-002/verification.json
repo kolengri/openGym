@@ -1,0 +1,115 @@
+{
+  "ok": true,
+  "scope": "Actual Three.js/Chromium/Metal and mobile touch emulation; no physical device or production application integration claim.",
+  "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+  "exercises": [
+    {
+      "id": "5265",
+      "duration": 8,
+      "maxJointErrorMeters": 0.0000013878100982222736,
+      "reviewTime": 2,
+      "warmPixels": 1262,
+      "cyanPixels": 0,
+      "sourceSurfacePhases": 9,
+      "displayMode": "load",
+      "holdSeconds": null
+    },
+    {
+      "id": "4007",
+      "duration": 6,
+      "maxJointErrorMeters": 0.000001293168970926691,
+      "reviewTime": 1.5,
+      "warmPixels": 2891,
+      "cyanPixels": 0,
+      "sourceSurfacePhases": 9,
+      "displayMode": "load",
+      "holdSeconds": null
+    },
+    {
+      "id": "6428",
+      "duration": 6,
+      "maxJointErrorMeters": 0.000001371266182544263,
+      "reviewTime": 1.5,
+      "warmPixels": 3747,
+      "cyanPixels": 0,
+      "sourceSurfacePhases": 9,
+      "displayMode": "load",
+      "holdSeconds": null
+    },
+    {
+      "id": "10565",
+      "duration": 28,
+      "maxJointErrorMeters": 9.303792667327511e-7,
+      "reviewTime": 14,
+      "warmPixels": 0,
+      "cyanPixels": 2048,
+      "sourceSurfacePhases": 11,
+      "displayMode": "stretch",
+      "holdSeconds": 24
+    },
+    {
+      "id": "6560",
+      "duration": 28,
+      "maxJointErrorMeters": 7.017952918998022e-7,
+      "reviewTime": 14,
+      "warmPixels": 0,
+      "cyanPixels": 1851,
+      "sourceSurfacePhases": 11,
+      "displayMode": "stretch",
+      "holdSeconds": 24
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "5265",
+      "time": 2,
+      "kneeSide": "Left",
+      "oppositeSide": "Right",
+      "crossedElbowKneeMeters": 0.5175739658324409,
+      "sameSideElbowKneeMeters": 0.6127173575797341
+    },
+    {
+      "id": "5265",
+      "time": 6,
+      "kneeSide": "Right",
+      "oppositeSide": "Left",
+      "crossedElbowKneeMeters": 0.5175739658324409,
+      "sameSideElbowKneeMeters": 0.6127173575797341
+    },
+    {
+      "id": "4007",
+      "maxAnkleDriftMeters": 0,
+      "footMode": "airborne"
+    },
+    {
+      "id": "6428",
+      "maxAnkleDriftMeters": 0,
+      "footMode": "planted"
+    }
+  ],
+  "maxJointErrorMeters": 0.0000013878100982222736,
+  "maxSurfaceParityErrorMeters": 9.252986142294084e-7,
+  "transparentCanvas": true,
+  "colorTextures": 0,
+  "shadows": false,
+  "ao": false,
+  "noVideo": true,
+  "mediaRequests": [],
+  "switchingFiveActions": true,
+  "touchOrbit": true,
+  "pinch": true,
+  "reset": true,
+  "seekEndResume": true,
+  "backgrounds": [
+    "white",
+    "dark",
+    "checker"
+  ],
+  "noOverflowWidths": [
+    320,
+    768,
+    1024,
+    1440
+  ],
+  "errors": []
+}

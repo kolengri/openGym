@@ -1,0 +1,4538 @@
+{
+  "source_sha256": "fb85a7c06814982d20211332fee958e71084660326d1b07ffec35d29cc47f109",
+  "glb_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+  "geometry_gate": {
+    "pass": true,
+    "checks": 30,
+    "errors": 0,
+    "thresholds_changed": false,
+    "warning_observer": "In-memory observation only; no gate output, source installation or tolerance was modified."
+  },
+  "surface_checks": {
+    "pass": true,
+    "samples": 98,
+    "failures": []
+  },
+  "visual_review": {
+    "performed": true,
+    "files": [
+      "qa/5265-solid-wire-sheet.png",
+      "qa/4007-solid-wire-sheet.png",
+      "qa/6428-solid-wire-sheet.png",
+      "qa/10565-solid-wire-sheet.png",
+      "qa/6560-solid-wire-sheet.png"
+    ],
+    "scope": "Actual native solid and original-cage wire images from three complementary views, at start/peak/opposite or hold poses. Uniform body, no cast shadow/cavity/AO/specular; temporary checker floor. No visible detached parts, wrist/head clipping, heel-variant confusion or wrong-side bicycle twist in these views."
+  },
+  "warning_dispositions": [
+    {
+      "id": "5265",
+      "frame": 0,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+        "asset lowest point z=0.009 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.19344495236873627,
+              -0.646090567111969,
+              0.26510128378868103
+            ],
+            [
+              -0.19387845695018768,
+              -0.6444523334503174,
+              0.26400241255760193
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972331933677197,
+              0.3187655806541443,
+              0.6296563148498535
+            ],
+            [
+              -0.01530677080154419,
+              0.31914180517196655,
+              0.6301390528678894
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849106177687645,
+              0.3198162317276001,
+              0.628861665725708
+            ],
+            [
+              -0.016624806448817253,
+              0.31993287801742554,
+              0.6295650005340576
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624806448817253,
+              0.31993287801742554,
+              0.6295650005340576
+            ],
+            [
+              -0.016418423503637314,
+              0.31900641322135925,
+              0.6292959451675415
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.1940397322177887,
+              -0.6445152163505554,
+              0.2640087306499481
+            ],
+            [
+              0.1936057209968567,
+              -0.646152675151825,
+              0.2651064991950989
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01864442229270935,
+              0.3208469748497009,
+              0.6279817819595337
+            ],
+            [
+              0.018093209713697433,
+              0.32075878977775574,
+              0.6288707256317139
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139922991394997,
+              0.3201490044593811,
+              0.6284441351890564
+            ],
+            [
+              -0.017845245078206062,
+              0.31994450092315674,
+              0.6292781233787537
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418423503637314,
+              0.31900641322135925,
+              0.6292959451675415
+            ],
+            [
+              -0.01652812398970127,
+              0.31909096240997314,
+              0.6299325227737427
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01825382374227047,
+              0.32006651163101196,
+              0.6283856630325317
+            ],
+            [
+              0.018093209713697433,
+              0.32075878977775574,
+              0.6288707256317139
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "5265",
+      "frame": 60,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+        "asset lowest point z=0.0063 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.19344475865364075,
+              -0.8964208364486694,
+              0.19681739807128906
+            ],
+            [
+              -0.19387823343276978,
+              -0.8949982523918152,
+              0.19545066356658936
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.058534495532512665,
+              0.3281197249889374,
+              0.6363559365272522
+            ],
+            [
+              0.058198146522045135,
+              0.32835644483566284,
+              0.6369191408157349
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.05626879259943962,
+              0.3283090591430664,
+              0.6360585689544678
+            ],
+            [
+              0.05658246576786041,
+              0.3285375237464905,
+              0.6366972923278809
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              0.05658246576786041,
+              0.3285375237464905,
+              0.6366972923278809
+            ],
+            [
+              0.057069506496191025,
+              0.327755331993103,
+              0.6363449692726135
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.19403916597366333,
+              -0.3886682987213135,
+              0.33485835790634155
+            ],
+            [
+              0.1936052143573761,
+              -0.3904714584350586,
+              0.3356550633907318
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.08728879690170288,
+              0.3431689143180847,
+              0.6271944046020508
+            ],
+            [
+              0.08703410625457764,
+              0.3429132401943207,
+              0.6281800866127014
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.05489303916692734,
+              0.3280875086784363,
+              0.6359611749649048
+            ],
+            [
+              0.05542531609535217,
+              0.32805487513542175,
+              0.6366958022117615
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.057069506496191025,
+              0.327755331993103,
+              0.6363449692726135
+            ],
+            [
+              0.05708304047584534,
+              0.32781982421875,
+              0.6369931101799011
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.08733927458524704,
+              0.34231775999069214,
+              0.6276390552520752
+            ],
+            [
+              0.08703410625457764,
+              0.3429132401943207,
+              0.6281800866127014
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "5265",
+      "frame": 180,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+        "asset lowest point z=0.0066 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.19344453513622284,
+              -0.39040955901145935,
+              0.33566173911094666
+            ],
+            [
+              -0.19387803971767426,
+              -0.38860535621643066,
+              0.3348639905452728
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.08521541208028793,
+              0.3398929238319397,
+              0.6295585632324219
+            ],
+            [
+              -0.08547502011060715,
+              0.3403927683830261,
+              0.6299700140953064
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.08629411458969116,
+              0.3415580987930298,
+              0.6284091472625732
+            ],
+            [
+              -0.08620806783437729,
+              0.3416101932525635,
+              0.6291497945785522
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.08620806783437729,
+              0.3416101932525635,
+              0.6291497945785522
+            ],
+            [
+              -0.08632734417915344,
+              0.34066563844680786,
+              0.628891110420227
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.19403962790966034,
+              -0.8950604796409607,
+              0.1954684555530548
+            ],
+            [
+              0.1936057060956955,
+              -0.8964823484420776,
+              0.19683383405208588
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.054064199328422546,
+              0.3285081386566162,
+              0.635658860206604
+            ],
+            [
+              -0.05479178577661514,
+              0.3286858797073364,
+              0.6363943815231323
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.08721862733364105,
+              0.3423515260219574,
+              0.6277257204055786
+            ],
+            [
+              -0.0872257798910141,
+              0.3420872390270233,
+              0.6285942792892456
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.08632734417915344,
+              0.34066563844680786,
+              0.628891110420227
+            ],
+            [
+              -0.08653634786605835,
+              0.3408164978027344,
+              0.6294894218444824
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.05481074005365372,
+              0.3279641270637512,
+              0.6359261274337769
+            ],
+            [
+              -0.05479178577661514,
+              0.3286858797073364,
+              0.6363943815231323
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "4007",
+      "frame": 0,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+        "asset lowest point z=0.0036 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.13949602842330933,
+              -0.5659833550453186,
+              0.46965140104293823
+            ],
+            [
+              -0.13992953300476074,
+              -0.5645608901977539,
+              0.4682847261428833
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972344040870667,
+              0.5780014991760254,
+              0.43081578612327576
+            ],
+            [
+              -0.015306754037737846,
+              0.5785800218582153,
+              0.4310157001018524
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849102452397346,
+              0.5784499049186707,
+              0.4295770823955536
+            ],
+            [
+              -0.016624802723526955,
+              0.5789307951927185,
+              0.43010348081588745
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624802723526955,
+              0.5789307951927185,
+              0.43010348081588745
+            ],
+            [
+              -0.016418427228927612,
+              0.5780072212219238,
+              0.43038231134414673
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.14009080827236176,
+              -0.56462162733078,
+              0.4683018624782562
+            ],
+            [
+              0.13965684175491333,
+              -0.566043496131897,
+              0.4696671962738037
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01864442229270935,
+              0.5788351893424988,
+              0.4282779097557068
+            ],
+            [
+              0.018093224614858627,
+              0.5792454481124878,
+              0.4290713965892792
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139934167265892,
+              0.5785017013549805,
+              0.4290456771850586
+            ],
+            [
+              -0.017845261842012405,
+              0.5787843465805054,
+              0.429856538772583
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418427228927612,
+              0.5780072212219238,
+              0.43038231134414673
+            ],
+            [
+              -0.01652809977531433,
+              0.578424870967865,
+              0.4308701753616333
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253829330205917,
+              0.5784005522727966,
+              0.4290415942668915
+            ],
+            [
+              0.018093224614858627,
+              0.5792454481124878,
+              0.4290713965892792
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "4007",
+      "frame": 0,
+      "path": "linear",
+      "warnings": [
+        "asset lowest point z=-0.0027 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": []
+    },
+    {
+      "id": "4007",
+      "frame": 45,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+        "asset lowest point z=0.0025 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.13949602842330933,
+              -0.5659833550453186,
+              0.46965140104293823
+            ],
+            [
+              -0.13992953300476074,
+              -0.5645608901977539,
+              0.4682847261428833
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.19520322978496552,
+              0.5433516502380371,
+              0.414646714925766
+            ],
+            [
+              0.19516825675964355,
+              0.5440060496330261,
+              0.4148852825164795
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.19344483315944672,
+              0.5445473194122314,
+              0.413788765668869
+            ],
+            [
+              0.19393891096115112,
+              0.5448805093765259,
+              0.41423988342285156
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              0.19393891096115112,
+              0.5448805093765259,
+              0.41423988342285156
+            ],
+            [
+              0.1938193291425705,
+              0.5439391136169434,
+              0.41450971364974976
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.14009080827236176,
+              -0.56462162733078,
+              0.4683018624782562
+            ],
+            [
+              0.13965684175491333,
+              -0.566043496131897,
+              0.4696671962738037
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.22524255514144897,
+              0.5310991406440735,
+              0.4054410457611084
+            ],
+            [
+              0.22506499290466309,
+              0.5316591262817383,
+              0.4063109755516052
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.19219902157783508,
+              0.5451204776763916,
+              0.4135230779647827
+            ],
+            [
+              0.19273555278778076,
+              0.5452322959899902,
+              0.4142467975616455
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.1938193291425705,
+              0.5439391136169434,
+              0.41450971364974976
+            ],
+            [
+              0.1939808577299118,
+              0.5443460941314697,
+              0.4149920642375946
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.22487369179725647,
+              0.5308207273483276,
+              0.4062843322753906
+            ],
+            [
+              0.22506499290466309,
+              0.5316591262817383,
+              0.4063109755516052
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "4007",
+      "frame": 45,
+      "path": "linear",
+      "warnings": [
+        "asset lowest point z=-0.0031 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": []
+    },
+    {
+      "id": "4007",
+      "frame": 135,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+        "asset lowest point z=0.0025 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.13949602842330933,
+              -0.5659833550453186,
+              0.46965140104293823
+            ],
+            [
+              -0.13992953300476074,
+              -0.5645608901977539,
+              0.4682847261428833
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.222121000289917,
+              0.5316621661186218,
+              0.4086906313896179
+            ],
+            [
+              -0.22268718481063843,
+              0.5320554971694946,
+              0.40879619121551514
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.2237367033958435,
+              0.5313925743103027,
+              0.4070860743522644
+            ],
+            [
+              -0.22382748126983643,
+              0.5319008827209473,
+              0.4076264500617981
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.22382748126983643,
+              0.5319008827209473,
+              0.4076264500617981
+            ],
+            [
+              -0.22333692014217377,
+              0.5311205387115479,
+              0.4079782962799072
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.14009080827236176,
+              -0.56462162733078,
+              0.4683018624782562
+            ],
+            [
+              0.13965684175491333,
+              -0.566043496131897,
+              0.4696671962738037
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.19172298908233643,
+              0.5456556081771851,
+              0.41285794973373413
+            ],
+            [
+              -0.19253645837306976,
+              0.5457853674888611,
+              0.41350850462913513
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.22481153905391693,
+              0.5309580564498901,
+              0.40630683302879333
+            ],
+            [
+              -0.22481827437877655,
+              0.5312998294830322,
+              0.4071478247642517
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.22333692014217377,
+              0.5311205387115479,
+              0.4079782962799072
+            ],
+            [
+              -0.2236955761909485,
+              0.5314419865608215,
+              0.40841710567474365
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.19205638766288757,
+              0.5450721979141235,
+              0.4135458469390869
+            ],
+            [
+              -0.19253645837306976,
+              0.5457853674888611,
+              0.41350850462913513
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "4007",
+      "frame": 135,
+      "path": "linear",
+      "warnings": [
+        "asset lowest point z=-0.003 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": []
+    },
+    {
+      "id": "6428",
+      "frame": 0,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.1834450364112854,
+              -0.6088926196098328,
+              0.016537614166736603
+            ],
+            [
+              -0.1838785707950592,
+              -0.6071649789810181,
+              0.015585645101964474
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972358010709286,
+              0.5780014991760254,
+              0.45431584119796753
+            ],
+            [
+              -0.015306761488318443,
+              0.5785800218582153,
+              0.4545156955718994
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849104315042496,
+              0.5784499049186707,
+              0.45307716727256775
+            ],
+            [
+              -0.016624784097075462,
+              0.5789307951927185,
+              0.45360344648361206
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624784097075462,
+              0.5789307951927185,
+              0.45360344648361206
+            ],
+            [
+              -0.01641843467950821,
+              0.5780072212219238,
+              0.4538823962211609
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.18403983116149902,
+              -0.6072283387184143,
+              0.015587965957820415
+            ],
+            [
+              0.1836058497428894,
+              -0.6089552640914917,
+              0.016538813710212708
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.0186444241553545,
+              0.578835129737854,
+              0.4517778754234314
+            ],
+            [
+              0.018093205988407135,
+              0.5792454481124878,
+              0.45257139205932617
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139928579330444,
+              0.5785016417503357,
+              0.45254573225975037
+            ],
+            [
+              -0.017845237627625465,
+              0.5787843465805054,
+              0.45335647463798523
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01641843467950821,
+              0.5780072212219238,
+              0.4538823962211609
+            ],
+            [
+              -0.016528092324733734,
+              0.578424870967865,
+              0.4543702006340027
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01825382374227047,
+              0.5784005522727966,
+              0.4525415897369385
+            ],
+            [
+              0.018093205988407135,
+              0.5792454481124878,
+              0.45257139205932617
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "6428",
+      "frame": 45,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (12 pairs) - delete to save tris",
+        "asset lowest point z=-0.0037 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.1834450364112854,
+              -0.6088926196098328,
+              0.016537614166736603
+            ],
+            [
+              -0.1838785707950592,
+              -0.6071649789810181,
+              0.015585645101964474
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.1952032893896103,
+              0.5433516502380371,
+              0.4381466805934906
+            ],
+            [
+              0.19516828656196594,
+              0.5440060496330261,
+              0.4383853077888489
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.1934448480606079,
+              0.5445473194122314,
+              0.43728873133659363
+            ],
+            [
+              0.1939389556646347,
+              0.5448805093765259,
+              0.43773990869522095
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              0.1939389556646347,
+              0.5448805093765259,
+              0.43773990869522095
+            ],
+            [
+              0.19381937384605408,
+              0.5439391136169434,
+              0.43800967931747437
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            12596,
+            15535
+          ],
+          "triangle_ids": [
+            12596,
+            15535
+          ],
+          "source_face_sets": [
+            1,
+            20
+          ],
+          "centers_world_m": [
+            [
+              -0.07115890830755234,
+              0.4261230230331421,
+              0.25674864649772644
+            ],
+            [
+              -0.07246201485395432,
+              0.42491811513900757,
+              0.26030343770980835
+            ]
+          ],
+          "source_corresponding": false,
+          "region": "right axillary / medial upper-arm native fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Three opposing native shoulder/torso fold pairs at6428 left-reach peak. Hidden inside the right axillary crease in reviewed solid views; absent from pure linear skin. No same-facing overlap error or QA threshold was waived."
+        },
+        {
+          "evaluated_quad_ids": [
+            12596,
+            15535
+          ],
+          "triangle_ids": [
+            12596,
+            57875
+          ],
+          "source_face_sets": [
+            1,
+            20
+          ],
+          "centers_world_m": [
+            [
+              -0.07115890830755234,
+              0.4261230230331421,
+              0.25674864649772644
+            ],
+            [
+              -0.07481071352958679,
+              0.42204293608665466,
+              0.2562330365180969
+            ]
+          ],
+          "source_corresponding": false,
+          "region": "right axillary / medial upper-arm native fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Three opposing native shoulder/torso fold pairs at6428 left-reach peak. Hidden inside the right axillary crease in reviewed solid views; absent from pure linear skin. No same-facing overlap error or QA threshold was waived."
+        },
+        {
+          "evaluated_quad_ids": [
+            15535,
+            12597
+          ],
+          "triangle_ids": [
+            15535,
+            54937
+          ],
+          "source_face_sets": [
+            20,
+            1
+          ],
+          "centers_world_m": [
+            [
+              -0.07246201485395432,
+              0.42491811513900757,
+              0.26030343770980835
+            ],
+            [
+              -0.06730429828166962,
+              0.43017780780792236,
+              0.2637995481491089
+            ]
+          ],
+          "source_corresponding": false,
+          "region": "right axillary / medial upper-arm native fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Three opposing native shoulder/torso fold pairs at6428 left-reach peak. Hidden inside the right axillary crease in reviewed solid views; absent from pure linear skin. No same-facing overlap error or QA threshold was waived."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.18403983116149902,
+              -0.6072283387184143,
+              0.015587965957820415
+            ],
+            [
+              0.1836058497428894,
+              -0.6089552640914917,
+              0.016538813710212708
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.22524258494377136,
+              0.5310992002487183,
+              0.4289410710334778
+            ],
+            [
+              0.22506502270698547,
+              0.5316591262817383,
+              0.42981094121932983
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.19219902157783508,
+              0.5451204776763916,
+              0.4370230436325073
+            ],
+            [
+              0.19273558259010315,
+              0.5452322959899902,
+              0.4377468228340149
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.19381937384605408,
+              0.5439391136169434,
+              0.43800967931747437
+            ],
+            [
+              0.193980872631073,
+              0.5443460941314697,
+              0.4384920597076416
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.22487372159957886,
+              0.5308207273483276,
+              0.42978435754776
+            ],
+            [
+              0.22506502270698547,
+              0.5316591262817383,
+              0.42981094121932983
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "6428",
+      "frame": 45,
+      "path": "linear",
+      "warnings": [
+        "asset lowest point z=-0.0036 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": []
+    },
+    {
+      "id": "6428",
+      "frame": 135,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+        "asset lowest point z=-0.0038 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.1834450364112854,
+              -0.6088926196098328,
+              0.016537614166736603
+            ],
+            [
+              -0.1838785707950592,
+              -0.6071649789810181,
+              0.015585645101964474
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.222121000289917,
+              0.5316621661186218,
+              0.4321906268596649
+            ],
+            [
+              -0.222687229514122,
+              0.5320554971694946,
+              0.43229615688323975
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.2237367331981659,
+              0.5313925743103027,
+              0.4305860996246338
+            ],
+            [
+              -0.22382752597332,
+              0.5319008827209473,
+              0.4311264157295227
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.22382752597332,
+              0.5319008827209473,
+              0.4311264157295227
+            ],
+            [
+              -0.22333693504333496,
+              0.5311206579208374,
+              0.43147826194763184
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.18403983116149902,
+              -0.6072283387184143,
+              0.015587965957820415
+            ],
+            [
+              0.1836058497428894,
+              -0.6089552640914917,
+              0.016538813710212708
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.19172298908233643,
+              0.5456556081771851,
+              0.43635794520378113
+            ],
+            [
+              -0.19253651797771454,
+              0.5457853078842163,
+              0.4370085597038269
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.2248115837574005,
+              0.5309580564498901,
+              0.4298068881034851
+            ],
+            [
+              -0.22481831908226013,
+              0.5312998294830322,
+              0.4306478202342987
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.22333693504333496,
+              0.5311206579208374,
+              0.43147826194763184
+            ],
+            [
+              -0.22369562089443207,
+              0.5314419865608215,
+              0.43191707134246826
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.19205638766288757,
+              0.5450721979141235,
+              0.4370458126068115
+            ],
+            [
+              -0.19253651797771454,
+              0.5457853078842163,
+              0.4370085597038269
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "6428",
+      "frame": 135,
+      "path": "linear",
+      "warnings": [
+        "asset lowest point z=-0.0035 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": []
+    },
+    {
+      "id": "10565",
+      "frame": 0,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.3343798816204071,
+              0.7231062650680542,
+              0.0495060458779335
+            ],
+            [
+              -0.33315742015838623,
+              0.7215263247489929,
+              0.04980393871665001
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972344040870667,
+              -0.17464679479599,
+              0.752023458480835
+            ],
+            [
+              -0.015306763350963593,
+              -0.17461542785167694,
+              0.7526347041130066
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849111765623093,
+              -0.17333030700683594,
+              0.7519751787185669
+            ],
+            [
+              -0.01662479341030121,
+              -0.17363819479942322,
+              0.7526181936264038
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.01662479341030121,
+              -0.17363819479942322,
+              0.7526181936264038
+            ],
+            [
+              -0.016418423503637314,
+              -0.17424273490905762,
+              0.751866340637207
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              -0.26871511340141296,
+              -0.5739182829856873,
+              0.051847346127033234
+            ],
+            [
+              -0.26914775371551514,
+              -0.5758886337280273,
+              0.05191976949572563
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018644411116838455,
+              -0.17198136448860168,
+              0.7518457174301147
+            ],
+            [
+              0.018093204125761986,
+              -0.17256346344947815,
+              0.7525233626365662
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01813991740345955,
+              -0.17281818389892578,
+              0.7518240809440613
+            ],
+            [
+              -0.01784524880349636,
+              -0.17346405982971191,
+              0.7523898482322693
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418423503637314,
+              -0.17424273490905762,
+              0.751866340637207
+            ],
+            [
+              -0.016528110951185226,
+              -0.17453859746456146,
+              0.7524363398551941
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253806978464127,
+              -0.1728522777557373,
+              0.751728892326355
+            ],
+            [
+              0.018093204125761986,
+              -0.17256346344947815,
+              0.7525233626365662
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "10565",
+      "frame": 30,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.3343798816204071,
+              0.7231062650680542,
+              0.04950619488954544
+            ],
+            [
+              -0.33315742015838623,
+              0.7215263247489929,
+              0.049804072827100754
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972332864999771,
+              -0.34460195899009705,
+              0.661636471748352
+            ],
+            [
+              -0.015306774526834488,
+              -0.3447454869747162,
+              0.6622314453125
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849113628268242,
+              -0.3433259427547455,
+              0.6619640588760376
+            ],
+            [
+              -0.01662478968501091,
+              -0.3438038229942322,
+              0.6624932289123535
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.01662478968501091,
+              -0.3438038229942322,
+              0.6624932289123535
+            ],
+            [
+              -0.016418414190411568,
+              -0.34416985511779785,
+              0.6616005897521973
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              -0.2687148153781891,
+              -0.573918342590332,
+              0.05184734985232353
+            ],
+            [
+              -0.26914748549461365,
+              -0.5758887529373169,
+              0.05191975086927414
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018644414842128754,
+              -0.34199580550193787,
+              0.6622231006622314
+            ],
+            [
+              0.018093198537826538,
+              -0.3427463471889496,
+              0.6627074480056763
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01813993602991104,
+              -0.34279200434684753,
+              0.6619645953178406
+            ],
+            [
+              -0.01784525439143181,
+              -0.3435719907283783,
+              0.6623238325119019
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418414190411568,
+              -0.34416985511779785,
+              0.6616005897521973
+            ],
+            [
+              -0.016528107225894928,
+              -0.34461545944213867,
+              0.6620631217956543
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01825382187962532,
+              -0.3427976369857788,
+              0.6618637442588806
+            ],
+            [
+              0.018093198537826538,
+              -0.3427463471889496,
+              0.6627074480056763
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "10565",
+      "frame": 30,
+      "path": "linear",
+      "warnings": [
+        "asset lowest point z=-0.0022 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": []
+    },
+    {
+      "id": "10565",
+      "frame": 60,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.3343799114227295,
+              0.7231059074401855,
+              0.04950619488954544
+            ],
+            [
+              -0.333157479763031,
+              0.7215261459350586,
+              0.04980408400297165
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972317032516003,
+              -0.4828811287879944,
+              0.5265576839447021
+            ],
+            [
+              -0.015306767076253891,
+              -0.4831876754760742,
+              0.527087390422821
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849111765623093,
+              -0.4817506968975067,
+              0.5272341966629028
+            ],
+            [
+              -0.016624806448817253,
+              -0.4823591411113739,
+              0.5276057720184326
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624806448817253,
+              -0.4823591411113739,
+              0.5276057720184326
+            ],
+            [
+              -0.016418399289250374,
+              -0.48245668411254883,
+              0.5266460180282593
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              -0.26871490478515625,
+              -0.5739182233810425,
+              0.05184722691774368
+            ],
+            [
+              -0.2691475749015808,
+              -0.5758885741233826,
+              0.051919639110565186
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.0186444204300642,
+              -0.4805488586425781,
+              0.5278603434562683
+            ],
+            [
+              0.018093213438987732,
+              -0.4814060926437378,
+              0.5281115770339966
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139950931072235,
+              -0.4812389314174652,
+              0.5273864269256592
+            ],
+            [
+              -0.01784525066614151,
+              -0.48208877444267273,
+              0.5275091528892517
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418399289250374,
+              -0.48245668411254883,
+              0.5266460180282593
+            ],
+            [
+              -0.016528114676475525,
+              -0.483015239238739,
+              0.52696293592453
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253818154335022,
+              -0.4812156558036804,
+              0.5272880792617798
+            ],
+            [
+              0.018093213438987732,
+              -0.4814060926437378,
+              0.5281115770339966
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "6560",
+      "frame": 0,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.3343798816204071,
+              0.7231062650680542,
+              0.0495060458779335
+            ],
+            [
+              -0.33315742015838623,
+              0.7215263247489929,
+              0.04980393871665001
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972344040870667,
+              -0.17464679479599,
+              0.752023458480835
+            ],
+            [
+              -0.015306763350963593,
+              -0.17461542785167694,
+              0.7526347041130066
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849111765623093,
+              -0.17333030700683594,
+              0.7519751787185669
+            ],
+            [
+              -0.01662479341030121,
+              -0.17363819479942322,
+              0.7526181936264038
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.01662479341030121,
+              -0.17363819479942322,
+              0.7526181936264038
+            ],
+            [
+              -0.016418423503637314,
+              -0.17424273490905762,
+              0.751866340637207
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              -0.26871511340141296,
+              -0.5739182829856873,
+              0.051847346127033234
+            ],
+            [
+              -0.26914775371551514,
+              -0.5758886337280273,
+              0.05191976949572563
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018644411116838455,
+              -0.17198136448860168,
+              0.7518457174301147
+            ],
+            [
+              0.018093204125761986,
+              -0.17256346344947815,
+              0.7525233626365662
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01813991740345955,
+              -0.17281818389892578,
+              0.7518240809440613
+            ],
+            [
+              -0.01784524880349636,
+              -0.17346405982971191,
+              0.7523898482322693
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418423503637314,
+              -0.17424273490905762,
+              0.751866340637207
+            ],
+            [
+              -0.016528110951185226,
+              -0.17453859746456146,
+              0.7524363398551941
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253806978464127,
+              -0.1728522777557373,
+              0.751728892326355
+            ],
+            [
+              0.018093204125761986,
+              -0.17256346344947815,
+              0.7525233626365662
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "6560",
+      "frame": 30,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.3343798816204071,
+              0.7231062650680542,
+              0.04950619488954544
+            ],
+            [
+              -0.33315742015838623,
+              0.7215263247489929,
+              0.049804072827100754
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972332864999771,
+              -0.34460195899009705,
+              0.661636471748352
+            ],
+            [
+              -0.015306774526834488,
+              -0.3447454869747162,
+              0.6622314453125
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849113628268242,
+              -0.3433259427547455,
+              0.6619640588760376
+            ],
+            [
+              -0.01662478968501091,
+              -0.3438038229942322,
+              0.6624932289123535
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.01662478968501091,
+              -0.3438038229942322,
+              0.6624932289123535
+            ],
+            [
+              -0.016418414190411568,
+              -0.34416985511779785,
+              0.6616005897521973
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              -0.2687148153781891,
+              -0.573918342590332,
+              0.05184734985232353
+            ],
+            [
+              -0.26914748549461365,
+              -0.5758887529373169,
+              0.05191975086927414
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018644414842128754,
+              -0.34199580550193787,
+              0.6622231006622314
+            ],
+            [
+              0.018093198537826538,
+              -0.3427463471889496,
+              0.6627074480056763
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01813993602991104,
+              -0.34279200434684753,
+              0.6619645953178406
+            ],
+            [
+              -0.01784525439143181,
+              -0.3435719907283783,
+              0.6623238325119019
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418414190411568,
+              -0.34416985511779785,
+              0.6616005897521973
+            ],
+            [
+              -0.016528107225894928,
+              -0.34461545944213867,
+              0.6620631217956543
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01825382187962532,
+              -0.3427976369857788,
+              0.6618637442588806
+            ],
+            [
+              0.018093198537826538,
+              -0.3427463471889496,
+              0.6627074480056763
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    },
+    {
+      "id": "6560",
+      "frame": 30,
+      "path": "linear",
+      "warnings": [
+        "asset lowest point z=-0.0022 (not resting on ground plane z=0)"
+      ],
+      "back_to_back_dispositions": []
+    },
+    {
+      "id": "6560",
+      "frame": 60,
+      "path": "native",
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ],
+      "back_to_back_dispositions": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.3343799114227295,
+              0.7231059074401855,
+              0.04950619488954544
+            ],
+            [
+              -0.333157479763031,
+              0.7215261459350586,
+              0.04980408400297165
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972317032516003,
+              -0.4828811287879944,
+              0.5265576839447021
+            ],
+            [
+              -0.015306767076253891,
+              -0.4831876754760742,
+              0.527087390422821
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849111765623093,
+              -0.4817506968975067,
+              0.5272341966629028
+            ],
+            [
+              -0.016624806448817253,
+              -0.4823591411113739,
+              0.5276057720184326
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624806448817253,
+              -0.4823591411113739,
+              0.5276057720184326
+            ],
+            [
+              -0.016418399289250374,
+              -0.48245668411254883,
+              0.5266460180282593
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              -0.26871490478515625,
+              -0.5739182233810425,
+              0.05184722691774368
+            ],
+            [
+              -0.2691475749015808,
+              -0.5758885741233826,
+              0.051919639110565186
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.0186444204300642,
+              -0.4805488586425781,
+              0.5278603434562683
+            ],
+            [
+              0.018093213438987732,
+              -0.4814060926437378,
+              0.5281115770339966
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139950931072235,
+              -0.4812389314174652,
+              0.5273864269256592
+            ],
+            [
+              -0.01784525066614151,
+              -0.48208877444267273,
+              0.5275091528892517
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418399289250374,
+              -0.48245668411254883,
+              0.5266460180282593
+            ],
+            [
+              -0.016528114676475525,
+              -0.483015239238739,
+              0.52696293592453
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253818154335022,
+              -0.4812156558036804,
+              0.5272880792617798
+            ],
+            [
+              0.018093213438987732,
+              -0.4814060926437378,
+              0.5281115770339966
+            ]
+          ],
+          "source_corresponding": true,
+          "region": "source mouth/lip seam or toe web fold",
+          "disposition": "accepted_warning_for_review_prototype",
+          "reason": "Exact native quad pair also exists in the accepted original source pose; opposing hidden skin in source mouth/toe folds. Preserve source topology and binding."
+        }
+      ]
+    }
+  ],
+  "floor_warning_disposition": "Global-floor warnings are retained. Actual support distributions pass the declared12mm curved-contact band/20% near fraction and4mm maximum skin-floor penetration; positive native pelvic gaps and small negative cage/fingertip floor offsets are not represented as exact rigid contacts.",
+  "skin_summary": [
+    {
+      "id": "5265",
+      "paths": {
+        "native": {
+          "global_floor_min_m": 0.004361580591648817,
+          "pelvic_patch_min_range_m": [
+            0.004361580591648817,
+            0.009000902064144611
+          ],
+          "pelvic_near_fraction_min": 0.23076923076923078,
+          "maximum_hand_penetration_m": 0.0
+        },
+        "linear": {
+          "global_floor_min_m": -0.0020514726638793945,
+          "pelvic_patch_min_range_m": [
+            -0.0020514726638793945,
+            0.0014398694038391113
+          ],
+          "pelvic_near_fraction_min": 0.4,
+          "maximum_hand_penetration_m": 0.0
+        }
+      }
+    },
+    {
+      "id": "4007",
+      "paths": {
+        "native": {
+          "global_floor_min_m": 0.0024898459669202566,
+          "pelvic_patch_min_range_m": [
+            0.003675266867503524,
+            0.004316257778555155
+          ],
+          "pelvic_near_fraction_min": 0.7619047619047619,
+          "maximum_hand_penetration_m": 0.0
+        },
+        "linear": {
+          "global_floor_min_m": -0.003072023391723633,
+          "pelvic_patch_min_range_m": [
+            -0.003072023391723633,
+            -0.002705812454223633
+          ],
+          "pelvic_near_fraction_min": 1.0,
+          "maximum_hand_penetration_m": 0.0
+        }
+      }
+    },
+    {
+      "id": "6428",
+      "paths": {
+        "native": {
+          "global_floor_min_m": -0.003765196306630969,
+          "pelvic_patch_min_range_m": [
+            0.010204465128481388,
+            0.010408002883195877
+          ],
+          "pelvic_near_fraction_min": 0.2619047619047619,
+          "maximum_hand_penetration_m": 0.0
+        },
+        "linear": {
+          "global_floor_min_m": -0.0035501718521118164,
+          "pelvic_patch_min_range_m": [
+            0.00491487979888916,
+            0.005198419094085693
+          ],
+          "pelvic_near_fraction_min": 1.0,
+          "maximum_hand_penetration_m": 0.0
+        }
+      }
+    },
+    {
+      "id": "10565",
+      "paths": {
+        "native": {
+          "global_floor_min_m": -0.0012466110056266189,
+          "pelvic_patch_min_range_m": [
+            0.0033173146657645702,
+            0.004361520055681467
+          ],
+          "pelvic_near_fraction_min": 0.2857142857142857,
+          "maximum_hand_penetration_m": 0.0
+        },
+        "linear": {
+          "global_floor_min_m": -0.002203643321990967,
+          "pelvic_patch_min_range_m": [
+            0.007098674774169922,
+            0.008106768131256104
+          ],
+          "pelvic_near_fraction_min": 0.25,
+          "maximum_hand_penetration_m": 0.0
+        }
+      },
+      "hold": {
+        "start_seconds": 2,
+        "end_seconds": 26,
+        "duration_seconds": 24,
+        "source_sampled_joint_drift_m": 0.0,
+        "samples_frames": [
+          60,
+          420,
+          780
+        ]
+      }
+    },
+    {
+      "id": "6560",
+      "paths": {
+        "native": {
+          "global_floor_min_m": -0.0012466110056266189,
+          "pelvic_patch_min_range_m": [
+            0.0033173146657645702,
+            0.004361520055681467
+          ],
+          "pelvic_near_fraction_min": 0.2857142857142857,
+          "maximum_hand_penetration_m": 0.0
+        },
+        "linear": {
+          "global_floor_min_m": -0.002203643321990967,
+          "pelvic_patch_min_range_m": [
+            0.007098674774169922,
+            0.008106768131256104
+          ],
+          "pelvic_near_fraction_min": 0.25,
+          "maximum_hand_penetration_m": 0.0
+        }
+      },
+      "hold": {
+        "start_seconds": 2,
+        "end_seconds": 26,
+        "duration_seconds": 24,
+        "source_sampled_joint_drift_m": 0.0,
+        "samples_frames": [
+          60,
+          420,
+          780
+        ]
+      }
+    }
+  ],
+  "remaining_limits": [
+    "Sampled illustration QA, not continuous physical collision certification or medical/coaching approval.",
+    "Native corrective/subdivision differs from the original linear GLB skin. Both paths are measured; primary checks actual exported skin.",
+    "90/90 pelvic support is an authored original-skin pelvic/upper-thigh junction patch, not a clinical ischial landmark.",
+    "Source muscle labels are artistic surface/context proxies, not measured recruitment or confirmation that every secondary tissue is passively stretched.",
+    "Actual live Three.js playback, camera/alpha/touch and physical-device behavior are owned by primary.",
+    "User review is pending; no contract issue or catalogue-wide production approval is inferred."
+  ]
+}

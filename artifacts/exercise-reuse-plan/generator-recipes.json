@@ -1,0 +1,5223 @@
+[
+  {
+    "family": "elbow_flexion",
+    "affected_candidate_exercises": 293,
+    "source_complete_for_storyboard": 99,
+    "pose_template_candidates": 22,
+    "apparatus_template_candidates": 105,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Elbow-flexion phase curve, fixed upper-arm frame option, coupled or independent hand targets, return/pause/side sequencing.",
+    "explicit_profile_parameters": "Supported pose, upper-arm direction, shoulder contribution, elbow ROM, forearm rotation, grip width, load contact, left/right timing, preacher/incline supports.",
+    "split_or_review_guards": "Standing/seated/preacher/spider/incline support or shoulder frames; shared-bar vs independent loads; hammer/supinated/reverse grips; alternating vs simultaneous; stretch-only forms.",
+    "ids": [
+      "0005",
+      "0023",
+      "0031",
+      "0038",
+      "0059",
+      "0070",
+      "0072",
+      "0080",
+      "0081",
+      "0089",
+      "0106",
+      "0110",
+      "0113",
+      "0139",
+      "0140",
+      "0165",
+      "0166",
+      "0181",
+      "0182",
+      "0183",
+      "0190",
+      "0195",
+      "0206",
+      "0209",
+      "0229",
+      "0285",
+      "0294",
+      "0297",
+      "0298",
+      "0312",
+      "0313",
+      "0315",
+      "0317",
+      "0318",
+      "0320",
+      "0322",
+      "0350",
+      "0353",
+      "0370",
+      "0372",
+      "0374",
+      "0382",
+      "0384",
+      "0390",
+      "0391",
+      "0393",
+      "0402",
+      "0403",
+      "0416",
+      "0418",
+      "0421",
+      "0422",
+      "0425",
+      "0428",
+      "0429",
+      "0439",
+      "0446",
+      "0447",
+      "0451",
+      "0452",
+      "0454",
+      "0575",
+      "0592",
+      "0636",
+      "0847",
+      "0853",
+      "0868",
+      "0897",
+      "0917",
+      "0968",
+      "0976",
+      "0986",
+      "10110",
+      "10138",
+      "1032",
+      "1070",
+      "10752",
+      "10857",
+      "10949",
+      "1108",
+      "1109",
+      "1123",
+      "11261",
+      "11272",
+      "11763",
+      "11792",
+      "11864",
+      "1196",
+      "1203",
+      "1228",
+      "1233",
+      "1352",
+      "1413",
+      "1414",
+      "1480",
+      "1506",
+      "1553",
+      "1607",
+      "1608",
+      "1614",
+      "1615",
+      "1616",
+      "1627",
+      "1628",
+      "1629",
+      "1630",
+      "1631",
+      "1632",
+      "1633",
+      "1634",
+      "1635",
+      "1636",
+      "1637",
+      "1638",
+      "1639",
+      "1640",
+      "1641",
+      "1642",
+      "1643",
+      "1645",
+      "1646",
+      "1647",
+      "1648",
+      "1649",
+      "1650",
+      "1651",
+      "1652",
+      "1653",
+      "1654",
+      "1655",
+      "1656",
+      "1657",
+      "1658",
+      "1659",
+      "1660",
+      "1661",
+      "1662",
+      "1663",
+      "1664",
+      "1665",
+      "1666",
+      "1667",
+      "1668",
+      "1669",
+      "1670",
+      "1671",
+      "1672",
+      "1673",
+      "1674",
+      "1675",
+      "1676",
+      "1677",
+      "1678",
+      "1679",
+      "1680",
+      "1681",
+      "1682",
+      "1683",
+      "1684",
+      "1769",
+      "1770",
+      "1872",
+      "2293",
+      "2294",
+      "2321",
+      "2348",
+      "2352",
+      "2353",
+      "2396",
+      "2401",
+      "2402",
+      "2403",
+      "2404",
+      "2407",
+      "2413",
+      "2414",
+      "2485",
+      "2656",
+      "2660",
+      "2741",
+      "2900",
+      "2901",
+      "2922",
+      "2954",
+      "3068",
+      "3083",
+      "3084",
+      "3123",
+      "3347",
+      "3486",
+      "3498",
+      "3514",
+      "3547",
+      "3554",
+      "3558",
+      "3560",
+      "3682",
+      "3687",
+      "3688",
+      "3748",
+      "3752",
+      "3761",
+      "3764",
+      "3830",
+      "3831",
+      "3850",
+      "3851",
+      "3925",
+      "3963",
+      "3988",
+      "4017",
+      "4063",
+      "4084",
+      "4085",
+      "4086",
+      "4087",
+      "4088",
+      "4110",
+      "4138",
+      "4152",
+      "4336",
+      "4338",
+      "4345",
+      "4350",
+      "4357",
+      "4369",
+      "4422",
+      "4498",
+      "4546",
+      "4574",
+      "4619",
+      "4687",
+      "4721",
+      "4738",
+      "4743",
+      "4838",
+      "4973",
+      "4981",
+      "5007",
+      "5201",
+      "5238",
+      "5239",
+      "5240",
+      "5297",
+      "5298",
+      "5299",
+      "5370",
+      "5374",
+      "5449",
+      "5623",
+      "5669",
+      "5696",
+      "5703",
+      "5856",
+      "5857",
+      "5883",
+      "5884",
+      "5921",
+      "6063",
+      "6064",
+      "6068",
+      "6069",
+      "6070",
+      "6108",
+      "6147",
+      "6149",
+      "6150",
+      "6195",
+      "6232",
+      "6234",
+      "6237",
+      "6263",
+      "6264",
+      "6265",
+      "6266",
+      "6361",
+      "6362",
+      "6363",
+      "6364",
+      "6406",
+      "6698",
+      "6757",
+      "7056",
+      "7129",
+      "7329",
+      "7625",
+      "7921",
+      "7922",
+      "8084",
+      "8274",
+      "8327",
+      "9862",
+      "9931"
+    ],
+    "source_examples": [
+      {
+        "id": "0005",
+        "source_path": "catalogue/exercises/0005.json",
+        "name": "band alternate biceps curl",
+        "pose": "standing",
+        "equipment": "band",
+        "props": [
+          "band_unspecified"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A biceps curl done one arm at a time against a band stood on with your feet. It gives rising tension toward the top of the curl."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand on the middle of a band and hold an end in each hand."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Keep your elbows at your sides with palms forward."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Curl one hand up toward your shoulder."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lower it slowly while curling the other hand."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Keep your upper arms still and avoid leaning back."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Alternate sides for your reps."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0023",
+        "source_path": "catalogue/exercises/0023.json",
+        "name": "barbell alternate biceps curl",
+        "pose": "standing",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A standing curl where the arms lift the bar alternately, keeping tension on the biceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand up straight with your feet shoulder-width apart and hold a barbell in each hand, palms facing forward."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Keep your upper arms stationary and exhale as you curl the weights while contracting your biceps."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Continue to raise the barbells until your biceps are fully contracted and the barbells are at shoulder level."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Hold the contracted position for a brief pause as you squeeze your biceps."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Inhale as you slowly begin to lower the barbells back to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions, alternating arms."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0038",
+        "source_path": "catalogue/exercises/0038.json",
+        "name": "barbell drag curl",
+        "pose": "supine",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A curl where the bar is dragged up along the torso with the elbows moving back. Targets the biceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart and hold a barbell with an underhand grip, palms facing up."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Let the barbell hang at arm's length in front of your thighs."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Keeping your upper arms stationary, curl the barbell up towards your chest by contracting your biceps."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly lower the barbell back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0059",
+        "source_path": "catalogue/exercises/0059.json",
+        "name": "barbell lying preacher curl",
+        "pose": "seated",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "bench_preacher"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A preacher curl performed while lying on the bench, isolating the biceps with no body swing."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on a preacher bench with your chest against the pad and your arms extended over the edge, holding a barbell with an underhand grip."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Continue to raise the bar until your biceps are fully contracted and the bar is at shoulder level."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Hold the contracted position for a brief pause as you squeeze your biceps."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Inhale and slowly begin to lower the barbell back to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0072",
+        "source_path": "catalogue/exercises/0072.json",
+        "name": "barbell prone incline curl",
+        "pose": "prone",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "bench_incline"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "Lying face down on an incline bench, you curl the bar up. Works the biceps with a strict stretch at the bottom."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Set up an incline bench at a 45-degree angle."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Lie face down on the bench with your chest and stomach resting against it."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Hold a barbell with an underhand grip, shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Extend your arms fully, allowing the barbell to hang down towards the floor."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Continue to raise the barbell until your biceps are fully contracted and the bar is at shoulder level."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Hold the contracted position for a brief pause as you squeeze your biceps."
+          },
+          {
+            "pointer": "/instructions/7",
+            "quote": "Inhale and slowly begin to lower the barbell back to the starting position."
+          },
+          {
+            "pointer": "/instructions/8",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0080",
+        "source_path": "catalogue/exercises/0080.json",
+        "name": "barbell reverse curl",
+        "pose": "prone",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A curl with an overhand grip. Trains the biceps, brachialis and forearms."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand up straight with your feet shoulder-width apart and hold a barbell with an overhand grip, palms facing down."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Keep your upper arms stationary and exhale as you curl the barbell upward, contracting your biceps."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Continue to raise the barbell until your biceps are fully contracted and the barbell is at shoulder level."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Hold the contracted position for a brief pause as you squeeze your biceps."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Inhale as you slowly lower the barbell back to the starting position, keeping your upper arms stationary."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0089",
+        "source_path": "catalogue/exercises/0089.json",
+        "name": "barbell seated close-grip concentration curl",
+        "pose": "seated",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A seated close-grip curl with the arms braced on the thighs. Isolates the biceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on a bench with your feet flat on the floor and hold a barbell with an underhand grip, hands shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Rest your upper arms against your inner thighs, just above your knees, and let the barbell hang down in front of you."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Keeping your upper arms stationary, exhale and curl the barbell up towards your shoulders, contracting your biceps."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Hold the contracted position for a brief pause, then inhale and slowly lower the barbell back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0139",
+        "source_path": "catalogue/exercises/0139.json",
+        "name": "biceps narrow pull-ups",
+        "pose": "hanging",
+        "equipment": "body weight",
+        "props": [
+          "pullup_bar"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A pull-up with a narrow grip. Emphasises the biceps and lats."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Hang from a pull-up bar with your palms facing towards you and your hands shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Engage your core and pull yourself up towards the bar, focusing on using your biceps to lift your body."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Pause for a moment at the top, then slowly lower yourself back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "legs_feet_missing"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "squat",
+    "affected_candidate_exercises": 401,
+    "source_complete_for_storyboard": 85,
+    "pose_template_candidates": 24,
+    "apparatus_template_candidates": 147,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Pelvis trajectory and knee/hip bend scaffold, planted-foot IK, lowering/rising/hold/landing stages.",
+    "explicit_profile_parameters": "Stance width/toe direction, depth, trunk lean, load location, foot supports, unilateral balance, machine constraints, timing.",
+    "split_or_review_guards": "Split/pistol/assisted and bilateral supports; front/back/goblet loads; jump/landing vs slow squat; Smith/hack/pendulum/belt axes; painful or unspecified range is never invented.",
+    "ids": [
+      "0024",
+      "0026",
+      "0039",
+      "0042",
+      "0043",
+      "0046",
+      "0051",
+      "0053",
+      "0063",
+      "0068",
+      "0069",
+      "0097",
+      "0098",
+      "0099",
+      "0101",
+      "0102",
+      "0124",
+      "0127",
+      "0291",
+      "0371",
+      "0410",
+      "0411",
+      "0412",
+      "0413",
+      "0435",
+      "0461",
+      "0513",
+      "0514",
+      "0533",
+      "0534",
+      "0544",
+      "0647",
+      "0741",
+      "0743",
+      "0744",
+      "0750",
+      "0755",
+      "0768",
+      "0770",
+      "0781",
+      "0783",
+      "0784",
+      "0785",
+      "0809",
+      "0822",
+      "0851",
+      "0852",
+      "0878",
+      "0882",
+      "0987",
+      "1001",
+      "1004",
+      "10051",
+      "10052",
+      "10055",
+      "10092",
+      "10097",
+      "10113",
+      "10168",
+      "10191",
+      "10326",
+      "10328",
+      "1038",
+      "10384",
+      "1039",
+      "1040",
+      "10410",
+      "10551",
+      "1063",
+      "1064",
+      "10673",
+      "10674",
+      "10675",
+      "10764",
+      "10851",
+      "10868",
+      "10869",
+      "10906",
+      "10907",
+      "10914",
+      "10926",
+      "1099",
+      "1100",
+      "1101",
+      "1117",
+      "11252",
+      "11268",
+      "11303",
+      "11316",
+      "1136",
+      "1141",
+      "1143",
+      "11451",
+      "11568",
+      "11784",
+      "1197",
+      "1232",
+      "1385",
+      "1400",
+      "1420",
+      "1434",
+      "1435",
+      "1436",
+      "1446",
+      "1461",
+      "1462",
+      "1476",
+      "1489",
+      "1509",
+      "1514",
+      "1527",
+      "1545",
+      "1546",
+      "1550",
+      "1552",
+      "1555",
+      "1558",
+      "1562",
+      "1566",
+      "1572",
+      "1573",
+      "1574",
+      "1578",
+      "1579",
+      "1580",
+      "1583",
+      "1593",
+      "1594",
+      "1595",
+      "1596",
+      "1598",
+      "1603",
+      "1644",
+      "1685",
+      "1686",
+      "1695",
+      "1697",
+      "1705",
+      "1759",
+      "1760",
+      "1762",
+      "1868",
+      "1875",
+      "1891",
+      "1893",
+      "1931",
+      "1961",
+      "1992",
+      "2153",
+      "2290",
+      "2323",
+      "2345",
+      "2359",
+      "2360",
+      "2361",
+      "2362",
+      "2368",
+      "2375",
+      "2431",
+      "2560",
+      "2569",
+      "2720",
+      "2728",
+      "2746",
+      "2751",
+      "2752",
+      "2753",
+      "2797",
+      "2798",
+      "2803",
+      "2804",
+      "2809",
+      "2810",
+      "2812",
+      "2950",
+      "2956",
+      "2957",
+      "2960",
+      "2966",
+      "2976",
+      "2984",
+      "2988",
+      "2993",
+      "3001",
+      "3030",
+      "3092",
+      "3119",
+      "3132",
+      "3142",
+      "3184",
+      "3187",
+      "3194",
+      "3222",
+      "3272",
+      "3281",
+      "3309",
+      "3311",
+      "3349",
+      "3354",
+      "3365",
+      "3366",
+      "3367",
+      "3369",
+      "3370",
+      "3392",
+      "3493",
+      "3500",
+      "3524",
+      "3530",
+      "3535",
+      "3543",
+      "3579",
+      "3593",
+      "3643",
+      "3691",
+      "3692",
+      "3704",
+      "3705",
+      "3706",
+      "3707",
+      "3709",
+      "3710",
+      "3716",
+      "3718",
+      "3727",
+      "3743",
+      "3747",
+      "3767",
+      "3769",
+      "3774",
+      "3775",
+      "3796",
+      "3797",
+      "3856",
+      "3857",
+      "3863",
+      "3871",
+      "3876",
+      "3877",
+      "3878",
+      "3927",
+      "3948",
+      "4028",
+      "4030",
+      "4048",
+      "4059",
+      "4061",
+      "4064",
+      "4072",
+      "4089",
+      "4090",
+      "4100",
+      "4109",
+      "4118",
+      "4123",
+      "4128",
+      "4129",
+      "4135",
+      "4137",
+      "4160",
+      "4166",
+      "4168",
+      "4169",
+      "4178",
+      "4179",
+      "4186",
+      "4218",
+      "4219",
+      "4246",
+      "4256",
+      "4294",
+      "4349",
+      "4362",
+      "4363",
+      "4387",
+      "4397",
+      "4398",
+      "4417",
+      "4435",
+      "4442",
+      "4443",
+      "4444",
+      "4524",
+      "4547",
+      "4561",
+      "4562",
+      "4563",
+      "4606",
+      "4679",
+      "4683",
+      "4689",
+      "4714",
+      "4722",
+      "4723",
+      "4732",
+      "4752",
+      "4754",
+      "4786",
+      "4788",
+      "4789",
+      "4790",
+      "4797",
+      "4805",
+      "4816",
+      "4848",
+      "4892",
+      "4909",
+      "4936",
+      "4951",
+      "4962",
+      "4963",
+      "5004",
+      "5017",
+      "5028",
+      "5073",
+      "5096",
+      "5108",
+      "5121",
+      "5161",
+      "5233",
+      "5301",
+      "5304",
+      "5313",
+      "5407",
+      "5496",
+      "5516",
+      "5628",
+      "5630",
+      "5633",
+      "5634",
+      "5659",
+      "5701",
+      "5745",
+      "5784",
+      "5865",
+      "5880",
+      "5882",
+      "6006",
+      "6044",
+      "6045",
+      "6046",
+      "6051",
+      "6056",
+      "6139",
+      "6193",
+      "6222",
+      "6327",
+      "6328",
+      "6329",
+      "6336",
+      "6344",
+      "6523",
+      "6541",
+      "6544",
+      "6600",
+      "6733",
+      "6744",
+      "6796",
+      "7203",
+      "7205",
+      "7206",
+      "7207",
+      "7279",
+      "7411",
+      "7469",
+      "7547",
+      "7548",
+      "7549",
+      "7550",
+      "7551",
+      "7552",
+      "7556",
+      "7560",
+      "7561",
+      "7566",
+      "7577",
+      "7578",
+      "7590",
+      "7598",
+      "7626",
+      "8374",
+      "8479",
+      "8533",
+      "8608",
+      "8755",
+      "8799",
+      "8876",
+      "8956",
+      "9041",
+      "9042",
+      "9315",
+      "9323",
+      "9484",
+      "9485",
+      "9493",
+      "9690",
+      "9691",
+      "9702",
+      "9878",
+      "9929",
+      "9988"
+    ],
+    "source_examples": [
+      {
+        "id": "0024",
+        "source_path": "catalogue/exercises/0024.json",
+        "name": "barbell bench front squat",
+        "pose": "standing",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A front squat variation with the bar held on the upper chest, putting the focus on the quads and an upright torso."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Start by standing with your feet shoulder-width apart and the barbell resting on your upper chest, just below your collarbone."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the barbell with an overhand grip, keeping your elbows up and your upper arms parallel to the ground."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lower your body down into a squat position by bending at the knees and hips, keeping your back straight and your chest up."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the bottom of the squat, then push through your heels to return to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "prop_text_conflict"
+        ]
+      },
+      {
+        "id": "0026",
+        "source_path": "catalogue/exercises/0026.json",
+        "name": "barbell bench squat",
+        "pose": "standing",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "rack"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A barbell squat with a bench behind you as a depth target. Trains the quads and glutes."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Set up a barbell on a squat rack at chest height."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Stand facing away from the rack, with your feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Bend your knees and lower your body down into a squat position, keeping your back straight and chest up."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Grasp the barbell with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Lift the barbell off the rack and step back, ensuring your feet are still shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Lower your body down into a squat, keeping your knees in line with your toes."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Pause for a moment at the bottom, then push through your heels to return to the starting position."
+          },
+          {
+            "pointer": "/instructions/7",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0039",
+        "source_path": "catalogue/exercises/0039.json",
+        "name": "barbell front chest squat",
+        "pose": "standing",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A front squat holding the bar at the front of the chest. Trains the quads, glutes and core."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Start by standing with your feet shoulder-width apart, toes slightly turned out."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the barbell in front of your chest with your hands shoulder-width apart, elbows pointing forward."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Engage your core and keep your chest up as you lower your body down into a squat position, pushing your hips back and bending your knees."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lower until your thighs are parallel to the ground, or as low as you can comfortably go."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the bottom, then push through your heels to return to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0102",
+        "source_path": "catalogue/exercises/0102.json",
+        "name": "barbell squat (on knees)",
+        "pose": "kneeling",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A squat performed from a kneeling position with the bar on the back. Trains the quads and glutes."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Start by kneeling on the ground with your knees hip-width apart and your toes pointing forward."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Place a barbell across your shoulders, gripping it with an overhand grip and your hands slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Engage your core and keep your chest lifted as you slowly lower your body down by bending your knees, keeping your back straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Continue lowering until your thighs are parallel to the ground, or as low as you can comfortably go."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the bottom, then push through your heels to return to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0291",
+        "source_path": "catalogue/exercises/0291.json",
+        "name": "dumbbell bench squat",
+        "pose": "standing",
+        "equipment": "dumbbell",
+        "props": [
+          "bench",
+          "dumbbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A dumbbell squat to a bench. Touching the bench gives a consistent depth and works the glutes and thighs."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Place a dumbbell on the ground in front of a bench."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Stand facing away from the bench with your feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Bend at the knees and hips to lower yourself down towards the bench, keeping your chest up and back straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Once your glutes touch the bench, push through your heels to stand back up to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0371",
+        "source_path": "catalogue/exercises/0371.json",
+        "name": "dumbbell plyo squat",
+        "pose": "standing",
+        "equipment": "dumbbell",
+        "props": [
+          "dumbbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A dumbbell squat finished with an explosive jump. It builds leg power and gets the heart rate up."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at your sides."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Lower your body into a squat position by bending your knees and pushing your hips back."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "As you reach the bottom of the squat, explode upward, jumping off the ground."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "While in the air, quickly switch the position of your feet, landing with your opposite foot forward."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Immediately lower your body back into a squat position and repeat the jump, switching your feet again."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Continue alternating the position of your feet with each jump for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0412",
+        "source_path": "catalogue/exercises/0412.json",
+        "name": "dumbbell squat (back on stability ball wall)",
+        "pose": "source_defined_support",
+        "equipment": "dumbbell",
+        "props": [
+          "dumbbell",
+          "stability_ball",
+          "wall"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A dumbbell squat with a stability ball pinned between your back and a wall. The ball guides the movement and takes stress off your lower back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Place a stability ball between your lower back and a wall and hold a dumbbell in each hand."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Step your feet forward, shoulder width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Bend your knees and sink down as the ball rolls up your back."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lower until your thighs are about parallel to the floor."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Push through your heels to stand back up."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Keep your knees tracking over your toes."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing",
+          "starting_legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0435",
+        "source_path": "catalogue/exercises/0435.json",
+        "name": "dumbbell sumo squat (back on stability ball wall)",
+        "pose": "standing",
+        "equipment": "dumbbell",
+        "props": [
+          "dumbbell",
+          "stability_ball",
+          "wall"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A wide-stance sumo squat holding a dumbbell with a stability ball between your back and the wall. The ball supports your back and keeps your posture upright."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Place a stability ball against a wall and lean your lower back on it."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold a dumbbell with both hands in front of you and set your feet wide with toes turned out."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Squat down as the ball rolls up your back."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lower until your thighs are about parallel."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Push through your heels to stand."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Keep your knees tracking over your toes."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "horizontal_pull",
+    "affected_candidate_exercises": 279,
+    "source_complete_for_storyboard": 84,
+    "pose_template_candidates": 23,
+    "apparatus_template_candidates": 112,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Scapula/shoulder/elbow target coordination, pull/return phase scaffold and resistance endpoint connection.",
+    "explicit_profile_parameters": "Torso inclination, seat/chest support, hand spacing/orientation, elbow plane, endpoint height, anchor, cable routing and bilateral coupling.",
+    "split_or_review_guards": "Chest-supported/seated/bent-over/inverted support; unilateral vs bilateral; free load vs cable vs lever; axis or contact changes. Upright rows belong to a separate family.",
+    "ids": [
+      "0027",
+      "0049",
+      "0062",
+      "0064",
+      "0118",
+      "0159",
+      "0160",
+      "0163",
+      "0167",
+      "0180",
+      "0189",
+      "0193",
+      "0208",
+      "0213",
+      "0214",
+      "0218",
+      "0234",
+      "0236",
+      "0239",
+      "0248",
+      "0292",
+      "0293",
+      "0327",
+      "0497",
+      "0498",
+      "0499",
+      "0521",
+      "0522",
+      "0541",
+      "0571",
+      "0574",
+      "0581",
+      "0588",
+      "0589",
+      "0606",
+      "0761",
+      "0808",
+      "0861",
+      "0892",
+      "0930",
+      "0988",
+      "0990",
+      "1003",
+      "10112",
+      "10185",
+      "10329",
+      "10389",
+      "10437",
+      "1046",
+      "10646",
+      "10667",
+      "10668",
+      "1071",
+      "1080",
+      "10866",
+      "10867",
+      "11060",
+      "1113",
+      "1120",
+      "11257",
+      "11263",
+      "11269",
+      "11275",
+      "1161",
+      "11715",
+      "11762",
+      "1184",
+      "11880",
+      "1194",
+      "1205",
+      "1210",
+      "1212",
+      "1235",
+      "1236",
+      "1237",
+      "1238",
+      "1313",
+      "1317",
+      "1318",
+      "1319",
+      "1321",
+      "1322",
+      "1323",
+      "1324",
+      "1329",
+      "1330",
+      "1331",
+      "1344",
+      "1345",
+      "1348",
+      "1349",
+      "1350",
+      "1351",
+      "1356",
+      "1359",
+      "1360",
+      "1361",
+      "1501",
+      "1717",
+      "1773",
+      "2265",
+      "2298",
+      "2300",
+      "2325",
+      "2326",
+      "2327",
+      "2343",
+      "2393",
+      "2464",
+      "2509",
+      "2511",
+      "2563",
+      "2661",
+      "2662",
+      "2663",
+      "2664",
+      "2671",
+      "2834",
+      "2902",
+      "2980",
+      "3017",
+      "3096",
+      "3102",
+      "3121",
+      "3144",
+      "3156",
+      "3158",
+      "3161",
+      "3162",
+      "3165",
+      "3166",
+      "3167",
+      "3168",
+      "3200",
+      "3233",
+      "3320",
+      "3325",
+      "3357",
+      "3381",
+      "3382",
+      "3388",
+      "3485",
+      "3495",
+      "3506",
+      "3536",
+      "3559",
+      "3654",
+      "3721",
+      "3749",
+      "3770",
+      "3771",
+      "3772",
+      "3773",
+      "3781",
+      "3782",
+      "3786",
+      "3787",
+      "3788",
+      "3789",
+      "3793",
+      "3794",
+      "3799",
+      "3822",
+      "3828",
+      "3845",
+      "3848",
+      "3858",
+      "3859",
+      "3860",
+      "3896",
+      "3899",
+      "3945",
+      "3991",
+      "3992",
+      "4011",
+      "4038",
+      "4039",
+      "4062",
+      "4104",
+      "4126",
+      "4145",
+      "4146",
+      "4147",
+      "4148",
+      "4195",
+      "4214",
+      "4215",
+      "4367",
+      "4368",
+      "4378",
+      "4379",
+      "4391",
+      "4392",
+      "4423",
+      "4424",
+      "4425",
+      "4426",
+      "4445",
+      "4450",
+      "4451",
+      "4452",
+      "4453",
+      "4454",
+      "4569",
+      "4570",
+      "4575",
+      "4629",
+      "4698",
+      "4730",
+      "4741",
+      "4744",
+      "4749",
+      "4758",
+      "4769",
+      "4770",
+      "4818",
+      "4837",
+      "4899",
+      "4911",
+      "4917",
+      "4921",
+      "4939",
+      "4974",
+      "5034",
+      "5090",
+      "5179",
+      "5232",
+      "5316",
+      "5369",
+      "5447",
+      "5517",
+      "5518",
+      "5524",
+      "5553",
+      "5607",
+      "5609",
+      "5656",
+      "5658",
+      "5661",
+      "5665",
+      "5697",
+      "5867",
+      "6032",
+      "6059",
+      "6072",
+      "6136",
+      "6137",
+      "6146",
+      "6156",
+      "6220",
+      "6252",
+      "6510",
+      "6511",
+      "6512",
+      "6513",
+      "6514",
+      "6515",
+      "6516",
+      "6517",
+      "6776",
+      "7230",
+      "7276",
+      "7554",
+      "7564",
+      "7587",
+      "7591",
+      "7597",
+      "7743",
+      "7744",
+      "7745",
+      "8222",
+      "8223",
+      "8224",
+      "8225",
+      "8299",
+      "8798",
+      "9698",
+      "9699",
+      "9875"
+    ],
+    "source_examples": [
+      {
+        "id": "0027",
+        "source_path": "catalogue/exercises/0027.json",
+        "name": "barbell bent over row",
+        "pose": "standing",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A hip-hinged row pulling the bar to your lower chest. A staple for the upper back and lats."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart and knees slightly bent."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Bend forward at the hips while keeping your back straight and chest up."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the barbell with an overhand grip, hands slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pull the barbell towards your lower chest by retracting your shoulder blades and squeezing your back muscles."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the top, then slowly lower the barbell back to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0049",
+        "source_path": "catalogue/exercises/0049.json",
+        "name": "barbell incline row",
+        "pose": "prone",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "bench_incline"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "Chest supported on an incline bench, you row the bar toward your chest. Works the upper back with little lower back stress."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Set up an incline bench at a 45-degree angle."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Lie face down on the bench with your chest against the pad and your feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the barbell with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Keep your back straight and your core engaged."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pull the barbell towards your chest, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment at the top, then slowly lower the barbell back to the starting position."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0159",
+        "source_path": "catalogue/exercises/0159.json",
+        "name": "cable decline seated wide-grip row",
+        "pose": "seated",
+        "equipment": "cable",
+        "props": [
+          "bench",
+          "bench_decline",
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A seated wide-grip cable row on a decline. Targets the upper back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on the decline bench facing the cable machine with your feet securely placed on the footrests."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the cable attachment with a wide overhand grip, palms facing down."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lean back slightly, keeping your back straight and your core engaged."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pull the cable towards your lower chest, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the peak of the contraction, then slowly release the cable back to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0160",
+        "source_path": "catalogue/exercises/0160.json",
+        "name": "cable floor seated wide-grip row",
+        "pose": "seated",
+        "equipment": "cable",
+        "props": [
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A wide-grip cable row seated on the floor. Targets the upper back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on the floor with your legs extended and your back straight."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Attach a cable handle to a low pulley and position the cable machine behind you."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the handle with a wide overhand grip, palms facing down."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lean back slightly, keeping your back straight and your chest lifted."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pull the handle towards your waist, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment at the top of the movement, then slowly release the handle back to the starting position."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0163",
+        "source_path": "catalogue/exercises/0163.json",
+        "name": "cable front seated row",
+        "pose": "seated",
+        "equipment": "cable",
+        "props": [
+          "cable_station",
+          "platform"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A seated row facing a cable stack. It builds the mid back and lats with smooth constant tension."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit at a cable row station with your feet on the platform and your knees slightly bent."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grab the handle with both hands and sit tall."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Pull the handle toward your lower ribs, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause briefly at the end."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Return slowly until your arms are straight."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Keep your chest up and avoid rocking back."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0167",
+        "source_path": "catalogue/exercises/0167.json",
+        "name": "cable high row (kneeling)",
+        "pose": "kneeling",
+        "equipment": "cable",
+        "props": [
+          "cable_station",
+          "cable_straight_bar"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A kneeling high cable row. Targets the upper back and rear delts."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Attach a straight bar to a cable machine at chest height."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Kneel down in front of the cable machine and grab the bar with an overhand grip, hands shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Sit back on your heels, keeping your back straight and your core engaged."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pull the bar towards your upper abdomen, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the top of the movement, then slowly release the bar back to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0189",
+        "source_path": "catalogue/exercises/0189.json",
+        "name": "cable one arm bent over row",
+        "pose": "standing",
+        "equipment": "cable",
+        "props": [
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A one-arm cable row from a hinged position. It trains the back one side at a time and shows up any strength imbalance."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand facing a cable machine with your feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Bend your knees slightly and hinge forward at the hips, keeping your back straight."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the cable handle with one hand, palm facing inward, and extend your arm fully."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pull the cable handle towards your body, keeping your elbow close to your side, until your hand reaches your lower chest."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment, then slowly extend your arm back to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions, then switch sides."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0292",
+        "source_path": "catalogue/exercises/0292.json",
+        "name": "dumbbell one arm bent-over row",
+        "pose": "standing",
+        "equipment": "dumbbell",
+        "props": [
+          "dumbbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A one-arm dumbbell row from a hinged stance. It trains the upper back one side at a time."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart, holding a dumbbell in one hand with your palm facing your body."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Bend your knees slightly and hinge forward at the hips, keeping your back straight and your core engaged."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Let the dumbbell hang straight down towards the floor, with your arm fully extended."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pull the dumbbell up towards your chest, keeping your elbow close to your body and squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the top, then slowly lower the dumbbell back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions, then switch sides."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      }
+    ]
+  },
+  {
+    "family": "chest_press",
+    "affected_candidate_exercises": 154,
+    "source_complete_for_storyboard": 44,
+    "pose_template_candidates": 11,
+    "apparatus_template_candidates": 61,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Coordinated upper-arm/forearm press/return targets with torso support frame and optional shared-load constraint.",
+    "explicit_profile_parameters": "Bench angle, elbow plane, grip, ROM, hand spacing, independent/shared load, torso/feet supports, machine handle path.",
+    "split_or_review_guards": "Flat/incline/decline/floor/standing frames; bar vs independent dumbbells; one-arm stability; machine pivot vs free path; reverse/neutral/wide grip and pauses remain explicit profiles.",
+    "ids": [
+      "0025",
+      "0030",
+      "0033",
+      "0045",
+      "0047",
+      "0052",
+      "0065",
+      "0122",
+      "0151",
+      "0169",
+      "0289",
+      "0301",
+      "0314",
+      "0352",
+      "0450",
+      "0576",
+      "0577",
+      "0748",
+      "0751",
+      "0753",
+      "0757",
+      "0923",
+      "0989",
+      "10042",
+      "10116",
+      "1029",
+      "1041",
+      "10560",
+      "10669",
+      "10670",
+      "10671",
+      "10672",
+      "1073",
+      "1111",
+      "1124",
+      "11256",
+      "1126",
+      "11264",
+      "11274",
+      "11285",
+      "1173",
+      "11764",
+      "1195",
+      "1211",
+      "1214",
+      "1220",
+      "1221",
+      "1254",
+      "1256",
+      "1257",
+      "1258",
+      "1261",
+      "1265",
+      "1266",
+      "1283",
+      "1287",
+      "1289",
+      "1298",
+      "1299",
+      "1300",
+      "1301",
+      "1308",
+      "1309",
+      "1455",
+      "1479",
+      "1497",
+      "1623",
+      "1624",
+      "1625",
+      "1626",
+      "1719",
+      "1743",
+      "2144",
+      "2187",
+      "2277",
+      "2278",
+      "2336",
+      "2338",
+      "2339",
+      "2340",
+      "2341",
+      "2342",
+      "2432",
+      "2659",
+      "2974",
+      "2982",
+      "3124",
+      "3174",
+      "3185",
+      "3310",
+      "3324",
+      "3333",
+      "3359",
+      "3668",
+      "3681",
+      "3695",
+      "3724",
+      "3729",
+      "3738",
+      "3739",
+      "3758",
+      "3780",
+      "3917",
+      "3921",
+      "3946",
+      "4068",
+      "4069",
+      "4070",
+      "4074",
+      "4076",
+      "4077",
+      "4079",
+      "4184",
+      "4201",
+      "4213",
+      "4371",
+      "4414",
+      "4544",
+      "4684",
+      "4731",
+      "4834",
+      "4835",
+      "4836",
+      "4845",
+      "4846",
+      "4856",
+      "5010",
+      "5011",
+      "5013",
+      "5067",
+      "5091",
+      "5093",
+      "5097",
+      "5284",
+      "5332",
+      "5576",
+      "5608",
+      "5660",
+      "5738",
+      "5814",
+      "5815",
+      "5816",
+      "6057",
+      "6355",
+      "6584",
+      "6813",
+      "7620",
+      "7621",
+      "7994",
+      "8618",
+      "8620",
+      "8622",
+      "9385",
+      "9932"
+    ],
+    "source_examples": [
+      {
+        "id": "0025",
+        "source_path": "catalogue/exercises/0025.json",
+        "name": "barbell bench press",
+        "pose": "supine",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "bench_flat"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "The classic flat bench press. Lower the bar to your chest and press it up to build the chest, shoulders and triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the barbell with an overhand grip slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lift the barbell off the rack and hold it directly above your chest with your arms fully extended."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lower the barbell slowly towards your chest, keeping your elbows tucked in."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment when the barbell touches your chest."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Push the barbell back up to the starting position by extending your arms."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0030",
+        "source_path": "catalogue/exercises/0030.json",
+        "name": "barbell close-grip bench press",
+        "pose": "supine",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "rack"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A bench press with a narrower grip that shifts more of the work to the triceps while still working the chest."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the barbell with a close grip, slightly narrower than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Unrack the barbell and lower it slowly towards your chest, keeping your elbows close to your body."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment when the barbell touches your chest."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Push the barbell back up to the starting position, fully extending your arms."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0033",
+        "source_path": "catalogue/exercises/0033.json",
+        "name": "barbell decline bench press",
+        "pose": "supported_lying",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "bench_decline",
+          "nordic_anchor",
+          "rack"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A bench press performed on a decline bench, which emphasises the lower chest."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Lie on a decline bench with your feet secured and your head lower than your hips."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the barbell with an overhand grip slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Unrack the barbell and lower it slowly towards your chest, keeping your elbows tucked in."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the bottom, then push the barbell back up to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0047",
+        "source_path": "catalogue/exercises/0047.json",
+        "name": "barbell incline bench press",
+        "pose": "supported_lying",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench",
+          "bench_incline",
+          "rack"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A barbell press on an incline bench, favouring the upper chest and front delts."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Set up an incline bench at a 45-degree angle."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Lie down on the bench with your feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the barbell with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Unrack the barbell and lower it slowly towards your chest, keeping your elbows at a 45-degree angle."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the bottom, then push the barbell back up to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0065",
+        "source_path": "catalogue/exercises/0065.json",
+        "name": "barbell one arm floor press",
+        "pose": "supine",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A floor press with one hand on the bar. Limits range of motion to be gentle on the shoulder and trains the triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Lie flat on your back on the floor with your knees bent and feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the barbell with one hand, palm facing up, and extend your arm straight up over your chest."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Slowly lower the barbell towards your chest, keeping your elbow close to your body."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the bottom, then push the barbell back up to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions, then switch arms."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0151",
+        "source_path": "catalogue/exercises/0151.json",
+        "name": "cable bench press",
+        "pose": "standing",
+        "equipment": "cable",
+        "props": [
+          "bench",
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A cable press from a bench. Trains the chest, shoulders and triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the cable machine to chest height and attach the handles."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Stand facing away from the machine with your feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the handles with an overhand grip and step forward to create tension in the cables."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Position your feet firmly on the ground and engage your core."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Bend your elbows and bring your hands to shoulder level, keeping your elbows at a 90-degree angle."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Push the handles forward, extending your arms fully in front of you."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Pause for a moment, then slowly reverse the movement, bringing your hands back to shoulder level."
+          },
+          {
+            "pointer": "/instructions/7",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0169",
+        "source_path": "catalogue/exercises/0169.json",
+        "name": "cable incline bench press",
+        "pose": "seated",
+        "equipment": "cable",
+        "props": [
+          "bench",
+          "bench_incline",
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "An incline cable press. Emphasises the upper chest."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the bench to a 45-degree incline."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Attach the cable handles to the high pulleys."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Sit on the bench facing the cable machine with your feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Grasp the handles with an overhand grip and bring them to shoulder height."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Push the handles forward and upward until your arms are fully extended."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment, then slowly lower the handles back to the starting position."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0289",
+        "source_path": "catalogue/exercises/0289.json",
+        "name": "dumbbell bench press",
+        "pose": "supine",
+        "equipment": "dumbbell",
+        "props": [
+          "bench",
+          "bench_flat",
+          "dumbbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "The classic dumbbell press on a flat bench. It builds the chest, shoulders and triceps with a good range of motion."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold a dumbbell in each hand, with your palms facing forward and your arms extended above your chest."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lower the dumbbells slowly to the sides of your chest, keeping your elbows at a 90-degree angle."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment, then push the dumbbells back up to the starting position, fully extending your arms."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      }
+    ]
+  },
+  {
+    "family": "overhead_press",
+    "affected_candidate_exercises": 107,
+    "source_complete_for_storyboard": 25,
+    "pose_template_candidates": 13,
+    "apparatus_template_candidates": 48,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Overhead shoulder/elbow trajectory scaffold, torso stabilization, lockout/return phase sequencing.",
+    "explicit_profile_parameters": "Seat/standing support, scapular/shoulder path, grip, front/behind load path, independent hand timing, machine axes and ROM.",
+    "split_or_review_guards": "Seated/standing and one-/two-arm frames; behind-neck paths; Arnold rotation; push-press/jerk ballistic leg drive are a separate family, never implicit retiming.",
+    "ids": [
+      "0086",
+      "0091",
+      "0148",
+      "0219",
+      "0287",
+      "0360",
+      "0361",
+      "0404",
+      "0405",
+      "0414",
+      "0426",
+      "0523",
+      "0539",
+      "0553",
+      "0587",
+      "0590",
+      "0603",
+      "0698",
+      "0765",
+      "0766",
+      "0772",
+      "0774",
+      "0869",
+      "0997",
+      "10043",
+      "10049",
+      "1012",
+      "10189",
+      "10388",
+      "1045",
+      "11016",
+      "11017",
+      "11260",
+      "1162",
+      "1165",
+      "11716",
+      "1209",
+      "1224",
+      "1226",
+      "1231",
+      "1438",
+      "1454",
+      "1456",
+      "1457",
+      "1540",
+      "1862",
+      "2137",
+      "2318",
+      "2381",
+      "2932",
+      "2934",
+      "2962",
+      "2996",
+      "3122",
+      "3186",
+      "3525",
+      "3690",
+      "3736",
+      "3737",
+      "3904",
+      "3915",
+      "3916",
+      "3972",
+      "3990",
+      "4010",
+      "4065",
+      "4067",
+      "4108",
+      "4120",
+      "4125",
+      "4174",
+      "4175",
+      "4185",
+      "4202",
+      "4346",
+      "4499",
+      "4577",
+      "4613",
+      "4621",
+      "4625",
+      "4686",
+      "4703",
+      "4745",
+      "4753",
+      "4833",
+      "4866",
+      "5066",
+      "5204",
+      "5205",
+      "5309",
+      "5529",
+      "5636",
+      "5667",
+      "6076",
+      "6097",
+      "6142",
+      "6800",
+      "6801",
+      "6806",
+      "6890",
+      "6891",
+      "7287",
+      "8364",
+      "8502",
+      "8633",
+      "8662",
+      "9703"
+    ],
+    "source_examples": [
+      {
+        "id": "0086",
+        "source_path": "catalogue/exercises/0086.json",
+        "name": "barbell seated behind head military press",
+        "pose": "seated",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A seated overhead press with the bar lowered behind your head. Works the shoulders and triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on a bench with your back straight and feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the barbell with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lift the barbell off the rack and bring it down to shoulder level, behind your head."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Press the barbell upward until your arms are fully extended."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Lower the barbell back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0148",
+        "source_path": "catalogue/exercises/0148.json",
+        "name": "cable alternate shoulder press",
+        "pose": "standing",
+        "equipment": "cable",
+        "props": [
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A cable shoulder press alternating arms. Trains the delts and triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart and grasp the handles of the cable machine with an overhand grip."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Position your hands at shoulder height, with your palms facing forward."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Keep your core engaged and your back straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Press one handle up and forward until your arm is fully extended."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the top, then slowly lower the handle back to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat with the other arm."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Alternate between arms for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0287",
+        "source_path": "catalogue/exercises/0287.json",
+        "name": "dumbbell arnold press v. 2",
+        "pose": "seated",
+        "equipment": "dumbbell",
+        "props": [
+          "bench",
+          "dumbbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A seated Arnold press variation. You rotate the palms as you press, working all heads of the shoulder."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on a bench with back support and hold a dumbbell in each hand at shoulder level, palms facing your body and elbows bent."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Press the dumbbells upward until your arms are fully extended and your palms are facing forward."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Rotate your wrists as you lift, so that your palms end up facing forward at the top of the movement."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly lower the dumbbells back to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0360",
+        "source_path": "catalogue/exercises/0360.json",
+        "name": "dumbbell one arm shoulder press v. 2",
+        "pose": "standing",
+        "equipment": "dumbbell",
+        "props": [
+          "dumbbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A one-arm overhead dumbbell press, second variation. It trains the shoulder and triceps while your core resists leaning."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart and hold a dumbbell in one hand at shoulder level, palm facing forward."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Engage your core and press the dumbbell straight up overhead, fully extending your arm."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Pause for a moment at the top, then slowly lower the dumbbell back to shoulder level."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Repeat for the desired number of repetitions, then switch to the other arm."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0523",
+        "source_path": "catalogue/exercises/0523.json",
+        "name": "kettlebell arnold press",
+        "pose": "standing",
+        "equipment": "kettlebell",
+        "props": [
+          "kettlebell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "You press kettlebells overhead while rotating your palms. It trains all three parts of the shoulder."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart, holding a kettlebell in each hand at shoulder height with your palms facing towards you."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Engage your core and press the kettlebells overhead, rotating your palms to face forward as you extend your arms."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Pause at the top of the movement, then slowly lower the kettlebells back to the starting position."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0587",
+        "source_path": "catalogue/exercises/0587.json",
+        "name": "lever military press",
+        "pose": "source_defined_support",
+        "equipment": "leverage machine",
+        "props": [
+          "shoulder_press"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "On a machine, you press the handles overhead from shoulder height. Builds the shoulders and triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the seat height and position yourself on the machine with your back against the backrest."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the handles with an overhand grip and position your hands slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Push the handles upward until your arms are fully extended, but do not lock your elbows."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly lower the handles back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing",
+          "legs_feet_missing",
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0590",
+        "source_path": "catalogue/exercises/0590.json",
+        "name": "lever one arm shoulder press",
+        "pose": "seated",
+        "equipment": "leverage machine",
+        "props": [
+          "shoulder_press"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "Seated on a machine, you press one handle overhead at a time. Trains each shoulder separately with help from the triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the seat height and position yourself on the machine with your back against the pad."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the lever handle with one hand and position your elbow at a 90-degree angle."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Press the lever upward until your arm is fully extended overhead."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly lower the lever back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions, then switch to the other arm."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing",
+          "legs_feet_missing",
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0698",
+        "source_path": "catalogue/exercises/0698.json",
+        "name": "shoulder press (with band)",
+        "pose": "standing",
+        "equipment": "band",
+        "props": [
+          "band_unspecified"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "An overhead press using a band for resistance. It builds the shoulders and triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand on the band with feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the band at shoulder height."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Press your hands overhead until your arms are straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Keep your core tight."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Lower slowly back to the shoulders."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Avoid leaning back."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "hip_hinge",
+    "affected_candidate_exercises": 152,
+    "source_complete_for_storyboard": 45,
+    "pose_template_candidates": 9,
+    "apparatus_template_candidates": 47,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Hip-hinge/trunk-frame scaffold with pelvis trajectory, planted-foot constraints and linked hand/load targets.",
+    "explicit_profile_parameters": "Knee bend, stance, hip depth, torso angle, hand/load location, ROM endpoint, unilateral support and resistance path.",
+    "split_or_review_guards": "Romanian/stiff/conventional/sumo/trap/behind-back/good-morning and single-leg mechanics need explicit sub-generators; rack pulls retain partial range; lever/cable axes remain distinct.",
+    "ids": [
+      "0032",
+      "0044",
+      "0066",
+      "0074",
+      "0085",
+      "0090",
+      "0115",
+      "0116",
+      "0117",
+      "0157",
+      "0196",
+      "0300",
+      "0432",
+      "0434",
+      "0578",
+      "0749",
+      "0752",
+      "0811",
+      "0886",
+      "0919",
+      "0966",
+      "0967",
+      "0991",
+      "1009",
+      "1010",
+      "10199",
+      "1023",
+      "10383",
+      "10561",
+      "10730",
+      "10862",
+      "10865",
+      "1087",
+      "10915",
+      "10916",
+      "11055",
+      "11058",
+      "11093",
+      "11287",
+      "11529",
+      "1155",
+      "1157",
+      "11789",
+      "1199",
+      "1206",
+      "1459",
+      "1513",
+      "1519",
+      "1532",
+      "1542",
+      "1543",
+      "1544",
+      "1556",
+      "1569",
+      "1597",
+      "1693",
+      "1756",
+      "1757",
+      "2324",
+      "2354",
+      "2357",
+      "2729",
+      "2750",
+      "2805",
+      "2806",
+      "2807",
+      "2808",
+      "2836",
+      "2920",
+      "3308",
+      "3322",
+      "3338",
+      "3340",
+      "3352",
+      "3585",
+      "3731",
+      "3733",
+      "3734",
+      "3759",
+      "3894",
+      "3928",
+      "3942",
+      "4046",
+      "4105",
+      "4107",
+      "4113",
+      "4116",
+      "4132",
+      "4133",
+      "4171",
+      "4173",
+      "4199",
+      "4203",
+      "4247",
+      "4293",
+      "4403",
+      "4523",
+      "4604",
+      "4605",
+      "4618",
+      "4757",
+      "4817",
+      "4841",
+      "4842",
+      "4850",
+      "4851",
+      "4861",
+      "4864",
+      "4914",
+      "5014",
+      "5119",
+      "5307",
+      "5327",
+      "5555",
+      "5577",
+      "5663",
+      "5670",
+      "5672",
+      "5702",
+      "5706",
+      "5837",
+      "5886",
+      "5910",
+      "5911",
+      "5912",
+      "5988",
+      "6034",
+      "6041",
+      "6042",
+      "6049",
+      "6424",
+      "6425",
+      "6552",
+      "6553",
+      "6692",
+      "7237",
+      "7374",
+      "7648",
+      "7883",
+      "8192",
+      "8712",
+      "8800",
+      "8891",
+      "8892",
+      "9494",
+      "9515",
+      "9609",
+      "9696",
+      "9865",
+      "9866",
+      "9876",
+      "9877"
+    ],
+    "source_examples": [
+      {
+        "id": "0032",
+        "source_path": "catalogue/exercises/0032.json",
+        "name": "barbell deadlift",
+        "pose": "standing",
+        "equipment": "barbell",
+        "props": [
+          "barbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "Lift the bar from the floor by driving the hips and legs until you stand tall. Trains the glutes, hamstrings and back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart and the barbell on the ground in front of you."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Bend your knees and hinge at the hips to lower your torso and grip the barbell with an overhand grip, hands slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Keep your back straight and chest lifted as you drive through your heels to lift the barbell off the ground, extending your hips and knees."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "As you stand up straight, squeeze your glutes and keep your core engaged."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Lower the barbell back down to the ground by bending at the hips and knees, keeping your back straight."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0090",
+        "source_path": "catalogue/exercises/0090.json",
+        "name": "barbell seated good morning",
+        "pose": "seated",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "bench"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A seated good morning with the bar on your back. Trains the lower back and glutes."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on a bench with your feet flat on the ground and a barbell resting on your upper back."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Keep your back straight and your chest up."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Slowly hinge forward at the hips, lowering your torso towards the ground."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the bottom, then push through your heels to return to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0157",
+        "source_path": "catalogue/exercises/0157.json",
+        "name": "cable deadlift",
+        "pose": "standing",
+        "equipment": "cable",
+        "props": [
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A deadlift using the cable stack. Trains the glutes, hamstrings and lower back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand facing the cable machine with your feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Bend at the hips and knees, lowering your torso until your back is parallel to the ground."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the cable handles with an overhand grip, keeping your arms straight and your shoulders back."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Engage your glutes and hamstrings to lift the cable handles, extending your hips and standing up straight."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the top, then slowly lower the cable handles back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0300",
+        "source_path": "catalogue/exercises/0300.json",
+        "name": "dumbbell deadlift",
+        "pose": "standing",
+        "equipment": "dumbbell",
+        "props": [
+          "dumbbell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A deadlift with a dumbbell in each hand. You hinge and stand to work the glutes, hamstrings and back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart, toes pointing forward."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold a dumbbell in each hand, palms facing your body, arms extended downwards."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Bend at your hips and knees, lowering the dumbbells towards the ground while keeping your back straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Push through your heels and extend your hips and knees, lifting the dumbbells back up to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0578",
+        "source_path": "catalogue/exercises/0578.json",
+        "name": "lever deadlift",
+        "pose": "seated",
+        "equipment": "leverage machine",
+        "props": [
+          "deadlift_lever",
+          "platform"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A machine deadlift that lets you hinge and stand up against a set load. Works the glutes, hamstrings and lower back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the seat height and foot platform to your desired position."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Sit on the machine with your back against the pad and your feet flat on the foot platform."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the handles or the sides of the seat for stability."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Engage your glutes and hamstrings, and push through your heels to lift the weight up."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Keep your back straight and avoid rounding your shoulders."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Extend your hips fully at the top of the movement, squeezing your glutes."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Lower the weight back down in a controlled manner, keeping tension on your glutes and hamstrings."
+          },
+          {
+            "pointer": "/instructions/7",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0749",
+        "source_path": "catalogue/exercises/0749.json",
+        "name": "smith bent knee good morning",
+        "pose": "standing",
+        "equipment": "smith machine",
+        "props": [
+          "smith"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "On the smith machine, you bend your knees slightly and hinge forward with the bar on your upper back. Works the hamstrings, glutes and lower back."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Start by standing with your feet shoulder-width apart, toes pointing forward."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Place the barbell across your upper back, resting it on your traps."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Bend your knees slightly and hinge forward at the hips, keeping your back straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lower your torso until it is parallel to the ground, feeling a stretch in your hamstrings."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Engage your glutes and hamstrings to raise your torso back up to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing",
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0811",
+        "source_path": "catalogue/exercises/0811.json",
+        "name": "trap bar deadlift",
+        "pose": "standing",
+        "equipment": "trap bar",
+        "props": [
+          "trap_bar"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A deadlift standing inside a hex bar, lifting by extending the hips and knees. It builds the glutes, quads and back with a friendly lifting position."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart and the trap bar on the ground in front of you."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Bend at the hips and knees to lower yourself down and grip the handles of the trap bar with an overhand grip."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Keep your back straight and chest up as you begin to lift the trap bar off the ground by extending your hips and knees."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "As you lift, focus on driving through your heels and squeezing your glutes at the top of the movement."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Lower the trap bar back down to the ground by bending at the hips and knees, keeping your back straight throughout the movement."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0919",
+        "source_path": "catalogue/exercises/0919.json",
+        "name": "band single stiff leg deadlift",
+        "pose": "standing",
+        "equipment": "band",
+        "props": [
+          "band_unspecified"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A single-leg stiff-leg deadlift with a band. It builds the hamstrings and balance."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand on the band on one leg and hold the ends."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Keep a slight bend in the standing knee."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Hinge forward with a flat back and kick the free leg back."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Return by driving your hips forward."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Finish reps, then switch legs."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "arms_hands_missing"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "push_up",
+    "affected_candidate_exercises": 163,
+    "source_complete_for_storyboard": 6,
+    "pose_template_candidates": 13,
+    "apparatus_template_candidates": 51,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Closed-chain hand/foot support solving, torso frame and elbow-flexion press phases.",
+    "explicit_profile_parameters": "Hand/foot surfaces and heights, support count, body line, hand orientation/width, elbow plane, tempo and transition phases.",
+    "split_or_review_guards": "Pike/planche/hindu/cobra/kneeling/decline/incline/ball forms retain distinct paths/support graphs; hand-release/plyometric variants require explicit release/landing events.",
+    "ids": [
+      "0134",
+      "0258",
+      "0259",
+      "0261",
+      "0278",
+      "0279",
+      "0283",
+      "0468",
+      "0471",
+      "0490",
+      "0492",
+      "0493",
+      "0494",
+      "0545",
+      "0611",
+      "0642",
+      "0653",
+      "0654",
+      "0655",
+      "0656",
+      "0657",
+      "0658",
+      "0659",
+      "0660",
+      "0661",
+      "0662",
+      "0663",
+      "0664",
+      "0665",
+      "0666",
+      "0667",
+      "0681",
+      "0699",
+      "0717",
+      "0725",
+      "0778",
+      "0803",
+      "0806",
+      "0915",
+      "0975",
+      "10050",
+      "10650",
+      "10882",
+      "10950",
+      "1115",
+      "1116",
+      "1121",
+      "1125",
+      "1128",
+      "11315",
+      "1138",
+      "1146",
+      "11717",
+      "1172",
+      "1174",
+      "1182",
+      "1273",
+      "1274",
+      "1275",
+      "1296",
+      "1306",
+      "1307",
+      "1310",
+      "1311",
+      "1421",
+      "1467",
+      "1486",
+      "1701",
+      "1772",
+      "2328",
+      "2350",
+      "2351",
+      "2398",
+      "2740",
+      "2831",
+      "2890",
+      "2895",
+      "2897",
+      "2921",
+      "2944",
+      "2946",
+      "2961",
+      "3002",
+      "3011",
+      "3021",
+      "3145",
+      "3211",
+      "3216",
+      "3217",
+      "3265",
+      "3266",
+      "3294",
+      "3327",
+      "3383",
+      "3401",
+      "3402",
+      "3488",
+      "3489",
+      "3490",
+      "3491",
+      "3492",
+      "3553",
+      "3557",
+      "3580",
+      "3662",
+      "3751",
+      "3784",
+      "3785",
+      "3812",
+      "3824",
+      "3906",
+      "3910",
+      "3922",
+      "3935",
+      "3947",
+      "3964",
+      "3977",
+      "3979",
+      "3984",
+      "3985",
+      "3993",
+      "4060",
+      "4117",
+      "4121",
+      "4153",
+      "4159",
+      "4162",
+      "4192",
+      "4521",
+      "4571",
+      "4617",
+      "4658",
+      "4736",
+      "4807",
+      "4830",
+      "4858",
+      "4859",
+      "4860",
+      "4984",
+      "5030",
+      "5151",
+      "5160",
+      "5278",
+      "5460",
+      "5556",
+      "5637",
+      "5866",
+      "5997",
+      "6151",
+      "6231",
+      "6537",
+      "6550",
+      "6910",
+      "6959",
+      "6982",
+      "6986",
+      "7884",
+      "8076",
+      "8894",
+      "9311",
+      "9312",
+      "9316",
+      "9325"
+    ],
+    "source_examples": [
+      {
+        "id": "0134",
+        "source_path": "catalogue/exercises/0134.json",
+        "name": "bent side knee push up",
+        "pose": "plank",
+        "equipment": "body weight",
+        "props": [],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A push-up with the knees bent and turned to one side, adding a gentle twist to the trunk. It trains the chest and the obliques."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Start in a push-up position with your knees bent and both hands under your shoulders."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Rotate your knees and hips slightly to one side."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lower your chest to the floor with your elbows at about 45 degrees."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Push back up to the start."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Keep your core tight and your hips from sagging."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Switch the side of your knees between sets."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing"
+        ]
+      },
+      {
+        "id": "0278",
+        "source_path": "catalogue/exercises/0278.json",
+        "name": "decline push up (on stability ball)",
+        "pose": "plank",
+        "equipment": "stability ball",
+        "props": [
+          "stability_ball"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A push-up with your feet on a stability ball, so your hands sit lower than your feet. It challenges the upper chest, shoulders and balance."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Place your shins or feet on a stability ball and your hands on the floor under your shoulders."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Form a straight line from head to heels."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lower your chest toward the floor."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Push back up without letting your hips sag."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Brace your core to keep the ball steady."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Keep your elbows at about 45 degrees."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing"
+        ]
+      },
+      {
+        "id": "0279",
+        "source_path": "catalogue/exercises/0279.json",
+        "name": "decline push-up",
+        "pose": "plank",
+        "equipment": "body weight",
+        "props": [
+          "platform"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A push-up with the feet raised on a surface. The incline puts more load on the upper chest and shoulders."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Place your hands on the ground slightly wider than shoulder-width apart, with your feet elevated on a stable surface."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Keep your body in a straight line from head to toe, engaging your core muscles."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lower your chest towards the ground by bending your elbows, keeping them close to your body."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Push through your palms to extend your arms and return to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing"
+        ]
+      },
+      {
+        "id": "0471",
+        "source_path": "catalogue/exercises/0471.json",
+        "name": "handstand push-up",
+        "pose": "standing",
+        "equipment": "body weight",
+        "props": [
+          "wall"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "You press your body upward while inverted against a wall. It builds the shoulders and triceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Find a wall and face away from it, standing a few feet away."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Place your hands on the ground shoulder-width apart and kick your feet up against the wall, coming into a handstand position."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Bend your elbows and lower your head towards the ground, keeping your body in a straight line."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Push through your hands and extend your arms to return to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0490",
+        "source_path": "catalogue/exercises/0490.json",
+        "name": "incline close-grip push-up",
+        "pose": "plank",
+        "equipment": "body weight",
+        "props": [
+          "bench",
+          "platform"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "An incline push-up with a narrow hand position. It targets the triceps and chest."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Place your hands on an elevated surface, such as a bench or step, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Extend your legs behind you, resting on the balls of your feet, with your body forming a straight line from head to heels."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lower your chest towards the elevated surface by bending your elbows, keeping them close to your sides."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the bottom, then push yourself back up to the starting position by straightening your arms."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing",
+          "starting_legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0545",
+        "source_path": "catalogue/exercises/0545.json",
+        "name": "kettlebell plyo push-up",
+        "pose": "plank",
+        "equipment": "kettlebell",
+        "props": [
+          "kettlebell"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "An explosive push-up with your hands on kettlebells. You push hard enough to lift off, which trains chest and arm power."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Start in a high plank position with your hands on the kettlebells, shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Lower your chest towards the ground, keeping your elbows close to your body."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Push through your hands explosively, lifting your hands off the kettlebells and extending your arms fully."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Land softly back on the kettlebells and immediately lower your chest back down for the next repetition."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "legs_feet_missing",
+          "named_pose_requires_geometry"
+        ]
+      },
+      {
+        "id": "0611",
+        "source_path": "catalogue/exercises/0611.json",
+        "name": "lunge push up",
+        "pose": "standing",
+        "equipment": "body weight",
+        "props": [],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A lunge flowing into a push-up. It combines leg and upper body work for a full-body challenge."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand tall with feet together."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Step back into a lunge and lower your back knee toward the floor."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Place your hands on the floor and step into a plank."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lower into a push-up and press back up."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Step back into the lunge and stand up."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Alternate the lunging leg each rep."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      },
+      {
+        "id": "0653",
+        "source_path": "catalogue/exercises/0653.json",
+        "name": "push-up (bosu ball)",
+        "pose": "supine",
+        "equipment": "bosu ball",
+        "props": [
+          "bosu"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A push-up with your hands on a bosu ball. The unstable surface trains the chest, arms and core stabilizers."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Place the bosu ball on the ground with the flat side facing up."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Position yourself in a push-up position with your hands on the outer edges of the bosu ball."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Engage your core and lower your body down towards the bosu ball by bending your elbows."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Push yourself back up to the starting position by extending your arms."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_body_pose_missing",
+          "legs_feet_missing"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "vertical_pull",
+    "affected_candidate_exercises": 144,
+    "source_complete_for_storyboard": 26,
+    "pose_template_candidates": 21,
+    "apparatus_template_candidates": 65,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Hanging or seated torso setup, shoulder/elbow pull/return phases and hand-anchor constraints.",
+    "explicit_profile_parameters": "Grip, hand spacing, body support/assistance, torso lean, load path, leg placement, ROM and side coordination.",
+    "split_or_review_guards": "Pull-up body travel vs pulldown handle travel; assisted support; unilateral loading, kipping/ballistic and static hangs; pulley/machine axes are explicit.",
+    "ids": [
+      "0007",
+      "0015",
+      "0017",
+      "0150",
+      "0177",
+      "0197",
+      "0198",
+      "0205",
+      "0232",
+      "0237",
+      "0238",
+      "0245",
+      "0253",
+      "0466",
+      "0467",
+      "0572",
+      "0579",
+      "0627",
+      "0638",
+      "0651",
+      "0652",
+      "0670",
+      "0673",
+      "0674",
+      "0678",
+      "0688",
+      "0818",
+      "0841",
+      "0905",
+      "0928",
+      "0970",
+      "0974",
+      "0983",
+      "1013",
+      "1047",
+      "10503",
+      "10660",
+      "10661",
+      "10662",
+      "1067",
+      "1088",
+      "10902",
+      "10903",
+      "1094",
+      "10948",
+      "11015",
+      "11253",
+      "1127",
+      "11309",
+      "11714",
+      "1198",
+      "1204",
+      "1222",
+      "1326",
+      "1327",
+      "1347",
+      "1367",
+      "1429",
+      "1431",
+      "1432",
+      "1763",
+      "1863",
+      "1870",
+      "2291",
+      "2330",
+      "2616",
+      "2665",
+      "2736",
+      "2997",
+      "3019",
+      "3116",
+      "3117",
+      "3290",
+      "3293",
+      "3326",
+      "3358",
+      "3418",
+      "3487",
+      "3497",
+      "3550",
+      "3563",
+      "3777",
+      "3791",
+      "4102",
+      "4144",
+      "4181",
+      "4206",
+      "4207",
+      "4217",
+      "4358",
+      "4415",
+      "4576",
+      "4716",
+      "4717",
+      "4718",
+      "4724",
+      "4725",
+      "4726",
+      "4773",
+      "4780",
+      "4781",
+      "4782",
+      "4783",
+      "4784",
+      "4785",
+      "4806",
+      "4831",
+      "4913",
+      "4919",
+      "4920",
+      "4948",
+      "4957",
+      "4970",
+      "4983",
+      "5008",
+      "5123",
+      "5236",
+      "5326",
+      "5473",
+      "5474",
+      "5479",
+      "5522",
+      "5581",
+      "5844",
+      "6017",
+      "6036",
+      "6356",
+      "6392",
+      "6804",
+      "6881",
+      "6961",
+      "7228",
+      "7385",
+      "7512",
+      "7517",
+      "7583",
+      "8189",
+      "8297",
+      "9304",
+      "9317",
+      "9320",
+      "9510",
+      "9511",
+      "9512"
+    ],
+    "source_examples": [
+      {
+        "id": "0007",
+        "source_path": "catalogue/exercises/0007.json",
+        "name": "alternate lateral pulldown",
+        "pose": "seated",
+        "equipment": "cable",
+        "props": [
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A cable lat pulldown done one handle at a time, building the lats with a stretch and squeeze on each side."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on the cable machine with your back straight and feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the handles with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Lean back slightly and pull the handles towards your chest, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the peak of the movement, then slowly release the handles back to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0015",
+        "source_path": "catalogue/exercises/0015.json",
+        "name": "assisted parallel close grip pull-up",
+        "pose": "hanging",
+        "equipment": "leverage machine",
+        "props": [
+          "assisted_dip_pullup",
+          "dip_bars"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A machine-assisted pull-up on parallel bars with a close neutral grip. Builds the lats and biceps with less bodyweight."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the machine to your desired weight and height."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Place your hands on the parallel bars with a close grip, palms facing each other."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Hang from the bars with your arms fully extended and your feet off the ground."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Engage your back muscles and pull your body up towards the bars, keeping your elbows close to your body."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Continue pulling until your chin is above the bars."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment at the top, then slowly lower your body back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0017",
+        "source_path": "catalogue/exercises/0017.json",
+        "name": "assisted pull-up",
+        "pose": "hanging",
+        "equipment": "leverage machine",
+        "props": [
+          "assisted_dip_pullup"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A pull-up on an assisted machine that takes some of your weight, so you can build up to full pull-ups."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the machine to your desired weight and height settings."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the handles with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Hang with your arms fully extended and your feet off the ground."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Engage your back muscles and pull your body up towards the handles, keeping your elbows close to your body."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Continue pulling until your chin is above the handles."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment at the top, then slowly lower your body back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0150",
+        "source_path": "catalogue/exercises/0150.json",
+        "name": "cable bar lateral pulldown",
+        "pose": "source_defined_support",
+        "equipment": "cable",
+        "props": [
+          "cable_station",
+          "cable_straight_bar"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A lat pulldown on the cable machine with a straight bar. Builds the lats."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the cable pulley to a high position and attach a straight bar."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Sit facing the cable machine with your feet flat on the ground and your knees slightly bent."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the bar with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lean back slightly and keep your chest up, maintaining a slight arch in your lower back."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pull the bar down towards your chest, leading with your elbows and squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment at the bottom of the movement, then slowly return the bar to the starting position."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0177",
+        "source_path": "catalogue/exercises/0177.json",
+        "name": "cable lateral pulldown (with rope attachment)",
+        "pose": "standing",
+        "equipment": "cable",
+        "props": [
+          "cable_rope",
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A high-pulley rope pulldown that sweeps the hands down to your sides. It works the lats and the muscles between the shoulder blades."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Attach a rope attachment to the cable machine at a high position."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Stand facing the machine with your feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the rope with an overhand grip, palms facing each other."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Keep your back straight and lean slightly back."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pull the rope down towards your sides, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment at the bottom of the movement."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Slowly release the tension and allow the rope to return to the starting position."
+          },
+          {
+            "pointer": "/instructions/7",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0198",
+        "source_path": "catalogue/exercises/0198.json",
+        "name": "cable pulldown",
+        "pose": "seated",
+        "equipment": "cable",
+        "props": [
+          "cable_lat_bar",
+          "cable_station",
+          "knee_pad"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A classic seated cable pulldown with a wide bar. You pull to the chest to train the lats and the muscles around the shoulder blades."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Adjust the cable pulldown machine so that the seat is at a comfortable height and the knee pad is secured."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Sit on the seat with your back straight and your feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Grasp the cable bar with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Lean back slightly and engage your core."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pull the cable bar down towards your chest, squeezing your shoulder blades together."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Pause for a moment at the bottom of the movement, then slowly release the bar back to the starting position."
+          },
+          {
+            "pointer": "/instructions/6",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0253",
+        "source_path": "catalogue/exercises/0253.json",
+        "name": "chin-ups (narrow parallel grip)",
+        "pose": "hanging",
+        "equipment": "body weight",
+        "props": [
+          "pullup_bar"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A chin-up on a bar with a narrow parallel grip and the palms facing in. It works the lats, upper back and biceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Hang from a pull-up bar with a narrow parallel grip, palms facing towards you."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Engage your back muscles and pull your body up towards the bar, keeping your elbows close to your body."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Continue pulling until your chin is above the bar."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly lower your body back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0466",
+        "source_path": "catalogue/exercises/0466.json",
+        "name": "gironda sternum chin",
+        "pose": "standing",
+        "equipment": "body weight",
+        "props": [
+          "support_bar"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A chin-up variation where you pull toward the sternum. It builds the lats, upper back and biceps."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand facing a high bar with your feet shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Reach up and grab the bar with an overhand grip, slightly wider than shoulder-width apart."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Hang from the bar with your arms fully extended and your body straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Engage your lats and biceps to pull your chest up towards the bar, leading with your sternum."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the top, then slowly lower yourself back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_arms_hands_missing"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "trunk_flexion",
+    "affected_candidate_exercises": 230,
+    "source_complete_for_storyboard": 113,
+    "pose_template_candidates": 21,
+    "apparatus_template_candidates": 87,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Segmented trunk-flexion curve and controlled return/hold stages with supported pelvis frame.",
+    "explicit_profile_parameters": "Hip flexion, foot/leg supports, hand position, torso range, load placement, bench angle, tempo and side order.",
+    "split_or_review_guards": "Crunch vs sit-up vs reverse-crunch/leg-driven action; planted vs raised legs; shortened/negative/weighted variants. Identical instruction boilerplate does not erase name/description differences.",
+    "ids": [
+      "0001",
+      "0021",
+      "0071",
+      "0147",
+      "0175",
+      "0212",
+      "0221",
+      "0223",
+      "0226",
+      "0242",
+      "0260",
+      "0262",
+      "0263",
+      "0267",
+      "0269",
+      "0271",
+      "0272",
+      "0273",
+      "0274",
+      "0275",
+      "0277",
+      "0281",
+      "0282",
+      "0456",
+      "0457",
+      "0469",
+      "0470",
+      "0482",
+      "0487",
+      "0495",
+      "0502",
+      "0503",
+      "0505",
+      "0507",
+      "0508",
+      "0595",
+      "0621",
+      "0625",
+      "0634",
+      "0635",
+      "0691",
+      "0707",
+      "0708",
+      "0718",
+      "0719",
+      "0735",
+      "0736",
+      "0807",
+      "0821",
+      "0823",
+      "0831",
+      "0832",
+      "0840",
+      "0871",
+      "0872",
+      "0873",
+      "0874",
+      "0969",
+      "0972",
+      "0981",
+      "0985",
+      "0992",
+      "1005",
+      "1007",
+      "1014",
+      "1020",
+      "10558",
+      "10639",
+      "10710",
+      "1081",
+      "1082",
+      "10871",
+      "10873",
+      "10877",
+      "10879",
+      "1106",
+      "1112",
+      "11262",
+      "11270",
+      "11282",
+      "1137",
+      "1147",
+      "1187",
+      "1188",
+      "1189",
+      "1190",
+      "1242",
+      "1250",
+      "1452",
+      "1495",
+      "1498",
+      "1758",
+      "1845",
+      "1857",
+      "1858",
+      "1864",
+      "2130",
+      "2206",
+      "2268",
+      "2269",
+      "2276",
+      "2297",
+      "2314",
+      "2344",
+      "2429",
+      "2469",
+      "2523",
+      "2815",
+      "2889",
+      "3016",
+      "3201",
+      "3202",
+      "3203",
+      "3204",
+      "3279",
+      "3280",
+      "3282",
+      "3283",
+      "3329",
+      "3332",
+      "3336",
+      "3389",
+      "3422",
+      "3484",
+      "3503",
+      "3510",
+      "3515",
+      "3621",
+      "3622",
+      "3640",
+      "3670",
+      "3679",
+      "3760",
+      "3813",
+      "3821",
+      "3838",
+      "3865",
+      "3881",
+      "3882",
+      "3883",
+      "3889",
+      "3944",
+      "3951",
+      "4002",
+      "4003",
+      "4008",
+      "4009",
+      "4019",
+      "4022",
+      "4080",
+      "4081",
+      "4083",
+      "4097",
+      "4101",
+      "4158",
+      "4187",
+      "4188",
+      "4248",
+      "4250",
+      "4251",
+      "4252",
+      "4253",
+      "4330",
+      "4332",
+      "4333",
+      "4334",
+      "4354",
+      "4366",
+      "4535",
+      "4620",
+      "4623",
+      "4624",
+      "4626",
+      "4628",
+      "4720",
+      "4727",
+      "4734",
+      "4735",
+      "4748",
+      "4756",
+      "4763",
+      "4778",
+      "4787",
+      "4812",
+      "4906",
+      "4972",
+      "4990",
+      "4992",
+      "5072",
+      "5202",
+      "5203",
+      "5206",
+      "5228",
+      "5237",
+      "5250",
+      "5265",
+      "5266",
+      "5274",
+      "5308",
+      "5334",
+      "5344",
+      "5514",
+      "5515",
+      "5583",
+      "5741",
+      "5846",
+      "5963",
+      "6005",
+      "6016",
+      "6052",
+      "6053",
+      "6103",
+      "6144",
+      "6210",
+      "6211",
+      "6418",
+      "6419",
+      "6554",
+      "6555",
+      "6693",
+      "6752",
+      "6799",
+      "6805",
+      "6809",
+      "7255",
+      "7414",
+      "7417",
+      "9010",
+      "9024",
+      "9986"
+    ],
+    "source_examples": [
+      {
+        "id": "0001",
+        "source_path": "catalogue/exercises/0001.json",
+        "name": "3/4 sit-up",
+        "pose": "supine",
+        "equipment": "body weight",
+        "props": [],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A shortened sit-up that stops at about 45 degrees, keeping tension on the abs the whole time."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Lie flat on your back with your knees bent and feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Place your hands behind your head with your elbows pointing outwards."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly lower your upper body back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0021",
+        "source_path": "catalogue/exercises/0021.json",
+        "name": "ball sit up (on stability ball)",
+        "pose": "seated",
+        "equipment": "stability ball",
+        "props": [
+          "stability_ball"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A sit-up with your back resting on a stability ball. The curved surface lets you move through more range than on the floor."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on a stability ball and walk your feet out until your lower back is supported."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Place your hands by your head or across your chest."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Curl your torso up, bringing your ribs toward your hips."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Squeeze your abs at the top."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Lower slowly back over the ball."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Keep your feet planted and your neck relaxed."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0071",
+        "source_path": "catalogue/exercises/0071.json",
+        "name": "barbell press sit-up",
+        "pose": "supine",
+        "equipment": "barbell",
+        "props": [
+          "barbell",
+          "mat"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A weighted sit-up holding the bar on your chest. Strengthens the abs."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Lie flat on your back on a mat with your knees bent and feet flat on the ground."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the barbell with an overhand grip, resting it on your chest."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly lower your upper body back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0175",
+        "source_path": "catalogue/exercises/0175.json",
+        "name": "cable kneeling crunch",
+        "pose": "kneeling",
+        "equipment": "cable",
+        "props": [
+          "cable_rope",
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "Kneeling cable crunch with a rope behind the head. Crunching down against the pulley loads the abs with steady tension."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Attach a rope handle to a high pulley and kneel down facing away from the machine."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the rope handle with both hands and place it behind your head, keeping your elbows out to the sides."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Keeping your hips stationary, flex your waist and crunch your torso down towards your thighs."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the bottom, then slowly return to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0212",
+        "source_path": "catalogue/exercises/0212.json",
+        "name": "cable seated crunch",
+        "pose": "seated",
+        "equipment": "cable",
+        "props": [
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A seated cable crunch with the handle behind the head. You curl the torso forward against the pull to work the abs."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on a cable machine with your feet flat on the ground and your knees bent."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the cable handle with both hands and position it behind your head."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Engage your abs and slowly curl your upper body forward, bringing your chest towards your knees."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the top, then slowly return to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "source_complete_for_storyboard",
+        "review_codes": []
+      },
+      {
+        "id": "0221",
+        "source_path": "catalogue/exercises/0221.json",
+        "name": "cable side bend crunch (bosu ball)",
+        "pose": "standing",
+        "equipment": "cable",
+        "props": [
+          "bosu",
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A standing one-arm cable side bend. You bend sideways against the cable to work the obliques and the abs."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Stand with your feet shoulder-width apart, holding a cable handle in one hand."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Place the other hand on your hip."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Engage your core and slowly bend sideways towards the hand holding the cable, keeping your back straight."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Pause for a moment at the bottom of the movement, then slowly return to the starting position."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Repeat for the desired number of repetitions, then switch sides."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "prop_not_instruction_verified"
+        ]
+      },
+      {
+        "id": "0223",
+        "source_path": "catalogue/exercises/0223.json",
+        "name": "cable side crunch",
+        "pose": "standing",
+        "equipment": "cable",
+        "props": [
+          "cable_station"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A cable side crunch from a low pulley, bringing the elbow toward the hip. It works the obliques with steady tension."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Attach a cable handle to a low pulley and stand sideways to the machine."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Grasp the handle with the hand furthest from the machine and place your other hand on your hip."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Keep your feet shoulder-width apart and your knees slightly bent."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "With your abs engaged, bend sideways at the waist, bringing your elbow down towards your hip."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the bottom, then slowly return to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions, then switch sides."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_legs_feet_missing"
+        ]
+      },
+      {
+        "id": "0242",
+        "source_path": "catalogue/exercises/0242.json",
+        "name": "cable tuck reverse crunch",
+        "pose": "supine",
+        "equipment": "cable",
+        "props": [
+          "cable_station",
+          "mat"
+        ],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "A cable reverse crunch lying on a mat. You tuck the knees in and curl the hips up to work the lower abs."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Attach a cable to a low pulley and lie down on a mat facing up."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Hold the cable with both hands and extend your arms straight up above your chest."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Bend your knees and lift your legs up, bringing your knees towards your chest."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "At the same time, curl your pelvis up towards your chest, lifting your hips off the ground."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Pause for a moment at the top, then slowly lower your legs and hips back down to the starting position."
+          },
+          {
+            "pointer": "/instructions/5",
+            "quote": "Repeat for the desired number of repetitions."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "starting_legs_feet_missing"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "ninety_ninety_hip_stretch",
+    "affected_candidate_exercises": 2,
+    "source_complete_for_storyboard": 1,
+    "pose_template_candidates": 1,
+    "apparatus_template_candidates": 1,
+    "confidence": "medium: explicit named mechanics with supplied instruction evidence; shared generator design is proposed, not verified",
+    "reusable_generator": "Seated 90/90 hip setup, forward-hinge hold and side-switch scaffold.",
+    "explicit_profile_parameters": "Front/side leg geometry, trunk hinge range, hand support graph, hold duration and transition order.",
+    "split_or_review_guards": "10565 has unspecified hands, 6560 explicitly hands on floor. Do not silently use a floor hand constraint for both.",
+    "ids": [
+      "10565",
+      "6560"
+    ],
+    "source_examples": [
+      {
+        "id": "10565",
+        "source_path": "catalogue/exercises/10565.json",
+        "name": "90 to 90 press stretch",
+        "pose": "seated",
+        "equipment": "body weight",
+        "props": [],
+        "description_evidence": {
+          "pointer": "/description",
+          "quote": "Sit in a 90-degree hip position and press forward to stretch the glutes and hips. It improves hip rotation."
+        },
+        "ordered_instruction_evidence": [
+          {
+            "pointer": "/instructions/0",
+            "quote": "Sit on the floor with both knees bent at 90 degrees, one leg in front, one to the side."
+          },
+          {
+            "pointer": "/instructions/1",
+            "quote": "Sit tall."
+          },
+          {
+            "pointer": "/instructions/2",
+            "quote": "Hinge forward over the front shin with a flat back."
+          },
+          {
+            "pointer": "/instructions/3",
+            "quote": "Hold for 20-30 seconds."
+          },
+          {
+            "pointer": "/instructions/4",
+            "quote": "Switch sides and repeat."
+          }
+        ],
+        "source_review_status": "needs_review",
+        "review_codes": [
+          "arms_hands_missing"
+        ]
+      }
+    ]
+  }
+]

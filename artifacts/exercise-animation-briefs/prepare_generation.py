@@ -41,13 +41,20 @@ def prepare(exercise_ids,output_dir):
         names.update(display.get('primaries',[]));names.update(display.get('secondaries',[]))
         issues=known_open_issues([canonical_id])
         blockers=brief['storyboard_readiness']['blockers']
+        overrides=contract.get('per_exercise_overrides',{}).get(canonical_id,{})
+        resolutions=overrides.get('source_blocker_resolutions',{})
+        resolved={key:value for key,value in resolutions.items()
+                  if key in blockers and value.get('status')=='authored_resolution_for_prototype'}
+        unresolved=[key for key in blockers if key not in resolved]
         blocking=[issue for issue in issues if issue.get('blocks_generation',True)]
         unmapped=names-atlas['mappings'].keys()
         if unmapped:raise ValueError('Unmapped muscle labels for '+canonical_id+': '+', '.join(sorted(unmapped)))
         packet=dict(schema_version='1.0.0',requested_id=requested,canonical_id=canonical_id,
             alias_resolution=aliases.get(requested),not_production_approved=True,
-            readiness={'status':'blocked' if blocking or blockers else 'requires_review',
-                       'source_blockers':blockers,'known_open_issue_ids':[issue['id'] for issue in issues],
+            readiness={'status':'blocked' if blocking or unresolved else 'requires_review',
+                       'source_blockers':blockers,'unresolved_source_blockers':unresolved,
+                       'authored_source_resolutions':resolved,
+                       'known_open_issue_ids':[issue['id'] for issue in issues],
                        'blocking_issue_ids':[issue['id'] for issue in blocking]},
             source_brief=brief,selected_pilot_authoring_override=pilots.get(canonical_id),
             delivery_policy=contract.get('delivery_policy',{}),
@@ -69,7 +76,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--exercise',nargs='+',required=True,help='Catalogue IDs, including aliases')
     parser.add_argument('--output-dir',type=Path,default=ROOT/'artifacts/exercise-generation')
-    parser.add_argument('--require-ready',action='store_true',help='Exit 2 after writing packets if any has a known/source blocker; never implies production approval')
+    parser.add_argument('--require-ready',action='store_true',help='Exit 2 after writing packets if any has a known or unresolved source blocker; never implies production approval')
     args=parser.parse_args()
     try:results=prepare(args.exercise,args.output_dir)
     except ValueError as error:parser.error(str(error))
