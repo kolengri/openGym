@@ -200,17 +200,21 @@ async function main() {
   }
   return result;
  };
- window.heatFrustum = () => entries.map(({camera}) => {
+ window.heatFrustum = ids => entries.map(({camera}) => {
   const min = [Infinity, Infinity], max = [-Infinity, -Infinity], point = new THREE.Vector3();
+  const selected = ids ? new Set(ids) : null, seen = new Set();
   camera.updateMatrixWorld(true);
   for (const mesh of meshes) {
    mesh.skeleton.update();
+   const source = mesh.geometry.getAttribute('_source_index');
    for (let i = 0; i < mesh.geometry.getAttribute('position').count; i++) {
+    const id = Math.round(source.getX(i)); if (selected && !selected.has(id)) continue;
+    seen.add(id);
     mesh.getVertexPosition(i, point); mesh.localToWorld(point); point.project(camera);
     for (const [axis, value] of [point.x, point.y].entries()) {min[axis] = Math.min(min[axis], value); max[axis] = Math.max(max[axis], value);}
    }
   }
-  return {min, max};
+  return {min, max, sourceVertices: seen.size};
  });
  function tick(now) {
   const delta = Math.min(.1, (now - last) / 1000); last = now;

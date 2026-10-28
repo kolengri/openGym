@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "json_npz_float32_deltas_exact": true,
+    "json_npz_times_exact": true,
+    "json_npz_weights_exact": true,
+    "target10_zero": true,
+    "exterior_delta_exact_zero": true,
+    "changed_vertices_within_protected361": true,
+    "source_cap_below8mm": true,
+    "override_hash_matches": true,
+    "motion_hash_matches": true
+  },
+  "changed_vertex_indices": [
+    10957,
+    10959,
+    10961,
+    10967,
+    13365,
+    13366
+  ],
+  "changed_source_ids": [
+    10957,
+    10960,
+    10962,
+    10970,
+    -1,
+    -2
+  ],
+  "target_nonzero_counts": [
+    0,
+    6
+  ],
+  "maximum_source_delta_m": 0.0013925736421001357,
+  "correctives_sha256": "ab3d1c8f31b62c4048fbc706024c10b8ad353e7e6f17302d410d528c0db78d22",
+  "npz_sha256": "b1557be8a6eaefdc0667aad7ac60aa02230849c245b1cb4b567e7316025c7b04",
+  "promotion_map": {}
+}

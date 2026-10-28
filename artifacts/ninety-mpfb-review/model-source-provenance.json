@@ -1,0 +1,30 @@
+{
+  "source_url": "https://github.com/makehumancommunity/mpfb2/archive/refs/tags/v2.0.18.zip",
+  "release_url": "https://github.com/makehumancommunity/mpfb2/releases/tag/v2.0.18",
+  "commit": "d0a32e57a7f915cb2f2b95410e2117648c7bbb7e",
+  "archive_sha256": "ada7c4ff11e79cf6ed9b441bccabc52c9359f2848b988f66e89c14c30b21fed7",
+  "archive_bytes": 45601989,
+  "archive_commit_comment_verified": true,
+  "package_path": "artifacts/mannequin-mpfb-prototype/runtime/blender/extensions/user_default/mpfb",
+  "global_installation": false,
+  "preferences_saved": false,
+  "selected_dependency_files": {
+    "LICENSE.md": "5cefb60680cb9efd4550a2e65d719021cfbec9dad3658481d11d48ae863ce04d",
+    "LICENSE.ASSETS.md": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c",
+    "LICENSE.CODE.md": "26c03bc049c15fc5b9e52d791a06f1a6bc32f89edc8f8c701ab0aadf66e85b82",
+    "src/mpfb/blender_manifest.toml": "09723beadd1cb5f29f0327a6792fd92365b46fd8bfb8141d9df21c6421a6a201",
+    "src/mpfb/data/3dobjs/base.obj": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+    "src/mpfb/data/rigs/rigify/rig.human.json": "6c3e61576d299d4acfbe45789d69738608ae0559d382f4a0e9e598a82379be7f",
+    "src/mpfb/data/rigs/rigify/weights.human_toes.json": "edcbca3323b03080fe750caa292c673ecbacdd200ebf0062d00d3b425e13a999",
+    "src/mpfb/data/targets/macrodetails/macro.json": "5b6dfabced7b7912df45d3c39f6ef34bca55a72cb6de8ee6c8d66c371de4447c"
+  },
+  "license_source_url": "https://github.com/makehumancommunity/mpfb2/blob/d0a32e57a7f915cb2f2b95410e2117648c7bbb7e/LICENSE.md",
+  "assets_license": "CC0-1.0",
+  "addon_code_license": "GPL-3.0-or-later",
+  "local_dependencies_gitignored": [
+    "dependencies/",
+    "runtime/"
+  ],
+  "rigify_readonly_module": "/Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/rigify/__init__.py",
+  "isolated_loading_correction": "Rigify factory startup needs default_set=True to create its in-memory preference entry. use_preferences_save=False, isolated resources, factory startup and offline mode prevent a saved/global installation."
+}

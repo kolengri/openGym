@@ -1,0 +1,3344 @@
+{
+  "status": "all151_numeric_pass",
+  "sourceMotionSha256": "be315132efac3553991fb8a3505f13a01d94c2620a465b7f643c7f565ca73bcc",
+  "weightOverrideSha256": "a60f2fab5cb2043e787baa5deaefcc713deb677eb0a819f1b95869b60e25411f",
+  "method": "Single inverse-edge-length L1 displacement-strain LP with adaptive transported separation, positive-material-area linearizations and source8mm Euclidean-ball cuts. Both targets exist; target10 is naturally zero until intermediate constraints require it.",
+  "source_cap_m": 0.008,
+  "domain_count": 276,
+  "fixed_boundary_count": 88,
+  "bound_blockers": [],
+  "history": [
+    {
+      "iteration": 0,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "constraints": 17685,
+      "maximum_source_delta_m": 0.0013925736421001357,
+      "source_cap_violations": 0,
+      "target10_maximum_source_delta_m": 0.0,
+      "objective": 52.29946033288685,
+      "keyposes_pass": false,
+      "frames_checked": 3,
+      "hip_pairs_total": 0,
+      "reversal_count": 0,
+      "orientation_guard_failure_count": 1
+    },
+    {
+      "iteration": 1,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "constraints": 17686,
+      "maximum_source_delta_m": 0.0013925736421001357,
+      "source_cap_violations": 0,
+      "target10_maximum_source_delta_m": 0.0,
+      "objective": 52.303481989049516,
+      "keyposes_pass": true,
+      "frames_checked": 151,
+      "hip_pairs_total": 0,
+      "reversal_count": 0,
+      "orientation_guard_failure_count": 0
+    }
+  ],
+  "initial_keyposes": {
+    "0": {
+      "frame": 0,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.999941486696953,
+      "area_ratio_range": [
+        0.9999414867010551,
+        1.0001562545137035
+      ],
+      "edge_ratio_range": [
+        0.9999144508796027,
+        1.0000425396178625
+      ],
+      "whole_floor_min_m": 2.20749662993569e-09,
+      "glute_min_m": 2.20749662993569e-09,
+      "maximum_posed_delta_m": 0.0
+    },
+    "30": {
+      "frame": 30,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.29049473024741135,
+      "area_ratio_range": [
+        0.30043405894288255,
+        1.2841042883294997
+      ],
+      "edge_ratio_range": [
+        0.8374117596358138,
+        1.3710335327654666
+      ],
+      "whole_floor_min_m": -0.002943812869489193,
+      "glute_min_m": 0.0015618535690009594,
+      "maximum_posed_delta_m": 0.0
+    },
+    "60": {
+      "frame": 60,
+      "hip_pairs": [
+        [
+          26544,
+          26552
+        ],
+        [
+          26583,
+          26552
+        ],
+        [
+          26799,
+          26749
+        ],
+        [
+          26798,
+          26749
+        ],
+        [
+          26542,
+          26554
+        ],
+        [
+          26546,
+          26554
+        ],
+        [
+          26551,
+          26542
+        ],
+        [
+          26552,
+          26542
+        ],
+        [
+          26551,
+          26546
+        ],
+        [
+          26552,
+          26546
+        ],
+        [
+          26547,
+          26544
+        ],
+        [
+          26544,
+          26551
+        ]
+      ],
+      "hip_pair_count": 12,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 70,
+      "orientation_guard_failed_faces": [
+        26546,
+        26583,
+        26750
+      ],
+      "reversed_face_count": 2,
+      "minimum_oriented_area_ratio": -0.4238128381868639,
+      "area_ratio_range": [
+        0.35498820529574576,
+        1.5944763984276369
+      ],
+      "edge_ratio_range": [
+        0.6816588699837948,
+        1.8664261585658677
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0
+    }
+  },
+  "last_checked_samples": [
+    {
+      "frame": 0,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.999941486696953,
+      "area_ratio_range": [
+        0.9999414867010551,
+        1.0001562545137035
+      ],
+      "edge_ratio_range": [
+        0.9999144508796027,
+        1.0000425396178625
+      ],
+      "whole_floor_min_m": 2.20749662993569e-09,
+      "glute_min_m": 2.20749662993569e-09,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 1,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.999735106935144,
+      "area_ratio_range": [
+        0.9997351074211475,
+        1.00060062789476
+      ],
+      "edge_ratio_range": [
+        0.9998360132050701,
+        1.0006939539149315
+      ],
+      "whole_floor_min_m": -1.6601482855094218e-07,
+      "glute_min_m": 6.454159517943481e-08,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 2,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9992700237590824,
+      "area_ratio_range": [
+        0.999270209708336,
+        1.0001924278991337
+      ],
+      "edge_ratio_range": [
+        0.9997760461908902,
+        1.000182442447533
+      ],
+      "whole_floor_min_m": -1.4963726471250993e-06,
+      "glute_min_m": 5.596362129267618e-08,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 3,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9983639040156063,
+      "area_ratio_range": [
+        0.9983639270483187,
+        1.0007969894103625
+      ],
+      "edge_ratio_range": [
+        0.9996021879145256,
+        1.0007209186756565
+      ],
+      "whole_floor_min_m": -4.8228657760773785e-06,
+      "glute_min_m": 1.5046165913190634e-07,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 4,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 94,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9962336024181941,
+      "area_ratio_range": [
+        0.9962337186269022,
+        1.001529770298548
+      ],
+      "edge_ratio_range": [
+        0.9990812193465953,
+        1.001381167345106
+      ],
+      "whole_floor_min_m": -1.1231846656301059e-05,
+      "glute_min_m": 1.889094392026891e-07,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 5,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 94,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9928120794198724,
+      "area_ratio_range": [
+        0.9928125131106097,
+        1.0029105126821845
+      ],
+      "edge_ratio_range": [
+        0.9982502771943628,
+        1.0026137041626022
+      ],
+      "whole_floor_min_m": -2.122773184964899e-05,
+      "glute_min_m": 5.039515826865681e-07,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 6,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 92,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9879334754050698,
+      "area_ratio_range": [
+        0.9879346952681345,
+        1.0049033995279986
+      ],
+      "edge_ratio_range": [
+        0.9970611190120295,
+        1.0044365038270795
+      ],
+      "whole_floor_min_m": -3.5650016798172146e-05,
+      "glute_min_m": 1.0258165730192559e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 7,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 92,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9813429010702697,
+      "area_ratio_range": [
+        0.9813458403322679,
+        1.0075706610861954
+      ],
+      "edge_ratio_range": [
+        0.9954562392731102,
+        1.0068840126834324
+      ],
+      "whole_floor_min_m": -5.470815085573122e-05,
+      "glute_min_m": 1.958990424100193e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 8,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 92,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9729047927947381,
+      "area_ratio_range": [
+        0.9729109421314239,
+        1.0110045144732933
+      ],
+      "edge_ratio_range": [
+        0.9934032844621314,
+        1.0100644598405866
+      ],
+      "whole_floor_min_m": -7.887753599788994e-05,
+      "glute_min_m": 3.3860681014630245e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 9,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 90,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9624686675068334,
+      "area_ratio_range": [
+        0.9624806194213674,
+        1.0152399738232794
+      ],
+      "edge_ratio_range": [
+        0.9908700864413967,
+        1.0140574609838724
+      ],
+      "whole_floor_min_m": -0.00010820240277098492,
+      "glute_min_m": 5.807336492580362e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 10,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 90,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9499274398188344,
+      "area_ratio_range": [
+        0.9499488802387532,
+        1.020330267962196
+      ],
+      "edge_ratio_range": [
+        0.9878336828893138,
+        1.0189375646438548
+      ],
+      "whole_floor_min_m": -0.00014250577078200877,
+      "glute_min_m": 9.750810932018794e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 11,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 86,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9352243944968782,
+      "area_ratio_range": [
+        0.9352605440403681,
+        1.0262856672890366
+      ],
+      "edge_ratio_range": [
+        0.9842741543221379,
+        1.0247729075416199
+      ],
+      "whole_floor_min_m": -0.00018174313299823552,
+      "glute_min_m": 1.5416340829688124e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 12,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 84,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9182813175561407,
+      "area_ratio_range": [
+        0.9183394294974724,
+        1.0331457945214597
+      ],
+      "edge_ratio_range": [
+        0.9801883052897858,
+        1.031647285287068
+      ],
+      "whole_floor_min_m": -0.0002251699916087091,
+      "glute_min_m": 2.389765541011002e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 13,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 81,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8990696791073142,
+      "area_ratio_range": [
+        0.8991592905314465,
+        1.040927545381772
+      ],
+      "edge_ratio_range": [
+        0.9755665090066284,
+        1.0396290882845622
+      ],
+      "whole_floor_min_m": -0.0002725172962527722,
+      "glute_min_m": 3.5533135815057904e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 14,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 71,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8775687728271468,
+      "area_ratio_range": [
+        0.877702850240275,
+        1.0496045776882315
+      ],
+      "edge_ratio_range": [
+        0.9704187196475873,
+        1.0487982989584763
+      ],
+      "whole_floor_min_m": -0.000323054613545537,
+      "glute_min_m": 5.1106675527989864e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 15,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 69,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8538421843878264,
+      "area_ratio_range": [
+        0.8540361694388863,
+        1.0591930241669052
+      ],
+      "edge_ratio_range": [
+        0.964754516698905,
+        1.059198614841051
+      ],
+      "whole_floor_min_m": -0.00037577407783828676,
+      "glute_min_m": 7.174671191023663e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 16,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 70,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8278868558838249,
+      "area_ratio_range": [
+        0.828160685712434,
+        1.0696614080948292
+      ],
+      "edge_ratio_range": [
+        0.9585842992168182,
+        1.070894320597515
+      ],
+      "whole_floor_min_m": -0.00042967157787643373,
+      "glute_min_m": 9.823580330703408e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 17,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 68,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7997512532049789,
+      "area_ratio_range": [
+        0.8001298055054488,
+        1.0809852910273148
+      ],
+      "edge_ratio_range": [
+        0.9519301837765397,
+        1.0839278112055588
+      ],
+      "whole_floor_min_m": -0.0004837347660213709,
+      "glute_min_m": 0.00013170360762160271,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 18,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 64,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7695427266038818,
+      "area_ratio_range": [
+        0.7700561042160202,
+        1.093162058800857
+      ],
+      "edge_ratio_range": [
+        0.94482327339962,
+        1.098345548649103
+      ],
+      "whole_floor_min_m": -0.0006482852040790021,
+      "glute_min_m": 0.00017278091399930418,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 19,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 64,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7373268896975446,
+      "area_ratio_range": [
+        0.7380128842337751,
+        1.1061119294930235
+      ],
+      "edge_ratio_range": [
+        0.9372913111959145,
+        1.114166396311801
+      ],
+      "whole_floor_min_m": -0.0008378072525374591,
+      "glute_min_m": 0.00022291505592875183,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 20,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7032265620213187,
+      "area_ratio_range": [
+        0.704128887790077,
+        1.1197950139682429
+      ],
+      "edge_ratio_range": [
+        0.9293651166762088,
+        1.1314046371630209
+      ],
+      "whole_floor_min_m": -0.0010329758515581489,
+      "glute_min_m": 0.0002826759882736951,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 21,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 53,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.6673393546895283,
+      "area_ratio_range": [
+        0.6685133028524282,
+        1.1341740161263938
+      ],
+      "edge_ratio_range": [
+        0.9210912516583613,
+        1.1500259596839897
+      ],
+      "whole_floor_min_m": -0.001231999951414764,
+      "glute_min_m": 0.0003534217248670757,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 22,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 54,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.6298210599995889,
+      "area_ratio_range": [
+        0.6313327513704285,
+        1.1491944492965096
+      ],
+      "edge_ratio_range": [
+        0.9125037072166454,
+        1.1700376072554053
+      ],
+      "whole_floor_min_m": -0.0014335415326058865,
+      "glute_min_m": 0.00043549537076614797,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 23,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 56,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.5908032719850056,
+      "area_ratio_range": [
+        0.5927339231168711,
+        1.1647637876657935
+      ],
+      "edge_ratio_range": [
+        0.9036542931183094,
+        1.1913691770639459
+      ],
+      "whole_floor_min_m": -0.001635575550608337,
+      "glute_min_m": 0.0005299437907524407,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 24,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 54,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.5504744265016395,
+      "area_ratio_range": [
+        0.5529234595010206,
+        1.1808698131091755
+      ],
+      "edge_ratio_range": [
+        0.8945882450002908,
+        1.2139876028673589
+      ],
+      "whole_floor_min_m": -0.001836811425164342,
+      "glute_min_m": 0.0006372074712999165,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 25,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 12,
+      "global_exact_pair_count": 67,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.5089761064119235,
+      "area_ratio_range": [
+        0.5120675455967081,
+        1.197409064380415
+      ],
+      "edge_ratio_range": [
+        0.8853474835970533,
+        1.2377985207698674
+      ],
+      "whole_floor_min_m": -0.002035481156781316,
+      "glute_min_m": 0.0007577990763820708,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 26,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 71,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.4664993714061226,
+      "area_ratio_range": [
+        0.4703905444537219,
+        1.2143170845577484
+      ],
+      "edge_ratio_range": [
+        0.8759888230200755,
+        1.2627058631653743
+      ],
+      "whole_floor_min_m": -0.0022304116282612085,
+      "glute_min_m": 0.0008917173254303634,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 27,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 67,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.42321957284865636,
+      "area_ratio_range": [
+        0.4281140825579604,
+        1.2315027815291353
+      ],
+      "edge_ratio_range": [
+        0.8665646040952981,
+        1.2886124820036122
+      ],
+      "whole_floor_min_m": -0.0024198186583817005,
+      "glute_min_m": 0.0010394862620159984,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 28,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 65,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.37932038304554977,
+      "area_ratio_range": [
+        0.3854855250869217,
+        1.248913862677029
+      ],
+      "edge_ratio_range": [
+        0.8571170198761016,
+        1.3153956314014668
+      ],
+      "whole_floor_min_m": -0.002602575346827507,
+      "glute_min_m": 0.0012006936594843864,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 29,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 65,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.3350251907306031,
+      "area_ratio_range": [
+        0.34282287723985055,
+        1.2664740311830078
+      ],
+      "edge_ratio_range": [
+        0.8474445342363085,
+        1.342915652707455
+      ],
+      "whole_floor_min_m": -0.002777512650936842,
+      "glute_min_m": 0.001374944462440908,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 30,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.29049473024741135,
+      "area_ratio_range": [
+        0.30043405894288255,
+        1.2841042883294997
+      ],
+      "edge_ratio_range": [
+        0.8374117596358138,
+        1.3710331801767641
+      ],
+      "whole_floor_min_m": -0.002943812869489193,
+      "glute_min_m": 0.0015618535690009594,
+      "maximum_posed_delta_m": 1.862645149230957e-09
+    },
+    {
+      "frame": 31,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.290366245164874,
+      "area_ratio_range": [
+        0.3016774980084784,
+        1.3017210058781667
+      ],
+      "edge_ratio_range": [
+        0.8205707281662992,
+        1.38089917058224
+      ],
+      "whole_floor_min_m": -0.003100485075265169,
+      "glute_min_m": 0.0017605929169803858,
+      "maximum_posed_delta_m": 8.684488053815857e-05
+    },
+    {
+      "frame": 32,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2901902998371069,
+      "area_ratio_range": [
+        0.30291199634946286,
+        1.3192417905967913
+      ],
+      "edge_ratio_range": [
+        0.7978492447929911,
+        1.3911818650874233
+      ],
+      "whole_floor_min_m": -0.0032470067963004112,
+      "glute_min_m": 0.0019701076671481133,
+      "maximum_posed_delta_m": 0.00017325534767413417
+    },
+    {
+      "frame": 33,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2899782593424906,
+      "area_ratio_range": [
+        0.30413847184418913,
+        1.3365933602162008
+      ],
+      "edge_ratio_range": [
+        0.7754960961663581,
+        1.40179490066148
+      ],
+      "whole_floor_min_m": -0.0033828383311629295,
+      "glute_min_m": 0.0021892008371651173,
+      "maximum_posed_delta_m": 0.0002588455835206146
+    },
+    {
+      "frame": 34,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 59,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.28978442459418047,
+      "area_ratio_range": [
+        0.30539006638151733,
+        1.353712961395412
+      ],
+      "edge_ratio_range": [
+        0.7536292914408542,
+        1.4126650344810268
+      ],
+      "whole_floor_min_m": -0.0035076893400400877,
+      "glute_min_m": 0.002416757168248296,
+      "maximum_posed_delta_m": 0.00034323172251847825
+    },
+    {
+      "frame": 35,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.28951729164002493,
+      "area_ratio_range": [
+        0.30657324850305645,
+        1.3705060446045645
+      ],
+      "edge_ratio_range": [
+        0.7323537191072227,
+        1.4237111755766492
+      ],
+      "whole_floor_min_m": -0.0036214469000697136,
+      "glute_min_m": 0.002650955691933632,
+      "maximum_posed_delta_m": 0.0004260453134598251
+    },
+    {
+      "frame": 36,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.28926066771031145,
+      "area_ratio_range": [
+        0.30774587112403623,
+        1.3869097784938909
+      ],
+      "edge_ratio_range": [
+        0.7117621382026036,
+        1.4348591423939587
+      ],
+      "whole_floor_min_m": -0.003724121255800128,
+      "glute_min_m": 0.0028900878969579935,
+      "maximum_posed_delta_m": 0.0005069168146172446
+    },
+    {
+      "frame": 37,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2889689871716262,
+      "area_ratio_range": [
+        0.3088557884869529,
+        1.402851155861075
+      ],
+      "edge_ratio_range": [
+        0.691946930871077,
+        1.4459928802984985
+      ],
+      "whole_floor_min_m": -0.0038159284740686417,
+      "glute_min_m": 0.0031325644813477993,
+      "maximum_posed_delta_m": 0.0005855194273653912
+    },
+    {
+      "frame": 38,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.288669977237392,
+      "area_ratio_range": [
+        0.30992016171105313,
+        1.418287417956256
+      ],
+      "edge_ratio_range": [
+        0.6729902866007675,
+        1.4570480560185255
+      ],
+      "whole_floor_min_m": -0.003897219430655241,
+      "glute_min_m": 0.0033764394465833902,
+      "maximum_posed_delta_m": 0.0006615123872131182
+    },
+    {
+      "frame": 39,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.28835487602519805,
+      "area_ratio_range": [
+        0.3109209900256125,
+        1.4465075467180286
+      ],
+      "edge_ratio_range": [
+        0.6549633598168744,
+        1.4679106361963512
+      ],
+      "whole_floor_min_m": -0.003968358971178532,
+      "glute_min_m": 0.0036196436267346144,
+      "maximum_posed_delta_m": 0.0007345844850601288
+    },
+    {
+      "frame": 40,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2880193884800078,
+      "area_ratio_range": [
+        0.3080368015406016,
+        1.514829711872342
+      ],
+      "edge_ratio_range": [
+        0.6379375401710835,
+        1.4785639264534265
+      ],
+      "whole_floor_min_m": -0.004029861651360989,
+      "glute_min_m": 0.0038600487168878317,
+      "maximum_posed_delta_m": 0.0008044562593735049
+    },
+    {
+      "frame": 41,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2846112646219042,
+      "area_ratio_range": [
+        0.28466271065810184,
+        1.58174927125806
+      ],
+      "edge_ratio_range": [
+        0.6219504459234642,
+        1.4888590997077857
+      ],
+      "whole_floor_min_m": -0.004082515835762024,
+      "glute_min_m": 0.004095954820513725,
+      "maximum_posed_delta_m": 0.0008708578310744648
+    },
+    {
+      "frame": 42,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2625682650387886,
+      "area_ratio_range": [
+        0.26352480132782974,
+        1.6465182683969943
+      ],
+      "edge_ratio_range": [
+        0.6070503754559029,
+        1.4987471363273424
+      ],
+      "whole_floor_min_m": -0.00412704236805439,
+      "glute_min_m": 0.004325186833739281,
+      "maximum_posed_delta_m": 0.0009335680293499348
+    },
+    {
+      "frame": 43,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.24174335553458512,
+      "area_ratio_range": [
+        0.2447692036994941,
+        1.7084874325812542
+      ],
+      "edge_ratio_range": [
+        0.5932683828110477,
+        1.5081670748624656
+      ],
+      "whole_floor_min_m": -0.004164104349911213,
+      "glute_min_m": 0.004545906092971563,
+      "maximum_posed_delta_m": 0.0009923574341948068
+    },
+    {
+      "frame": 44,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.22221105379473147,
+      "area_ratio_range": [
+        0.22845551028711591,
+        1.7671272418099575
+      ],
+      "edge_ratio_range": [
+        0.5806167683092447,
+        1.5170555588287584
+      ],
+      "whole_floor_min_m": -0.004194522276520729,
+      "glute_min_m": 0.0047562867403030396,
+      "maximum_posed_delta_m": 0.0010470745039264367
+    },
+    {
+      "frame": 45,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.20406589964601,
+      "area_ratio_range": [
+        0.21461230829917005,
+        1.8220053372678897
+      ],
+      "edge_ratio_range": [
+        0.5690982684579196,
+        1.525383551411975
+      ],
+      "whole_floor_min_m": -0.004219288006424904,
+      "glute_min_m": 0.004954609088599682,
+      "maximum_posed_delta_m": 0.0010975666613635214
+    },
+    {
+      "frame": 46,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1874261957063545,
+      "area_ratio_range": [
+        0.20325574650841682,
+        1.8727571153988167
+      ],
+      "edge_ratio_range": [
+        0.5587096673627817,
+        1.5330450133582443
+      ],
+      "whole_floor_min_m": -0.00423874007537961,
+      "glute_min_m": 0.005139854270964861,
+      "maximum_posed_delta_m": 0.0011437202104559038
+    },
+    {
+      "frame": 47,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.17226197999676346,
+      "area_ratio_range": [
+        0.1941492201258969,
+        1.9191194136256116
+      ],
+      "edge_ratio_range": [
+        0.5494418613386871,
+        1.5400709871067835
+      ],
+      "whole_floor_min_m": -0.004254219122231007,
+      "glute_min_m": 0.0053101712837815285,
+      "maximum_posed_delta_m": 0.0011854857997407912
+    },
+    {
+      "frame": 48,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.15860288279649576,
+      "area_ratio_range": [
+        0.18708052801607247,
+        1.9609135107466495
+      ],
+      "edge_ratio_range": [
+        0.5412537589140396,
+        1.5463928962787779
+      ],
+      "whole_floor_min_m": -0.004265800584107637,
+      "glute_min_m": 0.0054650744423270226,
+      "maximum_posed_delta_m": 0.0012228282306442288
+    },
+    {
+      "frame": 49,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.14654965439620285,
+      "area_ratio_range": [
+        0.1818712838444141,
+        1.9980133757896432
+      ],
+      "edge_ratio_range": [
+        0.5341189153175365,
+        1.5520118676444823
+      ],
+      "whole_floor_min_m": -0.004274702165275812,
+      "glute_min_m": 0.005603351630270481,
+      "maximum_posed_delta_m": 0.001255748128031955
+    },
+    {
+      "frame": 50,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1360454166452448,
+      "area_ratio_range": [
+        0.17816236198634697,
+        2.030402801663967
+      ],
+      "edge_ratio_range": [
+        0.5279969864617294,
+        1.5569136079827326
+      ],
+      "whole_floor_min_m": -0.004281192552298307,
+      "glute_min_m": 0.005725061986595392,
+      "maximum_posed_delta_m": 0.0012843398910138684
+    },
+    {
+      "frame": 51,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.12702997624340268,
+      "area_ratio_range": [
+        0.17558131214605593,
+        2.058118735837263
+      ],
+      "edge_ratio_range": [
+        0.5228300650315516,
+        1.5611321474757984
+      ],
+      "whole_floor_min_m": -0.004285925999283791,
+      "glute_min_m": 0.005829417612403631,
+      "maximum_posed_delta_m": 0.0013086846039713407
+    },
+    {
+      "frame": 52,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.11954821948437837,
+      "area_ratio_range": [
+        0.17394866566492467,
+        2.081266224896816
+      ],
+      "edge_ratio_range": [
+        0.5185725205947315,
+        1.5646487781740606
+      ],
+      "whole_floor_min_m": -0.004289222415536642,
+      "glute_min_m": 0.005917274858802557,
+      "maximum_posed_delta_m": 0.0013289492993955774
+    },
+    {
+      "frame": 53,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.11347280954753582,
+      "area_ratio_range": [
+        0.17293972432898963,
+        2.100053220879339
+      ],
+      "edge_ratio_range": [
+        0.5151515284771352,
+        1.567492760587606
+      ],
+      "whole_floor_min_m": -0.0042915912345051765,
+      "glute_min_m": 0.005988731049001217,
+      "maximum_posed_delta_m": 0.001345349482713292
+    },
+    {
+      "frame": 54,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10873163665095929,
+      "area_ratio_range": [
+        0.17236064317909291,
+        2.114734004428359
+      ],
+      "edge_ratio_range": [
+        0.5124990584155972,
+        1.5697261167233656
+      ],
+      "whole_floor_min_m": -0.00429305387660861,
+      "glute_min_m": 0.006044948007911444,
+      "maximum_posed_delta_m": 0.0013581329556190966
+    },
+    {
+      "frame": 55,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1051821068046469,
+      "area_ratio_range": [
+        0.17200942328815894,
+        2.1256740610381586
+      ],
+      "edge_ratio_range": [
+        0.5105396008674735,
+        1.5713862898259066
+      ],
+      "whole_floor_min_m": -0.004294005688279867,
+      "glute_min_m": 0.0060868039727211,
+      "maximum_posed_delta_m": 0.0013676392753252996
+    },
+    {
+      "frame": 56,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10274659866725849,
+      "area_ratio_range": [
+        0.1718848497006291,
+        2.1332833406571954
+      ],
+      "edge_ratio_range": [
+        0.5091804542711064,
+        1.5725446646689822
+      ],
+      "whole_floor_min_m": -0.004294658079743385,
+      "glute_min_m": 0.006116039119660854,
+      "maximum_posed_delta_m": 0.001374244269056732
+    },
+    {
+      "frame": 57,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10116871435117064,
+      "area_ratio_range": [
+        0.17176499047893104,
+        2.138065833323425
+      ],
+      "edge_ratio_range": [
+        0.5083316415737392,
+        1.573286690027096
+      ],
+      "whole_floor_min_m": -0.004295084625482559,
+      "glute_min_m": 0.0061342776753008366,
+      "maximum_posed_delta_m": 0.0013783965737507579
+    },
+    {
+      "frame": 58,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10037420322709321,
+      "area_ratio_range": [
+        0.17176404101243234,
+        2.1406153692114565
+      ],
+      "edge_ratio_range": [
+        0.5078783028492281,
+        1.5736560350907824
+      ],
+      "whole_floor_min_m": -0.004295137710869312,
+      "glute_min_m": 0.006144200451672077,
+      "maximum_posed_delta_m": 0.001380607103395213
+    },
+    {
+      "frame": 59,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000454688170706,
+      "area_ratio_range": [
+        0.1717230049631358,
+        2.1415820207184777
+      ],
+      "edge_ratio_range": [
+        0.5077102758777883,
+        1.573808421971989
+      ],
+      "whole_floor_min_m": -0.0042952378280460835,
+      "glute_min_m": 0.006147825624793768,
+      "maximum_posed_delta_m": 0.0013814404598493125
+    },
+    {
+      "frame": 60,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 61,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 62,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 63,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 64,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 65,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 66,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 67,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 68,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 69,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 70,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 71,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 72,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 73,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 74,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 75,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 76,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 77,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 78,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 79,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 80,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 81,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 82,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 83,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 84,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 85,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 86,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 87,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 88,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 89,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417240934016455
+      ],
+      "edge_ratio_range": [
+        0.5076807873014407,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295248072594404,
+      "glute_min_m": 0.006148384418338537,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 90,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000023245775667,
+      "area_ratio_range": [
+        0.1717267585283558,
+        2.1417263280928256
+      ],
+      "edge_ratio_range": [
+        0.5076803827175758,
+        1.5738289322444334
+      ],
+      "whole_floor_min_m": -0.004295249469578266,
+      "glute_min_m": 0.006148387212306261,
+      "maximum_posed_delta_m": 0.0013815600763517355
+    },
+    {
+      "frame": 91,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1000454688170706,
+      "area_ratio_range": [
+        0.1717230049631358,
+        2.1415820207184777
+      ],
+      "edge_ratio_range": [
+        0.5077102758777883,
+        1.573808421971989
+      ],
+      "whole_floor_min_m": -0.0042952378280460835,
+      "glute_min_m": 0.006147825624793768,
+      "maximum_posed_delta_m": 0.0013814404598493125
+    },
+    {
+      "frame": 92,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10037420322709321,
+      "area_ratio_range": [
+        0.17176404101243234,
+        2.1406153692114565
+      ],
+      "edge_ratio_range": [
+        0.5078783028492281,
+        1.5736560350907824
+      ],
+      "whole_floor_min_m": -0.004295137710869312,
+      "glute_min_m": 0.006144200451672077,
+      "maximum_posed_delta_m": 0.001380607103395213
+    },
+    {
+      "frame": 93,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10116871435117064,
+      "area_ratio_range": [
+        0.17176499047893104,
+        2.138065833323425
+      ],
+      "edge_ratio_range": [
+        0.5083316415737392,
+        1.573286690027096
+      ],
+      "whole_floor_min_m": -0.004295084625482559,
+      "glute_min_m": 0.0061342776753008366,
+      "maximum_posed_delta_m": 0.0013783965737507579
+    },
+    {
+      "frame": 94,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10274659866725849,
+      "area_ratio_range": [
+        0.1718848497006291,
+        2.1332833406571954
+      ],
+      "edge_ratio_range": [
+        0.5091804542711064,
+        1.5725446646689822
+      ],
+      "whole_floor_min_m": -0.004294658079743385,
+      "glute_min_m": 0.006116039119660854,
+      "maximum_posed_delta_m": 0.001374244269056732
+    },
+    {
+      "frame": 95,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1051811155118215,
+      "area_ratio_range": [
+        0.17200988884494278,
+        2.1256740610381586
+      ],
+      "edge_ratio_range": [
+        0.5105396008674735,
+        1.5713862607991431
+      ],
+      "whole_floor_min_m": -0.004294005688279867,
+      "glute_min_m": 0.0060868039727211,
+      "maximum_posed_delta_m": 0.0013676392753252996
+    },
+    {
+      "frame": 96,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.10873163665095929,
+      "area_ratio_range": [
+        0.17236064317909291,
+        2.114734004428359
+      ],
+      "edge_ratio_range": [
+        0.5124990584155972,
+        1.5697261167233656
+      ],
+      "whole_floor_min_m": -0.00429305387660861,
+      "glute_min_m": 0.006044948007911444,
+      "maximum_posed_delta_m": 0.0013581329556190966
+    },
+    {
+      "frame": 97,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.11347280954753582,
+      "area_ratio_range": [
+        0.17293972432898963,
+        2.100053220879339
+      ],
+      "edge_ratio_range": [
+        0.5151515284771352,
+        1.567492760587606
+      ],
+      "whole_floor_min_m": -0.0042915912345051765,
+      "glute_min_m": 0.005988731049001217,
+      "maximum_posed_delta_m": 0.001345349482713292
+    },
+    {
+      "frame": 98,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.11954821948437837,
+      "area_ratio_range": [
+        0.17394866566492467,
+        2.081266224896816
+      ],
+      "edge_ratio_range": [
+        0.5185725205947315,
+        1.5646487781740606
+      ],
+      "whole_floor_min_m": -0.004289222415536642,
+      "glute_min_m": 0.005917274858802557,
+      "maximum_posed_delta_m": 0.0013289492993955774
+    },
+    {
+      "frame": 99,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.12702997624340268,
+      "area_ratio_range": [
+        0.17558131214605593,
+        2.058118735837263
+      ],
+      "edge_ratio_range": [
+        0.5228300650315516,
+        1.5611321474757984
+      ],
+      "whole_floor_min_m": -0.004285925999283791,
+      "glute_min_m": 0.005829417612403631,
+      "maximum_posed_delta_m": 0.0013086846039713407
+    },
+    {
+      "frame": 100,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.13604443241565758,
+      "area_ratio_range": [
+        0.17816248005980567,
+        2.0304010059211386
+      ],
+      "edge_ratio_range": [
+        0.5279969864617294,
+        1.5569135710686108
+      ],
+      "whole_floor_min_m": -0.004281192552298307,
+      "glute_min_m": 0.005725061520934105,
+      "maximum_posed_delta_m": 0.0012843398910138684
+    },
+    {
+      "frame": 101,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.14654965439620285,
+      "area_ratio_range": [
+        0.1818712838444141,
+        1.9980133757896432
+      ],
+      "edge_ratio_range": [
+        0.5341215608545302,
+        1.5520118676444823
+      ],
+      "whole_floor_min_m": -0.004274702165275812,
+      "glute_min_m": 0.005603351164609194,
+      "maximum_posed_delta_m": 0.001255748128031955
+    },
+    {
+      "frame": 102,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.15860157538353017,
+      "area_ratio_range": [
+        0.18707851923718147,
+        1.96091622965432
+      ],
+      "edge_ratio_range": [
+        0.5412537589140396,
+        1.5463928962787779
+      ],
+      "whole_floor_min_m": -0.004265800584107637,
+      "glute_min_m": 0.00546507490798831,
+      "maximum_posed_delta_m": 0.0012228282306442288
+    },
+    {
+      "frame": 103,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.17226197999676346,
+      "area_ratio_range": [
+        0.1941492201258969,
+        1.9191194136256116
+      ],
+      "edge_ratio_range": [
+        0.5494422289562072,
+        1.5400709871067835
+      ],
+      "whole_floor_min_m": -0.004254219122231007,
+      "glute_min_m": 0.005310171749442816,
+      "maximum_posed_delta_m": 0.0011854857997407912
+    },
+    {
+      "frame": 104,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.1874261957063545,
+      "area_ratio_range": [
+        0.20325574650841682,
+        1.8727571153988167
+      ],
+      "edge_ratio_range": [
+        0.5587096673627817,
+        1.5330450133582443
+      ],
+      "whole_floor_min_m": -0.00423874007537961,
+      "glute_min_m": 0.005139854270964861,
+      "maximum_posed_delta_m": 0.0011437202104559038
+    },
+    {
+      "frame": 105,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.20406589964601,
+      "area_ratio_range": [
+        0.21461230829917005,
+        1.8220053372678897
+      ],
+      "edge_ratio_range": [
+        0.5690982684579196,
+        1.525383551411975
+      ],
+      "whole_floor_min_m": -0.004219288006424904,
+      "glute_min_m": 0.004954609088599682,
+      "maximum_posed_delta_m": 0.0010975666613635214
+    },
+    {
+      "frame": 106,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.22221105379473147,
+      "area_ratio_range": [
+        0.22845551028711591,
+        1.7671272418099575
+      ],
+      "edge_ratio_range": [
+        0.5806167683092447,
+        1.5170555588287584
+      ],
+      "whole_floor_min_m": -0.004194522276520729,
+      "glute_min_m": 0.0047562867403030396,
+      "maximum_posed_delta_m": 0.0010470745039264367
+    },
+    {
+      "frame": 107,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.24174335553458512,
+      "area_ratio_range": [
+        0.2447692036994941,
+        1.7084874325812542
+      ],
+      "edge_ratio_range": [
+        0.5932708601421655,
+        1.5081670748624656
+      ],
+      "whole_floor_min_m": -0.004164104349911213,
+      "glute_min_m": 0.004545905161648989,
+      "maximum_posed_delta_m": 0.0009923574341948068
+    },
+    {
+      "frame": 108,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2625682650387886,
+      "area_ratio_range": [
+        0.26352480132782974,
+        1.6465182683969943
+      ],
+      "edge_ratio_range": [
+        0.6070500455272093,
+        1.4987471363273424
+      ],
+      "whole_floor_min_m": -0.00412704236805439,
+      "glute_min_m": 0.004325186368077993,
+      "maximum_posed_delta_m": 0.0009335680293499348
+    },
+    {
+      "frame": 109,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2846149437689019,
+      "area_ratio_range": [
+        0.28466637462491534,
+        1.581753963249003
+      ],
+      "edge_ratio_range": [
+        0.6219504459234642,
+        1.4888553085429292
+      ],
+      "whole_floor_min_m": -0.004082516301423311,
+      "glute_min_m": 0.004095955286175013,
+      "maximum_posed_delta_m": 0.0008708578310744648
+    },
+    {
+      "frame": 110,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2880193884800078,
+      "area_ratio_range": [
+        0.3080392028794784,
+        1.514829594071816
+      ],
+      "edge_ratio_range": [
+        0.6379375401710835,
+        1.4785677073472911
+      ],
+      "whole_floor_min_m": -0.004029862117022276,
+      "glute_min_m": 0.0038600494153797626,
+      "maximum_posed_delta_m": 0.0008044562593735049
+    },
+    {
+      "frame": 111,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.28835487602519805,
+      "area_ratio_range": [
+        0.3109209900256125,
+        1.4465075467180286
+      ],
+      "edge_ratio_range": [
+        0.6549633598168744,
+        1.4679106361963512
+      ],
+      "whole_floor_min_m": -0.003968358971178532,
+      "glute_min_m": 0.0036196436267346144,
+      "maximum_posed_delta_m": 0.0007345844850601288
+    },
+    {
+      "frame": 112,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.288669977237392,
+      "area_ratio_range": [
+        0.30992016171105313,
+        1.418287417956256
+      ],
+      "edge_ratio_range": [
+        0.6729902866007675,
+        1.4570480560185255
+      ],
+      "whole_floor_min_m": -0.003897219430655241,
+      "glute_min_m": 0.0033764394465833902,
+      "maximum_posed_delta_m": 0.0006615123872131182
+    },
+    {
+      "frame": 113,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2889689871716262,
+      "area_ratio_range": [
+        0.3088557884869529,
+        1.402851155861075
+      ],
+      "edge_ratio_range": [
+        0.691946930871077,
+        1.4459928802984985
+      ],
+      "whole_floor_min_m": -0.0038159284740686417,
+      "glute_min_m": 0.0031325644813477993,
+      "maximum_posed_delta_m": 0.0005855194273653912
+    },
+    {
+      "frame": 114,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.28926066771031145,
+      "area_ratio_range": [
+        0.30774587112403623,
+        1.3869097784938909
+      ],
+      "edge_ratio_range": [
+        0.7117621382026036,
+        1.4348591423939587
+      ],
+      "whole_floor_min_m": -0.003724121255800128,
+      "glute_min_m": 0.0028900878969579935,
+      "maximum_posed_delta_m": 0.0005069168146172446
+    },
+    {
+      "frame": 115,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 20,
+      "global_exact_pair_count": 58,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2895177104310738,
+      "area_ratio_range": [
+        0.3065739224428424,
+        1.3705068259341573
+      ],
+      "edge_ratio_range": [
+        0.7323537056550868,
+        1.4237111755766492
+      ],
+      "whole_floor_min_m": -0.0036214464344084263,
+      "glute_min_m": 0.0026509547606110573,
+      "maximum_posed_delta_m": 0.0004260453134598251
+    },
+    {
+      "frame": 116,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 59,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2897823136129755,
+      "area_ratio_range": [
+        0.3053866729620461,
+        1.35371374772962
+      ],
+      "edge_ratio_range": [
+        0.7536292914408542,
+        1.4126650344810268
+      ],
+      "whole_floor_min_m": -0.003507689107209444,
+      "glute_min_m": 0.002416756469756365,
+      "maximum_posed_delta_m": 0.00034323172251847825
+    },
+    {
+      "frame": 117,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2899820939460386,
+      "area_ratio_range": [
+        0.3041431340275744,
+        1.3365933602162008
+      ],
+      "edge_ratio_range": [
+        0.7754989228138075,
+        1.401790113612657
+      ],
+      "whole_floor_min_m": -0.003382838796824217,
+      "glute_min_m": 0.0021892015356570482,
+      "maximum_posed_delta_m": 0.0002588455835206146
+    },
+    {
+      "frame": 118,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.2901898639680999,
+      "area_ratio_range": [
+        0.3029113387842325,
+        1.3192514047317003
+      ],
+      "edge_ratio_range": [
+        0.7978492447929911,
+        1.3911818650874233
+      ],
+      "whole_floor_min_m": -0.0032470072619616985,
+      "glute_min_m": 0.001970108365640044,
+      "maximum_posed_delta_m": 0.00017325534767413417
+    },
+    {
+      "frame": 119,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.290366245164874,
+      "area_ratio_range": [
+        0.3016774980084784,
+        1.3017210058781667
+      ],
+      "edge_ratio_range": [
+        0.8205707281662992,
+        1.38089917058224
+      ],
+      "whole_floor_min_m": -0.003100485075265169,
+      "glute_min_m": 0.0017605929169803858,
+      "maximum_posed_delta_m": 8.684488053815857e-05
+    },
+    {
+      "frame": 120,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.29049473024741135,
+      "area_ratio_range": [
+        0.30043405894288255,
+        1.2841042883294997
+      ],
+      "edge_ratio_range": [
+        0.8374117596358138,
+        1.3710331801767641
+      ],
+      "whole_floor_min_m": -0.002943812869489193,
+      "glute_min_m": 0.0015618535690009594,
+      "maximum_posed_delta_m": 1.862645149230957e-09
+    },
+    {
+      "frame": 121,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 65,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.3350251907306031,
+      "area_ratio_range": [
+        0.34282287723985055,
+        1.2664828477977275
+      ],
+      "edge_ratio_range": [
+        0.8474445342363085,
+        1.342915652707455
+      ],
+      "whole_floor_min_m": -0.0027775121852755547,
+      "glute_min_m": 0.0013749441131949425,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 122,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 65,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.379322200735643,
+      "area_ratio_range": [
+        0.3854879315624434,
+        1.248913862677029
+      ],
+      "edge_ratio_range": [
+        0.8571170198761016,
+        1.3153966372859147
+      ],
+      "whole_floor_min_m": -0.0026025748811662197,
+      "glute_min_m": 0.001200693310238421,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 123,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 67,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.423221883825007,
+      "area_ratio_range": [
+        0.42811700945720943,
+        1.2314939679626378
+      ],
+      "edge_ratio_range": [
+        0.8665646040952981,
+        1.288611539660466
+      ],
+      "whole_floor_min_m": -0.002419818192720413,
+      "glute_min_m": 0.0010394856799393892,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 124,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 16,
+      "global_exact_pair_count": 71,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.4664993714061226,
+      "area_ratio_range": [
+        0.4703905444537219,
+        1.2143082731355888
+      ],
+      "edge_ratio_range": [
+        0.8759888230200755,
+        1.2627094627451367
+      ],
+      "whole_floor_min_m": -0.0022304109297692776,
+      "glute_min_m": 0.0008917168015614152,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 125,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 12,
+      "global_exact_pair_count": 67,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.5089744637592781,
+      "area_ratio_range": [
+        0.512066035620991,
+        1.1974082358851428
+      ],
+      "edge_ratio_range": [
+        0.8853474835970533,
+        1.2377985207698674
+      ],
+      "whole_floor_min_m": -0.0020354799926280975,
+      "glute_min_m": 0.0007577983778901398,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 126,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 54,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.5504751873353707,
+      "area_ratio_range": [
+        0.5529247167907355,
+        1.1808609469119917
+      ],
+      "edge_ratio_range": [
+        0.8945882450002908,
+        1.2139883401143632
+      ],
+      "whole_floor_min_m": -0.0018368103774264455,
+      "glute_min_m": 0.0006372068310156465,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 127,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 56,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.5908008496238745,
+      "area_ratio_range": [
+        0.5927311724295419,
+        1.1647637876657935
+      ],
+      "edge_ratio_range": [
+        0.9036549852048238,
+        1.1913727877824971
+      ],
+      "whole_floor_min_m": -0.0016355740372091532,
+      "glute_min_m": 0.0005299430340528488,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 128,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 54,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.6298121099811143,
+      "area_ratio_range": [
+        0.6313241955126313,
+        1.1491936093651216
+      ],
+      "edge_ratio_range": [
+        0.9125037072166454,
+        1.1700381996656504
+      ],
+      "whole_floor_min_m": -0.0014335429295897484,
+      "glute_min_m": 0.000435496011050418,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 129,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 53,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.667330599786623,
+      "area_ratio_range": [
+        0.668504664146669,
+        1.134165220151761
+      ],
+      "edge_ratio_range": [
+        0.9210906067012333,
+        1.1500264787384786
+      ],
+      "whole_floor_min_m": -0.0012320009991526604,
+      "glute_min_m": 0.0003534221323207021,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 130,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 61,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7032265620213187,
+      "area_ratio_range": [
+        0.704128887790077,
+        1.1197950139682429
+      ],
+      "edge_ratio_range": [
+        0.9293651166762088,
+        1.1314041912373884
+      ],
+      "whole_floor_min_m": -0.0010329770157113671,
+      "glute_min_m": 0.0002826763375196606,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 131,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 64,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7373268896975446,
+      "area_ratio_range": [
+        0.7380128842337751,
+        1.1061119294930235
+      ],
+      "edge_ratio_range": [
+        0.9372906634590449,
+        1.114166396311801
+      ],
+      "whole_floor_min_m": -0.0008378079510293901,
+      "glute_min_m": 0.0002229152451036498,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 132,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 64,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7695385292245871,
+      "area_ratio_range": [
+        0.7700522470369274,
+        1.093162058800857
+      ],
+      "edge_ratio_range": [
+        0.94482327339962,
+        1.098345548649103
+      ],
+      "whole_floor_min_m": -0.0006482858443632722,
+      "glute_min_m": 0.0001727810740703717,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 133,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 68,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.7997512532049789,
+      "area_ratio_range": [
+        0.8001298055054488,
+        1.0809844361604664
+      ],
+      "edge_ratio_range": [
+        0.9519301837765397,
+        1.0839278112055588
+      ],
+      "whole_floor_min_m": -0.00048373485333286226,
+      "glute_min_m": 0.00013170368038117886,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 134,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 70,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8278868558838249,
+      "area_ratio_range": [
+        0.828160685712434,
+        1.069660566390061
+      ],
+      "edge_ratio_range": [
+        0.9585842992168182,
+        1.070894320597515
+      ],
+      "whole_floor_min_m": -0.0004296716651879251,
+      "glute_min_m": 9.823586151469499e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 135,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 69,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8538421843878264,
+      "area_ratio_range": [
+        0.8540361694388863,
+        1.0591930241669052
+      ],
+      "edge_ratio_range": [
+        0.964754516698905,
+        1.059198614841051
+      ],
+      "whole_floor_min_m": -0.00037577407783828676,
+      "glute_min_m": 7.174671191023663e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 136,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 71,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8775687728271468,
+      "area_ratio_range": [
+        0.877702850240275,
+        1.0496045776882315
+      ],
+      "edge_ratio_range": [
+        0.9704187196475873,
+        1.0487982989584763
+      ],
+      "whole_floor_min_m": -0.0003230545553378761,
+      "glute_min_m": 5.1106660976074636e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 137,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 81,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.8990696791073142,
+      "area_ratio_range": [
+        0.8991592905314465,
+        1.0409284083627997
+      ],
+      "edge_ratio_range": [
+        0.9755665090066284,
+        1.0396326650635974
+      ],
+      "whole_floor_min_m": -0.00027251720894128084,
+      "glute_min_m": 3.553311398718506e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 138,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 84,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9182813175561407,
+      "area_ratio_range": [
+        0.9183394294974724,
+        1.0331462776227562
+      ],
+      "edge_ratio_range": [
+        0.9801883052897858,
+        1.031647285287068
+      ],
+      "whole_floor_min_m": -0.0002251698897453025,
+      "glute_min_m": 2.389762994425837e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 139,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 86,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9352243944968782,
+      "area_ratio_range": [
+        0.9352605440403681,
+        1.0262856672890366
+      ],
+      "edge_ratio_range": [
+        0.9842741543221379,
+        1.0247729075416199
+      ],
+      "whole_floor_min_m": -0.00018174298747908324,
+      "glute_min_m": 1.5416317182825878e-05,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 140,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 90,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9499274398188344,
+      "area_ratio_range": [
+        0.9499488802387532,
+        1.020330267962196
+      ],
+      "edge_ratio_range": [
+        0.9878347020510364,
+        1.0189375646438548
+      ],
+      "whole_floor_min_m": -0.00014250562526285648,
+      "glute_min_m": 9.750790013640653e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 141,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 90,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9624752838891192,
+      "area_ratio_range": [
+        0.9624872089789609,
+        1.015230348323099
+      ],
+      "edge_ratio_range": [
+        0.9908700864413967,
+        1.0140574609838724
+      ],
+      "whole_floor_min_m": -0.00010820224997587502,
+      "glute_min_m": 5.807320576423081e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 142,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 92,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9729068929690436,
+      "area_ratio_range": [
+        0.9729130538219375,
+        1.0110045144732933
+      ],
+      "edge_ratio_range": [
+        0.9934032844621314,
+        1.0100644598405866
+      ],
+      "whole_floor_min_m": -7.887739047873765e-05,
+      "glute_min_m": 3.3860571875266032e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 143,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 92,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9813429010702697,
+      "area_ratio_range": [
+        0.9813458403322679,
+        1.0075802849804145
+      ],
+      "edge_ratio_range": [
+        0.9954562392731102,
+        1.006887556154664
+      ],
+      "whole_floor_min_m": -5.4708318202756345e-05,
+      "glute_min_m": 1.9589977000578074e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 144,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 92,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9879334754050698,
+      "area_ratio_range": [
+        0.9879346952681345,
+        1.0049033995279986
+      ],
+      "edge_ratio_range": [
+        0.9970611190120295,
+        1.0044365038270795
+      ],
+      "whole_floor_min_m": -3.5650129575515166e-05,
+      "glute_min_m": 1.0258208931190893e-06,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 145,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 94,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9928147636236021,
+      "area_ratio_range": [
+        0.9928152010039544,
+        1.0029105126821845
+      ],
+      "edge_ratio_range": [
+        0.9982502771943628,
+        1.0026137041626022
+      ],
+      "whole_floor_min_m": -2.1227800971246324e-05,
+      "glute_min_m": 5.039535722062283e-07,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 146,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 94,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9962336024181941,
+      "area_ratio_range": [
+        0.9962337186269022,
+        1.001529770298548
+      ],
+      "edge_ratio_range": [
+        0.9990812193465953,
+        1.001381167345106
+      ],
+      "whole_floor_min_m": -1.1231886674067937e-05,
+      "glute_min_m": 1.8891044817337388e-07,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 147,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9983639040156063,
+      "area_ratio_range": [
+        0.9983639270483187,
+        1.0007969894103625
+      ],
+      "edge_ratio_range": [
+        0.9996021879145256,
+        1.0007209186756565
+      ],
+      "whole_floor_min_m": -4.822884420718765e-06,
+      "glute_min_m": 1.504617017644705e-07,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 148,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9992700237590824,
+      "area_ratio_range": [
+        0.999270209708336,
+        1.0001924278991337
+      ],
+      "edge_ratio_range": [
+        0.9997760461908902,
+        1.000182442447533
+      ],
+      "whole_floor_min_m": -1.4963791272748495e-06,
+      "glute_min_m": 5.596379182293276e-08,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 149,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.999735106935144,
+      "area_ratio_range": [
+        0.9997351074211475,
+        1.00060062789476
+      ],
+      "edge_ratio_range": [
+        0.9998360132050701,
+        1.0006939539149315
+      ],
+      "whole_floor_min_m": -1.6601603647359298e-07,
+      "glute_min_m": 6.454158807400745e-08,
+      "maximum_posed_delta_m": 0.0
+    },
+    {
+      "frame": 150,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "hand_leg_pair_count": 0,
+      "global_exact_pair_count": 96,
+      "orientation_guard_failed_faces": [],
+      "reversed_face_count": 0,
+      "minimum_oriented_area_ratio": 0.9999445252154834,
+      "area_ratio_range": [
+        0.9999445374225963,
+        1.0003141774845177
+      ],
+      "edge_ratio_range": [
+        0.9999144508796027,
+        1.0002224926465495
+      ],
+      "whole_floor_min_m": 1.2685630323971964e-09,
+      "glute_min_m": 1.2685630323971964e-09,
+      "maximum_posed_delta_m": 0.0
+    }
+  ],
+  "promotion_map": {},
+  "checks": {
+    "all151_hip_pairs_zero": true,
+    "all151_material_orientation_guards_pass": true,
+    "source_cap_pass": true,
+    "all151_exterior_positions_exact": true,
+    "P0_exact": true,
+    "override_hash_unchanged": true
+  },
+  "correctives_sha256": "ab3d1c8f31b62c4048fbc706024c10b8ad353e7e6f17302d410d528c0db78d22",
+  "npz_sha256": "b1557be8a6eaefdc0667aad7ac60aa02230849c245b1cb4b567e7316025c7b04"
+}
