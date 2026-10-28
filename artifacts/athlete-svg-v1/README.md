@@ -1,5 +1,9 @@
 # SVG mannequin motion style prototype
 
+Status: rejected visual exploration, superseded by `../human-animation-base/`.
+The user requested professionally authored human anatomy instead of these custom
+procedural body contours. Retained only as exploration history.
+
 Original vector artwork explores a neutral mannequin between flat exercise
 illustrations and an anatomical model. The supplied reference screenshots
 informed the broad visual direction; their figures and geometry were not traced.
