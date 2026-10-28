@@ -1,20 +1,190 @@
 {
   "ok": true,
-  "source_sha256": "eae482f6ed3b6030e97d6f37b48f232a3a865659ec8a7af63903708f300afd7f",
   "failures": [],
-  "surface_samples": 22,
-  "geometry_checks": 8,
-  "loops": [
+  "source_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
+  "binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "original_basis_weights_uv_source_ids_unchanged": true,
+  "vertices": 10582,
+  "triangles": 21160,
+  "bones": 51,
+  "actions": [
+    "Exercise_10565",
+    "Exercise_6560"
+  ],
+  "morphs": [
+    "Sit90_10565_Upright",
+    "Sit90_10565_Hinge",
+    "Sit90_6560_Upright",
+    "Sit90_6560_Hinge"
+  ],
+  "all_non_armature_modifiers_disabled": true,
+  "preview_seconds": 5,
+  "preview_hold_seconds": 1,
+  "source_workout_hold_seconds": [
+    20,
+    30
+  ],
+  "samples_checked": 302,
+  "all_skin_min_z_m": -0.0022010207176208496,
+  "loop_skin_error_max_m": 0.0,
+  "wrist_direction_ranges_degrees": {
+    "10565": {
+      "Left": [
+        8.31136947926973,
+        29.819595048278508
+      ],
+      "Right": [
+        60.31759180567936,
+        89.34475513664216
+      ]
+    },
+    "6560": {
+      "Left": [
+        54.7475418016827,
+        88.93355725803988
+      ],
+      "Right": [
+        58.35483449483865,
+        89.03640624656194
+      ]
+    }
+  },
+  "native_target_error_samples": [
     {
       "id": "10565",
-      "joint_translation_error_m": 0.0,
-      "quaternion_angle_degrees": 0.0
+      "frame": 0,
+      "local_target_error_max_m": 2.5284578325873637e-07,
+      "local_target_error_p95_m": 1.3874278218493846e-07
+    },
+    {
+      "id": "10565",
+      "frame": 15,
+      "local_target_error_max_m": 0.0024434443109692602,
+      "local_target_error_p95_m": 0.0003353792144027299
+    },
+    {
+      "id": "10565",
+      "frame": 30,
+      "local_target_error_max_m": 0.0027964714333678013,
+      "local_target_error_p95_m": 0.0004917640313789754
+    },
+    {
+      "id": "10565",
+      "frame": 45,
+      "local_target_error_max_m": 0.001008106564417082,
+      "local_target_error_p95_m": 0.0002191206258136882
+    },
+    {
+      "id": "10565",
+      "frame": 60,
+      "local_target_error_max_m": 2.341717172323992e-07,
+      "local_target_error_p95_m": 1.3393309567171797e-07
+    },
+    {
+      "id": "10565",
+      "frame": 75,
+      "local_target_error_max_m": 2.341717172323992e-07,
+      "local_target_error_p95_m": 1.3393309567171797e-07
+    },
+    {
+      "id": "10565",
+      "frame": 90,
+      "local_target_error_max_m": 2.341717172323992e-07,
+      "local_target_error_p95_m": 1.3393309567171797e-07
+    },
+    {
+      "id": "10565",
+      "frame": 105,
+      "local_target_error_max_m": 0.001008106564417082,
+      "local_target_error_p95_m": 0.0002191206258136882
+    },
+    {
+      "id": "10565",
+      "frame": 120,
+      "local_target_error_max_m": 0.0027964714333678013,
+      "local_target_error_p95_m": 0.0004917640313789754
+    },
+    {
+      "id": "10565",
+      "frame": 135,
+      "local_target_error_max_m": 0.0024434443109692602,
+      "local_target_error_p95_m": 0.0003353792144027299
+    },
+    {
+      "id": "10565",
+      "frame": 150,
+      "local_target_error_max_m": 2.5284578325873637e-07,
+      "local_target_error_p95_m": 1.3874278218493846e-07
     },
     {
       "id": "6560",
-      "joint_translation_error_m": 0.0,
-      "quaternion_angle_degrees": 0.0
+      "frame": 0,
+      "local_target_error_max_m": 2.8246196660242734e-07,
+      "local_target_error_p95_m": 1.375147585831709e-07
+    },
+    {
+      "id": "6560",
+      "frame": 15,
+      "local_target_error_max_m": 0.007559650821586945,
+      "local_target_error_p95_m": 0.0006587881191816896
+    },
+    {
+      "id": "6560",
+      "frame": 30,
+      "local_target_error_max_m": 0.005396254558530404,
+      "local_target_error_p95_m": 0.0007540525976032776
+    },
+    {
+      "id": "6560",
+      "frame": 45,
+      "local_target_error_max_m": 0.0019370927477389145,
+      "local_target_error_p95_m": 0.0003135769580604058
+    },
+    {
+      "id": "6560",
+      "frame": 60,
+      "local_target_error_max_m": 2.1900144899933143e-07,
+      "local_target_error_p95_m": 1.2945865532828772e-07
+    },
+    {
+      "id": "6560",
+      "frame": 75,
+      "local_target_error_max_m": 2.1900144899933143e-07,
+      "local_target_error_p95_m": 1.2945865532828772e-07
+    },
+    {
+      "id": "6560",
+      "frame": 90,
+      "local_target_error_max_m": 2.1900144899933143e-07,
+      "local_target_error_p95_m": 1.2945865532828772e-07
+    },
+    {
+      "id": "6560",
+      "frame": 105,
+      "local_target_error_max_m": 0.0019370927477389145,
+      "local_target_error_p95_m": 0.0003135769580604058
+    },
+    {
+      "id": "6560",
+      "frame": 120,
+      "local_target_error_max_m": 0.005396254558530404,
+      "local_target_error_p95_m": 0.0007540525976032776
+    },
+    {
+      "id": "6560",
+      "frame": 135,
+      "local_target_error_max_m": 0.007559650821586945,
+      "local_target_error_p95_m": 0.0006587881191816896
+    },
+    {
+      "id": "6560",
+      "frame": 150,
+      "local_target_error_max_m": 2.8246196660242734e-07,
+      "local_target_error_p95_m": 1.375147585831709e-07
     }
   ],
-  "review_status": "requires_primary_and_user_review"
+  "asset_qa_warnings": [
+    "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
+  ],
+  "visual_status": "Primary approved early full-body shape only; final source stills and actual Three.js DQ+morph/normal appearance require review."
 }

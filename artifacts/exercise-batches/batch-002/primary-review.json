@@ -1,5 +1,5 @@
 {
-  "status": "repaired_candidate_local_checks_passed_awaiting_user_review",
+  "status": "whole_body_v2_checks_and_scoped_appearance_pass_user_review_pending",
   "not_production_approved": true,
   "exercise_ids": [
     "5265",
@@ -8,44 +8,77 @@
     "10565",
     "6560"
   ],
+  "models": {
+    "default": {
+      "path": "artifacts/bodyweight-next-five/next-five.glb",
+      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+      "bytes": 1325048,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_4007",
+        "Exercise_5265",
+        "Exercise_6428",
+        "Exercise_6560"
+      ]
+    },
+    "ninety-repaired": {
+      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+      "sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+      "bytes": 1305964,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_6560"
+      ]
+    }
+  },
+  "source_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
   "camera_presets_sha256": {
     "artifacts/bodyweight-next-five/camera-presets.json": "62d60c500557c7211a2b00c5794b0e92fb67878e8807e0ed78ca57b7656ada74",
-    "artifacts/bodyweight-next-five/ninety-camera-presets.json": "add7520c04a61e442b389246907e3f7b0dae43799b844b7fb2b8e7d9f03ac6ee"
+    "artifacts/bodyweight-next-five/ninety-camera-presets.json": "ea23d2f34db002bb94fc3adaad84eebb73c3ad22e2d005a8621f1fe7aecd08e8"
   },
   "visual_evidence": {
-    "neutral-6560.png": "6c616113f64ba36554002f3711f961ebdbb939ad2d570ab6209e9781834cf8e8",
-    "zones-10565.png": "5ead12b2fa998ad178c44b77a85a56a3622c40b16a7af13ed3065f401e3ce0b0",
+    "live-entry-10565.png": "2cff085224eecfd032342fcd5dfc1923884fde12e33e513d44713668bba86d99",
+    "live-entry-6560.png": "d06cd812887ee5bd8bba5294be448aef4a6b17e32469cc617e50908c27901897",
+    "live-start-10565.png": "95ee982bc8304cbb525abf5ffd26cfff2621af2b198a04f8c8f3e7350a676b82",
+    "live-start-6560.png": "299502dfe5d1b48f26209345057856b6df6d1f5ad57346cf4dbc6a038b46693e",
+    "neutral-10565.png": "d1557c96f6d0b0a656f09ae7631ce8a1c12588c41bdca205ffa8266650f04409",
+    "neutral-6560.png": "a3b5bc85e056325491212268b88c131aabdb1703baf85f0d9573dced0e0b23ae",
+    "review-10565.png": "eeb83b76543d1d9f957532c4f378893d6bf028523ff3f76076a08ca5f6d56ac7",
+    "review-4007.png": "7a9e4a9f3306f1d438de34264dd0689b503f27aed22e32ecfaf5e7b9a9ecad47",
     "review-5265.png": "ba43c13751fc37c8e9082cf5f19cf901b598c4fb5f30eb5037e5959d89dd8eb2",
     "review-6428.png": "36b88515f0538fb6d28308b31d754aff39821f821208ca3ba69be0051c7a7338",
-    "review-6560.png": "769ea049576f8dd48187a5ad2305119f74840f6283b89a5c54e146def4f7b236",
-    "neutral-10565.png": "eef4e3f3d1bf7822046850adce026a999d6bdfb701e0f1937266c17d58cf8da3",
-    "review-4007.png": "7a9e4a9f3306f1d438de34264dd0689b503f27aed22e32ecfaf5e7b9a9ecad47",
-    "mobile.png": "10172ed885a50989be04f0e93e17622346208d3f40290a61948df9011c736d87",
-    "zones-6560.png": "600c3bfd143328e38825ca8c93edf75f099b6989fedef3e5f9c86c5553958fc2",
-    "review-10565.png": "76a48793753f4874e2250876bd3f5b64d5f26a07f0946c471ba674a870ca24a6",
-    "inline-settled.png": "722e637532c8ba3ff0d4bd5c52e39600a75bba116777d9d29c73cbafc9e67fd2"
+    "review-6560.png": "bc1757d2695380931c938dee4fb780d2f3bdb173d701f9111be31edfda8983d7",
+    "zones-10565.png": "c02ec7ea117f4e1de34e4d2d8a346f73aeabc6d29b8e30b2a23d63a0968f933a",
+    "zones-6560.png": "8aa787d6794ed1ab9327d1137f83eda97a23834952b7bc9264e06d0f5396a865"
   },
-  "primary_visual_review": "Actual repaired Three.js peak views pass bounded appearance review: rounded continuous pelvic/glute volume, readable hand positions and natural hip/thigh transitions. Independent Terra/high review agrees for the shown peak. Native source-bound solid/wire review covers additional geometry. Partial rear occlusion and static-image timing/contact limits remain explicit.",
+  "primary_visual_review": "Actual common Three.js neutral/zone hold views and entry view inspected. Whole-body layout, round glute/hip transition, elbow/forearm continuity and separate hand supports are materially improved. Scoped independent Terra/high review agrees for shown start/entry/hinge samples. Small groin cage crease remains; posterior contour is partly occluded in recommended views and complemented by native rear/side proofs and free orbit. This does not establish user acceptance.",
   "corrected_findings": [
-    "Original first-three actions and source assets retained byte-identical.",
-    "Both repaired 90/90 clips use the original 51-bone binding with optional DQ skinning; no helper bones or weight edits.",
-    "Coupled pelvic, leg, foot and palm supports verified on actual deformed DQ skin.",
-    "6560 forearm/front-thigh intersection removed and shoulder roll softened without moving support targets.",
-    "Actual live 5-second loops use 2-second entry, 1-second hold and 2-second return; source 20\u201330-second workout text remains separate."
+    "Both rejected90/90 variants remain historical; old numeric PASS is not appearance acceptance.",
+    "Corrected135-degree thigh layout to front-forward/rear-side and aligned hinge over front leg.",
+    "Corrected shoulder and full arm/elbow frames, separate shin/knee hands and floor supports.",
+    "Original Basis/UV/rest/weights/source IDs and51bones retained, with four compact local POSITION/NORMAL targets.",
+    "First-three source assets remain byte-identical and use original linear skinning.",
+    "Actual five-second live playback uses2-second entry,1-second hold and2-second return; source20\u201330-second workout hold is separate."
   ],
   "checks": [
     "../../bodyweight-next-five/ninety-pose-verification.json",
     "../../bodyweight-next-five/ninety-asset-qa.json",
+    "../../bodyweight-next-five/ninety-warning-dispositions.json",
+    "../../bodyweight-next-five/repair-90/full-body-v2/hand-contact-summary.json",
     "verification.json",
-    "../runtime-code-review.json",
-    "inline-verification.json"
+    "finishing-check-report.json",
+    "whole-body-v2-visual-review.json",
+    "../runtime-code-review.json"
   ],
-  "accepted_native_warnings": "Current repaired source has 18 source-bound warning observations with dispositions in ninety-warning-dispositions.json; zero mandatory geometry errors. Original first-three warning dispositions remain in the historical qa-review.json.",
-  "contact_scope": "Artist-authored support patches,12mm curved-contact band and4mm maximum floor penetration. Sampled illustration QA; physical-device/application integration and user acceptance remain separate.",
-  "independent_code_review": "Shared reusable runtime code passed independent Sol 6.1/xhigh review and targeted failed-load/race/retry verification; see ../runtime-code-review.json. Media appearance accepted separately for this candidate.",
-  "inline_source_revision": "d957ecdbf2b854e028653afb563cd522de0ccfd2",
-  "inline_html_sha256": "9c54be5bac81c4be3dad462b124af421feeffd81b969bb71edbd74f408718d04",
-  "inline_acceptance": "Passed actual public model-byte/hash checks, all five action selections, live pose change, poster replacement, alpha and no media/error checks. Host HTML preview/render shown separately; startup snapshots may capture the honest loading poster.",
+  "accepted_native_warnings": "Two hidden opposite-facing triangle pairs retained to preserve original connected topology/source IDs; no mandatory geometry errors. See current source-bound ninety-warning-dispositions.json. Previous18-observation dispositions were for the rejected v1 source.",
+  "contact_scope": "Actual source/runtime skin illustration witnesses, not clinical certification. Press right wrist reaches60\u201389degrees forearm-to-Middle1 direction and is reviewed as a substantially extended support hand. Source full-path hand/leg penetration remains within declared4mm illustration band; exact limits are in v2 REPORT.md.",
+  "independent_code_review": "Shared runtime execution remains unchanged from approved Sol6.1/xhigh review. Small follow-up edits add004 camera-data routing and0003 opposite-pair test; primary syntax/integration checks apply. Media acceptance remains per asset.",
+  "inline_acceptance": {
+    "status": "pending_new_immutable_source_publication",
+    "previous_revision": "d957ecdbf2b854e028653afb563cd522de0ccfd2"
+  },
   "user_rejection": {
     "exercise_ids": [
       "10565",
@@ -66,6 +99,11 @@
       30
     ]
   },
+  "second_user_rejection": {
+    "feedback": "90/90 \u0432\u0441\u0435 \u0440\u0430\u0432\u043d\u043e \u0441 \u0444\u0438\u0433\u0443\u0440\u043e\u0439 \u043d\u0435 \u0442\u0430\u043a \u0432\u0441\u0435",
+    "scope": "Whole-body appearance; previous local and numeric PASS does not establish user acceptance.",
+    "repair_path": "../../bodyweight-next-five/repair-90/full-body-v2/"
+  },
   "historical_rejected_evidence": {
     "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
     "visual_evidence": {
@@ -78,29 +116,19 @@
     },
     "inline_source_revision": "53ec8539d4a38ee0453f0a906496af9f022d677d"
   },
-  "models": {
-    "default": {
-      "path": "artifacts/bodyweight-next-five/next-five.glb",
-      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
-      "bytes": 1325048,
-      "bones": 51,
-      "animations": [
-        "Exercise_10565",
-        "Exercise_4007",
-        "Exercise_5265",
-        "Exercise_6428",
-        "Exercise_6560"
-      ]
-    },
-    "ninety-repaired": {
-      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
-      "sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
-      "bytes": 965540,
-      "bones": 51,
-      "animations": [
-        "Exercise_10565",
-        "Exercise_6560"
-      ]
-    }
-  }
+  "superseded_v1_model": {
+    "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+    "sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
+    "bytes": 965540,
+    "bones": 51,
+    "animations": [
+      "Exercise_10565",
+      "Exercise_6560"
+    ]
+  },
+  "scope_limits": [
+    "Curated images cover shown poses, not continuous motion/collision by themselves.",
+    "Runtime checks separately measure playback, alpha, controls and sampled native parity.",
+    "Production app integration and physical-device testing were not performed."
+  ]
 }

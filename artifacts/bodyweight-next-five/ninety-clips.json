@@ -66,10 +66,10 @@
     "side_note": "Front leg is anatomical left; repeat on the mirrored side.",
     "muscle_notice": "Illustrative smooth surface emphasis; not EMG, physiological recruitment or true segmentation. Deep hip flexors/adductors/lumbar labels use surface proxies.",
     "interpretation": "One representative seated90/90 side;5second compressed demonstration with a1second preview hold. The source workout hold remains20\u201330seconds. The two sources describe substantially the same hip stretch.",
-    "review_status": "draft_DQ_requires_surface_geometry_and_visual_review",
+    "review_status": "native_DQ_morph_shape_reviewed_actual_runtime_review_pending",
     "source_path": "catalogue/exercises/10565.json",
     "source_sha256": "4f028037f23841c7e58a49f5873e0d1b6a2963ea3196ee518b41757d1c5fed69",
-    "arms": "Hands rest separately on the front knee and shin; an authored relaxed placement because the source does not specify it.",
+    "arms": "Hands rest separately on the front knee and shin, with a relaxed outward elbow plane. Authored placement: the source does not specify press-hand placement.",
     "preview_timing": {
       "compressed_demo": true,
       "duration_seconds": 5,
@@ -81,7 +81,35 @@
     },
     "asset": "ninety-repaired",
     "skinning": "dualQuaternion",
-    "required_renderer": "Three.js approved dual-quaternion skinning adapter"
+    "required_renderer": "Three.js approved DQ adapter with standard POSITION/NORMAL morph targets",
+    "correctives": {
+      "names": [
+        "Sit90_10565_Upright",
+        "Sit90_10565_Hinge"
+      ],
+      "all_names": [
+        "Sit90_10565_Upright",
+        "Sit90_10565_Hinge",
+        "Sit90_6560_Upright",
+        "Sit90_6560_Hinge"
+      ],
+      "source_weights_unchanged": true,
+      "position_and_normal_morphs": true,
+      "native_smoothing_enabled": false
+    },
+    "explicit_staging": {
+      "pelvis_legs": "Front anatomical left thigh follows torso forward; rear right thigh lies to the side, approximately90degrees between thigh directions. Both knee bend planes follow the actual source anterior-knee frame. The previous135degree thigh spread is removed.",
+      "spine": "Flat-back forward hinge along the front thigh; no independent lumbar collapse. Press starts with a20degree forward orientation to keep authored separate leg-hand contacts reachable on the original arm proportions.",
+      "hands": "Hands rest separately on the front knee and shin, with a relaxed outward elbow plane. Authored placement: the source does not specify press-hand placement.",
+      "floor": "WorldZ=0m. Curved support witnesses and all-skin penetration are separate from visual silhouette acceptance.",
+      "timing": "5seconds:2seconds entry,1second demonstration hold,2seconds return. Workout hold remains20\u201330seconds; mirrored side is instructed separately."
+    },
+    "provenance": {
+      "body_source": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-five/bodyweight-five.blend",
+      "body_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+      "restricted_media_used": false,
+      "binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b"
+    }
   },
   {
     "id": "6560",
@@ -150,10 +178,10 @@
     "side_note": "Front leg is anatomical left; repeat on the mirrored side.",
     "muscle_notice": "Illustrative smooth surface emphasis; not EMG, physiological recruitment or true segmentation. Deep hip flexors/adductors/lumbar labels use surface proxies.",
     "interpretation": "One representative seated90/90 side;5second compressed demonstration with a1second preview hold. The source workout hold remains20\u201330seconds. The two sources describe substantially the same hip stretch.",
-    "review_status": "draft_DQ_requires_surface_geometry_and_visual_review",
+    "review_status": "native_DQ_morph_shape_reviewed_actual_runtime_review_pending",
     "source_path": "catalogue/exercises/6560.json",
     "source_sha256": "537d7285af59957a4d9eaa3606d7da3c273d9e871844c326d5d499dda5b5417b",
-    "arms": "Both palms and extended fingers rest on the floor in front of the hips; elbows remain unlocked.",
+    "arms": "Both open palms and extended fingers rest on the floor alongside the front leg; hands slide a short distance as the body hinges, with outward unlocked elbows.",
     "preview_timing": {
       "compressed_demo": true,
       "duration_seconds": 5,
@@ -165,6 +193,34 @@
     },
     "asset": "ninety-repaired",
     "skinning": "dualQuaternion",
-    "required_renderer": "Three.js approved dual-quaternion skinning adapter"
+    "required_renderer": "Three.js approved DQ adapter with standard POSITION/NORMAL morph targets",
+    "correctives": {
+      "names": [
+        "Sit90_6560_Upright",
+        "Sit90_6560_Hinge"
+      ],
+      "all_names": [
+        "Sit90_10565_Upright",
+        "Sit90_10565_Hinge",
+        "Sit90_6560_Upright",
+        "Sit90_6560_Hinge"
+      ],
+      "source_weights_unchanged": true,
+      "position_and_normal_morphs": true,
+      "native_smoothing_enabled": false
+    },
+    "explicit_staging": {
+      "pelvis_legs": "Front anatomical left thigh follows torso forward; rear right thigh lies to the side, approximately90degrees between thigh directions. Both knee bend planes follow the actual source anterior-knee frame. The previous135degree thigh spread is removed.",
+      "spine": "Flat-back forward hinge along the front thigh; no independent lumbar collapse. Press starts with a20degree forward orientation to keep authored separate leg-hand contacts reachable on the original arm proportions.",
+      "hands": "Both open palms and extended fingers rest on the floor alongside the front leg; hands slide a short distance as the body hinges, with outward unlocked elbows.",
+      "floor": "WorldZ=0m. Curved support witnesses and all-skin penetration are separate from visual silhouette acceptance.",
+      "timing": "5seconds:2seconds entry,1second demonstration hold,2seconds return. Workout hold remains20\u201330seconds; mirrored side is instructed separately."
+    },
+    "provenance": {
+      "body_source": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-five/bodyweight-five.blend",
+      "body_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+      "restricted_media_used": false,
+      "binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b"
+    }
   }
 ]

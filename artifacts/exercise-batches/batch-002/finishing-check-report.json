@@ -1,0 +1,115 @@
+{
+  "status": "checks_passed_visual_review_pending",
+  "commands": [
+    {
+      "command": "node artifacts/exercise-batches/fit-cameras.mjs 002",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-002/draft-review/fit-cameras.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-002/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-002/draft-review/build.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-002/verify.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-002/draft-review/verify.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-002/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-002/draft-review/final-build.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/capture-review.mjs 002 10565 6560",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-002/draft-review/capture-review.log"
+    },
+    {
+      "command": "Chromium headless / Metal: viewer.html, IDs 10565 and 6560, dual-view stills at 1.0 and 0.0 with zones off",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-002/draft-review/live-capture.log"
+    }
+  ],
+  "models": {
+    "ninety_repaired_blend_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
+    "ninety_repaired_glb_sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+    "ninety_repaired_glb_bytes": 1305964,
+    "default_blend_sha256": "fb85a7c06814982d20211332fee958e71084660326d1b07ffec35d29cc47f109",
+    "default_glb_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37"
+  },
+  "stable_input_sha256": {
+    "clips.json": "f720e3848d0106bb261449193b3196be52e54ac02eb666bfdeedb6cff9c46ddf",
+    "ninety-clips.json": "fed85939179896a6a6b6f64b8ad30a3d6bd3174c74b808668a43b2b8407cf376",
+    "ninety-runtime-surface-reference.json": "20883f5c6353eee1796c6e58ec1966ef8b36e90c31b92f85c895fb96c9ae021f",
+    "ninety-dq-reference.json.gz": "5960ed87c104e26b606a3ff0bc35e18ddbeafd8901558e5489e9ed7284eefe3a",
+    "batch-002/build.mjs": "595f2376f33984405b0a5fec3040020a18252028e58b967b9448db007e61f362",
+    "batch-002/verify.mjs": "4a98dec0d0d11ce2896aef491280096a621d822aaec16e00785a2dfd3e7c91b0",
+    "batch-002/viewer.js": "85202f9267252b2eb4291675d21b088f2ab7648b5401d487558afe5de0ce8be3",
+    "batch-002/template.html": "755e848af1942d350e5ddc2775eb52cacdfecd76f334e97f3bf2a47e82a8e0b2",
+    "fit-cameras.mjs": "2cc4cbfc05fcc8fd95bee3b2f24cfac80f61886f884157c33366f2dcb26e9e18",
+    "capture-review.mjs": "ad14499d50ece9aa93abb2dfa7987bc5ef98fce6533ec50e6e9a9649718e4963",
+    "dual-quaternion.js": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+  },
+  "camera_fit": {
+    "input_change": "Only ninety-camera-presets.json changed as authorized; pre-fit SHA256 add7520c04a61e442b389246907e3f7b0dae43799b844b7fb2b8e7d9f03ac6ee; post-fit SHA256 ea23d2f34db002bb94fc3adaad84eebb73c3ad22e2d005a8621f1fe7aecd08e8.",
+    "widths_by_exercise": {
+      "5265": [
+        2.84,
+        2.07
+      ],
+      "4007": [
+        2.32,
+        2.05
+      ],
+      "6428": [
+        2.57,
+        2.05
+      ],
+      "10565": [
+        2.1,
+        2.05
+      ],
+      "6560": [
+        2.11,
+        2.05
+      ]
+    },
+    "evidence": "artifacts/exercise-batches/batch-002/camera-fit.json"
+  },
+  "verification": {
+    "ok": true,
+    "max_joint_error_m": 5.7483704945647006e-06,
+    "max_surface_parity_error_m": 4.91336963182043e-06,
+    "max_all_vertex_dq_error_m": 6.491228594504685e-06,
+    "live_playback_seconds": {
+      "10565": 5.019,
+      "6560": 5.0192
+    },
+    "hold_drift_m": {
+      "10565": 0,
+      "6560": 0
+    },
+    "transparent_canvas": true,
+    "shadows": false,
+    "ao": false,
+    "color_textures": 0,
+    "actions_switched": true,
+    "latest_selection_wins": true,
+    "touch_orbit": true,
+    "pinch": true,
+    "reset": true,
+    "errors": [],
+    "evidence": "artifacts/exercise-batches/batch-002/verification.json"
+  },
+  "screenshots": [
+    "artifacts/exercise-batches/batch-002/live-entry-10565.png",
+    "artifacts/exercise-batches/batch-002/live-start-10565.png",
+    "artifacts/exercise-batches/batch-002/live-entry-6560.png",
+    "artifacts/exercise-batches/batch-002/live-start-6560.png",
+    "artifacts/exercise-batches/batch-002/review-10565.png",
+    "artifacts/exercise-batches/batch-002/review-6560.png"
+  ],
+  "visual_acceptance": "Scoped primary/Terra actual appearance review recorded separately in whole-body-v2-visual-review.json; not user acceptance."
+}

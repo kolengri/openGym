@@ -462,13 +462,13 @@
     "current_request_scope": [
       "10565",
       "6560",
-      "6033",
-      "4348",
-      "3244",
-      "1906",
-      "1777"
+      "1980",
+      "2098",
+      "1977",
+      "4512",
+      "0003"
     ],
-    "further_exercises": "The user explicitly authorized batch 003 in parallel while 90/90 is repaired separately. Deliver these five for review before further rollout."
+    "further_exercises": "User authorized batch 004 only plus the reopened whole-body 90/90 repair. Deliver for review before further rollout."
   },
   "visualization_policy": {
     "candidate": "surface_heat_zone",
@@ -480,23 +480,23 @@
     "stretch_palette": "Diffuse cyan for stretching exercises; keep source training labels separate from contraction/load claims. No measured force, temperature or EMG interpretation.",
     "approved_style_exercise_id": "5915",
     "current_batch": [
-      "6033",
-      "4348",
-      "3244",
-      "1906",
-      "1777"
+      "1980",
+      "2098",
+      "1977",
+      "4512",
+      "0003"
     ],
     "additional_authorized_batch": {
-      "batch": "003",
+      "batch": "004",
       "exercise_ids": [
-        "6033",
-        "4348",
-        "3244",
-        "1906",
-        "1777"
+        "1980",
+        "2098",
+        "1977",
+        "4512",
+        "0003"
       ],
-      "style": "Unchanged approved 5915 soft surface fields: warm primary/additional load and cyan stretching, inactive neutral skin, real alpha, no body shadows or AO.",
-      "execution": "One original exercise animation per agent with disjoint asset ownership; independent 90/90 repair continues."
+      "style": "Approved soft zones, cyan stretching/warm load, neutral inactive body, true alpha and no body shadows/AO.",
+      "execution": "One asset author per exercise, bounded by six total active agents including root; separate whole-body 90/90 repair."
     },
     "parallel_repair_batch": [
       "10565",
@@ -598,7 +598,13 @@
         }
       ],
       "current_evidence_status": "current_asset_topology_measured_future_poses_unreviewed",
-      "automatic_production_approval": false
+      "automatic_production_approval": false,
+      "local_repair_policy": {
+        "order": "Correct exercise layout and parent-relative axial frames first; compare the actual runtime cage before considering skin repair.",
+        "weights": "Diagnosed bounded local weight diffusion or attachment edits must snapshot integer group IDs before mutation, normalize to at most four influences, preserve exact weights outside the declared region and report original/new binding identities. A source-coordinate field or automatic heat candidate earns acceptance only by better posed anatomy.",
+        "correctives": "A few local POSITION/NORMAL targets may reproduce a justified original-cage surface target. Report affected source IDs, posed/rest displacement, conditioning and transition error. Reject unstable inverse fitting, global body warps, per-frame caches and native-only Smooth/Multires fixes.",
+        "appearance": "DQ preserves volume but cannot certify correct layout or attachments. Original-weight preservation, numerical parity, low floor minimum and topology PASS do not accept a visibly distorted person."
+      }
     },
     {
       "id": "MOTION-ACTION-ISOLATION",
@@ -682,7 +688,32 @@
         }
       ],
       "current_evidence_status": "contract_required_no_universal_validated_limits",
-      "automatic_production_approval": false
+      "automatic_production_approval": false,
+      "observed_failure_modes": [
+        {
+          "case_ids": [
+            "10565",
+            "6560"
+          ],
+          "failure": "Correct knee bend axes hid a 135-degree inter-thigh layout and a trunk hinge away from the front thigh.",
+          "required_check": "Inspect torso-relative femur directions and the complete seated layout before surface fitting; limb endpoints and knee angle alone are insufficient."
+        },
+        {
+          "case_ids": [
+            "4512"
+          ],
+          "failure": "Keeping the standing pelvic frame while rotating only femurs produced a glute/thigh shelf; a high-knee workaround became a deep tuck.",
+          "required_check": "Author the seated pelvic frame and global tall trunk separately. Record actual hip/knee/ankle positions and pelvis-relative segment angles, not just pole coordinates. Preserve plausible whole-body seating and actual supports together."
+        },
+        {
+          "case_ids": [
+            "0003",
+            "1977"
+          ],
+          "failure": "Endpoint-preserving shortest-arc or world-rest arm rotations left sheared elbows, shoulder pinches or excessive wrist bend.",
+          "required_check": "Transport limb frames relative to the moving chest/pelvis and map the original flexion plane to the actual bend plane. Review elbow, palm and proximal-finger directions through the full action. Measured illustration angles are not clinical limits."
+        }
+      ]
     },
     {
       "id": "POSE-HANDS-FINGERS",
@@ -704,7 +735,19 @@
         }
       ],
       "current_evidence_status": "open_0001_hand_head_pose",
-      "automatic_production_approval": false
+      "automatic_production_approval": false,
+      "observed_failure_modes": [
+        {
+          "case_ids": [
+            "2098",
+            "10565",
+            "6560",
+            "1977"
+          ],
+          "failure": "A whole-hand or whole-thumb minimum concealed distal fingertip gaps or crossings.",
+          "required_check": "Use immutable original-ID distal digit patches plus actual palm/finger triangles, grasp close-ups from both sides and acquisition/release clearance. Keep hand/head or hand/leg checks separate from hand/hand separation."
+        }
+      ]
     },
     {
       "id": "MOTION-HOP-PHASES",
@@ -1698,7 +1741,7 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generation-contract.json",
-      "sha256": "cb1bae142ce1e4acb6f955beef4a12c15f220c74c7faf477888752f0553b09c2"
+      "sha256": "d06d17007b328356eba044c03479907a3f626187abbfc4d385dc7765d3423c0b"
     },
     {
       "path": "artifacts/exercise-animation-briefs/selected-first-five.json",

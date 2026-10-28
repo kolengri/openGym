@@ -3,7 +3,7 @@ import {homedir} from 'node:os';
 import {chromium} from '../first-exercise-3d/runtime/node_modules/playwright-core/index.mjs';
 
 const batch = process.argv[2];
-if (!['002', '003'].includes(batch)) throw Error('Pass batch002or003');
+if (!['002', '003', '004'].includes(batch)) throw Error('Pass batch 002, 003 or 004');
 const root = new URL(`./batch-${batch}/`, import.meta.url);
 const config = JSON.parse((await readFile(new URL('viewer.html', root), 'utf8')).match(/<script id="heat-data" type="application\/json">(.*?)<\/script>/s)[1]);
 const browser = await chromium.launch({headless: true,
@@ -33,10 +33,10 @@ try {
   // Uniform camera-width expansion preserves the authored angle and target.
   // All inactive body surfaces also remain inside a10percent framing margin.
   const factors = sampled.bounds.map(value => Math.max(1, value / .9));
-  const source = batch === '003' ? new URL(`assets/${exercise.id}/cameras.json`, root)
+  const source = batch !== '002' ? new URL(`assets/${exercise.id}/cameras.json`, root)
    : new URL(`../bodyweight-next-five/${['10565', '6560'].includes(exercise.id) ? 'ninety-' : ''}camera-presets.json`, import.meta.url);
   const document = JSON.parse(await readFile(source));
-  const cameras = batch === '003' ? document : document[exercise.id];
+  const cameras = batch !== '002' ? document : document[exercise.id];
   for (const [index, factor] of factors.entries()) cameras[index].scale = Math.ceil(cameras[index].scale * factor * 100) / 100;
   await writeFile(source, JSON.stringify(document, null, 2) + '\n');
   evidence.push({id: exercise.id, sampledRuntimeFrames: sampled.frames,

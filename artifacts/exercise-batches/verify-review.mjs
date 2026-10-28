@@ -111,8 +111,11 @@ try {
    maximumDQError = Math.max(maximumDQError, error);
    mechanics.push({id, fullNativeDQWitnesses: witnesses.length, maxAllVertexDQErrorMeters: error});
   }
-  if (id === '5265') {
-   for (const [time, kneeSide, oppositeSide] of [[2, 'Left', 'Right'], [6, 'Right', 'Left']]) {
+  if (['5265', '0003'].includes(id)) {
+   const crossPeaks = id === '0003'
+    ? [[1.25, 'Left', 'Right'], [3.75, 'Right', 'Left']]
+    : [[2, 'Left', 'Right'], [6, 'Right', 'Left']];
+   for (const [time, kneeSide, oppositeSide] of crossPeaks) {
     await page.evaluate(time => window.heatFrame(time), time);
     const joints = (await probe(page)).joints;
     const distance = (a, b) => Math.hypot(...joints[a].map((value, axis) => value - joints[b][axis]));
@@ -120,7 +123,7 @@ try {
     const sameSide = distance(kneeSide + 'Leg', kneeSide + 'ForeArm');
     assert.ok(crossed < sameSide, `Bicycle twists toward the same-side elbow at ${time}s`);
     // Blender front is -Y, converted to +Three.jsZ.
-    assert.ok(joints[oppositeSide + 'Arm'][2] > joints[kneeSide + 'Arm'][2], 'The opposite shoulder turns away from the raised knee');
+    if (id === '5265') assert.ok(joints[oppositeSide + 'Arm'][2] > joints[kneeSide + 'Arm'][2], 'The opposite shoulder turns away from the raised knee');
     mechanics.push({id, time, kneeSide, oppositeSide, crossedElbowKneeMeters: crossed, sameSideElbowKneeMeters: sameSide});
    }
   } else if (['4007', '6428'].includes(id)) {
