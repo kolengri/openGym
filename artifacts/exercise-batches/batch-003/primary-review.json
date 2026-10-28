@@ -66,7 +66,8 @@
     "neutral-1777.png": "8bc1692e60379b4e5c34246875d8d3728c714f3ecdadbb357a0ea7f0617c993d",
     "neutral-6033.png": "68815f5387bc806eaa6b202ae1fcf1092ff52519e09559215392d1e99dcd187b",
     "review-3244.png": "7b9017dcfc262cfe377ae05c5c1be28ce2dabe00ea72f0e233a86ee390749bee",
-    "review-6033-entry.png": "89be4417ec123955a1ccc39413237fbe300ed6c885055ef074d701765cce41d3"
+    "review-6033-entry.png": "89be4417ec123955a1ccc39413237fbe300ed6c885055ef074d701765cce41d3",
+    "inline-settled.png": "c563a9d60598c186072d5522b9ea6b463496554e14faa783342c08085d264429"
   },
   "primary_visual_review": "Actual Three.js neutral and selected-zone views pass for all five candidates. Terra/high reviewed the same current runtime stills; 6033 received a targeted recheck after the knee repair. Source-native intermediate proofs and sampled parity/contact receipts complement these single-pose stills.",
   "per_exercise": {
@@ -79,13 +80,16 @@
   "checks": [
     "verification.json",
     "runtime-contacts.json",
-    "../runtime-code-review.json"
+    "../runtime-code-review.json",
+    "inline-verification.json"
   ],
   "independent_code_review": "Reusable runtime passed independent Sol 6.1/xhigh review and targeted R1 failed-load/race/retry verification. Media QA and appearance are separate.",
   "scope_limits": [
     "Curated screenshots establish the shown appearance, not exact contact or timing by themselves.",
     "Runtime source-bound checks are sampled illustration evidence, not clinical/coaching approval or continuous collision proof.",
-    "Physical-device testing and production application integration were not performed.",
-    "Inline resource verification is pending publication of the immutable source commit."
-  ]
+    "Physical-device testing and production application integration were not performed."
+  ],
+  "inline_source_revision": "d957ecdbf2b854e028653afb563cd522de0ccfd2",
+  "inline_html_sha256": "29f1490612cd3936843441c2da50bde7e6b4cd86172ec7d53de75ad3398d3b3a",
+  "inline_acceptance": "Passed actual public model-byte/hash checks, all five action selections, live pose change, poster replacement, alpha and no media/error checks. Host HTML preview/render shown separately; startup snapshots may capture the honest loading poster."
 }

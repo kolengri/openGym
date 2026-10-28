@@ -22,7 +22,8 @@
     "review-4007.png": "7a9e4a9f3306f1d438de34264dd0689b503f27aed22e32ecfaf5e7b9a9ecad47",
     "mobile.png": "10172ed885a50989be04f0e93e17622346208d3f40290a61948df9011c736d87",
     "zones-6560.png": "600c3bfd143328e38825ca8c93edf75f099b6989fedef3e5f9c86c5553958fc2",
-    "review-10565.png": "76a48793753f4874e2250876bd3f5b64d5f26a07f0946c471ba674a870ca24a6"
+    "review-10565.png": "76a48793753f4874e2250876bd3f5b64d5f26a07f0946c471ba674a870ca24a6",
+    "inline-settled.png": "722e637532c8ba3ff0d4bd5c52e39600a75bba116777d9d29c73cbafc9e67fd2"
   },
   "primary_visual_review": "Actual repaired Three.js peak views pass bounded appearance review: rounded continuous pelvic/glute volume, readable hand positions and natural hip/thigh transitions. Independent Terra/high review agrees for the shown peak. Native source-bound solid/wire review covers additional geometry. Partial rear occlusion and static-image timing/contact limits remain explicit.",
   "corrected_findings": [
@@ -36,14 +37,15 @@
     "../../bodyweight-next-five/ninety-pose-verification.json",
     "../../bodyweight-next-five/ninety-asset-qa.json",
     "verification.json",
-    "../runtime-code-review.json"
+    "../runtime-code-review.json",
+    "inline-verification.json"
   ],
   "accepted_native_warnings": "Current repaired source has 18 source-bound warning observations with dispositions in ninety-warning-dispositions.json; zero mandatory geometry errors. Original first-three warning dispositions remain in the historical qa-review.json.",
   "contact_scope": "Artist-authored support patches,12mm curved-contact band and4mm maximum floor penetration. Sampled illustration QA; physical-device/application integration and user acceptance remain separate.",
   "independent_code_review": "Shared reusable runtime code passed independent Sol 6.1/xhigh review and targeted failed-load/race/retry verification; see ../runtime-code-review.json. Media appearance accepted separately for this candidate.",
-  "inline_source_revision": "53ec8539d4a38ee0453f0a906496af9f022d677d",
-  "inline_html_sha256": "60c41ac0b78e3874f2f21d95fe892f14ddbd2ad774460976dd1d51646dfc9479",
-  "inline_acceptance": "Repaired URL-mode candidate is not published yet; historical inline receipt is not current acceptance.",
+  "inline_source_revision": "d957ecdbf2b854e028653afb563cd522de0ccfd2",
+  "inline_html_sha256": "9c54be5bac81c4be3dad462b124af421feeffd81b969bb71edbd74f408718d04",
+  "inline_acceptance": "Passed actual public model-byte/hash checks, all five action selections, live pose change, poster replacement, alpha and no media/error checks. Host HTML preview/render shown separately; startup snapshots may capture the honest loading poster.",
   "user_rejection": {
     "exercise_ids": [
       "10565",

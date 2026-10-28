@@ -1,6 +1,29 @@
 {
-  "revision": "53ec8539d4a38ee0453f0a906496af9f022d677d",
-  "model_path": "artifacts/bodyweight-next-five/next-five.glb",
-  "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
-  "purpose": "Immutable accepted asset commit for the live inline review."
+  "revision": "d957ecdbf2b854e028653afb563cd522de0ccfd2",
+  "models": {
+    "default": {
+      "path": "artifacts/bodyweight-next-five/next-five.glb",
+      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+      "bytes": 1325048,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_4007",
+        "Exercise_5265",
+        "Exercise_6428",
+        "Exercise_6560"
+      ]
+    },
+    "ninety-repaired": {
+      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+      "sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
+      "bytes": 965540,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_6560"
+      ]
+    }
+  },
+  "purpose": "Immutable source commit for the locally checked live review candidates; user motion acceptance remains separate."
 }
