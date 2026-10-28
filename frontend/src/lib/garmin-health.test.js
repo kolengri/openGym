@@ -1,6 +1,6 @@
 import { beforeEach, expect, it, vi } from 'vitest'
 import { _setGarminCloudPluginForTest } from './garmin-cloud.js'
-import { bodyCompositionReadings, healthArchive, healthDays, syncGarminHealth } from './garmin-health.js'
+import { bodyCompositionReadings, healthArchive, healthDays, healthDisplayRows, syncGarminHealth } from './garmin-health.js'
 const date = '2026-10-20', at = Date.parse(date + 'T09:00:00Z')
 const composition = () => ({ metric: 'body_composition', date, status: 'available', data: { dateWeightList: [{ date: at, weight: 78257, bodyFat: null, bodyWater: 51.2, samplePk: 123 }] } })
 function storeOf(bodyweight = []) {
@@ -11,6 +11,19 @@ function storeOf(bodyweight = []) {
   return { getState: () => state, subscribe: fn => { listeners.add(fn); return () => listeners.delete(fn) }, switchOwner(id) { const before = state; state = { ...state, user: { id } }; listeners.forEach(fn => fn(state, before)) } }
 }
 let bridge, archive, rows
+
+it('formats scalar and list readings equally without rounding the archived source', () => {
+  const values = [7.5, 7.25, 0.1 + 0.2, 16.5346696635, 10, null, 'available', false]
+  const data = { average: 0.1 + 0.2, readings: values }
+  const original = structuredClone(data)
+  expect(healthDisplayRows(data)).toEqual([
+    ['average', '0.3'],
+    ['readings', '7.5, 7.25, 0.3, 16.53, 10, available, false'],
+  ])
+  expect(data).toEqual(original)
+  expect(healthDisplayRows({ values: Array.from({ length: 15 }, (_, i) => i) })[0][1].split(', ')).toHaveLength(12)
+})
+
 beforeEach(() => {
   rows = new Map()
   archive = { read: vi.fn(async (_, d, m) => rows.get(d + m)), write: vi.fn(async (_, r) => { rows.set(r.date + r.metric, structuredClone(r)) }) }

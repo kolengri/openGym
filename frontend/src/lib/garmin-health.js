@@ -92,10 +92,12 @@ export async function syncGarminHealth(store, { start, end, archive = garminHeal
   } finally { stopGuard() }
 }
 
+const healthDisplayValue = value => typeof value === 'number' ? String(Math.round(value * 100) / 100) : String(value)
+
 export function healthDisplayRows(data, prefix = '', out = [], depth = 0) {
   if (depth > 6 || out.length >= 100) return out
   if (Array.isArray(data)) {
-    if (data.length && data.every(x => x == null || typeof x !== 'object')) out.push([prefix, data.filter(x => x != null).slice(0, 12).join(', ')])
+    if (data.length && data.every(x => x == null || typeof x !== 'object')) out.push([prefix, data.filter(x => x != null).slice(0, 12).map(healthDisplayValue).join(', ')])
     else if (data.length) out.push([prefix, String(data.length)])
   } else if (data && typeof data === 'object') {
     for (const [key, value] of Object.entries(data)) {
@@ -103,6 +105,6 @@ export function healthDisplayRows(data, prefix = '', out = [], depth = 0) {
       const label = key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/_/g, ' ')
       healthDisplayRows(value, prefix ? prefix + ' · ' + label : label, out, depth + 1)
     }
-  } else if (data !== null && data !== undefined && out.length < 100) out.push([prefix, typeof data === 'number' ? String(Math.round(data * 100) / 100) : String(data)])
+  } else if (data !== null && data !== undefined && out.length < 100) out.push([prefix, healthDisplayValue(data)])
   return out
 }
