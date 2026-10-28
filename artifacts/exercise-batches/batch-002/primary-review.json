@@ -1,5 +1,5 @@
 {
-  "status": "whole_body_v2_checks_and_scoped_appearance_pass_user_review_pending",
+  "status": "reopened_user_feedback_pending_view_identity_and_region",
   "not_production_approved": true,
   "exercise_ids": [
     "5265",
@@ -60,7 +60,7 @@
     "Corrected shoulder and full arm/elbow frames, separate shin/knee hands and floor supports.",
     "Original Basis/UV/rest/weights/source IDs and51bones retained, with four compact local POSITION/NORMAL targets.",
     "First-three source assets remain byte-identical and use original linear skinning.",
-    "Actual five-second live playback uses2-second entry,1-second hold and2-second return; source20\u201330-second workout hold is separate."
+    "Actual five-second live playback uses2-second entry,1-second hold and2-second return; source20–30-second workout hold is separate."
   ],
   "checks": [
     "../../bodyweight-next-five/ninety-pose-verification.json",
@@ -73,11 +73,13 @@
     "../runtime-code-review.json"
   ],
   "accepted_native_warnings": "Two hidden opposite-facing triangle pairs retained to preserve original connected topology/source IDs; no mandatory geometry errors. See current source-bound ninety-warning-dispositions.json. Previous18-observation dispositions were for the rejected v1 source.",
-  "contact_scope": "Actual source/runtime skin illustration witnesses, not clinical certification. Press right wrist reaches60\u201389degrees forearm-to-Middle1 direction and is reviewed as a substantially extended support hand. Source full-path hand/leg penetration remains within declared4mm illustration band; exact limits are in v2 REPORT.md.",
-  "independent_code_review": "Shared runtime execution remains unchanged from approved Sol6.1/xhigh review. Small follow-up edits add004 camera-data routing and0003 opposite-pair test; primary syntax/integration checks apply. Media acceptance remains per asset.",
+  "contact_scope": "Actual source/runtime skin illustration witnesses, not clinical certification. Press right wrist reaches60–89degrees forearm-to-Middle1 direction and is reviewed as a substantially extended support hand. Source full-path hand/leg penetration remains within declared4mm illustration band; exact limits are in v2 REPORT.md.",
+  "independent_code_review": "This inline delivery bundles the existing independently reviewed runtime recorded in ../runtime-code-review.json. Its production rendering execution is unchanged; current work on companion detail-framing QA is outside this source/presentation delivery.",
   "inline_acceptance": {
-    "status": "pending_new_immutable_source_publication",
-    "previous_revision": "d957ecdbf2b854e028653afb563cd522de0ccfd2"
+    "status": "published_current_model_network_checks_passed_user_review_pending",
+    "revision": "664bcdf8707d17720f695411d86969ee375afdc3",
+    "evidence": "inline-verification.json",
+    "live_widget_attachment": "76260ce7-924b-4d92-a902-e3eaf39d62ae-366bed7e-e8e7-4dd7-98d5-825acc60f5ec-html"
   },
   "user_rejection": {
     "exercise_ids": [
@@ -100,7 +102,7 @@
     ]
   },
   "second_user_rejection": {
-    "feedback": "90/90 \u0432\u0441\u0435 \u0440\u0430\u0432\u043d\u043e \u0441 \u0444\u0438\u0433\u0443\u0440\u043e\u0439 \u043d\u0435 \u0442\u0430\u043a \u0432\u0441\u0435",
+    "feedback": "90/90 все равно с фигурой не так все",
     "scope": "Whole-body appearance; previous local and numeric PASS does not establish user acceptance.",
     "repair_path": "../../bodyweight-next-five/repair-90/full-body-v2/"
   },
@@ -130,5 +132,11 @@
     "Curated images cover shown poses, not continuous motion/collision by themselves.",
     "Runtime checks separately measure playback, alpha, controls and sampled native parity.",
     "Production app integration and physical-device testing were not performed."
-  ]
+  ],
+  "latest_user_feedback": {
+    "feedback": "90 90 опять согнуло человека",
+    "status": "unresolved",
+    "view_identity": "not confirmed: previous live widget used rejected d957 source; new v2 was previously shown only as three static views",
+    "action": "Displayed the published 664bcdf v2 live viewer; requested affected body region and whether feedback referred to old live or new static views. No additional geometry changes inferred from silence."
+  }
 }
