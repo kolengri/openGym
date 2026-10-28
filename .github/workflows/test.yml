@@ -246,6 +246,8 @@ jobs:
     if: needs.changes.outputs.mcp == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      GARMIN_RELEASE_7ZZ: /usr/bin/7zz
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -264,6 +266,11 @@ jobs:
       # under CI rather than skipping, so a green run means it ran.
       - run: npm ci --no-audit --no-fund --omit=optional
         working-directory: api
+      - name: Install IQ archive validator
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y 7zip-standalone
+          test -x "$GARMIN_RELEASE_7ZZ"
       - name: MCP tests
         working-directory: mcp
         run: >
