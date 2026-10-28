@@ -6,6 +6,7 @@ import Toybox.System;
 class WorkoutView extends WatchUi.View {
     var app;
     function initialize(owner) { View.initialize(); app = owner; }
+    function onShow() { app.enableTouch(); }
     function text(dc, x, y, value, font, color, width) {
         dc.setColor(color, Graphics.COLOR_TRANSPARENT);
         // A smaller font before truncation keeps values and long names readable.
@@ -33,7 +34,9 @@ class WorkoutView extends WatchUi.View {
         // The reference's divided dashboard, using measured HR and workout data.
         dc.setColor(green,Graphics.COLOR_TRANSPARENT);
         dc.drawLine(w*0.40,h*0.055,w*0.60,h*0.055);
-        line(dc,h*0.075,"HR "+(app.heartRate == null ? "--" : app.heartRate.toString()),Graphics.FONT_MEDIUM,Graphics.COLOR_WHITE);
+        var hrLabel = "HR "+(app.heartRate == null ? "--" : app.heartRate.toString());
+        if (app.model.data["outbox"].size() > 0) { hrLabel += "  Syncing"; }
+        line(dc,h*0.075,hrLabel,Graphics.FONT_MEDIUM,Graphics.COLOR_WHITE);
         dc.setColor(Graphics.COLOR_DK_GRAY,Graphics.COLOR_TRANSPARENT);
         dc.drawLine(w*0.16,h*0.215,w*0.84,h*0.215);
         if (app.notice != null || app.timerAlert != null) {

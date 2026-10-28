@@ -4,8 +4,8 @@ import Toybox.Lang;
 module WorkoutControls {
     function rect(id, w, h) {
         if (id.equals("primary")) { return [(w*0.18).toNumber(), (h*0.64).toNumber(), (w*0.64).toNumber(), (h*0.13).toNumber()]; }
-        if (id.equals("next")) { return [(w*0.20).toNumber(), (h*0.79).toNumber(), (w*0.29).toNumber(), (h*0.11).toNumber()]; }
-        return [(w*0.51).toNumber(), (h*0.79).toNumber(), (w*0.29).toNumber(), (h*0.11).toNumber()];
+        if (id.equals("next")) { return [(w*0.23).toNumber(), (h*0.78).toNumber(), (w*0.25).toNumber(), (h*0.10).toNumber()]; }
+        return [(w*0.52).toNumber(), (h*0.78).toNumber(), (w*0.25).toNumber(), (h*0.10).toNumber()];
     }
     function contains(r, x, y) { return x >= r[0] && y >= r[1] && x < r[0]+r[2] && y < r[1]+r[3]; }
     function hit(w, h, x, y, active, modal) {

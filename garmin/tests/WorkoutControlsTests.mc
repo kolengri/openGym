@@ -306,6 +306,24 @@ function touchUsesDrawnBoundsForBothDevicesAndIgnoresBackground(logger) {
 }
 
 (:test)
+function allButtonCornersFitRoundScreenWithAnInset(logger) {
+    var sizes = [280,454]; var ids = ["primary","next","menu"];
+    for (var i=0;i<sizes.size();i++) {
+        var w = sizes[i]; var center = w/2.0; var radius = w*0.48;
+        for (var j=0;j<ids.size();j++) {
+            var r = WorkoutControls.rect(ids[j],w,w);
+            for (var x=0;x<2;x++) {
+                for (var y=0;y<2;y++) {
+                    var dx = r[0]+x*r[2]-center; var dy = r[1]+y*r[3]-center;
+                    Test.assert(dx*dx+dy*dy <= radius*radius);
+                }
+            }
+        }
+    }
+    return true;
+}
+
+(:test)
 function actualTouchDelegateStartsCompletesDismissesAndKeepsConfirmation(logger) {
     var app = new TouchFixtureApp(280); var delegate = new TouchFixtureDelegate(app);
     var p = WorkoutControls.rect("primary",280,280); var x = p[0]+1; var y = p[1]+1;

@@ -61,6 +61,13 @@ class OpenGymApp extends Application.AppBase {
         tick();
     }
     function getInitialView() { return [new WorkoutView(self), new WorkoutDelegate(self)]; }
+    // Foreground app setting only. Do not change global device lock preferences or
+    // continually override input settings from the timer/sensor callbacks.
+    function enableTouch() {
+        if (WatchUi has :configureTouchEvents) {
+            try { WatchUi.configureTouchEvents({:enabled=>true}); } catch (ex) {}
+        }
+    }
     function persist() {
         if (storageFatal) { return false; }
         try { store.save(model.data); return true; }
@@ -170,12 +177,13 @@ class OpenGymApp extends Application.AppBase {
                 recording = ActivityRecording.createSession({:name=>"openGym", :sport=>Activity.SPORT_TRAINING, :subSport=>Activity.SUB_SPORT_STRENGTH_TRAINING});
                 recordingWid = id;
                 if (!recording.start()) { recording = null; recordingStatus = "Recording failed"; return; }
+                enableTouch();
                 recordingStatus = "Recording FIT";
             } catch (ex) { recording = null; recordingStatus = "Recording unavailable"; return; }
         }
         try {
             if (model.paused() && recording.isRecording()) { recording.stop(); }
-            else if (!model.paused() && !recording.isRecording()) { recording.start(); }
+            else if (!model.paused() && !recording.isRecording()) { recording.start(); enableTouch(); }
             recordingStatus = model.paused() ? "Recording paused" : "Recording FIT";
         } catch (ex) { recordingStatus = "Recording error"; }
     }
