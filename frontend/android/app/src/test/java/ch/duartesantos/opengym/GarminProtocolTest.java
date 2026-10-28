@@ -12,6 +12,31 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 public class GarminProtocolTest {
+    @Test public void cardioWarmupDoesNotBlockFollowingStrengthExercises() throws Exception {
+        JSONObject input = new JSONObject(snapshot());
+        JSONArray entries = input.getJSONObject("active").getJSONArray("entries");
+        JSONObject strength = new JSONObject(entries.getJSONObject(0).toString()).put("mode", "reps");
+        entries.getJSONObject(0).put("mode", "cardio").put("id", "warmup");
+        entries.put(strength);
+        JSONObject envelope = GarminProtocol.snapshot(input.toString(), 8);
+        JSONArray actual = envelope.getJSONObject("state").getJSONObject("active").getJSONArray("entries");
+        assertEquals(2, actual.length());
+        assertEquals("cardio", actual.getJSONObject(0).getString("mode"));
+        assertEquals("warmup", actual.getJSONObject(0).getString("id"));
+        assertEquals("reps", actual.getJSONObject(1).getString("mode"));
+        assertEquals(1, actual.getJSONObject(0).getJSONArray("sets").length());
+        assertTrue(Serializer.serialize(GarminProtocol.wire(envelope)).length > 0);
+    }
+
+    @Test public void cloudUploadCanDisableSeparateWatchRecording() throws Exception {
+        JSONObject input = new JSONObject(snapshot());
+        assertTrue(GarminProtocol.snapshot(input.toString(), 1).getJSONObject("state").getJSONObject("settings").getBoolean("recording"));
+        input.put("settings", new JSONObject().put("recording", false));
+        assertFalse(GarminProtocol.snapshot(input.toString(), 2).getJSONObject("state").getJSONObject("settings").getBoolean("recording"));
+        input.getJSONObject("settings").put("recording", "false");
+        assertThrows(IllegalArgumentException.class, () -> GarminProtocol.snapshot(input.toString(), 3));
+    }
+
     private static String snapshot() throws Exception {
         JSONObject side = new JSONObject().put("w", 20).put("r", 5).put("done", false);
         JSONObject row = new JSONObject().put("w", 20).put("r", 5).put("sec", 45).put("done", false)

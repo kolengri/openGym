@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 import { useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
 import { Button, NumberField, Segmented } from './ui.jsx'
@@ -31,45 +31,62 @@ export function weightTargetGuard(store) {
     s?.active?.id === wid && JSON.stringify(s?.active?.entries) === entries }
 }
 
+// Keep the exact profile-unit value separate from the rounded conversion preview. A unit
+// toggle is presentation-only; only typing a new amount changes the calculated load.
+function useWeightAmount(initial, unit) {
+  const [value, setValue] = useState(initial)
+  const [input, setInput] = useState(initial)
+  const [inputUnit, setInputUnit] = useState(unit)
+  return { value, input, unit: inputUnit,
+    onChange: amount => { setInput(amount); setValue(exactWeightIn(amount, inputUnit, unit)) },
+    onUnitChange: next => {
+      setInput(next === unit ? Math.round(value * 100) / 100 : Math.round(exactWeightIn(value, unit, next)))
+      setInputUnit(next)
+    },
+  }
+}
+
+function WeightInput({ label, amount, autoFocus }) {
+  const id = useId()
+  return <div className="weight-calc-field">
+    <label htmlFor={id}>{label}</label>
+    <div className="weight-calc-input">
+      <NumberField id={id} className="field" value={amount.input} onChange={amount.onChange} aria-label={label} autoFocus={autoFocus} />
+      <button type="button" className="weight-unit" aria-label={t('Weight unit') + ': ' + amount.unit}
+        onClick={() => amount.onUnitChange(amount.unit === 'kg' ? 'lb' : 'kg')}>{amount.unit}</button>
+    </div>
+  </div>
+}
+
 function Calculator({ value, unit, barWeight, onApply, close, guard }) {
   useEffect(() => { guard.listen(); return guard.dispose }, [guard])
   const [stale, setStale] = useState(false)
-  const [bar, setBar] = useState(barWeight)
-  const [barUnit, setBarUnit] = useState(unit)
-  const [plateUnit, setPlateUnit] = useState(unit === 'kg' ? 'lb' : 'kg')
-  const [plates, setPlates] = useState(0)
+  const bar = useWeightAmount(barWeight, unit)
+  const plates = useWeightAmount(0, unit)
   const [totalOnly, setTotalOnly] = useState(true)
-  const [total, setTotal] = useState(value || 0)
-  const [totalUnit, setTotalUnit] = useState(unit)
-  const options = [{ value: 'kg', label: 'kg' }, { value: 'lb', label: 'lb' }]
+  const total = useWeightAmount(value || 0, unit)
   const result = totalOnly
-    ? Number.isFinite(total) && total >= 0 ? Math.round(exactWeightIn(total, totalUnit, unit) * 10000) / 10000 : null
-    : mixedBarWeight({ bar, barUnit, plates, plateUnit, unit })
-  return <>
+    ? Number.isFinite(total.value) && total.value >= 0 ? Math.round(total.value * 10000) / 10000 : null
+    : mixedBarWeight({ bar: bar.value, barUnit: unit, plates: plates.value, plateUnit: unit, unit })
+  return <div className="weight-calculator">
     <h3>{t('Weight calculator')}</h3>
     <Segmented value={totalOnly ? 'total' : 'bar'} onChange={v => setTotalOnly(v === 'total')} options={[{ value: 'total', label: t('Total weight') }, { value: 'bar', label: t('Bar and plates') }]} />
-    {totalOnly ? <label className="measure-date">
-      <span>{t('Total weight')}</span>
-      <NumberField value={total} onChange={setTotal} aria-label={t('Total weight')} />
-      <Segmented value={totalUnit} onChange={v => { setTotal(exactWeightIn(total, totalUnit, v)); setTotalUnit(v) }} options={options} />
-    </label> : <>
-      <label className="measure-date"><span>{t('Bar weight')}</span><NumberField value={bar} onChange={setBar} aria-label={t('Bar weight')} /></label>
-      <Segmented value={barUnit} onChange={v => { setBar(exactWeightIn(bar, barUnit, v)); setBarUnit(v) }} options={options} />
-      <label className="measure-date"><span>{t('Plates on one side')}</span><NumberField value={plates} onChange={setPlates} aria-label={t('Plates on one side')} /></label>
-      <Segmented value={plateUnit} onChange={v => { setPlates(exactWeightIn(plates, plateUnit, v)); setPlateUnit(v) }} options={options} />
+    {totalOnly ? <WeightInput label={t('Total weight')} amount={total} autoFocus /> : <>
+      <WeightInput label={t('Bar weight')} amount={bar} />
+      <WeightInput label={t('Plates on one side')} amount={plates} />
       <p className="small muted">{t('Enter the combined plate weight on one side. Both sides are counted.')}</p>
     </>}
-    <p><b>{t('Total weight')}: {result == null ? '–' : fmtPlate(result)} {unit}</b></p>
+    <div className="weight-calc-result"><span>{t('Total weight')}</span><strong>{result == null ? '–' : fmtPlate(result)} <small>{unit}</small></strong></div>
     {stale && <p role="alert">{t('Workout changed. Reopen the weight calculator.')}</p>}
     <Button variant="primary" disabled={stale || result == null || result > 10000} onClick={() => {
       if (!guard.matches(useStore.getState().S)) { setStale(true); return }
       onApply(result, guard.matches); guard.dispose(); close()
     }}>{t('Apply')}</Button>
-  </>
+  </div>
 }
 
 /** The logged number stays in the profile's unit; conversion is an explicit per-row action. */
-export default function MixedWeightField({ value, onChange, unit, exerciseId, ...rest }) {
+export default function MixedWeightField({ value, onChange, unit, exerciseId }) {
   const open = () => {
     const initial = useStore.getState()
     if (initial.S.unit !== unit) return
@@ -79,9 +96,8 @@ export default function MixedWeightField({ value, onChange, unit, exerciseId, ..
       close={close} onApply={onChange} />)
   }
   const displayed = typeof value === 'number' ? Math.round(value * 100) / 100 : value
-  return <span style={{ display: 'flex', flexDirection: 'column', width: '100%', minWidth: 0 }}>
-    <NumberField value={displayed} onChange={onChange} {...rest} />
-    <button type="button" aria-label={t('Weight calculator')} title={t('Weight calculator')} onClick={open}
-      style={{ fontSize: 10, width: '100%', minWidth: 0, minHeight: 44, padding: '0 3px', flexShrink: 0 }}>kg/lb</button>
-  </span>
+  const readout = displayed === '' || displayed == null ? '–' : displayed
+  return <button type="button" className="weight-value" aria-label={`${t('Weight calculator')}: ${readout} ${unit}`} title={t('Weight calculator')} onClick={open}>
+    {readout}
+  </button>
 }

@@ -24,7 +24,7 @@ function mount(sets, target = {}) {
   useStore.setState({ S, user: null })
   act(() => root.render(<MemoryRouter><Workout /></MemoryRouter>))
 }
-function open(button = host.querySelector('button[aria-label="Weight calculator"]')) {
+function open(button = host.querySelector('button[aria-label^="Weight calculator:"]')) {
   expect(button).toBeTruthy()
   act(() => button.click())
   const sheet = useUI.getState().sheets.at(-1)
@@ -45,20 +45,20 @@ it('uses the real normal-set setter and preserves inherited-load cascading', () 
 it('uses the real side setter without changing the other side', () => {
   const side = () => ({ ...row(), sides: { L: row(), R: row() } })
   mount([side(), side()], { side: true })
-  open(host.querySelector('.setrow-side button[aria-label="Weight calculator"]')); apply()
+  open(host.querySelector('.setrow-side button[aria-label^="Weight calculator:"]')); apply()
   const sets = useStore.getState().S.active.entries[0].sets
   expect(sets[0].sides.L.w).toBe(100); expect(sets[0].sides.R.w).toBe(60)
 })
 it('uses the real drop setter and refuses a removed drop without touching the next row', () => {
   mount([{ ...row(), type: 'dropset', drops: [{ w: 40, r: 6 }, { w: 30, r: 6 }] }])
-  open(host.querySelector('.subrow button[aria-label="Weight calculator"]'))
+  open(host.querySelector('.subrow button[aria-label^="Weight calculator:"]'))
   act(() => useStore.getState().update(s => { s.active.entries[0].sets[0].drops.shift() }))
   apply()
   expect(useStore.getState().S.active.entries[0].sets[0].drops).toEqual([{ w: 30, r: 6 }])
 })
 it('applies through the actual drop setter when the target remains current', () => {
   mount([{ ...row(), type: 'dropset', drops: [{ w: 40, r: 6 }] }])
-  open(host.querySelector('.subrow button[aria-label="Weight calculator"]')); apply()
+  open(host.querySelector('.subrow button[aria-label^="Weight calculator:"]')); apply()
   expect(useStore.getState().S.active.entries[0].sets[0].drops[0].w).toBe(100)
 })
 it('does not apply to an equal-length replacement exercise', () => {

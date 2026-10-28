@@ -305,9 +305,13 @@ public class GarminBridgePlugin extends Plugin {
                     changed();
                 }));
                 sdk.registerForAppEvents(selected, app, (device, application, messages, status) -> dispatch(() -> {
-                    if (!current(epoch, device) || status != ConnectIQ.IQMessageStatus.SUCCESS
-                        || application == null || application.getApplicationId() == null || !GarminProtocol.APP_ID.equals(
+                    if (!current(epoch, device) || application == null || application.getApplicationId() == null || !GarminProtocol.APP_ID.equals(
                             application.getApplicationId().replace("-", "").toLowerCase(Locale.ROOT))) return;
+                    if (status != ConnectIQ.IQMessageStatus.SUCCESS) {
+                        error = "Garmin receive failed (" + status + "). Open Garmin Connect and reconnect the watch.";
+                        changed();
+                        return;
+                    }
                     receive(messages);
                 }));
                 replayAcks = true;
@@ -318,7 +322,7 @@ public class GarminBridgePlugin extends Plugin {
                 @Override public void onApplicationInfoReceived(IQApp info) { dispatch(() -> {
                     if (!current(epoch, selected)) return;
                     installed = info != null && info.getStatus() == IQApp.IQAppStatus.INSTALLED;
-                    if (installed) error = null;
+                    if (installed && "Install the openGym companion on the selected Garmin watch".equals(error)) error = null;
                     flush();
                     changed();
                 }); }
@@ -422,7 +426,7 @@ public class GarminBridgePlugin extends Plugin {
                 if (result != ConnectIQ.IQMessageStatus.SUCCESS) {
                     outbound.clear();
                     replayAcks = true;
-                    error = "Garmin send failed; the saved link will retry on reconnection";
+                    error = "Garmin send failed (" + result + "). Open Garmin Connect and reconnect the watch.";
                     changed();
                     return;
                 }

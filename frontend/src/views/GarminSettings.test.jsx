@@ -23,6 +23,13 @@ const render = async () => { await act(async () => { root.render(<GarminSettings
 const button = name => [...host.querySelectorAll('button')].find(el => el.textContent.trim() === name)
 
 describe('Garmin connection settings', () => {
+  it('shows the bridge failure instead of hiding it behind a generic connection message', async () => {
+    h.status = { available: true, enabled: true, installed: true, connected: true,
+      error: 'Garmin send failed (FAILURE_DEVICE_NOT_CONNECTED). Open Garmin Connect and reconnect the watch.' }
+    await render()
+    expect(host.querySelector('[role="alert"]').textContent).toBe(h.status.error)
+    expect(host.textContent).not.toContain('GitHub')
+  })
   it('requires an explicit connect action, then offers disconnect and opening the watch app', async () => {
     await render()
     expect(h.configure).not.toHaveBeenCalled()

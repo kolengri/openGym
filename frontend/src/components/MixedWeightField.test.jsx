@@ -35,20 +35,41 @@ it('counts a kg bar plus two lb plate loads in either profile unit', () => {
   expect(mixedBarWeight({ bar: 20, barUnit: 'kg', plates: 45, plateUnit: 'lb', unit: 'lb' })).toBeCloseTo(134.0925, 4)
   expect(mixedBarWeight({ bar: 20, barUnit: 'kg', plates: -1, plateUnit: 'lb', unit: 'kg' })).toBeNull()
 })
+it('exposes each current load and unit in the weight control accessible name, including updates and empty values', () => {
+  act(() => root.render(<><MixedWeightField value={60} unit="kg" onChange={change} /><MixedWeightField value={40} unit="kg" onChange={change} /></>))
+  const labels = () => [...host.querySelectorAll('button')].map(b => b.getAttribute('aria-label'))
+  expect(labels()).toEqual(['Weight calculator: 60 kg', 'Weight calculator: 40 kg'])
+  act(() => root.render(<><MixedWeightField value={62.5} unit="kg" onChange={change} /><MixedWeightField value="" unit="lb" onChange={change} /></>))
+  expect(labels()).toEqual(['Weight calculator: 62.5 kg', 'Weight calculator: – lb'])
+})
 it('applies total pounds to only this field in a kg profile', () => {
-  open(); click('lb'); enter('Total weight', '100')
+  open(); click('kg'); enter('Total weight', '100')
   expect(change).not.toHaveBeenCalled()
   click('Apply')
   expect(change).toHaveBeenCalledWith(45.3592, expect.any(Function))
   expect(useStore.getState().S.unit).toBe('kg')
 })
 it('applies a kg bar and the combined lb plates on one side without counting the bar twice', () => {
-  open(); click('Bar and plates'); enter('Bar weight', '20'); enter('Plates on one side', '45'); click('Apply')
+  open(); click('Bar and plates'); enter('Bar weight', '20')
+  act(() => modalHost.querySelector('input[aria-label="Plates on one side"]').closest('.weight-calc-input').querySelector('button').click())
+  enter('Plates on one side', '45'); click('Apply')
   expect(change).toHaveBeenCalledWith(60.8233, expect.any(Function))
 })
 it('does not apply a calculator left open across a workout switch', () => {
   open(); useStore.getState().update(s => { s.active = { id: 'different-session' } }); click('Apply')
   expect(change).not.toHaveBeenCalled()
+})
+it('defaults to the profile unit and toggles by converting the current number without changing saved weight', () => {
+  open()
+  const input = () => modalHost.querySelector('input[aria-label="Total weight"]')
+  expect(input().value).toBe('60')
+  click('kg')
+  expect(Number(input().value)).toBe(132)
+  expect(change).not.toHaveBeenCalled()
+  click('lb')
+  expect(Number(input().value)).toBeCloseTo(60, 8)
+  click('Apply')
+  expect(change).toHaveBeenCalledWith(60, expect.any(Function))
 })
 
 for (const changeTarget of [

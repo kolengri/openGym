@@ -56,7 +56,7 @@ final class GarminProtocol {
             state.put("discarded", discarded);
         }
         JSONObject settings = input.optJSONObject("settings");
-        state.put("settings", new JSONObject().put("recording", true)
+        state.put("settings", new JSONObject().put("recording", settings == null || !settings.has("recording") || bool(settings, "recording"))
             .put("restHaptics", settings == null || !settings.has("restHaptics") || bool(settings, "restHaptics")));
         if (!input.has("active")) fail("Garmin snapshot must include active");
         if (input.isNull("active")) state.put("active", JSONObject.NULL);
@@ -88,7 +88,8 @@ final class GarminProtocol {
 
     private static JSONObject entry(JSONObject source) throws Exception {
         String mode = string(source, "mode", 16);
-        if (!mode.equals("reps") && !mode.equals("time")) fail("This exercise mode is not supported on Garmin");
+        // Cardio stays in the plan so indexes match the phone; completion remains phone-only.
+        if (!mode.equals("reps") && !mode.equals("time") && !mode.equals("cardio")) fail("This exercise mode is not supported on Garmin");
         JSONObject out = new JSONObject().put("id", id(source.get("id")))
             .put("name", string(source, "name", 160)).put("mode", mode);
         copyNumbers(source, out, 0, 86400, "restSec", "sideRestSec");

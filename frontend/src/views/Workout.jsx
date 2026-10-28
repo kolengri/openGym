@@ -732,7 +732,9 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
         own line and its own icon: the plan's instruction (cfg.note, from the routine), the
         standing fact about the movement (exNotes), and the message you pinned to yourself last
         session. Today's own note is edited through the button in the header and shown last. */}
-    {cfg.note && <div className="exnote">{cfg.note}</div>}
+    {cfg.note && (cfg.note.length > 160
+      ? <details className="exnote workout-plan-note"><summary>{t('Note')}</summary><div>{cfg.note}</div></details>
+      : <div className="exnote">{cfg.note}</div>)}
     {standingNote && <div className="exnote"><Icon name="info" style={{ fontSize: 13, marginInlineEnd: 5, verticalAlign: '-2px' }} />{standingNote}</div>}
     {pinnedNote && <div className="exnote" style={{ color: 'var(--yellow)' }}>
       <Icon name="pin" style={{ fontSize: 13, marginInlineEnd: 5, verticalAlign: '-2px' }} />

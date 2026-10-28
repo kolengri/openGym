@@ -2345,4 +2345,22 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .garmin-live{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 12px;margin-bottom:10px;border-radius:var(--r);background:var(--surface);font-variant-numeric:tabular-nums}
 .garmin-live>span{display:inline-flex;align-items:center;gap:6px;font-size:13px}
 .garmin-live .icn{width:16px;height:16px;color:var(--red)}
-.garmin-actions{display:flex;flex-direction:column;gap:8px;padding:8px 12px}
+.garmin-actions{display:flex;flex-direction:column;gap:4px;padding:8px 16px 16px}
+.garmin-actions .btn:not(.primary){background:var(--surface-2);border-radius:10px;min-height:44px}
+.garmin-help{padding:0 16px 16px;display:grid;gap:12px}
+.garmin-help p{margin:0;line-height:1.5}
+.garmin-error{margin:0;padding:0 16px 16px;color:var(--red);overflow-wrap:anywhere}
+.weight-calculator{display:grid;gap:20px}
+.weight-calculator h3,.weight-calculator p{margin:0}
+.weight-calc-field{display:grid;gap:8px;min-width:0}
+.weight-calc-field>label{font-size:14px;color:var(--label-2)}
+.weight-calc-input{display:flex;gap:12px;align-items:center;min-width:0}
+.weight-calc-input .field{flex:1;min-width:0;width:0;height:48px;font-size:22px;font-variant-numeric:tabular-nums}
+.weight-calc-input .weight-unit{flex:0 0 56px;min-height:48px;background:var(--surface-2);color:var(--acc);border-radius:10px;font-size:17px;font-weight:600}
+.weight-calc-result{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:16px;border-top:1px solid var(--sep)}
+.weight-calc-result>span{color:var(--label-2)}
+.weight-calc-result strong{font-size:26px;font-variant-numeric:tabular-nums}
+.weight-calc-result small{font-size:16px;font-weight:500}
+.workout-plan-note summary{cursor:pointer;color:var(--label-2);min-height:44px;padding:12px 0;box-sizing:border-box}
+.workout-plan-note>div{padding-bottom:12px;white-space:pre-wrap}
+.stp .val .weight-value{flex:1;width:100%;min-width:0;height:44px;font-size:17px;font-weight:500;font-variant-numeric:tabular-nums;text-decoration:underline;text-decoration-color:var(--label-3);text-underline-offset:4px}
