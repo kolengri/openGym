@@ -1,17 +1,16 @@
 import path from 'node:path'
 import { open, rename, unlink, lstat, mkdtemp, rm } from 'node:fs/promises'
-import { APP_ID, MANIFEST_ID, BASE_VERSION, RELEASE_HOME, browserConfigSchema, prepareSchema, deploySchema, statusSchema, parse, newerThan, fail, publicError } from './contract.js'
+import { APP_ID, MANIFEST_ID, BASE_VERSION, RELEASE_HOME, prepareSchema, deploySchema, statusSchema, parse, newerThan, fail, publicError } from './contract.js'
 import { directory, readFileSafe, sha256, validateIq } from './artifact.js'
-import { GarminBrowser } from './browser.js'
+import { GarminApi, GarminSession } from './api.js'
 
 export class ReleaseService {
-  constructor({ home = RELEASE_HOME, enabled = process.env.GARMIN_RELEASE_ENABLE_DEPLOY === '1', browserFactory = (config, profile) => new GarminBrowser(config, profile) } = {}) {
+  constructor({ home = RELEASE_HOME, enabled = process.env.GARMIN_RELEASE_ENABLE_DEPLOY === '1', apiFactory = sessionFile => new GarminApi(sessionFile) } = {}) {
     this.home = home
     this.enabled = enabled
-    this.browserFactory = browserFactory
+    this.apiFactory = apiFactory
     this.privateDir = path.join(home, 'private')
-    this.profileDir = path.join(this.privateDir, 'browser-profile')
-    this.configFile = path.join(this.privateDir, 'browser.json')
+    this.sessionFile = path.join(this.privateDir, 'http-session.json')
     this.activeFile = path.join(this.privateDir, 'active-deployment.json')
   }
 
@@ -50,10 +49,12 @@ export class ReleaseService {
     try { await dir.sync() } finally { await dir.close() }
   }
 
-  async config() {
-    const stat = await lstat(this.configFile)
-    if (!stat.isFile() || stat.isSymbolicLink() || (stat.mode & 0o077)) fail('PRIVATE_CONFIG_REQUIRED', 'Browser configuration must be a private regular file with mode 0600.')
-    return parse(browserConfigSchema, await this.readJson(this.configFile))
+  async check() {
+    return this.exclusive(async () => {
+      const evidence = await this.apiFactory(this.sessionFile).inspect()
+      await this.writeJson(path.join(this.privateDir, 'session-ready.json'), { appId: APP_ID, verifiedAt: new Date().toISOString() })
+      return evidence
+    })
   }
 
   async optionalJson(file) {
@@ -64,7 +65,7 @@ export class ReleaseService {
     const { version } = parse(statusSchema, input)
     await this.init()
     let configuration
-    try { await this.config(); configuration = 'configured' }
+    try { await new GarminSession(this.sessionFile).load(); configuration = 'configured' }
     catch (e) { configuration = e.code === 'ENOENT' ? 'missing' : 'invalid' }
     const session = await this.optionalJson(path.join(this.privateDir, 'session-ready.json'))
     const active = await this.optionalJson(this.activeFile)
@@ -73,7 +74,7 @@ export class ReleaseService {
     let locked = false
     try { await lstat(path.join(this.privateDir, 'operation.lock')); locked = true } catch (e) { if (e.code !== 'ENOENT') throw e }
     return { appId: APP_ID, manifestId: MANIFEST_ID, baselineVersion: BASE_VERSION,
-      deploymentEnabled: this.enabled, browserConfiguration: configuration,
+      deploymentEnabled: this.enabled, transport: 'http', httpSession: configuration,
       sessionPreviouslyVerified: session?.appId === APP_ID, operationLocked: locked,
       unresolvedDeployment: active && active.state !== 'deployed' ? { version: active.version, state: active.state } : null,
       ...(version ? { version, prepared: !!receipt, sha256: receipt?.sha256 ?? null, state: journal?.state ?? (receipt ? 'prepared' : 'missing') } : {}) }
@@ -131,22 +132,20 @@ export class ReleaseService {
       if (receipt.appId !== APP_ID || receipt.version !== request.version || receipt.sha256 !== request.sha256) fail('RECEIPT_MISMATCH', 'Prepared receipt does not match this deployment request.')
       const bytes = await readFileSafe(path.join(dir, `opengym-garmin-${request.version}.iq`))
       await validateIq(bytes, request.version, request.sha256)
-      const config = await this.config()
       const session = await this.optionalJson(path.join(this.privateDir, 'session-ready.json'))
-      if (session?.appId !== APP_ID) fail('AUTH_HANDOFF', 'Run the session setup command manually before deployment.')
-      await directory(this.profileDir)
-      const browser = this.browserFactory(config, this.profileDir)
+      if (session?.appId !== APP_ID) fail('AUTH_HANDOFF', 'Verify the imported HTTP session with garmin_release_check before deployment.')
+      const api = this.apiFactory(this.sessionFile)
       const journal = { schemaVersion: 1, appId: APP_ID, version: request.version, sha256: request.sha256, requestHash,
         state: 'uploading', attemptedAt: new Date().toISOString() }
       let intent = false
       try {
-        const evidence = await browser.deploy({ ...request, bytes, beforeUpload: async () => {
-          if (intent) fail('RETRY_BLOCKED', 'The browser cannot select the upload file twice in one attempt.')
+        const evidence = await api.deploy({ ...request, bytes, beforeUpload: async () => {
+          if (intent) fail('RETRY_BLOCKED', 'The HTTP transport cannot start the upload twice in one attempt.')
           await this.writeJson(this.activeFile, journal)
           intent = true
           await this.writeJson(journalFile, journal)
         } })
-        if (!intent || evidence.appId !== APP_ID || evidence.version !== request.version || evidence.ownerOnlyBeta !== true) fail('INVALID_EVIDENCE', 'The browser did not verify the updated existing owner-only beta.')
+        if (!intent || evidence.appId !== APP_ID || evidence.version !== request.version || evidence.ownerOnlyBeta !== true) fail('INVALID_EVIDENCE', 'The HTTP transport did not verify the updated existing owner-only beta.')
         journal.state = 'deployed'
         journal.verifiedAt = new Date().toISOString()
         await this.writeJson(journalFile, journal)

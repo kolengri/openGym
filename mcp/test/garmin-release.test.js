@@ -1,25 +1,26 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import path from 'node:path'
 import { mkdtemp, writeFile, readFile, rm, chmod, symlink, readdir, mkdir } from 'node:fs/promises'
-import { APP_ID, BASE_VERSION, RELEASE_HOME, browserConfigSchema, parse, publicError, isTargetUrl } from '../src/garmin-release/contract.js'
+import { APP_ID, BASE_VERSION, RELEASE_HOME, publicError } from '../src/garmin-release/contract.js'
 import { sha256, validateIq, directory } from '../src/garmin-release/artifact.js'
+import { GarminSession } from '../src/garmin-release/api.js'
 import { ReleaseService } from '../src/garmin-release/service.js'
-import { iq, VERSION, config } from './garmin-release-fixture.js'
+import { iq, VERSION } from './garmin-release-fixture.js'
 
 const homes = []
 afterEach(async () => { for (const home of homes.splice(0)) await rm(home, { recursive: true, force: true }) })
 
-async function fixture(browserDeploy = async ({ beforeUpload, version }) => {
+async function fixture(apiDeploy = async ({ beforeUpload, version }) => {
   await beforeUpload()
   return { appId: APP_ID, version, ownerOnlyBeta: true }
 }) {
   await directory(path.join(RELEASE_HOME, 'tests'))
   const home = await mkdtemp(path.join(RELEASE_HOME, 'tests/service-'))
   homes.push(home)
-  const deploy = vi.fn(browserDeploy)
-  const service = new ReleaseService({ home, enabled: true, browserFactory: () => ({ deploy }) })
+  const deploy = vi.fn(apiDeploy)
+  const service = new ReleaseService({ home, enabled: true, apiFactory: () => ({ deploy }) })
   await service.init()
-  await writeFile(service.configFile, JSON.stringify(config), { mode: 0o600 })
+  await new GarminSession(service.sessionFile).import([{ name: 'session', value: 'fixture-only', domain: 'apps.garmin.com', path: '/', secure: true, httpOnly: true, expires: -1 }])
   await service.writeJson(path.join(service.privateDir, 'session-ready.json'), { appId: APP_ID })
   const bytes = iq(), hash = sha256(bytes)
   await writeFile(path.join(home, 'inbox', `opengym-garmin-${VERSION}.iq`), bytes)
@@ -106,20 +107,17 @@ describe('offline preparation and fixed target', () => {
     const { service, home, request } = await fixture()
     const file = path.join(home, 'inbox', `opengym-garmin-${VERSION}.iq`)
     await rm(file)
-    await symlink(service.configFile, file)
+    await symlink(service.sessionFile, file)
     await expect(service.prepare(request)).rejects.toMatchObject({ code: 'ELOOP' })
     const linked = path.join(home, 'linked')
     await symlink(path.join(home, 'private'), linked)
     await expect(directory(path.join(linked, 'nested'))).rejects.toMatchObject({ code: 'UNSAFE_PATH' })
   })
-  it('accepts only a reviewed existing Garmin developer listing with a private config', async () => {
-    expect(isTargetUrl(`https://apps.garmin.com/en-US/apps/${APP_ID}`)).toBe(true)
-    for (const url of ['https://connect.garmin.com/apps/' + APP_ID, 'https://evil.test/apps/' + APP_ID,
-      'https://apps-developer.garmin.com/new?app=' + APP_ID, `https://user:pass@apps-developer.garmin.com/apps/${APP_ID}`]) expect(isTargetUrl(url)).toBe(false)
-    expect(() => parse(browserConfigSchema, { ...config, reviewedForExistingOwnerBeta: false })).toThrow()
+  it('requires a private regular HTTP session file', async () => {
     const { service } = await fixture()
-    await chmod(service.configFile, 0o644)
-    await expect(service.config()).rejects.toMatchObject({ code: 'PRIVATE_CONFIG_REQUIRED' })
+    await chmod(service.sessionFile, 0o644)
+    await expect(new GarminSession(service.sessionFile).load()).rejects.toMatchObject({ code: 'PRIVATE_SESSION_REQUIRED' })
+    expect(await service.status()).toMatchObject({ transport: 'http', httpSession: 'invalid' })
   })
 })
 
@@ -137,14 +135,14 @@ describe('deployment intent and retry boundaries', () => {
     expect(f.deploy).toHaveBeenCalledTimes(1)
     await expect(f.service.deploy({ ...f.deployment, releaseNotes: 'Different intent.' })).rejects.toMatchObject({ code: 'RETRY_BLOCKED' })
   })
-  it('blocks ambiguous failures across service restarts and redacts the browser error', async () => {
+  it('blocks ambiguous failures across service restarts and redacts the HTTP transport error', async () => {
     const f = await fixture(async ({ beforeUpload }) => { await beforeUpload(); throw new Error('session cookie secret-value https://private.example') })
     await f.service.prepare(f.request)
     await expect(f.service.deploy(f.deployment)).rejects.toMatchObject({ code: 'UPLOAD_UNCERTAIN' })
     const text = await readFile(path.join(f.service.releaseDir(VERSION), 'journal.json'), 'utf8')
     expect(text).not.toContain('secret-value')
     expect(JSON.parse(text)).toMatchObject({ state: 'uncertain', failureCode: 'LOCAL_FAILURE' })
-    const restarted = new ReleaseService({ home: f.home, enabled: true, browserFactory: () => { throw new Error('Must not launch') } })
+    const restarted = new ReleaseService({ home: f.home, enabled: true, apiFactory: () => { throw new Error('Must not launch') } })
     await expect(restarted.deploy(f.deployment)).rejects.toMatchObject({ code: 'RETRY_BLOCKED' })
   })
   it('blocks interrupted uploading intents without requiring a new idempotency key', async () => {
@@ -201,7 +199,7 @@ describe('deployment intent and retry boundaries', () => {
     await expect(f.service.deploy(f.deployment)).rejects.toMatchObject({ code: 'AUTH_HANDOFF' })
     expect(f.deploy).not.toHaveBeenCalled()
   })
-  it('rehashes the exact prepared buffer before handing it to the browser', async () => {
+  it('rehashes the exact prepared buffer before handing it to the HTTP transport', async () => {
     const f = await fixture()
     await f.service.prepare(f.request)
     await writeFile(path.join(f.service.releaseDir(VERSION), `opengym-garmin-${VERSION}.iq`), iq({ extra: '<!-- swapped -->' }))

@@ -1,7 +1,7 @@
 import { execFileSync } from 'node:child_process'
 import { mkdirSync, mkdtempSync, writeFileSync, readFileSync, rmSync, symlinkSync } from 'node:fs'
 import path from 'node:path'
-import { APP_ID, MANIFEST_ID, RELEASE_HOME } from '../src/garmin-release/contract.js'
+import { MANIFEST_ID, RELEASE_HOME } from '../src/garmin-release/contract.js'
 
 export const VERSION = '0.1.0-beta.3'
 export function iq({ id = MANIFEST_ID, version = VERSION, type = 'watch-app', xml, binary = true, extra = '', manifestPath = 'manifest.xml', entries = {}, encryption, programDirectory = false, programSymlink = false, compressionLevel = 1 } = {}) {
@@ -33,17 +33,4 @@ export function iq({ id = MANIFEST_ID, version = VERSION, type = 'watch-app', xm
     })
     return readFileSync(archive)
   } finally { rmSync(temp, { recursive: true, force: true }) }
-}
-
-// Synthetic DOM contract, deliberately unrelated to an authenticated Garmin account.
-export const config = {
-  schemaVersion: 1, reviewedForExistingOwnerBeta: true,
-  listingUrl: `https://apps-developer.garmin.com/en-US/apps/${APP_ID}`,
-  ownerBeta: { selector: '#owner-beta', text: 'Beta: visible only to owner' },
-  currentVersion: '#current-version', updateButton: '#update',
-  formIdentity: { selector: '#form-beta', text: 'Existing owner beta update' },
-  fileInput: '#file', versionInput: '#version', nextButton: '#next',
-  releaseNotesInput: '#notes', submitButton: '#save-beta',
-  uploadAccepted: { selector: '#accepted', text: 'Beta update saved' },
-  handoffSelectors: ['#login', '#captcha', '#terms'], timeoutMs: 1000
 }

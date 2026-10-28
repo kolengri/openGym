@@ -17,7 +17,7 @@ it('discovers only release tools under real Node stdio and returns offline statu
   try {
     await client.connect(transport)
     const list = await client.listTools()
-    expect(list.tools.map(t => t.name).sort()).toEqual(['garmin_release_deploy', 'garmin_release_prepare', 'garmin_release_status'])
+    expect(list.tools.map(t => t.name).sort()).toEqual(['garmin_release_check', 'garmin_release_deploy', 'garmin_release_prepare', 'garmin_release_status'])
     const result = await client.callTool({ name: 'garmin_release_status', arguments: {} })
     expect(JSON.parse(result.content[0].text)).toMatchObject({ appId: APP_ID, deploymentEnabled: false })
     const disabled = await client.callTool({ name: 'garmin_release_deploy', arguments: { appId: APP_ID, version: '0.1.0-beta.3', sha256: '0'.repeat(64), expectedCurrentVersion: '0.1.0-beta.2', confirmOwnerOnlyBeta: true, confirmSubmissionTerms: true, releaseNotes: 'Synthetic test only' } })

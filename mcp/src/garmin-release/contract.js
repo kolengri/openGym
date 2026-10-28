@@ -19,48 +19,6 @@ export const deploySchema = prepareSchema.extend({
 }).strict()
 export const statusSchema = z.object({ version: versionSchema.optional() }).strict()
 
-const selector = z.string().min(1).max(500).refine(s => !/REPLACE_/i.test(s))
-const marker = z.object({ selector, text: z.string().trim().min(1).max(200), prefix: z.boolean().optional() }).strict()
-export const browserConfigSchema = z.object({
-  schemaVersion: z.literal(1),
-  reviewedForExistingOwnerBeta: z.literal(true),
-  listingUrl: z.string().url().refine(isTargetUrl),
-  ownerBeta: marker,
-  currentVersion: selector,
-  updateButton: selector.optional(),
-  formIdentity: marker,
-  fileInput: selector,
-  versionInput: selector,
-  nextButton: selector.optional(),
-  releaseNotesInput: selector,
-  submitButton: selector,
-  uploadAccepted: marker,
-  handoffSelectors: z.array(selector).min(1).max(10),
-  timeoutMs: z.number().int().min(1000).max(120000).default(30000)
-}).strict()
-
-// Observed Store labels include either 'Version X' or 'X (Internal: N)'.
-// Keep parsing anchored so unrelated dates or versions cannot satisfy the fence.
-export function versionLabelPattern(version) {
-  return new RegExp(`^(?:Version\\s+)?v?${version.replaceAll('.', '\\.')}\\s*(?:\\(Internal:\\s*\\d+\\))?\\s*$`)
-}
-
-export function parseVersionLabel(text) {
-  const value = String(text ?? '').trim()
-  const match = /^(?:Version\s+)?v?(\d{1,4}\.\d{1,4}\.\d{1,4}-beta\.\d{1,4})\s*(?:\(Internal:\s*\d+\))?\s*$/.exec(value)
-  if (!match || !versionSchema.safeParse(match[1]).success) fail('REMOTE_VERSION_MISMATCH', 'The beta version label could not be read unambiguously.')
-  return match[1]
-}
-
-export function isTargetUrl(value) {
-  try {
-    const u = new URL(value)
-    return u.protocol === 'https:' && ['apps.garmin.com', 'apps-developer.garmin.com'].includes(u.hostname) &&
-      !u.username && !u.password && !u.port && !u.search && !u.hash &&
-      u.pathname.split('/').includes(APP_ID)
-  } catch { return false }
-}
-
 export function newerThan(a, b) {
   const numbers = v => versionSchema.parse(v).split(/[.\-]/).filter(x => x !== 'beta').map(Number)
   const aa = numbers(a), bb = numbers(b)
