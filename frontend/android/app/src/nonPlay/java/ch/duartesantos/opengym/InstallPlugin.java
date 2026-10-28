@@ -2,6 +2,8 @@ package ch.duartesantos.opengym;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.content.pm.PackageInfo;
+import android.os.Build;
 import androidx.core.content.FileProvider;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -57,6 +59,17 @@ public class InstallPlugin extends Plugin {
         } catch (Exception e) {
             call.reject("Could not check the download: " + e.getMessage());
             return;
+        }
+
+        if ("garmin".equals(BuildConfig.CHANNEL)) {
+            PackageInfo archive = getContext().getPackageManager().getPackageArchiveInfo(file.getAbsolutePath(), 0);
+            long version = archive == null ? -1 : (Build.VERSION.SDK_INT >= 28 ? archive.getLongVersionCode() : archive.versionCode);
+            if (!UpdateFile.isUpgrade(getContext().getPackageName(), archive == null ? null : archive.packageName,
+                    BuildConfig.VERSION_CODE, version)) {
+                call.reject("APK is not a newer update of this Garmin app");
+                return;
+            }
+            // Android verifies the signing certificate before replacing the installed app.
         }
 
         Uri uri = FileProvider.getUriForFile(

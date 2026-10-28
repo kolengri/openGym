@@ -1,8 +1,10 @@
 package ch.duartesantos.opengym;
 
-/** The local Garmin companion build never installs upstream APK updates. */
+/** The Garmin companion installs only its own checked fork updates. */
 final class FlavorPlugins {
     private FlavorPlugins() {}
 
-    static void register(MainActivity activity) {}
+    static void register(MainActivity activity) {
+        activity.registerFlavorPlugin(InstallPlugin.class);
+    }
 }

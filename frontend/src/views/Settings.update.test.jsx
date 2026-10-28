@@ -26,6 +26,7 @@ const mocks = vi.hoisted(() => {
   state.checkForUpdate = vi.fn(() => Promise.resolve({ hasUpdate: true, latestVersion: '9.9.9', apkUrl: 'https://x/opengym.apk', hashUrl: null }))
   state.confirmSheet = vi.fn()
   state.forget = vi.fn()
+  state.resetUpdateCheck = vi.fn()
   return state
 })
 vi.mock('../store/useStore.js', () => {
@@ -53,10 +54,11 @@ vi.mock('../lib/mobile.js', () => ({
 }))
 vi.mock('../lib/update.js', () => ({
   checkForUpdate: (...a) => mocks.checkForUpdate(...a),
+  resetUpdateCheck: () => mocks.resetUpdateCheck(),
   downloadAndInstall: vi.fn(),
   forgetDownloadedUpdate: (...a) => mocks.forget(...a),
 }))
-vi.mock('../lib/channel.js', () => ({ selfUpdates: () => Promise.resolve(mocks.channel === 'sideload') }))
+vi.mock('../lib/channel.js', () => ({ selfUpdates: () => Promise.resolve(['sideload', 'garmin'].includes(mocks.channel)) }))
 vi.mock('./MobileOnboarding.jsx', () => ({ ConnectSheet: () => null }))
 vi.mock('../sheets.jsx', () => ({
   starterPlanSheet: vi.fn(), confirmSheet: (...a) => mocks.confirmSheet(...a), importFromApp: vi.fn(),
@@ -77,6 +79,7 @@ beforeEach(() => {
   mocks.checkForUpdate.mockClear()
   mocks.confirmSheet.mockClear()
   mocks.forget.mockClear()
+  mocks.resetUpdateCheck.mockClear()
   host = document.createElement('div')
   document.body.appendChild(host)
   root = createRoot(host)
@@ -96,6 +99,41 @@ const checkRow = () => [...host.querySelectorAll('.lrow')].find(r => r.textConte
 const webRow = () => [...host.querySelectorAll('.lrow')].find(r => r.textContent.includes('Get the Android app'))
 
 describe('Settings — in-app update check', () => {
+  it.each(['manual-first', 'automatic-first'])('a superseded automatic check cannot replace a manual refresh: %s', async order => {
+    mocks.MOBILE = true
+    mocks.android = true
+    mocks.channel = 'garmin'
+    let automatic, manual
+    const a = new Promise(resolve => { automatic = resolve })
+    const b = new Promise(resolve => { manual = resolve })
+    mocks.checkForUpdate.mockReturnValueOnce(a).mockReturnValueOnce(b)
+    await mount()
+    await act(async () => { checkRow().click(); await Promise.resolve() })
+    const old = { hasUpdate: false, latestVersion: 'test', apkUrl: null, hashUrl: null }
+    const fresh = { hasUpdate: true, latestVersion: '9.9.9', apkUrl: 'https://x/opengym.apk', hashUrl: null }
+    if (order === 'automatic-first') {
+      await act(async () => { automatic(old); await Promise.resolve() })
+      expect(mocks.forget).not.toHaveBeenCalled()
+      await act(async () => { manual(fresh); await Promise.resolve() })
+    } else {
+      await act(async () => { manual(fresh); await Promise.resolve() })
+      expect(updateRow()).toBeTruthy()
+      await act(async () => { automatic(old); await Promise.resolve() })
+    }
+    expect(updateRow()).toBeTruthy()
+    expect(mocks.forget).not.toHaveBeenCalled()
+    expect(mocks.resetUpdateCheck).toHaveBeenCalledTimes(1)
+  })
+  it('the Garmin Android build offers its checked update with the existing confirmation', async () => {
+    mocks.MOBILE = true
+    mocks.android = true
+    mocks.channel = 'garmin'
+    await mount()
+    expect(mocks.checkForUpdate).toHaveBeenCalledTimes(1)
+    expect(updateRow()).toBeTruthy()
+    act(() => { updateRow().click() })
+    expect(mocks.confirmSheet).toHaveBeenCalledTimes(1)
+  })
   it('web build: never asks for releases; the Updates section points at the APK instead', async () => {
     await mount()
     expect(mocks.checkForUpdate).not.toHaveBeenCalled()
@@ -144,6 +182,7 @@ describe('Settings — in-app update check', () => {
     expect(checkRow()).toBeTruthy()
     await act(async () => { checkRow().click(); await Promise.resolve() })
     expect(mocks.checkForUpdate).toHaveBeenCalledTimes(2)
+    expect(mocks.resetUpdateCheck).toHaveBeenCalledTimes(1)
     await act(async () => { await Promise.resolve() })
     expect(updateRow()).toBeTruthy()   // the second (default) answer had 9.9.9 — the row now offers it
   })

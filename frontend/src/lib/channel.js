@@ -24,8 +24,8 @@ export function getChannel() {
   })().catch(() => 'web'))
 }
 
-// The in-app updater is for the sideloaded APK only.
+// Each self-updating channel has its own release feed; store builds never install APKs.
 export async function selfUpdates() {
-  return (await getChannel()) === 'sideload'
+  return ['sideload', 'garmin'].includes(await getChannel())
 }
 

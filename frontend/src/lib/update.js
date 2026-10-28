@@ -11,10 +11,13 @@
 
 import { MOBILE } from './mobile.js'
 import { APK_VARIANTS, APK_VARIANT } from './apk-variant.js'
+import { getChannel } from './channel.js'
 
 const REPO = 'DuarteSantos8/openGym'
 const LATEST_URL = `https://api.github.com/repos/${REPO}/releases/latest`
 export const RELEASES_PAGE = `https://github.com/${REPO}/releases/latest`
+const GARMIN_REPO = 'kolengri/openGym'
+const GARMIN_PACKAGE = 'ch.duartesantos.opengym.garmin.test'
 
 /**
  * Compares two semver strings (e.g. "1.2.11" vs "1.3.0").
@@ -56,6 +59,7 @@ export async function checkForUpdate() {
   return cached
 }
 async function fetchLatest() {
+  if (await getChannel() === 'garmin') return fetchGarminLatest()
   const res = await fetch(LATEST_URL, { headers: { Accept: 'application/vnd.github+json' } })
   // 404: the repository has no published release yet
   if (res.status === 404) return { hasUpdate: false, latestVersion: __APP_VERSION__, apkUrl: null, hashUrl: null }
@@ -66,6 +70,36 @@ async function fetchLatest() {
   const hasUpdate = compareSemver(latestVersion, __APP_VERSION__) > 0
   const { apk, hash } = pickApk(latest.assets || [])
   return { hasUpdate, latestVersion, apkUrl: apk?.browser_download_url || null, hashUrl: hash?.browser_download_url || null }
+}
+
+// The fork's Android channel compares native versionCode, not upstream semver
+// or web build metadata. Watch releases and upstream APK names cannot match.
+async function fetchGarminLatest() {
+  const { registerPlugin } = await import('@capacitor/core')
+  const installed = await registerPlugin('Channel').get()
+  if (installed.channel !== 'garmin' || installed.packageName !== GARMIN_PACKAGE ||
+      !Number.isSafeInteger(installed.versionCode) || installed.versionCode <= 0) throw new Error('Invalid installed Garmin package identity')
+  const res = await fetch(`https://api.github.com/repos/${GARMIN_REPO}/releases?per_page=100`, { headers: { Accept: 'application/vnd.github+json' } })
+  if (!res.ok) throw new Error(`GitHub API ${res.status}`)
+  const releases = await res.json()
+  if (!Array.isArray(releases)) throw new Error('Invalid Garmin release list')
+  const candidates = releases.filter(r => r && !r.draft && !r.prerelease && /^garmin-android-[1-9]\d{0,8}$/.test(r.tag_name || ''))
+    .map(r => ({ release: r, code: Number(r.tag_name.slice('garmin-android-'.length)) }))
+    .sort((a, b) => b.code - a.code)
+  const latest = candidates[0]
+  const none = { hasUpdate: false, latestVersion: __APP_VERSION__, apkUrl: null, hashUrl: null,
+    releasesPage: `https://github.com/${GARMIN_REPO}/releases` }
+  if (!latest || latest.code <= installed.versionCode) return none
+  const name = `openGym-Garmin-${latest.code}.apk`
+  const base = `https://github.com/${GARMIN_REPO}/releases/download/${latest.release.tag_name}/`
+  const assets = latest.release.assets
+  if (!Array.isArray(assets)) throw new Error('Garmin release assets are missing')
+  const exactAsset = file => assets.filter(a => a?.name === file && a.browser_download_url === base + file)
+  const apk = exactAsset(name), hash = exactAsset(name + '.sha256')
+  if (apk.length !== 1 || hash.length !== 1) throw new Error('Garmin APK and checksum are missing or invalid')
+  const label = /^\d+\.\d+\.\d+-garmin\.\d+$/.test(latest.release.name || '') ? latest.release.name : String(latest.code)
+  return { hasUpdate: true, latestVersion: label, apkUrl: apk[0].browser_download_url,
+    hashUrl: hash[0].browser_download_url, releasesPage: `https://github.com/${GARMIN_REPO}/releases/tag/${latest.release.tag_name}` }
 }
 
 /**
