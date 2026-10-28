@@ -1,0 +1,388 @@
+{
+  "canonical_exercise_count": 5632,
+  "alias_stub_count": 922,
+  "canonical_source": "catalogue/exercises/*.json",
+  "source_fields": [
+    "target",
+    "secondaryMuscles",
+    "muscleMap.primaries",
+    "muscleMap.secondaries"
+  ],
+  "names": {
+    "abdominals": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 2
+    },
+    "abductors": {
+      "fields": [
+        "target"
+      ],
+      "count": 90
+    },
+    "abs": {
+      "fields": [
+        "target",
+        "muscleMap.secondaries",
+        "muscleMap.primaries"
+      ],
+      "count": 894
+    },
+    "adductors": {
+      "fields": [
+        "muscleMap.primaries",
+        "muscleMap.secondaries",
+        "target",
+        "secondaryMuscles"
+      ],
+      "count": 398
+    },
+    "ankle stabilizers": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 4
+    },
+    "ankles": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 216
+    },
+    "back": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 11
+    },
+    "biceps": {
+      "fields": [
+        "target",
+        "secondaryMuscles",
+        "muscleMap.secondaries",
+        "muscleMap.primaries"
+      ],
+      "count": 947
+    },
+    "brachialis": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 156
+    },
+    "calves": {
+      "fields": [
+        "secondaryMuscles",
+        "muscleMap.secondaries",
+        "target",
+        "muscleMap.primaries"
+      ],
+      "count": 923
+    },
+    "cardiovascular system": {
+      "fields": [
+        "target"
+      ],
+      "count": 172
+    },
+    "chest": {
+      "fields": [
+        "muscleMap.primaries",
+        "secondaryMuscles",
+        "muscleMap.secondaries"
+      ],
+      "count": 349
+    },
+    "core": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 1885
+    },
+    "deltoids": {
+      "fields": [
+        "muscleMap.secondaries",
+        "muscleMap.primaries",
+        "secondaryMuscles"
+      ],
+      "count": 171
+    },
+    "delts": {
+      "fields": [
+        "target"
+      ],
+      "count": 619
+    },
+    "feet": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 114
+    },
+    "forearm": {
+      "fields": [
+        "muscleMap.secondaries"
+      ],
+      "count": 90
+    },
+    "forearms": {
+      "fields": [
+        "secondaryMuscles",
+        "target"
+      ],
+      "count": 781
+    },
+    "gluteal": {
+      "fields": [
+        "muscleMap.primaries",
+        "muscleMap.secondaries"
+      ],
+      "count": 78
+    },
+    "glutes": {
+      "fields": [
+        "secondaryMuscles",
+        "target"
+      ],
+      "count": 2005
+    },
+    "grip muscles": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 222
+    },
+    "groin": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 61
+    },
+    "hamstring": {
+      "fields": [
+        "muscleMap.primaries",
+        "muscleMap.secondaries"
+      ],
+      "count": 83
+    },
+    "hamstrings": {
+      "fields": [
+        "target",
+        "secondaryMuscles"
+      ],
+      "count": 1549
+    },
+    "hands": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 37
+    },
+    "hip flexors": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 782
+    },
+    "hip-flexors": {
+      "fields": [
+        "muscleMap.secondaries"
+      ],
+      "count": 1
+    },
+    "inner thighs": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 56
+    },
+    "latissimus dorsi": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 5
+    },
+    "lats": {
+      "fields": [
+        "target",
+        "secondaryMuscles"
+      ],
+      "count": 541
+    },
+    "levator scapulae": {
+      "fields": [
+        "target"
+      ],
+      "count": 65
+    },
+    "lower abs": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 209
+    },
+    "lower back": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 601
+    },
+    "lower-back": {
+      "fields": [
+        "muscleMap.secondaries",
+        "muscleMap.primaries"
+      ],
+      "count": 56
+    },
+    "obliques": {
+      "fields": [
+        "secondaryMuscles",
+        "muscleMap.secondaries"
+      ],
+      "count": 695
+    },
+    "pectorals": {
+      "fields": [
+        "target"
+      ],
+      "count": 473
+    },
+    "quadriceps": {
+      "fields": [
+        "secondaryMuscles",
+        "muscleMap.primaries",
+        "muscleMap.secondaries"
+      ],
+      "count": 708
+    },
+    "quads": {
+      "fields": [
+        "target"
+      ],
+      "count": 654
+    },
+    "rear deltoids": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 328
+    },
+    "rhomboids": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 375
+    },
+    "rotator cuff": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 185
+    },
+    "serratus": {
+      "fields": [
+        "muscleMap.secondaries"
+      ],
+      "count": 20
+    },
+    "serratus anterior": {
+      "fields": [
+        "target"
+      ],
+      "count": 15
+    },
+    "shins": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 72
+    },
+    "shoulders": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 1482
+    },
+    "soleus": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 105
+    },
+    "spine": {
+      "fields": [
+        "target"
+      ],
+      "count": 168
+    },
+    "sternocleidomastoid": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 54
+    },
+    "trapezius": {
+      "fields": [
+        "muscleMap.secondaries",
+        "muscleMap.primaries",
+        "secondaryMuscles"
+      ],
+      "count": 448
+    },
+    "traps": {
+      "fields": [
+        "secondaryMuscles",
+        "target"
+      ],
+      "count": 93
+    },
+    "triceps": {
+      "fields": [
+        "muscleMap.secondaries",
+        "secondaryMuscles",
+        "target",
+        "muscleMap.primaries"
+      ],
+      "count": 1167
+    },
+    "upper back": {
+      "fields": [
+        "target",
+        "secondaryMuscles"
+      ],
+      "count": 861
+    },
+    "upper chest": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 279
+    },
+    "upper-back": {
+      "fields": [
+        "muscleMap.primaries",
+        "muscleMap.secondaries"
+      ],
+      "count": 87
+    },
+    "wrist extensors": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 51
+    },
+    "wrist flexors": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 70
+    },
+    "wrists": {
+      "fields": [
+        "secondaryMuscles"
+      ],
+      "count": 3
+    }
+  }
+}

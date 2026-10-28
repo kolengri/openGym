@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exercise animation brief index</title>
+<style>
+:root{color-scheme:light dark;font:16px/1.5 system-ui,sans-serif;background:#10171c;color:#e7eef2}*{box-sizing:border-box}body{max-width:1440px;margin:0 auto;padding:24px}header{border-bottom:1px solid #48616d;margin-bottom:20px}h1{font-size:1.7rem}h2{font-size:1.4rem}h3{font-size:1.05rem;color:#a8dbe7}p{max-width:90ch}a{color:#a2e1f0}input,select,button{font:inherit;padding:9px;border-radius:5px;border:1px solid #607d8b;background:#18252d;color:inherit}input{width:min(100%,420px)}button{cursor:pointer}label{display:inline-block;margin:0 12px 12px 0}main{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:24px}nav{max-height:70vh;overflow:auto;border:1px solid #48616d;border-radius:6px}nav a{display:block;padding:10px 12px;border-bottom:1px solid #2b3d47;text-decoration:none}nav a[aria-current]{background:#294a59}nav small{display:block;color:#b9c9d1}.tag{font-size:.8rem;border:1px solid #607d8b;border-radius:4px;padding:2px 6px}.review{color:#ffd49a}.complete{color:#a9e2bc}li{margin:9px 0}small,.muted{color:#b9c9d1}article{min-width:0;overflow-wrap:anywhere}noscript{display:block;padding:20px}#count{min-height:1.5em}.paging{display:flex;gap:10px;margin-bottom:12px}@media(max-width:760px){body{padding:14px}main{grid-template-columns:1fr}nav{max-height:35vh}h1{font-size:1.4rem}}
+</style>
+<header>
+<h1>Exercise animation briefs</h1>
+<p id="summary"></p>
+<p>Source completeness and authored storyboard readiness are separate. Initial hand/foot placements can be reversible proposals; missing exercise mechanics remain unresolved. <strong>No brief is certified animation-ready.</strong></p>
+<p><a href="README.md">Method</a> · <a href="selected-first-five.md">First five samples</a> · <a href="briefs.jsonl.gz">All records (JSONL.gz)</a> · <a href="coverage-report.json">Coverage</a></p>
+<label>Search name, ID, alias or muscle<br><input id="query" type="search" placeholder="e.g. 0002, squat, obliques"></label>
+<label>Filter<br><select id="status"><option value="">All canonical briefs</option><option value="proposal_ready_for_review">Storyboard proposal ready for review</option><option value="blocked_on_source_resolution">Storyboard blocked on source resolution</option><option value="needs_review">Source gaps detected</option><option value="source_complete_for_storyboard">Source complete for storyboard</option><option value="equipment_free">Equipment-free candidates</option></select></label>
+<p id="count" role="status" aria-live="polite"></p>
+<div class="paging"><button id="previous" type="button">Previous 100</button><button id="next" type="button">Next 100</button></div>
+</header>
+<noscript>Use <a href="details/chunk-000.html">readable details pages</a> or <a href="selected-first-five.md">the sample briefs</a> without JavaScript.</noscript>
+<main><nav id="list" aria-label="Exercise results"></nav><article id="detail" aria-live="polite"></article></main>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+'use strict';
+const data=JSON.parse(document.getElementById('data').textContent);
+const byId=new Map(data.briefs.map(b=>[b.id,b]));
+const aliasMap=new Map(data.aliases.map(a=>[a.id,a.canonical_id]));
+const aliasGroups=new Map();for(const a of data.aliases){if(!aliasGroups.has(a.canonical_id))aliasGroups.set(a.canonical_id,[]);aliasGroups.get(a.canonical_id).push(a.id)}
+const sorted=[...data.briefs].sort((a,b)=>a.name<b.name?-1:a.name>b.name?1:a.id.localeCompare(b.id));
+const query=document.getElementById('query'),status=document.getElementById('status'),list=document.getElementById('list'),detail=document.getElementById('detail');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let page=0;
+const n=data.report.canonical_storyboard_readiness_counts;
+document.getElementById('summary').textContent=`${data.report.catalogue_record_count.toLocaleString()} source IDs: ${data.briefs.length.toLocaleString()} canonical exercises + ${data.aliases.length} aliases. ${n.proposal_ready_for_review||0} storyboard proposals ready for review; ${n.blocked_on_source_resolution||0} blocked on source resolution.`;
+function select(){
+ const raw=location.hash.slice(1)||'5965';
+ const id=aliasMap.get(raw)||raw,b=byId.get(id);
+ if(!b){detail.innerHTML='<p>No matching exercise ID.</p>';return}
+ const aliasNote=raw!==id?`<p class="review">Alias ${esc(raw)} resolves to canonical ${esc(id)}. Motion and muscle descriptions are inherited.</p>`:'';
+ detail.innerHTML=`<h2>${esc(b.id)} — ${esc(b.name)}</h2>${aliasNote}<p><span class="tag">${esc(b.storyboard_status)}</span></p><p>Source completeness: <code>${esc(b.source_status)}</code>. Proposed pose class: <code>${esc(b.pose)}</code>.</p><p><strong><a href="${esc(b.detail_page)}">Read full movement, hand/foot placement, equipment, muscle labels and authored proposals</a></strong></p><p><a href="${esc(b.detail_json)}">Compressed JSON download (.gz; find ID ${esc(b.id)} after decompression)</a> · <a href="../../${esc(b.source_path)}">Original source record</a></p><h3>Training muscle labels</h3><p>${b.muscles.map(esc).join(', ')}</p><h3>Source gaps retained</h3>${b.review_codes.length?`<ul>${b.review_codes.map(c=>`<li><code>${esc(c)}</code></li>`).join('')}</ul>`:'<p>No gap detected by automatic checks.</p>'}<h3>Remaining storyboard blockers</h3>${b.blockers.length?`<ul>${b.blockers.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>`:'<p>No unresolved blocker detected. Authored staging and movement still require owner review.</p>'}<h3>Aliases</h3><p>${aliasGroups.has(id)?aliasGroups.get(id).map(a=>`<a href="#${esc(a)}">${esc(a)}</a>`).join(', '):'None.'}</p><p class="muted">Full descriptions are paginated into 100-record readable pages and JSON chunks. This index contains summaries only and opens directly from disk.</p>`;
+ for(const a of list.querySelectorAll('a'))a.toggleAttribute('aria-current',a.dataset.id===id);
+}
+function filter(reset=true){
+ if(reset)page=0;
+ const q=query.value.trim().toLowerCase(),s=status.value;
+ const candidates=sorted.filter(b=>{
+  if(s==='equipment_free'&&!b.equipment_free_candidate)return false;
+  if(s&&s!=='equipment_free'&&b.storyboard_status!==s&&b.source_status!==s)return false;
+  const text=[b.id,b.name,...(aliasGroups.get(b.id)||[]),...b.muscles].join(' ').toLowerCase();
+  return !q||text.includes(q);
+ });
+ page=Math.max(0,Math.min(page,Math.ceil(candidates.length/100)-1));
+ document.getElementById('count').textContent=`${candidates.length.toLocaleString()} matching canonical exercises. Page ${page+1} of ${Math.max(1,Math.ceil(candidates.length/100))}.`;
+ document.getElementById('previous').disabled=page===0;document.getElementById('next').disabled=(page+1)*100>=candidates.length;
+ list.innerHTML=candidates.slice(page*100,(page+1)*100).map(b=>`<a href="#${esc(b.id)}" data-id="${esc(b.id)}">${esc(b.id)} — ${esc(b.name)}<small>${esc(b.storyboard_status)}</small></a>`).join('');select();
+}
+query.addEventListener('input',()=>filter());status.addEventListener('change',()=>filter());window.addEventListener('hashchange',select);
+document.getElementById('previous').addEventListener('click',()=>{page--;filter(false)});document.getElementById('next').addEventListener('click',()=>{page++;filter(false)});filter();
+</script>
+</html>

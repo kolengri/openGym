@@ -1,0 +1,89 @@
+{
+  "neutral": "neutral.png",
+  "inactive_anatomy": "uniform neutral; no drawn regions, fibers or seams",
+  "activation_color_space": "sRGB",
+  "role_mask_color_space": "linear non-color",
+  "channels": {
+    "R": "primary",
+    "G": "secondary",
+    "B": "stretch"
+  },
+  "priority": [
+    "primary",
+    "secondary",
+    "stretch"
+  ],
+  "exercises": {
+    "5965": {
+      "name": "1 2 stick drill",
+      "primary": [
+        "cardiovascular system"
+      ],
+      "secondary": [
+        "quadriceps",
+        "calves",
+        "core"
+      ],
+      "stretch": [],
+      "activation_texture": "5965-activation.png",
+      "role_mask": "5965-roles.png"
+    },
+    "5915": {
+      "name": "3 leg chaturanga pose",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [
+        "chest",
+        "shoulders",
+        "core",
+        "glutes"
+      ],
+      "stretch": [],
+      "activation_texture": "5915-activation.png",
+      "role_mask": "5915-roles.png"
+    },
+    "5887": {
+      "name": "3 leg dog pose",
+      "primary": [],
+      "secondary": [
+        "shoulders",
+        "calves",
+        "glutes",
+        "core"
+      ],
+      "stretch": [
+        "hamstrings"
+      ],
+      "activation_texture": "5887-activation.png",
+      "role_mask": "5887-roles.png"
+    },
+    "0001": {
+      "name": "3/4 sit-up",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "hip flexors",
+        "lower back"
+      ],
+      "stretch": [],
+      "activation_texture": "0001-activation.png",
+      "role_mask": "0001-roles.png"
+    },
+    "9066": {
+      "name": "4 way single leg hop",
+      "primary": [
+        "calves"
+      ],
+      "secondary": [
+        "quadriceps",
+        "glutes",
+        "ankles"
+      ],
+      "stretch": [],
+      "activation_texture": "9066-activation.png",
+      "role_mask": "9066-roles.png"
+    }
+  }
+}
