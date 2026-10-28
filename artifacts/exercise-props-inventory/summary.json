@@ -1,0 +1,245 @@
+{
+  "source_record_count": 6554,
+  "visible_exercise_count": 5632,
+  "figure_alias_count": 922,
+  "examined_visible_records": 5632,
+  "buildable_prop_rows": 206,
+  "unresolved_placeholder_rows": 6,
+  "buildable_base_models": 164,
+  "buildable_variants": 31,
+  "buildable_attachments": 11,
+  "all_exercises_accounted_for": true,
+  "catalogue_sha256": "ef780e1e50090688f25d2ebbf30b15e25d5f5fb2bd1b16ec38701a3745726215",
+  "equipment_counts": {
+    "body weight": 2246,
+    "band": 261,
+    "cable": 446,
+    "leverage machine": 279,
+    "assisted": 43,
+    "medicine ball": 50,
+    "stability ball": 71,
+    "barbell": 389,
+    "rope": 44,
+    "dumbbell": 757,
+    "ez barbell": 50,
+    "kettlebell": 187,
+    "olympic barbell": 8,
+    "weighted": 148,
+    "bosu ball": 12,
+    "sled machine": 48,
+    "smith machine": 94,
+    "wheel roller": 4,
+    "trap bar": 10,
+    "resistance band": 149,
+    "landmine": 33,
+    "weight plate": 45,
+    "sandbag": 12,
+    "macebell": 2,
+    "suspension trainer": 133,
+    "roller": 49,
+    "hammer": 1,
+    "stationary bike": 5,
+    "upper body ergometer": 1,
+    "elliptical machine": 5,
+    "skierg machine": 1,
+    "stepmill machine": 1,
+    "tire": 2,
+    "massage ball": 46
+  },
+  "canonical_prop_count": 212,
+  "prop_relation_counts": {
+    "base": 170,
+    "variant": 31,
+    "attachment": 11
+  },
+  "prop_category_counts": {
+    "free_weight": 12,
+    "unresolved": 6,
+    "band": 3,
+    "anchor": 5,
+    "machine": 92,
+    "attachment": 10,
+    "bench": 8,
+    "support": 10,
+    "environment": 5,
+    "rack": 8,
+    "suspension": 3,
+    "ball": 6,
+    "recovery": 1,
+    "small_prop": 18,
+    "combat": 3,
+    "rope": 3,
+    "strongman": 17,
+    "cardio": 2
+  },
+  "exercise_coverage_counts": {
+    "no_prop_documented_in_text": 1487,
+    "mapped_props": 4053,
+    "unresolved_prop_geometry": 92
+  },
+  "production_priority_counts": {
+    "P0": 15,
+    "P1": 28,
+    "P2": 163,
+    "REVIEW": 6
+  },
+  "issues": [
+    {
+      "exercise_id": "2707",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2708",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2711",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2713",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2714",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2715",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2716",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2717",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2718",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2719",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2720",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2721",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2722",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2723",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2724",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2725",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2726",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2727",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2728",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2733",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2734",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2735",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "5965",
+      "issue": "stick in drill name may mean landing/hold cue; instructions specify no physical stick"
+    },
+    {
+      "exercise_id": "10198",
+      "name": "sled alternating single leg negative press",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "1447",
+      "name": "lever calf stretch (plate loaded)",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2197",
+      "name": "run on treadmill",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2722",
+      "name": "strongman hood stones",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2724",
+      "name": "strongman atlas stones",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2734",
+      "name": "strongman barbell farmers walk",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "3637",
+      "name": "wheel run",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "4245",
+      "name": "single leg board jump",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "5965",
+      "name": "1 2 stick drill",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "6550",
+      "name": "incline push up on a smith bar",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "8610",
+      "name": "chinese plank",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    }
+  ],
+  "limitations": [
+    "Every visible English record is examined; figure aliases are excluded as independent exercises.",
+    "Text only: no licensed media is opened, copied or provided to an AI tool.",
+    "Regex extraction supports audit and production planning, not a guarantee of visual geometry completeness.",
+    "No-prop-documented means no supported prop match in current text; it does not prove equipment-free performance. A floor/ground surface is assumed as part of the scene.",
+    "Dimensions, materials, stack-vs-plate mechanisms and hidden accessories often need owner review.",
+    "Unresolved generic load/rope/machine rows are retained rather than silently guessed.",
+    "Priority is an ordinal planning judgment from exercise count, not measured production time.",
+    "Variants may share a reusable model; parent links do not automatically count parent coverage."
+  ]
+}
