@@ -1,3 +1,25 @@
+# Separate 90/90 repair — current review candidate
+
+The repaired `ninety-repaired.blend` and `ninety-repaired.glb` contain only 10565 and 6560. They preserve the original 51-bone binding, Basis, topology, UVs, weights and source IDs. Deep hip flexion uses the explicit dual-quaternion adapter in `../exercise-batches/dual-quaternion.js`; a generic linear-skin GLB viewer is not the appearance reference. There are no helper bones, corrective morphs, textures or clothes in this repaired asset. Rejected 57-bone and large-offset experiments are excluded from the delivery.
+
+The source enables only Preserve Volume Armature deformation. Original CorrectiveSmooth and Multires definitions are retained as disabled optional previews. The runtime cage is the support truth. Pelvis, leg, foot and floor-palm supports were solved together; 6560's forearm path clears the front thigh, and 10565 uses relaxed hands on the front leg. The reviewed arm roll avoids the earlier squared shoulder. Native and live runtime checks pass; user review remains separate.
+
+Each demonstration lasts five seconds: two to hinge, one to hold and two to return. The source workout hold remains 20–30 seconds in the description. Actual playback, all-vertex native DQ parity, floor/support references, hand clearance and loop closure are recorded in `ninety-*.json`, `ninety-dq-reference.json.gz` and `../exercise-batches/batch-002/verification.json`. Curated native solid/wire stills are in `repair-90/dq/stills/`; actual WebGL views are in the batch-002 folder.
+
+Reproduce the current source and export with Blender 5.2.3 LTS:
+
+```sh
+/opt/homebrew/bin/blender -b -t 2 --python-exit-code 1 -P artifacts/bodyweight-next-five/build_ninety_repaired.py
+/opt/homebrew/bin/blender -b -t 2 --python-exit-code 1 -P artifacts/bodyweight-next-five/verify_ninety.py
+/opt/homebrew/bin/blender -b -t 2 --python-exit-code 1 -P artifacts/bodyweight-next-five/export_ninety.py
+```
+
+Native geometry QA requires the installed `blender-asset-qa/scripts/qa_check.py` skill dependency; its thresholds are not weakened. Contact parameters and original-index landmarks accompany the source. The batch viewer's camera fitter may widen only the final runtime view scales after export.
+
+The original `next-five.blend` and `next-five.glb` remain byte-identical for 5265, 4007 and 6428. Their old 90/90 actions are historical rejected evidence and are no longer selected by the current live viewer. The material below describes that original batch and its historical receipts; do not run its old authoring pipeline to overwrite the frozen assets.
+
+---
+
 # Next five live exercise review prototypes
 
 Five independently authored actions on the original continuous CC0 Blender Studio

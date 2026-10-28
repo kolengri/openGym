@@ -1,0 +1,1227 @@
+{
+  "schema": "opengym.exercise-animation-packaging-candidates.v1",
+  "scope": {
+    "asset_ids": [
+      "6033",
+      "4348",
+      "3244",
+      "1906",
+      "1777"
+    ],
+    "excluded_from_review": [
+      "90/90 repair, separately curated under bodyweight-next-five"
+    ],
+    "purpose": "Curated candidate delivery inventory for accepted sources, runtime models, evidence, and reproducibility inputs.",
+    "hash_algorithm": "SHA-256",
+    "selection_policy": "Retain canonical editable source and GLB, source metadata, current QA receipts, direct script dependencies, and a small proof set; exclude intermediate trials, duplicates, backups, and scratch/cache output."
+  },
+  "assets": [
+    {
+      "id": "4348",
+      "canonical_model": "artifacts/exercise-batches/batch-003/assets/4348/motion.glb",
+      "files": [
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/README.md",
+          "category": "documentation",
+          "bytes": 7367,
+          "sha256": "1ebbecafd905f743145ca28ef91952165627bbea120709cbed59de957eab06d7",
+          "reason": "Asset-specific scope, source choices, provenance, limits, QA summary, and reproduction instructions."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/source.blend",
+          "category": "editable-source",
+          "bytes": 13353963,
+          "sha256": "c84b9489cae7d1f1f471afef5938b6534fd8c5c2bb0ffda6bf42183c0f7b44f3",
+          "reason": "Editable canonical Blender source for the accepted animation."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/motion.glb",
+          "category": "runtime-model",
+          "bytes": 1193736,
+          "sha256": "0d7b71203d9c7918358ec9abce8b805f4d50d3e7ababf74b4c04949bec49de13",
+          "reason": "Canonical runtime model used by the shared viewer."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/clip.json",
+          "category": "runtime-metadata",
+          "bytes": 3127,
+          "sha256": "154ebaf92cff3430e124b45d465bf3045287d73fadda6ba462356d5fde8aa6bb",
+          "reason": "Source-backed exercise name, action, timing, phase, laterality, and viewer muscle metadata."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/cameras.json",
+          "category": "runtime-metadata",
+          "bytes": 332,
+          "sha256": "4de06f6f73a62af25e8a89d3b790d2150299e1778722a41ff352b5b059414e94",
+          "reason": "Accepted shared-viewer camera presets."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/authoring-context.json",
+          "category": "runtime-metadata",
+          "bytes": 59257,
+          "sha256": "7104f072ef0a59679bc3130b952b4932bd9b57d7b1d016c82e46bc3e47128a77",
+          "reason": "Original per-asset authoring context snapshot; preserve with source and builder."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/pose-samples.json",
+          "category": "qa-evidence",
+          "bytes": 41752,
+          "sha256": "a3b181b4cd70bab5f9c0019376d7932e7fb865fa8b17a6beef2e12a3529b20cc",
+          "reason": "Frozen authored joint samples for pose and loop checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/runtime-surface-reference.json",
+          "category": "qa-evidence",
+          "bytes": 50846,
+          "sha256": "5ce9c497e0fae9a334d96ef130454b6216828672726e52c23d1a6b43afbde534",
+          "reason": "Frozen original-index surface reference for independent actual-GLB parity checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/asset-qa.json",
+          "category": "qa-evidence",
+          "bytes": 7869,
+          "sha256": "4cec7b3a76a9de7100d748d2812580970f517534fe386f48428a2c1491caca97",
+          "reason": "Current topology, weights, UV, and geometry QA receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/surface-contact-report.json",
+          "category": "qa-evidence",
+          "bytes": 81592,
+          "sha256": "c7a0083f2f9aefc5f2688ec65fb767b8c11817db1022097835ea5319ccca60d5",
+          "reason": "Current surface/contact evidence and support tolerances."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/runtime-export.json",
+          "category": "qa-evidence",
+          "bytes": 778,
+          "sha256": "c8166413b900af322e6efbcb4b40aa924e05f8277bd08a77def478fa272e5a34",
+          "reason": "Current export/interface receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/glb-readback.json",
+          "category": "qa-evidence",
+          "bytes": 1353,
+          "sha256": "5d2e445bd686f6e4f3848fb5738b5472e308cbe5c3709f56e94852c922b44dae",
+          "reason": "Actual decoded-GLB accessor and transported-normal readback receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/static-corrective.json",
+          "category": "qa-evidence",
+          "bytes": 1416,
+          "sha256": "dc0346a0c742cbf0a37fb1ea344450851c7696bad49e57cad53e4011fdd17128",
+          "reason": "Hash-bound evidence for the accepted constant corrective morph."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/normal-corrective.json",
+          "category": "qa-evidence",
+          "bytes": 1057,
+          "sha256": "d2eeb3d94aca96ff71b5e971b319279f89e8fed08e14f415ec16bee47af1259d",
+          "reason": "Hash-bound proof for its accepted morph NORMAL correction."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/support-patches.json",
+          "category": "qa-evidence",
+          "bytes": 11615,
+          "sha256": "627a7f769cc5fa3ceda7019fa0de934a40f86302f68779c1bdb4cdd18d20686e",
+          "reason": "Frozen palm, finger-pad, and knee support patches with declared tolerance bands."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/build_motion.py",
+          "category": "reproducibility-script",
+          "bytes": 21143,
+          "sha256": "512dd1e0aa52a8fba9a9c84f17d94e3fbe55db2305dc5eac149bf583a08ceb48",
+          "reason": "Canonical builder; imports shared authoring.py and local glb_normals.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/glb_normals.py",
+          "category": "reproducibility-script",
+          "bytes": 5420,
+          "sha256": "36b62df9d60f1f4910cbb7200a82dacf1cf40350d0102287692a93e8a3ed803b",
+          "reason": "Required local GLB accessor/normal helper imported by builder and readback."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/verify_asset.py",
+          "category": "reproducibility-script",
+          "bytes": 7461,
+          "sha256": "cb995405dd7bdb8d7dbf3697f7e1d78b9024809fa07d7370a334b7e0558522ac",
+          "reason": "Reproduces support/contact and Blender QA; imports shared helpers and external asset-QA module."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/readback_glb.py",
+          "category": "reproducibility-script",
+          "bytes": 6176,
+          "sha256": "b69228d75c4cc288600822ee0269510498a656cad88c5a018956a13e5e430868",
+          "reason": "Independent actual GLB readback; imports build_motion.py and glb_normals.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/review_wire.py",
+          "category": "reproducibility-script",
+          "bytes": 1217,
+          "sha256": "97a51c84409713b7f99ff79c998c69f195db610feb1cbfae0fdaeb26fa7a5ee8",
+          "reason": "Reproduces accepted topology wire still; imports build_motion.py camera data."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/native-corrective-target.png",
+          "category": "review-still",
+          "bytes": 395371,
+          "sha256": "cbaa6d10527e7bba0ec312636ccf8040514aca6640bb711ecbcfc25f54b5a9f9",
+          "reason": "Curated native target for the accepted corrective."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/glb-readback-oblique.png",
+          "category": "review-still",
+          "bytes": 392348,
+          "sha256": "5c2cbf2b3703cb4ff5c39151b58ff79cdd0e8040b9d6320b9b4b72481fe8b4a3",
+          "reason": "Actual decoded-GLB oblique proof with runtime-equation normals."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/glb-readback-hands.png",
+          "category": "review-still",
+          "bytes": 640604,
+          "sha256": "1fe791a02ebd68ba1868176ecb22746304303727955b75bb593d7ac675f6d12a",
+          "reason": "Actual decoded-GLB hand/support close proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/review-wire.png",
+          "category": "review-still",
+          "bytes": 438529,
+          "sha256": "c777abc6a05c19b4ece57eb4ed63b3d04d8ede6c3b935734fe6cf0b57c2a1071",
+          "reason": "Curated topology proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/early-start.png",
+          "category": "review-still",
+          "bytes": 364287,
+          "sha256": "5334dfe7f86ac946ed186f795179a5e12aeaa3aa9de41d0e913880d8de90eda8",
+          "reason": "Curated native start pose."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/early-hold.png",
+          "category": "review-still",
+          "bytes": 394031,
+          "sha256": "f0d9c028ca6828768bafb141086fa9a35d8360335a05f7b0c22032d784f6cd39",
+          "reason": "Curated native hold pose."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/4348/early-return.png",
+          "category": "review-still",
+          "bytes": 404398,
+          "sha256": "a7f8c5c40f553ff0190c085092e51851291e599eaeaa0cb081a6204cbad3313f",
+          "reason": "Curated native return pose."
+        }
+      ],
+      "reproduction_scripts": [
+        "build_motion.py",
+        "verify_asset.py",
+        "readback_glb.py",
+        "review_wire.py"
+      ],
+      "dependency_notes": [
+        "Preserve shared batch-003/authoring.py, artifacts/bodyweight-five/bodyweight-five.blend, and artifacts/bodyweight-five/build_motion.py at repository-relative paths.",
+        "verify_asset.py additionally imports artifacts/bodyweight-next-five/warning_observer.py and the installed Blender asset-QA skill qa_check.py.",
+        "Only the target, decoded GLB, wire, and three native pose stills are selected; other scratch/early proof images are omitted."
+      ],
+      "excluded_or_not_proposed": [
+        "early-linear.png (intermediate comparison)",
+        "non-curated diagnostic probes and proof stills"
+      ]
+    },
+    {
+      "id": "3244",
+      "canonical_model": "artifacts/exercise-batches/batch-003/assets/3244/motion.glb",
+      "files": [
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/README.md",
+          "category": "documentation",
+          "bytes": 4603,
+          "sha256": "51d44e10403514d9c884b04c2d266f55d3fefc2f8e843b897ec2ca653e46be68",
+          "reason": "Asset-specific scope, source choices, provenance, limits, QA summary, and reproduction instructions."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/source.blend",
+          "category": "editable-source",
+          "bytes": 13554427,
+          "sha256": "7a9b32c54489fa4640292688cd03ce6a643fdd8731820e111f3fc8499e87a4b4",
+          "reason": "Editable canonical Blender source for the accepted animation."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/motion.glb",
+          "category": "runtime-model",
+          "bytes": 882088,
+          "sha256": "77cfeb4a8b8f379656be51f9cf9050b20e61cffa7443d8a6266bf995b5b652b7",
+          "reason": "Canonical runtime model used by the shared viewer."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/clip.json",
+          "category": "runtime-metadata",
+          "bytes": 3125,
+          "sha256": "6ce6e99e827efe58cee1d05a5f924d4e29ea6c68d51bd1909826e70f23f38c3e",
+          "reason": "Source-backed exercise name, action, timing, phase, laterality, and viewer muscle metadata."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/cameras.json",
+          "category": "runtime-metadata",
+          "bytes": 327,
+          "sha256": "618abc34b9c689f49b2c4c1d6660a684a24c60b14c175e99ddb3d35b07fbe5ac",
+          "reason": "Accepted shared-viewer camera presets."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/authoring-context.json",
+          "category": "runtime-metadata",
+          "bytes": 56789,
+          "sha256": "42d46ef545f787b119fd058f5a26e4898816af715ad9ac9f78439b9be90512a2",
+          "reason": "Original per-asset authoring context snapshot; preserve with source and builder."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/pose-samples.json",
+          "category": "qa-evidence",
+          "bytes": 65460,
+          "sha256": "390e5cd89214a0bbaaae3e2e1ab9463bfa1a2bc7e172dee373bb90f520e56d40",
+          "reason": "Frozen authored joint samples for pose and loop checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/runtime-surface-reference.json",
+          "category": "qa-evidence",
+          "bytes": 51181,
+          "sha256": "b819a0b323e4f4bfee8426fd225fb832c8555f4ec377a198c0b69218768ddd6c",
+          "reason": "Frozen original-index surface reference for independent actual-GLB parity checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/asset-qa.json",
+          "category": "qa-evidence",
+          "bytes": 871,
+          "sha256": "4f260482c21d608d8a619b030660288bec6a8b58108bd4aecbfcada9848329ed",
+          "reason": "Current topology, weights, UV, and geometry QA receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/pose-contact-qa.json",
+          "category": "qa-evidence",
+          "bytes": 158323,
+          "sha256": "749e033cced297b44032f5e19cfafb6f329b2a89647fc19d1de611df51a36537",
+          "reason": "Current native and independently decoded GLB contact/support verification."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/export-report.json",
+          "category": "qa-evidence",
+          "bytes": 836,
+          "sha256": "6f03b9943ff52c6c3c4c652c5690cece48e6f624cf7cc36d13064e8b18b5c1b7",
+          "reason": "Current canonical export/model identity receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/visual-review.json",
+          "category": "qa-evidence",
+          "bytes": 1690,
+          "sha256": "8686fcc71b2d696219004495f83aefd37d4dd53b1bb5584005efdc4688ad7a59",
+          "reason": "Current reviewed native/export proof index and visual acceptance notes."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/build_motion.py",
+          "category": "reproducibility-script",
+          "bytes": 13981,
+          "sha256": "12b279de32c3ccb60b47ef990639bd3cdec397e6df3f3ff5ea10db92198a6818",
+          "reason": "Canonical builder; imports shared batch-003/authoring.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/verify_asset.py",
+          "category": "reproducibility-script",
+          "bytes": 14892,
+          "sha256": "32d4edbe10ca7723ddbb7bf5487af2fbc88e1365d20e4a83aa3c596887325c35",
+          "reason": "Reproduces native and actual GLB checks; imports authoring.py and external Blender asset-QA qa_check.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/native-peak-oblique-solid.png",
+          "category": "review-still",
+          "bytes": 736169,
+          "sha256": "b137416f7c2e38328f0ba4be30dec6858403d04cf5beff66dd53a5d861d68368",
+          "reason": "Curated native peak for comparison."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/exported-peak-oblique-solid.png",
+          "category": "review-still",
+          "bytes": 734950,
+          "sha256": "44ee81088f23c33ae46eae77a67364cff41abdcd4c6a4a505313d3acbb20c488",
+          "reason": "Actual exported-skin peak proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/exported-peak-oblique-wire.png",
+          "category": "review-still",
+          "bytes": 801428,
+          "sha256": "26d25b295656ea7d0d49f7d70cc41d1cfe9eef5bcb5d43aad190ba12a1d917c0",
+          "reason": "Actual exported-skin topology proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/exported-start-side-solid.png",
+          "category": "review-still",
+          "bytes": 701268,
+          "sha256": "90563a9406d123e5939ea23dcb801e2ee0015e9415cb69d747e6adaaa1f78cd2",
+          "reason": "Actual exported start support proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/3244/exported-return-side-solid.png",
+          "category": "review-still",
+          "bytes": 701268,
+          "sha256": "ed1a729a1b36b78e41c4b1e4c5c831b37f6045e3173f7a65b33479e43c378ce9",
+          "reason": "Actual exported return support proof."
+        }
+      ],
+      "reproduction_scripts": [
+        "build_motion.py",
+        "verify_asset.py"
+      ],
+      "dependency_notes": [
+        "Contact evidence is in pose-contact-qa.json; this asset does not have a separate surface-contact-report.json.",
+        "Preserve shared batch-003/authoring.py, artifacts/bodyweight-five/bodyweight-five.blend, and artifacts/bodyweight-five/build_motion.py.",
+        "verify_asset.py hardcodes /Users/kolengri/.codex/skills/blender-asset-qa/scripts; relocation requires that installed skill path or a later authorized portability fix.",
+        "The selected five PNGs are representative native/exported stills; other early and scratch contact views are omitted."
+      ],
+      "excluded_or_not_proposed": [
+        "early images superseded by actual exported-skin proofs",
+        "scratch contact probes not referenced by current review receipt"
+      ]
+    },
+    {
+      "id": "1906",
+      "canonical_model": "artifacts/exercise-batches/batch-003/assets/1906/motion.glb",
+      "files": [
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/README.md",
+          "category": "documentation",
+          "bytes": 8931,
+          "sha256": "2a8488d7d1a4502513dba233ee4a73306dc0391d5b8228804958d4ebf42e0018",
+          "reason": "Asset-specific scope, source choices, provenance, limits, QA summary, and reproduction instructions."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/source.blend",
+          "category": "editable-source",
+          "bytes": 13506760,
+          "sha256": "e6d3e9d866291229bcd17961ebcbb1031b4c2c14a705981bbccfd48a349fdbfe",
+          "reason": "Editable canonical Blender source for the accepted animation."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/motion.glb",
+          "category": "runtime-model",
+          "bytes": 1053304,
+          "sha256": "da9eec0be34e40f3e54c361fef26b52153c4db494123ee676b4e0a6d88bd9316",
+          "reason": "Canonical runtime model used by the shared viewer."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/clip.json",
+          "category": "runtime-metadata",
+          "bytes": 5224,
+          "sha256": "9f129381b960234b001355a8161a092a9bb55f8c46d04cc33a7269a06eb6d609",
+          "reason": "Source-backed exercise name, action, timing, phase, laterality, and viewer muscle metadata."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/cameras.json",
+          "category": "runtime-metadata",
+          "bytes": 356,
+          "sha256": "59624b1c472077b7ec7c74f8d3caebd53cac8511c95ee959a25f93ee370dd495",
+          "reason": "Accepted shared-viewer camera presets."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/authoring-context.json",
+          "category": "runtime-metadata",
+          "bytes": 60596,
+          "sha256": "1384c63c03d0ba9e80cb061f5b0ca97257e08c06be21c765379fe88977dba87b",
+          "reason": "Original per-asset authoring context snapshot; preserve with source and builder."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/pose-samples.json",
+          "category": "qa-evidence",
+          "bytes": 65988,
+          "sha256": "a1a266000c5ad87bb39a8807e287bd36a9c034789456d14a24dc4f0ba7740fd6",
+          "reason": "Frozen authored joint samples for pose and loop checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/runtime-surface-reference.json",
+          "category": "qa-evidence",
+          "bytes": 13783,
+          "sha256": "6d990619b74def92b739d78af804d0ba1fbe971b8d3ceb3d1715b496f070d915",
+          "reason": "Frozen original-index surface reference for independent actual-GLB parity checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/asset-qa.json",
+          "category": "qa-evidence",
+          "bytes": 2712,
+          "sha256": "fe7abbd29af0ef028e6a330c6239a63778419ead9779b04c4cb87cefe7645d3f",
+          "reason": "Current topology, weights, UV, and geometry QA receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/export-report.json",
+          "category": "qa-evidence",
+          "bytes": 481,
+          "sha256": "ac63063ebe69b59ca010990bc71cf69304f3f90242bf9023a8b70b655d81e399",
+          "reason": "Current canonical export/model identity receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/export-parity-report.json",
+          "category": "qa-evidence",
+          "bytes": 4387,
+          "sha256": "6623eaf02449081cf66b2cfe50a99a03d823bb63b9c76441faa82d1937c7ac69",
+          "reason": "Current independently decoded GLB skin/animation parity receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/hand-clearance-report.json",
+          "category": "qa-evidence",
+          "bytes": 3528,
+          "sha256": "f81489ae7a0b3ccca89b7716603040f1ff21586a0f1a61f240773a98698755f4",
+          "reason": "Current hand clearance evidence."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/skin-corrective-report.json",
+          "category": "qa-evidence",
+          "bytes": 840,
+          "sha256": "f2254f265d300d7b6ef5fcb137d3b9573e770bbb64375bb0a5c045c7595fa9d2",
+          "reason": "Current report for the accepted animated hip/knee corrective."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/normal-patch-report.json",
+          "category": "qa-evidence",
+          "bytes": 1347,
+          "sha256": "ae03b920efde9f2b2f4c1c15e2a0f076e57544cc13c90dd1c52eea986d988d6f",
+          "reason": "Current report for the accepted localized NORMAL correction."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/visual-review.json",
+          "category": "qa-evidence",
+          "bytes": 2172,
+          "sha256": "3c13f17e085145baebcf57de9fe3e9cb712c9ae6e16f8f0537281d52f38465f6",
+          "reason": "Current reviewed proof index and remaining visual notes."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/lbs-final-proof.json",
+          "category": "qa-evidence",
+          "bytes": 2488,
+          "sha256": "6501febcd607979532258b201b4ac0a9115b56d0b769909348d3538b2d2a4244",
+          "reason": "Current final accepted corrective-fit phase proof receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/build_motion.py",
+          "category": "reproducibility-script",
+          "bytes": 9268,
+          "sha256": "a0fd3924b243093fd14db0735ba0ea3a1519d65bc64ba7351feb807bee612179",
+          "reason": "Canonical builder; imports shared authoring.py, skin_corrective.py, and patch_morph_normals.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/skin_corrective.py",
+          "category": "reproducibility-script",
+          "bytes": 4017,
+          "sha256": "9e2d9e4eb77e26b613a32530cc6413d1b7e3201dca2abfcd95aa4d4c800f42fd",
+          "reason": "Required implementation of the accepted corrective."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/patch_morph_normals.py",
+          "category": "reproducibility-script",
+          "bytes": 1243,
+          "sha256": "59dbbc4c7dd6e5a8f368e5d231cc23c472786390f8f961d583455bc2d5b078ec",
+          "reason": "Required accepted normal-patch dependency; imports glb_runtime.py and glb_normals.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/glb_runtime.py",
+          "category": "reproducibility-script",
+          "bytes": 3284,
+          "sha256": "144002dc894695d035ff983c4c7bd1c2aa7b9754a5de5403f2047c0d6bfd2db8",
+          "reason": "Decoded GLB skin/action evaluator for the normal patch and export verification."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/glb_normals.py",
+          "category": "reproducibility-script",
+          "bytes": 5457,
+          "sha256": "7464991997b6420b261483a1f1b6467c389342c1a74072215fdc3bd5814d3a05",
+          "reason": "Local GLB accessor and normal transport helper."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/export_motion.py",
+          "category": "reproducibility-script",
+          "bytes": 2365,
+          "sha256": "10de9aa1992ab24330d1c25972e00b69ce0d8e05297c7798eefa6690058c88e3",
+          "reason": "Canonical re-export; imports the accepted patch_morph_normals.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/verify_asset.py",
+          "category": "reproducibility-script",
+          "bytes": 8250,
+          "sha256": "2c5ba5ed96ee6d2094a346b60d76425ea709dc0a9e2d2b20458885b3c73848ee",
+          "reason": "Native contact/geometry verification; needs shared authoring.py and external qa_check.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/verify_export.py",
+          "category": "reproducibility-script",
+          "bytes": 2938,
+          "sha256": "e8395fe48aceb9c4c8869c4fc4d36615295a0af7e397f8b51f96589b19028fc7",
+          "reason": "Independent GLB accessor/animation checks; imports glb_runtime.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/verify_hands.py",
+          "category": "reproducibility-script",
+          "bytes": 2574,
+          "sha256": "dc7865fd0044198d162ce395e728d241f803197360e9b7da771203d281a94828",
+          "reason": "Hand clearance verification."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/render_export.py",
+          "category": "reproducibility-script",
+          "bytes": 492,
+          "sha256": "b5460f46a8b505df55effe846f333739033397480811a61692b0303a3b476410",
+          "reason": "Wrapper for render_lbs.py to render actual decoded GLB geometry and normals."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/render_lbs.py",
+          "category": "reproducibility-script",
+          "bytes": 3973,
+          "sha256": "e7d0fb47ec5f6607a5927e95713cc6abb30f215317ef566a2ac26c20f5496da7",
+          "reason": "Required renderer for render_export.py; imports glb_runtime.py and glb_normals.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/write_metadata.py",
+          "category": "reproducibility-script",
+          "bytes": 4393,
+          "sha256": "d827b1f866de0fdb629ab614c6d5b5d4dc97e55ac4553e85daaf66edfac7554d",
+          "reason": "Regenerates clip metadata from catalogue/exercises/1906.json."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/export-peak-oblique.png",
+          "category": "review-still",
+          "bytes": 402944,
+          "sha256": "9871ab6ed70769b8fbbe72749ab37b05fae26007dca19d2398617c0bcc35e9a6",
+          "reason": "Actual exported-skin peak proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/export-peak-contact-side.png",
+          "category": "review-still",
+          "bytes": 314159,
+          "sha256": "af3596e14b6d562eef57bb3e1014a27722f390d826c271b391d9091fa9876e01",
+          "reason": "Actual exported support/hand-contact proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/export-start-contact-side.png",
+          "category": "review-still",
+          "bytes": 305460,
+          "sha256": "ce9eeb32b26ad12a5b61ac9dd81ee05b486afba7e399379ce7f88bfe5a46935a",
+          "reason": "Actual exported start support proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/export-return-oblique.png",
+          "category": "review-still",
+          "bytes": 405579,
+          "sha256": "2d6c8608aeca9a404cd399b6049958ef61a7979fd4d3928646b08388f6b2eeb5",
+          "reason": "Actual exported return proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/lbs-final-peak-overview.png",
+          "category": "review-still",
+          "bytes": 402944,
+          "sha256": "5016370faaf089aa3019ce4b8b71b178c3fa6c4b1b719f7256a8a50a8195edba",
+          "reason": "Final actual-LBS corrective overview."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/lbs-final-peak-close.png",
+          "category": "review-still",
+          "bytes": 607276,
+          "sha256": "d92c6afa691ec86644ecf3d52f1f5ac601482e0a144954fd8e09c4dc4b7fb60d",
+          "reason": "Final close proof of the corrected hip/knee region."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1906/lbs-final-entry-close.png",
+          "category": "review-still",
+          "bytes": 583387,
+          "sha256": "3c83aa4fe7235812e9d666e73ceae0b24ca79a31c9775d5e2013cb843555dfc5",
+          "reason": "Actual-LBS entry proof showing corrective ramp."
+        }
+      ],
+      "reproduction_scripts": [
+        "build_motion.py",
+        "write_metadata.py",
+        "export_motion.py",
+        "verify_asset.py",
+        "verify_export.py",
+        "verify_hands.py",
+        "render_export.py"
+      ],
+      "dependency_notes": [
+        "authoring.py requires the accepted bodyweight-five.blend and its build_motion.py helper; write_metadata.py also reads catalogue/exercises/1906.json.",
+        "verify_asset.py uses the installed Blender asset-QA skill at ~/.codex/skills/blender-asset-qa/scripts/qa_check.py.",
+        "Preserve frozen cameras.json scale 2.39; the builder baseline is 2.15.",
+        "delivery-report.json identified canonical paths and rejected diagnostics, but is omitted because its pending-acceptance list predates the primary live-runtime acceptance."
+      ],
+      "excluded_or_not_proposed": [
+        "candidate-motion.glb and candidate-source.blend (diagnostic, not canonical)",
+        "candidate builder and candidate reports/images",
+        "early, LBS candidate, solver, normal-diagnostic, and skin-inspection scratch outputs"
+      ]
+    },
+    {
+      "id": "1777",
+      "canonical_model": "artifacts/exercise-batches/batch-003/assets/1777/motion.glb",
+      "files": [
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/README.md",
+          "category": "documentation",
+          "bytes": 5154,
+          "sha256": "0de9f9171e58553668b79baca91cbb03b7656e75da27eaec120bec73348efec5",
+          "reason": "Asset-specific scope, source choices, provenance, limits, QA summary, and reproduction instructions."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/source.blend",
+          "category": "editable-source",
+          "bytes": 13729746,
+          "sha256": "17a0cdde636cf0bd810877d37901bb2ff71f8903e27b54c2406eb4ec368cd555",
+          "reason": "Editable canonical Blender source for the accepted animation."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/motion.glb",
+          "category": "runtime-model",
+          "bytes": 879444,
+          "sha256": "a4c646a2c6333fc67fc968dfd2d6d13d00138ee5f5cdb03e56dd81371f568b7f",
+          "reason": "Canonical runtime model used by the shared viewer."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/clip.json",
+          "category": "runtime-metadata",
+          "bytes": 4436,
+          "sha256": "137b407de0dcf81401ffb843b629fa02ce4893641facd1007d77e5c8a9f39d70",
+          "reason": "Source-backed exercise name, action, timing, phase, laterality, and viewer muscle metadata."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/cameras.json",
+          "category": "runtime-metadata",
+          "bytes": 350,
+          "sha256": "7c66a16e7eb9c649193214ede74a3b886eb4c118a96bbb7ac88ae7004a160dbc",
+          "reason": "Accepted shared-viewer camera presets."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/authoring-context.json",
+          "category": "runtime-metadata",
+          "bytes": 58588,
+          "sha256": "8cb268e2a14ec1a36863410b54d88b412253fda16b72a24bb2ba2806ec829ed5",
+          "reason": "Original per-asset authoring context snapshot; preserve with source and builder."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/pose-samples.json",
+          "category": "qa-evidence",
+          "bytes": 65275,
+          "sha256": "b52e0f8f24a052f6a8df7d2144ee1fc076395286bcf48a0b7ecf221942c222d0",
+          "reason": "Frozen authored joint samples for pose and loop checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/runtime-surface-reference.json",
+          "category": "qa-evidence",
+          "bytes": 26849,
+          "sha256": "1ece5063a86016befbac11794d847b3d295f540c8f2dacd75412872389819a0c",
+          "reason": "Frozen original-index surface reference for independent actual-GLB parity checks."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/asset-qa.json",
+          "category": "qa-evidence",
+          "bytes": 5286,
+          "sha256": "0fd680a8731160e92335ed5ebd774dc1a6b89bd880921d18638ad5b04a45887f",
+          "reason": "Current topology, weights, UV, and geometry QA receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export-parity-report.json",
+          "category": "qa-evidence",
+          "bytes": 2787,
+          "sha256": "d4a95507224fadbb464113d3f65fedcf9b7f0a301e4c66f3efe02663d49d6522",
+          "reason": "Current independently decoded GLB skin/animation parity receipt."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export-render-report.json",
+          "category": "qa-evidence",
+          "bytes": 238,
+          "sha256": "010a4b699693a9b85b56dbb5c43e5df0eb62b21fd650e8ec68a76fd4610d4e7f",
+          "reason": "Current actual exported-skin review render report."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/qa-summary.json",
+          "category": "qa-evidence",
+          "bytes": 9330,
+          "sha256": "35b6cae27a6453e3423968a42a8260c46da41e552ca565532fbfcae7f1d93abd",
+          "reason": "Current hash-linked summary of canonical asset measurements."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/linear-vertex-reference.json",
+          "category": "qa-evidence",
+          "bytes": 7262248,
+          "sha256": "fc43b904d83b2c6bb2b43bbe28baafcf4ab130f632776d5d7c898a5a6e4fe35d",
+          "reason": "Original-index reference used by independent export parity verification."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/build_motion.py",
+          "category": "reproducibility-script",
+          "bytes": 9938,
+          "sha256": "469864757ca89091975aecbabf667fa4e0b7a9c31333bb426f381c88e9ed826e",
+          "reason": "Canonical plain-LBS builder; imports shared authoring.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export_motion.py",
+          "category": "reproducibility-script",
+          "bytes": 1401,
+          "sha256": "8239bbfee95180456cc722189eb69ceeaf191681cb8cf66559a545e7ec242342",
+          "reason": "Re-export helper; documented --plain mode avoids optional rejected normal trial."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/verify_asset.py",
+          "category": "reproducibility-script",
+          "bytes": 8951,
+          "sha256": "5aad68f4521f664f494906259d8a87feb71b3f624f70ef248fab5881e434c3a8",
+          "reason": "Reproduces native and linear checks; needs shared authoring.py and external qa_check.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/verify_export.py",
+          "category": "reproducibility-script",
+          "bytes": 4943,
+          "sha256": "2bc7fa1128b4a6db5e36eec217088a5a531fbe1d51059c544e5dc9515a53c324",
+          "reason": "Independent GLB accessor, animation, and surface parity checker."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/render_export.py",
+          "category": "reproducibility-script",
+          "bytes": 4976,
+          "sha256": "000f911985b196007edc462162ed49e6e25b0d5dd66127710cacc53763e33013",
+          "reason": "Actual decoded-GLB proof renderer; imports verify_export.py and sibling asset 4348/glb_normals.py."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/write_report.py",
+          "category": "reproducibility-script",
+          "bytes": 6783,
+          "sha256": "087bc36adcc2bdd7046c4ba6774e0981fa8b3ab77965abc578d8ebd9b167e4c7",
+          "reason": "Regenerates canonical hash and measurement summary."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export-entry-oblique.png",
+          "category": "review-still",
+          "bytes": 428536,
+          "sha256": "d1fc82cfdba70f44fe83ba046d6aa5b9e6f1de4d68942068e4ffe5bbc913fdce",
+          "reason": "Actual exported entry/clearance view."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export-peak-oblique.png",
+          "category": "review-still",
+          "bytes": 449850,
+          "sha256": "3f5e9448b8d4c9e7783620de55e83680b259eae6739b568c457fce57cb0d3f75",
+          "reason": "Actual exported peak view."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export-peak-side.png",
+          "category": "review-still",
+          "bytes": 407495,
+          "sha256": "0a65448c22f46bf4fa086f248ba2c1f1f89612bdc214513c84e702c22ec8524e",
+          "reason": "Actual exported side view for reach and back contour."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export-peak-hands.png",
+          "category": "review-still",
+          "bytes": 531177,
+          "sha256": "b821a31aa3603a7f14b2d2ec7dd363c017e494e517ac34f6409825cd0a86a483",
+          "reason": "Actual exported hands/grip close proof."
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/1777/export-return-oblique.png",
+          "category": "review-still",
+          "bytes": 419160,
+          "sha256": "09937475defc0f5c0d4f7ddeebbd3327459cf89890016e006727d5506da0a405",
+          "reason": "Actual exported return view."
+        }
+      ],
+      "reproduction_scripts": [
+        "build_motion.py",
+        "export_motion.py -- --plain",
+        "verify_asset.py",
+        "verify_export.py",
+        "write_report.py",
+        "render_export.py"
+      ],
+      "dependency_notes": [
+        "authoring.py requires the accepted bodyweight-five.blend and its build_motion.py helper.",
+        "render_export.py imports glb_normals.py from sibling asset 4348; preserve sibling layout.",
+        "verify_asset.py uses qa_check.py from ~/.codex/skills/blender-asset-qa/scripts; this is an external host prerequisite.",
+        "motion-plain.glb is byte-identical to motion.glb and is excluded. Optional normal-trial mode is not part of the canonical reproducibility path."
+      ],
+      "excluded_or_not_proposed": [
+        "motion-normal-trial.glb and normal-trial-report.json (unaccepted 58-target experiment)",
+        "motion-plain.glb (duplicate of canonical model)",
+        "scratch grip/normal trials and early intermediate stills"
+      ]
+    },
+    {
+      "id": "6033",
+      "canonical_model": "artifacts/exercise-batches/batch-003/assets/6033/motion.glb",
+      "files": [
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/source.blend",
+          "category": "runtime_and_source",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 13584966,
+          "sha256": "144190a81099f5abae8180533d0c600652d27255fc598e4a0d812bf722245067"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/motion.glb",
+          "category": "runtime_and_source",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 945416,
+          "sha256": "8a928882f94a9935ebf46abf1d7538f9b9d276abc52edc941d6710dee67bdcb2"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/clip.json",
+          "category": "runtime_and_source",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 3569,
+          "sha256": "ecd7ac8349dc1f1c22669219e78fba409bb0b4a724fc18a4ace23c3f1eaa8170"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/cameras.json",
+          "category": "runtime_and_source",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 330,
+          "sha256": "8f2dded515e99f542ecd4348dd1ad777078ad421d21fb8b78d7e9015e55569e8"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/build_motion.py",
+          "category": "reproduction",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 12905,
+          "sha256": "18dd0960e484a5fe5816548b9c0d3e7dda02b12c07696c78cea8066f5aa59a2a"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/knee_corrective.py",
+          "category": "reproduction",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 4063,
+          "sha256": "12b52691becf7a392f845170cb49160e4801bce4b327ee97fe7674fe50cfab40"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/knee_native_target.py",
+          "category": "reproduction",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 2580,
+          "sha256": "b7bd5d532d4c6d1cfc434357228027a407e37aaf84e1b94019248029ff38733f"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/verify_asset.py",
+          "category": "reproduction",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 12052,
+          "sha256": "ca39b4755237e68f8d82daf1e26b91b39df4ffbe89a790b9ae75a591938bcbfc"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/verify_corrective_source.py",
+          "category": "reproduction",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 2483,
+          "sha256": "e906a03e372dfd9f8914194b3f7efb4e1937a28a764346bd3123896ada30ecbe"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/verify_export.mjs",
+          "category": "reproduction",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 8385,
+          "sha256": "51ee07980c711dfc6031ee9f6a98de542c17f26e4fa8c8392f8c1d024ddcb2c6"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/render_export.py",
+          "category": "reproduction",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 1750,
+          "sha256": "3c6402c07e8d6749e619c02a65053debf2d8e37952df10227c7360c518cad61a"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/pose-samples.json",
+          "category": "source_bound_references",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 65177,
+          "sha256": "588061b0e25eb2080380c23c7f0f2e279d06f0853ba49d15c758187c4fc39095"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/runtime-surface-reference.json",
+          "category": "source_bound_references",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 2771476,
+          "sha256": "fa4ec8cde0dbf0e43680bee49a3a3b97f08af062818243479e57b4e249496ea0"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/dq-reference.json.gz",
+          "category": "source_bound_references",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 1414274,
+          "sha256": "5228bd969667e18f937894ba944499ff8fc35b1154a32743ee3c799613d7ebe9"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/knee-normal-reference.json.gz",
+          "category": "source_bound_references",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 581572,
+          "sha256": "a970a8ab9e46cfa4d60b603380f4159c55c2b23e7d1accf2f1cf1737c8044bdf"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/landmarks.json",
+          "category": "source_bound_references",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 54848,
+          "sha256": "8401a20662c07ba1b214440a9e125806837ad6a73578d531d399823aba3e273c"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/build-report.json",
+          "category": "qa_receipts",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 6789,
+          "sha256": "2cb98bbbab01648cd380057c7cc00175e7a1bab8ca4cecefa3b931c6e2232d72"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/knee-corrective-report.json",
+          "category": "qa_receipts",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 4963,
+          "sha256": "1f005a739d73616ef3159cc970be5b9d5a40d0d38376098d2954ffd265ca0acb"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/knee-source-verification.json",
+          "category": "qa_receipts",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 501,
+          "sha256": "f2f8716f0b4c82fc576b3618fbe48b4af7b5feca49339f28653f848f29167fbb"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/knee-invariant-verification.json",
+          "category": "qa_receipts",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 821,
+          "sha256": "f31a6f817d54f82edb1a97652457b508e54e2dcdaaa5cf88823de4c329cf0537"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/surface-contact-report.json",
+          "category": "qa_receipts",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 125603,
+          "sha256": "0d5f30eab94a92a7378af0d5b72a45883528f2564e35989e0b3fc50228074b3e"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/asset-qa.json",
+          "category": "qa_receipts",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 17206,
+          "sha256": "2a24372201d4686132e090f74f6f45245ab7ad6b342f0c26056f49eb8bd5be9d"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/export-verification.json",
+          "category": "qa_receipts",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 19999,
+          "sha256": "1aac2915397a1cb96bfc0a0390bb1bfecbaf25fc777e196f0f078edb43a0cc3f"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/early-start-side.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 181699,
+          "sha256": "47a4a46598b45321e3bb88ced24941700f10ebda7f1a863b5d5ba773179e5734"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/early-peak-side.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 184948,
+          "sha256": "0b0d00a78c6891a14a6754f5cdda103694be59eb902297feb76034ebb4cc1165"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/early-peak-oblique.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 178109,
+          "sha256": "f70df7fae56ccd7c05167ea677bb44086226f5edae83343fd8dfc3c2bbc4eada"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/early-peak-rear.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 215038,
+          "sha256": "7feaf2eb9acfc6be92420d5e663b53c0798a2a1ca23e14db3879b762a33f6201"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/early-return-side.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 181699,
+          "sha256": "f5b4f300bb405ea43b112053dfaa37f139c532ff00e30af33723db857ef61013"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/wire-peak-oblique.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 220104,
+          "sha256": "f13bb78a53ec4636c6727957da7c41d7eb30a00a3ea4ba07d40538f7253a77fc"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/exported-dq-start-side.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 188021,
+          "sha256": "6cefb71b6bc58ddd5f3f4d8afeb5a0cefd2e1f90c9d5cf39c3718d4de5d84e23"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/exported-dq-peak-oblique.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 197692,
+          "sha256": "a9ea81af5ba383206d65b5f8de5ff40d72353a041a45d4d69f6f07bd53cbf187"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/exported-dq-return-side.png",
+          "category": "viewed_proofs",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 188021,
+          "sha256": "692f3935b69856e690fc2c082907d6d882caaa044efcd518a79549e244a19a56"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/pre-knee-pose-samples.json",
+          "category": "accepted_baseline_comparison",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 65177,
+          "sha256": "588061b0e25eb2080380c23c7f0f2e279d06f0853ba49d15c758187c4fc39095"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/pre-knee-runtime-surface-reference.json",
+          "category": "accepted_baseline_comparison",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 2771476,
+          "sha256": "954703aa41e73825a9f1985130580516693453417897c61ffba06a90f0fe798b"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/pre-knee-dq-reference.json.gz",
+          "category": "accepted_baseline_comparison",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 1414243,
+          "sha256": "ad053d3f4f87f271b244d03af4d851457c41ff08de7a9010067c3595cf075d1e"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/README.md",
+          "category": "delivery_reports",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 8270,
+          "sha256": "020a4c122c41e9a8f653cf93ba8e5e65e88c6b0ae4f2fe374593f1113f6c6658"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/delivery-report.json",
+          "category": "delivery_reports",
+          "reason": "Final source-author curated delivery; source-bound current corrective, QA and reproducibility evidence.",
+          "bytes": 13168,
+          "sha256": "3ec2a7a6763b8d5962bf6600cf8e0e5cbdeb865ab73c2c35eb1154cc335cda05"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/authoring-context.json",
+          "category": "source-context-and-decision",
+          "reason": "Frozen authoring input or explicitly approved full-knee target supporting the generation finding.",
+          "bytes": 57811,
+          "sha256": "5298b6ef5fcd9c0161899094a767a4d526576de6498b635e157964053a6ed21c"
+        },
+        {
+          "path": "artifacts/exercise-batches/batch-003/assets/6033/knee-native-target-proposal.json",
+          "category": "source-context-and-decision",
+          "reason": "Frozen authoring input or explicitly approved full-knee target supporting the generation finding.",
+          "bytes": 4326,
+          "sha256": "1216e0ab9d79632cbde61a1f1cdfb93f1affc8bfef631ab6b31e5aabc9568964"
+        }
+      ]
+    }
+  ],
+  "shared_dependencies": [
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "status": "required-shared-input",
+      "bytes": 4194,
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045",
+      "reason": "Imported shared rig/math loader; preserve batch-003 relative path."
+    },
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "status": "required-shared-input",
+      "bytes": 14997498,
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+      "reason": "Immutable CC0 source opened and SHA-checked by authoring.py."
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "status": "required-shared-input",
+      "bytes": 18948,
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c",
+      "reason": "Function source parsed by authoring.py to load shared rig/math helpers."
+    },
+    {
+      "path": "artifacts/bodyweight-next-five/warning_observer.py",
+      "status": "required-shared-input",
+      "bytes": 2618,
+      "sha256": "ce8fd9d86a22df849c9db3f00b22900b99af758305a7914654bf6879b90806e8",
+      "reason": "Imported by 4348 verifier to annotate inherited QA warnings."
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/assets/4348/glb_normals.py",
+      "status": "required-shared-input",
+      "bytes": 5420,
+      "sha256": "36b62df9d60f1f4910cbb7200a82dacf1cf40350d0102287692a93e8a3ed803b",
+      "reason": "Sibling helper imported by 1777 render_export.py."
+    },
+    {
+      "path": "catalogue/exercises/1906.json",
+      "status": "required-shared-input",
+      "bytes": 796,
+      "sha256": "54fced582533408b3caca65bbf34c3c0f448e51ebe0c6c24980066456ee83e1c",
+      "reason": "Source text input read by 1906 write_metadata.py."
+    }
+  ],
+  "external_prerequisites": [
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "status": "available-locally-external-to-repository",
+      "bytes": 16590,
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b",
+      "reason": "Required by asset verification scripts. Not copied into this package; 3244 additionally hardcodes the current absolute user path."
+    },
+    {
+      "name": "Blender",
+      "version": "5.2.3 LTS as documented in asset READMEs",
+      "status": "required-runtime",
+      "reason": "Provides bpy, mathutils, glTF IO, and bundled NumPy for build and QA scripts."
+    }
+  ],
+  "excluded_artifacts": [
+    {
+      "asset_id": "1906",
+      "paths": [
+        "candidate-source.blend",
+        "candidate-motion.glb"
+      ],
+      "reason": "Delivery report marks diagnostic binaries, not canonical inputs."
+    },
+    {
+      "asset_id": "1777",
+      "paths": [
+        "motion-normal-trial.glb",
+        "normal-trial-report.json"
+      ],
+      "reason": "README marks the 58-target trial unaccepted and disproportionate."
+    },
+    {
+      "asset_id": "1777",
+      "paths": [
+        "motion-plain.glb"
+      ],
+      "reason": "README says this is byte-identical to canonical motion.glb."
+    },
+    {
+      "asset_id": "all listed",
+      "paths": [
+        "*.blend1",
+        "unselected early/native/linear/candidate PNGs",
+        "solver probes and scratch diagnostics"
+      ],
+      "reason": "Backups and nonessential intermediate outputs are not delivery candidates."
+    }
+  ],
+  "review_notes": [
+    "The Luna inventory covered 4348, 3244, 1906 and 1777; the primary added the 6033 source-author final curated list after final native/runtime/appearance acceptance.",
+    "1906 delivery-report.json was consulted for canonical/excluded paths but omitted as current acceptance evidence because its pending list predates primary live-runtime acceptance.",
+    "Shared helpers and their base source dependencies are listed separately so expected relative imports remain resolvable.",
+    "The selected project files are not fully self-contained: Blender asset-QA qa_check.py remains an external skill prerequisite, 3244 hardcodes its user path, and 1777 render_export imports 4348/glb_normals.py. These are disclosed rather than hidden.",
+    "Each candidate file has current byte count and SHA-256. This manifest does not copy, stage, or reclassify any source asset.",
+    "The primary refreshed final camera/provenance metadata hashes after integration; source/model identities and frozen authoring snapshots remain explicit."
+  ]
+}

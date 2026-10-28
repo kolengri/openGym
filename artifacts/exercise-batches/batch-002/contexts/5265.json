@@ -437,13 +437,15 @@
     "generate_frame_sequences": false,
     "existing_video_artifacts": "Historical batch001 only; preserve without regeneration.",
     "current_request_scope": [
-      "5265",
-      "4007",
-      "6428",
       "10565",
-      "6560"
+      "6560",
+      "6033",
+      "4348",
+      "3244",
+      "1906",
+      "1777"
     ],
-    "further_exercises": "The user approved the5915 soft heat-zone style and authorized the next five equipment-free exercises. Review this batch before further rollout."
+    "further_exercises": "The user explicitly authorized batch 003 in parallel while 90/90 is repaired separately. Deliver these five for review before further rollout."
   },
   "visualization_policy": {
     "candidate": "surface_heat_zone",
@@ -451,13 +453,29 @@
     "exercise_id": "5915",
     "inactive_body": "Uniform neutral skin; no painted muscle fibers or hard region boundaries.",
     "main_additional": "Diffuse heat cue from selected source regions; stronger main areas and softer additional areas.",
-    "phase_strength": "Small authored artistic emphasis; no measured physiological recruitment claim.",
+    "phase_strength": "Stable authored artistic emphasis; no invented phase-dependent recruitment or measured physiological claim.",
     "stretch_palette": "Diffuse cyan for stretching exercises; keep source training labels separate from contraction/load claims. No measured force, temperature or EMG interpretation.",
     "approved_style_exercise_id": "5915",
     "current_batch": [
-      "5265",
-      "4007",
-      "6428",
+      "6033",
+      "4348",
+      "3244",
+      "1906",
+      "1777"
+    ],
+    "additional_authorized_batch": {
+      "batch": "003",
+      "exercise_ids": [
+        "6033",
+        "4348",
+        "3244",
+        "1906",
+        "1777"
+      ],
+      "style": "Unchanged approved 5915 soft surface fields: warm primary/additional load and cyan stretching, inactive neutral skin, real alpha, no body shadows or AO.",
+      "execution": "One original exercise animation per agent with disjoint asset ownership; independent 90/90 repair continues."
+    },
+    "parallel_repair_batch": [
       "10565",
       "6560"
     ]
@@ -1505,7 +1523,7 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generation-contract.json",
-      "sha256": "4bc911135bda9e89c45386de604c6b882d07c77451fe9ad6344ab065467affdd"
+      "sha256": "cb1bae142ce1e4acb6f955beef4a12c15f220c74c7faf477888752f0553b09c2"
     },
     {
       "path": "artifacts/exercise-animation-briefs/selected-first-five.json",

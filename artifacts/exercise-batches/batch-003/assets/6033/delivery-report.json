@@ -1,0 +1,356 @@
+{
+  "id": "6033",
+  "status": "accepted_review_candidate_frozen",
+  "skinning": "dualQuaternion",
+  "primary_final_acceptance": "Primary reports root and independent Terra actual Three.js visual recheck passed the new knee shape and elevated abdominal view; all-five runtime parity/alpha/controls/loops passed. Residual original-cage faceting explicitly accepted.",
+  "freeze": "No further source/model/camera/runtime-metadata changes after final primary acceptance. Only this delivery README/report were updated.",
+  "binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "files": {
+    "source.blend": {
+      "bytes": 13584966,
+      "sha256": "144190a81099f5abae8180533d0c600652d27255fc598e4a0d812bf722245067"
+    },
+    "motion.glb": {
+      "bytes": 945416,
+      "sha256": "8a928882f94a9935ebf46abf1d7538f9b9d276abc52edc941d6710dee67bdcb2"
+    },
+    "clip.json": {
+      "bytes": 3569,
+      "sha256": "ecd7ac8349dc1f1c22669219e78fba409bb0b4a724fc18a4ace23c3f1eaa8170"
+    },
+    "cameras.json": {
+      "bytes": 330,
+      "sha256": "8f2dded515e99f542ecd4348dd1ad777078ad421d21fb8b78d7e9015e55569e8"
+    },
+    "build_motion.py": {
+      "bytes": 12905,
+      "sha256": "18dd0960e484a5fe5816548b9c0d3e7dda02b12c07696c78cea8066f5aa59a2a"
+    },
+    "knee_corrective.py": {
+      "bytes": 4063,
+      "sha256": "12b52691becf7a392f845170cb49160e4801bce4b327ee97fe7674fe50cfab40"
+    },
+    "knee_native_target.py": {
+      "bytes": 2580,
+      "sha256": "b7bd5d532d4c6d1cfc434357228027a407e37aaf84e1b94019248029ff38733f"
+    },
+    "verify_asset.py": {
+      "bytes": 12052,
+      "sha256": "ca39b4755237e68f8d82daf1e26b91b39df4ffbe89a790b9ae75a591938bcbfc"
+    },
+    "verify_corrective_source.py": {
+      "bytes": 2483,
+      "sha256": "e906a03e372dfd9f8914194b3f7efb4e1937a28a764346bd3123896ada30ecbe"
+    },
+    "verify_export.mjs": {
+      "bytes": 8385,
+      "sha256": "51ee07980c711dfc6031ee9f6a98de542c17f26e4fa8c8392f8c1d024ddcb2c6"
+    },
+    "render_export.py": {
+      "bytes": 1750,
+      "sha256": "3c6402c07e8d6749e619c02a65053debf2d8e37952df10227c7360c518cad61a"
+    },
+    "pose-samples.json": {
+      "bytes": 65177,
+      "sha256": "588061b0e25eb2080380c23c7f0f2e279d06f0853ba49d15c758187c4fc39095"
+    },
+    "runtime-surface-reference.json": {
+      "bytes": 2771476,
+      "sha256": "fa4ec8cde0dbf0e43680bee49a3a3b97f08af062818243479e57b4e249496ea0"
+    },
+    "dq-reference.json.gz": {
+      "bytes": 1414274,
+      "sha256": "5228bd969667e18f937894ba944499ff8fc35b1154a32743ee3c799613d7ebe9"
+    },
+    "knee-normal-reference.json.gz": {
+      "bytes": 581572,
+      "sha256": "a970a8ab9e46cfa4d60b603380f4159c55c2b23e7d1accf2f1cf1737c8044bdf"
+    },
+    "landmarks.json": {
+      "bytes": 54848,
+      "sha256": "8401a20662c07ba1b214440a9e125806837ad6a73578d531d399823aba3e273c"
+    },
+    "build-report.json": {
+      "bytes": 6789,
+      "sha256": "2cb98bbbab01648cd380057c7cc00175e7a1bab8ca4cecefa3b931c6e2232d72"
+    },
+    "knee-corrective-report.json": {
+      "bytes": 4963,
+      "sha256": "1f005a739d73616ef3159cc970be5b9d5a40d0d38376098d2954ffd265ca0acb"
+    },
+    "knee-source-verification.json": {
+      "bytes": 501,
+      "sha256": "f2f8716f0b4c82fc576b3618fbe48b4af7b5feca49339f28653f848f29167fbb"
+    },
+    "knee-invariant-verification.json": {
+      "bytes": 821,
+      "sha256": "f31a6f817d54f82edb1a97652457b508e54e2dcdaaa5cf88823de4c329cf0537"
+    },
+    "surface-contact-report.json": {
+      "bytes": 125603,
+      "sha256": "0d5f30eab94a92a7378af0d5b72a45883528f2564e35989e0b3fc50228074b3e"
+    },
+    "asset-qa.json": {
+      "bytes": 17206,
+      "sha256": "2a24372201d4686132e090f74f6f45245ab7ad6b342f0c26056f49eb8bd5be9d"
+    },
+    "export-verification.json": {
+      "bytes": 19999,
+      "sha256": "1aac2915397a1cb96bfc0a0390bb1bfecbaf25fc777e196f0f078edb43a0cc3f"
+    },
+    "early-start-side.png": {
+      "bytes": 181699,
+      "sha256": "47a4a46598b45321e3bb88ced24941700f10ebda7f1a863b5d5ba773179e5734"
+    },
+    "early-peak-side.png": {
+      "bytes": 184948,
+      "sha256": "0b0d00a78c6891a14a6754f5cdda103694be59eb902297feb76034ebb4cc1165"
+    },
+    "early-peak-oblique.png": {
+      "bytes": 178109,
+      "sha256": "f70df7fae56ccd7c05167ea677bb44086226f5edae83343fd8dfc3c2bbc4eada"
+    },
+    "early-peak-rear.png": {
+      "bytes": 215038,
+      "sha256": "7feaf2eb9acfc6be92420d5e663b53c0798a2a1ca23e14db3879b762a33f6201"
+    },
+    "early-return-side.png": {
+      "bytes": 181699,
+      "sha256": "f5b4f300bb405ea43b112053dfaa37f139c532ff00e30af33723db857ef61013"
+    },
+    "wire-peak-oblique.png": {
+      "bytes": 220104,
+      "sha256": "f13bb78a53ec4636c6727957da7c41d7eb30a00a3ea4ba07d40538f7253a77fc"
+    },
+    "exported-dq-start-side.png": {
+      "bytes": 188021,
+      "sha256": "6cefb71b6bc58ddd5f3f4d8afeb5a0cefd2e1f90c9d5cf39c3718d4de5d84e23"
+    },
+    "exported-dq-peak-oblique.png": {
+      "bytes": 197692,
+      "sha256": "a9ea81af5ba383206d65b5f8de5ff40d72353a041a45d4d69f6f07bd53cbf187"
+    },
+    "exported-dq-return-side.png": {
+      "bytes": 188021,
+      "sha256": "692f3935b69856e690fc2c082907d6d882caaa044efcd518a79549e244a19a56"
+    },
+    "pre-knee-pose-samples.json": {
+      "bytes": 65177,
+      "sha256": "588061b0e25eb2080380c23c7f0f2e279d06f0853ba49d15c758187c4fc39095"
+    },
+    "pre-knee-runtime-surface-reference.json": {
+      "bytes": 2771476,
+      "sha256": "954703aa41e73825a9f1985130580516693453417897c61ffba06a90f0fe798b"
+    },
+    "pre-knee-dq-reference.json.gz": {
+      "bytes": 1414243,
+      "sha256": "ad053d3f4f87f271b244d03af4d851457c41ff08de7a9010067c3595cf075d1e"
+    }
+  },
+  "curated_delivery": {
+    "runtime_and_source": [
+      "source.blend",
+      "motion.glb",
+      "clip.json",
+      "cameras.json"
+    ],
+    "reproduction": [
+      "build_motion.py",
+      "knee_corrective.py",
+      "knee_native_target.py",
+      "verify_asset.py",
+      "verify_corrective_source.py",
+      "verify_export.mjs",
+      "render_export.py"
+    ],
+    "source_bound_references": [
+      "pose-samples.json",
+      "runtime-surface-reference.json",
+      "dq-reference.json.gz",
+      "knee-normal-reference.json.gz",
+      "landmarks.json"
+    ],
+    "qa_receipts": [
+      "build-report.json",
+      "knee-corrective-report.json",
+      "knee-source-verification.json",
+      "knee-invariant-verification.json",
+      "surface-contact-report.json",
+      "asset-qa.json",
+      "export-verification.json"
+    ],
+    "viewed_proofs": [
+      "early-start-side.png",
+      "early-peak-side.png",
+      "early-peak-oblique.png",
+      "early-peak-rear.png",
+      "early-return-side.png",
+      "wire-peak-oblique.png",
+      "exported-dq-start-side.png",
+      "exported-dq-peak-oblique.png",
+      "exported-dq-return-side.png"
+    ],
+    "accepted_baseline_comparison": [
+      "pre-knee-pose-samples.json",
+      "pre-knee-runtime-surface-reference.json",
+      "pre-knee-dq-reference.json.gz"
+    ],
+    "delivery_reports": [
+      "README.md",
+      "delivery-report.json"
+    ]
+  },
+  "source_geometry": {
+    "original_vertices": 10582,
+    "triangles": 21160,
+    "bones": 51,
+    "actions": [
+      "Exercise_6033"
+    ],
+    "action_slots": [
+      "OBJECT",
+      "KEY"
+    ],
+    "materials": 1,
+    "textures": 0,
+    "helpers_added": 0,
+    "weights_changed": false,
+    "morphs_added": 1,
+    "corrective": "KneeCapRound POSITION and NORMAL"
+  },
+  "corrective": {
+    "method": "Exact original-cage CorrectiveSmooth displacement over the complete local knee circumference, smoothly feathered into thigh/calf. No outside-bisector exclusion or dome term.",
+    "changed_original_vertices": 360,
+    "maximum_displacement_m": 0.02532348019559522,
+    "authorized_bound_m": 0.03,
+    "inverse_dq_target_error_m": 9.581484601067934e-08,
+    "sample_weights": [
+      {
+        "frame": 0,
+        "weight": 0.0
+      },
+      {
+        "frame": 30,
+        "weight": 0.3203582763671875
+      },
+      {
+        "frame": 75,
+        "weight": 1.0
+      },
+      {
+        "frame": 120,
+        "weight": 0.3203582763671875
+      },
+      {
+        "frame": 150,
+        "weight": 0.0
+      }
+    ],
+    "joint_support_outside_knee_and_endpoints_unchanged": true,
+    "full_invariant_receipt": "knee-invariant-verification.json",
+    "global_smoothing_applied_at_runtime": false
+  },
+  "checks": {
+    "dq_contacts_and_geometry_pass": true,
+    "full_dq_vertex_error_m": 1.084447481920292e-06,
+    "joint_error_m": 9.054886085005668e-07,
+    "selected_surface_error_m": 1.1101283898103597e-06,
+    "loop_skin_error_m": 1.8505768575398292e-07,
+    "maximum_basis_normal_vector_error": 8.187660755892303e-05,
+    "maximum_target_normal_vector_error": 8.187660755892303e-05,
+    "normal_scope": "GLTFLoader Basis and full key normals compared in original rest space at every exported UV-split vertex. Shared GPU shader morphs normals before unit DQ rotation, which preserves the vector-error bound. GPU raster appearance remains primary-owned.",
+    "minimum_floor_z_m": -0.0020000338554382324,
+    "minimum_pelvic_near_fraction": 0.25,
+    "minimum_palm_pad_near_fraction": 0.25,
+    "maximum_palm_tangential_drift_m": 0.00023065682034939528,
+    "minimum_foot_clearance_m": 0.09298130869865417
+  },
+  "dq_reference": {
+    "path": "dq-reference.json.gz",
+    "source_sha256": "144190a81099f5abae8180533d0c600652d27255fc598e4a0d812bf722245067",
+    "frames": [
+      0,
+      30,
+      75,
+      120,
+      150
+    ],
+    "original_vertices_per_frame": 10582,
+    "coordinates": "Blender Z up, original ID order"
+  },
+  "sampled_dq_envelope_m": {
+    "minimum": [
+      -0.31510400772094727,
+      -1.005134105682373,
+      -0.0020000338554382324
+    ],
+    "maximum": [
+      0.3150996267795563,
+      0.555454671382904,
+      0.9501727819442749
+    ],
+    "dimensions": [
+      0.6302036345005035,
+      1.560588777065277,
+      0.9521728157997131
+    ],
+    "basis": "Union at five reference phases, not a continuous bound."
+  },
+  "nonruntime_preview": "All non-Armature modifiers are disabled in saved source. Separate Multires-only native preview has 9/12 hidden back-to-back pair warnings at entry/peak and some pelvic contact differences. Global CorrectiveSmooth is disabled everywhere except deriving the one knee-local rest key; no double smoothing.",
+  "shared_read_only_dependencies": [
+    "artifacts/exercise-batches/batch-003/authoring.py",
+    "artifacts/bodyweight-five/bodyweight-five.blend",
+    "artifacts/bodyweight-next-five/warning_observer.py",
+    "artifacts/exercise-batches/dual-quaternion.js",
+    "artifacts/first-exercise-3d/runtime/node_modules/three",
+    "~/.codex/skills/blender-asset-qa/scripts/qa_check.py"
+  ],
+  "historical_exclusions": "Exclude repair-v1*, hip-volume-repair.json, before-repair*, knee-probe*, knee-round*, knee-existing-smooth-cage-side.png, knee-full-native-target*, knee-*-proposal.json, knee-corrective-limitations.md, probe/preview/diagnose scripts and logs, repair-checkpoint.json, old exported-* without -dq-, optional native preview stills, __pycache__. They are prior/rejected diagnostics, not final dependencies.",
+  "limits": "Original-cage faceting remains accepted. Contact checks sample eleven phases; full native/Three CPU DQ parity samples five phases. Neither is a continuous collision guarantee. Standard GLB requires the shared optional DQ adapter; no generic LBS appearance claim.",
+  "scope": "Only assets/6033 written; no Git, shared file edits, paid jobs, videos or animation frame sequences.",
+  "asset_qa_binding": {
+    "source_sha256": "144190a81099f5abae8180533d0c600652d27255fc598e4a0d812bf722245067",
+    "asset_qa_sha256": "2a24372201d4686132e090f74f6f45245ab7ad6b342f0c26056f49eb8bd5be9d",
+    "surface_contact_report_sha256": "0d5f30eab94a92a7378af0d5b72a45883528f2564e35989e0b3fc50228074b3e",
+    "source_corrective": "KneeCapRound",
+    "identity": "The final build reopens the saved corrective-bearing source before verify_asset.run. asset-qa.samples exactly equals surface-contact-report.geometry_checks; that same run writes its exact current source_sha256. This binds the existing geometry receipt without a redundant run.",
+    "geometry_checks": [
+      {
+        "path": "dq_cage",
+        "runtime_frame": 0,
+        "native_frame": 1,
+        "pass": true,
+        "evaluated_vertices": 10582,
+        "warnings": []
+      },
+      {
+        "path": "dq_cage",
+        "runtime_frame": 75,
+        "native_frame": 76,
+        "pass": true,
+        "evaluated_vertices": 10582,
+        "warnings": []
+      },
+      {
+        "path": "native",
+        "runtime_frame": 0,
+        "native_frame": 1,
+        "pass": true,
+        "evaluated_vertices": 42342,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+        ]
+      },
+      {
+        "path": "native",
+        "runtime_frame": 75,
+        "native_frame": 76,
+        "pass": true,
+        "evaluated_vertices": 42342,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (12 pairs) - delete to save tris"
+        ]
+      }
+    ]
+  }
+}

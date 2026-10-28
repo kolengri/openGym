@@ -1,0 +1,3452 @@
+{
+  "ok": true,
+  "failures": [],
+  "source_sha256": "144190a81099f5abae8180533d0c600652d27255fc598e4a0d812bf722245067",
+  "sample_frames": [
+    0,
+    19,
+    30,
+    38,
+    56,
+    75,
+    94,
+    112,
+    120,
+    131,
+    150
+  ],
+  "tolerances": {
+    "support_near_band_m": 0.012,
+    "support_minimum_near_fraction": 0.2,
+    "maximum_floor_penetration_m": 0.004,
+    "minimum_airborne_foot_clearance_m": 0.05,
+    "planted_hand_maximum_drift_m": 0.005,
+    "loop_translation_m": 0.0001
+  },
+  "loop_max_matrix_element_error": 0.0,
+  "samples": [
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 0,
+      "vertices": 10582,
+      "floor_min_z": -0.0020000338554382324,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0013695359230041504,
+          "max_z": 0.05907618999481201,
+          "median_z": 0.01199832558631897,
+          "p10_z": 0.00290259113535285,
+          "p90_z": 0.05164836347103119,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.007042650890070945,
+          "patch_area_m2": 0.012835362402256578,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8491649851202965
+        },
+        "pelvic_support_R": {
+          "min_z": -0.001499950885772705,
+          "max_z": 0.05890154838562012,
+          "median_z": 0.011795520782470703,
+          "p10_z": 0.0029016851913183928,
+          "p90_z": 0.05141802132129669,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.007063027762342244,
+          "patch_area_m2": 0.012874150357674807,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8484651669859886
+        },
+        "palm_pad_L": {
+          "min_z": 0.009091973304748535,
+          "max_z": 0.017638206481933594,
+          "median_z": 0.014228224754333496,
+          "p10_z": 0.010328894481062889,
+          "p90_z": 0.01676909253001213,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048679539395379834,
+          "patch_area_m2": 0.0014070464922042447,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8994684120019277
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019997358322143555,
+          "max_z": 0.07558184862136841,
+          "median_z": 0.0507698655128479,
+          "p10_z": 0.016762280836701393,
+          "p90_z": 0.06722358614206314,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029638015275850194,
+          "patch_area_m2": 0.04953419667589287,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.004081455055375187
+        },
+        "foot_L": {
+          "min_z": 0.0950060486793518,
+          "max_z": 0.2676694691181183,
+          "median_z": 0.22206705808639526,
+          "p10_z": 0.12406264245510101,
+          "p90_z": 0.2527386546134949,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.05882729287958455,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07969823026260225
+        },
+        "palm_pad_R": {
+          "min_z": 0.009009480476379395,
+          "max_z": 0.01756155490875244,
+          "median_z": 0.014043301343917847,
+          "p10_z": 0.010240858420729637,
+          "p90_z": 0.01667695678770542,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004840932888328098,
+          "patch_area_m2": 0.0014050692052478553,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.9007905821005503
+        },
+        "whole_hand_R": {
+          "min_z": -0.0020000338554382324,
+          "max_z": 0.07533919811248779,
+          "median_z": 0.050644874572753906,
+          "p10_z": 0.01666504144668579,
+          "p90_z": 0.06715403497219086,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029640422949341882,
+          "patch_area_m2": 0.04954617794328442,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.0036622823627449038
+        },
+        "foot_R": {
+          "min_z": 0.09481682628393173,
+          "max_z": 0.26762643456459045,
+          "median_z": 0.2220146358013153,
+          "p10_z": 0.12389923632144928,
+          "p90_z": 0.25268834829330444,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.058900318756514025,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07913570971686731
+        },
+        "lumbar_clearance": {
+          "min_z": 0.1182703971862793,
+          "max_z": 0.27478671073913574,
+          "median_z": 0.21145987510681152,
+          "p10_z": 0.15244272351264954,
+          "p90_z": 0.25935041904449463,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.028337805590126663,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.6241582507888476
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.14151598513126373,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.1412891298532486,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 19,
+      "vertices": 10582,
+      "floor_min_z": -0.0019997358322143555,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.001352846622467041,
+          "max_z": 0.04700732231140137,
+          "median_z": 0.016519099473953247,
+          "p10_z": 0.0007592677720822394,
+          "p90_z": 0.038075998425483704,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.005879613803699613,
+          "patch_area_m2": 0.014913353050360456,
+          "tangential_drift_m": 0.021793393418192863,
+          "mean_floor_facing_normal": 0.8625141531229019
+        },
+        "pelvic_support_R": {
+          "min_z": -0.0014998912811279297,
+          "max_z": 0.04680144786834717,
+          "median_z": 0.016152232885360718,
+          "p10_z": 0.00041954516200348735,
+          "p90_z": 0.03780186548829079,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.005894980713492259,
+          "patch_area_m2": 0.014959685708163306,
+          "tangential_drift_m": 0.021859582513570786,
+          "mean_floor_facing_normal": 0.8617003858089447
+        },
+        "palm_pad_L": {
+          "min_z": 0.009092271327972412,
+          "max_z": 0.01763850450515747,
+          "median_z": 0.014231711626052856,
+          "p10_z": 0.010329211130738258,
+          "p90_z": 0.016759365797042847,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004864919319516048,
+          "patch_area_m2": 0.0014050081435925676,
+          "tangential_drift_m": 2.0835537725361064e-05,
+          "mean_floor_facing_normal": 0.8994057923555374
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019995570182800293,
+          "max_z": 0.07558232545852661,
+          "median_z": 0.05077022314071655,
+          "p10_z": 0.01676044426858425,
+          "p90_z": 0.06722404807806015,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.00296345304695933,
+          "patch_area_m2": 0.049480946051176034,
+          "tangential_drift_m": 7.4258782660763245e-06,
+          "mean_floor_facing_normal": 0.003855986674985243
+        },
+        "foot_L": {
+          "min_z": 0.09300809353590012,
+          "max_z": 0.2642941474914551,
+          "median_z": 0.22129732370376587,
+          "p10_z": 0.12297604233026505,
+          "p90_z": 0.24981489777565002,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.060585120535165515,
+          "tangential_drift_m": 0.06998776644468307,
+          "mean_floor_facing_normal": -0.06847514790113177
+        },
+        "palm_pad_R": {
+          "min_z": 0.009009718894958496,
+          "max_z": 0.01756185293197632,
+          "median_z": 0.014047175645828247,
+          "p10_z": 0.010241096839308739,
+          "p90_z": 0.01666727103292942,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004837926462641917,
+          "patch_area_m2": 0.001403002983352053,
+          "tangential_drift_m": 2.0691297322628088e-05,
+          "mean_floor_facing_normal": 0.9007296661535898
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019997358322143555,
+          "max_z": 0.07533937692642212,
+          "median_z": 0.05064505338668823,
+          "p10_z": 0.016662979498505592,
+          "p90_z": 0.06723843514919281,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002963705810088868,
+          "patch_area_m2": 0.04949331643649657,
+          "tangential_drift_m": 7.204831035778625e-06,
+          "mean_floor_facing_normal": 0.003521065860499024
+        },
+        "foot_R": {
+          "min_z": 0.09298130869865417,
+          "max_z": 0.2642534077167511,
+          "median_z": 0.22124744951725006,
+          "p10_z": 0.12290272861719131,
+          "p90_z": 0.24977369606494904,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06064412171707545,
+          "tangential_drift_m": 0.0699925348162651,
+          "mean_floor_facing_normal": -0.06795774483856744
+        },
+        "lumbar_clearance": {
+          "min_z": 0.1083483099937439,
+          "max_z": 0.2811702489852905,
+          "median_z": 0.21473544836044312,
+          "p10_z": 0.1475520133972168,
+          "p90_z": 0.2662660479545593,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.0297066104831174,
+          "tangential_drift_m": 0.0003702644316945225,
+          "mean_floor_facing_normal": 0.5809939536783431
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.13289491832256317,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.13261526823043823,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 30,
+      "vertices": 10582,
+      "floor_min_z": -0.0019999146461486816,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0013156533241271973,
+          "max_z": 0.04083096981048584,
+          "median_z": 0.01777699589729309,
+          "p10_z": 0.001770657254382968,
+          "p90_z": 0.03627312183380127,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.008774711604928598,
+          "patch_area_m2": 0.01684801551164128,
+          "tangential_drift_m": 0.03739552199840546,
+          "mean_floor_facing_normal": 0.8506198078393936
+        },
+        "pelvic_support_R": {
+          "min_z": -0.001499950885772705,
+          "max_z": 0.04060548543930054,
+          "median_z": 0.017222225666046143,
+          "p10_z": 0.0014566420577466488,
+          "p90_z": 0.03619838133454323,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.008803507400443777,
+          "patch_area_m2": 0.016900713060749695,
+          "tangential_drift_m": 0.037512537091970444,
+          "mean_floor_facing_normal": 0.8497362732887268
+        },
+        "palm_pad_L": {
+          "min_z": 0.009092211723327637,
+          "max_z": 0.01763850450515747,
+          "median_z": 0.014238417148590088,
+          "p10_z": 0.010329377837479115,
+          "p90_z": 0.016754960641264915,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004859558248426765,
+          "patch_area_m2": 0.0014015444639881025,
+          "tangential_drift_m": 5.3105726692592725e-05,
+          "mean_floor_facing_normal": 0.8992702215909958
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019996166229248047,
+          "max_z": 0.07558196783065796,
+          "median_z": 0.05077022314071655,
+          "p10_z": 0.016759324818849564,
+          "p90_z": 0.0672679990530014,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029628368329213117,
+          "patch_area_m2": 0.04939899845635409,
+          "tangential_drift_m": 1.8547108993516304e-05,
+          "mean_floor_facing_normal": 0.0039485852587782646
+        },
+        "foot_L": {
+          "min_z": 0.0969092920422554,
+          "max_z": 0.2596309185028076,
+          "median_z": 0.22170785069465637,
+          "p10_z": 0.1274442821741104,
+          "p90_z": 0.2457927167415619,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06148151879278885,
+          "tangential_drift_m": 0.16053441166877747,
+          "mean_floor_facing_normal": -0.05698820361529702
+        },
+        "palm_pad_R": {
+          "min_z": 0.00900954008102417,
+          "max_z": 0.017561614513397217,
+          "median_z": 0.014055013656616211,
+          "p10_z": 0.01024097204208374,
+          "p90_z": 0.016662638634443283,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004832702161365887,
+          "patch_area_m2": 0.001399499938088411,
+          "tangential_drift_m": 5.293444337439723e-05,
+          "mean_floor_facing_normal": 0.9005952626466751
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019999146461486816,
+          "max_z": 0.07533931732177734,
+          "median_z": 0.0506519079208374,
+          "p10_z": 0.016661953181028366,
+          "p90_z": 0.06723819673061371,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002963101876048313,
+          "patch_area_m2": 0.049411771604354726,
+          "tangential_drift_m": 1.845088627305813e-05,
+          "mean_floor_facing_normal": 0.0036370833456939532
+        },
+        "foot_R": {
+          "min_z": 0.09689728915691376,
+          "max_z": 0.2595933675765991,
+          "median_z": 0.22171401977539062,
+          "p10_z": 0.1273551881313324,
+          "p90_z": 0.24575531482696533,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.061533152799313484,
+          "tangential_drift_m": 0.1605437695980072,
+          "mean_floor_facing_normal": -0.05649960099616948
+        },
+        "lumbar_clearance": {
+          "min_z": 0.10443413257598877,
+          "max_z": 0.2922379970550537,
+          "median_z": 0.22199401259422302,
+          "p10_z": 0.1476694941520691,
+          "p90_z": 0.2780945897102356,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.030894668088876642,
+          "tangential_drift_m": 0.0013079200871288776,
+          "mean_floor_facing_normal": 0.5329679639803039
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.12815488874912262,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.12790954113006592,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 38,
+      "vertices": 10582,
+      "floor_min_z": -0.0019999146461486816,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0012850165367126465,
+          "max_z": 0.047940194606781006,
+          "median_z": 0.01736345887184143,
+          "p10_z": 0.003934812732040882,
+          "p90_z": 0.04331888258457184,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.009727943921461701,
+          "patch_area_m2": 0.018561424978543073,
+          "tangential_drift_m": 0.04843331128358841,
+          "mean_floor_facing_normal": 0.8332343176007271
+        },
+        "pelvic_support_R": {
+          "min_z": -0.001499950885772705,
+          "max_z": 0.047910213470458984,
+          "median_z": 0.017105132341384888,
+          "p10_z": 0.003319334937259555,
+          "p90_z": 0.04320633411407471,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.009758293628692627,
+          "patch_area_m2": 0.018619355134433135,
+          "tangential_drift_m": 0.04858774691820145,
+          "mean_floor_facing_normal": 0.83231420814991
+        },
+        "palm_pad_L": {
+          "min_z": 0.009092211723327637,
+          "max_z": 0.017638444900512695,
+          "median_z": 0.014247119426727295,
+          "p10_z": 0.010329658165574074,
+          "p90_z": 0.01676236465573311,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048537986185692716,
+          "patch_area_m2": 0.0013979419254610548,
+          "tangential_drift_m": 8.454685303149745e-05,
+          "mean_floor_facing_normal": 0.8991003781557083
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019996166229248047,
+          "max_z": 0.07558184862136841,
+          "median_z": 0.050773561000823975,
+          "p10_z": 0.016760921105742455,
+          "p90_z": 0.0672910064458847,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002962181247312401,
+          "patch_area_m2": 0.049320927481858234,
+          "tangential_drift_m": 2.927603418356739e-05,
+          "mean_floor_facing_normal": 0.004420783941714811
+        },
+        "foot_L": {
+          "min_z": 0.10200123488903046,
+          "max_z": 0.25549349188804626,
+          "median_z": 0.22165247797966003,
+          "p10_z": 0.13197636604309082,
+          "p90_z": 0.24285463988780975,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06195057087961686,
+          "tangential_drift_m": 0.23725616931915283,
+          "mean_floor_facing_normal": -0.04773807938412327
+        },
+        "palm_pad_R": {
+          "min_z": 0.00900954008102417,
+          "max_z": 0.017561674118041992,
+          "median_z": 0.014065146446228027,
+          "p10_z": 0.01024097204208374,
+          "p90_z": 0.016670148819684982,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004827149987249868,
+          "patch_area_m2": 0.0013958668405393837,
+          "tangential_drift_m": 8.427755528828129e-05,
+          "mean_floor_facing_normal": 0.9004229058821996
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019999146461486816,
+          "max_z": 0.07533895969390869,
+          "median_z": 0.05065184831619263,
+          "p10_z": 0.016663575544953346,
+          "p90_z": 0.06723815202713013,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002962469402973511,
+          "patch_area_m2": 0.04933396894921316,
+          "tangential_drift_m": 2.9344260838115588e-05,
+          "mean_floor_facing_normal": 0.003980365882474157
+        },
+        "foot_R": {
+          "min_z": 0.10199429094791412,
+          "max_z": 0.2554587125778198,
+          "median_z": 0.2216179519891739,
+          "p10_z": 0.13193601369857788,
+          "p90_z": 0.2428191602230072,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.061998232390692465,
+          "tangential_drift_m": 0.23726844787597656,
+          "mean_floor_facing_normal": -0.04727144769425542
+        },
+        "lumbar_clearance": {
+          "min_z": 0.10360193252563477,
+          "max_z": 0.3026295304298401,
+          "median_z": 0.22938939929008484,
+          "p10_z": 0.149787038564682,
+          "p90_z": 0.28918781876564026,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.031748604887980036,
+          "tangential_drift_m": 0.0023629076313227415,
+          "mean_floor_facing_normal": 0.49316387044058907
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.12609019875526428,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.12587274610996246,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 56,
+      "vertices": 10582,
+      "floor_min_z": -0.0019999146461486816,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0007280707359313965,
+          "max_z": 0.07506835460662842,
+          "median_z": 0.02085036039352417,
+          "p10_z": -0.0007160961395129561,
+          "p90_z": 0.06419005244970322,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.009498362895101309,
+          "patch_area_m2": 0.0235044052824378,
+          "tangential_drift_m": 0.07134202122688293,
+          "mean_floor_facing_normal": 0.7821411229670048
+        },
+        "pelvic_support_R": {
+          "min_z": -0.0015009641647338867,
+          "max_z": 0.07500320672988892,
+          "median_z": 0.02056780457496643,
+          "p10_z": -0.0011624634498730302,
+          "p90_z": 0.06414051353931427,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.009535379998851568,
+          "patch_area_m2": 0.023576141393277794,
+          "tangential_drift_m": 0.07157615572214127,
+          "mean_floor_facing_normal": 0.7811896875500679
+        },
+        "palm_pad_L": {
+          "min_z": 0.00909203290939331,
+          "max_z": 0.01763826608657837,
+          "median_z": 0.014272958040237427,
+          "p10_z": 0.01033068262040615,
+          "p90_z": 0.016816794872283936,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048388992399850395,
+          "patch_area_m2": 0.0013889935671613785,
+          "tangential_drift_m": 0.00015570582763757557,
+          "mean_floor_facing_normal": 0.8985748688379923
+        },
+        "whole_hand_L": {
+          "min_z": -0.001999795436859131,
+          "max_z": 0.07558178901672363,
+          "median_z": 0.05077338218688965,
+          "p10_z": 0.01677302084863186,
+          "p90_z": 0.06738580018281937,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029604919318444445,
+          "patch_area_m2": 0.04915186113885284,
+          "tangential_drift_m": 5.314268128131516e-05,
+          "mean_floor_facing_normal": 0.007984980230735003
+        },
+        "foot_L": {
+          "min_z": 0.1149810329079628,
+          "max_z": 0.2544717788696289,
+          "median_z": 0.21869045495986938,
+          "p10_z": 0.1434977948665619,
+          "p90_z": 0.2365812063217163,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.062437276495813876,
+          "tangential_drift_m": 0.39597296714782715,
+          "mean_floor_facing_normal": -0.02893482324322788
+        },
+        "palm_pad_R": {
+          "min_z": 0.00900954008102417,
+          "max_z": 0.017561674118041992,
+          "median_z": 0.014095783233642578,
+          "p10_z": 0.010240918025374413,
+          "p90_z": 0.016725778579711914,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048129362585314084,
+          "patch_area_m2": 0.0013868561263734591,
+          "tangential_drift_m": 0.00015521282330155373,
+          "mean_floor_facing_normal": 0.8998847206433614
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019999146461486816,
+          "max_z": 0.07533919811248779,
+          "median_z": 0.05065184831619263,
+          "p10_z": 0.016675889492034912,
+          "p90_z": 0.06723815947771072,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002960850345061772,
+          "patch_area_m2": 0.04916488288290566,
+          "tangential_drift_m": 5.331305510480888e-05,
+          "mean_floor_facing_normal": 0.0074211204313384274
+        },
+        "foot_R": {
+          "min_z": 0.11516649276018143,
+          "max_z": 0.2550753653049469,
+          "median_z": 0.21865007281303406,
+          "p10_z": 0.143474742770195,
+          "p90_z": 0.23655155301094055,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06248029094587082,
+          "tangential_drift_m": 0.395992636680603,
+          "mean_floor_facing_normal": -0.028510403785610764
+        },
+        "lumbar_clearance": {
+          "min_z": 0.10166209936141968,
+          "max_z": 0.3216874599456787,
+          "median_z": 0.24298104643821716,
+          "p10_z": 0.15354123711585999,
+          "p90_z": 0.3098505139350891,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.033154261953313835,
+          "tangential_drift_m": 0.005271569825708866,
+          "mean_floor_facing_normal": 0.41075341030955315
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.12396929413080215,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.1238083764910698,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 75,
+      "vertices": 10582,
+      "floor_min_z": -0.0019684433937072754,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0007224678993225098,
+          "max_z": 0.0912136435508728,
+          "median_z": 0.023781120777130127,
+          "p10_z": 0.0024984001647681,
+          "p90_z": 0.07685942202806473,
+          "fraction_near_floor": 0.25,
+          "near_floor_area_m2": 0.0068695617956109345,
+          "patch_area_m2": 0.026908824365818873,
+          "tangential_drift_m": 0.0825381651520729,
+          "mean_floor_facing_normal": 0.7543830312788486
+        },
+        "pelvic_support_R": {
+          "min_z": -0.0015082955360412598,
+          "max_z": 0.0911373496055603,
+          "median_z": 0.023598432540893555,
+          "p10_z": 0.002031671814620495,
+          "p90_z": 0.07684425264596939,
+          "fraction_near_floor": 0.25,
+          "near_floor_area_m2": 0.006885034148581326,
+          "patch_area_m2": 0.026989338250132278,
+          "tangential_drift_m": 0.08281142264604568,
+          "mean_floor_facing_normal": 0.7534330785274506
+        },
+        "palm_pad_L": {
+          "min_z": 0.009167790412902832,
+          "max_z": 0.01771402359008789,
+          "median_z": 0.014386951923370361,
+          "p10_z": 0.010408657602965832,
+          "p90_z": 0.01701636239886284,
+          "fraction_near_floor": 0.25,
+          "near_floor_area_m2": 0.000376251893612789,
+          "patch_area_m2": 0.0013788454871246358,
+          "tangential_drift_m": 0.00023065682034939528,
+          "mean_floor_facing_normal": 0.8978009869654974
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019238591194152832,
+          "max_z": 0.0756576657295227,
+          "median_z": 0.05084937810897827,
+          "p10_z": 0.01687643676996231,
+          "p90_z": 0.06754231452941895,
+          "fraction_near_floor": 0.06827880512091039,
+          "near_floor_area_m2": 0.0028526178134598013,
+          "patch_area_m2": 0.048993328798587754,
+          "tangential_drift_m": 8.138189150486141e-05,
+          "mean_floor_facing_normal": 0.008393960172949017
+        },
+        "foot_L": {
+          "min_z": 0.121432825922966,
+          "max_z": 0.2602732479572296,
+          "median_z": 0.21686892211437225,
+          "p10_z": 0.14903758466243744,
+          "p90_z": 0.23437973856925964,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06255637463812036,
+          "tangential_drift_m": 0.46667492389678955,
+          "mean_floor_facing_normal": -0.020508393052750352
+        },
+        "palm_pad_R": {
+          "min_z": 0.0090409517288208,
+          "max_z": 0.017593085765838623,
+          "median_z": 0.014171957969665527,
+          "p10_z": 0.010272329673171043,
+          "p90_z": 0.01688336208462715,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004796363919012947,
+          "patch_area_m2": 0.001376643102048547,
+          "tangential_drift_m": 0.00022652785992249846,
+          "mean_floor_facing_normal": 0.8990782797336578
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019684433937072754,
+          "max_z": 0.0753706693649292,
+          "median_z": 0.05068325996398926,
+          "p10_z": 0.016735387966036797,
+          "p90_z": 0.06738468259572983,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002958975081128301,
+          "patch_area_m2": 0.049006403716248315,
+          "tangential_drift_m": 7.827586523490027e-05,
+          "mean_floor_facing_normal": 0.009651248495659664
+        },
+        "foot_R": {
+          "min_z": 0.1216043084859848,
+          "max_z": 0.2608588635921478,
+          "median_z": 0.21684221923351288,
+          "p10_z": 0.1489994078874588,
+          "p90_z": 0.23435625433921814,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06259783546801145,
+          "tangential_drift_m": 0.46669742465019226,
+          "mean_floor_facing_normal": -0.020103352658135978
+        },
+        "lumbar_clearance": {
+          "min_z": 0.10531258583068848,
+          "max_z": 0.33364880084991455,
+          "median_z": 0.2528451383113861,
+          "p10_z": 0.15953579545021057,
+          "p90_z": 0.3225875794887543,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.033533002555486746,
+          "tangential_drift_m": 0.0069076139479875565,
+          "mean_floor_facing_normal": 0.3741215351555083
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.12591992318630219,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.12579947710037231,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 94,
+      "vertices": 10582,
+      "floor_min_z": -0.0019999146461486816,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0007280707359313965,
+          "max_z": 0.07506835460662842,
+          "median_z": 0.02085036039352417,
+          "p10_z": -0.0007160961395129561,
+          "p90_z": 0.06419005244970322,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.009498362895101309,
+          "patch_area_m2": 0.0235044052824378,
+          "tangential_drift_m": 0.07134202122688293,
+          "mean_floor_facing_normal": 0.7821411229670048
+        },
+        "pelvic_support_R": {
+          "min_z": -0.0015009641647338867,
+          "max_z": 0.07500320672988892,
+          "median_z": 0.02056780457496643,
+          "p10_z": -0.0011624634498730302,
+          "p90_z": 0.06414051353931427,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.009535379998851568,
+          "patch_area_m2": 0.023576141393277794,
+          "tangential_drift_m": 0.07157615572214127,
+          "mean_floor_facing_normal": 0.7811896875500679
+        },
+        "palm_pad_L": {
+          "min_z": 0.00909203290939331,
+          "max_z": 0.01763826608657837,
+          "median_z": 0.014272958040237427,
+          "p10_z": 0.01033068262040615,
+          "p90_z": 0.016816794872283936,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048388992399850395,
+          "patch_area_m2": 0.0013889935671613785,
+          "tangential_drift_m": 0.00015570582763757557,
+          "mean_floor_facing_normal": 0.8985748688379923
+        },
+        "whole_hand_L": {
+          "min_z": -0.001999795436859131,
+          "max_z": 0.07558178901672363,
+          "median_z": 0.05077338218688965,
+          "p10_z": 0.01677302084863186,
+          "p90_z": 0.06738580018281937,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029604919318444445,
+          "patch_area_m2": 0.04915186113885284,
+          "tangential_drift_m": 5.314268128131516e-05,
+          "mean_floor_facing_normal": 0.007984980230735003
+        },
+        "foot_L": {
+          "min_z": 0.1149810329079628,
+          "max_z": 0.2544717788696289,
+          "median_z": 0.21869045495986938,
+          "p10_z": 0.1434977948665619,
+          "p90_z": 0.2365812063217163,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.062437276495813876,
+          "tangential_drift_m": 0.39597296714782715,
+          "mean_floor_facing_normal": -0.02893482324322788
+        },
+        "palm_pad_R": {
+          "min_z": 0.00900954008102417,
+          "max_z": 0.017561674118041992,
+          "median_z": 0.014095783233642578,
+          "p10_z": 0.010240918025374413,
+          "p90_z": 0.016725778579711914,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048129362585314084,
+          "patch_area_m2": 0.0013868561263734591,
+          "tangential_drift_m": 0.00015521282330155373,
+          "mean_floor_facing_normal": 0.8998847206433614
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019999146461486816,
+          "max_z": 0.07533919811248779,
+          "median_z": 0.05065184831619263,
+          "p10_z": 0.016675889492034912,
+          "p90_z": 0.06723815947771072,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002960850345061772,
+          "patch_area_m2": 0.04916488288290566,
+          "tangential_drift_m": 5.331305510480888e-05,
+          "mean_floor_facing_normal": 0.0074211204313384274
+        },
+        "foot_R": {
+          "min_z": 0.11516649276018143,
+          "max_z": 0.2550753653049469,
+          "median_z": 0.21865007281303406,
+          "p10_z": 0.143474742770195,
+          "p90_z": 0.23655155301094055,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06248029094587082,
+          "tangential_drift_m": 0.395992636680603,
+          "mean_floor_facing_normal": -0.028510403785610764
+        },
+        "lumbar_clearance": {
+          "min_z": 0.10166209936141968,
+          "max_z": 0.3216874599456787,
+          "median_z": 0.24298104643821716,
+          "p10_z": 0.15354123711585999,
+          "p90_z": 0.3098505139350891,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.033154261953313835,
+          "tangential_drift_m": 0.005271569825708866,
+          "mean_floor_facing_normal": 0.41075341030955315
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.12396929413080215,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.1238083764910698,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 112,
+      "vertices": 10582,
+      "floor_min_z": -0.0019999146461486816,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0012850165367126465,
+          "max_z": 0.047940194606781006,
+          "median_z": 0.01736345887184143,
+          "p10_z": 0.003934812732040882,
+          "p90_z": 0.04331888258457184,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.009727943921461701,
+          "patch_area_m2": 0.018561424978543073,
+          "tangential_drift_m": 0.04843331128358841,
+          "mean_floor_facing_normal": 0.8332343176007271
+        },
+        "pelvic_support_R": {
+          "min_z": -0.001499950885772705,
+          "max_z": 0.047910213470458984,
+          "median_z": 0.017105132341384888,
+          "p10_z": 0.003319334937259555,
+          "p90_z": 0.04320633411407471,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.009758293628692627,
+          "patch_area_m2": 0.018619355134433135,
+          "tangential_drift_m": 0.04858774691820145,
+          "mean_floor_facing_normal": 0.83231420814991
+        },
+        "palm_pad_L": {
+          "min_z": 0.009092211723327637,
+          "max_z": 0.017638444900512695,
+          "median_z": 0.014247119426727295,
+          "p10_z": 0.010329658165574074,
+          "p90_z": 0.01676236465573311,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048537986185692716,
+          "patch_area_m2": 0.0013979419254610548,
+          "tangential_drift_m": 8.454685303149745e-05,
+          "mean_floor_facing_normal": 0.8991003781557083
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019996166229248047,
+          "max_z": 0.07558184862136841,
+          "median_z": 0.050773561000823975,
+          "p10_z": 0.016760921105742455,
+          "p90_z": 0.0672910064458847,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002962181247312401,
+          "patch_area_m2": 0.049320927481858234,
+          "tangential_drift_m": 2.927603418356739e-05,
+          "mean_floor_facing_normal": 0.004420783941714811
+        },
+        "foot_L": {
+          "min_z": 0.10200123488903046,
+          "max_z": 0.25549349188804626,
+          "median_z": 0.22165247797966003,
+          "p10_z": 0.13197636604309082,
+          "p90_z": 0.24285463988780975,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06195057087961686,
+          "tangential_drift_m": 0.23725616931915283,
+          "mean_floor_facing_normal": -0.04773807938412327
+        },
+        "palm_pad_R": {
+          "min_z": 0.00900954008102417,
+          "max_z": 0.017561674118041992,
+          "median_z": 0.014065146446228027,
+          "p10_z": 0.01024097204208374,
+          "p90_z": 0.016670148819684982,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004827149987249868,
+          "patch_area_m2": 0.0013958668405393837,
+          "tangential_drift_m": 8.427755528828129e-05,
+          "mean_floor_facing_normal": 0.9004229058821996
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019999146461486816,
+          "max_z": 0.07533895969390869,
+          "median_z": 0.05065184831619263,
+          "p10_z": 0.016663575544953346,
+          "p90_z": 0.06723815202713013,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002962469402973511,
+          "patch_area_m2": 0.04933396894921316,
+          "tangential_drift_m": 2.9344260838115588e-05,
+          "mean_floor_facing_normal": 0.003980365882474157
+        },
+        "foot_R": {
+          "min_z": 0.10199429094791412,
+          "max_z": 0.2554587125778198,
+          "median_z": 0.2216179519891739,
+          "p10_z": 0.13193601369857788,
+          "p90_z": 0.2428191602230072,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.061998232390692465,
+          "tangential_drift_m": 0.23726844787597656,
+          "mean_floor_facing_normal": -0.04727144769425542
+        },
+        "lumbar_clearance": {
+          "min_z": 0.10360193252563477,
+          "max_z": 0.3026295304298401,
+          "median_z": 0.22938939929008484,
+          "p10_z": 0.149787038564682,
+          "p90_z": 0.28918781876564026,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.031748604887980036,
+          "tangential_drift_m": 0.0023629076313227415,
+          "mean_floor_facing_normal": 0.49316387044058907
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.12609019875526428,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.12587274610996246,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 120,
+      "vertices": 10582,
+      "floor_min_z": -0.0019999146461486816,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0013156533241271973,
+          "max_z": 0.04083096981048584,
+          "median_z": 0.01777699589729309,
+          "p10_z": 0.001770657254382968,
+          "p90_z": 0.03627312183380127,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.008774711604928598,
+          "patch_area_m2": 0.01684801551164128,
+          "tangential_drift_m": 0.03739552199840546,
+          "mean_floor_facing_normal": 0.8506198078393936
+        },
+        "pelvic_support_R": {
+          "min_z": -0.001499950885772705,
+          "max_z": 0.04060548543930054,
+          "median_z": 0.017222225666046143,
+          "p10_z": 0.0014566420577466488,
+          "p90_z": 0.03619838133454323,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.008803507400443777,
+          "patch_area_m2": 0.016900713060749695,
+          "tangential_drift_m": 0.037512537091970444,
+          "mean_floor_facing_normal": 0.8497362732887268
+        },
+        "palm_pad_L": {
+          "min_z": 0.009092211723327637,
+          "max_z": 0.01763850450515747,
+          "median_z": 0.014238417148590088,
+          "p10_z": 0.010329377837479115,
+          "p90_z": 0.016754960641264915,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004859558248426765,
+          "patch_area_m2": 0.0014015444639881025,
+          "tangential_drift_m": 5.3105726692592725e-05,
+          "mean_floor_facing_normal": 0.8992702215909958
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019996166229248047,
+          "max_z": 0.07558196783065796,
+          "median_z": 0.05077022314071655,
+          "p10_z": 0.016759324818849564,
+          "p90_z": 0.0672679990530014,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029628368329213117,
+          "patch_area_m2": 0.04939899845635409,
+          "tangential_drift_m": 1.8547108993516304e-05,
+          "mean_floor_facing_normal": 0.0039485852587782646
+        },
+        "foot_L": {
+          "min_z": 0.0969092920422554,
+          "max_z": 0.2596309185028076,
+          "median_z": 0.22170785069465637,
+          "p10_z": 0.1274442821741104,
+          "p90_z": 0.2457927167415619,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06148151879278885,
+          "tangential_drift_m": 0.16053441166877747,
+          "mean_floor_facing_normal": -0.05698820361529702
+        },
+        "palm_pad_R": {
+          "min_z": 0.00900954008102417,
+          "max_z": 0.017561614513397217,
+          "median_z": 0.014055013656616211,
+          "p10_z": 0.01024097204208374,
+          "p90_z": 0.016662638634443283,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004832702161365887,
+          "patch_area_m2": 0.001399499938088411,
+          "tangential_drift_m": 5.293444337439723e-05,
+          "mean_floor_facing_normal": 0.9005952626466751
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019999146461486816,
+          "max_z": 0.07533931732177734,
+          "median_z": 0.0506519079208374,
+          "p10_z": 0.016661953181028366,
+          "p90_z": 0.06723819673061371,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002963101876048313,
+          "patch_area_m2": 0.049411771604354726,
+          "tangential_drift_m": 1.845088627305813e-05,
+          "mean_floor_facing_normal": 0.0036370833456939532
+        },
+        "foot_R": {
+          "min_z": 0.09689728915691376,
+          "max_z": 0.2595933675765991,
+          "median_z": 0.22171401977539062,
+          "p10_z": 0.1273551881313324,
+          "p90_z": 0.24575531482696533,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.061533152799313484,
+          "tangential_drift_m": 0.1605437695980072,
+          "mean_floor_facing_normal": -0.05649960099616948
+        },
+        "lumbar_clearance": {
+          "min_z": 0.10443413257598877,
+          "max_z": 0.2922379970550537,
+          "median_z": 0.22199401259422302,
+          "p10_z": 0.1476694941520691,
+          "p90_z": 0.2780945897102356,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.030894668088876642,
+          "tangential_drift_m": 0.0013079200871288776,
+          "mean_floor_facing_normal": 0.5329679639803039
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.12815488874912262,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.12790954113006592,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 131,
+      "vertices": 10582,
+      "floor_min_z": -0.0019997358322143555,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.001352846622467041,
+          "max_z": 0.04700732231140137,
+          "median_z": 0.016519099473953247,
+          "p10_z": 0.0007592677720822394,
+          "p90_z": 0.038075998425483704,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.005879613803699613,
+          "patch_area_m2": 0.014913353050360456,
+          "tangential_drift_m": 0.021793393418192863,
+          "mean_floor_facing_normal": 0.8625141531229019
+        },
+        "pelvic_support_R": {
+          "min_z": -0.0014998912811279297,
+          "max_z": 0.04680144786834717,
+          "median_z": 0.016152232885360718,
+          "p10_z": 0.00041954516200348735,
+          "p90_z": 0.03780186548829079,
+          "fraction_near_floor": 0.375,
+          "near_floor_area_m2": 0.005894980713492259,
+          "patch_area_m2": 0.014959685708163306,
+          "tangential_drift_m": 0.021859582513570786,
+          "mean_floor_facing_normal": 0.8617003858089447
+        },
+        "palm_pad_L": {
+          "min_z": 0.009092271327972412,
+          "max_z": 0.01763850450515747,
+          "median_z": 0.014231711626052856,
+          "p10_z": 0.010329211130738258,
+          "p90_z": 0.016759365797042847,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004864919319516048,
+          "patch_area_m2": 0.0014050081435925676,
+          "tangential_drift_m": 2.0835537725361064e-05,
+          "mean_floor_facing_normal": 0.8994057923555374
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019995570182800293,
+          "max_z": 0.07558232545852661,
+          "median_z": 0.05077022314071655,
+          "p10_z": 0.01676044426858425,
+          "p90_z": 0.06722404807806015,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.00296345304695933,
+          "patch_area_m2": 0.049480946051176034,
+          "tangential_drift_m": 7.4258782660763245e-06,
+          "mean_floor_facing_normal": 0.003855986674985243
+        },
+        "foot_L": {
+          "min_z": 0.09300809353590012,
+          "max_z": 0.2642941474914551,
+          "median_z": 0.22129732370376587,
+          "p10_z": 0.12297604233026505,
+          "p90_z": 0.24981489777565002,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.060585120535165515,
+          "tangential_drift_m": 0.06998776644468307,
+          "mean_floor_facing_normal": -0.06847514790113177
+        },
+        "palm_pad_R": {
+          "min_z": 0.009009718894958496,
+          "max_z": 0.01756185293197632,
+          "median_z": 0.014047175645828247,
+          "p10_z": 0.010241096839308739,
+          "p90_z": 0.01666727103292942,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004837926462641917,
+          "patch_area_m2": 0.001403002983352053,
+          "tangential_drift_m": 2.0691297322628088e-05,
+          "mean_floor_facing_normal": 0.9007296661535898
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019997358322143555,
+          "max_z": 0.07533937692642212,
+          "median_z": 0.05064505338668823,
+          "p10_z": 0.016662979498505592,
+          "p90_z": 0.06723843514919281,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.002963705810088868,
+          "patch_area_m2": 0.04949331643649657,
+          "tangential_drift_m": 7.204831035778625e-06,
+          "mean_floor_facing_normal": 0.003521065860499024
+        },
+        "foot_R": {
+          "min_z": 0.09298130869865417,
+          "max_z": 0.2642534077167511,
+          "median_z": 0.22124744951725006,
+          "p10_z": 0.12290272861719131,
+          "p90_z": 0.24977369606494904,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06064412171707545,
+          "tangential_drift_m": 0.0699925348162651,
+          "mean_floor_facing_normal": -0.06795774483856744
+        },
+        "lumbar_clearance": {
+          "min_z": 0.1083483099937439,
+          "max_z": 0.2811702489852905,
+          "median_z": 0.21473544836044312,
+          "p10_z": 0.1475520133972168,
+          "p90_z": 0.2662660479545593,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.0297066104831174,
+          "tangential_drift_m": 0.0003702644316945225,
+          "mean_floor_facing_normal": 0.5809939536783431
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.13289491832256317,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.13261526823043823,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "dq_cage",
+      "frame": 150,
+      "vertices": 10582,
+      "floor_min_z": -0.0020000338554382324,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": -0.0013695359230041504,
+          "max_z": 0.05907618999481201,
+          "median_z": 0.01199832558631897,
+          "p10_z": 0.00290259113535285,
+          "p90_z": 0.05164836347103119,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.007042650890070945,
+          "patch_area_m2": 0.012835362402256578,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8491649851202965
+        },
+        "pelvic_support_R": {
+          "min_z": -0.001499950885772705,
+          "max_z": 0.05890154838562012,
+          "median_z": 0.011795520782470703,
+          "p10_z": 0.0029016851913183928,
+          "p90_z": 0.05141802132129669,
+          "fraction_near_floor": 0.5,
+          "near_floor_area_m2": 0.007063027762342244,
+          "patch_area_m2": 0.012874150357674807,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8484651669859886
+        },
+        "palm_pad_L": {
+          "min_z": 0.009091973304748535,
+          "max_z": 0.017638206481933594,
+          "median_z": 0.014228224754333496,
+          "p10_z": 0.010328894481062889,
+          "p90_z": 0.01676909253001213,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.00048679539395379834,
+          "patch_area_m2": 0.0014070464922042447,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8994684120019277
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019997358322143555,
+          "max_z": 0.07558184862136841,
+          "median_z": 0.0507698655128479,
+          "p10_z": 0.016762280836701393,
+          "p90_z": 0.06722358614206314,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029638015275850194,
+          "patch_area_m2": 0.04953419667589287,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.004081455055375187
+        },
+        "foot_L": {
+          "min_z": 0.0950060486793518,
+          "max_z": 0.2676694691181183,
+          "median_z": 0.22206705808639526,
+          "p10_z": 0.12406264245510101,
+          "p90_z": 0.2527386546134949,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.05882729287958455,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07969823026260225
+        },
+        "palm_pad_R": {
+          "min_z": 0.009009480476379395,
+          "max_z": 0.01756155490875244,
+          "median_z": 0.014043301343917847,
+          "p10_z": 0.010240858420729637,
+          "p90_z": 0.01667695678770542,
+          "fraction_near_floor": 0.3333333333333333,
+          "near_floor_area_m2": 0.0004840932888328098,
+          "patch_area_m2": 0.0014050692052478553,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.9007905821005503
+        },
+        "whole_hand_R": {
+          "min_z": -0.0020000338554382324,
+          "max_z": 0.07533919811248779,
+          "median_z": 0.050644874572753906,
+          "p10_z": 0.01666504144668579,
+          "p90_z": 0.06715403497219086,
+          "fraction_near_floor": 0.06970128022759602,
+          "near_floor_area_m2": 0.0029640422949341882,
+          "patch_area_m2": 0.04954617794328442,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.0036622823627449038
+        },
+        "foot_R": {
+          "min_z": 0.09481682628393173,
+          "max_z": 0.26762643456459045,
+          "median_z": 0.2220146358013153,
+          "p10_z": 0.12389923632144928,
+          "p90_z": 0.25268834829330444,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.058900318756514025,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07913570971686731
+        },
+        "lumbar_clearance": {
+          "min_z": 0.1182703971862793,
+          "max_z": 0.27478671073913574,
+          "median_z": 0.21145987510681152,
+          "p10_z": 0.15244272351264954,
+          "p90_z": 0.25935041904449463,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.028337805590126663,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.6241582507888476
+        },
+        "hand_body_clearance_L": {
+          "minimum_unsigned_distance_m": 0.14151598513126373,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        },
+        "hand_body_clearance_R": {
+          "minimum_unsigned_distance_m": 0.1412891298532486,
+          "basis": "Closest actual skin to torso/leg surface; image review checks external location and rules out internal containment."
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 0,
+      "vertices": 42342,
+      "floor_min_z": -0.0019160584779456258,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.0006621642969548702,
+          "max_z": 0.07586845010519028,
+          "median_z": 0.018800850957632065,
+          "p10_z": 0.0022854069247841835,
+          "p90_z": 0.05884610861539841,
+          "fraction_near_floor": 0.34146341463414637,
+          "near_floor_area_m2": 0.006152033325633965,
+          "patch_area_m2": 0.016450487630208954,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8252699564142925
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0005434849299490452,
+          "max_z": 0.07573507726192474,
+          "median_z": 0.01826287806034088,
+          "p10_z": 0.002211296930909157,
+          "p90_z": 0.05866089090704918,
+          "fraction_near_floor": 0.34146341463414637,
+          "near_floor_area_m2": 0.006147991342004389,
+          "patch_area_m2": 0.016476787270221394,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8252078323829465
+        },
+        "palm_pad_L": {
+          "min_z": 0.008573037572205067,
+          "max_z": 0.02168404683470726,
+          "median_z": 0.014654934406280518,
+          "p10_z": 0.009793424978852272,
+          "p90_z": 0.018193991854786873,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005283386258270184,
+          "patch_area_m2": 0.0017538982463065622,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8776157836119334
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019126498373225331,
+          "max_z": 0.07625290751457214,
+          "median_z": 0.05082383006811142,
+          "p10_z": 0.01750626042485237,
+          "p90_z": 0.06710928678512573,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.00290807928263348,
+          "patch_area_m2": 0.05025497872077267,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.007881379833203974
+        },
+        "foot_L": {
+          "min_z": 0.0948837548494339,
+          "max_z": 0.2679651081562042,
+          "median_z": 0.2209993302822113,
+          "p10_z": 0.12372870743274689,
+          "p90_z": 0.25250673294067383,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.05982676838067391,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07672070689718143
+        },
+        "palm_pad_R": {
+          "min_z": 0.008462314493954182,
+          "max_z": 0.021496079862117767,
+          "median_z": 0.014536717906594276,
+          "p10_z": 0.009777258150279522,
+          "p90_z": 0.018046852201223373,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.000525758597177628,
+          "patch_area_m2": 0.0017511053029011237,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8788324703772863
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019160584779456258,
+          "max_z": 0.07594767212867737,
+          "median_z": 0.05072189122438431,
+          "p10_z": 0.017351048067212105,
+          "p90_z": 0.0670098289847374,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.002929300901428178,
+          "patch_area_m2": 0.050260937352277324,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.008086121267770042
+        },
+        "foot_R": {
+          "min_z": 0.09471668303012848,
+          "max_z": 0.26792192459106445,
+          "median_z": 0.22095602750778198,
+          "p10_z": 0.12357079982757568,
+          "p90_z": 0.25246357917785645,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.05991273442073464,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07610223384699719
+        },
+        "lumbar_clearance": {
+          "min_z": 0.09838675707578659,
+          "max_z": 0.28396859765052795,
+          "median_z": 0.20859746634960175,
+          "p10_z": 0.13926365971565247,
+          "p90_z": 0.2621757388114929,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03305143235047581,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.6209570173017993
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 19,
+      "vertices": 42342,
+      "floor_min_z": -0.0019157228525727987,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.00047496845945715904,
+          "max_z": 0.06505663692951202,
+          "median_z": 0.01915692538022995,
+          "p10_z": 0.0025174750480800867,
+          "p90_z": 0.047122564166784286,
+          "fraction_near_floor": 0.36585365853658536,
+          "near_floor_area_m2": 0.007390483369817957,
+          "patch_area_m2": 0.018975070321175735,
+          "tangential_drift_m": 0.02090589515864849,
+          "mean_floor_facing_normal": 0.8413418575031001
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0004775093402713537,
+          "max_z": 0.06489946693181992,
+          "median_z": 0.018882717937231064,
+          "p10_z": 0.0025200897362083197,
+          "p90_z": 0.04690493270754814,
+          "fraction_near_floor": 0.36585365853658536,
+          "near_floor_area_m2": 0.007384523138171062,
+          "patch_area_m2": 0.019011564130778424,
+          "tangential_drift_m": 0.020971862599253654,
+          "mean_floor_facing_normal": 0.8411570874656119
+        },
+        "palm_pad_L": {
+          "min_z": 0.008572984486818314,
+          "max_z": 0.021636074408888817,
+          "median_z": 0.014655902981758118,
+          "p10_z": 0.009793594479560852,
+          "p90_z": 0.018194328993558884,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005280121599753329,
+          "patch_area_m2": 0.0017512644103589992,
+          "tangential_drift_m": 3.036956513824407e-05,
+          "mean_floor_facing_normal": 0.8775682856639226
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019124483224004507,
+          "max_z": 0.07625328004360199,
+          "median_z": 0.05082431808114052,
+          "p10_z": 0.017507003620266914,
+          "p90_z": 0.06713217496871948,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.0029077463850626373,
+          "patch_area_m2": 0.05021426587177302,
+          "tangential_drift_m": 6.453080459323246e-06,
+          "mean_floor_facing_normal": 0.008316477340894309
+        },
+        "foot_L": {
+          "min_z": 0.09299495816230774,
+          "max_z": 0.26465553045272827,
+          "median_z": 0.22114132344722748,
+          "p10_z": 0.1229950562119484,
+          "p90_z": 0.249632328748703,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06159042548884486,
+          "tangential_drift_m": 0.07001244276762009,
+          "mean_floor_facing_normal": -0.06597869162155658
+        },
+        "palm_pad_R": {
+          "min_z": 0.008462229743599892,
+          "max_z": 0.021448038518428802,
+          "median_z": 0.014537673443555832,
+          "p10_z": 0.009777335450053215,
+          "p90_z": 0.018047481775283813,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.000525417567587283,
+          "patch_area_m2": 0.0017484714990132488,
+          "tangential_drift_m": 3.0082668672548607e-05,
+          "mean_floor_facing_normal": 0.8787875841061275
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019157228525727987,
+          "max_z": 0.0759478509426117,
+          "median_z": 0.05072781443595886,
+          "p10_z": 0.0173557810485363,
+          "p90_z": 0.06701012700796127,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.002928962447356298,
+          "patch_area_m2": 0.0502206048078051,
+          "tangential_drift_m": 6.4442829170729965e-06,
+          "mean_floor_facing_normal": 0.008502869582133584
+        },
+        "foot_R": {
+          "min_z": 0.09287068992853165,
+          "max_z": 0.26461470127105713,
+          "median_z": 0.22110062837600708,
+          "p10_z": 0.1229463666677475,
+          "p90_z": 0.24959352612495422,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06166362346344556,
+          "tangential_drift_m": 0.0700172707438469,
+          "mean_floor_facing_normal": -0.0653894850933875
+        },
+        "lumbar_clearance": {
+          "min_z": 0.08632299304008484,
+          "max_z": 0.2909121811389923,
+          "median_z": 0.21139763295650482,
+          "p10_z": 0.13441762328147888,
+          "p90_z": 0.2685055136680603,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.034657272561162245,
+          "tangential_drift_m": 0.0005165339098311961,
+          "mean_floor_facing_normal": 0.5792255581852919
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 30,
+      "vertices": 42342,
+      "floor_min_z": -0.0019159080693498254,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.0017442312091588974,
+          "max_z": 0.059939585626125336,
+          "median_z": 0.02148844115436077,
+          "p10_z": 0.005509058479219675,
+          "p90_z": 0.05458134040236473,
+          "fraction_near_floor": 0.24390243902439024,
+          "near_floor_area_m2": 0.005503680818947032,
+          "patch_area_m2": 0.021309397590812296,
+          "tangential_drift_m": 0.03559302166104317,
+          "mean_floor_facing_normal": 0.8323160526229114
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016728206537663937,
+          "max_z": 0.05976662039756775,
+          "median_z": 0.02031824178993702,
+          "p10_z": 0.005483398213982582,
+          "p90_z": 0.05435853824019432,
+          "fraction_near_floor": 0.2682926829268293,
+          "near_floor_area_m2": 0.006025013841281179,
+          "patch_area_m2": 0.02135535192064708,
+          "tangential_drift_m": 0.035709135234355927,
+          "mean_floor_facing_normal": 0.8320083436442585
+        },
+        "palm_pad_L": {
+          "min_z": 0.008572527207434177,
+          "max_z": 0.02157527580857277,
+          "median_z": 0.01465708389878273,
+          "p10_z": 0.009793994016945362,
+          "p90_z": 0.018194276839494705,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005274371847008297,
+          "patch_area_m2": 0.0017467688180659025,
+          "tangential_drift_m": 7.717504922766238e-05,
+          "mean_floor_facing_normal": 0.8774481614430746
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019125324906781316,
+          "max_z": 0.07625305652618408,
+          "median_z": 0.05079210549592972,
+          "p10_z": 0.01750793308019638,
+          "p90_z": 0.06714548170566559,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.002907160019162802,
+          "patch_area_m2": 0.05014808564658324,
+          "tangential_drift_m": 1.646945020183921e-05,
+          "mean_floor_facing_normal": 0.008885579258756571
+        },
+        "foot_L": {
+          "min_z": 0.09695561230182648,
+          "max_z": 0.26007628440856934,
+          "median_z": 0.22154566645622253,
+          "p10_z": 0.12747825682163239,
+          "p90_z": 0.2457854151725769,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.062486234012411046,
+          "tangential_drift_m": 0.16057422757148743,
+          "mean_floor_facing_normal": -0.05484505096233924
+        },
+        "palm_pad_R": {
+          "min_z": 0.008461694233119488,
+          "max_z": 0.021386779844760895,
+          "median_z": 0.014538872055709362,
+          "p10_z": 0.009777232073247433,
+          "p90_z": 0.018047956749796867,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005248335387477709,
+          "patch_area_m2": 0.0017439843911688513,
+          "tangential_drift_m": 7.669923070352525e-05,
+          "mean_floor_facing_normal": 0.87866965730985
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019159080693498254,
+          "max_z": 0.07594779878854752,
+          "median_z": 0.05070777237415314,
+          "p10_z": 0.01737169362604618,
+          "p90_z": 0.06704592704772949,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.0029283617172382037,
+          "patch_area_m2": 0.05015526925285485,
+          "tangential_drift_m": 1.611107654753141e-05,
+          "mean_floor_facing_normal": 0.009025040776285076
+        },
+        "foot_R": {
+          "min_z": 0.09694419056177139,
+          "max_z": 0.26003870368003845,
+          "median_z": 0.22151145339012146,
+          "p10_z": 0.12749095261096954,
+          "p90_z": 0.24574688076972961,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06255269639602545,
+          "tangential_drift_m": 0.16058412194252014,
+          "mean_floor_facing_normal": -0.05427689396685711
+        },
+        "lumbar_clearance": {
+          "min_z": 0.08085105568170547,
+          "max_z": 0.3026670515537262,
+          "median_z": 0.2183462381362915,
+          "p10_z": 0.1342579871416092,
+          "p90_z": 0.2795552611351013,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03603052967082476,
+          "tangential_drift_m": 0.0015948712825775146,
+          "mean_floor_facing_normal": 0.5329370041807254
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 38,
+      "vertices": 42342,
+      "floor_min_z": -0.0019159151706844568,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.0037996997125446796,
+          "max_z": 0.07148684561252594,
+          "median_z": 0.02369186282157898,
+          "p10_z": 0.006773066706955433,
+          "p90_z": 0.054695770144462585,
+          "fraction_near_floor": 0.24390243902439024,
+          "near_floor_area_m2": 0.006044625682989135,
+          "patch_area_m2": 0.02336861837829929,
+          "tangential_drift_m": 0.0458257831633091,
+          "mean_floor_facing_normal": 0.8172991399357958
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0037082182243466377,
+          "max_z": 0.07136031985282898,
+          "median_z": 0.023448701947927475,
+          "p10_z": 0.006323693320155144,
+          "p90_z": 0.05462447181344032,
+          "fraction_near_floor": 0.2682926829268293,
+          "near_floor_area_m2": 0.006577109452337027,
+          "patch_area_m2": 0.023422915197443217,
+          "tangential_drift_m": 0.04597824439406395,
+          "mean_floor_facing_normal": 0.8168973174037003
+        },
+        "palm_pad_L": {
+          "min_z": 0.008572528138756752,
+          "max_z": 0.021532438695430756,
+          "median_z": 0.014658592641353607,
+          "p10_z": 0.009795100428164005,
+          "p90_z": 0.018194273114204407,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005268245272418426,
+          "patch_area_m2": 0.0017420727222088317,
+          "tangential_drift_m": 0.00012238230556249619,
+          "mean_floor_facing_normal": 0.8772836963335673
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019125548424199224,
+          "max_z": 0.07625292241573334,
+          "median_z": 0.050824012607336044,
+          "p10_z": 0.017508938908576965,
+          "p90_z": 0.06722744554281235,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.002906533967006908,
+          "patch_area_m2": 0.050081722854429245,
+          "tangential_drift_m": 2.569451135059353e-05,
+          "mean_floor_facing_normal": 0.00949570527971818
+        },
+        "foot_L": {
+          "min_z": 0.1020217165350914,
+          "max_z": 0.25600820779800415,
+          "median_z": 0.2213890701532364,
+          "p10_z": 0.13193802535533905,
+          "p90_z": 0.24256524443626404,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06295414589823167,
+          "tangential_drift_m": 0.23730339109897614,
+          "mean_floor_facing_normal": -0.04585528976215418
+        },
+        "palm_pad_R": {
+          "min_z": 0.008461667224764824,
+          "max_z": 0.021343545988202095,
+          "median_z": 0.014540538191795349,
+          "p10_z": 0.009777607396245003,
+          "p90_z": 0.018048718571662903,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005242192564764991,
+          "patch_area_m2": 0.0017393038856425846,
+          "tangential_drift_m": 0.00012181184865767136,
+          "mean_floor_facing_normal": 0.8785038024187088
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019159151706844568,
+          "max_z": 0.07594753801822662,
+          "median_z": 0.05072172358632088,
+          "p10_z": 0.017390141263604164,
+          "p90_z": 0.06709840893745422,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.0029277336976747392,
+          "patch_area_m2": 0.05009216370910963,
+          "tangential_drift_m": 2.5788365746848285e-05,
+          "mean_floor_facing_normal": 0.009553817989482516
+        },
+        "foot_R": {
+          "min_z": 0.10204458981752396,
+          "max_z": 0.2559734582901001,
+          "median_z": 0.2213527113199234,
+          "p10_z": 0.13188424706459045,
+          "p90_z": 0.24253107607364655,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06301697405457674,
+          "tangential_drift_m": 0.23731744289398193,
+          "mean_floor_facing_normal": -0.045305677528276224
+        },
+        "lumbar_clearance": {
+          "min_z": 0.0789281353354454,
+          "max_z": 0.3136000633239746,
+          "median_z": 0.22554908692836761,
+          "p10_z": 0.13602414727210999,
+          "p90_z": 0.2900734543800354,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03700883079363848,
+          "tangential_drift_m": 0.0027595313731580973,
+          "mean_floor_facing_normal": 0.49465062072177135
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 56,
+      "vertices": 42342,
+      "floor_min_z": -0.0019159135408699512,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.004483543336391449,
+          "max_z": 0.10221102833747864,
+          "median_z": 0.02620294690132141,
+          "p10_z": 0.007591387256979942,
+          "p90_z": 0.07494784891605377,
+          "fraction_near_floor": 0.1951219512195122,
+          "near_floor_area_m2": 0.005834900017362088,
+          "patch_area_m2": 0.029275926121044904,
+          "tangential_drift_m": 0.06661494076251984,
+          "mean_floor_facing_normal": 0.7714430940587346
+        },
+        "pelvic_support_R": {
+          "min_z": 0.004102653358131647,
+          "max_z": 0.10214024037122726,
+          "median_z": 0.025886286050081253,
+          "p10_z": 0.007476904895156622,
+          "p90_z": 0.07489922642707825,
+          "fraction_near_floor": 0.21951219512195122,
+          "near_floor_area_m2": 0.006676817924017087,
+          "patch_area_m2": 0.02935399700072594,
+          "tangential_drift_m": 0.06684201955795288,
+          "mean_floor_facing_normal": 0.7708604324881624
+        },
+        "palm_pad_L": {
+          "min_z": 0.008573292754590511,
+          "max_z": 0.02148822508752346,
+          "median_z": 0.014662733301520348,
+          "p10_z": 0.009799557738006115,
+          "p90_z": 0.018194077536463737,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005252503729025193,
+          "patch_area_m2": 0.0017303464865108253,
+          "tangential_drift_m": 0.0002242771879537031,
+          "mean_floor_facing_normal": 0.8767370780309042
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019126870902255177,
+          "max_z": 0.07625280320644379,
+          "median_z": 0.05082390084862709,
+          "p10_z": 0.017511729151010513,
+          "p90_z": 0.06730348616838455,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.002904924564177236,
+          "patch_area_m2": 0.049944583441060786,
+          "tangential_drift_m": 4.6062716137384996e-05,
+          "mean_floor_facing_normal": 0.010708031235111317
+        },
+        "foot_L": {
+          "min_z": 0.11498333513736725,
+          "max_z": 0.25717151165008545,
+          "median_z": 0.21868161857128143,
+          "p10_z": 0.1432315856218338,
+          "p90_z": 0.23646165430545807,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06343941808538034,
+          "tangential_drift_m": 0.3960288166999817,
+          "mean_floor_facing_normal": -0.027554053158620587
+        },
+        "palm_pad_R": {
+          "min_z": 0.008462350815534592,
+          "max_z": 0.021298585459589958,
+          "median_z": 0.014545240439474583,
+          "p10_z": 0.009779483079910278,
+          "p90_z": 0.01805061101913452,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005226620523899328,
+          "patch_area_m2": 0.0017276228054470266,
+          "tangential_drift_m": 0.00022325290774460882,
+          "mean_floor_facing_normal": 0.8779483526945114
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019159135408699512,
+          "max_z": 0.07594770938158035,
+          "median_z": 0.05072182044386864,
+          "p10_z": 0.01742323487997055,
+          "p90_z": 0.06718289107084274,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.002926134498011379,
+          "patch_area_m2": 0.04995126711492048,
+          "tangential_drift_m": 4.6014258259674534e-05,
+          "mean_floor_facing_normal": 0.010818374010677636
+        },
+        "foot_R": {
+          "min_z": 0.11508610099554062,
+          "max_z": 0.25768470764160156,
+          "median_z": 0.21863007545471191,
+          "p10_z": 0.1431449055671692,
+          "p90_z": 0.23641565442085266,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06349794146549925,
+          "tangential_drift_m": 0.39604800939559937,
+          "mean_floor_facing_normal": -0.027043308559546744
+        },
+        "lumbar_clearance": {
+          "min_z": 0.07493330538272858,
+          "max_z": 0.33364903926849365,
+          "median_z": 0.23884247243404388,
+          "p10_z": 0.13872310519218445,
+          "p90_z": 0.30985233187675476,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03859559195188922,
+          "tangential_drift_m": 0.005887732375413179,
+          "mean_floor_facing_normal": 0.4156206212714761
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 75,
+      "vertices": 42342,
+      "floor_min_z": -0.0018844443839043379,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.007528106682002544,
+          "max_z": 0.11940038204193115,
+          "median_z": 0.032120004296302795,
+          "p10_z": 0.01245081052184105,
+          "p90_z": 0.0905427411198616,
+          "fraction_near_floor": 0.0975609756097561,
+          "near_floor_area_m2": 0.0035211689973948523,
+          "patch_area_m2": 0.033310876264295075,
+          "tangential_drift_m": 0.07653060555458069,
+          "mean_floor_facing_normal": 0.7461946453990006
+        },
+        "pelvic_support_R": {
+          "min_z": 0.007133702281862497,
+          "max_z": 0.11935584247112274,
+          "median_z": 0.0320143885910511,
+          "p10_z": 0.012095801532268524,
+          "p90_z": 0.09048642963171005,
+          "fraction_near_floor": 0.0975609756097561,
+          "near_floor_area_m2": 0.0035153247881680727,
+          "patch_area_m2": 0.03340478311292827,
+          "tangential_drift_m": 0.07679224759340286,
+          "mean_floor_facing_normal": 0.7455409783415679
+        },
+        "palm_pad_L": {
+          "min_z": 0.008651829324662685,
+          "max_z": 0.02161111682653427,
+          "median_z": 0.014744598418474197,
+          "p10_z": 0.009883999824523926,
+          "p90_z": 0.01827492006123066,
+          "fraction_near_floor": 0.25,
+          "near_floor_area_m2": 0.00046610794652224286,
+          "patch_area_m2": 0.0017169108962207247,
+          "tangential_drift_m": 0.00032788346288725734,
+          "mean_floor_facing_normal": 0.8759017010529836
+        },
+        "whole_hand_L": {
+          "min_z": -0.0018367574084550142,
+          "max_z": 0.07632869482040405,
+          "median_z": 0.050867959856987,
+          "p10_z": 0.017605744302272797,
+          "p90_z": 0.067482590675354,
+          "fraction_near_floor": 0.06504065040650407,
+          "near_floor_area_m2": 0.0028457172541038744,
+          "patch_area_m2": 0.049820304599165866,
+          "tangential_drift_m": 7.172831828938797e-05,
+          "mean_floor_facing_normal": 0.011099414861201877
+        },
+        "foot_L": {
+          "min_z": 0.12146162986755371,
+          "max_z": 0.2632860243320465,
+          "median_z": 0.2169043868780136,
+          "p10_z": 0.14893516898155212,
+          "p90_z": 0.23449762165546417,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06355832777805404,
+          "tangential_drift_m": 0.46673014760017395,
+          "mean_floor_facing_normal": -0.019345155806347113
+        },
+        "palm_pad_R": {
+          "min_z": 0.008496145717799664,
+          "max_z": 0.021376224234700203,
+          "median_z": 0.014583239331841469,
+          "p10_z": 0.009814733639359474,
+          "p90_z": 0.01813541166484356,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005208743123148452,
+          "patch_area_m2": 0.0017142254375812627,
+          "tangential_drift_m": 0.00032345124054700136,
+          "mean_floor_facing_normal": 0.8770860254764556
+        },
+        "whole_hand_R": {
+          "min_z": -0.0018844443839043379,
+          "max_z": 0.07597920298576355,
+          "median_z": 0.0507393404841423,
+          "p10_z": 0.01747061125934124,
+          "p90_z": 0.06733515858650208,
+          "fraction_near_floor": 0.06610109579356663,
+          "near_floor_area_m2": 0.002908262475102674,
+          "patch_area_m2": 0.04982697230559552,
+          "tangential_drift_m": 6.760493852198124e-05,
+          "mean_floor_facing_normal": 0.011218379886027774
+        },
+        "foot_R": {
+          "min_z": 0.12160172313451767,
+          "max_z": 0.26378554105758667,
+          "median_z": 0.21683865785598755,
+          "p10_z": 0.14891637861728668,
+          "p90_z": 0.2344641089439392,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06361539698370677,
+          "tangential_drift_m": 0.46675366163253784,
+          "mean_floor_facing_normal": -0.018853305675072478
+        },
+        "lumbar_clearance": {
+          "min_z": 0.07772579789161682,
+          "max_z": 0.34599244594573975,
+          "median_z": 0.24861875176429749,
+          "p10_z": 0.14406020939350128,
+          "p90_z": 0.32257455587387085,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03900495186098851,
+          "tangential_drift_m": 0.007615596521645784,
+          "mean_floor_facing_normal": 0.38057871912410873
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 94,
+      "vertices": 42342,
+      "floor_min_z": -0.0019159135408699512,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.004483543336391449,
+          "max_z": 0.10221102833747864,
+          "median_z": 0.02620294690132141,
+          "p10_z": 0.007591387256979942,
+          "p90_z": 0.07494784891605377,
+          "fraction_near_floor": 0.1951219512195122,
+          "near_floor_area_m2": 0.005834900017362088,
+          "patch_area_m2": 0.029275926121044904,
+          "tangential_drift_m": 0.06661494076251984,
+          "mean_floor_facing_normal": 0.7714430940587346
+        },
+        "pelvic_support_R": {
+          "min_z": 0.004102653358131647,
+          "max_z": 0.10214024037122726,
+          "median_z": 0.025886286050081253,
+          "p10_z": 0.007476904895156622,
+          "p90_z": 0.07489922642707825,
+          "fraction_near_floor": 0.21951219512195122,
+          "near_floor_area_m2": 0.006676817924017087,
+          "patch_area_m2": 0.02935399700072594,
+          "tangential_drift_m": 0.06684201955795288,
+          "mean_floor_facing_normal": 0.7708604324881624
+        },
+        "palm_pad_L": {
+          "min_z": 0.008573292754590511,
+          "max_z": 0.02148822508752346,
+          "median_z": 0.014662733301520348,
+          "p10_z": 0.009799557738006115,
+          "p90_z": 0.018194077536463737,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005252503729025193,
+          "patch_area_m2": 0.0017303464865108253,
+          "tangential_drift_m": 0.0002242771879537031,
+          "mean_floor_facing_normal": 0.8767370780309042
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019126870902255177,
+          "max_z": 0.07625280320644379,
+          "median_z": 0.05082390084862709,
+          "p10_z": 0.017511729151010513,
+          "p90_z": 0.06730348616838455,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.002904924564177236,
+          "patch_area_m2": 0.049944583441060786,
+          "tangential_drift_m": 4.6062716137384996e-05,
+          "mean_floor_facing_normal": 0.010708031235111317
+        },
+        "foot_L": {
+          "min_z": 0.11498333513736725,
+          "max_z": 0.25717151165008545,
+          "median_z": 0.21868161857128143,
+          "p10_z": 0.1432315856218338,
+          "p90_z": 0.23646165430545807,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06343941808538034,
+          "tangential_drift_m": 0.3960288166999817,
+          "mean_floor_facing_normal": -0.027554053158620587
+        },
+        "palm_pad_R": {
+          "min_z": 0.008462350815534592,
+          "max_z": 0.021298585459589958,
+          "median_z": 0.014545240439474583,
+          "p10_z": 0.009779483079910278,
+          "p90_z": 0.01805061101913452,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005226620523899328,
+          "patch_area_m2": 0.0017276228054470266,
+          "tangential_drift_m": 0.00022325290774460882,
+          "mean_floor_facing_normal": 0.8779483526945114
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019159135408699512,
+          "max_z": 0.07594770938158035,
+          "median_z": 0.05072182044386864,
+          "p10_z": 0.01742323487997055,
+          "p90_z": 0.06718289107084274,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.002926134498011379,
+          "patch_area_m2": 0.04995126711492048,
+          "tangential_drift_m": 4.6014258259674534e-05,
+          "mean_floor_facing_normal": 0.010818374010677636
+        },
+        "foot_R": {
+          "min_z": 0.11508610099554062,
+          "max_z": 0.25768470764160156,
+          "median_z": 0.21863007545471191,
+          "p10_z": 0.1431449055671692,
+          "p90_z": 0.23641565442085266,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06349794146549925,
+          "tangential_drift_m": 0.39604800939559937,
+          "mean_floor_facing_normal": -0.027043308559546744
+        },
+        "lumbar_clearance": {
+          "min_z": 0.07493330538272858,
+          "max_z": 0.33364903926849365,
+          "median_z": 0.23884247243404388,
+          "p10_z": 0.13872310519218445,
+          "p90_z": 0.30985233187675476,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03859559195188922,
+          "tangential_drift_m": 0.005887732375413179,
+          "mean_floor_facing_normal": 0.4156206212714761
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 112,
+      "vertices": 42342,
+      "floor_min_z": -0.0019159151706844568,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.0037996997125446796,
+          "max_z": 0.07148684561252594,
+          "median_z": 0.02369186282157898,
+          "p10_z": 0.006773066706955433,
+          "p90_z": 0.054695770144462585,
+          "fraction_near_floor": 0.24390243902439024,
+          "near_floor_area_m2": 0.006044625682989135,
+          "patch_area_m2": 0.02336861837829929,
+          "tangential_drift_m": 0.0458257831633091,
+          "mean_floor_facing_normal": 0.8172991399357958
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0037082182243466377,
+          "max_z": 0.07136031985282898,
+          "median_z": 0.023448701947927475,
+          "p10_z": 0.006323693320155144,
+          "p90_z": 0.05462447181344032,
+          "fraction_near_floor": 0.2682926829268293,
+          "near_floor_area_m2": 0.006577109452337027,
+          "patch_area_m2": 0.023422915197443217,
+          "tangential_drift_m": 0.04597824439406395,
+          "mean_floor_facing_normal": 0.8168973174037003
+        },
+        "palm_pad_L": {
+          "min_z": 0.008572528138756752,
+          "max_z": 0.021532438695430756,
+          "median_z": 0.014658592641353607,
+          "p10_z": 0.009795100428164005,
+          "p90_z": 0.018194273114204407,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005268245272418426,
+          "patch_area_m2": 0.0017420727222088317,
+          "tangential_drift_m": 0.00012238230556249619,
+          "mean_floor_facing_normal": 0.8772836963335673
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019125548424199224,
+          "max_z": 0.07625292241573334,
+          "median_z": 0.050824012607336044,
+          "p10_z": 0.017508938908576965,
+          "p90_z": 0.06722744554281235,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.002906533967006908,
+          "patch_area_m2": 0.050081722854429245,
+          "tangential_drift_m": 2.569451135059353e-05,
+          "mean_floor_facing_normal": 0.00949570527971818
+        },
+        "foot_L": {
+          "min_z": 0.1020217165350914,
+          "max_z": 0.25600820779800415,
+          "median_z": 0.2213890701532364,
+          "p10_z": 0.13193802535533905,
+          "p90_z": 0.24256524443626404,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06295414589823167,
+          "tangential_drift_m": 0.23730339109897614,
+          "mean_floor_facing_normal": -0.04585528976215418
+        },
+        "palm_pad_R": {
+          "min_z": 0.008461667224764824,
+          "max_z": 0.021343545988202095,
+          "median_z": 0.014540538191795349,
+          "p10_z": 0.009777607396245003,
+          "p90_z": 0.018048718571662903,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005242192564764991,
+          "patch_area_m2": 0.0017393038856425846,
+          "tangential_drift_m": 0.00012181184865767136,
+          "mean_floor_facing_normal": 0.8785038024187088
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019159151706844568,
+          "max_z": 0.07594753801822662,
+          "median_z": 0.05072172358632088,
+          "p10_z": 0.017390141263604164,
+          "p90_z": 0.06709840893745422,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.0029277336976747392,
+          "patch_area_m2": 0.05009216370910963,
+          "tangential_drift_m": 2.5788365746848285e-05,
+          "mean_floor_facing_normal": 0.009553817989482516
+        },
+        "foot_R": {
+          "min_z": 0.10204458981752396,
+          "max_z": 0.2559734582901001,
+          "median_z": 0.2213527113199234,
+          "p10_z": 0.13188424706459045,
+          "p90_z": 0.24253107607364655,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06301697405457674,
+          "tangential_drift_m": 0.23731744289398193,
+          "mean_floor_facing_normal": -0.045305677528276224
+        },
+        "lumbar_clearance": {
+          "min_z": 0.0789281353354454,
+          "max_z": 0.3136000633239746,
+          "median_z": 0.22554908692836761,
+          "p10_z": 0.13602414727210999,
+          "p90_z": 0.2900734543800354,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03700883079363848,
+          "tangential_drift_m": 0.0027595313731580973,
+          "mean_floor_facing_normal": 0.49465062072177135
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 120,
+      "vertices": 42342,
+      "floor_min_z": -0.0019159080693498254,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.0017442312091588974,
+          "max_z": 0.059939585626125336,
+          "median_z": 0.02148844115436077,
+          "p10_z": 0.005509058479219675,
+          "p90_z": 0.05458134040236473,
+          "fraction_near_floor": 0.24390243902439024,
+          "near_floor_area_m2": 0.005503680818947032,
+          "patch_area_m2": 0.021309397590812296,
+          "tangential_drift_m": 0.03559302166104317,
+          "mean_floor_facing_normal": 0.8323160526229114
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016728206537663937,
+          "max_z": 0.05976662039756775,
+          "median_z": 0.02031824178993702,
+          "p10_z": 0.005483398213982582,
+          "p90_z": 0.05435853824019432,
+          "fraction_near_floor": 0.2682926829268293,
+          "near_floor_area_m2": 0.006025013841281179,
+          "patch_area_m2": 0.02135535192064708,
+          "tangential_drift_m": 0.035709135234355927,
+          "mean_floor_facing_normal": 0.8320083436442585
+        },
+        "palm_pad_L": {
+          "min_z": 0.008572527207434177,
+          "max_z": 0.02157527580857277,
+          "median_z": 0.01465708389878273,
+          "p10_z": 0.009793994016945362,
+          "p90_z": 0.018194276839494705,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005274371847008297,
+          "patch_area_m2": 0.0017467688180659025,
+          "tangential_drift_m": 7.717504922766238e-05,
+          "mean_floor_facing_normal": 0.8774481614430746
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019125324906781316,
+          "max_z": 0.07625305652618408,
+          "median_z": 0.05079210549592972,
+          "p10_z": 0.01750793308019638,
+          "p90_z": 0.06714548170566559,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.002907160019162802,
+          "patch_area_m2": 0.05014808564658324,
+          "tangential_drift_m": 1.646945020183921e-05,
+          "mean_floor_facing_normal": 0.008885579258756571
+        },
+        "foot_L": {
+          "min_z": 0.09695561230182648,
+          "max_z": 0.26007628440856934,
+          "median_z": 0.22154566645622253,
+          "p10_z": 0.12747825682163239,
+          "p90_z": 0.2457854151725769,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.062486234012411046,
+          "tangential_drift_m": 0.16057422757148743,
+          "mean_floor_facing_normal": -0.05484505096233924
+        },
+        "palm_pad_R": {
+          "min_z": 0.008461694233119488,
+          "max_z": 0.021386779844760895,
+          "median_z": 0.014538872055709362,
+          "p10_z": 0.009777232073247433,
+          "p90_z": 0.018047956749796867,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005248335387477709,
+          "patch_area_m2": 0.0017439843911688513,
+          "tangential_drift_m": 7.669923070352525e-05,
+          "mean_floor_facing_normal": 0.87866965730985
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019159080693498254,
+          "max_z": 0.07594779878854752,
+          "median_z": 0.05070777237415314,
+          "p10_z": 0.01737169362604618,
+          "p90_z": 0.06704592704772949,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.0029283617172382037,
+          "patch_area_m2": 0.05015526925285485,
+          "tangential_drift_m": 1.611107654753141e-05,
+          "mean_floor_facing_normal": 0.009025040776285076
+        },
+        "foot_R": {
+          "min_z": 0.09694419056177139,
+          "max_z": 0.26003870368003845,
+          "median_z": 0.22151145339012146,
+          "p10_z": 0.12749095261096954,
+          "p90_z": 0.24574688076972961,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06255269639602545,
+          "tangential_drift_m": 0.16058412194252014,
+          "mean_floor_facing_normal": -0.05427689396685711
+        },
+        "lumbar_clearance": {
+          "min_z": 0.08085105568170547,
+          "max_z": 0.3026670515537262,
+          "median_z": 0.2183462381362915,
+          "p10_z": 0.1342579871416092,
+          "p90_z": 0.2795552611351013,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03603052967082476,
+          "tangential_drift_m": 0.0015948712825775146,
+          "mean_floor_facing_normal": 0.5329370041807254
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 131,
+      "vertices": 42342,
+      "floor_min_z": -0.0019157228525727987,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.00047496845945715904,
+          "max_z": 0.06505663692951202,
+          "median_z": 0.01915692538022995,
+          "p10_z": 0.0025174750480800867,
+          "p90_z": 0.047122564166784286,
+          "fraction_near_floor": 0.36585365853658536,
+          "near_floor_area_m2": 0.007390483369817957,
+          "patch_area_m2": 0.018975070321175735,
+          "tangential_drift_m": 0.02090589515864849,
+          "mean_floor_facing_normal": 0.8413418575031001
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0004775093402713537,
+          "max_z": 0.06489946693181992,
+          "median_z": 0.018882717937231064,
+          "p10_z": 0.0025200897362083197,
+          "p90_z": 0.04690493270754814,
+          "fraction_near_floor": 0.36585365853658536,
+          "near_floor_area_m2": 0.007384523138171062,
+          "patch_area_m2": 0.019011564130778424,
+          "tangential_drift_m": 0.020971862599253654,
+          "mean_floor_facing_normal": 0.8411570874656119
+        },
+        "palm_pad_L": {
+          "min_z": 0.008572984486818314,
+          "max_z": 0.021636074408888817,
+          "median_z": 0.014655902981758118,
+          "p10_z": 0.009793594479560852,
+          "p90_z": 0.018194328993558884,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005280121599753329,
+          "patch_area_m2": 0.0017512644103589992,
+          "tangential_drift_m": 3.036956513824407e-05,
+          "mean_floor_facing_normal": 0.8775682856639226
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019124483224004507,
+          "max_z": 0.07625328004360199,
+          "median_z": 0.05082431808114052,
+          "p10_z": 0.017507003620266914,
+          "p90_z": 0.06713217496871948,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.0029077463850626373,
+          "patch_area_m2": 0.05021426587177302,
+          "tangential_drift_m": 6.453080459323246e-06,
+          "mean_floor_facing_normal": 0.008316477340894309
+        },
+        "foot_L": {
+          "min_z": 0.09299495816230774,
+          "max_z": 0.26465553045272827,
+          "median_z": 0.22114132344722748,
+          "p10_z": 0.1229950562119484,
+          "p90_z": 0.249632328748703,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06159042548884486,
+          "tangential_drift_m": 0.07001244276762009,
+          "mean_floor_facing_normal": -0.06597869162155658
+        },
+        "palm_pad_R": {
+          "min_z": 0.008462229743599892,
+          "max_z": 0.021448038518428802,
+          "median_z": 0.014537673443555832,
+          "p10_z": 0.009777335450053215,
+          "p90_z": 0.018047481775283813,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.000525417567587283,
+          "patch_area_m2": 0.0017484714990132488,
+          "tangential_drift_m": 3.0082668672548607e-05,
+          "mean_floor_facing_normal": 0.8787875841061275
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019157228525727987,
+          "max_z": 0.0759478509426117,
+          "median_z": 0.05072781443595886,
+          "p10_z": 0.0173557810485363,
+          "p90_z": 0.06701012700796127,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.002928962447356298,
+          "patch_area_m2": 0.0502206048078051,
+          "tangential_drift_m": 6.4442829170729965e-06,
+          "mean_floor_facing_normal": 0.008502869582133584
+        },
+        "foot_R": {
+          "min_z": 0.09287068992853165,
+          "max_z": 0.26461470127105713,
+          "median_z": 0.22110062837600708,
+          "p10_z": 0.1229463666677475,
+          "p90_z": 0.24959352612495422,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.06166362346344556,
+          "tangential_drift_m": 0.0700172707438469,
+          "mean_floor_facing_normal": -0.0653894850933875
+        },
+        "lumbar_clearance": {
+          "min_z": 0.08632299304008484,
+          "max_z": 0.2909121811389923,
+          "median_z": 0.21139763295650482,
+          "p10_z": 0.13441762328147888,
+          "p90_z": 0.2685055136680603,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.034657272561162245,
+          "tangential_drift_m": 0.0005165339098311961,
+          "mean_floor_facing_normal": 0.5792255581852919
+        }
+      }
+    },
+    {
+      "id": "6033",
+      "path": "native",
+      "frame": 150,
+      "vertices": 42342,
+      "floor_min_z": -0.0019160584779456258,
+      "contacts": {
+        "pelvic_support_L": {
+          "min_z": 0.0006621642969548702,
+          "max_z": 0.07586845010519028,
+          "median_z": 0.018800850957632065,
+          "p10_z": 0.0022854069247841835,
+          "p90_z": 0.05884610861539841,
+          "fraction_near_floor": 0.34146341463414637,
+          "near_floor_area_m2": 0.006152033325633965,
+          "patch_area_m2": 0.016450487630208954,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8252699564142925
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0005434849299490452,
+          "max_z": 0.07573507726192474,
+          "median_z": 0.01826287806034088,
+          "p10_z": 0.002211296930909157,
+          "p90_z": 0.05866089090704918,
+          "fraction_near_floor": 0.34146341463414637,
+          "near_floor_area_m2": 0.006147991342004389,
+          "patch_area_m2": 0.016476787270221394,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8252078323829465
+        },
+        "palm_pad_L": {
+          "min_z": 0.008573037572205067,
+          "max_z": 0.02168404683470726,
+          "median_z": 0.014654934406280518,
+          "p10_z": 0.009793424978852272,
+          "p90_z": 0.018193991854786873,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.0005283386258270184,
+          "patch_area_m2": 0.0017538982463065622,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8776157836119334
+        },
+        "whole_hand_L": {
+          "min_z": -0.0019126498373225331,
+          "max_z": 0.07625290751457214,
+          "median_z": 0.05082383006811142,
+          "p10_z": 0.01750626042485237,
+          "p90_z": 0.06710928678512573,
+          "fraction_near_floor": 0.06574761399787911,
+          "near_floor_area_m2": 0.00290807928263348,
+          "patch_area_m2": 0.05025497872077267,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.007881379833203974
+        },
+        "foot_L": {
+          "min_z": 0.0948837548494339,
+          "max_z": 0.2679651081562042,
+          "median_z": 0.2209993302822113,
+          "p10_z": 0.12372870743274689,
+          "p90_z": 0.25250673294067383,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.05982676838067391,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07672070689718143
+        },
+        "palm_pad_R": {
+          "min_z": 0.008462314493954182,
+          "max_z": 0.021496079862117767,
+          "median_z": 0.014536717906594276,
+          "p10_z": 0.009777258150279522,
+          "p90_z": 0.018046852201223373,
+          "fraction_near_floor": 0.2833333333333333,
+          "near_floor_area_m2": 0.000525758597177628,
+          "patch_area_m2": 0.0017511053029011237,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.8788324703772863
+        },
+        "whole_hand_R": {
+          "min_z": -0.0019160584779456258,
+          "max_z": 0.07594767212867737,
+          "median_z": 0.05072189122438431,
+          "p10_z": 0.017351048067212105,
+          "p90_z": 0.0670098289847374,
+          "fraction_near_floor": 0.06645457758925416,
+          "near_floor_area_m2": 0.002929300901428178,
+          "patch_area_m2": 0.050260937352277324,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.008086121267770042
+        },
+        "foot_R": {
+          "min_z": 0.09471668303012848,
+          "max_z": 0.26792192459106445,
+          "median_z": 0.22095602750778198,
+          "p10_z": 0.12357079982757568,
+          "p90_z": 0.25246357917785645,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.05991273442073464,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": -0.07610223384699719
+        },
+        "lumbar_clearance": {
+          "min_z": 0.09838675707578659,
+          "max_z": 0.28396859765052795,
+          "median_z": 0.20859746634960175,
+          "p10_z": 0.13926365971565247,
+          "p90_z": 0.2621757388114929,
+          "fraction_near_floor": 0.0,
+          "near_floor_area_m2": 0.0,
+          "patch_area_m2": 0.03305143235047581,
+          "tangential_drift_m": 0.0,
+          "mean_floor_facing_normal": 0.6209570173017993
+        }
+      }
+    }
+  ],
+  "geometry_checks": [
+    {
+      "path": "dq_cage",
+      "frame": 0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": -0.002,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": []
+    },
+    {
+      "path": "dq_cage",
+      "frame": 75,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": -0.002,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": []
+    },
+    {
+      "path": "native",
+      "frame": 0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+        ],
+        "ground_z": -0.0019,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 9
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 42342,
+            "faces": 42340,
+            "tris": 84680,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.1734451949596405,
+              -0.9880370497703552,
+              0.2458142638206482
+            ],
+            [
+              -0.17387869954109192,
+              -0.9874886274337769,
+              0.24391941726207733
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972317032516003,
+              0.30595195293426514,
+              0.7360653877258301
+            ],
+            [
+              -0.015306763350963593,
+              0.30636098980903625,
+              0.7365207076072693
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849106177687645,
+              0.3069445788860321,
+              0.7351993918418884
+            ],
+            [
+              -0.016624797135591507,
+              0.3071100413799286,
+              0.7358929514884949
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624797135591507,
+              0.3071100413799286,
+              0.7358929514884949
+            ],
+            [
+              -0.016418393701314926,
+              0.3061670660972595,
+              0.7356890439987183
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.1740400791168213,
+              -0.9875337481498718,
+              0.2439645230770111
+            ],
+            [
+              0.17360608279705048,
+              -0.9880824089050293,
+              0.24585798382759094
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018644411116838455,
+              0.3079114854335785,
+              0.7342498302459717
+            ],
+            [
+              0.018093209713697433,
+              0.3078855276107788,
+              0.735142707824707
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01813993975520134,
+              0.30724745988845825,
+              0.7347597479820251
+            ],
+            [
+              -0.017845245078206062,
+              0.30710169672966003,
+              0.7356059551239014
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418393701314926,
+              0.3061670660972595,
+              0.7356890439987183
+            ],
+            [
+              -0.01652810536324978,
+              0.30629587173461914,
+              0.7363182902336121
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253818154335022,
+              0.3071611523628235,
+              0.7347071170806885
+            ],
+            [
+              0.018093209713697433,
+              0.3078855276107788,
+              0.735142707824707
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "native",
+      "frame": 75,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (12 pairs) - delete to save tris"
+        ],
+        "ground_z": -0.0019,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 12
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 42342,
+            "faces": 42340,
+            "tris": 84680,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.17344507575035095,
+              -0.5360875129699707,
+              0.22484523057937622
+            ],
+            [
+              -0.17387861013412476,
+              -0.5349239706993103,
+              0.2232523262500763
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972325414419174,
+              0.10752630233764648,
+              0.7852557897567749
+            ],
+            [
+              -0.015306765213608742,
+              0.10775493830442429,
+              0.7858235239982605
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01684909127652645,
+              0.10875529050827026,
+              0.7847814559936523
+            ],
+            [
+              -0.016624800860881805,
+              0.10867355763912201,
+              0.7854897975921631
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624800860881805,
+              0.10867355763912201,
+              0.7854897975921631
+            ],
+            [
+              -0.01641841232776642,
+              0.10785716772079468,
+              0.7849757075309753
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            12932,
+            13889
+          ],
+          "triangle_ids": [
+            12932,
+            13889
+          ],
+          "source_face_sets": [
+            18,
+            18
+          ],
+          "centers_world_m": [
+            [
+              -0.027021374553442,
+              0.040476225316524506,
+              0.2153075784444809
+            ],
+            [
+              -0.02904101274907589,
+              0.04520779103040695,
+              0.21526548266410828
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            12933,
+            13889
+          ],
+          "triangle_ids": [
+            12933,
+            13889
+          ],
+          "source_face_sets": [
+            18,
+            18
+          ],
+          "centers_world_m": [
+            [
+              -0.027771927416324615,
+              0.04489685595035553,
+              0.21857261657714844
+            ],
+            [
+              -0.02904101274907589,
+              0.04520779103040695,
+              0.21526548266410828
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            13889,
+            12933
+          ],
+          "triangle_ids": [
+            13889,
+            55273
+          ],
+          "source_face_sets": [
+            18,
+            18
+          ],
+          "centers_world_m": [
+            [
+              -0.02904101274907589,
+              0.04520779103040695,
+              0.21526548266410828
+            ],
+            [
+              -0.025894111022353172,
+              0.03822201117873192,
+              0.2200799435377121
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.17403995990753174,
+              -0.534981906414032,
+              0.22327926754951477
+            ],
+            [
+              0.17360596358776093,
+              -0.5361451506614685,
+              0.22487083077430725
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01864444836974144,
+              0.10998855531215668,
+              0.7842200994491577
+            ],
+            [
+              0.018093209713697433,
+              0.10965882986783981,
+              0.7850501537322998
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139932304620743,
+              0.10919025540351868,
+              0.7844719290733337
+            ],
+            [
+              -0.01784525252878666,
+              0.10876383632421494,
+              0.78521728515625
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01641841232776642,
+              0.10785716772079468,
+              0.7849757075309753
+            ],
+            [
+              -0.016528116539120674,
+              0.10776299238204956,
+              0.7856110334396362
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253833055496216,
+              0.10912706702947617,
+              0.7843931913375854
+            ],
+            [
+              0.018093209713697433,
+              0.10965882986783981,
+              0.7850501537322998
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "native_smooth_contact_differences": [
+    "native frame56 pelvic_support_L: unsupported",
+    "native frame75 pelvic_support_L: unsupported",
+    "native frame75 pelvic_support_R: unsupported",
+    "native frame94 pelvic_support_L: unsupported"
+  ],
+  "contact_gate_basis": "The selected runtime uses original DQ cage; optional Multires-only preview is measured separately; global CorrectiveSmooth is disabled and has no runtime contact claim.",
+  "skinning": "dualQuaternion",
+  "limits": "Sampled DQcage contact/geometry QA. Optional native Multires evaluated separately; global CorrectiveSmooth disabled. Standard GLB requires optional runtime DQ adapter; primary owns actual GPU/browser review. No LBS quality claim."
+}

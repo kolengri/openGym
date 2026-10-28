@@ -1,0 +1,96 @@
+{
+  "id": "3244",
+  "name": "abdominal stretch",
+  "action": "Exercise_3244",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "hip flexors",
+    "chest"
+  ],
+  "stretch": [
+    "abs",
+    "hip flexors",
+    "chest"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "interpretation": "Original low prone press-up with planted ventral pelvis and relaxed legs, flat open palms, extended finger pads and natural bent elbows. A low preparatory chest clearance avoids forcing the original neutral cage through the floor. The hips never rise; this is not an upward-dog transition. Trunk extension is distributed across spine segments and the head remains relaxed near forward gaze at the hold. The 5-second demonstration compresses a source 20\u201330-second hold.",
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "additional": [
+      "hip flexors",
+      "chest"
+    ],
+    "illustrative_palette": "cyan stretch, neutral inactive skin; not measured recruitment"
+  },
+  "source_record": "catalogue/exercises/3244.json",
+  "source_record_sha256": "01e63b64e1814d66580120b348c6d087c77067ddcd1a441446c0ea45ca403907",
+  "provenance": "Repository instruction text and unchanged Blender Studio CC0 mannequin. No restricted exercise images/video used.",
+  "staging": {
+    "laterality": "Bilateral symmetrical press-up; no alternating side.",
+    "support": "Ventral pelvis, anterior thigh/knee/shin, foot dorsum, palm heel and all distal finger pads on shared z=0 illustration floor.",
+    "hands": "Open palm down, fingers forward, mild natural spread; thumb abducted to the floor.",
+    "elbow_poles": "Backward with small lateral offset; no elbow lock.",
+    "neck": "Head pitch 65 degrees downward at low entry, 17 degrees at hold; no extreme backward neck tilt.",
+    "timing": "2 seconds enter, 1 second hold, 2 seconds return. Workout hold remains separate."
+  },
+  "joint_targets": {
+    "basis": "Blender-world rotations about +X applied to original rest segments; 0 upright, 90 prone. These are authored segment orientations, not validated anatomical joint limits.",
+    "segment_pitch_start_degrees": [
+      90,
+      79,
+      71,
+      65,
+      65
+    ],
+    "segment_pitch_hold_degrees": [
+      90,
+      68,
+      45,
+      27,
+      17
+    ],
+    "segment_order": [
+      "Hips",
+      "Spine",
+      "Spine1",
+      "Neck",
+      "Head"
+    ],
+    "clinical_safe_limits": null
+  },
+  "binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "source_vertex_count": 10582,
+  "bone_count": 51,
+  "native_surface": "Original native JointSurfaceCorrective and Multires retained; independent QA compares against exported original cage with linear skinning.",
+  "not_production_approved": true
+}

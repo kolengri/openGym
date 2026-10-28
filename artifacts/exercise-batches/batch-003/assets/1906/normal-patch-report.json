@@ -1,0 +1,25 @@
+{
+  "method": "One peak-fitted morph NORMAL target inverse-transports the native posed geometric normals through the actual Three.js linear blended bone matrix; no positions, skin weights, Basis or rig rests change.",
+  "angle_error_degrees_before": {
+    "50": 0.0,
+    "90": 8.537736462515939e-07,
+    "95": 2.2100944892678536,
+    "99": 16.674191082131948,
+    "100": 150.75089861578564
+  },
+  "angle_error_degrees_after": {
+    "50": 0.0,
+    "90": 8.537736462515939e-07,
+    "95": 8.537736462515939e-07,
+    "99": 8.537736462515939e-07,
+    "100": 2.831646840510158e-06
+  },
+  "normal_target_bytes": 144120,
+  "max_normal_delta": 1.9007439613342285,
+  "blender_import_limitation": "Blender5.2 imp/mesh.py imports only morph POSITION and installs base custom normals. Readback must apply the transmitted default morph normal explicitly; raw importer shading is not a valid morph-normal proof.",
+  "fit_time_seconds": 2.5,
+  "normal_correction_scope": "Selected left hip/knee neighborhoods; rest retains existing transport.",
+  "animated_phase_status": "Decoded actual Three.js-equation entry/hold/return proof viewed; primary live GPU/soft-material acceptance pending.",
+  "source_sha256": "e6d3e9d866291229bcd17961ebcbb1031b4c2c14a705981bbccfd48a349fdbfe",
+  "glb_sha256": "da9eec0be34e40f3e54c361fef26b52153c4db494123ee676b4e0a6d88bd9316"
+}

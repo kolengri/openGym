@@ -1,0 +1,206 @@
+{
+  "ok": true,
+  "scope": "Actual Three.js/Chromium/Metal and mobile touch emulation; no physical device or production application integration claim.",
+  "models": {
+    "1777": {
+      "path": "artifacts/exercise-batches/batch-003/assets/1777/motion.glb",
+      "sha256": "a4c646a2c6333fc67fc968dfd2d6d13d00138ee5f5cdb03e56dd81371f568b7f",
+      "bytes": 879444,
+      "bones": 51,
+      "animations": [
+        "Exercise_1777"
+      ]
+    },
+    "1906": {
+      "path": "artifacts/exercise-batches/batch-003/assets/1906/motion.glb",
+      "sha256": "da9eec0be34e40f3e54c361fef26b52153c4db494123ee676b4e0a6d88bd9316",
+      "bytes": 1053304,
+      "bones": 51,
+      "animations": [
+        "Exercise_1906"
+      ]
+    },
+    "3244": {
+      "path": "artifacts/exercise-batches/batch-003/assets/3244/motion.glb",
+      "sha256": "77cfeb4a8b8f379656be51f9cf9050b20e61cffa7443d8a6266bf995b5b652b7",
+      "bytes": 882088,
+      "bones": 51,
+      "animations": [
+        "Exercise_3244"
+      ]
+    },
+    "4348": {
+      "path": "artifacts/exercise-batches/batch-003/assets/4348/motion.glb",
+      "sha256": "0d7b71203d9c7918358ec9abce8b805f4d50d3e7ababf74b4c04949bec49de13",
+      "bytes": 1193736,
+      "bones": 51,
+      "animations": [
+        "Exercise_4348"
+      ]
+    },
+    "6033": {
+      "path": "artifacts/exercise-batches/batch-003/assets/6033/motion.glb",
+      "sha256": "8a928882f94a9935ebf46abf1d7538f9b9d276abc52edc941d6710dee67bdcb2",
+      "bytes": 945416,
+      "bones": 51,
+      "animations": [
+        "Exercise_6033"
+      ]
+    }
+  },
+  "exercises": [
+    {
+      "id": "6033",
+      "duration": 5,
+      "maxJointErrorMeters": 9.054886085005668e-7,
+      "reviewTime": 1.25,
+      "warmPixels": 2010,
+      "cyanPixels": 0,
+      "sourceSurfacePhases": 11,
+      "displayMode": "load",
+      "holdSeconds": null,
+      "asset": "6033",
+      "bones": 51
+    },
+    {
+      "id": "4348",
+      "duration": 5,
+      "maxJointErrorMeters": 5.272343834643018e-7,
+      "reviewTime": 2.5,
+      "warmPixels": 1754,
+      "cyanPixels": 0,
+      "sourceSurfacePhases": 7,
+      "displayMode": "load",
+      "holdSeconds": 1,
+      "asset": "4348",
+      "bones": 51
+    },
+    {
+      "id": "3244",
+      "duration": 5,
+      "maxJointErrorMeters": 4.303175936471993e-7,
+      "reviewTime": 2.5,
+      "warmPixels": 0,
+      "cyanPixels": 1161,
+      "sourceSurfacePhases": 11,
+      "displayMode": "stretch",
+      "holdSeconds": 1,
+      "asset": "3244",
+      "bones": 51
+    },
+    {
+      "id": "1906",
+      "duration": 5,
+      "maxJointErrorMeters": 3.935327171023155e-7,
+      "reviewTime": 2.5,
+      "warmPixels": 0,
+      "cyanPixels": 1210,
+      "sourceSurfacePhases": 7,
+      "displayMode": "stretch",
+      "holdSeconds": 1,
+      "asset": "1906",
+      "bones": 51
+    },
+    {
+      "id": "1777",
+      "duration": 5,
+      "maxJointErrorMeters": 0.0000012668695121293553,
+      "reviewTime": 2.5,
+      "warmPixels": 0,
+      "cyanPixels": 827,
+      "sourceSurfacePhases": 11,
+      "displayMode": "stretch",
+      "holdSeconds": 1,
+      "asset": "1777",
+      "bones": 51
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "6033",
+      "fullNativeDQWitnesses": 5,
+      "maxAllVertexDQErrorMeters": 0.0000010844474819202921
+    },
+    {
+      "id": "3244",
+      "livePlayback": {
+        "durationSeconds": 5,
+        "holdSeconds": 1,
+        "sampleTimes": [
+          0.41669999999999996,
+          1.5166000000000004,
+          2.1166,
+          2.9164999999999983,
+          3.516599999999996,
+          4.716500000000004
+        ],
+        "holdDriftMeters": 0,
+        "wallSeconds": 5.018899999976158,
+        "wrapObserved": true
+      }
+    },
+    {
+      "id": "1906",
+      "livePlayback": {
+        "durationSeconds": 5,
+        "holdSeconds": 1,
+        "sampleTimes": [
+          0.40000000000000013,
+          1.516600000000002,
+          2.1000000000000028,
+          2.9166000000000016,
+          3.5164999999999993,
+          4.716500000000005
+        ],
+        "holdDriftMeters": 0,
+        "wallSeconds": 5.016700000047684,
+        "wrapObserved": true
+      }
+    },
+    {
+      "id": "1777",
+      "livePlayback": {
+        "durationSeconds": 5,
+        "holdSeconds": 1,
+        "sampleTimes": [
+          0.4,
+          1.5165999999999988,
+          2.1165999999999996,
+          2.916599999999998,
+          3.516499999999998,
+          4.716500000000003
+        ],
+        "holdDriftMeters": 0,
+        "wallSeconds": 5.016399999976158,
+        "wrapObserved": true
+      }
+    }
+  ],
+  "maxJointErrorMeters": 0.0000012668695121293553,
+  "maxSurfaceParityErrorMeters": 7.152053523307167e-7,
+  "maxAllVertexDQErrorMeters": 0.0000010844474819202921,
+  "transparentCanvas": true,
+  "colorTextures": 0,
+  "shadows": false,
+  "ao": false,
+  "noVideo": true,
+  "mediaRequests": [],
+  "switchingFiveActions": true,
+  "latestSelectionWins": true,
+  "touchOrbit": true,
+  "pinch": true,
+  "reset": true,
+  "seekEndResume": true,
+  "backgrounds": [
+    "white",
+    "dark",
+    "checker"
+  ],
+  "noOverflowWidths": [
+    320,
+    768,
+    1024,
+    1440
+  ],
+  "errors": []
+}

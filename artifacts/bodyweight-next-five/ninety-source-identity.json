@@ -1,0 +1,56 @@
+{
+  "source": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-five/bodyweight-five.blend",
+  "source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "output": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-next-five/ninety-repaired.blend",
+  "output_sha256": "eae482f6ed3b6030e97d6f37b48f232a3a865659ec8a7af63903708f300afd7f",
+  "vertices": 10582,
+  "polygons": 10590,
+  "bones": 51,
+  "binding_and_rest_geometry_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "original_binding_rest_uv_source_index_unchanged": true,
+  "helpers": false,
+  "morphs": false,
+  "skinning": "dualQuaternion",
+  "required_renderer": "Three.js custom dual-quaternion adapter; standard GLB LBS playback is not the approved deformation.",
+  "modifier_policy": "Only PreserveVolume Armature enabled. Original CorrectiveSmooth and Multires definitions retained but disabled; optional subdivision is separate authoring review, not runtime support truth.",
+  "actions": [
+    "Exercise_10565",
+    "Exercise_6560"
+  ],
+  "duration_seconds": 5,
+  "preview_hold_seconds": 1,
+  "source_workout_hold_seconds": [
+    20,
+    30
+  ],
+  "original_three_asset_immutable": {
+    "blend_sha256": "fb85a7c06814982d20211332fee958e71084660326d1b07ffec35d29cc47f109",
+    "glb_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37"
+  },
+  "authoring_files": {
+    "build_ninety_repaired.py": "d160f42cd1a89925cb6c65e4b32b4a1d239971b459207ba484364d969c3a29d3",
+    "ninety_pose.py": "5d1d925d79efa87553c7c1ebefa6980334e1421caa95ea86daf0ff5884bed217"
+  },
+  "contact_parameters_sha256": "5956fd574e34fca826115eb16f41fb065dfdd9c9fd6f2d60decf4f7e1d7f29e2",
+  "status": "native_DQ_QA_passed_runtime_and_primary_visual_review_required",
+  "export": {
+    "output": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-next-five/ninety-repaired.glb",
+    "sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
+    "bytes": 965540,
+    "meshes": 1,
+    "skins": 1,
+    "bones": 51,
+    "triangles": 21160,
+    "animations": [
+      "Exercise_10565",
+      "Exercise_6560"
+    ]
+  },
+  "reference_files": {
+    "ninety-dq-reference.json.gz": "1b6c748444d7a5c22e603e83d03cf5044c9cf399b71fc8feab8bed44ad010365",
+    "ninety-runtime-surface-reference.json": "a2d728e8fd2c7139425163bc37714e998d8ce99d6e3744dd393c51095c4e1509",
+    "ninety-pose-samples.json": "fa3dab4e4e2d6f208a8fe182d5403deb87712aecdfb18e6ef3c84ee2c8f3c340",
+    "ninety-pose-verification.json": "262beaf203a1d632702bc721d3aa496adc6772d6e8289059dcc4b5469eda883b",
+    "ninety-asset-qa.json": "24a9c3860f94091872f909b1dad32a82f8c07ef51e92e2cb51b96fe861823734"
+  }
+}

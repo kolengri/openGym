@@ -103,3 +103,25 @@ Historical video recipes and receipts remain in `../bodyweight-five/` for proven
 ## Review handoff
 
 Keep the model/runtime, context and exact hashes under `artifacts/<task>/`, and show the live example for user review. Preserve frozen batch001 and its original diagnosis; do not regenerate its videos. The heat prototype remains `awaiting_user_confirmation`; continue other exercises after the user confirms this direction. This scope uses no paid generation service and does not publish or deploy the application.
+
+## User-rejected90/90 pelvis and timing
+
+The user rejected the first batch00290/90 delivery: the pelvis/glutes collapsed into a narrow wedge and the28second preview paused too long. Numeric topology checks, skin/joint export parity and support-patch floor bands had passed; those checks did not establish a natural human silhouette. Require heat-off side/rear views at start, hinge and return, plus an oblique view showing both legs, before the final export. Inspect the exported linear skin separately from the native corrective result. Preserve rounded continuous glute volume, a smooth hip/thigh junction, a visibly flat back and natural arms;6560needs readable floor palms. Do not hide a collapse with a different camera or translate the whole body downward to satisfy a contact threshold.
+
+The latest user direction supersedes the old full-hold preview policy for10565/6560: use a clearly labeled5second demonstration with2seconds to hinge,1second to hold and2seconds to return. Retain the source20–30second workout hold in text. Check actual live playback through the hold and return, rather than accepting duration metadata alone. The anatomy repair remains open until corrected source and exported-skin visual evidence support closure.
+
+## Runtime shape, normals and reusable rig decisions
+
+For batch 003 and the separate 90/90 repair, retain the original 51-bone binding rather than reusing rejected helper-bone fits or large inverse offsets. Deep hip flexion can use the optional dual-quaternion adapter in the live Three.js material. This is an explicit runtime requirement: ordinary GLB viewers applying linear skinning are not appearance references for those assets. Validate all original-index vertices against a native Preserve Volume cage with every non-Armature modifier disabled. Do not lower the whole runtime body to imitate a different native CorrectiveSmooth surface.
+
+A bounded corrective can address a specific skin fold. Preserve the original Basis, rest skeleton, weights, UVs and source IDs; export matching normal deltas when required. The static quadruped uses one constant corrective, and the selected-leg stretch uses one small animated corrective. The rejected 58-target normal precision trial is not part of the accepted pipeline. Check the actual decoded/Three.js normal equation or actual WebGL output: an importer that ignores morph normals can give a misleading preview.
+
+Inspect hands during entry as well as the final pose. A hand path can cross the scalp midway even when start and hold clear it. Coordinate forearm and upper-arm frames around the actual elbow plane rather than adding near-antiparallel twist. At large knee flexion, inspect the anterior patella and the knee silhouette; correct endpoints alone do not establish a rounded human knee.
+
+The recommended camera must expose the selected zones in the actual pose. An anatomically correct abdominal field hidden behind both knees is not adequate presentation. Complementary views and user orbit remain available, but cannot excuse a poor default. Camera width fitting changes framing only and must never be used to hide a deformed mesh.
+
+Keep the support plane and measured skin minimum as separate values. `floor_plane_z = 0` defines the datum; `global_floor_z` records the actual deformed skin minimum, which may differ by millimeters. Never write the plane constant into a measured-surface reference merely to satisfy parity.
+
+Frozen authoring-context snapshots record what each asset author used; refreshed batch contexts carry the current generation findings. Source and runtime receipts name their own exact hashes. User review, application integration and physical-device evidence remain separate from local numeric and appearance checks.
+
+For the 6033 knee repair, a narrow anterior cap mask and fitted dome left a flat/peaked border despite small numeric offsets. The accepted target uses the complete local original-cage native knee transition, feathered around the whole circumference; it preserves every support vertex. Invert only the stable DQ rotation for the local corrective. This is a pose-specific repair, not a universal knee solver. Require side and oblique proof before export, then inspect the actual runtime normal/position result through the cycle.

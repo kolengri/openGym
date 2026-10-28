@@ -1,0 +1,22 @@
+{
+  "method": "One static morph NORMAL target inverse-transports the native posed geometric normals through the actual Three.js linear blended bone matrix; no positions, skin weights, Basis or rig rests change.",
+  "angle_error_degrees_before": {
+    "50": 0.0,
+    "90": 10.484301935218582,
+    "95": 17.607957003427813,
+    "99": 43.20552154198021,
+    "100": 138.01907944486257
+  },
+  "angle_error_degrees_after": {
+    "50": 0.0,
+    "90": 0.008411692122619892,
+    "95": 0.01103020450338943,
+    "99": 0.014590952132534018,
+    "100": 0.023196253956225543
+  },
+  "normal_target_bytes": 144120,
+  "max_normal_delta": 1.9579412937164307,
+  "blender_import_limitation": "Blender5.2 imp/mesh.py imports only morph POSITION and installs base custom normals. Readback must apply the transmitted default morph normal explicitly; raw importer shading is not a valid morph-normal proof.",
+  "source_sha256": "c84b9489cae7d1f1f471afef5938b6534fd8c5c2bb0ffda6bf42183c0f7b44f3",
+  "glb_sha256": "0d7b71203d9c7918358ec9abce8b805f4d50d3e7ababf74b4c04949bec49de13"
+}

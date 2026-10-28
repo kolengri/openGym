@@ -1,0 +1,755 @@
+{
+  "pass": true,
+  "samples": [
+    {
+      "path": "dq_cage",
+      "frame": 0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": -0.002,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": []
+    },
+    {
+      "path": "dq_cage",
+      "frame": 75,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": -0.002,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": []
+    },
+    {
+      "path": "native",
+      "frame": 0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+        ],
+        "ground_z": -0.0019,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 9
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 42342,
+            "faces": 42340,
+            "tris": 84680,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.1734451949596405,
+              -0.9880370497703552,
+              0.2458142638206482
+            ],
+            [
+              -0.17387869954109192,
+              -0.9874886274337769,
+              0.24391941726207733
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972317032516003,
+              0.30595195293426514,
+              0.7360653877258301
+            ],
+            [
+              -0.015306763350963593,
+              0.30636098980903625,
+              0.7365207076072693
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849106177687645,
+              0.3069445788860321,
+              0.7351993918418884
+            ],
+            [
+              -0.016624797135591507,
+              0.3071100413799286,
+              0.7358929514884949
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624797135591507,
+              0.3071100413799286,
+              0.7358929514884949
+            ],
+            [
+              -0.016418393701314926,
+              0.3061670660972595,
+              0.7356890439987183
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.1740400791168213,
+              -0.9875337481498718,
+              0.2439645230770111
+            ],
+            [
+              0.17360608279705048,
+              -0.9880824089050293,
+              0.24585798382759094
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018644411116838455,
+              0.3079114854335785,
+              0.7342498302459717
+            ],
+            [
+              0.018093209713697433,
+              0.3078855276107788,
+              0.735142707824707
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01813993975520134,
+              0.30724745988845825,
+              0.7347597479820251
+            ],
+            [
+              -0.017845245078206062,
+              0.30710169672966003,
+              0.7356059551239014
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016418393701314926,
+              0.3061670660972595,
+              0.7356890439987183
+            ],
+            [
+              -0.01652810536324978,
+              0.30629587173461914,
+              0.7363182902336121
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253818154335022,
+              0.3071611523628235,
+              0.7347071170806885
+            ],
+            [
+              0.018093209713697433,
+              0.3078855276107788,
+              0.735142707824707
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "native",
+      "frame": 75,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (12 pairs) - delete to save tris"
+        ],
+        "ground_z": -0.0019,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 12
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 42342,
+            "faces": 42340,
+            "tris": 84680,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.17344507575035095,
+              -0.5360875129699707,
+              0.22484523057937622
+            ],
+            [
+              -0.17387861013412476,
+              -0.5349239706993103,
+              0.2232523262500763
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972325414419174,
+              0.10752630233764648,
+              0.7852557897567749
+            ],
+            [
+              -0.015306765213608742,
+              0.10775493830442429,
+              0.7858235239982605
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01684909127652645,
+              0.10875529050827026,
+              0.7847814559936523
+            ],
+            [
+              -0.016624800860881805,
+              0.10867355763912201,
+              0.7854897975921631
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.016624800860881805,
+              0.10867355763912201,
+              0.7854897975921631
+            ],
+            [
+              -0.01641841232776642,
+              0.10785716772079468,
+              0.7849757075309753
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            12932,
+            13889
+          ],
+          "triangle_ids": [
+            12932,
+            13889
+          ],
+          "source_face_sets": [
+            18,
+            18
+          ],
+          "centers_world_m": [
+            [
+              -0.027021374553442,
+              0.040476225316524506,
+              0.2153075784444809
+            ],
+            [
+              -0.02904101274907589,
+              0.04520779103040695,
+              0.21526548266410828
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            12933,
+            13889
+          ],
+          "triangle_ids": [
+            12933,
+            13889
+          ],
+          "source_face_sets": [
+            18,
+            18
+          ],
+          "centers_world_m": [
+            [
+              -0.027771927416324615,
+              0.04489685595035553,
+              0.21857261657714844
+            ],
+            [
+              -0.02904101274907589,
+              0.04520779103040695,
+              0.21526548266410828
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            13889,
+            12933
+          ],
+          "triangle_ids": [
+            13889,
+            55273
+          ],
+          "source_face_sets": [
+            18,
+            18
+          ],
+          "centers_world_m": [
+            [
+              -0.02904101274907589,
+              0.04520779103040695,
+              0.21526548266410828
+            ],
+            [
+              -0.025894111022353172,
+              0.03822201117873192,
+              0.2200799435377121
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.17403995990753174,
+              -0.534981906414032,
+              0.22327926754951477
+            ],
+            [
+              0.17360596358776093,
+              -0.5361451506614685,
+              0.22487083077430725
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.01864444836974144,
+              0.10998855531215668,
+              0.7842200994491577
+            ],
+            [
+              0.018093209713697433,
+              0.10965882986783981,
+              0.7850501537322998
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139932304620743,
+              0.10919025540351868,
+              0.7844719290733337
+            ],
+            [
+              -0.01784525252878666,
+              0.10876383632421494,
+              0.78521728515625
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01641841232776642,
+              0.10785716772079468,
+              0.7849757075309753
+            ],
+            [
+              -0.016528116539120674,
+              0.10776299238204956,
+              0.7856110334396362
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253833055496216,
+              0.10912706702947617,
+              0.7843931913375854
+            ],
+            [
+              0.018093209713697433,
+              0.10965882986783981,
+              0.7850501537322998
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

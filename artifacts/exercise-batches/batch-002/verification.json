@@ -1,7 +1,31 @@
 {
   "ok": true,
   "scope": "Actual Three.js/Chromium/Metal and mobile touch emulation; no physical device or production application integration claim.",
-  "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+  "models": {
+    "default": {
+      "path": "artifacts/bodyweight-next-five/next-five.glb",
+      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+      "bytes": 1325048,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_4007",
+        "Exercise_5265",
+        "Exercise_6428",
+        "Exercise_6560"
+      ]
+    },
+    "ninety-repaired": {
+      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+      "sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
+      "bytes": 965540,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_6560"
+      ]
+    }
+  },
   "exercises": [
     {
       "id": "5265",
@@ -12,7 +36,9 @@
       "cyanPixels": 0,
       "sourceSurfacePhases": 9,
       "displayMode": "load",
-      "holdSeconds": null
+      "holdSeconds": null,
+      "asset": "default",
+      "bones": 51
     },
     {
       "id": "4007",
@@ -23,7 +49,9 @@
       "cyanPixels": 0,
       "sourceSurfacePhases": 9,
       "displayMode": "load",
-      "holdSeconds": null
+      "holdSeconds": null,
+      "asset": "default",
+      "bones": 51
     },
     {
       "id": "6428",
@@ -34,29 +62,35 @@
       "cyanPixels": 0,
       "sourceSurfacePhases": 9,
       "displayMode": "load",
-      "holdSeconds": null
+      "holdSeconds": null,
+      "asset": "default",
+      "bones": 51
     },
     {
       "id": "10565",
-      "duration": 28,
-      "maxJointErrorMeters": 9.303792667327511e-7,
-      "reviewTime": 14,
+      "duration": 5,
+      "maxJointErrorMeters": 0.000001508826228563825,
+      "reviewTime": 2.5,
       "warmPixels": 0,
-      "cyanPixels": 2048,
+      "cyanPixels": 1708,
       "sourceSurfacePhases": 11,
       "displayMode": "stretch",
-      "holdSeconds": 24
+      "holdSeconds": 1,
+      "asset": "ninety-repaired",
+      "bones": 51
     },
     {
       "id": "6560",
-      "duration": 28,
-      "maxJointErrorMeters": 7.017952918998022e-7,
-      "reviewTime": 14,
+      "duration": 5,
+      "maxJointErrorMeters": 9.934845224427825e-7,
+      "reviewTime": 2.5,
       "warmPixels": 0,
-      "cyanPixels": 1851,
+      "cyanPixels": 1626,
       "sourceSurfacePhases": 11,
       "displayMode": "stretch",
-      "holdSeconds": 24
+      "holdSeconds": 1,
+      "asset": "ninety-repaired",
+      "bones": 51
     }
   ],
   "mechanics": [
@@ -85,10 +119,57 @@
       "id": "6428",
       "maxAnkleDriftMeters": 0,
       "footMode": "planted"
+    },
+    {
+      "id": "10565",
+      "fullNativeDQWitnesses": 5,
+      "maxAllVertexDQErrorMeters": 0.0000018111563269701023
+    },
+    {
+      "id": "10565",
+      "livePlayback": {
+        "durationSeconds": 5,
+        "holdSeconds": 1,
+        "sampleTimes": [
+          0.4166999999999998,
+          1.5165999999999997,
+          2.1164999999999985,
+          2.916499999999997,
+          3.5164999999999953,
+          4.716500000000003
+        ],
+        "holdDriftMeters": 0,
+        "wallSeconds": 5.0186000000238415,
+        "wrapObserved": true
+      }
+    },
+    {
+      "id": "6560",
+      "fullNativeDQWitnesses": 5,
+      "maxAllVertexDQErrorMeters": 0.0000014463169615777345
+    },
+    {
+      "id": "6560",
+      "livePlayback": {
+        "durationSeconds": 5,
+        "holdSeconds": 1,
+        "sampleTimes": [
+          0.4,
+          1.5165000000000013,
+          2.1165000000000016,
+          2.9164999999999996,
+          3.5164999999999984,
+          4.716500000000004
+        ],
+        "holdDriftMeters": 0,
+        "wallSeconds": 5.020299999952316,
+        "wrapObserved": true
+      }
     }
   ],
-  "maxJointErrorMeters": 0.0000013878100982222736,
-  "maxSurfaceParityErrorMeters": 9.252986142294084e-7,
+  "maxJointErrorMeters": 0.000001508826228563825,
+  "maxSurfaceParityErrorMeters": 0.0000010831076633910364,
+  "maxAllVertexDQErrorMeters": 0.0000018111563269701023,
   "transparentCanvas": true,
   "colorTextures": 0,
   "shadows": false,
@@ -96,6 +177,7 @@
   "noVideo": true,
   "mediaRequests": [],
   "switchingFiveActions": true,
+  "latestSelectionWins": true,
   "touchOrbit": true,
   "pinch": true,
   "reset": true,

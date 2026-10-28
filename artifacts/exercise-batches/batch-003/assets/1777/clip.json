@@ -1,0 +1,102 @@
+{
+  "id": "1777",
+  "action": "Exercise_1777",
+  "name": "above head chest stretch",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "primary": [
+    "pectorals"
+  ],
+  "secondary": [
+    "shoulders",
+    "upper chest"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {
+    "pectorals": [
+      "L",
+      "R"
+    ],
+    "shoulders": [
+      "L",
+      "R"
+    ],
+    "upper chest": [
+      "L",
+      "R"
+    ]
+  },
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "interpretation": "Symmetric standing demonstration begins with fingers linked in front of the body. The linked hands travel in a forward clearance arc to overhead, palms outward/up, then slightly behind the shoulder line. A small upper-thoracic lift opens the chest; pelvis and lumbar pitch remain unchanged. Fingers stay linked while the arms lower gently to release the stretch and close the loop. Relaxed shoulders and steady breathing are represented by a quiet, unbounced hold rather than an invented breathing motion. The catalogue conditional side-switch cue does not apply to this symmetric staging. The 5-second illustration compresses the source 20\u201330-second workout hold.",
+  "authored_choices": {
+    "stance": "Original bilateral standing feet, hip/knee geometry and pelvis position preserved.",
+    "grip": "Loose articulated bilateral interlaced finger hooks; right wrist offset 14 mm along the finger row and 20 mm along palm normal keeps actual surfaces from crossing. Palms turn outward/up during the rise. Illustration spacing, not an anatomical prescription.",
+    "upper_thoracic_pitch_degrees": -3.5,
+    "lower_spine_pitch_degrees": 0,
+    "neck_pitch_degrees": -1.5,
+    "angle_status": "Reversible authored world-X staging values, not validated anatomical targets.",
+    "timing": "0\u20132 enter; 2\u20133 quiet hold; 3\u20135 gentle return.",
+    "support_surface": "Plane Blender-world Z=0; both heel and forefoot skin patches stay grounded through all phases.",
+    "muscle_display": "Cyan soft stretch fields for source pectorals; softer source shoulders and upper chest. Root integrates the common runtime field, no texture maps.",
+    "cameras": "Front oblique exposes bilateral chest, hands and feet; side oblique exposes overhead/back reach, lumbar contour and hand/scalp clearance.",
+    "arm_orientation": "Minimum-rotation upper arm; forearm frame transported from upper arm before elbow flexion to avoid the independent antiparallel shortest-arc roll."
+  },
+  "source": {
+    "path": "catalogue/exercises/1777.json",
+    "sha256": "f41ee7f7e39756d572e9d2897d993a7eb1e2aa5b5199ef9cf19777e44d285cad",
+    "instruction_pointer": "/instructions",
+    "instructions": [
+      "Stand tall and interlace your fingers, then raise your arms overhead.",
+      "Press your arms slightly back and lift your chest without arching your lower back.",
+      "Keep your shoulders relaxed and your breathing slow and steady.",
+      "Hold for 20-30 seconds without bouncing.",
+      "Release gently and repeat, switching sides if the stretch is one-sided."
+    ],
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "shoulders",
+      "upper chest"
+    ],
+    "textSource": "opengym"
+  },
+  "provenance": {
+    "body": "Blender Studio original continuous CC0 mannequin from accepted bodyweight-five source.",
+    "motion": "Original analytic authoring from repository text; no restricted exercise media used."
+  },
+  "readiness": "authored_for_review_not_production_approved",
+  "unresolved_source_blockers": [],
+  "not_applicable": [
+    "Hopping support phases",
+    "Floor-palm support",
+    "Conditional one-sided repeat"
+  ],
+  "unresolved_asset_issues": [
+    {
+      "id": "1777-LIVE-APPEARANCE-REVIEW",
+      "status": "pending_primary_visual_acceptance",
+      "description": "Plain LBS export retained. Raw Blender-import shading is not a faithful Three.js appearance proof. Primary actual WebGL smoke compiled both modes without errors and observed no material armpit band with the approved material; final front/side intermediate/peak review remains primary-owned. The frozen 58-normal-target trial is excluded from the canonical asset."
+    }
+  ]
+}

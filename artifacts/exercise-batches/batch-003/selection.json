@@ -1,0 +1,74 @@
+{
+  "batch": "003",
+  "selection_rule": "Next five canonical body-weight candidates with no inherited inventory props, casefolded English name then ID, after batches001and002. Source omissions remain review issues.",
+  "user_approval": "User explicitly requested the next five in parallel, one exercise per agent, while90/90is repaired separately.",
+  "exercises": [
+    {
+      "id": "6033",
+      "name": "ab tuck",
+      "source_sha256": "9d6dcf774c54ccd03e03b7b79c977b5135643fa5d62c38cfd40b78726c5ad57a",
+      "source_path": "catalogue/exercises/6033.json",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "lower abs",
+        "hip flexors"
+      ]
+    },
+    {
+      "id": "4348",
+      "name": "abdominal 4 points",
+      "source_sha256": "6f54d5a80c694c953683ad692216abeadc7d5c1c89d5f216a85a42babe20f416",
+      "source_path": "catalogue/exercises/4348.json",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "core",
+        "shoulders",
+        "hip flexors"
+      ]
+    },
+    {
+      "id": "3244",
+      "name": "abdominal stretch",
+      "source_sha256": "01e63b64e1814d66580120b348c6d087c77067ddcd1a441446c0ea45ca403907",
+      "source_path": "catalogue/exercises/3244.json",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "hip flexors",
+        "chest"
+      ]
+    },
+    {
+      "id": "1906",
+      "name": "abduction of one leg flexion stretch",
+      "source_sha256": "54fced582533408b3caca65bbf34c3c0f448e51ebe0c6c24980066456ee83e1c",
+      "source_path": "catalogue/exercises/1906.json",
+      "primary": [
+        "adductors"
+      ],
+      "secondary": [
+        "groin",
+        "hip flexors"
+      ]
+    },
+    {
+      "id": "1777",
+      "name": "above head chest stretch",
+      "source_sha256": "f41ee7f7e39756d572e9d2897d993a7eb1e2aa5b5199ef9cf19777e44d285cad",
+      "source_path": "catalogue/exercises/1777.json",
+      "primary": [
+        "pectorals"
+      ],
+      "secondary": [
+        "shoulders",
+        "upper chest"
+      ]
+    }
+  ],
+  "delivery": "Original continuous mannequin, live GLB + Three.js only. No videos or animation frame sequences."
+}

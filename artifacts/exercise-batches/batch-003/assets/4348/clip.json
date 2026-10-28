@@ -1,0 +1,66 @@
+{
+  "id": "4348",
+  "name": "abdominal 4 points",
+  "action": "Exercise_4348",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "core",
+    "shoulders",
+    "hip flexors"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Brace"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Relax"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    15,
+    30
+  ],
+  "interpretation": "Compressed 5-second bracing demonstration on hands and knees; the source workout hold remains15\u201330seconds. The skeleton intentionally remains still during brace, hold and relaxation: no knee hover, plank transition, visible abdominal deformation or exaggerated breathing. The viewer may label the phases; no invented physiological activation curve. Normal breathing is an instruction, not simulated mechanics.",
+  "authored_staging": {
+    "floor": "Level Z=0 plane in original Blender world meters; review stills use thin datum lines with no masking floor surface.",
+    "pose": "Wrists under shoulders, knees under hips; straight torso and neutral neck share a79degree world-X pitch (11degree upward slope toward shoulders). This reversible slope matches the unchanged mannequin limb lengths with natural near-straight elbows.",
+    "hands": "Open palm support and all ten finger pads on the common floor. Palm orientation fitted to original palmar skin plane; distal finger phalanges are horizontal. Basis coordinates, rest, weights and UVs unchanged. One constant pose-corrective morph reproduces the clean native CorrectiveSmooth cage.",
+    "feet": "Both lower legs extend behind with relaxed plantar-flexed feet; knee support is required, foot dorsum is supplementary.",
+    "joint_angle_status": "Authored illustration placement; no clinical joint-range limits are claimed."
+  },
+  "source": {
+    "text_path": "catalogue/exercises/4348.json",
+    "text_sha256": "6f54d5a80c694c953683ad692216abeadc7d5c1c89d5f216a85a42babe20f416",
+    "context_path": "artifacts/exercise-batches/batch-003/assets/4348/authoring-context.json",
+    "context_sha256": "7104f072ef0a59679bc3130b952b4932bd9b57d7b1d016c82e46bc3e47128a77",
+    "body_path": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-five/bodyweight-five.blend",
+    "body_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+    "motion": "Original authored pose/action. All inherited historical actions are removed; no capture trajectory is used.",
+    "restricted_media_used": false
+  },
+  "static_pose_corrective": {
+    "name": "StaticPoseCorrective_4348",
+    "weight": 1,
+    "animated": false,
+    "reason": "Native CorrectiveSmooth cage reproduced in actual GLB LBS to remove rejected angular waist/shoulder folds."
+  },
+  "readiness": "authored_prototype_requires_primary_runtime_and_user_review"
+}

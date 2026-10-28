@@ -1,0 +1,261 @@
+{
+  "id": "1777",
+  "status": "authored_for_primary_review",
+  "geometry_contact_export_checks_pass": true,
+  "production_approved": false,
+  "files": {
+    "source.blend": {
+      "bytes": 13729746,
+      "sha256": "17a0cdde636cf0bd810877d37901bb2ff71f8903e27b54c2406eb4ec368cd555"
+    },
+    "motion.glb": {
+      "bytes": 879444,
+      "sha256": "a4c646a2c6333fc67fc968dfd2d6d13d00138ee5f5cdb03e56dd81371f568b7f"
+    },
+    "clip.json": {
+      "bytes": 4436,
+      "sha256": "137b407de0dcf81401ffb843b629fa02ce4893641facd1007d77e5c8a9f39d70"
+    },
+    "cameras.json": {
+      "bytes": 348,
+      "sha256": "89af2e67a430efdbd75fdd23da247626c5b70bfccffd61e2f9f18c30809bc952"
+    },
+    "pose-samples.json": {
+      "bytes": 65275,
+      "sha256": "b52e0f8f24a052f6a8df7d2144ee1fc076395286bcf48a0b7ecf221942c222d0"
+    },
+    "runtime-surface-reference.json": {
+      "bytes": 26849,
+      "sha256": "1ece5063a86016befbac11794d847b3d295f540c8f2dacd75412872389819a0c"
+    }
+  },
+  "blender": "5.2.3 LTS, Apple M5, background -t 2",
+  "binding_hash": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "source_topology": {
+    "vertices": 10582,
+    "triangles": 21160,
+    "bones": 51,
+    "continuous_body_islands": 1,
+    "neutral_materials": 1,
+    "color_textures": 0,
+    "uv_and_weights": "Unchanged original source"
+  },
+  "export": {
+    "ok": true,
+    "glb_sha256": "a4c646a2c6333fc67fc968dfd2d6d13d00138ee5f5cdb03e56dd81371f568b7f",
+    "source_sha256": "17a0cdde636cf0bd810877d37901bb2ff71f8903e27b54c2406eb4ec368cd555",
+    "actual_animation": "Exercise_1777",
+    "duration_seconds": 5,
+    "source_vertices": 10582,
+    "exported_uv_split_vertices": 12010,
+    "unique_source_indices": 10582,
+    "source_index_complete": true,
+    "triangles": 21160,
+    "bones": 51,
+    "max_skin_error_m": 1.4361476342311577e-06,
+    "max_joint_error_m": 1.2300912373367443e-06,
+    "loop_skin_error_m": 0.0,
+    "skin_method": "Independently decoded GLB node TRS, quaternion slerp, inverse bind matrices and four-influence linear blend skin. All exported UV-split vertices compared to native original-index linear references."
+  },
+  "support_floor_min_z_m": {
+    "native": -4.900057683698833e-05,
+    "linear": -1.8636092136148363e-07
+  },
+  "support_patches": {
+    "native": {
+      "heel_L": {
+        "min_z": -4.8971764044836164e-05,
+        "max_z": 0.01193996425718069,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      },
+      "forefoot_L": {
+        "min_z": 0.000349032343365252,
+        "max_z": 0.012125159613788128,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      },
+      "heel_R": {
+        "min_z": -4.900057683698833e-05,
+        "max_z": 0.011996683664619923,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      },
+      "forefoot_R": {
+        "min_z": 0.00034893397241830826,
+        "max_z": 0.012124896049499512,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      }
+    },
+    "linear": {
+      "heel_L": {
+        "min_z": -1.8636092136148363e-07,
+        "max_z": 0.011726772412657738,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      },
+      "forefoot_L": {
+        "min_z": 0.000802668510004878,
+        "max_z": 0.011996994726359844,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      },
+      "heel_R": {
+        "min_z": 1.374573002976831e-06,
+        "max_z": 0.011980816721916199,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      },
+      "forefoot_R": {
+        "min_z": 0.0008012682083062828,
+        "max_z": 0.011996678076684475,
+        "min_near_fraction": 1.0,
+        "max_tangential_drift_m": 0.0
+      }
+    }
+  },
+  "minimum_sampled_hand_head_clearance_m": 0.037843722850084305,
+  "maximum_sampled_cross_hand_intersections": 0,
+  "rotation_continuity": {
+    "max_world_rotation_step_degrees": 9.710129955187556,
+    "bone": "LeftForeArm",
+    "frame": 45,
+    "max_world_joint_step_m": 0.03394277327755217,
+    "sampled_every_native_frame": true
+  },
+  "accepted_inherited_warnings": [
+    "Native evaluated skin reports 10 hidden back-to-back triangle pairs at start and 11 at hold; linear cage has no QA warnings. These are inherited local body folds, no topology repair authorized or made.",
+    "Original UV tile coordinates are preserved; no color texture is used."
+  ],
+  "unresolved_asset_issues": [
+    {
+      "id": "1777-LIVE-APPEARANCE-REVIEW",
+      "status": "pending_primary_visual_acceptance",
+      "description": "Plain LBS export retained. Raw Blender-import shading is not a faithful Three.js appearance proof. Primary actual WebGL smoke compiled both modes without errors and observed no material armpit band with the approved material; final front/side intermediate/peak review remains primary-owned. The frozen 58-normal-target trial is excluded from the canonical asset."
+    }
+  ],
+  "scope_limits": [
+    "Contact, hand clearance and triangle intersection evidence samples 11 poses, not continuous collision certification.",
+    "Actual shared Three.js playback, field appearance, touch/orbit/zoom/reset and live transparent-canvas checks belong to primary integration and have not been performed in this asset slice.",
+    "Existing export stills were raw Blender reimports; their normal transport is not a faithful Three.js-normal acceptance proof. Primary is comparing original LBS and its existing DQ adapter in the actual shared browser.",
+    "Native CorrectiveSmooth/Multires skin and exported original-cage LBS skin are separately inspected; they are not claimed visually identical.",
+    "No clinical, technique, muscle activation or catalogue-wide production certification."
+  ],
+  "proofs": [
+    {
+      "path": "early-start-oblique.png",
+      "sha256": "9ed8963f045d63963be1178472b9144c7a6e411a7bf8a7f1c5a8df7bd4490a7a",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "early-peak-oblique.png",
+      "sha256": "f1092dc99fbf5ff599a49311e7f5e8ec6c5532e599302e07a01446c2feabaff8",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "early-return-oblique.png",
+      "sha256": "5dfe0a9ee55c32ac8fe448b4b4956b47ad8eb8bc520b9ed43de7672d0e758520",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "early-entry-oblique.png",
+      "sha256": "94aadc7f7d5d7d13a6ce0150cb8890e13ba54d610638472d6ea645653e92fe96",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "early-peak-side.png",
+      "sha256": "fed4219ac47b0ad77d6c5dbef47a50309ed92b1bb471bb7ab4aaa452098a30f6",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "early-peak-hands.png",
+      "sha256": "1b8c2f92940f84b5624c2acf1af643814127495e06360b8386657ad78247ef0e",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "native-peak-wire.png",
+      "sha256": "2b9b24c8860cac69acf71d199f715ebeb114a6dc098847eddbcb1b2955ad71e4",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "linear-peak-wire.png",
+      "sha256": "ae85ee14d5cc154a58c2d986c70d3d4312a0b531b97da0408c3cee7ea63f7ada",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "linear-peak-oblique.png",
+      "sha256": "1e0359bfb6f1ee2229e623cff97a2ac2b2d3fddc24a10dd1e67032cc863630d9",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "linear-peak-side.png",
+      "sha256": "4ce67e0d7c50f0ea49bdcd876965f051c3c6e2ba02107446cc15eade6490c82d",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "export-start-oblique.png",
+      "sha256": "2317da33cce5b2fb44378ea4ef3edc2702c0a30d0566431cb293ecaef7c63019",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "export-peak-oblique.png",
+      "sha256": "3f5e9448b8d4c9e7783620de55e83680b259eae6739b568c457fce57cb0d3f75",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "export-return-oblique.png",
+      "sha256": "09937475defc0f5c0d4f7ddeebbd3327459cf89890016e006727d5506da0a405",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "export-entry-oblique.png",
+      "sha256": "d1fc82cfdba70f44fe83ba046d6aa5b9e6f1de4d68942068e4ffe5bbc913fdce",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "export-peak-side.png",
+      "sha256": "0a65448c22f46bf4fa086f248ba2c1f1f89612bdc214513c84e702c22ec8524e",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    },
+    {
+      "path": "export-peak-hands.png",
+      "sha256": "b821a31aa3603a7f14b2d2ec7dd363c017e494e517ac34f6409825cd0a86a483",
+      "viewed_by_author": true,
+      "heat_off": true,
+      "corner_alpha": 0
+    }
+  ],
+  "generated_videos": 0,
+  "generated_frame_sequences": 0
+}

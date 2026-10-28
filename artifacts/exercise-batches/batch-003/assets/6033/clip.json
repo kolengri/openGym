@@ -1,0 +1,86 @@
+{
+  "id": "6033",
+  "name": "ab tuck",
+  "action": "Exercise_6033",
+  "duration": 5.0,
+  "duration_seconds": 5.0,
+  "frames": 150,
+  "duration_frames": 150,
+  "fps": 30,
+  "skinning": "dualQuaternion",
+  "bones": 51,
+  "corrective": {
+    "name": "KneeCapRound",
+    "scope": "Whole local knee circumference only",
+    "maximum_displacement_m": 0.02532348229973922,
+    "zero_at_entry_return": true,
+    "position_and_normal_morph": true
+  },
+  "source_hold_recommendation_seconds": null,
+  "display_mode": "heat",
+  "camera": "oblique",
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "lower abs",
+    "hip flexors"
+  ],
+  "stretch": [],
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "lower abs",
+      "hip flexors"
+    ]
+  },
+  "muscle_display_roles": {
+    "primary": "main",
+    "secondary": "additional"
+  },
+  "highlight_sides": {},
+  "side_note": "Bilateral abs and hip-flexor exercise; both anatomical sides use the catalogue training roles.",
+  "phases": [
+    {
+      "start": 0,
+      "end": 2.5,
+      "label": "Draw knees and chest together"
+    },
+    {
+      "start": 2.5,
+      "end": 5,
+      "label": "Extend under control"
+    }
+  ],
+  "source_instructions": [
+    "Sit on the floor and lean back slightly.",
+    "Extend your legs in front of you.",
+    "Pull your knees to your chest as you bring your torso forward.",
+    "Extend again under control.",
+    "Keep your core braced."
+  ],
+  "interpretation": "Original supported seated tuck: lean back with open palms placed behind and lateral to pelvis, fingers away from body; both feet hover throughout. Pelvic skin remains on the floor while chest and knees approach, then extend under control. Hand placement and hovering feet are explicit reversible staging choices because the source omits those details.",
+  "explicit_staging": {
+    "hands": "Open palms behind/lateral to hips; fingers directed posteriorly, subtle2degree proximal extension preserves open support shape. Fixed wrists atx\u00b10.23m,y0.22m retain posterior/lateral support while remaining reachable under the original DQ pelvic volume. No hand/body contact.",
+    "pelvis": "Actual bilateral posterior pelvic skin contacts floor. Root height is solved per frame against evaluated posterior skin with independent hand/ankle targets and re-solved limb chains.",
+    "legs": "Bilateral near-full extension to a controlled tuck, feet hovering; no floor foot support.",
+    "neck": "Tracks chest with neutral small offset; no isolated head rocking.",
+    "timing": "One5second controlled tuck/extend cycle at30fps, no workout hold duration asserted.",
+    "floor": "World Z=0 metres; illustration contact tolerance12mm/4mm penetration."
+  },
+  "muscle_notice": "Illustrative catalogue training emphasis, not measured EMG or instantaneous recruitment. Lower abs uses inferior rectus-abdominis blocks; hip flexors includes a limited deep iliopsoas projection.",
+  "provenance": {
+    "text": "catalogue/exercises/6033.json",
+    "body": "Original Blender Studio CC0 mannequin in artifacts/bodyweight-five/bodyweight-five.blend",
+    "restricted_media_used": false
+  },
+  "review_status": "dq_source_checked_runtime_gpu_appearance_review_pending",
+  "source_record_sha256": "9d6dcf774c54ccd03e03b7b79c977b5135643fa5d62c38cfd40b78726c5ad57a",
+  "source_gaps": {
+    "arms_hands": "Source unspecified; authored open posterior support palms.",
+    "foot_support": "Source unspecified; authored hovering feet.",
+    "joint_angles": "Authored illustration only, no validated clinical angles."
+  }
+}

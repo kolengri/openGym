@@ -1,0 +1,119 @@
+{
+  "batch": "003",
+  "exercise_ids": [
+    "6033",
+    "4348",
+    "3244",
+    "1906",
+    "1777"
+  ],
+  "initial_exercise_id": "6033",
+  "models": {
+    "1777": {
+      "path": "artifacts/exercise-batches/batch-003/assets/1777/motion.glb",
+      "sha256": "a4c646a2c6333fc67fc968dfd2d6d13d00138ee5f5cdb03e56dd81371f568b7f",
+      "bytes": 879444,
+      "bones": 51,
+      "animations": [
+        "Exercise_1777"
+      ]
+    },
+    "1906": {
+      "path": "artifacts/exercise-batches/batch-003/assets/1906/motion.glb",
+      "sha256": "da9eec0be34e40f3e54c361fef26b52153c4db494123ee676b4e0a6d88bd9316",
+      "bytes": 1053304,
+      "bones": 51,
+      "animations": [
+        "Exercise_1906"
+      ]
+    },
+    "3244": {
+      "path": "artifacts/exercise-batches/batch-003/assets/3244/motion.glb",
+      "sha256": "77cfeb4a8b8f379656be51f9cf9050b20e61cffa7443d8a6266bf995b5b652b7",
+      "bytes": 882088,
+      "bones": 51,
+      "animations": [
+        "Exercise_3244"
+      ]
+    },
+    "4348": {
+      "path": "artifacts/exercise-batches/batch-003/assets/4348/motion.glb",
+      "sha256": "0d7b71203d9c7918358ec9abce8b805f4d50d3e7ababf74b4c04949bec49de13",
+      "bytes": 1193736,
+      "bones": 51,
+      "animations": [
+        "Exercise_4348"
+      ]
+    },
+    "6033": {
+      "path": "artifacts/exercise-batches/batch-003/assets/6033/motion.glb",
+      "sha256": "8a928882f94a9935ebf46abf1d7538f9b9d276abc52edc941d6710dee67bdcb2",
+      "bytes": 945416,
+      "bones": 51,
+      "animations": [
+        "Exercise_6033"
+      ]
+    }
+  },
+  "model_revision": null,
+  "selected_regions": [
+    "rectus_abdominis_1.L",
+    "rectus_abdominis_1.R",
+    "rectus_abdominis_2.L",
+    "rectus_abdominis_2.R",
+    "rectus_abdominis_3.L",
+    "rectus_abdominis_3.R",
+    "rectus_abdominis_4.L",
+    "rectus_abdominis_4.R",
+    "sartorius.L",
+    "sartorius.R",
+    "iliopsoas_projection.L",
+    "iliopsoas_projection.R",
+    "external_oblique.L",
+    "external_oblique.R",
+    "erector_spinae.L",
+    "erector_spinae.R",
+    "deltoid_anterior.L",
+    "deltoid_anterior.R",
+    "deltoid_lateral.L",
+    "deltoid_lateral.R",
+    "deltoid_posterior.L",
+    "deltoid_posterior.R",
+    "pectoralis_clavicular.L",
+    "pectoralis_clavicular.R",
+    "pectoralis_sternal.L",
+    "pectoralis_sternal.R",
+    "adductor_longus.L",
+    "adductor_magnus_visible.L"
+  ],
+  "video_outputs": [],
+  "frame_sequence_outputs": [],
+  "runtime": "Three.js0.186.1 / WebGLRenderer",
+  "scope": "Live review artifact; application integration and physical mobile testing remain separate.",
+  "display_role_note": "Artistic source-label emphasis: cyan stretching, warm load. Not measured EMG, force, temperature or recruitment.",
+  "offline_html_bytes": 7294390,
+  "offline_html_sha256": "d7ae28afe96c971376f580f421205933b43b4636ceb4ed54b05e3d7b053397a5",
+  "inline_html_bytes": null,
+  "inline_html_sha256": null,
+  "input_files_sha256": {
+    "artifacts/exercise-batches/batch-003/build.mjs": "4e17de35c02c68ffcfeb11fe7dedcde6dd012e18e1b313ff182b32013e638910",
+    "artifacts/exercise-batches/batch-003/template.html": "1bae181c7c34657978df099a35d5b1542bd21f33c4a5f28733effc714f05b77f",
+    "artifacts/exercise-batches/batch-003/viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+    "artifacts/exercise-batches/batch-003/presentation.json": "2f8330124069b12d571c6d952a02d17c54dfcc047e9a720da5a209d9b66809d1",
+    "artifacts/exercise-batches/build-review.mjs": "8dff7c7c3f5cd81763f873ae953b32454bc5541cbb0f2ae93571a5d761d65425",
+    "artifacts/exercise-batches/batch-002/viewer.js": "85202f9267252b2eb4291675d21b088f2ab7648b5401d487558afe5de0ce8be3",
+    "artifacts/exercise-batches/dual-quaternion.js": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "artifacts/chaturanga-heatmap/heat-field.js": "e44dc66c993c5695382b1d6535b6a5dc65ecfbad375ac9cfcc8c3859ab33dddd",
+    "artifacts/chaturanga-heatmap/heat-material.js": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e",
+    "artifacts/exercise-batches/batch-003/assets/6033/clip.json": "ecd7ac8349dc1f1c22669219e78fba409bb0b4a724fc18a4ace23c3f1eaa8170",
+    "artifacts/exercise-batches/batch-003/assets/6033/cameras.json": "8f2dded515e99f542ecd4348dd1ad777078ad421d21fb8b78d7e9015e55569e8",
+    "artifacts/exercise-batches/batch-003/assets/4348/clip.json": "154ebaf92cff3430e124b45d465bf3045287d73fadda6ba462356d5fde8aa6bb",
+    "artifacts/exercise-batches/batch-003/assets/4348/cameras.json": "4de06f6f73a62af25e8a89d3b790d2150299e1778722a41ff352b5b059414e94",
+    "artifacts/exercise-batches/batch-003/assets/3244/clip.json": "6ce6e99e827efe58cee1d05a5f924d4e29ea6c68d51bd1909826e70f23f38c3e",
+    "artifacts/exercise-batches/batch-003/assets/3244/cameras.json": "618abc34b9c689f49b2c4c1d6660a684a24c60b14c175e99ddb3d35b07fbe5ac",
+    "artifacts/exercise-batches/batch-003/assets/1906/clip.json": "9f129381b960234b001355a8161a092a9bb55f8c46d04cc33a7269a06eb6d609",
+    "artifacts/exercise-batches/batch-003/assets/1906/cameras.json": "59624b1c472077b7ec7c74f8d3caebd53cac8511c95ee959a25f93ee370dd495",
+    "artifacts/exercise-batches/batch-003/assets/1777/clip.json": "137b407de0dcf81401ffb843b629fa02ce4893641facd1007d77e5c8a9f39d70",
+    "artifacts/exercise-batches/batch-003/assets/1777/cameras.json": "7c66a16e7eb9c649193214ede74a3b886eb4c118a96bbb7ac88ae7004a160dbc"
+  }
+}

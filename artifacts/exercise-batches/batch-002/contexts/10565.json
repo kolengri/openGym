@@ -9,7 +9,9 @@
     "source_blockers": [],
     "unresolved_source_blockers": [],
     "authored_source_resolutions": {},
-    "known_open_issue_ids": [],
+    "known_open_issue_ids": [
+      "OPEN-90-90-PELVIS-TIMING"
+    ],
     "blocking_issue_ids": []
   },
   "source_brief": {
@@ -452,13 +454,15 @@
     "generate_frame_sequences": false,
     "existing_video_artifacts": "Historical batch001 only; preserve without regeneration.",
     "current_request_scope": [
-      "5265",
-      "4007",
-      "6428",
       "10565",
-      "6560"
+      "6560",
+      "6033",
+      "4348",
+      "3244",
+      "1906",
+      "1777"
     ],
-    "further_exercises": "The user approved the5915 soft heat-zone style and authorized the next five equipment-free exercises. Review this batch before further rollout."
+    "further_exercises": "The user explicitly authorized batch 003 in parallel while 90/90 is repaired separately. Deliver these five for review before further rollout."
   },
   "visualization_policy": {
     "candidate": "surface_heat_zone",
@@ -466,13 +470,29 @@
     "exercise_id": "5915",
     "inactive_body": "Uniform neutral skin; no painted muscle fibers or hard region boundaries.",
     "main_additional": "Diffuse heat cue from selected source regions; stronger main areas and softer additional areas.",
-    "phase_strength": "Small authored artistic emphasis; no measured physiological recruitment claim.",
+    "phase_strength": "Stable authored artistic emphasis; no invented phase-dependent recruitment or measured physiological claim.",
     "stretch_palette": "Diffuse cyan for stretching exercises; keep source training labels separate from contraction/load claims. No measured force, temperature or EMG interpretation.",
     "approved_style_exercise_id": "5915",
     "current_batch": [
-      "5265",
-      "4007",
-      "6428",
+      "6033",
+      "4348",
+      "3244",
+      "1906",
+      "1777"
+    ],
+    "additional_authorized_batch": {
+      "batch": "003",
+      "exercise_ids": [
+        "6033",
+        "4348",
+        "3244",
+        "1906",
+        "1777"
+      ],
+      "style": "Unchanged approved 5915 soft surface fields: warm primary/additional load and cyan stretching, inactive neutral skin, real alpha, no body shadows or AO.",
+      "execution": "One original exercise animation per agent with disjoint asset ownership; independent 90/90 repair continues."
+    },
+    "parallel_repair_batch": [
       "10565",
       "6560"
     ]
@@ -1275,18 +1295,62 @@
     }
   },
   "per_exercise_overrides": {
-    "status": "authored_prototype_awaiting_user_review",
+    "status": "repaired_candidate_runtime_checked_awaiting_user_review",
     "representation": "One representative90/90 seated side; mirrored side uses the same motion and mirrored regions.",
     "source_similarity": "The two source descriptions substantially overlap. Preserve their hand-contact cues; do not invent different mechanics merely to distinguish their catalogue IDs.",
     "muscle_policy": "Source labels belong to a stretching exercise. Use cyan stretch zones with stronger source target and softer additional areas; deep hip/lumbar surface masks are illustrative proxies.",
-    "hold_policy": "Keep a real20–30second hold in the clip; an optional clearly labeled faster playback is preview-only.",
+    "hold_policy": "Use a clearly labeled compressed5second review loop: hinge0–2s, hold2–3s, return3–5s. Preserve the source20–30second workout hold in the description; do not confuse demonstration time with the exercise prescription.",
     "required_qa": [
       "Use a coordinated pelvic/spinal hip hinge with a flat back; do not leave the pelvis upright while flexing only the lumbar chain.",
       "Verify the deformed pelvic, thigh/shin and foot support patches together. A good silhouette or low global minimum may hide a pelvic gap of centimeters.",
-      "Keep foot contacts fixed through the hinge and preserve the documented or explicitly authored hand-support choice. Correct one contact without sinking another."
-    ]
+      "Keep foot contacts fixed through the hinge and preserve the documented or explicitly authored hand-support choice. Correct one contact without sinking another.",
+      "Review heat-off native and exported skin from side and rear at start, hinge and return, plus an oblique view showing both bent legs. Require continuous rounded pelvic/glute volume and a smooth hip/thigh junction; numeric floor bands alone cannot accept a pinched wedge or collapsed buttocks.",
+      "Check visible skin-level back profile and natural arm placement. For6560, palms must visibly support on the floor with plausible orientation. For10565, replace the unsupported high-elbow hand hover with an explicit natural authored hand position.",
+      "Play the actual live5second loop and verify exactly1second of hold between the two2second transitions; static phase metadata alone is insufficient."
+    ],
+    "demo_timing": {
+      "duration_seconds": 5,
+      "hinge_seconds": 2,
+      "hold_seconds": 1,
+      "return_seconds": 2,
+      "source_hold_recommendation_seconds": [
+        20,
+        30
+      ]
+    },
+    "runtime_skinning": "dualQuaternion",
+    "rig_repair_policy": "Preserve the original 51-bone binding, Basis, rest geometry, UVs and source IDs. Use the explicit asset-specific DQ runtime adapter and compare actual skinned vertices with the source Preserve Volume cage with all non-Armature modifiers disabled. Rejected helper-bone trials are not a foundation. Keep the original first-three batch 002 source and GLB byte-identical."
   },
-  "known_open_issues": [],
+  "known_open_issues": [
+    {
+      "id": "OPEN-90-90-PELVIS-TIMING",
+      "exercise_ids": [
+        "10565",
+        "6560"
+      ],
+      "status": "open",
+      "blocks_generation": false,
+      "summary": "The user rejected the previously delivered90/90 clips for collapsed pelvic/glute silhouette and a long middle hold. Independent heat-off review also found unnatural hovering10565arms and unclear6560palm support.",
+      "required_remediation": [
+        "Repair hip/pelvis deformation rather than mask it through camera choice or whole-body floor translation.",
+        "Independently inspect heat-off side/rear/oblique proof before final export, then inspect the actual exported live skin.",
+        "Use5second demonstrations with1second hold and retain20–30second exercise instructions separately."
+      ],
+      "scope_note": "Nonblocking for the explicitly authorized repair. Blocks claiming these two clips accepted; existing numerical parity/geometry checks do not close visual findings.",
+      "candidate_resolution": {
+        "status": "repaired_runtime_and_appearance_checked_awaiting_user_review",
+        "model_sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
+        "source_sha256": "eae482f6ed3b6030e97d6f37b48f232a3a865659ec8a7af63903708f300afd7f",
+        "evidence": [
+          "artifacts/bodyweight-next-five/ninety-pose-verification.json",
+          "artifacts/exercise-batches/batch-002/verification.json",
+          "artifacts/exercise-batches/batch-002/neutral-10565.png",
+          "artifacts/exercise-batches/batch-002/neutral-6560.png"
+        ],
+        "note": "Rounded volume, coupled supports and natural arms repaired; actual live 5-second loops have 1-second holds. Keep the finding visible until user review."
+      }
+    }
+  ],
   "muscle_name_mappings": {
     "adductors": {
       "status": "partial_surface",
@@ -1522,7 +1586,7 @@
     },
     {
       "path": "artifacts/exercise-animation-briefs/generation-contract.json",
-      "sha256": "4bc911135bda9e89c45386de604c6b882d07c77451fe9ad6344ab065467affdd"
+      "sha256": "cb1bae142ce1e4acb6f955beef4a12c15f220c74c7faf477888752f0553b09c2"
     },
     {
       "path": "artifacts/exercise-animation-briefs/selected-first-five.json",

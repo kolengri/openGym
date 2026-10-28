@@ -1,0 +1,41 @@
+{
+  "id": "1906",
+  "status": "frozen_candidate_author_viewed_primary_visual_acceptance_pending",
+  "source_sha256": "e6d3e9d866291229bcd17961ebcbb1031b4c2c14a705981bbccfd48a349fdbfe",
+  "glb_sha256": "da9eec0be34e40f3e54c361fef26b52153c4db494123ee676b4e0a6d88bd9316",
+  "proof_method": "Actual GLB animated morph/LBS positions and actual Three.js normal equation decoded into temporary posed review meshes; raw Blender morph-normal import is not accepted as corrected runtime shading evidence.",
+  "viewed_stills": [
+    "early-peak-oblique.png",
+    "lbs-final-peak-close.png",
+    "lbs-final-entry-close.png",
+    "export-peak-oblique.png"
+  ],
+  "reused_endpoint_viewing": "Before repair, native/export start and return were viewed. The corrective is exactly zero at both endpoints and the Basis/weights/rig are unchanged; loop positions and morph endpoint weights were rechecked.",
+  "available_final_stills": [
+    "export-start-oblique.png",
+    "export-peak-oblique.png",
+    "export-return-oblique.png",
+    "export-peak-side.png",
+    "export-peak-contact-side.png",
+    "export-start-contact-side.png",
+    "lbs-final-start-close.png",
+    "lbs-final-entry-close.png",
+    "lbs-final-peak-close.png",
+    "lbs-final-peak-overview.png",
+    "lbs-final-return-close.png",
+    "lbs-final-end-close.png"
+  ],
+  "observations": [
+    "Sharp original groin normal wedge is softened with one local geometry/normal corrective.",
+    "Small rounded inner-knee flexion crease remains visible and is explicitly pending primary visual judgment.",
+    "No rig, motion-mechanics, Basis, weights, UV, source-index or side-role changes.",
+    "Inactive skin remains one neutral material. Selected cyan roles remain anatomical left only."
+  ],
+  "historical_diagnostics": "skin-candidate-* files include raw importer and recomputed-normal diagnostics. They do not certify final appearance.",
+  "pending": [
+    "Primary actual Three.js soft-material/normal-morph acceptance",
+    "Primary final shape judgment",
+    "Live cyan laterality and interaction verification"
+  ],
+  "limitations": "CPU decoded runtime-equation proof, not a GPU screenshot or clinical certification."
+}

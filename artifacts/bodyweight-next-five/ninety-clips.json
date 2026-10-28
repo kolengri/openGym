@@ -1,0 +1,170 @@
+[
+  {
+    "id": "10565",
+    "name": "90 to 90 press stretch",
+    "duration": 5.0,
+    "duration_seconds": 5.0,
+    "frames": 150,
+    "duration_frames": 150,
+    "fps": 30,
+    "action": "Exercise_10565",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hip flexors",
+      "adductors",
+      "lower back"
+    ],
+    "stretch": [
+      "glutes",
+      "hip flexors",
+      "adductors",
+      "lower back"
+    ],
+    "display_mode": "stretch",
+    "camera": "oblique",
+    "phases": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "Hinge forward over the front shin"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "label": "Hold the hip stretch for 1 second"
+      },
+      {
+        "start": 3,
+        "end": 5,
+        "label": "Return upright"
+      }
+    ],
+    "source_roles": {
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hip flexors",
+        "adductors",
+        "lower back"
+      ]
+    },
+    "muscle_display_roles": {
+      "primary": "stretch_main",
+      "secondary": "stretch_context"
+    },
+    "highlight_sides": {
+      "glutes": [
+        "L"
+      ],
+      "hip flexors": [
+        "R"
+      ]
+    },
+    "side_note": "Front leg is anatomical left; repeat on the mirrored side.",
+    "muscle_notice": "Illustrative smooth surface emphasis; not EMG, physiological recruitment or true segmentation. Deep hip flexors/adductors/lumbar labels use surface proxies.",
+    "interpretation": "One representative seated90/90 side;5second compressed demonstration with a1second preview hold. The source workout hold remains20\u201330seconds. The two sources describe substantially the same hip stretch.",
+    "review_status": "draft_DQ_requires_surface_geometry_and_visual_review",
+    "source_path": "catalogue/exercises/10565.json",
+    "source_sha256": "4f028037f23841c7e58a49f5873e0d1b6a2963ea3196ee518b41757d1c5fed69",
+    "arms": "Hands rest separately on the front knee and shin; an authored relaxed placement because the source does not specify it.",
+    "preview_timing": {
+      "compressed_demo": true,
+      "duration_seconds": 5,
+      "hold_seconds": 1,
+      "source_workout_hold_seconds": [
+        20,
+        30
+      ]
+    },
+    "asset": "ninety-repaired",
+    "skinning": "dualQuaternion",
+    "required_renderer": "Three.js approved dual-quaternion skinning adapter"
+  },
+  {
+    "id": "6560",
+    "name": "90 to 90 stretch",
+    "duration": 5.0,
+    "duration_seconds": 5.0,
+    "frames": 150,
+    "duration_frames": 150,
+    "fps": 30,
+    "action": "Exercise_6560",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hip flexors",
+      "adductors",
+      "lower back"
+    ],
+    "stretch": [
+      "glutes",
+      "hip flexors",
+      "adductors",
+      "lower back"
+    ],
+    "display_mode": "stretch",
+    "camera": "oblique",
+    "phases": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "Hinge forward over the front shin"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "label": "Hold the hip stretch for 1 second"
+      },
+      {
+        "start": 3,
+        "end": 5,
+        "label": "Return upright"
+      }
+    ],
+    "source_roles": {
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hip flexors",
+        "adductors",
+        "lower back"
+      ]
+    },
+    "muscle_display_roles": {
+      "primary": "stretch_main",
+      "secondary": "stretch_context"
+    },
+    "highlight_sides": {
+      "glutes": [
+        "L"
+      ],
+      "hip flexors": [
+        "R"
+      ]
+    },
+    "side_note": "Front leg is anatomical left; repeat on the mirrored side.",
+    "muscle_notice": "Illustrative smooth surface emphasis; not EMG, physiological recruitment or true segmentation. Deep hip flexors/adductors/lumbar labels use surface proxies.",
+    "interpretation": "One representative seated90/90 side;5second compressed demonstration with a1second preview hold. The source workout hold remains20\u201330seconds. The two sources describe substantially the same hip stretch.",
+    "review_status": "draft_DQ_requires_surface_geometry_and_visual_review",
+    "source_path": "catalogue/exercises/6560.json",
+    "source_sha256": "537d7285af59957a4d9eaa3606d7da3c273d9e871844c326d5d499dda5b5417b",
+    "arms": "Both palms and extended fingers rest on the floor in front of the hips; elbows remain unlocked.",
+    "preview_timing": {
+      "compressed_demo": true,
+      "duration_seconds": 5,
+      "hold_seconds": 1,
+      "source_workout_hold_seconds": [
+        20,
+        30
+      ]
+    },
+    "asset": "ninety-repaired",
+    "skinning": "dualQuaternion",
+    "required_renderer": "Three.js approved dual-quaternion skinning adapter"
+  }
+]

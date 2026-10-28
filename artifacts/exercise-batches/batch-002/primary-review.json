@@ -1,5 +1,5 @@
 {
-  "status": "live_candidate_accepted_for_user_review",
+  "status": "repaired_candidate_local_checks_passed_awaiting_user_review",
   "not_production_approved": true,
   "exercise_ids": [
     "5265",
@@ -8,33 +8,97 @@
     "10565",
     "6560"
   ],
-  "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
-  "camera_presets_sha256": "d051c4816c1d33ea4040660069549057866c67a2bb6bba985827f177b755a394",
-  "visual_evidence": {
-    "review-5265.png": "b3a89dd890e80fc79a04f56bedea4c652dd88d64574f93071252e3dbf15884ad",
-    "review-4007.png": "4c8a16e308497824923bc54df04d281aa037acafce94d1632b768fd8797cd89a",
-    "review-6428.png": "36b88515f0538fb6d28308b31d754aff39821f821208ca3ba69be0051c7a7338",
-    "review-10565.png": "0918584f9080fbb86cc72c763224a418b5976b1d161e23013c257238300449fc",
-    "review-6560.png": "6a3da4791fa114c2eecb9db65de1bfbde4f979eee1812179696231a1a71c1fea",
-    "mobile.png": "fce52b1755c1167ac055b762b2fb8c5dcdfb3542e6bddd2497d5e3ebbec85fa5"
+  "camera_presets_sha256": {
+    "artifacts/bodyweight-next-five/camera-presets.json": "62d60c500557c7211a2b00c5794b0e92fb67878e8807e0ed78ca57b7656ada74",
+    "artifacts/bodyweight-next-five/ninety-camera-presets.json": "add7520c04a61e442b389246907e3f7b0dae43799b844b7fb2b8e7d9f03ac6ee"
   },
-  "primary_visual_review": "Actual final Three.js screenshots inspected for all five motions plus mobile. Higher abdominal views expose load zones; opposite90/90 views expose the selected left glute and right anterior hip. Continuous body, neutral inactive surfaces and distinct raised/planted heel-touch variants retained.",
+  "visual_evidence": {
+    "neutral-6560.png": "6c616113f64ba36554002f3711f961ebdbb939ad2d570ab6209e9781834cf8e8",
+    "zones-10565.png": "5ead12b2fa998ad178c44b77a85a56a3622c40b16a7af13ed3065f401e3ce0b0",
+    "review-5265.png": "ba43c13751fc37c8e9082cf5f19cf901b598c4fb5f30eb5037e5959d89dd8eb2",
+    "review-6428.png": "36b88515f0538fb6d28308b31d754aff39821f821208ca3ba69be0051c7a7338",
+    "review-6560.png": "769ea049576f8dd48187a5ad2305119f74840f6283b89a5c54e146def4f7b236",
+    "neutral-10565.png": "eef4e3f3d1bf7822046850adce026a999d6bdfb701e0f1937266c17d58cf8da3",
+    "review-4007.png": "7a9e4a9f3306f1d438de34264dd0689b503f27aed22e32ecfaf5e7b9a9ecad47",
+    "mobile.png": "10172ed885a50989be04f0e93e17622346208d3f40290a61948df9011c736d87",
+    "zones-6560.png": "600c3bfd143328e38825ca8c93edf75f099b6989fedef3e5f9c86c5553958fc2",
+    "review-10565.png": "76a48793753f4874e2250876bd3f5b64d5f26a07f0946c471ba674a870ca24a6"
+  },
+  "primary_visual_review": "Actual repaired Three.js peak views pass bounded appearance review: rounded continuous pelvic/glute volume, readable hand positions and natural hip/thigh transitions. Independent Terra/high review agrees for the shown peak. Native source-bound solid/wire review covers additional geometry. Partial rear occlusion and static-image timing/contact limits remain explicit.",
   "corrected_findings": [
-    "Bicycle torso yaw reversed to approach the opposite knee; actual GLB cross-body checks pass at both peaks.",
-    "Heel-touch relaxed and reaching finger clearance corrected and sampled against skin.",
-    "90/90 pelvic/spinal hinge and simultaneous original-index floor patches corrected.",
-    "90/90 runtime cameras refined to reveal the selected anatomical side."
+    "Original first-three actions and source assets retained byte-identical.",
+    "Both repaired 90/90 clips use the original 51-bone binding with optional DQ skinning; no helper bones or weight edits.",
+    "Coupled pelvic, leg, foot and palm supports verified on actual deformed DQ skin.",
+    "6560 forearm/front-thigh intersection removed and shoulder roll softened without moving support targets.",
+    "Actual live 5-second loops use 2-second entry, 1-second hold and 2-second return; source 20\u201330-second workout text remains separate."
   ],
   "checks": [
-    "../../bodyweight-next-five/qa-review.json",
+    "../../bodyweight-next-five/ninety-pose-verification.json",
+    "../../bodyweight-next-five/ninety-asset-qa.json",
     "verification.json",
-    "../../exercise-animation-briefs/generation-verification.json",
-    "../../exercise-reuse-plan/verification.json"
+    "../runtime-code-review.json"
   ],
-  "accepted_native_warnings": "Nine inherited hidden mouth/toe opposing pairs and three native axillary pairs at one6428peak are retained to preserve original topology/binding. Linear GLB has no corresponding back-to-back warnings.",
+  "accepted_native_warnings": "Current repaired source has 18 source-bound warning observations with dispositions in ninety-warning-dispositions.json; zero mandatory geometry errors. Original first-three warning dispositions remain in the historical qa-review.json.",
   "contact_scope": "Artist-authored support patches,12mm curved-contact band and4mm maximum floor penetration. Sampled illustration QA; physical-device/application integration and user acceptance remain separate.",
-  "independent_code_review": "Exempt isolated media/artifact/research scope; no production application code changed.",
+  "independent_code_review": "Shared reusable runtime code passed independent Sol 6.1/xhigh review and targeted failed-load/race/retry verification; see ../runtime-code-review.json. Media appearance accepted separately for this candidate.",
   "inline_source_revision": "53ec8539d4a38ee0453f0a906496af9f022d677d",
   "inline_html_sha256": "60c41ac0b78e3874f2f21d95fe892f14ddbd2ad774460976dd1d51646dfc9479",
-  "inline_acceptance": "Actual network-loaded model bytes and all five live actions pass. Host html_preview/html_render performed; stable loading layout exposes five exercise choices and an honest startup poster before the live canvas replaces it."
+  "inline_acceptance": "Repaired URL-mode candidate is not published yet; historical inline receipt is not current acceptance.",
+  "user_rejection": {
+    "exercise_ids": [
+      "10565",
+      "6560"
+    ],
+    "findings": [
+      "Pelvis/glute volume collapses to a pinched wedge; hip/thigh junction is visibly folded.",
+      "The middle hold makes the review animation unnecessarily long."
+    ],
+    "required_demo_timing": {
+      "duration_seconds": 5,
+      "hinge_seconds": 2,
+      "hold_seconds": 1,
+      "return_seconds": 2
+    },
+    "source_hold_recommendation_seconds": [
+      20,
+      30
+    ]
+  },
+  "historical_rejected_evidence": {
+    "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+    "visual_evidence": {
+      "review-5265.png": "b3a89dd890e80fc79a04f56bedea4c652dd88d64574f93071252e3dbf15884ad",
+      "review-4007.png": "4c8a16e308497824923bc54df04d281aa037acafce94d1632b768fd8797cd89a",
+      "review-6428.png": "36b88515f0538fb6d28308b31d754aff39821f821208ca3ba69be0051c7a7338",
+      "review-10565.png": "0918584f9080fbb86cc72c763224a418b5976b1d161e23013c257238300449fc",
+      "review-6560.png": "6a3da4791fa114c2eecb9db65de1bfbde4f979eee1812179696231a1a71c1fea",
+      "mobile.png": "fce52b1755c1167ac055b762b2fb8c5dcdfb3542e6bddd2497d5e3ebbec85fa5"
+    },
+    "inline_source_revision": "53ec8539d4a38ee0453f0a906496af9f022d677d"
+  },
+  "models": {
+    "default": {
+      "path": "artifacts/bodyweight-next-five/next-five.glb",
+      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+      "bytes": 1325048,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_4007",
+        "Exercise_5265",
+        "Exercise_6428",
+        "Exercise_6560"
+      ]
+    },
+    "ninety-repaired": {
+      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+      "sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
+      "bytes": 965540,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_6560"
+      ]
+    }
+  }
 }

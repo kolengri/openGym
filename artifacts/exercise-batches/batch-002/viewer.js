@@ -3,6 +3,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {attachHeatField} from '../../chaturanga-heatmap/heat-field.js';
 import {createHeatMaterial} from '../../chaturanga-heatmap/heat-material.js';
+import {addDualQuaternionSkinning} from '../dual-quaternion.js';
 
 async function main() {
  const config = JSON.parse(document.querySelector('#heat-data').textContent);
@@ -16,42 +17,55 @@ async function main() {
   document.querySelector('#legend').dataset.mode = item.displayMode;
   canvas.setAttribute('aria-label', item.title + ' · живая 3D-анимация с мягкими зонами мышц');
  }
- describe(config.exercises[0]);
- document.querySelector('#view').value = config.exercises[0].displayMode === 'stretch' ? 'dual' : 'front';
+ const initial = config.exercises.find(item => item.id === config.initialExerciseId) ?? config.exercises[0];
+ describe(initial);
+ document.querySelector('#view').value = initial.displayMode === 'stretch' ? 'dual' : 'front';
+ const initialWidth = Math.max(240, stage.clientWidth), dual = initial.displayMode === 'stretch', stacked = dual && initialWidth < 540;
+ const initialPanelHeight = Math.round((dual && !stacked ? (initialWidth - 12) / 2 : initialWidth) / 1.65);
+ canvas.style.height = (stacked ? initialPanelHeight * 2 + 12 : initialPanelHeight) + 'px';
  for (const item of config.exercises) {
   const button = document.createElement('button'); button.type = 'button'; button.dataset.id = item.id;
   button.textContent = item.shortTitle; button.disabled = true;
-  button.setAttribute('aria-pressed', String(item.id === config.exercises[0].id));
+  button.setAttribute('aria-pressed', String(item.id === initial.id));
   button.onclick = () => select(item.id); document.querySelector('#exercises').append(button);
  }
  const renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true, preserveDrawingBuffer: true});
  renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setClearColor(0x000000, 0);
  renderer.shadowMap.enabled = false; renderer.outputColorSpace = THREE.SRGBColorSpace;
  const loader = new GLTFLoader();
- const gltf = config.model ? await loader.parseAsync(Uint8Array.from(atob(config.model), c => c.charCodeAt(0)).buffer, '')
-  : await loader.loadAsync(config.modelUrl);
- const scene = new THREE.Scene(); scene.add(gltf.scene, new THREE.AmbientLight(0xffffff, 2.5));
+ const scene = new THREE.Scene(); scene.add(new THREE.AmbientLight(0xffffff, 2.5));
  const light = new THREE.DirectionalLight(0xffffff, 1); light.position.set(1, 3, 5); scene.add(light);
- const {material, uniforms} = createHeatMaterial(), meshes = [], bones = new Map(), fieldCache = new Map();
- gltf.scene.traverse(object => {
-  if (object.isBone) bones.set(object.name, object);
-  if (!object.isMesh) return;
-  meshes.push(object);
-  for (const old of Array.isArray(object.material) ? object.material : [object.material]) {old.map?.dispose(); old.dispose();}
-  object.material = material; object.castShadow = false; object.receiveShadow = false;
- });
- for (const exercise of config.exercises) {
-  const fields = meshes.map(mesh => {
-   const field = attachHeatField(mesh, {...config, ...exercise});
-   return {field, attribute: mesh.geometry.getAttribute('heatZone')};
-  });
-  fieldCache.set(exercise.id, fields);
+ const {material, uniforms} = createHeatMaterial(), assetCache = new Map();
+ const dq = addDualQuaternionSkinning(material);
+ let gltf, meshes = [], bones = new Map(), mixer, selection = 0;
+ async function loadAsset(key) {
+  if (!assetCache.has(key)) {
+   const pending = (async () => {
+   const asset = config.assets?.[key] ?? config;
+   const gltf = asset.model ? await loader.parseAsync(Uint8Array.from(atob(asset.model), c => c.charCodeAt(0)).buffer, '')
+    : await loader.loadAsync(asset.modelUrl);
+   const meshes = [], bones = new Map();
+   gltf.scene.traverse(object => {
+    if (object.isBone) bones.set(object.name, object);
+    if (!object.isMesh) return;
+    meshes.push(object);
+    for (const old of Array.isArray(object.material) ? object.material : [object.material]) {old.map?.dispose(); old.dispose();}
+    object.material = material; object.castShadow = false; object.receiveShadow = false;
+    dq.installSurfaceProbe(object);
+   });
+    return {gltf, meshes, bones, mixer: new THREE.AnimationMixer(gltf.scene), fields: new Map()};
+   })().catch(error => {
+    if (assetCache.get(key) === pending) assetCache.delete(key);
+    throw error;
+   });
+   assetCache.set(key, pending);
+  }
+  return assetCache.get(key);
  }
  const cameras = [0, 1].map(() => new THREE.OrthographicCamera(-1, 1, 1, -1, .01, 30));
  const toThree = ([x, y, z]) => new THREE.Vector3(x, z, -y);
  const controls = new OrbitControls(cameras[0], canvas);
  controls.enablePan = false; controls.enableDamping = false; controls.minZoom = .65; controls.maxZoom = 2.8;
- const mixer = new THREE.AnimationMixer(gltf.scene);
  let exercise, clip, action, fields, linked, entries = [], mode = 'front', time = 0, playing = true, last = performance.now(), poseUpdates = 0;
  function render() {
   renderer.setScissorTest(false); renderer.clear(true, true, true); renderer.setScissorTest(true);
@@ -91,21 +105,40 @@ async function main() {
  }
  function pose(value) {
   time = Math.max(0, Math.min(clip.duration, value));
-  action.paused = false; action.enabled = true; mixer.setTime(time); scene.updateMatrixWorld(true); poseUpdates++;
+  action.paused = false; action.enabled = true; mixer.setTime(time); scene.updateMatrixWorld(true);
+  for (const mesh of meshes) dq.update(mesh, exercise.skinning === 'dualQuaternion');
+  poseUpdates++;
   // Stable training-emphasis zones; no invented phase-dependent activation model.
   uniforms.heatPhase.value = 1;
   const phase = exercise.phases.find(phase => time >= phase.start && time < phase.end) ?? exercise.phases.at(-1);
   document.querySelector('#phase').textContent = phase?.label ?? 'Движение';
   document.querySelector('#timeline').value = String(time); render();
  }
- function select(id) {
-  exercise = config.exercises.find(item => item.id === id);
-  if (!exercise) throw Error('Unknown exercise: ' + id);
+ async function select(id) {
+  const candidate = config.exercises.find(item => item.id === id), request = ++selection;
+  if (!candidate) throw Error('Unknown exercise: ' + id);
+  const loading = document.querySelector('#loading');
+  loading.textContent = 'Загружается 3D…'; loading.hidden = false;
+  let asset;
+  try {asset = await loadAsset(candidate.asset ?? 'default');}
+  catch (error) {
+   if (request !== selection) return false;
+   if (!gltf) throw error;
+   loading.textContent = 'Не удалось загрузить упражнение. Нажмите его ещё раз.';
+   return false;
+  }
+  if (request !== selection) return;
+  if (gltf) scene.remove(gltf.scene);
+  ({gltf, meshes, bones, mixer} = asset); scene.add(gltf.scene); exercise = candidate;
   clip = gltf.animations.find(item => item.name === 'Exercise_' + id);
   if (!clip) throw Error('Animation is missing: ' + id);
   mixer.stopAllAction(); action = mixer.clipAction(clip).reset().setLoop(THREE.LoopOnce, 1);
   action.clampWhenFinished = true; action.play();
-  fields = fieldCache.get(id);
+  if (!asset.fields.has(id)) asset.fields.set(id, meshes.map(mesh => {
+   const field = attachHeatField(mesh, {...config, ...exercise});
+   return {field, attribute: mesh.geometry.getAttribute('heatZone')};
+  }));
+  fields = asset.fields.get(id);
   meshes.forEach((mesh, index) => mesh.geometry.setAttribute('heatZone', fields[index].attribute));
   const palette = exercise.displayMode === 'stretch' ? ['#72b4cf', '#2297c3', '#b1f2f3'] : ['#f7a64b', '#f24720', '#ffe09a'];
   ['heatAmber', 'heatRed', 'heatCore'].forEach((name, i) => uniforms[name].value.set(palette[i]));
@@ -115,7 +148,7 @@ async function main() {
   document.querySelector('#timeline').max = String(clip.duration);
   document.querySelectorAll('#exercises button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.id === id)));
   playing = true; document.querySelector('#play').textContent = 'Пауза';
-  reset(); pose(0);
+  reset(); pose(0); document.querySelector('#loading').hidden = true;
  }
  controls.addEventListener('change', () => {
   if (linked) {
@@ -133,19 +166,26 @@ async function main() {
  document.querySelector('#strength').oninput = event => {uniforms.heatStrength.value = Number(event.target.value); render();};
  document.querySelector('#timeline').oninput = event => {playing = false; document.querySelector('#play').textContent = 'Продолжить'; pose(Number(event.target.value));};
  new ResizeObserver(layout).observe(stage);
- select(config.exercises[0].id); document.querySelector('#loading').hidden = true; document.querySelector('#poster')?.remove();
+ await select(initial.id); document.querySelector('#poster')?.remove();
  document.querySelectorAll('#exercises button').forEach(button => {button.disabled = false;});
  window.heatReady = true; window.heatSelect = select;
  window.heatFrame = value => {playing = false; document.querySelector('#play').textContent = 'Продолжить'; pose(value);};
+ window.heatSkinning = value => {
+  if (!['linear', 'dualQuaternion'].includes(value)) throw Error('Unknown skinning mode');
+  exercise.skinning = value; pose(time);
+ };
  window.heatProbe = () => {
   const gl = renderer.getContext(), pixel = new Uint8Array(4); gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixel);
   return {exerciseId: exercise.id, time, playing, duration: clip.duration, action: clip.name, mode, displayMode: exercise.displayMode,
+   asset: exercise.asset ?? 'default', loadedAssets: assetCache.size,
+   skinning: exercise.skinning ?? 'linear',
    viewportCount: entries.length, cameras: cameras.map(camera => ({position: camera.position.toArray(), zoom: camera.zoom})),
    panEnabled: controls.enablePan, heatEnabled: uniforms.heatEnabled.value, heatPhase: uniforms.heatPhase.value,
    heatStrength: uniforms.heatStrength.value, meshes: meshes.length, bones: bones.size, poseUpdates,
    colorTextures: material.map ? 1 : 0, ao: !!material.aoMap, shadows: renderer.shadowMap.enabled,
    transparentCanvas: renderer.getContextAttributes().alpha && scene.background === null, cornerAlpha: pixel[3],
    sourceVertices: fields[0].field.sourceVertexCount, primary: Array.from(fields[0].field.primary), secondary: Array.from(fields[0].field.secondary),
+   morphWeights: meshes.map(mesh => Array.from(mesh.morphTargetInfluences ?? [])),
    joints: Object.fromEntries([...bones].map(([name, bone]) => [name, bone.getWorldPosition(new THREE.Vector3()).toArray()]))};
  };
  // Actual skinned GLB surface positions, indexed by the original Blender vertices.
@@ -180,6 +220,9 @@ async function main() {
  requestAnimationFrame(tick);
 }
 main().catch(error => {
- window.heatError = error.message; document.querySelector('#loading').textContent = 'Не удалось открыть 3D. ' + error.message;
- document.querySelector('#loading').hidden = false;
+ window.heatError = error.message;
+ const loading = document.querySelector('#loading');
+ loading.textContent = 'Не удалось открыть 3D. ';
+ const retry = document.createElement('button'); retry.type = 'button'; retry.textContent = 'Попробовать ещё раз';
+ retry.onclick = () => window.location.reload(); loading.append(retry); loading.hidden = false;
 });

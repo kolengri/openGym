@@ -30,6 +30,12 @@ assert bicycle['readiness']['status']=='requires_review'
 assert bicycle['readiness']['source_blockers']==['initial_body_support_unresolved']
 assert bicycle['readiness']['unresolved_source_blockers']==[]
 assert bicycle['readiness']['authored_source_resolutions']['initial_body_support_unresolved']['status']=='authored_resolution_for_prototype'
+for exercise_id in ['10565','6560']:
+    packet=json.loads((next_out/(exercise_id+'.json')).read_text())
+    assert packet['per_exercise_overrides']['demo_timing']==dict(
+        duration_seconds=5,hinge_seconds=2,hold_seconds=1,return_seconds=2,source_hold_recommendation_seconds=[20,30])
+    assert 'OPEN-90-90-PELVIS-TIMING' in packet['readiness']['known_open_issue_ids']
+    assert packet['readiness']['status']=='requires_review'
 for packet in packets.values():
     for source in packet['input_files']:
         assert hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest()==source['sha256']
