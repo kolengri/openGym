@@ -499,7 +499,7 @@ def main():
 def write_csv(rows):
     fields = ["exercise_id", "name", "family", "reuse_class", "exact_source_owner", "candidate_pose_template", "candidate_apparatus_template", "candidate_literal_profile", "candidate_parameter_profile", "family_confidence", "equipment", "prop_ids", "source_review_status", "storyboard_status", "protected_distinction", "source_path", "source_sha256"]
     with (OUT / "exercise-mapping.csv").open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({k: ";".join(row[k]) if isinstance(row[k], list) else row[k] for k in fields})
