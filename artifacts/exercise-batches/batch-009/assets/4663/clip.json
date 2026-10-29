@@ -1,0 +1,98 @@
+{
+  "id": "4663",
+  "name": "backhand raise",
+  "action": "Exercise_4663",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "delts"
+  ],
+  "secondary": [
+    "rear deltoids",
+    "upper back",
+    "rhomboids",
+    "lower back"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Lie face down with your arms by your sides, palms up.",
+    "Lift your chest and arms slightly off the floor.",
+    "Raise your hands up and back by squeezing your shoulder blades.",
+    "Pause at the top.",
+    "Lower slowly and repeat."
+  ],
+  "source_hold_recommendation_seconds": null,
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.7333333333333333,
+      "label": "Small chest and arms lift"
+    },
+    {
+      "start": 0.7333333333333333,
+      "end": 1,
+      "label": "Pause and reach back"
+    },
+    {
+      "start": 1,
+      "end": 2.066666666666667,
+      "label": "Lower slowly"
+    },
+    {
+      "start": 2.066666666666667,
+      "end": 2.5,
+      "label": "Grounded pause"
+    },
+    {
+      "start": 2.5,
+      "end": 3.2333333333333334,
+      "label": "Small chest and arms lift"
+    },
+    {
+      "start": 3.2333333333333334,
+      "end": 3.5,
+      "label": "Pause and reach back"
+    },
+    {
+      "start": 3.5,
+      "end": 4.566666666666666,
+      "label": "Lower slowly"
+    },
+    {
+      "start": 4.566666666666666,
+      "end": 5.0,
+      "label": "Grounded pause"
+    }
+  ],
+  "interpretation": "Prone palms-up backhand raise: arms stay beside the trunk, hands reach back toward the heels while the chest and arms lift slightly. Two controlled repetitions with a small top pause in five seconds are authored timing. Hips and lumbar segment, both straight legs and foot transforms stay fixed; small8degree thoracic extension carries neck/head together without independent neck extension. Hands remain relaxed, palm surface faces up and all finger transforms follow the actual source hand. Accepted4935 prone binding is reused exactly, but its overhead sweep and raised-leg motion are absent. Numerical angles,12cm wrist rise,1mm support target and7degree elbow flexion are authored illustration choices, not source measurements.",
+  "source_roles": {
+    "primary": [
+      "delts"
+    ],
+    "secondary": [
+      "rear deltoids",
+      "upper back",
+      "rhomboids",
+      "lower back"
+    ]
+  },
+  "authored_numeric_parameters_not_source_measurements": true,
+  "diagnostic_peak_seconds": [
+    0.8666666666666667,
+    3.3666666666666667
+  ],
+  "geometry_rest_uv_source_ids_preserved": true,
+  "runtime_frame_vertex_cache": false,
+  "shape_correctives": [],
+  "morph_reset_policy": "No morph targets in this asset; runtime explicit zero-target reset is vacuous.1315 retains its independently keyed accepted RestingHipVolume and explicit return-to-zero.",
+  "known_shape_limits": [
+    "Original low-poly joint facets remain visible. Local triangle crossing diagnostics are disclosed separately; no global collision-free or clinical claim."
+  ],
+  "floor_plane_z_m": 0,
+  "heat_role_note": "Root supplies artistic warm fields from source labels; labels do not establish measured activation."
+}

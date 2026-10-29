@@ -1,0 +1,21 @@
+{
+  "source_sha256": "e3523a98e7301e3e6d1ae274ee006e82d7edfd4c2f4b0d52e133beaf381ee12c",
+  "helper_sha256": "e7c6f436b867a668f46efd48ad9f08e64715fa96fcc6970b13776e8f1b1415b4",
+  "archive_sha256": "c0417c262db584c2e0f54844c7e7f683ffdfd02db2407f5330cf94ef8537202b",
+  "witness151_sha256": "23e5e3874c6aec05b8d63cea026330a76f00f026445195ead15009d25770f711",
+  "acquisition_extension_sha256": "a0f26f87f8c3e1099ac87905920334a2af857b885e28b9053963f4523cc1f410",
+  "anterior_wrist_amplitude_m": 0.19319430809214422,
+  "all151_untouched_bones_vs_0290944c_matrix_error": 0.0,
+  "states": 151,
+  "maximum_frozen_helper_witness_51bone_matrix_error": 0.0,
+  "maximum_saved_native_desired_51bone_matrix_error": 3.2782554626464844e-06,
+  "maximum_saved_native_rigid_reference_51bone_matrix_error": 1.0132789611816406e-06,
+  "maximum_rigid_reference_projection_51bone_matrix_change": 3.159046173095703e-06,
+  "maximum_saved_native_authoring_route_joint_position_error_m": 4.6265645892162865e-07,
+  "maximum_saved_native_authoring_route_rotation_error_degrees": 4.719754618290178e-05,
+  "saved_native_desired_worst_frame": 26,
+  "maximum_saved_native_accepted_endpoint_51bone_matrix_error": 0.0,
+  "maximum_original_p_held_key_scalar_error": 2.9536315282463477e-08,
+  "scope": "Bone-only. Native endpoint channels preserve the accepted saved source exactly. Intermediate dynamic frames use the existing production rigid-quaternion normalization convention to remove frozen float32 nonrigidity; static trunk/head/feet retain original native channels. Raw frozen-matrix, projected rigid-reference, position and rotation errors are reported separately. No mesh or skin QA is performed.",
+  "ok": true
+}

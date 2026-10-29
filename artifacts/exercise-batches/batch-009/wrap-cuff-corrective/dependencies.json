@@ -1,0 +1,72 @@
+{
+  "status": "Exact read-only dependencies for the accepted held component. Midpoint diagnostics are excluded; full-cycle shape remains unresolved.",
+  "authority": "Own wrap-cuff-corrective only; producer sources and shared helpers read-only; no Git, network or package installation.",
+  "source_sha256": "88c2da9b30955e3793637fe5f8a086e0ca7339d395cf20997d6b3fdcac817c1e",
+  "runtime_environment": "environment.json",
+  "files": [
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/held-wrap-tangent-88c2da9b3095/source.blend",
+      "snapshot": "artifacts/exercise-batches/batch-009/wrap-cuff-corrective/inputs-contact/source.blend",
+      "sha256": "88c2da9b30955e3793637fe5f8a086e0ca7339d395cf20997d6b3fdcac817c1e",
+      "bytes": 14984577,
+      "role": "Immutable construction input; no producer source mutation"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/held-wrap-tangent-88c2da9b3095/motion.py",
+      "snapshot": "artifacts/exercise-batches/batch-009/wrap-cuff-corrective/inputs-contact/motion.py",
+      "sha256": "cefda51b202ea6effbb910c83a79e052d60aab43fa106e00e42df8b8c7f1e259",
+      "bytes": 7310,
+      "role": "Immutable construction input; no producer source mutation"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/held-wrap-tangent-88c2da9b3095/held-contract.json",
+      "snapshot": "artifacts/exercise-batches/batch-009/wrap-cuff-corrective/inputs-contact/held-contract.json",
+      "sha256": "8c84491ab0cfea730851824854d5e43a74a49ce584c21d7dc5339f28a6068a62",
+      "bytes": 644,
+      "role": "Immutable construction input; no producer source mutation"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/self_clearance.py",
+      "sha256": "9cc195f6355bb1ae21d63ae2fc338f4ec2aac794256d678068e52a4ea59d863b",
+      "bytes": 2222,
+      "role": "Read-only canonical clearance domains and sparse source-bound skin checks"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/triangle_intersection.py",
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36",
+      "bytes": 1428,
+      "role": "Read-only exact triangle intersection predicate"
+    },
+    {
+      "path": "catalogue/exercises/3995.json",
+      "sha256": "aa58adcf249d252b1b0a330d517409db5d104f8b32db2fe449721c97437d6664",
+      "bytes": 633,
+      "role": "Exercise source semantics"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b",
+      "bytes": 16590,
+      "role": "Mandatory created-mesh game-profile QA"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/review_shots.py",
+      "sha256": "ffd4361f313592b67c124cdf0ec54b8d9866c9b29eefdac5c47731ce133d3f01",
+      "bytes": 6292,
+      "role": "Required native wire review"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/_bpyx.py",
+      "sha256": "a3339ba8a678469e8ed29510e32a7331e0235202191ca4edb977af4720819b4b",
+      "bytes": 4503,
+      "role": "QA helper dependency"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/boundary-contact-diagnosis.json",
+      "snapshot": "artifacts/exercise-batches/batch-009/wrap-cuff-corrective/evidence/f18-boundary-input.json",
+      "sha256": "47c5ad2036cb8f1fdd29c90bb68759bbe14ab729d8df668643d4949e356dd5f7",
+      "bytes": 2824,
+      "role": "Historical rejected midpoint boundary classification input; no full-cycle acceptance implied"
+    }
+  ]
+}

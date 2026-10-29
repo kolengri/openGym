@@ -1,0 +1,83 @@
+{
+  "id": "4663",
+  "status": "native_decoded_game_QA_complete_primary_GPU_integration_pending",
+  "source_sha256": "686cfaeeadc3d177adfe55901b72b6fca318247c59d25c8cff6eed48e075b6ea",
+  "glb_sha256": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+  "action": "Exercise_4663",
+  "duration_seconds": 5,
+  "repetitions": 2,
+  "skinning": "dualQuaternion",
+  "runtime_adapter_sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+  "vertices": 10582,
+  "bones": 51,
+  "triangles": 21160,
+  "basis_rest_uv_topology_sourceIDs_unchanged": true,
+  "binding": "Exact accepted4935 prone binding; no refit",
+  "binding_sha256": "185b028576708385e433d9d296ddda84e24f879dfb34f895fbbf242cd835c8ec",
+  "native151_ok": true,
+  "decoded151_ok": true,
+  "maximum_full151_native_decoded_error_m": 5.885397493494513e-06,
+  "minimum_native_floor_z_m": 0.0009993314743041992,
+  "minimum_decoded_floor_z_m": 0.0009993776911869645,
+  "minimum_triangle_area_m2": 5.893116478094605e-08,
+  "loop_skin_error_m": 1.7881393432617188e-07,
+  "maximum_fixed_leg_skin_drift_m": 0.0,
+  "minimum_actual_palm_up_dot": 0.9329176014432756,
+  "minimum_foot_support_z_m": {
+    "Left": 0.0027792996261268854,
+    "Right": 0.0021102630998939276
+  },
+  "maximum_foot_support_z_m": {
+    "Left": 0.0027792996261268854,
+    "Right": 0.0021102630998939276
+  },
+  "whole_arm_hand_body_and_bilateral_nonattachment_crossings": 0,
+  "localized_shoulder_attachment_crossing_maxima": {
+    "Left": 58,
+    "Right": 51
+  },
+  "game_QA": {
+    "errors": 0,
+    "warnings": 0,
+    "retained_warnings": [
+      {
+        "frame": 0,
+        "warnings": []
+      },
+      {
+        "frame": 11,
+        "warnings": []
+      },
+      {
+        "frame": 26,
+        "warnings": []
+      },
+      {
+        "frame": 46,
+        "warnings": []
+      }
+    ],
+    "warning_policy": "Retained below without weakening mandatory game errors; original low-poly normals or mesh warnings do not imply clinical/global collision freedom."
+  },
+  "POSITION_and_NORMAL": {
+    "full_source_positions": true,
+    "normal_source_and_full_DQ_reference": 9.934583402814722e-05,
+    "morph_targets": 0,
+    "explicit_morph_reset": "No targets; vacuous zero reset.1315separateRestingHipVolume keys explicitly zero at start/return."
+  },
+  "whole_body_cameras": 2,
+  "primary_early_GPU_review": {
+    "accepted": true,
+    "glb_sha256": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+    "receipt": "../../logs/early-elbow-motion-floor/{neutral,zones}-4663-{start,lift,peak,lower,second-peak,return}.png",
+    "accepted_scope": "Root inspected actual shared unlit model:palms up,connected arms beside trunk,small chest/arm lift,planted legs. Root final all11fields/framing remains separate."
+  },
+  "source_model_separate_from1315": true,
+  "source_movement": "Prone arms alongside trunk,palms up,small chest+arm lift,reach back,pause,lower; legs remain grounded",
+  "authored_staging": "Two controlled repetitions,8degree thoracic extension,12cm wrist rise,7degree elbow flexion,1mm pelvic/rest-hand target; not source measurements.",
+  "remaining_limits": [
+    "Actual GPU acceptance and camera/muscle integration belong to root.",
+    "Original low-poly shoulder/hip facets and any localized attachment crossings remain disclosed.",
+    "No global collision-free or clinical claim."
+  ]
+}

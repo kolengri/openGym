@@ -1,0 +1,333 @@
+{
+  "status": "LOCAL_VERIFICATION_COMPLETE_ROOT_FINAL_INTEGRATION_OWNED_SEPARATELY",
+  "source_sha256": "e3523a98e7301e3e6d1ae274ee006e82d7edfd4c2f4b0d52e133beaf381ee12c",
+  "glb_sha256": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+  "vertices": 10582,
+  "bones": 51,
+  "triangles": 21160,
+  "actions": [
+    "Exercise_1405",
+    "Exercise_4515",
+    "Exercise_3995",
+    "Exercise_1404"
+  ],
+  "all_integer_states_per_action": 151,
+  "morph_targets": [
+    "OwnershipRightCross",
+    "OwnershipLeftCross",
+    "WrapRightOverCuff"
+  ],
+  "canonical_invariants_exact": true,
+  "existing_components_exact": true,
+  "new_component_archive_sha256": "32711c5d0e73e06372aa2b037403763e2e263e10a27d42864e1a1ba4fb5677ca",
+  "new_component_driver": "Held cuff follows original sin-squared p. The coherent transported acquisition route has a C1 anterior193.194mm Leftwrist detour with fixed arm lengths and unchanged forearm-local hand interpolation. All3components explicitly zero in the other actions.",
+  "root_actual_GPU_acceptance": {
+    "model_sha256": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+    "receipt": "artifacts/exercise-batches/batch-009/logs/self-hug-detour-5c960475/capture-peaks.json",
+    "scope": "20poses including formerhandcrossingf21/f22/f23/f53; wholebody andcuffdetail"
+  },
+  "bone_continuity": {
+    "LeftArm": {
+      "global_rotation_step_degrees": {
+        "maximum": 10.28431272139962,
+        "frame_pair": [
+          25,
+          26
+        ]
+      },
+      "parent_local_rotation_step_degrees": {
+        "maximum": 8.861695464196973,
+        "frame_pair": [
+          25,
+          26
+        ]
+      },
+      "actual_axial_offset_from_unmodified_parent_transport_degrees": {
+        "maximum_absolute": 21.786779408613523,
+        "signed_value": 21.786779408613523,
+        "frame": 16
+      }
+    },
+    "LeftForeArm": {
+      "global_rotation_step_degrees": {
+        "maximum": 23.639907660857137,
+        "frame_pair": [
+          19,
+          20
+        ]
+      },
+      "parent_local_rotation_step_degrees": {
+        "maximum": 23.69584543283635,
+        "frame_pair": [
+          19,
+          20
+        ]
+      },
+      "actual_axial_offset_from_unmodified_parent_transport_degrees": {
+        "maximum_absolute": 167.7271368325783,
+        "signed_value": -167.7271368325783,
+        "frame": 19
+      }
+    },
+    "LeftHand": {
+      "global_rotation_step_degrees": {
+        "maximum": 22.53583870003662,
+        "frame_pair": [
+          28,
+          29
+        ]
+      },
+      "parent_local_rotation_step_degrees": {
+        "maximum": 4.753322173288152,
+        "frame_pair": [
+          18,
+          19
+        ]
+      }
+    },
+    "RightArm": {
+      "global_rotation_step_degrees": {
+        "maximum": 10.386988845050105,
+        "frame_pair": [
+          26,
+          27
+        ]
+      },
+      "parent_local_rotation_step_degrees": {
+        "maximum": 8.76463545742604,
+        "frame_pair": [
+          22,
+          23
+        ]
+      },
+      "actual_axial_offset_from_unmodified_parent_transport_degrees": {
+        "maximum_absolute": 39.09556013655588,
+        "signed_value": -39.09556013655588,
+        "frame": 30
+      }
+    },
+    "RightForeArm": {
+      "global_rotation_step_degrees": {
+        "maximum": 18.507227520401624,
+        "frame_pair": [
+          18,
+          19
+        ]
+      },
+      "parent_local_rotation_step_degrees": {
+        "maximum": 19.481846440967544,
+        "frame_pair": [
+          16,
+          17
+        ]
+      },
+      "actual_axial_offset_from_unmodified_parent_transport_degrees": {
+        "maximum_absolute": 172.89555877405394,
+        "signed_value": -172.89555877405394,
+        "frame": 17
+      }
+    },
+    "RightHand": {
+      "global_rotation_step_degrees": {
+        "maximum": 16.581051769892014,
+        "frame_pair": [
+          17,
+          18
+        ]
+      },
+      "parent_local_rotation_step_degrees": {
+        "maximum": 3.8087771393192935,
+        "frame_pair": [
+          18,
+          19
+        ]
+      }
+    }
+  },
+  "route_native_parity": {
+    "source_sha256": "e3523a98e7301e3e6d1ae274ee006e82d7edfd4c2f4b0d52e133beaf381ee12c",
+    "helper_sha256": "e7c6f436b867a668f46efd48ad9f08e64715fa96fcc6970b13776e8f1b1415b4",
+    "archive_sha256": "c0417c262db584c2e0f54844c7e7f683ffdfd02db2407f5330cf94ef8537202b",
+    "witness151_sha256": "23e5e3874c6aec05b8d63cea026330a76f00f026445195ead15009d25770f711",
+    "acquisition_extension_sha256": "a0f26f87f8c3e1099ac87905920334a2af857b885e28b9053963f4523cc1f410",
+    "anterior_wrist_amplitude_m": 0.19319430809214422,
+    "all151_untouched_bones_vs_0290944c_matrix_error": 0.0,
+    "states": 151,
+    "maximum_frozen_helper_witness_51bone_matrix_error": 0.0,
+    "maximum_saved_native_desired_51bone_matrix_error": 3.2782554626464844e-06,
+    "maximum_saved_native_rigid_reference_51bone_matrix_error": 1.0132789611816406e-06,
+    "maximum_rigid_reference_projection_51bone_matrix_change": 3.159046173095703e-06,
+    "maximum_saved_native_authoring_route_joint_position_error_m": 4.6265645892162865e-07,
+    "maximum_saved_native_authoring_route_rotation_error_degrees": 4.719754618290178e-05,
+    "saved_native_desired_worst_frame": 26,
+    "maximum_saved_native_accepted_endpoint_51bone_matrix_error": 0.0,
+    "maximum_original_p_held_key_scalar_error": 2.9536315282463477e-08,
+    "scope": "Bone-only. Native endpoint channels preserve the accepted saved source exactly. Intermediate dynamic frames use the existing production rigid-quaternion normalization convention to remove frozen float32 nonrigidity; static trunk/head/feet retain original native channels. Raw frozen-matrix, projected rigid-reference, position and rotation errors are reported separately. No mesh or skin QA is performed.",
+    "ok": true
+  },
+  "accepted_three_action_POSITION_NORMAL_and_51bone_identity": true,
+  "3995_endpoint_sampling": {
+    "accepted_glb_sha256": "f879599342838f04563e9f70e186ad4b53e399e3b3836db4dd2dbd4ef01797f1",
+    "final_glb_sha256": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+    "all151_51bone_world_matrix_max_element_error": 1.8724697952283473,
+    "kinematics_exact_to_frozen_f879": false,
+    "held_open_endpoint_51bone_world_matrix_max_element_error": 1.0889208201803058e-08,
+    "held_open_endpoint_at_encoded_key_times_51bone_world_matrix_max_element_error": 0,
+    "intermediate_FK_identity_is_diagnostic": true,
+    "runtime_frame30_endpoint_scope": "Explicit float32 key-time resampling diagnostic: frame/30 can sample fractionally inside changed adjacent segments. Native and encoded-key endpoints remain exactly unchanged; physical readback tolerances are independent."
+  },
+  "no_runtime_vertex_cache": true,
+  "verification": {
+    "1405": {
+      "native": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 52,
+        "localized_Arm_Spine1_diagnostic_category_samples": 52,
+        "localized_attachment_unique_frames": 52,
+        "localized_Arm_Spine1_exact_pair_sum": 2314,
+        "minimum_skin_floor_z_m": 0.0009998109890148044,
+        "minimum_triangle_area_m2": 5.8951960446814913e-08,
+        "loop_skin_error_m": 0.0,
+        "maximum_native_decoded_POSITION_error_m": null
+      },
+      "actual_decoded": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 52,
+        "localized_Arm_Spine1_diagnostic_category_samples": 52,
+        "localized_attachment_unique_frames": 52,
+        "localized_Arm_Spine1_exact_pair_sum": 2314,
+        "minimum_skin_floor_z_m": 0.0009997539455071092,
+        "minimum_triangle_area_m2": 5.895894757469265e-08,
+        "loop_skin_error_m": 2.480327263730363e-07,
+        "maximum_native_decoded_POSITION_error_m": 2.1857400755493994e-06
+      },
+      "game_profile_errors": 0,
+      "game_profile_warnings": 0,
+      "maximum_sparse_DQ_POSITION_error_m": 2.0564816420600426e-06,
+      "maximum_source_NORMAL_vector_error": 8.187660755892303e-05,
+      "maximum_morph_NORMAL_vector_error": 0.00014030982834297158,
+      "maximum_51_joint_error_m": 1.0937746167735986e-06
+    },
+    "4515": {
+      "native": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 214,
+        "localized_Arm_Spine1_diagnostic_category_samples": 214,
+        "localized_attachment_unique_frames": 107,
+        "localized_Arm_Spine1_exact_pair_sum": 7553,
+        "minimum_skin_floor_z_m": 0.0009998109890148044,
+        "minimum_triangle_area_m2": 5.8951960446814913e-08,
+        "loop_skin_error_m": 0.0,
+        "maximum_native_decoded_POSITION_error_m": null
+      },
+      "actual_decoded": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 214,
+        "localized_Arm_Spine1_diagnostic_category_samples": 214,
+        "localized_attachment_unique_frames": 107,
+        "localized_Arm_Spine1_exact_pair_sum": 7553,
+        "minimum_skin_floor_z_m": 0.0009997539455071092,
+        "minimum_triangle_area_m2": 5.895894757469265e-08,
+        "loop_skin_error_m": 1.2401636318651815e-07,
+        "maximum_native_decoded_POSITION_error_m": 1.7369922543642287e-06
+      },
+      "game_profile_errors": 0,
+      "game_profile_warnings": 0,
+      "maximum_sparse_DQ_POSITION_error_m": 1.4230452652267943e-06,
+      "maximum_source_NORMAL_vector_error": 8.187660755892303e-05,
+      "maximum_morph_NORMAL_vector_error": 0.00014030982834297158,
+      "maximum_51_joint_error_m": 1.00924931576224e-06
+    },
+    "3995": {
+      "native": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [
+          37.5,
+          112.5
+        ],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 184,
+        "localized_Arm_Spine1_diagnostic_category_samples": 184,
+        "localized_attachment_unique_frames": 94,
+        "localized_Arm_Spine1_exact_pair_sum": 3710,
+        "minimum_skin_floor_z_m": 0.0009998109890148044,
+        "minimum_triangle_area_m2": 5.8951960446814913e-08,
+        "loop_skin_error_m": 0.0,
+        "maximum_native_decoded_POSITION_error_m": null
+      },
+      "actual_decoded": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [
+          37.5,
+          112.5
+        ],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 184,
+        "localized_Arm_Spine1_diagnostic_category_samples": 184,
+        "localized_attachment_unique_frames": 94,
+        "localized_Arm_Spine1_exact_pair_sum": 3710,
+        "minimum_skin_floor_z_m": 0.0009997539455071092,
+        "minimum_triangle_area_m2": 5.8951960446814913e-08,
+        "loop_skin_error_m": 3.29514509253144e-07,
+        "maximum_native_decoded_POSITION_error_m": 1.9860514499600097e-06
+      },
+      "game_profile_errors": 0,
+      "game_profile_warnings": 0,
+      "maximum_sparse_DQ_POSITION_error_m": 1.5106348048305353e-06,
+      "maximum_source_NORMAL_vector_error": 8.187660755892303e-05,
+      "maximum_morph_NORMAL_vector_error": 0.00014030982834297158,
+      "maximum_51_joint_error_m": 1.413766445353598e-06
+    },
+    "1404": {
+      "native": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 136,
+        "localized_Arm_Spine1_diagnostic_category_samples": 136,
+        "localized_attachment_unique_frames": 68,
+        "localized_Arm_Spine1_exact_pair_sum": 2136,
+        "minimum_skin_floor_z_m": 0.0009998109890148044,
+        "minimum_triangle_area_m2": 4.999644311313174e-08,
+        "loop_skin_error_m": 0.0,
+        "maximum_native_decoded_POSITION_error_m": null
+      },
+      "actual_decoded": {
+        "integer_states": 151,
+        "additional_native_fractional_states": [],
+        "hard_crossing_or_other_failure_count": 0,
+        "raw_gate_ok": false,
+        "raw_failure_count": 136,
+        "localized_Arm_Spine1_diagnostic_category_samples": 136,
+        "localized_attachment_unique_frames": 68,
+        "localized_Arm_Spine1_exact_pair_sum": 2136,
+        "minimum_skin_floor_z_m": 0.0009998228633776307,
+        "minimum_triangle_area_m2": 5.024264536869551e-08,
+        "loop_skin_error_m": 3.893073182087381e-07,
+        "maximum_native_decoded_POSITION_error_m": 1.7781501707161268e-06
+      },
+      "game_profile_errors": 0,
+      "game_profile_warnings": 0,
+      "maximum_sparse_DQ_POSITION_error_m": 1.2014293331934655e-06,
+      "maximum_source_NORMAL_vector_error": 8.187660755892303e-05,
+      "maximum_morph_NORMAL_vector_error": 0.00014030982834297158,
+      "maximum_51_joint_error_m": 1.0904429497296863e-06
+    }
+  },
+  "limitation": "Raw localized Arm/Spine1 attachment intersections remain explicit. They are not game-QA errors/warnings and do not imply global self-collision freedom. Root owns final metadata/camera integration."
+}

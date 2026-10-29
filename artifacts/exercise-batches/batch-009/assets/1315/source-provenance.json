@@ -1,0 +1,133 @@
+{
+  "id": "1315",
+  "source_catalogue": {
+    "path": "catalogue/exercises/1315.json",
+    "sha256": "403f8ec112ecbdf6c8c1f432b5e27bdd4be680811296cc76516f2ae04e192736",
+    "role": "Source instruction labels/hold"
+  },
+  "source_resolution": "../../source-resolutions.json",
+  "source_facts_vs_staging": "Source instructions and muscle roles remain in catalogue/clip; numeric demonstration timing,contact tolerance and joint angles are authored choices.",
+  "canonical_license": "CC0 Blender Studio human; original canonical source IDs/Basis/rest/UV/topology and51bones preserved.",
+  "direct_reuse": "Accepted6539 action/binary payload exact with new identity; all151 identity receipts in family.",
+  "read_only_dependencies": [
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/source.blend",
+      "sha256": "b8499ef44ef06bb5f9ae85edf787b86021cbe555cdce9e1220a01bc5f566a332",
+      "role": "Accepted exact native resting source; action identity only changes"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/motion.glb",
+      "sha256": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00",
+      "role": "Accepted exact resting GLB binary/samplers/morphs"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/delivery-report.json",
+      "sha256": "819e2d5467ae5e85e536b11080335556f4da69d14c9b8bd2fdc84c6071aa4be1",
+      "role": "Accepted resting mechanics/GPU lineage and retained fold warnings"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/native-identity.json",
+      "sha256": "f360c9327d4d7f77b8b75b8630edc304077e6c8d20889a4912e540fd12926426",
+      "role": "Prior4365\u21926539 native exact identity receipt"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/decoded-identity.json",
+      "sha256": "e576cc3f0e0dea4448b8841a3fc1dfe1a66a052829b2cad47a876bdb50698b0c",
+      "role": "Prior4365\u21926539 actual decoded identity receipt"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/source.blend",
+      "sha256": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c",
+      "role": "Accepted unchanged prone binding; old action removed"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/local-binding-report.json",
+      "sha256": "a74dc91974f7fb50bb3c8460450a0acb0bf05fe092e006ea32274b209bf45be2",
+      "role": "Accepted prone binding signature"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045",
+      "role": "Invariant source rig math/helper extraction"
+    },
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+      "role": "Canonical CC0 Basis/rest/UV/topology source"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c",
+      "role": "Read-only rig math functions extracted by authoring helper"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/palm_frame.py",
+      "sha256": "31b8baf5d66e9ebe3f9b4eac1efcdeace1dcd2d48345d8e3a84cf8d106da32d7",
+      "role": "Source-derived true palm plane frame"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+      "role": "Unchanged DQ POSITION/NORMAL shared adapter"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/resting-repair/resting_checks.py",
+      "sha256": "1f421c67b98d4110d345d7c025fd6714dfaef11cbd5a62b80efd39eb7c34d2b3",
+      "role": "Established source shoulder attachment ROI; diagnostic scope only"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/package-lock.json",
+      "sha256": "ee452d9a3fca4320321ba6b3a3a860cb421f31d4aa4f8111d738f3f7d33ceeab",
+      "role": "Existing project runtime dependency lock"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b",
+      "role": "Mandatory game profile QA implementation"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/review_shots.py",
+      "sha256": "ffd4361f313592b67c124cdf0ec54b8d9866c9b29eefdac5c47731ce133d3f01",
+      "role": "Native solid/wire review implementation"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/asset-interface.json",
+      "sha256": "acb7430e0b2aa17fbf665f2bb3253064b8302d2adad30a0580f683e04940e396",
+      "role": "Current asset interface"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/authoring-handoff.md",
+      "sha256": "ddd7b130754a80f9203b18bd624cf1f7def375c53b0306b5787ec6a62a27beb6",
+      "role": "Authoring acceptance contract"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/source-resolutions.json",
+      "sha256": "ec1d33776a323e559a6f52dc8527ba99388841dad6bc971f162c68491dea2319",
+      "role": "Source-specific staging boundary"
+    },
+    {
+      "path": "catalogue/exercises/1315.json",
+      "sha256": "403f8ec112ecbdf6c8c1f432b5e27bdd4be680811296cc76516f2ae04e192736",
+      "role": "Source instruction labels/hold"
+    },
+    {
+      "path": "catalogue/exercises/4663.json",
+      "sha256": "837b75832d7c3752ce1c41337c53ea784ad78dfa49f4ba268dd6d155e44ea5f3",
+      "role": "Source instruction labels"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/contexts/1315.json",
+      "sha256": "88711d86763b0f732bcbeb0bfa8b4452a8dd74c6ac579a6747db8ab3af6189b2",
+      "role": "Current intake context"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/contexts/4663.json",
+      "sha256": "9a21bd3b8dded9d72eac92e711640cc6f30943fbe026b9ff9d599c26d7095229",
+      "role": "Current intake context"
+    }
+  ],
+  "source_sha256": "b7fa88d4f190b0f78e00f70d6c2b547598ca8ca50beac19d5a27a679c2c1c572",
+  "glb_sha256": "56f6b3af6060d8e38f86f2cbf60a8e6ee7b2bd2d3fb6837e31ab7708e0525c44",
+  "no_restricted_visual_derivative": true,
+  "no_runtime_vertex_frame_cache": true
+}

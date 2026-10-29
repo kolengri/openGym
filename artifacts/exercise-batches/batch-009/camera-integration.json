@@ -1,0 +1,41 @@
+{
+  "1315": {
+    "reason": "The anterior low oblique view hid the primary spine and secondary glute fields in the folded pose. Keep side motion view and use an elevated posterior companion; unchanged target, model, motion and fields. Width fit remains separate.",
+    "authored_camera_sha256": "83b9704cf53b3a08e495774371d6a0544f65261285c7d22d66097ca89fda5339",
+    "integrated_camera_sha256_before_width_fit": "2e8875ab88f2057339b899a9fdae78d6950e503e3b99cf715c957ceef79531f1",
+    "old_second": {
+      "label": "Whole body oblique",
+      "position": [
+        3.8,
+        -5,
+        2.2
+      ],
+      "target": [
+        0,
+        0.05,
+        0.65
+      ],
+      "scale": 2.98
+    },
+    "new_second": {
+      "label": "posterior_back_glute_oblique",
+      "position": [
+        3,
+        4.5,
+        4.5
+      ],
+      "target": [
+        0,
+        0.05,
+        0.65
+      ],
+      "scale": 2.98
+    },
+    "final_camera_sha256": "2e8875ab88f2057339b899a9fdae78d6950e503e3b99cf715c957ceef79531f1"
+  },
+  "final_fit": {
+    "receipt": "camera-fit.json",
+    "sha256": "764ee6bd87283a31a37b2f96172cda1ea1c8b338596916631006a3c55c9ca587",
+    "manifest_refresh": "Onlycamera and dependentmanifest hashes/seals were refreshed; other declared payloadhashes validated."
+  }
+}

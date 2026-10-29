@@ -1,0 +1,52 @@
+{
+  "id": "1404",
+  "name": "back stretch",
+  "action": "Exercise_1404",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "lats"
+  ],
+  "secondary": [
+    "lower back",
+    "upper back"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Stand or sit tall and clasp your hands in front of you.",
+    "Press your arms forward and round your upper back.",
+    "Let your head drop gently.",
+    "Breathe slowly into your back.",
+    "Hold for 20-30 seconds."
+  ],
+  "source_record_sha256": "c8bb93e66727a9ec502c6d57e7a5b0e5fa574d05dadd0318ca5efbe0666d25b4",
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "interpretation": "Use the source-permitted standing option: clasp hands in front, reach forward while rounding the upper back, and lower the head gently. Feet remain hip-width and supported. No crossed/overhead arm requirement from1405. Retain20\u201330s source hold and5s2/1/2 demonstration. Exact reach, elbow poles and cadence are authored. Grip acquisition follows reachable arm placement; reverse path releases fingers before unwinding. Preserved shoulder correctives have explicit zero tracks. The separately authored WrapRightOverCuff POSITION/NORMAL component follows the3995 shoulder-protraction fraction and resets explicitly in all other actions.",
+  "review_status": "early_native_motion_pending",
+  "source_sha256": "e3523a98e7301e3e6d1ae274ee006e82d7edfd4c2f4b0d52e133beaf381ee12c"
+}

@@ -1,0 +1,149 @@
+{
+  "ok": true,
+  "id": "1843",
+  "source_sha256": "6015f443dc30fd10f61999ebb05d4d73adf4122953a3c1e51851eb1e2b925dee",
+  "glb_sha256": "f6287112cc152e73da3e7fbbef0c5421dd073b64c53a543163dd021714b54716",
+  "native_frames": 151,
+  "actual_decoded_frames": 151,
+  "vertices": 10582,
+  "triangles": 21160,
+  "bones": 51,
+  "character_objects": {
+    "mesh": 1,
+    "armature": 1,
+    "materials": 1
+  },
+  "native_skin_dimensions_m": [
+    {
+      "frame": 0,
+      "dimensions_m": [
+        0.9362680315971375,
+        1.1096448600292206,
+        0.9873334243893623
+      ]
+    },
+    {
+      "frame": 30,
+      "dimensions_m": [
+        1.0682517886161804,
+        1.113822191953659,
+        0.9865618422627449
+      ]
+    },
+    {
+      "frame": 75,
+      "dimensions_m": [
+        0.6000033915042877,
+        1.156184434890747,
+        0.9951281622052193
+      ]
+    },
+    {
+      "frame": 120,
+      "dimensions_m": [
+        1.0682517886161804,
+        1.113822191953659,
+        0.9865618422627449
+      ]
+    },
+    {
+      "frame": 150,
+      "dimensions_m": [
+        0.9362680315971375,
+        1.1096448600292206,
+        0.9873334243893623
+      ]
+    }
+  ],
+  "maximum_joint_step_degrees": 14.377455995323045,
+  "maximum_head_step_degrees": 1.8804883226181452,
+  "binding_exact_to_accepted1368": true,
+  "lower_body_matrix_max_delta": 1.6689300537109375e-06,
+  "native_decoded_skin_max_error_m": 1.886395196804888e-06,
+  "dq_rotated_normal_max_error": 8.19716852777125e-05,
+  "loop_error_m": 0.0,
+  "minimum_triangle_area_m2": 2.5194724499075568e-08,
+  "game_errors": 0,
+  "game_warnings": [
+    {
+      "frame": 30,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "frame": 75,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "frame": 120,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    }
+  ],
+  "game_warning_explanation": "The same canonical mouth/lip back-to-back face pair2302/1670 is flagged at30/75/120. Source vertex IDs and positions are retained in asset-qa.json. Original topology is preserved; no face deletion is justified.",
+  "held_contacts": {
+    "Left_hand": {
+      "minimum_distance_m": 0.0011972455540671945,
+      "median_distance_m": 0.05282304808497429,
+      "minimum_signed_normal_distance_m": 0.0011966449965257198,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 31
+    },
+    "Left_palm": {
+      "minimum_distance_m": 0.0011972455540671945,
+      "median_distance_m": 0.01416390435770154,
+      "minimum_signed_normal_distance_m": 0.0011966449965257198,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 19
+    },
+    "Left_forearm": {
+      "minimum_distance_m": 0.05449693277478218,
+      "median_distance_m": 0.13442138582468033,
+      "minimum_signed_normal_distance_m": 0.05421632016077638,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 0
+    },
+    "Left_digits": {
+      "minimum_distance_m": 0.013928390108048916,
+      "median_distance_m": 0.06639190763235092,
+      "minimum_signed_normal_distance_m": 0.013928391155786812,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 0
+    },
+    "Right_hand": {
+      "minimum_distance_m": 0.0014350670389831066,
+      "median_distance_m": 0.0515918992459774,
+      "minimum_signed_normal_distance_m": 0.0014350671408465132,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 23
+    },
+    "Right_palm": {
+      "minimum_distance_m": 0.0014350670389831066,
+      "median_distance_m": 0.018124163150787354,
+      "minimum_signed_normal_distance_m": 0.0014350671408465132,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 11
+    },
+    "Right_forearm": {
+      "minimum_distance_m": 0.0264580138027668,
+      "median_distance_m": 0.088308896869421,
+      "minimum_signed_normal_distance_m": 0.0264580138027668,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 0
+    },
+    "Right_digits": {
+      "minimum_distance_m": 0.004892166703939438,
+      "median_distance_m": 0.05691153556108475,
+      "minimum_signed_normal_distance_m": 0.004892165937647519,
+      "inside_more4mm_ids": [],
+      "within12mm_count": 4
+    }
+  },
+  "crossing_check": "All 151 actual native and actual decoded states: whole arms versus head/neck/torso/both legs, hands versus opposite arm, both legs against each other. Zero exact triangle crossings.",
+  "physical_limit": "Discrete checks and local signed nearest diagnostics do not certify all enclosed-volume or continuous-time self collision.",
+  "root_acceptance": "Root owns actual GPU natural-motion/field/camera acceptance and later width integration."
+}

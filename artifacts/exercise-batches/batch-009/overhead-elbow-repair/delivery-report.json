@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "id": "1986",
+  "source_sha256": "5032e96ff3af6a5ee010c8ca3f2f53be6d734ab473f6ddd90a580ce03bef467f",
+  "glb_sha256": "e252e8bb2d874dccae75c1cc63c514f2f7c16021a62236e16e49c5b3b7e36535",
+  "vertices": 10582,
+  "bones": 51,
+  "isolated_actions": [
+    "Exercise_1986"
+  ],
+  "binding_unchanged_from_batch008": true,
+  "basis_rest_uv_topology_source_ids_unchanged": true,
+  "morph_targets": 0,
+  "native_states": 151,
+  "actual_decoded_states": 151,
+  "maximum_joint_step_degrees": 28.389447351178926,
+  "maximum_full_dq_vertex_error_m": 1.0360265398310104e-06,
+  "maximum_native_decoded_physical_error_m": 4.061058270562854e-05,
+  "maximum_source_normal_error": 8.187660755892303e-05,
+  "minimum_triangle_area_m2": 5.895894757469265e-08,
+  "minimum_floor_z_m": 0.0009998363675549626,
+  "loop_skin_error_m": 0.0,
+  "whole_arm_body_triangle_crossings": 0,
+  "whole_arm_leg_triangle_crossings": 0,
+  "held_identity": {
+    "ok": true,
+    "baseline_glb_sha256": "0da7d54a1ffd3aa5f2a00e186421952dd24613f0e28cd6a16c15b1c0f42420b2",
+    "glb_sha256": "e252e8bb2d874dccae75c1cc63c514f2f7c16021a62236e16e49c5b3b7e36535",
+    "frame": 75,
+    "source_vertices": 10582,
+    "bones": 51,
+    "maximum_held_skin_error_m": 7.142016272426943e-07,
+    "maximum_held_joint_matrix_error": 1.5968686470357873e-06,
+    "meaning": "Actual decoded DQ hold is unchanged from root-accepted early model; source binding invariance is independently asserted by source-verification.json."
+  },
+  "game_errors": 0,
+  "game_warnings": [
+    {
+      "frame": 48,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "frame": 75,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    }
+  ],
+  "support": "Both actual plantar skins continuously supported onZ0; neutral planted hip-width stance is an authored source-gap resolution.",
+  "source_hold_seconds": [
+    20,
+    30
+  ],
+  "demo_phases_seconds": [
+    2,
+    1,
+    2
+  ],
+  "runtime_frames": "0..150 at30fps; native1..151",
+  "gpu_acceptance": {
+    "early_live_route": "Root accepted actual151-key shared unlit GPU route",
+    "accepted_glb_sha256": "0da7d54a1ffd3aa5f2a00e186421952dd24613f0e28cd6a16c15b1c0f42420b2",
+    "unchanged_since_early_gpu_acceptance": false,
+    "evidence": "../../logs/low-elbow-0da7d54a/capture-peaks.json",
+    "final_all_asset_integration": "Root-owned final exact GPU review remains separate."
+  },
+  "limits": "Bounded exercise-specific head/torso/arm/leg/hand checks; native geometric normal witnesses are diagnostic. No global collision-free or clinical claim."
+}

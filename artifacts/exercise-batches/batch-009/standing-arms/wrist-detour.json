@@ -1,0 +1,80 @@
+{
+  "amplitude_m": 0.19319430809214422,
+  "maximum_reachable_amplitude_m": 0.2112338894943239,
+  "clearance_margin_m": 0.004,
+  "maximum_plane_violation_m": -0.001648881196975708,
+  "constraint_frames": [
+    20.0,
+    20.5,
+    21.0,
+    21.5,
+    22.0,
+    22.5,
+    23.0,
+    23.5,
+    24.0,
+    24.5,
+    25.0
+  ],
+  "samples": [
+    {
+      "frame": 20.0,
+      "front_plane_y_m": null,
+      "plane_violation_m": -0.004
+    },
+    {
+      "frame": 20.5,
+      "front_plane_y_m": null,
+      "plane_violation_m": -0.004
+    },
+    {
+      "frame": 21.0,
+      "front_plane_y_m": -0.4169227182865143,
+      "plane_violation_m": -0.07639280772209167
+    },
+    {
+      "frame": 21.5,
+      "front_plane_y_m": -0.4644629955291748,
+      "plane_violation_m": -0.02600694513320923
+    },
+    {
+      "frame": 22.0,
+      "front_plane_y_m": -0.46842074394226074,
+      "plane_violation_m": -0.014845289945602417
+    },
+    {
+      "frame": 22.5,
+      "front_plane_y_m": -0.46909523010253906,
+      "plane_violation_m": -0.007003017425537109
+    },
+    {
+      "frame": 23.0,
+      "front_plane_y_m": -0.4666115641593933,
+      "plane_violation_m": -0.001648881196975708
+    },
+    {
+      "frame": 23.5,
+      "front_plane_y_m": -0.34724143147468567,
+      "plane_violation_m": -0.11396829104423523
+    },
+    {
+      "frame": 24.0,
+      "front_plane_y_m": -0.30910950899124146,
+      "plane_violation_m": -0.1434640965461731
+    },
+    {
+      "frame": 24.5,
+      "front_plane_y_m": -0.21445637941360474,
+      "plane_violation_m": -0.23254380440711975
+    },
+    {
+      "frame": 25.0,
+      "front_plane_y_m": null,
+      "plane_violation_m": -0.004
+    }
+  ],
+  "method": "Conservative wholehand triangle XZ overlap versus right upperarm/forearm front plane. Fixed arm lengths and frozen endpoint-corrected transported frames are recomputed for each candidate. Brent scalar root solves the smallest conservative anterior offset;1mm numeric margin added. No local hand rotation or independent finger change.",
+  "driver": "smooth5((normalizedp\u2212.20)/.35) * (1\u2212smooth5((normalizedp\u2212.76)/.21));0atopen/held; same reverse/repeat",
+  "root_authorization": "Bounded anterior Leftwrist detour after failed localhand escape; no independent Hand translation or fourthmorph",
+  "derivation_sha256": "667a6e7448330065f033c9fb231c019215630c4dacfb10d28c681f125b1f7921"
+}

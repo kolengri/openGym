@@ -1,0 +1,126 @@
+{
+  "original_CC0_body": {
+    "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+    "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "original_binding_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b"
+  },
+  "read_only_dependencies": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/plantar_binding.py",
+      "sha256": "72676e1d9856fdc0f3c534590c345405a5a494cf5a0c82df0dd3d5b4abfb6cdc",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/check_motion.py",
+      "sha256": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/self_clearance.py",
+      "sha256": "9cc195f6355bb1ae21d63ae2fc338f4ec2aac794256d678068e52a4ea59d863b",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/triangle_intersection.py",
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+      "modified": false,
+      "publication_dependency": true
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/package.json",
+      "sha256": "f9c474a27c920b9435353a6235968f4453436bee0444fac7e5fd289c8fa463de",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/build/three.module.js",
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/build/three.core.js",
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+      "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/examples/jsm/utils/SkeletonUtils.js",
+      "sha256": "b1632a703206c3d830de9fcbe515696770d04b71a15ee6b50afa6d2c3298c86f",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-core/scripts/env_report.py",
+      "sha256": "e628feed806dd265e0c1ce803d92591aac208a9f463d8c47cbb939476d3b347a",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-core/scripts/_bpyx.py",
+      "sha256": "a3339ba8a678469e8ed29510e32a7331e0235202191ca4edb977af4720819b4b",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b",
+      "modified": false,
+      "publication_dependency": false
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/_bpyx.py",
+      "sha256": "a3339ba8a678469e8ed29510e32a7331e0235202191ca4edb977af4720819b4b",
+      "modified": false,
+      "publication_dependency": false
+    }
+  ],
+  "tools": {
+    "blender": "/opt/homebrew/bin/blender",
+    "blender_version": "5.2.3 LTS",
+    "threads": 2,
+    "three_version": "0.186.1",
+    "python": "Blender bundled Python3.13.13/NumPy; system Python3 for packaging",
+    "scipy_libigl_venv": "Provided existing environment; not required by this no-refit motion slice."
+  },
+  "rights": "Original Blender Studio Human Base Meshes1.4.1 CC0 and catalogue text. Motion is newly authored; no mocap, GymVisual derivatives, restricted reference frames, paid generation or video."
+}

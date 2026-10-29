@@ -1,0 +1,17 @@
+{
+  "source_and_glb_unchanged": true,
+  "original_native_pass_failures": {
+    "arm_body_pairs": "34 at start were initially marked hard. Sampled failure-pair source bounds were underarmZ1.197..1.284m; all final per-frame crossing pairs are retained under the established attachment ROI.",
+    "chest": "Copied4935check asked absolute anteriorchestZ>=25mm. Actual backhand raise begins10.7546mm and rises12.9859mm to23.7405mm."
+  },
+  "cause": "New checker copied an unrelated raised-leg overhead-sweep absolute height and used a source shoulder attachment ROI that omitted the actual lower armpit.",
+  "corrected_contract": {
+    "shoulder_attachment_ROI": "Established read-only accepted resting_checks.pysourceROI:1.12<sourceZ<1.53m and.08<abs(sourceX)<.39m. Pairs are retained as localized warnings; distal-arm/body and bilateral crossing gates are unchanged.",
+    "slight_chest_lift": "Source requires a slight chest lift; verify>=10mm relative native/decoded skin rise from supported start,authored8degree thoracic extension and fixed pelvis/lumbar. Source has no numeric25mm height minimum."
+  },
+  "primary_early_GPU_review": {
+    "accepted_glb_sha256": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+    "evidence": "../logs/early-elbow-motion-floor/{neutral,zones}-4663-{start,lift,peak,lower,second-peak,return}.png",
+    "observed": "Primary accepted arm/chest/hip silhouette,palms up,connected arms beside trunk,planted legs; physical gates remain separate."
+  }
+}

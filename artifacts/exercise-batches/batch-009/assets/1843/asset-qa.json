@@ -1,0 +1,369 @@
+{
+  "pass": true,
+  "source_sha256": "6015f443dc30fd10f61999ebb05d4d73adf4122953a3c1e51851eb1e2b925dee",
+  "samples": [
+    {
+      "frame": 0,
+      "report": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0015,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "report": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ],
+        "ground_z": 0.0015,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 1
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            2302,
+            1670
+          ],
+          "triangle_ids": [
+            2302,
+            12260
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              0.05537247657775879,
+              -0.05797195062041283,
+              0.8107556700706482
+            ],
+            [
+              0.05649981647729874,
+              -0.058729998767375946,
+              0.8099023103713989
+            ]
+          ],
+          "source_vertex_ids": [
+            [
+              1530,
+              1529,
+              1635,
+              1634
+            ],
+            [
+              1884,
+              1885,
+              1540,
+              1536
+            ]
+          ],
+          "source_rest_centroids": [
+            [
+              -0.01633702963590622,
+              -0.11953777074813843,
+              1.606706142425537
+            ],
+            [
+              -0.013419670052826405,
+              -0.11918061971664429,
+              1.6054999828338623
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 75,
+      "report": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ],
+        "ground_z": 0.0015,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 1
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            2302,
+            1670
+          ],
+          "triangle_ids": [
+            2302,
+            12260
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              0.05537247657775879,
+              -0.05797195062041283,
+              0.8107556700706482
+            ],
+            [
+              0.05649981647729874,
+              -0.058729998767375946,
+              0.8099023103713989
+            ]
+          ],
+          "source_vertex_ids": [
+            [
+              1530,
+              1529,
+              1635,
+              1634
+            ],
+            [
+              1884,
+              1885,
+              1540,
+              1536
+            ]
+          ],
+          "source_rest_centroids": [
+            [
+              -0.01633702963590622,
+              -0.11953777074813843,
+              1.606706142425537
+            ],
+            [
+              -0.013419670052826405,
+              -0.11918061971664429,
+              1.6054999828338623
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 120,
+      "report": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ],
+        "ground_z": 0.0015,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 1
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            2302,
+            1670
+          ],
+          "triangle_ids": [
+            2302,
+            12260
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              0.05537247657775879,
+              -0.05797195062041283,
+              0.8107556700706482
+            ],
+            [
+              0.05649981647729874,
+              -0.058729998767375946,
+              0.8099023103713989
+            ]
+          ],
+          "source_vertex_ids": [
+            [
+              1530,
+              1529,
+              1635,
+              1634
+            ],
+            [
+              1884,
+              1885,
+              1540,
+              1536
+            ]
+          ],
+          "source_rest_centroids": [
+            [
+              -0.01633702963590622,
+              -0.11953777074813843,
+              1.606706142425537
+            ],
+            [
+              -0.013419670052826405,
+              -0.11918061971664429,
+              1.6054999828338623
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

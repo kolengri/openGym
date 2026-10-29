@@ -1,0 +1,67 @@
+{
+  "status": "Curated accepted route reproduction packet only; final production/GPU/full-cycle acceptance remains with primary and writer",
+  "source_sha256": "88c2da9b30955e3793637fe5f8a086e0ca7339d395cf20997d6b3fdcac817c1e",
+  "held_POSITION_sha256": "a50d65d6c27e7b18a9aeb962919f9ff196b4dae19ce295d3c6a4d7b26415d4f9",
+  "runtime_dependencies": [
+    "Python standard library",
+    "NumPy",
+    "Blender mathutils"
+  ],
+  "files": [
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_route.py",
+      "sha256": "e7c6f436b867a668f46efd48ad9f08e64715fa96fcc6970b13776e8f1b1415b4",
+      "bytes": 6175,
+      "role": "Side-effect-free accepted route evaluator; standard library, NumPy, mathutils only"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent-route-coefficients.npz",
+      "sha256": "c0417c262db584c2e0f54844c7e7f683ffdfd02db2407f5330cf94ef8537202b",
+      "bytes": 224328,
+      "role": "Hash-frozen spatial coefficients, transport tables, source endpoints and exact native endpoint local channels"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent-hand-matrices.npz",
+      "sha256": "23e5e3874c6aec05b8d63cea026330a76f00f026445195ead15009d25770f711",
+      "bytes": 236632,
+      "role": "Accepted 151-frame desired matrix witness in archive bone-name order"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/frozen-route-parity.json",
+      "sha256": "bf84bbc77ed02bc8e6d8f85acc723a6f0a9e87b87e1a0c304bcdd442c7f3169b",
+      "bytes": 1441,
+      "role": "Independent standalone evaluator parity: exact zero across151 integer and9 fractional samples"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent-hand-report.json",
+      "sha256": "5584187253c97952f813862c716d51d0db9e7fd2e1945e5728efcf2a60a57d1d",
+      "bytes": 16738,
+      "role": "Corrected accepted construction method, bone continuity, sparse geometry and unresolved raw crossing evidence"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/integration-handoff.md",
+      "sha256": "2f4785b85c80fab0766be4d785f3d7194da01e662e2e3bccbe42c08a42adaf68",
+      "bytes": 6350,
+      "role": "Concise endpoint, quaternion, progress, dependency and integration contract"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_hand_mid-front.png",
+      "sha256": "199a75b5d1e48650b2bdf0d9f062b262ee3cac01e5bbd5c80fe46cd4ca4a4fcd",
+      "bytes": 614395,
+      "role": "Primary-accepted provisional native early-midpoint front view"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_hand_mid-side.png",
+      "sha256": "cffa8e16153a9b67afddcc8fa3933eff3b5df56318cef8eb8eaace0a2c8a08e3",
+      "bytes": 610832,
+      "role": "Primary-accepted provisional native early-midpoint side view"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_hand_mid-rear.png",
+      "sha256": "23744602d182f7dfcd0847759050449ab0922fe8e4e0fabfd6018815156b2b29",
+      "bytes": 584404,
+      "role": "Primary-accepted provisional native early-midpoint rear view"
+    }
+  ],
+  "exclusions": "All failed route, zero-hinge, key-zero, timing-only, midpoint-target, builder and log artifacts are deliberately excluded. Do not copy the whole diagnostic directory."
+}
