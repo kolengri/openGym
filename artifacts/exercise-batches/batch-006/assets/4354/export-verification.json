@@ -1,0 +1,5940 @@
+{
+  "ok": true,
+  "id": "4354",
+  "source_sha256": "e9eef5aa5a78c76a0e8b5261739a3cdba3a8b673c8ead2262ffc93a99e465d44",
+  "sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701",
+  "bytes": 1270268,
+  "animations": [
+    "Exercise_0006",
+    "Exercise_4354"
+  ],
+  "action": "Exercise_4354",
+  "duration_seconds": 5,
+  "bones": 51,
+  "original_vertex_ids": 10582,
+  "triangles": 21160,
+  "morph_position_targets": [
+    "Shoulder0006Center",
+    "Shoulder0006Left",
+    "Shoulder0006Right",
+    "Shoulder4354Center",
+    "Shoulder4354Left",
+    "Shoulder4354Right"
+  ],
+  "morph_normal_targets": [
+    "Shoulder0006Center",
+    "Shoulder0006Left",
+    "Shoulder0006Right",
+    "Shoulder4354Center",
+    "Shoulder4354Left",
+    "Shoulder4354Right"
+  ],
+  "maximum_basis_normal_vector_error": 0.00008187660755892303,
+  "maximum_target_normal_vector_errors": {
+    "Shoulder0006Center": 0.00008187660755892303,
+    "Shoulder0006Left": 0.00008187660755892303,
+    "Shoulder0006Right": 0.00008187660755892303,
+    "Shoulder4354Center": 0.00008187660755892303,
+    "Shoulder4354Left": 0.00008187660755892303,
+    "Shoulder4354Right": 0.00008251404033661755
+  },
+  "maximum_full_dq_vertex_error_m": 0.000001588748510504471,
+  "maximum_joint_error_m": 9.087715649372747e-7,
+  "maximum_surface_patch_error_m": 0.0000015887485105044707,
+  "maximum_morph_weight_error": 2.65922809661312e-7,
+  "loop_skin_error_m": 1.809298765831899e-7,
+  "native_mechanical_clearance_m": 0.3353370428085327,
+  "decoded_mechanical_clearance_lower_bound_m": 0.3353338653115117,
+  "samples": [
+    {
+      "frame": 0,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 1,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 2,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 3,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 4,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 5,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 6,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 7,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 8,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 9,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 10,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 11,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 12,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 13,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 14,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 16,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 18,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 19,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 20,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 21,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 22,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 23,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 24,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 26,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 27,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 28,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 29,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 31,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 32,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 33,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 34,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 35,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 36,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 37,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 38,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 39,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 40,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 41,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 42,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 43,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 44,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 46,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 47,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 48,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 49,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 50,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 51,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 52,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 53,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 54,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 55,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 56,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 57,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 58,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 59,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 61,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 62,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 63,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 64,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 65,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 66,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 67,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 68,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 69,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 70,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 71,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 72,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 73,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 74,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 76,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 77,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 78,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 79,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 80,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 81,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 82,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 83,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 84,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 85,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 86,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 87,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 88,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 89,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 91,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 92,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 93,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 94,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 95,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 96,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 97,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 98,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 99,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 100,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 101,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 102,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 103,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 104,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 106,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 107,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 108,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 109,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 110,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 111,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 112,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 113,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 114,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 115,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 116,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 117,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 118,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 119,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 121,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 122,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 123,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 124,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 125,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 126,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 127,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 128,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 129,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 130,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 131,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 132,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 133,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 134,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 135,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 136,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 137,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 138,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 139,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 140,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 141,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 142,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 143,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 144,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 145,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 146,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 147,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 148,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 149,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "maximum_full_native_vertex_error_m": 0.000001588748510504471,
+      "floor_min_z_m": -0.0023700845151124472,
+      "supported_patches": {
+        "sole_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_L": {
+          "min_z": 0.0010000808423376506,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_L": {
+          "min_z": 0.004065903103780408,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "sole_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.30669800235017625
+        },
+        "heel_R": {
+          "min_z": 0.0010002677150769048,
+          "fraction_near_floor": 0.5177664974619289
+        },
+        "plantar_pad_R": {
+          "min_z": 0.004064565839933064,
+          "fraction_near_floor": 0.9354838709677419
+        },
+        "pelvic_support_L": {
+          "min_z": 0.0017499189135191662,
+          "fraction_near_floor": 0.5
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014999505708251926,
+          "fraction_near_floor": 0.5
+        }
+      }
+    }
+  ],
+  "scope": "Actual canonical shared two-action GLB, exact shared optional DQ CPU adapter, all10582 source vertices across all151frames versus canonical native source. Full-body pointwise parity carries native triangle/clearance witnesses with explicit error margin; native joint/patch subframes and all6 independent NORMAL target buffers checked. Actual GPU raster review remains root-owned."
+}

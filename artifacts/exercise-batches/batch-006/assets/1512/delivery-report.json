@@ -1,0 +1,567 @@
+{
+  "exercise_id": "1512",
+  "status": "shape_accepted_final_asset_gates_pass_primary_integration_pending",
+  "production_approved": false,
+  "frozen_at_utc": "2026-10-29T11:08:45.655432+00:00",
+  "ownership": "artifacts/exercise-batches/batch-006/assets/1512",
+  "source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+  "glb_sha256": "05408ed5b88318c897e4a801eab1455c4a99e1dcad6b1697770ddeb2c44718c1",
+  "source_input_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "source_mechanics": "Anatomical LEFT all-fours quadriceps stretch. The left hand lifts, approaches with a forearm-aligned wrist, closes around the heel/ankle collar before the pull, and remains fixed in the foot frame through pull, hold and unloading. The fingers open before the arm retracts. The right palm, knee and resting foot support the body. Mirror the complete action and highlights for the other side. This five-second demonstration is separate from the source 20\u201330 second workout hold.",
+  "source_cue_disagreement": {
+    "description": "Pull one foot toward the glutes from all fours.",
+    "instructions": "Instruction 2 combines straight back and knee bent; instruction 3 asks for a lower hip position.",
+    "resolution": "Straight back is interpreted as a backward thigh trajectory with a flexed knee. The same-side hand holds the heel/ankle collar and draws the foot toward the gluteal region. A restrained pelvic lower is authored with a neutral torso and level pelvis. The source does not specify exact grasp geometry or numeric joint angles.",
+    "authored_numeric_choices_not_source_facts": {
+      "common_trunk_world_X_pitch_degrees": 84,
+      "moving_thigh_world_YZ_sweep_hold_degrees": 115,
+      "moving_knee_flexion_hold_degrees": 130,
+      "moving_hip_extension_relative_to_trunk_hold_degrees": 31,
+      "pelvic_lower_m": 0.004,
+      "resting_shin_rise_degrees": 2.65
+    }
+  },
+  "repair": {
+    "cause": "Rejected motion independently interpolated wrist rotation and finger poses; acquisition was late and wrist deviation reached 60.65 degrees during hold.",
+    "change": "Forearm-aligned approach, reachable same-side collar C-grasp, opposed thumb/fingers, foot-local stable pull/hold/unload, visible opening before retraction. No new geometry fairing.",
+    "visual_acceptance": "Root accepted current early-grasp-detail, early-release-detail and early-hold-side on 2026-10-29; shape/path frozen."
+  },
+  "invariants": {
+    "pass": true,
+    "source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+    "accepted_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "geometry_rest_uv_sha256": "8727ad935b8ff72b5df350e581931938fa50bce6c4abaa33e910236dd578aae3",
+    "basis_rest_uv_topology_identical_to_accepted_source": true,
+    "original_source_binding_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+    "local_binding_sha256": "a6858a74126e15664bf2d7e57a26c924a00bf80b0dfc14f028bb8aa850d8a9d2",
+    "binding_changed_original_ids": [
+      3178,
+      3179,
+      3180,
+      3181,
+      3182,
+      3183,
+      3184,
+      3185,
+      3186,
+      3187,
+      3188,
+      3189,
+      3190,
+      3191,
+      3192,
+      3193,
+      3214,
+      3215,
+      3216,
+      3217,
+      3218,
+      3219,
+      3220,
+      3221,
+      3222,
+      3223,
+      3224,
+      3225,
+      3226,
+      3227,
+      3228,
+      3229,
+      3251,
+      3252,
+      3253,
+      3254,
+      3255,
+      3256,
+      3257,
+      3258,
+      3259,
+      3260,
+      3261,
+      3262,
+      3263,
+      3264,
+      3268,
+      3270,
+      3272,
+      3274,
+      3275,
+      3276,
+      3277,
+      3278,
+      3279,
+      3280,
+      3281,
+      3282,
+      3318,
+      3319,
+      3320,
+      3321,
+      3322,
+      3323,
+      3324,
+      3325,
+      3326,
+      3327,
+      3328,
+      3329,
+      3330,
+      3331,
+      3332,
+      3333,
+      3335,
+      3336,
+      3337,
+      3344,
+      3345,
+      3346,
+      3347,
+      3348,
+      3349,
+      3381,
+      3382,
+      3383,
+      3384,
+      3385,
+      3386,
+      3387,
+      3388,
+      3389,
+      3390,
+      3391,
+      3392,
+      3393,
+      3394,
+      3398,
+      3399,
+      3400,
+      3401,
+      3402,
+      3403,
+      3404,
+      3430,
+      3431,
+      3432,
+      3433,
+      3434,
+      3435,
+      3436,
+      3437,
+      3467,
+      8087,
+      8088,
+      8089,
+      8090,
+      8091,
+      8092,
+      8435,
+      8436,
+      8437,
+      8438,
+      8439,
+      8440,
+      8441,
+      8442,
+      8443,
+      8444,
+      8445,
+      8446,
+      8447,
+      8448,
+      8449,
+      8450,
+      8471,
+      8472,
+      8473,
+      8474,
+      8475,
+      8476,
+      8477,
+      8478,
+      8479,
+      8480,
+      8481,
+      8482,
+      8483,
+      8484,
+      8485,
+      8486,
+      8508,
+      8509,
+      8510,
+      8511,
+      8512,
+      8513,
+      8514,
+      8515,
+      8516,
+      8517,
+      8518,
+      8519,
+      8520,
+      8521,
+      8525,
+      8527,
+      8529,
+      8531,
+      8532,
+      8533,
+      8534,
+      8535,
+      8536,
+      8537,
+      8538,
+      8539,
+      8575,
+      8576,
+      8577,
+      8578,
+      8579,
+      8580,
+      8581,
+      8582,
+      8583,
+      8584,
+      8585,
+      8586,
+      8587,
+      8588,
+      8589,
+      8590,
+      8592,
+      8593,
+      8594,
+      8602,
+      8603,
+      8604,
+      8605,
+      8606,
+      8607,
+      8639,
+      8640,
+      8641,
+      8642,
+      8643,
+      8644,
+      8645,
+      8646,
+      8647,
+      8648,
+      8649,
+      8650,
+      8651,
+      8652,
+      8656,
+      8657,
+      8658,
+      8659,
+      8660,
+      8661,
+      8662,
+      8688,
+      8689,
+      8690,
+      8691,
+      8692,
+      8693,
+      8694,
+      8695,
+      8725,
+      8726,
+      9135,
+      9136,
+      9137,
+      9138,
+      9140,
+      9145
+    ],
+    "binding_outside_declared_domain_exact": true,
+    "source_vertices": 10582,
+    "triangles": 21160,
+    "bones": 51,
+    "maximum_influences": 4,
+    "actions": [
+      "Exercise_1512"
+    ],
+    "all_non_armature_modifiers_disabled": true,
+    "skinning": "dualQuaternion",
+    "morphs": [
+      "LocalStart",
+      "LocalEntry",
+      "LocalHold"
+    ],
+    "outside_corrective_domain_maximum_delta_m": 0.0,
+    "protected_posterior_waist_maximum_key_delta_m": 0,
+    "normal_reference": "morph-normal-reference.json.gz",
+    "scope": "Read-only source-bound invariants, no save; DQ adapter required and native Smooth/Multires disabled."
+  },
+  "actual_saved_weights": {
+    "source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+    "readback": "Actual saved/reopened Blender VertexGroupElement values, not solver arrays.",
+    "vertices": 10582,
+    "maximum_influences": 4,
+    "minimum_weight_sum": 0.9999998658895493,
+    "maximum_weight_sum": 1.0000001601874828,
+    "maximum_sum_error": 1.601874828338623e-07
+  },
+  "reused_geometry_components": {
+    "history_source_sha256": "cf0b838a9cc6c33368c8ef55f2bc93f6b6c0fe645baee444d2e9ed1f2bd8b2d7",
+    "history_motion_status": "User-rejected grasp; discarded completely. No visual approval inherited.",
+    "components": "Existing239-ID binding and three compact body POSITION keys reused byte-for-byte as technical inputs; no new fairing.",
+    "binding_sha256": "a6858a74126e15664bf2d7e57a26c924a00bf80b0dfc14f028bb8aa850d8a9d2",
+    "source_basis_binding_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+    "maximum_actual_weight_sum_error": 1.601874828338623e-07,
+    "maximum_actual_influences": 4,
+    "key_buffer_sha256": {
+      "LocalStart": "55f23a6ec98ddc8d3bdded56201aedd3537901cd163dd7fc296f2a99c3169fa8",
+      "LocalEntry": "6099053037c3410c1894f90d892adb5d7985668d9b6d1369e53ca9a5cc89ceeb",
+      "LocalHold": "5b474eea142af687554e0e98f660eb2181d922fabea17efb29b8fb3bc27bda3a"
+    }
+  },
+  "compact_keys": {
+    "report": "local-corrective-report.json",
+    "new_targets_added": false,
+    "outside_mask_delta_m": 0,
+    "protected_posterior_waist_delta_m": 0,
+    "actual_key_statistics": [
+      {
+        "name": "LocalStart",
+        "actual_source_key_statistics": {
+          "changed_vertices_over1e_minus8_m": 1478,
+          "maximum_rest_delta_m": 0.03273670794957355,
+          "p95_rest_delta_among_changed_m": 0.029132568444817708,
+          "maximum_evaluated_target_delta_m": 0.03273672837551726,
+          "p95_evaluated_target_delta_among_changed_m": 0.029132557012903845,
+          "maximum_outside_declared_mask_delta_m": 0.0,
+          "maximum_protected_posterior_waist_delta_m": 0.0,
+          "source_coordinate_bounds_of_changed_vertices": {
+            "min": [
+              -0.3065294623374939,
+              -0.11485493183135986,
+              0.3442493677139282
+            ],
+            "max": [
+              0.3068392872810364,
+              0.15468062460422516,
+              1.5321284532546997
+            ]
+          }
+        }
+      },
+      {
+        "name": "LocalEntry",
+        "actual_source_key_statistics": {
+          "changed_vertices_over1e_minus8_m": 1478,
+          "maximum_rest_delta_m": 0.035145662534550204,
+          "p95_rest_delta_among_changed_m": 0.029137387381012892,
+          "maximum_evaluated_target_delta_m": 0.03514565208882605,
+          "p95_evaluated_target_delta_among_changed_m": 0.029137400617391212,
+          "maximum_outside_declared_mask_delta_m": 0.0,
+          "maximum_protected_posterior_waist_delta_m": 0.0,
+          "source_coordinate_bounds_of_changed_vertices": {
+            "min": [
+              -0.3065294623374939,
+              -0.11485493183135986,
+              0.3442493677139282
+            ],
+            "max": [
+              0.3068392872810364,
+              0.15468062460422516,
+              1.5321284532546997
+            ]
+          }
+        }
+      },
+      {
+        "name": "LocalHold",
+        "actual_source_key_statistics": {
+          "changed_vertices_over1e_minus8_m": 1478,
+          "maximum_rest_delta_m": 0.03631688066466501,
+          "p95_rest_delta_among_changed_m": 0.02956011414998736,
+          "maximum_evaluated_target_delta_m": 0.03631687575263923,
+          "p95_evaluated_target_delta_among_changed_m": 0.02956014886890323,
+          "maximum_outside_declared_mask_delta_m": 0.0,
+          "maximum_protected_posterior_waist_delta_m": 0.0,
+          "source_coordinate_bounds_of_changed_vertices": {
+            "min": [
+              -0.3065294623374939,
+              -0.11485493183135986,
+              0.3442493677139282
+            ],
+            "max": [
+              0.3068392872810364,
+              0.15468062460422516,
+              1.5321284532546997
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "verification": {
+    "native_full151": {
+      "pass": true,
+      "minimum_floor_z": -3.022700548171997e-05,
+      "loop_skin_error_m": 0.0,
+      "minimum_triangle_area_m2": 5.893528386206995e-08
+    },
+    "native_grasp": {
+      "maximum_recorded_local_penetration_m": 0,
+      "held_minimum_part_clearance_m": 0.0005719063738069963,
+      "held_palm_minimum_clearance_m": 0.0028155676277492603,
+      "held_foot_local_hand_matrix_maximum_error": 4.76837158203125e-07,
+      "active_airborne_wrist_deviation_max_degrees": 17.84593021624036,
+      "reach_comparison": {
+        "same_fixed_foot_local_grasp_old_pose_target_wrist_distance_m": 0.548179830390321,
+        "repaired_pose_actual_wrist_distance_m": 0.523525357156917,
+        "unchanged_upper_plus_forearm_length_m": 0.529140293598175,
+        "reach_improvement_m": 0.024654473233404084,
+        "old_target_overreach_m": 0.019039536792145983,
+        "new_reach_margin_m": 0.0056149364412581,
+        "authored_change": "Final thigh115versus110degrees, shin155versus150degrees; knee flexion stays130degrees, torso/support unchanged."
+      }
+    },
+    "native_limb_integrity": {
+      "maximum_bone_scale_deviation": 1.1920928955078125e-06,
+      "maximum_bone_length_error_m": 2.682209014892578e-07,
+      "maximum_connected_chain_gap_m": 3.40125328615705e-07
+    },
+    "decoded_full151": {
+      "pass": true,
+      "frames": 151,
+      "minimum_triangle_area_m2": 5.895908085078573e-08,
+      "maximum_joint_error_m": 9.429294181731601e-07,
+      "minimum_floor_z": -2.9705693655207588e-05
+    },
+    "decoded_arm_leg_triangles": {
+      "pass": true,
+      "frames": 151,
+      "domain_triangle_counts": {
+        "LeftArm": 2518,
+        "RightArm": 2519,
+        "LeftLeg": 3458,
+        "RightLeg": 3458
+      },
+      "triangle_crossing_count": 0,
+      "limits": "Discrete151frame surface crossing check; no continuous-time or fully-enclosed-volume certification. Positive-clearance/nearest-normal penetration diagnostics remain separate."
+    },
+    "export": {
+      "ok": true,
+      "bytes": 1172844,
+      "maximum_full_dq_vertex_error_m": 2.0969293280804236e-05,
+      "maximum_joint_error_m": 8.237817234681144e-07,
+      "maximum_surface_error_m": 1.4629666762408428e-06,
+      "maximum_basis_normal_vector_error": 8.187660755892303e-05,
+      "maximum_target_normal_vector_errors": [
+        8.187660755892303e-05,
+        8.447662658670609e-05,
+        8.187660755892303e-05
+      ],
+      "loop_skin_error_m": 3.5372075795867926e-07
+    },
+    "mandatory_game_qa": {
+      "pass": true,
+      "frames": [
+        0,
+        25,
+        40,
+        75,
+        115
+      ],
+      "errors": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "render_action_readback": "early-render-readback.json; native bones and full skin before/after each staged render are identical.",
+    "neutral_wire": "Two actual native start/hold wire inspections; limb-integrity-report.json records no underlying surface change."
+  },
+  "retained_warnings": {
+    "locations": [
+      {
+        "frame": 0,
+        "pairs": 0,
+        "original_ids": []
+      },
+      {
+        "frame": 25,
+        "pairs": 0,
+        "original_ids": []
+      },
+      {
+        "frame": 40,
+        "pairs": 2,
+        "original_ids": [
+          [
+            5950,
+            5961,
+            5962,
+            6188,
+            6208,
+            6222
+          ],
+          [
+            5633,
+            5635,
+            5909,
+            9942,
+            9943,
+            9951
+          ]
+        ]
+      },
+      {
+        "frame": 75,
+        "pairs": 2,
+        "original_ids": [
+          [
+            5950,
+            5961,
+            5962,
+            6188,
+            6208,
+            6222
+          ],
+          [
+            5633,
+            5635,
+            5909,
+            9942,
+            9943,
+            9951
+          ]
+        ]
+      },
+      {
+        "frame": 115,
+        "pairs": 1,
+        "original_ids": [
+          [
+            5950,
+            5961,
+            5962,
+            6188,
+            6208,
+            6222
+          ]
+        ]
+      }
+    ],
+    "explanation": "One close folded left ankle skin pair at grasp/hold/release; an additional thumb/collar pair within the checker 1 mm coplanar-nearness threshold at grasp/hold. Full actual decoded triangle tests confirm zero arm/leg crossings. No topology deletion is appropriate for these continuous skin/contact surfaces."
+  },
+  "runtime_adapter": {
+    "path": "artifacts/exercise-batches/dual-quaternion.js",
+    "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "changed": false
+  },
+  "remaining_risks": [
+    "Primary-owned actual GPU, heat fields, camera-width integration and final user review remain pending.",
+    "Residual angular bent-knee silhouette of the preserved body remains visible; this repair addresses grasp kinematics.",
+    "Contact checks cover 151 discrete times; no continuous-time or fully enclosed-volume nonintersection certificate.",
+    "Static hand/foot companion cannot be a tight hold-only crop because full entry/return hand travel must remain in frame."
+  ],
+  "videos_or_runtime_frame_caches_generated": false
+}

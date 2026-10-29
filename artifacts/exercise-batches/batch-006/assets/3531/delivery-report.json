@@ -1,0 +1,62 @@
+{
+  "id": "3531",
+  "status": "author_native_export_physical_gates_passed; root_actual_GPU_and_integration_pending",
+  "source_sha256": "5588b98e6ce66b85d05f25cde916721bb8b6e925574330d5ab2e28627b1df4c5",
+  "glb_sha256": "f280164c36d439d97466382e4f79be65aecb62842111a4b2154ba9e03335064e",
+  "runtime_binding_sha256": "185b028576708385e433d9d296ddda84e24f879dfb34f895fbbf242cd835c8ec",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "source_invariants_pass": true,
+  "full151_native_pass": true,
+  "full151_decoded_physical_pass": true,
+  "game_qa_zero_errors": true,
+  "game_qa_warnings": [],
+  "metrics": {
+    "minimum_floor_z_m": 0.0009996502194553614,
+    "minimum_area_m2": 5.894062058335841e-08,
+    "native_loop_m": 0.0,
+    "decoded_loop_m": 2.5636927089222153e-07,
+    "maximum_full151_native_decoded_error_m": 2.640873505845768e-06,
+    "maximum_normal_vector_error": 8.187660755892303e-05,
+    "maximum_influences": 4,
+    "maximum_weight_sum_error": 4.470348358154297e-08
+  },
+  "remaining": [
+    "Root actual GPU acceptance, camera-width fit and shared heat integration."
+  ],
+  "bounded_disclosures": [
+    "Local nearest-normal arm/leg depth test within40mm with4mm tolerance; no global collision-free claim.",
+    "Local fist/palm depth proxy within25mm and4mm tolerance; original low-poly finger seams."
+  ],
+  "files_sha256": {
+    "README.md": "f2b8daa48592e1c2f839b6f4fe366d04958273262c3efae6975ded9a578749b0",
+    "asset-qa.json": "573dc110591e08d3cbc2ebeb49986ff4e90b07d32d878ce0141b06c44df351fa",
+    "authoring-context.json": "2d9a0ef04fbf83248a652fc5b85be0b4fb0609e9eadc7b75684c9900a8eb61db",
+    "authoring-family.json": "39ea32b2ad3c308ac4f04a1bbc349171dc333a89ec88fdebe2ece61a44d6f7ec",
+    "cameras.json": "6c05d6f4b772ef3c0af5f470424ecf130e71d1c6ac0dc4224b5423d2e060103e",
+    "clip.json": "fa15e9f3607a3af9c346e2fc976e89980ee7435442eea04a8289d6e811098352",
+    "curated-files.json": "22b0cb843e418fad758ed34f1eef11358318fa81156c74440e795407c69241e4",
+    "decoded-physical-report.json": "62d5af5ced49c5d2e8bdd26dcf9226e1a6a21bced8e20fcde88d4ed9098c69a4",
+    "decoded-source-readback.json": "5e12dfec455e6ef8ca4ac0530f7d65e5563d305133c729283c383f5f927a7ffb",
+    "dq-reference.json.gz": "9f46f3cec321c591c55540b31354b99b80fc6ccac55f29e0381d07e778813eef",
+    "environment.json": "b0137a3dc6caa615d8d7ecd94b96e7894e051f56b6cc3da12124c8e6203969c4",
+    "export-verification.json": "49ec4544a7f5ad7486efc163d5904bd00458e3d58ed19395a3c1aa0e0cc180a5",
+    "fist-close.png": "ddf3ec7709581bbafe37e1db4dd4d9c2aa18ba55bf817cddef0e8c7538b0c490",
+    "local-binding-report.json": "a74dc91974f7fb50bb3c8460450a0acb0bf05fe092e006ea32274b209bf45be2",
+    "mechanics-repair-history.json": "874333b6d565bce12e06e0cbb1085140b377a0eefe48484e593d3c64d3f4d04a",
+    "motion-witnesses.json": "ee69f111a0f7469623e340f2deff4efa8d39a60af2c509eecaf623f0e78a385e",
+    "motion.glb": "f280164c36d439d97466382e4f79be65aecb62842111a4b2154ba9e03335064e",
+    "neutral-guard-return.png": "7f094f146c83bd2ca6a034ef43a76d0d82a457b55f03ca220da796befd22a5aa",
+    "neutral-guard.png": "9112048c725f7e72f017046d83c00846ec5b38dcb97d4f474fa38e41e8e94c3b",
+    "neutral-left-punch.png": "8e7d5af86c22b7ea82cfd77cb22f72dbddbcabc072a7c6e7a21686e97443cc25",
+    "neutral-right-punch.png": "73fdc65bfb78d4ebfc2b8def188a29603f857becade65841d19ec4ab9c78b6a0",
+    "normal-reference.json.gz": "cb6f115e0929e912d9c2cef25e5c8e15bf4a4bae99ed7b8f84c2a1c1ec8d968f",
+    "pose-samples.json": "e29f345c9bf39d9d7005b1674bae14223dd13afe2a42ad4d96d8a550037a2ce7",
+    "proof-receipt.json": "6f8eb60f1deb2beb02453c95f8c38a1f154a927cbe8a973ede019309e3e34ffc",
+    "raw-asset-qa.json": "638a34e3834a9493afb1c05af9d86d934a28251e97ebab5cf626c3cdc05f8d09",
+    "runtime-surface-reference.json": "a38ae726f7be3ce4d7736ad42a99bda2362289efce0b773321655fc4013c3d26",
+    "source-verification.json": "5e12dfec455e6ef8ca4ac0530f7d65e5563d305133c729283c383f5f927a7ffb",
+    "source.blend": "5588b98e6ce66b85d05f25cde916721bb8b6e925574330d5ab2e28627b1df4c5",
+    "surface-contact-report.json": "d3b1d4c646537c984c1223d3a7e0542466145d14c125abb6d25c19b0a745a919",
+    "surface-landmarks.json": "09fb87a821c05ee5037342159e0a44d66421906bd34955d3f0715acfaae1d79f"
+  }
+}

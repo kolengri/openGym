@@ -3,7 +3,7 @@ import {homedir} from 'node:os';
 import {chromium} from '../first-exercise-3d/runtime/node_modules/playwright-core/index.mjs';
 
 const batch = process.argv[2];
-if (!['002', '003', '004', '005'].includes(batch)) throw Error('Pass batch 002, 003, 004 or 005');
+if (!['002', '003', '004', '005', '006'].includes(batch)) throw Error('Pass batch 002, 003, 004, 005 or 006');
 const root = new URL(`./batch-${batch}/`, import.meta.url);
 const config = JSON.parse((await readFile(new URL('viewer.html', root), 'utf8')).match(/<script id="heat-data" type="application\/json">(.*?)<\/script>/s)[1]);
 const browser = await chromium.launch({headless: true,

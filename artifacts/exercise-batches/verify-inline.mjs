@@ -48,7 +48,7 @@ try {
  await page.screenshot({path: new URL('inline-settled.png', root).pathname});
  assert.equal(await page.locator('video').count(), 0); assert.deepEqual(media, []); assert.deepEqual(errors, []);
  assert.deepEqual([...received.keys()].sort(), Object.keys(manifest.models).sort()); await Promise.all(received.values());
- const report = {ok: true, scope: 'Actual URL-mode Three.js preview; pinned public model bytes verified and all five live actions selected.',
+ const report = {ok: true, scope: `Actual URL-mode Three.js preview; pinned public model bytes verified and all ${manifest.exercise_ids.length} live actions selected.`,
   model_revision: manifest.model_revision, models: manifest.models, actions,
   input_bytes: (await readFile(new URL('inline.html', root))).byteLength, mediaRequests: media,
   liveCanvasReplacesPoster: true, livePoseChanges: true, externalResources: [...new Set(urls)], errors};

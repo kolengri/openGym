@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "source_ids": [
+    "4826",
+    "3590",
+    "4001",
+    "5106"
+  ],
+  "source": {
+    "body": "artifacts/bodyweight-five/bodyweight-five.blend",
+    "body_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+  },
+  "5106": {
+    "source_facts": [
+      "Both legs start raised straight up.",
+      "Lower back presses into floor.",
+      "Alternate a ceilingward leg/toe reach."
+    ],
+    "authored_interpretation": "Both straight legs remain82\u201390degrees above horizontal; alternate restrained reach toward true vertical plus controlled ankle/toe extension. Pelvis does not lift, roll or scissor. Head supported; arms relaxed beside torso.",
+    "tradeoff": "Near vertical, a small hip-angle change gives little ankle-height travel; ankle/toe extension supplies most visible toe-tip rise. The source does not specify the joint mechanism or amplitudes. No ceiling prop/contact is invented.",
+    "root_disposition": "Accepted interpretation before dependent authoring."
+  },
+  "straight_leg_family": {
+    "source_compatible_ids": [
+      "4826",
+      "3590"
+    ],
+    "head_up_variant": "4001",
+    "loop": "One complete5second anti-phase left/right cycle; the loop begins at a raised mid-transfer, separate from the source floor setup. No claim that the animation starts with grounded heels.",
+    "authored_leg_range_degrees": [
+      4,
+      90
+    ],
+    "4001_noncontact": "Small positive low-leg angle and actual heel/toe skin clearance; the lowering foot must remain airborne.",
+    "hands": "Arms beside torso, relaxed palms near floor. Explicit for4826/3590; authored compatible neutral support for4001/5106."
+  },
+  "sharing": "Final one physical body/GLB with four accepted action identities.4826/3590 share exact all151 native/decoded skin;4001 changes cervical/head pose and safe same-field weight;5106 retains both legs near vertical with distinct toe reach. All use the same verified51bones and7compact POSITION/NORMAL fields.",
+  "proven_binding_reuse": "Initial candidate replays the accepted anatomical above-hip/posterior-waist repair and harmonic proximal-glute recipe on canonical Basis. New joint poses, support fields and schedules are authored independently; no bicycle pose/targets/schedule or old97 target field is reused.",
+  "support_profile_sha256": "1503f7ef2948eadcf3ffd9a8814ea0fe2daa002055479e2046d7dcd4b1aa0ef2",
+  "final_visual_status": "Root accepted final source cues and bounded cervical shape; remaining small attachment crease disclosed. Root owns final actual GPU integration and user approval."
+}

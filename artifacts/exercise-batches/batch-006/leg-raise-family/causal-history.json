@@ -1,0 +1,113 @@
+{
+  "scope": "Concise causal history; no pose/target grid is delivered or proposed for replay.",
+  "source_profile": "Original45 was frozen in prior source work; seven vertices above neutralSpine1head are diagnostic, lower38 use the source-only bilateral posterior envelope. The19 central IDs include a1.6\u201318.94mm rest groove, so demanding raw19<=2mm would deform source anatomy. Actual raw45 and rejectedflat19 are retained in every native/decoded report.",
+  "upper_contact_pose": {
+    "receipt": "upper-pose-receipt.json",
+    "selected_pose": "pose-parameters.json",
+    "reason": "Initial bicycle-like spine/chest/cervical staging left an upper-back floor violation and a floating flat head; one contact pose solve and natural arm/wrist placement fixed contacts.",
+    "remaining_issue": "The resulting neck attachment had a pronounced crease; root held export."
+  },
+  "one_coupled_cervical_solve": {
+    "optimizer_success": false,
+    "message": "Iteration limit reached",
+    "candidate_integrated": false,
+    "initial_actual_chain_deviation_degrees": [
+      -43.111591585329435,
+      31.380743348772036
+    ],
+    "candidate_actual_chain_deviation_degrees": [
+      -34.3195357326585,
+      27.008208453814962
+    ],
+    "interpretation": "One coupled pelvis/Spine/chest/neck/root solve reduced deviation but did not remove the crease. Iteration limit is not a proof of global non-neutral-pose infeasibility."
+  },
+  "analytic_exact_neutral_obstacle": {
+    "source_chest_id": 3303,
+    "source_chest_weights": {
+      "Spine1": 1.0
+    },
+    "source_occiput_id": 8040,
+    "source_occiput_weights": {
+      "Head": 1.0
+    },
+    "source_depth_gap_m": 0.05863356590270996,
+    "neutral_pose_floor_min_m": -0.021103262901306152,
+    "neutral_pose_head_min_m": 0.03753030300140381,
+    "interpretation": "With face-up skull and exact-rest cervical chain, upper-back/occiput skin depths differ58.63mm. Root translation cannot make both contact. No58mm warp or prop was used.",
+    "source_chest_rest_m": [
+      -0.11216342449188232,
+      0.15468062460422516,
+      1.356069803237915
+    ],
+    "source_occiput_rest_m": [
+      8.310278644785285e-05,
+      0.09604708850383759,
+      1.7116749286651611
+    ],
+    "world_chest_neck_head_degrees": [
+      -90,
+      -90,
+      -90
+    ]
+  },
+  "one_compact_cervical_field": {
+    "method": "One screened biharmonic fairing of native posed posterior cervical surface, source-anatomy C2 collar, global8mm cap; inverse blended DQ rotation gives one sparse source-space additive shape key. No pose/binding/floor support target changes.",
+    "uncapped_fairing_max_m": 0.022398656161982857,
+    "selected_max_m": 0.008,
+    "flat_head_weight": 1.0,
+    "root_visual_disposition": "Accepted with remaining small contour crease disclosed; no further shape work."
+  },
+  "rejected_head_up_full_weight": {
+    "weight": 1.0,
+    "flipped_triangle_count": 8,
+    "first_limiting_triangle_ids": [
+      2388,
+      3121,
+      3126
+    ],
+    "normal_dot_min": -0.9658954881770253,
+    "why": "Head-up cervical rotation maps the same field differently; fullweight flips8 triangles. It is not the delivered schedule.",
+    "analytic_first_positive_orientation_root": 0.7772886547671148,
+    "delivered_same_field_weight": 0.6218309238136919,
+    "delivered_all151_normal_dot_min": 0.8181002922314745
+  },
+  "rejected_upper_back_reference": {
+    "reason": "Export verifier erroneously applied2mm floor support to diagnostic3303, whose accepted frozen pose was4.987mm. Geometry and original lumbar/pelvic/head criteria were untouched.",
+    "retained_raw3303": true,
+    "actual_original_protected_upperback_floor_ids": [
+      3311,
+      8568
+    ],
+    "new_geometry_or_target_changes": false,
+    "static_bindings": {
+      "3311": {
+        "Spine": 0.09389153122901917,
+        "Spine1": 0.9061084389686584
+      },
+      "8568": {
+        "Spine": 0.09746485948562622,
+        "Spine1": 0.9025351405143738
+      }
+    },
+    "all151_native_anchor_skin_drift_m": 0.0,
+    "support_profile_or_pelvic_masks_changed": false,
+    "rejected_mislabeled_reference": {
+      "patch": "upper_back_anchor",
+      "source_ids": [
+        3303
+      ],
+      "state": "supported",
+      "erroneous_threshold_m": 0.002,
+      "actual_native_minimum_m": 0.004986763000488281,
+      "failed_assertion": "AssertionError [ERR_ASSERTION]: decoded support upper_back_anchor frame0",
+      "why_rejected": "The new verifier mislabeled a preserved5mm diagnostic point as a2mm support anchor; the original lumbar/pelvic criteria never included that point."
+    }
+  },
+  "proof_layers": {
+    "current_flat_cervical_proofs": "cervical-4826-*.png",
+    "current_head_up_proof": "cervical-4001-safe-start-oblique.png",
+    "5106_source_cue_proofs": "settled-5106-*.png are the accepted frozen leg/support staging before the final compact cervical field; final exported geometry/normal transport is separately verified all151 and reviewed in root GPU integration.",
+    "inherited_action_proofs": "No inherited action is used: canonical bootstrap removes all actions; saved51-bone and morph151 readback plus per-render native surface readback are authoritative. Old batch005 inherited-action failures are not reused as evidence."
+  },
+  "no_unaccepted_rejected_candidate_geometry_in_final_source": true
+}

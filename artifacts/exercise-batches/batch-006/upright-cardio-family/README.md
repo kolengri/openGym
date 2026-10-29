@@ -1,0 +1,9 @@
+# Upright cardiovascular demonstrations
+
+Two separate five-second actions share the original CC0 Blender Studio body and51-bone rest skeleton. No new geometry, UVs, rest changes, morphs or runtime vertex caches. `binding.py` applies a declared C1 proximal-thigh-to-torso partition and distal plantar shin-removal field, preserving Foot/ToeBase articulation; stable group-name installation is followed by actual normalized<=4 readback.
+
+`motion.py` supplies continuous alternating one-foot hop ground/flight phases and a separate fixed staggered-stance punch action. Hops have articulated knees, ankle/toe roll and opposing arms; the four-hop timing is a slowed demonstration. Punch fists use source hand-local palmar flexion and an exterior opposed thumb. Arms/forearms/hands transport through the original connected hierarchy. No muscle activation measurement is claimed.
+
+Run Blender5.2.3 offline, factory startup,2threads: `build.py -- <id>` makes early native proofs; `export_motion.py -- <id>` freezes the editable review camera and exports one action; `verify_native.py -- <id> --game-qa` writes native references/checks. Run `node verify_export.mjs <id>` against the exact shared optional DQ adapter, then `verify_native.py -- <id> --decoded <temporary-exchange-path>` for actual decoded151 physical checks and full151 native parity. The temporary local binary is deleted by that check and is never shipped or read at runtime. `write_delivery.py` only updates metadata/curation.
+
+The export verifier resets its one-shot mixer action before each arbitrary-time read; otherwise a prior end-of-clip read pauses subsequent backwards reads and falsely reports large joint errors. Model bytes were unaffected by that diagnostic correction. Basis NORMAL is checked in every exported UV split; the exact shared DQ adapter handles runtime rotation. Actual GPU appearance and final camera-width/heat integration remain root-owned.

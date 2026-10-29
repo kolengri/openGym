@@ -1,0 +1,4285 @@
+{
+  "ok": true,
+  "id": "4826",
+  "source_sha256": "7f723baf6bb99a2e2af7f28641bcf36490a9b1c4450359f14cd852b3f99e5dc7",
+  "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea",
+  "bytes": 1215372,
+  "animations": [
+    "Exercise_3590",
+    "Exercise_4001",
+    "Exercise_4826",
+    "Exercise_5106"
+  ],
+  "action": "Exercise_4826",
+  "duration_seconds": 5,
+  "bones": 51,
+  "original_vertex_ids": 10582,
+  "triangles": 21160,
+  "morph_position_targets": [
+    "SupportRaiseNeutral",
+    "SupportRaiseLeft",
+    "SupportRaiseRight",
+    "SupportToeNeutral",
+    "SupportToeLeft",
+    "SupportToeRight",
+    "CervicalAttachment"
+  ],
+  "morph_normal_targets": [
+    "SupportRaiseNeutral",
+    "SupportRaiseLeft",
+    "SupportRaiseRight",
+    "SupportToeNeutral",
+    "SupportToeLeft",
+    "SupportToeRight",
+    "CervicalAttachment"
+  ],
+  "maximum_basis_normal_vector_error": 0.00008187660755892303,
+  "maximum_target_normal_vector_errors": {
+    "SupportRaiseNeutral": 0.00008187660755892303,
+    "SupportRaiseLeft": 0.00008187660755892303,
+    "SupportRaiseRight": 0.00008187660755892303,
+    "SupportToeNeutral": 0.00008187660755892303,
+    "SupportToeLeft": 0.00008187660755892303,
+    "SupportToeRight": 0.00008187660755892303,
+    "CervicalAttachment": 0.00008187660755892303
+  },
+  "maximum_full_dq_vertex_error_m": 0.0000011080580199060624,
+  "maximum_all151_joint_error_m": 8.729253975078536e-7,
+  "maximum_joint_error_m": 7.136949620835982e-7,
+  "maximum_surface_patch_error_m": 9.00788009978008e-7,
+  "maximum_morph_weight_error": 2.65922809661312e-7,
+  "loop_skin_error_m": 1.3998151187132656e-7,
+  "native_mechanical_clearance_m": 0.08890867233276367,
+  "decoded_mechanical_clearance_lower_bound_m": 0.08890645621672386,
+  "samples": [
+    {
+      "frame": 0,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00025013131015982903,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00024998181476909576,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017499556822090923,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499349097208905,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.3803643109001e-7
+    },
+    {
+      "frame": 1,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00016886411399030798,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00025957736337878234,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016970454205313956,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749832686416375,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915858077726,
+      "ridge_max_m": 0.001750043957133962,
+      "joint_error_m": 5.704800781093007e-7
+    },
+    {
+      "frame": 2,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00008758062190050708,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002741250744286994,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016486801211734736,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326671643305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 4.953049926964018e-7
+    },
+    {
+      "frame": 3,
+      "maximum_full_native_vertex_error_m": 8.790769356729827e-7,
+      "floor_min_z_m": -0.0000064154694731644035,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00029352905336421653,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016049498178410948,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326928336305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091408858,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 6.375282912010988e-7
+    },
+    {
+      "frame": 4,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00007449328603020833,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00031764174441162307,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015658685743987766,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326671643305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.533389360883608e-7
+    },
+    {
+      "frame": 5,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.000155009827959407,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0003463055284153027,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.00153148011562948,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326671643305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 4.910600804439978e-7
+    },
+    {
+      "frame": 6,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00023499717308073098,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00037934466855671367,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015017628969625219,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 4.781232984864583e-7
+    },
+    {
+      "frame": 7,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0003143152690364692,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00041645708962356753,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014766477461803373,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.522865592338971e-7
+    },
+    {
+      "frame": 8,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0003928266861436547,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0004574571199742472,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014560622646523913,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.754943604881167e-7
+    },
+    {
+      "frame": 9,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00047039256048331257,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0005020048554930101,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014398929253544024,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.978517200214829e-7
+    },
+    {
+      "frame": 10,
+      "maximum_full_native_vertex_error_m": 9.562469173563587e-7,
+      "floor_min_z_m": 0.0005468758597714785,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.000549839717623235,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001427952168047364,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056685303,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558075563,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 6.404390843407122e-7
+    },
+    {
+      "frame": 11,
+      "maximum_full_native_vertex_error_m": 9.909129101814037e-7,
+      "floor_min_z_m": 0.0006005926268396466,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006005926268396466,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014201401098860034,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 5.587177198480845e-7
+    },
+    {
+      "frame": 12,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0006539201227828695,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006539201227828695,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001416218414375836,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.067366466995555e-7
+    },
+    {
+      "frame": 13,
+      "maximum_full_native_vertex_error_m": 8.91898633651889e-7,
+      "floor_min_z_m": 0.0006596206561614859,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0007094730792938098,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014159547173444587,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.089405357380801e-7
+    },
+    {
+      "frame": 14,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0006429049045861834,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0007668767096924434,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014190956738451832,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 4.886787330777049e-7
+    },
+    {
+      "frame": 15,
+      "maximum_full_native_vertex_error_m": 8.753585812011072e-7,
+      "floor_min_z_m": 0.0005741024856424914,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00082569864899118,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001425403402078862,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.030356789325959e-7
+    },
+    {
+      "frame": 16,
+      "maximum_full_native_vertex_error_m": 9.448313656391116e-7,
+      "floor_min_z_m": 0.0005073629007499303,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008856182307485083,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001434583161879499,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056684748,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 7.502405066343069e-7
+    },
+    {
+      "frame": 17,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.000442802804474951,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0009461772480372499,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001446316066862463,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.17520170299028e-7
+    },
+    {
+      "frame": 18,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00038053617079891744,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0010069805159060863,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014602979677285632,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.809634639252201e-7
+    },
+    {
+      "frame": 19,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0003206719941946101,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001067650905674511,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014762315819509264,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056685303,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558075563,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 4.1060839124402245e-7
+    },
+    {
+      "frame": 20,
+      "maximum_full_native_vertex_error_m": 9.625838884459454e-7,
+      "floor_min_z_m": 0.0002633151165869485,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0011278123107469895,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014937710504110413,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056685303,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558075563,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 5.37274181277836e-7
+    },
+    {
+      "frame": 21,
+      "maximum_full_native_vertex_error_m": 8.963965332010474e-7,
+      "floor_min_z_m": 0.0002085661308175446,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0011870006382267428,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001512591625140891,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.951607867735327e-7
+    },
+    {
+      "frame": 22,
+      "maximum_full_native_vertex_error_m": 9.258413194190056e-7,
+      "floor_min_z_m": 0.00015652147433398156,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0012449353787796769,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015323599700108326,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056685303,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 5.893474236784247e-7
+    },
+    {
+      "frame": 23,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00010727185135772643,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013011784768445223,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015527681218734934,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326671643305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.964412369103496e-7
+    },
+    {
+      "frame": 24,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.000060904327186639406,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013554113309992566,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015734616688993786,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.186879749056152e-7
+    },
+    {
+      "frame": 25,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00001749984508103708,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014072801482414299,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015941777362947218,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326928336305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091408858,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.235111582593355e-7
+    },
+    {
+      "frame": 26,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0000228654260274741,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014564502025246062,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016145714727561211,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498545001150625,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.00175009153914088,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 6.203369921724331e-7
+    },
+    {
+      "frame": 27,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00006012059186266683,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015026571687231094,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016343790044069384,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498789558209674,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.00175009153914088,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 4.368903424047674e-7
+    },
+    {
+      "frame": 28,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00009420018125028129,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015455898447405136,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016533320129367146,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749895831471511,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091408858,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.645456546722803e-7
+    },
+    {
+      "frame": 29,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00012504463211393535,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015850052645521862,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016711321459090267,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498958475671358,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632473999,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 6.04197438256776e-7
+    },
+    {
+      "frame": 30,
+      "maximum_full_native_vertex_error_m": 9.005725872023655e-7,
+      "floor_min_z_m": -0.00015259988220317489,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001620680631323812,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016875999475464698,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498957509934424,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914924742095,
+      "ridge_max_m": 0.0017500439519048117,
+      "joint_error_m": 7.136949620835982e-7
+    },
+    {
+      "frame": 31,
+      "maximum_full_native_vertex_error_m": 9.068381854742221e-7,
+      "floor_min_z_m": -0.0001768171541427499,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0016523150330909342,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017024924136673225,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498958556150315,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916441406666,
+      "ridge_max_m": 0.0017500439604020146,
+      "joint_error_m": 5.291018404841296e-7
+    },
+    {
+      "frame": 32,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00019765453954145862,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0016798174840939595,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017156176872668016,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749895738921932,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914749746521,
+      "ridge_max_m": 0.0017500439509242627,
+      "joint_error_m": 5.694678609586615e-7
+    },
+    {
+      "frame": 33,
+      "maximum_full_native_vertex_error_m": 8.870042908972173e-7,
+      "floor_min_z_m": -0.00021507491065997364,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017029915686562758,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001726830860056372,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499086605839986,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632473999,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 5.967469544990983e-7
+    },
+    {
+      "frame": 34,
+      "maximum_full_native_vertex_error_m": 0.0000010997618253690107,
+      "floor_min_z_m": -0.00022904832284798005,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017216899828945698,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017359467722196653,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499207725954757,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914895576536,
+      "ridge_max_m": 0.0017500439517413868,
+      "joint_error_m": 7.854838729120897e-7
+    },
+    {
+      "frame": 35,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0002395497525811141,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017357940563687002,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017428968469494488,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749925293860255,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914983077653,
+      "ridge_max_m": 0.0017500439522316613,
+      "joint_error_m": 7.139151964035501e-7
+    },
+    {
+      "frame": 36,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00024656086982233205,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017452775479900318,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017475886524237483,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499354396189604,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915617450208,
+      "ridge_max_m": 0.0017500439557859293,
+      "joint_error_m": 6.520948154915935e-7
+    },
+    {
+      "frame": 37,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00025006945794303626,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017500085689322598,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017499245653517237,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499831258071669,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091651933544,
+      "ridge_max_m": 0.001750079161405127,
+      "joint_error_m": 5.466544150112921e-7
+    },
+    {
+      "frame": 38,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00025006945794303626,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017500085689322598,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017499245653517237,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499831258071669,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091651933544,
+      "ridge_max_m": 0.001750079161405127,
+      "joint_error_m": 5.466544150112921e-7
+    },
+    {
+      "frame": 39,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00024656086982233205,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017452775479900318,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017475886524237483,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499354396189604,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915617450208,
+      "ridge_max_m": 0.0017500439557859293,
+      "joint_error_m": 6.520948154915935e-7
+    },
+    {
+      "frame": 40,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0002395497525811141,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017357940563687002,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017428968469494488,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749925293860255,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914983077653,
+      "ridge_max_m": 0.0017500439522316613,
+      "joint_error_m": 7.139151964035501e-7
+    },
+    {
+      "frame": 41,
+      "maximum_full_native_vertex_error_m": 0.0000010997618253690107,
+      "floor_min_z_m": -0.00022904832284798005,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017216899828945698,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017359467722196653,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499207725954757,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914895576536,
+      "ridge_max_m": 0.0017500439517413868,
+      "joint_error_m": 7.854838729120897e-7
+    },
+    {
+      "frame": 42,
+      "maximum_full_native_vertex_error_m": 8.870042908972173e-7,
+      "floor_min_z_m": -0.00021507491065997364,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017029915686562758,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001726830860056372,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499086605839986,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632473999,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 5.967469544990983e-7
+    },
+    {
+      "frame": 43,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00019765453954145862,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0016798174840939595,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017156176872668016,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749895738921932,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914749746521,
+      "ridge_max_m": 0.0017500439509242627,
+      "joint_error_m": 5.694678609586615e-7
+    },
+    {
+      "frame": 44,
+      "maximum_full_native_vertex_error_m": 9.068381854742221e-7,
+      "floor_min_z_m": -0.0001768171541427499,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0016523150330909342,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017024924136673225,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498958556150315,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916441406666,
+      "ridge_max_m": 0.0017500439604020146,
+      "joint_error_m": 5.291018404841296e-7
+    },
+    {
+      "frame": 45,
+      "maximum_full_native_vertex_error_m": 9.005725872023655e-7,
+      "floor_min_z_m": -0.00015259988220317489,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001620680631323812,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016875999475464698,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498957509934424,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914924742095,
+      "ridge_max_m": 0.0017500439519048117,
+      "joint_error_m": 7.136949620835982e-7
+    },
+    {
+      "frame": 46,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00012504457970430316,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015850049637117225,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016711322496042458,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498958475671358,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632474221,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 6.077683926073628e-7
+    },
+    {
+      "frame": 47,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00009420023679007627,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015455900554888213,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016533212716977053,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498958314715665,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091408858,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.634361327365586e-7
+    },
+    {
+      "frame": 48,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00006012059186288887,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015026571687231094,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016343790044067164,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498789558209674,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.00175009153914088,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 4.3689033224255003e-7
+    },
+    {
+      "frame": 49,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0000228654260274741,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014564502025244952,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016145714727561211,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498545001150625,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.00175009153914088,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 6.203369949731774e-7
+    },
+    {
+      "frame": 50,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00001749992088262431,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014072798411709497,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015941712017858989,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326928336305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091408858,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.337857954237534e-7
+    },
+    {
+      "frame": 51,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00006090424851379339,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013554125619092972,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015734733340952434,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.389045549974449e-7
+    },
+    {
+      "frame": 52,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00010727185135772643,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013011784768446333,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015527681218733824,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326671643305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.964412257401747e-7
+    },
+    {
+      "frame": 53,
+      "maximum_full_native_vertex_error_m": 9.258413194190056e-7,
+      "floor_min_z_m": 0.00015652147433398156,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0012449353787795658,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015323599700109436,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056685303,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 5.893474341644836e-7
+    },
+    {
+      "frame": 54,
+      "maximum_full_native_vertex_error_m": 9.071108339169496e-7,
+      "floor_min_z_m": 0.00020856622774889644,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0011870010481974669,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015125918727617593,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990638,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.69407891765793e-7
+    },
+    {
+      "frame": 55,
+      "maximum_full_native_vertex_error_m": 0.0000010471042500046795,
+      "floor_min_z_m": 0.0002633150171338361,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001127789042710603,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014937763787160607,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056684748,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 5.218532445131159e-7
+    },
+    {
+      "frame": 56,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0003206719941946101,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001067650905674511,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014762315819508154,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056685303,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558075563,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 4.1060838798649636e-7
+    },
+    {
+      "frame": 57,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00038053617079891744,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0010069805159059753,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014602979677286743,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.809634425660134e-7
+    },
+    {
+      "frame": 58,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0004428029196434924,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0009461513161882484,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001446319413498376,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543297082,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691413183,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.471890080037755e-7
+    },
+    {
+      "frame": 59,
+      "maximum_full_native_vertex_error_m": 9.274509270045012e-7,
+      "floor_min_z_m": 0.0005073627834888406,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008855977029902373,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014345829619162864,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056684748,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 7.200983345145508e-7
+    },
+    {
+      "frame": 60,
+      "maximum_full_native_vertex_error_m": 8.753585812011072e-7,
+      "floor_min_z_m": 0.0005741024856424914,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00082569864899118,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001425403402078862,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.030356789325959e-7
+    },
+    {
+      "frame": 61,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0006429049678369214,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0007668747920275276,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014190957130595927,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 4.977625493410742e-7
+    },
+    {
+      "frame": 62,
+      "maximum_full_native_vertex_error_m": 8.994059053590137e-7,
+      "floor_min_z_m": 0.0006596206548634131,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.000709497267815995,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014159521757182714,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799989528,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624739932,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.752457017866707e-7
+    },
+    {
+      "frame": 63,
+      "maximum_full_native_vertex_error_m": 8.819927976444155e-7,
+      "floor_min_z_m": 0.0006539327355570279,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006539327355570279,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014162114717931051,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.683513965981694e-7
+    },
+    {
+      "frame": 64,
+      "maximum_full_native_vertex_error_m": 9.817626637178507e-7,
+      "floor_min_z_m": 0.0006005823379550135,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006005823379550135,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014201469862436533,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326543295972,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.411233145375025e-7
+    },
+    {
+      "frame": 65,
+      "maximum_full_native_vertex_error_m": 9.623202332284252e-7,
+      "floor_min_z_m": 0.0005468757301296256,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00054982840984108,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014279472477753963,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498327056683638,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558071122,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 5.865881597373203e-7
+    },
+    {
+      "frame": 66,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0004703928933642021,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0005020088983849202,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014398849138113068,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990638,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.608228776356278e-7
+    },
+    {
+      "frame": 67,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00039282654709565934,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0004574527682615903,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014560618758917565,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.983906511890898e-7
+    },
+    {
+      "frame": 68,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0003143152187486953,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00041645703499426645,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014766478198939836,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799990083,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.633516450632131e-7
+    },
+    {
+      "frame": 69,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00023499651502645325,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0003793221867106622,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015017629899835017,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326799989528,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624739932,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.084068376905779e-7
+    },
+    {
+      "frame": 70,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00015501001845591444,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00034632486097396775,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001531486257434822,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326671643305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.389079576901837e-7
+    },
+    {
+      "frame": 71,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00007449304136708523,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00031764449539062323,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015658551900336048,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017498326671643305,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158079888,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 6.206766535941931e-7
+    },
+    {
+      "frame": 72,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.000006415562899486638,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00029352295994744537,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016049480579811704,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749832692833575,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091406638,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.718344817718956e-7
+    },
+    {
+      "frame": 73,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00008758057220353832,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002741232613451272,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016486796725332376,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749832667164386,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158077668,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.193075534383759e-7
+    },
+    {
+      "frame": 74,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0001688643122199074,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002595666992336598,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016970401252728862,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749832686416375,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915858075505,
+      "ridge_max_m": 0.001750043957133962,
+      "joint_error_m": 5.9174322580514e-7
+    },
+    {
+      "frame": 75,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00025013131015982903,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00024998181476909576,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017499556822090923,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499349097208905,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.3803643109001e-7
+    },
+    {
+      "frame": 76,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00016725206340173493,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002600688514853289,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001696566551309009,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017487198661365055,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915858075505,
+      "ridge_max_m": 0.001750043957133962,
+      "joint_error_m": 5.9174322580514e-7
+    },
+    {
+      "frame": 77,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0000843760938496474,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002746470361926212,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001648209477014495,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749930608891996,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158077668,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.193075534383759e-7
+    },
+    {
+      "frame": 78,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00000165847828703658,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002936713383354661,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016048755920596847,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499306420480296,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091406638,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.718344817718956e-7
+    },
+    {
+      "frame": 79,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00008074353037379467,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00031703228644758275,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015665636450333809,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749062069162359,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158079888,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 6.206766535941931e-7
+    },
+    {
+      "frame": 80,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00016267806771358417,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00034469810331505535,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015332282393096808,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001748950617475424,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.389079576901837e-7
+    },
+    {
+      "frame": 81,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00024398872835762475,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00037647273706936657,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015047456890455724,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488754716578556,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624739932,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.084068376905779e-7
+    },
+    {
+      "frame": 82,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00032452210138450566,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00041220259267421566,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014810528143770485,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001748832742798516,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.633516450632131e-7
+    },
+    {
+      "frame": 83,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0004041255051572268,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0004516943866675893,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014619875207242394,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488182733336397,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.983906511890898e-7
+    },
+    {
+      "frame": 84,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0004826490048039367,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0004947152842411651,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014473619243113856,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001748828250283073,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.608228776356278e-7
+    },
+    {
+      "frame": 85,
+      "maximum_full_native_vertex_error_m": 9.776631509890672e-7,
+      "floor_min_z_m": 0.0005409853396328712,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0005409853396328712,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014369891079321073,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001748858483305686,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558071122,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 5.865881597373203e-7
+    },
+    {
+      "frame": 86,
+      "maximum_full_native_vertex_error_m": 9.686106405963857e-7,
+      "floor_min_z_m": 0.0005902946333068426,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0005902946333068426,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014306480230952268,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017489060573221069,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.411233147603661e-7
+    },
+    {
+      "frame": 87,
+      "maximum_full_native_vertex_error_m": 8.985386564717134e-7,
+      "floor_min_z_m": 0.0006422650894555848,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006422650894555848,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014281057412451892,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017489664349808684,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.683513965981694e-7
+    },
+    {
+      "frame": 88,
+      "maximum_full_native_vertex_error_m": 8.961791220964407e-7,
+      "floor_min_z_m": 0.0006761402046339682,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006966068034973127,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001429081032843671,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749037030406124,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624739932,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.752457017866707e-7
+    },
+    {
+      "frame": 89,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0006428881073328729,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0007529468808157302,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014332719055419885,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017491139642834205,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 4.977625493410742e-7
+    },
+    {
+      "frame": 90,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0005740857924828036,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008109512044525147,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001440406796103133,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017491952706590527,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.030356789325959e-7
+    },
+    {
+      "frame": 91,
+      "maximum_full_native_vertex_error_m": 8.89626273252861e-7,
+      "floor_min_z_m": 0.0005073462533092266,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008702355173847431,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014502061454728654,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017492780378667236,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 7.200982792709976e-7
+    },
+    {
+      "frame": 92,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0004427862559771012,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0009303820421592834,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014623634756686377,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017493595770995615,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 5.902013915112966e-7
+    },
+    {
+      "frame": 93,
+      "maximum_full_native_vertex_error_m": 9.538968168645337e-7,
+      "floor_min_z_m": 0.00038051964956992146,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0009910491685440892,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014765064178574594,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017494392407015821,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691415403,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 7.406083084404681e-7
+    },
+    {
+      "frame": 94,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00032065607248005223,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0010517954188229428,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001492356114044413,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017495146718293428,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558068902,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 4.449183015266647e-7
+    },
+    {
+      "frame": 95,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0002632992052907235,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0011122049632648623,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015095912445796111,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017480037008313076,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558075563,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 5.551608656782339e-7
+    },
+    {
+      "frame": 96,
+      "maximum_full_native_vertex_error_m": 8.785001249103981e-7,
+      "floor_min_z_m": 0.00020855030793881513,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0011719394364048674,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015278928934194802,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001744694664493729,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.694078189980783e-7
+    },
+    {
+      "frame": 97,
+      "maximum_full_native_vertex_error_m": 9.309230588769177e-7,
+      "floor_min_z_m": 0.00015650568641417673,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0012305473618625107,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001546973221210446,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017451423053121695,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 5.893474341644836e-7
+    },
+    {
+      "frame": 98,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00010725613496070929,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0012876704102461334,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015664843316959276,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017438394515777028,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.964412257401747e-7
+    },
+    {
+      "frame": 99,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00006088864110559422,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001342906027356261,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015861682371302033,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017412208608692803,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.389046127756911e-7
+    },
+    {
+      "frame": 100,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.000017484268213963094,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013959009595656546,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016057242523521698,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017422200369748286,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091406638,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.148884057863387e-7
+    },
+    {
+      "frame": 101,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.000022880995628360434,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001446305063023845,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016248711089118517,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017432153518815718,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.00175009153914088,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 5.98696757089295e-7
+    },
+    {
+      "frame": 102,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00006013581770675236,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014937681550391546,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016433903856641896,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001744191860514277,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.00175009153914088,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 4.6923745477447755e-7
+    },
+    {
+      "frame": 103,
+      "maximum_full_native_vertex_error_m": 8.745439823854523e-7,
+      "floor_min_z_m": -0.00009421538868087387,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015379983699321254,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016610164094883473,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001745134224252598,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091408858,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.665764513349034e-7
+    },
+    {
+      "frame": 104,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0001250597773722606,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015786604085114009,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.00167754365193018,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017460279127750056,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632474221,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 6.077684005963978e-7
+    },
+    {
+      "frame": 105,
+      "maximum_full_native_vertex_error_m": 9.007880099780081e-7,
+      "floor_min_z_m": -0.0001526150542460747,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001615536148676766,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016927865638572959,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017468605917616287,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914924742095,
+      "ridge_max_m": 0.0017500439519048117,
+      "joint_error_m": 7.136949620835982e-7
+    },
+    {
+      "frame": 106,
+      "maximum_full_native_vertex_error_m": 9.112676719382854e-7,
+      "floor_min_z_m": -0.0001768322395549471,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001648352019565258,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017064743253264458,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001747616162093124,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916441406666,
+      "ridge_max_m": 0.0017500439604020146,
+      "joint_error_m": 5.291018280894909e-7
+    },
+    {
+      "frame": 107,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00019766968835094323,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0016768892145370695,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017185435074672517,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017482869062694362,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914749746521,
+      "ridge_max_m": 0.0017500439509242627,
+      "joint_error_m": 5.582319218070099e-7
+    },
+    {
+      "frame": 108,
+      "maximum_full_native_vertex_error_m": 8.918949308176493e-7,
+      "floor_min_z_m": -0.0002150899702923481,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017009697155233594,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017288204292514875,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488614455674345,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632473777,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 5.81912719842519e-7
+    },
+    {
+      "frame": 109,
+      "maximum_full_native_vertex_error_m": 0.0000011080580199060624,
+      "floor_min_z_m": -0.0002290632846883578,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017204214459038414,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017371784651520894,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749331686440786,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914895580977,
+      "ridge_max_m": 0.0017500439517413868,
+      "joint_error_m": 7.973119603094602e-7
+    },
+    {
+      "frame": 110,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00023956470591141033,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017351165962347648,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017435130274779942,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017496898475118372,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914983077653,
+      "ridge_max_m": 0.0017500439522316613,
+      "joint_error_m": 7.176423661975784e-7
+    },
+    {
+      "frame": 111,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00024657582690984503,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001744997667328274,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017478114441376036,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499222550757462,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915617450208,
+      "ridge_max_m": 0.0017500439557859293,
+      "joint_error_m": 6.520948200770266e-7
+    },
+    {
+      "frame": 112,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00025008438655976795,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017499241932370513,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001749947666538021,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499484728430437,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091651933544,
+      "ridge_max_m": 0.0017500602004803523,
+      "joint_error_m": 5.466544150112921e-7
+    },
+    {
+      "frame": 113,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00025008438655976795,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017499241932370513,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001749947666538021,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499484728430437,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091651933544,
+      "ridge_max_m": 0.0017500602004803523,
+      "joint_error_m": 5.466544150112921e-7
+    },
+    {
+      "frame": 114,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00024657582690984503,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001744997667328274,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017478114441376036,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499222550757462,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915617450208,
+      "ridge_max_m": 0.0017500439557859293,
+      "joint_error_m": 6.520948200770266e-7
+    },
+    {
+      "frame": 115,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00023956470591141033,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017351165962347648,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017435130274779942,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017496898475118372,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914983077653,
+      "ridge_max_m": 0.0017500439522316613,
+      "joint_error_m": 7.176423661975784e-7
+    },
+    {
+      "frame": 116,
+      "maximum_full_native_vertex_error_m": 0.0000011080580199060624,
+      "floor_min_z_m": -0.0002290632846883578,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017204214459038414,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017371784651520894,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749331686440786,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914895580977,
+      "ridge_max_m": 0.0017500439517413868,
+      "joint_error_m": 7.973119603094602e-7
+    },
+    {
+      "frame": 117,
+      "maximum_full_native_vertex_error_m": 8.918949308176493e-7,
+      "floor_min_z_m": -0.0002150899702923481,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017009697155233594,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017288204292514875,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488614455674345,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632473777,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 5.81912719842519e-7
+    },
+    {
+      "frame": 118,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00019766968835094323,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0016768892145370695,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017185435074672517,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017482869062694362,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914749746521,
+      "ridge_max_m": 0.0017500439509242627,
+      "joint_error_m": 5.582319218889035e-7
+    },
+    {
+      "frame": 119,
+      "maximum_full_native_vertex_error_m": 9.112676719382854e-7,
+      "floor_min_z_m": -0.0001768322395549471,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001648352019565258,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017064743253264458,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001747616162093124,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916441406666,
+      "ridge_max_m": 0.0017500439604020146,
+      "joint_error_m": 5.291018280894909e-7
+    },
+    {
+      "frame": 120,
+      "maximum_full_native_vertex_error_m": 9.007880099780081e-7,
+      "floor_min_z_m": -0.0001526150542460747,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001615536148676766,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016927865638572959,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017468605917616287,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914924742095,
+      "ridge_max_m": 0.0017500439519048117,
+      "joint_error_m": 7.136949620835982e-7
+    },
+    {
+      "frame": 121,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0001250597773722606,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015786604085114009,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.00167754365193018,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017460279127750056,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091632474221,
+      "ridge_max_m": 0.0017500439597485373,
+      "joint_error_m": 6.077684005963978e-7
+    },
+    {
+      "frame": 122,
+      "maximum_full_native_vertex_error_m": 8.745439823854523e-7,
+      "floor_min_z_m": -0.00009421538868087387,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0015379983699321254,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016610164094883473,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001745134224252598,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091408858,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.665764513558548e-7
+    },
+    {
+      "frame": 123,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.000060135817706086225,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014937681550402648,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016433903856636345,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017441918605139994,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.00175009153914088,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 4.6923765057063184e-7
+    },
+    {
+      "frame": 124,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00002288071729589225,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014463069881879842,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016248702609779064,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017432153188071675,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091539141102,
+      "ridge_max_m": 0.0017500439545191648,
+      "joint_error_m": 6.468936193393902e-7
+    },
+    {
+      "frame": 125,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.000017484571420534056,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001395902004898475,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016057229985178,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017422199875967992,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091406638,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.58427338194556e-7
+    },
+    {
+      "frame": 126,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00006088896851302872,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013429056305738762,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001586166745049744,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001741220804395538,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624739932,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.587450787657529e-7
+    },
+    {
+      "frame": 127,
+      "maximum_full_native_vertex_error_m": 9.4608669817967e-7,
+      "floor_min_z_m": 0.00010725648584203329,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001287664321281079,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015664833759226893,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017438395251111877,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.001750091515808433,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 6.995822228970879e-7
+    },
+    {
+      "frame": 128,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00015650533282590695,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0012305487263034598,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015469363302356154,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017451418165946586,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558066681,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 5.134991120224015e-7
+    },
+    {
+      "frame": 129,
+      "maximum_full_native_vertex_error_m": 9.695254127005118e-7,
+      "floor_min_z_m": 0.00020854993181834702,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0011719355671021003,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015278938519698304,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017446945850226048,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624746594,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 8.729253975078536e-7
+    },
+    {
+      "frame": 130,
+      "maximum_full_native_vertex_error_m": 9.556791122483349e-7,
+      "floor_min_z_m": 0.00026329880747827383,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0011122120811943303,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015095933770190584,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017480037279212768,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558071122,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 4.97694862386819e-7
+    },
+    {
+      "frame": 131,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00032065565386468764,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001051781058365231,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014923336300307621,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017495144393477255,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558075563,
+      "ridge_max_m": 0.001750043961055714,
+      "joint_error_m": 3.893245941389316e-7
+    },
+    {
+      "frame": 132,
+      "maximum_full_native_vertex_error_m": 9.538968168645337e-7,
+      "floor_min_z_m": 0.0003805196495685892,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0009910491685425349,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014765064178581255,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.00174943924070136,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691415403,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 7.406086565032656e-7
+    },
+    {
+      "frame": 133,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0004427862559771012,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0009303820421592834,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014623634756686377,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017493595770995615,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 5.902013920120324e-7
+    },
+    {
+      "frame": 134,
+      "maximum_full_native_vertex_error_m": 8.89626273252861e-7,
+      "floor_min_z_m": 0.0005073462533092266,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008702355173847431,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014502061454728654,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017492780378667236,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558073343,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 7.200982792709976e-7
+    },
+    {
+      "frame": 135,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0005740857924828036,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008109512044525147,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001440406796103133,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017491952706590527,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.030356789325959e-7
+    },
+    {
+      "frame": 136,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0006428881073328729,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0007529468808157302,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014332719055419885,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017491139642834205,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 4.977625493410742e-7
+    },
+    {
+      "frame": 137,
+      "maximum_full_native_vertex_error_m": 8.961791220964407e-7,
+      "floor_min_z_m": 0.0006761402046339682,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006966068034973127,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001429081032843671,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749037030406124,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624739932,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.752457024574573e-7
+    },
+    {
+      "frame": 138,
+      "maximum_full_native_vertex_error_m": 8.985386564717134e-7,
+      "floor_min_z_m": 0.0006422650894576942,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0006422650894576942,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001428105741244301,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001748966434981146,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691410963,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 6.683518743128281e-7
+    },
+    {
+      "frame": 139,
+      "maximum_full_native_vertex_error_m": 9.82452079797241e-7,
+      "floor_min_z_m": 0.0005902857286745888,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0005902857286745888,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014306597831095225,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017489059379517044,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500914691417624,
+      "ridge_max_m": 0.001750043950597635,
+      "joint_error_m": 5.951497856955729e-7
+    },
+    {
+      "frame": 140,
+      "maximum_full_native_vertex_error_m": 9.676281856249239e-7,
+      "floor_min_z_m": 0.000540991297784732,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.000540991297784732,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014369965749478908,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488586019877225,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916558071122,
+      "ridge_max_m": 0.0017500439610554919,
+      "joint_error_m": 7.394629131208775e-7
+    },
+    {
+      "frame": 141,
+      "maximum_full_native_vertex_error_m": 9.10804239737053e-7,
+      "floor_min_z_m": 0.0004826485410065473,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0004947184728941179,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014473738014489923,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488282981724043,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.20107380188652e-7
+    },
+    {
+      "frame": 142,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0004041245893666723,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00045168204400897194,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014619898704483214,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488180865760025,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 7.012825356840545e-7
+    },
+    {
+      "frame": 143,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00032452217382672455,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00041218765136796787,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014810489991474718,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488324877307157,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 6.412709466602736e-7
+    },
+    {
+      "frame": 144,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00024398867334307628,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0003764491109759516,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015047309792104446,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017488751222099405,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 4.2370862032383435e-7
+    },
+    {
+      "frame": 145,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.0001626785449424517,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00034469497803496507,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015332210292542392,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017489505650447254,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158077668,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 4.2406155671121993e-7
+    },
+    {
+      "frame": 146,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": 0.00008074462306989494,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0003170473648715366,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0015665574012101446,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749062325087973,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158075447,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 6.364947061383418e-7
+    },
+    {
+      "frame": 147,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0000016584782860373792,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00029367133833324566,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001604875592060906,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499306420480296,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500916091406638,
+      "ridge_max_m": 0.0017500439584411387,
+      "joint_error_m": 5.718340387159438e-7
+    },
+    {
+      "frame": 148,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.0000843760938496474,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002746470361926212,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001648209477014495,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.001749930608891996,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915158077668,
+      "ridge_max_m": 0.0017500439532119882,
+      "joint_error_m": 5.19307552944461e-7
+    },
+    {
+      "frame": 149,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00016725206340173493,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002600688514853289,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001696566551309009,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017487198661365055,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915858075505,
+      "ridge_max_m": 0.001750043957133962,
+      "joint_error_m": 5.9174322580514e-7
+    },
+    {
+      "frame": 150,
+      "maximum_full_native_vertex_error_m": 8.714142827342889e-7,
+      "floor_min_z_m": -0.00025013175702814916,
+      "supported_patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0002499619315567969,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017499358316805935,
+          "fraction_near_floor": 1
+        },
+        "occiput_anchor": {
+          "min_z": 0.0010001059660418865,
+          "fraction_near_floor": 1
+        },
+        "upper_back_floor_anchors": {
+          "min_z": 0.0013822270999339636,
+          "fraction_near_floor": 1
+        }
+      },
+      "profile_median_m": 0.0017499349097208905,
+      "profile_fraction_within5mm": 1,
+      "midline_profile_max_m": 0.0017500915624742153,
+      "ridge_max_m": 0.0017500439558265635,
+      "joint_error_m": 5.287014328659897e-7
+    }
+  ],
+  "scope": "Actual canonical shared four-action GLB, exact shared optional DQ CPU adapter, all10582 source vertices across all151frames versus canonical native source. Full-body pointwise parity carries native triangle/clearance witnesses with explicit error margin; native joint/patch subframes and all7 independent NORMAL target buffers checked. Actual GPU raster review remains root-owned."
+}

@@ -1,0 +1,28 @@
+{
+  "review": "Focused perceptual review of actual-GPU stills",
+  "source_identity": {
+    "build_manifest_sha256": "924f18905a05386fe88df00a2fa811e08ffca04a260f168d04ade157de0c8a83",
+    "identity_evidence": "Build identity supplied in the review handoff; not independently recomputed in this focused still review."
+  },
+  "inspected_files": [
+    "artifacts/exercise-batches/batch-006/neutral-1512-approach.png",
+    "artifacts/exercise-batches/batch-006/neutral-1512-grasp.png",
+    "artifacts/exercise-batches/batch-006/neutral-1512-hold.png",
+    "artifacts/exercise-batches/batch-006/neutral-1512-release.png",
+    "artifacts/exercise-batches/batch-006/zones-1512-hold.png",
+    "artifacts/exercise-batches/batch-006/neutral-4826-left.png",
+    "artifacts/exercise-batches/batch-006/neutral-4001-left.png"
+  ],
+  "result": "accepted within the focused still-review scope",
+  "defects": [],
+  "findings": [
+    "In the grasp and hold views, the hand appears seated around the heel/ankle; no material detachment or visibly impossible wrist is apparent at the displayed scale.",
+    "No conspicuous broken neck shape is apparent in the two supplied 4826 and 4001 views.",
+    "The approach, grasp, hold and release stills show successive poses around the raised foot. Small angular attachment and joint creases were accepted in the review brief."
+  ],
+  "limits": [
+    "Stills cannot establish continuous acquisition and release choreography, timing, or motion between samples. The approach and release samples still show the hand close to or overlapping the foot.",
+    "The hand and foot overlap and share a similar color, so the stills do not conclusively establish whether individual digits pass through the foot or make surface contact.",
+    "Only the supplied views were inspected; no audio, playback, other exercises, or independent build identity verification was reviewed."
+  ]
+}

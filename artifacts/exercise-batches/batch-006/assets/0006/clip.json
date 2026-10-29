@@ -1,0 +1,103 @@
+{
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_hold_recommendation_seconds": null,
+  "skinning": "dualQuaternion",
+  "native_frame_origin": 1,
+  "asset": "floor-crunch",
+  "review_status": "frozen_user_review_candidate_not_production_approved",
+  "shared_motion": {
+    "family": "batch006-grounded-floor-crunch",
+    "physical_actions": [
+      "Exercise_0006",
+      "Exercise_4354"
+    ],
+    "identity_difference": "Distinct source movements and action tracks: lateral same-side heel reach versus opposite elbow/knee upper-trunk rotation."
+  },
+  "provenance": {
+    "body": "Original Blender Studio CC0 Human Base Mesh via accepted artifacts/bodyweight-five/bodyweight-five.blend",
+    "accepted_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "restricted_media_used": false,
+    "paid_generation_used": false,
+    "text": "catalogue/exercises/0006.json"
+  },
+  "id": "0006",
+  "action": "Exercise_0006",
+  "name": "alternate heel touchers",
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "obliques"
+  ],
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "obliques"
+    ]
+  },
+  "source_instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Extend your arms straight out to the sides, parallel to the ground.",
+    "Engaging your abs, lift your shoulders off the ground and reach your right hand towards your right heel.",
+    "Return to the starting position and repeat on the left side, reaching your left hand towards your left heel.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 1.25,
+      "label": "Reach left heel"
+    },
+    {
+      "start": 1.25,
+      "end": 2.5,
+      "label": "Return to center"
+    },
+    {
+      "start": 2.5,
+      "end": 3.75,
+      "label": "Reach right heel"
+    },
+    {
+      "start": 3.75,
+      "end": 5,
+      "label": "Return to center"
+    }
+  ],
+  "interpretation": "Five-second controlled alternating lateral heel reach, feet flat and knees bent. Source wording \"arms straight out to the sides, parallel to the ground\" is interpreted as straight arms hovering alongside the torso toward the feet, with a small relaxed elbow bend. Each same-side reach is led by lateral upper-trunk flexion; hands approach the actual heel/Achilles-heel skin, without a wide T-pose arm sweep. The return closes the loop. Numerical timing, stance and range are authored illustration choices.",
+  "disclosures": [
+    "Root owns final runtime/GPU, muscle fields and user acceptance.",
+    "Original Basis/rest/UV/topology/source IDs are preserved; local runtime binding and explicit compact joint components are declared separately."
+  ],
+  "authored_choices": {
+    "base": "Supine, fixed bent legs, both feet grounded; ankle centers340mm apart and360mm caudal to hip-root Y. Source-pose interpretation is declared separately per exercise.",
+    "skin": "Immutable original cage/Basis/rest/UV/IDs. Source-anatomy upper-waist/posterior glute and plantar binding reused; one declared source-knee harmonic field; six shoulder-only compact POSITION/NORMAL targets with40mm cap.",
+    "timing": "One full alternating left/right cycle over5seconds at30fps, native frames1..151. Center at0/2.5/5s, opposite peaks1.25/3.75s.",
+    "root_and_floor": "One constant pelvic root for both clips; actual skin and separate floor plane measured. Source lumbar arch is observed rather than flattened.",
+    "runtime": "Optional exact shared DQ adapter is required; native and full decoded source-domain parity are checked. Root owns actual GPU, muscle fields and final camera fitting.",
+    "heel_contact": "Actual active third-phalanx skin approaches the outer heel triangles at3.6mm at both exact peaks. Palm-down wrist remains reachable; inactive wrist stays beside the outer leg corridor. Contact is an authored illustration clearance."
+  },
+  "correctives": {
+    "names": [
+      "Shoulder0006Center",
+      "Shoulder0006Left",
+      "Shoulder0006Right",
+      "Shoulder4354Center",
+      "Shoulder4354Left",
+      "Shoulder4354Right"
+    ],
+    "position_targets": 6,
+    "normal_targets": 6,
+    "maximum_source_delta_m": 0.04,
+    "weights": "Three nonnegative sine-partition weights for the active action; the other action shoulder keys remain zero.",
+    "knee_morphs": 0,
+    "construction": "Source-local native diagnostic displacements mapped by inverse unit-DQ rotation. C1 source collars and radial cap; only Armature enabled in final source/runtime proof."
+  }
+}

@@ -71,7 +71,8 @@ const pixels = page => page.evaluate(() => {
 });
 try {
  const page = await browser.newPage({viewport: {width: 728, height: 950}, deviceScaleFactor: 1});
- await ready(page); assert.equal(await page.locator('#exercises button').count(), 5);
+ await ready(page); assert.equal(await page.locator('#exercises button').count(), ids.length);
+ assert.equal(new Set(ids).size, ids.length, 'Each exercise ID must be unique');
  assert.equal(await page.evaluate(async ([first, last]) => {
   await Promise.all([window.heatSelect(first), window.heatSelect(last)]);
   return window.heatProbe().exerciseId;
@@ -255,7 +256,8 @@ try {
   models: JSON.parse(await readFile(new URL('build-manifest.json', root))).models,
   exercises: result, mechanics, maxJointErrorMeters: maximumJointError, maxSurfaceParityErrorMeters: maximumSurfaceError, maxAllVertexDQErrorMeters: maximumDQError,
   transparentCanvas: true, colorTextures: 0, shadows: false, ao: false, noVideo: true, mediaRequests,
-  switchingFiveActions: true, latestSelectionWins: true, touchOrbit: true, pinch: true, reset: true, seekEndResume: true,
+  switchingAllActions: true, selectedActionCount: ids.length, ...(ids.length === 5 ? {switchingFiveActions: true} : {}),
+  latestSelectionWins: true, touchOrbit: true, pinch: true, reset: true, seekEndResume: true,
   backgrounds: ['white', 'dark', 'checker'], noOverflowWidths: [320, 768, 1024, 1440], errors};
  await writeFile(new URL('runtime-contacts.json', root), JSON.stringify(contacts, null, 2) + '\n');
  await writeFile(new URL('verification.json', root), JSON.stringify(report, null, 2) + '\n');

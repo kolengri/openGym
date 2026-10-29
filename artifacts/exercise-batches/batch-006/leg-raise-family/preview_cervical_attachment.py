@@ -1,0 +1,30 @@
+"""Actual native C2 cervical candidate proof on frozen supported pose."""
+import json,sys,hashlib
+from pathlib import Path
+import bpy,numpy as np
+from mathutils import Vector
+P=Path(__file__).resolve().parent;sys.path.insert(0,str(P))
+import family_common as c,support_fields as support,cervical_attachment as cervical
+binding=c.initialize();a=c.a;support.install(a.body);rest=np.array([v.co[:]for v in a.body.data.vertices]);a.body.data.calc_loop_triangles();tri=np.array([t.vertices[:]for t in a.body.data.loop_triangles]);recipe=json.loads((P/'cervical-attachment-recipe.json').read_text());ids=recipe['source_ids'];outside=np.ones(len(rest),bool);outside[ids]=False;protected=recipe['protected_source_ids'];install=cervical.install(a.body);assert install['actual_maximum_rest_delta_m']<=.0080001
+camdata=bpy.data.cameras.new('QA_Camera');cam=bpy.data.objects.new('QA_Camera',camdata);a.scene.collection.objects.link(cam);a.scene.camera=cam;camdata.type='ORTHO';scene=a.scene;scene.render.engine='BLENDER_WORKBENCH';scene.render.resolution_x=1100;scene.render.resolution_y=800;scene.render.resolution_percentage=100;scene.render.image_settings.file_format='PNG';scene.render.image_settings.color_mode='RGBA';scene.render.film_transparent=True;scene.display.shading.color_type='SINGLE';scene.display.shading.single_color=(.58,.60,.63);scene.display.shading.show_shadows=False;scene.display.shading.show_cavity=False;scene.display.shading.show_specular_highlight=False;scene.view_settings.view_transform='Standard';scene.view_settings.look='None'
+mesh=bpy.data.meshes.new('QA_FloorGuide');mesh.from_pydata([[-.2,-1.4,-.002],[-.2,1.1,-.002],[-.2,1.1,0],[-.2,-1.4,0]],[],[[0,1,2,3]]);guide=bpy.data.objects.new('QA_FloorGuide',mesh);scene.collection.objects.link(guide)
+views=[{'label':'side','position':[5,0,.40],'target':[0,-.12,.40],'scale':2.3},{'label':'oblique','position':[3,-3,2.5],'target':[0,-.12,.40],'scale':2.3}]
+def crosses(v):return np.cross(v[tri[:,1]]-v[tri[:,0]],v[tri[:,2]]-v[tri[:,0]])
+rows=[]
+for eid in ['4826','4001','5106']:
+ phases=[];minarea=1.;mindot=1.;maxoutside=0.;maxprotected=0.;maxdelta=0.
+ for frame in range(151):
+  key=a.body.data.shape_keys.key_blocks[cervical.KEY];key.value=0.;before,meta=c.sample(frame,eid);key.value=cervical.value_for(eid);points,meta=c.sample(frame,eid);delta=np.linalg.norm(points-before,axis=1);maxoutside=max(maxoutside,float(delta[outside].max()));maxprotected=max(maxprotected,float(delta[protected].max()));maxdelta=max(maxdelta,float(delta.max()));assert maxoutside<2e-6 and maxprotected<2e-6 and maxdelta<=.008001
+  old=crosses(before);new=crosses(points);area=np.linalg.norm(new,axis=1)/2;normaldot=np.sum(old*new,axis=1)/(np.linalg.norm(old,axis=1)*np.linalg.norm(new,axis=1));
+  if not(area.min()>1e-12 and normaldot.min()>0):
+   bad=np.flatnonzero((area<=1e-12)|(normaldot<=0));failure={'id':eid,'frame':frame,'minimum_area_m2':float(area.min()),'minimum_normal_dot':float(normaldot.min()),'bad_triangles':[{'triangle':int(i),'ids':tri[i].tolist(),'before_area_m2':float(np.linalg.norm(old[i])/2),'after_area_m2':float(area[i]),'normal_dot':float(normaldot[i]),'actual_delta_m':delta[tri[i]].tolist()}for i in bad]};(P/'cervical-native-failure.json').write_text(json.dumps(failure,indent=2)+'\n');raise AssertionError(failure)
+  minarea=min(minarea,float(area.min()));mindot=min(mindot,float(normaldot.min()));m=c.support_metrics(points);assert m['whole_body_min_z_m']>=-.00035;assert m['profile_median_m']<=.005 and m['profile_fraction_within5mm']>=.5;assert m['midline_profile_max_m']<=.002 and m['ridge_max_z_m']<=.002;assert max(m['pelvic_min_m'].values())<=.002;phases.append({'frame':frame,**m})
+ proofs=[]
+ for frame,label in [(0,'start'),(37.5,'left-peak'),(112.5,'right-peak')]:
+  points,meta=c.sample(frame,eid)
+  for view in views:
+   cam.location=view['position'];cam.rotation_euler=(Vector(view['target'])-cam.location).to_track_quat('-Z','Y').to_euler();camdata.ortho_scale=view['scale'];scene.render.filepath=str(P/f'cervical-{eid}-{label}-{view["label"]}.png');bpy.ops.render.render(write_still=True);err=float(np.max(np.linalg.norm(c.coordinates()-points,axis=1)));assert err<2e-6;proofs.append({'frame':frame,'view':view['label'],'render_surface_readback_m':err,'actual_matrix_max_error':meta['matrix_max_error']})
+ rows.append({'id':eid,'samples':phases,'minimum_actual_triangle_area_m2':minarea,'minimum_before_after_triangle_normal_dot':mindot,'maximum_outside_domain_actual_delta_m':maxoutside,'maximum_protected_anchor_actual_delta_m':maxprotected,'maximum_actual_delta_m':maxdelta,'proofs':proofs})
+# Close side proof of the specific attachment replaces additional exploratory views.
+points,meta=c.sample(0,'4826');cam.location=(4,.42,.22);cam.rotation_euler=(Vector((0,.40,.22))-cam.location).to_track_quat('-Z','Y').to_euler();camdata.ortho_scale=1.15;scene.render.resolution_y=650;scene.render.filepath=str(P/'cervical-4826-neck-side.png');bpy.ops.render.render(write_still=True);error=float(np.max(np.linalg.norm(c.coordinates()-points,axis=1)));assert error<2e-6
+report={'status':'frozen_preview_root_shape_accepted_remaining_small_crease_disclosed','posture':c.posture(),'binding':binding,'install':install,'families':rows,'source_anatomy_c2_collar':recipe['source_domain_m'],'exterior_continuity':'Single original connected source mesh, same topology/IDs. The compact analytic C2 collar multiplies the solved field; all vertices outside domain and all protected head/upperback/lumbar/pelvic anchors read back unchanged. No added panels, attachments, props or bones.','close_side_render_readback_m':error,'no_global_collision_free_claim':True};(P/'cervical-native-preview.json').write_text(json.dumps(report,indent=2)+'\n');print('CERVICAL_NATIVE_PASS',json.dumps([{'id':r['id'],'minimum_actual_triangle_area_m2':r['minimum_actual_triangle_area_m2'],'minimum_normal_dot':r['minimum_before_after_triangle_normal_dot'],'max_protected_delta_m':r['maximum_protected_anchor_actual_delta_m'],'max_actual_delta_m':r['maximum_actual_delta_m']}for r in rows]))

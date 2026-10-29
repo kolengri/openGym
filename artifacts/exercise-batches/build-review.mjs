@@ -16,8 +16,9 @@ const translatedPhases = {
  'Hinge forward over the front shin': 'Наклон над голенью', 'Hold the hip stretch for 1 second': 'Удержание', 'Return upright': 'Возврат в исходную',
 };
 
-export async function buildReview({root, batch, ids, clips, cameras, presentation, assetFiles, initialExerciseId, inputFiles = [], atlasOverrides = {}}) {
- const atlas = JSON.parse(await readFile(new URL('../bodyweight-five/runtime-muscles.json', import.meta.url)));
+export async function buildReview({root, batch, ids, clips, cameras, presentation, assetFiles, initialExerciseId, inputFiles = [], atlasOverrides = {},
+ atlasFile = new URL('../bodyweight-five/runtime-muscles.json', import.meta.url)}) {
+ const atlas = JSON.parse(await readFile(atlasFile));
  const models = {}, encodedAssets = {};
  for (const [key, file] of Object.entries(assetFiles)) {
   const bytes = await readFile(file), document = JSON.parse(bytes.subarray(20, 20 + bytes.readUInt32LE(12)).toString());
@@ -90,7 +91,7 @@ export async function buildReview({root, batch, ids, clips, cameras, presentatio
  const inputs = {};
  for (const file of [new URL('build.mjs', root), new URL('template.html', root), new URL('viewer.js', root), new URL('presentation.json', root),
   new URL('./build-review.mjs', import.meta.url), new URL('./batch-002/viewer.js', import.meta.url), new URL('./dual-quaternion.js', import.meta.url),
-  new URL('../chaturanga-heatmap/heat-field.js', import.meta.url), new URL('../chaturanga-heatmap/heat-material.js', import.meta.url), ...inputFiles])
+  new URL('../chaturanga-heatmap/heat-field.js', import.meta.url), new URL('../chaturanga-heatmap/heat-material.js', import.meta.url), atlasFile, ...inputFiles])
   inputs[relative(fileURLToPath(repo), fileURLToPath(file))] = hash(await readFile(file));
  const manifest = {batch, exercise_ids: ids, initial_exercise_id: initialExerciseId, models, model_revision: revision ?? null, selected_regions: [...selected],
   video_outputs: [], frame_sequence_outputs: [], runtime: 'Three.js0.186.1 / WebGLRenderer',

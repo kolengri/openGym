@@ -1,0 +1,102 @@
+{
+  "status": "frozen_root_accepted_user_review_candidate",
+  "physical_geometry": 1,
+  "actions": [
+    "Exercise_3479",
+    "Exercise_3480"
+  ],
+  "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+  "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+  "canonical_asset": "assets/3479",
+  "runtime_asset_key": "standing-leg-family",
+  "runtime_skinning": "standard linear",
+  "source_invariants": {
+    "ok": true,
+    "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+    "basis_exact": true,
+    "rest_exact": true,
+    "uv_exact": true,
+    "topology_exact": true,
+    "source_ids_exact": true,
+    "bones": 51,
+    "source_vertices": 10582,
+    "triangles": 21160,
+    "maximum_influences": 4,
+    "actual_changed_binding_vertices": 3029,
+    "declared_binding_vertices": 5611,
+    "binding_exterior_exact": true,
+    "corrective_exteriors_exact": true,
+    "maximum_saved_source_target_delta_m": 0.025000032037496567,
+    "nla_discovery": "Inactive KEY association3480 is explicitly muted with use_nla=False; only the selected active action evaluates natively."
+  },
+  "per_exercise": {
+    "3479": {
+      "action": "Exercise_3479",
+      "minimum_body_z_m": 0.00029988985625095665,
+      "minimum_knee_skin_z_m": 0.31066256761550903,
+      "maximum_decoded_native_position_error_m": 1.974221099636278e-06,
+      "decoded_loop_vertex_error_m": 2.1445560294739704e-07,
+      "maximum_arm_hand_leg_intersections": 0,
+      "heel_contact": {
+        "full_contact_samples": 22,
+        "finger_to_heel_point_m_range": [
+          0.002999870377178106,
+          0.00300043124156595
+        ],
+        "whole_hand_to_heel_surface_m_range": [
+          0.0023653965909034014,
+          0.002423213329166174
+        ]
+      },
+      "mandatory_game_qa": {
+        "pass": true,
+        "errors": 0,
+        "retained_warnings": [
+          {
+            "frame": 18,
+            "warnings": [
+              "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
+            ]
+          }
+        ],
+        "reason": "Warnings identify a few back-to-back facets in local joint folds of the single continuous original body. The bounded visible candidate was accepted with residual creases. Deleting faces would violate the required original topology/source IDs; warnings are retained without claiming globally collision-free skin."
+      }
+    },
+    "3480": {
+      "action": "Exercise_3480",
+      "minimum_body_z_m": 0.0002996824332512915,
+      "minimum_knee_skin_z_m": 0.16073226928710938,
+      "maximum_decoded_native_position_error_m": 1.1313112316192572e-06,
+      "decoded_loop_vertex_error_m": 2.0511250703887e-07,
+      "maximum_arm_hand_leg_intersections": 0,
+      "heel_contact": null,
+      "mandatory_game_qa": {
+        "pass": true,
+        "errors": 0,
+        "retained_warnings": [
+          {
+            "frame": 37,
+            "warnings": [
+              "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+            ]
+          },
+          {
+            "frame": 112,
+            "warnings": [
+              "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+            ]
+          }
+        ],
+        "reason": "Warnings identify a few back-to-back facets in local joint folds of the single continuous original body. The bounded visible candidate was accepted with residual creases. Deleting faces would violate the required original topology/source IDs; warnings are retained without claiming globally collision-free skin."
+      }
+    }
+  },
+  "root_owned_remaining": [
+    "muscle fields",
+    "viewer asset-key mapping",
+    "camera width fitting",
+    "browser/GPU acceptance",
+    "final user approval"
+  ],
+  "shared_export_correction": "Blender5.2.3 ACTIONS gathers inactive OBJECT slots on a sole armature, but inactive KEY slots require an NLA association. Source retains one muted3480 KEY strip with use_nla=False. Both exported actions have all four explicit morph channels; native and decoded receipts pass."
+}

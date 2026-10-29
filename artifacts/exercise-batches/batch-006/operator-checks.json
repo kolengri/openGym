@@ -1,0 +1,47 @@
+{
+  "repository": "kolengri/openGym",
+  "branch": "t3/upgrade-exercise-animations",
+  "head": "802bec5d2d99d25315e1331e55d54249e6109b94",
+  "base": "main",
+  "pull_request": "https://github.com/kolengri/openGym/pull/3",
+  "build_manifest": {
+    "path": "artifacts/exercise-batches/batch-006/build-manifest.json",
+    "sha256": "924f18905a05386fe88df00a2fa811e08ffca04a260f168d04ade157de0c8a83",
+    "stable": true
+  },
+  "initial_attempt": {
+    "command": "node artifacts/exercise-batches/batch-006/verify.mjs",
+    "exit_code": 1,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify-schema-failure.log",
+    "failure": "0006 frame0 patchsole_L bounds were undefined in the required reference summary."
+  },
+  "authorized_repair": {
+    "receipt": "artifacts/exercise-batches/batch-006/reference-normalization.json",
+    "scope": "Filled omitted scalar patch min_z/max_z in six supplied reference JSONs from their existing native positions; positions, indices and other metadata unchanged."
+  },
+  "retry": {
+    "command": "node artifacts/exercise-batches/batch-006/verify.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify.log",
+    "result": "passed",
+    "evidence": "Actual Three.js/Chromium/Metal and mobile touch emulation; 11 actions selected; all listed mechanics, parity, rendering and interaction assertions passed; zero runtime errors."
+  },
+  "capture": {
+    "command": "node artifacts/exercise-batches/batch-006/capture-peaks.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/capture-peaks.log",
+    "result": "passed",
+    "poses": 20,
+    "screenshots": 40,
+    "manifest": "artifacts/exercise-batches/batch-006/capture-peaks.json",
+    "screenshots_pattern": "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png"
+  },
+  "generated_evidence": [
+    "artifacts/exercise-batches/batch-006/logs/verify-schema-failure.log",
+    "artifacts/exercise-batches/batch-006/logs/verify.log",
+    "artifacts/exercise-batches/batch-006/logs/capture-peaks.log",
+    "artifacts/exercise-batches/batch-006/capture-peaks.json",
+    "artifacts/exercise-batches/batch-006/operator-checks.json",
+    "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png (40 screenshots)"
+  ]
+}

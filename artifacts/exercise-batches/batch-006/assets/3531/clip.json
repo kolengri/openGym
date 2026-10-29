@@ -1,0 +1,70 @@
+{
+  "id": "3531",
+  "name": "alternate punching",
+  "action": "Exercise_3531",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "cardiovascular system"
+  ],
+  "secondary": [
+    "shoulders",
+    "triceps",
+    "core",
+    "obliques"
+  ],
+  "display_primary": [
+    "shoulders",
+    "triceps"
+  ],
+  "display_secondary": [
+    "core",
+    "obliques"
+  ],
+  "display_role_basis": "Source-informed artistic visible load proxies; cardiovascular system is not a surface muscle. Source target/secondary labels are retained, not rewritten; no measured activation claim.",
+  "source_roles": {
+    "primary": [
+      "cardiovascular system"
+    ],
+    "secondary": [
+      "shoulders",
+      "triceps",
+      "core",
+      "obliques"
+    ]
+  },
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Stand with a staggered stance and fists up.",
+    "Punch forward with one arm, rotating your torso slightly.",
+    "Pull it back as you punch with the other.",
+    "Keep your core tight.",
+    "Keep a steady rhythm for 30-60 seconds.",
+    "Rest briefly and repeat."
+  ],
+  "source_hold_recommendation_seconds": null,
+  "source_workout_interval_seconds": [
+    30,
+    60
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 5,
+      "label": "Right punch and retraction; left punch and retraction"
+    }
+  ],
+  "interpretation": "Authored slowed five-second demonstration, not a claimed source tempo or clinical/force/stability certification. Fixed staggered stance, closed guard fists and alternating forward punches;17-degree soft elbow at extension,8-degree upper torso rotation; no strike target or impact props. Source30\u201360second workout interval retained separately.",
+  "source_record_sha256": "2d75d23e2c9fd1fa4dbfb961c7b09f8f440da8aebcc71f984ee7a29e70f40641",
+  "review_status": "native_source_and_decoded_gates_passed; primary_actual_GPU_review_pending",
+  "source_sha256": "5588b98e6ce66b85d05f25cde916721bb8b6e925574330d5ab2e28627b1df4c5",
+  "glb_sha256": "f280164c36d439d97466382e4f79be65aecb62842111a4b2154ba9e03335064e",
+  "authoring_family": "../../upright-cardio-family",
+  "source_invariant_reference": "source-verification.json",
+  "local_binding_reference": "local-binding-report.json"
+}

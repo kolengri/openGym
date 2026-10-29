@@ -1,0 +1,134 @@
+{
+  "exercise_id": "3479",
+  "status": "frozen_root_accepted_user_review_candidate",
+  "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+  "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+  "shared_family_manifest": "../../standing-leg-family/curated-files.json",
+  "self_hash": "This manifest intentionally does not hash itself.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "03a456cfff19e8c631a0639bec4ca479ab8d8f697e5aa6bc56ebfe3e96651bb3",
+      "bytes": 2904
+    },
+    {
+      "path": "delivery-report.json",
+      "sha256": "8c407cd21baac944f41a0cc0260f05811c7b8ab8668da7f1697ec3e8dc36c7ac",
+      "bytes": 4813
+    },
+    {
+      "path": "source.blend",
+      "sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+      "bytes": 14494969
+    },
+    {
+      "path": "motion.glb",
+      "sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+      "bytes": 1143612
+    },
+    {
+      "path": "clip.json",
+      "sha256": "ff06f4c2624ffcf460de274854fe504e317ec1e9cba53a53f3d617ed8feb0f11",
+      "bytes": 4033
+    },
+    {
+      "path": "cameras.json",
+      "sha256": "33f918fa6df34e3be09238568eca0409c129b55bb5952ba2f91996119adb7a6e",
+      "bytes": 370
+    },
+    {
+      "path": "authoring-context.json",
+      "sha256": "b1ecd31306f8e156ae72b4626bf96d91343ae23550b015d54745ed647880d35c",
+      "bytes": 60734
+    },
+    {
+      "path": "pose-samples.json",
+      "sha256": "f8249296fa0ae58e549946c2e7193d3e3aa697a227b79894898c1b3fa04236e0",
+      "bytes": 95399
+    },
+    {
+      "path": "runtime-surface-reference.json",
+      "sha256": "52fcf658fd4bf8c0ecaca2221ddbe178d1dbbcfa4e902e72c2bcce5d3124717f",
+      "bytes": 15083
+    },
+    {
+      "path": "linear-vertex-reference.json.gz",
+      "sha256": "210c0251a3749595b59455edba56847520e48d69e13cfac24d12a3b0d296a149",
+      "bytes": 2890152
+    },
+    {
+      "path": "topology-reference.json.gz",
+      "sha256": "28be5595df14764c6e1c33b537514293af929ebbd29d7380fe2bd3d9b9107090",
+      "bytes": 114011
+    },
+    {
+      "path": "landmarks.json",
+      "sha256": "f03d4dd6905008cf4bbc079c90dee6a61e720a29318da8c26bc5d2d8d22cc01c",
+      "bytes": 80988
+    },
+    {
+      "path": "asset-qa.json",
+      "sha256": "851ce2dbd863cd695ad90350936a128e97996ee461df63b4e2b4fa44910d8b15",
+      "bytes": 6152
+    },
+    {
+      "path": "surface-contact-report.json",
+      "sha256": "b4aebec2bb77ee53d341bdd362f71b47a39851ed3f91abe16f35fb9292390c2a",
+      "bytes": 3567464
+    },
+    {
+      "path": "runtime-physics-report.json",
+      "sha256": "dcbc8e69127f22950eb2ebea1fc2d0b5b1669f3dc3c9e7fd4c7833a8505e52f3",
+      "bytes": 3583061
+    },
+    {
+      "path": "export-parity-report.json",
+      "sha256": "347a4952eb4ff54bce7f2e052ebb03c98b1959754371067a34cb41bff9903243",
+      "bytes": 3231
+    },
+    {
+      "path": "proof-manifest.json",
+      "sha256": "13b4266a0fd2ca0038cf2547d0a654cfb4c9b3c313128c8d7f7a65c20be322ea",
+      "bytes": 3839
+    },
+    {
+      "path": "review-start-neutral.png",
+      "sha256": "dfae0966758957e72a31b6b83b382805618bcacbdc5a7c78d635c9bcdbd77134",
+      "bytes": 212937
+    },
+    {
+      "path": "review-squat-neutral.png",
+      "sha256": "ddc6efc18abe4afb6772a79364f346b60223c921b6b37d1430ca1241b2edc38b",
+      "bytes": 183718
+    },
+    {
+      "path": "review-kick-neutral.png",
+      "sha256": "943727a841068a643b46b2e81506e5cfad45c09dee65ac168cd2df2d885ece43",
+      "bytes": 200466
+    },
+    {
+      "path": "review-heel-contact-neutral.png",
+      "sha256": "a7138f843bc2686dc088e99ad65ac015225e753951497231a8d53cefb0b85735",
+      "bytes": 201112
+    },
+    {
+      "path": "review-heel-contact-wire.png",
+      "sha256": "0e2f53a3fe4fd272fb15f9fc1f91498db49412cf58f6884d6855f20640517ca8",
+      "bytes": 214115
+    },
+    {
+      "path": "review-mirror-contact-neutral.png",
+      "sha256": "584c4df93c545217cdc8cded7e0c2fe5628315d5920eee44598910b0a19e6905",
+      "bytes": 199292
+    }
+  ],
+  "exclusions": [
+    "all historical early/causal/path/fingertip/relaxed/edge/joint trial stills",
+    "logs",
+    "backups",
+    "__pycache__",
+    "environments",
+    "runtime caches",
+    "unlisted files"
+  ]
+}

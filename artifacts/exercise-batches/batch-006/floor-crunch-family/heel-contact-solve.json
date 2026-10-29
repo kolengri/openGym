@@ -1,0 +1,173 @@
+{
+  "method": "One scalar Newton contact solve using actual saved-source fingertip-to-heel triangles; independent finite derivative, no grid or geometry edits. Inactive outer-leg corridor is unchanged.",
+  "target_gap_m": 0.003,
+  "solved_lateral_wrist_offset_m": 0.1136217348292371,
+  "original_offset_m": 0.185,
+  "source_sha256_before_pose_change": "9ff963b651b63bbfa561390795c4be511c8a90e8d77346d2a84c6c5768757220",
+  "evaluations": [
+    {
+      "offset_m": 0.185,
+      "side": "Left",
+      "frame": 37.5,
+      "nearest_fingertip_heel_distance_m": 0.04958884418010712,
+      "witness": {
+        "finger_source_id": 10124,
+        "heel_face_source_ids": [
+          5911,
+          5912,
+          5910,
+          5909
+        ],
+        "finger_m": [
+          0.25313377380371094,
+          -0.29096367955207825,
+          0.048057615756988525
+        ],
+        "heel_m": [
+          0.21394413709640503,
+          -0.31583425402641296,
+          0.03060252219438553
+        ],
+        "signed_normal_distance_m": 0.04938219115138054
+      },
+      "whole_arm_leg_intersections": 0
+    },
+    {
+      "offset_m": 0.18,
+      "side": "Left",
+      "frame": 37.5,
+      "nearest_fingertip_heel_distance_m": 0.04567746818065643,
+      "witness": {
+        "finger_source_id": 10124,
+        "heel_face_source_ids": [
+          5911,
+          5912,
+          5910,
+          5909
+        ],
+        "finger_m": [
+          0.24813389778137207,
+          -0.29096347093582153,
+          0.0480579137802124
+        ],
+        "heel_m": [
+          0.21279317140579224,
+          -0.31376194953918457,
+          0.03023395873606205
+        ],
+        "signed_normal_distance_m": 0.04561264859512448
+      },
+      "whole_arm_leg_intersections": 0
+    },
+    {
+      "offset_m": 0.1254444315930633,
+      "side": "Left",
+      "frame": 37.5,
+      "nearest_fingertip_heel_distance_m": 0.008272607810795307,
+      "witness": {
+        "finger_source_id": 10124,
+        "heel_face_source_ids": [
+          5914,
+          5916,
+          6096,
+          6097
+        ],
+        "finger_m": [
+          0.1935780644416809,
+          -0.290963351726532,
+          0.04805731773376465
+        ],
+        "heel_m": [
+          0.18930494785308838,
+          -0.29713350534439087,
+          0.04457798972725868
+        ],
+        "signed_normal_distance_m": 0.008168807020410895
+      },
+      "whole_arm_leg_intersections": 0
+    },
+    {
+      "offset_m": 0.12344443159306329,
+      "side": "Left",
+      "frame": 37.5,
+      "nearest_fingertip_heel_distance_m": 0.007380661088973284,
+      "witness": {
+        "finger_source_id": 10124,
+        "heel_face_source_ids": [
+          5918,
+          6095,
+          6096,
+          5916
+        ],
+        "finger_m": [
+          0.19157859683036804,
+          -0.2909635901451111,
+          0.04805779457092285
+        ],
+        "heel_m": [
+          0.18853852152824402,
+          -0.29700133204460144,
+          0.045095063745975494
+        ],
+        "signed_normal_distance_m": 0.007353420020081103
+      },
+      "whole_arm_leg_intersections": 0
+    },
+    {
+      "offset_m": 0.1136217348292371,
+      "side": "Left",
+      "frame": 37.5,
+      "nearest_fingertip_heel_distance_m": 0.0036450985353440046,
+      "witness": {
+        "finger_source_id": 10124,
+        "heel_face_source_ids": [
+          6114,
+          6116,
+          6096,
+          6095
+        ],
+        "finger_m": [
+          0.18175548315048218,
+          -0.2909635305404663,
+          0.048057734966278076
+        ],
+        "heel_m": [
+          0.18093310296535492,
+          -0.29372188448905945,
+          0.045821238309144974
+        ],
+        "signed_normal_distance_m": 0.0035855877795256674
+      },
+      "whole_arm_leg_intersections": 0
+    },
+    {
+      "offset_m": 0.1136217348292371,
+      "side": "Right",
+      "frame": 112.5,
+      "nearest_fingertip_heel_distance_m": 0.0035808354150503874,
+      "witness": {
+        "finger_source_id": 4828,
+        "heel_face_source_ids": [
+          963,
+          983,
+          981,
+          962
+        ],
+        "finger_m": [
+          -0.182109534740448,
+          -0.29096460342407227,
+          0.04776656627655029
+        ],
+        "heel_m": [
+          -0.1809690296649933,
+          -0.29349321126937866,
+          0.045502107590436935
+        ],
+        "signed_normal_distance_m": 0.0035715484409593046
+      },
+      "whole_arm_leg_intersections": 0
+    }
+  ],
+  "left_gap_m": 0.0036450985353440046,
+  "right_gap_m": 0.0035808354150503874
+}

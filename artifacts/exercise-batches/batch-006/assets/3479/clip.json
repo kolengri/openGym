@@ -1,0 +1,126 @@
+{
+  "id": "3479",
+  "asset": "standing-leg-family",
+  "action": "Exercise_3479",
+  "name": "alternate heel touch side kick squat",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "quads"
+  ],
+  "secondary": [
+    "glutes",
+    "hip flexors",
+    "core"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_roles": {
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "hip flexors",
+      "core"
+    ]
+  },
+  "source_instructions": [
+    "Stand with feet hip-width apart.",
+    "Squat down.",
+    "Stand and kick one leg to the side.",
+    "Touch the heel with your hand.",
+    "Squat again.",
+    "Alternate sides."
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.6,
+      "label": "Squat"
+    },
+    {
+      "start": 0.6,
+      "end": 1.2,
+      "label": "Stand and left side kick"
+    },
+    {
+      "start": 1.2,
+      "end": 1.55,
+      "label": "Left heel touch"
+    },
+    {
+      "start": 1.55,
+      "end": 2.5,
+      "label": "Return"
+    },
+    {
+      "start": 2.5,
+      "end": 3.1,
+      "label": "Squat"
+    },
+    {
+      "start": 3.1,
+      "end": 3.7,
+      "label": "Stand and right side kick"
+    },
+    {
+      "start": 3.7,
+      "end": 4.05,
+      "label": "Right heel touch"
+    },
+    {
+      "start": 4.05,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": null,
+  "skinning": "linear",
+  "interpretation": "Two hip-width squats alternate a left and right side kick. Each kick extends laterally, then rechambers slightly while the trunk bends toward that side to permit a same-side relaxed little-fingertip edge tap on the medial/posterior heel. The source does not specify kick height, trunk angle, contact finger or numeric timing; these are authored choices. Actual fingertip and whole-hand skin contact distances are measured separately. There is no wrapped grasp or added forearm supination. Takeoff and landing are declared airborne; the opposite sole stays planted.",
+  "shared_geometry": {
+    "family": "batch006-standing-leg-family",
+    "physical_glb": "assets/3479/motion.glb",
+    "actions": [
+      "Exercise_3479",
+      "Exercise_3480"
+    ],
+    "same_bytes_in_both_assets": true,
+    "distinct_motion": true
+  },
+  "correctives": {
+    "names": [
+      "LungeLeftPopliteal",
+      "LungeRightPopliteal",
+      "HeelTouchLeftShoulder",
+      "HeelTouchRightShoulder"
+    ],
+    "position_targets": 4,
+    "normal_targets": 4,
+    "maximum_source_delta_m": 0.025,
+    "runtime": "Four compact additive standard glTF POSITION/NORMAL targets before linear skinning. Active rear-knee lunge target or active-side heel-touch shoulder target; all unrelated keys explicitly zero.",
+    "construction": "One local CorrectiveSmooth20x1.0 target per mirrored diagnosed collar, C1 source domain, exact inverse LBS and C1 radial25mm cap. No runtime DQ or smoothing.",
+    "uncapped_required_source_delta_m": {
+      "LungeLeftPopliteal": 0.04885645733737698,
+      "LungeRightPopliteal": 0.048608196525364675,
+      "HeelTouchLeftShoulder": 0.05119922383111301,
+      "HeelTouchRightShoulder": 0.05151491101849598
+    }
+  },
+  "provenance": {
+    "text": "catalogue/exercises/3479.json",
+    "body": "Blender Studio CC0 Human Base Mesh, original accepted bodyweight-five/bodyweight-five.blend",
+    "accepted_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "restricted_media_used": false,
+    "paid_generation_used": false
+  },
+  "review_status": "root_accepted_bounded_shape_for_user_review_not_production_approval",
+  "disclosures": [
+    "Residual local joint crease detail remains under the fixed25mm cap; uncapped requirements are retained.",
+    "Localized nonadjacent self-fold counts and opposed shader normals are diagnostic. No global collision-free or clinical claim.",
+    "Muscle fields, camera width fitting, actual browser/GPU acceptance and final integration remain root-owned."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "family": "batch006-standing-leg-family",
+  "status": "frozen_root_accepted_user_review_candidate",
+  "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+  "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+  "canonical_final_asset": "../assets/3479",
+  "self_hash": "This manifest intentionally does not hash itself.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "21cc631d7c87cde18a42e20a28b9b165084ce00212fc4ac9e75bf640bae8b0d1",
+      "bytes": 4179
+    },
+    {
+      "path": "delivery-report.json",
+      "sha256": "005d2e80935e15ce3dcbb35a01e2e5555e456e9dc3f660dcb82ec67281768228",
+      "bytes": 4149
+    },
+    {
+      "path": "export-manifest.json",
+      "sha256": "8d62fc79dde3e5292f425caa8c0f7520e856b958c7b61d1d70907ad24b7807f0",
+      "bytes": 366
+    },
+    {
+      "path": "invariant-report.json",
+      "sha256": "f3a09355fbb9b565aa49c7515f12c011a323357dd28c6de1838a1140dff43046",
+      "bytes": 673
+    },
+    {
+      "path": "binding-report.json",
+      "sha256": "b98164468f64a47e92c3f84c6e2158df6a30267d55e165b4063804782214ddcd",
+      "bytes": 1910936
+    },
+    {
+      "path": "saved-binding-provenance.json",
+      "sha256": "563e378015d29a154625a9c0c2f3fc50c047348af4964b8e4d79bc91093c2ebe",
+      "bytes": 819176
+    },
+    {
+      "path": "joint-target-report.json",
+      "sha256": "6f628f385a80879306739cb67f9897b435df6596e949ff7eca11912a9539797d",
+      "bytes": 230125
+    },
+    {
+      "path": "contact-landmarks.json",
+      "sha256": "660c92a9ab74d2a87c29991d93d822ae476a762ebfdf0f0ee43ae897a69cf925",
+      "bytes": 1755
+    },
+    {
+      "path": "kinematic-state.json",
+      "sha256": "90bba1dcc367401b64b66d5825dc3cb9c7dd2925b81bd5cc1583cd256000fcde",
+      "bytes": 308348
+    },
+    {
+      "path": "target-errors.json",
+      "sha256": "401e930f603187e65f622070080b142e6f88193f9a0404270980fcf8c70a0846",
+      "bytes": 48591
+    },
+    {
+      "path": "poses.py",
+      "sha256": "a4853bcbd7acf478ae66607f04f7900cbda53f8e0b1038815afd9921aa319b14",
+      "bytes": 11089
+    },
+    {
+      "path": "build_draft.py",
+      "sha256": "b94cfe783fe08383d2bace8f6fb58c5b8f820a2defcd38d69d72c774d9d8c9c7",
+      "bytes": 8102
+    },
+    {
+      "path": "build_joint_targets.py",
+      "sha256": "2a9fd343ed5614a7a9c7a109d2f293839ef8576ed214806e25175ed69f3285a2",
+      "bytes": 6400
+    },
+    {
+      "path": "package.py",
+      "sha256": "5cdb8e771dd9fae193180dc854dea80eb5d47f15febc9f830b2126f15f722783",
+      "bytes": 2736
+    },
+    {
+      "path": "geometry_checks.py",
+      "sha256": "07c428dad8b98f34fb4d30394388ee083ef2827fe7fee7a03b6a935cf13858ed",
+      "bytes": 5883
+    },
+    {
+      "path": "verify_invariants.py",
+      "sha256": "b2a9cc29035cc4c23786b5b63587e12d67f5203aa94093995d536a065b05406e",
+      "bytes": 3170
+    },
+    {
+      "path": "verify_native.py",
+      "sha256": "830d2d881a33bf9382ec876b2c0390bbd5ea3d699cde05aea7c985a5ab84de48",
+      "bytes": 8750
+    },
+    {
+      "path": "verify_export.mjs",
+      "sha256": "568b1aef7bcce0f4c6027cc3cb090ce3eb329cb2d8c003d5a7a2fd51c156fe0d",
+      "bytes": 9017
+    },
+    {
+      "path": "verify_runtime_stream.mjs",
+      "sha256": "65b485f7598eefa8e113161b158831dcc4860405f91fa22c56f6b46e063cf4d9",
+      "bytes": 3599
+    },
+    {
+      "path": "verify_runtime_stream.py",
+      "sha256": "6271a692c36b8f92f8c7d30eba913c4771e0b79170342be5d5b63fe72bfee111",
+      "bytes": 3834
+    },
+    {
+      "path": "proof_final.py",
+      "sha256": "35926a001dbdac8c0e71bf38452ba0e96a09ccc6d1a8b8ff17a13b5d1434e91c",
+      "bytes": 3775
+    },
+    {
+      "path": "curate.py",
+      "sha256": "80c1e845079b788a3550567f1e8d683b0f1358c80102c94af29ac379533a23e3",
+      "bytes": 16521
+    }
+  ],
+  "read_only_dependencies": [
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-005/assets/3948/local_weights.py",
+      "sha256": "874215b8a4d3a2663550de599e83b6757d74d1af0def33d26e09d4f38322a780"
+    },
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    }
+  ],
+  "exclusions": [
+    "unlisted files",
+    "historical trial/causal reports and stills",
+    "logs",
+    "__pycache__",
+    "intermediate .blend and .blend1",
+    "duplicate family source.blend and motion.glb",
+    "runtime caches",
+    "environments"
+  ]
+}

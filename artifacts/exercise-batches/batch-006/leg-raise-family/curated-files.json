@@ -1,0 +1,407 @@
+{
+  "id": "leg-raise-family",
+  "status": "frozen_passing_native_export_packet_curated_root_runtime_owned",
+  "created_utc": "2026-10-29T11:26:08.781404+00:00",
+  "physical_body_count": 1,
+  "physical_glb_count": 1,
+  "actions": [
+    "Exercise_4826",
+    "Exercise_4001",
+    "Exercise_3590",
+    "Exercise_5106"
+  ],
+  "source_sha256": "7f723baf6bb99a2e2af7f28641bcf36490a9b1c4450359f14cd852b3f99e5dc7",
+  "glb_sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea",
+  "per_id_manifests": {
+    "4826": {
+      "path": "assets/4826/curated-files.json",
+      "bytes": 3461,
+      "sha256": "59a33d0b05eb2a2dab921c47dc7cbf616084010a94df0c351aaac9cd85c74f93"
+    },
+    "4001": {
+      "path": "assets/4001/curated-files.json",
+      "bytes": 3461,
+      "sha256": "4bba168ba67b452dfd71676167bf6a5534c4a7a6b83792a677c7c1ae444adbb8"
+    },
+    "3590": {
+      "path": "assets/3590/curated-files.json",
+      "bytes": 3461,
+      "sha256": "b9b43dcd187fcd2ce5445f943e13226463d9b5e42651220bcb3305169a2305e4"
+    },
+    "5106": {
+      "path": "assets/5106/curated-files.json",
+      "bytes": 3461,
+      "sha256": "bb82bb7a96e03b4b6df777f3dbf9ccdce5b836f20dc540d04a7bb26a3724194b"
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6927,
+      "sha256": "e2571399849547b4cc7fc4a64d4aeaef6e39291eb590dda495dfd662682b91f0"
+    },
+    {
+      "path": "delivery-report.json",
+      "bytes": 9038,
+      "sha256": "fac6e5678c2c43f9d62de57b8bf9dc1232ef74a5ee55fb8e4f688cc44a969aa3"
+    },
+    {
+      "path": "final-metrics.json",
+      "bytes": 4408,
+      "sha256": "ecb061907a5776919e09d9e6994ae13ccedafac031847ea8e5573e90612fd1f1"
+    },
+    {
+      "path": "causal-history.json",
+      "bytes": 5341,
+      "sha256": "fb009b467b827eb9c9e77c07a06d1d45c7c265fad18c1a004832a9ded96b8ba4"
+    },
+    {
+      "path": "authoring-decisions.json",
+      "bytes": 2604,
+      "sha256": "7696807467ffcb83a91109eaf7628f2e8f259ca83bcbaba6b3370b56b9e233fc"
+    },
+    {
+      "path": "pose-parameters.json",
+      "bytes": 294,
+      "sha256": "52234cfc264268879b135e7dcd1c34fc949be004fc1436124f50d9c6482ca1aa"
+    },
+    {
+      "path": "source-neutral-envelope.json",
+      "bytes": 10202,
+      "sha256": "1503f7ef2948eadcf3ffd9a8814ea0fe2daa002055479e2046d7dcd4b1aa0ef2"
+    },
+    {
+      "path": "source-support-masks.json",
+      "bytes": 19575,
+      "sha256": "4992747dbc7da84a190f32970ece23f832988d19ce0c80b4d8e4fe63e7a380b0"
+    },
+    {
+      "path": "source-glute-binding.json",
+      "bytes": 30634,
+      "sha256": "a7c22d67f59ffacb4e7c7b10a70db7c9d04c2af9aa430474acc17e8f897f854a"
+    },
+    {
+      "path": "binding_core.py",
+      "bytes": 3842,
+      "sha256": "5c3bb8c3e71f7a9ebdedf70e40f1fdf6d193095326e05e66bd7ad308fbf947e4"
+    },
+    {
+      "path": "family_common.py",
+      "bytes": 4129,
+      "sha256": "e765af0e1bcb491d92f69d6dcbb31934987fa37fc8039e677aa4a3a7445f1761"
+    },
+    {
+      "path": "leg_raise_pose.py",
+      "bytes": 4191,
+      "sha256": "157414f7cd9fde5ca74cc2f1637b793ba447fb2a934fbce138aab0320a01889f"
+    },
+    {
+      "path": "support_fields.py",
+      "bytes": 2447,
+      "sha256": "e05c68e1481efd233996f5110e5dea81113bb5ed0ab121372bf5452077382d61"
+    },
+    {
+      "path": "cervical_attachment.py",
+      "bytes": 1676,
+      "sha256": "17730d22d45ed701468ca8538206f0b9543f98399e3b185585875c205720d9dc"
+    },
+    {
+      "path": "build_source_invariants.py",
+      "bytes": 697,
+      "sha256": "cbb9bd06889419eafb1409dfc6cee6eb4d5eadac1222faad00f77157799a7839"
+    },
+    {
+      "path": "support-fields.npz",
+      "bytes": 7796,
+      "sha256": "f49247133fdfd0df5af10259fb2daea744b2c14c5d8f8589f3a601bc6a83b139"
+    },
+    {
+      "path": "cervical-attachment.npz",
+      "bytes": 3898,
+      "sha256": "b07a531ef131cf517a17cf5ff3600a91d1ae5db3404965b59796e0fcaba6f34b"
+    },
+    {
+      "path": "support-domain.json",
+      "bytes": 2016,
+      "sha256": "3f67e7fd329f605e53ae8b4f5d68196572848e595bfb93dfd3532c5d9a3adc2d"
+    },
+    {
+      "path": "support-construction-receipt.json",
+      "bytes": 242891,
+      "sha256": "d3d3062b58abd45b23bde67ba36153b357528718af961212977e8f3caff97aad"
+    },
+    {
+      "path": "cervical-attachment-recipe.json",
+      "bytes": 14545,
+      "sha256": "6f53ca8593f3175d72b9d13ffe1c253198dec42a40f00717a6e5a14005ddf143"
+    },
+    {
+      "path": "cervical-action-weights.json",
+      "bytes": 510,
+      "sha256": "f02c12259ad30b9ad1bba3fa1afdd0523438b4c0b022531f2e25278dce5939db"
+    },
+    {
+      "path": "final-composition-receipt.json",
+      "bytes": 5651,
+      "sha256": "7973db56abfe7b1c22a44092912c6bbfc59e0036d02dc0cfea1f4d606bbeeced"
+    },
+    {
+      "path": "source-build-receipt.json",
+      "bytes": 984561,
+      "sha256": "1b3333acd04084633630af89a1ad824cccb5a79a78cfd3f9ddea53f9089cb5d2"
+    },
+    {
+      "path": "source-verification.json",
+      "bytes": 16148,
+      "sha256": "187fde664fbbc8fadbedff97c36b108bd248231891b10c10071c0e2e688c40d6"
+    },
+    {
+      "path": "native-action-readback.json",
+      "bytes": 2409416,
+      "sha256": "0b26598d14202d96ba08c013bc7b07ef9773802dfec710bf2aa659e79950aa7e"
+    },
+    {
+      "path": "morph-normal-reference.json.gz",
+      "bytes": 2321501,
+      "sha256": "64acf783e0abe4d278b2535a814901af37a52d252666988708f119c43d0926ed"
+    },
+    {
+      "path": "physical-domains.json",
+      "bytes": 97355,
+      "sha256": "54f25acfa36d553902929ef66e98d95bb000f1b01c8886dd36abd2fdaeeba1e6"
+    },
+    {
+      "path": "export-morph-channel-receipt.json",
+      "bytes": 1190,
+      "sha256": "497115bfde457160ac49c0ce8c99e971c93f33f0f53c40b125cf2514cace0178"
+    },
+    {
+      "path": "export-weight-verification.json",
+      "bytes": 457,
+      "sha256": "bff4142990b92a4de50802e767ef097b73bace4529a1a500a0a48ac890fedef6"
+    },
+    {
+      "path": "upper-back-reference-label-receipt.json",
+      "bytes": 1148,
+      "sha256": "7ff345583768ff2a79b58feba1cb10583ade54c0e7848b177e434da36cd23a8d"
+    },
+    {
+      "path": "build_family.py",
+      "bytes": 7840,
+      "sha256": "ff0fbf8fef602a6c30b3f6819e71d445e374b26fbb4a8732409a896ba521f2f3"
+    },
+    {
+      "path": "verify_source.py",
+      "bytes": 4203,
+      "sha256": "3bba621305c0c23f0dd18d9f167f27fb56ba15a4b409f30ee7092d72ea4c95f8"
+    },
+    {
+      "path": "verify_native.py",
+      "bytes": 12631,
+      "sha256": "2a54ea1fe7634dd0ad5ba0c419b290e71e1326a958bc97eaa0ed636fc0e42b15"
+    },
+    {
+      "path": "export_family.py",
+      "bytes": 1550,
+      "sha256": "294b4889660b838516eac2dfbeb8d1b1b5d8f9f027ce176380c0ac672c6f0aaf"
+    },
+    {
+      "path": "complete_morph_channels.py",
+      "bytes": 3784,
+      "sha256": "69e59619f11c41bd1bdea3512dae4221a4df74df26c979642511b42fb06e2926"
+    },
+    {
+      "path": "verify_export.mjs",
+      "bytes": 10307,
+      "sha256": "b6aea3974c6f234cca10215759e0a58a2ccf4ce0fcb850ff61304da8f73e284e"
+    },
+    {
+      "path": "verify_export_weights.mjs",
+      "bytes": 1886,
+      "sha256": "4b0e242ec9c6030cbcde81c85f6ca18c294053f716fb59b0795f181affdf923f"
+    },
+    {
+      "path": "verify_decoded_physical.py",
+      "bytes": 4650,
+      "sha256": "f6988a8301d12c2729b83d3d6929baf4b5748ed33fd14f12c149a3c42e4d7d1a"
+    },
+    {
+      "path": "build_support_fields.py",
+      "bytes": 5106,
+      "sha256": "7f4ef21c46af207937f2229183bb3356aff441d5231f1f42d10afc3838585560"
+    },
+    {
+      "path": "build_cervical_attachment.py",
+      "bytes": 5053,
+      "sha256": "b1adcf1e5e5512ecff43c56463a5ee1b417d5db641dcca9a805963f10c6d6150"
+    },
+    {
+      "path": "inspect_cervical_head_up_safety.py",
+      "bytes": 2597,
+      "sha256": "8ab2b31ef7d5b50083fb5e09f8cadbf7e5b960d14c85f9c8636ea4a9e3b81e20"
+    },
+    {
+      "path": "preview_cervical_attachment.py",
+      "bytes": 6053,
+      "sha256": "d9d6369a007909f4063ef82976a48bb508568c1648cff6daa4ad280d58f7faf0"
+    },
+    {
+      "path": "preview_head_up.py",
+      "bytes": 3179,
+      "sha256": "9dc40f582cb97540dca40c85925c6ddc6565c9e95094f1bb69662fdd76749e10"
+    },
+    {
+      "path": "curate_delivery.py",
+      "bytes": 8711,
+      "sha256": "7fa96464fdf4b3b26db8c23ad3a635dd8e645b8ac95d200ce710db1c69bb696e"
+    },
+    {
+      "path": "source.blend",
+      "bytes": 14399551,
+      "sha256": "7f723baf6bb99a2e2af7f28641bcf36490a9b1c4450359f14cd852b3f99e5dc7"
+    },
+    {
+      "path": "motion.glb",
+      "bytes": 1215372,
+      "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea"
+    },
+    {
+      "path": "cervical-4826-start-side.png",
+      "bytes": 316163,
+      "sha256": "aaae63f9c3c949cd1c7b8a8163eba7610aa81788a7518b42ec20df3895e7ad3c"
+    },
+    {
+      "path": "cervical-4826-start-oblique.png",
+      "bytes": 349482,
+      "sha256": "8ed97fbec28f2904d0b4b58d64cd4407e6598bc124c1e7b7602e726beac82121"
+    },
+    {
+      "path": "cervical-4826-left-peak-oblique.png",
+      "bytes": 383502,
+      "sha256": "b9a27c133956015f19f02e23142bd204353baf30ab54b229aff4b2e0c42c6228"
+    },
+    {
+      "path": "cervical-4826-right-peak-oblique.png",
+      "bytes": 403692,
+      "sha256": "c37221acfc67f2cfa3365337da66a8ef0f4860181cbf31aeb2f3f226c882e14a"
+    },
+    {
+      "path": "cervical-4001-safe-start-oblique.png",
+      "bytes": 342958,
+      "sha256": "d62fef6478b0db08ccf0be459c422ba457610cd7995ee63018a65045d9f81f19"
+    },
+    {
+      "path": "settled-5106-start-side.png",
+      "bytes": 344094,
+      "sha256": "825aef507090f61afd87e4bfc827763cd1e1fe995e954f00fe6df8cd48d1ab98"
+    },
+    {
+      "path": "settled-5106-left-peak-oblique.png",
+      "bytes": 396619,
+      "sha256": "8174f04db0a5bcab299ca80261d1ef1f4bd2936d132473380c03a6fdc45de098"
+    },
+    {
+      "path": "settled-5106-right-peak-oblique.png",
+      "bytes": 392099,
+      "sha256": "813a2decfbe60715c5118bb26dc56f3f0055222746b4a1a5a97fafc092ca2bb1"
+    }
+  ],
+  "file_count": 54,
+  "total_curated_family_bytes": 24836170,
+  "external_workspace_dependencies_already_tracked_elsewhere": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "bytes": 14997498,
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "bytes": 18948,
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "bytes": 4194,
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/bodyweight-next-five/warning_observer.py",
+      "bytes": 2618,
+      "sha256": "ce8fd9d86a22df849c9db3f00b22900b99af758305a7914654bf6879b90806e8"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "bytes": 5062,
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/package.json",
+      "bytes": 109,
+      "sha256": "e793a0e38aa2f2244646a0f74a930902b3d13ecae5fa9d54d89a4e035f507e5f"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/package-lock.json",
+      "bytes": 14637,
+      "sha256": "ee452d9a3fca4320321ba6b3a3a860cb421f31d4aa4f8111d738f3f7d33ceeab"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/authoring-handoff.md",
+      "bytes": 5476,
+      "sha256": "235cf09bcca58244c8f83343b0c9e32334a376f6b40b9bd9cabd1f64c707eb22"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/asset-interface.json",
+      "bytes": 3304,
+      "sha256": "9aca7f26bbbf18c1ccdfba986e6ba410124a7adbe740f4a8f1dd29fdfd4785ef"
+    },
+    {
+      "path": "catalogue/exercises/4826.json",
+      "bytes": 686,
+      "sha256": "f45c6c0e277e1295640dfd187e4f1ec8f145f8acb272dbf0ff0deaedde7bb789"
+    },
+    {
+      "path": "catalogue/exercises/4001.json",
+      "bytes": 589,
+      "sha256": "a1eb823ad40b28d7d0619596de766e7841e0b8634c0dbff53538f2f6d469792e"
+    },
+    {
+      "path": "catalogue/exercises/3590.json",
+      "bytes": 646,
+      "sha256": "1483a064546569a8e7284132b8d402cb693a73244ee408f79ad05fd11f03f0f3"
+    },
+    {
+      "path": "catalogue/exercises/5106.json",
+      "bytes": 634,
+      "sha256": "dac21e2aaf75167a28b8444896b3956dcf3a2f356f934277faa749f5e57c30e6"
+    }
+  ],
+  "external_tool_prerequisites": {
+    "blender": "5.2.3 LTS, installed /opt/homebrew/bin/blender,2threads, factory startup, no saved preferences",
+    "node": "26.10.0",
+    "three": "0.186.1 from tracked runtime package manifest/lock",
+    "construction_python": "3.13.13 local existing venv; optional field-construction recipes use NumPy2.5.4/SciPy1.18.1",
+    "game_qa_scripts": [
+      {
+        "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+        "bytes": 16590,
+        "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b",
+        "delivered": false
+      },
+      {
+        "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/_bpyx.py",
+        "bytes": 4503,
+        "sha256": "a3339ba8a678469e8ed29510e32a7331e0235202191ca4edb977af4720819b4b",
+        "delivered": false
+      }
+    ]
+  },
+  "metadata_snapshot_policy": "Root-owned runtime/GPU and mutable camera/reference integration are a separate evidence layer; root-integration.json supersedes explicitly listed handoff metadata hashes.",
+  "excludes": [
+    "full151 native/decoded raw skins and decoded topology QA staging",
+    "fit grids/trials, unsuccessful solve scripts, bulk baseline history",
+    "logs/backups/pycache/environments",
+    "most screenshots; only accepted current surface and explicit staged5106 cues retained"
+  ],
+  "retained_causal_history": "Original45/flat19 versus neutral-envelope rule, one rejected coupled cervical solve and exact-neutral source-depth obstacle, one capped fairing with rejected fullweight4001 then analytic safe amplitude, rejected3303reference label.",
+  "self_hash_policy": "Manifest is not its own entry; final byte size/hash returned separately."
+}

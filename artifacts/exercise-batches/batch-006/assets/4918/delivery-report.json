@@ -1,0 +1,72 @@
+{
+  "id": "4918",
+  "status": "author_native_export_physical_gates_passed; root_actual_GPU_and_integration_pending",
+  "source_sha256": "5be07ced001992d15b16c86ccdb04f1aa0f09168d1d55b7fb0acbaac3fe0cafe",
+  "glb_sha256": "e7cc94794e0a5dbb166371669742278dfe1440abf5ede8ad7b12551a42e4e501",
+  "runtime_binding_sha256": "185b028576708385e433d9d296ddda84e24f879dfb34f895fbbf242cd835c8ec",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "source_invariants_pass": true,
+  "full151_native_pass": true,
+  "full151_decoded_physical_pass": true,
+  "game_qa_zero_errors": true,
+  "game_qa_warnings": [
+    {
+      "frame": 20,
+      "warning": "asset lowest point z=0.2325 (not resting on ground plane z=0)",
+      "disposition": "Expected during explicitly declared flight; grounded-only support gates are checked independently."
+    },
+    {
+      "frame": 58,
+      "warning": "asset lowest point z=0.2553 (not resting on ground plane z=0)",
+      "disposition": "Expected during explicitly declared flight; grounded-only support gates are checked independently."
+    }
+  ],
+  "metrics": {
+    "minimum_floor_z_m": 0.000999609474092722,
+    "minimum_area_m2": 5.8947446494167606e-08,
+    "native_loop_m": 0.0,
+    "decoded_loop_m": 4.3213367462158203e-07,
+    "maximum_full151_native_decoded_error_m": 6.536991829061541e-06,
+    "maximum_normal_vector_error": 8.187660755892303e-05,
+    "maximum_influences": 4,
+    "maximum_weight_sum_error": 4.470348358154297e-08
+  },
+  "remaining": [
+    "Root actual GPU acceptance, camera-width fit and shared heat integration."
+  ],
+  "bounded_disclosures": [
+    "Local nearest-normal arm/leg depth test within40mm with4mm tolerance; no global collision-free claim.",
+    "Slowed4hop demonstration; no source cadence or flight-force claim."
+  ],
+  "files_sha256": {
+    "README.md": "8fa6ed7116e837d2299d1a0125d1e5349bcf8519a5736b3da8f2e9ef33254e7c",
+    "asset-qa.json": "7ebd13e98beb2c56a0299741b3e8fbff7977a115effd7b7bb23aec010972a677",
+    "authoring-context.json": "818f167966763245f0ccbf9bdfe691c326c390d034edb34bb710efde16cf9b83",
+    "authoring-family.json": "39ea32b2ad3c308ac4f04a1bbc349171dc333a89ec88fdebe2ece61a44d6f7ec",
+    "cameras.json": "6c05d6f4b772ef3c0af5f470424ecf130e71d1c6ac0dc4224b5423d2e060103e",
+    "clip.json": "51b7a905f2065c27fde43da7f88e50eb40bc46160c9a10838a9545d856e114d3",
+    "curated-files.json": "76b303eb55444404bfec4b7cbdce5d3ce48029677a53ec20200b23f6e83f4729",
+    "decoded-physical-report.json": "ca4f948ba488449d3179ccf797bb930f0aacff0198cd5d75a3b3663b5a919e22",
+    "decoded-source-readback.json": "163dde3d9deab29b21137c21de62d8f3cc5b8e0c5ca6a6da29c0c34e535697ca",
+    "dq-reference.json.gz": "ae101fc10898be8140cf592a0f163971053624b94fe7a95059c168d94de3ad44",
+    "environment.json": "b0137a3dc6caa615d8d7ecd94b96e7894e051f56b6cc3da12124c8e6203969c4",
+    "export-verification.json": "4e345894c498b12757abb26503e6faa841b6a8eda724606d5f28b2432c451ed5",
+    "local-binding-report.json": "a74dc91974f7fb50bb3c8460450a0acb0bf05fe092e006ea32274b209bf45be2",
+    "mechanics-repair-history.json": "33836e784c35b188fb35726425e69e28cb46d750a8f648267b4d1bfb4bb0863a",
+    "motion-witnesses.json": "1bf5c0097df5547a411c3ffab65f063b7ef6c98f52a4f5f5621af1d3bdbd90d1",
+    "motion.glb": "e7cc94794e0a5dbb166371669742278dfe1440abf5ede8ad7b12551a42e4e501",
+    "neutral-left-knee-flight.png": "35fb763915b9f0fdfbc76fba5d95ab6c29e5916dc3745991f74d897d65a42792",
+    "neutral-ready.png": "5df0f31839720c5db4cdcd1d1ffcac8ddd8bf79b2d96f69230f5459efd0ede17",
+    "neutral-right-knee-flight.png": "d64205bd406f435b406dcb8768b54ec6187cffc92b1c0dcbaeac3ebbeb8a5b2f",
+    "neutral-soft-left-landing.png": "77bc81ec2ac62448d8845141b83dbd698aa6e961653a9d71169b12189398d707",
+    "normal-reference.json.gz": "2a66874419b7ef3d2432359fc97d913fd870cf41ef35b1c4a970b849bf0c3ba9",
+    "pose-samples.json": "f36b3741bae050bfcbf8917cc470e5cb5e2b80eefbbfd18b7f468e640cb33741",
+    "proof-receipt.json": "9656573ba07d512267951c247069d33f223816e4412e0e790eb278cee3ecef7d",
+    "raw-asset-qa.json": "114729bb8fb999dd7e4e683c20043cc16e74701f1495688836c304ac91df08a0",
+    "runtime-surface-reference.json": "2c8c00e8fba3651c6c42e55bfa35c458cecf4bd5e6b8e91adda702b249bb6ff5",
+    "source-verification.json": "163dde3d9deab29b21137c21de62d8f3cc5b8e0c5ca6a6da29c0c34e535697ca",
+    "source.blend": "5be07ced001992d15b16c86ccdb04f1aa0f09168d1d55b7fb0acbaac3fe0cafe",
+    "surface-contact-report.json": "eae8c80cf0dc29ab9adc8224cc9a48a554f705d90265d73c7399a1a5b2c5d75f",
+    "surface-landmarks.json": "f22887efeb6405c9425305b2bcad644282a9268773d8bf7407682b014f0e3cd8"
+  }
+}
