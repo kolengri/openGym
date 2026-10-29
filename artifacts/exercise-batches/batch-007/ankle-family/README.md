@@ -1,0 +1,17 @@
+# Seated ankle family:1368,2761,2762
+
+One original-body editable source and one canonical GLB contain three distinct actions: `Exercise_1368` (12s bilateral circles, both directions), `Exercise_2761` (5s bilateral dorsal flexion) and `Exercise_2762` (5s bilateral plantar flexion). Asset-local files are exact hardlink aliases. Primary owns fields, full-cycle camera-width fitting, GPU review and integration.
+
+The pelvis remains volumetric and grounded. A minimum geometry-derived11.524186° static knee bend resolves the calf/floor conflict while keeping forward extended legs. Nonlifted heel skin remains at the floor, including2761.1368 lifts the active leg45mm. Hands use relaxed thigh-near staging with actual skin clearance and fixed-length connected arms; they are not gripping or body supports. Numeric angles and timing are authored choices.2761 retains the catalogue calf label and explicitly records its front-shin description discrepancy.
+
+Foot and ToeBase are transported in a continuous shin frame. `foot-regression-summary.json` checks actual saved frame orientation plus all-frame native/decoded internal ankle/forefoot edges, directly targeting the previous ankle hook/roll class of defect. The measured maximum shin-relative step is1.664° at30fps; ToeBase relative rotation is constant.
+
+Original Basis/rest/UV/source IDs/topology remain exact. There are no shape targets. Binding reuses the frozen accepted profile and86-ID proximal glute recipe, then a compact original plantar Foot/collar feather. The full profile is required by the frozen glute input contract. Its torso redistribution is geometrically inert because Hips/Spine/Spine1 have one rigid deformation here; this is measured, not a leg-only claim. `binding-receipt.json` records every actual weight and changed ID; `source-verification.json` proves max4 normalization and exact outside-domain weights.
+
+The initial fully straight knee placed calf skin below the floor; that was fixed with the minimum static knee bend rather than flattening the body. An initial hand anchor buried the palm heel; one actual palmar-envelope translation corrected it while preserving hand orientation/digits. Final complete-cycle minimum thigh clearance is positive. Failed diagnostics are excluded from delivery.
+
+Every native cycle and actual decoded shared-DQ cycle passes floor/support, internal foot shape, positive area and loop gates. Actual exported arm/hand/finger triangles versus both complete legs have zero crossings at361/151/151 samples. Five complete source-DQ skin references per action and all51 native joint heads establish parity; mandatory game QA has zero errors/warnings. These are discrete tests, not continuous collision or enclosed-volume certificates. Primary GPU raster/field/camera review is still pending.
+
+Run Blender scripts with `blender -b -t 2 --python-exit-code 1 --factory-startup --python <script>`. Author with `build_family.py`, then `inspect_early.py`, `verify_source.py`, `verify_native.py`, `export_motion.py`, `node verify_export.mjs`, `verify_foot_motion.py`, `render_wire_proof.py`, and `package_family.py`. Reproduction requires the frozen read-only original source, batch003 helper, batch006 profile/glute recipe and shared DQ adapter, all identified by path/hash in receipts. No network or paid job is used.
+
+Only files in the family and asset `curated-files.json` manifests belong to the delivery. No runtime frame cache, vertex cache, video, trial, environment or private log is included.

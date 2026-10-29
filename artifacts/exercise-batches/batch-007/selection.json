@@ -1,0 +1,64 @@
+{
+  "batch": "007",
+  "exercise_ids": [
+    "4437",
+    "10058",
+    "4436",
+    "4702",
+    "4715",
+    "1368",
+    "2761",
+    "2762",
+    "3294",
+    "3905"
+  ],
+  "order": "Equipment-free catalogue continuation after5106;4365 is deferred for unresolved skin deformation and3905 fills the ten-record review.",
+  "skipped": [
+    {
+      "id": "10438",
+      "reason": "Requires pull-up bar"
+    },
+    {
+      "id": "10729",
+      "reason": "Requires pool and aquabike"
+    },
+    {
+      "id": "3293",
+      "reason": "Requires pull-up bar"
+    }
+  ],
+  "mat_policy": "The transparent support plane remains available; no separate mat apparatus is required in the accepted ten.",
+  "reuse_groups": {
+    "upright": [
+      "4437",
+      "4436"
+    ],
+    "kneeling": [
+      "10058"
+    ],
+    "prone": [
+      "4702",
+      "4715",
+      "3294"
+    ],
+    "ankle": [
+      "1368",
+      "2761",
+      "2762"
+    ],
+    "arm_circle": [
+      "3905"
+    ]
+  },
+  "equivalent_source_records": [
+    "4702 and4715 describe the same opposite-arm/leg prone movement; share geometry and motion where source cues agree, preserving IDs and labels."
+  ],
+  "deferred": [
+    {
+      "id": "4365",
+      "reason": "Child/resting pose still has visible shoulder and pelvic deformation after the coupled9 candidate. No accepted motion export is included.",
+      "replacement_id": "3905",
+      "selection_authority": "The user requested ten further exercises without naming IDs; this is an authored selection, not an inferred reply to the optional preference question."
+    }
+  ]
+}

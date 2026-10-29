@@ -48,7 +48,8 @@ export function attachHeatField(mesh, config) {
   if (maximum <= 0) throw Error('Empty heat field');
   return values.map(value => value / maximum);
  }
- const primary = field(config.primary, .036), secondary = field(config.secondary, .032);
+ const primary = field(config.primary, .036);
+ const secondary = config.secondary.length ? field(config.secondary, .032) : new Float32Array(count);
  const attribute = new Float32Array(source.count * 2);
  for (let i = 0; i < source.count; i++) {
   const id = Math.round(source.getX(i));

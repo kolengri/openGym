@@ -1,0 +1,67 @@
+{
+  "id": "10058",
+  "action": "Exercise_10058",
+  "duration": 8,
+  "duration_seconds": 8,
+  "frames": 240,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "glutes"
+  ],
+  "secondary": [
+    "quadriceps",
+    "hip flexors",
+    "core"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 1.4,
+      "label": "Left foot forward"
+    },
+    {
+      "start": 1.4,
+      "end": 1.9,
+      "label": "Left half-kneel"
+    },
+    {
+      "start": 1.9,
+      "end": 3.3,
+      "label": "Return to both knees"
+    },
+    {
+      "start": 3.3,
+      "end": 4,
+      "label": "Settle kneeling"
+    },
+    {
+      "start": 4,
+      "end": 5.4,
+      "label": "Right foot forward"
+    },
+    {
+      "start": 5.4,
+      "end": 5.9,
+      "label": "Right half-kneel"
+    },
+    {
+      "start": 5.9,
+      "end": 7.3,
+      "label": "Return to both knees"
+    },
+    {
+      "start": 7.3,
+      "end": 8,
+      "label": "Settle kneeling"
+    }
+  ],
+  "interpretation": "The instruction sequence is full kneeling to half kneeling and back, alternating both sides. The vague description of standing does not override these steps. An eight-second bilateral demonstration allows a controlled foot placement, short half-kneel pause and complete return; it never rises to full standing. Exact timing and stance are authored.",
+  "diagnostic_peak_frames": [
+    49,
+    169
+  ],
+  "skinning": "linear"
+}

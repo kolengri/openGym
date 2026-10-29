@@ -55,7 +55,7 @@ export async function buildReview({root, batch, ids, clips, cameras, presentatio
     region.weights.some(value => !Number.isFinite(value) || value < 0 || value > 1)) throw Error('Invalid muscle region for body: ' + id + '/' + name);
   }
   for (const region of [...primary, ...secondary]) selected.add(region);
-  if (!primary.length || !secondary.length || cameras[id]?.length !== 2 || !clip.phases?.length) throw Error('Missing roles, views or phases: ' + id);
+  if (!primary.length || (!secondary.length && !clip.allow_unmapped_secondary) || cameras[id]?.length !== 2 || !clip.phases?.length) throw Error('Missing roles, views or phases: ' + id);
   return {id, ...presentation[id], asset, expectedBones: models[asset].bones, sourceVertices,
    ...(override ? {regions: override.regions} : {}), skinning: clip.skinning ?? 'linear', primary, secondary,
    phases: clip.phases.map(phase => ({...phase, label: translatedPhases[phase.label] ?? phase.label})), cameras: cameras[id],

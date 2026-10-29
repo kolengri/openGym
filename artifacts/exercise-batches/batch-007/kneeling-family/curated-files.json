@@ -1,0 +1,135 @@
+{
+  "status": "complete_standalone10058_child_deferred",
+  "delivery_ready": true,
+  "delivery_assets": [
+    "10058"
+  ],
+  "deferred_assets": [
+    "4365"
+  ],
+  "asset_manifests": [
+    "../assets/10058/curated-files.json"
+  ],
+  "deferred_outcome_report": "4365-rejected-outcome.json",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "4251545a81dbb6d633a416987b58c0957ba411fdc56b9d12ae67933bc166c9e2",
+      "bytes": 2610
+    },
+    {
+      "path": "findings.md",
+      "sha256": "02e8f8566e447b446670dd3a7466dd7a95a857cbd5e8a458a8d05511a24ec2a0",
+      "bytes": 1759
+    },
+    {
+      "path": "rekey_10058.py",
+      "sha256": "60f331bfebdc8534fc0ae6f3723290a5dccf6eb6409a3a5a77da7c85f05c2dac",
+      "bytes": 2983
+    },
+    {
+      "path": "kneel10058_motion.py",
+      "sha256": "7b45cf902ac4acef950a08358d2886aa4ad81ff9e699a31ecfe3457db2ca1963",
+      "bytes": 7674
+    },
+    {
+      "path": "anatomical_frames.py",
+      "sha256": "f087fc8e05685792ace3109b7a47ff88cd5ea85cc2290116b10486f77616a363",
+      "bytes": 1624
+    },
+    {
+      "path": "surface_checks_10058.py",
+      "sha256": "948d3461cf3bc55bf01ac88f48f14591434b008798313e3ec59d9cd7d0a01e36",
+      "bytes": 3568
+    },
+    {
+      "path": "peak_checks.py",
+      "sha256": "8bff6ae60a19788c3e98ce1d569e427e8ba01336c4e49955782c47a67cad487f",
+      "bytes": 2773
+    },
+    {
+      "path": "export_10058.py",
+      "sha256": "d813274baee74408675319bc7fa49f40d9d4755852c24054fe30fb0dad2caa9b",
+      "bytes": 1865
+    },
+    {
+      "path": "verify_10058_native.py",
+      "sha256": "1cdb17177f8408d9b2a1ccbc819e8fef32b0bf3f6ae7987aea0c088c5df4d432",
+      "bytes": 8038
+    },
+    {
+      "path": "verify_10058_export.mjs",
+      "sha256": "a9ca5922dc74d3ba92babfb3641fee54aee3f285749b354171bed6afcfab5145",
+      "bytes": 8667
+    },
+    {
+      "path": "verify_10058_runtime.py",
+      "sha256": "7e2d0fe5fc5b6965059d6ee470f3d9114db31df5d6bc2f9120e483576c844d2e",
+      "bytes": 5158
+    },
+    {
+      "path": "verify_10058_runtime.mjs",
+      "sha256": "dbe18ed9d7087e0c7d5b98adcb341083024182ae73e768841667c8f19c0dcccc",
+      "bytes": 4117
+    },
+    {
+      "path": "render_frozen_10058.py",
+      "sha256": "11d4a2fa89ef31951a8d6f959aa35f1c79f3e65074e8d57571047e52ac58493a",
+      "bytes": 2601
+    },
+    {
+      "path": "package_final.py",
+      "sha256": "13a1798e9adedf84e0a6d3193e0342961b3ad41f12b0cc7827407c6d32982b3b",
+      "bytes": 15453
+    },
+    {
+      "path": "kneel10-state.json",
+      "sha256": "6b51ea473a36fb791cfa8ca71b91e996df45a8e9952cffbf2335a96444539eb3",
+      "bytes": 226500
+    },
+    {
+      "path": "kneel10-target-errors.json",
+      "sha256": "79ac1596b09ce2ef87f08a9290ab016d7d2065afd37bdb3e0f6f4fc26e4213ea",
+      "bytes": 121246
+    },
+    {
+      "path": "kneel10-proof-report.json",
+      "sha256": "05350d2ccb09474f9a157b909c7aaa914583341b9c1b449bf3c1590273b2f5d1",
+      "bytes": 35606
+    },
+    {
+      "path": "10058-frozen-proof-report.json",
+      "sha256": "9aceaa4f129ad79d6eaaf686d99a2cb459e44aa91eecfc3f50188c520b9049f1",
+      "bytes": 1157
+    },
+    {
+      "path": "10058-authoring-recheck.json",
+      "sha256": "47250e13c49f54a1c04583cfdb9068e561ef05198822d8728980472090222072",
+      "bytes": 203
+    },
+    {
+      "path": "10058-export-manifest.json",
+      "sha256": "1a05dc4720369c95d23535577b3cb316822fd8f0c0e9265c6c065049a8763da9",
+      "bytes": 332
+    },
+    {
+      "path": "4365-rejected-outcome.json",
+      "sha256": "04181621407d08291793e70fa4d291807e533d85a80989ee3cb76ef25c0bac05",
+      "bytes": 2721
+    },
+    {
+      "path": "dependency-manifest.json",
+      "sha256": "41f124c6f209865e0259dfe1df9929cb13cb13d0f1af6f6b8ad06748bc418490",
+      "bytes": 1203
+    }
+  ],
+  "excluded": [
+    "Unlisted historical trial blends, vertex witnesses and trial images",
+    "logs",
+    "backups",
+    "caches",
+    "temporary streams",
+    "local environments"
+  ],
+  "self_hash": "Manifest does not hash itself."
+}

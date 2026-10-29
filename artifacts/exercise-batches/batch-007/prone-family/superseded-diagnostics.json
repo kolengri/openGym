@@ -1,0 +1,30 @@
+{
+  "status": "superseded_nonacceptance_evidence",
+  "reason": "Keep observed failures separate from final accepted receipts. Earlier candidates were overwritten after bounded causal corrections; only final source/model hashes are delivered.",
+  "observations": [
+    {
+      "candidate": "initial superman staging",
+      "whole_floor_support": "nose",
+      "pelvis_gap_m": 0.02801424264907837,
+      "lowerchest_gap_m": 0.02453446388244629,
+      "disposition": "Rejected; switched to source pelvic contact solve plus thoracic extension."
+    },
+    {
+      "candidate": "first archer staging",
+      "failure": "Visible bent knees; both palm/toe support alone did not establish a straight plank.",
+      "disposition": "Rejected; solve both full-length leg reaches with fixed ankle targets and small pelvic yaw."
+    },
+    {
+      "candidate": "whole-hand-only support after first staging correction",
+      "frozen_source_sha256_4702": "b8ddff709874521111c4f354fbe452ff319361f0d1136d62a83dd9c159b7ff61",
+      "frozen_source_sha256_3294": "a7ff11363dd095b7ae8ed381a4e27b98704e8da791d11f997f7f9b481ff4a304",
+      "central_palm_gap_m": {
+        "4702_left": 0.012212634086608887,
+        "4702_right": 0.012085199356079102,
+        "3294_left": 0.012091755867004395,
+        "3294_right": 0.012008965015411377
+      },
+      "disposition": "Rejected despite passing whole-hand support. Final gates use frozen central/heel palm IDs and a source-derived palm frame."
+    }
+  ]
+}

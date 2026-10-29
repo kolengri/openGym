@@ -1,0 +1,39 @@
+{
+  "status": "root_selected_fallback; all_native_decoded_export_game_gates_passed; root_GPU_pending",
+  "source_sha256": "90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34",
+  "glb_sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+  "asset_manifest_sha256": "62227202b1bbbef94c8f9080277ac868b53b6eaaf2e475cd3256bf8cf045e795",
+  "asset_delivery_sha256": "615ccd08ac5c1e45c4a952774473e54220df594e49784249d4a2f974d0929f79",
+  "metrics": {
+    "native_integer_samples": 241,
+    "decoded_integer_samples": 241,
+    "minimum_native_floor_z_m": 0.0009998363675549626,
+    "minimum_decoded_floor_z_m": 0.0009998776949942112,
+    "native_loop_m": 0.0,
+    "decoded_loop_m": 2.667227207228677e-07,
+    "maximum_full_cycle_native_decoded_error_m": 2.26782994301266e-06,
+    "maximum_NORMAL_vector_error": 8.187660755892303e-05,
+    "native_stationary_sole_drift_m": 0.0,
+    "decoded_stationary_sole_drift_m": 0.0,
+    "native_clavicle_head_drift_m": 0.0,
+    "actual_arm_leg_triangle_crossings": 0,
+    "maximum_influences": 4,
+    "maximum_weight_partition_error": 1.341104507446289e-07
+  },
+  "files_sha256": {
+    "motion.py": "1e7f5da8482e2d4c5bb8c633b77fea374ac27940e67c036305602d53faa0a36f",
+    "plantar_binding.py": "72676e1d9856fdc0f3c534590c345405a5a494cf5a0c82df0dd3d5b4abfb6cdc",
+    "build.py": "7e72daef563c7fc24f8eb806f30033011c81624ef4e114a25d48272041261367",
+    "check_motion.py": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d",
+    "circle_checks.py": "2c88895ecd68db6aa3185cb90d319d36380384ed2a8cff872c884f7f1c487c4c",
+    "triangle_intersection.py": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36",
+    "verify_native.py": "d13a174fa4a408f88adbb181cc0ae237952c84f342f55c67b5dad6ff40c59989",
+    "verify_export.mjs": "90a79f94b50aa7bcf19aa91d6e1cf0d05702e6a532398f15d1fbf674e390cd64",
+    "export_motion.py": "ca9095d4a373e2d44ac832255f265bd2abd5935c511bc63a6a3099c6533a31d1",
+    "render_qa.py": "1f89ffae340b8b445b1af52824a2f731b8351696a3c3ae326ae88233ecf753dd",
+    "write_delivery.py": "a0f8b084eba251f8d5688ac9a94d46dd79f4238b744fc1b705e373a1c27cf945",
+    "dependencies.json": "d62895005d42bc452e812825da924371d24d337216a547d82c0b8261c8a7556b",
+    "README.md": "c3d95a7fb850ffb4470067825750cd51df030932a844cd8ed559220c619dd542",
+    "curated-files.json": "54467e748d7220149bf451e9957ae96f21f845fb6b496fde4b61317f3573ebb2"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "status": "accepted_for_user_review",
+  "id": "10058",
+  "action": "Exercise_10058",
+  "source_sha256": "7bde624e1e24d6b94c9f3724cdbb4333d56aad51a2a86eac4f3e573e2e4a4d76",
+  "glb_sha256": "d306f59c96bbdcf9208bf32027b1043cf3462ed0054e57ed2ed23ebab6e4e8a4",
+  "duration_seconds": 8,
+  "native_frames": 241,
+  "source_invariants": {
+    "basis": true,
+    "rest": true,
+    "uv": true,
+    "topology": true,
+    "source_ids": 10582,
+    "bones": 51,
+    "maximum_influences": 4,
+    "morphs": 0,
+    "skinning": "linear"
+  },
+  "authored_timing": "1.4s lift/place,0.5s tall half-kneel,1.4s return,0.7s full kneel; repeat mirrored. Never full standing.",
+  "useful_times_seconds": {
+    "neutral": 0,
+    "first_motion": 0.03333333333333333,
+    "left_peak": 1.6333333333333333,
+    "right_peak": 5.633333333333334,
+    "worst_knee": 4.333333333333333,
+    "worst_hip": 4.966666666666667,
+    "loop": 8
+  },
+  "source_decoded_checks_passed": true,
+  "minimum_decoded_body_floor_clearance_m": 0.00045169316581450403,
+  "maximum_decoded_native_errors": {
+    "position_m": 1.2260903255852292e-06,
+    "joint_m": 1.1596368563378886e-06,
+    "deform_matrix": 2.0563602447509766e-06,
+    "shader_normal_degrees": 0.006356076219330382
+  },
+  "native_loop_vertex_error_m": 0.0,
+  "decoded_loop_vertex_error_m": 1.2498126875429437e-07,
+  "maximum_native_joint_step": {
+    "from": 22,
+    "to": 23,
+    "bone": "LeftLeg",
+    "degrees": 7.349860271592213
+  },
+  "neutral_to_first_frame": {
+    "maximum_joint_degrees": 0.03956468205889273,
+    "maximum_skin_step_m": 0.00014026865118318738,
+    "left_knee_step_m": 0.00011906730682730006
+  },
+  "minimum_native_triangle_area_m2": 5.885693670991276e-08,
+  "whole_arm_hand_vs_leg_crossings": 0,
+  "game_QA": {
+    "errors": 0,
+    "sample_frames": [
+      0,
+      22,
+      49,
+      151,
+      169
+    ],
+    "warning_samples": [
+      {
+        "frame": 0,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ]
+      },
+      {
+        "frame": 151,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ]
+      }
+    ]
+  },
+  "localized_self_fold_warnings": {
+    "shoulders": {
+      "maximum_pairs": 0,
+      "worst_frames": [],
+      "left_peak_pairs": 0,
+      "right_peak_pairs": 0,
+      "interpretation": "No nonadjacent triangle crossings in the frozen source ROI."
+    },
+    "hips": {
+      "maximum_pairs": 35,
+      "worst_frames": [
+        149,
+        150,
+        189,
+        190
+      ],
+      "left_peak_pairs": 4,
+      "right_peak_pairs": 5,
+      "interpretation": "Natural compressed joint crease; diagnostic nonadjacent triangle contacts/crossings, not a collision-free claim."
+    },
+    "knees": {
+      "maximum_pairs": 51,
+      "worst_frames": [
+        130,
+        209
+      ],
+      "left_peak_pairs": 19,
+      "right_peak_pairs": 22,
+      "interpretation": "Natural compressed joint crease; diagnostic nonadjacent triangle contacts/crossings, not a collision-free claim."
+    }
+  },
+  "review_receipt": "Primary independently accepted native f0/f1/f49/f130/f149/f151/f188 and actual GPU left peak/hip transition for user review, with compressed crease and bounded self-fold warnings. Primary reported all ten integrated browser checks passing; integration reports/screenshots are owned by primary.",
+  "limitations": [
+    "The localized hip and knee triangle intersections are retained and disclosed; no global self-collision-free claim.",
+    "Inherited original UV layout is preserved; game QA records84.1percent outside the0..1tile. No textures are used.",
+    "Source code starts from the delivered editable source, whose exact original-to-final binding changes are retained in saved-binding-provenance.json. Historical rejected blends are not required for rekey/check or runtime verification."
+  ]
+}

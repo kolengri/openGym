@@ -1,0 +1,119 @@
+{
+  "id": "1368",
+  "name": "ankle circles",
+  "action": "Exercise_1368",
+  "asset": "seated-ankle",
+  "duration": 12.0,
+  "duration_seconds": 12.0,
+  "frames": 360,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "calves"
+  ],
+  "secondary": [
+    "ankle stabilizers"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {
+    "calves": [
+      "L",
+      "R"
+    ],
+    "ankle stabilizers": [
+      "L",
+      "R"
+    ]
+  },
+  "skinning": "dualQuaternion",
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.5,
+      "label": "Left leg lift"
+    },
+    {
+      "start": 0.5,
+      "end": 2.75,
+      "label": "Left counterclockwise circle (front view)"
+    },
+    {
+      "start": 2.75,
+      "end": 3,
+      "label": "Left direction change pause"
+    },
+    {
+      "start": 3,
+      "end": 5.5,
+      "label": "Left clockwise circle (front view)"
+    },
+    {
+      "start": 5.5,
+      "end": 6,
+      "label": "Left leg lower"
+    },
+    {
+      "start": 6,
+      "end": 6.5,
+      "label": "Right leg lift"
+    },
+    {
+      "start": 6.5,
+      "end": 8.75,
+      "label": "Right counterclockwise circle (front view)"
+    },
+    {
+      "start": 8.75,
+      "end": 9,
+      "label": "Right direction change pause"
+    },
+    {
+      "start": 9,
+      "end": 11.5,
+      "label": "Right clockwise circle (front view)"
+    },
+    {
+      "start": 11.5,
+      "end": 12,
+      "label": "Right leg lower"
+    }
+  ],
+  "interpretation": "Twelve-second seated demonstration: left leg lifts45mm, one slow counterclockwise ankle circle, a direction-change pause, one clockwise circle and lower; then repeat on the right. Direction is measured from the actual toe-vector path in frontal X/Z projection, viewed from the toes toward the body. Legs remain extended forward with a gentle authored knee bend. Source repetition count is unspecified.",
+  "authored_choices": {
+    "pelvic_support": "Actual posterior pelvic skin is grounded; no pelvis flattening or pose-space target.",
+    "seated_legs": "Both legs extend forward with authored11.524186\u00b0 knee flexion (168.475814\u00b0 internal angle), the minimum static bend satisfying this body\u2019s calf and heel support. This numeric choice is not in the catalogue.",
+    "hands": "Relaxed palm-down thigh-near rest. Actual complete-cycle closest arm/hand-to-thigh clearance is reported, rather than claiming load-bearing hand contact. Exact two-link arm IK, unchanged limb lengths, no grip.",
+    "ankle_transport": "Continuous shin-relative Foot frame; ToeBase follows the rigid Foot deformation. Original plantar skin is bound to Foot with a compact feather into the ankle; no body geometry or corrective targets.",
+    "cameras": "Whole body plus a static both-foot detail with unique complete source-domain Foot/ToeBase IDs. Full model remains present. Primary owns full-cycle width fitting.",
+    "angles_are_authored_not_source_facts": true,
+    "numeric_choices": {
+      "lift_m": 0.045,
+      "circle_pitch_amplitude_degrees": 12,
+      "circle_roll_amplitude_degrees": 8,
+      "first_circle_seconds": 2.25,
+      "reverse_circle_seconds": 2.5
+    }
+  },
+  "source": {
+    "path": "catalogue/exercises/1368.json",
+    "sha256": "22de07e891f5050589292aba0dec1358db7edda2464b18e7d06b3bb7e379960b",
+    "description": "Sit and move your foot in slow circles from the ankle. It warms up the ankle joint and the muscles around the calf.",
+    "instructions": [
+      "Sit on the ground with your legs extended in front of you.",
+      "Lift one leg off the ground and rotate your ankle in a circular motion.",
+      "Perform the desired number of circles in one direction, then switch to the other direction.",
+      "Repeat with the other leg."
+    ],
+    "target": "calves",
+    "secondaryMuscles": [
+      "ankle stabilizers"
+    ],
+    "textSource": "exercisedb"
+  },
+  "runtime_adapter": {
+    "path": "artifacts/exercise-batches/dual-quaternion.js",
+    "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "changed": false
+  },
+  "readiness": "native_decoded_game_gates_pass_primary_gpu_review_pending"
+}

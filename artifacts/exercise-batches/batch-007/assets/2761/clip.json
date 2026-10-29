@@ -1,0 +1,133 @@
+{
+  "id": "2761",
+  "name": "ankle dorsal flexion",
+  "action": "Exercise_2761",
+  "asset": "seated-ankle",
+  "duration": 5.0,
+  "duration_seconds": 5.0,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "calves"
+  ],
+  "secondary": [
+    "shins",
+    "ankles"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {
+    "calves": [
+      "L",
+      "R"
+    ],
+    "shins": [
+      "L",
+      "R"
+    ],
+    "ankles": [
+      "L",
+      "R"
+    ]
+  },
+  "skinning": "dualQuaternion",
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.15,
+      "label": "Left neutral"
+    },
+    {
+      "start": 0.15,
+      "end": 1.05,
+      "label": "Left toes toward shin"
+    },
+    {
+      "start": 1.05,
+      "end": 1.45,
+      "label": "Left brief pause"
+    },
+    {
+      "start": 1.45,
+      "end": 2.35,
+      "label": "Left controlled return"
+    },
+    {
+      "start": 2.35,
+      "end": 2.5,
+      "label": "Neutral side change"
+    },
+    {
+      "start": 2.5,
+      "end": 2.65,
+      "label": "Right neutral"
+    },
+    {
+      "start": 2.65,
+      "end": 3.55,
+      "label": "Right toes toward shin"
+    },
+    {
+      "start": 3.55,
+      "end": 3.95,
+      "label": "Right brief pause"
+    },
+    {
+      "start": 3.95,
+      "end": 4.85,
+      "label": "Right controlled return"
+    },
+    {
+      "start": 4.85,
+      "end": 5.0,
+      "label": "Neutral side change"
+    }
+  ],
+  "interpretation": "Seated left then right ankle dorsiflexion, pulling the toes/top of foot toward the shin, brief pause and controlled return. Actual heel skin stays supported throughout. The catalogue primary calf label is retained; its description instead says front of the lower leg. This five-second demonstration shows one repetition per side, separate from the source10\u201315-repetition workout instruction.",
+  "authored_choices": {
+    "pelvic_support": "Actual posterior pelvic skin is grounded; no pelvis flattening or pose-space target.",
+    "seated_legs": "Both legs extend forward with authored11.524186\u00b0 knee flexion (168.475814\u00b0 internal angle), the minimum static bend satisfying this body\u2019s calf and heel support. This numeric choice is not in the catalogue.",
+    "hands": "Relaxed palm-down thigh-near rest. Actual complete-cycle closest arm/hand-to-thigh clearance is reported, rather than claiming load-bearing hand contact. Exact two-link arm IK, unchanged limb lengths, no grip.",
+    "ankle_transport": "Continuous shin-relative Foot frame; ToeBase follows the rigid Foot deformation. Original plantar skin is bound to Foot with a compact feather into the ankle; no body geometry or corrective targets.",
+    "cameras": "Whole body plus a static both-foot detail with unique complete source-domain Foot/ToeBase IDs. Full model remains present. Primary owns full-cycle width fitting.",
+    "angles_are_authored_not_source_facts": true,
+    "numeric_choices": {
+      "shin_relative_ankle_excursion_degrees": 15,
+      "each_side_seconds": 2.5,
+      "brief_pause_seconds": 0.4
+    }
+  },
+  "source": {
+    "path": "catalogue/exercises/2761.json",
+    "sha256": "4561403b2577efb175dba7eb59df7f9fde406320913017328b12b453918f7b26",
+    "description": "Pulling the toes up toward the shin, working the front of the lower leg. A simple way to keep the ankle moving well.",
+    "instructions": [
+      "Stand or sit tall with a relaxed posture and the joint in a neutral starting position.",
+      "Sit with one leg out and your heel resting on the floor.",
+      "Pull your toes and the top of your foot toward your shin as far as is comfortable.",
+      "Pause briefly, then lower the foot back down slowly.",
+      "Repeat for 10-15 smooth reps, then switch sides if you are working one side at a time."
+    ],
+    "target": "calves",
+    "secondaryMuscles": [
+      "shins",
+      "ankles"
+    ],
+    "textSource": "opengym"
+  },
+  "runtime_adapter": {
+    "path": "artifacts/exercise-batches/dual-quaternion.js",
+    "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "changed": false
+  },
+  "readiness": "native_decoded_game_gates_pass_primary_gpu_review_pending",
+  "source_repetition_recommendation": [
+    10,
+    15
+  ],
+  "source_label_discrepancy": {
+    "catalogue_primary": "calves",
+    "description": "front of the lower leg",
+    "resolution": "Preserve the exact catalogue calf target and secondary shins/ankles labels; disclose the description discrepancy rather than changing the source."
+  }
+}

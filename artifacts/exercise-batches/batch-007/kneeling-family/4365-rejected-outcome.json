@@ -1,0 +1,102 @@
+{
+  "status": "deferred_rejected_not_delivered",
+  "id": "4365",
+  "replacement_id": "3905",
+  "last_candidate": "coupled9",
+  "candidate_source_sha256": "0d9f1c4d0a7c0a69be00f706b1ca608bb740b910a7f26bffdfac80e2c779a39b",
+  "reason": "Visible shoulder feather ribbons/pinching and hip collar deformation remained unacceptable, despite support/loop passing. User chose replacement3905; repairs stopped.",
+  "source_instruction": "Sit toward heels, fold/reach forehead and palms to the floor; source hold30\u201360seconds distinct from authored2sentry/1shold/2sreturn.",
+  "source_hold_recommendation_seconds": [
+    30,
+    60
+  ],
+  "measured_candidate": {
+    "native_frames": 151,
+    "loop_skin_error_m": 0.0,
+    "whole_arm_hand_vs_leg_pairs": 0,
+    "localized_self_crossings": {
+      "shoulders": {
+        "peak_pairs": 43,
+        "maximum_pairs": 48,
+        "worst_frames": [
+          55,
+          95
+        ]
+      },
+      "hips": {
+        "peak_pairs": 85,
+        "maximum_pairs": 126,
+        "worst_frames": [
+          40,
+          110
+        ]
+      },
+      "knees": {
+        "peak_pairs": 107,
+        "maximum_pairs": 107,
+        "worst_frames": [
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99
+        ]
+      }
+    },
+    "child_local_volume": {
+      "source_displacement_max_m": 0.14596699436991079,
+      "world_displacement_max_m": 0.07836106995377526,
+      "raw_DQ_envelope_displacement_max_m": 0.07854880231760066,
+      "maximum_inverse_condition": 3.560279994934756,
+      "native_core_DQ_target_error_m": 2.443972150513042e-07,
+      "outside_exact_error_m": 0.0
+    },
+    "interpretation": "Exact core native-DQ matching and pinned exterior did not establish anatomically acceptable transition/feather volume. No final export/native-runtime parity or visual acceptance is claimed."
+  },
+  "delivery_assets": [],
+  "retention_policy": "Only this bounded outcome, frozen catalogue context and source interpretation are curated. Rejected giant blend, full vertex witnesses, trial stills/logs/caches and intermediate variants are excluded."
+}

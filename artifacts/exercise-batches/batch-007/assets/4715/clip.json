@@ -1,0 +1,97 @@
+{
+  "id": "4715",
+  "name": "alternating superman v. 2",
+  "action": "Exercise_4715",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "spine"
+  ],
+  "secondary": [
+    "glutes",
+    "rear deltoids",
+    "hamstrings"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Lie face down with arms extended overhead.",
+    "Raise your right arm and left leg.",
+    "Hold briefly and lower.",
+    "Raise your left arm and right leg.",
+    "Keep your neck neutral and move smoothly."
+  ],
+  "source_hold_recommendation_seconds": null,
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.5,
+      "label": "Raise right arm and left leg"
+    },
+    {
+      "start": 0.5,
+      "end": 1.5,
+      "label": "Hold opposite limbs"
+    },
+    {
+      "start": 1.5,
+      "end": 2,
+      "label": "Lower with control"
+    },
+    {
+      "start": 2,
+      "end": 2.5,
+      "label": "Neutral support"
+    },
+    {
+      "start": 2.5,
+      "end": 3,
+      "label": "Raise left arm and right leg"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "label": "Hold opposite limbs"
+    },
+    {
+      "start": 4,
+      "end": 4.5,
+      "label": "Lower with control"
+    },
+    {
+      "start": 4.5,
+      "end": 5,
+      "label": "Neutral support"
+    }
+  ],
+  "interpretation": "Source-equivalent4702/4715 share the same original body, binding, five-second motion path and two independent action identities. Right arm/left leg first;0.5s raise,1s hold,0.5s lower,0.5s neutral per side. Continuous upper chest/neck/head orientation uses6degrees upper thoracic extension, with no independent neck crank. Actual anterior pelvis/lowerchest, central/heel palm and nonraised distal foot skin support the floor. Source-derived palm orientation plus4degree extension prevents fingertip-only support. Raised straight leg reaches12degrees above horizontal; resting legs8.4degrees below horizontal follow the floor. These ranges/timing/contact tolerances are authored illustration choices, not source measurements.",
+  "source_roles": {
+    "primary": [
+      "spine"
+    ],
+    "secondary": [
+      "glutes",
+      "rear deltoids",
+      "hamstrings"
+    ]
+  },
+  "authored_numeric_parameters_not_source_measurements": true,
+  "diagnostic_peak_seconds": [
+    1,
+    3.5
+  ],
+  "source_model_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "shared_model_id": "4702",
+  "geometry_rest_uv_source_ids_preserved": true,
+  "runtime_frame_vertex_cache": false,
+  "shape_correctives": [],
+  "known_shape_limits": [
+    "Original low-poly shoulder/armpit contour is retained; no clinical anatomy or globally collision-free claim."
+  ],
+  "floor_plane_z_m": 0,
+  "heat_role_note": "Root supplies source-label artistic warm fields; labels do not establish measured activation."
+}

@@ -1,0 +1,9 @@
+# 4436 — alternating step out
+
+Five-second `Exercise_4436` action in a shared two-action GLB on the original10582-vertex,21160-triangle,51-bone CC0 body. Original Basis/rest/UV/topology/source IDs are exact. The declared inherited upright binding is unchanged; no new geometry/fairing/joint-weight edits were needed.
+
+Authored four alternating lateral step-outs/returns in five seconds, narrow starting feet, low35mm swing lift, soft knees and hands held in front of chest. Source30–60second workout interval retained separately.
+
+Native and actual decoded151 support, whole-skin floor, complete arm/hand-versus-leg signed proximity and exact triangle crossing, positive areas, elbow limits, loop and DQ parity pass. Mixed-ankle/forefoot shape regressions use exact frozen source edge domains and unchanged35%/15%ratio limits; explicit continuous shin/foot and130°total curl checks prevent the earlier hook/overfold errors. Source/GLB all151 maximum skin error is2.686µm. Game QA has zero errors/warnings. Required actual solid/random/wire sheets and useful GPU timestamps are supplied. Original low-poly lower-knee facets and finger seams remain visible; local nearest-normal and discrete triangle checks are not global/continuous-time collision certification or clinical evidence.
+
+Source muscle labels remain intact: primary['cardiovascular system'], secondary['quadriceps', 'glutes', 'calves', 'core']. Numerical cadence, limb pairing and illustrationQC limits are authored choices. Runtime fields, final camera widths and actualGPU acceptance are root-owned. No videos, paid services, runtime vertex caches or Git mutations were made. Shared source/model bytes: `ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28` / `5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc`. See explicit manifest and delivery report; shared authoring dependencies are declared separately.

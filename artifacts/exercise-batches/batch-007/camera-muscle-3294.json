@@ -1,0 +1,69 @@
+{
+  "id": "3294",
+  "reason": "Both initial cameras viewed the dorsal side, obscuring the primary pectoral field. Keep the profile motion view and pair it with an anterior underside view through the transparent support plane.",
+  "before": [
+    {
+      "label": "side_whole_body",
+      "position": [
+        4,
+        -0.2,
+        1.8
+      ],
+      "target": [
+        0,
+        -0.15,
+        0.2
+      ],
+      "scale": 2.55
+    },
+    {
+      "label": "oblique_whole_body",
+      "position": [
+        3,
+        -4,
+        3.6
+      ],
+      "target": [
+        0,
+        -0.15,
+        0.2
+      ],
+      "scale": 2.55
+    }
+  ],
+  "after": [
+    {
+      "label": "side_whole_body",
+      "position": [
+        4,
+        -0.2,
+        1.8
+      ],
+      "target": [
+        0,
+        -0.15,
+        0.2
+      ],
+      "scale": 2.55
+    },
+    {
+      "label": "anterior_oblique_whole_body",
+      "position": [
+        3,
+        -4,
+        -1.4
+      ],
+      "target": [
+        0,
+        -0.15,
+        0.2
+      ],
+      "scale": 2.55
+    }
+  ],
+  "model_sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0",
+  "shape_or_motion_changed": false,
+  "visual_acceptance": "accepted_primary_pectoral_visibility_and_profile_companion",
+  "proof_file": "camera-muscle-3294.png",
+  "proof_sha256": "9d40403e6a772317c4edd156f02dc0f642351a1652642819629d4f3cf921eda8"
+}

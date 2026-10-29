@@ -1,0 +1,146 @@
+{
+  "id": "3905",
+  "status": "root_selected_fallback; all_native_decoded_export_game_gates_passed; root_GPU_pending",
+  "selection_context": "Root selected 3905 under the existing broad next-ten authorization as replacement for unresolved 4365. No separate user reply/approval is claimed.",
+  "source_sha256": "90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34",
+  "glb_sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+  "runtime_binding_sha256": "6c3c40b3a5ba6fcbe33e75b6599b21233b8ad03d29b0bd028e0efcff967f1b38",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "duration_seconds": 8,
+  "frames": 240,
+  "action": "Exercise_3905",
+  "full241_native_pass": true,
+  "full241_actual_decoded_pass": true,
+  "all_original_upper_body_weights_exact": true,
+  "source_invariants_pass": true,
+  "game_qa_zero_errors": true,
+  "game_qa_warnings": [],
+  "source_repetitions_before_reverse": [
+    10,
+    15
+  ],
+  "authored_demo_circles_per_direction": 3,
+  "useful_GPU_poses": [
+    {
+      "frame": 0,
+      "seconds": 0.0,
+      "action": "Exercise_3905",
+      "phase": "Small-radius forward start"
+    },
+    {
+      "frame": 75,
+      "seconds": 2.5,
+      "action": "Exercise_3905",
+      "phase": "Larger forward circle, lower arc"
+    },
+    {
+      "frame": 100,
+      "seconds": 3.3333333333333335,
+      "action": "Exercise_3905",
+      "phase": "Large forward upper arc, rear view"
+    },
+    {
+      "frame": 120,
+      "seconds": 4.0,
+      "action": "Exercise_3905",
+      "phase": "Smooth reversal at maximum radius"
+    },
+    {
+      "frame": 140,
+      "seconds": 4.666666666666667,
+      "action": "Exercise_3905",
+      "phase": "Early reverse travel"
+    },
+    {
+      "frame": 165,
+      "seconds": 5.5,
+      "action": "Exercise_3905",
+      "phase": "Reverse lower arc, rear view"
+    },
+    {
+      "frame": 240,
+      "seconds": 8.0,
+      "action": "Exercise_3905",
+      "phase": "Exact loop return"
+    }
+  ],
+  "circle_motion": {
+    "Left": {
+      "forward_turns": 2.9999990108280294,
+      "reverse_turns": -2.999998995860045,
+      "radius_range_m": [
+        0.04499988535209359,
+        0.13999997755788912
+      ]
+    },
+    "Right": {
+      "forward_turns": 2.9999990108280294,
+      "reverse_turns": -2.999998995860045,
+      "radius_range_m": [
+        0.04499988535209359,
+        0.13999997755788912
+      ]
+    }
+  },
+  "metrics": {
+    "native_integer_samples": 241,
+    "decoded_integer_samples": 241,
+    "minimum_native_floor_z_m": 0.0009998363675549626,
+    "minimum_decoded_floor_z_m": 0.0009998776949942112,
+    "native_loop_m": 0.0,
+    "decoded_loop_m": 2.667227207228677e-07,
+    "maximum_full_cycle_native_decoded_error_m": 2.26782994301266e-06,
+    "maximum_NORMAL_vector_error": 8.187660755892303e-05,
+    "native_stationary_sole_drift_m": 0.0,
+    "decoded_stationary_sole_drift_m": 0.0,
+    "native_clavicle_head_drift_m": 0.0,
+    "actual_arm_leg_triangle_crossings": 0,
+    "maximum_influences": 4,
+    "maximum_weight_partition_error": 1.341104507446289e-07
+  },
+  "bounded_limitations": [
+    "Original low-poly skin/finger contours remain.",
+    "Mirror-time static poses coincide; actual motion angle direction, not still pose difference, proves reversal.",
+    "Discrete/local checks and stationary clavicle heads do not certify clinical relaxation/global collision freedom."
+  ],
+  "remaining": [
+    "Root actualGPU playback acceptance, fields and camera-width integration."
+  ],
+  "files_sha256": {
+    "README.md": "1074bff3c1047952e8515e7146ad07eb6e083a4ca8cca064e4bb44293466fd35",
+    "asset-qa.json": "71b932e6245507feb7eb3544bfa9804a1ec6e3035c3bced95431ff9c1eab85b5",
+    "authoring-context.json": "15498997c92891cacc5b196c61e7810dfdfc64b423d3400fdbe8ef84b8486150",
+    "authoring-family.json": "70f1026781e40faa4618e5be770b9419471aa6f3e53166e7d00c2e54373c2001",
+    "cameras.json": "2fc9063ec777269e533cae7d84e00b5e59bd771da9aa9a09da4a1daeb6e5eb99",
+    "circle-motion-report.json": "b1ebf54145433c75a7bfbc8bdfbd10952221c3f5e8a035c14a337fba33e1f8bf",
+    "clip.json": "c9434d12fea20628808e9aa0382bead1594040de84ebdf329645f30f1258fc74",
+    "curated-files.json": "62227202b1bbbef94c8f9080277ac868b53b6eaaf2e475cd3256bf8cf045e795",
+    "decoded-direction-witness.svg": "249a61be49d976bd4e8e36fa4052d653bd4715583399ca1cd8ff5cf9401bd387",
+    "decoded-physical-report.json": "7131352087f4115f588b8064dbd4222a66291d55d0f228462415ddb3874229fd",
+    "decoded-source-readback.json": "ea1040a737a1df84d55f15c3df154872367521f24fd8ad3e89045f9c0210586f",
+    "dq-reference.json.gz": "c13fd063b4da4409abf689f0d2be6c91e93d1a752fe3487311524eb6ac84a018",
+    "environment.json": "7c1530de9b8e6f6c69eace3a703dbe35ed76f8975d2e6521b67c05ba6ab53940",
+    "export-verification.json": "70bb9dae9a6441f1b5236754b6c865c54dd1025aa1191c241a041bc677b1a166",
+    "local-binding-report.json": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e",
+    "motion-witnesses.json": "10091c6b14ed866eddf5bf4977dfcd664d9117a3a0733ef42efa913fdc347103",
+    "motion.glb": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+    "neutral-forward-large.png": "e652b1423cc89cf735dc891a91ffab21e853885d876a7d53e6a722213773e86f",
+    "neutral-forward-upper.png": "abefedd56001f858a5f5275ea35cdc6efbdc90af2ce57a98594b0a23ab2401fd",
+    "neutral-loop-return.png": "341a508138ecc2a1a3cf612958c6058026e6ce45e5af638bd54f7df19ae8ad03",
+    "neutral-reversal.png": "355db9c1875c0ace85eaff91012083cb84baf32c304376ec1252aa52cb775fd0",
+    "neutral-reverse-large.png": "354b1af793d2ae2f8aebb0be7f7380b4116f5ebcfc2cb814045006eef2f716b6",
+    "neutral-start.png": "46e1ec1a63d7f2cda293d4e628c60d6d04e3abf2539a9e63404ef9933d213d1c",
+    "normal-reference.json.gz": "dc9936296cf9fefb15945b12258bc3144191ea9e957da813c8a99256b05fa1b5",
+    "pose-samples.json": "d15167740fa7adba257ea3e29ecd5a84d1c147291e4f4b87ac2c4e67b99b2a58",
+    "proof-receipt.json": "75ece979acbdd17986add458dbe9d88654ba3562e0df620a9089bfece7c9dd7d",
+    "qa-random.png": "8fe72fd2e85d180c8fb40ed38aac7ccbac029283d4ae451438f3880d745b57a8",
+    "qa-render-receipt.json": "0db9a6878c291baf843b534d51467b985aa1221e9668a9c5315c0b40e067172c",
+    "qa-wire.png": "70e62b8cf9f97802f3a4e1987dff07c412ac33888ba985f9c63973d78e06e926",
+    "raw-asset-qa.json": "9d9264cea6b2e63d4f40fb42ed864e65aedc739173044dc7c73cdb9d1a11a14d",
+    "runtime-surface-reference.json": "a7620243c6b2a208cb2f8ebb161bde0f77c3c2a9d24cfaca95837e749a682a6a",
+    "source-verification.json": "ea1040a737a1df84d55f15c3df154872367521f24fd8ad3e89045f9c0210586f",
+    "source.blend": "90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34",
+    "surface-contact-report.json": "3b3b3b53d1c9283328279ebb8f22952fde444614fdf3b062c841d5cba0a060ea",
+    "surface-landmarks.json": "e97286f3ba200121afb9f9b2dd963522d82fdcce48e5b35a45a4baf2aa88d1f9"
+  }
+}

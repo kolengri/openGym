@@ -1,0 +1,120 @@
+{
+  "source_sha256": "90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34",
+  "glb_sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+  "native": {
+    "maximum_stationary_sole_skin_drift_m": 0.0,
+    "maximum_clavicle_head_drift_m": 0.0,
+    "sides": {
+      "Left": {
+        "forward_turns": 2.99999971390289,
+        "reverse_turns": -2.99999971390289,
+        "radius_range_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "forward_small_to_large_radius_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "maximum_angular_step_degrees": 16.87175323439752,
+        "minimum_forward_angular_step_radians": 0.00010861159425709581,
+        "maximum_reverse_angular_step_radians": -0.00010861159425709581
+      },
+      "Right": {
+        "forward_turns": 2.99999971390289,
+        "reverse_turns": -2.99999971390289,
+        "radius_range_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "forward_small_to_large_radius_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "maximum_angular_step_degrees": 16.87175323439752,
+        "minimum_forward_angular_step_radians": 0.00010861159425709581,
+        "maximum_reverse_angular_step_radians": -0.00010861159425709581
+      }
+    },
+    "source_repetitions_before_reverse": [
+      10,
+      15
+    ],
+    "authored_demo_circles_per_direction": 3
+  },
+  "decoded_skin_and_native_joint_crosscheck": {
+    "maximum_stationary_sole_skin_drift_m": 0.0,
+    "maximum_clavicle_head_drift_m": 0.0,
+    "sides": {
+      "Left": {
+        "forward_turns": 2.99999971390289,
+        "reverse_turns": -2.99999971390289,
+        "radius_range_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "forward_small_to_large_radius_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "maximum_angular_step_degrees": 16.87175323439752,
+        "minimum_forward_angular_step_radians": 0.00010861159425709581,
+        "maximum_reverse_angular_step_radians": -0.00010861159425709581
+      },
+      "Right": {
+        "forward_turns": 2.99999971390289,
+        "reverse_turns": -2.99999971390289,
+        "radius_range_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "forward_small_to_large_radius_m": [
+          0.04499997943639755,
+          0.13999992609024048
+        ],
+        "maximum_angular_step_degrees": 16.87175323439752,
+        "minimum_forward_angular_step_radians": 0.00010861159425709581,
+        "maximum_reverse_angular_step_radians": -0.00010861159425709581
+      }
+    },
+    "source_repetitions_before_reverse": [
+      10,
+      15
+    ],
+    "authored_demo_circles_per_direction": 3
+  },
+  "independent_actual_decoded_joints": {
+    "Left": {
+      "forward_turns": 2.9999990108280294,
+      "reverse_turns": -2.999998995860045,
+      "radius_range_m": [
+        0.04499988535209359,
+        0.13999997755788912
+      ]
+    },
+    "Right": {
+      "forward_turns": 2.9999990108280294,
+      "reverse_turns": -2.999998995860045,
+      "radius_range_m": [
+        0.04499988535209359,
+        0.13999997755788912
+      ]
+    }
+  },
+  "source_repetitions_before_reverse": [
+    10,
+    15
+  ],
+  "authored_demo_circles_per_direction": 3,
+  "duration_seconds": 8,
+  "full_cycle_integer_samples": 241,
+  "full_source_DQ_witness_frames": [
+    0,
+    60,
+    120,
+    180,
+    240
+  ],
+  "direction_plot": "decoded-direction-witness.svg",
+  "limits": "Mirror-time static poses coincide; signed travel and unwrapped actual wrist angles prove reversal. Static clavicle heads indicate no authored shrug, not measured muscle relaxation."
+}
