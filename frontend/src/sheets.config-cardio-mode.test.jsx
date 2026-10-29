@@ -28,8 +28,9 @@ function open(ex, existing) {
   const picked = () => host.querySelector('.seg-range button.on')?.textContent.trim()
   const pick = label => act(() => [...host.querySelectorAll('.seg-range button')].find(b => b.textContent.trim() === label).click())
   const labels = () => [...host.querySelectorAll('.stp-l')].map(l => l.textContent.trim())
+  const primaryLabels = () => [...host.querySelector('.cfgrow').querySelectorAll('.stp-l')].map(l => l.textContent.trim())
   const save = () => act(() => [...host.querySelectorAll('button')].find(b => b.textContent.trim() === 'Save').click())
-  return { modes, picked, pick, labels, save, onSave }
+  return { modes, picked, pick, labels, primaryLabels, save, onSave }
 }
 
 beforeEach(() => {
@@ -66,7 +67,7 @@ describe('a cardio exercise logged as sets x reps (#678)', () => {
     const v = open(EXIDX[HIGH_KNEES], { sets: 3, reps: 20, weight: 0, mode: 'reps', bodyweight: true })
     expect(v.picked()).toBe('Reps')
     v.pick('Cardio')
-    expect(v.labels()).toEqual(['Time goal (min)', 'Distance goal (km)'])
+    expect(v.primaryLabels()).toEqual(['Time goal (min)', 'Distance goal (km)'])
     v.save()
     const saved = v.onSave.mock.calls[0][0]
     expect(saved).toEqual({ sets: 1, mode: 'cardio', min: 20 })

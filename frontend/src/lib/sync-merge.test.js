@@ -778,6 +778,15 @@ describe('a change is stamped after everything the copy it was made on carries (
   const T = Date.UTC(2026, 9, 6, 12), DAY = 86400000
   const change = (prev, wall, mut) => { const n = clone(prev); mut(n); n._ts = stampChange(prev, n, wall); return n }
 
+  it.each([undefined, 50])('an unchanged workout keeps its previous edit time (%s)', at => {
+    const w = { id: 'w1', d: '2026-09-30', start: 1, end: 2, entries: [{ id: 'bench', sets: [{ w: 60, r: 5 }] }] }
+    if (at != null) Object.assign(w, { _ts: at, _f: { entries: at }, _u: { entries: [0, at - 1, at] } })
+    const b0 = { _ts: 100, workouts: [w] }
+    const saved = change(b0, 1000, S => { stampWorkout(S.workouts[0], 1000) })
+    expect(saved.workouts[0]).toEqual(w)
+    expect(saved._ts).toBe(1000)
+  })
+
   it('a phone a day behind keeps the setting, rename and delete it made after the web change it saw', () => {
     const b0 = { _ts: T - 3600000, restSec: 90, routines: [{ id: 'r1', name: 'Pull', ex: [], _ts: T - 7200000 }],
       workouts: [{ id: 'w1', d: '2026-10-06', start: T - 7200000, end: T - 3600000, entries: [] }] }
