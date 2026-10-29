@@ -19,5 +19,23 @@
     "title": "Add live exercise reviews and repair all-fours foot grasp",
     "body_source": "artifacts/exercise-batches/batch-006/pr-body.md"
   },
-  "ci_observation": "Deferred until the primary's planned immutable public inline pin metadata commit and final SHA handoff."
+  "ci_observation": "Deferred until the primary's planned immutable public inline pin metadata commit and final SHA handoff.",
+  "source_follow_up_stage_a": {
+    "source_sha": "33f2bb8b8208cf2f2c9de7a38230130cbb002169",
+    "push": {
+      "command": "git push origin t3/upgrade-exercise-animations",
+      "exit_code": 0,
+      "receipt": "9e04568c..33f2bb8b t3/upgrade-exercise-animations -> t3/upgrade-exercise-animations"
+    },
+    "pull_request": {
+      "url": "https://github.com/kolengri/openGym/pull/3",
+      "linked_to_thread": true,
+      "link_receipt": "alreadyLinked=true",
+      "update_command": "gh pr edit 3 --repo kolengri/openGym --title 'Add live exercise reviews with corrected movement and muscle fields' --body-file artifacts/exercise-batches/batch-006/pr-body.md",
+      "update_exit_code": 0,
+      "title": "Add live exercise reviews with corrected movement and muscle fields",
+      "body_source": "artifacts/exercise-batches/batch-006/pr-body.md"
+    },
+    "ci_observation": "Deferred until the primary metadata pin commit and final SHA handoff."
+  }
 }

@@ -193,5 +193,18 @@
       ],
       "screenshot_pattern": "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png"
     }
+  },
+  "pinned_inline_feedback": {
+    "source_revision": "33f2bb8b8208cf2f2c9de7a38230130cbb002169",
+    "build_manifest_sha256": "d9d8ec5026364f761996fd1a457028ba3cf60ee51ce74a883e11907d81f71192",
+    "command": "node artifacts/exercise-batches/batch-006/verify-inline.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify-inline-feedback.log",
+    "result": "passed",
+    "action_count": 11,
+    "includes_eight_second_3479": true,
+    "public_model_byte_hashes_match_exact_revision": true,
+    "live_canvas_replaces_poster": true,
+    "external_resource_count": 12
   }
 }
