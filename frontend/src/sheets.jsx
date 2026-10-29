@@ -2087,12 +2087,12 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
     {cardio && <>
       <div className="small dim" role={cardioGoalMissing ? 'alert' : undefined} style={{ marginTop: -10, marginBottom: 18 }}>{t('Set a time or distance goal. Zero leaves a goal off.')}</div>
       {/* Incline and older interval/speed settings remain secondary to cardio goals. */}
-      {(inclineFits(ex) || c.sets > 1 || c.speed != null || c.incline > 0) && <details style={{ marginBottom: 18 }}>
+      {(inclineFits(ex) || c.sets > 1 || c.speed != null || c.incline != null) && <details style={{ marginBottom: 18 }}>
         <summary>{t('More')}</summary>
         <div className="row cfgrow">
           {c.sets > 1 && <Stepper label={t('Intervals')} value={c.sets} step={1} min={1} decimal={false} onChange={v => setC(x => ({ ...x, sets: v }))} />}
           {c.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} value={toSpeed(c.speed, speedUnit)} step={0.5} onChange={v => setC(x => ({ ...x, speed: fromSpeed(v, speedUnit) }))} />}
-          {(inclineFits(ex) || c.incline > 0) && <Stepper label={t('Incline (%)')} value={c.incline || 0} step={INCLINE_STEP} max={INCLINE_MAX} onChange={v => setC(x => ({ ...x, incline: clampIncline(v) }))} />}
+          {(inclineFits(ex) || c.incline != null) && <Stepper label={t('Incline (%)')} value={c.incline || 0} step={INCLINE_STEP} max={INCLINE_MAX} onChange={v => setC(x => ({ ...x, incline: clampIncline(v) }))} />}
         </div>
       </details>}
     </>}

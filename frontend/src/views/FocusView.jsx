@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useStore } from '../store/useStore.js'
 import { exOr } from '../lib/exercises.js'
-import { clampIncline, hasIncline, inclineFits, INCLINE_MAX, INCLINE_STEP } from '../lib/incline.js'
+import { clampIncline, inclineFits, INCLINE_MAX, INCLINE_STEP } from '../lib/incline.js'
 import { exerciseNameClass, exerciseNameFor, t } from '../lib/i18n.js'
 import { fmtDate, fmtNum, fmtPlate } from '../lib/format.js'
 import { EFFORT, effortOf, modeOf } from '../lib/history.js'
@@ -338,11 +338,11 @@ export default function FocusView({
           style={effortTint ? { color: effortTint, borderColor: effortTint, background: `color-mix(in srgb, ${effortTint} 20%, var(--surface-2))` } : undefined}
           aria-label={t(EFFORT[effort].hd)} disabled={readOnly} onClick={openEffort}>{effortValue == null ? t(EFFORT[effort].hd) : fmtNum(effortValue)}</button>}
       </div>
-      {mode === 'cardio' && (inclineFits(ex) || set.speed != null || hasIncline(set)) && <details className="small dim">
+      {mode === 'cardio' && (inclineFits(ex) || set.speed != null || set.incline != null) && <details className="small dim">
         <summary>{t('More')}</summary>
         <div className="row cfgrow">
           {set.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} ariaLabel="speed" value={toSpeed(set.speed, speedUnit)} step={0.5} disabled={readOnly} onChange={value => onField(setIdx, 'speed', fromSpeed(value, speedUnit))} />}
-          {(inclineFits(ex) || hasIncline(set)) && <Stepper label={t('Incline (%)')} ariaLabel="incline" value={set.incline || 0} step={INCLINE_STEP} max={INCLINE_MAX} disabled={readOnly} onChange={value => onField(setIdx, 'incline', clampIncline(value))} />}
+          {(inclineFits(ex) || set.incline != null) && <Stepper label={t('Incline (%)')} ariaLabel="incline" value={set.incline ?? null} nullable step={INCLINE_STEP} max={INCLINE_MAX} disabled={readOnly} onChange={value => onField(setIdx, 'incline', clampIncline(value))} />}
         </div>
       </details>}
       <Button variant="primary" icon="check" aria-label={t('Complete set')} onClick={complete}>{set.done ? t('Completed') : t('Complete')}</Button>

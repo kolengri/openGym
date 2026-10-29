@@ -48,6 +48,35 @@ function type(input, value) {
 }
 
 describe('the incline column', () => {
+  describe.each(['cards', 'list', 'compact', 'focus'])('%s incline drafts', workoutView => {
+    it.each([TREADMILL, BIKE])('preserves fractional typing and clearing for exercise %s', id => {
+      mount(id, [{ min: 20, ...(id === BIKE ? { incline: 3 } : {}), done: false }], { workoutView })
+      const input = () => container.querySelector('input[aria-label="incline"]')
+      for (const separator of ['.', ',']) {
+        type(input(), '0')
+        expect(input()).not.toBeNull()
+        expect(input().value).toBe('0')
+        expect(stored().incline).toBe(0)
+        type(input(), input().value + separator)
+        expect(input().value).toBe('0.')
+        type(input(), input().value + '5')
+        expect(stored().incline).toBe(0.5)
+      }
+      type(input(), '')
+      expect(stored()).not.toHaveProperty('incline')
+      if (id === TREADMILL) {
+        expect(input().value).toBe('')
+        for (const separator of ['.', ',']) {
+          type(input(), separator)
+          expect(input().value).toBe('.')
+          type(input(), input().value + '5')
+          expect(stored().incline).toBe(0.5)
+          type(input(), '')
+        }
+      } else expect(input()).toBeNull()
+    })
+  })
+
   it('can add incline to a goals-only treadmill row in the regular and focus views', () => {
     for (const workoutView of ['full', 'focus']) {
       mount(TREADMILL, [{ min: 20, done: false }], { workoutView })

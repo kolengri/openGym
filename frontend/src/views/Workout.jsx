@@ -12,7 +12,7 @@ import { loadKindFor, baseWeightFor, inventoryFor, rowLoad, sameLoad, plateDelta
 import { effectiveRoutines, effectiveRoutineIds, lastEntryFor, bestWeightFor, bestWeightForEntry, freestyleConfig, pickedExerciseConfig, setsDoneActive, setUnitsTotal, supersetUnits, unitOf, setLabel, modeOf, isBw, isPerSide, repStep, EFFORT, effortOf, stepEffort, capEffort, cascadeWeight, insertWarmupRow, barFloor, makeWarmupAt, canBeWarmup, makeWorkAt, removeRowAt, removeLastSet, setSpanAt, copyRowAt, copySpanAt, insertRowAt, pairAdjacent, unpairSuperset, cleanupSg, applyIntensifierPlan, pinnedNoteFor, exNoteFor, setsRepsOf, sessionVolume } from '../lib/history.js'
 import { fmtNum, fmtPlate, fmtVol, exerciseNameText, fmtDate, fmtDaysAgo, todayISO, exCount, DAYN } from '../lib/format.js'
 import { speedUnitOf, toSpeed, fromSpeed } from '../lib/speed.js'
-import { clampIncline, hasIncline, inclineFits, inclineFrom, INCLINE_STEP } from '../lib/incline.js'
+import { clampIncline, inclineFits, inclineFrom, INCLINE_STEP } from '../lib/incline.js'
 import { beep, vibrate, unlock } from '../lib/sound.js'
 import { pinState } from '../lib/queue.js'
 import { t, tn, exerciseNameFor, exerciseNameClass } from '../lib/i18n.js'
@@ -660,11 +660,11 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
         onClick={() => onStartTimed(i)}><Icon name="play" /></button>}
       <Check checked={s.done} label={sideTagOf(s) ? t('Set {0} ({1}) done', setNumOf(s, i), sideTagOf(s)) : t('Set {0} done', setNumOf(s, i))} onChange={() => onToggle(i)} />
     </div>
-    {cardio && (inclineFits(ex) || s.speed != null || hasIncline(s)) && <details className="small dim" style={{ marginBottom: 8 }}>
+    {cardio && (inclineFits(ex) || s.speed != null || s.incline != null) && <details className="small dim" style={{ marginBottom: 8 }}>
       <summary>{t('More')}</summary>
       <div className="row cfgrow">
         {s.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} ariaLabel="speed" value={toSpeed(s.speed, speedUnit)} step={0.5} onChange={v => onField(i, 'speed', fromSpeed(v, speedUnit))} />}
-        {(inclineFits(ex) || hasIncline(s)) && <Stepper label={t('Incline (%)')} ariaLabel="incline" value={s.incline ?? ''} step={INCLINE_STEP} max={40} onChange={v => onField(i, 'incline', v > 0 ? clampIncline(v) : null)} />}
+        {(inclineFits(ex) || s.incline != null) && <Stepper label={t('Incline (%)')} ariaLabel="incline" value={s.incline ?? null} nullable step={INCLINE_STEP} max={40} onChange={v => onField(i, 'incline', clampIncline(v))} />}
       </div>
     </details>}
   </>

@@ -63,4 +63,17 @@ describe('cardio goal configuration', () => {
     act(() => save().click())
     expect(onSave).toHaveBeenCalledWith({ sets: 2, mode: 'cardio', min: 12.5, speed: 0, incline: 4 })
   })
+
+  it('keeps an existing incline control mounted while replacing it with a fractional grade', () => {
+    const onSave = open({ sets: 1, mode: 'cardio', min: 20, incline: 3 })
+    for (const separator of ['.', ',']) {
+      type('Incline (%)', '0')
+      expect(field('Incline (%)')).not.toBeNull()
+      type('Incline (%)', '0' + separator)
+      expect(field('Incline (%)').value).toBe('0.')
+      type('Incline (%)', field('Incline (%)').value + '5')
+    }
+    act(() => save().click())
+    expect(onSave).toHaveBeenCalledWith({ sets: 1, mode: 'cardio', min: 20, incline: 0.5 })
+  })
 })
