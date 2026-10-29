@@ -8,12 +8,12 @@ import { currentDbLoad, historyAs, volumeFactor, workoutAs } from './dumbbells.j
 // last few sessions, derived in a single pass over the log so the sheet can memoise the
 // result and never rescan on a re-render.
 //
-// The chart plots ONE number per session, chosen the way Stats does it:
+// The chart plots ONE number per session:
 //   reps   — the heaviest completed work set (metric 'weight'); an exercise never loaded
 //            (pull-ups, push-ups) plots its best rep count instead (metric 'reps'), because
 //            that is the thing improving
 //   time   — the longest completed hold, in seconds (metric 'sec')
-//   cardio — the minutes logged that session (metric 'min')
+//   cardio — session totals in kilometers or minutes, chosen from the latest measured session
 // The mode is the one the exercise was logged in most recently; a session logged in another
 // mode still appears in the list (its sets are labelled by their own target) but gets no point
 // and no value, so the curve never mixes seconds with kilos.
@@ -56,9 +56,16 @@ export function exerciseHistory(S, exId, { limit = HISTORY_SESSIONS } = {}) {
 
   const mode = logged[logged.length - 1].mode
   const repsOnly = mode === 'reps' && !logged.some(l => l.mode === 'reps' && bestWeightForEntry(l.en) > 0)
-  const metric = mode === 'cardio' ? 'min' : mode === 'time' ? 'sec' : repsOnly ? 'reps' : 'weight'
+  let cardioMetric = 'min'
+  if (mode === 'cardio') for (let i = logged.length - 1; i >= 0; i--) {
+    const item = logged[i]
+    if (item.mode !== 'cardio') continue
+    if (item.rows.some(s => s.km > 0)) { cardioMetric = 'km'; break }
+    if (item.rows.some(s => s.min > 0)) break
+  }
+  const metric = mode === 'cardio' ? cardioMetric : mode === 'time' ? 'sec' : repsOnly ? 'reps' : 'weight'
   const valueOf = ({ en, rows }) => {
-    if (metric === 'min') return rows.reduce((a, s) => a + (Number(s.min) || 0), 0)
+    if (metric === 'min' || metric === 'km') return rows.reduce((a, s) => a + (Number(s[metric]) || 0), 0)
     if (metric === 'sec') return Math.max(0, ...rows.map(s => Number(s.sec) || 0))
     if (metric === 'reps') return Math.max(0, ...rows.map(completedRepsOf))
     return bestWeightForEntry(en)
