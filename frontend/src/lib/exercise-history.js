@@ -104,7 +104,8 @@ export function exerciseHistory(S, exId, { limit = HISTORY_SESSIONS } = {}) {
  * (#173) — the answer to "last time was a bad day, what can I actually do". It is the heaviest
  * completed work set, and of equally heavy ones the one with the most reps: the same "heaviest"
  * the Best chip and a PR mean, which on an assistance machine is the least help. A timed exercise
- * compares holds, then their load; cardio compares minutes, then speed. An exercise never loaded
+ * compares holds, then their load; cardio uses distance when its latest measured session has
+ * kilometers, otherwise minutes and then speed. An exercise never loaded
  * (pull-ups) comes down to its reps that way.
  *
  * Unlike "Last time" this looks across every routine: a record belongs to the exercise, not to
@@ -129,17 +130,32 @@ export function bestSetFor(S, exId, mode = modeOf({ id: exId }), as) {
   // Stored order is not always the order things happened in (a moved session keeps its place
   // until it is filed again), so a tie is settled by the start time, not by which came first
   // in the array; within one session the set logged first keeps it.
-  let best = null
+  let best = null, bestDistance = null, latestCardioMetric = null, latestCardioAt = -Infinity
   for (const stored of S?.workouts || []) {
     const w = as ? workoutAs(stored, exId, as) : stored
     let t = null
+    let cardioMetric = null
     for (const en of w.entries || []) {
       if (en.id !== exId) continue
       for (const set of metricRowsForEntry(en, mode)) {
         t ??= workoutAt(w)
         if (!best || better(set, best.set) || (!better(best.set, set) && t < best.t)) best = { d: w.d, set, target: en.target || null, t }
+        if (mode === 'cardio') {
+          if (set.km > 0) {
+            cardioMetric = 'km'
+            if (!bestDistance || Number(set.km) > Number(bestDistance.set.km) ||
+              (Number(set.km) === Number(bestDistance.set.km) && t < bestDistance.t)) {
+              bestDistance = { d: w.d, set, target: en.target || null, t }
+            }
+          } else if (set.min > 0 && !cardioMetric) cardioMetric = 'min'
+        }
       }
     }
+    if (cardioMetric && t >= latestCardioAt) {
+      latestCardioAt = t
+      latestCardioMetric = cardioMetric
+    }
   }
+  if (latestCardioMetric === 'km') best = bestDistance
   return best && { d: best.d, set: best.set, target: best.target }
 }

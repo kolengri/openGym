@@ -204,6 +204,31 @@ describe('exerciseHistory', () => {
 
 // #173: the workout card can hold today's rows against your best set instead of last time.
 describe('bestSetFor', () => {
+  it('selects the longest recorded distance and the first time a distance record was reached', () => {
+    const run = (i, sets) => ({ id: 'r' + i, d: iso(i), start: T0 + i * DAY,
+      entries: [{ id: 'run', target: { mode: 'cardio', km: 99 }, sets }] })
+    const workouts = [run(4, [{ km: 5, done: true }]), run(0, [{ km: 2, done: true }]),
+      run(2, [{ km: 5, done: true }, { km: 100, done: false }, { km: 100, done: true, phase: 'warmup' }])]
+    const before = structuredClone(workouts)
+    const sort = vi.spyOn(Array.prototype, 'sort')
+    try {
+      expect(bestSetFor({ workouts }, 'run', 'cardio')).toMatchObject({ d: iso(2), set: { km: 5 } })
+      expect(sort).not.toHaveBeenCalled()
+    } finally { sort.mockRestore() }
+    expect(workouts).toEqual(before)
+  })
+
+  it.each([false, true])('uses the latest session measure without comparing kilometers to minutes: %s', reverse => {
+    const timed = { id: 'timed', d: iso(0), start: T0, entries: [{ id: 'run', target: { mode: 'cardio' }, sets: [{ min: 90, done: true }] }] }
+    const rows = [{ km: 5, done: true }, { min: 20, done: true }]
+    const mixed = { id: 'mixed', d: iso(1), start: T0 + DAY,
+      entries: rows.map(set => ({ id: 'run', target: { mode: 'cardio' }, sets: [set] })) }
+    if (reverse) mixed.entries.reverse()
+    expect(bestSetFor({ workouts: [mixed, timed] }, 'run', 'cardio').set).toMatchObject({ km: 5 })
+    const later = { ...timed, d: iso(2), start: T0 + 2 * DAY }
+    expect(bestSetFor({ workouts: [later, mixed] }, 'run', 'cardio').set).toMatchObject({ min: 90 })
+  })
+
   it('is the heaviest work set, the most reps of equally heavy ones, first time reached', () => {
     const S = { workouts: [
       session(0, [warm(120, 1), work(100, 5), work(100, 6)]),

@@ -150,6 +150,15 @@ describe('the reference line in mph', () => {
     entries: [{ id: BIKE, target: { mode: 'cardio', sets: 1, min: 20, speed: 16.09344 }, sets: [{ min: 20, speed: 16.09344, done: true }] }] }
   const refText = () => container.querySelector('.refline')?.textContent || ''
 
+  it('shows the best measured distance instead of the earliest distance-only session', () => {
+    const completed = (i, km) => ({ ...past, id: 'distance-' + i, start: past.start + i * 86400000, end: past.end + i * 86400000,
+      entries: [{ id: BIKE, target: { mode: 'cardio', km: 99 }, sets: [{ km, done: true }] }] })
+    mount({ workouts: [completed(0, 2), completed(1, 5)], logRef: 'best' })
+    expect(refText()).toContain('5 km')
+    expect(refText()).not.toContain('2 km')
+    expect(refText()).not.toContain('99 km')
+  })
+
   it('shows last time and the best set in mph for a profile in pounds', () => {
     mount({ unit: 'lb', workouts: [past] })
     expect(refText()).toContain('20 min @ 10 mph')
