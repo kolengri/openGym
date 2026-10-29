@@ -1,9 +1,11 @@
 # 4436 — alternating step out
 
-Five-second `Exercise_4436` action in a shared two-action GLB on the original10582-vertex,21160-triangle,51-bone CC0 body. Original Basis/rest/UV/topology/source IDs are exact. The declared inherited upright binding is unchanged; no new geometry/fairing/joint-weight edits were needed.
-
 Authored four alternating lateral step-outs/returns in five seconds, narrow starting feet, low35mm swing lift, soft knees and hands held in front of chest. Source30–60second workout interval retained separately.
 
-Native and actual decoded151 support, whole-skin floor, complete arm/hand-versus-leg signed proximity and exact triangle crossing, positive areas, elbow limits, loop and DQ parity pass. Mixed-ankle/forefoot shape regressions use exact frozen source edge domains and unchanged35%/15%ratio limits; explicit continuous shin/foot and130°total curl checks prevent the earlier hook/overfold errors. Source/GLB all151 maximum skin error is2.686µm. Game QA has zero errors/warnings. Required actual solid/random/wire sheets and useful GPU timestamps are supplied. Original low-poly lower-knee facets and finger seams remain visible; local nearest-normal and discrete triangle checks are not global/continuous-time collision certification or clinical evidence.
+The shared container now also carries the repaired4437hand target. This4436action explicitly holds it at0; all51bones and10582skin vertices are BIT-EXACT for all151native AND actualdecoded samples.
 
-Source muscle labels remain intact: primary['cardiovascular system'], secondary['quadriceps', 'glutes', 'calves', 'core']. Numerical cadence, limb pairing and illustrationQC limits are authored choices. Runtime fields, final camera widths and actualGPU acceptance are root-owned. No videos, paid services, runtime vertex caches or Git mutations were made. Shared source/model bytes: `ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28` / `5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc`. See explicit manifest and delivery report; shared authoring dependencies are declared separately.
+Full151native/decoded support, floor, limb clearance, positive areas, loop and DQ gates pass. Basis/morphNORMAL and normalized<=4 export checks pass; gameQA has0errors/0warnings. Maximum full151native/decoded skin error is2.686µm. Source labels and original timing remain intact. Source30–60second workout recommendations remain distinct from the five-second illustration where applicable.
+
+See `fist-feedback-repair.json` for the compact causal history, old model/source identities and exact preservation. Local depth/contact measurements do not certify global or continuous-time self-collision freedom. Minor original polygonal facets remain; primary accepted the connected native fist shape for user review. Root owns actualGPU/finaluser acceptance. Cameras are byte-exact; only clip source/model hashes and hand-repair declarations were refreshed.
+
+Source `b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3`. GLB `e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390`. No Git, runtime, videos or paid changes.

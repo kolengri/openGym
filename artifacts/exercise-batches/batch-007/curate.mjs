@@ -22,7 +22,8 @@ for (const id of build.exercise_ids) {
  add(new URL(`review-${id}.png`, root));
 }
 for (const directory of [...build.exercise_ids.map(id => `assets/${id}/`),
- 'upright-family/', 'kneeling-family/', 'prone-family/', 'ankle-family/', 'arm-circle-family/']) {
+ 'upright-family/', 'kneeling-family/', 'prone-family/', 'ankle-family/', 'arm-circle-family/',
+ 'resting-repair/', 'feedback-resting-fists/']) {
  const base = new URL(directory, root), manifest = new URL('curated-files.json', base);
  add(manifest);
  const packet = await read(manifest);

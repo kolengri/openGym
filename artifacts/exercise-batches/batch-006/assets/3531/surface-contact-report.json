@@ -1,9 +1,14 @@
 {
   "ok": true,
   "maximum_full151_native_decoded_error_m": null,
-  "source_sha256": "dd74caa91937a734c5d15773be533f334498f495d426506a2a24502714be8316",
+  "source_sha256": "cd7d8674eca825f3a49b6db5a9b9a069baee6ab75acdaa1216064248441be447",
   "native_integer_frames": 151,
-  "additional_fractional_frames": [],
+  "additional_fractional_frames": [
+    37.5,
+    57.5,
+    112.5,
+    132.5
+  ],
   "minimum_floor_z_m": 0.0009995042346417904,
   "minimum_triangle_area_m2": 5.894526136942095e-08,
   "loop_skin_error_m": 0.0,
@@ -41,12 +46,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -74,12 +79,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -116,12 +121,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -149,12 +154,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -191,12 +196,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -224,12 +229,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -266,12 +271,12 @@
         "Left": {
           "min_z_m": 0.0009998813038691878,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999808389693499,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -299,12 +304,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720428356245975,
+          "minimum_close_signed_distance_m": -0.0012640833301702514,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784244402952027,
+          "minimum_close_signed_distance_m": -0.0012307560537010431,
           "diagnostic_ids": []
         }
       },
@@ -341,12 +346,12 @@
         "Left": {
           "min_z_m": 0.0009999353205785155,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997760644182563,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -374,12 +379,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203089414106216,
+          "minimum_close_signed_distance_m": -0.0012640789791475981,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678373272123281,
+          "minimum_close_signed_distance_m": -0.0012308895675232634,
           "diagnostic_ids": []
         }
       },
@@ -416,12 +421,12 @@
         "Left": {
           "min_z_m": 0.0009997586021199822,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.000999622279778123,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -449,12 +454,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205745629762532,
+          "minimum_close_signed_distance_m": -0.0012641048815567046,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678296518046409,
+          "minimum_close_signed_distance_m": -0.0012305219497648068,
           "diagnostic_ids": []
         }
       },
@@ -491,12 +496,12 @@
         "Left": {
           "min_z_m": 0.0010001454502344131,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999824687838554,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -524,12 +529,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720383106610825,
+          "minimum_close_signed_distance_m": -0.001264362050278578,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678574717923766,
+          "minimum_close_signed_distance_m": -0.0012306386779528111,
           "diagnostic_ids": []
         }
       },
@@ -566,12 +571,12 @@
         "Left": {
           "min_z_m": 0.0009997515007853508,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.001000097836367786,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -599,12 +604,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204433754141064,
+          "minimum_close_signed_distance_m": -0.0012641408029594459,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678200333752102,
+          "minimum_close_signed_distance_m": -0.001231337053468451,
           "diagnostic_ids": []
         }
       },
@@ -641,12 +646,12 @@
         "Left": {
           "min_z_m": 0.0010000565089285374,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997949237003922,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -674,12 +679,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037202960488684766,
+          "minimum_close_signed_distance_m": -0.001264328275283333,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036782713336833694,
+          "minimum_close_signed_distance_m": -0.00123121018987149,
           "diagnostic_ids": []
         }
       },
@@ -716,12 +721,12 @@
         "Left": {
           "min_z_m": 0.0009997671004384756,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999409085139632,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -749,12 +754,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003719898095823737,
+          "minimum_close_signed_distance_m": -0.0012637001855182461,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036779294268853846,
+          "minimum_close_signed_distance_m": -0.0012310244346736,
           "diagnostic_ids": []
         }
       },
@@ -791,12 +796,12 @@
         "Left": {
           "min_z_m": 0.000999795738607645,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000496404245496,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -824,12 +829,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204283971732366,
+          "minimum_close_signed_distance_m": -0.0012641434877878055,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036779820297851984,
+          "minimum_close_signed_distance_m": -0.0012308420264162123,
           "diagnostic_ids": []
         }
       },
@@ -866,12 +871,12 @@
         "Left": {
           "min_z_m": 0.0009999471949413419,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999718749895692,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -899,12 +904,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204201234999346,
+          "minimum_close_signed_distance_m": -0.0012639273263630457,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781204296403303,
+          "minimum_close_signed_distance_m": -0.0012312922190176323,
           "diagnostic_ids": []
         }
       },
@@ -941,12 +946,12 @@
         "Left": {
           "min_z_m": 0.0009998107561841607,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.000999871757812798,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -974,12 +979,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037208560870567453,
+          "minimum_close_signed_distance_m": -0.001264278958842624,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003677927375974832,
+          "minimum_close_signed_distance_m": -0.0012307265196795925,
           "diagnostic_ids": []
         }
       },
@@ -1016,12 +1021,12 @@
         "Left": {
           "min_z_m": 0.000999904004856944,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997739689424634,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -1049,12 +1054,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720385536325921,
+          "minimum_close_signed_distance_m": -0.0012635181628866121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784426229132805,
+          "minimum_close_signed_distance_m": -0.0012309780074701848,
           "diagnostic_ids": []
         }
       },
@@ -1091,12 +1096,12 @@
         "Left": {
           "min_z_m": 0.000999858952127397,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009996602311730385,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -1124,12 +1129,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720488715771353,
+          "minimum_close_signed_distance_m": -0.0012642905894608703,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784266922040842,
+          "minimum_close_signed_distance_m": -0.0012307811084610876,
           "diagnostic_ids": []
         }
       },
@@ -1166,12 +1171,12 @@
         "Left": {
           "min_z_m": 0.001000025193206966,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010003348579630256,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1199,12 +1204,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720545231772121,
+          "minimum_close_signed_distance_m": -0.001264006488781888,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783378382097,
+          "minimum_close_signed_distance_m": -0.0012309568119235337,
           "diagnostic_ids": []
         }
       },
@@ -1241,12 +1246,12 @@
         "Left": {
           "min_z_m": 0.0009998874738812447,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009995941072702408,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -1274,12 +1279,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205249827820808,
+          "minimum_close_signed_distance_m": -0.0012641176072065718,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678547051094938,
+          "minimum_close_signed_distance_m": -0.0012305786367505789,
           "diagnostic_ids": []
         }
       },
@@ -1316,12 +1321,12 @@
         "Left": {
           "min_z_m": 0.0009999796748161316,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997430024668574,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1349,12 +1354,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720313558005728,
+          "minimum_close_signed_distance_m": -0.0012640829736483283,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784429030376486,
+          "minimum_close_signed_distance_m": -0.0012307259312365204,
           "diagnostic_ids": []
         }
       },
@@ -1391,12 +1396,12 @@
         "Left": {
           "min_z_m": 0.0009998214663937688,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009998775785788894,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1424,12 +1429,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720509117556503,
+          "minimum_close_signed_distance_m": -0.0012638387961487751,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781755261472426,
+          "minimum_close_signed_distance_m": -0.001231128815561533,
           "diagnostic_ids": []
         }
       },
@@ -1466,12 +1471,12 @@
         "Left": {
           "min_z_m": 0.0009999637259170413,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.001000095158815384,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -1499,12 +1504,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037209071324468823,
+          "minimum_close_signed_distance_m": -0.0012641903631447349,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784750627703033,
+          "minimum_close_signed_distance_m": -0.0012309442390687764,
           "diagnostic_ids": []
         }
       },
@@ -1541,12 +1546,12 @@
         "Left": {
           "min_z_m": 0.0009999960893765092,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000445181503892,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1574,12 +1579,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720371778399567,
+          "minimum_close_signed_distance_m": -0.0012641147695831023,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678120108816074,
+          "minimum_close_signed_distance_m": -0.0012310238162172027,
           "diagnostic_ids": []
         }
       },
@@ -1616,12 +1621,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1649,12 +1654,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -1691,12 +1696,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1724,12 +1729,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -1766,12 +1771,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1799,12 +1804,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -1841,12 +1846,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1874,12 +1879,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -1916,12 +1921,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -1949,12 +1954,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -1991,12 +1996,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2024,12 +2029,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -2066,12 +2071,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2099,12 +2104,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -2141,12 +2146,12 @@
         "Left": {
           "min_z_m": 0.0009999031899496913,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000900365412235,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2174,12 +2179,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720465691003483,
+          "minimum_close_signed_distance_m": -0.0012640652203117497,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783278264920227,
+          "minimum_close_signed_distance_m": -0.0012307552024140023,
           "diagnostic_ids": []
         }
       },
@@ -2216,12 +2221,12 @@
         "Left": {
           "min_z_m": 0.001000012387521565,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997988818213344,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -2249,12 +2254,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720461085322313,
+          "minimum_close_signed_distance_m": -0.0012637474719667807,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678370158013422,
+          "minimum_close_signed_distance_m": -0.001230684865731746,
           "diagnostic_ids": []
         }
       },
@@ -2291,12 +2296,12 @@
         "Left": {
           "min_z_m": 0.000999916810542345,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998064488172531,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2324,12 +2329,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201128288870677,
+          "minimum_close_signed_distance_m": -0.001263488295080606,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678470318845939,
+          "minimum_close_signed_distance_m": -0.0012310692618484609,
           "diagnostic_ids": []
         }
       },
@@ -2366,12 +2371,12 @@
         "Left": {
           "min_z_m": 0.0009997270535677671,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.00100004265550524,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2399,12 +2404,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205097505648155,
+          "minimum_close_signed_distance_m": -0.0012637782276669896,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678277337712643,
+          "minimum_close_signed_distance_m": -0.0012308912118896842,
           "diagnostic_ids": []
         }
       },
@@ -2441,12 +2446,12 @@
         "Left": {
           "min_z_m": 0.000999922165647149,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001050541177392,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2474,12 +2479,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203583102609628,
+          "minimum_close_signed_distance_m": -0.0012645307433558628,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678352577253463,
+          "minimum_close_signed_distance_m": -0.001230942718393635,
           "diagnostic_ids": []
         }
       },
@@ -2516,12 +2521,12 @@
         "Left": {
           "min_z_m": 0.0009998903842642903,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009997038869187236,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -2549,12 +2554,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720515778695699,
+          "minimum_close_signed_distance_m": -0.0012643297231988981,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678174759443209,
+          "minimum_close_signed_distance_m": -0.0012314186024013907,
           "diagnostic_ids": []
         }
       },
@@ -2591,12 +2596,12 @@
         "Left": {
           "min_z_m": 0.0009998846799135208,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001303162425756,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2624,12 +2629,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037202205066932947,
+          "minimum_close_signed_distance_m": -0.0012644202943192795,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036778905489427416,
+          "minimum_close_signed_distance_m": -0.001230682508321479,
           "diagnostic_ids": []
         }
       },
@@ -2666,12 +2671,12 @@
         "Left": {
           "min_z_m": 0.0009998265886679292,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999963222071528,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2699,12 +2704,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201451786472717,
+          "minimum_close_signed_distance_m": -0.0012641560897463933,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.00367844205993606,
+          "minimum_close_signed_distance_m": -0.0012308679797570221,
           "diagnostic_ids": []
         }
       },
@@ -2741,12 +2746,12 @@
         "Left": {
           "min_z_m": 0.000999964657239616,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009998506866395473,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -2774,12 +2779,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720502253372615,
+          "minimum_close_signed_distance_m": -0.001264085054572206,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678249395761668,
+          "minimum_close_signed_distance_m": -0.0012311311802477576,
           "diagnostic_ids": []
         }
       },
@@ -2816,12 +2821,12 @@
         "Left": {
           "min_z_m": 0.0009997516172006726,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998957393690944,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -2849,12 +2854,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201225513854297,
+          "minimum_close_signed_distance_m": -0.001264120719724815,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036786897599085933,
+          "minimum_close_signed_distance_m": -0.0012312093531363644,
           "diagnostic_ids": []
         }
       },
@@ -2891,12 +2896,12 @@
         "Left": {
           "min_z_m": 0.0009997416054829955,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999264730140567,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -2924,12 +2929,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720599055668572,
+          "minimum_close_signed_distance_m": -0.0012638323532883078,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036782860947823792,
+          "minimum_close_signed_distance_m": -0.00123014460405102,
           "diagnostic_ids": []
         }
       },
@@ -2966,12 +2971,12 @@
         "Left": {
           "min_z_m": 0.00099954626057297,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999775793403387,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -2999,12 +3004,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204566251602955,
+          "minimum_close_signed_distance_m": -0.0012639673732337542,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783028990612365,
+          "minimum_close_signed_distance_m": -0.001230901303642895,
           "diagnostic_ids": []
         }
       },
@@ -3041,12 +3046,12 @@
         "Left": {
           "min_z_m": 0.0009998101741075516,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001230984926224,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3074,12 +3079,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203852407401428,
+          "minimum_close_signed_distance_m": -0.001263983955141157,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036786085529456614,
+          "minimum_close_signed_distance_m": -0.0012307597280596383,
           "diagnostic_ids": []
         }
       },
@@ -3116,12 +3121,12 @@
         "Left": {
           "min_z_m": 0.0009995042346417904,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009998866589739919,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3149,12 +3154,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720626984431874,
+          "minimum_close_signed_distance_m": -0.0012636700994335115,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678698985822848,
+          "minimum_close_signed_distance_m": -0.0012309590747463517,
           "diagnostic_ids": []
         }
       },
@@ -3191,12 +3196,12 @@
         "Left": {
           "min_z_m": 0.0009997576707974076,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998686145991087,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -3224,12 +3229,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720442568010185,
+          "minimum_close_signed_distance_m": -0.001263883532374166,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783772502531065,
+          "minimum_close_signed_distance_m": -0.0012310260062804446,
           "diagnostic_ids": []
         }
       },
@@ -3266,12 +3271,12 @@
         "Left": {
           "min_z_m": 0.0009999423054978251,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000990005210042,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3299,12 +3304,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204207037575543,
+          "minimum_close_signed_distance_m": -0.0012641218781936914,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678402701552841,
+          "minimum_close_signed_distance_m": -0.0012310900638112798,
           "diagnostic_ids": []
         }
       },
@@ -3341,12 +3346,12 @@
         "Left": {
           "min_z_m": 0.0009998269379138947,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999793255701661,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3374,12 +3379,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037206606975814793,
+          "minimum_close_signed_distance_m": -0.0012640378263313323,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.00367872130300384,
+          "minimum_close_signed_distance_m": -0.0012308279146964196,
           "diagnostic_ids": []
         }
       },
@@ -3416,12 +3421,12 @@
         "Left": {
           "min_z_m": 0.0009997355518862605,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000242618843913,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3449,12 +3454,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204180443950463,
+          "minimum_close_signed_distance_m": -0.0012635672464966774,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781037106266012,
+          "minimum_close_signed_distance_m": -0.0012309149242355488,
           "diagnostic_ids": []
         }
       },
@@ -3491,12 +3496,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3524,12 +3529,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -3566,12 +3571,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3599,12 +3604,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -3641,12 +3646,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3674,12 +3679,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -3716,12 +3721,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3749,12 +3754,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -3791,12 +3796,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3824,12 +3829,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -3866,12 +3871,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3899,12 +3904,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -3941,12 +3946,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -3974,12 +3979,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -4016,12 +4021,12 @@
         "Left": {
           "min_z_m": 0.0009998813038691878,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999808389693499,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -4049,12 +4054,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720428356245975,
+          "minimum_close_signed_distance_m": -0.0012640833301702514,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784244402952027,
+          "minimum_close_signed_distance_m": -0.0012307560537010431,
           "diagnostic_ids": []
         }
       },
@@ -4091,12 +4096,12 @@
         "Left": {
           "min_z_m": 0.0009999353205785155,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997760644182563,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -4124,12 +4129,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203089414106216,
+          "minimum_close_signed_distance_m": -0.0012640789791475981,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678373272123281,
+          "minimum_close_signed_distance_m": -0.0012308895675232634,
           "diagnostic_ids": []
         }
       },
@@ -4166,12 +4171,12 @@
         "Left": {
           "min_z_m": 0.0009997586021199822,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.000999622279778123,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -4199,12 +4204,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205745629762532,
+          "minimum_close_signed_distance_m": -0.0012641048815567046,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678296518046409,
+          "minimum_close_signed_distance_m": -0.0012305219497648068,
           "diagnostic_ids": []
         }
       },
@@ -4241,12 +4246,12 @@
         "Left": {
           "min_z_m": 0.0010001454502344131,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999824687838554,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -4274,12 +4279,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720383106610825,
+          "minimum_close_signed_distance_m": -0.001264362050278578,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678574717923766,
+          "minimum_close_signed_distance_m": -0.0012306386779528111,
           "diagnostic_ids": []
         }
       },
@@ -4316,12 +4321,12 @@
         "Left": {
           "min_z_m": 0.0009997515007853508,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.001000097836367786,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -4349,12 +4354,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204433754141064,
+          "minimum_close_signed_distance_m": -0.0012641408029594459,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678200333752102,
+          "minimum_close_signed_distance_m": -0.001231337053468451,
           "diagnostic_ids": []
         }
       },
@@ -4391,12 +4396,12 @@
         "Left": {
           "min_z_m": 0.0010000565089285374,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997949237003922,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -4424,12 +4429,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037202960488684766,
+          "minimum_close_signed_distance_m": -0.001264328275283333,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036782713336833694,
+          "minimum_close_signed_distance_m": -0.00123121018987149,
           "diagnostic_ids": []
         }
       },
@@ -4466,12 +4471,12 @@
         "Left": {
           "min_z_m": 0.0009997671004384756,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999409085139632,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -4499,12 +4504,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003719898095823737,
+          "minimum_close_signed_distance_m": -0.0012637001855182461,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036779294268853846,
+          "minimum_close_signed_distance_m": -0.0012310244346736,
           "diagnostic_ids": []
         }
       },
@@ -4541,12 +4546,12 @@
         "Left": {
           "min_z_m": 0.000999795738607645,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000496404245496,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -4574,12 +4579,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204283971732366,
+          "minimum_close_signed_distance_m": -0.0012641434877878055,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036779820297851984,
+          "minimum_close_signed_distance_m": -0.0012308420264162123,
           "diagnostic_ids": []
         }
       },
@@ -4616,12 +4621,12 @@
         "Left": {
           "min_z_m": 0.0009999471949413419,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999718749895692,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -4649,12 +4654,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204201234999346,
+          "minimum_close_signed_distance_m": -0.0012639273263630457,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781204296403303,
+          "minimum_close_signed_distance_m": -0.0012312922190176323,
           "diagnostic_ids": []
         }
       },
@@ -4691,12 +4696,12 @@
         "Left": {
           "min_z_m": 0.0009998107561841607,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.000999871757812798,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -4724,12 +4729,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037208560870567453,
+          "minimum_close_signed_distance_m": -0.001264278958842624,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003677927375974832,
+          "minimum_close_signed_distance_m": -0.0012307265196795925,
           "diagnostic_ids": []
         }
       },
@@ -4766,12 +4771,12 @@
         "Left": {
           "min_z_m": 0.000999904004856944,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997739689424634,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -4799,12 +4804,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720385536325921,
+          "minimum_close_signed_distance_m": -0.0012635181628866121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784426229132805,
+          "minimum_close_signed_distance_m": -0.0012309780074701848,
           "diagnostic_ids": []
         }
       },
@@ -4841,12 +4846,12 @@
         "Left": {
           "min_z_m": 0.000999858952127397,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009996602311730385,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -4874,12 +4879,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720488715771353,
+          "minimum_close_signed_distance_m": -0.0012642905894608703,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784266922040842,
+          "minimum_close_signed_distance_m": -0.0012307811084610876,
           "diagnostic_ids": []
         }
       },
@@ -4916,12 +4921,12 @@
         "Left": {
           "min_z_m": 0.001000025193206966,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010003348579630256,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -4949,12 +4954,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720545231772121,
+          "minimum_close_signed_distance_m": -0.001264006488781888,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783378382097,
+          "minimum_close_signed_distance_m": -0.0012309568119235337,
           "diagnostic_ids": []
         }
       },
@@ -4991,12 +4996,12 @@
         "Left": {
           "min_z_m": 0.0009998874738812447,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009995941072702408,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -5024,12 +5029,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205249827820808,
+          "minimum_close_signed_distance_m": -0.0012641176072065718,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678547051094938,
+          "minimum_close_signed_distance_m": -0.0012305786367505789,
           "diagnostic_ids": []
         }
       },
@@ -5066,12 +5071,12 @@
         "Left": {
           "min_z_m": 0.0009999796748161316,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997430024668574,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5099,12 +5104,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720313558005728,
+          "minimum_close_signed_distance_m": -0.0012640829736483283,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784429030376486,
+          "minimum_close_signed_distance_m": -0.0012307259312365204,
           "diagnostic_ids": []
         }
       },
@@ -5141,12 +5146,12 @@
         "Left": {
           "min_z_m": 0.0009998214663937688,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009998775785788894,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5174,12 +5179,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720509117556503,
+          "minimum_close_signed_distance_m": -0.0012638387961487751,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781755261472426,
+          "minimum_close_signed_distance_m": -0.001231128815561533,
           "diagnostic_ids": []
         }
       },
@@ -5216,12 +5221,12 @@
         "Left": {
           "min_z_m": 0.0009999637259170413,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.001000095158815384,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -5249,12 +5254,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037209071324468823,
+          "minimum_close_signed_distance_m": -0.0012641903631447349,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784750627703033,
+          "minimum_close_signed_distance_m": -0.0012309442390687764,
           "diagnostic_ids": []
         }
       },
@@ -5291,12 +5296,12 @@
         "Left": {
           "min_z_m": 0.0009999960893765092,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000445181503892,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5324,12 +5329,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720371778399567,
+          "minimum_close_signed_distance_m": -0.0012641147695831023,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678120108816074,
+          "minimum_close_signed_distance_m": -0.0012310238162172027,
           "diagnostic_ids": []
         }
       },
@@ -5366,12 +5371,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5399,12 +5404,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -5441,12 +5446,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5474,12 +5479,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -5516,12 +5521,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5549,12 +5554,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -5591,12 +5596,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5624,12 +5629,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -5666,12 +5671,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5699,12 +5704,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -5741,12 +5746,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5774,12 +5779,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -5816,12 +5821,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5849,12 +5854,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -5891,12 +5896,12 @@
         "Left": {
           "min_z_m": 0.0009999031899496913,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000900365412235,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -5924,12 +5929,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720465691003483,
+          "minimum_close_signed_distance_m": -0.0012640652203117497,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783278264920227,
+          "minimum_close_signed_distance_m": -0.0012307552024140023,
           "diagnostic_ids": []
         }
       },
@@ -5966,12 +5971,12 @@
         "Left": {
           "min_z_m": 0.001000012387521565,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997988818213344,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -5999,12 +6004,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720461085322313,
+          "minimum_close_signed_distance_m": -0.0012637474719667807,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678370158013422,
+          "minimum_close_signed_distance_m": -0.001230684865731746,
           "diagnostic_ids": []
         }
       },
@@ -6041,12 +6046,12 @@
         "Left": {
           "min_z_m": 0.000999916810542345,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998064488172531,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6074,12 +6079,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201128288870677,
+          "minimum_close_signed_distance_m": -0.001263488295080606,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678470318845939,
+          "minimum_close_signed_distance_m": -0.0012310692618484609,
           "diagnostic_ids": []
         }
       },
@@ -6116,12 +6121,12 @@
         "Left": {
           "min_z_m": 0.0009997270535677671,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.00100004265550524,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6149,12 +6154,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205097505648155,
+          "minimum_close_signed_distance_m": -0.0012637782276669896,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678277337712643,
+          "minimum_close_signed_distance_m": -0.0012308912118896842,
           "diagnostic_ids": []
         }
       },
@@ -6191,12 +6196,12 @@
         "Left": {
           "min_z_m": 0.000999922165647149,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001050541177392,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6224,12 +6229,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203583102609628,
+          "minimum_close_signed_distance_m": -0.0012645307433558628,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678352577253463,
+          "minimum_close_signed_distance_m": -0.001230942718393635,
           "diagnostic_ids": []
         }
       },
@@ -6266,12 +6271,12 @@
         "Left": {
           "min_z_m": 0.0009998903842642903,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009997038869187236,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -6299,12 +6304,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720515778695699,
+          "minimum_close_signed_distance_m": -0.0012643297231988981,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678174759443209,
+          "minimum_close_signed_distance_m": -0.0012314186024013907,
           "diagnostic_ids": []
         }
       },
@@ -6341,12 +6346,12 @@
         "Left": {
           "min_z_m": 0.0009998846799135208,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001303162425756,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6374,12 +6379,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037202205066932947,
+          "minimum_close_signed_distance_m": -0.0012644202943192795,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036778905489427416,
+          "minimum_close_signed_distance_m": -0.001230682508321479,
           "diagnostic_ids": []
         }
       },
@@ -6416,12 +6421,12 @@
         "Left": {
           "min_z_m": 0.0009998265886679292,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999963222071528,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6449,12 +6454,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201451786472717,
+          "minimum_close_signed_distance_m": -0.0012641560897463933,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.00367844205993606,
+          "minimum_close_signed_distance_m": -0.0012308679797570221,
           "diagnostic_ids": []
         }
       },
@@ -6491,12 +6496,12 @@
         "Left": {
           "min_z_m": 0.000999964657239616,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009998506866395473,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -6524,12 +6529,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720502253372615,
+          "minimum_close_signed_distance_m": -0.001264085054572206,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678249395761668,
+          "minimum_close_signed_distance_m": -0.0012311311802477576,
           "diagnostic_ids": []
         }
       },
@@ -6566,12 +6571,12 @@
         "Left": {
           "min_z_m": 0.0009997516172006726,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998957393690944,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6599,12 +6604,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201225513854297,
+          "minimum_close_signed_distance_m": -0.001264120719724815,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036786897599085933,
+          "minimum_close_signed_distance_m": -0.0012312093531363644,
           "diagnostic_ids": []
         }
       },
@@ -6641,12 +6646,12 @@
         "Left": {
           "min_z_m": 0.0009997416054829955,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999264730140567,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -6674,12 +6679,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720599055668572,
+          "minimum_close_signed_distance_m": -0.0012638323532883078,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036782860947823792,
+          "minimum_close_signed_distance_m": -0.00123014460405102,
           "diagnostic_ids": []
         }
       },
@@ -6716,12 +6721,12 @@
         "Left": {
           "min_z_m": 0.00099954626057297,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999775793403387,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -6749,12 +6754,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204566251602955,
+          "minimum_close_signed_distance_m": -0.0012639673732337542,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783028990612365,
+          "minimum_close_signed_distance_m": -0.001230901303642895,
           "diagnostic_ids": []
         }
       },
@@ -6791,12 +6796,12 @@
         "Left": {
           "min_z_m": 0.0009998101741075516,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001230984926224,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6824,12 +6829,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203852407401428,
+          "minimum_close_signed_distance_m": -0.001263983955141157,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036786085529456614,
+          "minimum_close_signed_distance_m": -0.0012307597280596383,
           "diagnostic_ids": []
         }
       },
@@ -6866,12 +6871,12 @@
         "Left": {
           "min_z_m": 0.0009995042346417904,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009998866589739919,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -6899,12 +6904,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720626984431874,
+          "minimum_close_signed_distance_m": -0.0012636700994335115,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678698985822848,
+          "minimum_close_signed_distance_m": -0.0012309590747463517,
           "diagnostic_ids": []
         }
       },
@@ -6941,12 +6946,12 @@
         "Left": {
           "min_z_m": 0.0009997576707974076,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998686145991087,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -6974,12 +6979,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720442568010185,
+          "minimum_close_signed_distance_m": -0.001263883532374166,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783772502531065,
+          "minimum_close_signed_distance_m": -0.0012310260062804446,
           "diagnostic_ids": []
         }
       },
@@ -7016,12 +7021,12 @@
         "Left": {
           "min_z_m": 0.0009999423054978251,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000990005210042,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7049,12 +7054,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204207037575543,
+          "minimum_close_signed_distance_m": -0.0012641218781936914,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678402701552841,
+          "minimum_close_signed_distance_m": -0.0012310900638112798,
           "diagnostic_ids": []
         }
       },
@@ -7091,12 +7096,12 @@
         "Left": {
           "min_z_m": 0.0009998269379138947,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999793255701661,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7124,12 +7129,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037206606975814793,
+          "minimum_close_signed_distance_m": -0.0012640378263313323,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.00367872130300384,
+          "minimum_close_signed_distance_m": -0.0012308279146964196,
           "diagnostic_ids": []
         }
       },
@@ -7166,12 +7171,12 @@
         "Left": {
           "min_z_m": 0.0009997355518862605,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000242618843913,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7199,12 +7204,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204180443950463,
+          "minimum_close_signed_distance_m": -0.0012635672464966774,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781037106266012,
+          "minimum_close_signed_distance_m": -0.0012309149242355488,
           "diagnostic_ids": []
         }
       },
@@ -7241,12 +7246,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7274,12 +7279,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -7316,12 +7321,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7349,12 +7354,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -7391,12 +7396,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7424,12 +7429,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -7466,12 +7471,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7499,12 +7504,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -7541,12 +7546,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7574,12 +7579,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -7616,12 +7621,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7649,12 +7654,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -7691,12 +7696,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7724,12 +7729,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -7766,12 +7771,12 @@
         "Left": {
           "min_z_m": 0.0009998813038691878,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999808389693499,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7799,12 +7804,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720428356245975,
+          "minimum_close_signed_distance_m": -0.0012640833301702514,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784244402952027,
+          "minimum_close_signed_distance_m": -0.0012307560537010431,
           "diagnostic_ids": []
         }
       },
@@ -7841,12 +7846,12 @@
         "Left": {
           "min_z_m": 0.0009999353205785155,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997760644182563,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -7874,12 +7879,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203089414106216,
+          "minimum_close_signed_distance_m": -0.0012640789791475981,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678373272123281,
+          "minimum_close_signed_distance_m": -0.0012308895675232634,
           "diagnostic_ids": []
         }
       },
@@ -7916,12 +7921,12 @@
         "Left": {
           "min_z_m": 0.0009997586021199822,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.000999622279778123,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -7949,12 +7954,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205745629762532,
+          "minimum_close_signed_distance_m": -0.0012641048815567046,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678296518046409,
+          "minimum_close_signed_distance_m": -0.0012305219497648068,
           "diagnostic_ids": []
         }
       },
@@ -7991,12 +7996,12 @@
         "Left": {
           "min_z_m": 0.0010001454502344131,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999824687838554,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -8024,12 +8029,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720383106610825,
+          "minimum_close_signed_distance_m": -0.001264362050278578,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678574717923766,
+          "minimum_close_signed_distance_m": -0.0012306386779528111,
           "diagnostic_ids": []
         }
       },
@@ -8066,12 +8071,12 @@
         "Left": {
           "min_z_m": 0.0009997515007853508,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.001000097836367786,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -8099,12 +8104,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204433754141064,
+          "minimum_close_signed_distance_m": -0.0012641408029594459,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678200333752102,
+          "minimum_close_signed_distance_m": -0.001231337053468451,
           "diagnostic_ids": []
         }
       },
@@ -8141,12 +8146,12 @@
         "Left": {
           "min_z_m": 0.0010000565089285374,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997949237003922,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -8174,12 +8179,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037202960488684766,
+          "minimum_close_signed_distance_m": -0.001264328275283333,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036782713336833694,
+          "minimum_close_signed_distance_m": -0.00123121018987149,
           "diagnostic_ids": []
         }
       },
@@ -8216,12 +8221,12 @@
         "Left": {
           "min_z_m": 0.0009997671004384756,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999409085139632,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -8249,12 +8254,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003719898095823737,
+          "minimum_close_signed_distance_m": -0.0012637001855182461,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036779294268853846,
+          "minimum_close_signed_distance_m": -0.0012310244346736,
           "diagnostic_ids": []
         }
       },
@@ -8291,12 +8296,12 @@
         "Left": {
           "min_z_m": 0.000999795738607645,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000496404245496,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -8324,12 +8329,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204283971732366,
+          "minimum_close_signed_distance_m": -0.0012641434877878055,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036779820297851984,
+          "minimum_close_signed_distance_m": -0.0012308420264162123,
           "diagnostic_ids": []
         }
       },
@@ -8366,12 +8371,12 @@
         "Left": {
           "min_z_m": 0.0009999471949413419,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999718749895692,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -8399,12 +8404,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204201234999346,
+          "minimum_close_signed_distance_m": -0.0012639273263630457,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781204296403303,
+          "minimum_close_signed_distance_m": -0.0012312922190176323,
           "diagnostic_ids": []
         }
       },
@@ -8441,12 +8446,12 @@
         "Left": {
           "min_z_m": 0.0009998107561841607,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.000999871757812798,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -8474,12 +8479,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037208560870567453,
+          "minimum_close_signed_distance_m": -0.001264278958842624,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003677927375974832,
+          "minimum_close_signed_distance_m": -0.0012307265196795925,
           "diagnostic_ids": []
         }
       },
@@ -8516,12 +8521,12 @@
         "Left": {
           "min_z_m": 0.000999904004856944,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997739689424634,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -8549,12 +8554,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720385536325921,
+          "minimum_close_signed_distance_m": -0.0012635181628866121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784426229132805,
+          "minimum_close_signed_distance_m": -0.0012309780074701848,
           "diagnostic_ids": []
         }
       },
@@ -8591,12 +8596,12 @@
         "Left": {
           "min_z_m": 0.000999858952127397,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009996602311730385,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -8624,12 +8629,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720488715771353,
+          "minimum_close_signed_distance_m": -0.0012642905894608703,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784266922040842,
+          "minimum_close_signed_distance_m": -0.0012307811084610876,
           "diagnostic_ids": []
         }
       },
@@ -8666,12 +8671,12 @@
         "Left": {
           "min_z_m": 0.001000025193206966,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010003348579630256,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -8699,12 +8704,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720545231772121,
+          "minimum_close_signed_distance_m": -0.001264006488781888,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783378382097,
+          "minimum_close_signed_distance_m": -0.0012309568119235337,
           "diagnostic_ids": []
         }
       },
@@ -8741,12 +8746,12 @@
         "Left": {
           "min_z_m": 0.0009998874738812447,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009995941072702408,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -8774,12 +8779,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205249827820808,
+          "minimum_close_signed_distance_m": -0.0012641176072065718,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678547051094938,
+          "minimum_close_signed_distance_m": -0.0012305786367505789,
           "diagnostic_ids": []
         }
       },
@@ -8816,12 +8821,12 @@
         "Left": {
           "min_z_m": 0.0009999796748161316,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997430024668574,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -8849,12 +8854,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720313558005728,
+          "minimum_close_signed_distance_m": -0.0012640829736483283,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784429030376486,
+          "minimum_close_signed_distance_m": -0.0012307259312365204,
           "diagnostic_ids": []
         }
       },
@@ -8891,12 +8896,12 @@
         "Left": {
           "min_z_m": 0.0009998214663937688,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009998775785788894,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -8924,12 +8929,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720509117556503,
+          "minimum_close_signed_distance_m": -0.0012638387961487751,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781755261472426,
+          "minimum_close_signed_distance_m": -0.001231128815561533,
           "diagnostic_ids": []
         }
       },
@@ -8966,12 +8971,12 @@
         "Left": {
           "min_z_m": 0.0009999637259170413,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.001000095158815384,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -8999,12 +9004,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037209071324468823,
+          "minimum_close_signed_distance_m": -0.0012641903631447349,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036784750627703033,
+          "minimum_close_signed_distance_m": -0.0012309442390687764,
           "diagnostic_ids": []
         }
       },
@@ -9041,12 +9046,12 @@
         "Left": {
           "min_z_m": 0.0009999960893765092,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000445181503892,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9074,12 +9079,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720371778399567,
+          "minimum_close_signed_distance_m": -0.0012641147695831023,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678120108816074,
+          "minimum_close_signed_distance_m": -0.0012310238162172027,
           "diagnostic_ids": []
         }
       },
@@ -9116,12 +9121,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9149,12 +9154,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -9191,12 +9196,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9224,12 +9229,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -9266,12 +9271,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9299,12 +9304,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -9341,12 +9346,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9374,12 +9379,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -9416,12 +9421,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9449,12 +9454,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -9491,12 +9496,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9524,12 +9529,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -9566,12 +9571,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9599,12 +9604,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -9641,12 +9646,12 @@
         "Left": {
           "min_z_m": 0.0009999031899496913,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000900365412235,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9674,12 +9679,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720465691003483,
+          "minimum_close_signed_distance_m": -0.0012640652203117497,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783278264920227,
+          "minimum_close_signed_distance_m": -0.0012307552024140023,
           "diagnostic_ids": []
         }
       },
@@ -9716,12 +9721,12 @@
         "Left": {
           "min_z_m": 0.001000012387521565,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009997988818213344,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -9749,12 +9754,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720461085322313,
+          "minimum_close_signed_distance_m": -0.0012637474719667807,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678370158013422,
+          "minimum_close_signed_distance_m": -0.001230684865731746,
           "diagnostic_ids": []
         }
       },
@@ -9791,12 +9796,12 @@
         "Left": {
           "min_z_m": 0.000999916810542345,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998064488172531,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9824,12 +9829,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201128288870677,
+          "minimum_close_signed_distance_m": -0.001263488295080606,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678470318845939,
+          "minimum_close_signed_distance_m": -0.0012310692618484609,
           "diagnostic_ids": []
         }
       },
@@ -9866,12 +9871,12 @@
         "Left": {
           "min_z_m": 0.0009997270535677671,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.00100004265550524,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9899,12 +9904,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037205097505648155,
+          "minimum_close_signed_distance_m": -0.0012637782276669896,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678277337712643,
+          "minimum_close_signed_distance_m": -0.0012308912118896842,
           "diagnostic_ids": []
         }
       },
@@ -9941,12 +9946,12 @@
         "Left": {
           "min_z_m": 0.000999922165647149,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001050541177392,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -9974,12 +9979,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203583102609628,
+          "minimum_close_signed_distance_m": -0.0012645307433558628,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678352577253463,
+          "minimum_close_signed_distance_m": -0.001230942718393635,
           "diagnostic_ids": []
         }
       },
@@ -10016,12 +10021,12 @@
         "Left": {
           "min_z_m": 0.0009998903842642903,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009997038869187236,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -10049,12 +10054,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720515778695699,
+          "minimum_close_signed_distance_m": -0.0012643297231988981,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678174759443209,
+          "minimum_close_signed_distance_m": -0.0012314186024013907,
           "diagnostic_ids": []
         }
       },
@@ -10091,12 +10096,12 @@
         "Left": {
           "min_z_m": 0.0009998846799135208,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001303162425756,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10124,12 +10129,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037202205066932947,
+          "minimum_close_signed_distance_m": -0.0012644202943192795,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036778905489427416,
+          "minimum_close_signed_distance_m": -0.001230682508321479,
           "diagnostic_ids": []
         }
       },
@@ -10166,12 +10171,12 @@
         "Left": {
           "min_z_m": 0.0009998265886679292,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009999963222071528,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10199,12 +10204,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201451786472717,
+          "minimum_close_signed_distance_m": -0.0012641560897463933,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.00367844205993606,
+          "minimum_close_signed_distance_m": -0.0012308679797570221,
           "diagnostic_ids": []
         }
       },
@@ -10241,12 +10246,12 @@
         "Left": {
           "min_z_m": 0.000999964657239616,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0009998506866395473,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -10274,12 +10279,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720502253372615,
+          "minimum_close_signed_distance_m": -0.001264085054572206,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678249395761668,
+          "minimum_close_signed_distance_m": -0.0012311311802477576,
           "diagnostic_ids": []
         }
       },
@@ -10316,12 +10321,12 @@
         "Left": {
           "min_z_m": 0.0009997516172006726,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998957393690944,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10349,12 +10354,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037201225513854297,
+          "minimum_close_signed_distance_m": -0.001264120719724815,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036786897599085933,
+          "minimum_close_signed_distance_m": -0.0012312093531363644,
           "diagnostic_ids": []
         }
       },
@@ -10391,12 +10396,12 @@
         "Left": {
           "min_z_m": 0.0009997416054829955,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999264730140567,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -10424,12 +10429,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720599055668572,
+          "minimum_close_signed_distance_m": -0.0012638323532883078,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036782860947823792,
+          "minimum_close_signed_distance_m": -0.00123014460405102,
           "diagnostic_ids": []
         }
       },
@@ -10466,12 +10471,12 @@
         "Left": {
           "min_z_m": 0.00099954626057297,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999775793403387,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         }
       },
       "whole_limb_clearance": {
@@ -10499,12 +10504,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204566251602955,
+          "minimum_close_signed_distance_m": -0.0012639673732337542,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783028990612365,
+          "minimum_close_signed_distance_m": -0.001230901303642895,
           "diagnostic_ids": []
         }
       },
@@ -10541,12 +10546,12 @@
         "Left": {
           "min_z_m": 0.0009998101741075516,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010001230984926224,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10574,12 +10579,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037203852407401428,
+          "minimum_close_signed_distance_m": -0.001263983955141157,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036786085529456614,
+          "minimum_close_signed_distance_m": -0.0012307597280596383,
           "diagnostic_ids": []
         }
       },
@@ -10616,12 +10621,12 @@
         "Left": {
           "min_z_m": 0.0009995042346417904,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009998866589739919,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10649,12 +10654,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720626984431874,
+          "minimum_close_signed_distance_m": -0.0012636700994335115,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678698985822848,
+          "minimum_close_signed_distance_m": -0.0012309590747463517,
           "diagnostic_ids": []
         }
       },
@@ -10691,12 +10696,12 @@
         "Left": {
           "min_z_m": 0.0009997576707974076,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         },
         "Right": {
           "min_z_m": 0.0009998686145991087,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999970680788948
+          "foot_pitch_degrees": 9.999970680788948
         }
       },
       "whole_limb_clearance": {
@@ -10724,12 +10729,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720442568010185,
+          "minimum_close_signed_distance_m": -0.001263883532374166,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036783772502531065,
+          "minimum_close_signed_distance_m": -0.0012310260062804446,
           "diagnostic_ids": []
         }
       },
@@ -10766,12 +10771,12 @@
         "Left": {
           "min_z_m": 0.0009999423054978251,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000990005210042,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10799,12 +10804,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204207037575543,
+          "minimum_close_signed_distance_m": -0.0012641218781936914,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003678402701552841,
+          "minimum_close_signed_distance_m": -0.0012310900638112798,
           "diagnostic_ids": []
         }
       },
@@ -10841,12 +10846,12 @@
         "Left": {
           "min_z_m": 0.0009998269379138947,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0009999793255701661,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10874,12 +10879,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037206606975814793,
+          "minimum_close_signed_distance_m": -0.0012640378263313323,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.00367872130300384,
+          "minimum_close_signed_distance_m": -0.0012308279146964196,
           "diagnostic_ids": []
         }
       },
@@ -10916,12 +10921,12 @@
         "Left": {
           "min_z_m": 0.0009997355518862605,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         },
         "Right": {
           "min_z_m": 0.0010000242618843913,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -10949,12 +10954,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0037204180443950463,
+          "minimum_close_signed_distance_m": -0.0012635672464966774,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036781037106266012,
+          "minimum_close_signed_distance_m": -0.0012309149242355488,
           "diagnostic_ids": []
         }
       },
@@ -10991,12 +10996,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -11024,12 +11029,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -11066,12 +11071,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -11099,12 +11104,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -11141,12 +11146,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -11174,12 +11179,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -11216,12 +11221,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -11249,12 +11254,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },
@@ -11291,12 +11296,12 @@
         "Left": {
           "min_z_m": 0.0009998444002121687,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 9.999892133613493
+          "foot_pitch_degrees": 9.999892133613493
         },
         "Right": {
           "min_z_m": 0.0010000066831707954,
           "grounded": true,
-          "foot_rotation_from_rest_degrees": 10.000049227964404
+          "foot_pitch_degrees": 10.000049227964404
         }
       },
       "whole_limb_clearance": {
@@ -11324,12 +11329,12 @@
       "fist_palm_clearance": {
         "Left": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.003720552453160053,
+          "minimum_close_signed_distance_m": -0.001264221024030121,
           "diagnostic_ids": []
         },
         "Right": {
           "distal_vertices_more_than4mm_inside_palm": 0,
-          "minimum_close_signed_distance_m": -0.0036785344273084775,
+          "minimum_close_signed_distance_m": -0.0012308824116189498,
           "diagnostic_ids": []
         }
       },

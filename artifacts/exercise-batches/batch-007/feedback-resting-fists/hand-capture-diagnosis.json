@@ -1,0 +1,469 @@
+{
+  "results": [
+    {
+      "batch": "007",
+      "id": "4437",
+      "originalInitial": "4437",
+      "model_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+      "maximum_native_runtime_hand_error_m": 8.077258053735961e-07,
+      "mean_error_m": 3.9832656638639333e-07,
+      "hands": {
+        "Left": {
+          "source_ids": 754,
+          "maximum_error_m": 8.077258053735961e-07
+        },
+        "Right": {
+          "source_ids": 755,
+          "maximum_error_m": 7.249219932522158e-07
+        }
+      },
+      "frustum": [
+        {
+          "min": [
+            -0.4659163315283012,
+            -1.730723034280115
+          ],
+          "max": [
+            1.4918894749330818,
+            1.6284254187353333
+          ],
+          "sourceVertices": 1509
+        }
+      ],
+      "diag": {
+        "calls": 1,
+        "triangles": 21160,
+        "meshes": [
+          {
+            "frustumCulled": true,
+            "visible": true,
+            "sphere": {
+              "center": [
+                -0.12317247238284876,
+                0.858939641931565,
+                0.015021646195239805
+              ],
+              "radius": 0.9501735386114758
+            },
+            "matrixWorld": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "views": [
+          {
+            "width": 1200,
+            "height": 727,
+            "position": [
+              0.7219682335853576,
+              1.1693413257598877,
+              0.6783526539802551
+            ],
+            "projection": [
+              8.16326530612245,
+              0,
+              0,
+              0,
+              0,
+              13.474440670353424,
+              0,
+              0,
+              0,
+              0,
+              -0.06668889629876626,
+              0,
+              0,
+              0,
+              -1.0006668889629877,
+              1
+            ],
+            "view": [
+              0.44784135862770086,
+              0.31354003066378766,
+              0.8373355161904015,
+              0,
+              5.551115123125783e-17,
+              0.936498501178393,
+              -0.35067158038629775,
+              0,
+              -0.8941130339629857,
+              0.15704523699232265,
+              0.41940276112053704,
+              0,
+              0.2831967149322214,
+              -1.4279843943454233,
+              -0.4789778489198025,
+              1
+            ]
+          }
+        ],
+        "canvas": {
+          "width": 1200,
+          "height": 727,
+          "clientWidth": 640,
+          "clientHeight": 727
+        }
+      },
+      "screenshot_sha256": "64542b509491df0bd6bd173faac9e58502787f5ef1a5fdfc619aa87d255c67fd",
+      "probe": {
+        "exerciseId": "4437",
+        "time": 0,
+        "action": "Exercise_4437",
+        "skinning": "dualQuaternion",
+        "morphWeights": [
+          [
+            1
+          ]
+        ],
+        "cameras": [
+          {
+            "position": [
+              0.7219682335853576,
+              1.1693413257598877,
+              0.6783526539802551
+            ],
+            "zoom": 1
+          },
+          {
+            "position": [
+              0.7219682335853577,
+              1.1693413257598877,
+              0.6783526539802551
+            ],
+            "zoom": 1
+          }
+        ],
+        "loadedAssets": 1
+      },
+      "native_profile_camera": {
+        "position": [
+          0.24531978249549868,
+          0.6576423048228026,
+          1.1899667860567569
+        ],
+        "target": [
+          -0.15723441064357757,
+          -0.2379795701056719,
+          1.5375466296076774
+        ],
+        "scale": 0.245,
+        "source": "Exact formula fromrender_fists.py applied to frozen nativeHandmatrix",
+        "limitation": "Original native profile proofs isolate actual handfaces; uncut whole body can occlude this camera."
+      },
+      "closer_same_orientation_profile_camera": {
+        "position": [
+          -0.1108586871567088,
+          -0.134800636366124,
+          1.4975041533675713
+        ],
+        "target": [
+          -0.15723441064357757,
+          -0.2379795701056719,
+          1.5375466296076774
+        ],
+        "scale": 0.245,
+        "distance_m": 0.12,
+        "note": "Same orthographic view direction, shorter eye distance to avoid intervening torso; camera refinement only, root must inspect clipping/occlusion."
+      },
+      "cached_sphere_intersects_actual_camera": true,
+      "minimum_cached_sphere_plane_margin_m": 0.36453899208989526,
+      "actual_hand_frustum": {
+        "Left": {
+          "inside_actual_frustum": 129,
+          "total": 754,
+          "outside_cached_sphere": 0,
+          "ndc_min": [
+            0.6257282787521337,
+            -0.3713597923415435
+          ],
+          "ndc_max": [
+            1.491889513594598,
+            1.6284261543853624
+          ]
+        },
+        "Right": {
+          "inside_actual_frustum": 679,
+          "total": 755,
+          "outside_cached_sphere": 0,
+          "ndc_min": [
+            -0.4659149133861229,
+            -1.7307213397145347
+          ],
+          "ndc_max": [
+            0.3632175899606789,
+            0.5441954258920205
+          ]
+        }
+      },
+      "display_mapping": {
+        "drawing_buffer": [
+          1200,
+          727
+        ],
+        "CSS_canvas": [
+          640,
+          727
+        ],
+        "vertical_to_horizontal_display_scale": 1.875,
+        "native_vertical_extent_m": 0.245,
+        "viewer_horizontal_extent_m": 0.245,
+        "actual_viewer_vertical_extent_m": 0.14842916666666667,
+        "correct_viewer_width_for_native_vertical_extent_m": 0.40440165061898214
+      }
+    },
+    {
+      "batch": "006",
+      "id": "3531",
+      "originalInitial": "1512",
+      "model_sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1",
+      "maximum_native_runtime_hand_error_m": 1.05451627920044e-06,
+      "mean_error_m": 4.1415329741384016e-07,
+      "hands": {
+        "Left": {
+          "source_ids": 754,
+          "maximum_error_m": 1.05451627920044e-06
+        },
+        "Right": {
+          "source_ids": 755,
+          "maximum_error_m": 8.53050630652417e-07
+        }
+      },
+      "frustum": [
+        {
+          "min": [
+            -0.4659159193004231,
+            -1.730722771492998
+          ],
+          "max": [
+            1.4918897795025245,
+            1.6284338461719259
+          ],
+          "sourceVertices": 1509
+        }
+      ],
+      "diag": {
+        "calls": 0,
+        "triangles": 0,
+        "meshes": [
+          {
+            "frustumCulled": true,
+            "visible": true,
+            "sphere": {
+              "center": [
+                -0.0754303298163151,
+                0.22565653121653267,
+                0.05077550301910182
+              ],
+              "radius": 0.7908192802822727
+            },
+            "matrixWorld": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "views": [
+          {
+            "width": 1200,
+            "height": 727,
+            "position": [
+              0.7219679355621338,
+              1.15934145450592,
+              0.6733525991439819
+            ],
+            "projection": [
+              8.16326530612245,
+              0,
+              0,
+              0,
+              0,
+              13.474440670353424,
+              0,
+              0,
+              0,
+              0,
+              -0.06668889629876626,
+              0,
+              0,
+              0,
+              -1.0006668889629877,
+              1
+            ],
+            "view": [
+              0.4478414860116039,
+              0.31353988984009196,
+              0.8373355007916369,
+              0,
+              8.326672684688674e-17,
+              0.9364985507844048,
+              -0.3506714479091639,
+              0,
+              -0.8941129701592068,
+              0.15704522233348078,
+              0.41940290263100133,
+              0,
+              0.27872609927017145,
+              -1.4178341476347018,
+              -0.48038747098183165,
+              1
+            ]
+          }
+        ],
+        "canvas": {
+          "width": 1200,
+          "height": 727,
+          "clientWidth": 640,
+          "clientHeight": 727
+        }
+      },
+      "screenshot_sha256": "2f638bf4d84d1f6442fb6166819320783c663dc9e950998df8d410e2cb868d3b",
+      "probe": {
+        "exerciseId": "3531",
+        "time": 0,
+        "action": "Exercise_3531",
+        "skinning": "dualQuaternion",
+        "morphWeights": [
+          [
+            1
+          ]
+        ],
+        "cameras": [
+          {
+            "position": [
+              0.7219679355621338,
+              1.15934145450592,
+              0.6733525991439819
+            ],
+            "zoom": 1
+          },
+          {
+            "position": [
+              0.7219679355621338,
+              1.1593414545059204,
+              0.6733525991439819
+            ],
+            "zoom": 1
+          }
+        ],
+        "loadedAssets": 2
+      },
+      "native_profile_camera": {
+        "position": [
+          0.2453197096288204,
+          0.6626426949352027,
+          1.1799666680395604
+        ],
+        "target": [
+          -0.15723445817828177,
+          -0.2329794854670763,
+          1.5275465086102487
+        ],
+        "scale": 0.245,
+        "source": "Exact formula fromrender_fists.py applied to frozen nativeHandmatrix",
+        "limitation": "Original native profile proofs isolate actual handfaces; uncut whole body can occlude this camera."
+      },
+      "closer_same_orientation_profile_camera": {
+        "position": [
+          -0.11085874882350871,
+          -0.12980054148474196,
+          1.4875040423958417
+        ],
+        "target": [
+          -0.15723445817828177,
+          -0.2329794854670763,
+          1.5275465086102487
+        ],
+        "scale": 0.245,
+        "distance_m": 0.12,
+        "note": "Same orthographic view direction, shorter eye distance to avoid intervening torso; camera refinement only, root must inspect clipping/occlusion."
+      },
+      "cached_sphere_intersects_actual_camera": false,
+      "minimum_cached_sphere_plane_margin_m": -0.35714963670025734,
+      "actual_hand_frustum": {
+        "Left": {
+          "inside_actual_frustum": 129,
+          "total": 754,
+          "outside_cached_sphere": 754,
+          "ndc_min": [
+            0.625731152151443,
+            -0.37135834301941273
+          ],
+          "ndc_max": [
+            1.491890642485194,
+            1.6284313660000649
+          ]
+        },
+        "Right": {
+          "inside_actual_frustum": 679,
+          "total": 755,
+          "outside_cached_sphere": 755,
+          "ndc_min": [
+            -0.46591520338291437,
+            -1.7307201671511088
+          ],
+          "ndc_max": [
+            0.3632162289162948,
+            0.5441997434137882
+          ]
+        }
+      },
+      "display_mapping": {
+        "drawing_buffer": [
+          1200,
+          727
+        ],
+        "CSS_canvas": [
+          640,
+          727
+        ],
+        "vertical_to_horizontal_display_scale": 1.875,
+        "native_vertical_extent_m": 0.245,
+        "viewer_horizontal_extent_m": 0.245,
+        "actual_viewer_vertical_extent_m": 0.14842916666666667,
+        "correct_viewer_width_for_native_vertical_extent_m": 0.40440165061898214
+      }
+    }
+  ],
+  "scope": "Bounded read-only diagnosis of original root hand captures. Temporary HTML overrides camera configuration and adds read-only bounds observation. No authoring assets, model bytes, delivered viewer or capture sources changed by this diagnostic.",
+  "conclusions": {
+    "runtime_hand_surface_parity": "All1509original hand sourceIDs compared at t0, native BlenderZup\u2192Three[x,z,-y].4437max0.807726micrometers;3531max1.054516micrometers. No pose/morph mapping defect found.",
+    "006_blank_capture": "CachedSkinnedMesh sphere excludes all1509actual handvertices and fails the actualcamera frustum by0.357150m; rendercalls0/triangles0 despite679right-handvertices inside actualfrustum. Initialasset1512 sharedDQ uniforms precede3531 reset render.",
+    "007_capture_appearance": "Runtimehand parity passes, drawcalls1/21160triangles. Buffer1200x727 displayed640x727 yields1.875 vertical:horizontal scale. Native ortho_scale.245 is verticalextent; viewer cameras.scale.245 is horizontalextent, leaving actualheight.148429m. Axis conversion is correct. Shading differs but is not isolated/measured as sole remaining perceptual cause.",
+    "smallest_repairs": "Root owns disablingfrustumCulled for singleSkinnedMesh mannequins, removingcanvas-onlyCSSresize, and convertingnative verticalextent toviewerwidth usingactualaspect. No author pose/geometry change indicated.",
+    "profile_limit": "Native profile images isolate actual hand faces. Exactcamera may be torso-occluded in uncut scene; closer-eye proposal is provided but unverified for clipping/occlusion.",
+    "root_followup": "Root reports applying culling/drawstats/capture fixes; root rebuild/recheck is independently owned and was not rerun by this author."
+  },
+  "source_capture_png_hash_match": {
+    "007-4437-hand-palmar-after.png": "64542b509491df0bd6bd173faac9e58502787f5ef1a5fdfc619aa87d255c67fd",
+    "006-3531-hand-palmar-after.png": "2f638bf4d84d1f6442fb6166819320783c663dc9e950998df8d410e2cb868d3b"
+  }
+}

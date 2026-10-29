@@ -1,0 +1,49 @@
+{
+  "source_sha256": "b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3",
+  "glb_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+  "presets": [
+    {
+      "id": "guard_right_palmar",
+      "action": "Exercise_4437",
+      "seconds": 0,
+      "coordinate_system": "Native Blender Z-up metres; runtime conversion[x,z,-y]",
+      "position": [
+        0.7219682335853577,
+        -0.6783526539802551,
+        1.1693413257598877
+      ],
+      "target": [
+        -0.15723441541194916,
+        -0.23797957599163055,
+        1.5375466346740723
+      ],
+      "scale": 0.245,
+      "view": "orthographic",
+      "proof": "fist-final-guard-uncut-palmar.png"
+    },
+    {
+      "id": "guard_right_dorsal",
+      "action": "Exercise_4437",
+      "seconds": 0,
+      "coordinate_system": "Native Blender Z-up metres; runtime conversion[x,z,-y]",
+      "position": [
+        -1.0457874536514282,
+        0.19606691598892212,
+        1.8570430278778076
+      ],
+      "target": [
+        -0.15723441541194916,
+        -0.23797957599163055,
+        1.5375466346740723
+      ],
+      "scale": 0.245,
+      "view": "orthographic",
+      "proof": "fist-final-guard-uncut-dorsal.png"
+    }
+  ],
+  "useful_times_seconds": {
+    "guard": 0.0,
+    "right-peak": 0.3333333333333333,
+    "left-peak": 1.1666666666666667
+  }
+}

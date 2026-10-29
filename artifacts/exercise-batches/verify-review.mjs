@@ -173,7 +173,9 @@ try {
   if (exercise.displayMode === 'stretch') {
    assert.equal((await probe(page)).duration, 5, 'The stretch demonstration must last5seconds');
    assert.ok(hold && hold.start === 2 && hold.end === 3, 'The compressed demonstration must hold for exactly1second');
-   assert.ok(exercise.note.includes('20–30'), 'Preserve the source workout hold separately from demonstration timing');
+   const clip = batch === '002' ? null : JSON.parse(await readFile(new URL(`assets/${id}/clip.json`, root)));
+   const sourceHold = clip?.source_hold_recommendation_seconds ?? [20, 30];
+   assert.ok(exercise.note.includes(sourceHold.join('–')), 'Preserve the source workout hold separately from demonstration timing');
    await page.evaluate(() => window.heatFrame(0)); await page.locator('#play').click();
    const playback = await page.evaluate(() => new Promise((resolve, reject) => {
     const targets = [.4, 1.5, 2.1, 2.9, 3.5, 4.7], samples = [];

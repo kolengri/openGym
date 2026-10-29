@@ -97,6 +97,8 @@ def pose(a,frame,exercise,ground_offsets=None):
    side='Left'if sign==1 else'Right';direction=a.rest[side+'Hand'].to_3x3()@Vector((-sign*.98,.15,.15));q=a.orient(name,direction)
    d[name]=d[parent]@a.rest[parent].inverted()@Matrix.Translation(head)@q.to_matrix().to_4x4()
   else:d[name]=d[parent]@a.rest[parent].inverted()@a.rest[name]@Quaternion(axis,math.radians(angles[index])).to_matrix().to_4x4()
+ if exercise=='3531':
+  import fist_pose;fist_pose.apply(a,d)
  for bone in a.rig.pose.bones:
   parent=bone.parent.name if bone.parent else None;bone.matrix_basis=a.rest[bone.name].inverted()@(a.rest[parent]@d[parent].inverted()if parent else Matrix.Identity(4))@d[bone.name]
  return d,{**state,'reach_errors_m':reach_errors}

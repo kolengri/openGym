@@ -49,6 +49,9 @@ async function main() {
     if (object.isBone) bones.set(object.name, object);
     if (!object.isMesh) return;
     meshes.push(object);
+    // A single custom-skinned character stays visible while orbiting or switching assets.
+    // Cached bounds can belong to a previous pose/DQ palette; no per-frame CPU bound scan is needed.
+    if (object.isSkinnedMesh) object.frustumCulled = false;
     for (const old of Array.isArray(object.material) ? object.material : [object.material]) {old.map?.dispose(); old.dispose();}
     object.material = material; object.castShadow = false; object.receiveShadow = false;
     dq.installSurfaceProbe(object);
@@ -180,6 +183,8 @@ async function main() {
    asset: exercise.asset ?? 'default', loadedAssets: assetCache.size,
    skinning: exercise.skinning ?? 'linear',
    viewportCount: entries.length, cameras: cameras.map(camera => ({position: camera.position.toArray(), zoom: camera.zoom})),
+   drawCalls: renderer.info.render.calls, triangles: renderer.info.render.triangles,
+   frustumCulling: meshes.map(mesh => mesh.frustumCulled),
    panEnabled: controls.enablePan, heatEnabled: uniforms.heatEnabled.value, heatPhase: uniforms.heatPhase.value,
    heatStrength: uniforms.heatStrength.value, meshes: meshes.length, bones: bones.size, poseUpdates,
    colorTextures: material.map ? 1 : 0, ao: !!material.aoMap, shadows: renderer.shadowMap.enabled,

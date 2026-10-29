@@ -44,3 +44,11 @@ The rejected globalSmooth20 target produced384.9mm inverse-source demand at a co
 The coupled9 candidate combined anatomical knee frames,586 original hip-weight rows and a local shoulder volume target. Its child/resting-pose images still showed shoulder ribbons and hip collapse, so4365 is not delivered. Numerical crossing reductions did not establish an acceptable figure. The standalone10058 action excludes that child-only shape component; its neutral IK pole is transported continuously into the half-kneeling plane to remove the first-frame knee jump.
 
 3905 demonstrates three forward and three reverse circles over eight seconds. The original10–15-circle recommendation remains a source cue, distinct from demonstration timing. Forward and reverse pass through identical positions in opposite time order; direction is established by trajectory/velocity and playback rather than a single still.
+
+## Explicit user follow-up: resting pose and fists
+
+The later optional-question reply explicitly selected continued4365 repair. The original ten-record scope is restored and3905 is retained as a completed bonus; the earlier temporary selection was the primary's decision, never a user approval.
+
+Fresh whole-body original weights and DQ removed the old inverse-LBS feather from consideration. Sharing overhead motion through source/chest/reach-derived clavicle frames improved the shoulder attachment. A local rest-shape hip-volume target, inverted through unit DQ, restores the deep-fold collar with protected contacts and exact exterior; selected keyed entry/peak/return silhouettes were accepted before export. Full-loop and runtime receipts remain separate from those stills.
+
+Punch fingers were shallow hooks and the thumb target pointed nearly normal to the palm. Closure is solved per digit against actual palm skin, with external thumb contact. The initial dorsal correction pinned the other side of the MCP seam: exact wedge faces lay at mask0. A coherent collar across both Hand and proximal digit domains closed those torn-looking valleys while preserving contact patches. Explicit standard-GLB weight0/1 tracks prevent the fist component leaking into shared non-punch actions. Original geometry, rest/UV, non-finger movement and paired-action skin are retained as independently measured invariants.
