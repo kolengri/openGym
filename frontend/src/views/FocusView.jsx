@@ -75,7 +75,9 @@ function Prescription({ entry, setIdx, unit, fallbackRest, children }) {
     : ''
   // An exercise on 'No timer' (restOff) shows no rest, whatever the default is.
   const rest = target.restOff === true ? '' : target.restSec > 0 ? `Rest ${target.restSec}s` : fallbackRest > 0 ? `Rest ${fallbackRest}s` : ''
-  const badges = [reps && `${reps} Reps`, load, rpe, rest, target.tempo].filter(Boolean)
+  const cardio = modeOf({ ...target, id: entry.id }) === 'cardio'
+  const goal = cardio && (target.min > 0 || target.km > 0) ? `${t('Goal')}: ${setsRepsOf({ ...target, mode: 'cardio' })}` : ''
+  const badges = [goal, !cardio && reps && `${reps} Reps`, load, rpe, rest, target.tempo].filter(Boolean)
 
   return <div className="focus-prescription">
     <span className="focus-badge focus-progress">{setIdx + 1}/{entry.sets.length}</span>
@@ -300,15 +302,10 @@ export default function FocusView({
       <div data-testid="focus-set" className={(set.done ? 'complete ' : '') + (locked ? 'locked' : '')}>
         {isSideSet(set) ? <div className="focus-sides">{sideFields('L')}{sideFields('R')}</div> : <>
           {mode === 'cardio' ? <>
-            <Stepper label={t('Duration (min)')} ariaLabel="duration" value={set.min || 0} step={1} decimal={false} disabled={readOnly}
-              onChange={value => onField(setIdx, 'min', value)} />
-            {/* Stored in km/h, shown and typed in the profile's speed unit, as on every other
-                cardio input (lib/speed.js). */}
-            <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} ariaLabel="speed" value={toSpeed(set.speed || 0, speedUnit)} step={0.5} disabled={readOnly}
-              onChange={value => onField(setIdx, 'speed', fromSpeed(value, speedUnit))} />
-            {/* The treadmill's grade, where the exercise has one (lib/incline.js). */}
-            {(inclineFits(ex) || entry.sets.some(hasIncline)) && <Stepper label={t('Incline (%)')} ariaLabel="incline" value={set.incline || 0} step={INCLINE_STEP} max={INCLINE_MAX} disabled={readOnly}
-              onChange={value => onField(setIdx, 'incline', clampIncline(value))} />}
+            <Stepper label={t('Duration (min)')} ariaLabel="duration" value={set.min ?? ''} step={1} disabled={readOnly}
+              onChange={value => onField(setIdx, 'min', value > 0 ? value : null)} />
+            <Stepper label={t('Distance (km)')} ariaLabel="distance" value={set.km ?? ''} step={0.1} disabled={readOnly}
+              onChange={value => onField(setIdx, 'km', value > 0 ? value : null)} />
           </> : <>
             <Stepper label={t('Load ({0})', S.unit)} ariaLabel="load" value={set.w || 0} step={loadStep} onStep={stepLoad} disabled={readOnly}
               onChange={value => onField(setIdx, 'w', value)} />
@@ -341,6 +338,13 @@ export default function FocusView({
           style={effortTint ? { color: effortTint, borderColor: effortTint, background: `color-mix(in srgb, ${effortTint} 20%, var(--surface-2))` } : undefined}
           aria-label={t(EFFORT[effort].hd)} disabled={readOnly} onClick={openEffort}>{effortValue == null ? t(EFFORT[effort].hd) : fmtNum(effortValue)}</button>}
       </div>
+      {mode === 'cardio' && (set.speed != null || hasIncline(set)) && <details className="small dim">
+        <summary>{t('More')}</summary>
+        <div className="row cfgrow">
+          {set.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} ariaLabel="speed" value={toSpeed(set.speed, speedUnit)} step={0.5} disabled={readOnly} onChange={value => onField(setIdx, 'speed', fromSpeed(value, speedUnit))} />}
+          {(inclineFits(ex) || hasIncline(set)) && <Stepper label={t('Incline (%)')} ariaLabel="incline" value={set.incline || 0} step={INCLINE_STEP} max={INCLINE_MAX} disabled={readOnly} onChange={value => onField(setIdx, 'incline', clampIncline(value))} />}
+        </div>
+      </details>}
       <Button variant="primary" icon="check" aria-label={t('Complete set')} onClick={complete}>{set.done ? t('Completed') : t('Complete')}</Button>
       <div className="focus-secondary">
         <button className="focus-skip" aria-label={t('Skip set')} disabled={setIdx >= entry.sets.length - 1} onClick={() => selectSet(setIdx + 1)}>

@@ -3,6 +3,86 @@ import Toybox.WatchUi;
 import Toybox.Lang;
 
 (:test)
+function cardioAcknowledgementKeepsTheNextIntervalTimer(logger) {
+    var snap = WorkoutFixtures.snapshot(1);
+    snap["state"]["active"]["entries"] = [{"id"=>"run", "name"=>"Run", "mode"=>"cardio", "sets"=>[
+        {"sec"=>30,"done"=>false}, {"sec"=>30,"done"=>false}]}];
+    var m = new WorkoutModel(null,"cardio-ack"); Test.assert(m.snapshot(snap,1000000l));
+    Test.assert(m.startSet(1000000l)); Test.assert(m.setDone(1031000l));
+    var doneId = m.batch()[0]["id"];
+    Test.assert(m.queue("skipRest",{},1031000l)); var skipId = m.batch()[1]["id"];
+    Test.assert(m.startSet(1032000l));
+    snap["seq"] = 2;
+    snap["state"]["active"]["entries"][0]["sets"][0] = {"sec"=>31,"done"=>true};
+    Test.assert(m.acknowledge({"v"=>1,"kind"=>"ack","seq"=>2,"state"=>snap["state"],"ids"=>[doneId,skipId]},1037000l));
+    Test.assertEqual(m.elapsed(1038000l),6);
+    Test.assertEqual(m.batch().size(),0);
+    return true;
+}
+
+(:test)
+function cardioTimerMeasuresActiveTimeAcrossPauseRestartAndPhoneSnapshots(logger) {
+    var snap = WorkoutFixtures.snapshot(1);
+    snap["state"]["active"]["entries"] = [{"id"=>"run", "name"=>"Run", "mode"=>"cardio", "sets"=>[{"sec"=>30,"done"=>false}]}];
+    var m = new WorkoutModel(null,"cardio"); Test.assert(m.snapshot(snap,1000000l));
+    Test.assertEqual(WorkoutControls.primary(m,1000000l),"startSet");
+    m.sample(99,1000000l); Test.assert(m.data["hr"] == null);
+    // The physical START shortcut starts cardio too, without completing a row.
+    Test.assert(m.setDone(1000000l)); Test.assertEqual(m.batch().size(),0);
+    Test.assert(!m.setDone(1000000l));
+    m.sample(140,1010000l);
+    Test.assert(m.pause(1010000l)); Test.assertEqual(m.elapsed(1040000l),10);
+    m = new WorkoutModel(GymData.copy(m.data),"unused");
+    snap["seq"] = 2; Test.assert(m.snapshot(snap,1040000l));
+    Test.assertEqual(m.elapsed(1040000l),10);
+    Test.assert(m.pause(1040000l)); Test.assertEqual(m.elapsed(1045000l),15);
+    Test.assertEqual(WorkoutControls.primary(m,1045000l),"setDone");
+    var alerts = new WorkoutAlerts();
+    Test.assert(alerts.poll(m,1059000l) == null);
+    Test.assert(alerts.poll(m,1060000l) != null);
+    Test.assert(alerts.poll(m,1061000l) == null);
+    Test.assert(!m.current()["row"]["done"]);
+    m.sample(160,1061000l); Test.assert(m.setDone(1061000l));
+    var event = m.batch()[2];
+    Test.assertEqual(event["sec"],31); Test.assert(event["r"] == null); Test.assert(event["w"] == null);
+    Test.assertEqual(event["hr"]["avg"],150);
+    Test.assert(m.active()["entries"][0]["sets"][0]["done"]);
+    return true;
+}
+
+(:test)
+function cardioWithoutTargetRunsStopwatchWithoutTargetAlert(logger) {
+    var m = WorkoutFixtures.model(); m.current()["entry"]["mode"] = "cardio";
+    Test.assert(m.startSet(1000000l));
+    var alerts = new WorkoutAlerts(); Test.assert(alerts.poll(m,1100000l) == null);
+    Test.assert(m.setDone(1100000l)); Test.assertEqual(m.batch()[0]["sec"],100);
+    return true;
+}
+
+(:test)
+function prescriptionsPrioritizeRepsAndTimedTargetsOverEmptyLoad(logger) {
+    var m = WorkoutFixtures.model(); var c = m.current();
+    c["entry"]["bodyweight"] = true; c["row"]["w"] = 0;
+    var p = WorkoutControls.prescription(c,"kg");
+    Test.assertEqual(p["value"],"5 "+GymUi.string(Rez.Strings.Reps));
+    Test.assertEqual(p["detail"],GymUi.string(Rez.Strings.Bodyweight));
+    c["row"]["w"] = 7.5; p = WorkoutControls.prescription(c,"kg");
+    Test.assertEqual(p["detail"],"+7.5 kg");
+    c["entry"]["mode"] = "cardio"; c["row"]["sec"] = 750;
+    p = WorkoutControls.prescription(c,"kg"); Test.assertEqual(p["value"],"12:30");
+    Test.assertEqual(p["detail"],GymUi.string(Rez.Strings.Target));
+    c["entry"]["goalKm"] = 5; p = WorkoutControls.prescription(c,"kg");
+    Test.assertEqual(p["detail"],GymUi.string(Rez.Strings.Target)+" 5 "+GymUi.string(Rez.Strings.Kilometers));
+    c["row"]["sec"] = null; p = WorkoutControls.prescription(c,"kg");
+    Test.assertEqual(p["value"],"5 "+GymUi.string(Rez.Strings.Kilometers));
+    c["entry"]["mode"] = "time"; c["entry"]["goalKm"] = null;
+    c["row"]["sec"] = 45; c["row"]["w"] = 20; p = WorkoutControls.prescription(c,"kg");
+    Test.assertEqual(p["value"],"00:45");
+    Test.assertEqual(p["detail"],GymUi.string(Rez.Strings.Target)+" · 20 kg");
+    return true;
+}
+
+(:test)
 function repsStartMeasuresOnlyExplicitSetAndKeepsPhonePayload(logger) {
     var m = WorkoutFixtures.model();
     Test.assertEqual(m.elapsed(1005000l),0);

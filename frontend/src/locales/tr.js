@@ -2743,4 +2743,10 @@ export default {
   "Last night average": "Geçen gecenin ortalaması",
   "Unit not verified; original Garmin value.": "Birim doğrulanmadı; orijinal Garmin değeri.",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "Süre hedefi (dk)",
+  "Distance goal (km)": "Mesafe hedefi (km)",
+  "Distance (km)": "Mesafe (km)",
+  "Set a time or distance goal. Zero leaves a goal off.": "Süre veya mesafe hedefi belirleyin. Sıfır, ilgili hedefi kapatır.",
+
 }

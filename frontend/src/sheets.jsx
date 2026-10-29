@@ -1901,8 +1901,8 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
   const sideDefault = t('Default ({0})', fmtRest(10))
   // No rest of its own: the default rest timer's, which may itself be off.
   const restLikeAll = t('Default ({0})', fmtRest(st.restSec))
-  // A catalogue cardio exercise logs intervals by default, but it can be counted in sets x reps
-  // or timed like any other (#678). A saved duration/speed plan keeps its cardio form even after
+  // A catalogue cardio exercise logs time and distance, but it can be counted in sets x reps
+  // or timed like any other (#678). A saved cardio plan keeps its form even after
   // the catalogue moved its exercise out of cardio (jumping jacks, #717).
   const speedUnit = speedUnitOf(st)
   const seed = existing || initial || pickedExerciseConfig(ex.id)
@@ -1916,12 +1916,13 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
       ? { ...cfg, ...normalizeRepRange(cfg.reps, cfg.repsMin, isPerSide(cfg) ? 2 : 1) }
       : cfg
   })
-  // Cardio keeps its own duration+speed form; the reps/time choice (issue #16) is offered for
+  // Cardio keeps its own time/distance form; the reps/time choice (issue #16) is offered for
   // everything else, which is where the gap was — planks, hangs, wall sits, loaded carries.
   // A cardio exercise gets Cardio as a third choice, and a slot that picked Reps or Time says so
   // in its `mode` (modeOf reads it before the body part).
   const mode = modeOf({ ...c, id: ex.id })
   const cardio = cardioEx && mode === 'cardio'
+  const cardioGoalMissing = cardio && !(c.min > 0 || c.km > 0)
   // Both default from the dataset and are then whatever the config says — see isBw.
   const bw = !cardio && isBw({ ...c, id: ex.id })
   const perSide = isPerSide(c)
@@ -1949,7 +1950,7 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
       : next
   })
   const save = () => {
-    if (progressionStepInvalid) return
+    if (progressionStepInvalid || cardioGoalMissing) return
     close()
     const sets = Math.max(1, Math.round(c.sets) || (cardio ? 1 : 3))
     // Only carry progression settings that differ from the inherited default, so a plan file
@@ -2005,7 +2006,7 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
     }
     // The treadmill's grade, only when it has one, so a flat slot keeps the shape it had.
     const incline = clampIncline(c.incline)
-    if (cardio) onSave({ sets, min: Math.max(1, Math.round(c.min) || 20), speed: Math.max(0, c.speed || 8), ...(incline > 0 ? { incline } : {}), ...withNote, ...withRest, ...withSubs })
+    if (cardio) onSave({ sets, mode: 'cardio', ...(c.min > 0 ? { min: Math.min(1440, Math.max(0.01, Math.round(c.min * 100) / 100)) } : {}), ...(c.km > 0 ? { km: Math.min(10000, Math.max(0.01, Math.round(c.km * 100) / 100)) } : {}), ...(c.speed != null ? { speed: Math.max(0, c.speed) } : {}), ...(incline > 0 ? { incline } : {}), ...withNote, ...withRest, ...withSubs })
     else if (mode === 'time') onSave({ sets, mode: 'time', sec: Math.max(1, Math.round(c.sec) || 45), weight: Math.max(0, c.weight || 0), ...flags, ...(perSide ? { side: true } : {}), ...prog, ...withNote, ...withWarmups, ...withRest, ...withSetRests, ...withMeant, ...withFailure, ...withSubs })
     else {
       // A unilateral target is stored even: the split has to divide, and a typed 15 would
@@ -2064,15 +2065,8 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
     </div>
     <div className="row cfgrow" style={{ marginBottom: mode === 'time' ? 8 : 18 }}>
       {cardio ? <>
-        <Stepper label={t('Intervals')} value={c.sets} step={1} decimal={false} onChange={v => setC(x => ({ ...x, sets: v }))} />
-        <Stepper label={t('Minutes')} value={c.min} step={1} decimal={false} onChange={v => setC(x => ({ ...x, min: v }))} />
-        {/* Typed and stepped in the profile's unit, kept in km/h (lib/speed.js). */}
-        <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} value={toSpeed(c.speed, speedUnit)} step={0.5}
-          onChange={v => setC(x => ({ ...x, speed: fromSpeed(v, speedUnit) }))} />
-        {/* The grade it starts at, where the exercise has one (lib/incline.js); the workout rows
-            take it from here when last time had none. */}
-        {(inclineFits(ex) || c.incline > 0) && <Stepper label={t('Incline (%)')} value={c.incline || 0} step={INCLINE_STEP} max={INCLINE_MAX}
-          onChange={v => setC(x => ({ ...x, incline: clampIncline(v) }))} />}
+        <Stepper label={t('Time goal (min)')} ariaLabel={t('Time goal (min)')} value={c.min || 0} step={1} max={1440} onChange={v => setC(x => ({ ...x, min: v }))} />
+        <Stepper label={t('Distance goal (km)')} ariaLabel={t('Distance goal (km)')} value={c.km || 0} step={0.1} max={10000} onChange={v => setC(x => ({ ...x, km: v }))} />
       </> : mode === 'time' ? <>
         <Stepper label={t('Sets')} value={c.sets} step={1} decimal={false} onChange={v => setC(x => ({ ...x, sets: v }))} />
         <Stepper label={t('Seconds')} value={c.sec} step={5} decimal={false} onChange={v => setC(x => ({ ...x, sec: v }))} />
@@ -2090,6 +2084,18 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
         {!bw && !pyramid && <Stepper label={t('Weight ({0})', st.unit)} value={c.weight} step={2.5} onChange={v => setC(x => ({ ...x, weight: v }))} />}
       </>}
     </div>
+    {cardio && <>
+      <div className="small dim" role={cardioGoalMissing ? 'alert' : undefined} style={{ marginTop: -10, marginBottom: 18 }}>{t('Set a time or distance goal. Zero leaves a goal off.')}</div>
+      {/* Older plans retain their interval, speed and incline settings as secondary controls. */}
+      {(c.sets > 1 || c.speed != null || c.incline > 0) && <details style={{ marginBottom: 18 }}>
+        <summary>{t('More')}</summary>
+        <div className="row cfgrow">
+          {c.sets > 1 && <Stepper label={t('Intervals')} value={c.sets} step={1} min={1} decimal={false} onChange={v => setC(x => ({ ...x, sets: v }))} />}
+          {c.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} value={toSpeed(c.speed, speedUnit)} step={0.5} onChange={v => setC(x => ({ ...x, speed: fromSpeed(v, speedUnit) }))} />}
+          {(inclineFits(ex) || c.incline > 0) && <Stepper label={t('Incline (%)')} value={c.incline || 0} step={INCLINE_STEP} max={INCLINE_MAX} onChange={v => setC(x => ({ ...x, incline: clampIncline(v) }))} />}
+        </div>
+      </details>}
+    </>}
     {/* Pyramid sets: a row per set, each with its own reps or Max, rest and weight. A set left
         at 0 weight starts from that same set last time (buildSets). */}
     {pyramid && <div style={{ marginTop: -10, marginBottom: 18 }}>
@@ -2369,7 +2375,7 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
     {/* What saving does, when it is neither of the two usual things: the routine editor's
         Replace (#110) seeds this sheet with the slot it replaces, and saving puts the exercise
         into that slot. */}
-    <Button variant="primary" disabled={progressionStepInvalid} onClick={save}>{saveLabel || (existing ? t('Save') : t('Add to routine'))}</Button>
+    <Button variant="primary" disabled={progressionStepInvalid || cardioGoalMissing} onClick={save}>{saveLabel || (existing ? t('Save') : t('Add to routine'))}</Button>
     {isCustomEx(ex) && <><div style={{ height: 8 }} /><Button icon="pencil" onClick={() => { close(); customExSheet(ex) }}>{t('Edit or delete this exercise')}</Button></>}
     {/* The routine editor's counterpart to a workout's Swap (#110): another exercise in this
         slot, with the slot's sets, reps, weight, rule and note kept (lib/routines.js). What was

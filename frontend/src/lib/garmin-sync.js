@@ -119,9 +119,14 @@ export function garminSnapshot(snapshot, { timer = null, paused = false, sourceA
       const unit = units.find(u => u.includes(entryIdx)) || [entryIdx]
       return {
         ...pick(entry, ['id', 'name', 'mode', 'restSec', 'bodyweight', 'perSide', 'group', 'assisted', 'step']),
+        ...(entry.mode === 'cardio' && Number.isFinite(target.km) && target.km > 0 ? { goalKm: target.km } : {}),
         ...(source ? { restSec: ownExerciseRest(target) ?? snapshot.restSec, sideRestSec: sideRestFor(target, { timed: false }) || 0 } : {}),
         sets: (entry.sets || []).map((set, setIdx) => ({
           ...pick(set, ['w', 'r', 'sec', 'done', 'warmup', 'at']),
+          // Cardio stores minutes on the phone; the existing timed wire field uses seconds.
+          // Match the watch's whole-second timer so ACK round trips retain row identity.
+          ...(entry.mode === 'cardio' && Number.isFinite(rows[setIdx]?.min ?? target.min) && (rows[setIdx]?.min ?? target.min) > 0
+            ? { sec: Math.round((rows[setIdx]?.min ?? target.min) * 60) } : {}),
           ...(source ? { restSec: ownSetRest(rows[setIdx]) ?? warmupRestSecFor(source, setIdx,
             restSecFor(sources, unit, snapshot.restSec, { idx: entryIdx, sec: pyramidRestFor(target, rows, setIdx) }), warmupRestSec) } : {}),
           ...(unsupportedSet(rows[setIdx]) ? { unsupported: true } : {}),

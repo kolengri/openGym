@@ -1,7 +1,6 @@
 // @vitest-environment happy-dom
 // Discord: "the incline can only be modified while a workout is actively in progress". A
-// treadmill's settings (the routine editor's exercise sheet) take an incline next to its minutes
-// and speed, the same Stepper the workout rows use, and save it on the slot.
+// treadmill's legacy settings remain editable in More while goals use the primary controls.
 import React, { act } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createRoot } from 'react-dom/client'
@@ -30,7 +29,10 @@ function open(ex, existing) {
     el.dispatchEvent(new Event('input', { bubbles: true }))
   })
   const save = () => act(() => [...host.querySelectorAll('button')].find(b => b.textContent.trim() === 'Save').click())
-  return { labels, field, type, save, onSave }
+  const details = () => host.querySelector('details')
+  const more = () => act(() => host.querySelector('summary').click())
+  const primaryLabels = () => [...host.querySelector('.cfgrow').querySelectorAll('.stp-l')].map(l => l.textContent.trim())
+  return { labels, primaryLabels, details, more, field, type, save, onSave }
 }
 
 beforeEach(() => {
@@ -41,9 +43,13 @@ beforeEach(() => {
 afterEach(() => { act(() => { mounted.splice(0).forEach(root => root.unmount()) }) })
 
 describe('incline in a treadmill\'s settings (Discord)', () => {
-  it('offers Incline next to Minutes and Speed and saves it on the slot', () => {
+  it('keeps legacy incline editable under More and saves it on the slot', () => {
     const v = open(EXIDX[TREADMILL], { sets: 1, min: 30, speed: 5 })
-    expect(v.labels()).toEqual(expect.arrayContaining(['Minutes', 'Incline (%)']))
+    expect(v.primaryLabels()).toEqual(['Time goal (min)', 'Distance goal (km)'])
+    expect(v.details().open).toBe(false)
+    v.more()
+    expect(v.details().open).toBe(true)
+    expect(v.labels()).toContain('Incline (%)')
     v.type(v.field('Incline (%)'), '7.3')
     v.save()
     expect(v.onSave.mock.calls[0][0]).toMatchObject({ sets: 1, min: 30, speed: 5, incline: 7.5 })
@@ -51,6 +57,7 @@ describe('incline in a treadmill\'s settings (Discord)', () => {
 
   it('reopens with the saved incline, and a flat one leaves the key out', () => {
     const v = open(EXIDX[TREADMILL], { sets: 1, min: 30, speed: 5, incline: 6 })
+    v.more()
     expect(v.field('Incline (%)').value).toBe('6')
     v.type(v.field('Incline (%)'), '0')
     v.save()

@@ -62,8 +62,8 @@ describe('jumping-jack logging', () => {
     expect(buildSets(state, cfg)).toEqual([{ w: 0, r: 20, done: false }])
   })
 
-  it.each(['2258', '0798'])('keeps walking and cycling (%s) in duration/speed mode', id => {
+  it.each(['2258', '0798'])('keeps walking and cycling (%s) in cardio without a fabricated speed', id => {
     expect(isCardio(id)).toBe(true)
-    expect(defaultConfig(id)).toEqual({ sets: 1, min: 20, speed: 8 })
+    expect(defaultConfig(id)).toEqual({ sets: 1, mode: 'cardio', min: 20 })
   })
 })

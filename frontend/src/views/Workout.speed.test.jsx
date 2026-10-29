@@ -36,11 +36,11 @@ function unmount() {
 afterEach(() => { if (root) unmount() })
 
 // The speed column is the second stepper of the set row, after the minutes.
-const speedCell = () => container.querySelector('.setrow').querySelectorAll('.stp')[1]
+const speedCell = () => container.querySelector('input[aria-label="speed"]').closest('.stp')
 const shown = () => speedCell().querySelector('input').value
-const header = () => container.querySelector('.sethead .r-sp').textContent
+const header = () => speedCell().closest('.stp-w').querySelector('.stp-l').textContent
 const stored = () => useStore.getState().S.active.entries[0].sets[0].speed
-const tap = label => act(() => speedCell().querySelector(`button[aria-label="${label}"]`).click())
+const tap = label => act(() => speedCell().querySelector(`button[aria-label="${label} speed"]`).click())
 function type(value) {
   const input = speedCell().querySelector('input')
   act(() => {
@@ -50,6 +50,42 @@ function type(value) {
 }
 
 describe('cardio speed in the set row', () => {
+  it('logs nullable kilometers independently from the target and never copies a goal into a result', () => {
+    mount({ unit: 'lb', speedUnit: 'mph' })
+    act(() => useStore.getState().update(s => {
+      s.active.entries[0] = { id: BIKE, target: { sets: 1, mode: 'cardio', min: 20, km: 5 }, sets: [{ min: 20, done: false }] }
+    }))
+    const row = container.querySelector('.setrow')
+    expect([...container.querySelectorAll('.sethead span')].map(e => e.textContent).filter(Boolean)).toEqual(['Duration (min)', 'Distance (km)'])
+    expect(container.querySelector('.planline').textContent).toContain('20 min · 5 km')
+    const input = row.querySelector('input[aria-label="Distance (km)"]')
+    expect(input.value).toBe('')
+    act(() => {
+      Object.getOwnPropertyDescriptor(input.constructor.prototype, 'value').set.call(input, '4,8')
+      input.dispatchEvent(new Event('input', { bubbles: true }))
+    })
+    act(() => row.querySelector('[role="checkbox"]').click())
+    const entry = useStore.getState().S.active.entries[0]
+    expect(entry.target.km).toBe(5)
+    expect(entry.sets[0]).toMatchObject({ min: 20, km: 4.8, done: true })
+    expect(entry.sets[0].speed).toBeUndefined()
+    const add = [...container.querySelectorAll('button')].find(b => /Add set/.test(b.textContent))
+    act(() => add.click())
+    expect(useStore.getState().S.active.entries[0].sets[1]).toEqual({ min: 20, done: false })
+  })
+
+  it('keeps the focus distance field empty until a result is entered', () => {
+    mount()
+    act(() => useStore.getState().update(s => {
+      s.active.workoutView = 'focus'
+      s.active.entries[0] = { id: BIKE, target: { sets: 1, mode: 'cardio', km: 5 }, sets: [{ done: false }] }
+    }))
+    expect(container.querySelector('input[aria-label="distance"]').value).toBe('')
+    expect(container.querySelector('input[aria-label="duration"]').value).toBe('')
+    expect(container.querySelector('.focus-prescription').textContent).toContain('5 km')
+    expect(useStore.getState().S.active.entries[0].sets[0]).toEqual({ done: false })
+  })
+
   it('reads, steps and takes typing in mph for a profile in pounds, and stores km/h', () => {
     mount({ unit: 'lb' })
     expect(header()).toBe('Speed (mph)')

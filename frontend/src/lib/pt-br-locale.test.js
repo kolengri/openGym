@@ -42,7 +42,8 @@ describe('Brazilian Portuguese locale', () => {
     // If the hash fails, review the changed keys and wording before accepting a new one. From
     // frontend/: node scripts/pt-br-inheritance-fingerprint.mjs --list
     // Includes 22 reviewed Garmin diagnostics/health strings shared by both Portuguese locales.
-    expect(fingerprint, 'pt-PT inheritance changed; review the inherited pt-BR wording').toBe('cf408c2112e579bb086b1f8a4297825215e3ce557b7589e1a855fdf5095d64bb')
+    // Also includes the three neutral cardio goal/distance labels; the hint uses a pt-BR override.
+    expect(fingerprint, 'pt-PT inheritance changed; review the inherited pt-BR wording').toBe('adb1b7a65c25664cb5d0035d565c2f13e8eebc99cfa63460e8d7a9b3e442aa39')
   })
 
   // pt-PT labelled Unpair 'Desfazer': Undo, in Portuguese (it is pt-BR's Undo), on the button that

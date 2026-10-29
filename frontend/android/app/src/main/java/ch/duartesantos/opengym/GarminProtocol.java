@@ -88,7 +88,7 @@ final class GarminProtocol {
 
     private static JSONObject entry(JSONObject source) throws Exception {
         String mode = string(source, "mode", 16);
-        // Cardio stays in the plan so indexes match the phone; completion remains phone-only.
+        // Cardio shares the elapsed-seconds wire field; the phone stores it as minutes.
         if (!mode.equals("reps") && !mode.equals("time") && !mode.equals("cardio")) fail("This exercise mode is not supported on Garmin");
         JSONObject out = new JSONObject().put("id", id(source.get("id")))
             .put("name", string(source, "name", 160)).put("mode", mode);
@@ -97,6 +97,7 @@ final class GarminProtocol {
             if (source.has(k)) out.put(k, bool(source, k));
         if (source.has("group")) out.put("group", string(source, "group", 128));
         copyNumbers(source, out, 0, 10000, "step");
+        copyNumbers(source, out, 0, 10000, "goalKm");
         JSONArray sets = source.getJSONArray("sets"), reduced = new JSONArray();
         if (sets.length() > 100) fail("Too many Garmin sets");
         for (int i = 0; i < sets.length(); i++) {

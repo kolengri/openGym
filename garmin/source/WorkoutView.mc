@@ -87,10 +87,11 @@ class WorkoutView extends WatchUi.View {
         var label = GymUi.string(Rez.Strings.Exercise)+" "+(a["cur"]+1).toString()+" / "+a["entries"].size().toString();
         var value = GymUi.string(Rez.Strings.Complete); var detail = GymUi.string(Rez.Strings.AllSetsDone);
         if (c != null) {
-            var row = c["side"] == null ? c["row"] : c["row"]["sides"][c["side"]];
-            label = (c["row"]["warmup"] == true ? GymUi.string(Rez.Strings.Warmup)+" " : GymUi.string(Rez.Strings.Set)+" ")+(c["setIdx"]+1).toString()+" / "+e["sets"].size().toString()+(c["side"] == null ? "" : " "+GymUi.side(c["side"]));
-            value = row["w"] == null ? GymUi.string(Rez.Strings.Bodyweight) : WorkoutControls.decimal(row["w"])+" "+GymUi.unit(model.state["unit"]);
-            detail = GymData.is(e["mode"],"time") ? (c["row"]["sec"] == null ? GymUi.string(Rez.Strings.Target)+" --:--" : GymUi.string(Rez.Strings.Target)+" "+WorkoutControls.clock(c["row"]["sec"])) : (row["r"] == null ? "?" : WorkoutControls.decimal(row["r"]))+" "+GymUi.string(Rez.Strings.Reps);
+            if (!GymData.is(e["mode"],"cardio")) {
+                label = (c["row"]["warmup"] == true ? GymUi.string(Rez.Strings.Warmup)+" " : GymUi.string(Rez.Strings.Set)+" ")+(c["setIdx"]+1).toString()+" / "+e["sets"].size().toString()+(c["side"] == null ? "" : " "+GymUi.side(c["side"]));
+            }
+            var prescription = WorkoutControls.prescription(c,GymUi.unit(model.state["unit"]));
+            value = prescription["value"]; detail = prescription["detail"];
         }
         text(dc,left,layout["labelY"],label,tiny,Graphics.COLOR_LT_GRAY,width);
         text(dc,left,layout["valueY"],value,layout["valueFont"],Graphics.COLOR_WHITE,width);
@@ -180,7 +181,7 @@ class WorkoutMenu extends WatchUi.Menu2InputDelegate {
         if (!id.equals("status") && !id.equals("reconnect") && !sameWorkout(workout,app.model.wid())) {
             app.notice = GymUi.string(Rez.Strings.WorkoutChanged); WatchUi.requestUpdate(); return;
         }
-        if (id.equals("status")) { app.notice = GymUi.message(app.recordingStatus)+". "+GymUi.string(Rez.Strings.PendingCommands)+" "+app.model.data["outbox"].size().toString(); WatchUi.requestUpdate(); }
+        if (id.equals("status")) { app.notice = WatchUi.loadResource(Rez.Strings.AppVersion)+". "+GymUi.message(app.recordingStatus)+". "+GymUi.string(Rez.Strings.PendingCommands)+" "+app.model.data["outbox"].size().toString(); WatchUi.requestUpdate(); }
         else if (id.equals("finish") || id.equals("discard")) {
             confirm(id);
         } else if (id.equals("reconnect")) { app.lastHelloAt = 0l; app.tick(); }

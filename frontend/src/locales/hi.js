@@ -2743,4 +2743,10 @@ export default {
   "Last night average": "पिछली रात का औसत",
   "Unit not verified; original Garmin value.": "इकाई सत्यापित नहीं है; Garmin का मूल मान।",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "समय का लक्ष्य (मिनट)",
+  "Distance goal (km)": "दूरी का लक्ष्य (किमी)",
+  "Distance (km)": "दूरी (किमी)",
+  "Set a time or distance goal. Zero leaves a goal off.": "समय या दूरी का लक्ष्य तय करें। शून्य रखने पर वह लक्ष्य बंद रहता है।",
+
 }

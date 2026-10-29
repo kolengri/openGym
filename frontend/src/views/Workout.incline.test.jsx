@@ -37,7 +37,7 @@ function unmount() {
 afterEach(() => { if (root) unmount() })
 
 const cells = () => container.querySelector('.setrow').querySelectorAll('.stp')
-const inclineCell = () => container.querySelector('.setrow .stp.inc')
+const inclineCell = () => container.querySelector('input[aria-label="incline"]')?.closest('.stp') || null
 const stored = () => useStore.getState().S.active.entries[0].sets[0]
 const heads = () => [...container.querySelectorAll('.sethead span')].map(s => s.textContent).filter(Boolean)
 function type(input, value) {
@@ -48,21 +48,21 @@ function type(input, value) {
 }
 
 describe('the incline column', () => {
-  it('sits after the speed on a treadmill, steps in half percents and stores on the set', () => {
+  it('keeps legacy incline in secondary controls while primary fields record time and distance', () => {
     mount(TREADMILL, [{ min: 20, speed: 5, done: false }])
-    expect(cells()).toHaveLength(3)
-    expect(heads()).toEqual(['Duration (min)', 'Speed (km/h)', 'Incline (%)'])
+    expect(cells()).toHaveLength(2)
+    expect(heads()).toEqual(['Duration (min)', 'Distance (km)'])
     // No grade logged yet: the field is empty, not a 0 nobody typed.
     expect(inclineCell().querySelector('input').value).toBe('')
     expect('incline' in stored()).toBe(false)
-    act(() => inclineCell().querySelector('button[aria-label="Increase"]').click())
+    act(() => inclineCell().querySelector('button[aria-label="Increase incline"]').click())
     expect(stored().incline).toBe(0.5)
     type(inclineCell().querySelector('input'), '12')
     expect(stored().incline).toBe(12)
     // A typo past what any treadmill does lands on the top, never on a grade nobody can walk.
     type(inclineCell().querySelector('input'), '60')
     expect(stored().incline).toBe(40)
-    act(() => inclineCell().querySelector('button[aria-label="Increase"]').click())
+    act(() => inclineCell().querySelector('button[aria-label="Increase incline"]').click())
     expect(stored().incline).toBe(40)
     // Cleared, the key goes, and the set is a flat one again.
     type(inclineCell().querySelector('input'), '')

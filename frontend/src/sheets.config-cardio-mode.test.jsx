@@ -45,7 +45,8 @@ describe('a cardio exercise logged as sets x reps (#678)', () => {
     const v = open(EXIDX[HIGH_KNEES], { sets: 1, min: 20, speed: 8 })
     expect(v.modes()).toEqual(['Cardio', 'Reps', 'Time'])
     expect(v.picked()).toBe('Cardio')
-    expect(v.labels()).toContain('Intervals')
+    expect(v.labels()).toEqual(expect.arrayContaining(['Time goal (min)', 'Distance goal (km)']))
+    expect(v.labels()).not.toContain('Intervals')
   })
 
   it('Reps gives it sets x reps, saved as a reps slot the session reads as reps', () => {
@@ -61,14 +62,14 @@ describe('a cardio exercise logged as sets x reps (#678)', () => {
     expect(modeOf({ ...saved, id: HIGH_KNEES })).toBe('reps')
   })
 
-  it('reopens on Reps, and going back to Cardio saves an interval again', () => {
+  it('reopens on Reps, and going back to Cardio saves a time goal without inventing speed', () => {
     const v = open(EXIDX[HIGH_KNEES], { sets: 3, reps: 20, weight: 0, mode: 'reps', bodyweight: true })
     expect(v.picked()).toBe('Reps')
     v.pick('Cardio')
-    expect(v.labels()).toContain('Intervals')
+    expect(v.labels()).toEqual(['Time goal (min)', 'Distance goal (km)'])
     v.save()
     const saved = v.onSave.mock.calls[0][0]
-    expect(saved).toMatchObject({ sets: 1, min: 20, speed: 8 })
+    expect(saved).toEqual({ sets: 1, mode: 'cardio', min: 20 })
     expect(modeOf({ ...saved, id: HIGH_KNEES })).toBe('cardio')
   })
 

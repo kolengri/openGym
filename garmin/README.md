@@ -74,18 +74,24 @@ when set to Russian, with English as the fallback for other locales. Exercise
 names retain the phone's text and use up to two measured lines, with an ellipsis
 when the remaining name exceeds the round display's available width. A `+N`
 header suffix shows pending watch commands; **Status** in the menu provides the
-queue details. The compact Russian HR label **ЧСС** is used when space requires it.
+queue details and installed build version. The compact Russian HR label **ЧСС** is used when space requires it.
 Start a workout on the phone to populate
 exercise, current set, weight and reps. Idle explicitly says **No workout
 connected / Start on phone**. The physical **MENU** or **BACK** key opens status,
 reconnect and exit; there is no on-screen Menu button.
 
 - Tap **Start set** to start an explicit local elapsed `mm:ss` timer, for reps or
-  timed sets. Tap **Complete set** to record completion. Rep-set timing is a local
+  timed sets or cardio. Tap **Complete set** to record completion. Cardio records
+  actual elapsed time back to the phone in minutes, preserving its speed and incline.
+  Rep-set timing is a local
   display only; it does not add seconds or a start event to the phone protocol.
 - The large timer panel shows **REST** with remaining `mm:ss` during rest and
   **SET TIME** with elapsed `mm:ss` during a started set. Timed rows also show
-  their target. Both timers freeze on pause, and set timing survives restart and
+  their target. Cardio shows its planned duration instead of weight and reps;
+  an optional kilometer goal is labelled as a target, never a measured distance.
+  A distance-only goal still has a stopwatch; enter the actual distance on the phone.
+  bodyweight exercises show reps prominently, with added load below when present.
+  Both timers freeze on pause, and set timing survives restart and
   same-set phone snapshots. Changing the exercise or planned row layout clears
   local timing and per-set HR, including replacements at unchanged array indices.
 - Tap **Next ex** to select the next exercise. After the final exercise is
@@ -113,7 +119,7 @@ listing by itself; the owner must select the matching version for a later upload
 
 Per-side rep sets tick L and R independently and show the side. Warmup rows retain
 their label. The companion refuses rows marked `unsupported` (for example a drop
-set or rest-pause set), cardio/distance modes, time-per-side sets without per-side
+set or rest-pause set), distance modes, time-per-side sets without per-side
 seconds, and missing rep targets. Use the phone for those sets; the watch never
 fabricates a rep count. Exercise animations are not included.
 
