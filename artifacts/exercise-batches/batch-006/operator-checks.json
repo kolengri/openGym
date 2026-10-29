@@ -43,5 +43,18 @@
     "artifacts/exercise-batches/batch-006/capture-peaks.json",
     "artifacts/exercise-batches/batch-006/operator-checks.json",
     "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png (40 screenshots)"
-  ]
+  ],
+  "pinned_inline": {
+    "source_revision": "57a98d8af5642cb5ebf55031fddffdaf0d975ce8",
+    "build_manifest_sha256": "c1f013d7c3e4237fb4c6dee07a5b37fd444f34d1e55206e92c8dc48a42e122f7",
+    "inline_bytes": 206836,
+    "command": "node artifacts/exercise-batches/batch-006/verify-inline.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify-inline.log",
+    "result": "passed",
+    "action_count": 11,
+    "live_canvas_replaces_poster": true,
+    "external_resource_count": 12,
+    "evidence": "Verified actual public six model byte hashes against exact commit 57a98d8af5642cb5ebf55031fddffdaf0d975ce8."
+  }
 }

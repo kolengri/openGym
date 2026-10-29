@@ -31,7 +31,7 @@ for (const directory of [...ids.map(id => `assets/${id}/`), 'floor-crunch-family
 for (const path of Object.keys(build.input_files_sha256)) add(new URL(path, repo));
 for (const sample of (await read(new URL('capture-peaks.json', root))).evidence) add(new URL(sample.file, root));
 for (const file of ['build-review.mjs', 'fit-cameras.mjs', 'verify-review.mjs', 'verify-inline.mjs']) add(new URL('../' + file, root));
-for (const file of ['source-revision.json', 'inline.html', 'inline-verification.json', 'inline-settled.png', 'publication-report.json']) {
+for (const file of ['source-revision.json', 'inline.html', 'inline-verification.json', 'inline-settled.png', 'inline-delivery.json', 'publication-report.json']) {
  const url = new URL(file, root);
  try { await readFile(url); add(url); } catch (error) { if (error.code !== 'ENOENT') throw error; }
 }

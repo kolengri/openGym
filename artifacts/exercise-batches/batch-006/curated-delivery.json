@@ -13,7 +13,7 @@
     "3480",
     "5106"
   ],
-  "model_revision": null,
+  "model_revision": "57a98d8af5642cb5ebf55031fddffdaf0d975ce8",
   "policy": "Explicit final packets and accepted review evidence only; no logs, trials, backups, environments or temporary full-cycle audit streams.",
   "manifest_self_hash_policy": "This manifest is staged separately and does not hash itself.",
   "files": [
@@ -1504,8 +1504,8 @@
     },
     {
       "path": "artifacts/exercise-batches/batch-006/build-manifest.json",
-      "bytes": 8578,
-      "sha256": "924f18905a05386fe88df00a2fa811e08ffca04a260f168d04ade157de0c8a83"
+      "bytes": 8680,
+      "sha256": "c1f013d7c3e4237fb4c6dee07a5b37fd444f34d1e55206e92c8dc48a42e122f7"
     },
     {
       "path": "artifacts/exercise-batches/batch-006/build.mjs",
@@ -1584,8 +1584,8 @@
     },
     {
       "path": "artifacts/exercise-batches/batch-006/curate.mjs",
-      "bytes": 3299,
-      "sha256": "f93077f3632f8beb836e3714d853ab1db168fd8fd31f15dcd4db3c365efa8d0d"
+      "bytes": 3323,
+      "sha256": "3eef7b139e4f26a0451d3c294e9720088f547d30e06e60027066f231939895fb"
     },
     {
       "path": "artifacts/exercise-batches/batch-006/findings.md",
@@ -1786,6 +1786,26 @@
       "path": "artifacts/exercise-batches/batch-006/floor-crunch-family/verify_source.py",
       "bytes": 4871,
       "sha256": "9ab50bc7b317b6e41cf51ea0fe6b573320b8c7926741985a91bb35bffcb0636d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/inline-delivery.json",
+      "bytes": 808,
+      "sha256": "64f74277616584a78ae2f126687d0e47421567d339f9a72f5be7b6e39fde7339"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/inline-settled.png",
+      "bytes": 110117,
+      "sha256": "8edbcffb83211a13ff7d3650fe7e26affd345514f5840e0f57f3c5d27920c557"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/inline-verification.json",
+      "bytes": 4088,
+      "sha256": "e4f52d86c3c27a357ac34c89e575f50b4140011fe05cdef8cfedea02a8dd12dc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/inline.html",
+      "bytes": 206836,
+      "sha256": "e707af64fa59406f6f7f9985a934b7eea9841ccdb446e7b3bf5add73b5d3ce52"
     },
     {
       "path": "artifacts/exercise-batches/batch-006/leg-raise-family/README.md",
@@ -2179,8 +2199,8 @@
     },
     {
       "path": "artifacts/exercise-batches/batch-006/operator-checks.json",
-      "bytes": 2296,
-      "sha256": "5e74f034f8df6a8af8e226fea5a024827cd56b2749fe5bf1f4cf3d66d0dd491f"
+      "bytes": 2936,
+      "sha256": "8f23993c193731d30022157eeca0f6fbdcfbd56de4c82dbb459c7dbc478ede21"
     },
     {
       "path": "artifacts/exercise-batches/batch-006/phase-labels.json",
@@ -2201,6 +2221,11 @@
       "path": "artifacts/exercise-batches/batch-006/presentation.json",
       "bytes": 8661,
       "sha256": "9efe2bec464bc9be055885325c7499c7f25b73ea0c8c73cc4257a383f4ba126f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/publication-report.json",
+      "bytes": 1045,
+      "sha256": "2561a275107ad222cacbec4c1224e94361c8a9d23c81a3550e4addb2998757b6"
     },
     {
       "path": "artifacts/exercise-batches/batch-006/reference-normalization.json",
@@ -2264,8 +2289,8 @@
     },
     {
       "path": "artifacts/exercise-batches/batch-006/root-integration.json",
-      "bytes": 12151,
-      "sha256": "ecbb6c20ad092348b459567c14887e8f19ef465db2ca09487e144f79faddd0e3"
+      "bytes": 12885,
+      "sha256": "c80165a72ea3d95cdac5792d335fdba593911fe009db41727ffa3bbb396a4c5d"
     },
     {
       "path": "artifacts/exercise-batches/batch-006/runtime-contacts.json",
@@ -2276,6 +2301,11 @@
       "path": "artifacts/exercise-batches/batch-006/selection.json",
       "bytes": 4752,
       "sha256": "3377a2fbd13bec8d28305847a427eb280fde477def000c0a336c76594453c2a8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/source-revision.json",
+      "bytes": 164,
+      "sha256": "51b549d4b5bc1af622fa98c9faec5d972f66bad2ec490b94ce1139a5421037a8"
     },
     {
       "path": "artifacts/exercise-batches/batch-006/standing-leg-family/README.md",
@@ -2633,5 +2663,5 @@
       "sha256": "dac21e2aaf75167a28b8444896b3956dcf3a2f356f934277faa749f5e57c30e6"
     }
   ],
-  "total_bytes": 348788039
+  "total_bytes": 349112597
 }

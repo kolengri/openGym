@@ -1,0 +1,23 @@
+{
+  "stage": "A",
+  "repository": "kolengri/openGym",
+  "remote": "origin",
+  "branch": "t3/upgrade-exercise-animations",
+  "base": "main",
+  "source_sha": "57a98d8af5642cb5ebf55031fddffdaf0d975ce8",
+  "push": {
+    "command": "git push origin t3/upgrade-exercise-animations",
+    "exit_code": 0,
+    "receipt": "802bec5d..57a98d8a t3/upgrade-exercise-animations -> t3/upgrade-exercise-animations"
+  },
+  "pull_request": {
+    "url": "https://github.com/kolengri/openGym/pull/3",
+    "linked_to_thread": true,
+    "link_receipt": "alreadyLinked=true",
+    "update_command": "gh pr edit 3 --repo kolengri/openGym --title 'Add live exercise reviews and repair all-fours foot grasp' --body-file artifacts/exercise-batches/batch-006/pr-body.md",
+    "update_exit_code": 0,
+    "title": "Add live exercise reviews and repair all-fours foot grasp",
+    "body_source": "artifacts/exercise-batches/batch-006/pr-body.md"
+  },
+  "ci_observation": "Deferred until the primary's planned immutable public inline pin metadata commit and final SHA handoff."
+}
