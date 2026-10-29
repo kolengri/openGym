@@ -1,0 +1,326 @@
+{
+  "task": "Pinned public inline checks after accepted SourceA pin",
+  "head": "48bbda6bfc5cc1e02115a6ad55bc55465fc9155e",
+  "branch": "t3/upgrade-exercise-animations",
+  "commands": [
+    {
+      "command": "node artifacts/exercise-batches/batch-006/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/build-006-inline-stage.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/build-007-inline-stage.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-006/verify-inline.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/verify-inline-006.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/verify-inline.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/verify-inline-007.log"
+    }
+  ],
+  "offlinePayloadsUnchanged": true,
+  "selectionScope": "Both pinned inline viewers; each verified all 11 selected actions and all public model bytes against the exact 48bbda6b commit revision.",
+  "batches": {
+    "006": {
+      "sourceRevision": "48bbda6bfc5cc1e02115a6ad55bc55465fc9155e",
+      "offlineHtml": {
+        "bytes": 9739666,
+        "sha256": "3609572fae94c71f79d4d1589ca4f1c7ee21400f6aee9282f1cd3b74cd26c638",
+        "expectedSha256": "3609572fae94c71f79d4d1589ca4f1c7ee21400f6aee9282f1cd3b74cd26c638",
+        "unchanged": true
+      },
+      "inlineHtml": {
+        "bytes": 211208,
+        "sha256": "16e9fafebfc773fafed87736f909dfb3078a916001bad8c7f363dc47015e3a49"
+      },
+      "buildManifest": {
+        "sha256": "4c2c02c147fd4fbee30c3bd6f3ff914deee0e898cc26af47cb951b73c6c4e79e",
+        "runtimeViewerSha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3"
+      },
+      "pinnedModelRevision": "48bbda6bfc5cc1e02115a6ad55bc55465fc9155e",
+      "modelCount": 6,
+      "models": {
+        "1512": {
+          "path": "artifacts/exercise-batches/batch-006/assets/1512/motion.glb",
+          "sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+          "bytes": 1170452
+        },
+        "3531": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1",
+          "bytes": 944756
+        },
+        "4918": {
+          "path": "artifacts/exercise-batches/batch-006/assets/4918/motion.glb",
+          "sha256": "e7cc94794e0a5dbb166371669742278dfe1440abf5ede8ad7b12551a42e4e501",
+          "bytes": 897932
+        },
+        "standing-leg-family": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3479/motion.glb",
+          "sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
+          "bytes": 1229380
+        },
+        "floor-crunch": {
+          "path": "artifacts/exercise-batches/batch-006/assets/0006/motion.glb",
+          "sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701",
+          "bytes": 1270268
+        },
+        "leg-raise-family": {
+          "path": "artifacts/exercise-batches/batch-006/assets/4826/motion.glb",
+          "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea",
+          "bytes": 1215372
+        }
+      },
+      "actions": [
+        {
+          "id": "1512",
+          "action": "Exercise_1512",
+          "asset": "1512",
+          "sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a"
+        },
+        {
+          "id": "3479",
+          "action": "Exercise_3479",
+          "asset": "standing-leg-family",
+          "sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a"
+        },
+        {
+          "id": "0006",
+          "action": "Exercise_0006",
+          "asset": "floor-crunch",
+          "sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701"
+        },
+        {
+          "id": "4918",
+          "action": "Exercise_4918",
+          "asset": "4918",
+          "sha256": "e7cc94794e0a5dbb166371669742278dfe1440abf5ede8ad7b12551a42e4e501"
+        },
+        {
+          "id": "4826",
+          "action": "Exercise_4826",
+          "asset": "leg-raise-family",
+          "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea"
+        },
+        {
+          "id": "4001",
+          "action": "Exercise_4001",
+          "asset": "leg-raise-family",
+          "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea"
+        },
+        {
+          "id": "3590",
+          "action": "Exercise_3590",
+          "asset": "leg-raise-family",
+          "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea"
+        },
+        {
+          "id": "4354",
+          "action": "Exercise_4354",
+          "asset": "floor-crunch",
+          "sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701"
+        },
+        {
+          "id": "3531",
+          "action": "Exercise_3531",
+          "asset": "3531",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+        },
+        {
+          "id": "3480",
+          "action": "Exercise_3480",
+          "asset": "standing-leg-family",
+          "sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a"
+        },
+        {
+          "id": "5106",
+          "action": "Exercise_5106",
+          "asset": "leg-raise-family",
+          "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea"
+        }
+      ],
+      "inlineVerification": {
+        "ok": true,
+        "actions": [
+          "Exercise_1512",
+          "Exercise_3479",
+          "Exercise_0006",
+          "Exercise_4918",
+          "Exercise_4826",
+          "Exercise_4001",
+          "Exercise_3590",
+          "Exercise_4354",
+          "Exercise_3531",
+          "Exercise_3480",
+          "Exercise_5106"
+        ],
+        "liveCanvasReplacesPoster": true,
+        "livePoseChanges": true,
+        "mediaRequests": [],
+        "errors": [],
+        "externalResources": 12
+      },
+      "inlineVerificationReportSha256": "1f7f79021ec8bfca1783b2427d765422fe56396319f287d1fd18c5a412a47378",
+      "logs": {
+        "build": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/build-006-inline-stage.log",
+        "verifyInline": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/verify-inline-006.log"
+      }
+    },
+    "007": {
+      "sourceRevision": "48bbda6bfc5cc1e02115a6ad55bc55465fc9155e",
+      "offlineHtml": {
+        "bytes": 9544748,
+        "sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+        "expectedSha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+        "unchanged": true
+      },
+      "inlineHtml": {
+        "bytes": 218693,
+        "sha256": "14cd0cc59644e837f193539b418096656c2edd8414bd5ecdc4ff383ebee3807f"
+      },
+      "buildManifest": {
+        "sha256": "0d6f7cf59621e5151d5368c017bbb54deb79c2760372c7bffc4a1eeb21dc7aaa",
+        "runtimeViewerSha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3"
+      },
+      "pinnedModelRevision": "48bbda6bfc5cc1e02115a6ad55bc55465fc9155e",
+      "modelCount": 7,
+      "models": {
+        "3294": {
+          "path": "artifacts/exercise-batches/batch-007/assets/3294/motion.glb",
+          "sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0",
+          "bytes": 895956
+        },
+        "3905": {
+          "path": "artifacts/exercise-batches/batch-007/assets/3905/motion.glb",
+          "sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+          "bytes": 873308
+        },
+        "4365": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5",
+          "bytes": 960332
+        },
+        "4437": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+          "bytes": 991960
+        },
+        "4702": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4702/motion.glb",
+          "sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0",
+          "bytes": 938872
+        },
+        "10058": {
+          "path": "artifacts/exercise-batches/batch-007/assets/10058/motion.glb",
+          "sha256": "d306f59c96bbdcf9208bf32027b1043cf3462ed0054e57ed2ed23ebab6e4e8a4",
+          "bytes": 880328
+        },
+        "seated-ankle": {
+          "path": "artifacts/exercise-batches/batch-007/assets/1368/motion.glb",
+          "sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "bytes": 1015348
+        }
+      },
+      "actions": [
+        {
+          "id": "4437",
+          "action": "Exercise_4437",
+          "asset": "4437",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+        },
+        {
+          "id": "10058",
+          "action": "Exercise_10058",
+          "asset": "10058",
+          "sha256": "d306f59c96bbdcf9208bf32027b1043cf3462ed0054e57ed2ed23ebab6e4e8a4"
+        },
+        {
+          "id": "4436",
+          "action": "Exercise_4436",
+          "asset": "4437",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+        },
+        {
+          "id": "4702",
+          "action": "Exercise_4702",
+          "asset": "4702",
+          "sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0"
+        },
+        {
+          "id": "4715",
+          "action": "Exercise_4715",
+          "asset": "4702",
+          "sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0"
+        },
+        {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "asset": "4365",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        {
+          "id": "1368",
+          "action": "Exercise_1368",
+          "asset": "seated-ankle",
+          "sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        {
+          "id": "2761",
+          "action": "Exercise_2761",
+          "asset": "seated-ankle",
+          "sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        {
+          "id": "2762",
+          "action": "Exercise_2762",
+          "asset": "seated-ankle",
+          "sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        {
+          "id": "3294",
+          "action": "Exercise_3294",
+          "asset": "3294",
+          "sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0"
+        },
+        {
+          "id": "3905",
+          "action": "Exercise_3905",
+          "asset": "3905",
+          "sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f"
+        }
+      ],
+      "inlineVerification": {
+        "ok": true,
+        "actions": [
+          "Exercise_4437",
+          "Exercise_10058",
+          "Exercise_4436",
+          "Exercise_4702",
+          "Exercise_4715",
+          "Exercise_4365",
+          "Exercise_1368",
+          "Exercise_2761",
+          "Exercise_2762",
+          "Exercise_3294",
+          "Exercise_3905"
+        ],
+        "liveCanvasReplacesPoster": true,
+        "livePoseChanges": true,
+        "mediaRequests": [],
+        "errors": [],
+        "externalResources": 13
+      },
+      "inlineVerificationReportSha256": "55182477e77efc967a7b86ba3e13fe942866b8acf2c68240b2db4896ecf67de1",
+      "logs": {
+        "build": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/build-007-inline-stage.log",
+        "verifyInline": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/verify-inline-007.log"
+      }
+    }
+  }
+}

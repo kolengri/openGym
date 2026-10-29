@@ -19,10 +19,11 @@ const gallery = `<section class="feedback-gallery" aria-label="Кулаки кр
  <p>Один ракурс и момент движения. Пальцы собраны к ладони, большой палец снаружи.</p>
  <div class="feedback-pair">${await figure('007-4437-hand-palmar-before.png', 'До')}${await figure('007-4437-hand-palmar-after.png', 'После')}</div>
  <div class="feedback-pair">${await figure('007-4437-hand-profile-after.png', 'После · сгиб пальцев сбоку')}</div>
- <details><summary>Удары из предыдущей группы</summary><div class="feedback-pair">${await figure('006-3531-hand-palmar-before.png', 'До · удары')}${await figure('006-3531-hand-palmar-after.png', 'После · удары')}</div></details>
+ <p>То же исправление кистей применяется к ударам из предыдущей группы.</p>
 </section>`;
-const css = `<style>.feedback-gallery{margin-top:24px}.feedback-gallery h2{margin-bottom:4px}.feedback-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.feedback-pair figure{margin:0}.feedback-pair img{display:block;width:100%;height:auto;border-radius:var(--radius,10px)}.feedback-pair figcaption{padding:5px 0;color:var(--muted-foreground)}.feedback-gallery summary{cursor:pointer;margin:14px 0}</style>`;
+const css = `<style>.feedback-gallery{margin-top:24px}.feedback-gallery h2{margin-bottom:4px}.feedback-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.feedback-pair figure{margin:0}.feedback-pair img{display:block;width:100%;height:auto;border-radius:var(--radius,10px)}.feedback-pair figcaption{padding:5px 0;color:var(--muted-foreground)}@media(max-width:520px){.feedback-pair{grid-template-columns:1fr}}</style>`;
 const html = inline.replace('</head>', css + '</head>').replace('</body>', gallery + '</body>');
+if (Buffer.byteLength(html) >= 512000) throw Error('Inline comparison exceeds the host limit');
 await writeFile(new URL('review.html', root), html);
 await writeFile(new URL('review-build.json', root), JSON.stringify({
  scope: 'Exact pinned live batch007 inline review plus unchanged selected actual GPU before/after PNGs.',

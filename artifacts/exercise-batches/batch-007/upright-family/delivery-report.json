@@ -1,5 +1,5 @@
 {
-  "status": "both_native_export_decoded_packets_passed; root_GPU_pending",
+  "status": "accepted_fist_component_frozen; applicable_native_decoded_game_pass; root_GPU_pending",
   "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
   "glb_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
   "actions": [
@@ -12,78 +12,58 @@
   "bones": 51,
   "assets": {
     "4437": {
-      "delivery_report_sha256": "cdd889ac8a332af1c6a37e90aa3ada25879a6bead01f511ed7fd4520d33a0650",
-      "manifest_sha256": "13a8e4dcf3bdbb916b347583eb5e223955192ae9f760ce4b7ef9b27d72af81e9",
-      "metrics": {
-        "minimum_native_floor_z_m": 0.0009997243760153651,
-        "minimum_decoded_floor_z_m": 0.000999755342490971,
-        "native_loop_skin_m": 0.0,
-        "decoded_loop_skin_m": 2.6987150723151616e-07,
-        "maximum_full151_native_decoded_error_m": 3.204304070518023e-06,
-        "maximum_NORMAL_vector_error": 8.187660755892303e-05,
-        "maximum_actual_total_knee_flexion_degrees": 130.00003389793395,
-        "maximum_leg_foot_orientation_step_degrees": 22.18143718813556,
-        "mixed_ankle_edge_ratio_range": [
-          0.7287127349363232,
-          1.1051366965230023
-        ],
-        "forefoot_edge_ratio_range": [
-          0.9998923456521404,
-          1.0000602523175879
-        ],
-        "actual_arm_leg_triangle_crossings": 0,
-        "maximum_influences": 4,
-        "maximum_weight_partition_error": 4.470348358154297e-08
-      }
+      "source_sha256": "b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3",
+      "glb_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+      "manifest_sha256": "80595412726ec3b31f777069131d7d1adf0cddc54d3bb40a404606bc31691e85",
+      "delivery_report_sha256": "f7caad3c31499a20c9dd1d9fbced41a08033d74e1b861b2b1d826cb4c7eab230"
     },
     "4436": {
-      "delivery_report_sha256": "b3cc46ce92948dd145e9a21db8e8c2c705bd00a441e476db58a4430eb874aa97",
-      "manifest_sha256": "9fdcffa635d6543a96c323b09a99620fd2992d06292067967b86d2dde91ab9d9",
-      "metrics": {
-        "minimum_native_floor_z_m": 0.0009997619781643152,
-        "minimum_decoded_floor_z_m": 0.0009994065621867776,
-        "native_loop_skin_m": 0.0,
-        "decoded_loop_skin_m": 1.2753339684474237e-07,
-        "maximum_full151_native_decoded_error_m": 2.6855209263293453e-06,
-        "maximum_NORMAL_vector_error": 8.187660755892303e-05,
-        "maximum_actual_total_knee_flexion_degrees": 47.55633455903802,
-        "maximum_leg_foot_orientation_step_degrees": 4.191289662004495,
-        "mixed_ankle_edge_ratio_range": [
-          0.7746264415072955,
-          1.3330027534094218
-        ],
-        "forefoot_edge_ratio_range": [
-          0.9999648149064471,
-          1.0000499095056703
-        ],
-        "actual_arm_leg_triangle_crossings": 0,
-        "maximum_influences": 4,
-        "maximum_weight_partition_error": 4.470348358154297e-08
-      }
+      "source_sha256": "b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3",
+      "glb_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+      "manifest_sha256": "aaf96746ee4e6160edbdb627b782f3519a1f4491404a219bc9651fc758157f10",
+      "delivery_report_sha256": "5e939e8a4abb196ec38ea030675aec86dba5e076e86fd5e3ebfd94a2458fd6d6"
     }
   },
   "files_sha256": {
-    "source.blend": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
-    "motion.glb": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+    "source.blend": "b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3",
+    "motion.glb": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
     "binding.py": "1e98c62c894dcfc97264fe54590fe24c88a30a3d895ee9ec75b65daa445dfecb",
-    "motion.py": "2c51a8259ae02cb27fe2befdc8afcd29eeeb045fecede45db63f68ba9403a4d9",
-    "build.py": "216d40c9eded5f1013d23611d332bce2a05d602f8fd66cfd1b0cc5d64d1dccc5",
+    "motion.py": "1773e38c0a11eefbf53bcf3305d986bfbdbc5e882a9a2b37c87a8b82a793894c",
+    "build.py": "a4584f6177f9fb33c8f3384697a0cd6466c40001a24d9cfbf3682d44abc6fe59",
     "check_motion.py": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d",
     "triangle_intersection.py": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36",
-    "verify_native.py": "7a7235032cbb796d4f61812834aa0b2d11520c03621d67ae9e13737cbab359e5",
-    "verify_export.mjs": "0402f01655fa12f881e6b02dfc51b834d4f69c295c38133c3712f6f5d7c99393",
-    "export_motion.py": "15d907615a568c3aa189f5ef4280dedec916900d380e66db6a88cb3c019a9e18",
+    "verify_native.py": "2d04f824904d3b42d947090242f42818d2dd1fb44385d72888ffc9237342882a",
+    "verify_export.mjs": "8e2b02d4f61d8d117f30abf81afd82bc5d07fb380dabe2ce5ba09ba9c51017c1",
+    "export_motion.py": "314196039b4ad41578b745f3f19653abe453b63c7e7c54913e1e1bfa610e2ca0",
     "render_qa.py": "dd36e492c0982013b524ca5ca0a1c0de96bc0ad1a5cdb0865c389d429d601e89",
     "write_contract.py": "5b2aabc0fd34f5689c9f301dabae528d48c577e0cbf0e028e9dd5c9a615290ad",
-    "write_delivery.py": "8f71069e9c2d409d2e111da567b92ffdb51b33c4b017f4e4d1f3b470326cf431",
     "motion-qc-contract.json": "024050e91f60fc91f6566dbf0a56df30e346456e34dddd0346fcd9666d273b82",
     "local-binding-report.json": "5097cf4ae4105d162ff38c2d1609f4f5c0b03f57171c1925e62660fc49593955",
     "ankle-diagnosis.json": "fcac009612af6dd7532da4bc3fb6a94fc64da13d82a38461bb3714bff32b40e5",
     "rejected-additive-knee-diagnosis.json": "fba649d3df0c547efe2680c8337ca25c2af3a2f81d62e239c59428d15ec60226",
     "diagnose_knee.py": "e718b0dc27b1a6c7720c60ac4d12f05637ad042e65ef2258fc83d2c9795bc635",
     "diagnose_ankle.py": "f1251323c79e64e6f9e6683dc3cddfc9fa9878d1fa1a4c510ef7b6d213d14dae",
-    "README.md": "e87c8260ce38a23878e5c38fe177cbfdacf9e9c027fc37f9724a6ae80deae164",
+    "README.md": "c2a0e0193907c327878abc69ac26ecbacc88cebd49a1e82a8039a9e99b86fe04",
     "dependencies.json": "061882db7833fc7a07d44cf1f4a9a396046c29311317f4ceb21682f4ba320a17",
-    "curated-files.json": "589d7ff71997fdf88a7e033eb4382289926f4cb33df697bf0db2d28cdcc15288"
-  }
+    "curated-files.json": "316af9cc310b1a2bf279fb2a23e0cc8267e27a2c5c36d29a24c0e81a76037e2e",
+    "fist_pose.py": "9e93c0a4513ffb8b1d654029112091a11a881632d495c65fb8ff7e9c5b385f6f",
+    "fist-component.json": "1fe6c074c1a9b563db10d9933a677eaa8243ab0c8515f157b155f36587e66805",
+    "fix_fist_weights.py": "06522c79377bdae3914df2e64588dbfc1ad6a6cb17d4f5eb266ecedc3b0d0e06",
+    "fist-feedback-repair.json": "2b5d754b9aeab9832e55040fbe06d6980202b4ef012f15706cf4ed397a99e2d5",
+    "fist-decoded-preservation.json": "0e1db7cae72b5534f8dde2147b3150212df7c63ec3b2fc5879d451d9046d2cb1",
+    "fist-hand-landmarks.json": "1c1a577d9394d33796742c9ed76950f1c3adcef1de013c76ddaf1bf7eedff3b8",
+    "fist-closure.json": "4b49fef5577e8f12cb82ee1672df149f354e51e20397e3c3ed56a0cb9bb662c0",
+    "fist-widened-contacts.json": "e72c778d1cc36fe020848bf6345f8c0452b60b21e2277f1c2cb809d58b15b39f",
+    "fist-widened-preservation.json": "1af3a1cd73ead576942743d7660d33399dffa451a664dea3f2db46604951c30d",
+    "fist-widened-component-readback.json": "b4437c6f2dc169ca091c46c66089256880393cc9682de60f8c05a128c0e07315",
+    "fist-widened-gradient.json": "3287a9618a3ed08be871163a0e0ea143ba4de6942b25581acd653f612b340a17",
+    "fist-frozen-contact-domain.json": "f8dfeef726766b37e0ed15b6139675ea7cddf01a14e9a4a6fb0aeefe5b97681a",
+    "fist-inheritance-check.json": "9c972e427124b68c654a3821e8f86f6879d8a0712938308d6fa1c907d0159d70",
+    "verify_fist_preservation.mjs": "c17e434625059268abfff1239d63e52b36700a0ec2d32babcc84bb1581f6b259",
+    "render_final_fist_packet.py": "19f95b136214730cc5ccd4852c0f3b8d73340e053bff73665dfadcfc99a83511",
+    "write_fist_delivery.py": "3706108f38c2cb3500fe2cb217984176cc89d0d20f1645b9630e0e9d911ddb8a",
+    "fist-two-source-readback.json": "4552fc2baf7a9391a65b3f7f43315c204e70cc42b153b1edce0da36fc75c5856",
+    "read_frozen_fist_component.py": "b7f93f8f0a84523533f3fb44bd38b8ff68d6a2ca7d9d2bc5ee4b66ead88ed961"
+  },
+  "fist_feedback": "fist-feedback-repair.json"
 }

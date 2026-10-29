@@ -1,5 +1,5 @@
 {
-  "status": "accepted_for_user_review",
+  "status": "historical_accepted_review_superseded_by_feedback",
   "scope": "Media acceptance of native shape and selected actual Three.js GPU poses. Full-cycle mechanics and browser behavior have separate receipts.",
   "exercise_ids": [
     "4437",
@@ -179,5 +179,10 @@
     "accepted_offline_payload_unchanged": true,
     "verification": "inline-verification.json",
     "delivery": "inline-delivery.json"
+  },
+  "subsequent_user_feedback": {
+    "status": "current_eleven_action_receipt_supersedes_this_historical_ten",
+    "receipt": "feedback-resting-fists/integration.json",
+    "note": "This receipt preserves the earlier ten-action review. The user later explicitly requested continued4365 repair and closed fists; current eleven-action delivery is recorded separately."
   }
 }

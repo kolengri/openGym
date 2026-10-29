@@ -31,3 +31,5 @@ The review uses the existing Three.js 0.186.1 runtime and its dual-quaternion ad
 Native full-cycle mechanics, actual decoded export parity, mesh/game QA, camera framing and browser playback are separate checks. Per-asset receipts retain contact and support metrics and explain warnings. Root integration receipts record the exact camera/clip/model hashes after assembly. `visual-review.json` records the inspected poses; `verification.json` records live selection, seeking, framing, transparency and simulated touch/pinch/reset.
 
 `findings.md` retains concrete failed approaches and their causes so later authoring does not repeat them. This is a user-review batch; application integration, physical-device performance and clinical exercise validation are outside this delivery.
+
+Closed-fist follow-up:3531 now uses actual-skin digit closure and exterior thumb opposition. Other actions and non-hand motion are preserved; see `../batch-007/feedback-resting-fists/integration.json` for the current source-bound browser and GPU evidence.

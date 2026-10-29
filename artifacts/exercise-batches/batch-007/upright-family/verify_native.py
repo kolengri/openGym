@@ -25,7 +25,9 @@ assert len(b.data.vertices)==10582 and len(r.data.bones)==51
 assert a.binding_hash(b,r)==json.loads((P/'local-binding-report.json').read_text())['runtime_binding_sha256']
 assert max(len(v.groups)for v in b.data.vertices)<=4
 assert max(abs(sum(g.weight for g in v.groups)-1)for v in b.data.vertices)<2e-6
-assert not b.data.shape_keys
+assert list(b.data.shape_keys.key_blocks.keys())==['Basis','Fist_Dorsal_MCP']
+keys=b.data.shape_keys;keys.animation_data.action=r.animation_data.action;keys.animation_data.action_slot=next(x for x in r.animation_data.action.slots if x.target_id_type=='KEY')
+expected_fist_weight=float(ID in ['4437','3531'])
 for m in b.modifiers:assert m.show_viewport==(m.type=='ARMATURE') and m.show_render==(m.type=='ARMATURE')
 assert next(m for m in b.modifiers if m.type=='ARMATURE').use_deform_preserve_volume
 b.data.calc_loop_triangles();tri=np.array([t.vertices[:]for t in b.data.loop_triangles],int);rest=np.array([v.co[:]for v in b.data.vertices]);names={g.index:g.name for g in b.vertex_groups}
@@ -52,7 +54,7 @@ frames=sorted(set([0,7,10,16,23,30,35,60,75,85,110,120,135,150]if ID=='4437'else
 # mandatory frames + distinct flight/impact/punch samples; fractional references are optional sparse reads.
 allframes=sorted(set(list(range(151))+frames))
 for f in allframes:
- s.frame_set(int(f)+1,subframe=f%1);bpy.context.view_layer.update();e=b.evaluated_get(bpy.context.evaluated_depsgraph_get());me=e.to_mesh();p=np.array([v.co[:]for v in me.vertices]);native_p=p.copy()
+ s.frame_set(int(f)+1,subframe=f%1);bpy.context.view_layer.update();assert keys.key_blocks['Fist_Dorsal_MCP'].value==expected_fist_weight;e=b.evaluated_get(bpy.context.evaluated_depsgraph_get());me=e.to_mesh();p=np.array([v.co[:]for v in me.vertices]);native_p=p.copy()
  if decoded is not None and float(f).is_integer():
   p=decoded[int(f)].astype(float);max_decoded_error=max(max_decoded_error,float(np.linalg.norm(p-native_p,axis=1).max()))
  state=motion.state(f,ID);z=float(p[:,2].min());area=np.linalg.norm(np.cross(p[tri[:,1]]-p[tri[:,0]],p[tri[:,2]]-p[tri[:,0]]),axis=1)/2;mina=float(area.min());minarea=min(minarea,mina)
@@ -99,13 +101,18 @@ for f in allframes:
  e.to_mesh_clear()
 loop=float(np.max(np.linalg.norm(start-end,axis=1)));boneloop=float(np.max(abs(startbones-endbones)))
 if loop>1e-5 or boneloop>1e-5:fail.append('Loop mismatch')
-for name,data in ([]if decoded_path else [('runtime-surface-reference.json',{'source_sha256':source_sha,'reference_kind':'native_armature_only_DQ','source_vertices':10582,'coordinate_system':'BlenderZup meters; runtime[x,z,-y]','samples':refs}),('surface-landmarks.json',{'source_sha256':source_sha,'patches':patches,'whole_arm_ids':{k:sorted(v)for k,v in arms.items()},'whole_leg_ids':{k:sorted(v)for k,v in legs.items()},'leg_faces':faces,'palm_faces':palmfaces,'distal_finger_ids':{k:sorted(v)for k,v in distal.items()},'triangles':tri.tolist()}),('pose-samples.json',poses)]):
+for name,data in ([]if decoded_path else [('runtime-surface-reference.json',{'source_sha256':source_sha,'reference_kind':'native_armature_DQ_with_declared_fist_target','source_vertices':10582,'coordinate_system':'BlenderZup meters; runtime[x,z,-y]','samples':refs}),('surface-landmarks.json',{'source_sha256':source_sha,'patches':patches,'whole_arm_ids':{k:sorted(v)for k,v in arms.items()},'whole_leg_ids':{k:sorted(v)for k,v in legs.items()},'leg_faces':faces,'palm_faces':palmfaces,'distal_finger_ids':{k:sorted(v)for k,v in distal.items()},'triangles':tri.tolist()}),('pose-samples.json',poses)]):
  (P/name).write_text(json.dumps(data,separators=(',',':'))+'\n')
 with gzip.open(P/('decoded-five-reference-verification.json.gz'if decoded_path else'dq-reference.json.gz'),'wt')as out:json.dump({'source_sha256':source_sha,'source_vertices':10582,'samples':dq},out,separators=(',',':'))
-with gzip.open(P/('decoded-normal-readback.json.gz'if decoded_path else'normal-reference.json.gz'),'wt')as out:json.dump({'source_sha256':source_sha,'basis':[v.normal[:]for v in b.data.vertices]},out,separators=(',',':'))
+def source_normals(coords):
+ mesh=bpy.data.meshes.new('TemporaryNormalWitness');mesh.from_pydata(coords,[],[list(p.vertices)for p in b.data.polygons])
+ for p,original in zip(mesh.polygons,b.data.polygons):p.use_smooth=original.use_smooth
+ mesh.update();result=np.array([v.normal[:]for v in mesh.vertices]);bpy.data.meshes.remove(mesh);return result
+basis_array=source_normals([v.co[:]for v in b.data.vertices]);basis_normals=basis_array.tolist();morph_normal_delta=(source_normals([v.co[:]for v in keys.key_blocks['Fist_Dorsal_MCP'].data])-basis_array).tolist()
+with gzip.open(P/('decoded-normal-readback.json.gz'if decoded_path else'normal-reference.json.gz'),'wt')as out:json.dump({'source_sha256':source_sha,'basis':basis_normals,'targets':{'Fist_Dorsal_MCP':morph_normal_delta}},out,separators=(',',':'))
 if decoded_path and max_decoded_error>.0001:fail.append('Full151 native/decoded parity exceeds100micrometers')
 report={'ok':not fail,'maximum_full151_native_decoded_error_m':max_decoded_error if decoded_path else None,'source_sha256':source_sha,'native_integer_frames':151,'additional_fractional_frames':[f for f in frames if f%1],'minimum_floor_z_m':min(x['whole_skin_min_z_m']for x in samples),'minimum_triangle_area_m2':minarea,'loop_skin_error_m':loop,'loop_bone_max_element_error':boneloop,'tolerances':{'floor_penetration_m':.00035,'grounded_sole_max_gap_m':.002,'flight_sole_min_gap_m':.0001,'local_inside_m':.004,'elbow_internal_max_degrees':165},'maximum_leg_foot_orientation_step_degrees':checks.maximum_step,'forefoot_edge_ratio_range':checks.edge_range,'maximum_forefoot_relative_matrix_error':checks.maximum_toe_error,'mixed_ankle_edge_ratio_range':checks.ankle_range,'native_mixed_ankle_edge_ratio_range':checks.native_ankle_range,'internal_shape_QC':'Frozen35percent mixed-ankle and15percent forefoot edge-ratio bounds versus planted skin; actual intended ankle flexion is allowed; no clinical interpretation.','triangle_crossings':checks.crossings,'scope':'Actual full native DQ skin; whole arms/hands/fingers versus both full legs; local nearest-normal inside only within40mm. Finger/palm diagnostic within25mm. No global self-collision or clinical claim.','failures':fail,'samples':samples};(P/('decoded-physical-report.json'if decoded_path else'surface-contact-report.json')).write_text(json.dumps(report,indent=2)+'\n')
-(P/('decoded-source-readback.json'if decoded_path else'source-verification.json')).write_text(json.dumps({'ok':True,'source_sha256':source_sha,'original_source_sha256':a.SOURCE_SHA,'basis_topology_uv_bone_rest_sha256':original,'basis_topology_uv_bone_rest_unchanged':True,'runtime_binding_sha256':a.binding_hash(b,r),'maximum_influences':max(len(v.groups)for v in b.data.vertices),'maximum_weight_sum_error':max(abs(sum(g.weight for g in v.groups)-1)for v in b.data.vertices),'vertices':10582,'triangles':len(tri),'bones':51,'morphs':[],'actions':['Exercise_4436','Exercise_4437'],'selected_action':'Exercise_'+ID,'only_armature_enabled':True,'dual_quaternion':True},indent=2)+'\n')
+(P/('decoded-source-readback.json'if decoded_path else'source-verification.json')).write_text(json.dumps({'ok':True,'source_sha256':source_sha,'original_source_sha256':a.SOURCE_SHA,'basis_topology_uv_bone_rest_sha256':original,'basis_topology_uv_bone_rest_unchanged':True,'runtime_binding_sha256':a.binding_hash(b,r),'maximum_influences':max(len(v.groups)for v in b.data.vertices),'maximum_weight_sum_error':max(abs(sum(g.weight for g in v.groups)-1)for v in b.data.vertices),'vertices':10582,'triangles':len(tri),'bones':51,'morphs':['Fist_Dorsal_MCP'],'fist_component_weight':expected_fist_weight,'actions':['Exercise_4436','Exercise_4437'],'selected_action':'Exercise_'+ID,'only_armature_enabled':True,'dual_quaternion':True},indent=2)+'\n')
 print('NATIVE_GATES',json.dumps({'ok':not fail,'failures':fail[:20],'failure_count':len(fail),'minimum_area':minarea,'loop':loop,'maximum_finger_intrusion_count':maxhandinside}))
 if '--game-qa'in sys.argv:
  sys.path.insert(0,str(Path.home()/'.codex/skills/blender-asset-qa/scripts'));import qa_check

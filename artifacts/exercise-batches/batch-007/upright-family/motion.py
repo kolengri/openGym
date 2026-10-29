@@ -49,14 +49,17 @@ def pose(a,frame,ID,offsets=None):
   length=math.sqrt(a.length[side+'Arm']**2+a.length[side+'ForeArm']**2+2*a.length[side+'Arm']*a.length[side+'ForeArm']*math.cos(math.radians(17)));forward=chest_q@Vector((sgn*.025,-1,-.025)).normalized();target=guard.lerp(shoulder+forward*length,p);pole=shoulder+Vector((sgn*.18,.03,-.8));elbow,wrist=a.two_joint(shoulder,target,a.length[side+'Arm'],a.length[side+'ForeArm'],pole);reach[side+'_wrist']=float((target-wrist).length)
   aq=chest_q@a.orient(side+'Arm',chest_q.inverted()@(elbow-shoulder));bq=transported(a,side+'ForeArm',side+'Arm',aq,wrist-elbow);hq=bq@a.rest[side+'ForeArm'].to_quaternion().inverted()@a.rest[side+'Hand'].to_quaternion()
   for bone,head,q in [(side+'Arm',shoulder,aq),(side+'ForeArm',elbow,bq),(side+'Hand',wrist,hq)]:d[bone]=Matrix.Translation(head)@q.to_matrix().to_4x4()
- for name,(head,tail,parent,digit,index)in a.finger_specs.items():
-  sgn=1 if name.startswith('Left')else-1;side='Left'if sgn==1 else'Right';palmar=a.rest[side+'Hand'].to_3x3()@Vector((-sgn,0,0));axis=a.rest[name].to_3x3().inverted()@(tail-head).normalized().cross(palmar).normalized()
-  if digit=='Thumb':
-   axis=a.rest[name].to_3x3().inverted()@(tail-head).normalized().cross(Vector((-sgn,0,0))).normalized()
-  if digit=='Thumb'and index==0:
-   q=a.orient(name,a.rest[side+'Hand'].to_3x3()@Vector((-sgn*.98,.15,.15)));d[name]=d[parent]@a.rest[parent].inverted()@Matrix.Translation(head)@q.to_matrix().to_4x4()
-  else:
-   angle=([0,25,10]if digit=='Thumb'else[60,70,30])[index];d[name]=d[parent]@a.rest[parent].inverted()@a.rest[name]@Quaternion(axis,math.radians(angle)).to_matrix().to_4x4()
+ if ID=='4437':
+  import fist_pose;fist_pose.apply(a,d)
+ else:
+  for name,(head,tail,parent,digit,index)in a.finger_specs.items():
+   sgn=1 if name.startswith('Left')else-1;side='Left'if sgn==1 else'Right';palmar=a.rest[side+'Hand'].to_3x3()@Vector((-sgn,0,0));axis=a.rest[name].to_3x3().inverted()@(tail-head).normalized().cross(palmar).normalized()
+   if digit=='Thumb':
+    axis=a.rest[name].to_3x3().inverted()@(tail-head).normalized().cross(Vector((-sgn,0,0))).normalized()
+   if digit=='Thumb'and index==0:
+    q=a.orient(name,a.rest[side+'Hand'].to_3x3()@Vector((-sgn*.98,.15,.15)));d[name]=d[parent]@a.rest[parent].inverted()@Matrix.Translation(head)@q.to_matrix().to_4x4()
+   else:
+    angle=([0,25,10]if digit=='Thumb'else[60,70,30])[index];d[name]=d[parent]@a.rest[parent].inverted()@a.rest[name]@Quaternion(axis,math.radians(angle)).to_matrix().to_4x4()
  for pb in a.rig.pose.bones:
   parent=pb.parent.name if pb.parent else None;pb.matrix_basis=a.rest[pb.name].inverted()@(a.rest[parent]@d[parent].inverted()if parent else Matrix.Identity(4))@d[pb.name]
  return d,{**st,'reach_errors_m':reach,'authored_curl_degrees':curl_angle,'authored_shin_relative_ankle_degrees':ankle_relative}

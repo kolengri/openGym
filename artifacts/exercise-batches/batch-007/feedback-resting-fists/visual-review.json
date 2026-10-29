@@ -1,0 +1,502 @@
+{
+  "status": "accepted_for_user_review",
+  "owner": "primary",
+  "models": {
+    "4365": {
+      "source_sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd",
+      "model_sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+    },
+    "4437": {
+      "source_sha256": "b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3",
+      "model_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+    },
+    "3531": {
+      "source_sha256": "cd7d8674eca825f3a49b6db5a9b9a069baee6ab75acdaa1216064248441be447",
+      "model_sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+    }
+  },
+  "runtime_sha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3",
+  "capture_sha256": "3e283be12aa051bc7c12186c934ab78bec63f8485c51108f028cd63778744bed",
+  "operator_checks_sha256": "e241f4b641682246609eb7d26f4e7e8a3f537fd48debbd39b7c11dbb9bbdbccd",
+  "scope": "Primary inspection of selected actual Chromium/Metal GPU poses; continuous mechanics and behavior are separately verified.",
+  "accepted_files": [
+    "007-4365-hold-zones.png",
+    "007-4365-hip-entry-neutral.png",
+    "007-4365-shoulder-entry-zones.png",
+    "007-4365-return-neutral.png",
+    "007-4437-hand-palmar-before.png",
+    "007-4437-hand-palmar-after.png",
+    "007-4437-hand-dorsal-after.png",
+    "007-4437-hand-profile-after.png",
+    "006-3531-hand-palmar-after.png",
+    "006-3531-hand-profile-after.png",
+    "006-3531-right-peak-body.png"
+  ],
+  "findings": [
+    "4365 back/hip silhouette stays connected at hold and transition; supported palms and head are covered by separate full-cycle contact checks.",
+    "Both punch clips show a closed curl to the palm with the opposed thumb outside; profile view makes the fold legible.",
+    "Selected hands draw correctly after asset switches; no cached-bound omission or CSS aspect stretch remains."
+  ],
+  "limits": [
+    "Minor original polygonal hand facets remain in closeups.",
+    "4365 retains minor concave waist/joint creases and declared localized crossing diagnostics; this is not a global collision-free claim.",
+    "The close-eye hand profile is a diagnostic camera; small clipped parts of the distant body at its upper edge are outside the hand proof.",
+    "No physical-device, production app or clinical recruitment validation."
+  ],
+  "evidence": [
+    {
+      "batch": "007",
+      "id": "4365",
+      "label": "shoulder-entry-zones",
+      "time": 1.1666666666666667,
+      "zones": true,
+      "file": "007-4365-shoulder-entry-zones.png",
+      "png_sha256": "c7bf397ac7d891ef3a24e7cbd46086445e2669a869a640929fa7ee858ef58102",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+        "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+      },
+      "state": {
+        "id": "4365",
+        "action": "Exercise_4365",
+        "time": 1.1666666666666667,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            0
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 34676
+    },
+    {
+      "batch": "007",
+      "id": "4365",
+      "label": "hip-entry-neutral",
+      "time": 1.5333333333333334,
+      "zones": false,
+      "file": "007-4365-hip-entry-neutral.png",
+      "png_sha256": "df945aaa862d333cb3e847264ec7247da0861f2d8081b6ad46a1db2287f4b4ad",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+        "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+      },
+      "state": {
+        "id": "4365",
+        "action": "Exercise_4365",
+        "time": 1.5333333333333334,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            0.7401241375354641
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 29453
+    },
+    {
+      "batch": "007",
+      "id": "4365",
+      "label": "hold-zones",
+      "time": 2.5,
+      "zones": true,
+      "file": "007-4365-hold-zones.png",
+      "png_sha256": "697bfa3c5affa28ba5f962b8bb2ec0870b6b9cbb1a1ef6d7985573bfe2f44eae",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+        "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+      },
+      "state": {
+        "id": "4365",
+        "action": "Exercise_4365",
+        "time": 2.5,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            1
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 28344
+    },
+    {
+      "batch": "007",
+      "id": "4365",
+      "label": "return-neutral",
+      "time": 3.5,
+      "zones": false,
+      "file": "007-4365-return-neutral.png",
+      "png_sha256": "0cacddfd104a02dfab0ed71e6f8b369ca4b2c7e5ce3a12a07d0712b4515fb951",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+        "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+      },
+      "state": {
+        "id": "4365",
+        "action": "Exercise_4365",
+        "time": 3.5,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            0.6172001957893372
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 29808
+    },
+    {
+      "batch": "007",
+      "id": "4437",
+      "label": "hand-palmar-before",
+      "time": 0,
+      "zones": false,
+      "camera": {
+        "label": "guard_right_palmar",
+        "position": [
+          0.7219682335853577,
+          -0.6783526539802551,
+          1.1693413257598877
+        ],
+        "target": [
+          -0.15723441541194916,
+          -0.23797957599163055,
+          1.5375466346740723
+        ],
+        "scale": 0.40440165061898214,
+        "scale_note": "Native vertical ortho extent0.245m converted to horizontal width for the1200x727 delivered viewport; no CSS stretching."
+      },
+      "baseline_revision": "e08ae06492b49e66eae46a6d14a5a8d755f6f44e",
+      "baseline_model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+      "file": "007-4437-hand-palmar-before.png",
+      "png_sha256": "f024e9c3812177284ae55c4f13eaf30e1338cd1e867c89f4f93f1cac71e04885",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+        "sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+        "revision": "e08ae06492b49e66eae46a6d14a5a8d755f6f44e"
+      },
+      "state": {
+        "id": "4437",
+        "action": "Exercise_4437",
+        "time": 0,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          []
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 315182
+    },
+    {
+      "batch": "007",
+      "id": "4437",
+      "label": "hand-palmar-after",
+      "time": 0,
+      "zones": false,
+      "camera": {
+        "label": "guard_right_palmar",
+        "position": [
+          0.7219682335853577,
+          -0.6783526539802551,
+          1.1693413257598877
+        ],
+        "target": [
+          -0.15723441541194916,
+          -0.23797957599163055,
+          1.5375466346740723
+        ],
+        "scale": 0.40440165061898214,
+        "scale_note": "Native vertical ortho extent0.245m converted to horizontal width for the1200x727 delivered viewport; no CSS stretching."
+      },
+      "file": "007-4437-hand-palmar-after.png",
+      "png_sha256": "0903430d20c2ec1d346f2d87284ae2c54cbb2cadae1c5d9ce289c74598fd068e",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+        "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+      },
+      "state": {
+        "id": "4437",
+        "action": "Exercise_4437",
+        "time": 0,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            1
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 302234
+    },
+    {
+      "batch": "007",
+      "id": "4437",
+      "label": "hand-dorsal-after",
+      "time": 0,
+      "zones": false,
+      "camera": {
+        "label": "guard_right_dorsal",
+        "position": [
+          -1.0457874536514282,
+          0.19606691598892212,
+          1.8570430278778076
+        ],
+        "target": [
+          -0.15723441541194916,
+          -0.23797957599163055,
+          1.5375466346740723
+        ],
+        "scale": 0.40440165061898214,
+        "scale_note": "Native vertical ortho extent0.245m converted to horizontal width for the1200x727 delivered viewport; no CSS stretching."
+      },
+      "file": "007-4437-hand-dorsal-after.png",
+      "png_sha256": "324b643954dfdfed475575e8c8286fb2e470547b64a857ba1e330a9dfbe13b0e",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+        "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+      },
+      "state": {
+        "id": "4437",
+        "action": "Exercise_4437",
+        "time": 0,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            1
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 296747
+    },
+    {
+      "batch": "006",
+      "id": "3531",
+      "label": "right-peak-body",
+      "time": 0.26666666666666666,
+      "zones": true,
+      "file": "006-3531-right-peak-body.png",
+      "png_sha256": "df13110eceb3c97fc4eebd6b3a7b2ca52762aef918576e15a34213a6f63dcc43",
+      "source_viewer_sha256": "3609572fae94c71f79d4d1589ca4f1c7ee21400f6aee9282f1cd3b74cd26c638",
+      "source_manifest_sha256": "c64ad6cba0824e696be0321960214ff0ff93c1b35aca0fea71c96cc1e38e0bb8",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+        "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+      },
+      "state": {
+        "id": "3531",
+        "action": "Exercise_3531",
+        "time": 0.26666666666666666,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            1
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 24664
+    },
+    {
+      "batch": "006",
+      "id": "3531",
+      "label": "hand-palmar-after",
+      "time": 0,
+      "zones": false,
+      "camera": {
+        "label": "guard_right_palmar",
+        "position": [
+          0.7219679355621338,
+          -0.6733525991439819,
+          1.1593414545059204
+        ],
+        "target": [
+          -0.15723446011543274,
+          -0.23297949135303497,
+          1.5275465250015259
+        ],
+        "scale": 0.40440165061898214,
+        "scale_note": "Native vertical ortho extent0.245m converted to horizontal width for the1200x727 delivered viewport; no CSS stretching."
+      },
+      "file": "006-3531-hand-palmar-after.png",
+      "png_sha256": "b06550ba26f9a8a6b3b323b474ce53239c5cc8ea2c6676723b4271f073e3ac9d",
+      "source_viewer_sha256": "3609572fae94c71f79d4d1589ca4f1c7ee21400f6aee9282f1cd3b74cd26c638",
+      "source_manifest_sha256": "c64ad6cba0824e696be0321960214ff0ff93c1b35aca0fea71c96cc1e38e0bb8",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+        "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+      },
+      "state": {
+        "id": "3531",
+        "action": "Exercise_3531",
+        "time": 0,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            1
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 302234
+    },
+    {
+      "batch": "007",
+      "id": "4437",
+      "label": "hand-profile-after",
+      "time": 0,
+      "zones": false,
+      "camera": {
+        "label": "guard_right_thumb_profile",
+        "position": [
+          -0.1108586872,
+          -0.1348006364,
+          1.4975041534
+        ],
+        "target": [
+          -0.1572344106,
+          -0.2379795701,
+          1.5375466296
+        ],
+        "scale": 0.40440165061898214,
+        "scale_note": "Native vertical0.245m converted to horizontal viewport width; close eye avoids uncut torso occlusion."
+      },
+      "file": "007-4437-hand-profile-after.png",
+      "png_sha256": "2a168ef52674265c4da84935836e00d7f5e51c8fa162fc043b42994ca71e629d",
+      "source_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "source_manifest_sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+        "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+      },
+      "state": {
+        "id": "4437",
+        "action": "Exercise_4437",
+        "time": 0,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            1
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 90553
+    },
+    {
+      "batch": "006",
+      "id": "3531",
+      "label": "hand-profile-after",
+      "time": 0,
+      "zones": false,
+      "camera": {
+        "label": "guard_right_thumb_profile",
+        "position": [
+          -0.1108587488,
+          -0.1298005415,
+          1.4875040424
+        ],
+        "target": [
+          -0.1572344582,
+          -0.2329794855,
+          1.5275465086
+        ],
+        "scale": 0.40440165061898214,
+        "scale_note": "Native vertical0.245m converted to horizontal viewport width; close eye avoids uncut torso occlusion."
+      },
+      "file": "006-3531-hand-profile-after.png",
+      "png_sha256": "7dffabb7276b480d8b7aeab4f8a859de660e3533eaa2f788ab56d6f36160199c",
+      "source_viewer_sha256": "3609572fae94c71f79d4d1589ca4f1c7ee21400f6aee9282f1cd3b74cd26c638",
+      "source_manifest_sha256": "c64ad6cba0824e696be0321960214ff0ff93c1b35aca0fea71c96cc1e38e0bb8",
+      "model": {
+        "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+        "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+      },
+      "state": {
+        "id": "3531",
+        "action": "Exercise_3531",
+        "time": 0,
+        "skinning": "dualQuaternion",
+        "morph_weights": [
+          [
+            1
+          ]
+        ],
+        "source_vertices": 10582,
+        "draw_calls": 1,
+        "triangles": 21160,
+        "frustum_culling": [
+          false
+        ]
+      },
+      "occupied_pixels": 90557
+    }
+  ]
+}

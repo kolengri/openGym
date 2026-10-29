@@ -1,0 +1,101 @@
+{
+  "status": "accepted_for_user_review",
+  "owner": "primary",
+  "models": {
+    "4365": {
+      "source_sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd",
+      "model_sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+    },
+    "4437": {
+      "source_sha256": "b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3",
+      "model_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+    },
+    "3531": {
+      "source_sha256": "cd7d8674eca825f3a49b6db5a9b9a069baee6ab75acdaa1216064248441be447",
+      "model_sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+    }
+  },
+  "runtime_sha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3",
+  "capture_sha256": "3e283be12aa051bc7c12186c934ab78bec63f8485c51108f028cd63778744bed",
+  "operator_checks_sha256": "e241f4b641682246609eb7d26f4e7e8a3f537fd48debbd39b7c11dbb9bbdbccd",
+  "user_direction": [
+    "Continue resting4365 repair rather than replace it.",
+    "Both hands in the guard/punch position must be closed fists."
+  ],
+  "selection": {
+    "007_original_ten_plus_bonus": [
+      "4437",
+      "10058",
+      "4436",
+      "4702",
+      "4715",
+      "4365",
+      "1368",
+      "2761",
+      "2762",
+      "3294",
+      "3905"
+    ],
+    "bonus": "3905",
+    "006_count": 11
+  },
+  "accepted_native_changes": {
+    "4365": "Coherent original binding and DQ, distributed source/reach-derived clavicle motion, contact solve, one local hip-volume shape with measured fold-dependent drive.",
+    "4437_and_3531": "Actual-skin per-digit closure and exterior thumb opposition, plus one coherent Hand/digit1 volume target with preserved contact vertices. Standard zero/one GLB morph tracks reset the paired non-punch action."
+  },
+  "preservation": {
+    "4436": "All51 bone and10582 skinned source-vertex positions are exactly preserved across151 decoded samples; morph weight remains0.",
+    "4437_and_3531": "Non-finger bones and non-hand skin positions are exactly preserved.",
+    "3480_and_4918": "Existing files remain byte-exact. Runtime3480 resolves through standing-leg-family to assets/3479/motion.glb; unused paired3480 in3531 container is not the runtime mapping.",
+    "10058": "Source and GLB unchanged."
+  },
+  "checks": {
+    "native_decoded": "All151 samples of the changed clips pass the author physical, DQ/NORMAL and preservation gates. Local crossing diagnostics remain disclosed.",
+    "game_qa": "Zero errors and warnings in the declared representative-frame game QA.",
+    "browser": "Both006/007 verifiers pass all11 actions, transparent canvas, playback, controls and skin parity.",
+    "actual_gpu": {
+      "samples": 24,
+      "errors": [],
+      "every_sample_draws": true
+    }
+  },
+  "runtime_repair": {
+    "path": "artifacts/exercise-batches/batch-002/viewer.js",
+    "behavior": "Single skinned mannequin bypasses frustum culling; old cached bounds were formed before the correct asset DQ palette and could hide3531 on close orbit.",
+    "tradeoff": "Always draw the one character rather than scan its animated10582-vertex bounds each frame; performance is not benchmarked.",
+    "primary_docs": [
+      "https://github.com/mrdoob/three.js/blob/r186/docs/pages/SkinnedMesh.html",
+      "https://github.com/mrdoob/three.js/blob/r186/docs/pages/Object3D.html.md"
+    ],
+    "capture_repair": "Use native drawing-buffer proportions and convert Blender vertical ortho extent to viewer horizontal width. Assert draw calls, triangles and occupied alpha pixels."
+  },
+  "receipts": [
+    "operator-checks.json",
+    "visual-review.json",
+    "hand-capture-diagnosis.json",
+    "../upright-family/fist-feedback-repair.json",
+    "../assets/4365/delivery-report.json",
+    "../resting-repair/primary-gpu-review.json"
+  ],
+  "limits": [
+    "Minor original polygonal hand facets remain in closeups.",
+    "4365 retains minor concave waist/joint creases and declared localized crossing diagnostics; this is not a global collision-free claim.",
+    "The close-eye hand profile is a diagnostic camera; small clipped parts of the distant body at its upper edge are outside the hand proof.",
+    "No physical-device, production app or clinical recruitment validation."
+  ],
+  "accepted_source_commit": "48bbda6bfc5cc1e02115a6ad55bc55465fc9155e",
+  "pinned_inline_checks_sha256": "d9a1eac63caf3edc543c4417171041464e76ea9977a6e6f112321fa08fb5982e",
+  "current_builds": {
+    "006": {
+      "manifest_sha256": "4c2c02c147fd4fbee30c3bd6f3ff914deee0e898cc26af47cb951b73c6c4e79e",
+      "offline_viewer_sha256": "3609572fae94c71f79d4d1589ca4f1c7ee21400f6aee9282f1cd3b74cd26c638",
+      "inline_sha256": "16e9fafebfc773fafed87736f909dfb3078a916001bad8c7f363dc47015e3a49"
+    },
+    "007": {
+      "manifest_sha256": "0d6f7cf59621e5151d5368c017bbb54deb79c2760372c7bffc4a1eeb21dc7aaa",
+      "offline_viewer_sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e",
+      "inline_sha256": "14cd0cc59644e837f193539b418096656c2edd8414bd5ecdc4ff383ebee3807f"
+    }
+  },
+  "pinned_inline_result": "All11 live actions and every public model hash verified in both batches; accepted offline payloads remained byte-identical."
+}
