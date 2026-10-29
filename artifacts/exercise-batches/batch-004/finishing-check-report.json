@@ -198,6 +198,15 @@
     "five_browser_checks": "verification.json",
     "independent_source_review": "draft-review/mixed-body-code-review.json",
     "visual_acceptance": "visual-review.json",
-    "production_approved": false
+    "production_approved": false,
+    "public_inline_verification": "inline-verification.json",
+    "immutable_model_revision": "e55cb193a12c2c250afc6361102d7fd79fb238a1",
+    "html_preview_and_render": "Actual HTML previewed and rendered in the user thread; independent URL-mode browser check passes."
+  },
+  "ci_disclosure": {
+    "observed_source_commit": "e55cb193a12c2c250afc6361102d7fd79fb238a1",
+    "cla": "Failed: committers of PR3 must sign CLA. No signature performed.",
+    "job_url": "https://github.com/kolengri/openGym/actions/runs/40814616411/job/123252680795",
+    "ongoing_monitoring": false
   }
 }

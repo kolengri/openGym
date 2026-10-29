@@ -1,6 +1,6 @@
 # Butterfly runtime candidate — exercise 4512
 
-The delivered candidate is `../exercise-batches/batch-004/assets/4512/motion.glb`. It uses a CC0 MakeHuman/MPFB body, original exercise text and standard GLB animation. No restricted reference media, paid generation, video or runtime vertex cache was used.
+The delivered candidate is `../exercise-batches/batch-004/assets/4512/motion.glb`. It uses a CC0 MakeHuman/MPFB body, original exercise text and standard GLB animation. No restricted reference media, paid generation, video or runtime vertex cache was used. Model data use the same pinned CC0 MakeHuman source documented in `../ninety-mpfb-review/model-source-provenance.json` and `../ninety-mpfb-review/LICENSE.MODEL.md`; the GPL MPFB addon remains an offline authoring dependency.
 
 ## Runtime sources
 
