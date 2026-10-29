@@ -1,0 +1,31 @@
+{
+  "sourceAtlas": "artifacts/bodyweight-five/runtime-muscles.json",
+  "sourceAtlasSha256": "0a1aa8edc3b913382be6780ff6973b7afb35418619c0cd7b9ae1a987d69baa3b",
+  "neutralSurfaceGlbSha256": "09eb09b459cf510129df914e2b75cab6302b703e4c392ff25278c45ef539937d",
+  "method": "24 inverse-edge-length weighted graph heat steps, 55% neighbor blend; per-region normalization and smooth tiny-tail taper. Existing runtime surface falloff remains unchanged.",
+  "artisticParameters": {
+    "passes": 24,
+    "blend": 0.55,
+    "tailThreshold": 0.012,
+    "fullTailWeight": 0.04
+  },
+  "sourceVertices": 10582,
+  "regionVertices": {
+    "rectus_abdominis_1.L": 229,
+    "rectus_abdominis_1.R": 218,
+    "rectus_abdominis_2.L": 226,
+    "rectus_abdominis_2.R": 224,
+    "rectus_abdominis_3.L": 234,
+    "rectus_abdominis_3.R": 231,
+    "rectus_abdominis_4.L": 218,
+    "rectus_abdominis_4.R": 218,
+    "external_oblique.L": 345,
+    "external_oblique.R": 344,
+    "sartorius.L": 282,
+    "sartorius.R": 275,
+    "iliopsoas_projection.L": 236,
+    "iliopsoas_projection.R": 234
+  },
+  "scope": "Softened source-label emphasis for 2395 and 5266 only. No measured activation claim. Graph adjacency prevents transfer between nearby unconnected limbs.",
+  "geometryAndRuntimeChanged": false
+}

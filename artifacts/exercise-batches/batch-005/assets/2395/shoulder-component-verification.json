@@ -1,0 +1,46 @@
+{
+  "pass": true,
+  "source_sha256": "ba7390e0e07b64b7dc7daf3dd943fd888fe0c859e857c98e22d47296b1a2fcd9",
+  "foundation_source_sha256": "be2366c68e1cc5f1e5439a184240159b3622e725c6d58de8f0e76a445c173383",
+  "component_archive_sha256": "72fbe31853f567c95216b3d2848e2df64bb8afae7fb330cd61dafd6b2c5aceda",
+  "binding_basis_topology_uv_bone_rest_before_after_sha256": "4a31b8e584aa3862ed123c733a1e2cc30f51bfd5a859dbe55b8ff038833d321e",
+  "all_action_curve_values_and_interpolation_before_after_sha256": "31d76ff1b7ce9f208dd1411d10f78fa30da05a3d3ef3ca86e3b769561c316cd2",
+  "hip_body_weights_unchanged": true,
+  "pose_root_and_all_key_weight_curves_unchanged": true,
+  "states": [
+    {
+      "key": "JointNeutral",
+      "construction_maximum_additive_rest_delta_m": 0.025,
+      "actual_float32_key_difference_maximum_m": 0.025000048811444985,
+      "final_full_buffer_sha256_float32": "564dbb06f559677ed9f6707e150348957539253225b0fe9c953db5f238115303",
+      "foundation_full_buffer_sha256_float32": "783643170887ce74c4f678b392826277959221253e248249662fd09c1fc736fd",
+      "protected97_exact": true,
+      "outside_mask_exact": true,
+      "exact_composition_readback": true
+    },
+    {
+      "key": "JointRightCross",
+      "construction_maximum_additive_rest_delta_m": 0.02500000000000001,
+      "actual_float32_key_difference_maximum_m": 0.025000048529979293,
+      "final_full_buffer_sha256_float32": "0a979f5d3439fb2c4fd52fc3ce3d2fb5238c80777df572ae94ffd7404573d2f7",
+      "foundation_full_buffer_sha256_float32": "c36d6b8011594fdbc5ca985e4994d115331a93992c2e17c7df416f60743c74b7",
+      "protected97_exact": true,
+      "outside_mask_exact": true,
+      "exact_composition_readback": true
+    },
+    {
+      "key": "JointLeftCross",
+      "construction_maximum_additive_rest_delta_m": 0.025000000000000005,
+      "actual_float32_key_difference_maximum_m": 0.02500005655510409,
+      "final_full_buffer_sha256_float32": "b3e36e75e5933a951b63bd07ab961c3c071c1f8aba048407951ed23a54574a49",
+      "foundation_full_buffer_sha256_float32": "ad1c9960d1ec69e30e49ec4bc951f8bd7f0a914d5693b1fc96695297d1860e69",
+      "protected97_exact": true,
+      "outside_mask_exact": true,
+      "exact_composition_readback": true
+    }
+  ],
+  "source_vertices": 10582,
+  "bones": 51,
+  "new_action_created": false,
+  "scope": "All three complete final key buffers equal the previously frozen original+support buffers plus only the declared source-bound shoulder addition. No foundation/guard/support component is removed. No visual readiness claim."
+}

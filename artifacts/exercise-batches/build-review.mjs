@@ -9,6 +9,7 @@ const hash = value => createHash('sha256').update(value).digest('hex');
 const repo = new URL('../../', import.meta.url);
 const translatedPhases = {
  'Start': 'Начальная позиция', 'Enter': 'Вход в положение', 'Center': 'По центру', 'Hold': 'Удержание', 'Return': 'Возврат',
+ 'Descend': 'Опускание', 'Stand': 'Подъём',
  'Left reach': 'К левой пятке', 'Right reach': 'К правой пятке', 'Left twist': 'Поворот влево', 'Right twist': 'Поворот вправо',
  'Left knee / right elbow': 'Левое колено / правый локоть', 'Right knee / left elbow': 'Правое колено / левый локоть',
  'Return through center': 'Возврат через центр', 'Reach left heel': 'К левой пятке', 'Reach right heel': 'К правой пятке',

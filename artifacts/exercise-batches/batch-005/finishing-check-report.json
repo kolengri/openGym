@@ -1,0 +1,516 @@
+{
+  "packet": "batch-005 finishing checks",
+  "observed_at_utc": "2026-10-29T10:07:07+00:00",
+  "source_identity": {
+    "head": "cd870e15dd6b5e807e8a80d652f61b32fa58f70b",
+    "branch": "t3/upgrade-exercise-animations"
+  },
+  "build_manifest": {
+    "path": "artifacts/exercise-batches/batch-005/build-manifest.json",
+    "sha256": "c9eb00305d2bfc658094ce8b39f2e7eab415f09d667faba3f2403448134f5a86",
+    "model_revision": null,
+    "all_20_input_hashes_match": true,
+    "input_file_count": 20,
+    "input_hash_checks": [
+      {
+        "path": "artifacts/exercise-batches/batch-005/build.mjs",
+        "expected_sha256": "72ea66f88f3c5a4f030080aff2b32e60318c8d2174a4f7b2f682130b125ca113",
+        "actual_sha256": "72ea66f88f3c5a4f030080aff2b32e60318c8d2174a4f7b2f682130b125ca113",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/template.html",
+        "expected_sha256": "c77531b69ceedc3d59bbeb95845fa193dbe689a9a8d6a8d004b6673d64a3c236",
+        "actual_sha256": "c77531b69ceedc3d59bbeb95845fa193dbe689a9a8d6a8d004b6673d64a3c236",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/viewer.js",
+        "expected_sha256": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+        "actual_sha256": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/presentation.json",
+        "expected_sha256": "81d6508e7887968de686034de7ea9ce17e43c50573147cb967f36c27d4af00da",
+        "actual_sha256": "81d6508e7887968de686034de7ea9ce17e43c50573147cb967f36c27d4af00da",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/build-review.mjs",
+        "expected_sha256": "416ee497df5e5976ecd8072ca62f60dfe5d43f038bb3a1110c1148ccb1368706",
+        "actual_sha256": "416ee497df5e5976ecd8072ca62f60dfe5d43f038bb3a1110c1148ccb1368706",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-002/viewer.js",
+        "expected_sha256": "97509ce317027e520ad6bc8ffd19ca386bba7913095dfb6c935f173e9117f492",
+        "actual_sha256": "97509ce317027e520ad6bc8ffd19ca386bba7913095dfb6c935f173e9117f492",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/dual-quaternion.js",
+        "expected_sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+        "actual_sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+        "match": true
+      },
+      {
+        "path": "artifacts/chaturanga-heatmap/heat-field.js",
+        "expected_sha256": "e44dc66c993c5695382b1d6535b6a5dc65ecfbad375ac9cfcc8c3859ab33dddd",
+        "actual_sha256": "e44dc66c993c5695382b1d6535b6a5dc65ecfbad375ac9cfcc8c3859ab33dddd",
+        "match": true
+      },
+      {
+        "path": "artifacts/chaturanga-heatmap/heat-material.js",
+        "expected_sha256": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e",
+        "actual_sha256": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/soft-abdominal-regions.json",
+        "expected_sha256": "68268b8ba0526226c0bcb9d5547b16ecd8acf789d2a34dedf66bc5c33bc073ec",
+        "actual_sha256": "68268b8ba0526226c0bcb9d5547b16ecd8acf789d2a34dedf66bc5c33bc073ec",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/2395/clip.json",
+        "expected_sha256": "c6fad6c4d6315134c55f3821faade242e3969441ec591d784c7392657900c191",
+        "actual_sha256": "c6fad6c4d6315134c55f3821faade242e3969441ec591d784c7392657900c191",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/2395/cameras.json",
+        "expected_sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+        "actual_sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/3948/clip.json",
+        "expected_sha256": "99b253bf18a356c2c898337202218611612e7fb13e48f49c6d828e0e19e24862",
+        "actual_sha256": "99b253bf18a356c2c898337202218611612e7fb13e48f49c6d828e0e19e24862",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/3948/cameras.json",
+        "expected_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "actual_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/4714/clip.json",
+        "expected_sha256": "dd71f9eb6adbe74c0105ffe4b0ff633a5fa3e0f2948166d0f865edb5593c77b4",
+        "actual_sha256": "dd71f9eb6adbe74c0105ffe4b0ff633a5fa3e0f2948166d0f865edb5593c77b4",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/4714/cameras.json",
+        "expected_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "actual_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/5266/clip.json",
+        "expected_sha256": "e5cc90ff6627fc4dc9fa9cbb0ec547a05672e7f99c42f02eff88b7f9bf470b78",
+        "actual_sha256": "e5cc90ff6627fc4dc9fa9cbb0ec547a05672e7f99c42f02eff88b7f9bf470b78",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/5266/cameras.json",
+        "expected_sha256": "37b80ea0ef0c4ec601ccf8194a44f8bfc25a9a9a2af30d6c5cef74886091a3ca",
+        "actual_sha256": "37b80ea0ef0c4ec601ccf8194a44f8bfc25a9a9a2af30d6c5cef74886091a3ca",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/1512/clip.json",
+        "expected_sha256": "46aa6c67e916eb4cfe783f49034e2c9dbdc3319b6e7ebdf289d767084c74f2b9",
+        "actual_sha256": "46aa6c67e916eb4cfe783f49034e2c9dbdc3319b6e7ebdf289d767084c74f2b9",
+        "match": true
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/assets/1512/cameras.json",
+        "expected_sha256": "9bcbc6c8eadbe445db5c702f52fce2f701df0366ce6785a0134837ae3b12f840",
+        "actual_sha256": "9bcbc6c8eadbe445db5c702f52fce2f701df0366ce6785a0134837ae3b12f840",
+        "match": true
+      }
+    ],
+    "models": {
+      "2395": {
+        "path": "artifacts/exercise-batches/batch-005/assets/2395/motion.glb",
+        "expected_sha256": "c8de01ca6d5d651ac124830555dc8c6d41b988f1dcb9a0a350143e9369663847",
+        "receipt_sha256": "c8de01ca6d5d651ac124830555dc8c6d41b988f1dcb9a0a350143e9369663847",
+        "actual_sha256": "c8de01ca6d5d651ac124830555dc8c6d41b988f1dcb9a0a350143e9369663847",
+        "matches_all": true,
+        "bytes": 1153252,
+        "animation_names": [
+          "Exercise_2395"
+        ]
+      },
+      "5266": {
+        "path": "artifacts/exercise-batches/batch-005/assets/5266/motion.glb",
+        "expected_sha256": "09eb09b459cf510129df914e2b75cab6302b703e4c392ff25278c45ef539937d",
+        "receipt_sha256": "09eb09b459cf510129df914e2b75cab6302b703e4c392ff25278c45ef539937d",
+        "actual_sha256": "09eb09b459cf510129df914e2b75cab6302b703e4c392ff25278c45ef539937d",
+        "matches_all": true,
+        "bytes": 1129532,
+        "animation_names": [
+          "Exercise_5266"
+        ]
+      },
+      "1512": {
+        "path": "artifacts/exercise-batches/batch-005/assets/1512/motion.glb",
+        "expected_sha256": "db52d2d4532f3de8a856b487b9d9063ca2dcb4043485d97911b356e6dc814759",
+        "receipt_sha256": "db52d2d4532f3de8a856b487b9d9063ca2dcb4043485d97911b356e6dc814759",
+        "actual_sha256": "db52d2d4532f3de8a856b487b9d9063ca2dcb4043485d97911b356e6dc814759",
+        "matches_all": true,
+        "bytes": 1170728,
+        "animation_names": [
+          "Exercise_1512"
+        ]
+      },
+      "squat": {
+        "path": "artifacts/exercise-batches/batch-005/assets/3948/motion.glb",
+        "expected_sha256": "2a109b9f6ea9a99ac5de7f83f7e18610ad2b036e54a16942221bcf3c4c2acb6f",
+        "receipt_sha256": "2a109b9f6ea9a99ac5de7f83f7e18610ad2b036e54a16942221bcf3c4c2acb6f",
+        "actual_sha256": "2a109b9f6ea9a99ac5de7f83f7e18610ad2b036e54a16942221bcf3c4c2acb6f",
+        "matches_all": true,
+        "bytes": 1225712,
+        "animation_names": [
+          "Exercise_3948",
+          "Exercise_4714"
+        ]
+      }
+    }
+  },
+  "verification": {
+    "command": "node artifacts/exercise-batches/batch-005/verify.mjs",
+    "process_exit_status": "not_persisted; verifier was invoked once and completed before wrapper log-write failure",
+    "wrapper_failure": "FileNotFoundError: batch-005/draft-review/verify-final.log parent directory did not exist",
+    "result_path": "artifacts/exercise-batches/batch-005/verification.json",
+    "result_sha256": "c2ca9231f40e232403d98ec6b860a6235f5caa247f15e0aef8441cda7f0568df",
+    "receipt_ok": true,
+    "errors": [],
+    "scope": "Actual Three.js/Chromium/Metal and mobile touch emulation; no physical device or production application integration claim.",
+    "aggregate": {
+      "maxJointErrorMeters": 8.558086788766289e-07,
+      "maxSurfaceParityErrorMeters": 1.3172852413867453e-06,
+      "maxAllVertexDQErrorMeters": 2.0969293280804236e-05,
+      "transparentCanvas": true,
+      "colorTextures": 0,
+      "shadows": false,
+      "ao": false,
+      "noVideo": true,
+      "switchingFiveActions": true,
+      "latestSelectionWins": true,
+      "touchOrbit": true,
+      "pinch": true,
+      "reset": true,
+      "seekEndResume": true,
+      "backgrounds": [
+        "white",
+        "dark",
+        "checker"
+      ],
+      "noOverflowWidths": [
+        320,
+        768,
+        1024,
+        1440
+      ]
+    },
+    "exercises": {
+      "2395": {
+        "duration": 5,
+        "maxJointErrorMeters": 6.747881387815263e-07,
+        "reviewTime": 1.25,
+        "warmPixels": 2962,
+        "cyanPixels": 0,
+        "sourceSurfacePhases": 13,
+        "displayMode": "load",
+        "holdSeconds": null,
+        "asset": "2395",
+        "bones": 51
+      },
+      "3948": {
+        "duration": 5,
+        "maxJointErrorMeters": 8.558086788766289e-07,
+        "reviewTime": 1.25,
+        "warmPixels": 2961,
+        "cyanPixels": 0,
+        "sourceSurfacePhases": 11,
+        "displayMode": "load",
+        "holdSeconds": null,
+        "asset": "squat",
+        "bones": 51
+      },
+      "4714": {
+        "duration": 5,
+        "maxJointErrorMeters": 8.558086788766289e-07,
+        "reviewTime": 1.25,
+        "warmPixels": 3093,
+        "cyanPixels": 0,
+        "sourceSurfacePhases": 11,
+        "displayMode": "load",
+        "holdSeconds": null,
+        "asset": "squat",
+        "bones": 51
+      },
+      "5266": {
+        "duration": 5,
+        "maxJointErrorMeters": 6.281614208317345e-07,
+        "reviewTime": 1.25,
+        "warmPixels": 2821,
+        "cyanPixels": 0,
+        "sourceSurfacePhases": 13,
+        "displayMode": "load",
+        "holdSeconds": null,
+        "asset": "5266",
+        "bones": 51
+      },
+      "1512": {
+        "duration": 5,
+        "maxJointErrorMeters": 6.573074226534784e-07,
+        "reviewTime": 2.5,
+        "warmPixels": 0,
+        "cyanPixels": 3337,
+        "sourceSurfacePhases": 11,
+        "displayMode": "stretch",
+        "holdSeconds": 1,
+        "asset": "1512",
+        "bones": 51
+      }
+    },
+    "recovered_log_path": "artifacts/exercise-batches/batch-005/draft-review/verify-final.log",
+    "recovered_log_sha256": "fd8bc3ba1622f23b379d2c46423dd9d6e645df9a41303cee7d82b548d70a2375"
+  },
+  "capture_review": {
+    "command": "node artifacts/exercise-batches/capture-review.mjs 005",
+    "exit_status": 0,
+    "log_path": "artifacts/exercise-batches/batch-005/draft-review/capture-review-final.log",
+    "log_sha256": "3ce8dabcd85544f8aac390cd9da8de05ae5b5a911190ae403d8e9594cd69ed45",
+    "scope": "One representative pose per exercise, two views with and without zones; not an animation frame sequence.",
+    "screenshots": [
+      {
+        "path": "artifacts/exercise-batches/batch-005/neutral-2395.png",
+        "exists": true,
+        "bytes": 46769,
+        "sha256": "ecac560247f655fba945c3b612075f648a37599be67867d988a56091abb6df96"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/zones-2395.png",
+        "exists": true,
+        "bytes": 54460,
+        "sha256": "02b70e44cefd5a9362e890e68afb7b2cc17e6ecb62410bb33cc6e5b0b2bde808"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/neutral-3948.png",
+        "exists": true,
+        "bytes": 22328,
+        "sha256": "e8765623f9f01daea10b81c270acaef576fb00187bca80f9fde10125a912474d"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/zones-3948.png",
+        "exists": true,
+        "bytes": 31847,
+        "sha256": "6403d77c020a5cd80a3d86824d5559d27b97c511f836743a1268416961628478"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/neutral-4714.png",
+        "exists": true,
+        "bytes": 22328,
+        "sha256": "e8765623f9f01daea10b81c270acaef576fb00187bca80f9fde10125a912474d"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/zones-4714.png",
+        "exists": true,
+        "bytes": 33671,
+        "sha256": "95aacd10be740cd8db03584f6e927ffb4abd37bcb91bfd8b05a676aa3e6bc678"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/neutral-5266.png",
+        "exists": true,
+        "bytes": 49092,
+        "sha256": "276faf398ecdae307b23c2c85494bb815ae65013cd733aea4294d2e2ffee68fa"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/zones-5266.png",
+        "exists": true,
+        "bytes": 57210,
+        "sha256": "3c067608d8f94a91433c6d459ed0ffd1dce6fb40bede36c86233af4fde2dc55e"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/neutral-1512.png",
+        "exists": true,
+        "bytes": 53370,
+        "sha256": "f88e70e590515002b0f349ffc2e224753a4eb102c0848016340b9d6a3408f226"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-005/zones-1512.png",
+        "exists": true,
+        "bytes": 61040,
+        "sha256": "37df1b7130ae8b4b1d3f7cae1161bff8609b9a26a6ead0cfd1279279ced63333"
+      }
+    ]
+  },
+  "tested_visual_inputs": {
+    "camera_fit": {
+      "path": "artifacts/exercise-batches/batch-005/camera-fit.json",
+      "sha256": "868e806e076dea7146b1120c7a7bef97ad3f8990ed4d1b4c330466767d465995",
+      "bytes": 3940
+    },
+    "camera_pre_fit": {
+      "path": "artifacts/exercise-batches/batch-005/camera-pre-fit.json",
+      "sha256": "ae3eeedfc489d345185a41c33c8c8b91f5b0c665c4f6f4624a8a5eefe3371563",
+      "bytes": 2876
+    },
+    "cameras": {
+      "artifacts/exercise-batches/batch-005/assets/2395/cameras.json": {
+        "sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+        "manifest_sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+        "matches_build_manifest": true,
+        "bytes": 329
+      },
+      "artifacts/exercise-batches/batch-005/assets/3948/cameras.json": {
+        "sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "manifest_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "matches_build_manifest": true,
+        "bytes": 336
+      },
+      "artifacts/exercise-batches/batch-005/assets/4714/cameras.json": {
+        "sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "manifest_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "matches_build_manifest": true,
+        "bytes": 336
+      },
+      "artifacts/exercise-batches/batch-005/assets/5266/cameras.json": {
+        "sha256": "37b80ea0ef0c4ec601ccf8194a44f8bfc25a9a9a2af30d6c5cef74886091a3ca",
+        "manifest_sha256": "37b80ea0ef0c4ec601ccf8194a44f8bfc25a9a9a2af30d6c5cef74886091a3ca",
+        "matches_build_manifest": true,
+        "bytes": 328
+      },
+      "artifacts/exercise-batches/batch-005/assets/1512/cameras.json": {
+        "sha256": "9bcbc6c8eadbe445db5c702f52fce2f701df0366ce6785a0134837ae3b12f840",
+        "manifest_sha256": "9bcbc6c8eadbe445db5c702f52fce2f701df0366ce6785a0134837ae3b12f840",
+        "matches_build_manifest": true,
+        "bytes": 383
+      }
+    },
+    "clips": {
+      "2395": {
+        "path": "artifacts/exercise-batches/batch-005/assets/2395/clip.json",
+        "sha256": "c6fad6c4d6315134c55f3821faade242e3969441ec591d784c7392657900c191",
+        "id": "2395",
+        "primary": [
+          "abs"
+        ],
+        "secondary": [
+          "obliques",
+          "hip flexors",
+          "lower abs"
+        ],
+        "display_mode": "heat",
+        "skinning": "dualQuaternion"
+      },
+      "3948": {
+        "path": "artifacts/exercise-batches/batch-005/assets/3948/clip.json",
+        "sha256": "99b253bf18a356c2c898337202218611612e7fb13e48f49c6d828e0e19e24862",
+        "id": "3948",
+        "primary": [
+          "quads"
+        ],
+        "secondary": [
+          "glutes",
+          "hamstrings",
+          "core"
+        ],
+        "display_mode": "heat",
+        "skinning": "linear"
+      },
+      "4714": {
+        "path": "artifacts/exercise-batches/batch-005/assets/4714/clip.json",
+        "sha256": "dd71f9eb6adbe74c0105ffe4b0ff633a5fa3e0f2948166d0f865edb5593c77b4",
+        "id": "4714",
+        "primary": [
+          "quads"
+        ],
+        "secondary": [
+          "glutes",
+          "hamstrings",
+          "calves",
+          "core"
+        ],
+        "display_mode": "heat",
+        "skinning": "linear"
+      },
+      "5266": {
+        "path": "artifacts/exercise-batches/batch-005/assets/5266/clip.json",
+        "sha256": "e5cc90ff6627fc4dc9fa9cbb0ec547a05672e7f99c42f02eff88b7f9bf470b78",
+        "id": "5266",
+        "primary": [
+          "abs"
+        ],
+        "secondary": [
+          "obliques",
+          "hip flexors"
+        ],
+        "display_mode": "heat",
+        "skinning": "dualQuaternion"
+      },
+      "1512": {
+        "path": "artifacts/exercise-batches/batch-005/assets/1512/clip.json",
+        "sha256": "46aa6c67e916eb4cfe783f49034e2c9dbdc3319b6e7ebdf289d767084c74f2b9",
+        "id": "1512",
+        "primary": [
+          "quads"
+        ],
+        "secondary": [
+          "hamstrings",
+          "glutes"
+        ],
+        "display_mode": "stretch",
+        "skinning": "dualQuaternion"
+      }
+    },
+    "soft_abdominal_regions": {
+      "path": "artifacts/exercise-batches/batch-005/soft-abdominal-regions.json",
+      "sha256": "68268b8ba0526226c0bcb9d5547b16ecd8acf789d2a34dedf66bc5c33bc073ec",
+      "bytes": 49405
+    },
+    "heat_runtime_hashes": {
+      "artifacts/exercise-batches/batch-005/viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+      "artifacts/exercise-batches/batch-005/presentation.json": "81d6508e7887968de686034de7ea9ce17e43c50573147cb967f36c27d4af00da",
+      "artifacts/exercise-batches/batch-002/viewer.js": "97509ce317027e520ad6bc8ffd19ca386bba7913095dfb6c935f173e9117f492",
+      "artifacts/chaturanga-heatmap/heat-field.js": "e44dc66c993c5695382b1d6535b6a5dc65ecfbad375ac9cfcc8c3859ab33dddd",
+      "artifacts/chaturanga-heatmap/heat-material.js": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e"
+    }
+  },
+  "shared_squat_field_switch": {
+    "asset_key": "squat",
+    "glb_path": "artifacts/exercise-batches/batch-005/assets/3948/motion.glb",
+    "glb_sha256": "2a109b9f6ea9a99ac5de7f83f7e18610ad2b036e54a16942221bcf3c4c2acb6f",
+    "loaded_once_for_exercise_ids": [
+      "3948",
+      "4714"
+    ],
+    "3948": {
+      "warmPixels": 2961,
+      "cyanPixels": 0,
+      "clip_primary": [
+        "quads"
+      ]
+    },
+    "4714": {
+      "warmPixels": 3093,
+      "cyanPixels": 0,
+      "clip_primary": [
+        "quads"
+      ]
+    },
+    "source_mask_note": "4714 includes calves; the squat clip source masks are exercise-specific."
+  },
+  "reused_evidence_and_limits": [
+    "Existing native 151-sample, DQ/NORMAL, source-weight, and game receipts were not rerun.",
+    "Peak proof screenshots from capture-peaks.mjs were reused; no duplicate peak captures were generated.",
+    "No production integration, physical mobile, clinical anatomy, or global collision-free claim."
+  ],
+  "known_evidence_gap": "The verify command result JSON is a complete success receipt (ok=true, errors=[]), but its exact child-process exit status and raw stdout were not persisted because the wrapper attempted to write the log before creating draft-review/. The command was not rerun; verify-final.log preserves the recovered receipt and this limitation."
+}

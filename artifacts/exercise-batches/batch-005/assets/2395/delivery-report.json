@@ -1,0 +1,93 @@
+{
+  "id": "2395",
+  "status": "local_gates_and_primary_gpu_geometry_passed",
+  "source_record_sha256": "f28e2e226453813110573e2581d2e732fcd9ddd6560015999adbf28ce3a1c9bb",
+  "source_sha256": "b0841562c3bc5355858a7a07919ede46654428949a01fe099229e2dede317f36",
+  "motion_sha256": "c8de01ca6d5d651ac124830555dc8c6d41b988f1dcb9a0a350143e9369663847",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "original_binding_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "runtime_binding_sha256": "6050d50b4e22e03b7d44cd98c1268d08ffa3e3be3bdc1821642ba244e6ffc244",
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "obliques",
+      "hip flexors",
+      "lower abs"
+    ]
+  },
+  "source_vertices": 10582,
+  "source_triangles": 21160,
+  "bones": 51,
+  "duration_seconds": 5,
+  "skinning": "dualQuaternion",
+  "checks": {
+    "raw-asset-qa.json": {
+      "pass": true,
+      "ok": true
+    },
+    "asset-qa.json": {
+      "pass": true
+    },
+    "export-verification.json": {
+      "ok": true,
+      "maximum_full_dq_vertex_error_m": 1.3126245909126028e-06,
+      "maximum_joint_error_m": 6.747881387815263e-07
+    },
+    "source-verification.json": {
+      "pass": true
+    },
+    "lower-back-cue-verification.json": {
+      "pass": true,
+      "failures": []
+    },
+    "render-readback.json": {
+      "pass": true
+    },
+    "surface-contact-report.json": {
+      "ok": true,
+      "failures": []
+    },
+    "gpu-geometry-acceptance.json": {
+      "pass": true
+    }
+  },
+  "lower_back": {
+    "profile_method": "Frozen neutral posterior-envelope source depth; raw45/19 heights retained. Failed flat-groove criterion preserved separately.",
+    "whole_skin_minimum_z_m": 0.0002499818801879883,
+    "maximum_profile_median_z_m": 0.0017497539520263672,
+    "maximum_profile_midline_z_m": 0.0017501115798950195
+  },
+  "accepted_warnings": [
+    {
+      "path": "native",
+      "frame": 0,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "path": "native",
+      "frame": 37.5,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+      ]
+    }
+  ],
+  "warning_reason": "Optional native Multires preview retains9 hidden back-to-back triangle pairs at sourceface-setpairs32/33,53/49,22/7 at both reviewed poses. This preview is excluded from the runtimeexport; the actual DQcage has no warnings. Deleting protected sourcegeometry for an optional-preview optimization would violate exact original topology. No runtime warning is accepted.",
+  "family_reuse_receipt": "family-reuse-receipt.json",
+  "bounded_native_shape_acceptance": "Primary accepted the reconciled safe normalized glute binding-only overlay and the isolated shoulder candidate. No rejected hip fairing or malformed source weights are used.",
+  "joint_repair_receipt": "joint-repair-integration.json",
+  "gpu_geometry_acceptance_receipt": "gpu-geometry-acceptance.json",
+  "imported_proof_limitation": "Blender imported custom-normal shading is diagnostic; actual Three.js peak geometry is accepted. See importer-diagnosis.json.",
+  "minor_visual_limit": "The long thigh edge is normal occlusion; minor low-poly contour/notch remains disclosed.",
+  "remaining_issues": [
+    "Primary owns final batch integration, camera-hash receipt, batch-local torso-side heat spike repair and heat_regions_file clip mapping."
+  ],
+  "restrictions": {
+    "paid_generation": false,
+    "restricted_media": false,
+    "video_or_frame_cache": false
+  }
+}

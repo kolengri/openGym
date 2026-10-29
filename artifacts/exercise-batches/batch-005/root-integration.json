@@ -1,0 +1,95 @@
+{
+  "scope": "Root integration after native author handoffs. Recommended camera angles/targets and geometry are unchanged.",
+  "changes": {
+    "2395": [
+      {
+        "path": "clip.json",
+        "before_sha256": "6c3ad1285e44bfc7c656dd65c5614bd1699a12fc21ae2a8752afcad008540221",
+        "after_sha256": "c6fad6c4d6315134c55f3821faade242e3969441ec591d784c7392657900c191",
+        "bytes": 6242
+      }
+    ],
+    "3948": [
+      {
+        "path": "cameras.json",
+        "before_sha256": "a721a6b82163a38543b1d9f85fc31f78f17367ede336bf1b2fe3e540c43f7c60",
+        "after_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "bytes": 336
+      }
+    ],
+    "4714": [
+      {
+        "path": "cameras.json",
+        "before_sha256": "a721a6b82163a38543b1d9f85fc31f78f17367ede336bf1b2fe3e540c43f7c60",
+        "after_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+        "bytes": 336
+      }
+    ],
+    "5266": [
+      {
+        "path": "clip.json",
+        "before_sha256": "b4b8d3e6527c4cc629d6752d13ebe30fd832633b04ee5f376867f4bada75db81",
+        "after_sha256": "e5cc90ff6627fc4dc9fa9cbb0ec547a05672e7f99c42f02eff88b7f9bf470b78",
+        "bytes": 3968
+      },
+      {
+        "path": "cameras.json",
+        "before_sha256": "65c97ae0a938d20ff894bc718581a40e792a98559e33e96046c7038b115ed01b",
+        "after_sha256": "37b80ea0ef0c4ec601ccf8194a44f8bfc25a9a9a2af30d6c5cef74886091a3ca",
+        "bytes": 328
+      }
+    ],
+    "1512": []
+  },
+  "cameras": {
+    "2395": {
+      "before_sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+      "after_sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+      "horizontal_widths": [
+        2.57,
+        2.35
+      ]
+    },
+    "3948": {
+      "before_sha256": "a721a6b82163a38543b1d9f85fc31f78f17367ede336bf1b2fe3e540c43f7c60",
+      "after_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+      "horizontal_widths": [
+        3.67,
+        3.4
+      ]
+    },
+    "4714": {
+      "before_sha256": "a721a6b82163a38543b1d9f85fc31f78f17367ede336bf1b2fe3e540c43f7c60",
+      "after_sha256": "4ff805d8e996c47a84545adf19f77f94e83f1b2e327f906cf37814885b2dad69",
+      "horizontal_widths": [
+        3.67,
+        3.4
+      ]
+    },
+    "5266": {
+      "before_sha256": "65c97ae0a938d20ff894bc718581a40e792a98559e33e96046c7038b115ed01b",
+      "after_sha256": "37b80ea0ef0c4ec601ccf8194a44f8bfc25a9a9a2af30d6c5cef74886091a3ca",
+      "horizontal_widths": [
+        2.4,
+        2.35
+      ]
+    },
+    "1512": {
+      "before_sha256": "9bcbc6c8eadbe445db5c702f52fce2f701df0366ce6785a0134837ae3b12f840",
+      "after_sha256": "9bcbc6c8eadbe445db5c702f52fce2f701df0366ce6785a0134837ae3b12f840",
+      "horizontal_widths": [
+        2.235294117647059,
+        2.235294117647059
+      ]
+    }
+  },
+  "abdominal_fields": {
+    "ids": [
+      "2395",
+      "5266"
+    ],
+    "regions_file": "soft-abdominal-regions.json",
+    "preparation": "soft-zone-preparation.json",
+    "runtime_shader_changed": false
+  }
+}

@@ -1,0 +1,662 @@
+{
+  "ok": true,
+  "source_sha256": "b0841562c3bc5355858a7a07919ede46654428949a01fe099229e2dede317f36",
+  "sha256": "c8de01ca6d5d651ac124830555dc8c6d41b988f1dcb9a0a350143e9369663847",
+  "bytes": 1153252,
+  "animations": [
+    "Exercise_2395"
+  ],
+  "duration_seconds": 5,
+  "bones": 51,
+  "original_vertex_ids": 10582,
+  "triangles": 21160,
+  "morph_position_targets": [
+    "JointNeutral",
+    "JointRightCross",
+    "JointLeftCross"
+  ],
+  "morph_normal_targets": [
+    "JointNeutral",
+    "JointRightCross",
+    "JointLeftCross"
+  ],
+  "maximum_basis_normal_vector_error": 0.00008187660755892303,
+  "maximum_target_normal_vector_errors": [
+    0.00008187660755892303,
+    0.00008187660755892303,
+    0.00008187660755892303
+  ],
+  "normal_scope": "Every GLTFLoader UV-split Basis/key NORMAL compared to independently calculated source rest normals. Three morphs before unit DQ rotation, which preserves this vector-error bound. Actual GPU raster appearance remains primary-owned.",
+  "maximum_full_dq_vertex_error_m": 0.0000013126245909126028,
+  "maximum_joint_error_m": 6.747881387815263e-7,
+  "maximum_surface_error_m": 0.000001500720555725038,
+  "maximum_morph_weight_error": 1.0939969807832739e-7,
+  "loop_skin_error_m": 1.7657514531000625e-7,
+  "samples": [
+    {
+      "frame": 0,
+      "joint_error_m": 4.67172753294957e-7,
+      "surface_error_m": 9.221345449926403e-7,
+      "morph_weights": [
+        1,
+        0,
+        0
+      ],
+      "floor_min_z": 0.0008784047145194984,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013044607372493244,
+          "max_z": 0.00695134671895159,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001307825320787881,
+          "max_z": 0.0069523595007746075,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.17021200977011963,
+          "max_z": 0.26171490370957173,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.44953432434275503,
+          "max_z": 0.5861618282317941,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.17033720749365644,
+          "max_z": 0.26184098969388936,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.44946119219673564,
+          "max_z": 0.5868780282617172,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0008784047145194984,
+          "max_z": 0.02201273662620845,
+          "fraction_near_floor": 0.7333333333333333
+        }
+      }
+    },
+    {
+      "frame": 12.5,
+      "joint_error_m": 5.928319250822236e-7,
+      "surface_error_m": 7.724265099727782e-7,
+      "morph_weights": [
+        0.5000000203074991,
+        0.5000000094948233,
+        0
+      ],
+      "floor_min_z": 0.00028819805134827625,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0012274745150052668,
+          "max_z": 0.00647404567966825,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.00028819805134827625,
+          "max_z": 0.007911203880811957,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.1615593830747334,
+          "max_z": 0.2799033237481563,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.3866033595314641,
+          "max_z": 0.5237507451084771,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.21095264095411626,
+          "max_z": 0.30193929274319453,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.3519307057537804,
+          "max_z": 0.4898858787386676,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0009578274767939043,
+          "max_z": 0.02860898739014406,
+          "fraction_near_floor": 0.7333333333333333
+        }
+      }
+    },
+    {
+      "frame": 19,
+      "joint_error_m": 6.281614208317345e-7,
+      "surface_error_m": 8.251006592516146e-7,
+      "morph_weights": [
+        0.28537058146514344,
+        0.7146294185348494,
+        0
+      ],
+      "floor_min_z": 0.0007985481337680622,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0014204790640851561,
+          "max_z": 0.006324106166802401,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0007985481337680622,
+          "max_z": 0.008474188167565955,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.17411233745768162,
+          "max_z": 0.30561682464443884,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.32931804369095535,
+          "max_z": 0.4666965473615386,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.2416276641256737,
+          "max_z": 0.34314674739400086,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.24108412765617965,
+          "max_z": 0.37924887583239564,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0010205214158713893,
+          "max_z": 0.036508236449295906,
+          "fraction_near_floor": 0.7111111111111111
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "joint_error_m": 5.356883402942637e-7,
+      "surface_error_m": 0.0000010666435862279103,
+      "morph_weights": [
+        0.04873485490679741,
+        0.9512651562690735,
+        0
+      ],
+      "floor_min_z": 0.0008818236182250305,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0016938371183244927,
+          "max_z": 0.006200983229276147,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001602589102248586,
+          "max_z": 0.008989740751745745,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.2010159705005703,
+          "max_z": 0.3454120411820275,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.25558371724382034,
+          "max_z": 0.3932348745779908,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.28376519672388545,
+          "max_z": 0.3952490138642774,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.12120834899493493,
+          "max_z": 0.25958910939862195,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0008818236182250305,
+          "max_z": 0.046414374684954185,
+          "fraction_near_floor": 0.7111111111111111
+        }
+      }
+    },
+    {
+      "frame": 37.5,
+      "joint_error_m": 6.747881387815263e-7,
+      "surface_error_m": 0.0000012920762835354812,
+      "morph_weights": [
+        0,
+        1,
+        0
+      ],
+      "floor_min_z": 0.000836228430926178,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017497702728100917,
+          "max_z": 0.006180630741347171,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017498482712519081,
+          "max_z": 0.009075489085775434,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.20816742538944033,
+          "max_z": 0.35494647211576225,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.24015324277098898,
+          "max_z": 0.37786448212052615,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.29318674565679914,
+          "max_z": 0.4065086769144131,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.10002929889221282,
+          "max_z": 0.23845257746559018,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.000836228430926178,
+          "max_z": 0.04858702510880042,
+          "fraction_near_floor": 0.6888888888888889
+        }
+      }
+    },
+    {
+      "frame": 56,
+      "joint_error_m": 6.281614187748891e-7,
+      "surface_error_m": 8.251006592516146e-7,
+      "morph_weights": [
+        0.2853705814651312,
+        0.7146294185348616,
+        0
+      ],
+      "floor_min_z": 0.0007985481337680622,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001420479064085045,
+          "max_z": 0.006324106166802401,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0007985481337680622,
+          "max_z": 0.008474188167565955,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.17411233745768162,
+          "max_z": 0.30561682464443884,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.32931804369095535,
+          "max_z": 0.4666965473615386,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.2416276641256737,
+          "max_z": 0.34314674739400086,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.24108412765617965,
+          "max_z": 0.37924887583239564,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0010205214158712783,
+          "max_z": 0.036508236449295906,
+          "fraction_near_floor": 0.7111111111111111
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "joint_error_m": 4.67172753294957e-7,
+      "surface_error_m": 9.221345449926403e-7,
+      "morph_weights": [
+        1,
+        0,
+        0
+      ],
+      "floor_min_z": 0.0008784047145194984,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013044607372493244,
+          "max_z": 0.00695134671895159,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001307825320787881,
+          "max_z": 0.0069523595007746075,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.17021200977011963,
+          "max_z": 0.26171490370957173,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.44953432434275503,
+          "max_z": 0.5861618282317941,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.17033720749365644,
+          "max_z": 0.26184098969388936,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.44946119219673564,
+          "max_z": 0.5868780282617172,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0008784047145194984,
+          "max_z": 0.02201273662620845,
+          "fraction_near_floor": 0.7333333333333333
+        }
+      }
+    },
+    {
+      "frame": 94,
+      "joint_error_m": 5.589870415275031e-7,
+      "surface_error_m": 0.000001500720555725038,
+      "morph_weights": [
+        0.2853706882112934,
+        0,
+        0.7146293117887067
+      ],
+      "floor_min_z": 0.0008001042085422627,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008001042085422627,
+          "max_z": 0.008477004658554443,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0014210240834158228,
+          "max_z": 0.006327867470544979,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.24153008004838827,
+          "max_z": 0.343086375007177,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.24115490029733533,
+          "max_z": 0.3785224300792472,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.17437933991891008,
+          "max_z": 0.30568937347700187,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.32925537563751545,
+          "max_z": 0.4674115042781908,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0008014280347998226,
+          "max_z": 0.0367273607962853,
+          "fraction_near_floor": 0.7111111111111111
+        }
+      }
+    },
+    {
+      "frame": 112.5,
+      "joint_error_m": 5.783789994453177e-7,
+      "surface_error_m": 0.0000013710936579244813,
+      "morph_weights": [
+        0,
+        0,
+        1
+      ],
+      "floor_min_z": 0.0007920137994633092,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0017499604369324295,
+          "max_z": 0.009079524026466557,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0017497274291848885,
+          "max_z": 0.006185215599205873,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.29314359413817237,
+          "max_z": 0.40645181412611064,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.10009876277139361,
+          "max_z": 0.23772184225975862,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.20823775684465384,
+          "max_z": 0.354992144505636,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.24009526568602527,
+          "max_z": 0.37857861011211513,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0007920137994633092,
+          "max_z": 0.04898256894845604,
+          "fraction_near_floor": 0.6444444444444445
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "joint_error_m": 5.760095983095397e-7,
+      "surface_error_m": 0.0000013126245909126028,
+      "morph_weights": [
+        0.04873485490679741,
+        0,
+        0.9512651562690735
+      ],
+      "floor_min_z": 0.0007922244640332088,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.001603193869908759,
+          "max_z": 0.008993632716149558,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0016939389234734703,
+          "max_z": 0.006205443377018061,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.28371835913876753,
+          "max_z": 0.3951913947374344,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.12127803813606532,
+          "max_z": 0.2588591017475188,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.20108802371280876,
+          "max_z": 0.3454627593605998,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.2555248830601595,
+          "max_z": 0.39394915541818,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0007922244640332088,
+          "max_z": 0.046780426752061566,
+          "fraction_near_floor": 0.6666666666666666
+        }
+      }
+    },
+    {
+      "frame": 131,
+      "joint_error_m": 5.324647275578005e-7,
+      "surface_error_m": 0.0000014451987070445283,
+      "morph_weights": [
+        0.2853704789029142,
+        0,
+        0.7146295210969721
+      ],
+      "floor_min_z": 0.0008001078031351638,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0008001078031351638,
+          "max_z": 0.008477005666784054,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.001421024225584211,
+          "max_z": 0.006327867404266274,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.24153005598539046,
+          "max_z": 0.34308646345710636,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.2411547845553551,
+          "max_z": 0.3785223145905198,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.17437935266062798,
+          "max_z": 0.3056893977337303,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.3292553227417067,
+          "max_z": 0.4674114519650048,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0008014280886448621,
+          "max_z": 0.03672741658239215,
+          "fraction_near_floor": 0.7111111111111111
+        }
+      }
+    },
+    {
+      "frame": 137.5,
+      "joint_error_m": 6.134842207986399e-7,
+      "surface_error_m": 0.0000010264480544009764,
+      "morph_weights": [
+        0.500000101402645,
+        0,
+        0.49999992839967744
+      ],
+      "floor_min_z": 0.00028874271355450176,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.00028874271355450176,
+          "max_z": 0.007912613242601119,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0012283638463334023,
+          "max_z": 0.006477059733214718,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.21084755730326177,
+          "max_z": 0.301794981235575,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.35200230894248175,
+          "max_z": 0.4891625686813416,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.16209207356757782,
+          "max_z": 0.28000469214986545,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.3865374621286975,
+          "max_z": 0.5244661980419751,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0008207714248693598,
+          "max_z": 0.028691542429148287,
+          "fraction_near_floor": 0.7111111111111111
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "joint_error_m": 4.4539565225363174e-7,
+      "surface_error_m": 9.429974917822254e-7,
+      "morph_weights": [
+        1,
+        0,
+        0
+      ],
+      "floor_min_z": 0.0008784044851715689,
+      "patches": {
+        "pelvic_support_L": {
+          "min_z": 0.0013044346961336162,
+          "max_z": 0.0069513426144954815,
+          "fraction_near_floor": 1
+        },
+        "pelvic_support_R": {
+          "min_z": 0.0013077993332627491,
+          "max_z": 0.006952355404756139,
+          "fraction_near_floor": 1
+        },
+        "whole_hand_L": {
+          "min_z": 0.17021201818308584,
+          "max_z": 0.26171492635768145,
+          "fraction_near_floor": 0
+        },
+        "foot_L": {
+          "min_z": 0.449534303683721,
+          "max_z": 0.5861618043924883,
+          "fraction_near_floor": 0
+        },
+        "whole_hand_R": {
+          "min_z": 0.1703372222642212,
+          "max_z": 0.2618410283763055,
+          "fraction_near_floor": 0
+        },
+        "foot_R": {
+          "min_z": 0.44946117156617943,
+          "max_z": 0.5868780041574478,
+          "fraction_near_floor": 0
+        },
+        "lumbar_arch": {
+          "min_z": 0.0008784044851715689,
+          "max_z": 0.022012747473139027,
+          "fraction_near_floor": 0.7333333333333333
+        }
+      }
+    }
+  ],
+  "scope": "Actual canonical GLB + exact shared optional CPU DQ adapter against the corrective-bearing native DQ cage. No generic linear-skin appearance claim."
+}

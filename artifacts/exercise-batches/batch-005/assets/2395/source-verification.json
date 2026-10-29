@@ -1,0 +1,71 @@
+{
+  "pass": true,
+  "source_sha256": "b0841562c3bc5355858a7a07919ede46654428949a01fe099229e2dede317f36",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "binding_rest_uv_sha256": "6050d50b4e22e03b7d44cd98c1268d08ffa3e3be3bdc1821642ba244e6ffc244",
+  "original_basis_topology_uv_bone_rest_sha256": "8727ad935b8ff72b5df350e581931938fa50bce6c4abaa33e910236dd578aae3",
+  "basis_topology_uv_bone_rest_unchanged": true,
+  "runtime_weights_changed_by_declared_local_overlays": true,
+  "all_actual_weights_equal_declarative_recipe": true,
+  "maximum_influences": 4,
+  "maximum_weight_partition_error": 1.341104507446289e-07,
+  "binding_overlay_receipts": [
+    "profile-binding-overlay.json",
+    "glute-binding-repair.json",
+    "joint-repair-integration.json"
+  ],
+  "bones": 51,
+  "vertices": 10582,
+  "triangles": 21160,
+  "materials": 1,
+  "dimensions_m": [
+    0.9068410396575928,
+    1.396107792854309,
+    0.5864408016204834
+  ],
+  "actions": [
+    "Exercise_2395"
+  ],
+  "action_slots": [
+    "OBJECT",
+    "KEY"
+  ],
+  "morphs": [
+    "JointNeutral",
+    "JointRightCross",
+    "JointLeftCross"
+  ],
+  "composition": [
+    {
+      "key": "JointNeutral",
+      "final_coordinate_sha256_float32": "564dbb06f559677ed9f6707e150348957539253225b0fe9c953db5f238115303",
+      "original_foundation_coordinate_sha256_float32": "6728cc7a2eec5c92a98ec512b47e5d89a69752d5f24fe31f6bc5e460f86fb953",
+      "maximum_new_support_delta_m": 0.0033113465178757906,
+      "maximum_additive_shoulder_delta_m": 0.025,
+      "all97_shared_support_positions_exact": true,
+      "exact_original_plus_support_plus_shoulder": true
+    },
+    {
+      "key": "JointRightCross",
+      "final_coordinate_sha256_float32": "0a979f5d3439fb2c4fd52fc3ce3d2fb5238c80777df572ae94ffd7404573d2f7",
+      "original_foundation_coordinate_sha256_float32": "177e283af3e7936d8ffcc3b348132187e4bbe1686ea9a6ebe37bbc18ed3f264f",
+      "maximum_new_support_delta_m": 0.0036864213179796934,
+      "maximum_additive_shoulder_delta_m": 0.02500000000000001,
+      "all97_shared_support_positions_exact": true,
+      "exact_original_plus_support_plus_shoulder": true
+    },
+    {
+      "key": "JointLeftCross",
+      "final_coordinate_sha256_float32": "b3e36e75e5933a951b63bd07ab961c3c071c1f8aba048407951ed23a54574a49",
+      "original_foundation_coordinate_sha256_float32": "e684da8f763456a64301144eda946e13328d14634b46e80d0c7eafb73f722470",
+      "maximum_new_support_delta_m": 0.0036864206194877625,
+      "maximum_additive_shoulder_delta_m": 0.025000000000000005,
+      "all97_shared_support_positions_exact": true,
+      "exact_original_plus_support_plus_shoulder": true
+    }
+  ],
+  "global_corrective_smooth_disabled": true,
+  "all_non_armature_modifiers_disabled": true,
+  "normal_reference": "joint-normal-reference.json.gz",
+  "source_saved": false
+}

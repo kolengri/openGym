@@ -1,0 +1,101 @@
+{
+  "id": "4714",
+  "action": "Exercise_4714",
+  "name": "air squat (version 2)",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "primary": [
+    "quads"
+  ],
+  "secondary": [
+    "glutes",
+    "hamstrings",
+    "calves",
+    "core"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 2.5,
+      "label": "Descend"
+    },
+    {
+      "start": 2.5,
+      "end": 5,
+      "label": "Stand"
+    }
+  ],
+  "source_hold_recommendation_seconds": null,
+  "skinning": "linear",
+  "native_frame_origin": 1,
+  "source_roles": {
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "hamstrings",
+      "calves",
+      "core"
+    ]
+  },
+  "source_instructions": [
+    "Stand with feet shoulder-width apart, toes slightly out.",
+    "Push your hips back and bend your knees.",
+    "Lower until thighs are at least parallel with chest up.",
+    "Drive through your heels to stand.",
+    "Keep your knees tracking over your toes."
+  ],
+  "interpretation": "One complete controlled five-second arms-forward squat. Shoulder-width feet with modest12degree toes-out remain supported. Hips move back and down to parallel, with chest up and knees following the stance. Arms reach forward30degrees below world horizontal with relaxed10degree elbow flexion and softly articulated fingers. This arm height is an authored compatible balance choice for both canonical texts; neither specifies numerical shoulder height. The return exactly closes the loop. No stretch hold applies.",
+  "shared_motion": {
+    "family": "batch005-arms-forward-parallel-squat",
+    "authored_once_in": "3948",
+    "relabelled_identity": true,
+    "identity_difference": "4714 additionally labels calves as secondary; geometry, pose and timing are identical.",
+    "physical_actions": [
+      "Exercise_3948",
+      "Exercise_4714"
+    ]
+  },
+  "authored_choices": {
+    "feet": "Ankles0.40m apart, approximately shoulder width; toes12degrees out. Original low plantar source vertices locally rebound to Foot to prevent shin-driven heel lifting.",
+    "arms": "30degrees below horizontal in world space,10degree elbow flexion; palms neutral and fingers relaxed.",
+    "timing": "Sinusoidal descent/return, parallel at2.5s; no peak hold.",
+    "range": "Peak native left thigh about1.7degrees below horizontal;22degree pelvis and20degree chest forward inclination.",
+    "skin": "Original51-bone linear cage, bounded harmonic shoulder and restored local lower binding, validated plantar Foot binding, and three bounded25mm POSITION/NORMAL source correctives. Basis/rest/UV/sourceIDs/topology preserved.",
+    "cameras": "Exactly two whole-body orthographic views: true sagittal90degree view and complementary posterior oblique for glutes.",
+    "muscle_display": "Primary quads and source-listed secondary zones; root-owned stable soft heat fields, neutral inactive skin. Motion timing does not imply physiological recruitment."
+  },
+  "provenance": {
+    "text": "catalogue/exercises/4714.json",
+    "body": "Original Blender Studio CC0 Human Base Mesh via accepted artifacts/bodyweight-five/bodyweight-five.blend",
+    "accepted_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "restricted_media_used": false,
+    "paid_generation_used": false
+  },
+  "review_status": "frozen_user_review_candidate_not_production_approved",
+  "asset": "squat",
+  "correctives": {
+    "names": [
+      "SquatStanding",
+      "SquatHalf",
+      "SquatParallel"
+    ],
+    "position_targets": 3,
+    "normal_targets": 3,
+    "runtime": "Standard linear GLB morphs before LBS; no DQ adapter.",
+    "target_construction": "Source-bound native DQ hip plus bounded local native joint fairing, inverse LBS mapping; all runtime target effects included in source/native surface references.",
+    "maximum_source_delta_m": 0.025,
+    "source_collar": "C1 zero collars and C1 radial source-delta saturation; protected feet/fingers/head/exterior unchanged.",
+    "weights": "Three nonnegative partition weights of cosine flexion; standing/half/parallel, exactly loop closing."
+  },
+  "disclosures": [
+    "Root accepted the bounded visible candidate shape for user review; no production approval.",
+    "Minor hip/knee/axillary folds remain. Exact nonadjacent crossing witnesses and opposed normal diagnostics are retained; no global zero-self-collision claim.",
+    "Muscle heat fields, viewer integration, physical renderer validation and final user approval remain root-owned."
+  ]
+}

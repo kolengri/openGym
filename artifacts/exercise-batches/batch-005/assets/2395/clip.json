@@ -1,0 +1,159 @@
+{
+  "id": "2395",
+  "name": "air bike v. 2",
+  "action": "Exercise_2395",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "duration_frames": 150,
+  "fps": 30,
+  "skinning": "dualQuaternion",
+  "bones": 51,
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "obliques",
+    "hip flexors",
+    "lower abs"
+  ],
+  "stretch": [],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 1.25,
+      "label": "Right elbow toward left knee; right leg extends"
+    },
+    {
+      "start": 1.25,
+      "end": 2.5,
+      "label": "Return through raised-knee centre"
+    },
+    {
+      "start": 2.5,
+      "end": 3.75,
+      "label": "Left elbow toward right knee; left leg extends"
+    },
+    {
+      "start": 3.75,
+      "end": 5,
+      "label": "Return through raised-knee centre"
+    }
+  ],
+  "cross_pair_witnesses": [
+    {
+      "time": 1.25,
+      "frame": 37.5,
+      "elbow": "RightForeArm",
+      "knee": "LeftLeg",
+      "extended_leg": "Right"
+    },
+    {
+      "time": 3.75,
+      "frame": 112.5,
+      "elbow": "LeftForeArm",
+      "knee": "RightLeg",
+      "extended_leg": "Left"
+    }
+  ],
+  "source_hold_recommendation_seconds": null,
+  "source_instructions": [
+    "Lie on your back with your hands behind your head.",
+    "Lift your shoulders and bring your knees up.",
+    "Bring one elbow toward the opposite knee while extending the other leg.",
+    "Switch sides in a smooth pedalling motion.",
+    "Keep your lower back pressed down.",
+    "Continue for the planned reps or time."
+  ],
+  "interpretation": "One five-second alternating supine bicycle crunch using the accepted0003 family controls. Hands stay behind the head, shoulders raised, opposite elbow approaches the bent knee as the other leg extends. The added2395 lower-back cue uses a frozen coupled pelvis/lumbar pose, anatomy-bounded binding overlay and compact support additions. Contact is evaluated against a frozen neutral posterior-envelope profile, preserving the original skin groove; raw45/19 skin heights remain reported. This is an illustration QC approximation, not a literal flat-back or clinical technique claim.",
+  "explicit_staging": {
+    "hands": "Separate palms cradle the occiput with gently articulated fingers; source palm plane is measured from original geometry. No neck pull.",
+    "wrists": "35degree palm/forearm deviation is an authored staging bound, not a clinical range.",
+    "back": "Original bilateral pelvic patches and actual lumbar ridges remain near the floor. Lower-back arch gap is measured relative to the frozen source-groove profile; see lower-back-cue-verification.json. Whole skin floor checked across151frames.",
+    "timing": "Opposite peaks at1.25/3.75seconds; one complete5second alternating cycle."
+  },
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "obliques",
+      "hip flexors",
+      "lower abs"
+    ]
+  },
+  "muscle_display_roles": {
+    "abs": {
+      "role": "main",
+      "mapping": "Superficial rectus abdominis regions"
+    },
+    "obliques": {
+      "role": "additional",
+      "mapping": "External oblique surface regions"
+    },
+    "hip flexors": {
+      "role": "additional",
+      "mapping": "Visible sartorius and limited deep iliopsoas surface projection; not exposed iliopsoas tissue."
+    },
+    "lower abs": {
+      "role": "additional",
+      "mapping": "Lower rectus abdominis region; a source training label, not a separate anatomical muscle."
+    }
+  },
+  "artistic_emphasis": "Stable soft warm main/additional zones; neutral inactive body. No phase-dependent physiological recruitment claim.",
+  "correctives": {
+    "names": [
+      "JointNeutral",
+      "JointRightCross",
+      "JointLeftCross"
+    ],
+    "position_targets": 3,
+    "normal_targets": 3,
+    "method": "Exact original0003 three compact key buffers, including legacy flank guards, plus frozen sparse2395 support and the accepted bounded additive shoulder component under the exact original151 weight schedule. Three final POSITION/NORMAL targets; no extra runtime morphs. Glute repair changes binding only; rejected hip fairing is excluded.",
+    "flank_guard_amplitudes_m": [
+      0.01169804891982033,
+      0.014063733814609718,
+      0.015739590092533264
+    ],
+    "global_corrective_smooth_enabled": false,
+    "basis_rest_uv_unchanged": true,
+    "weights_changed_by_declared_overlay": true,
+    "new_support_maximum_rest_delta_m": 0.0036864265560218306,
+    "new_support_limit_m": 0.008,
+    "new_shoulder_component_cap_m": 0.025,
+    "new_shoulder_component": "shoulder-additive-component.npz",
+    "legacy_foundation_maximum_rest_delta_m": 0.05276146819288466,
+    "composition_receipt": "source-verification.json",
+    "binding_receipt": [
+      "profile-binding-overlay.json",
+      "glute-binding-repair.json",
+      "joint-repair-integration.json"
+    ]
+  },
+  "source_gaps": {
+    "timing": "Source gives planned reps/time without speed; one five-second cycle authored.",
+    "initial_leg_angles": "Source requests raised knees without an angle; accepted90degree family setup reused.",
+    "hand_detail": "Hands behind head is sourced; separated palm placement and finger curl are authored."
+  },
+  "source_record_sha256": "f28e2e226453813110573e2581d2e732fcd9ddd6560015999adbf28ce3a1c9bb",
+  "provenance": {
+    "text": "catalogue/exercises/2395.json",
+    "body": "Original Blender Studio CC0 Human Base Mesh in artifacts/bodyweight-five/bodyweight-five.blend",
+    "restricted_media_used": false,
+    "paid_generation_used": false,
+    "family": "batch-004/assets/0003",
+    "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "runtime_binding_receipt": [
+      "profile-binding-overlay.json",
+      "glute-binding-repair.json",
+      "joint-repair-integration.json"
+    ],
+    "support_contract": "support-contract.json"
+  },
+  "review_status": "source_native_export_and_primary_gpu_geometry_accepted_for_user_review",
+  "native_frame_origin": 1,
+  "minor_visual_limit": "Long thigh boundary is legitimate occlusion; minor low-poly contour/notch is retained instead of deforming rigid thigh volume.",
+  "heat_regions_file": "../../soft-abdominal-regions.json"
+}

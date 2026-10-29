@@ -1,0 +1,60 @@
+{
+  "id": "5266",
+  "ready_for_primary_review": true,
+  "numeric_checks_passed": true,
+  "shape_status": {
+    "status": "accepted_for_user_review",
+    "accepted": true,
+    "decision": "Primary and independent review accept the normalized intended posterior glute-binding reconstruction; the long edge is legitimate thigh occlusion, not a joining sheet. The normalized actual-source proofs were separately reviewed after RNA write reconciliation.",
+    "source_sha256": "a0f8f28b14e9b05b58c1b401030a21d69a09b08fd66ff775427670e24fe721c2",
+    "disclosed_residual": "Minor straight low-poly thigh contour/notch.",
+    "posterior_attachment_recipe": "glute-binding-repair.json",
+    "actual_source_reconciliation": "glute-source-reconciliation.json",
+    "panel_causality": "panel-causal-report.json",
+    "excluded_components": [
+      "HipFairNeutral",
+      "HipFairRightCross",
+      "HipFairLeftCross"
+    ],
+    "production_gpu_approval": false
+  },
+  "production_approved": false,
+  "source_sha256": "a0f8f28b14e9b05b58c1b401030a21d69a09b08fd66ff775427670e24fe721c2",
+  "motion_sha256": "09eb09b459cf510129df914e2b75cab6302b703e4c392ff25278c45ef539937d",
+  "blender": "5.2.3 LTS; offline2threads",
+  "source_vertices": 10582,
+  "triangles": 21160,
+  "bones": 51,
+  "actions": [
+    "Exercise_5266"
+  ],
+  "skinning": "dualQuaternion",
+  "runtime_adapter": "artifacts/exercise-batches/dual-quaternion.js; unchanged shared optional adapter",
+  "runtime_gpu_review": "Primary-owned and not claimed by CPU/native receipts.",
+  "mechanics": "Fixed raised tabletop, no extending/pedalling legs, alternating shoulder curl/twist, supported occiput, pressed-down lower-back requirement.",
+  "receipt_results": {
+    "source-verification.json": {
+      "pass": true,
+      "source_matches": true
+    },
+    "surface-contact-report.json": {
+      "pass": true,
+      "source_matches": true
+    },
+    "mechanics-verification.json": {
+      "pass": true,
+      "source_matches": true
+    },
+    "export-verification.json": {
+      "pass": true,
+      "source_matches": true
+    },
+    "asset-qa.json": {
+      "pass": true,
+      "source_matches": true
+    }
+  },
+  "remaining_risks": [
+    "Minor straight low-poly thigh contour/notch disclosed; actual GPU rendering and final camera widths remain primary-owned."
+  ]
+}

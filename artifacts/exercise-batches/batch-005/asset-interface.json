@@ -1,0 +1,49 @@
+{
+  "coordinate_system": "Original Blender rig, meters, Z up/front -Y. Runtime converts [x,y,z] to [x,z,-y].",
+  "source_frames": "Declare the native frame origin per asset. Blender Studio frames1..151 and MPFB frames0..150 both map to runtime0..150 at30fps (five seconds).",
+  "clip.json": {
+    "id": "<id>",
+    "action": "Exercise_<id>",
+    "duration": 5,
+    "duration_seconds": 5,
+    "frames": 150,
+    "fps": 30,
+    "primary": [
+      "<source target label>"
+    ],
+    "secondary": [
+      "<source secondary label>"
+    ],
+    "display_mode": "stretch or heat",
+    "highlight_sides": {},
+    "phases": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "Enter"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "label": "Hold"
+      },
+      {
+        "start": 3,
+        "end": 5,
+        "label": "Return"
+      }
+    ],
+    "interpretation": "Explicit authored staging choices, source limits and relevant display notes.",
+    "source_hold_recommendation_seconds": [
+      20,
+      30
+    ],
+    "skinning": "linear or dualQuaternion; omitted means linear"
+  },
+  "cameras.json": "Exactly2 objects {label,position:[x,y,z],target:[x,y,z],scale,frameSourceIds?}. Scale is orthographic horizontal width. Keep a whole-body companion throughout the clip. Detail IDs are unique integers0..sourceVertices-1 in the actual exported body domain; retain the complete model and verify its selected framing region.",
+  "pose-samples.json": "Array of{id,frame,joints:{<bone-name>:[x,y,z]}} in BlenderZup coordinates at runtime0..150. Include all51 native bones for Blender Studio assets, or all clip-specific standard-GLB deformation groups/common root for MPFB. Reference native joint matrices explicitly; retain start, intermediate, hold and return states.",
+  "runtime-surface-reference.json": "Source-domain support patches at sampled frames, checked in the actual GPU renderer. The reference_kind declares native or standard-linear CPU origin; do not infer native Bbone surface parity from a CPU transport reference.",
+  "notes": "Values are schema examples, not literal measurements. Record actual deformed-skin minima and a separate floor plane. The four Blender Studio assets preserve their original Basis/rest/UV/sourceIDs and51bones, with diagnosed local binding/correctives declared. An MPFB replacement declares its seated bind, actual vertex/joint counts, source-ID and generated-cap provenance, native-control reference, normalized runtime grouped weights and every local POSITION/NORMAL corrective. Native Smooth/Multires/Bbone previews do not prove standard linear or DQ runtime appearance. Verify complete arms as well as hands when contact-critical. Stretch demonstrations use2senter/1shold/2sreturn and retain source20\u201330s workout holds; air bike0003 is a five-second alternating cycle.",
+  "dq-reference.json.gz": "For DQ assets only: {source_sha256,source_vertices:10582,samples:[{id,frame,positions:[[x,y,z],...]}]}; all original IDs in order, at frames 0/30/75/120/150 with only Armature enabled. Include current pose-corrective influences.",
+  "source.blend": "Editable authoring reference. For4512 this is the native kinematic action only; final standard-linear geometry, weights and contact targets are explicit runtime inputs declared in clip.json."
+}

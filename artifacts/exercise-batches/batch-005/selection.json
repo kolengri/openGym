@@ -1,0 +1,83 @@
+{
+  "batch": "005",
+  "selection_rule": "Next five canonical body-weight records with no documented inventory props after batch004, casefolded English name and ID.",
+  "user_authorization": "Continue the next five live review candidates.",
+  "exercises": [
+    {
+      "id": "2395",
+      "name": "air bike v. 2",
+      "source_sha256": "f28e2e226453813110573e2581d2e732fcd9ddd6560015999adbf28ce3a1c9bb",
+      "source_path": "catalogue/exercises/2395.json",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques",
+        "hip flexors",
+        "lower abs"
+      ]
+    },
+    {
+      "id": "3948",
+      "name": "air squat",
+      "source_sha256": "f725c02e4f97e7d8eb59f151fd043681a397dcf7cf39d1510334f47191fdc42f",
+      "source_path": "catalogue/exercises/3948.json",
+      "primary": [
+        "quads"
+      ],
+      "secondary": [
+        "glutes",
+        "hamstrings",
+        "core"
+      ]
+    },
+    {
+      "id": "4714",
+      "name": "air squat (version 2)",
+      "source_sha256": "bcaf8038ed37adb7c5f1de9693c296d8e4d2e444559cce8d6e375fd586114e1c",
+      "source_path": "catalogue/exercises/4714.json",
+      "primary": [
+        "quads"
+      ],
+      "secondary": [
+        "glutes",
+        "hamstrings",
+        "calves",
+        "core"
+      ]
+    },
+    {
+      "id": "5266",
+      "name": "air twisting crunch",
+      "source_sha256": "75020baf95cd8c1d661e35d5b01fb985e2aa9734f1620f14c912ec2b5a46876a",
+      "source_path": "catalogue/exercises/5266.json",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques",
+        "hip flexors"
+      ]
+    },
+    {
+      "id": "1512",
+      "name": "all fours squad stretch",
+      "source_sha256": "1537bfbe79171564d9286f0449793eb919696374cc7ed30846235dd8a0701d80",
+      "source_path": "catalogue/exercises/1512.json",
+      "primary": [
+        "quads"
+      ],
+      "secondary": [
+        "hamstrings",
+        "glutes"
+      ]
+    }
+  ],
+  "reuse_decisions": {
+    "2395": "Reuse0003 geometry/motion if full source cues match; update catalogue identity and muscle labels.",
+    "3948/4714": "One shared squat motion; respect the union of compatible stance, range and arm cues. Separate source identity and muscle emphasis.",
+    "5266": "Reuse existing articulated body and head/hand pose; fixed raised knees differ from pedalling.",
+    "1512": "Reconcile source prose/instruction disagreement explicitly before pose authoring."
+  },
+  "delivery": "Live GLB+Three.js only; no video, runtime vertex cache or restricted media derivatives."
+}

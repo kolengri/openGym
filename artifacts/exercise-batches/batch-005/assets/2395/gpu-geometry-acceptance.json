@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "authority": "Primary and independent review of actual Three.js GPU right/left peak poses after width fitting",
+  "source_sha256": "b0841562c3bc5355858a7a07919ede46654428949a01fe099229e2dede317f36",
+  "motion_sha256": "c8de01ca6d5d651ac124830555dc8c6d41b988f1dcb9a0a350143e9369663847",
+  "cameras_sha256_at_handoff": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+  "camera_widths_m": [
+    2.57,
+    2.35
+  ],
+  "result": "No open armpit gap or broken body seam is visible in either supplied actual GPU view. Source/GLB geometry is frozen.",
+  "screenshots": [
+    {
+      "file": "gpu-neutral-right-peak.png",
+      "sha256": "6072e103541bd3488bf68406c29376d62998072b11bacb9c598d1f50bf74624a",
+      "provided_view_label": "right-peak",
+      "display": "neutral"
+    },
+    {
+      "file": "gpu-neutral-left-peak.png",
+      "sha256": "5b613a1deeac4a6906c37cac5f861277a7e5aab771d01946f119bdf9e838a990",
+      "provided_view_label": "left-peak",
+      "display": "neutral"
+    }
+  ],
+  "scope": "GPU geometry, arm separation and framing acceptance at the supplied two peak views. Neutral screenshots are frozen copies of primary evidence. This does not approve heat fields.",
+  "imported_blender_proof_limit": "Blender re-import keeps custom normals and differs from native source normal construction. Its apparent cuts are not authoritative GPU geometry evidence; importer-diagnosis.json records same-frame POSITION comparison with inherited actions removed.",
+  "heat_status": "Root owns the remaining batch-local torso-side heat spike repair and subsequent heat_regions_file clip integration."
+}
