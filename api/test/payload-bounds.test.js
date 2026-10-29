@@ -136,14 +136,14 @@ const planAndLogFields = {
   'exercise weight': S => { S.routines[0].ex[0].weight = INJECT; },
   'exercise repsMin / repsMax': S => { S.routines[0].ex[0].repsMin = INJECT; S.routines[0].ex[0].repsMax = INJECT; },
   'timed sec': S => { S.routines[0].ex[1].sec = INJECT; },
-  'cardio min / speed': S => { S.routines[0].ex.push({ id: '0001', mode: 'cardio', sets: 1, min: INJECT, speed: INJECT }); },
+  'cardio min / km / speed': S => { S.routines[0].ex.push({ id: '0001', mode: 'cardio', sets: 1, min: INJECT, km: INJECT, speed: INJECT }); },
   'week entry': S => { S.week[1] = [INJECT]; },
   'custom exercise id': S => { S.customEx = [{ id: INJECT, n: 'Sandbag', bp: 'back' }]; },
   'workout id': S => { S.workouts[0].id = INJECT; },
   'workout date': S => { S.workouts[0].d = S.workouts[0].d + INJECT; },
   'logged entry id': S => { S.workouts[0].entries[0].id = INJECT; },
-  'logged target': S => { S.workouts[0].entries[0].target = { sets: INJECT, reps: INJECT, sec: INJECT, weight: INJECT }; },
-  'logged set values': S => { Object.assign(S.workouts[0].entries[0].sets[0], { w: INJECT, r: INJECT, sec: INJECT, min: INJECT, speed: INJECT, rir: INJECT, rpe: INJECT }); },
+  'logged target': S => { S.workouts[0].entries[0].target = { mode: 'cardio', sets: INJECT, reps: INJECT, sec: INJECT, weight: INJECT, min: INJECT, km: INJECT, speed: INJECT }; },
+  'logged set values': S => { Object.assign(S.workouts[0].entries[0].sets[0], { w: INJECT, r: INJECT, sec: INJECT, min: INJECT, km: INJECT, speed: INJECT, rir: INJECT, rpe: INJECT }); },
   'body-weight weigh-in': S => { S.bodyweight.push({ d: D('2026-07-21'), w: INJECT }, { d: D('2026-07-21') + INJECT, w: 80 }); },
   'target body weight': S => { S.targetW = INJECT; }
 };
