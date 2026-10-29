@@ -3653,8 +3653,8 @@ function LastAndNext({ st, w }) {
   </div>
 }
 
-// The cardio of the session, which "Last time and next time" leaves out: minutes, speed and the
-// treadmill's incline as they were logged.
+// The cardio of the session, which "Last time and next time" leaves out: distance, time and
+// legacy speed/incline as they were logged.
 function CardioDone({ st, w }) {
   const rows = finishCardio(w)
   if (!rows.length) return null
