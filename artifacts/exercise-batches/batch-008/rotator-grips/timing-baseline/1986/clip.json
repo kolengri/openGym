@@ -1,0 +1,87 @@
+{
+  "id": "1986",
+  "name": "arm up rotator stretch",
+  "action": "Exercise_1986",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "delts"
+  ],
+  "secondary": [
+    "rotator cuff",
+    "triceps"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {
+    "delts": [
+      "L"
+    ],
+    "rotator cuff": [
+      "L"
+    ],
+    "triceps": [
+      "L"
+    ]
+  },
+  "source_instructions": [
+    "Raise one arm overhead and bend the elbow, palm resting on your upper back.",
+    "Use your other hand to hold the elbow.",
+    "Gently press the elbow back and down.",
+    "Keep your ribs down and chest open.",
+    "Hold for 20-30 seconds, then switch sides."
+  ],
+  "source_record_sha256": "062e68575b048b20c46b2fb6b0635552df6565583e3ffbd5bc5e2c9164810a6f",
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "interpretation": "Representative left arm overhead with palm actually resting on upperback; right hand cups the left elbow, gently pressing back/down. Neutral ribs/chest, continuous crown-clearing reach, acquisition and reverse release. Authored standing hip-width neutral support and exact trajectory/angles are staging choices, separately resolved from unspecified source details. The five-second2sentry/1shold/2sreturn demonstration shortens the source20\u201330second workout hold; repeat on the mirrored side. Soft artistic stretch fields are root-owned; no physiological/clinical claim.",
+  "authored_choices": {
+    "support": "Standing hip-width neutral stance, ankles280mm apart, toes10degrees outward; both actual plantar skins supported continuously. This is an authored source-gap resolution.",
+    "side": "Left stretch, right assistance; repeat mirrored side in workout.",
+    "contact": "Original central palm/wrist/finger source IDs, actual native and actual decoded skin, independently checked from visual acceptance.",
+    "skinning": "Original10582-vertex/51-bone CC0 Basis/rest/UV/topology/sourceIDs. Additive bounded shoulder binding plus accepted distal plantar binding; native/runtime DQ, no shape keys.",
+    "orientation": "Deterministic authoring-only fine-step upper-arm frame transport prevents antipodal swings; endpoint axial correction restores accepted original upper-body hold basis. Standard GLB151 bone keys; no runtime frame/vertex cache."
+  },
+  "asset": "1987",
+  "shared_motion": {
+    "family": "batch008-rotator-grips",
+    "physical_actions": [
+      "Exercise_1987",
+      "Exercise_1986"
+    ],
+    "relationship": "One compatible body/binding; independent wrist-grasp and elbow-grasp actions. Byte-identical GLBs in both required per-ID locations; root hash-deduplicates."
+  },
+  "provenance": {
+    "text": "catalogue/exercises/1986.json",
+    "body": "Original Blender Studio CC0 Human Base Mesh via accepted bodyweight-five.blend",
+    "accepted_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "restricted_media_used": false,
+    "paid_generation_used": false
+  },
+  "source_sha256": "43b365d87cd3c7f2566695b735a068de773427d41c6ad875ed1d26471a90dbb3",
+  "glb_sha256": "ca583ebabd85a85df782d04454cfd9310b72a4809ed0b180f9c526ba1c750789",
+  "review_status": "151_native_actual_decoded_export_game_gates_passed; root_GPU_acceptance_pending",
+  "authoring_family": "../../rotator-grips"
+}

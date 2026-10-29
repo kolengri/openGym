@@ -1,0 +1,56 @@
+{
+  "id": "6539",
+  "action": "Exercise_6539",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "lats"
+  ],
+  "secondary": [
+    "shoulders",
+    "lower back"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Sit back and reach"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Rest supported"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return to kneeling"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "interpretation": "The title says armless, while the explicit source instructions require both arms reaching forward. Follow the instructions: kneel, sit toward heels, reach forward and lower the chest with forehead near the floor. Exact accepted4365 motion is reused without refitting; five seconds demonstrate2s entry/1s hold/2s return. Workout hold20\u201330seconds.",
+  "diagnostic_peak_frames": [
+    75
+  ],
+  "skinning": "dualQuaternion",
+  "correctives": {
+    "names": [
+      "RestingHipVolume"
+    ],
+    "position_targets": 1,
+    "normal_targets": 1,
+    "maximum_source_displacement_m": 0.10973291255518877,
+    "maximum_world_displacement_m": 0.10973293250068683,
+    "inverse_condition_max": 1.000000238418579,
+    "drive": "Quintic smootherstep of measured bilateral hip flexion above the native first-fold onset; exactly0 at neutral and1 at supported peak.",
+    "original_weights": "Exact original whole-body weights; no inherited binding or old inverse-LBS feather."
+  }
+}

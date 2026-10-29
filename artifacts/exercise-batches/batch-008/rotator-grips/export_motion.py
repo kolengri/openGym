@@ -1,0 +1,7 @@
+"""Export one canonical51-bone body with two explicit independently reset actions."""
+import bpy,hashlib,shutil
+from pathlib import Path
+F=Path(__file__).resolve().parent;P=F.parent/'assets/1987';bpy.ops.wm.open_mainfile(filepath=str(P/'source.blend'));b=bpy.data.objects['SK_BlenderStudioHuman'];r=bpy.data.objects['RIG_BlenderStudioHuman'];s=bpy.context.scene;r.animation_data.action=bpy.data.actions['Exercise_1987'];r.animation_data.action_slot=r.animation_data.action.slots[0];s.frame_set(1);assert sorted(a.name for a in bpy.data.actions)==['Exercise_1986','Exercise_1987'];assert not b.data.shape_keys
+bpy.ops.object.select_all(action='DESELECT');b.select_set(True);r.select_set(True);bpy.context.view_layer.objects.active=r
+assert bpy.ops.export_scene.gltf(filepath=str(P/'motion.glb'),export_format='GLB',use_selection=True,export_yup=True,export_apply=False,export_texcoords=True,export_normals=True,export_materials='EXPORT',export_vertex_color='NONE',export_attributes=True,export_morph=True,export_morph_normal=True,export_animations=True,export_animation_mode='ACTIONS',export_merge_animation='ACTION',export_force_sampling=True,export_frame_range=False,export_frame_step=1,export_anim_slide_to_zero=True,export_skins=True,export_influence_nb=4,export_def_bones=True,export_leaf_bone=False,export_rest_position_armature=True,export_extras=True,export_cameras=False,export_lights=False)=={'FINISHED'}
+shutil.copyfile(P/'motion.glb',F.parent/'assets/1986/motion.glb');print('EXPORTED',hashlib.sha256((P/'motion.glb').read_bytes()).hexdigest())

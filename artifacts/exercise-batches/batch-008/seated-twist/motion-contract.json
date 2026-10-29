@@ -1,0 +1,34 @@
+{
+  "contacts": {
+    "palm_delta": -0.0037790989875793454,
+    "hug_distance": 0.01205342461457966
+  },
+  "drive": {
+    "neutral": [
+      83.16118220511702,
+      -3.125032369646884
+    ],
+    "peak": [
+      126.22661780285485,
+      36.45962683970914
+    ]
+  },
+  "component_names": [
+    "TwistHipVolume",
+    "ThighContactLead"
+  ],
+  "contact_interpolation": "sqrt(k)-k entry lead of the same frozen contactvector; zero neutral/held; totalcontactamplitude sqrt(k)<=1. Foot-only swing lift12mm*sin(pi*quinticLegProgress)^2, zero endpoints.",
+  "binding_sha256": "5d86c09973b942c805961005305a752bb7a5084260840ff0ed6d5edbc529ec08",
+  "neutral_key": 0,
+  "peak_key": 1,
+  "other_actions": "Standalone single-action asset; no other action contribution. Key is explicit at every frame including neutral0.",
+  "source_sha256": "8861f6ec1015db6b3bbf5d1a4f603877a5c2469ebe7f4cbe6f52ea62b60cf697",
+  "neutral_weights": {
+    "TwistHipVolume": 0,
+    "ThighContactLead": 0
+  },
+  "held_weights": {
+    "TwistHipVolume": 1,
+    "ThighContactLead": 0
+  }
+}

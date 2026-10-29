@@ -1,0 +1,76 @@
+{
+  "id": "6121",
+  "action": "Exercise_6121",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "spine"
+  ],
+  "secondary": [
+    "obliques",
+    "glutes",
+    "hip flexors"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {},
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "repeat_other_side": true,
+  "authored_representative_side": "Left knee crosses outside the right distal thigh; right palm hugs the left knee; left hand supports behind.",
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.3,
+      "label": "Release hands"
+    },
+    {
+      "start": 0.3,
+      "end": 1.3,
+      "label": "Place foot outside opposite thigh"
+    },
+    {
+      "start": 1.3,
+      "end": 2,
+      "label": "Hug knee and gently twist"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold supported twist"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Release and extend legs"
+    }
+  ],
+  "interpretation": "One representative side of seated half spinal twist. Start seated with legs extended and a small support-compatible knee bend; cross the left foot outside the right distal thigh, place the left palm behind, hug the left knee with the right hand/arm, and gently rotate across Spine/Spine1/neck. The5s2/1/2 demo is authored; source workout hold20\u201330s and repeat the opposite side remain separate. Actual pelvic skin, extended heel, crossed sole and rear central palm are supported.",
+  "diagnostic_peak_frames": [
+    24,
+    28,
+    75
+  ],
+  "skinning": "dualQuaternion",
+  "runtime_adapter": "artifacts/exercise-batches/dual-quaternion.js",
+  "correctives": {
+    "names": [
+      "TwistHipVolume",
+      "ThighContactLead"
+    ],
+    "position_targets": 2,
+    "normal_targets": 2,
+    "maximum_source_displacement_m": 0.08646451892475368,
+    "maximum_world_displacement_m": 0.0864645033744287,
+    "inverse_condition_max": 1.0000003576278687,
+    "drive": "TwistHipVolume k is the product of quintic normalized measured Left hip flexion and adduction. ThighContactLead reuses the same frozen contact vector with scalar sqrt(k)-k: C1, zero neutral/held, total contact amplitude sqrt(k)<=1. Both scalars explicit at all151 frames.",
+    "binding_lineage": "Accepted1368 seated binding +255 exact original semantic hip rows; all other inherited rows unchanged.",
+    "contact_additional_vector_bound_m": 0.04,
+    "contact_peak_triangle_clearance_m": 0.001450364014855446,
+    "foot_swing_clearance": "12mm*sin(pi*quinticLegProgress)^2 extra ankle lift during swing only; exactzero at neutral/held/return endpoints."
+  }
+}

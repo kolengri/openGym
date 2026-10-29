@@ -1,0 +1,15 @@
+# Accepted6121 authoring packet
+
+The five-second representative left-side demonstration starts seated with legs extended, places the left foot outside the right distal thigh, uses the right arm/palm to hug the left knee, supports the left palm behind, gently twists, then returns. The catalogue20–30second hold and repeat on the other side are separate from the authored2sentry/1shold/2sreturn demo.
+
+The editable source contains one Exercise_6121 action, the original10582vertex/51bone CC0 body, unchanged Basis/rest/UV/source IDs/topology and at most four normalized influences. It reuses accepted1368 seated support binding with exactly255 semantic hip rows restored to original source weights. Native dual-quaternion skinning requires the unchanged declared project DQ adapter for accepted runtime appearance.
+
+TwistHipVolume combines the accepted hip-volume component with the frozen medial thigh contact field. ThighContactLead reuses that same vector with scalar sqrt(k)-k, zero at neutral/held; total contact amplitude sqrt(k) never exceeds1. The additional contact displacement is bounded40mm, inverse unit-DQ condition1.00000036. A measured12mm C1 swing lift avoids transient foot/calf contact without changing held anchors. Both standard POSITION/NORMAL targets and explicit scalar/reset tracks are exported.
+
+All151 native and actualdecoded frames pass complete bilateral limbs, whole arm/hand-versus-leg, floor/support, positive-area and loop checks. Minimum complete triangle clearance is1.450297mm native/1.450753mm decoded. Maximum decoded/native DQ position difference is7.867micrometres; shaderNORMAL difference0.004782degrees. Six full original-ID DQ/NORMAL witnesses and all51joint readbacks pass. Raw game QA has zero errors across15samples; eight samples report1–2hidden back-to-back face pairs.
+
+Localized compressed shared-pelvis/knee/shoulder crease crossings remain diagnostic warnings, with exact face/frame pairs in the native and decoded reports. Face17419 atf24/126 turns over90degrees relative to the hip-only baseline but has positive actual area/material-frame orientation and no direct nonadjacent crossings; its compressed one-ring remains documented. Native silhouette proofs were primary-reviewed. This packet makes no global self-collision-free claim. The initial hand release is brisk: maximum measured central-palm speed1.511m/s atf4→5; the complete curve/step evidence is in motion-speed-report.json.
+
+Rebuild with final frozen target data via seated-twist/twist_motion.py and build_source.py, then write_native_references.py, export_source.py, verify_export.mjs and verify_runtime.mjs. Declared read-only inputs are in dependencies.json. Blender5.2.3LTS runs factory/offline with two threads. Curated manifests exclude rejected poses, optimizer histories, logs, environments, backups and runtime frame caches. The primary accepted actualGPU thigh/foot transits, held neutral and posterior stretch fields on the exact frozen GLB. Final posterior camera framing is primary-owned.
+
+Independent6539 exact resting-motion reuse is delivered by ../resting-reuse/curated-files.json; its source/model are unchanged.

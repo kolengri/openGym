@@ -1,0 +1,35 @@
+{
+  "status": "native_shape_accepted_for_integration;original_author_full151_and_root_GPU_pending",
+  "component_archive": "shoulder-ownership-target.npz",
+  "component_sha256": "f78f91bbd0c1d64a1d944980993228952a3ec83a50386c332a2e52f02bd1a958",
+  "helper": "corrective.py",
+  "helper_sha256": "e6d91655df864c8331df8c7404b11435db57e303bb5e9ec2ddc8dad26f4a849b",
+  "foundation_sha256": "35502f29ae6ce6f6f8337cd722c79b899871e1364495adae544e6be1e38fac1a",
+  "POSITION_source_ids": 1288,
+  "NORMAL_source_ids": 1403,
+  "POSITION_NORMAL_union": 1472,
+  "protected_POSITION_ids": 2653,
+  "native_lower_axilla_seed_ids": 187,
+  "geodesic_exact_collar_m": 0.025,
+  "geodesic_C1_ramp_m": [
+    0.025,
+    0.085
+  ],
+  "max_delta_m": 0.057562295347452164,
+  "min_pre_normalization_DQ_norm": 0.9005518209555242,
+  "inverse_rotation_condition_number": 1,
+  "exterior_POSITION_delta_m": 0.0,
+  "protected_POSITION_delta_m": 0.0,
+  "NORMAL_delta_outside_union": 0.0,
+  "all151_6014_skin_and51_bone_matrices_bit_exact": true,
+  "sampled_5172_native_states": 9,
+  "sampled_crossings": 0,
+  "game_qa_errors": 0,
+  "game_qa_warnings": 0,
+  "remaining_shape_limit": "Original lower-axilla crease retained exactly; no global collision-free claim.",
+  "pending": [
+    "Integrated5172 all151 native/actualdecoded DQ+NORMAL/support/clearance/loop/export/game QA",
+    "Root actualunshadowedGPU acceptance"
+  ],
+  "no_runtime_vertex_cache": true
+}

@@ -1,0 +1,46 @@
+{
+  "read_only_workspace_files": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/bodyweight-five/README.md",
+      "sha256": "817935a93b288b2a2108a685f0efb0a6865dfb9e70d5750994a97b6d45d24fd7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/1368/source.blend",
+      "sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/palm_frame.py",
+      "sha256": "31b8baf5d66e9ebe3f9b4eac1efcdeace1dcd2d48345d8e3a84cf8d106da32d7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/resting-repair/resting_checks.py",
+      "sha256": "1f421c67b98d4110d345d7c025fd6714dfaef11cbd5a62b80efd39eb7c34d2b3"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    }
+  ],
+  "original_CC0_body": {
+    "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+    "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+  },
+  "software_requirements": {
+    "Blender": "5.2.3LTS; /opt/homebrew/bin/blender, factory/offline -t2",
+    "Python": "Blender3.13 + existing local SciPy1.18.1 for cKDTree exacttriangle broadphase; no environment copied/installed.",
+    "runtime": "Existing project Three GLTFLoader/AnimationMixer and unchanged declared DQ adapter.",
+    "mandatory_game_QA": "Read-only ~/.codex/skills/blender-asset-qa/scripts/qa_check.py and _bpyx.py; raw outputs delivered."
+  }
+}

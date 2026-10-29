@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "source_sha256": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+  "game_profile_zero_errors": true,
+  "raw_report": "raw-asset-qa.json",
+  "warnings": [
+    {
+      "frame": 33,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "frame": 108,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    }
+  ],
+  "warning_disposition": "At right peak33 the game checker reports2 hidden back-to-back face pairs and at left peak108 one pair. Retained as small posed local diagnostics after native visual acceptance; immutable original topology is preserved. These do not certify global collision freedom."
+}

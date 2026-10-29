@@ -1,0 +1,3222 @@
+{
+  "batch": "008",
+  "exercise_ids": [
+    "6121",
+    "5172",
+    "1987",
+    "6014",
+    "1986",
+    "6539",
+    "3214",
+    "3204",
+    "4935",
+    "3483"
+  ],
+  "packet": "accepted_sources_and_reproduction_dependencies",
+  "model_revision": null,
+  "policy": "Explicit source/asset/family manifests and selected final evidence only. No logs, trials, caches, environments, backups or runtime frame streams.",
+  "manifest_self_hash_policy": "The generated packet manifest is staged separately and does not hash itself.",
+  "files": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "bytes": 14997498,
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "bytes": 18948,
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/bodyweight-five/inspect_situp_contacts.py",
+      "bytes": 13852,
+      "sha256": "d13d9d0ca70ad294b82694f93492283bf202eefa5400daaaeccefb8080a7c034"
+    },
+    {
+      "path": "artifacts/bodyweight-five/README.md",
+      "bytes": 9861,
+      "sha256": "817935a93b288b2a2108a685f0efb0a6865dfb9e70d5750994a97b6d45d24fd7"
+    },
+    {
+      "path": "artifacts/chaturanga-heatmap/heat-field.js",
+      "bytes": 2886,
+      "sha256": "5ab692d60bb56eaa12b4364cefc3a49b12573c3fca659445deffd5a0863c0e6f"
+    },
+    {
+      "path": "artifacts/chaturanga-heatmap/heat-material.js",
+      "bytes": 1779,
+      "sha256": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-002/viewer.js",
+      "bytes": 14573,
+      "sha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/assets/1777/build_motion.py",
+      "bytes": 9938,
+      "sha256": "469864757ca89091975aecbabf667fa4e0b7a9c31333bb426f381c88e9ed826e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/assets/1777/solve_grip.py",
+      "bytes": 3096,
+      "sha256": "5719bfa72ac104a6c75a1cee7db6e72a4db4d6fb978e52676d01ee6522dbb8ed"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "bytes": 4194,
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-004/assets/1977/build_motion.py",
+      "bytes": 10412,
+      "sha256": "1988b082fc18ca614869dad8dccae3a1e25bd5cd242022716f55c746f57fc1d2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-004/assets/1977/landmarks.json",
+      "bytes": 31870,
+      "sha256": "a2a33f7cdddaf1aee39506c77ef745f13623d19ae858a6629e1815692cfda19c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-004/assets/1977/local_weights.py",
+      "bytes": 2370,
+      "sha256": "bb27a99498178b2611dc6204d78647068f76b3c479fc9922ffc712536de93842"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-004/assets/1977/solve_grasp.py",
+      "bytes": 2384,
+      "sha256": "4b94ab29524a7d50be686822f5aa313d547f50f1b10b1186d52efef40b16ae84"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-005/findings.md",
+      "bytes": 6685,
+      "sha256": "46d1e810fcd1025b45b5df10fa39ffc99e336118454cd6dce8057e603d9a00bc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/upright-cardio-family/binding.py",
+      "bytes": 2485,
+      "sha256": "1e98c62c894dcfc97264fe54590fe24c88a30a3d895ee9ec75b65daa445dfecb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/check_motion.py",
+      "bytes": 5197,
+      "sha256": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/plantar_binding.py",
+      "bytes": 1914,
+      "sha256": "72676e1d9856fdc0f3c534590c345405a5a494cf5a0c82df0dd3d5b4abfb6cdc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/triangle_intersection.py",
+      "bytes": 1428,
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/1368/source.blend",
+      "bytes": 14897509,
+      "sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/4365/delivery-report.json",
+      "bytes": 12791,
+      "sha256": "432a258fd229a556abb4bef0c1e3537ac5cb9d9020ceb0584cec7812e2501bc0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+      "bytes": 960332,
+      "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/4365/source.blend",
+      "bytes": 13898893,
+      "sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/motion.py",
+      "bytes": 6147,
+      "sha256": "a0bd4672d11bb2bf08d7186866d8c68b207f48a8246cd5122d0bc43270833920"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/palm_frame.py",
+      "bytes": 1117,
+      "sha256": "31b8baf5d66e9ebe3f9b4eac1efcdeace1dcd2d48345d8e3a84cf8d106da32d7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/resting-repair/resting_checks.py",
+      "bytes": 2770,
+      "sha256": "1f421c67b98d4110d345d7c025fd6714dfaef11cbd5a62b80efd39eb7c34d2b3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/resting-repair/runtime_checks.py",
+      "bytes": 2198,
+      "sha256": "e0cec1e6fb6701f4e4a0e5a298eb2ac1294e371b60884dc892f8ac6a83f0d4ea"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/.gitignore",
+      "bytes": 101,
+      "sha256": "ff10b1df20901c907cc918930457c2b695f25d5daddb71bc768e9d33a5ca0cde"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/asset-interface.json",
+      "bytes": 3714,
+      "sha256": "acb7430e0b2aa17fbf665f2bb3253064b8302d2adad30a0580f683e04940e396"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/asset-qa.json",
+      "bytes": 779,
+      "sha256": "c654fd1cb0092e827aaf7c94cc1a80008db24034355cd5247dc7bd72598471a9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/authoring-context.json",
+      "bytes": 61217,
+      "sha256": "aa3b4b6facd489f9f3e97441cc3d546df05f12cffb6e34a8e2f5c30ae47ecf89"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/authoring-family.json",
+      "bytes": 106,
+      "sha256": "60190cfd2f59063be9bc76e256ed436690387943136d34c98ff398aa3127fa71"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/cameras.json",
+      "bytes": 351,
+      "sha256": "c38c186f9e54bea6aa5ef0c9f56182a5029d0d4ddb0d4f93ece1a8d2680a6e5b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/clip.json",
+      "bytes": 4153,
+      "sha256": "84490cddc9964895f80de84ff25f73488d7e3fe3a1b4efd650b43d5b3c20f39e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/curated-files.json",
+      "bytes": 7372,
+      "sha256": "055ed96fadbd114dfe690cc34cbd9f4ce38d69eb5bf79b9b9009884291310f4b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/decoded-physical-report.json",
+      "bytes": 728483,
+      "sha256": "6a91bf08b8f989fefbc243c41be9b98a1c1dbce66b7f25161d79c8f0eefca1b8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/delivery-report.json",
+      "bytes": 6066,
+      "sha256": "c5246afe19e67a6a4626c2e3e11b6276fcbd63a22b12ee4791e9147464c0a81e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/dq-reference.json.gz",
+      "bytes": 1434583,
+      "sha256": "d21c38e8841b4229c1fc7a2793acaeb5750753c88b834e8ddfb9c802a7c28722"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-peak-contact.png",
+      "bytes": 425210,
+      "sha256": "5b4a9585c433b6b5aed403ee1b7751447fa69e3de30b2c92f4f4ef2250584443"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-peak-posterior_contact_oblique.png",
+      "bytes": 248328,
+      "sha256": "288aceaac1a936176a559b571a9cb1bf2fa48c8a004b1311a1fc7e86f4bac894"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-peak-side_whole_body.png",
+      "bytes": 238140,
+      "sha256": "78c0a0d1f1cca1c005f129c2726d3d4ee5bb1bf44c0d9b355138d4a5f4c1c23d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-proof-reuse-receipt.json",
+      "bytes": 959,
+      "sha256": "968ae71dc5c8fe80ec50a69106f8e19ffdca962f1f2959497d214e64d5a63958"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-release-posterior_contact_oblique.png",
+      "bytes": 263620,
+      "sha256": "336a281a0012404f6b2ef902280977f1aea3fac483b50503c6fe868cd35feb82"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-release-side_whole_body.png",
+      "bytes": 243287,
+      "sha256": "43488eee14b04ebce8d52831b46082ce3046085040af6e375ba67c4ee8e8a32d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-start-posterior_contact_oblique.png",
+      "bytes": 256715,
+      "sha256": "354cfa7343e820906ddc583ec76670d0c2209cfedd59c6d02f65c1e7cc882796"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/early-start-side_whole_body.png",
+      "bytes": 232792,
+      "sha256": "066dafe286d369ea1dbe6e0f17ed14d0861af38b206c40d3c9c63ae6d9e401ae"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/export-verification.json",
+      "bytes": 21818,
+      "sha256": "7918dff5f1c07ec6ccb7a7dad5bf33968869d0995c441cc299e994bb1ca49bec"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/local-binding-report.json",
+      "bytes": 618744,
+      "sha256": "54893cfc22dd149166d9fbb47cdb7f4c98fe1fd724015c70c18345b94dd2270d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/motion.glb",
+      "bytes": 1061416,
+      "sha256": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/normal-reference.json.gz",
+      "bytes": 1740546,
+      "sha256": "3e32e4ce306fff331cc93c1730da2de464211ee9e2b1e91b4db87e0718820098"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/pose-samples.json",
+      "bytes": 41181,
+      "sha256": "bb11c7512e1a01f4aa3b4f313d6bf401e12bd3e0760a9981e7811e85e9a7e265"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/qa-random_back.png",
+      "bytes": 390434,
+      "sha256": "0641af4c65049c1e4621ffa5104d83464c311877674b18cc87fed054db7c0a60"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/qa-random_front.png",
+      "bytes": 392868,
+      "sha256": "e0364a55df4a18c9dfa27273f786876241f134ceb73f0dbd1f1675ee5556fd36"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/qa-random.png",
+      "bytes": 695143,
+      "sha256": "e1f022419bf06caf12cb3297a8e6a101843b15e93e7873c136c565ad6f55d0c9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/qa-render-receipt.json",
+      "bytes": 1701,
+      "sha256": "e4c5ef55aa0fbd93c47ced2f071aaf31a5ae7f81ded37bdb8cda269629b13e46"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/qa-wire_back.png",
+      "bytes": 437747,
+      "sha256": "9b346faeb481f12166b0918e314a4a7a593e4d940fb93afa10c91b5ba989543a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/qa-wire_front.png",
+      "bytes": 435684,
+      "sha256": "421c62796e31848e84b655a855e4b9928e3566b864ce07007921da1bd2db8c06"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/qa-wire.png",
+      "bytes": 744473,
+      "sha256": "7b5d750bfa4fea0a6527153b0302fe2c6e717f8d3e80e5859594b26d162265fb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/raw-asset-qa.json",
+      "bytes": 5280,
+      "sha256": "17934cb88abfc429bbeb4e8811e2bf49b5fd05461b9ecdd088fe29d19cb62708"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/README.md",
+      "bytes": 944,
+      "sha256": "419793d2dc09f0d55349ce6a3195e173a12dcd05e6e197b677a066042033d6e7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/runtime-surface-reference.json",
+      "bytes": 2166304,
+      "sha256": "41391bad898dd99412d949e230f7e5e6c2987abcc9715ecd720bd0a6bcbbdd96"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/shoulder-binding-report.json",
+      "bytes": 293000,
+      "sha256": "1f6bc1a38e4743e2f24e2fd02a56c59499eef36ad73157c75478aa1832182f22"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/source-verification.json",
+      "bytes": 766,
+      "sha256": "4e96af5f00ecb1143b06131441c1abdfd2c5209f501822012905b69f5d6260c5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/source.blend",
+      "bytes": 14112526,
+      "sha256": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/surface-contact-report.json",
+      "bytes": 728323,
+      "sha256": "208370ad3e92fb3e5930afa480b36238be1f2dc80fa62172d6df2ca52e66436d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/surface-landmarks.json",
+      "bytes": 435707,
+      "sha256": "4ddd4bf28c29ab628c0c074052538d97a92ddbff09b4bcb0f85eec27a48b4f32"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f008-posterior_contact_oblique.png",
+      "bytes": 252224,
+      "sha256": "0832588d061187fa12702bdf7c48bc48ec6808ed70cad209cf04e5a8b343461e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f008-side_whole_body.png",
+      "bytes": 231699,
+      "sha256": "d5dd27c0cf38904bccd2be7663c6ac55f4a672677ba563ed1c3542dc0746da6c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f022-posterior_contact_oblique.png",
+      "bytes": 264330,
+      "sha256": "755a738e01cb117a4fb9edf295d8f63015fcd4e5fa3a15e58e5d1de5b1012cc3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f022-side_whole_body.png",
+      "bytes": 245155,
+      "sha256": "20d41f49095ca39a2db8c5d988bf6fdad3973858bfcde1f8cc4ea1a9b198932c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f030-posterior_contact_oblique.png",
+      "bytes": 263620,
+      "sha256": "a4b7c46a8365f57a474c2a7f8408afaed365e29a743ed160449ef03ccc6f7242"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f030-side_whole_body.png",
+      "bytes": 243287,
+      "sha256": "663bcc40ec7a3e8c7da880a9525a01f46395a32389c0b3b07fe54311625482c3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f046-posterior_contact_oblique.png",
+      "bytes": 261642,
+      "sha256": "a1000c2be23de4590dd6d306559da20401dd23335b655ac1b98ad9c069c05a75"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f046-side_whole_body.png",
+      "bytes": 253377,
+      "sha256": "1e0d7301286e2a5f43908dc711927bb015f2372964a43f8dc92beaf72c931f3e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f047-posterior_contact_oblique.png",
+      "bytes": 258680,
+      "sha256": "e2c38715cd71ddf46d179159ba770198ff406b4aa06d40e41531bc97c0a96e02"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f047-side_whole_body.png",
+      "bytes": 251376,
+      "sha256": "308510015109a4119e4333a01bd2181982843f378a50f52d0a1cff3251362f28"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f057-finger-detail.png",
+      "bytes": 357807,
+      "sha256": "11b715d75bf59d013b7d6df02b2fb3cd15b8ab08054cf136fb52c44bcf0344a7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f057-posterior_contact_oblique.png",
+      "bytes": 248172,
+      "sha256": "aacdaae3bfddf3ac3a878ade22235834a28daa0c70b429371ace234a05fa5236"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-f057-side_whole_body.png",
+      "bytes": 237737,
+      "sha256": "0895e68b27d68a8ebe923838dd12d2ff6de9bfa56cbf03d1301742efeeecb947"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/timing-proof-receipt.json",
+      "bytes": 6358,
+      "sha256": "fc82d76cbe40bb9317aae7c8f8c17e40347ce498c1494b93d44987570538500e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/transport-inventory.json",
+      "bytes": 559,
+      "sha256": "4233e9a1979354a061aa5eee9fddb814233ad532c63a9ae3bedb6f2e263d9687"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/asset-qa.json",
+      "bytes": 681,
+      "sha256": "b5941d3c6e1f95fb8d014fbeead6c7c8d869c9f53ea68944fd3178b1f336df99"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/authoring-context.json",
+      "bytes": 61911,
+      "sha256": "7db29e227cbee9cf7a4e488a88ede01ec6d84fa40f08800897ecd7eac972ffed"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/authoring-family.json",
+      "bytes": 106,
+      "sha256": "401599d9fd6e7891fdebd0c5a248000950029f7dea632d7d1e947f5a2e9f5aaf"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/cameras.json",
+      "bytes": 358,
+      "sha256": "77f8499e1e97bbbd42750138dad11a673bad43375a464d4aa211e32f1e8005af"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/clip.json",
+      "bytes": 3594,
+      "sha256": "8fd059e223b6a84c31842e51868a4d41ca573e88b10a51882a5be1f3c968f487"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/curated-files.json",
+      "bytes": 5358,
+      "sha256": "3c3feed3c4b7d8fc0990e22be7d9cdb017b69e48a2222d7a6112610278fd45ef"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/decoded-physical-report.json",
+      "bytes": 605161,
+      "sha256": "3d769078d212fae16802fe558371d5c235f002d3351e9573c3cc54a3a10daaf2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/delivery-report.json",
+      "bytes": 1383,
+      "sha256": "edbcd548584abdabf53a580a918ef3deba48b1ffae80e84447ac91aaa0606177"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/dq-reference.json.gz",
+      "bytes": 1435536,
+      "sha256": "eecb33d34198a8199ef95a12c0c85f6c8925ecea08899584fd5a4ca7194c33ff"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-peak-contact.png",
+      "bytes": 552953,
+      "sha256": "c806343f557bd0cd4802eccb4fe143df12fc7319b75f0fced53f990c24d012ba"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-peak-posterior_contact_oblique.png",
+      "bytes": 252093,
+      "sha256": "4da0ed781db7527f8abf53a603be6a5cf800aa42af66aeedb30e0e909950607f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-peak-side_whole_body.png",
+      "bytes": 241451,
+      "sha256": "e7e912720374b832598396573887cbc632000f1776585b575538a4ddc080c7ef"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-proof-reuse-receipt.json",
+      "bytes": 959,
+      "sha256": "fef294081af362d6a4b8f4134d6b072383a0e9c3a09baccf7eb9ead6df005a38"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-release-posterior_contact_oblique.png",
+      "bytes": 253771,
+      "sha256": "e759e57d1ae6a6479b80deb7fdd31a8f32ace4bcf18c0c4f576d4304a18526ba"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-release-side_whole_body.png",
+      "bytes": 244746,
+      "sha256": "c2605dd7d5cd91ae0b98eca70b996c6ff4a640084302ce00fe5e4c9f3e8143de"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-start-posterior_contact_oblique.png",
+      "bytes": 256675,
+      "sha256": "c244dbd7299b2fbacf6ac725d05a062f39c38cdb393c0f132188cc63eeca6d21"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/early-start-side_whole_body.png",
+      "bytes": 232790,
+      "sha256": "4b4bc52433c5581be71492e4e1be5bca250a224e0a44431dc86a5ae7cb68df19"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/export-verification.json",
+      "bytes": 21814,
+      "sha256": "213937b204d6cf25397d3ae721c68cb39579d75869a21adb6a8f0b74aa73ae81"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/local-binding-report.json",
+      "bytes": 618744,
+      "sha256": "54893cfc22dd149166d9fbb47cdb7f4c98fe1fd724015c70c18345b94dd2270d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/motion.glb",
+      "bytes": 1061416,
+      "sha256": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/native-reuse-receipt.json",
+      "bytes": 739,
+      "sha256": "354d844eac2ab8024af185a4558437a48c0baa4a870f6958c6bd58292bd15bb4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/normal-reference.json.gz",
+      "bytes": 1741594,
+      "sha256": "a76d5dd5a7b5f775d9912ce0c885ae3149e5472b579d775f3254780b0bb493d9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/pose-samples.json",
+      "bytes": 41334,
+      "sha256": "7fd02b20e6c88345e99bb272cb737210394c85eb7c5837af7a162650635bde05"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/qa-random_back.png",
+      "bytes": 391600,
+      "sha256": "29ce8788785389f0e9c0368c8878da54d85ba5bac9a3fb6368c4303595913df1"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/qa-random_front.png",
+      "bytes": 390672,
+      "sha256": "44754e63d8ad83b78218179d9104beb49ca4664ab351dc97a08085e674dc6160"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/qa-random.png",
+      "bytes": 694868,
+      "sha256": "2c5b2d3f886e8c7b44c50e7ae50b4ed949dfe5bc127492f568b6775a1e72d152"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/qa-render-receipt.json",
+      "bytes": 1701,
+      "sha256": "56a6e665b0a55978a400b00aa1f8542fedbc13845fa6700c48b6376919832e11"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/qa-wire_back.png",
+      "bytes": 432795,
+      "sha256": "7185e97a554743808b74705363b4e6a61f9efbfd2b4da5a69e28db308712bf9f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/qa-wire_front.png",
+      "bytes": 427846,
+      "sha256": "5e978f2f548e65054afd5fd41304fc98ca550d6a4f5b1e8246126d3a7037d138"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/qa-wire.png",
+      "bytes": 740976,
+      "sha256": "2eb5103c7b5d008d8a5853daf036b7042643676a2167fb4a9f90dfb599397269"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/raw-asset-qa.json",
+      "bytes": 5566,
+      "sha256": "650aaaf5170ca235690e893dc2a71f5d624ddc21385c2d7b5d62c22d7534fd84"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/README.md",
+      "bytes": 921,
+      "sha256": "954d68f1dc39c70dfb66df1720d1f9d1f5e37f4cdc78593475bee68a1aa5892b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/runtime-surface-reference.json",
+      "bytes": 4819378,
+      "sha256": "0dd7e25e00bf5eede7ed568b27064b9182f8f1d1bfa31bf0686c98c4246a9120"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/shoulder-binding-report.json",
+      "bytes": 293000,
+      "sha256": "1f6bc1a38e4743e2f24e2fd02a56c59499eef36ad73157c75478aa1832182f22"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/source-verification.json",
+      "bytes": 1539,
+      "sha256": "dee19abdb552b083941302abb61737e62bfe78290606e1aeb44e36a87c503373"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/source.blend",
+      "bytes": 14112526,
+      "sha256": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/surface-contact-report.json",
+      "bytes": 605979,
+      "sha256": "f55ce5b0cc1707e60bf41646aa72c63dc75855264d03ac1644ee5d4e31114134"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/surface-landmarks.json",
+      "bytes": 1208670,
+      "sha256": "5b69ad356718413c61af38b0d76abb6b82f904b43c69fed67a67c26d8baaf676"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1987/transport-inventory.json",
+      "bytes": 559,
+      "sha256": "4233e9a1979354a061aa5eee9fddb814233ad532c63a9ae3bedb6f2e263d9687"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/cameras.json",
+      "bytes": 341,
+      "sha256": "e17ac13e5faeced049de04e2c1c2137a7f2eb87d568d2ad0d7b30f196379daf2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/clip.json",
+      "bytes": 2824,
+      "sha256": "faecbdc72ab87720589db13867aaf47a94b165f860cd481a6c30e066cf3b933b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/curated-files.json",
+      "bytes": 8876,
+      "sha256": "e13f22941a1a1c36bcb905afcfacba3e10c85af09ed09cb1668767efd9a7ecae"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/decoded-physical-report.json",
+      "bytes": 316122,
+      "sha256": "97007ebfc0fde7bec1c1caa06218d8b7603c86283f9905403080f2e6d7139f29"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/decoded-source-readback.json",
+      "bytes": 755059,
+      "sha256": "2fe7c9331cfe13833fe84b554cc542fa70c0660f4c5abafa857086fb4d727f4b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/delivery-report.json",
+      "bytes": 2458,
+      "sha256": "333b5f36475f41d326844c78c03f3eb1d288694c02b00c353c34269dea3ec12b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/dq-reference.json.gz",
+      "bytes": 1410430,
+      "sha256": "9449eb2ae56494ca8ddb150468f085592bf118daa043390620dd3919ba39449b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-curl-oblique_whole_body.png",
+      "bytes": 343411,
+      "sha256": "c3fd134b66f1e190eae26a707111fcf552ec87a5281ef06a379a19e5d7ee9a25"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-curl-side_whole_body.png",
+      "bytes": 287630,
+      "sha256": "e6787dd16f0a8f414bc6e6f2350689340c5fbe634594827b6ecb46010410668c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-lower-oblique_whole_body.png",
+      "bytes": 333663,
+      "sha256": "aeba4e1948270619bf073ec8dc1bb859da8390719e1cd1d88134105e4fefeafd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-lower-side_whole_body.png",
+      "bytes": 276234,
+      "sha256": "9075a1525a1e709063cf86a7a489d974721e356638a14615099929317b647069"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-peak-oblique_whole_body.png",
+      "bytes": 341812,
+      "sha256": "730d46c65f4b37acde3b22d8af09756771a7ca4f52bbd24209a0640eaddae097"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-peak-side_whole_body.png",
+      "bytes": 310864,
+      "sha256": "297e572e04a13d4c64d9e2eef0be0f88f63bf0294e8bd0f3beb2dc548fe84882"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-proof-readback.json",
+      "bytes": 92136,
+      "sha256": "671b84595e5724ee2285bb4a475997e5896630382afb2466c844298376d88814"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-return-oblique_whole_body.png",
+      "bytes": 290730,
+      "sha256": "dfc34b83aa0bf097cbf9c02ca347646914d48b0229d744de6793718f6e6a0ad7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-return-side_whole_body.png",
+      "bytes": 257603,
+      "sha256": "d8e52dc59208246f4ef9efd546272aecebc45b31b49ab63fc9a1a9d01f0eb43a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-start-oblique_whole_body.png",
+      "bytes": 290730,
+      "sha256": "85ede5ced283d4380b8cb9d675c4932013556755b8c315e015811159e0d1a432"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/early-start-side_whole_body.png",
+      "bytes": 257603,
+      "sha256": "d61724935a1d1d98ca1f785d069eca56754654736b2a7f2cf78566872d8d37cc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/export-verification.json",
+      "bytes": 21792,
+      "sha256": "3c1f228733843f894029ee95856256e1202120cd8a2b1d3891de43ead0237690"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/local-binding-report.json",
+      "bytes": 2498657,
+      "sha256": "a74dc91974f7fb50bb3c8460450a0acb0bf05fe092e006ea32274b209bf45be2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/motion.glb",
+      "bytes": 884012,
+      "sha256": "3334f0c740b2d506b200c619244d8cf5608aa9691562906a1ab33cca203119d0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/normal-reference.json.gz",
+      "bytes": 1737475,
+      "sha256": "ef6511d9aab270896e3492c25ecd82e45761c265633e37e99a12635c9795df54"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/pose-samples.json",
+      "bytes": 48283,
+      "sha256": "1eff9ca0f5a4248c1390640c8151977a38c3b31bb94aba7ee4dad810c5c389be"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/qa-random.png",
+      "bytes": 990976,
+      "sha256": "740facb6a9180c2811d58ca2269767ae3b263625a93d996d4562a2ed503b940a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/qa-wire.png",
+      "bytes": 1044322,
+      "sha256": "f16a4f6cdd1fc57be1f5443daf3bc64a3dd9bfce4cd5950b4805ee1110347fa5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/raw-asset-qa.json",
+      "bytes": 3626,
+      "sha256": "422efeac2409a4e507ad6940549c5b1cc6abf65d6ab0925b44b54dad4613824a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/runtime-surface-reference.json",
+      "bytes": 5195781,
+      "sha256": "e2744f3df32cf237a0e91c2caedae01a6da6c15b89a1b4231de3d4ae98b17038"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/source-verification.json",
+      "bytes": 755059,
+      "sha256": "2fe7c9331cfe13833fe84b554cc542fa70c0660f4c5abafa857086fb4d727f4b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/source.blend",
+      "bytes": 13730100,
+      "sha256": "0c8801cec290f641d3365fbbce7e0b37cee1b8e47a6514a553691f23580d4b65"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/support-plane-peak.png",
+      "bytes": 308874,
+      "sha256": "217d284b7d7943ce268aea58fd8ceb3065ed0fc50a6a46e0e0cc591bcb813e81"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/support-plane-start.png",
+      "bytes": 258292,
+      "sha256": "364c5d7ecd33b1b01c8dc663a3834cf3267c750e3b32ca44a78878ab1356c8df"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/surface-contact-report.json",
+      "bytes": 316160,
+      "sha256": "a6833145035c52a8cdb20ede703b89b22707f9f8cc741168aa989cbc978f247a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3204/surface-landmarks.json",
+      "bytes": 487799,
+      "sha256": "6458240897b42dd29527931a98eea09e7311240cd7889e15d5f3cdde21b6d30b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/asset-qa.json",
+      "bytes": 796,
+      "sha256": "18ef19dc32e648fe20aca6a73bac42109353e484fe98d90a2a20acb2cee97155"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/authoring-context.json",
+      "bytes": 64908,
+      "sha256": "676ba945eee8153e4b40ef135084851062f36802aecbf5c287ce4e2326f94209"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/cameras.json",
+      "bytes": 348,
+      "sha256": "9cf2a0638170400f36b2898604e11e39d667c7fb4a40af243775154bc94443cf"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/clip.json",
+      "bytes": 3114,
+      "sha256": "503d427faf5ae75a4b278624432c5de309cb5f51428ccf50c41e3125df811800"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/curated-files.json",
+      "bytes": 1480,
+      "sha256": "d4314fbeade81cdced1aeecf14e1e02237be490c4e1d0f772dc0208cd9be3936"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/decoded-physical-report.json",
+      "bytes": 1213273,
+      "sha256": "31d9b6f1e997d750400371183e8490a48cd81014b9c66c0f1aa070e72d6969ce"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/decoded-source-readback.json",
+      "bytes": 800,
+      "sha256": "2396b7b6131a5acaef00811e18ff097ec3a3faa991eb92b3248ab5ebf660924c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/delivery-report.json",
+      "bytes": 7687,
+      "sha256": "56b418c63f76ca020208d5e701d48f54f55808314b530888a17e3962045de8c8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/dq-reference.json.gz",
+      "bytes": 2881403,
+      "sha256": "039c8a6dcf3415e3ab41cef1041c4afb9a3d9bfc9450bb4ba14ddffc0f42b2fa"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-balance-diagnostic.json",
+      "bytes": 17491,
+      "sha256": "1bc6a487088199777c706e23d2cd02cbbc54201e8f3942207edfd46644e4ee57"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-left-reach-0.png",
+      "bytes": 247958,
+      "sha256": "dd382511b215dfecd2719885ab9612881df2ad544520a6e98a4aed75e0cf6dfa"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-left-reach-1.png",
+      "bytes": 232495,
+      "sha256": "74e7875d0d82e939f97989f2bbd91ac2a50c674b5fe05cb1be6723e3fb152681"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-left-return-0.png",
+      "bytes": 243509,
+      "sha256": "6d8f4f714ec9be8f01ff33e196b6158aefa65244c2f5e7d6f651b0c4c613fef4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-left-return-1.png",
+      "bytes": 280352,
+      "sha256": "4b7c36cbec3e4093c0626d050e8363502512ced16a0a68cdb0283de94c5d2edd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-loop-return-0.png",
+      "bytes": 247081,
+      "sha256": "6a3080a56bc1d6b81cfd93fc4ca96748e9db46d7f750e6e2f4aca55b8eb57cc3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-loop-return-1.png",
+      "bytes": 276827,
+      "sha256": "144abfa8245edfe4ead2ac49e0df17aeb5327b46a2ff1839a312cebb19920039"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-report.json",
+      "bytes": 2988,
+      "sha256": "31e4c186d888ad93605adada3080591e6aae9f3c8cf0ed5ffe5c9b2aad47e2c3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-right-reach-0.png",
+      "bytes": 246601,
+      "sha256": "f43bfeec35c81a1ad0bebd148d3241fe8fc8f80353a4dc3f98affc666131811d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-right-reach-1.png",
+      "bytes": 222216,
+      "sha256": "1a661bee04904f3a66d0da247adc8ead93cf518afcf39fd27243e24dd4f31059"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-right-return-0.png",
+      "bytes": 248540,
+      "sha256": "fc8dc09a03e89b496388e09009e09f4a78141557b617ed7075b2eb28f6ec3216"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-right-return-1.png",
+      "bytes": 274519,
+      "sha256": "30e20cef3231568c9ec84e731e64347da441d5291c5006eb18efd7d4a8358f0b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-start-0.png",
+      "bytes": 247081,
+      "sha256": "ac36a0cf506f702c2b499d398e8e8fead09162147f25290a16a6c6da0397a406"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/early-start-1.png",
+      "bytes": 276827,
+      "sha256": "f7d5c38f8e1d6fb51e63ac51915a854691970e4c3172d64d802003fdbcb7ac51"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/environment.json",
+      "bytes": 978,
+      "sha256": "589e10f05fe74379ce4bcc90d34220fe0a7333d3e086c8c9d7789708dbcf66fa"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/export-verification.json",
+      "bytes": 22396,
+      "sha256": "ab55c6e5ce96df9cf2e4ad5713c4ac9c88af488d8b1e0f34c52b243403c88325"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/local-binding-report.json",
+      "bytes": 618631,
+      "sha256": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/motion-witnesses.json",
+      "bytes": 115738,
+      "sha256": "7609deb07be2bb58755555c877edd66c87b0fdd6f896adbd0197bcaeffedd337"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/motion.glb",
+      "bytes": 895544,
+      "sha256": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/normal-reference.json.gz",
+      "bytes": 291597,
+      "sha256": "47eb392dcf310708b33ed3f42709ee4b674333d1f1b4c89bc4d1f6f1ac43ca1e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/pose-samples.json",
+      "bytes": 49443,
+      "sha256": "f925aeaa256b2c04a93ad9d261bc4d30935f918d4c06bbde83a7aa231367776b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/qa-random.png",
+      "bytes": 671492,
+      "sha256": "00b30fac785af32a5ae0a47a76a56f39770908afaf432b77a0dc467dec6c350c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/qa-render-receipt.json",
+      "bytes": 1396,
+      "sha256": "55f128999da72239a9f08eb6673437f35a12c3efe1f19a4407b488026be6083b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/qa-wire.png",
+      "bytes": 686097,
+      "sha256": "79dc06c1df62a73749f6ee839ec6ee7846520150f8416a2ac39eb40bf977a1f4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/raw-asset-qa.json",
+      "bytes": 5209,
+      "sha256": "324a2cfddc0327ca29d70fb7b8872f85263ff6bc3ccd4f87e20c6feb60f9fc1a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/README.md",
+      "bytes": 1377,
+      "sha256": "4d825b3a72a2069691f393143a9ca0e3ac5452c9d2c0617273b06e5b94f14e89"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/runtime-surface-reference.json",
+      "bytes": 976311,
+      "sha256": "3a433966e9e209a86960096080d75174f2c382c22212b94d429968e8126c898f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/source-verification.json",
+      "bytes": 800,
+      "sha256": "2396b7b6131a5acaef00811e18ff097ec3a3faa991eb92b3248ab5ebf660924c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/source.blend",
+      "bytes": 13827717,
+      "sha256": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/surface-contact-report.json",
+      "bytes": 1213489,
+      "sha256": "76effa50470a99e818cf34bc366627999b5209a06b2a5c313d64e55c57142ec9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3214/surface-landmarks.json",
+      "bytes": 482290,
+      "sha256": "a0ec1acc7ae35ac1c25bdac074cea1a01cbbe2b950b2cd48a116779801f622cc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/cameras.json",
+      "bytes": 343,
+      "sha256": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/clip.json",
+      "bytes": 3046,
+      "sha256": "e05e2ddfb6e894025da5154d30fce26554bb4e8c6d19d0a477b75dd06e330c6c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/curated-files.json",
+      "bytes": 8915,
+      "sha256": "28961977d6e3e99a76d950f4996f4b8e00694bbbe69c20ff9a6804a21c754fc3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/decoded-physical-report.json",
+      "bytes": 290317,
+      "sha256": "632367a408370d713eb41424f14176c9560500b07ee9ee1af7dadb5e26eca08d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/decoded-source-readback.json",
+      "bytes": 755080,
+      "sha256": "2192a9c99bcdab14e1e898ea0a36edb44b1346f7040606cde24015fca8c2eeaa"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/delivery-report.json",
+      "bytes": 2855,
+      "sha256": "9ced9ba7947e0fe91034b3f5063c82001c62f969aedb07e7b02d1a8961b255db"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/dq-reference.json.gz",
+      "bytes": 1409546,
+      "sha256": "a6b0b15eb0e5ae988714190331adb935ce161117d1a207d2e3ada9890bed6298"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-hips-oblique_whole_body.png",
+      "bytes": 272333,
+      "sha256": "7485cb96d604850015117681325973c3bec783f8d06611d84fbcae7c79be98a0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-hips-side_whole_body.png",
+      "bytes": 237354,
+      "sha256": "0bb9ebe364104b2a866667ae4dc0fcc05c08bc3128b669d4996f5d9b2c33b774"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-lift-oblique_whole_body.png",
+      "bytes": 292506,
+      "sha256": "3f53be63d293c236b78d40b2bdebf6ec210192d7a031f8f87acbff2dc4e0e03d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-lift-side_whole_body.png",
+      "bytes": 240454,
+      "sha256": "0e99a19561d9327a276097fe4116d69556636b9ce052388f733e17827d098f7d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-overhead-return-oblique_whole_body.png",
+      "bytes": 292506,
+      "sha256": "abbf2fe37fbb9087d94a5896f0545a0471796539dc693aadb86a65c8c2c80f89"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-overhead-return-side_whole_body.png",
+      "bytes": 240454,
+      "sha256": "1772351770e0ca6ff19df3d3c4ac7bb1d20b756359f01f4e22034aa6db0b0119"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-proof-readback.json",
+      "bytes": 84939,
+      "sha256": "874276ebd1fc08c05b90e4450367367b28adea3be3597a250457eb20391624fe"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-return-oblique_whole_body.png",
+      "bytes": 299432,
+      "sha256": "7e068489616a7e4f45f16407f0edb696992a20d27d7f5ccbf1e1c173b58a9cda"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-return-side_whole_body.png",
+      "bytes": 240474,
+      "sha256": "f27961bd6a7dc2d25051ecf6271c402af6750ec2e8c8bfe558fc44ad9d35776d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-start-oblique_whole_body.png",
+      "bytes": 299432,
+      "sha256": "684b40339f32f3939126d83e5aef553f4006da3dfd602b27e80afb6f15a6b554"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-start-side_whole_body.png",
+      "bytes": 240474,
+      "sha256": "eaee91e0c1e51ebc6b003815f055bbfb3722490e0a3d9c6dd53c9a0d823f4cbe"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-sweep-oblique_whole_body.png",
+      "bytes": 278502,
+      "sha256": "1290dd420a2a63e9e84ba64e2aab0cfec0f981b6a7341388c4a99873615dc71e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/early-sweep-side_whole_body.png",
+      "bytes": 239296,
+      "sha256": "a5930921271f12a88627e8e176b20be6502ce75adace2e26e1bd32d8a6b318d8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/export-verification.json",
+      "bytes": 21713,
+      "sha256": "a29a3899e227f435b27f03c8ef6ea1922725943fa09e26abf932def40333cf75"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/local-binding-report.json",
+      "bytes": 2498657,
+      "sha256": "a74dc91974f7fb50bb3c8460450a0acb0bf05fe092e006ea32274b209bf45be2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/motion.glb",
+      "bytes": 903420,
+      "sha256": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/normal-reference.json.gz",
+      "bytes": 1737750,
+      "sha256": "00a4748ab68f1c08718296895deabe2752ced02b4a4fd0c25dbd996d427c4d03"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/pose-samples.json",
+      "bytes": 48739,
+      "sha256": "944f3a9496dd1424bbb4485e34f0a4f7ef43ac1f889df74aacef01d4a8ad12d6"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/qa-random.png",
+      "bytes": 966036,
+      "sha256": "041dd7ab4806d5a654c3b787470199b1edfb781ded12a6c5540b412ae1e0043a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/qa-wire.png",
+      "bytes": 996685,
+      "sha256": "8815082776cda9a5c7bc08badad56d8e320167c5c347d9f74c0f3ccc77c45a3e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/raw-asset-qa.json",
+      "bytes": 3625,
+      "sha256": "58cd592c49b4bbe574b18032ea65fc1885960f983ce79280b6e0269fc81d8488"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/runtime-surface-reference.json",
+      "bytes": 4919855,
+      "sha256": "aeba739b6acb4cebd0b9fedfbd7ef390e64c8cf6a5af708f717055ae018e70a7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/source-verification.json",
+      "bytes": 755080,
+      "sha256": "2192a9c99bcdab14e1e898ea0a36edb44b1346f7040606cde24015fca8c2eeaa"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/source.blend",
+      "bytes": 14210900,
+      "sha256": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/surface-contact-report.json",
+      "bytes": 290018,
+      "sha256": "5cc6aef907ee0992f4af8e83a36530cc1ae7129aaa406751a0c20fccf622c527"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/3483/surface-landmarks.json",
+      "bytes": 486237,
+      "sha256": "d0665739bab59415386f2336e8a913d83234b11e6ce70e3a17c2ef348d16303a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/cameras.json",
+      "bytes": 343,
+      "sha256": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/clip.json",
+      "bytes": 2896,
+      "sha256": "7e621edecd126c5cc9da3faf0a028d321493c4b4c07701004c114c7f07d62bf8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/curated-files.json",
+      "bytes": 8915,
+      "sha256": "ac4f223d074b2de0b8d7eda8f4202b7d96e3d58b91474acafa9327a01fa28166"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/decoded-physical-report.json",
+      "bytes": 290317,
+      "sha256": "632367a408370d713eb41424f14176c9560500b07ee9ee1af7dadb5e26eca08d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/decoded-source-readback.json",
+      "bytes": 755080,
+      "sha256": "c878dd05e55ff25551bc748ffe5dbd928a360983c194713559c02f85ed2fedb0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/delivery-report.json",
+      "bytes": 2691,
+      "sha256": "7598da1cf1c52dd4ac388a63f9cc223f5b70634e3636c0efc46859e76457a307"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/dq-reference.json.gz",
+      "bytes": 1409545,
+      "sha256": "7f2dd229cfd4c3f47737a8af4361affaa9157b714dc6384802a21f76874e09f0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-hips-oblique_whole_body.png",
+      "bytes": 272333,
+      "sha256": "7485cb96d604850015117681325973c3bec783f8d06611d84fbcae7c79be98a0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-hips-side_whole_body.png",
+      "bytes": 237354,
+      "sha256": "0bb9ebe364104b2a866667ae4dc0fcc05c08bc3128b669d4996f5d9b2c33b774"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-lift-oblique_whole_body.png",
+      "bytes": 292506,
+      "sha256": "3f53be63d293c236b78d40b2bdebf6ec210192d7a031f8f87acbff2dc4e0e03d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-lift-side_whole_body.png",
+      "bytes": 240454,
+      "sha256": "0e99a19561d9327a276097fe4116d69556636b9ce052388f733e17827d098f7d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-overhead-return-oblique_whole_body.png",
+      "bytes": 292506,
+      "sha256": "abbf2fe37fbb9087d94a5896f0545a0471796539dc693aadb86a65c8c2c80f89"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-overhead-return-side_whole_body.png",
+      "bytes": 240454,
+      "sha256": "1772351770e0ca6ff19df3d3c4ac7bb1d20b756359f01f4e22034aa6db0b0119"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-proof-readback.json",
+      "bytes": 84939,
+      "sha256": "874276ebd1fc08c05b90e4450367367b28adea3be3597a250457eb20391624fe"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-return-oblique_whole_body.png",
+      "bytes": 299432,
+      "sha256": "7e068489616a7e4f45f16407f0edb696992a20d27d7f5ccbf1e1c173b58a9cda"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-return-side_whole_body.png",
+      "bytes": 240474,
+      "sha256": "f27961bd6a7dc2d25051ecf6271c402af6750ec2e8c8bfe558fc44ad9d35776d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-start-oblique_whole_body.png",
+      "bytes": 299432,
+      "sha256": "684b40339f32f3939126d83e5aef553f4006da3dfd602b27e80afb6f15a6b554"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-start-side_whole_body.png",
+      "bytes": 240474,
+      "sha256": "eaee91e0c1e51ebc6b003815f055bbfb3722490e0a3d9c6dd53c9a0d823f4cbe"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-sweep-oblique_whole_body.png",
+      "bytes": 278502,
+      "sha256": "1290dd420a2a63e9e84ba64e2aab0cfec0f981b6a7341388c4a99873615dc71e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/early-sweep-side_whole_body.png",
+      "bytes": 239296,
+      "sha256": "a5930921271f12a88627e8e176b20be6502ce75adace2e26e1bd32d8a6b318d8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/export-verification.json",
+      "bytes": 21713,
+      "sha256": "3193ff16203fa19da60de7f2d933f305f8b3790b75e868f465612456161ec29d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/local-binding-report.json",
+      "bytes": 2498657,
+      "sha256": "a74dc91974f7fb50bb3c8460450a0acb0bf05fe092e006ea32274b209bf45be2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/motion.glb",
+      "bytes": 903420,
+      "sha256": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/normal-reference.json.gz",
+      "bytes": 1737754,
+      "sha256": "3a087316d960e0ed9f4ce521116bac1aaeba3974e8b7be24051beeeda715e2a2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/pose-samples.json",
+      "bytes": 48739,
+      "sha256": "d1f7229db49ac669af613e2d570b4feae11d8938267f01938564007d4b717887"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/qa-random.png",
+      "bytes": 966036,
+      "sha256": "041dd7ab4806d5a654c3b787470199b1edfb781ded12a6c5540b412ae1e0043a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/qa-wire.png",
+      "bytes": 996685,
+      "sha256": "8815082776cda9a5c7bc08badad56d8e320167c5c347d9f74c0f3ccc77c45a3e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/raw-asset-qa.json",
+      "bytes": 3625,
+      "sha256": "58cd592c49b4bbe574b18032ea65fc1885960f983ce79280b6e0269fc81d8488"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/runtime-surface-reference.json",
+      "bytes": 4919855,
+      "sha256": "6a227e12056f5fb7d3f7b56850ad5c72bb163fac43faedc3d7eb90a3f6e156e5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/source-verification.json",
+      "bytes": 755080,
+      "sha256": "c878dd05e55ff25551bc748ffe5dbd928a360983c194713559c02f85ed2fedb0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/source.blend",
+      "bytes": 14210900,
+      "sha256": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/surface-contact-report.json",
+      "bytes": 290018,
+      "sha256": "5cc6aef907ee0992f4af8e83a36530cc1ae7129aaa406751a0c20fccf622c527"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/surface-landmarks.json",
+      "bytes": 486237,
+      "sha256": "d0665739bab59415386f2336e8a913d83234b11e6ce70e3a17c2ef348d16303a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/asset-qa.json",
+      "bytes": 296,
+      "sha256": "e423c43393f871046a8e9b1bb9dd5127fd428d835b0b715bebb703e227965fa5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/authoring-context.json",
+      "bytes": 60314,
+      "sha256": "2b387a66899b1ad6e252576040e1b7e9eb8e574a6bc4b02fe30621fe580a1120"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/authoring-family.json",
+      "bytes": 321,
+      "sha256": "cfd443b5bfd7c211838cd78e4ae816ebec33bf0449cf42ef610777e50a019c93"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/cameras.json",
+      "bytes": 343,
+      "sha256": "d3bd7d69ceaaa9237517f82327ff91d8ac1f235d83f0c91dc90c34b522f97a9d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/clip.json",
+      "bytes": 1854,
+      "sha256": "b1e8c68ef15a59b16995a6d580f8175d0914582e46acc8a9c0bf822de65d33f9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/curated-files.json",
+      "bytes": 1782,
+      "sha256": "c48aa52cad7226767292783ae35baa479a3a0884da4c6b1df2fa0558527b4b99"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/decoded-physical-report.json",
+      "bytes": 651924,
+      "sha256": "17ea65e19e12e05f11fc151018ab52216a5bd3874caf348636b30234dee703a7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/decoded-source-readback.json",
+      "bytes": 876,
+      "sha256": "761bc642fa8c84d2fe5abbfbaa68a0f7262fbbbecf916aa2721afb23f29234f3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/delivery-report.json",
+      "bytes": 7554,
+      "sha256": "e8488a6c9be6aadf98d27ea777c2a6dec7331605402fa7cea33536f90daba504"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/dq-reference.json.gz",
+      "bytes": 1432263,
+      "sha256": "811e587e8a76ffd47d14c420fff6879ba9d7b490aa967dc53e8dda9adb6dec14"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/early-report.json",
+      "bytes": 3187,
+      "sha256": "72938ed1af78412e376caa2e1703eaa9f49abcd7882dbc99966b4d622151adf9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/environment.json",
+      "bytes": 932,
+      "sha256": "7c1530de9b8e6f6c69eace3a703dbe35ed76f8975d2e6521b67c05ba6ab53940"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/export-verification.json",
+      "bytes": 22418,
+      "sha256": "5a580eaa1e7a2221ec27b2d1a1e0bbba14624b912bb00ae06610f478d093fec3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/local-binding-report.json",
+      "bytes": 618631,
+      "sha256": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/morph-weight-export.json",
+      "bytes": 787,
+      "sha256": "3c09cc67b112776189816c2494472f86736934590e941f01c01ff7f1b4f35b58"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/motion-witnesses.json",
+      "bytes": 114144,
+      "sha256": "7a00ff6395012697d08031a58ae366664f3f0e184e2ce5cfb2d3c19065dc65be"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/motion.glb",
+      "bytes": 1078452,
+      "sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-left-over-cross-front_oblique_whole_body.png",
+      "bytes": 258980,
+      "sha256": "eb32782d51174633105433066813ba9a38a5b835d3ef3a86a0ecec9fa8623e36"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-left-over-cross-side_whole_body.png",
+      "bytes": 250425,
+      "sha256": "631cb46365d881dc967e0f57e6017d29e18f6851b8c0e20f1125c2ffb8a227fd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-loop-return-front_oblique_whole_body.png",
+      "bytes": 260950,
+      "sha256": "83ca1a115e6ec1342afbff37f17b45f690430f5e5a8802139036d6a8473923a9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-loop-return-side_whole_body.png",
+      "bytes": 240792,
+      "sha256": "4564478073748b0e427b897e4a9003133506e78116620ddc8e409727f0169e81"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-mid-swing-front_oblique_whole_body.png",
+      "bytes": 259446,
+      "sha256": "565dd3a6294a5549e549cb35f11e842af36f0d28436f0173742204a2e14fc541"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-mid-swing-side_whole_body.png",
+      "bytes": 249212,
+      "sha256": "51273aea2ae1a38f248838081fd897d519424a4d77b69aa78486a1e5d337135e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-return-open-front_oblique_whole_body.png",
+      "bytes": 260950,
+      "sha256": "d11eaa02f83c0971b3988fae50cbfeddd27041ea7a46f06f5460c46c2e2d6c3e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-return-open-side_whole_body.png",
+      "bytes": 240792,
+      "sha256": "eea9d21dda4c2e8fe51b7780c6a88f5f320942b2a859b7be3103adf8db0c099d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-right-over-cross-front_oblique_whole_body.png",
+      "bytes": 259003,
+      "sha256": "ba6252115f76fe0e6e286273885bd92fe480c404f4d0349227a2cb65d7108c8f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-right-over-cross-side_whole_body.png",
+      "bytes": 251101,
+      "sha256": "6bbd6d5392c1bfa96de3fc5810272870a7cf9209f2e6402ad11d451c4917548f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-start-open-front_oblique_whole_body.png",
+      "bytes": 260950,
+      "sha256": "f1de96d2b50079f368c53eaea2cd585c08a38809c27529e38e053d67add29fad"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/neutral-final-start-open-side_whole_body.png",
+      "bytes": 240792,
+      "sha256": "49ad45b172f80e6df02988d53be5f78003d737bec8df677187925009e281cda4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/normal-reference.json.gz",
+      "bytes": 379055,
+      "sha256": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/pose-samples.json",
+      "bytes": 29950,
+      "sha256": "4e62ed2f7cd532439eff8c4b639df2f5dd3f9f2e07f2c55a98522d0f7610d879"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/proof-receipt.json",
+      "bytes": 1821,
+      "sha256": "2b34a3d09a7cc8a615f295c618597e2e8512baabe11a9360c464a7ad74721c35"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/qa-random.png",
+      "bytes": 682709,
+      "sha256": "4fdd68fd30eafa4b96919ea137fce23b96d1fd6bbfcdc83f477f4de331afe922"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/qa-render-receipt.json",
+      "bytes": 1396,
+      "sha256": "df20531cd9adadd9731e2ed14728dbcce272434a7cdf1e2cd3c341743f3a5819"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/qa-wire.png",
+      "bytes": 721814,
+      "sha256": "3fea621c31d7e07442923c1163b11b03eac2cc7768c1681003674b9eb66971ff"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/raw-asset-qa.json",
+      "bytes": 3626,
+      "sha256": "1abb9ca39e1c5bb8e7b2128ef7cb3fe09db4c372351367b8a1522aeef7ae0ea6"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/README.md",
+      "bytes": 1802,
+      "sha256": "90d65a61e322b019ca351141cd1f2c7c99f1a3c7473b7df08dc241a6910e3ba5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/runtime-surface-reference.json",
+      "bytes": 1483849,
+      "sha256": "6f7acdbdfd3a9d3f78115baee528462496db97b44b37f5fb1b1821c2168f09e0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/source-verification.json",
+      "bytes": 876,
+      "sha256": "761bc642fa8c84d2fe5abbfbaa68a0f7262fbbbecf916aa2721afb23f29234f3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/source.blend",
+      "bytes": 14252989,
+      "sha256": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/surface-contact-report.json",
+      "bytes": 651812,
+      "sha256": "b05773d0536c7ca88999bac3ee37baa30c41aa48b7a466c5ddeec90efa3a2c9f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/5172/surface-landmarks.json",
+      "bytes": 482290,
+      "sha256": "149d059f824160ff610ca5a3434a6d4ad227d632889b19a5f756398133b79257"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/asset-qa.json",
+      "bytes": 296,
+      "sha256": "e423c43393f871046a8e9b1bb9dd5127fd428d835b0b715bebb703e227965fa5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/authoring-context.json",
+      "bytes": 61282,
+      "sha256": "404e6a5af25d0c46e5a9f21e7b835739049dbd2f4c9ab674dd00cd62140893d0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/authoring-family.json",
+      "bytes": 321,
+      "sha256": "cfd443b5bfd7c211838cd78e4ae816ebec33bf0449cf42ef610777e50a019c93"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/cameras.json",
+      "bytes": 344,
+      "sha256": "cc13430588b0c50ab09def5253accd4d9f6a269e3a6704a6031126a32d84c892"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/clip.json",
+      "bytes": 2055,
+      "sha256": "99461426537a1b51953e6422070b87a1e46719a894d94d7ce122a1543fec0686"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/curated-files.json",
+      "bytes": 1828,
+      "sha256": "b1e31b0babfeb69330108bea27b0adf6fd986de1916dc5661622340e97d5232e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/decoded-physical-report.json",
+      "bytes": 702434,
+      "sha256": "556a73207fd3c0dc172a6724c00a8cb4cd3f874dc91fd023203874f4ffd7f64c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/decoded-source-readback.json",
+      "bytes": 876,
+      "sha256": "76b63da121dd35cb6eb53c3234c457ff992256473b51f590de0e4cbf2ee3dd2f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/delivery-report.json",
+      "bytes": 7758,
+      "sha256": "7327ee52faa13d165afc2d3a86d5d3dcb94712685568e76f80e48e59610a09c4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/dq-reference.json.gz",
+      "bytes": 1435924,
+      "sha256": "c7330c154a1bed41ab7e81ed91265c2c5d200f62479600acde453858f3224444"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/early-report.json",
+      "bytes": 3190,
+      "sha256": "54b9aa4fe2422bf9ed19bdb43ba4cb3c47fdcd88bf89718c4f6394dced43cf92"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/environment.json",
+      "bytes": 932,
+      "sha256": "7c1530de9b8e6f6c69eace3a703dbe35ed76f8975d2e6521b67c05ba6ab53940"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/export-verification.json",
+      "bytes": 22565,
+      "sha256": "6063353bee42f09b320a271b47099533323c2b68d7aa2bcb4f4b3f81ebae00a6"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/local-binding-report.json",
+      "bytes": 618631,
+      "sha256": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/morph-weight-export.json",
+      "bytes": 787,
+      "sha256": "3c09cc67b112776189816c2494472f86736934590e941f01c01ff7f1b4f35b58"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/motion-witnesses.json",
+      "bytes": 119221,
+      "sha256": "0775358421e9e67ee5a54b12dd4405a6978b2ff25ddcce8b9ebec627ff61027f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/motion.glb",
+      "bytes": 1078452,
+      "sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-left-knee-overhead-front_oblique_whole_body.png",
+      "bytes": 278294,
+      "sha256": "596492908974acbd558a404b3a48ae7e584236edecbb9051402812fa13208c57"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-left-knee-overhead-side_whole_body.png",
+      "bytes": 263622,
+      "sha256": "d85190cd84516ac3df4d0d236864eb63f839b1ff407799336bcd1ad8e85ed48a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-loop-return-front_oblique_whole_body.png",
+      "bytes": 265716,
+      "sha256": "fc5144a471e01506834a05bf731276b04ef88d4ccb0d8875528c60438046e78c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-loop-return-side_whole_body.png",
+      "bytes": 243030,
+      "sha256": "cdc9dd6e0e06b3d865780a878df63266894b6a48575aa38f7e56c0bfc991d402"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-return-low-front_oblique_whole_body.png",
+      "bytes": 265737,
+      "sha256": "cf342f92ffe8d417c2a19893da10d608741ee1f11335b1a99896c3ad8ba88576"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-return-low-side_whole_body.png",
+      "bytes": 243195,
+      "sha256": "225cad559e757ecaba703c41d163b9a0235569e1e18b6aade71eb32dd719f658"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-right-knee-overhead-front_oblique_whole_body.png",
+      "bytes": 280896,
+      "sha256": "648ce8a03a543cbd00bf2fed98b900d7af3fd354278af148db806fc2db717aa7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-right-knee-overhead-side_whole_body.png",
+      "bytes": 265699,
+      "sha256": "5947c1bd395fb05f8c7547a42f1e54a5a5ba074f9296944633c977e0edb68c4b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-rising-step-front_oblique_whole_body.png",
+      "bytes": 263051,
+      "sha256": "5e5b9621f78356efcc36d98a5ca6357d041697d0c1b379c0ae3cbe1a896c971b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-rising-step-side_whole_body.png",
+      "bytes": 249188,
+      "sha256": "8d424a459f4b0b36696c30c7a69edb1b1b65809008a9e01fc0c2b0106220a20c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-start-low-front_oblique_whole_body.png",
+      "bytes": 265716,
+      "sha256": "1012eb9a162fd57771fc95293f298ec047b68ee8dfdd648cfa5e1a162c30fe02"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/neutral-final-start-low-side_whole_body.png",
+      "bytes": 243030,
+      "sha256": "ca7d96602c2cd07a50325a7e17097fd077bbbef58e629db8ce6226b586086880"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/normal-reference.json.gz",
+      "bytes": 379055,
+      "sha256": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/pose-samples.json",
+      "bytes": 35798,
+      "sha256": "26671f923bc00bc1ddb1df7d683d23e568952c84235650b6e46d498f4c491be4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/proof-receipt.json",
+      "bytes": 1906,
+      "sha256": "b20e5029b002bb6caca94825c6ee4259e0ca08492051f1878624f8ae62439ac9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/qa-random.png",
+      "bytes": 692593,
+      "sha256": "450f8a2793d17b2df021c61115207cb5e35289658e02fd2e958b97e622c78e33"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/qa-render-receipt.json",
+      "bytes": 1396,
+      "sha256": "652cf45cc899cdbab89a679dd1726afacd187f5b59383990cd8b4c39453e7544"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/qa-wire.png",
+      "bytes": 726793,
+      "sha256": "a4ccca334300e56c2798babbab47190b734331ad4a5581cccd0ec641bbdc128b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/raw-asset-qa.json",
+      "bytes": 3684,
+      "sha256": "249f1a3a889fca2235bb9611ae3971ccfc048a891cb404ec0dd2e68a168e63d2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/README.md",
+      "bytes": 2027,
+      "sha256": "347c1f3e3136d793d6e4fb5ac8db117561b9ff044b4ab620f9a2a71483ddefff"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/runtime-surface-reference.json",
+      "bytes": 3708132,
+      "sha256": "cb4e8f2027a8a6723b2dba9bb688ae275e203cf114240e46064967919bdee3cc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/source-identity-reuse.json",
+      "bytes": 3070,
+      "sha256": "20a2a3243bae9d5c1ee24437da573fc25787721cf4b46a48b03f53d30d19b2cf"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/source-verification.json",
+      "bytes": 1024,
+      "sha256": "475296c873eb05fc8c02801cc0f0a2b74e73b28fdddede03c2708443a0ebb83d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/source.blend",
+      "bytes": 14252989,
+      "sha256": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/surface-contact-report.json",
+      "bytes": 702301,
+      "sha256": "636158708410892595a29860cc3740db41ba0add481c2d29a3095c1f76870ccc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6014/surface-landmarks.json",
+      "bytes": 1399679,
+      "sha256": "49294bde50cd80ef2c204ebbbe7c973f3ad8bb27493b39b04d38402835ad9a18"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/asset-qa.json",
+      "bytes": 19256,
+      "sha256": "9188d8c7a1f764032ad727c1c9f7c9b4bf92456e9dc45576e981120620d841ec"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/authoring-context.json",
+      "bytes": 62069,
+      "sha256": "37f34e930c234f6bd427a249976498de225e386aed79fa94f597d54bc42f226e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/cameras.json",
+      "bytes": 351,
+      "sha256": "36234fb9c7ca7077897146a627738c4b754d7d842fbb1394f44ea67c463d2f37"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/clip.json",
+      "bytes": 2654,
+      "sha256": "dffbae06ebe3210e5ad004b75af2803ee9dd81f43ae63484553315d7d7bd8e6d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/contact-margin-peak-oblique.png",
+      "bytes": 352402,
+      "sha256": "5d549089c9a1383995eae53c2d4620b33447a94de3a984582a39879f74ea18e4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/contact-margin-peak-side.png",
+      "bytes": 319685,
+      "sha256": "27b39eb1171ac7ab5f9cf0d9a50dad1256a976937e59bca534ab9de5b9222fe8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/curated-files.json",
+      "bytes": 5292,
+      "sha256": "42cef4ab2d1fb2193d598d057ddf8cb05fb0913263c82bac6f2b8f89654679b4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/delivery-report.json",
+      "bytes": 60329,
+      "sha256": "3b59276f7369f6cfd83b23c90147f6e16d017ee3fba7bff1d752433dcec0976c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/dq-reference.json.gz",
+      "bytes": 3468952,
+      "sha256": "3bed85d98f589cbcb6b455f311d1f4e82f8c71ec666f026880f02ad3e815aa7f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/export-verification.json",
+      "bytes": 8939,
+      "sha256": "457e41e96ae41c972e849c0ddaab4d6f85d62f49d6b934b13506ba8a4338b7ad"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/final-transit-f24-oblique.png",
+      "bytes": 348710,
+      "sha256": "7112af0a9ca8274b720f34b80e76dafbddb2ec2352d88d4be5efe41ce377c240"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/final-transit-f24-side.png",
+      "bytes": 316019,
+      "sha256": "d9ff33e3c4e45f4edb1c913e85fdc2229fff3d14b0767089a57620197460d40d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/joint-normal-reference.json.gz",
+      "bytes": 871592,
+      "sha256": "abdcc95de904741267e17523cb8a6b00d45611c2eaf0f090d8bc6e75d0fb6108"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/landmarks.json",
+      "bytes": 14700,
+      "sha256": "192f1d2a7f093f5cc9a93127359f67cf66ec2a3e039982a5566e30c0ead88a0c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/motion.glb",
+      "bytes": 1003756,
+      "sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/neutral-peak-oblique.png",
+      "bytes": 385395,
+      "sha256": "819493ee8faebd26d47252ec40d7d0637c3dbe6e7004e3fbe88e0ca3f7496576"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/neutral-peak-side.png",
+      "bytes": 345508,
+      "sha256": "d127e3e0a20b9026e3804b17490dc560bf7822c04c50d13db0b78158a2f84521"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/neutral-return-oblique.png",
+      "bytes": 372523,
+      "sha256": "fb2eda8d2ce1ae250c47e86adda187c2e9d51fe62f7cb6e1388c48c8f89010db"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/neutral-return-side.png",
+      "bytes": 333092,
+      "sha256": "505dc640dce95d157373dfdcf6ad4077bae71dc7086531a7536a3332158480fa"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/neutral-start-oblique.png",
+      "bytes": 372523,
+      "sha256": "b7bac597a42370de9e359f96674ea9bd55e3f9ba2e69cf4b3c67084a631fe719"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/neutral-start-side.png",
+      "bytes": 333092,
+      "sha256": "580b3698109c817e8bf84fbef5b39f9d9b003b8059547c2c69dcec25596f9e60"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/pose-samples.json",
+      "bytes": 125209,
+      "sha256": "161c052805d2fcf0049d6d450c897e8b625d065589f8c1c321b9eff47ad2ce4f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/proof-receipt.json",
+      "bytes": 1617,
+      "sha256": "f6f939cde808991215879d5704bc9613a4994082524e58e30b382dfc2f67e3f7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/README.md",
+      "bytes": 3029,
+      "sha256": "6f89a9020843d51a6b02d06e7b97060e24116db56bf0c7fa9fc7494bcb5dbcbd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/runtime-physics-report.json",
+      "bytes": 2865385,
+      "sha256": "1705f8f6103ca83965beaab046eb27f22440a940dbf1badcc14693a3b3e53f44"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/runtime-surface-reference.json",
+      "bytes": 3060206,
+      "sha256": "418358dc1c41401feb0cd8f44c851d7467d0a367c025f60e37df6ddf6c52c050"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/source-morph-samples.json",
+      "bytes": 23528,
+      "sha256": "c686344df1fc2a34d5e6cabd42c58a56060bd16c756979a77fa8e395faf9b822"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/source-verification.json",
+      "bytes": 38261,
+      "sha256": "4f97aa66b73119d2242d018f267c5810db95812ad941aae96b43730449c58827"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/source.blend",
+      "bytes": 13862702,
+      "sha256": "8861f6ec1015db6b3bbf5d1a4f603877a5c2469ebe7f4cbe6f52ea62b60cf697"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/surface-contact-report.json",
+      "bytes": 2819987,
+      "sha256": "d8349b6422d84e5ff806a8c5ea2dc6744fc4ff6a6d28c3e557d069b3a1f69be8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/topology-reference.json.gz",
+      "bytes": 113996,
+      "sha256": "ab5ba00dc79658ee567d354a1d082ed62198595544cd2acb363c0faa80841409"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6121/wire-peak.png",
+      "bytes": 385395,
+      "sha256": "819493ee8faebd26d47252ec40d7d0637c3dbe6e7004e3fbe88e0ca3f7496576"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/asset-qa.json",
+      "bytes": 5951,
+      "sha256": "4dbeae20654e03fbfbc01598efba8a03c1fd14e8c95f32e8a87f0d0aadd4ca2e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/authoring-context.json",
+      "bytes": 61558,
+      "sha256": "1665bba3dff5ccdf37b906f87b9d968555e6e7250e9d8db380acc40facd07fec"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/cameras.json",
+      "bytes": 340,
+      "sha256": "83b9704cf53b3a08e495774371d6a0544f65261285c7d22d66097ca89fda5339"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/clip.json",
+      "bytes": 1608,
+      "sha256": "9520775ec46cadd3063e27160e6d7ecb9414912f37188a0301231e2f855a3de6"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/curated-files.json",
+      "bytes": 4592,
+      "sha256": "f4ba4d8092f1d1a2543cfd5e3487cee5bc0e9c74280d3b4847e4ea9ce565bf69"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/delivery-report.json",
+      "bytes": 5444,
+      "sha256": "819e2d5467ae5e85e536b11080335556f4da69d14c9b8bd2fdc84c6071aa4be1"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/dq-reference.json.gz",
+      "bytes": 2890255,
+      "sha256": "99dd3a0c45f32a30e6e1aeeb67c7c0fbf2e29d0ca08f1cfcddbcf06c1a0d896d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/export-verification.json",
+      "bytes": 7087,
+      "sha256": "ff2da834fb82e4da4f3577ca6077e72ef9673c3039e6f220693a7ae25beb5154"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/joint-normal-reference.json.gz",
+      "bytes": 581622,
+      "sha256": "af00346c69d970a13dcad80d4cdfda9e0e165e3c5dae71ea65047f1887e3cfaa"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/landmarks.json",
+      "bytes": 20529,
+      "sha256": "596aab05f90a3df429a3ff76fdd9b0ac8a83f6ee7a021686175fed05149b9d74"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/motion.glb",
+      "bytes": 960332,
+      "sha256": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/neutral-peak-oblique.png",
+      "bytes": 168848,
+      "sha256": "cfceb10b48302ebb327361aad7e60021b37bde1c93b3d9a9cc124c6f6ffade74"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/neutral-peak-side.png",
+      "bytes": 149801,
+      "sha256": "751ff601b2f6eb405d22c70843aa4ddea7a644c228cc6b9ce084a6a1b5233c4a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/neutral-return-oblique.png",
+      "bytes": 225031,
+      "sha256": "ee0290a672172fd56c8b8d2489690f1150ffbd9d950f6d2225f27130d1e01d19"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/neutral-return-side.png",
+      "bytes": 176997,
+      "sha256": "eccfad5db7efb88be1922ae054c4bd93d0ef4a1de336f4b106c1dfa4192ca1da"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/neutral-start-oblique.png",
+      "bytes": 225031,
+      "sha256": "48ecc68a094e77950b306b9111e3f1cfaf67f073253f2ce6616e181be40f3809"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/neutral-start-side.png",
+      "bytes": 176997,
+      "sha256": "0982c698b2d7bf279897b5bd9422092a7a6c4d4a42216bf03d35ed20b744923d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/pose-samples.json",
+      "bytes": 118932,
+      "sha256": "691f08e5069a18de757ecf19c29073da2a948a56067e5e4fb7fff18592532ff5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/proof-receipt.json",
+      "bytes": 1659,
+      "sha256": "e0f745dba9752457b6294bef2505d52ff85c8a9e19c3d8b6f7edca838c0266f7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/README.md",
+      "bytes": 1730,
+      "sha256": "20b5d0ee4ee5c10b32024de21b9c524d0788cd7fdc5cfa624f898e285d90aaf5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/runtime-physics-report.json",
+      "bytes": 2215146,
+      "sha256": "4e514f2abf636c143af2aba1232fc84ef88fc9186a130c6b9562a8dccf339472"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/runtime-surface-reference.json",
+      "bytes": 3687234,
+      "sha256": "243f629752bf7deac6ca184cba0eb40f4b44714e90b0a6e6926c0f442c07fd49"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/source-morph-samples.json",
+      "bytes": 17493,
+      "sha256": "b26ea971f926e26d7f340fc6545536dd8e5710a03695d4271b6dba31a23c400e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/source-verification.json",
+      "bytes": 7923,
+      "sha256": "13f0c321a71e62813a698a679d8ad5ac3ca60894f40e0d7648a60e0dff162349"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/source.blend",
+      "bytes": 13898223,
+      "sha256": "b8499ef44ef06bb5f9ae85edf787b86021cbe555cdce9e1220a01bc5f566a332"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/surface-contact-report.json",
+      "bytes": 2175,
+      "sha256": "8efe35a88dda94ee2d16f2b2781c1d4afb705a479e38d242d868445992804ecc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/topology-reference.json.gz",
+      "bytes": 113996,
+      "sha256": "791d0b24bb941a59e0237427d0dd60cb495d8d2f566cc992a5c0d299d7a77647"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/wire-peak.png",
+      "bytes": 180535,
+      "sha256": "b939c78685b514770263e1844f8d3b2fd4ecf298fb175fb67ab24053bc96a5c0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/authoring-handoff.md",
+      "bytes": 9959,
+      "sha256": "6334a023ddd9f22480e3014b08c79bd1b5b4368eb97c811b99d34c54390aca95"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/balance_geometry.py",
+      "bytes": 1155,
+      "sha256": "7a061538b009a491446723218431c67292c9f121f2632abcce55eb9b9b973818"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/build.py",
+      "bytes": 7443,
+      "sha256": "0664cd034943cfa15a09adaf82b469d4afad901366e95c50652acd1ab7c841e2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/curated-files.json",
+      "bytes": 599,
+      "sha256": "9d55b35f92d31ecf5dcd238c9caf9f7c3a5fc4eefb00576e893025db29952074"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/delivery-report.json",
+      "bytes": 3299,
+      "sha256": "20576345e2f3e381db74c2332f5722f8d7211c7bd0b760d2b1bbbcf89e604920"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/dependencies.json",
+      "bytes": 2783,
+      "sha256": "1770c7f3195c2f96d1747e6e8de5ff1e6d32c2b391cb39e0f521469ea20a539f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/environment.json",
+      "bytes": 1070,
+      "sha256": "4161b9e37b4caf68a63c78c7529b2b35690b435e4074cec5fd240aafcd9d5442"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/export_motion.py",
+      "bytes": 1301,
+      "sha256": "aacd461c84db4f1f16edafbca2f421cca6050669e3c75b383ecf2e12bb4996b0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/finalize.py",
+      "bytes": 13048,
+      "sha256": "7dd3ce4b47dd408b81a9bdf6c0c64ef15ee3aa19e8f99c65315042e1f0899c0f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/motion.py",
+      "bytes": 5065,
+      "sha256": "f6725b14a533c74c59636e3f656e27c2752dea438dd177d0eae6a4328d8ede08"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/probe_balance.py",
+      "bytes": 1590,
+      "sha256": "2bd12dc17f5e9ffd5f76830e43e6781c924dd40ad5f1e1958bd93bb871831730"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/probe_source.py",
+      "bytes": 596,
+      "sha256": "9123f734f6e415b2792b4a6580b42c8bd7060e15b4a287cf6aba2f1adc800732"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/README.md",
+      "bytes": 743,
+      "sha256": "3ffae43fe8073eea60e1718ebeeb90a4931abcfb65c79c8948b41786bb3ca57b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/render_qa.py",
+      "bytes": 1422,
+      "sha256": "d124d3b4cba5a5b62a45ea06a32a7268404fe7236b8f18f52e5962890bae0add"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/verify_export.mjs",
+      "bytes": 8376,
+      "sha256": "a4a233790dd5dd70da6b19574af1648918ea5afad4c7e2843d5d3647eed7f0e9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/balance-hinge/verify_native.py",
+      "bytes": 17658,
+      "sha256": "e0b0d31fb0ba21390260d92dd470a76d0a35dd3538f0de8a5afcc3bd823ab96a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/build.mjs",
+      "bytes": 2082,
+      "sha256": "2f99f94a87b1a7949c320dea222fe1ea6364471edd388d778b66e7d7caed1819"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/camera-integration.json",
+      "bytes": 2175,
+      "sha256": "993c8a745b5c7331ab6e15c757cfb750059a1ac944f22d218a089fd5da5c1749"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/capture-peaks.mjs",
+      "bytes": 3820,
+      "sha256": "448250ac3c9478305518ba472d54f95d38574131089c174a6d67c38f89f0f081"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/1986.json",
+      "bytes": 61217,
+      "sha256": "aa3b4b6facd489f9f3e97441cc3d546df05f12cffb6e34a8e2f5c30ae47ecf89"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/1987.json",
+      "bytes": 61911,
+      "sha256": "7db29e227cbee9cf7a4e488a88ede01ec6d84fa40f08800897ecd7eac972ffed"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/3204.json",
+      "bytes": 63258,
+      "sha256": "7999da46673d24d9d8d85a39e4243ce848a497af5d8a45fd2fb3ba0c4278c95c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/3214.json",
+      "bytes": 64908,
+      "sha256": "676ba945eee8153e4b40ef135084851062f36802aecbf5c287ce4e2326f94209"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/3483.json",
+      "bytes": 63122,
+      "sha256": "f38d21be5ad67c9aaa7bceb309d379dfd660ffb098117cc4205c8c587e6af5cd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/4935.json",
+      "bytes": 61701,
+      "sha256": "415aeb63863597973936c25cb6a6cebc4a763310650253f14f0302e2cd2915fd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/5172.json",
+      "bytes": 60314,
+      "sha256": "2b387a66899b1ad6e252576040e1b7e9eb8e574a6bc4b02fe30621fe580a1120"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/6014.json",
+      "bytes": 61282,
+      "sha256": "404e6a5af25d0c46e5a9f21e7b835739049dbd2f4c9ab674dd00cd62140893d0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/6121.json",
+      "bytes": 62069,
+      "sha256": "37f34e930c234f6bd427a249976498de225e386aed79fa94f597d54bc42f226e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/6539.json",
+      "bytes": 61558,
+      "sha256": "1665bba3dff5ccdf37b906f87b9d968555e6e7250e9d8db380acc40facd07fec"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/curate.mjs",
+      "bytes": 6141,
+      "sha256": "a0c50045f16c3621354fb77614374151999a718f17b1dfacd4d6fa79e093c44f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/findings.md",
+      "bytes": 8001,
+      "sha256": "6ba2a3a4fdad83e1b1cfaeb11b415f50a3fbbbfb6c5e99d0f29924ddaa10f0e3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/build.py",
+      "bytes": 7066,
+      "sha256": "e589473b67c2256a5661efa6c18f2287365f887d38e86d30b7064ebffefc66f6"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/curated-files.json",
+      "bytes": 5560,
+      "sha256": "7bf28f12fc7f2d7e9e2f2e9f90b58a4a71d5c5c1feea779f859e621e264324ce"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/delivery-report.json",
+      "bytes": 12291,
+      "sha256": "a404695548c2fa4a2ad2815ffe2bc2f60ec4567f681f6da8c7237be249c60025"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/export_motion.py",
+      "bytes": 1790,
+      "sha256": "2afe08ce55d74b56e1e7eca28695e412e429c959d9a2957df00c58e1f4a50a48"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/finalize.py",
+      "bytes": 8085,
+      "sha256": "cb0abc238f32a55ecc61180739e9875dd3c47536ea001da2e42681619bfa8a51"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/motion.py",
+      "bytes": 5572,
+      "sha256": "358cc05ca31ac1234ba1cc70cd104300b9be333aa388667e229dfe9c840f4939"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/README.md",
+      "bytes": 3467,
+      "sha256": "d34f5f00863e85ef800d7fffe87bc7ef63cb1b0ee7a18f7afaebe9576f8c962f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/review.py",
+      "bytes": 2364,
+      "sha256": "664fd507f766919fb3ba66abe9f6361268cc8e119ac54aad2ec6c94732c6896a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/superseded-diagnostics.json",
+      "bytes": 1147,
+      "sha256": "cc8d6d361b877e3de683e8384769e09544a4c3e6598f7c9d1cc910264ecb3814"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/verify_export.mjs",
+      "bytes": 7724,
+      "sha256": "4690bbfe9927417f4abd2016c83aa2e0ca34be52e3250ebf3ff6cdb2fba84a3d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/verify_native.py",
+      "bytes": 13169,
+      "sha256": "22e5f3b83fce3b99834a82b497635680df9bedfc17144283d532351b799ebd6b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/floor-family/write_metadata.py",
+      "bytes": 3805,
+      "sha256": "31dd7dd1382d8e61ed17250f1d0e552b4255a8ebee27dad5c9ec16851b8abd1b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/intake-contract.json",
+      "bytes": 102349,
+      "sha256": "d06d17007b328356eba044c03479907a3f626187abbfc4d385dc7765d3423c0b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/intake-provenance.json",
+      "bytes": 615,
+      "sha256": "ef8c66248b7f68dcbb962bf6db71e7e04a019d627ef3e5154c8aaef22969024b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/muscle-atlas-provenance.json",
+      "bytes": 653,
+      "sha256": "bd9c628364f80b6d62cd79609936393e1c1b055b49b354a183e6ac86f2720beb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/muscle-atlas.json",
+      "bytes": 113866,
+      "sha256": "ca962f887504856aafd865e497270c8df9ad101af86e5e7b902ab270ef655cc5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/phase-labels.json",
+      "bytes": 2131,
+      "sha256": "dbbbe0964dcdc7e5171eba1afee60cfd24df9b817a48a193660bf6ed410a052d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/prepare-muscle-atlas.mjs",
+      "bytes": 1555,
+      "sha256": "758430c382af31bf7f0ce79a7c2d8e8d3081efda505c180ca0a73005435896a9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/presentation.json",
+      "bytes": 8327,
+      "sha256": "c314755828c49e9eba8dd36a7b867568b31e35494747b6590756f456c2d9f4d3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/README.md",
+      "bytes": 2035,
+      "sha256": "e6288dc945e2606a9adce5d7611ed35aded453d29112c90e357708111d40e287"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/clone_metadata.py",
+      "bytes": 3473,
+      "sha256": "fbac5eafb8a285df96a977b3e305a02e232eb113efe3a0f4a5ee62dbadb4d749"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/clone_native.py",
+      "bytes": 3568,
+      "sha256": "b7c4599663fb56bf53db5bc0aec112fe41310d793dcfe6f95d522db19a5cc162"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/curated-files.json",
+      "bytes": 3110,
+      "sha256": "86e44947f16e432dbeed358ead64225b437cf799804957bd80eba05fb50c2859"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/decoded-identity.json",
+      "bytes": 845,
+      "sha256": "e576cc3f0e0dea4448b8841a3fc1dfe1a66a052829b2cad47a876bdb50698b0c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/native-identity.json",
+      "bytes": 539,
+      "sha256": "f360c9327d4d7f77b8b75b8630edc304077e6c8d20889a4912e540fd12926426"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/package_reuse.py",
+      "bytes": 7556,
+      "sha256": "a50fe9b162e94990991c73424783911c7798122d6d454aa705762b12a613195c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/README.md",
+      "bytes": 838,
+      "sha256": "09caf68ab4f1214fe29cb8de8e422953e2ec0ce4d8d3dfee1642555ca19027e1"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/reuse-lineage.json",
+      "bytes": 979,
+      "sha256": "6d4be3e8ecc41a6b598dc6bc990295595e8e5548a410f67ef5e342028d98be1b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/verify_export.mjs",
+      "bytes": 8877,
+      "sha256": "9c9e9bfbc133af286ab8d333ef2d8ad0bd15663f8a778bf5183d94424e7a230e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/verify_identity.mjs",
+      "bytes": 3655,
+      "sha256": "eac75ba59aa4f3a3912d0d9fedb077860a4e15d2998cb528ec0de1c14922e80d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/verify_runtime.mjs",
+      "bytes": 4553,
+      "sha256": "de4af056c4bcc5212cdea00f909813d6c2e8cd017655e6d10dcbbc35449cf609"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/verify_runtime.py",
+      "bytes": 5941,
+      "sha256": "1384aee0b09f761faa701c027563a91e47c70bec2f447b35317d5b01e6043028"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/review-poses.json",
+      "bytes": 2239,
+      "sha256": "10fa7c012143d2e218b9eced65b2d62aa201979f5eafa3630fd4a76324c15689"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/build.py",
+      "bytes": 6848,
+      "sha256": "a6af404ef5d25a7005901a8d60101cddf84f00471aad36025265ae0a1d3b2b6d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/causal-receipt.json",
+      "bytes": 2494,
+      "sha256": "27389eff205e12c82daac886f0a4200d912333141ea81095b0890410780eb7d7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/check_decoded.py",
+      "bytes": 501,
+      "sha256": "9b514c7b941f21271708db0a7267ddd9d9190ad2174120b3ac879a32fae65f4b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/curated-files.json",
+      "bytes": 9918,
+      "sha256": "77ed19b4b0e67a8be75e49c04f2f22ea52f0edefae1a873f17dcd7261136083f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/delivery-report.json",
+      "bytes": 8730,
+      "sha256": "4d28f9a4181e212548d10c4b52ce1f893564ebccfb6cab69059c8eba3bbe9691"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/dependencies.json",
+      "bytes": 5227,
+      "sha256": "22f22019fa7b14f0d4420e92c76426a556364d7423842ba9fa179fc681696738"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/diagnose_contacts.py",
+      "bytes": 3223,
+      "sha256": "94a519326c098ad6ea091a0e77dae88e48da31a1ebb833bcf4fbfe9f051eb21a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/diagnose_elbow.py",
+      "bytes": 1848,
+      "sha256": "139924d94e1199cc186a03b61c417a8c5ba914469abf5bee44c6d6bbe5fbb53d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/diagnose_qa.py",
+      "bytes": 1571,
+      "sha256": "9ac9610a94236faa4aee40020ece88b42e5b9fd90654642c95657f26b0fd8c08"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/diagnose_timing.py",
+      "bytes": 2997,
+      "sha256": "591f6a61f93b0049bf46d152a365a27b7c58111c5f7aca9a0563469b47b802f7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/elbow-roll-diagnosis.json",
+      "bytes": 27720,
+      "sha256": "2cb02df1b66d789e77fd7f59564da9c2a156eb225702164d47bbefef873e937a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/entry-timing.json",
+      "bytes": 9799,
+      "sha256": "e67bd6bd52ab558a4447f4841198bf74064d267157c3abfc3583ca4566dc8002"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/export_motion.py",
+      "bytes": 1556,
+      "sha256": "ab24419eb030aff39424a80f39dc2731e82352c0092d2e9c6eb523d8d13d8193"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/finish_qa.py",
+      "bytes": 2021,
+      "sha256": "0da26297fe39ab7dddccb7e36aef6e0d082b68cfa7a8fe9bc71a06cbedfee525"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/local-binding-report.json",
+      "bytes": 618744,
+      "sha256": "54893cfc22dd149166d9fbb47cdb7f4c98fe1fd724015c70c18345b94dd2270d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/make_timing.py",
+      "bytes": 2849,
+      "sha256": "c1ea98aea0212864c192053141f41c78e4eb46f11fafa87e4b15dd853d1f3596"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/motion.py",
+      "bytes": 9299,
+      "sha256": "93a30a37d63f8e025654858296fa78b8a2684889158e4858c0e652c018fefe6f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/native-back-contact-solve.json",
+      "bytes": 9098,
+      "sha256": "62fe7c9c75bae734fc13cb8fcf3b1a46c6cddab76e17acdf1d47b6f3a9e6b366"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/native-keying-receipt.json",
+      "bytes": 155027,
+      "sha256": "d5df0c86417478aeb42add86e9026692f92c81e26aa856f10c5c1fd07002b30f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/qa-pair-diagnosis.json",
+      "bytes": 4178,
+      "sha256": "0940dd8afcbecf3b6cbca6e1324ff904c3ad1d9db30a1a96d283f0354857338e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/README.md",
+      "bytes": 2840,
+      "sha256": "4d63fd8fb7b171b5f93e2d00c727b0d22f701cb129ef56dd4ba8eb31c94a3773"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/render_qa.py",
+      "bytes": 1406,
+      "sha256": "48112ed8389dae9dfd32388b890cf9d46121ccfe06d0de711211d15d44fee11b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/render_timing.py",
+      "bytes": 4181,
+      "sha256": "07985ceddd938723bd4984107ed58bc8c746920fb31f7fa7a13710b4a84e3775"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/reuse_1987.py",
+      "bytes": 1998,
+      "sha256": "b82194080ce07318136cbab1536eab2790d0a60caa6962f82c64f3a7e9c185b0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/saved-keying-receipt.json",
+      "bytes": 224,
+      "sha256": "6ccc9dbd8688e4327fd03ecd0c8d834050eb8fed69d7b36be84c55f6b3abe866"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/shoulder_binding.py",
+      "bytes": 2633,
+      "sha256": "367fe639d240c6490629df1fa4f05747c19139ae9b3ef2cc96cb4b3a10a38ce8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/shoulder-binding-report.json",
+      "bytes": 293000,
+      "sha256": "1f6bc1a38e4743e2f24e2fd02a56c59499eef36ad73157c75478aa1832182f22"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/solve_native_contact.py",
+      "bytes": 4363,
+      "sha256": "3a18249c0fd1d31be926e17bea4e504665c3f61eeafc94bceaa7bef401805225"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/cameras.json",
+      "bytes": 349,
+      "sha256": "354574d04124ea365efed8681b1266ed95e0381dc310e235b6df9e6ec92fe2b3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/clip.json",
+      "bytes": 3621,
+      "sha256": "1207bd8a1e66757f29c87bce1d02af12e2be152d542ef7c105b301ebe8c4bcde"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/decoded-physical-report.json",
+      "bytes": 730384,
+      "sha256": "2a434eda29e31c60616580207bfba88c7f258ca701656470d43e50581b011aea"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/delivery-report.json",
+      "bytes": 1486,
+      "sha256": "b7bafef8d47550a18ca31d26c25251725b96e45eee68afc02dd551ecea7539b4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/dq-reference.json.gz",
+      "bytes": 1434260,
+      "sha256": "1838b72367083545ec1111579ceba9b3f64d5317296d6ef9813ac3c1e068729a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/export-verification.json",
+      "bytes": 21819,
+      "sha256": "585d9337959965b50a697cd4f059b725c6032b7a385deacf2e5a44f1a7b2d931"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/normal-reference.json.gz",
+      "bytes": 1740655,
+      "sha256": "2bf2735ebda893246192fc79ecefb84a3b16a7d76b1f02f97a95b758333dc2be"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/pose-samples.json",
+      "bytes": 41244,
+      "sha256": "93485672dc842988e4b85bdab4f321957472c377349c705218a91d32638cc73f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/raw-asset-qa.json",
+      "bytes": 5001,
+      "sha256": "06339c64a6568fab84f61c9419b2210de57749c0e4fc999de76e33ea9a830109"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/runtime-surface-reference.json",
+      "bytes": 2166345,
+      "sha256": "b77a8c6088cedec4a87162c84a430fd839e3525b7760fe83838033f8edd7e09b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/source-verification.json",
+      "bytes": 766,
+      "sha256": "026c14d9e69b64f2972750c22defdbf165797c5353a78b4784627fbc24375ede"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1986/surface-contact-report.json",
+      "bytes": 730477,
+      "sha256": "908d207578c8169a9cae34411279baaabf8cbe24b0fb2e8d75e5b28bea8d0303"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/cameras.json",
+      "bytes": 349,
+      "sha256": "354574d04124ea365efed8681b1266ed95e0381dc310e235b6df9e6ec92fe2b3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/clip.json",
+      "bytes": 3594,
+      "sha256": "6cc4c57d2c149ebd90991035be8874a85d4fd85dc58abb78c60768d764a48bc5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/decoded-physical-report.json",
+      "bytes": 605161,
+      "sha256": "8d4fbcb2684db7bca44c47a3534833085a1801fa5768e15e9bfc75ce61e6558b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/delivery-report.json",
+      "bytes": 1383,
+      "sha256": "89934ccdc8cbfb9185df9dd2bec2dde833f91bad93a2988110620bc085a35df2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/dq-reference.json.gz",
+      "bytes": 1434790,
+      "sha256": "23c2de004a660c9fdf9be3a1d960527bf04f0b098fcfec8b666c7f2ff8ce9e49"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/export-verification.json",
+      "bytes": 21814,
+      "sha256": "704c901229a0d35a44ae0ed2e98265156c344f5354293d34f6d4304c26160256"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/normal-reference.json.gz",
+      "bytes": 1740857,
+      "sha256": "6e6d46c7a4c7e9d5e89efff1e6a8844b457be061a5ac4997a0c341116b82cdd4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/pose-samples.json",
+      "bytes": 41334,
+      "sha256": "7fd02b20e6c88345e99bb272cb737210394c85eb7c5837af7a162650635bde05"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/raw-asset-qa.json",
+      "bytes": 4793,
+      "sha256": "443d9ce9b8e73205f33eee417fb18edfe3b650f890b2696778ccfe36790500ac"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/runtime-surface-reference.json",
+      "bytes": 2166899,
+      "sha256": "65eecfad9a3ff64b316065a13af523c0a7a029280cec9a9d3c92c778ec83ea5b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/source-verification.json",
+      "bytes": 766,
+      "sha256": "fd6fb7c63e029052b30ee934cd164fd9ef25cb82871370cb0080bfa4ef5d208b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/1987/surface-contact-report.json",
+      "bytes": 605206,
+      "sha256": "bcda0f6f9b4193907f24de760d5734e4387bc71640dd27e0237b26a7ed1833cb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/build.py",
+      "bytes": 6767,
+      "sha256": "7b254679ae746211f8316a0460ab630b8df9319c9a9ef93a391ed4678e5b5b06"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/manifest.json",
+      "bytes": 4475,
+      "sha256": "0b1acdfc616085233622b44ad9d1388e7e6d4b5bbea877a2abbaae9fc991e425"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/motion.glb",
+      "bytes": 1054096,
+      "sha256": "ca583ebabd85a85df782d04454cfd9310b72a4809ed0b180f9c526ba1c750789"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/motion.py",
+      "bytes": 8061,
+      "sha256": "74b34f5417472d1b7e69dd5f62bdd0d083efd476dece3415589f772bc72fdf71"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/native-back-contact-solve.json",
+      "bytes": 9098,
+      "sha256": "62fe7c9c75bae734fc13cb8fcf3b1a46c6cddab76e17acdf1d47b6f3a9e6b366"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/saved-keying-receipt.json",
+      "bytes": 224,
+      "sha256": "706e3f1d46e75b5d2e50b3b39339b211e63ab3623c517a5e1d7f6e88cd833848"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/shoulder_binding.py",
+      "bytes": 2633,
+      "sha256": "367fe639d240c6490629df1fa4f05747c19139ae9b3ef2cc96cb4b3a10a38ce8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/source.blend",
+      "bytes": 14111691,
+      "sha256": "43b365d87cd3c7f2566695b735a068de773427d41c6ad875ed1d26471a90dbb3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-baseline/wrist_motion.py",
+      "bytes": 4474,
+      "sha256": "21f258f444e869a473b49195621192f33557825f50b48731f5b4e91270840d7b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-comparison.json",
+      "bytes": 393793,
+      "sha256": "70e5e062ea90034742cf8d1f1eabc014308aa2cb5a372d96b43b64b69288d019"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/timing-diagnosis.json",
+      "bytes": 309349,
+      "sha256": "1b83f476448d137f1a8281121e92a2018d6814087e06ac38241548cb49dbf084"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/verify_export.mjs",
+      "bytes": 6992,
+      "sha256": "0c15d943dcc55596f6cbec6af5ee07ddd2a48fc96a38f42c1976bdcd1d400b1c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/verify_native.py",
+      "bytes": 13192,
+      "sha256": "c1876da486c5e03bf5c6b1202ce895c03bf4f6d94f68c67c577cf26be14c1506"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/verify_timing.py",
+      "bytes": 4751,
+      "sha256": "29e86bce55eba03bf6e41812a0c693d10dd01547516cc95a10f221309e8c5afb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/wrist_motion.py",
+      "bytes": 4474,
+      "sha256": "21f258f444e869a473b49195621192f33557825f50b48731f5b4e91270840d7b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/write_delivery.py",
+      "bytes": 17216,
+      "sha256": "f66a53b569bd166ff154e2e6458a47a8b7f06b9ae4cd9d087deb2ee36160277b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/authored-anchors.json",
+      "bytes": 278,
+      "sha256": "951a2dc71c42622ac06d1cfbbe170bc85e081d837e8f7273598abb505ed11424"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/bilateral_geometry.py",
+      "bytes": 3818,
+      "sha256": "3ae470f229f57749ca3bfbdfac2faf39b127378d832393dd17961f1285334b05"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/build_source.py",
+      "bytes": 8355,
+      "sha256": "9b59072d8849bc5468d474d8e7b01a86a96099889e5ea59b40761bed8d86e5f7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/contact-surface-contract.json",
+      "bytes": 192439,
+      "sha256": "2794e6664270c8627a999535cd58f5ae7a3007ff765dc519a0e2ec0002b9f798"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/curated-files.json",
+      "bytes": 6420,
+      "sha256": "fa699c93ba238df0178aa55b9f5c578b2c9029a1ef495cdc7d6c03844c259b78"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/dependencies.json",
+      "bytes": 2003,
+      "sha256": "0ded748c613eeadfb636af48e3d8b2cfa3057b1b029b99dd524c8d8e5486e808"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/diagnose_face17419.py",
+      "bytes": 5234,
+      "sha256": "c84ffe0e9dd46f47f3da2c9b6e363b76c2faf27f402fb7cc8ce35ed28030e2af"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/export_source.py",
+      "bytes": 1622,
+      "sha256": "8b093ab3dffac831faf8110e74ba819ff049421356fe21e616b7198e498bbabf"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/face17419-diagnosis.json",
+      "bytes": 25410,
+      "sha256": "e3858f4da3c358d5bfae1b0e46145d09c2a1bad31de2c4491c7cfdd9d4e3c5d7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/findings.md",
+      "bytes": 1800,
+      "sha256": "fd9046a4c5133b406d763e7ff5a927f888b0da2edd1c21d119d2a6bafe8f8308"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/frozen-export-checkpoint.json",
+      "bytes": 1960,
+      "sha256": "0bb90a13f30c2d66ef763307fc0a42acb14067f5e80febf1fa0d42b8e28a0b63"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/hip-binding-diagnosis.json",
+      "bytes": 125826,
+      "sha256": "99049f95ba223a70aef99a6026f76e60fc22bb0113eef92a5fc53f501df8d7cf"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/hip-volume-component.npz",
+      "bytes": 150543,
+      "sha256": "223cfae26464a84f1e92294a6225d3a211d95de2208b3225200d242ed59653be"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/hip-volume-contract.json",
+      "bytes": 120046,
+      "sha256": "5e864bda414ccfa87143ab96cce2154de29b155b3e13c28dd3fa9cff77d12bba"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/motion-contract.json",
+      "bytes": 1052,
+      "sha256": "ab0e696a7e5ec58d933cb4764138eec21c2b6f2f04bd76844dc77f7ee5311222"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/motion-speed-report.json",
+      "bytes": 48581,
+      "sha256": "cc5b6cbe4103dd699997fbf6d644dd67392346ff5ab6dfd5010025af2ad2edeb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/native_checks.py",
+      "bytes": 7840,
+      "sha256": "94346eb62786685a77f957e6a70cf4d9645bc22438dc4480b85a5e2d0ffe097f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/native-loop-report.json",
+      "bytes": 2819987,
+      "sha256": "d8349b6422d84e5ff806a8c5ea2dc6744fc4ff6a6d28c3e557d069b3a1f69be8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/package_final.py",
+      "bytes": 15494,
+      "sha256": "441927a89ee1bb2fc21535933f606c3793a4e1e44af3536fc251864e9a0cbde5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/prepare_landmarks.py",
+      "bytes": 1959,
+      "sha256": "35387b92f0b911228c4b35a558dee265b12bdd6b07fed6344a36fabd409b9f4c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/primary-gpu-acceptance.json",
+      "bytes": 2015,
+      "sha256": "648f1f06ac88b9ba5df7248ee47a5a65491cd10a9bfe23842cdcd08f6602234e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/README.md",
+      "bytes": 3155,
+      "sha256": "1e859dcb4168ae098bee88295aa24c3f368a50dc749f5c2f608c540283e9a71c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/selected-contact-receipt.json",
+      "bytes": 31258,
+      "sha256": "a724b339a49469bccf87300d316f3cc72cfca784bf036083bb2786c834274b50"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/status.json",
+      "bytes": 621,
+      "sha256": "ec8ad2dd059b7e4f1c6a59f775cc3fa33a1057b1da4fe988e32d25e151e7d2bf"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/thigh-contact-margin.npz",
+      "bytes": 263624,
+      "sha256": "ca99ed98b25715dc212b1f1492bf7860f7fd663684f89604887eee18e19a6cea"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/twist_motion.py",
+      "bytes": 14540,
+      "sha256": "010e55e9c11fc1fef97b0440b9502d4f4ca403eb851b64fc2de50e1b9a4caabc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/verify_export.mjs",
+      "bytes": 9028,
+      "sha256": "94bae899c49bc9892dd2be8b52b0e0e3af00e6fb63493edd5b99730f39b8dc2f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/verify_runtime.mjs",
+      "bytes": 4689,
+      "sha256": "86592be2befff39586e404337bc10075e0c03ae8ee91e339671a24ce9c5d40ba"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/verify_runtime.py",
+      "bytes": 6105,
+      "sha256": "d65c9bd49dc7b9f4535c77aba69a5db8c7150aa5cc07c01073a66cd89967df9d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/seated-twist/write_native_references.py",
+      "bytes": 8760,
+      "sha256": "d0bef30756f5c6d69ff463f958c7e50bc6c810f45d93dac9415c04711d984328"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/selection.json",
+      "bytes": 1485,
+      "sha256": "6c82a27e507d33021da255ab000ad33a6a3310aaa2b9f0003f1f9d86dfdd70b9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/build.py",
+      "bytes": 8314,
+      "sha256": "93b88ce6e78a9db9dfdd3c95b0f75bd08f9c8d5891efd95f56d8e77a213f30c4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/causal-diagnosis.json",
+      "bytes": 4288,
+      "sha256": "d2c9c02efd0410e7974cebfa266f173e8732b25b93c4308aede18bd0dda30ba2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/check_motion.py",
+      "bytes": 5197,
+      "sha256": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/component-readback.json",
+      "bytes": 1604,
+      "sha256": "d4ebfd33e10135c7f4bd02c0ed951f9cb6b6fb43ce717b15b0eb455a03618b88"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/continue_protraction.py",
+      "bytes": 4926,
+      "sha256": "918412ccb7e39669355502fb34323b658de7904750218e24e24eeef3921c51ad"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/curated-files.json",
+      "bytes": 1020,
+      "sha256": "f70353e7b9ded5ebde81150336062a3412ad0623c96f42abaebfc2763dd3a870"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/delivery-report.json",
+      "bytes": 19547,
+      "sha256": "38ca675580be4646a9d5b26d697435ee2efc9421c0cf286d8ae01472df10335a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/dependencies.json",
+      "bytes": 2361,
+      "sha256": "2e669a1319a174c691bd5fd50d37b561955e54931dca71b78ffd37fc2f299d58"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/export_motion.py",
+      "bytes": 1613,
+      "sha256": "3404d5e527eb9c1fcbe9c930dd146850d0b7c7e95b7203419356e0690e6091bd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/fix_morph_weights.py",
+      "bytes": 2540,
+      "sha256": "746fe4330b4c8762b6147f3ab314ec009b30092bd3d4d5efcb2dd69f7026675d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/foundation-v5.blend",
+      "bytes": 14238083,
+      "sha256": "35502f29ae6ce6f6f8337cd722c79b899871e1364495adae544e6be1e38fac1a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/integrate_specialist.py",
+      "bytes": 1725,
+      "sha256": "f0e30eff95e27eae782ba60ccd046bb3d15b861ac2d20a22b5feb7152618ac30"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/integration-receipt.json",
+      "bytes": 765,
+      "sha256": "dffc2d818f5fbb202998c402438c7e00aac729eeddc67b9e762965e44b1cb722"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/local-binding-report.json",
+      "bytes": 618631,
+      "sha256": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/motion.glb",
+      "bytes": 1078452,
+      "sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/motion.py",
+      "bytes": 6069,
+      "sha256": "f4d460a5b580ca94c403232d62031acdbb1c65032e1f40e375ae87dcbb6cc625"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/plantar_binding.py",
+      "bytes": 1914,
+      "sha256": "72676e1d9856fdc0f3c534590c345405a5a494cf5a0c82df0dd3d5b4abfb6cdc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/protraction-continuation.json",
+      "bytes": 92456,
+      "sha256": "2d1605a373c296e29f8c0333fcb89e0b5a314fd57ea6ab02e6a8461ff7b2df40"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/README.md",
+      "bytes": 1637,
+      "sha256": "1f71f7e5bb38aaeeae7969c82f2c681fed748078d7993740fc1dd9836d001266"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/render_final.py",
+      "bytes": 2720,
+      "sha256": "78358043596f8632d4b5abd307fa120c24d6a463252a08e12acba37dad92a22e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/render_qa.py",
+      "bytes": 1579,
+      "sha256": "84ff7836cab913da6e0a8f497f9e20fc5f64ff4f4f48fe5e1c1a1f9155b43397"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/self_clearance.py",
+      "bytes": 2222,
+      "sha256": "9cc195f6355bb1ae21d63ae2fc338f4ec2aac794256d678068e52a4ea59d863b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/capture_contact_domain.py",
+      "bytes": 2333,
+      "sha256": "eb5d93674542628af90642dced80ed7939e955b9a425a54e5216ce9adf882cef"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/capture.py",
+      "bytes": 2535,
+      "sha256": "7a7b1744414ad483917e711a9daf965a8fffbc9745495198cde37a7ff4a13f93"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/causal-receipt.json",
+      "bytes": 2014,
+      "sha256": "7a55c28d224828bdbdb6e16fee77a0b87c0cab8cf82fa976e13f63036bfe3a78"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-112.5-back-oblique.png",
+      "bytes": 555383,
+      "sha256": "78cd14d379e203ce28d43b6fbd690fda4267356986220ee1cb41851c038e21cb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-112.5-front-oblique.png",
+      "bytes": 550156,
+      "sha256": "ee6c8ea8a07b1f5732ee19d89f4a187246e30b86b38c166ef761093536f80690"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-112.5-side.png",
+      "bytes": 527903,
+      "sha256": "a8119adfb5a1d9b15399a6dfca7114c045cd650db303ded1a03510944d6152be"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-19-back-oblique.png",
+      "bytes": 551772,
+      "sha256": "f83ba1801ca7fc7557868760af311a369e0ca44a7eae6d64e5d303b72346e246"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-19-front-oblique.png",
+      "bytes": 556284,
+      "sha256": "a7fd6f9d539cb2038b135593d23be376be16e44ee4c54cd29a0187b654b0ddea"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-19-side.png",
+      "bytes": 519668,
+      "sha256": "5e8e88063257c3f14926cee7ac7593dc82d028374b6b74c69a154aa7d920a00e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-37.5-back-oblique.png",
+      "bytes": 544046,
+      "sha256": "6b9fb9f125c25ad786ad85c0f99b3cc73673306b2507f57be4b3a5c47e537737"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-37.5-front-oblique.png",
+      "bytes": 554819,
+      "sha256": "0f1f7a3b2052b9b762a532b6f09abe94a5fb67cdf8761064f4ca807d5eda0e0e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare-corrected-37.5-side.png",
+      "bytes": 528581,
+      "sha256": "bcfdaf4330449e6029d7922fcc8294dfd175a9934fb2e8570a57d9fe306d10cb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/compare.py",
+      "bytes": 2373,
+      "sha256": "dafb2302cf21c22709f7de2569d0b3cf465833f86e7e56921f840865c6a84fb8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/construct.py",
+      "bytes": 5864,
+      "sha256": "d0b1913a8189bc1e5354fe3204244377ce602a6c152b6b53d99c53dca45138ba"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/construction.json",
+      "bytes": 68397,
+      "sha256": "2e3a26f34ab23c85eacc343b0d2c85aae8d6939008af981b9f9ccff3fed95c02"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/corrective.py",
+      "bytes": 2244,
+      "sha256": "e6d91655df864c8331df8c7404b11435db57e303bb5e9ec2ddc8dad26f4a849b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/curated-files.json",
+      "bytes": 7464,
+      "sha256": "c0cd30243b71eb31da05b0e5a019c83d956360216db6cfbe10dafefbb42510ff"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/game-qa.json",
+      "bytes": 3544,
+      "sha256": "4acda68ed7126eb9afd7c82acd6d87e88cb86ae494f1d917785f5dac523aee98"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/handoff.json",
+      "bytes": 1425,
+      "sha256": "a7773c6a3075b08ed5e3cf61ee56f61896047e12b1f174d8fd55586159d68f7b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/native-contact-domain.json",
+      "bytes": 4574,
+      "sha256": "4a41f251941b012f3225cffd24c62c7e81d6c42bd3da343e42b4e618f0e5ab43"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/native-contact-domain.npz",
+      "bytes": 20557,
+      "sha256": "19183ebc4b11f46b787147e059de376403b2a5c84df3ba2e537c0e91c5145d0f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/native-current-checks.json",
+      "bytes": 8571,
+      "sha256": "d87eb1a4ed8008b5aecf49bd7bdcfa95f803a97feac797d7914d245bb9f806c3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/preservation-report.json",
+      "bytes": 128352,
+      "sha256": "619a731c5696c921637eb79b14beef726ba27c24f73c9793c835cb61f57a5123"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/preview.py",
+      "bytes": 2141,
+      "sha256": "50f20959c0f2c5ce45d902a0e2c036258149c05dd0df67b2ee43178f7ed5455e"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/proof-112.5-back-oblique.png",
+      "bytes": 556752,
+      "sha256": "bed82910c322d1d62d2dcb370897b9f24b739b84d066d245163ec17aea888085"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/proof-112.5-front-oblique.png",
+      "bytes": 545977,
+      "sha256": "612d4180047fe8f097e02a0d34cf12f63c6e142112a8199fd18103ffd8b60c68"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/proof-19-back-oblique.png",
+      "bytes": 539717,
+      "sha256": "d2a3612ea42c25e6e8015f3efdf4063f89d5b03f73d82c4ae7f5dd7e03403ed4"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/proof-19-front-oblique.png",
+      "bytes": 545581,
+      "sha256": "4d78257cf82da7285fc2539260c6edaddbbd49f8d33bc32fac22c32202bb2b44"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/proof-37.5-back-oblique.png",
+      "bytes": 539574,
+      "sha256": "5e8e0cde1e7fbde0a45a9f349d560bffd9761bb6032f81be8450af30878782b1"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/proof-37.5-front-oblique.png",
+      "bytes": 554187,
+      "sha256": "f6152fd58e71eb63185abcc0a66d3aa0f89bbd54612fc44dba2ee96e39c749a3"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/README.md",
+      "bytes": 5233,
+      "sha256": "a38114bff6cb2b591651003819684a9de5ebad5a6494c3ffc790fa0ca45302e5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/shoulder-ownership-target.npz",
+      "bytes": 327975,
+      "sha256": "f78f91bbd0c1d64a1d944980993228952a3ec83a50386c332a2e52f02bd1a958"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/target.npz",
+      "bytes": 163309,
+      "sha256": "ee9cc902a2ec48f47da40cb07556e19d64dbd0dca1d83ee68c2decaf43d60405"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/verify_current.py",
+      "bytes": 2835,
+      "sha256": "f817bc51ae6c606bd3c58a17b84fce11a65aa0da511357f8302b22381a9dc46b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/shoulder-specialist/verify_preservation.py",
+      "bytes": 4819,
+      "sha256": "4802061d209f5b8814673627b31cfd81eb4f70bbe7f3b6ebfb6e0696007ae7c2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/source.blend",
+      "bytes": 14252989,
+      "sha256": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/triangle_intersection.py",
+      "bytes": 1428,
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/verify_6014_identity.py",
+      "bytes": 3252,
+      "sha256": "cb9e5bcea2a95191c4aaa49d74f6a4ba566bba2a025c5b175651dc88f364bc0b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/verify_component.py",
+      "bytes": 3501,
+      "sha256": "380d7a2253800f2b8ab2e767f8c00086bb9309fde4a1716daeb9d13484723ab1"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/verify_export.mjs",
+      "bytes": 8193,
+      "sha256": "220b2d63514394bee1720a1585b5a63a372daa2ead7a1f3bfcbf625dc8773c07"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/verify_native.py",
+      "bytes": 14973,
+      "sha256": "3551ca1a5c10659036437b4c897c24d828a151e8d153e27e0f2a503f0f6df180"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/standing-dynamic/write_delivery.py",
+      "bytes": 12026,
+      "sha256": "796bf024d472b7d5d73a7d33b6ef8a8956142b726ae7fe2a4f4351462ca8501b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/template.html",
+      "bytes": 4897,
+      "sha256": "58d1dd64299eae880326121cd0ccfd66a9d1d956fc8baf4637a659298f1696b2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/verify-inline.mjs",
+      "bytes": 78,
+      "sha256": "7f3584978716091d5ec9b4b1ccd533e0deee7e3da191d8463b63b2954f5c535a"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/verify.mjs",
+      "bytes": 78,
+      "sha256": "8cc3adba08a17e6993c47cfe08db59db9b0cd54157bd261d51321d1ce731c00c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/viewer.js",
+      "bytes": 33,
+      "sha256": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92"
+    },
+    {
+      "path": "artifacts/exercise-batches/build-review.mjs",
+      "bytes": 9247,
+      "sha256": "4eca2781193a5cd713b52cab571ef609fdb2eb5652ef5440065debc01628dd9a"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "bytes": 5062,
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    },
+    {
+      "path": "artifacts/exercise-batches/fit-cameras.mjs",
+      "bytes": 4351,
+      "sha256": "eb8625d519c5031df64f6de2ca532130515c545a1220447af5a15c0247cfe931"
+    },
+    {
+      "path": "artifacts/exercise-batches/verify-inline.mjs",
+      "bytes": 4061,
+      "sha256": "196d25802d96f867d0fbb760dfb02ce1180660890854befa8c95f70f96b9fa30"
+    },
+    {
+      "path": "artifacts/exercise-batches/verify-review.mjs",
+      "bytes": 19801,
+      "sha256": "880954e7ddf1d3673b7190cc975602e77270be8d8022a91a5719ab82c22737a0"
+    }
+  ],
+  "total_bytes": 424639743
+}

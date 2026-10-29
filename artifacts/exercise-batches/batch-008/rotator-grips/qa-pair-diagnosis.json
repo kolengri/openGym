@@ -1,0 +1,180 @@
+{
+  "frame": 30,
+  "source_sha256": "9ff9079d616ecf2e487c737b911f7908218813e01aa33a6e69160a6f85e03a5a",
+  "raw_qa": {
+    "ok": true,
+    "pass": false,
+    "errors": [
+      "z-fighting: SK_BlenderStudioHuman (1 overlapping coplanar tri pairs)"
+    ],
+    "warnings": [],
+    "ground_z": 0.001,
+    "zfighting": [
+      {
+        "where": "SK_BlenderStudioHuman",
+        "tri_pairs": 1
+      }
+    ],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "SK_BlenderStudioHuman": {
+        "verts": 10582,
+        "faces": 10590,
+        "tris": 21160,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0,
+        "uv_maps": 1,
+        "uv_oob_pct": 84.1,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.0,
+        "uv_coverage_pct": 47.2
+      }
+    }
+  },
+  "zfight_pairs": [
+    {
+      "triangles": [
+        [
+          9567,
+          8160,
+          8268
+        ],
+        [
+          8096,
+          8111,
+          8314
+        ]
+      ],
+      "positions": [
+        [
+          [
+            0.24850694835186005,
+            0.14758804440498352,
+            1.6992778778076172
+          ],
+          [
+            0.27160072326660156,
+            0.12226191908121109,
+            1.6671779155731201
+          ],
+          [
+            0.24858571588993073,
+            0.13872742652893066,
+            1.6935714483261108
+          ]
+        ],
+        [
+          [
+            0.2514425814151764,
+            0.12202998250722885,
+            1.6813015937805176
+          ],
+          [
+            0.2507209777832031,
+            0.15486198663711548,
+            1.703028678894043
+          ],
+          [
+            0.2549887001514435,
+            0.16241313517093658,
+            1.7046856880187988
+          ]
+        ]
+      ],
+      "source_vertices": [
+        {
+          "id": 8096,
+          "basis": [
+            0.3297079801559448,
+            -0.0023541213013231754,
+            1.1836013793945312
+          ],
+          "groups": {
+            "LeftArm": 0.7088221907615662,
+            "LeftForeArm": 0.29117780923843384
+          }
+        },
+        {
+          "id": 8111,
+          "basis": [
+            0.3363457918167114,
+            -0.008727462962269783,
+            1.167056918144226
+          ],
+          "groups": {
+            "LeftArm": 0.27443188428878784,
+            "LeftForeArm": 0.7255681157112122
+          }
+        },
+        {
+          "id": 8160,
+          "basis": [
+            0.31239745020866394,
+            -0.0012399511178955436,
+            1.1739064455032349
+          ],
+          "groups": {
+            "LeftArm": 0.7691059708595276,
+            "LeftForeArm": 0.23089401423931122
+          }
+        },
+        {
+          "id": 8268,
+          "basis": [
+            0.3177066445350647,
+            -0.006639231462031603,
+            1.157749056816101
+          ],
+          "groups": {
+            "LeftArm": 0.24436116218566895,
+            "LeftForeArm": 0.755638837814331
+          }
+        },
+        {
+          "id": 8314,
+          "basis": [
+            0.34520938992500305,
+            -0.004277599044144154,
+            1.1701157093048096
+          ],
+          "groups": {
+            "LeftArm": 0.29355424642562866,
+            "LeftForeArm": 0.7064457535743713
+          }
+        },
+        {
+          "id": 9567,
+          "basis": [
+            0.3269478678703308,
+            -0.009473014622926712,
+            1.1628572940826416
+          ],
+          "groups": {
+            "LeftArm": 0.24985842406749725,
+            "LeftForeArm": 0.7501415610313416
+          }
+        }
+      ]
+    }
+  ],
+  "status": "Historical rejected mixed elbow-frame pose; current final QA is per-asset raw-asset-qa.json."
+}

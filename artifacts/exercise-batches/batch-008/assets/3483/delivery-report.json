@@ -1,0 +1,67 @@
+{
+  "id": "3483",
+  "local_acceptance_pass": true,
+  "source_sha256": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c",
+  "glb_sha256": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+  "vertices": 10582,
+  "triangles": 21160,
+  "bones": 51,
+  "exported_objects": 2,
+  "materials": 1,
+  "native_diagnostic_bounds_m": {
+    "minimum": [
+      -0.5882769823074341,
+      -1.1586978435516357,
+      0.0009999871253967285
+    ],
+    "maximum": [
+      0.5883997678756714,
+      1.1082727909088135,
+      0.3652881383895874
+    ],
+    "dimensions": [
+      1.1766767501831055,
+      2.266970634460449,
+      0.3642881512641907
+    ],
+    "basis": "Five complete native diagnostic poses, Blender Z-up meters"
+  },
+  "blender_version": "5.2.3 LTS",
+  "native_samples": 151,
+  "actual_decoded_samples": 151,
+  "full_source_DQ_position_reference_samples": 5,
+  "full_source_DQ_normal_reference_samples": 5,
+  "joint_reference_bones": 51,
+  "joint_reference_samples": 13,
+  "maximum_full151_native_decoded_error_m": 6.153629323984948e-06,
+  "maximum_fiveframe_DQ_position_error_m": 5.96481759839585e-06,
+  "maximum_fiveframe_DQ_normal_vector_error": 9.991939311088681e-05,
+  "maximum_joint_error_m": 1.1231444724304321e-06,
+  "minimum_floor_z_m": 0.0009999594185501337,
+  "minimum_triangle_area_m2": 5.892944566479646e-08,
+  "loop_native_skin_error_m": 0.0,
+  "loop_decoded_skin_error_m": 3.075565016351684e-07,
+  "game_qa_errors": 0,
+  "retained_raw_warnings": [],
+  "game_qa_reuse": {
+    "from": "4935",
+    "reason": "Byte-identical source and model, identical action transform tracks; native/decoded151 action-specific gates run independently."
+  },
+  "warning_disposition": "No game-profile errors or warnings at the diagnostic poses. The original out-of-tile UV metric is preserved under the exact UV invariant; the neutral material contains no image texture. Original low-poly hip and shoulder/armpit facets remain visible and were accepted in root native review.",
+  "source_binding_corrective": "Read-only causal waist/plantar helper; no geometry, Basis, UV, topology or rest skeleton changes. Actual saved <=4 influence normalized weights read back.",
+  "shape_keys": 0,
+  "native_visual_acceptance": "Root accepted3204 start/peak side/oblique and refreshed4935 lift/sweep/hips proofs; root actualGPU acceptance remains pending.",
+  "integration_pending": [
+    "Root actual GPU playback/surface acceptance",
+    "Root source-label soft muscle fields",
+    "Root camera-width fitting including3204 oblique foot edge"
+  ],
+  "not_a_global_collision_or_clinical_certificate": true,
+  "sweep_skin_support_and_lift_m": {
+    "pelvis": 0.0010000773472711444,
+    "lowertrunk": 0.003986679017543793,
+    "foot_Left": 0.04282274842262268,
+    "foot_Right": 0.04214434698224068,
+    "upperchest": 0.039404481649398804
+  }
+}

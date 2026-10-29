@@ -1,0 +1,63 @@
+{
+  "status": "all151native_actual_decoded_DQ_NORMAL_support_foot_clearance_loop_game_gates_passed; root_GPU_pending",
+  "source_sha256": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+  "glb_sha256": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+  "asset_manifest_sha256": "d4314fbeade81cdced1aeecf14e1e02237be490c4e1d0f772dc0208cd9be3936",
+  "asset_delivery_sha256": "56b418c63f76ca020208d5e701d48f54f55808314b530888a17e3962045de8c8",
+  "metrics": {
+    "source_vertices": 10582,
+    "bones": 51,
+    "triangles": 21160,
+    "source_samples": 151,
+    "native_decoded_maximum_error_m": 2.945293764378059e-06,
+    "five_pose_DQ_maximum_error_m": 2.701296405240653e-06,
+    "maximum_joint_error_m": 1.6888534104643873e-06,
+    "five_pose_full_source_normal_maximum_angle_degrees": 0.004700572679917477,
+    "minimum_native_floor_z_m": 0.0005732025601901114,
+    "minimum_actual_decoded_floor_z_m": 0.0005733341095037758,
+    "minimum_triangle_area_m2": 5.889887727267368e-08,
+    "loop_skin_error_m": 2.414264045062609e-07,
+    "maximum_supported_patch_drift_m": 7.571109813440713e-07,
+    "minimum_balance_proxy_hull_margin_m": 0.01739368155360796,
+    "maximum_soft_knee_flexion_degrees": 27.577594104643822,
+    "forefoot_edge_ratio_range": [
+      0.9999230121445468,
+      1.0000763380249567
+    ],
+    "mixed_ankle_edge_ratio_range": [
+      0.672626645392534,
+      1.2095830747307401
+    ],
+    "whole_arm_hand_vs_leg_triangle_crossings": 0,
+    "reach_peaks": {
+      "Right": {
+        "frame": 33,
+        "minimum_distal_hand_z_m": 0.23802556097507477,
+        "minimum_hand_to_stance_toe_skin_m": 0.2962605446973064,
+        "interpretation": "Towards toes; no grasp/floor contact required."
+      },
+      "Left": {
+        "frame": 108,
+        "minimum_distal_hand_z_m": 0.23824305832386017,
+        "minimum_hand_to_stance_toe_skin_m": 0.29637059204279964,
+        "interpretation": "Towards toes; no grasp/floor contact required."
+      }
+    }
+  },
+  "files_sha256": {
+    "README.md": "3ffae43fe8073eea60e1718ebeeb90a4931abcfb65c79c8948b41786bb3ca57b",
+    "balance_geometry.py": "7a061538b009a491446723218431c67292c9f121f2632abcce55eb9b9b973818",
+    "build.py": "0664cd034943cfa15a09adaf82b469d4afad901366e95c50652acd1ab7c841e2",
+    "curated-files.json": "9d55b35f92d31ecf5dcd238c9caf9f7c3a5fc4eefb00576e893025db29952074",
+    "dependencies.json": "1770c7f3195c2f96d1747e6e8de5ff1e6d32c2b391cb39e0f521469ea20a539f",
+    "environment.json": "4161b9e37b4caf68a63c78c7529b2b35690b435e4074cec5fd240aafcd9d5442",
+    "export_motion.py": "aacd461c84db4f1f16edafbca2f421cca6050669e3c75b383ecf2e12bb4996b0",
+    "finalize.py": "7dd3ce4b47dd408b81a9bdf6c0c64ef15ee3aa19e8f99c65315042e1f0899c0f",
+    "motion.py": "f6725b14a533c74c59636e3f656e27c2752dea438dd177d0eae6a4328d8ede08",
+    "probe_balance.py": "2bd12dc17f5e9ffd5f76830e43e6781c924dd40ad5f1e1958bd93bb871831730",
+    "probe_source.py": "9123f734f6e415b2792b4a6580b42c8bd7060e15b4a287cf6aba2f1adc800732",
+    "render_qa.py": "d124d3b4cba5a5b62a45ea06a32a7268404fe7236b8f18f52e5962890bae0add",
+    "verify_export.mjs": "a4a233790dd5dd70da6b19574af1648918ea5afad4c7e2843d5d3647eed7f0e9",
+    "verify_native.py": "e0b0d31fb0ba21390260d92dd470a76d0a35dd3538f0de8a5afcc3bd823ab96a"
+  }
+}

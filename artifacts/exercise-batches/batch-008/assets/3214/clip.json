@@ -1,0 +1,67 @@
+{
+  "id": "3214",
+  "name": "arms apart circular toe touch (male)",
+  "action": "Exercise_3214",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "glutes"
+  ],
+  "secondary": [
+    "hamstrings",
+    "quadriceps",
+    "calves"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Stand with your feet shoulder-width apart and arms extended to the sides.",
+    "Keeping your legs straight, bend forward at the waist and reach down towards your toes with your right hand.",
+    "As you reach down, simultaneously lift your left leg straight up behind you, maintaining balance.",
+    "Return to the starting position and repeat the movement with your left hand reaching towards your toes and your right leg lifting up behind you.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "source_record_sha256": "c5d1885fa2c64bcfe9b9dd05d72bc277d678b5e9fcfae07d9c0917e62c95f666",
+  "source_hold_recommendation_seconds": null,
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.25,
+      "label": "Transfer right"
+    },
+    {
+      "start": 0.25,
+      "end": 1.2,
+      "label": "Right hand down / left leg back"
+    },
+    {
+      "start": 1.2,
+      "end": 2.5,
+      "label": "Return and reset"
+    },
+    {
+      "start": 2.5,
+      "end": 2.75,
+      "label": "Transfer left"
+    },
+    {
+      "start": 2.75,
+      "end": 3.7,
+      "label": "Left hand down / right leg back"
+    },
+    {
+      "start": 3.7,
+      "end": 5,
+      "label": "Return and reset"
+    }
+  ],
+  "interpretation": "Five-second authored full bilateral cycle. Stand with actual sole centers about360mm apart and arms to the sides; transfer support, circle the same-side hand down towards stance shin/toes while the opposite nearly straight leg rises behind, return fully upright and mirror. Source says towards: the unchanged body proportions yield a lower-shin approach, without a required toe grasp or floor hand contact. Soft knees are nearly straight at the peaks (about13 degrees flexion); transfer bends are reported separately. Rounded arm arc,180mm lateral pelvis shift, posterior peak adjustment, coupled root height,80-degree pelvic hinge, modest distributed upper-spine rounding,70-degree rear-leg arc and timing are authored interpretations. Actual heel/ball skin stays planted. The homogeneous closed-skin volume-centroid projection is a geometric support guard, not anatomical mass, force, clinical stability or measured muscle activation. Original body/rest/UV/topology and all original torso/arm weights are exact; only the declared distal plantar binding recipe is reused. No global collision-free or clinical claim.",
+  "review_status": "151_native_actual_decoded_DQ_NORMAL_support_foot_clearance_loop_game_gates_passed; root_GPU_pending",
+  "source_sha256": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+  "glb_sha256": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+  "authoring_family": "../../balance-hinge"
+}

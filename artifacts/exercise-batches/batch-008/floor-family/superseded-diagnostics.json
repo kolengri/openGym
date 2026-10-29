@@ -1,0 +1,20 @@
+{
+  "accepted_files_are_listed_only_in": "curated-files.json",
+  "excluded_raw_diagnostics": [
+    {
+      "path": "raw-diagnostics/prone-initial-hand-gap.json",
+      "status": "superseded_failed_contact_check",
+      "observed_maximum_neutral_hand_gap_m": 0.006182670593261719,
+      "cause": "A wrist-height offset also rotates the source-derived palm frame, so a one-step translation estimate did not close actual skin contact.",
+      "bounded_remedy": "Iteratively solve the actual neutral hand skin minimum; final left/right gaps are approximately 1 mm. Pose lengths, sweep and binding are unchanged."
+    },
+    {
+      "status": "superseded_source_range_before_final_export",
+      "observed_peak_distal_foot_minimum_m": 0.09450338780879974,
+      "cause": "The initial bilateral leg elevation was larger than the few-centimetre source cue.",
+      "bounded_remedy": "Reduce straight-leg elevation from 6.4 to 2.8 degrees and transport the foot by 2.2 degrees. Final distal foot skin minima are 42.14–42.82 mm throughout the sweep."
+    }
+  ],
+  "final_native_proofs": "../assets/4935/early-*.png",
+  "no_runtime_vertex_caches": true
+}

@@ -1,0 +1,202 @@
+{
+  "id": "1986",
+  "source_sha256": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138",
+  "glb_sha256": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+  "native": {
+    "ok": true,
+    "native_integer_frames": 151,
+    "minimum_floor_z_m": 0.0009998363675549626,
+    "minimum_triangle_area_m2": 5.895894757469265e-08,
+    "loop_skin_error_m": 0.0,
+    "maximum_joint_step_degrees": 33.14106140014235,
+    "triangle_crossings": 0
+  },
+  "actual_decoded": {
+    "ok": true,
+    "maximum_full_cycle_native_decoded_error_m": 2.402000627471195e-06,
+    "minimum_floor_z_m": 0.0009998020250350237,
+    "minimum_triangle_area_m2": 5.895894757469265e-08,
+    "loop_skin_error_m": 1.2310379476739693e-07,
+    "triangle_crossings": 0
+  },
+  "game_qa": {
+    "pass": true,
+    "error_count": 0,
+    "warnings": [
+      {
+        "frame": 0,
+        "warnings": []
+      },
+      {
+        "frame": 30,
+        "warnings": []
+      },
+      {
+        "frame": 75,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ]
+      },
+      {
+        "frame": 120,
+        "warnings": []
+      }
+    ]
+  },
+  "limits": "Local original mesh facets and modest skin folds retained. Source workout hold shortened only for demonstration; mirrored side is not included in this single-side clip. CPU actual decoded transport evidence is separate from root-owned actual GPU/fields/framing acceptance.",
+  "timing": {
+    "before_major_joint_step": {
+      "frame": 41,
+      "seconds": 1.3666666666666667,
+      "interval_seconds": [
+        1.3333333333333333,
+        1.3666666666666667
+      ],
+      "joint": "LeftHand",
+      "degrees": 37.637835968530716
+    },
+    "after_major_joint_step": {
+      "frame": 30,
+      "seconds": 1.0,
+      "interval_seconds": [
+        0.9666666666666667,
+        1.0
+      ],
+      "joint": "LeftArm",
+      "degrees": 19.51881281852951
+    },
+    "after_all_joint_step": {
+      "frame": 57,
+      "seconds": 1.9,
+      "interval_seconds": [
+        1.8666666666666667,
+        1.9
+      ],
+      "joint": "RightLittle3",
+      "degrees": 33.14106140014235
+    },
+    "before_centroid_maxima": {
+      "Left_whole_hand": {
+        "maximum_speed_m_per_s": 3.9651176120495806,
+        "maximum_speed_frame": 41,
+        "maximum_speed_interval_seconds": [
+          1.3333333333333333,
+          1.3666666666666667
+        ],
+        "maximum_acceleration_m_per_s2": 44.17165762304034,
+        "maximum_acceleration_frame": 43,
+        "maximum_acceleration_interval_seconds": [
+          1.3666666666666667,
+          1.4333333333333333
+        ]
+      },
+      "Left_forearm": {
+        "maximum_speed_m_per_s": 2.963769653929344,
+        "maximum_speed_frame": 29,
+        "maximum_speed_interval_seconds": [
+          0.9333333333333333,
+          0.9666666666666667
+        ],
+        "maximum_acceleration_m_per_s2": 37.10561021579146,
+        "maximum_acceleration_frame": 27,
+        "maximum_acceleration_interval_seconds": [
+          0.8333333333333334,
+          0.9
+        ]
+      },
+      "Right_whole_hand": {
+        "maximum_speed_m_per_s": 4.390898128691836,
+        "maximum_speed_frame": 42,
+        "maximum_speed_interval_seconds": [
+          1.3666666666666667,
+          1.4
+        ],
+        "maximum_acceleration_m_per_s2": 79.80092718351868,
+        "maximum_acceleration_frame": 109,
+        "maximum_acceleration_interval_seconds": [
+          3.566666666666667,
+          3.6333333333333333
+        ]
+      },
+      "Right_forearm": {
+        "maximum_speed_m_per_s": 3.523974166441182,
+        "maximum_speed_frame": 34,
+        "maximum_speed_interval_seconds": [
+          1.1,
+          1.1333333333333333
+        ],
+        "maximum_acceleration_m_per_s2": 43.78195514634333,
+        "maximum_acceleration_frame": 36,
+        "maximum_acceleration_interval_seconds": [
+          1.1333333333333333,
+          1.2
+        ]
+      }
+    },
+    "after_centroid_maxima": {
+      "Left_whole_hand": {
+        "maximum_speed_m_per_s": 2.5041214876309263,
+        "maximum_speed_frame": 8,
+        "maximum_speed_interval_seconds": [
+          0.23333333333333334,
+          0.26666666666666666
+        ],
+        "maximum_acceleration_m_per_s2": 30.77454110885478,
+        "maximum_acceleration_frame": 35,
+        "maximum_acceleration_interval_seconds": [
+          1.1,
+          1.1666666666666667
+        ]
+      },
+      "Left_forearm": {
+        "maximum_speed_m_per_s": 2.078447186074876,
+        "maximum_speed_frame": 11,
+        "maximum_speed_interval_seconds": [
+          0.3333333333333333,
+          0.36666666666666664
+        ],
+        "maximum_acceleration_m_per_s2": 29.82323389813591,
+        "maximum_acceleration_frame": 26,
+        "maximum_acceleration_interval_seconds": [
+          0.8,
+          0.8666666666666667
+        ]
+      },
+      "Right_whole_hand": {
+        "maximum_speed_m_per_s": 2.762727198546541,
+        "maximum_speed_frame": 22,
+        "maximum_speed_interval_seconds": [
+          0.7,
+          0.7333333333333333
+        ],
+        "maximum_acceleration_m_per_s2": 39.42208382629861,
+        "maximum_acceleration_frame": 57,
+        "maximum_acceleration_interval_seconds": [
+          1.8333333333333333,
+          1.9
+        ]
+      },
+      "Right_forearm": {
+        "maximum_speed_m_per_s": 2.0895900885944285,
+        "maximum_speed_frame": 22,
+        "maximum_speed_interval_seconds": [
+          0.7,
+          0.7333333333333333
+        ],
+        "maximum_acceleration_m_per_s2": 34.831865832300956,
+        "maximum_acceleration_frame": 54,
+        "maximum_acceleration_interval_seconds": [
+          1.7333333333333334,
+          1.8
+        ]
+      }
+    },
+    "maximum_held_pose_matrix_error": 5.364418029785156e-07,
+    "comparison": "../../rotator-grips/timing-comparison.json",
+    "baseline": "../../rotator-grips/timing-baseline/manifest.json",
+    "actual_GPU_critical_neck_shoulder_runtime_frames": [
+      46,
+      47
+    ]
+  }
+}

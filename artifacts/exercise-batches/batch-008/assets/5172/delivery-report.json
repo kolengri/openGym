@@ -1,0 +1,137 @@
+{
+  "id": "5172",
+  "status": "native_decoded_export_game_pass; root_GPU_pending",
+  "source_sha256": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+  "glb_sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+  "runtime_binding_sha256": "6c3c40b3a5ba6fcbe33e75b6599b21233b8ad03d29b0bd028e0efcff967f1b38",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "source_invariants_pass": true,
+  "game_qa_zero_errors": true,
+  "game_qa_warnings": [],
+  "useful_GPU_poses": [
+    {
+      "frame": 0,
+      "seconds": 0.0,
+      "action": "Exercise_5172",
+      "phase": "Open at shoulder height"
+    },
+    {
+      "frame": 19,
+      "seconds": 0.6333333333333333,
+      "action": "Exercise_5172",
+      "phase": "Crossing transition"
+    },
+    {
+      "frame": 37.5,
+      "seconds": 1.25,
+      "action": "Exercise_5172",
+      "phase": "Right above left"
+    },
+    {
+      "frame": 75,
+      "seconds": 2.5,
+      "action": "Exercise_5172",
+      "phase": "Reopened"
+    },
+    {
+      "frame": 112.5,
+      "seconds": 3.75,
+      "action": "Exercise_5172",
+      "phase": "Left above right"
+    },
+    {
+      "frame": 150,
+      "seconds": 5.0,
+      "action": "Exercise_5172",
+      "phase": "Exact loop return"
+    }
+  ],
+  "metrics": {
+    "native_integer_samples": 151,
+    "decoded_integer_samples": 151,
+    "minimum_native_floor_z_m": 0.0009998790919780731,
+    "minimum_decoded_floor_z_m": 0.0009997420711442828,
+    "native_loop_m": 0.0,
+    "decoded_loop_m": 2.7092364185417753e-07,
+    "maximum_full_cycle_native_decoded_error_m": 2.0921145409088427e-06,
+    "maximum_NORMAL_vector_error": 8.187660755892303e-05,
+    "maximum_morph_NORMAL_vector_error": 0.00012798824818796936,
+    "native_arm_leg_triangle_crossings": 0,
+    "decoded_arm_leg_triangle_crossings": 0,
+    "native_arm_self_crossings": 0,
+    "decoded_arm_self_crossings": 0,
+    "maximum_influences": 4,
+    "maximum_weight_partition_error": 1.341104507446289e-07,
+    "forefoot_edge_ratio_range": [
+      0.999961446342751,
+      1.0000506119694332
+    ],
+    "mixed_ankle_edge_ratio_range": [
+      0.999995174606789,
+      1.0000048369782
+    ],
+    "maximum_leg_foot_orientation_step_degrees": 0.0
+  },
+  "bounded_limitations": [
+    "Original low-poly skin/finger facets and lower-axilla crease remain; the crest/scapula component has root native acceptance pending actual unshadowed GPU review.",
+    "Authored extent/cadence are illustration choices, not source tempo or measured muscle activation.",
+    "Local discrete checks do not establish clinical or continuous/global collision freedom."
+  ],
+  "remaining": [
+    "Root actual unshadowed GPU playback acceptance, fields and camera-width integration."
+  ],
+  "shoulder_component": {
+    "archive_sha256": "f78f91bbd0c1d64a1d944980993228952a3ec83a50386c332a2e52f02bd1a958",
+    "POSITION_ids": 1288,
+    "NORMAL_ids": 1403,
+    "union_ids": 1472,
+    "protected_POSITION_ids": 2653,
+    "maximum_rest_delta_m": 0.057562295347452164,
+    "declared_bound_m": 0.058,
+    "6014_weights_exact_zero": true,
+    "retained_shape_limitation": "Original lower-axilla crease retained exactly; not a global collision-free claim."
+  },
+  "files_sha256": {
+    "README.md": "90d65a61e322b019ca351141cd1f2c7c99f1a3c7473b7df08dc241a6910e3ba5",
+    "asset-qa.json": "e423c43393f871046a8e9b1bb9dd5127fd428d835b0b715bebb703e227965fa5",
+    "authoring-context.json": "2b387a66899b1ad6e252576040e1b7e9eb8e574a6bc4b02fe30621fe580a1120",
+    "authoring-family.json": "cfd443b5bfd7c211838cd78e4ae816ebec33bf0449cf42ef610777e50a019c93",
+    "cameras.json": "bad1e28e8aab337f9fc2d05082a2ca745baaee8ce24d92af3ae2ca5225a129ab",
+    "clip.json": "b1e8c68ef15a59b16995a6d580f8175d0914582e46acc8a9c0bf822de65d33f9",
+    "curated-files.json": "c48aa52cad7226767292783ae35baa479a3a0884da4c6b1df2fa0558527b4b99",
+    "decoded-physical-report.json": "17ea65e19e12e05f11fc151018ab52216a5bd3874caf348636b30234dee703a7",
+    "decoded-source-readback.json": "761bc642fa8c84d2fe5abbfbaa68a0f7262fbbbecf916aa2721afb23f29234f3",
+    "dq-reference.json.gz": "811e587e8a76ffd47d14c420fff6879ba9d7b490aa967dc53e8dda9adb6dec14",
+    "early-report.json": "72938ed1af78412e376caa2e1703eaa9f49abcd7882dbc99966b4d622151adf9",
+    "environment.json": "7c1530de9b8e6f6c69eace3a703dbe35ed76f8975d2e6521b67c05ba6ab53940",
+    "export-verification.json": "5a580eaa1e7a2221ec27b2d1a1e0bbba14624b912bb00ae06610f478d093fec3",
+    "local-binding-report.json": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e",
+    "morph-weight-export.json": "3c09cc67b112776189816c2494472f86736934590e941f01c01ff7f1b4f35b58",
+    "motion-witnesses.json": "7a00ff6395012697d08031a58ae366664f3f0e184e2ce5cfb2d3c19065dc65be",
+    "motion.glb": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+    "neutral-final-left-over-cross-front_oblique_whole_body.png": "eb32782d51174633105433066813ba9a38a5b835d3ef3a86a0ecec9fa8623e36",
+    "neutral-final-left-over-cross-side_whole_body.png": "631cb46365d881dc967e0f57e6017d29e18f6851b8c0e20f1125c2ffb8a227fd",
+    "neutral-final-loop-return-front_oblique_whole_body.png": "83ca1a115e6ec1342afbff37f17b45f690430f5e5a8802139036d6a8473923a9",
+    "neutral-final-loop-return-side_whole_body.png": "4564478073748b0e427b897e4a9003133506e78116620ddc8e409727f0169e81",
+    "neutral-final-mid-swing-front_oblique_whole_body.png": "565dd3a6294a5549e549cb35f11e842af36f0d28436f0173742204a2e14fc541",
+    "neutral-final-mid-swing-side_whole_body.png": "51273aea2ae1a38f248838081fd897d519424a4d77b69aa78486a1e5d337135e",
+    "neutral-final-return-open-front_oblique_whole_body.png": "d11eaa02f83c0971b3988fae50cbfeddd27041ea7a46f06f5460c46c2e2d6c3e",
+    "neutral-final-return-open-side_whole_body.png": "eea9d21dda4c2e8fe51b7780c6a88f5f320942b2a859b7be3103adf8db0c099d",
+    "neutral-final-right-over-cross-front_oblique_whole_body.png": "ba6252115f76fe0e6e286273885bd92fe480c404f4d0349227a2cb65d7108c8f",
+    "neutral-final-right-over-cross-side_whole_body.png": "6bbd6d5392c1bfa96de3fc5810272870a7cf9209f2e6402ad11d451c4917548f",
+    "neutral-final-start-open-front_oblique_whole_body.png": "f1de96d2b50079f368c53eaea2cd585c08a38809c27529e38e053d67add29fad",
+    "neutral-final-start-open-side_whole_body.png": "49ad45b172f80e6df02988d53be5f78003d737bec8df677187925009e281cda4",
+    "normal-reference.json.gz": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5",
+    "pose-samples.json": "4e62ed2f7cd532439eff8c4b639df2f5dd3f9f2e07f2c55a98522d0f7610d879",
+    "proof-receipt.json": "2b34a3d09a7cc8a615f295c618597e2e8512baabe11a9360c464a7ad74721c35",
+    "qa-random.png": "4fdd68fd30eafa4b96919ea137fce23b96d1fd6bbfcdc83f477f4de331afe922",
+    "qa-render-receipt.json": "df20531cd9adadd9731e2ed14728dbcce272434a7cdf1e2cd3c341743f3a5819",
+    "qa-wire.png": "3fea621c31d7e07442923c1163b11b03eac2cc7768c1681003674b9eb66971ff",
+    "raw-asset-qa.json": "1abb9ca39e1c5bb8e7b2128ef7cb3fe09db4c372351367b8a1522aeef7ae0ea6",
+    "runtime-surface-reference.json": "6f7acdbdfd3a9d3f78115baee528462496db97b44b37f5fb1b1821c2168f09e0",
+    "source-verification.json": "761bc642fa8c84d2fe5abbfbaa68a0f7262fbbbecf916aa2721afb23f29234f3",
+    "source.blend": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+    "surface-contact-report.json": "b05773d0536c7ca88999bac3ee37baa30c41aa48b7a466c5ddeec90efa3a2c9f",
+    "surface-landmarks.json": "149d059f824160ff610ca5a3434a6d4ad227d632889b19a5f756398133b79257"
+  }
+}

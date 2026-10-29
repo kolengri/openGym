@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "errors": [],
+  "retained_warnings": [
+    {
+      "frame": 0,
+      "warnings": []
+    },
+    {
+      "frame": 30,
+      "warnings": []
+    },
+    {
+      "frame": 75,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "frame": 120,
+      "warnings": []
+    }
+  ],
+  "warning_explanation": "One opposing near-contact skin face pair is reported at the1986 held pose; it is retained as a local folded/contact-surface warning. Mandatory game QA has zero errors. Canonical topology and editable source remain intact; glTF transport is triangulated. Root accepted minor native faceting. This is not a global self-collision certificate.",
+  "raw_report": "raw-asset-qa.json"
+}

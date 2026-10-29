@@ -3,8 +3,11 @@ import {homedir} from 'node:os';
 import {chromium} from '../first-exercise-3d/runtime/node_modules/playwright-core/index.mjs';
 
 const batch = process.argv[2];
-if (!['002', '003', '004', '005', '006', '007'].includes(batch)) throw Error('Pass batch 002, 003, 004, 005, 006 or 007');
-const root = new URL(`./batch-${batch}/`, import.meta.url);
+if (!['002', '003', '004', '005', '006', '007', '008'].includes(batch)) throw Error('Pass batch 002 through 008');
+const diagnostic = process.argv[3];
+if (diagnostic && (batch === '002' || !/^logs\/[a-z0-9-]+$/.test(diagnostic)))
+ throw Error('The optional diagnostic directory must be logs/<name> in batch 003 or later');
+const root = new URL(`./batch-${batch}/${diagnostic ? diagnostic + '/' : ''}`, import.meta.url);
 const config = JSON.parse((await readFile(new URL('viewer.html', root), 'utf8')).match(/<script id="heat-data" type="application\/json">(.*?)<\/script>/s)[1]);
 const browser = await chromium.launch({headless: true,
  executablePath: homedir() + '/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell', args: ['--use-angle=metal']});

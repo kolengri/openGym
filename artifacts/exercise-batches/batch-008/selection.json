@@ -1,0 +1,70 @@
+{
+  "batch": "008",
+  "exercise_ids": [
+    "6121",
+    "5172",
+    "1987",
+    "6014",
+    "1986",
+    "6539",
+    "3214",
+    "3204",
+    "4935",
+    "3483"
+  ],
+  "order": "Continue canonical body-weight records sorted by casefolded English name then ID after3294; exclude already-delivered3905bonus.",
+  "skipped": [
+    {
+      "id": "3905",
+      "reason": "Already delivered as batch007 bonus"
+    },
+    {
+      "id": "2355",
+      "reason": "Hanging pull-up bar required"
+    },
+    {
+      "id": "2333",
+      "reason": "Hanging pull-up bar required"
+    },
+    {
+      "id": "1817",
+      "reason": "Support surface/bench required"
+    }
+  ],
+  "reuse_groups": {
+    "standing_arms": [
+      "5172",
+      "1987",
+      "6014",
+      "1986"
+    ],
+    "seated_twist": [
+      "6121"
+    ],
+    "resting_reuse": [
+      "6539"
+    ],
+    "balance_hinge": [
+      "3214"
+    ],
+    "floor": [
+      "3204",
+      "4935",
+      "3483"
+    ]
+  },
+  "equivalent_source_records": [
+    "4935/3483 share bilateral prone lift and overhead-to-hip arm sweep; preserve distinct action identities and source muscle labels.",
+    "6539 can reuse accepted4365 motion/binding/component exactly; use its own action identity, source hold20–30s and muscle labels."
+  ],
+  "deferred": [],
+  "authoring_families": [
+    "standing-dynamic",
+    "rotator-grips",
+    "seated-twist",
+    "resting-reuse",
+    "balance-hinge",
+    "floor-family",
+    "standing-dynamic/shoulder-specialist"
+  ]
+}
