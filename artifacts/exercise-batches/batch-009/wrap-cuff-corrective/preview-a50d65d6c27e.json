@@ -1,0 +1,350 @@
+{
+  "source_sha256": "88c2da9b30955e3793637fe5f8a086e0ca7339d395cf20997d6b3fdcac817c1e",
+  "position_archive_sha256": "a50d65d6c27e7b18a9aeb962919f9ff196b4dae19ce295d3c6a4d7b26415d4f9",
+  "scope": "Early native sparse shape packet; final contact freeze, NORMAL archive, game QA, integrated151 and runtime pending.",
+  "samples": [
+    {
+      "frame": 0.0,
+      "label": "neutral",
+      "value": 0.0,
+      "maximum_posed_delta_m": 0.0,
+      "protected_maximum_position_difference_m": 0.0,
+      "minimum_torso_triangle_area_m2": 5.8951960446814913e-08,
+      "metrics": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.36023280024528503,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.025449901819229126,
+          "first_crossing_source_faces": []
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.025367649272084236,
+          "first_crossing_source_faces": []
+        }
+      },
+      "issues": [],
+      "proofs": [
+        "proofs/a50d65d6c27e/neutral-front.png",
+        "proofs/a50d65d6c27e/neutral-side.png",
+        "proofs/a50d65d6c27e/neutral-rear.png"
+      ]
+    },
+    {
+      "frame": 32.0,
+      "label": "intermediate",
+      "value": 0.8984307646751404,
+      "maximum_posed_delta_m": 0.14070245999821837,
+      "protected_maximum_position_difference_m": 0.0,
+      "minimum_torso_triangle_area_m2": 5.8951960446814913e-08,
+      "metrics": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.030722955241799355,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 39,
+          "minimum_vertex_surface_distance_m": 0.0005188155919313431,
+          "first_crossing_source_faces": [
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8406,
+                8687,
+                8701
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8406,
+                8701,
+                8407
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8408,
+                8459,
+                8460
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8408,
+                8460,
+                8409
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8406,
+                8701,
+                8407
+              ]
+            ]
+          ]
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 9,
+          "minimum_vertex_surface_distance_m": 0.0028019098099321127,
+          "first_crossing_source_faces": [
+            [
+              [
+                3930,
+                3931,
+                2993
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ],
+            [
+              [
+                3930,
+                3931,
+                2993
+              ],
+              [
+                3196,
+                3446,
+                3198
+              ]
+            ],
+            [
+              [
+                2992,
+                2993,
+                3931
+              ],
+              [
+                3196,
+                3446,
+                3198
+              ]
+            ],
+            [
+              [
+                2992,
+                2993,
+                3931
+              ],
+              [
+                3198,
+                3446,
+                3445
+              ]
+            ],
+            [
+              [
+                2891,
+                3930,
+                2994
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ]
+          ]
+        }
+      },
+      "issues": [
+        "left_distal_arm_torso_head source-bound actual skin crossings 39",
+        "right_distal_arm_torso_head source-bound actual skin crossings 9"
+      ],
+      "proofs": [
+        "proofs/a50d65d6c27e/intermediate-front.png",
+        "proofs/a50d65d6c27e/intermediate-side.png",
+        "proofs/a50d65d6c27e/intermediate-rear.png"
+      ]
+    },
+    {
+      "frame": 37.5,
+      "label": "held",
+      "value": 1.0,
+      "maximum_posed_delta_m": 0.15660905378500606,
+      "protected_maximum_position_difference_m": 0.0,
+      "minimum_torso_triangle_area_m2": 5.8951960446814913e-08,
+      "metrics": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.01259031891822815,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 40,
+          "minimum_vertex_surface_distance_m": 0.002289477037265897,
+          "first_crossing_source_faces": [
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8406,
+                8687,
+                8701
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8408,
+                8459,
+                8460
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8408,
+                8460,
+                8409
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8406,
+                8687,
+                8701
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8406,
+                8701,
+                8407
+              ]
+            ]
+          ]
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 15,
+          "minimum_vertex_surface_distance_m": 0.00179904920514673,
+          "first_crossing_source_faces": [
+            [
+              [
+                2891,
+                3918,
+                3924
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                2995,
+                3918
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                3930,
+                2994
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                3930,
+                2994
+              ],
+              [
+                3196,
+                3446,
+                3198
+              ]
+            ],
+            [
+              [
+                2891,
+                3924,
+                3930
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ]
+          ]
+        }
+      },
+      "issues": [
+        "left_distal_arm_torso_head source-bound actual skin crossings 40",
+        "right_distal_arm_torso_head source-bound actual skin crossings 15"
+      ],
+      "proofs": [
+        "proofs/a50d65d6c27e/held-front.png",
+        "proofs/a50d65d6c27e/held-side.png",
+        "proofs/a50d65d6c27e/held-rear.png"
+      ]
+    }
+  ]
+}

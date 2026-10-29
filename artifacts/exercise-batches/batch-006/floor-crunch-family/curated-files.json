@@ -1,0 +1,214 @@
+{
+  "id": "floor-crunch-family",
+  "status": "ready_for_primary_review",
+  "physical_glb_count": 1,
+  "actions": [
+    "Exercise_0006",
+    "Exercise_4354"
+  ],
+  "per_id_manifests": {
+    "0006": {
+      "path": "../assets/0006/curated-files.json",
+      "sha256": "043e07d75106c2f8d334bc54bd807d13f1bad07f8c89f455844844301f9f9881",
+      "files": 28
+    },
+    "4354": {
+      "path": "../assets/4354/curated-files.json",
+      "sha256": "ec18b352d9f13e260aa65e21471b71d99b0ac3bdcfc110063952a221259aaa6a",
+      "files": 24
+    }
+  },
+  "excludes": "Trial/diagnostic programs, rejected cap/hand/shoulder render candidates, logs, runtime caches, temporary native/decoded full-skin audit streams. Concise causal history and original failed-contract measurements are intentional evidence.",
+  "files": [
+    {
+      "path": "source.blend",
+      "bytes": 14420416,
+      "sha256": "e9eef5aa5a78c76a0e8b5261739a3cdba3a8b673c8ead2262ffc93a99e465d44"
+    },
+    {
+      "path": "motion.glb",
+      "bytes": 1270268,
+      "sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4796,
+      "sha256": "d49c1e4b3bdf9a877abd8b436f8cac1c6ac27d856a617f9e2ea14b21e1faec21"
+    },
+    {
+      "path": "delivery-report.json",
+      "bytes": 4078,
+      "sha256": "ea315ab8a3aa9e463b91e81cba08514c9ddf8bf2535523ba86d0dde3905c8e69"
+    },
+    {
+      "path": "final-metrics.json",
+      "bytes": 2345,
+      "sha256": "6b08b9fd58a323ed5599145f136bd1c5b472f74ba80b288d9fce6a20b981f23a"
+    },
+    {
+      "path": "build_family.py",
+      "bytes": 8743,
+      "sha256": "7bc630c69f9312e02ed77db79086d704cf8c32b8d54ff5d3a4d164e5705fad47"
+    },
+    {
+      "path": "floor_crunch_pose.py",
+      "bytes": 6147,
+      "sha256": "2410109ae20cfabc9e8a940f7259d09613818801069e32cb39ec1f77c5bf5763"
+    },
+    {
+      "path": "profile_binding.py",
+      "bytes": 3842,
+      "sha256": "5c3bb8c3e71f7a9ebdedf70e40f1fdf6d193095326e05e66bd7ad308fbf947e4"
+    },
+    {
+      "path": "glute_binding_overlay.py",
+      "bytes": 1986,
+      "sha256": "558b7260e7ea68d8fea1750812368b15172f0b2880845ea9c50698bcaac7f400"
+    },
+    {
+      "path": "glute-binding-repair.json",
+      "bytes": 30634,
+      "sha256": "a7c22d67f59ffacb4e7c7b10a70db7c9d04c2af9aa430474acc17e8f897f854a"
+    },
+    {
+      "path": "support-protected-domain.json",
+      "bytes": 2109,
+      "sha256": "1c266dcebda490a12ce546374a4116eb20b6038b44d62707bfa2932974dee0da"
+    },
+    {
+      "path": "knee_binding.py",
+      "bytes": 4204,
+      "sha256": "d66151a63f779801ec7233ca8ce86afb9ee992c8885d9647d92dfb9f6db64599"
+    },
+    {
+      "path": "knee-binding-receipt.json",
+      "bytes": 124967,
+      "sha256": "ee84f6d336bd1c576c1534fa7a38b3989ba089c34e88444e39ae1072e7f03241"
+    },
+    {
+      "path": "binding-receipt.json",
+      "bytes": 1417348,
+      "sha256": "32fea960e48ab422180d9e0f8f1e34b558e4f7fb91ead5dd26d13b0669a3a0e3"
+    },
+    {
+      "path": "joint_components.py",
+      "bytes": 5661,
+      "sha256": "c4c9410906da4da82b177b5245eb79d7893f5363423eeaf2401c3e7a3fedbfa5"
+    },
+    {
+      "path": "joint-components.json",
+      "bytes": 56443,
+      "sha256": "ab22dc4df045e470858d40b120eb6ade7526be906642a08ba6d4c4a5ef79c849"
+    },
+    {
+      "path": "joint-components.npz",
+      "bytes": 190431,
+      "sha256": "d50416bf7935914094500f74e122c8a74dff82f8e7d9293c6dfffb92e401f957"
+    },
+    {
+      "path": "pose-contract.json",
+      "bytes": 578,
+      "sha256": "b41939284c9df3097e03251ba7f3d93776c06ead55f92934c74d4e2a783c6cc6"
+    },
+    {
+      "path": "source-verification.json",
+      "bytes": 80715,
+      "sha256": "52164eb5c0ef9ff08b66ee7567030fc567150dc9e0b658986b504172c8d9eff9"
+    },
+    {
+      "path": "early-proof-readback.json",
+      "bytes": 3522,
+      "sha256": "c2c8865f04d4071b9d9f0aaf89e4543be37af45c58bad1e36559053588f993c7"
+    },
+    {
+      "path": "final-wire-readback.json",
+      "bytes": 485,
+      "sha256": "8f134e62c3417a3fdd0d2ce645770a7b97600a2b845906048bb92354d48a192c"
+    },
+    {
+      "path": "changed-candidate-check.json",
+      "bytes": 163813,
+      "sha256": "7a2371af0583bc945ea8c6e70e01575a47d2583a7aea1ff244ee8215f9fa3895"
+    },
+    {
+      "path": "heel-contact-solve.json",
+      "bytes": 4548,
+      "sha256": "6414fac71d80613fc138e9b374376e3f6376b72e9274705740b55edad095af35"
+    },
+    {
+      "path": "heel-reach-diagnosis.json",
+      "bytes": 6412,
+      "sha256": "3133b4c3362a6e34122e63e90d1fe558f20b96585044dc52d9f3726266f044c8"
+    },
+    {
+      "path": "plantar-pad-contract.json",
+      "bytes": 2235,
+      "sha256": "8697c557418c4a7fdc8eee173cbbbb14970cdb91f34bc7ccaac49fcfe07308a1"
+    },
+    {
+      "path": "plantar-contract-reconciliation.json",
+      "bytes": 536,
+      "sha256": "38ce052b9805f61032c512e105620243e951607f1d1be8a181e4d7d0984baa8f"
+    },
+    {
+      "path": "forefoot-source-profile-diagnosis.json",
+      "bytes": 2520,
+      "sha256": "df8d7ac78b2e07d7fcb6fd447772f212c2246a408c618af8ff7e26f757ef2fcd"
+    },
+    {
+      "path": "causal-history.json",
+      "bytes": 12390,
+      "sha256": "12bd14ff1b983cc0cc4b81b8cb73b4985f3a55fa3e029ae7c6f32d3868d1ce20"
+    },
+    {
+      "path": "export-morph-channel-receipt.json",
+      "bytes": 1701,
+      "sha256": "93f4725dbf4ab83fad897a0c60dd22368510a785a7756eb6913a40c503bdbe6d"
+    },
+    {
+      "path": "complete_morph_channel.py",
+      "bytes": 3705,
+      "sha256": "018ec716125acc6ecb89f87aa5268b01191cc0f46ad73b7d8d68750f4a8e431f"
+    },
+    {
+      "path": "export_family.py",
+      "bytes": 1646,
+      "sha256": "0aaece8099f8a70a123745eae6d5eb2ec35466b9656741d4c833e5474bd464fa"
+    },
+    {
+      "path": "verify_source.py",
+      "bytes": 4871,
+      "sha256": "9ab50bc7b317b6e41cf51ea0fe6b573320b8c7926741985a91bb35bffcb0636d"
+    },
+    {
+      "path": "verify_native.py",
+      "bytes": 11921,
+      "sha256": "6f39323c5cb364aa1f5f0b5dee406df42ad2c3f16f8b68ccb65af447a0f79581"
+    },
+    {
+      "path": "verify_export.mjs",
+      "bytes": 8826,
+      "sha256": "b04ad3cd221d23f853a7d805ef6cf1818621216a7d13ed9bc3d234373dfcb200"
+    },
+    {
+      "path": "verify_decoded_physical.py",
+      "bytes": 4181,
+      "sha256": "1c02e2686ebb546151a07a58eb1ef3c38a1cfd4469097abbd457bf57b49bbd7f"
+    },
+    {
+      "path": "reconcile_plantar_contract.py",
+      "bytes": 4300,
+      "sha256": "a5ed5d6df2e577617edd87f004250c739aec44bd9e75a107e8df92c586ad997f"
+    },
+    {
+      "path": "render_final_wire.py",
+      "bytes": 2290,
+      "sha256": "9ca12d4fdac6150eab0e5c6be04677d8f9820b20f3005d9745b60474a7fd2392"
+    },
+    {
+      "path": "curate_delivery.py",
+      "bytes": 7611,
+      "sha256": "c5f6489ddf73f29b6b50a186555b52285d013a76f825546783d44dc672ea705d"
+    }
+  ]
+}

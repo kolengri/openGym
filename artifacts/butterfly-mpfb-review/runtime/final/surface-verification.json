@@ -1,0 +1,2443 @@
+{
+  "status": "surface_pass_pending_actual_visual_review",
+  "frames": 151,
+  "sample_sha256": "40e78495c53a72bdb75a1825eba1e924d1a6621b80fdaa175973255dbdc84666",
+  "verification_input_sha256": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+  "checks": {
+    "all_hip_roi_descendants_and_replacement_faces_clear": true,
+    "all_complete_hand_vs_leg_faces_clear": true,
+    "whole_skin_floor_penetration_below_0p35mm": true,
+    "actual_inferior_glute_gap_below_2mm": true,
+    "all_feet_remain_within_1mm_of_floor": true,
+    "no_zero_area_faces": true,
+    "all_complete_arm_vs_leg_faces_clear": true
+  },
+  "maximum_bind_difference_m": 6.188917057900187e-08,
+  "maximum_loop_difference_m": 6.188917057900187e-08,
+  "minimum_whole_skin_z_m": -4.654152618854823e-09,
+  "maximum_inferior_glute_gap_m": 0.0007005100487731397,
+  "first_failed_hip_frame": null,
+  "first_failed_hand_frame": null,
+  "complete_arm_scope_checked": true,
+  "first_failed_arm_frame": null,
+  "baseline_contact_disclosure": "Global counts can include contacts outside the selected hip/hand scopes. Remaining pairs require separate localization; no global intersection-free claim.",
+  "samples": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "whole_skin_min_z_m": -4.654152618854823e-09,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": -4.654152618854823e-09,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4223655259268086e-08
+    },
+    {
+      "frame": 1,
+      "time": 0.03333333333333333,
+      "whole_skin_min_z_m": 2.597646897584127e-08,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.597646897584127e-08,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422449303362918e-08
+    },
+    {
+      "frame": 2,
+      "time": 0.06666666666666667,
+      "whole_skin_min_z_m": 1.8907587673311355e-07,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 1.8907587673311355e-07,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4225045068457512e-08
+    },
+    {
+      "frame": 3,
+      "time": 0.1,
+      "whole_skin_min_z_m": 6.550354783030343e-07,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 6.550354783030343e-07,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4222381497140532e-08
+    },
+    {
+      "frame": 4,
+      "time": 0.13333333333333333,
+      "whole_skin_min_z_m": 1.5129528492252575e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 1.5129528492252575e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4224915550606445e-08
+    },
+    {
+      "frame": 5,
+      "time": 0.16666666666666666,
+      "whole_skin_min_z_m": 2.893684950322495e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.893684950322495e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422076887428577e-08
+    },
+    {
+      "frame": 6,
+      "time": 0.2,
+      "whole_skin_min_z_m": 4.846780939260498e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 4.846780939260498e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422157900464497e-08
+    },
+    {
+      "frame": 7,
+      "time": 0.23333333333333334,
+      "whole_skin_min_z_m": 7.514679055020679e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 7.514679055020679e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4223340254359599e-08
+    },
+    {
+      "frame": 8,
+      "time": 0.26666666666666666,
+      "whole_skin_min_z_m": 1.090117893909337e-05,
+      "lowest_source_id": 10878,
+      "inferior_glute_min_z_m": 1.090117893909337e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422298829442433e-08
+    },
+    {
+      "frame": 9,
+      "time": 0.3,
+      "whole_skin_min_z_m": 1.5120106581889559e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 1.5120106581889559e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4219851366012773e-08
+    },
+    {
+      "frame": 10,
+      "time": 0.3333333333333333,
+      "whole_skin_min_z_m": 2.0254243281669915e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.0254243281669915e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4220673736347893e-08
+    },
+    {
+      "frame": 11,
+      "time": 0.36666666666666664,
+      "whole_skin_min_z_m": 2.624363150971476e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.624363150971476e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4220407214686178e-08
+    },
+    {
+      "frame": 12,
+      "time": 0.4,
+      "whole_skin_min_z_m": 3.3155920391436666e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 3.3155920391436666e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.421895380513667e-08
+    },
+    {
+      "frame": 13,
+      "time": 0.43333333333333335,
+      "whole_skin_min_z_m": 4.112083843210712e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 4.112083843210712e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4216097111379444e-08
+    },
+    {
+      "frame": 14,
+      "time": 0.4666666666666667,
+      "whole_skin_min_z_m": 5.0035501772072166e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 5.0035501772072166e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4212592332500087e-08
+    },
+    {
+      "frame": 15,
+      "time": 0.5,
+      "whole_skin_min_z_m": 6.0018392105121166e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 6.0018392105121166e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4210867614259472e-08
+    },
+    {
+      "frame": 16,
+      "time": 0.5333333333333333,
+      "whole_skin_min_z_m": 7.090865256031975e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 7.090865256031975e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4210584937252086e-08
+    },
+    {
+      "frame": 17,
+      "time": 0.5666666666666667,
+      "whole_skin_min_z_m": 8.290922414744273e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 8.290922414744273e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4207137873049743e-08
+    },
+    {
+      "frame": 18,
+      "time": 0.6,
+      "whole_skin_min_z_m": 9.589726687408984e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 9.589726687408984e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4205588901543732e-08
+    },
+    {
+      "frame": 19,
+      "time": 0.6333333333333333,
+      "whole_skin_min_z_m": 0.00010985687549691647,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00010985687549691647,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 154,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.420488110284448e-08
+    },
+    {
+      "frame": 20,
+      "time": 0.6666666666666666,
+      "whole_skin_min_z_m": 0.00012479702127166092,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00012479702127166092,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4200353441375675e-08
+    },
+    {
+      "frame": 21,
+      "time": 0.7,
+      "whole_skin_min_z_m": 0.00014069527969695628,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00014069527969695628,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4197372871941917e-08
+    },
+    {
+      "frame": 22,
+      "time": 0.7333333333333333,
+      "whole_skin_min_z_m": 0.00015746102144476026,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00015746102144476026,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4192605424151991e-08
+    },
+    {
+      "frame": 23,
+      "time": 0.7666666666666667,
+      "whole_skin_min_z_m": 0.00017506269796285778,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00017506269796285778,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4191437498689312e-08
+    },
+    {
+      "frame": 24,
+      "time": 0.8,
+      "whole_skin_min_z_m": 0.00019351212540641427,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00019351212540641427,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4189739376840488e-08
+    },
+    {
+      "frame": 25,
+      "time": 0.8333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00021271199511829764,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4189326469503254e-08
+    },
+    {
+      "frame": 26,
+      "time": 0.8666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00023259909357875586,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4184806475496472e-08
+    },
+    {
+      "frame": 27,
+      "time": 0.9,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0002530725614633411,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4182220789419111e-08
+    },
+    {
+      "frame": 28,
+      "time": 0.9333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00027402580599300563,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.417642010622377e-08
+    },
+    {
+      "frame": 29,
+      "time": 0.9666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0002954928495455533,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4171259520641945e-08
+    },
+    {
+      "frame": 30,
+      "time": 1.0,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00031736044911667705,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4170092128304584e-08
+    },
+    {
+      "frame": 31,
+      "time": 1.0333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0003393909428268671,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4165649051406805e-08
+    },
+    {
+      "frame": 32,
+      "time": 1.0666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0003615994064603001,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4162882128747163e-08
+    },
+    {
+      "frame": 33,
+      "time": 1.1,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0003838747797999531,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4160478976431263e-08
+    },
+    {
+      "frame": 34,
+      "time": 1.1333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00040610317955724895,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4159283034587507e-08
+    },
+    {
+      "frame": 35,
+      "time": 1.1666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.000428136030677706,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4154223966233094e-08
+    },
+    {
+      "frame": 36,
+      "time": 1.2,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00044986611464992166,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4153003838008721e-08
+    },
+    {
+      "frame": 37,
+      "time": 1.2333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0004712745430879295,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4151669315432891e-08
+    },
+    {
+      "frame": 38,
+      "time": 1.2666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0004921614890918136,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4150679022039383e-08
+    },
+    {
+      "frame": 39,
+      "time": 1.3,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.000512446858920157,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4143387737624455e-08
+    },
+    {
+      "frame": 40,
+      "time": 1.3333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0005320013733580709,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4142239927799711e-08
+    },
+    {
+      "frame": 41,
+      "time": 1.3666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0005508201429620385,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.414156207162918e-08
+    },
+    {
+      "frame": 42,
+      "time": 1.4,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0005686350632458925,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4138935333276979e-08
+    },
+    {
+      "frame": 43,
+      "time": 1.4333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.000585502537433058,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4136411161068062e-08
+    },
+    {
+      "frame": 44,
+      "time": 1.4666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006013591773808002,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4133854647990297e-08
+    },
+    {
+      "frame": 45,
+      "time": 1.5,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006160752382129431,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4136032858336156e-08
+    },
+    {
+      "frame": 46,
+      "time": 1.5333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006295681814663112,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4130874112480963e-08
+    },
+    {
+      "frame": 47,
+      "time": 1.5666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006418810226023197,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4133121709188733e-08
+    },
+    {
+      "frame": 48,
+      "time": 1.6,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006529526435770094,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4130233056858127e-08
+    },
+    {
+      "frame": 49,
+      "time": 1.6333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006627088878303766,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 149,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4126160438159046e-08
+    },
+    {
+      "frame": 50,
+      "time": 1.6666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006712437025271356,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127018200527684e-08
+    },
+    {
+      "frame": 51,
+      "time": 1.7,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006785618606954813,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4125172435121023e-08
+    },
+    {
+      "frame": 52,
+      "time": 1.7333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.000684628146700561,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127158072390169e-08
+    },
+    {
+      "frame": 53,
+      "time": 1.7666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006895780097693205,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127029332465803e-08
+    },
+    {
+      "frame": 54,
+      "time": 1.8,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006934630800969899,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127507360830198e-08
+    },
+    {
+      "frame": 55,
+      "time": 1.8333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006963015184737742,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4125283946735197e-08
+    },
+    {
+      "frame": 56,
+      "time": 1.8666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006982787745073438,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127378788730299e-08
+    },
+    {
+      "frame": 57,
+      "time": 1.9,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006995744770392776,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4122995150103898e-08
+    },
+    {
+      "frame": 58,
+      "time": 1.9333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007002149359323084,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08
+    },
+    {
+      "frame": 59,
+      "time": 1.9666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007004813523963094,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08
+    },
+    {
+      "frame": 60,
+      "time": 2.0,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 61,
+      "time": 2.033333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 62,
+      "time": 2.066666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 63,
+      "time": 2.1,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 64,
+      "time": 2.1333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 65,
+      "time": 2.1666666666666665,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 66,
+      "time": 2.2,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 67,
+      "time": 2.2333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 68,
+      "time": 2.2666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 69,
+      "time": 2.3,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 70,
+      "time": 2.3333333333333335,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 71,
+      "time": 2.3666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 72,
+      "time": 2.4,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 73,
+      "time": 2.433333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 74,
+      "time": 2.466666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 75,
+      "time": 2.5,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 76,
+      "time": 2.533333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 77,
+      "time": 2.566666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 78,
+      "time": 2.6,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 79,
+      "time": 2.6333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 80,
+      "time": 2.6666666666666665,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 81,
+      "time": 2.7,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 82,
+      "time": 2.7333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 83,
+      "time": 2.7666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 84,
+      "time": 2.8,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 85,
+      "time": 2.8333333333333335,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 86,
+      "time": 2.8666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 87,
+      "time": 2.9,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 88,
+      "time": 2.933333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 89,
+      "time": 2.966666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005064398981631,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08
+    },
+    {
+      "frame": 90,
+      "time": 3.0,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007005100487731397,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4125661922368964e-08
+    },
+    {
+      "frame": 91,
+      "time": 3.033333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007004813523963094,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08
+    },
+    {
+      "frame": 92,
+      "time": 3.066666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0007002149359323084,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08
+    },
+    {
+      "frame": 93,
+      "time": 3.1,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006995744770392776,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4122995150103898e-08
+    },
+    {
+      "frame": 94,
+      "time": 3.1333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006982787745073438,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127378788730299e-08
+    },
+    {
+      "frame": 95,
+      "time": 3.1666666666666665,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006963015184737742,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4125283946735197e-08
+    },
+    {
+      "frame": 96,
+      "time": 3.2,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006934630800969899,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127507360830198e-08
+    },
+    {
+      "frame": 97,
+      "time": 3.2333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006895780097693205,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127029332465803e-08
+    },
+    {
+      "frame": 98,
+      "time": 3.2666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.000684628146700561,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127158072390169e-08
+    },
+    {
+      "frame": 99,
+      "time": 3.3,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006785618606954813,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4125172435121023e-08
+    },
+    {
+      "frame": 100,
+      "time": 3.3333333333333335,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006712437025271356,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 148,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4127018200527684e-08
+    },
+    {
+      "frame": 101,
+      "time": 3.3666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006627088296227157,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 149,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4126160438159046e-08
+    },
+    {
+      "frame": 102,
+      "time": 3.4,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006529527017846704,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4130233056858127e-08
+    },
+    {
+      "frame": 103,
+      "time": 3.433333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006418810808099806,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4133121709188733e-08
+    },
+    {
+      "frame": 104,
+      "time": 3.466666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006295681814663112,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4130874112480963e-08
+    },
+    {
+      "frame": 105,
+      "time": 3.5,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006160752382129431,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4136032858336156e-08
+    },
+    {
+      "frame": 106,
+      "time": 3.533333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0006013591773808002,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4133854647990297e-08
+    },
+    {
+      "frame": 107,
+      "time": 3.566666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0005855024792253971,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4136411161068062e-08
+    },
+    {
+      "frame": 108,
+      "time": 3.6,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0005686350050382316,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4138935333276979e-08
+    },
+    {
+      "frame": 109,
+      "time": 3.6333333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0005508202011696994,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.414156207162918e-08
+    },
+    {
+      "frame": 110,
+      "time": 3.6666666666666665,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0005320014315657318,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4142239927799711e-08
+    },
+    {
+      "frame": 111,
+      "time": 3.7,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.000512446858920157,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4143387737624455e-08
+    },
+    {
+      "frame": 112,
+      "time": 3.7333333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0004921614890918136,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 138,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4150679022039383e-08
+    },
+    {
+      "frame": 113,
+      "time": 3.7666666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0004712745430879295,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4151669315432891e-08
+    },
+    {
+      "frame": 114,
+      "time": 3.8,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00044986611464992166,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4153003838008721e-08
+    },
+    {
+      "frame": 115,
+      "time": 3.8333333333333335,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00042813594336621463,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4154223966233094e-08
+    },
+    {
+      "frame": 116,
+      "time": 3.8666666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0004061030922457576,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4159283034587507e-08
+    },
+    {
+      "frame": 117,
+      "time": 3.9,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.000383874838007614,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4160478976431263e-08
+    },
+    {
+      "frame": 118,
+      "time": 3.933333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00036159949377179146,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4162882128747163e-08
+    },
+    {
+      "frame": 119,
+      "time": 3.966666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0003393909428268671,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4165649051406805e-08
+    },
+    {
+      "frame": 120,
+      "time": 4.0,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00031736044911667705,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4170092128304584e-08
+    },
+    {
+      "frame": 121,
+      "time": 4.033333333333333,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00029549282044172287,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4171259520641945e-08
+    },
+    {
+      "frame": 122,
+      "time": 4.066666666666666,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.0002740257477853447,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.417642010622377e-08
+    },
+    {
+      "frame": 123,
+      "time": 4.1,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00025307247415184975,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4182220789419111e-08
+    },
+    {
+      "frame": 124,
+      "time": 4.133333333333334,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00023259902081917971,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4184806475496472e-08
+    },
+    {
+      "frame": 125,
+      "time": 4.166666666666667,
+      "whole_skin_min_z_m": 0.00019974952738266438,
+      "lowest_source_id": 6196,
+      "inferior_glute_min_z_m": 0.00021271189325489104,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4189326469503254e-08
+    },
+    {
+      "frame": 126,
+      "time": 4.2,
+      "whole_skin_min_z_m": 0.0001935120380949229,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.0001935120380949229,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4189739376840488e-08
+    },
+    {
+      "frame": 127,
+      "time": 4.233333333333333,
+      "whole_skin_min_z_m": 0.00017506256699562073,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00017506256699562073,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 134,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.419160042493263e-08
+    },
+    {
+      "frame": 128,
+      "time": 4.266666666666667,
+      "whole_skin_min_z_m": 0.0001574611378600821,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.0001574611378600821,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 142,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4192605424151991e-08
+    },
+    {
+      "frame": 129,
+      "time": 4.3,
+      "whole_skin_min_z_m": 0.00014069538156036288,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00014069538156036288,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4197372871941917e-08
+    },
+    {
+      "frame": 130,
+      "time": 4.333333333333333,
+      "whole_skin_min_z_m": 0.0001247971085831523,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.0001247971085831523,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4200353441375675e-08
+    },
+    {
+      "frame": 131,
+      "time": 4.366666666666666,
+      "whole_skin_min_z_m": 0.00010985692642861977,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 0.00010985692642861977,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 154,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.420488110284448e-08
+    },
+    {
+      "frame": 132,
+      "time": 4.4,
+      "whole_skin_min_z_m": 9.589731780579314e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 9.589731780579314e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4205588901543732e-08
+    },
+    {
+      "frame": 133,
+      "time": 4.433333333333334,
+      "whole_skin_min_z_m": 8.290924597531557e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 8.290924597531557e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4207137873049743e-08
+    },
+    {
+      "frame": 134,
+      "time": 4.466666666666667,
+      "whole_skin_min_z_m": 7.09086743881926e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 7.09086743881926e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4210584937252086e-08
+    },
+    {
+      "frame": 135,
+      "time": 4.5,
+      "whole_skin_min_z_m": 6.0018392105121166e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 6.0018392105121166e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4210867614259472e-08
+    },
+    {
+      "frame": 136,
+      "time": 4.533333333333333,
+      "whole_skin_min_z_m": 5.003549449611455e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 5.003549449611455e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4212592332500087e-08
+    },
+    {
+      "frame": 137,
+      "time": 4.566666666666666,
+      "whole_skin_min_z_m": 4.11208275181707e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 4.11208275181707e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4216097111379444e-08
+    },
+    {
+      "frame": 138,
+      "time": 4.6,
+      "whole_skin_min_z_m": 3.3155898563563824e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 3.3155898563563824e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.421895380513667e-08
+    },
+    {
+      "frame": 139,
+      "time": 4.633333333333334,
+      "whole_skin_min_z_m": 2.6243609681841917e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.6243609681841917e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4220407214686178e-08
+    },
+    {
+      "frame": 140,
+      "time": 4.666666666666667,
+      "whole_skin_min_z_m": 2.025421963480767e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.025421963480767e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4220673736347893e-08
+    },
+    {
+      "frame": 141,
+      "time": 4.7,
+      "whole_skin_min_z_m": 1.5120083844522014e-05,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 1.5120083844522014e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4219851366012773e-08
+    },
+    {
+      "frame": 142,
+      "time": 4.733333333333333,
+      "whole_skin_min_z_m": 1.090115802071523e-05,
+      "lowest_source_id": 10878,
+      "inferior_glute_min_z_m": 1.090115802071523e-05,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422298829442433e-08
+    },
+    {
+      "frame": 143,
+      "time": 4.766666666666667,
+      "whole_skin_min_z_m": 7.514702247135574e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 7.514702247135574e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4223340254359599e-08
+    },
+    {
+      "frame": 144,
+      "time": 4.8,
+      "whole_skin_min_z_m": 4.846796400670428e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 4.846796400670428e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422157900464497e-08
+    },
+    {
+      "frame": 145,
+      "time": 4.833333333333333,
+      "whole_skin_min_z_m": 2.8936945000168635e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.8936945000168635e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422076887428577e-08
+    },
+    {
+      "frame": 146,
+      "time": 4.866666666666666,
+      "whole_skin_min_z_m": 1.5129583061934682e-06,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 1.5129583061934682e-06,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4224915550606445e-08
+    },
+    {
+      "frame": 147,
+      "time": 4.9,
+      "whole_skin_min_z_m": 6.550379794134642e-07,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 6.550379794134642e-07,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4222381497140532e-08
+    },
+    {
+      "frame": 148,
+      "time": 4.933333333333334,
+      "whole_skin_min_z_m": 1.890767720169606e-07,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 1.890767720169606e-07,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.4225045068457512e-08
+    },
+    {
+      "frame": 149,
+      "time": 4.966666666666667,
+      "whole_skin_min_z_m": 2.597662529524314e-08,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.597662529524314e-08,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422449303362918e-08
+    },
+    {
+      "frame": 150,
+      "time": 5.0,
+      "whole_skin_min_z_m": 2.1866148891547255e-09,
+      "lowest_source_id": 4245,
+      "inferior_glute_min_z_m": 2.1866148891547255e-09,
+      "support_min_z_m": {
+        "foot.L": 0.00019980913202743977,
+        "foot.R": 0.00019974952738266438
+      },
+      "global_exact_pair_count": 150,
+      "hip_pairs": [],
+      "hand_leg_pairs": [],
+      "arm_leg_pairs": [],
+      "minimum_triangle_area_m2": 1.422381967070556e-08
+    }
+  ],
+  "promotion_map": {}
+}

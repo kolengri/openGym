@@ -1,0 +1,2595 @@
+{
+  "id": "2762",
+  "ok": true,
+  "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+  "glb_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+  "frames": 151,
+  "maximums": {
+    "shin_relative_excursion_degrees": 30.000007665015225,
+    "world_foot_step_degrees": 1.5445552866880001,
+    "shin_relative_step_degrees": 1.6636142351011964,
+    "rigid_toe_relative_error_degrees": 0.0
+  },
+  "skin_edge_regression": {
+    "native": {
+      "mixed_ankle_ratio_min": 0.6971346153551413,
+      "mixed_ankle_ratio_max": 1.5683646135702587,
+      "rigid_forefoot_max_fractional_edge_change": 0.00017167945203522272
+    },
+    "decoded": {
+      "mixed_ankle_ratio_min": 0.6971291042688104,
+      "mixed_ankle_ratio_max": 1.5683646688074373,
+      "rigid_forefoot_max_fractional_edge_change": 3.8324898810060404e-13
+    }
+  },
+  "scope": "Actual saved native shin/Foot/ToeBase frames plus all-frame native and actual decoded internal skin-edge readback. Excursion<35\u00b0, step<3\u00b0 at30fps and constant Foot/ToeBase relation target the late-return hook/roll failure. Mixed ankle edge ratio[0.4,2.5] is an artifact guard, not a clinical or anatomical-quality claim. Forefoot drift<0.002.",
+  "samples": [
+    {
+      "frame": 0,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 1,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 2,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 3,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 4,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 5,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 6,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.2654080243768844,
+          "world_foot_step_degrees": 0.21670472016987377,
+          "shin_relative_step_degrees": 0.2373881338022591,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 7,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.7241537846385298,
+          "world_foot_step_degrees": 0.4187134612472453,
+          "shin_relative_step_degrees": 0.4562824632096509,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 8,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 1.3813768380528122,
+          "world_foot_step_degrees": 0.602631966060162,
+          "shin_relative_step_degrees": 0.656106904454367,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 9,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 2.222006532298657,
+          "world_foot_step_degrees": 0.7712590913840218,
+          "shin_relative_step_degrees": 0.8402275668584603,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 10,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 3.2272364217441103,
+          "world_foot_step_degrees": 0.9228015657161526,
+          "shin_relative_step_degrees": 1.004042290303517,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 11,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 4.378916666052038,
+          "world_foot_step_degrees": 1.0594215708156864,
+          "shin_relative_step_degrees": 1.151466267287836,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 12,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 5.658324222603555,
+          "world_foot_step_degrees": 1.179669825918111,
+          "shin_relative_step_degrees": 1.278992729281144,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 13,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 7.047734963945889,
+          "world_foot_step_degrees": 1.2832692814752182,
+          "shin_relative_step_degrees": 1.3892867307202157,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 14,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 8.528501192984436,
+          "world_foot_step_degrees": 1.3705689174649132,
+          "shin_relative_step_degrees": 1.4798563197750543,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 10.082233479152583,
+          "world_foot_step_degrees": 1.4407290475061072,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 16,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 11.691059778713344,
+          "world_foot_step_degrees": 1.4888205161738728,
+          "shin_relative_step_degrees": 1.6085985554406246,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 13.336360995989267,
+          "world_foot_step_degrees": 1.5184909646501141,
+          "shin_relative_step_degrees": 1.64516290594523,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 18,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 15.000031153264294,
+          "world_foot_step_degrees": 1.540495913165191,
+          "shin_relative_step_degrees": 1.663143699100406,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 19,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 16.66365520676242,
+          "world_foot_step_degrees": 1.5435414304830763,
+          "shin_relative_step_degrees": 1.663143699100406,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 20,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 18.308967523095745,
+          "world_foot_step_degrees": 1.5308117721391707,
+          "shin_relative_step_degrees": 1.6446870338591506,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 21,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 19.917680270761554,
+          "world_foot_step_degrees": 1.5008634203410747,
+          "shin_relative_step_degrees": 1.6081119044622612,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 22,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 21.47158587297989,
+          "world_foot_step_degrees": 1.4537089682500703,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 23,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 22.95231112088342,
+          "world_foot_step_degrees": 1.3887232401136897,
+          "shin_relative_step_degrees": 1.4803851258272014,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 24,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 24.341578428253182,
+          "world_foot_step_degrees": 1.3056415661015952,
+          "shin_relative_step_degrees": 1.3887232401136897,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 25.621120454153985,
+          "world_foot_step_degrees": 1.2059172824031181,
+          "shin_relative_step_degrees": 1.279604564820389,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 26,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 26.772606678400802,
+          "world_foot_step_degrees": 1.087852980287805,
+          "shin_relative_step_degrees": 1.1507863433003025,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 27,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 27.777788543078653,
+          "world_foot_step_degrees": 0.9445964859142517,
+          "shin_relative_step_degrees": 1.0048214654774277,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 28,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 28.618362848759197,
+          "world_foot_step_degrees": 0.7912951845099898,
+          "shin_relative_step_degrees": 0.8402275668584603,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 29,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 29.276038348845137,
+          "world_foot_step_degrees": 0.619285994969063,
+          "shin_relative_step_degrees": 0.656106904454367,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 29.73251355145543,
+          "world_foot_step_degrees": 0.42978271661217654,
+          "shin_relative_step_degrees": 0.4562824632096509,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 31,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 29.9695381911278,
+          "world_foot_step_degrees": 0.22381166540340428,
+          "shin_relative_step_degrees": 0.23406786145283956,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 32,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 33,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 34,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 35,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 36,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 37,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 38,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 39,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 40,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 41,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 42,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 43,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 30.000007665015225,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 44,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 29.9695381911278,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 29.73251355145543,
+          "world_foot_step_degrees": 0.22381166540340428,
+          "shin_relative_step_degrees": 0.23406786145283956,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 46,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 29.276038348845137,
+          "world_foot_step_degrees": 0.42978271661217654,
+          "shin_relative_step_degrees": 0.4545638702205993,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 47,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 28.618362848759197,
+          "world_foot_step_degrees": 0.619285994969063,
+          "shin_relative_step_degrees": 0.656106904454367,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 48,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 27.777788543078653,
+          "world_foot_step_degrees": 0.7912951845099898,
+          "shin_relative_step_degrees": 0.839295512841018,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 49,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 26.772606678400802,
+          "world_foot_step_degrees": 0.9445964859142517,
+          "shin_relative_step_degrees": 1.0048214654774277,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 50,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 25.621120454153985,
+          "world_foot_step_degrees": 1.087852980287805,
+          "shin_relative_step_degrees": 1.1507863433003025,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 51,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 24.341578428253182,
+          "world_foot_step_degrees": 1.2059172824031181,
+          "shin_relative_step_degrees": 1.278992729281144,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 52,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 22.95231112088342,
+          "world_foot_step_degrees": 1.3056415661015952,
+          "shin_relative_step_degrees": 1.3887232401136897,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 53,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 21.47158587297989,
+          "world_foot_step_degrees": 1.3887232401136897,
+          "shin_relative_step_degrees": 1.4803851258272014,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 54,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 19.917680270761554,
+          "world_foot_step_degrees": 1.4537089682500703,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 55,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 18.308967523095745,
+          "world_foot_step_degrees": 1.5008634203410747,
+          "shin_relative_step_degrees": 1.6081119044622612,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 56,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 16.66365520676242,
+          "world_foot_step_degrees": 1.5313230758315697,
+          "shin_relative_step_degrees": 1.6446870338591506,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 57,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 15.000031153264294,
+          "world_foot_step_degrees": 1.5435414304830763,
+          "shin_relative_step_degrees": 1.6636142351011964,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 58,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 13.336360995989267,
+          "world_foot_step_degrees": 1.5399877044022598,
+          "shin_relative_step_degrees": 1.663143699100406,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 59,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 11.691059778713344,
+          "world_foot_step_degrees": 1.5190064304890385,
+          "shin_relative_step_degrees": 1.6446870338591506,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 10.082233479152583,
+          "world_foot_step_degrees": 1.4888205161738728,
+          "shin_relative_step_degrees": 1.6081119044622612,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 61,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 8.528501192984436,
+          "world_foot_step_degrees": 1.4407290475061072,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 62,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 7.047734963945889,
+          "world_foot_step_degrees": 1.369997742895571,
+          "shin_relative_step_degrees": 1.4803851258272014,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 63,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 5.658324222603555,
+          "world_foot_step_degrees": 1.2832692814752182,
+          "shin_relative_step_degrees": 1.3892867307202157,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 64,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 4.378916666052038,
+          "world_foot_step_degrees": 1.179669825918111,
+          "shin_relative_step_degrees": 1.278992729281144,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 65,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 3.2272364217441103,
+          "world_foot_step_degrees": 1.0594215708156864,
+          "shin_relative_step_degrees": 1.151466267287836,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 66,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 2.222006532298657,
+          "world_foot_step_degrees": 0.9228015657161526,
+          "shin_relative_step_degrees": 1.005600107042809,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 67,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 1.3813768380528122,
+          "world_foot_step_degrees": 0.7702435809926584,
+          "shin_relative_step_degrees": 0.8402275668584603,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 68,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.7241537846385298,
+          "world_foot_step_degrees": 0.602631966060162,
+          "shin_relative_step_degrees": 0.6572987724645343,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 69,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.2654080243768844,
+          "world_foot_step_degrees": 0.4187134612472453,
+          "shin_relative_step_degrees": 0.4562824632096509,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 70,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.2130623617124058,
+          "shin_relative_step_degrees": 0.2373881338022591,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 71,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 72,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 73,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 74,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 76,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 77,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 78,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 79,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 80,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 81,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.2683407902126115,
+          "world_foot_step_degrees": 0.21670472016987377,
+          "shin_relative_step_degrees": 0.2373881338022591,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 82,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.7241537846385298,
+          "world_foot_step_degrees": 0.41684001506310486,
+          "shin_relative_step_degrees": 0.4545638702205993,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 83,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 1.3808100390734068,
+          "world_foot_step_degrees": 0.6013317755186267,
+          "shin_relative_step_degrees": 0.6572987724645343,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 84,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 2.222006532298657,
+          "world_foot_step_degrees": 0.7712590913840218,
+          "shin_relative_step_degrees": 0.8402275668584603,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 85,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 3.2272364217441103,
+          "world_foot_step_degrees": 0.9228015657161526,
+          "shin_relative_step_degrees": 1.0048214654774277,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 86,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 4.378559361781082,
+          "world_foot_step_degrees": 1.0594215708156864,
+          "shin_relative_step_degrees": 1.1507863433003025,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 87,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 5.658324222603555,
+          "world_foot_step_degrees": 1.1803331013195428,
+          "shin_relative_step_degrees": 1.279604564820389,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 88,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 7.047623973371875,
+          "world_foot_step_degrees": 1.2832692814752182,
+          "shin_relative_step_degrees": 1.3887232401136897,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 89,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 8.528409839204286,
+          "world_foot_step_degrees": 1.3705689174649132,
+          "shin_relative_step_degrees": 1.4798563197750543,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 10.082233479152583,
+          "world_foot_step_degrees": 1.4407290475061072,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 91,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 11.690992330595291,
+          "world_foot_step_degrees": 1.4846088507769137,
+          "shin_relative_step_degrees": 1.6081119044622612,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 92,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 13.336302085607675,
+          "world_foot_step_degrees": 1.5190064304890385,
+          "shin_relative_step_degrees": 1.6446870338591506,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 93,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 15.000031153264294,
+          "world_foot_step_degrees": 1.540495913165191,
+          "shin_relative_step_degrees": 1.6636142351011964,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 94,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 16.66360739543823,
+          "world_foot_step_degrees": 1.5445552866880001,
+          "shin_relative_step_degrees": 1.663143699100406,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 95,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 18.308924834413432,
+          "world_foot_step_degrees": 1.5313230758315697,
+          "shin_relative_step_degrees": 1.6446870338591506,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 96,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 19.917680270761554,
+          "world_foot_step_degrees": 1.5013848625955228,
+          "shin_relative_step_degrees": 1.6085985554406246,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 97,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 21.471548306939457,
+          "world_foot_step_degrees": 1.4537089682500703,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 98,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 22.952242818991717,
+          "world_foot_step_degrees": 1.3881594293420463,
+          "shin_relative_step_degrees": 1.4803851258272014,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 99,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 24.341545984854626,
+          "world_foot_step_degrees": 1.306839944135815,
+          "shin_relative_step_degrees": 1.3892867307202157,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 100,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 25.62108971830272,
+          "world_foot_step_degrees": 1.2052680942668497,
+          "shin_relative_step_degrees": 1.279604564820389,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 101,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 26.772548621792854,
+          "world_foot_step_degrees": 1.0871332491040149,
+          "shin_relative_step_degrees": 1.1507863433003025,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 102,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 27.777732194018,
+          "world_foot_step_degrees": 0.9437675784254472,
+          "shin_relative_step_degrees": 1.004042290303517,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 103,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 28.618333820455224,
+          "world_foot_step_degrees": 0.7903054474105726,
+          "shin_relative_step_degrees": 0.839295512841018,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 104,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.27598370733178,
+          "world_foot_step_degrees": 0.618020809147024,
+          "shin_relative_step_degrees": 0.656106904454367,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.73251355145543,
+          "world_foot_step_degrees": 0.42978271661217654,
+          "shin_relative_step_degrees": 0.4545638702205993,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 106,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.969510870371117,
+          "world_foot_step_degrees": 0.22381166540340428,
+          "shin_relative_step_degrees": 0.2373881338022591,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 107,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 108,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 109,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 110,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 111,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 112,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 113,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 114,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 115,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 116,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 117,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 118,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.999980344258546,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 119,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.969510870371117,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.73251355145543,
+          "world_foot_step_degrees": 0.22381166540340428,
+          "shin_relative_step_degrees": 0.23406786145283956,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 121,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 29.27598370733178,
+          "world_foot_step_degrees": 0.42978271661217654,
+          "shin_relative_step_degrees": 0.4562824632096509,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 122,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 28.618333820455224,
+          "world_foot_step_degrees": 0.619285994969063,
+          "shin_relative_step_degrees": 0.656106904454367,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 123,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 27.777732194018,
+          "world_foot_step_degrees": 0.7912951845099898,
+          "shin_relative_step_degrees": 0.839295512841018,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 124,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 26.772548621792854,
+          "world_foot_step_degrees": 0.9437675784254472,
+          "shin_relative_step_degrees": 1.005600107042809,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 125,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 25.62108971830272,
+          "world_foot_step_degrees": 1.087852980287805,
+          "shin_relative_step_degrees": 1.1507863433003025,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 126,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 24.341545984854626,
+          "world_foot_step_degrees": 1.2052680942668497,
+          "shin_relative_step_degrees": 1.278992729281144,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 127,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 22.952242818991717,
+          "world_foot_step_degrees": 1.3062409152012637,
+          "shin_relative_step_degrees": 1.3892867307202157,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 128,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 21.471548306939457,
+          "world_foot_step_degrees": 1.3887232401136897,
+          "shin_relative_step_degrees": 1.4803851258272014,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 129,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 19.917680270761554,
+          "world_foot_step_degrees": 1.453170450522697,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 130,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 18.308924834413432,
+          "world_foot_step_degrees": 1.5008634203410747,
+          "shin_relative_step_degrees": 1.6081119044622612,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 131,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 16.66360739543823,
+          "world_foot_step_degrees": 1.5313230758315697,
+          "shin_relative_step_degrees": 1.6446870338591506,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 132,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 15.000031153264294,
+          "world_foot_step_degrees": 1.5445552866880001,
+          "shin_relative_step_degrees": 1.663143699100406,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 133,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 13.336302085607675,
+          "world_foot_step_degrees": 1.540495913165191,
+          "shin_relative_step_degrees": 1.6636142351011964,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 134,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 11.690992330595291,
+          "world_foot_step_degrees": 1.5190064304890385,
+          "shin_relative_step_degrees": 1.6446870338591506,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 135,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 10.082233479152583,
+          "world_foot_step_degrees": 1.4856628343432112,
+          "shin_relative_step_degrees": 1.6081119044622612,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 136,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 8.528409839204286,
+          "world_foot_step_degrees": 1.4407290475061072,
+          "shin_relative_step_degrees": 1.5531461705599952,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 137,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 7.047623973371875,
+          "world_foot_step_degrees": 1.3705689174649132,
+          "shin_relative_step_degrees": 1.4803851258272014,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 138,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 5.658324222603555,
+          "world_foot_step_degrees": 1.2832692814752182,
+          "shin_relative_step_degrees": 1.3892867307202157,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 139,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 4.378559361781082,
+          "world_foot_step_degrees": 1.1803331013195428,
+          "shin_relative_step_degrees": 1.279604564820389,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 140,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 3.2272364217441103,
+          "world_foot_step_degrees": 1.0594215708156864,
+          "shin_relative_step_degrees": 1.151466267287836,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 141,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 2.222006532298657,
+          "world_foot_step_degrees": 0.9228015657161526,
+          "shin_relative_step_degrees": 1.0048214654774277,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 142,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 1.3808100390734068,
+          "world_foot_step_degrees": 0.7712590913840218,
+          "shin_relative_step_degrees": 0.839295512841018,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 143,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.7241537846385298,
+          "world_foot_step_degrees": 0.6013317755186267,
+          "shin_relative_step_degrees": 0.6572987724645343,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 144,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.2683407902126115,
+          "world_foot_step_degrees": 0.4187134612472453,
+          "shin_relative_step_degrees": 0.4562824632096509,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 145,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.21670472016987377,
+          "shin_relative_step_degrees": 0.23406786145283956,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 146,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 147,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 148,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 149,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "sides": {
+        "Left": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        },
+        "Right": {
+          "shin_relative_excursion_degrees": 0.0,
+          "world_foot_step_degrees": 0.0,
+          "shin_relative_step_degrees": 0.0,
+          "rigid_toe_relative_error_degrees": 0.0
+        }
+      }
+    }
+  ]
+}

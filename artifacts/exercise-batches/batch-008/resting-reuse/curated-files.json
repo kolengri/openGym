@@ -1,0 +1,104 @@
+{
+  "delivery_ready": true,
+  "delivery_assets": [
+    "6539"
+  ],
+  "asset_manifests": [
+    "../assets/6539/curated-files.json"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "09caf68ab4f1214fe29cb8de8e422953e2ec0ce4d8d3dfee1642555ca19027e1",
+      "bytes": 838
+    },
+    {
+      "path": "clone_native.py",
+      "sha256": "b7c4599663fb56bf53db5bc0aec112fe41310d793dcfe6f95d522db19a5cc162",
+      "bytes": 3568
+    },
+    {
+      "path": "clone_metadata.py",
+      "sha256": "fbac5eafb8a285df96a977b3e305a02e232eb113efe3a0f4a5ee62dbadb4d749",
+      "bytes": 3473
+    },
+    {
+      "path": "verify_identity.mjs",
+      "sha256": "eac75ba59aa4f3a3912d0d9fedb077860a4e15d2998cb528ec0de1c14922e80d",
+      "bytes": 3655
+    },
+    {
+      "path": "verify_export.mjs",
+      "sha256": "9c9e9bfbc133af286ab8d333ef2d8ad0bd15663f8a778bf5183d94424e7a230e",
+      "bytes": 8877
+    },
+    {
+      "path": "verify_runtime.mjs",
+      "sha256": "de4af056c4bcc5212cdea00f909813d6c2e8cd017655e6d10dcbbc35449cf609",
+      "bytes": 4553
+    },
+    {
+      "path": "verify_runtime.py",
+      "sha256": "1384aee0b09f761faa701c027563a91e47c70bec2f447b35317d5b01e6043028",
+      "bytes": 5941
+    },
+    {
+      "path": "package_reuse.py",
+      "sha256": "a50fe9b162e94990991c73424783911c7798122d6d454aa705762b12a613195c",
+      "bytes": 7556
+    },
+    {
+      "path": "native-identity.json",
+      "sha256": "f360c9327d4d7f77b8b75b8630edc304077e6c8d20889a4912e540fd12926426",
+      "bytes": 539
+    },
+    {
+      "path": "decoded-identity.json",
+      "sha256": "e576cc3f0e0dea4448b8841a3fc1dfe1a66a052829b2cad47a876bdb50698b0c",
+      "bytes": 845
+    },
+    {
+      "path": "reuse-lineage.json",
+      "sha256": "6d4be3e8ecc41a6b598dc6bc990295595e8e5548a410f67ef5e342028d98be1b",
+      "bytes": 979
+    },
+    {
+      "path": "curated-files.json",
+      "self_manifest": true
+    }
+  ],
+  "read_only_dependencies": [
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/4365/source.blend",
+      "sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+      "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/4365/delivery-report.json",
+      "sha256": "432a258fd229a556abb4bef0c1e3537ac5cb9d9020ceb0584cec7812e2501bc0"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/resting-repair/runtime_checks.py",
+      "sha256": "e0cec1e6fb6701f4e4a0e5a298eb2ac1294e371b60884dc892f8ac6a83f0d4ea"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/resting-repair/resting_checks.py",
+      "sha256": "1f421c67b98d4110d345d7c025fd6714dfaef11cbd5a62b80efd39eb7c34d2b3"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    }
+  ],
+  "excluded": [
+    "logs",
+    "trials",
+    "backups",
+    "environment",
+    "caches",
+    "runtime frame caches"
+  ]
+}

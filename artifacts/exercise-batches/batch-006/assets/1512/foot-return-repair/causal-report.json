@@ -1,0 +1,76 @@
+{
+  "status": "final_native_decoded_foot_contact_and_game_gates_pass",
+  "rejected_source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+  "initial_transport_source_sha256": "1a79b11cb7d7ed8c655584b30a63b9fbe3dc151395489de81f7fffe399533aec",
+  "observations": [
+    "Actual GPU before-4.40.png and native baseline late-foot show a severe hooked foot.",
+    "Shortest-arc shin frame crosses an antipodal singularity:135.35degree physical rotation in one30fps sample, while world foot/toe rotate6.43degrees.",
+    "Independent world foot rotation also yields extreme ankle-relative swing and mixed-edge crushing/stretching.",
+    "The previous generic positive-area/contact/transport checks did not cover internal foot shape."
+  ],
+  "remedy": "Continuous sagittal shin frame transports the planted shin-relative ankle and rigid Foot/ToeBase orientation; preserve original ankle/knee trajectory, torso and supports. Recompute collar attachment and source digits only because the previous fit was around collapsed skin.",
+  "native_foot_regression": {
+    "foot_regression_pass": true,
+    "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+    "rejected_source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+    "frames": 151,
+    "gates": {
+      "ankle_edges_stable_relative_to_actual_planted_shape": true,
+      "forefoot_edges_stable_relative_to_actual_planted_shape": true,
+      "no_ankle_relative_roll": true,
+      "no_shin_rotation_snap": true,
+      "ankle_and_knee_trajectory_retained": true
+    },
+    "baseline_maximum_ankle_edge_change_from_planted": 5.679445951245459,
+    "repaired_maximum_ankle_edge_change_from_planted": 6.434125996102047e-05,
+    "baseline_maximum_forefoot_edge_change_from_planted": 5.679445951245459,
+    "repaired_maximum_forefoot_edge_change_from_planted": 0.0004348720970573927,
+    "baseline_ankle_relative_quaternion_drift": 1.410003794175764,
+    "repaired_ankle_relative_quaternion_drift": 6.759939326175305e-07,
+    "baseline_maximum_late_rotation_degrees": {
+      "LeftLeg": 135.35031072623994,
+      "LeftFoot": 6.654509874370853,
+      "LeftToeBase": 6.654392480494494
+    },
+    "repaired_maximum_late_rotation_degrees": {
+      "LeftLeg": 8.448486380631381,
+      "LeftFoot": 8.44839331930394,
+      "LeftToeBase": 8.44839331930394
+    },
+    "maximum_ankle_knee_trajectory_change_m": 2.980232238769531e-07,
+    "threshold_basis": "0.2% relative edge-shape drift bounds deformation of the preserved planted foot, not medical joint ranges. 10 degrees/sample bounds the authored smooth 152.35 degree hinge transport at 30 fps; current analytical maximum is 8.45 degrees/sample.",
+    "scope": "Actual native DQ skin, source-bound mixed ankle and whole-forefoot edges across all151 samples. Tests internal shape and roll directly. Grasp acceptance and final export remain separate."
+  },
+  "grasp_dependency": "One authorized constrained geometry-derived collar/digit re-fit replaced the collapsed-foot fit. A measured zero-endpoint skin-normal closing/opening arc clears all151 native samples. Held pose accepted by root; no further variants.",
+  "proofs": {
+    "native_baseline": [
+      "baseline-release-foot.png",
+      "baseline-return-foot.png",
+      "baseline-late-foot.png",
+      "baseline-settled-foot.png"
+    ],
+    "native_transport": [
+      "repaired-release-foot.png",
+      "repaired-return-foot.png",
+      "repaired-late-foot.png",
+      "repaired-settled-foot.png",
+      "repaired-hold-wholebody.png",
+      "repaired-late-return-wholebody.png"
+    ],
+    "actual_gpu_baseline": "../../../foot-return-review/before-4.40.png"
+  },
+  "limits": "Primary-owned actual GPU late return and final user acceptance remain separate. Discrete checks are not continuous-time or enclosed-volume certificates.",
+  "final_source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+  "final_glb_sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+  "decoded_foot_regression": {
+    "pass": true,
+    "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+    "glb_sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+    "adapter_sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "frames": 151,
+    "maximum_ankle_edge_change_from_planted": 6.614519316938683e-06,
+    "maximum_forefoot_edge_change_from_planted": 8.680188160803404e-06,
+    "threshold": 0.002,
+    "scope": "Actual decoded canonical GLB and exact shared DQ adapter, original-ID mixed ankle and whole forefoot edges. Internal shape regression relative to actual planted skin; reaches the rejected hook missed by generic positive-area checks."
+  }
+}

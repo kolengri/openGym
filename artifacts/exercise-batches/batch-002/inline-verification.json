@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "scope": "Actual URL-mode Three.js preview; pinned public model bytes verified and all five live actions selected.",
+  "model_revision": "664bcdf8707d17720f695411d86969ee375afdc3",
+  "models": {
+    "default": {
+      "path": "artifacts/bodyweight-next-five/next-five.glb",
+      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+      "bytes": 1325048,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_4007",
+        "Exercise_5265",
+        "Exercise_6428",
+        "Exercise_6560"
+      ]
+    },
+    "ninety-repaired": {
+      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+      "sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+      "bytes": 1305964,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_6560"
+      ]
+    }
+  },
+  "actions": [
+    "Exercise_5265",
+    "Exercise_4007",
+    "Exercise_6428",
+    "Exercise_10565",
+    "Exercise_6560"
+  ],
+  "input_bytes": 104864,
+  "mediaRequests": [],
+  "liveCanvasReplacesPoster": true,
+  "livePoseChanges": true,
+  "externalResources": [
+    "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+    "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/loaders/GLTFLoader.js",
+    "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/controls/OrbitControls.js",
+    "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/utils/BufferGeometryUtils.js",
+    "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/utils/SkeletonUtils.js",
+    "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js",
+    "https://raw.githubusercontent.com/kolengri/openGym/664bcdf8707d17720f695411d86969ee375afdc3/artifacts/bodyweight-next-five/ninety-repaired.glb",
+    "https://raw.githubusercontent.com/kolengri/openGym/664bcdf8707d17720f695411d86969ee375afdc3/artifacts/bodyweight-next-five/next-five.glb"
+  ],
+  "errors": []
+}

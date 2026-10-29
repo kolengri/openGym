@@ -1,0 +1,5312 @@
+{
+  "id": "3244",
+  "source_sha256": "7a9b32c54489fa4640292688cd03ce6a643fdd8731820e111f3fc8499e87a4b4",
+  "motion_sha256": "77cfeb4a8b8f379656be51f9cf9050b20e61cffa7443d8a6266bf995b5b652b7",
+  "ok": true,
+  "checks": {
+    "linear_supports": true,
+    "native_supports": true,
+    "linear_whole_skin_floor": true,
+    "native_whole_skin_floor": true,
+    "export_native_cage_parity": true,
+    "seamless_skin_loop": true,
+    "planted_patch_drift": true,
+    "hands_clear_of_torso": true
+  },
+  "limits": {
+    "floor_penetration_m": 0.004,
+    "contact_near_band_m": 0.012,
+    "minimum_near_fraction": 0.2,
+    "maximum_planted_patch_drift_m": 0.005,
+    "native_cage_export_parity_m": 2e-05,
+    "loop_skin_error_m": 2e-05
+  },
+  "tolerance_basis": "Illustration approximations at1.8m body scale, not clinical limits or exact collision guarantees.12mm near-contact band,4mm penetration,5mm tangential drift.",
+  "frozen_original_patches": {
+    "ventral_pelvis_L": {
+      "indices": [
+        8655,
+        9132,
+        9133,
+        9128
+      ],
+      "polygon": 8629,
+      "rationale": "Anterior pelvic skin remains planted through all phases; not a posterior-glute proxy."
+    },
+    "anterior_thigh_L": {
+      "indices": [
+        8773,
+        9010,
+        8972,
+        8774
+      ],
+      "polygon": 8774,
+      "rationale": "Local anterior thigh skin supporting the prone leg, separate from pelvis and knee."
+    },
+    "anterior_shin_L": {
+      "indices": [
+        5159,
+        5175,
+        5171,
+        5161
+      ],
+      "polygon": 5246,
+      "rationale": "Local anterior lower-leg support, separate from foot dorsum."
+    },
+    "foot_dorsum_L": {
+      "indices": [
+        5819,
+        6135,
+        5209,
+        5176
+      ],
+      "polygon": 6148,
+      "rationale": "Actual dorsal foot contact in pointed prone feet; not a falsely flat sole."
+    },
+    "palm_heel_L": {
+      "indices": [
+        10034,
+        10035,
+        10059,
+        10056
+      ],
+      "polygon": 9982,
+      "rationale": "Actual palm heel, independent of finger-tip and wrist bone targets."
+    },
+    "thumb_pad_L": {
+      "indices": [
+        9926,
+        9968,
+        9933,
+        9932
+      ],
+      "polygon": 9888,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "index_pad_L": {
+      "indices": [
+        9863,
+        9869,
+        9872,
+        9871
+      ],
+      "polygon": 9810,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "middle_pad_L": {
+      "indices": [
+        9880,
+        9881,
+        9888,
+        9889
+      ],
+      "polygon": 9830,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "ring_pad_L": {
+      "indices": [
+        9841,
+        10125,
+        9843,
+        9842
+      ],
+      "polygon": 10064,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "little_pad_L": {
+      "indices": [
+        9902,
+        10126,
+        9904,
+        9903
+      ],
+      "polygon": 10068,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "ventral_pelvis_R": {
+      "indices": [
+        3397,
+        3868,
+        3870,
+        3869
+      ],
+      "polygon": 3412,
+      "rationale": "Anterior pelvic skin remains planted through all phases; not a posterior-glute proxy."
+    },
+    "anterior_thigh_R": {
+      "indices": [
+        3515,
+        3713,
+        3751,
+        3514
+      ],
+      "polygon": 3557,
+      "rationale": "Local anterior thigh skin supporting the prone leg, separate from pelvis and knee."
+    },
+    "anterior_shin_R": {
+      "indices": [
+        38,
+        42,
+        26,
+        28
+      ],
+      "polygon": 29,
+      "rationale": "Local anterior lower-leg support, separate from foot dorsum."
+    },
+    "foot_dorsum_R": {
+      "indices": [
+        43,
+        76,
+        1002,
+        686
+      ],
+      "polygon": 931,
+      "rationale": "Actual dorsal foot contact in pointed prone feet; not a falsely flat sole."
+    },
+    "palm_heel_R": {
+      "indices": [
+        4738,
+        4760,
+        4763,
+        4739
+      ],
+      "polygon": 4765,
+      "rationale": "Actual palm heel, independent of finger-tip and wrist bone targets."
+    },
+    "thumb_pad_R": {
+      "indices": [
+        4630,
+        4636,
+        4637,
+        4672
+      ],
+      "polygon": 4671,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "index_pad_R": {
+      "indices": [
+        4574,
+        4831,
+        4576,
+        4575
+      ],
+      "polygon": 4853,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "middle_pad_R": {
+      "indices": [
+        4585,
+        4592,
+        4591,
+        4586
+      ],
+      "polygon": 4612,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "ring_pad_R": {
+      "indices": [
+        4543,
+        4544,
+        4545,
+        4829
+      ],
+      "polygon": 4846,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    },
+    "little_pad_R": {
+      "indices": [
+        4606,
+        4607,
+        4608,
+        4830
+      ],
+      "polygon": 4851,
+      "rationale": "Distal articulated finger pad kept near floor; not the whole hand minimum."
+    }
+  },
+  "native": [
+    {
+      "frame": 0,
+      "vertices": 42342,
+      "global_min_z": -0.0013178029330447316,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0036369329318404198,
+          "max_z": 0.03176707774400711,
+          "median_z": 0.023923758417367935,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0482625812292099,
+            0.10812003910541534
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.0022251340560615063,
+          "max_z": 0.01138550415635109,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0034953446593135595,
+          "max_z": 0.010445994324982166,
+          "median_z": 0.006059713661670685,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2224106341600418,
+            -0.45983749628067017
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014593948144465685,
+          "max_z": 0.009345768019557,
+          "median_z": 0.003098763059824705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1725848913192749,
+            -0.5186755061149597
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004712012596428394,
+          "max_z": 0.008530018851161003,
+          "median_z": 0.005628008395433426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565734267234802,
+            -0.5850204229354858
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004353053867816925,
+          "max_z": 0.008286732248961926,
+          "median_z": 0.005230121314525604,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640053927898407,
+            -0.5992150902748108
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.0040208566933870316,
+          "max_z": 0.006383675150573254,
+          "median_z": 0.004638523794710636,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25876420736312866,
+            -0.5930736660957336
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703041795641184,
+          "max_z": 0.008634472265839577,
+          "median_z": 0.006294583901762962,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946640133857727,
+            -0.5650497078895569
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0032403478398919106,
+          "max_z": 0.03240618109703064,
+          "median_z": 0.024310985580086708,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04845975711941719,
+            0.10782258957624435
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536179654300213,
+          "max_z": 0.01116772461682558,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033703017979860306,
+          "max_z": 0.0103495167568326,
+          "median_z": 0.005951756611466408,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2224200963973999,
+            -0.4597857892513275
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080980326980352,
+          "max_z": 0.009304499253630638,
+          "median_z": 0.00317841162905097,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17259782552719116,
+            -0.518656313419342
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046703750267624855,
+          "max_z": 0.007461159490048885,
+          "median_z": 0.0056837862357497215,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520094990730286,
+            -0.5884061455726624
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409607965499163,
+          "max_z": 0.008230372332036495,
+          "median_z": 0.0053560445085167885,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062238097190857,
+            -0.5987430214881897
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059718921780586,
+          "max_z": 0.006863337010145187,
+          "median_z": 0.00466574914753437,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2616867125034332,
+            -0.5936998128890991
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.0057489508762955666,
+          "max_z": 0.008633088320493698,
+          "median_z": 0.0063589196652174,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728684425354,
+            -0.5650407075881958
+          ]
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0036050775088369846,
+          "max_z": 0.03171611577272415,
+          "median_z": 0.02388940379023552,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.04826340451836586,
+            0.10807346552610397
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002225133590400219,
+          "max_z": 0.011385503225028515,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.003485796507447958,
+          "max_z": 0.010412300936877728,
+          "median_z": 0.00603928416967392,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22241215407848358,
+            -0.45985516905784607
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014592916704714298,
+          "max_z": 0.00934567116200924,
+          "median_z": 0.0030986606143414974,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1725848913192749,
+            -0.5186754465103149
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711920861154795,
+          "max_z": 0.00852991919964552,
+          "median_z": 0.005627914797514677,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565731287002563,
+            -0.5850202441215515
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004352872259914875,
+          "max_z": 0.008286571130156517,
+          "median_z": 0.0052299583330750465,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640053927898407,
+            -0.5992148518562317
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020679742097855,
+          "max_z": 0.0063834949396550655,
+          "median_z": 0.004638340324163437,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25876420736312866,
+            -0.5930734872817993
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005702910013496876,
+          "max_z": 0.008634333498775959,
+          "median_z": 0.006294449791312218,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946643114089966,
+            -0.5650495886802673
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0032088374719023705,
+          "max_z": 0.03235631808638573,
+          "median_z": 0.024277087301015854,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.048460640013217926,
+            0.10777637362480164
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536170341074467,
+          "max_z": 0.011167723685503006,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033613191917538643,
+          "max_z": 0.010316548869013786,
+          "median_z": 0.005932026542723179,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22242146730422974,
+            -0.4598032236099243
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080731198191643,
+          "max_z": 0.009304509498178959,
+          "median_z": 0.0031784134916961193,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17259782552719116,
+            -0.518656313419342
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.00467029819265008,
+          "max_z": 0.007461064495146275,
+          "median_z": 0.0056836968287825584,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520102441310883,
+            -0.5884061455726624
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409599117934704,
+          "max_z": 0.008230353705585003,
+          "median_z": 0.005356035195291042,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062245547771454,
+            -0.5987430214881897
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059747792780399,
+          "max_z": 0.006863357033580542,
+          "median_z": 0.00466577522456646,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2616867125034332,
+            -0.5936997532844543
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.00574895553290844,
+          "max_z": 0.008633077144622803,
+          "median_z": 0.0063589196652174,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728684425354,
+            -0.565040647983551
+          ]
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0035404572263360023,
+          "max_z": 0.031612347811460495,
+          "median_z": 0.02381955459713936,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.04826505482196808,
+            0.10796616226434708
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002225133590400219,
+          "max_z": 0.011385500431060791,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0034681647084653378,
+          "max_z": 0.010350207798182964,
+          "median_z": 0.00600111298263073,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22241544723510742,
+            -0.4598853588104248
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.001459393184632063,
+          "max_z": 0.009345775470137596,
+          "median_z": 0.0030987816862761974,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17258484661579132,
+            -0.5186755061149597
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711916204541922,
+          "max_z": 0.008529934100806713,
+          "median_z": 0.00562791433185339,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565722346305847,
+            -0.5850203037261963
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.00435298727825284,
+          "max_z": 0.008286694996058941,
+          "median_z": 0.0052300794050097466,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640040516853333,
+            -0.5992149710655212
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020744934678078,
+          "max_z": 0.006383582949638367,
+          "median_z": 0.00463841063901782,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587641179561615,
+            -0.5930737257003784
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703040398657322,
+          "max_z": 0.00863446481525898,
+          "median_z": 0.006294578313827515,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946625232696533,
+            -0.5650498270988464
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.003144888672977686,
+          "max_z": 0.03225481137633324,
+          "median_z": 0.024208171293139458,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.0484624058008194,
+            0.107669897377491
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536170341074467,
+          "max_z": 0.011167719960212708,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.003344261087477207,
+          "max_z": 0.01025529857724905,
+          "median_z": 0.005894661881029606,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22242441773414612,
+            -0.4598326086997986
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00140807731077075,
+          "max_z": 0.009304498322308064,
+          "median_z": 0.0031784153543412685,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1725977659225464,
+            -0.5186564326286316
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046702721156179905,
+          "max_z": 0.007461081258952618,
+          "median_z": 0.005683690309524536,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520102441310883,
+            -0.5884063243865967
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409588873386383,
+          "max_z": 0.00823034718632698,
+          "median_z": 0.005356024019420147,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062241077423096,
+            -0.5987430214881897
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059636499732733,
+          "max_z": 0.006863252259790897,
+          "median_z": 0.004665663465857506,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26168668270111084,
+            -0.5937000513076782
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.0057488842867314816,
+          "max_z": 0.008633024990558624,
+          "median_z": 0.006358864717185497,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728088378906,
+            -0.5650407075881958
+          ]
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.003483553882688284,
+          "max_z": 0.031520456075668335,
+          "median_z": 0.023757848888635635,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0482664480805397,
+            0.10785254836082458
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002225133590400219,
+          "max_z": 0.011385497637093067,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0034526402596384287,
+          "max_z": 0.010296686552464962,
+          "median_z": 0.005967646837234497,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22241856157779694,
+            -0.45990806818008423
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014592446386814117,
+          "max_z": 0.009345600381493568,
+          "median_z": 0.0030985986813902855,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17258481681346893,
+            -0.5186753869056702
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711850546300411,
+          "max_z": 0.00852985680103302,
+          "median_z": 0.00562785379588604,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565722346305847,
+            -0.5850204229354858
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004352896939963102,
+          "max_z": 0.008286568336188793,
+          "median_z": 0.005229997914284468,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640040516853333,
+            -0.599215030670166
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020595923066139,
+          "max_z": 0.0063834423199296,
+          "median_z": 0.004638262093067169,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587641477584839,
+            -0.5930737257003784
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.00570288160815835,
+          "max_z": 0.008634321391582489,
+          "median_z": 0.006294421851634979,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946619272232056,
+            -0.5650497674942017
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0030885483138263226,
+          "max_z": 0.03216493874788284,
+          "median_z": 0.024147305637598038,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04846390336751938,
+            0.1075572520494461
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536165684461594,
+          "max_z": 0.011167717166244984,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033295212779194117,
+          "max_z": 0.010202781297266483,
+          "median_z": 0.005862184800207615,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2224273681640625,
+            -0.45985499024391174
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080072287470102,
+          "max_z": 0.009304430335760117,
+          "median_z": 0.003178342944011092,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1725977659225464,
+            -0.5186564326286316
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004670259077101946,
+          "max_z": 0.007461018860340118,
+          "median_z": 0.005683663301169872,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520090520381927,
+            -0.5884063243865967
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409491550177336,
+          "max_z": 0.008230254054069519,
+          "median_z": 0.005355920642614365,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062236607074738,
+            -0.5987430810928345
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.0040596420876681805,
+          "max_z": 0.006863235030323267,
+          "median_z": 0.00466566625982523,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2616865634918213,
+            -0.5937000513076782
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005748850759118795,
+          "max_z": 0.008632979355752468,
+          "median_z": 0.006358826998621225,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728088378906,
+            -0.5650407075881958
+          ]
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0034602954983711243,
+          "max_z": 0.031482722610235214,
+          "median_z": 0.023732561618089676,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.04826699569821358,
+            0.1077989861369133
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.0022251326590776443,
+          "max_z": 0.011385496705770493,
+          "median_z": 0.00468350388109684,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.003446040442213416,
+          "max_z": 0.010273702442646027,
+          "median_z": 0.005953267216682434,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22242000699043274,
+            -0.4599171578884125
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014591917861253023,
+          "max_z": 0.009345566853880882,
+          "median_z": 0.0030985623598098755,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17258480191230774,
+            -0.5186755061149597
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711753688752651,
+          "max_z": 0.008529771119356155,
+          "median_z": 0.005627752281725407,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565723836421967,
+            -0.5850204229354858
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004352896474301815,
+          "max_z": 0.008286590687930584,
+          "median_z": 0.005229990929365158,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2264004498720169,
+            -0.5992150902748108
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020532593131065,
+          "max_z": 0.006383341737091541,
+          "median_z": 0.00463819969445467,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587641775608063,
+            -0.5930737257003784
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005702872294932604,
+          "max_z": 0.008634323254227638,
+          "median_z": 0.0062944116070866585,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946625232696533,
+            -0.5650496482849121
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0030655120499432087,
+          "max_z": 0.03212803974747658,
+          "median_z": 0.024122364819049835,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04846451058983803,
+            0.10750415921211243
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536165684461594,
+          "max_z": 0.011167716234922409,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033231896813958883,
+          "max_z": 0.01018020510673523,
+          "median_z": 0.005848171189427376,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22242863476276398,
+            -0.4598638415336609
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080313267186284,
+          "max_z": 0.00930445734411478,
+          "median_z": 0.0031783769372850657,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17259761691093445,
+            -0.5186564326286316
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004670283291488886,
+          "max_z": 0.007461052853614092,
+          "median_z": 0.005683690309524536,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520075619220734,
+            -0.5884062051773071
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409571178257465,
+          "max_z": 0.008230318315327168,
+          "median_z": 0.005356007721275091,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062217235565186,
+            -0.5987427830696106
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059591796249151,
+          "max_z": 0.006863202899694443,
+          "median_z": 0.0046656252816319466,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26168641448020935,
+            -0.5936998128890991
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005748847499489784,
+          "max_z": 0.008633016608655453,
+          "median_z": 0.006358820013701916,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994726598262787,
+            -0.5650405883789062
+          ]
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0034602954983711243,
+          "max_z": 0.031482722610235214,
+          "median_z": 0.023732561618089676,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.04826699569821358,
+            0.1077989861369133
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.0022251326590776443,
+          "max_z": 0.011385496705770493,
+          "median_z": 0.00468350388109684,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.003446040442213416,
+          "max_z": 0.010273702442646027,
+          "median_z": 0.005953267216682434,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22242000699043274,
+            -0.4599171578884125
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014591917861253023,
+          "max_z": 0.009345566853880882,
+          "median_z": 0.0030985623598098755,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17258480191230774,
+            -0.5186755061149597
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711753688752651,
+          "max_z": 0.008529771119356155,
+          "median_z": 0.005627752281725407,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565723836421967,
+            -0.5850204229354858
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004352896474301815,
+          "max_z": 0.008286590687930584,
+          "median_z": 0.005229990929365158,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2264004498720169,
+            -0.5992150902748108
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020532593131065,
+          "max_z": 0.006383341737091541,
+          "median_z": 0.00463819969445467,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587641775608063,
+            -0.5930737257003784
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005702872294932604,
+          "max_z": 0.008634323254227638,
+          "median_z": 0.0062944116070866585,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946625232696533,
+            -0.5650496482849121
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0030655120499432087,
+          "max_z": 0.03212803974747658,
+          "median_z": 0.024122364819049835,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04846451058983803,
+            0.10750415921211243
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536165684461594,
+          "max_z": 0.011167716234922409,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033231896813958883,
+          "max_z": 0.01018020510673523,
+          "median_z": 0.005848171189427376,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22242863476276398,
+            -0.4598638415336609
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080313267186284,
+          "max_z": 0.00930445734411478,
+          "median_z": 0.0031783769372850657,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17259761691093445,
+            -0.5186564326286316
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004670283291488886,
+          "max_z": 0.007461052853614092,
+          "median_z": 0.005683690309524536,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520075619220734,
+            -0.5884062051773071
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409571178257465,
+          "max_z": 0.008230318315327168,
+          "median_z": 0.005356007721275091,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062217235565186,
+            -0.5987427830696106
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059591796249151,
+          "max_z": 0.006863202899694443,
+          "median_z": 0.0046656252816319466,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26168641448020935,
+            -0.5936998128890991
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005748847499489784,
+          "max_z": 0.008633016608655453,
+          "median_z": 0.006358820013701916,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994726598262787,
+            -0.5650405883789062
+          ]
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0034602954983711243,
+          "max_z": 0.031482722610235214,
+          "median_z": 0.023732561618089676,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.04826699569821358,
+            0.1077989861369133
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.0022251326590776443,
+          "max_z": 0.011385496705770493,
+          "median_z": 0.00468350388109684,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.003446040442213416,
+          "max_z": 0.010273702442646027,
+          "median_z": 0.005953267216682434,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22242000699043274,
+            -0.4599171578884125
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014591917861253023,
+          "max_z": 0.009345566853880882,
+          "median_z": 0.0030985623598098755,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17258480191230774,
+            -0.5186755061149597
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711753688752651,
+          "max_z": 0.008529771119356155,
+          "median_z": 0.005627752281725407,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565723836421967,
+            -0.5850204229354858
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004352896474301815,
+          "max_z": 0.008286590687930584,
+          "median_z": 0.005229990929365158,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2264004498720169,
+            -0.5992150902748108
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020532593131065,
+          "max_z": 0.006383341737091541,
+          "median_z": 0.00463819969445467,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587641775608063,
+            -0.5930737257003784
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005702872294932604,
+          "max_z": 0.008634323254227638,
+          "median_z": 0.0062944116070866585,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946625232696533,
+            -0.5650496482849121
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0030655120499432087,
+          "max_z": 0.03212803974747658,
+          "median_z": 0.024122364819049835,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04846451058983803,
+            0.10750415921211243
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536165684461594,
+          "max_z": 0.011167716234922409,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033231896813958883,
+          "max_z": 0.01018020510673523,
+          "median_z": 0.005848171189427376,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22242863476276398,
+            -0.4598638415336609
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080313267186284,
+          "max_z": 0.00930445734411478,
+          "median_z": 0.0031783769372850657,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17259761691093445,
+            -0.5186564326286316
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004670283291488886,
+          "max_z": 0.007461052853614092,
+          "median_z": 0.005683690309524536,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520075619220734,
+            -0.5884062051773071
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409571178257465,
+          "max_z": 0.008230318315327168,
+          "median_z": 0.005356007721275091,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062217235565186,
+            -0.5987427830696106
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059591796249151,
+          "max_z": 0.006863202899694443,
+          "median_z": 0.0046656252816319466,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26168641448020935,
+            -0.5936998128890991
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005748847499489784,
+          "max_z": 0.008633016608655453,
+          "median_z": 0.006358820013701916,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994726598262787,
+            -0.5650405883789062
+          ]
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.003483553882688284,
+          "max_z": 0.031520456075668335,
+          "median_z": 0.023757848888635635,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0482664480805397,
+            0.10785254836082458
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002225133590400219,
+          "max_z": 0.011385497637093067,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0034526402596384287,
+          "max_z": 0.010296686552464962,
+          "median_z": 0.005967646837234497,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22241856157779694,
+            -0.45990806818008423
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014592446386814117,
+          "max_z": 0.009345600381493568,
+          "median_z": 0.0030985986813902855,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17258481681346893,
+            -0.5186753869056702
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711850546300411,
+          "max_z": 0.00852985680103302,
+          "median_z": 0.00562785379588604,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565722346305847,
+            -0.5850204229354858
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004352896939963102,
+          "max_z": 0.008286568336188793,
+          "median_z": 0.005229997914284468,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640040516853333,
+            -0.599215030670166
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020595923066139,
+          "max_z": 0.0063834423199296,
+          "median_z": 0.004638262093067169,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587641477584839,
+            -0.5930737257003784
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.00570288160815835,
+          "max_z": 0.008634321391582489,
+          "median_z": 0.006294421851634979,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946619272232056,
+            -0.5650497674942017
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0030885483138263226,
+          "max_z": 0.03216493874788284,
+          "median_z": 0.024147305637598038,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04846390336751938,
+            0.1075572520494461
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536165684461594,
+          "max_z": 0.011167717166244984,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033295212779194117,
+          "max_z": 0.010202781297266483,
+          "median_z": 0.005862184800207615,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2224273681640625,
+            -0.45985499024391174
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080072287470102,
+          "max_z": 0.009304430335760117,
+          "median_z": 0.003178342944011092,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1725977659225464,
+            -0.5186564326286316
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004670259077101946,
+          "max_z": 0.007461018860340118,
+          "median_z": 0.005683663301169872,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520090520381927,
+            -0.5884063243865967
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409491550177336,
+          "max_z": 0.008230254054069519,
+          "median_z": 0.005355920642614365,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062236607074738,
+            -0.5987430810928345
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.0040596420876681805,
+          "max_z": 0.006863235030323267,
+          "median_z": 0.00466566625982523,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2616865634918213,
+            -0.5937000513076782
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005748850759118795,
+          "max_z": 0.008632979355752468,
+          "median_z": 0.006358826998621225,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728088378906,
+            -0.5650407075881958
+          ]
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0035404572263360023,
+          "max_z": 0.031612347811460495,
+          "median_z": 0.02381955459713936,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.04826505482196808,
+            0.10796616226434708
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002225133590400219,
+          "max_z": 0.011385500431060791,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0034681647084653378,
+          "max_z": 0.010350207798182964,
+          "median_z": 0.00600111298263073,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22241544723510742,
+            -0.4598853588104248
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.001459393184632063,
+          "max_z": 0.009345775470137596,
+          "median_z": 0.0030987816862761974,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17258484661579132,
+            -0.5186755061149597
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711916204541922,
+          "max_z": 0.008529934100806713,
+          "median_z": 0.00562791433185339,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565722346305847,
+            -0.5850203037261963
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.00435298727825284,
+          "max_z": 0.008286694996058941,
+          "median_z": 0.0052300794050097466,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640040516853333,
+            -0.5992149710655212
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020744934678078,
+          "max_z": 0.006383582949638367,
+          "median_z": 0.00463841063901782,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587641179561615,
+            -0.5930737257003784
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703040398657322,
+          "max_z": 0.00863446481525898,
+          "median_z": 0.006294578313827515,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946625232696533,
+            -0.5650498270988464
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.003144888672977686,
+          "max_z": 0.03225481137633324,
+          "median_z": 0.024208171293139458,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.0484624058008194,
+            0.107669897377491
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536170341074467,
+          "max_z": 0.011167719960212708,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.003344261087477207,
+          "max_z": 0.01025529857724905,
+          "median_z": 0.005894661881029606,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22242441773414612,
+            -0.4598326086997986
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00140807731077075,
+          "max_z": 0.009304498322308064,
+          "median_z": 0.0031784153543412685,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1725977659225464,
+            -0.5186564326286316
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046702721156179905,
+          "max_z": 0.007461081258952618,
+          "median_z": 0.005683690309524536,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520102441310883,
+            -0.5884063243865967
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409588873386383,
+          "max_z": 0.00823034718632698,
+          "median_z": 0.005356024019420147,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062241077423096,
+            -0.5987430214881897
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059636499732733,
+          "max_z": 0.006863252259790897,
+          "median_z": 0.004665663465857506,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26168668270111084,
+            -0.5937000513076782
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.0057488842867314816,
+          "max_z": 0.008633024990558624,
+          "median_z": 0.006358864717185497,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728088378906,
+            -0.5650407075881958
+          ]
+        }
+      }
+    },
+    {
+      "frame": 135,
+      "vertices": 42342,
+      "global_min_z": 0.0009224736131727695,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0036050775088369846,
+          "max_z": 0.03171611577272415,
+          "median_z": 0.02388940379023552,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.04826340451836586,
+            0.10807346552610397
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002225133590400219,
+          "max_z": 0.011385503225028515,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.003485796507447958,
+          "max_z": 0.010412300936877728,
+          "median_z": 0.00603928416967392,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22241215407848358,
+            -0.45985516905784607
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014592916704714298,
+          "max_z": 0.00934567116200924,
+          "median_z": 0.0030986606143414974,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1725848913192749,
+            -0.5186754465103149
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004711920861154795,
+          "max_z": 0.00852991919964552,
+          "median_z": 0.005627914797514677,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565731287002563,
+            -0.5850202441215515
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004352872259914875,
+          "max_z": 0.008286571130156517,
+          "median_z": 0.0052299583330750465,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640053927898407,
+            -0.5992148518562317
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004020679742097855,
+          "max_z": 0.0063834949396550655,
+          "median_z": 0.004638340324163437,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25876420736312866,
+            -0.5930734872817993
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005702910013496876,
+          "max_z": 0.008634333498775959,
+          "median_z": 0.006294449791312218,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946643114089966,
+            -0.5650495886802673
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0032088374719023705,
+          "max_z": 0.03235631808638573,
+          "median_z": 0.024277087301015854,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.048460640013217926,
+            0.10777637362480164
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536170341074467,
+          "max_z": 0.011167723685503006,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033613191917538643,
+          "max_z": 0.010316548869013786,
+          "median_z": 0.005932026542723179,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22242146730422974,
+            -0.4598032236099243
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080731198191643,
+          "max_z": 0.009304509498178959,
+          "median_z": 0.0031784134916961193,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17259782552719116,
+            -0.518656313419342
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.00467029819265008,
+          "max_z": 0.007461064495146275,
+          "median_z": 0.0056836968287825584,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520102441310883,
+            -0.5884061455726624
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409599117934704,
+          "max_z": 0.008230353705585003,
+          "median_z": 0.005356035195291042,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062245547771454,
+            -0.5987430214881897
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059747792780399,
+          "max_z": 0.006863357033580542,
+          "median_z": 0.00466577522456646,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2616867125034332,
+            -0.5936997532844543
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.00574895553290844,
+          "max_z": 0.008633077144622803,
+          "median_z": 0.0063589196652174,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728684425354,
+            -0.565040647983551
+          ]
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "vertices": 42342,
+      "global_min_z": -0.0013178029330447316,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.0036369329318404198,
+          "max_z": 0.03176707774400711,
+          "median_z": 0.023923758417367935,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0482625812292099,
+            0.10812003910541534
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.0022251340560615063,
+          "max_z": 0.01138550415635109,
+          "median_z": 0.004683504346758127,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12309092283248901,
+            0.26892247796058655
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0012369630858302116,
+          "max_z": 0.010209965519607067,
+          "median_z": 0.005872330162674189,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1617160439491272,
+            0.8682557940483093
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.002754237037152052,
+          "max_z": 0.015020718798041344,
+          "median_z": 0.009480820037424564,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1707802265882492,
+            0.9058128595352173
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0034953446593135595,
+          "max_z": 0.010445994324982166,
+          "median_z": 0.006059713661670685,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2224106341600418,
+            -0.45983749628067017
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.0014593948144465685,
+          "max_z": 0.009345768019557,
+          "median_z": 0.003098763059824705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1725848913192749,
+            -0.5186755061149597
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004712012596428394,
+          "max_z": 0.008530018851161003,
+          "median_z": 0.005628008395433426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19565734267234802,
+            -0.5850204229354858
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004353053867816925,
+          "max_z": 0.008286732248961926,
+          "median_z": 0.005230121314525604,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640053927898407,
+            -0.5992150902748108
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.0040208566933870316,
+          "max_z": 0.006383675150573254,
+          "median_z": 0.004638523794710636,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25876420736312866,
+            -0.5930736660957336
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703041795641184,
+          "max_z": 0.008634472265839577,
+          "median_z": 0.006294583901762962,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29946640133857727,
+            -0.5650497078895569
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.0032403478398919106,
+          "max_z": 0.03240618109703064,
+          "median_z": 0.024310985580086708,
+          "near_fraction": 0.22727272727272727,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04845975711941719,
+            0.10782258957624435
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0020536179654300213,
+          "max_z": 0.01116772461682558,
+          "median_z": 0.004856271669268608,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12289060652256012,
+            0.26911458373069763
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.0009792157215997577,
+          "max_z": 0.010261483490467072,
+          "median_z": 0.005943119991570711,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.16174089908599854,
+            0.867967426776886
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.002057823119685054,
+          "max_z": 0.0153942396864295,
+          "median_z": 0.009151601232588291,
+          "near_fraction": 0.7142857142857143,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17065651714801788,
+            0.9057295918464661
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0033703017979860306,
+          "max_z": 0.0103495167568326,
+          "median_z": 0.005951756611466408,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2224200963973999,
+            -0.4597857892513275
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0014080980326980352,
+          "max_z": 0.009304499253630638,
+          "median_z": 0.00317841162905097,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17259782552719116,
+            -0.518656313419342
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046703750267624855,
+          "max_z": 0.007461159490048885,
+          "median_z": 0.0056837862357497215,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19520094990730286,
+            -0.5884061455726624
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004409607965499163,
+          "max_z": 0.008230372332036495,
+          "median_z": 0.0053560445085167885,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23062238097190857,
+            -0.5987430214881897
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004059718921780586,
+          "max_z": 0.006863337010145187,
+          "median_z": 0.00466574914753437,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2616867125034332,
+            -0.5936998128890991
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.0057489508762955666,
+          "max_z": 0.008633088320493698,
+          "median_z": 0.0063589196652174,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2994728684425354,
+            -0.5650407075881958
+          ]
+        }
+      }
+    }
+  ],
+  "exported_linear": [
+    {
+      "frame": 0,
+      "global_min_z": -0.002404675185173063,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918568335975283,
+          "max_z": 0.005989874720311539,
+          "median_z": 0.004935828141779086,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235134524931405,
+            -0.46018192898652055
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022315875151651676,
+          "max_z": 0.005543117957558963,
+          "median_z": 0.0024912670394012376,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17190637145386303,
+            -0.5186430779973442
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681146908046829,
+          "max_z": 0.006769882553412765,
+          "median_z": 0.005566366101184689,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551404193195676,
+            -0.5850370949064072
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004321715632444767,
+          "max_z": 0.006061085943684819,
+          "median_z": 0.005026404994736028,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640174215818148,
+            -0.5993751014844758
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001638675247443,
+          "max_z": 0.005042127958636344,
+          "median_z": 0.004640286294483487,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587805588401013,
+            -0.5932291429104768
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.0057034695072496755,
+          "max_z": 0.007064102187949506,
+          "median_z": 0.006166618311812103,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992923271904374,
+            -0.5651679020648326
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0030095302863424878,
+          "max_z": 0.005888650414593077,
+          "median_z": 0.004671057698799275,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22239297768706084,
+            -0.46013318959438754
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0001727422410433277,
+          "max_z": 0.0055308218622788785,
+          "median_z": 0.0024921699686279303,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17192022586457292,
+            -0.5186272096653872
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046404861765325656,
+          "max_z": 0.006337466967029581,
+          "median_z": 0.005494298545032694,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507037536605576,
+            -0.5884984863365241
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004394861237223491,
+          "max_z": 0.006400251007122049,
+          "median_z": 0.005036481075648108,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23068556101034088,
+            -0.5987890118420047
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004041694375962024,
+          "max_z": 0.0053331003152413126,
+          "median_z": 0.004666503198633265,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26171493870147094,
+            -0.5938910137986696
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723340523627857,
+          "max_z": 0.007058432209282012,
+          "median_z": 0.006228899467853918,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992907380663733,
+            -0.5651496752359613
+          ]
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918997426282457,
+          "max_z": 0.0059899144432481455,
+          "median_z": 0.004931001554032095,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235186575505522,
+            -0.46018366635899643
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022321736738623033,
+          "max_z": 0.005543176677839656,
+          "median_z": 0.002491325656089033,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1719063090407868,
+            -0.5186431774065025
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681202028606668,
+          "max_z": 0.006769938745907089,
+          "median_z": 0.0055664214775258125,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1955139860931127,
+            -0.5850371949941322
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004321762530304529,
+          "max_z": 0.0060611343967909015,
+          "median_z": 0.005026452364719852,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640168783864956,
+            -0.5993751990821755
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001676103732754,
+          "max_z": 0.005042166649177837,
+          "median_z": 0.004640324248743721,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878050440062117,
+            -0.5932292368387373
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.0057034940341122164,
+          "max_z": 0.007064127842354634,
+          "median_z": 0.006166643249037984,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29929227157671057,
+            -0.5651679902548608
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0030094407802758183,
+          "max_z": 0.005888557347828893,
+          "median_z": 0.004670966207115684,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2223929959635837,
+            -0.46013334294148966
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00017266476616970006,
+          "max_z": 0.005530743772948488,
+          "median_z": 0.0024920920516506573,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17192025485600648,
+            -0.51862738235761
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046403994949816285,
+          "max_z": 0.006337381765473549,
+          "median_z": 0.0054942124967014005,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507041821550894,
+            -0.5884986635631964
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.00439476501110686,
+          "max_z": 0.0064001535093938244,
+          "median_z": 0.005036384538702421,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2306856055846172,
+            -0.5987891826300079
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004041588923688777,
+          "max_z": 0.005332994081875764,
+          "median_z": 0.0046663975432709726,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2617149820814693,
+            -0.5938911770553745
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723224009918593,
+          "max_z": 0.007058316611733256,
+          "median_z": 0.006228783266528509,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992907763240364,
+            -0.5651498261452093
+          ]
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918083521456197,
+          "max_z": 0.005989821198372214,
+          "median_z": 0.004921833271872478,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235290116992157,
+            -0.4601860977860851
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022312474023439277,
+          "max_z": 0.0055430818683364635,
+          "median_z": 0.002491231901201485,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17190628238410893,
+            -0.5186430066893559
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681099511237796,
+          "max_z": 0.00676983666948755,
+          "median_z": 0.005566319189246466,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551395582182024,
+            -0.5850370235120745
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.00432165645125554,
+          "max_z": 0.006061028710329708,
+          "median_z": 0.005026346431644485,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640165554713104,
+            -0.5993750287970186
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001568456031612,
+          "max_z": 0.005042059006056698,
+          "median_z": 0.00464021650421978,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878047101417667,
+            -0.5932290685152054
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703385825557433,
+          "max_z": 0.00706401930644826,
+          "median_z": 0.00616653487567663,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992922382112931,
+            -0.5651678251803778
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.00300950731993771,
+          "max_z": 0.005888630665369876,
+          "median_z": 0.00467103655559678,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2223929620653272,
+            -0.46013314718163845
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0001727060418356685,
+          "max_z": 0.005530785757964396,
+          "median_z": 0.0024921339285883803,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17192020786004333,
+            -0.5186271673120265
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004640456376291957,
+          "max_z": 0.006337435669423075,
+          "median_z": 0.005494268077580716,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507035011826035,
+            -0.5884984461825554
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.0043948402197325764,
+          "max_z": 0.006400231310019211,
+          "median_z": 0.005036460395375836,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2306855338191759,
+            -0.5987889728715534
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004041682509741962,
+          "max_z": 0.005333089091429544,
+          "median_z": 0.004666491465208561,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2617149110187035,
+            -0.5938909755404207
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723340192922338,
+          "max_z": 0.0070584308572192445,
+          "median_z": 0.006228898769853372,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992907109034185,
+            -0.5651496372754581
+          ]
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.003091766743636315,
+          "max_z": 0.005989781651717707,
+          "median_z": 0.004914088557647477,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235365812805202,
+            -0.4601882838022176
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022306966899934833,
+          "max_z": 0.005543026671319173,
+          "median_z": 0.0024911766991651957,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1719061425961336,
+            -0.5186434115110852
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681042569745331,
+          "max_z": 0.006769779611986049,
+          "median_z": 0.005566262375628156,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551379467071278,
+            -0.5850374478003424
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.0043216037780400285,
+          "max_z": 0.006060975443056782,
+          "median_z": 0.005026293632398149,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640149354646769,
+            -0.5993754649567269
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001522143036562,
+          "max_z": 0.005042011952073322,
+          "median_z": 0.004640169872599825,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878031587785566,
+            -0.5932295132230552
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703349539148778,
+          "max_z": 0.007063982267447533,
+          "median_z": 0.006166498282574512,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992920988469685,
+            -0.5651682769645826
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.003009382041434139,
+          "max_z": 0.005888498496243011,
+          "median_z": 0.0046709075280958745,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22239288466380316,
+            -0.46013359095254225
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00017259800684316096,
+          "max_z": 0.005530675832142007,
+          "median_z": 0.002492024593986633,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1719201127822467,
+            -0.5186276089512656
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004640324459842915,
+          "max_z": 0.006337306535167786,
+          "median_z": 0.005494137290389084,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507024448180404,
+            -0.5884989021593321
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004394689226867421,
+          "max_z": 0.006400078494084527,
+          "median_z": 0.005036309020006319,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.230685429275361,
+            -0.5987894373111726
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.00404151501285932,
+          "max_z": 0.00533291998521962,
+          "median_z": 0.0046663234879056326,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2617148100917657,
+            -0.593891445436577
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723154856703883,
+          "max_z": 0.007058247003048912,
+          "median_z": 0.006228713889585333,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992906202393365,
+            -0.565150110799664
+          ]
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918653649513184,
+          "max_z": 0.005989876661707583,
+          "median_z": 0.0049109380614855225,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235401115543277,
+            -0.4601887509527945
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022319995648312219,
+          "max_z": 0.005543159146205068,
+          "median_z": 0.002491308171280779,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17190614593780712,
+            -0.5186432425285432
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681181705603554,
+          "max_z": 0.006769919306659822,
+          "median_z": 0.005566401314800018,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551381091844813,
+            -0.5850372734625409
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004321734000986677,
+          "max_z": 0.006061107298690693,
+          "median_z": 0.0050264242503282874,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2264015113588407,
+            -0.5993752846226814
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001637812018066,
+          "max_z": 0.005042129590768052,
+          "median_z": 0.004640286463669069,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878033127676914,
+            -0.5932293266485992
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703442055125907,
+          "max_z": 0.007064076965035276,
+          "median_z": 0.00616659167942811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992921080631372,
+            -0.5651680821875296
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0030094987282202057,
+          "max_z": 0.005888617692825504,
+          "median_z": 0.004671025514803889,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2223928852939595,
+            -0.46013334950134377
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00017271277748076574,
+          "max_z": 0.005530791848994743,
+          "median_z": 0.002492140176955482,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1719201174940302,
+            -0.5186273678386767
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004640452189229982,
+          "max_z": 0.006337433345088628,
+          "median_z": 0.005494264693524181,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507025361790237,
+            -0.5884986523316109
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.0043948242350606015,
+          "max_z": 0.006400213726546977,
+          "median_z": 0.0050364440171812574,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2306854392514856,
+            -0.5987891829960487
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.0040416549786773115,
+          "max_z": 0.005333060614664542,
+          "median_z": 0.0046664636963522355,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26171481989990203,
+            -0.5938911884415037
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723298702980828,
+          "max_z": 0.007058390541375387,
+          "median_z": 0.0062288576844635735,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.29929062798269257,
+            -0.5651498522504548
+          ]
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918653649513184,
+          "max_z": 0.005989876661707583,
+          "median_z": 0.0049109380614855225,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235401115543277,
+            -0.4601887509527945
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022319995648312219,
+          "max_z": 0.005543159146205068,
+          "median_z": 0.002491308171280779,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17190614593780712,
+            -0.5186432425285432
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681181705603554,
+          "max_z": 0.006769919306659822,
+          "median_z": 0.005566401314800018,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551381091844813,
+            -0.5850372734625409
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004321734000986677,
+          "max_z": 0.006061107298690693,
+          "median_z": 0.0050264242503282874,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2264015113588407,
+            -0.5993752846226814
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001637812018066,
+          "max_z": 0.005042129590768052,
+          "median_z": 0.004640286463669069,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878033127676914,
+            -0.5932293266485992
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703442055125907,
+          "max_z": 0.007064076965035276,
+          "median_z": 0.00616659167942811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992921080631372,
+            -0.5651680821875296
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0030094987282202057,
+          "max_z": 0.005888617692825504,
+          "median_z": 0.004671025514803889,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2223928852939595,
+            -0.46013334950134377
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00017271277748076574,
+          "max_z": 0.005530791848994743,
+          "median_z": 0.002492140176955482,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1719201174940302,
+            -0.5186273678386767
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004640452189229982,
+          "max_z": 0.006337433345088628,
+          "median_z": 0.005494264693524181,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507025361790237,
+            -0.5884986523316109
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.0043948242350606015,
+          "max_z": 0.006400213726546977,
+          "median_z": 0.0050364440171812574,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2306854392514856,
+            -0.5987891829960487
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.0040416549786773115,
+          "max_z": 0.005333060614664542,
+          "median_z": 0.0046664636963522355,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26171481989990203,
+            -0.5938911884415037
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723298702980828,
+          "max_z": 0.007058390541375387,
+          "median_z": 0.0062288576844635735,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.29929062798269257,
+            -0.5651498522504548
+          ]
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918653649513184,
+          "max_z": 0.005989876661707583,
+          "median_z": 0.0049109380614855225,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235401115543277,
+            -0.4601887509527945
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022319995648312219,
+          "max_z": 0.005543159146205068,
+          "median_z": 0.002491308171280779,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17190614593780712,
+            -0.5186432425285432
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681181705603554,
+          "max_z": 0.006769919306659822,
+          "median_z": 0.005566401314800018,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551381091844813,
+            -0.5850372734625409
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004321734000986677,
+          "max_z": 0.006061107298690693,
+          "median_z": 0.0050264242503282874,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2264015113588407,
+            -0.5993752846226814
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001637812018066,
+          "max_z": 0.005042129590768052,
+          "median_z": 0.004640286463669069,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878033127676914,
+            -0.5932293266485992
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703442055125907,
+          "max_z": 0.007064076965035276,
+          "median_z": 0.00616659167942811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992921080631372,
+            -0.5651680821875296
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0030094987282202057,
+          "max_z": 0.005888617692825504,
+          "median_z": 0.004671025514803889,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2223928852939595,
+            -0.46013334950134377
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00017271277748076574,
+          "max_z": 0.005530791848994743,
+          "median_z": 0.002492140176955482,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1719201174940302,
+            -0.5186273678386767
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004640452189229982,
+          "max_z": 0.006337433345088628,
+          "median_z": 0.005494264693524181,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507025361790237,
+            -0.5884986523316109
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.0043948242350606015,
+          "max_z": 0.006400213726546977,
+          "median_z": 0.0050364440171812574,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2306854392514856,
+            -0.5987891829960487
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.0040416549786773115,
+          "max_z": 0.005333060614664542,
+          "median_z": 0.0046664636963522355,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26171481989990203,
+            -0.5938911884415037
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723298702980828,
+          "max_z": 0.007058390541375387,
+          "median_z": 0.0062288576844635735,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.29929062798269257,
+            -0.5651498522504548
+          ]
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.003091766743636315,
+          "max_z": 0.005989781651717707,
+          "median_z": 0.004914088557647477,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235365812805202,
+            -0.4601882838022176
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022306966899934833,
+          "max_z": 0.005543026671319173,
+          "median_z": 0.0024911766991651957,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1719061425961336,
+            -0.5186434115110852
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681042569745331,
+          "max_z": 0.006769779611986049,
+          "median_z": 0.005566262375628156,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551379467071278,
+            -0.5850374478003424
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.0043216037780400285,
+          "max_z": 0.006060975443056782,
+          "median_z": 0.005026293632398149,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640149354646769,
+            -0.5993754649567269
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001522143036562,
+          "max_z": 0.005042011952073322,
+          "median_z": 0.004640169872599825,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878031587785566,
+            -0.5932295132230552
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703349539148778,
+          "max_z": 0.007063982267447533,
+          "median_z": 0.006166498282574512,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992920988469685,
+            -0.5651682769645826
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.003009382041434139,
+          "max_z": 0.005888498496243011,
+          "median_z": 0.0046709075280958745,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22239288466380316,
+            -0.46013359095254225
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00017259800684316096,
+          "max_z": 0.005530675832142007,
+          "median_z": 0.002492024593986633,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1719201127822467,
+            -0.5186276089512656
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004640324459842915,
+          "max_z": 0.006337306535167786,
+          "median_z": 0.005494137290389084,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507024448180404,
+            -0.5884989021593321
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004394689226867421,
+          "max_z": 0.006400078494084527,
+          "median_z": 0.005036309020006319,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.230685429275361,
+            -0.5987894373111726
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.00404151501285932,
+          "max_z": 0.00533291998521962,
+          "median_z": 0.0046663234879056326,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2617148100917657,
+            -0.593891445436577
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723154856703883,
+          "max_z": 0.007058247003048912,
+          "median_z": 0.006228713889585333,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992906202393365,
+            -0.565150110799664
+          ]
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918083521456197,
+          "max_z": 0.005989821198372214,
+          "median_z": 0.004921833271872478,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235290116992157,
+            -0.4601860977860851
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022312474023439277,
+          "max_z": 0.0055430818683364635,
+          "median_z": 0.002491231901201485,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17190628238410893,
+            -0.5186430066893559
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681099511237796,
+          "max_z": 0.00676983666948755,
+          "median_z": 0.005566319189246466,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551395582182024,
+            -0.5850370235120745
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.00432165645125554,
+          "max_z": 0.006061028710329708,
+          "median_z": 0.005026346431644485,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640165554713104,
+            -0.5993750287970186
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001568456031612,
+          "max_z": 0.005042059006056698,
+          "median_z": 0.00464021650421978,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878047101417667,
+            -0.5932290685152054
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.005703385825557433,
+          "max_z": 0.00706401930644826,
+          "median_z": 0.00616653487567663,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992922382112931,
+            -0.5651678251803778
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.00300950731993771,
+          "max_z": 0.005888630665369876,
+          "median_z": 0.00467103655559678,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2223929620653272,
+            -0.46013314718163845
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0001727060418356685,
+          "max_z": 0.005530785757964396,
+          "median_z": 0.0024921339285883803,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17192020786004333,
+            -0.5186271673120265
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.004640456376291957,
+          "max_z": 0.006337435669423075,
+          "median_z": 0.005494268077580716,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507035011826035,
+            -0.5884984461825554
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.0043948402197325764,
+          "max_z": 0.006400231310019211,
+          "median_z": 0.005036460395375836,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2306855338191759,
+            -0.5987889728715534
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004041682509741962,
+          "max_z": 0.005333089091429544,
+          "median_z": 0.004666491465208561,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2617149110187035,
+            -0.5938909755404207
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723340192922338,
+          "max_z": 0.0070584308572192445,
+          "median_z": 0.006228898769853372,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992907109034185,
+            -0.5651496372754581
+          ]
+        }
+      }
+    },
+    {
+      "frame": 135,
+      "global_min_z": -0.0011712635005949178,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918997426282457,
+          "max_z": 0.0059899144432481455,
+          "median_z": 0.004931001554032095,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235186575505522,
+            -0.46018366635899643
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022321736738623033,
+          "max_z": 0.005543176677839656,
+          "median_z": 0.002491325656089033,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1719063090407868,
+            -0.5186431774065025
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681202028606668,
+          "max_z": 0.006769938745907089,
+          "median_z": 0.0055664214775258125,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.1955139860931127,
+            -0.5850371949941322
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004321762530304529,
+          "max_z": 0.0060611343967909015,
+          "median_z": 0.005026452364719852,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640168783864956,
+            -0.5993751990821755
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001676103732754,
+          "max_z": 0.005042166649177837,
+          "median_z": 0.004640324248743721,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.25878050440062117,
+            -0.5932292368387373
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.0057034940341122164,
+          "max_z": 0.007064127842354634,
+          "median_z": 0.006166643249037984,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.29929227157671057,
+            -0.5651679902548608
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0030094407802758183,
+          "max_z": 0.005888557347828893,
+          "median_z": 0.004670966207115684,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2223929959635837,
+            -0.46013334294148966
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.00017266476616970006,
+          "max_z": 0.005530743772948488,
+          "median_z": 0.0024920920516506573,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17192025485600648,
+            -0.51862738235761
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046403994949816285,
+          "max_z": 0.006337381765473549,
+          "median_z": 0.0054942124967014005,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507041821550894,
+            -0.5884986635631964
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.00439476501110686,
+          "max_z": 0.0064001535093938244,
+          "median_z": 0.005036384538702421,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2306856055846172,
+            -0.5987891826300079
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004041588923688777,
+          "max_z": 0.005332994081875764,
+          "median_z": 0.0046663975432709726,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2617149820814693,
+            -0.5938911770553745
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723224009918593,
+          "max_z": 0.007058316611733256,
+          "median_z": 0.006228783266528509,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992907763240364,
+            -0.5651498261452093
+          ]
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "global_min_z": -0.002404675185173063,
+      "native_cage_max_error_m": 5.86678429802276e-07,
+      "patches": {
+        "ventral_pelvis_L": {
+          "min_z": 0.010839707688541141,
+          "max_z": 0.029296070576323503,
+          "median_z": 0.020995451824699658,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.0494786795825585,
+            0.1074149425552566
+          ]
+        },
+        "anterior_thigh_L": {
+          "min_z": 0.002338295727516135,
+          "max_z": 0.005570621022898806,
+          "median_z": 0.004147184931591705,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.12329875038962915,
+            0.26873145748451865
+          ]
+        },
+        "anterior_shin_L": {
+          "min_z": 0.0006519541714814919,
+          "max_z": 0.0065515143080914235,
+          "median_z": 0.003474001724929351,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.16252522369700695,
+            0.8665252311486935
+          ]
+        },
+        "foot_dorsum_L": {
+          "min_z": 0.003460647496868903,
+          "max_z": 0.011113188221429747,
+          "median_z": 0.00808707739335056,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17047423497736758,
+            0.9085867290847989
+          ]
+        },
+        "palm_heel_L": {
+          "min_z": 0.0030918568335975283,
+          "max_z": 0.005989874720311539,
+          "median_z": 0.004935828141779086,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22235134524931405,
+            -0.46018192898652055
+          ]
+        },
+        "thumb_pad_L": {
+          "min_z": 0.00022315875151651676,
+          "max_z": 0.005543117957558963,
+          "median_z": 0.0024912670394012376,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.17190637145386303,
+            -0.5186430779973442
+          ]
+        },
+        "index_pad_L": {
+          "min_z": 0.004681146908046829,
+          "max_z": 0.006769882553412765,
+          "median_z": 0.005566366101184689,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.19551404193195676,
+            -0.5850370949064072
+          ]
+        },
+        "middle_pad_L": {
+          "min_z": 0.004321715632444767,
+          "max_z": 0.006061085943684819,
+          "median_z": 0.005026404994736028,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.22640174215818148,
+            -0.5993751014844758
+          ]
+        },
+        "ring_pad_L": {
+          "min_z": 0.004001638675247443,
+          "max_z": 0.005042127958636344,
+          "median_z": 0.004640286294483487,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2587805588401013,
+            -0.5932291429104768
+          ]
+        },
+        "little_pad_L": {
+          "min_z": 0.0057034695072496755,
+          "max_z": 0.007064102187949506,
+          "median_z": 0.006166618311812103,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            0.2992923271904374,
+            -0.5651679020648326
+          ]
+        },
+        "ventral_pelvis_R": {
+          "min_z": 0.010967961982570834,
+          "max_z": 0.029428574305267168,
+          "median_z": 0.020633541706478395,
+          "near_fraction": 0.25,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.04998284411267934,
+            0.10664088265481628
+          ]
+        },
+        "anterior_thigh_R": {
+          "min_z": 0.0022177149658883094,
+          "max_z": 0.00564990516769117,
+          "median_z": 0.004187607986470426,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.12305956345457718,
+            0.2688747417609739
+          ]
+        },
+        "anterior_shin_R": {
+          "min_z": 0.00038646635896759287,
+          "max_z": 0.0067373227886898005,
+          "median_z": 0.003545894268140314,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.1625108854413873,
+            0.8663048879287623
+          ]
+        },
+        "foot_dorsum_R": {
+          "min_z": 0.0030247423247356637,
+          "max_z": 0.011429705634606229,
+          "median_z": 0.00793148847496811,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17027135642504107,
+            0.9086574495501749
+          ]
+        },
+        "palm_heel_R": {
+          "min_z": 0.0030095302863424878,
+          "max_z": 0.005888650414593077,
+          "median_z": 0.004671057698799275,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.22239297768706084,
+            -0.46013318959438754
+          ]
+        },
+        "thumb_pad_R": {
+          "min_z": 0.0001727422410433277,
+          "max_z": 0.0055308218622788785,
+          "median_z": 0.0024921699686279303,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.17192022586457292,
+            -0.5186272096653872
+          ]
+        },
+        "index_pad_R": {
+          "min_z": 0.0046404861765325656,
+          "max_z": 0.006337466967029581,
+          "median_z": 0.005494298545032694,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.19507037536605576,
+            -0.5884984863365241
+          ]
+        },
+        "middle_pad_R": {
+          "min_z": 0.004394861237223491,
+          "max_z": 0.006400251007122049,
+          "median_z": 0.005036481075648108,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.23068556101034088,
+            -0.5987890118420047
+          ]
+        },
+        "ring_pad_R": {
+          "min_z": 0.004041694375962024,
+          "max_z": 0.0053331003152413126,
+          "median_z": 0.004666503198633265,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.26171493870147094,
+            -0.5938910137986696
+          ]
+        },
+        "little_pad_R": {
+          "min_z": 0.005723340523627857,
+          "max_z": 0.007058432209282012,
+          "median_z": 0.006228899467853918,
+          "near_fraction": 1.0,
+          "penetration_m": 0.0,
+          "centroid_xy": [
+            -0.2992907380663733,
+            -0.5651496752359613
+          ]
+        }
+      }
+    }
+  ],
+  "max_export_native_cage_error_m": 5.86678429802276e-07,
+  "loop_skin_error_m": 0.0,
+  "dense_export_global_floor_min_m": -0.002404675185173063,
+  "planted_patch_maximum_xy_drift_m": {
+    "ventral_pelvis_L": 0.0,
+    "anterior_thigh_L": 0.0,
+    "anterior_shin_L": 0.0,
+    "foot_dorsum_L": 0.0,
+    "palm_heel_L": 7.3243620388813465e-06,
+    "thumb_pad_L": 4.044839622646347e-07,
+    "index_pad_L": 4.308970320907929e-07,
+    "middle_pad_L": 4.4036332901304114e-07,
+    "ring_pad_L": 4.4290186104828697e-07,
+    "little_pad_L": 4.38965331616061e-07,
+    "ventral_pelvis_R": 0.0,
+    "anterior_thigh_R": 0.0,
+    "anterior_shin_R": 0.0,
+    "foot_dorsum_R": 0.0,
+    "palm_heel_R": 4.119972024452313e-07,
+    "thumb_pad_R": 4.1499015068174585e-07,
+    "index_pad_R": 4.359349664458476e-07,
+    "middle_pad_R": 4.4539658480094e-07,
+    "ring_pad_R": 4.5039065198491517e-07,
+    "little_pad_R": 4.512194031423198e-07
+  },
+  "hand_torso_clearance": [
+    {
+      "frame": 0,
+      "minimum_hand_torso_distance_m": 0.09847059845924377,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 15,
+      "minimum_hand_torso_distance_m": 0.10726174712181091,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 30,
+      "minimum_hand_torso_distance_m": 0.1255682408809662,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 45,
+      "minimum_hand_torso_distance_m": 0.14373470842838287,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 60,
+      "minimum_hand_torso_distance_m": 0.15355655550956726,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 75,
+      "minimum_hand_torso_distance_m": 0.15355655550956726,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 90,
+      "minimum_hand_torso_distance_m": 0.15355655550956726,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 105,
+      "minimum_hand_torso_distance_m": 0.14373470842838287,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 120,
+      "minimum_hand_torso_distance_m": 0.1255682408809662,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 135,
+      "minimum_hand_torso_distance_m": 0.10726174712181091,
+      "hand_vertices_inside_torso_crop": []
+    },
+    {
+      "frame": 150,
+      "minimum_hand_torso_distance_m": 0.09847059845924377,
+      "hand_vertices_inside_torso_crop": []
+    }
+  ],
+  "native_pipeline": "Original inherited corrective-smooth/subdivision, separately evaluated; masks propagated from frozen original source faces.",
+  "runtime_pipeline": "Independent glTF binary accessor/channel/IBM evaluation with linear skin weights.",
+  "base_qa_pass": true,
+  "base_qa_warnings": [],
+  "base_qa_errors": []
+}

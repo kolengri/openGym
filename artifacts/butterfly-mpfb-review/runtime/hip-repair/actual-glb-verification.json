@@ -1,0 +1,3060 @@
+{
+  "status": "actual_glb_all151_hip_pass_no_hip_corrective_required",
+  "actual_glb_sha256": "ee20ac0a034f91afcaaa03d50425e0c2bb35ca1052109813ce4e0cd6719bbf5b",
+  "actual_samples_sha256": "ab9c618d930c7e426d0b63d44ae3c24eab09c5ccc532d47a8c24b6f933b71ab0",
+  "override_sha256": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9",
+  "mesh_input_sha256": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+  "motion_input_sha256": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+  "verification_input_sha256": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+  "frames": 151,
+  "hip_face_count": 1814,
+  "weight_affected_face_count": 1227,
+  "union_checked_face_count": 1932,
+  "checks": {
+    "all151_exact_hip_zero": true,
+    "all151_exact_affected_zero": true,
+    "all151_orientation_ratio_at_least_point1": true,
+    "all151_zero_reversed_faces": true,
+    "all151_positive_triangle_areas": true,
+    "all151_exterior_samples_bit_exact": true,
+    "all151_protected_samples_bit_exact": true,
+    "all151_floor_and_glute_gap_identical_to_baseline": true,
+    "all_inputs_unchanged": true
+  },
+  "minimum_orientation_ratio": 0.9456312057094564,
+  "whole_floor_minimum_m": -4.654152618854823e-09,
+  "maximum_glute_gap_m": 0.0007005100487731397,
+  "maximum_active_surface_change_from_baseline_m": 0.013155045302231013,
+  "bind_codec_error_m": 3.9100246392968527e-08,
+  "loop_codec_error_m": 3.892064610267638e-08,
+  "maximum_actual_glb_codec_error_m": 4.59941800820109e-08,
+  "new_global_pairs_proof": "All affected-face vs all pairs are zero. Every other triangle is composed exclusively of bit-exact exterior vertices at every frame, so no new global intersection can occur outside the checked domain.",
+  "runtime_only_weight_change": true,
+  "native_weights_geometry_faces_uv_motion_frozen": true,
+  "hip_corrective_targets_required": false,
+  "hand_and_arm_status": "Not accepted here; independent targets and final integration belong to primary. Remaining global contacts are disclosed, not promoted as whole-body pass.",
+  "seconds": 3.016117333085276,
+  "samples": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9998476733112256,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4223655259268086e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": -4.654152618854823e-09,
+      "inferior_glute_gap_m": -4.654152618854823e-09,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 1,
+      "time": 0.03333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9999142511646651,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422449303362918e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.597646897584127e-08,
+      "inferior_glute_gap_m": 2.597646897584127e-08,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 2,
+      "time": 0.06666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.999920606801613,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4225045068457512e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.8907587673311355e-07,
+      "inferior_glute_gap_m": 1.8907587673311355e-07,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 3,
+      "time": 0.1,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.999851545347978,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4222381497140532e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 6.550354783030343e-07,
+      "inferior_glute_gap_m": 6.550354783030343e-07,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 4,
+      "time": 0.13333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9998396000815739,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4224915550606445e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.5129528492252575e-06,
+      "inferior_glute_gap_m": 1.5129528492252575e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 5,
+      "time": 0.16666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9996941567887144,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422076887428577e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.893684950322495e-06,
+      "inferior_glute_gap_m": 2.893684950322495e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 6,
+      "time": 0.2,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9994865670809766,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422157900464497e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 4.846780939260498e-06,
+      "inferior_glute_gap_m": 4.846780939260498e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 7,
+      "time": 0.23333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9992069657485562,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4223340254359599e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 7.514679055020679e-06,
+      "inferior_glute_gap_m": 7.514679055020679e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 8,
+      "time": 0.26666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9988487680622552,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422298829442433e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.090117893909337e-05,
+      "inferior_glute_gap_m": 1.090117893909337e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 9,
+      "time": 0.3,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9984080756231708,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4219851366012773e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.5120106581889559e-05,
+      "inferior_glute_gap_m": 1.5120106581889559e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 10,
+      "time": 0.3333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9978782036882422,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4220673736347893e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.0254243281669915e-05,
+      "inferior_glute_gap_m": 2.0254243281669915e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 11,
+      "time": 0.36666666666666664,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9972583055246318,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4220407214686178e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.624363150971476e-05,
+      "inferior_glute_gap_m": 2.624363150971476e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 12,
+      "time": 0.4,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9965464031986023,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.421895380513667e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 3.3155920391436666e-05,
+      "inferior_glute_gap_m": 3.3155920391436666e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 13,
+      "time": 0.43333333333333335,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9957404706746648,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4216097111379444e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 4.112083843210712e-05,
+      "inferior_glute_gap_m": 4.112083843210712e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 14,
+      "time": 0.4666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9948426522929767,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4212592332500087e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 5.0035501772072166e-05,
+      "inferior_glute_gap_m": 5.0035501772072166e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 15,
+      "time": 0.5,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9938544805233147,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4210867614259472e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 6.0018392105121166e-05,
+      "inferior_glute_gap_m": 6.0018392105121166e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 16,
+      "time": 0.5333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9927781657195665,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4210584937252086e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 7.090865256031975e-05,
+      "inferior_glute_gap_m": 7.090865256031975e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 17,
+      "time": 0.5666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9916167270550676,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4207137873049743e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 8.290922414744273e-05,
+      "inferior_glute_gap_m": 8.290922414744273e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 18,
+      "time": 0.6,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9903748789977268,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4205588901543732e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 9.589726687408984e-05,
+      "inferior_glute_gap_m": 9.589726687408984e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 19,
+      "time": 0.6333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 154,
+      "minimum_material_orientation_ratio": 0.9890574435470914,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.420488110284448e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00010985687549691647,
+      "inferior_glute_gap_m": 0.00010985687549691647,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 20,
+      "time": 0.6666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9876698164324987,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4200353441375675e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00012479702127166092,
+      "inferior_glute_gap_m": 0.00012479702127166092,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 21,
+      "time": 0.7,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9862183609079407,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4197372871941917e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00014069527969695628,
+      "inferior_glute_gap_m": 0.00014069527969695628,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 22,
+      "time": 0.7333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 142,
+      "minimum_material_orientation_ratio": 0.9847085913945778,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4192605424151991e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00015746102144476026,
+      "inferior_glute_gap_m": 0.00015746102144476026,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 23,
+      "time": 0.7666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.983149100082285,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4191437498689312e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00017506269796285778,
+      "inferior_glute_gap_m": 0.00017506269796285778,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 24,
+      "time": 0.8,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9815462164491293,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4189739376840488e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019351212540641427,
+      "inferior_glute_gap_m": 0.00019351212540641427,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 25,
+      "time": 0.8333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9799071972120721,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4189326469503254e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00021271199511829764,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 26,
+      "time": 0.8666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9782407931458704,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4184806475496472e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00023259909357875586,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 27,
+      "time": 0.9,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9765537921655165,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4182220789419111e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0002530725614633411,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 28,
+      "time": 0.9333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9748543254528109,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.417642010622377e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00027402580599300563,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 29,
+      "time": 0.9666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9731499253029452,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4171259520641945e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0002954928495455533,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 30,
+      "time": 1.0,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9714483179457858,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4170092128304584e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00031736044911667705,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 31,
+      "time": 1.0333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 146,
+      "minimum_material_orientation_ratio": 0.9697579476286917,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4165649051406805e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0003393909428268671,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 32,
+      "time": 1.0666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 146,
+      "minimum_material_orientation_ratio": 0.9680862729871513,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4162882128747163e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0003615994064603001,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 33,
+      "time": 1.1,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 146,
+      "minimum_material_orientation_ratio": 0.9664386957235646,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4160478976431263e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0003838747797999531,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 34,
+      "time": 1.1333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9648234962234841,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4159283034587507e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00040610317955724895,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 35,
+      "time": 1.1666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 158,
+      "minimum_material_orientation_ratio": 0.963248014431611,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4154223966233094e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.000428136030677706,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 36,
+      "time": 1.2,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 158,
+      "minimum_material_orientation_ratio": 0.9617159701358474,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4153003838008721e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00044986611464992166,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 37,
+      "time": 1.2333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 158,
+      "minimum_material_orientation_ratio": 0.9602348891959113,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4151669315432891e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0004712745430879295,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 38,
+      "time": 1.2666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 162,
+      "minimum_material_orientation_ratio": 0.9588101426014195,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4150679022039383e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0004921614890918136,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 39,
+      "time": 1.3,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 170,
+      "minimum_material_orientation_ratio": 0.9574461306098172,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4143387737624455e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.000512446858920157,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 40,
+      "time": 1.3333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 170,
+      "minimum_material_orientation_ratio": 0.9561480747227072,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4142239927799711e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0005320013733580709,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 41,
+      "time": 1.3666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.9549187554896295,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.414156207162918e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0005508201429620385,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 42,
+      "time": 1.4,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.9537630055823971,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4138935333276979e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0005686350632458925,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 43,
+      "time": 1.4333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 178,
+      "minimum_material_orientation_ratio": 0.9526838879043935,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4136411161068062e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.000585502537433058,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 44,
+      "time": 1.4666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.9516823472851561,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4133854647990297e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006013591773808002,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 45,
+      "time": 1.5,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.950761287860053,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4136032858336156e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006160752382129431,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 46,
+      "time": 1.5333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 186,
+      "minimum_material_orientation_ratio": 0.9499217247592873,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4130874112480963e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006295681814663112,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 47,
+      "time": 1.5666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 186,
+      "minimum_material_orientation_ratio": 0.949163683934199,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4133121709188733e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006418810226023197,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 48,
+      "time": 1.6,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 186,
+      "minimum_material_orientation_ratio": 0.9484875691606713,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4130233056858127e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006529526435770094,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 49,
+      "time": 1.6333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 185,
+      "minimum_material_orientation_ratio": 0.9478935437380347,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4126160438159046e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006627088878303766,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 50,
+      "time": 1.6666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9473773926267512,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127018200527684e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006712437025271356,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 51,
+      "time": 1.7,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9469389418559737,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4125172435121023e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006785618606954813,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 52,
+      "time": 1.7333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9465753521238318,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127158072390169e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.000684628146700561,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 53,
+      "time": 1.7666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.946280090021423,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127029332465803e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006895780097693205,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 54,
+      "time": 1.8,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9460513014524871,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127507360830198e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006934630800969899,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 55,
+      "time": 1.8333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9458802069881116,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4125283946735197e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006963015184737742,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 56,
+      "time": 1.8666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9457621815391746,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127378788730299e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006982787745073438,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 57,
+      "time": 1.9,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456876352208654,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4122995150103898e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006995744770392776,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 58,
+      "time": 1.9333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456479211963869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007002149359323084,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 59,
+      "time": 1.9666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456327684420921,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007004813523963094,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 60,
+      "time": 2.0,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 61,
+      "time": 2.033333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 62,
+      "time": 2.066666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 63,
+      "time": 2.1,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 64,
+      "time": 2.1333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 65,
+      "time": 2.1666666666666665,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 66,
+      "time": 2.2,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 67,
+      "time": 2.2333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 68,
+      "time": 2.2666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 69,
+      "time": 2.3,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 70,
+      "time": 2.3333333333333335,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 71,
+      "time": 2.3666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 72,
+      "time": 2.4,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 73,
+      "time": 2.433333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 74,
+      "time": 2.466666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 75,
+      "time": 2.5,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 76,
+      "time": 2.533333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 77,
+      "time": 2.566666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 78,
+      "time": 2.6,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 79,
+      "time": 2.6333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 80,
+      "time": 2.6666666666666665,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 81,
+      "time": 2.7,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 82,
+      "time": 2.7333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 83,
+      "time": 2.7666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 84,
+      "time": 2.8,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 85,
+      "time": 2.8333333333333335,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 86,
+      "time": 2.8666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 87,
+      "time": 2.9,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 88,
+      "time": 2.933333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 89,
+      "time": 2.966666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312235133869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4123589806500294e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005064398981631,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 90,
+      "time": 3.0,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456312057094564,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4125661922368964e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007005100487731397,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 91,
+      "time": 3.033333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456327684420921,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007004813523963094,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 92,
+      "time": 3.066666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456479211963869,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.412354695723191e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0007002149359323084,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 93,
+      "time": 3.1,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9456876352208654,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4122995150103898e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006995744770392776,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 94,
+      "time": 3.1333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9457621789948781,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127378788730299e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006982787745073438,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 95,
+      "time": 3.1666666666666665,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9458802044430228,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4125283946735197e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006963015184737742,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 96,
+      "time": 3.2,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9460513014524871,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127507360830198e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006934630800969899,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 97,
+      "time": 3.2333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.946280090021423,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127029332465803e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006895780097693205,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 98,
+      "time": 3.2666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9465753521238318,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127158072390169e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.000684628146700561,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 99,
+      "time": 3.3,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9469389418559737,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4125172435121023e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006785618606954813,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 100,
+      "time": 3.3333333333333335,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 184,
+      "minimum_material_orientation_ratio": 0.9473774173364571,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4127018200527684e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006712437025271356,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 101,
+      "time": 3.3666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 185,
+      "minimum_material_orientation_ratio": 0.9478935488549921,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4126160438159046e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006627088296227157,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 102,
+      "time": 3.4,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 186,
+      "minimum_material_orientation_ratio": 0.9484875418739338,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4130233056858127e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006529527017846704,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 103,
+      "time": 3.433333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 186,
+      "minimum_material_orientation_ratio": 0.9491634561029059,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4133121709188733e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006418810808099806,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 104,
+      "time": 3.466666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 186,
+      "minimum_material_orientation_ratio": 0.9499217247592873,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4130874112480963e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006295681814663112,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 105,
+      "time": 3.5,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.950761287860053,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4136032858336156e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006160752382129431,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 106,
+      "time": 3.533333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.9516823472851561,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4133854647990297e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0006013591773808002,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 107,
+      "time": 3.566666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 178,
+      "minimum_material_orientation_ratio": 0.9526838631256488,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4136411161068062e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0005855024792253971,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 108,
+      "time": 3.6,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.9537630368670039,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4138935333276979e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0005686350050382316,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 109,
+      "time": 3.6333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 174,
+      "minimum_material_orientation_ratio": 0.9549187567917612,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.414156207162918e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0005508202011696994,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 110,
+      "time": 3.6666666666666665,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 170,
+      "minimum_material_orientation_ratio": 0.956148175345706,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4142239927799711e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0005320014315657318,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 111,
+      "time": 3.7,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 170,
+      "minimum_material_orientation_ratio": 0.9574461306098172,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4143387737624455e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.000512446858920157,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 112,
+      "time": 3.7333333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 162,
+      "minimum_material_orientation_ratio": 0.9588101426014195,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4150679022039383e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0004921614890918136,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 113,
+      "time": 3.7666666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 158,
+      "minimum_material_orientation_ratio": 0.9602348891959113,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4151669315432891e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0004712745430879295,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 114,
+      "time": 3.8,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 158,
+      "minimum_material_orientation_ratio": 0.9617159701358474,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4153003838008721e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00044986611464992166,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 115,
+      "time": 3.8333333333333335,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 158,
+      "minimum_material_orientation_ratio": 0.9632479157050546,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4154223966233094e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00042813594336621463,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 116,
+      "time": 3.8666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9648235311514984,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4159283034587507e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0004061030922457576,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 117,
+      "time": 3.9,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 146,
+      "minimum_material_orientation_ratio": 0.966438694385425,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4160478976431263e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.000383874838007614,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 118,
+      "time": 3.933333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 146,
+      "minimum_material_orientation_ratio": 0.9680862703008734,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4162882128747163e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00036159949377179146,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 119,
+      "time": 3.966666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 146,
+      "minimum_material_orientation_ratio": 0.9697579476286917,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4165649051406805e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0003393909428268671,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 120,
+      "time": 4.0,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9714483179457858,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4170092128304584e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00031736044911667705,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 121,
+      "time": 4.033333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9731499307361201,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4171259520641945e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00029549282044172287,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 122,
+      "time": 4.066666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.974854322726169,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.417642010622377e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.0002740257477853447,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 123,
+      "time": 4.1,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9765537949021093,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4182220789419111e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00025307247415184975,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 124,
+      "time": 4.133333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9782408182295294,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4184806475496472e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00023259902081917971,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 125,
+      "time": 4.166666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.979907245572296,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4189326469503254e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00019974952738266438,
+      "inferior_glute_gap_m": 0.00021271189325489104,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 126,
+      "time": 4.2,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9815462051561816,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4189739376840488e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.0001935120380949229,
+      "inferior_glute_gap_m": 0.0001935120380949229,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 127,
+      "time": 4.233333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 134,
+      "minimum_material_orientation_ratio": 0.9831491335434056,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.419160042493263e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00017506256699562073,
+      "inferior_glute_gap_m": 0.00017506256699562073,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 128,
+      "time": 4.266666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 142,
+      "minimum_material_orientation_ratio": 0.9847085858278364,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4192605424151991e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.0001574611378600821,
+      "inferior_glute_gap_m": 0.0001574611378600821,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 129,
+      "time": 4.3,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9862184787003092,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4197372871941917e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00014069538156036288,
+      "inferior_glute_gap_m": 0.00014069538156036288,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 130,
+      "time": 4.333333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9876697884467458,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4200353441375675e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.0001247971085831523,
+      "inferior_glute_gap_m": 0.0001247971085831523,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 131,
+      "time": 4.366666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 154,
+      "minimum_material_orientation_ratio": 0.9890575221840537,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.420488110284448e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 0.00010985692642861977,
+      "inferior_glute_gap_m": 0.00010985692642861977,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 132,
+      "time": 4.4,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9903749013969158,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4205588901543732e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 9.589731780579314e-05,
+      "inferior_glute_gap_m": 9.589731780579314e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 133,
+      "time": 4.433333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.991616721411516,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4207137873049743e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 8.290924597531557e-05,
+      "inferior_glute_gap_m": 8.290924597531557e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 134,
+      "time": 4.466666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9927781600633182,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4210584937252086e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 7.09086743881926e-05,
+      "inferior_glute_gap_m": 7.09086743881926e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 135,
+      "time": 4.5,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9938544805233147,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4210867614259472e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 6.0018392105121166e-05,
+      "inferior_glute_gap_m": 6.0018392105121166e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 136,
+      "time": 4.533333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9948426579716488,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4212592332500087e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 5.003549449611455e-05,
+      "inferior_glute_gap_m": 5.003549449611455e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 137,
+      "time": 4.566666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9957404763630338,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4216097111379444e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 4.11208275181707e-05,
+      "inferior_glute_gap_m": 4.11208275181707e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 138,
+      "time": 4.6,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9965463919841956,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.421895380513667e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 3.3155898563563824e-05,
+      "inferior_glute_gap_m": 3.3155898563563824e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 139,
+      "time": 4.633333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9972582943085571,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4220407214686178e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.6243609681841917e-05,
+      "inferior_glute_gap_m": 2.6243609681841917e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 140,
+      "time": 4.666666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9978782093995531,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4220673736347893e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.025421963480767e-05,
+      "inferior_glute_gap_m": 2.025421963480767e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 141,
+      "time": 4.7,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9984080644044145,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4219851366012773e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.5120083844522014e-05,
+      "inferior_glute_gap_m": 1.5120083844522014e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 142,
+      "time": 4.733333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9988487737839211,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422298829442433e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.090115802071523e-05,
+      "inferior_glute_gap_m": 1.090115802071523e-05,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 143,
+      "time": 4.766666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9992069600230852,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4223340254359599e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 7.514702247135574e-06,
+      "inferior_glute_gap_m": 7.514702247135574e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 144,
+      "time": 4.8,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.999486561352535,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422157900464497e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 4.846796400670428e-06,
+      "inferior_glute_gap_m": 4.846796400670428e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 145,
+      "time": 4.833333333333333,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9996941680104459,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422076887428577e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.8936945000168635e-06,
+      "inferior_glute_gap_m": 2.8936945000168635e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 146,
+      "time": 4.866666666666666,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9998395943493934,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4224915550606445e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.5129583061934682e-06,
+      "inferior_glute_gap_m": 1.5129583061934682e-06,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 147,
+      "time": 4.9,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.999851545347978,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4222381497140532e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 6.550379794134642e-07,
+      "inferior_glute_gap_m": 6.550379794134642e-07,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 148,
+      "time": 4.933333333333334,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.999920606801613,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.4225045068457512e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 1.890767720169606e-07,
+      "inferior_glute_gap_m": 1.890767720169606e-07,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 149,
+      "time": 4.966666666666667,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9999142511646651,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422449303362918e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.597662529524314e-08,
+      "inferior_glute_gap_m": 2.597662529524314e-08,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    },
+    {
+      "frame": 150,
+      "time": 5.0,
+      "exact_hip_vs_all_pairs": [],
+      "exact_weight_affected_vs_all_pairs": [],
+      "global_exact_pair_count": 150,
+      "minimum_material_orientation_ratio": 0.9998877513153056,
+      "orientation_below_point1_faces": [],
+      "reversed_faces": [],
+      "minimum_triangle_area_m2": 1.422381967070556e-08,
+      "zero_area_faces": [],
+      "whole_floor_min_m": 2.1866148891547255e-09,
+      "inferior_glute_gap_m": 2.1866148891547255e-09,
+      "foot_minima_m": {
+        "support_foot.L": 0.00019980913202743977,
+        "support_foot.R": 0.00019974952738266438
+      },
+      "whole_floor_equal_baseline": true,
+      "glute_gap_equal_baseline": true
+    }
+  ],
+  "promotion_map": {}
+}

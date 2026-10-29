@@ -1,0 +1,131 @@
+{
+  "id": "1512",
+  "name": "all fours squad stretch",
+  "action": "Exercise_1512",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "quads"
+  ],
+  "secondary": [
+    "hamstrings",
+    "glutes"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {
+    "quads": [
+      "L"
+    ],
+    "hamstrings": [
+      "L"
+    ],
+    "glutes": [
+      "L"
+    ]
+  },
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "skinning": "dualQuaternion",
+  "interpretation": "Anatomical LEFT all-fours quadriceps stretch. The left hand lifts, approaches with a forearm-aligned wrist, closes around the heel/ankle collar before the pull, and remains fixed in the foot frame through pull, hold and unloading. The fingers open before the arm retracts. The right palm, knee and resting foot support the body. Mirror the complete action and highlights for the other side. This five-second demonstration is separate from the source 20\u201330 second workout hold.",
+  "source_cue_disagreement": {
+    "description": "Pull one foot toward the glutes from all fours.",
+    "instructions": "Instruction 2 combines straight back and knee bent; instruction 3 asks for a lower hip position.",
+    "resolution": "Straight back is interpreted as a backward thigh trajectory with a flexed knee. The same-side hand holds the heel/ankle collar and draws the foot toward the gluteal region. A restrained pelvic lower is authored with a neutral torso and level pelvis. The source does not specify exact grasp geometry or numeric joint angles.",
+    "authored_numeric_choices_not_source_facts": {
+      "common_trunk_world_X_pitch_degrees": 84,
+      "moving_thigh_world_YZ_sweep_hold_degrees": 115,
+      "moving_knee_flexion_hold_degrees": 130,
+      "moving_hip_extension_relative_to_trunk_hold_degrees": 31,
+      "pelvic_lower_m": 0.004,
+      "resting_shin_rise_degrees": 2.65
+    }
+  },
+  "authored_choices": {
+    "grasp": "Corrected-foot collar brace: meaningful palm, thumb and index contact, with all other digits curved outside the skin. The prior collapsed-foot fit is rejected history. One bounded constrained re-fit and a measured closure/opening clearance arc preserve a neutral wrist and fixed arm lengths.",
+    "staging_seconds": {
+      "approach": [
+        0,
+        1.1
+      ],
+      "finger_close": [
+        1.1,
+        1.3
+      ],
+      "foot_local_grasp_pull": [
+        1.3,
+        2
+      ],
+      "hold": [
+        2,
+        3
+      ],
+      "foot_local_grasp_unload": [
+        3,
+        3.7
+      ],
+      "finger_open": [
+        3.7,
+        3.9
+      ],
+      "withdraw_and_replace": [
+        3.9,
+        5
+      ]
+    },
+    "reach": "Current actual wrist target is520.327mm from shoulder against529.140mm fixed arm length, giving8.813mm margin. Ankle/knee trajectory, thigh115degrees and hold knee130degrees are preserved by this repair.",
+    "contacts": "Right palm/knee/foot remain supported; complete arm/hand/finger versus both complete legs checked at all 151 native and decoded samples.",
+    "geometry": "Original connected body, 239 previously diagnosed source binding changes and three original compact POSITION/NORMAL keys reused exactly. No new body fairing, weight edit, topology edit or native smoothing.",
+    "cameras": "Whole-body quad/grasp oblique plus a fixed hand/foot side companion framed from 1816 unique original IDs through the entire cycle; width fitting remains primary-owned.",
+    "foot_transport": "Continuous sagittal shin frame transports the actual planted shin-relative ankle shape. Foot and ToeBase rotate together; no world-space counter-rotation or shortest-arc shin singularity. All151 internal-foot edge shape samples are regressed against planted skin."
+  },
+  "source": {
+    "path": "catalogue/exercises/1512.json",
+    "sha256": "1537bfbe79171564d9286f0449793eb919696374cc7ed30846235dd8a0701d80",
+    "description": "On all fours you pull one foot toward your glutes to stretch the front of the thigh. It eases tight quads.",
+    "instructions": [
+      "Start on all fours with your hands directly under your shoulders and your knees directly under your hips.",
+      "Extend one leg straight back, keeping your knee bent and your foot flexed.",
+      "Slowly lower your hips towards the ground, feeling a stretch in your quads.",
+      "Hold this position for 20-30 seconds.",
+      "Switch legs and repeat the stretch on the other side."
+    ],
+    "target": "quads",
+    "secondaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "textSource": "exercisedb"
+  },
+  "provenance": {
+    "body": "Blender Studio CC0 continuous mannequin through bodyweight-five.blend; original Basis/rest/UV/topology/source IDs retained.",
+    "motion": "Original analytic text-driven authoring; no restricted still/video. Batch-005 1512 motion was user-rejected and is not an approved visual baseline."
+  },
+  "runtime_adapter": {
+    "path": "artifacts/exercise-batches/dual-quaternion.js",
+    "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "changed": false
+  },
+  "readiness": "corrected_foot_and_collar_shape_accepted_native_and_game_qa_pass_decoded_and_primary_gpu_pending"
+}

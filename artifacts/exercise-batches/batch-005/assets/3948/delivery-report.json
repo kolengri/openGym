@@ -1,0 +1,203 @@
+{
+  "exercise_id": "3948",
+  "status": "frozen_user_review_candidate",
+  "production_approved": false,
+  "asset": "squat",
+  "action": "Exercise_3948",
+  "shared_actions": [
+    "Exercise_3948",
+    "Exercise_4714"
+  ],
+  "geometry_authored_once": true,
+  "shared_geometry_source": "3948",
+  "source_sha256": "026db4baa0185082af3deda03edbec24cac1e04c9b61eceefe96adff9741ae06",
+  "glb_sha256": "2a109b9f6ea9a99ac5de7f83f7e18610ad2b036e54a16942221bcf3c4c2acb6f",
+  "byte_identical_to_other_family_identity": true,
+  "source_vertices": 10582,
+  "exported_vertices": 12010,
+  "triangles": 21160,
+  "bones": 51,
+  "materials": 1,
+  "textures": 0,
+  "maximum_influences": 4,
+  "position_normal_targets": 3,
+  "native_dimensions_samples": [
+    {
+      "frame": 0,
+      "dimensions_xyz_m": [
+        0.5908920764923096,
+        0.7852888703346252,
+        1.7990002632141113
+      ],
+      "bounds": [
+        [
+          -0.2953614890575409,
+          -0.6255747079849243,
+          0.00019989482825621963
+        ],
+        [
+          0.2955305874347687,
+          0.15971414744853973,
+          1.799200177192688
+        ]
+      ],
+      "active_native_bone_action": "Exercise_3948",
+      "active_native_key_action": "Exercise_3948",
+      "key_values": {
+        "SquatStanding": 1.0,
+        "SquatHalf": 0.0,
+        "SquatParallel": 0.0
+      }
+    },
+    {
+      "frame": 37,
+      "dimensions_xyz_m": [
+        0.5908926129341125,
+        0.8633651733398438,
+        1.5417510271072388
+      ],
+      "bounds": [
+        [
+          -0.2953617572784424,
+          -0.5843251943588257,
+          0.00019992423767689615
+        ],
+        [
+          0.29553085565567017,
+          0.27903997898101807,
+          1.5419509410858154
+        ]
+      ],
+      "active_native_bone_action": "Exercise_3948",
+      "active_native_key_action": "Exercise_3948",
+      "key_values": {
+        "SquatStanding": 0.02094241976737976,
+        "SquatHalf": 0.9790575504302979,
+        "SquatParallel": 0.0
+      }
+    },
+    {
+      "frame": 75,
+      "dimensions_xyz_m": [
+        0.5908918380737305,
+        0.9263221025466919,
+        1.25571608543396
+      ],
+      "bounds": [
+        [
+          -0.29536134004592896,
+          -0.5380585789680481,
+          0.00020010751904919744
+        ],
+        [
+          0.2955304980278015,
+          0.3882635235786438,
+          1.2559162378311157
+        ]
+      ],
+      "active_native_bone_action": "Exercise_3948",
+      "active_native_key_action": "Exercise_3948",
+      "key_values": {
+        "SquatStanding": 0.0,
+        "SquatHalf": 0.0,
+        "SquatParallel": 1.0
+      }
+    }
+  ],
+  "runtime_skinning": "linear",
+  "basis_rest_uv_source_ids_topology_preserved": true,
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "original_binding_hash": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "frozen_binding_hash": "b78c31893ae9d855865de1b3e7c14d60e33cbc3f2a3b497f8c0b5dfa73868335",
+  "maximum_corrective_source_delta_m": 0.025,
+  "root_visual_review": {
+    "accepted": "corrective25 parallel side/rear/oblique as bounded user-review shape",
+    "minor_details": "Hip/knee creases disclosed; no gross visible waist collar or broad hip sheet. Forward-reaching low arms and shoulders read plausibly.",
+    "scope": "Frozen geometry/pose/weights/target cap. No production approval."
+  },
+  "checks": {
+    "mandatory_game_profile": {
+      "pass": true,
+      "native_frames": [
+        0,
+        37,
+        75
+      ],
+      "errors": 0,
+      "accepted_warning_receipts": [
+        {
+          "frame": 37,
+          "warnings": [
+            "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
+          ],
+          "accepted_reason": "Two opposing facet pairs in the known folded joint skin of the single continuous source body. No duplicate objects or detachable hidden shells; deleting facets would break the required original topology/source IDs. Root accepted minor creases in the bounded user-review candidate."
+        },
+        {
+          "frame": 75,
+          "warnings": [
+            "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
+          ],
+          "accepted_reason": "Two opposing facet pairs in the known folded joint skin of the single continuous source body. No duplicate objects or detachable hidden shells; deleting facets would break the required original topology/source IDs. Root accepted minor creases in the bounded user-review candidate."
+        }
+      ],
+      "raw_report": "asset-qa.json"
+    },
+    "actual_export_all_151": {
+      "pass": true,
+      "report": "runtime-physics-report.json",
+      "maximum_native_vertex_error_m": 1.4320628376882033e-06,
+      "minimum_full_body_skin_z_m": 0.00019967810658272356,
+      "maximum_sole_patch_height_m": 0.012197505682706833,
+      "maximum_sole_patch_drift_m": 8.297816033619779e-07,
+      "minimum_whole_arm_hand_to_leg_clearance_m": 0.1516370326280594,
+      "whole_arm_hand_to_leg_triangle_intersections": 0,
+      "loop_vertex_error_m": 1.8431718463976653e-07,
+      "native_action_and_key_readback": "Exercise_3948 read back at all151 frames; Exercise_4714 shares identical sampler references, action tracks and morph samples."
+    },
+    "shader_and_export_parity": {
+      "pass": true,
+      "report": "export-parity-report.json",
+      "maximum_shader_normal_angle_degrees": 0.005602666740799681,
+      "maximum_skin_error_m": 9.365294093198601e-07,
+      "maximum_joint_error_m": 8.558086788766289e-07,
+      "identical_action_tracks": true,
+      "oriented_source_triangles_preserved": true
+    },
+    "native_alpha": {
+      "pass": true,
+      "report": "alpha-report.json"
+    }
+  },
+  "self_fold_diagnostics": {
+    "policy": "Localized diagnostic, not a global zero-fold acceptance gate. No assertion of complete self-collision clearance. Root visible review accepted bounded candidate; gross visible reversal or penetration would still block.",
+    "strict_native_report": "surface-contact-report.json",
+    "strict_native_report_ok": false,
+    "strict_native_false_reason": "The retained earlier native diagnostic asserts zero nonadjacent self-folds and reports false for the known minor crease domains. It is not the agreed floor/sole/arm-leg acceptance gate.",
+    "actual_runtime_report": "runtime-physics-report.json",
+    "unique_exact_runtime_witnesses": 555,
+    "domains": {
+      "pelvis_thigh": {
+        "maximum_disjoint_pairs": 25,
+        "maximum_opposed_shader_normal_faces": 21
+      },
+      "knees": {
+        "maximum_disjoint_pairs": 58,
+        "maximum_opposed_shader_normal_faces": 37
+      },
+      "shoulders": {
+        "maximum_disjoint_pairs": 91,
+        "maximum_opposed_shader_normal_faces": 8
+      }
+    }
+  },
+  "receipt_reuse": null,
+  "root_owned_remaining": [
+    "Shared heat field binding and viewer integration",
+    "Actual live renderer/layout/playback acceptance",
+    "User review and any production approval"
+  ],
+  "restricted_media_used": false,
+  "paid_generation_used": false,
+  "git_actions_performed": false,
+  "files_outside_owned_folders_modified": false
+}

@@ -1,0 +1,713 @@
+{
+  "passed": true,
+  "assertions": 360386,
+  "evidence_references_checked": 195686,
+  "records": 6554,
+  "canonical": 5632,
+  "aliases": 922,
+  "first_five_ids": [
+    "5965",
+    "5915",
+    "5887",
+    "0001",
+    "9066"
+  ],
+  "errors": [],
+  "files": [
+    {
+      "path": "artifacts/exercise-animation-briefs/.gitignore",
+      "bytes": 131,
+      "sha256": "a6af317add5da3939d9fbd11dbf776fa8a1f36b95daebb9e6520c971f7e59dd1"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/README.md",
+      "bytes": 7758,
+      "sha256": "63bef0084316dca18153fccf961f48ae44343b15f07c4c0dd8dfca671d0eb097"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/THIRD_PARTY_NOTICES.md",
+      "bytes": 2520,
+      "sha256": "607d2942bf00aa6473ced39de4d8a4fd18a8351a7bcc3dc2d014ae3877ed93ba"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/aliases.json",
+      "bytes": 240798,
+      "sha256": "2e46c4f40e3c65c76fcfbe960b513bf8497408106e0c3efdad5b0f641cf9517f"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/briefs.jsonl.gz",
+      "bytes": 4698709,
+      "sha256": "52a8dd017e7e28ec4241a08c1b8e323e1af6c7e0bcd65508e5e48ba222711c8b"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/browser-verification.json",
+      "bytes": 629,
+      "sha256": "c4152e1f368003735a6d104b91096da80a979646d8460c47899a6191cd8e52b4"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/check-browser.mjs",
+      "bytes": 5264,
+      "sha256": "b952180445f432ae103e8aa80c1e7d56e0016ddbcc7cdd5a3ffdd23db8604a8d"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/check-index.mjs",
+      "bytes": 3008,
+      "sha256": "00fb4131fe438d14d5a89b1ce7191089d2ce7f06bd50024537255a300b23a73a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/check_generation.py",
+      "bytes": 2781,
+      "sha256": "b01dd00ec0925974f7969c9f3b67ee7cc99a82cabe77304c7031e8b9e6d787be"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/check_reproducibility.py",
+      "bytes": 1658,
+      "sha256": "4f87bbaf2a0d33558eab3876f3ec121aa471139668890f36f702b16ab7da8736"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/coverage-report.json",
+      "bytes": 4869,
+      "sha256": "708c346867208582486fd48006e08ee33826ec8e7926cdf1e02a74fd42ced9c2"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-000.html",
+      "bytes": 728222,
+      "sha256": "68e5cd6b3ea17a2e47e269b28043ac10f9ac77e8ce84646b1ebb889a4e05a2e7"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-000.json.gz",
+      "bytes": 77989,
+      "sha256": "bdba7aeebfde55e7fd508c37e490bba9ae46ea70e9178e51aac0df8bbb716b2e"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-001.html",
+      "bytes": 718248,
+      "sha256": "b40583232f07e8c70bdb99b8a9df5f74ca6eff1e3c03bec69edef3a9053f3a94"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-001.json.gz",
+      "bytes": 74898,
+      "sha256": "f0b420219520dcee2f68fc3b793ae7ec8a4961b2f4fa43039b485fb068bbbdb0"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-002.html",
+      "bytes": 712675,
+      "sha256": "2a96da84ea8d73483e2467463a572961378f834bc303f952324314763b3c353c"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-002.json.gz",
+      "bytes": 75001,
+      "sha256": "3bb083f7c846bec8a2bef3f2ad1adb13762bb85fd91fa3f95d128548860804e2"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-003.html",
+      "bytes": 751744,
+      "sha256": "907f45a844fc1d165cbf83f008ece39201933c3e4e23bbe342a4ee8b08389b0e"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-003.json.gz",
+      "bytes": 70997,
+      "sha256": "d79a5eb8a33e28f91b661ba37da13872eff82785a99d3e3d3a89e986d3ee0c12"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-004.html",
+      "bytes": 705325,
+      "sha256": "e9a2375259fe79b7255602245c4c86264ff8fad48b0db11f6ffe3a34e34665f4"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-004.json.gz",
+      "bytes": 71725,
+      "sha256": "a249fa77b4250bb3117866f98d382c268f5375adc6b86ea8823ad677afe6f97a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-005.html",
+      "bytes": 704514,
+      "sha256": "570f1b782f080fb5d3c5eba6684b92e05e7d8d373368c87afdb6c48f5fe6e4ec"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-005.json.gz",
+      "bytes": 77412,
+      "sha256": "c474aa73df8e0a6105d372a2fc0c2851a075e415f1b7812003ac0798afcf1a46"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-006.html",
+      "bytes": 645665,
+      "sha256": "2a4d9532a12290190c5234107f87343bab210fd0fe9e61988f527d739e35f5db"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-006.json.gz",
+      "bytes": 74250,
+      "sha256": "a2d79300b8dc351edb66636e05c4a69413f99c152e0249c2c84eb88fb1c35f8a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-007.html",
+      "bytes": 680299,
+      "sha256": "b711425b9d114db11389b2e12f91e3c52ad417bcd89cfdd99a0627adfab1fb61"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-007.json.gz",
+      "bytes": 77022,
+      "sha256": "f3930ddc81c30f6754c8bb5566777eb2089035a2a3be328a1f97c8982326c776"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-008.html",
+      "bytes": 641750,
+      "sha256": "af191e265953d6149e95dba3026d4ebc318a3893b32433f3afecde9753221346"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-008.json.gz",
+      "bytes": 71973,
+      "sha256": "0ee9ecacd5c702c761bebe8414f804db4f38c39679473ef91ecec2827f6384e5"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-009.html",
+      "bytes": 676414,
+      "sha256": "bea1aeb7e6d1319ebbfb92647f96b321c67b1176342d0f31bd1e6501b4ea8df0"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-009.json.gz",
+      "bytes": 81971,
+      "sha256": "6a66c64cc79f9b4cdd2f1bdf4650486dcee1639dca52a403fdf7ea63f3833a1a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-010.html",
+      "bytes": 633566,
+      "sha256": "c2f23c3f03414ed5db4a560d971f466b693315a10c7d4de6b612282c805dc4e7"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-010.json.gz",
+      "bytes": 76347,
+      "sha256": "2b0385ab773cab302911ad5747bc63660e1653790060b6711470784a7b4f7aa8"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-011.html",
+      "bytes": 629431,
+      "sha256": "a10f1a918dc8f029a9011560ec324f8d657ffc0c50221f7745513bc84824298f"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-011.json.gz",
+      "bytes": 74303,
+      "sha256": "61d82eeb729d9133f5cce6d47f6e3d4839e41179f94fac0ac2d6fc71edc5d779"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-012.html",
+      "bytes": 609300,
+      "sha256": "f764a06be884094887bce865d5a0980421334c971eccf0d80d4b469b934508fa"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-012.json.gz",
+      "bytes": 71788,
+      "sha256": "a81636f774a372e4d0c59cc46f6a30f4998715748fa622196895798db762b1aa"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-013.html",
+      "bytes": 656155,
+      "sha256": "934c7e5aedffb8844abd36de8325cd97f4bccd2b63d6eb58b9b53ae10b59f0f7"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-013.json.gz",
+      "bytes": 78375,
+      "sha256": "f92ee0211e173efc603c2a991857953f556a4dc33d23a01bfd0cc68c405646ae"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-014.html",
+      "bytes": 616055,
+      "sha256": "cf0f306ef6eec95178403e07ab522efdb50aefa78aaedee8996f303eb79814a9"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-014.json.gz",
+      "bytes": 77693,
+      "sha256": "98e3eb68d3fcfa7756f07e135c2bfcc89f737d1aecf1fd8ce2323843cc364b03"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-015.html",
+      "bytes": 685312,
+      "sha256": "ae58a71077cb4c4ee5c150dff307e6c6396b020d0771a8e07fe396e47191ee06"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-015.json.gz",
+      "bytes": 74505,
+      "sha256": "07e985774f15b9611c1961a6a2c9c87c195a1534e63761a75f82e76a6de2ef34"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-016.html",
+      "bytes": 738579,
+      "sha256": "80a34ea921f1d38eeb213db961ff0d060ee970cde2c27c6327b217e7d25cc8e6"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-016.json.gz",
+      "bytes": 78509,
+      "sha256": "bc851278d6f89eec9dd222455e36e75b38a1b1c515cf1fe3e79d294d6e1fa48b"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-017.html",
+      "bytes": 687137,
+      "sha256": "a984711586358ca210f78c6b62acad7411cfa9cfef52d63055882093d33098e0"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-017.json.gz",
+      "bytes": 80451,
+      "sha256": "896944ef1d2b784865f207e896cc8aca5f41aab5f57f7526f353b158ac1c3bde"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-018.html",
+      "bytes": 663857,
+      "sha256": "91b74b17ba33e2c629ded806690eb5d48a8dce41f029724c119385ab5d49e34d"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-018.json.gz",
+      "bytes": 73906,
+      "sha256": "4c64c22d33cd88b7f609e6e954e4e8b2f430b4aa7eb2c5211c46554ba654050d"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-019.html",
+      "bytes": 747801,
+      "sha256": "fb0a5d69c7d8dfa334fff0c7a480f0a77689764477200b57766f0cf5cd4c5c00"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-019.json.gz",
+      "bytes": 72005,
+      "sha256": "5337a847a21528a0d84da9a15aa163a05cb6643633900df428c09f81d13a414c"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-020.html",
+      "bytes": 669340,
+      "sha256": "4859a5ca9cd223a2d33bb616c07a4f2863cfa5423ef766074c1c6e37a678f663"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-020.json.gz",
+      "bytes": 68182,
+      "sha256": "8c5f55dc82987ed32b6b3250d37c339af2dc04b225f9cdf79e32c2d7f96f8e96"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-021.html",
+      "bytes": 599727,
+      "sha256": "36324009d261d47d6e8ce10b6b375165e08fc95386d2067a0ea49629b4964e99"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-021.json.gz",
+      "bytes": 61860,
+      "sha256": "cce892f75c13316f2b7e72acabbc357fcbcb8da6e4c9cf3884c205547446968c"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-022.html",
+      "bytes": 593235,
+      "sha256": "02c9b70c81225d4d2b6290cb065e87563cdc0aa47764dd7510c8cc311627b492"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-022.json.gz",
+      "bytes": 60362,
+      "sha256": "c62600427b741de3c794dd3f1bfa7126b413c989592259cb587e9f1ea0cbf508"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-023.html",
+      "bytes": 642379,
+      "sha256": "23ab3810383b23bf0d13f99ef9614cb763ddd85f5e034f82e6720f2ada301bbc"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-023.json.gz",
+      "bytes": 74469,
+      "sha256": "3fe7c269028ed6e8c980b5e961aa0a197b0ede7d66d7fdb1761f2682cf92aa74"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-024.html",
+      "bytes": 666093,
+      "sha256": "827afb871d97d509a68a102287155816206b79b3a4d0ead61bb5c58322edf614"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-024.json.gz",
+      "bytes": 75951,
+      "sha256": "21a17df1357b69cf6622618a13a1d2ec22b461ee5b2ad2a2370b7c181eae6357"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-025.html",
+      "bytes": 639775,
+      "sha256": "1f1f6273289fa7ce461000a44dcee704ebe1f1ac133ab31ef651daf67ae27954"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-025.json.gz",
+      "bytes": 79726,
+      "sha256": "1d8c4bf4183d011dfa358ba8a8cfc108589a876f8f2314d0641fa0262cc7620c"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-026.html",
+      "bytes": 606265,
+      "sha256": "8ae27bfd0bb0c9a0e14d50b45aaf4de468411508119b1a5d5fbc710a2a168a13"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-026.json.gz",
+      "bytes": 64434,
+      "sha256": "c4bbad9973b2df5398c2b1850189eb5578d25bd60f3949ff385b66726b192da8"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-027.html",
+      "bytes": 610156,
+      "sha256": "a0c53fdb40aeaf5c141fcb9a12cd338ed3eae4b4dac502d8ed36dbd2952e645a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-027.json.gz",
+      "bytes": 72458,
+      "sha256": "1e25c95aba5138e01d5a0d305ccb5be347ef9c62b3cfaaabf4ad91bdb449ef3a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-028.html",
+      "bytes": 655203,
+      "sha256": "411ac2fa28d95945212b31d9945e9078fad513d6a83366dd89556f12e1d5500d"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-028.json.gz",
+      "bytes": 77828,
+      "sha256": "7b1389480f4ef2b536305ee64b98b7873afa1e9fa07eb4ca082ff521d4bd8c04"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-029.html",
+      "bytes": 626204,
+      "sha256": "ed4afeeacd6deece031370c2e5ca4b8ed0475d14d2d13b5b0c7f548764a4ccab"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-029.json.gz",
+      "bytes": 69050,
+      "sha256": "310d8e942f53fda25697ae6c1da6b4fa5b8fbd81b66436de766382a9c49b33dc"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-030.html",
+      "bytes": 614651,
+      "sha256": "d07c5c6840bf87585710af174ee7583c01e723928b12eb204a03c375012aaf8b"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-030.json.gz",
+      "bytes": 72594,
+      "sha256": "79526e8f6159a82db64a06725f3069b6bce9663a2e20138d3f2f379c389f5f70"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-031.html",
+      "bytes": 600588,
+      "sha256": "dd7b9c4bee6c19d0e7d63e58dba229194032a106d26f9f3641eca1b94e47ee0f"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-031.json.gz",
+      "bytes": 68388,
+      "sha256": "1e40e4cc86423c35b2161e304bc320bbeb5acf59125051d312cf6f5d9a0481e9"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-032.html",
+      "bytes": 632718,
+      "sha256": "68901624a146bf90abb32bd24b90cbcf2f0b1c0f163f7a7b02ae9edc64b4d388"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-032.json.gz",
+      "bytes": 75545,
+      "sha256": "27180470d5be9ed0ffb11c54a4b455002130f9f08a8b4913316c5153001f6576"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-033.html",
+      "bytes": 650253,
+      "sha256": "914cc5439984d0707b89b26c3e360cd971be713d0a92d0bb552c058c9e123e80"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-033.json.gz",
+      "bytes": 73533,
+      "sha256": "028899c30924a6ab4737f91c7c8f14460579fdcf6d6f608475b87792a2d0dc01"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-034.html",
+      "bytes": 644187,
+      "sha256": "8a81520f846ea9545ce29a2b679a9928b4e2a6bd071170a47e20f777b85fc16d"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-034.json.gz",
+      "bytes": 77074,
+      "sha256": "63cd17e8752a4c9a53833b6f36b076278ff498ef13d9406301de759c544011df"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-035.html",
+      "bytes": 599945,
+      "sha256": "77e5111d9232856a23d14af9cfdae15328603a79e65e0605119cc9d7eff998fe"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-035.json.gz",
+      "bytes": 68909,
+      "sha256": "645466dcffe086d43a51c464bfa169cc04a872b794ef3e88062037fbd2a464dc"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-036.html",
+      "bytes": 614858,
+      "sha256": "29260a63925d8f2bff9710514914acb805ac2b936b3f2e8affbe2885b7245fbe"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-036.json.gz",
+      "bytes": 73993,
+      "sha256": "21489ae6ec68abed2668b2a49b1489f041e71a8ee2649976419125e904a5efc9"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-037.html",
+      "bytes": 638433,
+      "sha256": "cccea409f591572ee1cbe1ee4036832b30bcbeea10855523df610d73d34e9ade"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-037.json.gz",
+      "bytes": 77886,
+      "sha256": "ada0894dccb1e629752bb5ec37e1434eb1c0df1126b62f47e98db3aa943660f1"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-038.html",
+      "bytes": 612194,
+      "sha256": "b4319a37d3096825585bf18dcc2ea8d50c75e139c9adcd411f56bb6d855c69d2"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-038.json.gz",
+      "bytes": 76531,
+      "sha256": "735fb8f8e183c125860e06412bb1b291c3527691a4cff3992386264e9cc897ec"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-039.html",
+      "bytes": 631144,
+      "sha256": "1f8e16bc1f5203d96fd6ee80e95718aca8e8a25bc54db7ae5babc3c338f26b89"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-039.json.gz",
+      "bytes": 69149,
+      "sha256": "16750120055a843ad1d462572f555b702849970bc406b2bad3d632fd251f5504"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-040.html",
+      "bytes": 636297,
+      "sha256": "1049c825d2ba7ce7b0b847fb6eb01778e0252871c52344168a62b78ed85a7a06"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-040.json.gz",
+      "bytes": 71977,
+      "sha256": "a1fb9119906772f0cfcfdf33feb592997a821b874d2b0b60acb59061fc6d834e"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-041.html",
+      "bytes": 610127,
+      "sha256": "ef07c784a2e0dfd9b6e3c2b6d864c6becb296615cd6303c67bb861e73c04bf75"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-041.json.gz",
+      "bytes": 71126,
+      "sha256": "f62bf47abc11cae8819f6460cb8078dac974840a3102a3dc4b51980ae00576bb"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-042.html",
+      "bytes": 614087,
+      "sha256": "01656de71b45d1da3ac409630c3972fa6a2a74bbe010f1857cbdb2d709f95c90"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-042.json.gz",
+      "bytes": 74464,
+      "sha256": "285b84919222c6d3e23521ffdcf3eb8bb6cf2433bbe3c18f051fed32ff912ce3"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-043.html",
+      "bytes": 622529,
+      "sha256": "8137834f9561ef4a8483c66a96e9a4b435d12d410b4fd178b7f8f92ef7f17240"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-043.json.gz",
+      "bytes": 80198,
+      "sha256": "fb28dd9ab06ffbe4676a2dec7ad4c409a735c903943c3263953ead06540efbf3"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-044.html",
+      "bytes": 624788,
+      "sha256": "c507085dce6eb5bae8e2336206960acbcc0cfd4e7d1e06482e9f01d6aa57d69f"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-044.json.gz",
+      "bytes": 75211,
+      "sha256": "4c4cc4ec61fa48dd5e6f85bb2d5440ade742bc3ea4848978c9afd283debc67f3"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-045.html",
+      "bytes": 607908,
+      "sha256": "83896c94ad9b7271410558b5a57d9ac20f76410b0f9d44159fc99b8cfe863944"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-045.json.gz",
+      "bytes": 74533,
+      "sha256": "7f016f4dfb2597887a5c0b37f695da6bd3e6cd95e6c0f3034cd5bcc236e5787a"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-046.html",
+      "bytes": 637243,
+      "sha256": "8e144b3f4835090c8c532060b52591cc9cfd259b9e303a63e8ec43216bad354b"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-046.json.gz",
+      "bytes": 72979,
+      "sha256": "9993e73b8fdf3a1c35e8712aca3843396b149935396396ed9f0f4c22fd82b691"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-047.html",
+      "bytes": 620315,
+      "sha256": "f01be2a470ef0b0e877787bb485e6e88de40f5519620381dac1b2f808f5c641d"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-047.json.gz",
+      "bytes": 78246,
+      "sha256": "dc364ba4a862e4eb47ff824b50498a645ef9f0f9da172d0f26699979332745a8"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-048.html",
+      "bytes": 586544,
+      "sha256": "23d3ab069c5968191c9c9778f19a6bf775a5fe0c22f9434189b3db44d28a8bda"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-048.json.gz",
+      "bytes": 69315,
+      "sha256": "289831b8082c9dfc525e854104d40023862c8d6303558e09c9c21b6cd4fb69d6"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-049.html",
+      "bytes": 628355,
+      "sha256": "db895d0986cec3d5bf2d4fa762869a304459c0a984518a395f9ffc1c98625ff0"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-049.json.gz",
+      "bytes": 66729,
+      "sha256": "50fa3418a583c3a35cd1309337f851279d68af2c585f30fb4ed53b85078ab88b"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-050.html",
+      "bytes": 617071,
+      "sha256": "e4d3b93200ea366b4c30ffac99ec4c416f3b0b142a49db6aa5a85cc74401db10"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-050.json.gz",
+      "bytes": 74243,
+      "sha256": "aea37c6f23f16d5f7dbf7d79db6f705aadfb3f4db68568ecfd4b64867c73d179"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-051.html",
+      "bytes": 630811,
+      "sha256": "1aeccb4b3154adbaf08ce506ec80ee6e61dab71e0b7081048778fd9a5efa7f30"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-051.json.gz",
+      "bytes": 74978,
+      "sha256": "79a190a42184d3f2e72334f1c8fe2f70f63ed7a09434f5bbbb8f1c94fe3d2803"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-052.html",
+      "bytes": 612527,
+      "sha256": "c50e725f58e3aa0ffafe665498f9ae335c0095686d1069fadf272001bf36f061"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-052.json.gz",
+      "bytes": 76214,
+      "sha256": "214fca0f37f871ce5711d67a5db664158a7d61e836aafd0e84ae06f432f84865"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-053.html",
+      "bytes": 626783,
+      "sha256": "1a9a828c9a5f7fc7701ff679ba03106def57cb12e38ddb199cae69e456b3c816"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-053.json.gz",
+      "bytes": 77930,
+      "sha256": "3e2db7ac9b9ccea96ce2f80ca1ac592ec11da2268dc552b3f3e4b000febaa26f"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-054.html",
+      "bytes": 634606,
+      "sha256": "b9c7e1d5722c89ec429a594f06b9510894fdbb9929b42e92176d16a94a5d68b3"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-054.json.gz",
+      "bytes": 75446,
+      "sha256": "76d0b7108513dfb1d1f42f203da7fa1c12fdc5208a0a972ff2545fc11b8e63d7"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-055.html",
+      "bytes": 620601,
+      "sha256": "0ea5e5aecd3d903550faa691fbc818c31829cc2070d8289a2c1f2bcc32e83aa7"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-055.json.gz",
+      "bytes": 75730,
+      "sha256": "dd1720299442bbbae622dec23ca7eb9b7d35f4ba984e17dad9201511562a4f56"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-056.html",
+      "bytes": 221256,
+      "sha256": "804ce84d8665561eb6ec0b727592ebc6016e017497425c8524872ca06ba0cacc"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/details/chunk-056.json.gz",
+      "bytes": 28264,
+      "sha256": "cb0661d6888b91b6efe4c9c37c28dc88aff004b0fbefe61f42f999b7e842c6f5"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/generate.py",
+      "bytes": 70058,
+      "sha256": "3b171adc2950ac5307496ae5413983eacb1269230d980c39499abb3d1c3a0277"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/generation-contract.json",
+      "bytes": 56061,
+      "sha256": "20835c505607a9ae0925dfa9e7f26b3194b3a6e49533579b5c4774ba427b4005"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/generation-verification.json",
+      "bytes": 361,
+      "sha256": "bf074f5692d6d12d3517e580ae49293d9fb0136b4fb55097dee1384d16b39e0f"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/index-desktop.png",
+      "bytes": 148802,
+      "sha256": "27c6b26fa410632bb8d208f7f82e878b291dbb331fe58a37d5566c5513d6d5c1"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/index-template.html",
+      "bytes": 7473,
+      "sha256": "96026dc10eb4e3d35780bf7c30ae3a89784c83faff2601ee1902a6a76b319bef"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/index-verification.json",
+      "bytes": 384,
+      "sha256": "34bcc9df08d5c1b4c8ac91ab1362231cf96c8ca33146f002f8553f426ec19d36"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/index.html",
+      "bytes": 2737359,
+      "sha256": "86a8ad2b98ddeb9e8383a3947f0fcfd0d2e40e3332e0b3391fe8534a1e4dcf3d"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/prepare_generation.py",
+      "bytes": 4641,
+      "sha256": "3d6a60c0a4600b088d58a7f992e56ee8485aa84effb373b19d70fdaa9268f127"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/production-guide.md",
+      "bytes": 24044,
+      "sha256": "3c64a01134856de1fb16c15b8122b06f9fd0f07460ced93da13f1772adc42158"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/reproducibility.json",
+      "bytes": 385,
+      "sha256": "0060af2c7c8e566fb9a0beb0ced7bd2e403f07287889f3b101e444ef09083169"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/review-queue.json",
+      "bytes": 2340389,
+      "sha256": "30b1d3dce5af9aafcf375fa72d35ac92435381db30fe85f623a5fbb07753aec4"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/selected-first-five.json",
+      "bytes": 89740,
+      "sha256": "a1e7f00193d81e7230d7afe8e50107cf3a371d1ddeb9d6fcb1eb6fb029df45e6"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/selected-first-five.md",
+      "bytes": 13991,
+      "sha256": "439fb44502f61af024fcf964bc14667f54172c9ac9ee68cdbb6836188124fc73"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/verify.py",
+      "bytes": 10202,
+      "sha256": "92b1d5d4750553654ba4b9afa2c25f897637b06da0d274e55277e660e6cf0bc5"
+    }
+  ]
+}

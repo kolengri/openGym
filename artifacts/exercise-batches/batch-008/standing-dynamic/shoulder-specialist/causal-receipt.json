@@ -1,0 +1,22 @@
+{
+  "source": "../foundation-v5.blend",
+  "source_sha256": "35502f29ae6ce6f6f8337cd722c79b899871e1364495adae544e6be1e38fac1a",
+  "pose_unchanged": "120 degree source crossover,105mm wrist-height layering,34.431645 degree peak clavicle protraction; same original51-bone action matrices.",
+  "diagnosed_weight_jumps": [
+    {"source_edge": [7519, 8383], "ownership": "100% Neck versus71.97% Shoulder/28.03% Arm", "peak_edge_stretch_ratio": 6.63},
+    {"source_edge": [2994, 3095], "ownership": "75.5% Arm versus84.4% Spine1", "peak_edge_stretch_ratio": 33.16}
+  ],
+  "rejected_preliminary_hypothesis": "Unrestricted harmonic torso ownership removed the crest but moved a pathological lower-axilla point214mm and introduced15 local crossings. Treating a curved arm exterior as the intersection of all facet halfspaces was invalid and its expanded constraint system became inconsistent. These trials are excluded from accepted curation.",
+  "accepted_bounded_continuation": "Preserve the original collision-free lower-axilla domain plus broad geodesic collar exactly; retain only the upper crest/scapular ownership change. No new pose or geometry-smoothing variant.",
+  "native_shape_review": "Root accepted corrected whole-upperbody37.5 front/back/side,19front and112.5front for integration. Pointed crest gone and rounded upper shoulder achieved. Original lower-axilla crease remains an explicit limit. Actual GPU review remains pending.",
+  "position_domain_count": 1288,
+  "normal_domain_count": 1403,
+  "position_normal_union_count": 1472,
+  "protected_position_count": 2653,
+  "maximum_position_component_displacement_m": 0.057562297481302156,
+  "minimum_native_blended_DQ_norm": 0.9005518209555242,
+  "inverse_unit_DQ_rotation_condition_number": 1,
+  "source_basis_rest_UV_topology_binding_unchanged": true,
+  "6014_component_weights": "All151 exact[0,0]; actual skin and51matrices verified bit exact.",
+  "full151_5172_native_decoded_export_game_and_GPU_owner": "Original author and root after integration."
+}

@@ -1,0 +1,30 @@
+{
+  "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+  "initial_reach_diagnostic": "initial-reach-diagnostic.json",
+  "rejected_ankle_raw_receipt": "rejected-ankle-regression.json",
+  "rejected_ankle_source_sha256": "f7414087b7ae025480e0cc4d20a56c067f9b2ade1436bddbb01ed09a905272b6",
+  "rejected_mixed_ankle_edge_ratio_range": [
+    0.688127777738375,
+    1.3921060276296782
+  ],
+  "rejected_curl_edge": {
+    "ids": [
+      5161,
+      5162
+    ],
+    "planted_length_m": 0.007349705592664563,
+    "collapsed_length_m": 0.0031178368817264207,
+    "ratio": 0.42421248612164886
+  },
+  "cause_and_repair": "Initial wide endpoint exceeded leg reach. Modest knee flexion/narrower endpoint resolved support; outward knee tracking then reduced mixed-ankle distortion while preserving foot plant and trajectory. No geometry or binding change.",
+  "thresholds_and_edge_domains_unchanged_through_ankle_repair": true,
+  "current_native_mixed_ankle_edge_ratio_range": [
+    0.7746313382326585,
+    1.3330134008946382
+  ],
+  "current_decoded_mixed_ankle_edge_ratio_range": [
+    0.7746264415072955,
+    1.3330027534094218
+  ],
+  "small_original_lower_knee_facet_retained": true
+}

@@ -1,0 +1,31 @@
+{
+  "morph": "StaticPoseCorrective_4348",
+  "weight": 1,
+  "animated": false,
+  "morph_target_count": 1,
+  "basis_binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "basis_unchanged": true,
+  "weights_unchanged": true,
+  "method": "Per original vertex, solve the actual blended linear bone matrix for the rest-space delta needed to reproduce the native CorrectiveSmooth cage at the constant isometric pose.",
+  "max_condition_number": 1.5437161513960058,
+  "linear_prediction_error_m": 2.8618102980392724e-07,
+  "offset_m": {
+    "0": 0.0,
+    "50": 6.827196672967755e-07,
+    "90": 0.0024088960199468283,
+    "95": 0.005084419834429105,
+    "99": 0.013745026960199584,
+    "100": 0.04426781608290386
+  },
+  "bounds": {
+    "maximum_condition_number": 10,
+    "maximum_rest_offset_m": 0.05,
+    "maximum_p99_rest_offset_m": 0.02
+  },
+  "affected_vertices_over_1micron": 5253,
+  "corrected_cage_target_error_max_m": 9.964855609715276e-07,
+  "native_modifiers": "Static shape key at1 -> Armature -> Multires. Original CorrectiveSmooth disabled to avoid double correction.",
+  "export_modifiers": "Static shape key at1 -> Armature only; one morph target with GLB mesh defaultweight1, no morph action.",
+  "source_sha256": "c84b9489cae7d1f1f471afef5938b6534fd8c5c2bb0ffda6bf42183c0f7b44f3",
+  "glb_sha256": "0d7b71203d9c7918358ec9abce8b805f4d50d3e7ababf74b4c04949bec49de13"
+}

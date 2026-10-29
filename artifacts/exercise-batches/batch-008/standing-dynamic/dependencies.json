@@ -1,0 +1,54 @@
+{
+  "original_CC0_body": {
+    "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+    "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "original_binding_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b"
+  },
+  "read_only_dependencies": [
+    {
+      "role": "rig_math",
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045",
+      "modified": false
+    },
+    {
+      "role": "rig_math_extracted_function_source",
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c",
+      "modified": false
+    },
+    {
+      "role": "DQ_adapter",
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+      "modified": false
+    },
+    {
+      "role": "accepted_plantar_analogue",
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/plantar_binding.py",
+      "sha256": "72676e1d9856fdc0f3c534590c345405a5a494cf5a0c82df0dd3d5b4abfb6cdc",
+      "modified": false
+    },
+    {
+      "role": "accepted_continuous_limb_checker",
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/check_motion.py",
+      "sha256": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d",
+      "modified": false
+    },
+    {
+      "role": "accepted_triangle_kernel",
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/triangle_intersection.py",
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36",
+      "modified": false
+    }
+  ],
+  "rights": "Catalogue text and original CC0 body only; no restricted media, paid generation or videos.",
+  "accepted_shoulder_component": {
+    "manifest": "shoulder-specialist/curated-files.json",
+    "manifest_sha256": "c0cd30243b71eb31da05b0e5a019c83d956360216db6cfbe10dafefbb42510ff",
+    "handoff_sha256": "a7773c6a3075b08ed5e3cf61ee56f61896047e12b1f174d8fd55586159d68f7b",
+    "helper_sha256": "e6d91655df864c8331df8c7404b11435db57e303bb5e9ec2ddc8dad26f4a849b",
+    "archive_sha256": "f78f91bbd0c1d64a1d944980993228952a3ec83a50386c332a2e52f02bd1a958",
+    "root_selected_as_separate_authoring_family": true
+  }
+}

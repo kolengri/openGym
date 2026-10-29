@@ -1,0 +1,96 @@
+{
+  "id": "2098",
+  "action": "Exercise_2098",
+  "name": "adduction hand with elbow extended stretch",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "primary": [
+    "forearms"
+  ],
+  "secondary": [
+    "wrist flexors",
+    "wrist extensors"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {
+    "forearms": [
+      "L"
+    ],
+    "wrist flexors": [
+      "L"
+    ],
+    "wrist extensors": [
+      "L"
+    ]
+  },
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "skinning": "linear",
+  "interpretation": "Anatomical left arm extends in front, slightly across the midline, with the shoulder down and a naturally near-straight elbow. Its palm stays vertical, thumb side above little-finger side. The assisting right hand approaches from above, closes an articulated gentle overhand grasp and guides an 18-degree little-finger-side wrist tilt in the palm plane. This is ulnar deviation, rather than wrist flexion. The left hand returns to neutral and the assist opens and releases. The compressed five-second demonstration is separate from the source 20\u201330-second workout hold. Mirror the complete motion to repeat on the right. No bouncing or phase-dependent recruitment claim.",
+  "authored_choices": {
+    "side": "Left; mirror for the other side.",
+    "timing": "0\u20131.05 s grasp acquisition; 1.05\u20132 s ulnar tilt; 2\u20133 s quiet hold; 3\u20135 s exact reversed release.",
+    "stance": "Original standing pelvis, trunk, legs and bilateral feet remain fixed.",
+    "source_locked_elbow_interpretation": "Naturally near-straight; no hyperextension. Measured internal elbow angle is recorded in surface-contact-report.json.",
+    "hand_mechanic": "Thumb-up vertical palm; hand direction tilts toward the lower little-finger edge while its palm-plane normal stays lateral.",
+    "assist": "Right hand uses all 15 original finger bones; thumb, index and middle contact proximity is checked against actual left-hand triangles throughout the entry and hold.",
+    "angle_status": "Reversible illustration values, no clinical target or measured recruitment.",
+    "muscle_display": "Soft cyan zones on selected anatomical-left forearm proxies only; wrist flexor/extensor fields are anatomical proxies. Right assist and hand intrinsic muscles stay neutral. Runtime fields are primary-owned.",
+    "runtime_skin": "Original four-influence linear binding, no weight edits, morphs or DQ. CorrectiveSmooth and Multires disabled in the canonical source and GLB.",
+    "cameras": "Two complementary whole-body orthographic obliques. Primary may fit final horizontal width."
+  },
+  "source": {
+    "path": "catalogue/exercises/2098.json",
+    "sha256": "98455adfb95937d0865b29b3a4cff14684f6dc34f73108ef09173780ca2bc189",
+    "instruction_pointer": "/instructions",
+    "instructions": [
+      "Stand tall and extend one arm in front of you with the elbow straight.",
+      "Turn the palm so the thumb points up.",
+      "Grab the hand with your other hand and tilt it gently toward the little finger side.",
+      "Keep the elbow locked and the shoulder down.",
+      "Hold for 20-30 seconds.",
+      "Release and repeat on the other arm."
+    ],
+    "target": "forearms",
+    "secondaryMuscles": [
+      "wrist flexors",
+      "wrist extensors"
+    ],
+    "textSource": "opengym"
+  },
+  "provenance": {
+    "body": "Original continuous Blender Studio CC0 mannequin from accepted bodyweight-five source.",
+    "motion": "Original text-only analytic staging. No restricted media derivatives.",
+    "authoring_helper": "Immutable batch-003/authoring.py reused directly."
+  },
+  "readiness": "authored_for_review_not_production_approved",
+  "unresolved_source_blockers": [],
+  "unresolved_asset_issues": [
+    {
+      "id": "2098-LIVE-APPEARANCE-REVIEW",
+      "status": "primary_owned",
+      "description": "Final common-runtime heat display, actual live WebGL appearance, camera fit and interaction verification remain with primary integration. Source QA is not production, anatomy, coaching or EMG certification."
+    }
+  ]
+}

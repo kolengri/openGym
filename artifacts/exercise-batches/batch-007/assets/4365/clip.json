@@ -1,0 +1,57 @@
+{
+  "id": "4365",
+  "action": "Exercise_4365",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "spine"
+  ],
+  "secondary": [
+    "lats",
+    "shoulders",
+    "hip flexors"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Sit back and reach"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Rest supported"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return to kneeling"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    30,
+    60
+  ],
+  "interpretation": "Supported child-like resting pose: sit toward the heels, fold and reach the forehead and central palms to the floor. Two-second entry, one-second hold and two-second return demonstrate the movement; the catalogue workout recommendation remains30\u201360seconds. Exact stance, timing, scapula-complex motion and local hip-volume component are authored.",
+  "diagnostic_peak_frames": [
+    75
+  ],
+  "skinning": "dualQuaternion",
+  "correctives": {
+    "names": [
+      "RestingHipVolume"
+    ],
+    "position_targets": 1,
+    "normal_targets": 1,
+    "maximum_source_displacement_m": 0.10973291255518877,
+    "maximum_world_displacement_m": 0.10973293250068683,
+    "inverse_condition_max": 1.000000238418579,
+    "drive": "Quintic smootherstep of measured bilateral hip flexion above the native first-fold onset; exactly0 at neutral and1 at supported peak.",
+    "original_weights": "Exact original whole-body weights; no inherited binding or old inverse-LBS feather."
+  }
+}

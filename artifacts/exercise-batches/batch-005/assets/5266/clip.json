@@ -1,0 +1,95 @@
+{
+  "id": "5266",
+  "name": "air twisting crunch",
+  "action": "Exercise_5266",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "duration_frames": 150,
+  "fps": 30,
+  "source_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "bones": 51,
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "obliques",
+    "hip flexors"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 1.25,
+      "label": "Lift shoulders; bring the right shoulder toward the raised left knee"
+    },
+    {
+      "start": 1.25,
+      "end": 2.5,
+      "label": "Return through centre with both legs held in tabletop"
+    },
+    {
+      "start": 2.5,
+      "end": 3.75,
+      "label": "Lift shoulders; bring the left shoulder toward the raised right knee"
+    },
+    {
+      "start": 3.75,
+      "end": 5,
+      "label": "Return through centre with both legs held in tabletop"
+    }
+  ],
+  "source_hold_recommendation_seconds": null,
+  "source_instructions": [
+    "Lie on your back with your knees raised.",
+    "Place your hands behind your head.",
+    "Lift your shoulders and twist toward one knee.",
+    "Return and twist toward the other side.",
+    "Keep a slow rhythm and press your lower back down."
+  ],
+  "interpretation": "One slow alternating supine twisting crunch. Both thighs and shins remain in a fixed raised tabletop throughout; neither leg extends or pedals. Shoulder girdle curls and twists alternately toward each raised knee. Separate palms support the occiput with relaxed articulated fingers, without pulling the head. Pelvis and posterior lumbar skin must remain supported against the same declared floor; both feet are intentionally airborne. Five-second rhythm, tabletop90degree knees and exact joint/palm staging are authored illustration choices; source only specifies raised knees, hands behind the head, alternating shoulder lift/twist and lower-back press-down.",
+  "explicit_staging": {
+    "hands": "Accepted0003 separate occiput palm frame and finger articulation, with head-relative targets and bounded wrist deviation. No neck-pull pose or hand/head lock constraint.",
+    "legs": "Fixed tableau: both hip/knee/ankle/toe joint centres stationary, knees90degrees and horizontal shins. No bicycle leg motion reused.",
+    "back": "Actual source-ID posterior pelvic/lumbar support is measured against floorZ0; a single joint height or minimum skin vertex is insufficient.",
+    "timing": "Peaks1.25/3.75seconds, complete5second alternatingloop."
+  },
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "obliques",
+      "hip flexors"
+    ]
+  },
+  "source_gaps": {
+    "timing": "Slow rhythm sourced; exact5second loop authored.",
+    "legs": "Raised knees sourced; fixed tabletop90degree staging authored.",
+    "hand_detail": "Hands behind head sourced; separate occiput palms and finger curl authored."
+  },
+  "provenance": {
+    "text": "catalogue/exercises/5266.json",
+    "source_record_sha256": "75020baf95cd8c1d661e35d5b01fb985e2aa9734f1620f14c912ec2b5a46876a",
+    "body": "Original CC0 Blender Studio Human Base Mesh in artifacts/bodyweight-five/bodyweight-five.blend",
+    "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "restricted_media_used": false,
+    "paid_generation_used": false
+  },
+  "review_status": "native_shape_accepted_for_user_review_local_checks_passed_primary_gpu_review_pending",
+  "correctives": {
+    "names": [
+      "JointNeutral",
+      "JointRightCross",
+      "JointLeftCross"
+    ],
+    "position_targets": 3,
+    "normal_targets": 3,
+    "method": "Exact original0003 three compact joint/flank target buffers plus declared sparse5266support deltas, preserving exact original151weight schedule. No extra joint residual installed.",
+    "global_corrective_smooth_enabled": false,
+    "subdivision_enabled": false
+  },
+  "heat_regions_file": "../../soft-abdominal-regions.json"
+}

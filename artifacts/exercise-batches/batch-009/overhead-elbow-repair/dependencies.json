@@ -1,0 +1,91 @@
+{
+  "policy": "Read-only exact reproduction dependencies. No earlier-batch, shared-viewer, adapter, environment or skill file was edited.",
+  "repository": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/check_motion.py",
+      "sha256": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/triangle_intersection.py",
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/motion.py",
+      "sha256": "93a30a37d63f8e025654858296fa78b8a2684889158e4858c0e652c018fefe6f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/wrist_motion.py",
+      "sha256": "21f258f444e869a473b49195621192f33557825f50b48731f5b4e91270840d7b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/local-binding-report.json",
+      "sha256": "54893cfc22dd149166d9fbb47cdb7f4c98fe1fd724015c70c18345b94dd2270d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/rotator-grips/native-back-contact-solve.json",
+      "sha256": "62fe7c9c75bae734fc13cb8fcf3b1a46c6cddab76e17acdf1d47b6f3a9e6b366"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/1986/source.blend",
+      "sha256": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/package.json",
+      "sha256": "f9c474a27c920b9435353a6235968f4453436bee0444fac7e5fd289c8fa463de"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/build/three.module.js",
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+      "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/asset-interface.json",
+      "sha256": "acb7430e0b2aa17fbf665f2bb3253064b8302d2adad30a0580f683e04940e396"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/source-resolutions.json",
+      "sha256": "ec1d33776a323e559a6f52dc8527ba99388841dad6bc971f162c68491dea2319"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/contexts/1986.json",
+      "sha256": "15e457b5209e2c08656538c747f03697da1ac74a6c8fe59470208c412c7b4c90"
+    },
+    {
+      "path": "catalogue/exercises/1986.json",
+      "sha256": "062e68575b048b20c46b2fb6b0635552df6565583e3ffbd5bc5e2c9164810a6f"
+    }
+  ],
+  "external_tools": [
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/review_shots.py",
+      "sha256": "ffd4361f313592b67c124cdf0ec54b8d9866c9b29eefdac5c47731ce133d3f01"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/_bpyx.py",
+      "sha256": "a3339ba8a678469e8ed29510e32a7331e0235202191ca4edb977af4720819b4b"
+    }
+  ]
+}

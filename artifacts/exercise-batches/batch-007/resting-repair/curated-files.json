@@ -1,0 +1,260 @@
+{
+  "delivery_ready": true,
+  "status": "accepted_for_user_review",
+  "delivery_assets": [
+    "4365"
+  ],
+  "read_only_dependencies": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/kneeling-family/anatomical_frames.py"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/palm_frame.py"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/assets/1512/surface-landmarks.json"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js"
+    }
+  ],
+  "asset_manifests": [
+    "../assets/4365/curated-files.json"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "0894e866e476d546bdc28050222564316e1564f63e3fd5b4c8a2e4a7c734500f",
+      "bytes": 2098
+    },
+    {
+      "path": "findings.md",
+      "sha256": "2dc2965c9843049e6c99f2fae7d229d81b446bc46ff659c7d8fd678d48b62032",
+      "bytes": 2168
+    },
+    {
+      "path": "rekey_source.py",
+      "sha256": "1d0f462a105a14d1b50a4e679a360f10c4d869ba1278a9cab7962b487518532d",
+      "bytes": 4626
+    },
+    {
+      "path": "export_frozen.py",
+      "sha256": "9f26c72094823f1d316faf293ce5a89975dc03f83017b043c5c4c53e05009801",
+      "bytes": 1647
+    },
+    {
+      "path": "resting_motion.py",
+      "sha256": "7ef6492c5b5483129705cd89c8590363bfa190492223c569ae2028439fd2acc9",
+      "bytes": 8088
+    },
+    {
+      "path": "clavicle.py",
+      "sha256": "93079fa509615ba2b006bc4ce6c9031ed9e9b4dfb34040b970e4a1afe8c4282d",
+      "bytes": 2378
+    },
+    {
+      "path": "resting_checks.py",
+      "sha256": "1f421c67b98d4110d345d7c025fd6714dfaef11cbd5a62b80efd39eb7c34d2b3",
+      "bytes": 2770
+    },
+    {
+      "path": "runtime_checks.py",
+      "sha256": "e0cec1e6fb6701f4e4a0e5a298eb2ac1294e371b60884dc892f8ac6a83f0d4ea",
+      "bytes": 2198
+    },
+    {
+      "path": "write_native_references.py",
+      "sha256": "936b50e6989d3c83c36abaaa14773a2f6bba0c203c4e8b764973bb8f2e8511a1",
+      "bytes": 9151
+    },
+    {
+      "path": "verify_export.mjs",
+      "sha256": "96e33f98c01de3eca74217409d9b1747786f9f2fc0319ad109cfb391927fc646",
+      "bytes": 8877
+    },
+    {
+      "path": "verify_runtime.mjs",
+      "sha256": "60283155a98aaedbb347c2ede03cc5b30f0abd66a9a21b36fdc14b22d79c0950",
+      "bytes": 4553
+    },
+    {
+      "path": "verify_runtime.py",
+      "sha256": "b5aa6e6a056992017b2c0553e76396f3761f5f8500cdb1ee3c67f3a2b6a5b6fb",
+      "bytes": 5877
+    },
+    {
+      "path": "render_final_proofs.py",
+      "sha256": "b096c08215a3fe2a2467f3c0597b0c79dfea239b5f4c6ca19bad72ed8268d0af",
+      "bytes": 2148
+    },
+    {
+      "path": "package_final.py",
+      "sha256": "9fca5e450d329ea4ab291fabb143b00d912bfad67972a6fa6128dcb00f0e62c6",
+      "bytes": 17563
+    },
+    {
+      "path": "motion-parameters.json",
+      "sha256": "3b8a0b65018006769498095358c3d88e0afe84846b2f9f96e2fc5f8adbd0218b",
+      "bytes": 1555
+    },
+    {
+      "path": "contact-solve.json",
+      "sha256": "7e847b6645383455a99a6d44614b26b4a3523bc510680e62c64333dd1f8ec143",
+      "bytes": 80080
+    },
+    {
+      "path": "native-state.json",
+      "sha256": "7946f0d9480b2b0dd7eb6daa125cde7ad59482ea9a5c69d37365e8f05cfe9d50",
+      "bytes": 143515
+    },
+    {
+      "path": "native-target-errors.json",
+      "sha256": "2882cccc2c77123873158cb7dda9cbedfa8b0189866c40afbd99ffa660d3587c",
+      "bytes": 76037
+    },
+    {
+      "path": "hip-activation.json",
+      "sha256": "52bbc072297327535d1c9662f008abefc234889d5d479e80bcdb901c768e5149",
+      "bytes": 20198
+    },
+    {
+      "path": "hip-volume-component.npz",
+      "sha256": "8558e38746ddd22f29476da8cc84c2f8c2f20e4b27d176d7defb5e31bca56877",
+      "bytes": 137881
+    },
+    {
+      "path": "hip-volume-final.npz",
+      "sha256": "ed34cf072e235dbb7b1e181c4adaee5334a7826481c85a978fc86d12694ff507",
+      "bytes": 19374
+    },
+    {
+      "path": "hip-dq-volume-peak-report.json",
+      "sha256": "4ff38bb31d8bfee41c1c9fa5dfa366d672ecefa1b166b4333680549387b383c2",
+      "bytes": 27834
+    },
+    {
+      "path": "native-loop-report.json",
+      "sha256": "3bc934c507dddd8e23002085fbf9a26ceecc49882f6ac673b4fdc14ae657c7fd",
+      "bytes": 1996088
+    },
+    {
+      "path": "loop-warning-proofs.json",
+      "sha256": "5e1b90f6638e5a5917d946e8256f5cc5ec7c6c3dda7320a8138d8d1cd3e91d47",
+      "bytes": 1056
+    },
+    {
+      "path": "component-contract.json",
+      "sha256": "5bbc219c0fc9aed3d222730f5c048f2718013a3114e389da8a9c95c840b8e0d3",
+      "bytes": 16761
+    },
+    {
+      "path": "export-manifest.json",
+      "sha256": "753984c1be9de2a3465fa6fa1dcbe630bcbcc81d9edadb427a7015953f3a6ffe",
+      "bytes": 1180
+    },
+    {
+      "path": "authoring-recheck.json",
+      "sha256": "18534ac3d9f9f5326e1d7b175a388e0208871571c85e89f097445216d1c7d60f",
+      "bytes": 512
+    },
+    {
+      "path": "dependency-manifest.json",
+      "sha256": "c5ba45659616416214719e46f18d180891cfe7d7aed2500420f91bbdf51529e7",
+      "bytes": 1637
+    },
+    {
+      "path": "hip-dq-volume-peak-wide-side.png",
+      "sha256": "b141178c875af66dc2150c5740284ee9339cfb4826de4070bf745c8110cbd004",
+      "bytes": 149814
+    },
+    {
+      "path": "hip-dq-volume-peak-oblique.png",
+      "sha256": "96c80d3d39591b9af4df3f2b37690d18663066a4772bec36964b70bfa31c7749",
+      "bytes": 168861
+    },
+    {
+      "path": "hip-dq-volume-entry-150-side.png",
+      "sha256": "cedcce49968bdeef31947f75253946bbec324634e4a43ca33a6f7604b560d39e",
+      "bytes": 152921
+    },
+    {
+      "path": "hip-dq-volume-entry-150-oblique.png",
+      "sha256": "d7a29a51d5129b8854a5e17361ee33fed8f28dfb4309b98565959db5843c2c9a",
+      "bytes": 173036
+    },
+    {
+      "path": "hip-dq-volume-entry-180-side.png",
+      "sha256": "1ebe7d4e2970d01c1cd12e22baf3d017260d8637a836450112963c4cc4cb1c9c",
+      "bytes": 149984
+    },
+    {
+      "path": "hip-dq-volume-entry-180-oblique.png",
+      "sha256": "519c8cd56286fd9896ad4192174acd84379eec4e3669d69508d48f16fa6aa3ac",
+      "bytes": 168552
+    },
+    {
+      "path": "hip-dq-volume-return-350-side.png",
+      "sha256": "9abfaabbce526039123e74a11a3eff5bb66e5b2dc408b5312de0559d871cc6b1",
+      "bytes": 152921
+    },
+    {
+      "path": "hip-dq-volume-return-350-oblique.png",
+      "sha256": "ac515032fa1d95b044c21cefa1692b74cb2f691f16470232137780050d9ca655",
+      "bytes": 173036
+    },
+    {
+      "path": "hip-dq-volume-return-320-side.png",
+      "sha256": "35c4184d7bb14b27dba4d0fb33df2827d240cce5c96f5096eab57bd72bd30f2a",
+      "bytes": 149984
+    },
+    {
+      "path": "hip-dq-volume-return-320-oblique.png",
+      "sha256": "dd4cc31fa80f3fc0713c9aa79aad013a0de163cc710ed9327d87b527c862ca53",
+      "bytes": 168552
+    },
+    {
+      "path": "hip-dq-volume-worst-shoulder-entry-side.png",
+      "sha256": "aed8e496fc79219d75458661eeac6aa909714c3683836076fe96dce05f681eea",
+      "bytes": 164561
+    },
+    {
+      "path": "hip-dq-volume-worst-shoulder-entry-oblique.png",
+      "sha256": "a1c64eabd49b667b4f075b4681a011ce7724517623b0bd265f277ee5571677a2",
+      "bytes": 186274
+    },
+    {
+      "path": "hip-dq-volume-worst-hip-entry-side.png",
+      "sha256": "44f2dd7ec4f3a211cd7b980efaf840b729c2baef3c691b8ac3aa94c41ebf9f3b",
+      "bytes": 152480
+    },
+    {
+      "path": "hip-dq-volume-worst-hip-entry-oblique.png",
+      "sha256": "306d699e79d178d568dc73529e678e56b2c5b16fca3a1fd6e714787f0f872262",
+      "bytes": 172071
+    },
+    {
+      "path": "primary-gpu-review.json",
+      "sha256": "0cd5612d303c72c25efa86601b936b6eacc408b3dcb9dce0641427ed521f80a3",
+      "bytes": 7099
+    }
+  ],
+  "excluded": [
+    "All unlisted intermediate/rejected blends and full witnesses",
+    "earlier baseline/clavicle trial images",
+    "logs",
+    "backups",
+    "caches",
+    "environments",
+    "stored runtime frame caches"
+  ],
+  "self_hash": "Manifest does not hash itself."
+}

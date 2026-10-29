@@ -1,0 +1,725 @@
+{
+  "source_sha256": "88c2da9b30955e3793637fe5f8a086e0ca7339d395cf20997d6b3fdcac817c1e",
+  "held_POSITION_sha256": "a50d65d6c27e7b18a9aeb962919f9ff196b4dae19ce295d3c6a4d7b26415d4f9",
+  "method": "Original outside wrist controls with chord-parameterized shape-preserving C1 spatial spline, traversed by arc length over full p. Incremental rotation-minimizing transport along the path, followed by smooth endpoint axial calibration, for elbow bend and both arm bone frames. Hand orientation follows the continuous forearm frame with smooth5 interpolation between the exact endpoint forearm-local hand quaternions; relaxed fingers inherit the final hand frame. Exact frozen source open/held matrices. Existing p-held corrective unchanged.",
+  "p_peak": 0.9995614150494292,
+  "transport_quadrature_nodes": 401,
+  "wrist_arc_length_m": {
+    "Left": 1.4469909064884812,
+    "Right": 1.4983082857145016
+  },
+  "endpoint_bend_twist_degrees": {
+    "Left": 166.56842894788477,
+    "Right": -136.51796547295143
+  },
+  "global_local_bone_steps": {
+    "global": {
+      "LeftArm": {
+        "maximum_step_degrees": 9.923164537171981,
+        "frame_pair": [
+          13,
+          14
+        ]
+      },
+      "LeftForeArm": {
+        "maximum_step_degrees": 19.00098350103211,
+        "frame_pair": [
+          18,
+          19
+        ]
+      },
+      "LeftHand": {
+        "maximum_step_degrees": 17.191486418142393,
+        "frame_pair": [
+          19,
+          20
+        ]
+      },
+      "RightArm": {
+        "maximum_step_degrees": 10.386993270435257,
+        "frame_pair": [
+          26,
+          27
+        ]
+      },
+      "RightForeArm": {
+        "maximum_step_degrees": 18.507233235006773,
+        "frame_pair": [
+          18,
+          19
+        ]
+      },
+      "RightHand": {
+        "maximum_step_degrees": 16.581037054000124,
+        "frame_pair": [
+          17,
+          18
+        ]
+      }
+    },
+    "local": {
+      "LeftArm": {
+        "maximum_step_degrees": 8.809988307602666,
+        "frame_pair": [
+          14,
+          15
+        ]
+      },
+      "LeftForeArm": {
+        "maximum_step_degrees": 18.714875276281138,
+        "frame_pair": [
+          18,
+          19
+        ]
+      },
+      "LeftHand": {
+        "maximum_step_degrees": 4.753316878101755,
+        "frame_pair": [
+          18,
+          19
+        ]
+      },
+      "RightArm": {
+        "maximum_step_degrees": 8.764628739465133,
+        "frame_pair": [
+          22,
+          23
+        ]
+      },
+      "RightForeArm": {
+        "maximum_step_degrees": 19.481869077861052,
+        "frame_pair": [
+          16,
+          17
+        ]
+      },
+      "RightHand": {
+        "maximum_step_degrees": 3.808767010385352,
+        "frame_pair": [
+          18,
+          19
+        ]
+      }
+    }
+  },
+  "maximum_joint_step_mm": {
+    "LeftArm": 11.389192581176758,
+    "LeftForeArm": 55.87887954711914,
+    "LeftHand": 60.60660171508789,
+    "RightArm": 11.918302536010742,
+    "RightForeArm": 57.2144775390625,
+    "RightHand": 62.75596618652344
+  },
+  "samples": [
+    {
+      "frame": 0.0,
+      "label": "open",
+      "morph_p": 0.0,
+      "clearance": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.3602331578731537,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.02544989250600338,
+          "first_crossing_source_faces": []
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.02536758966743946,
+          "first_crossing_source_faces": []
+        }
+      },
+      "issues": [],
+      "endpoint_all_bone_matrix_max_delta": 0.0
+    },
+    {
+      "frame": 18.0,
+      "label": "route_mid",
+      "morph_p": 0.4686047402353432,
+      "clearance": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.24887241423130035,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 39,
+          "minimum_vertex_surface_distance_m": 0.0010232122149318457,
+          "first_crossing_source_faces": [
+            [
+              [
+                8346,
+                8366,
+                8354
+              ],
+              [
+                8683,
+                8704,
+                8684
+              ]
+            ],
+            [
+              [
+                8346,
+                8366,
+                8354
+              ],
+              [
+                8683,
+                8705,
+                8704
+              ]
+            ],
+            [
+              [
+                8246,
+                8346,
+                8354
+              ],
+              [
+                8683,
+                8704,
+                8684
+              ]
+            ],
+            [
+              [
+                8246,
+                8354,
+                8252
+              ],
+              [
+                8683,
+                8704,
+                8684
+              ]
+            ],
+            [
+              [
+                8246,
+                8354,
+                8252
+              ],
+              [
+                8685,
+                8704,
+                8703
+              ]
+            ]
+          ]
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 4,
+          "minimum_vertex_surface_distance_m": 0.008345783688127995,
+          "first_crossing_source_faces": [
+            [
+              [
+                2891,
+                3924,
+                3930
+              ],
+              [
+                3412,
+                3457,
+                3458
+              ]
+            ],
+            [
+              [
+                2891,
+                3918,
+                3924
+              ],
+              [
+                3412,
+                3457,
+                3458
+              ]
+            ],
+            [
+              [
+                2891,
+                3918,
+                3924
+              ],
+              [
+                3411,
+                3457,
+                3412
+              ]
+            ],
+            [
+              [
+                2891,
+                2995,
+                3918
+              ],
+              [
+                3411,
+                3457,
+                3412
+              ]
+            ]
+          ]
+        }
+      },
+      "issues": [
+        "left_distal_arm_torso_head source-bound actual skin crossings 39",
+        "right_distal_arm_torso_head source-bound actual skin crossings 4"
+      ],
+      "endpoint_all_bone_matrix_max_delta": null
+    },
+    {
+      "frame": 27.99316987989392,
+      "label": "route_p085",
+      "morph_p": 0.8496272027920148,
+      "clearance": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.037214409559965134,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 36,
+          "minimum_vertex_surface_distance_m": 0.003391503356397152,
+          "first_crossing_source_faces": [
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8407,
+                8701,
+                8459
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8406,
+                8701,
+                8407
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8407,
+                8459,
+                8408
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8408,
+                8459,
+                8460
+              ]
+            ],
+            [
+              [
+                9215,
+                9226,
+                9225
+              ],
+              [
+                8410,
+                8424,
+                8423
+              ]
+            ]
+          ]
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 17,
+          "minimum_vertex_surface_distance_m": 0.0026212686207145452,
+          "first_crossing_source_faces": [
+            [
+              [
+                2891,
+                2995,
+                3918
+              ],
+              [
+                3412,
+                3426,
+                3425
+              ]
+            ],
+            [
+              [
+                2891,
+                2995,
+                3918
+              ],
+              [
+                3425,
+                3426,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                3918,
+                3924
+              ],
+              [
+                3425,
+                3426,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                3924,
+                3930
+              ],
+              [
+                3425,
+                3426,
+                3446
+              ]
+            ],
+            [
+              [
+                3930,
+                2993,
+                2994
+              ],
+              [
+                3425,
+                3426,
+                3446
+              ]
+            ]
+          ]
+        }
+      },
+      "issues": [
+        "left_distal_arm_torso_head source-bound actual skin crossings 36",
+        "right_distal_arm_torso_head source-bound actual skin crossings 17"
+      ],
+      "endpoint_all_bone_matrix_max_delta": null
+    },
+    {
+      "frame": 32.093489050318055,
+      "label": "route_p095",
+      "morph_p": 0.9495833442969577,
+      "clearance": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.026041118428111076,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 40,
+          "minimum_vertex_surface_distance_m": 0.0018137735314667225,
+          "first_crossing_source_faces": [
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8406,
+                8687,
+                8701
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8406,
+                8701,
+                8407
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8407,
+                8459,
+                8408
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8407,
+                8701,
+                8459
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8408,
+                8459,
+                8460
+              ]
+            ]
+          ]
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 21,
+          "minimum_vertex_surface_distance_m": 8.338194311363623e-05,
+          "first_crossing_source_faces": [
+            [
+              [
+                2891,
+                2995,
+                3918
+              ],
+              [
+                3425,
+                3446,
+                3447
+              ]
+            ],
+            [
+              [
+                2891,
+                3918,
+                3924
+              ],
+              [
+                3425,
+                3446,
+                3447
+              ]
+            ],
+            [
+              [
+                3930,
+                2993,
+                2994
+              ],
+              [
+                3414,
+                3459,
+                3460
+              ]
+            ],
+            [
+              [
+                3930,
+                2993,
+                2994
+              ],
+              [
+                3414,
+                3460,
+                3415
+              ]
+            ],
+            [
+              [
+                3930,
+                2993,
+                2994
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ]
+          ]
+        }
+      },
+      "issues": [
+        "left_distal_arm_torso_head source-bound actual skin crossings 40",
+        "right_distal_arm_torso_head source-bound actual skin crossings 21"
+      ],
+      "endpoint_all_bone_matrix_max_delta": null
+    },
+    {
+      "frame": 37.5,
+      "label": "held",
+      "morph_p": 1.0,
+      "clearance": {
+        "left_arm_right_arm": {
+          "exact_triangle_crossings": 0,
+          "minimum_vertex_surface_distance_m": 0.012590007856488228,
+          "first_crossing_source_faces": []
+        },
+        "left_distal_arm_torso_head": {
+          "exact_triangle_crossings": 40,
+          "minimum_vertex_surface_distance_m": 0.0022891105618327856,
+          "first_crossing_source_faces": [
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8406,
+                8687,
+                8701
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8408,
+                8459,
+                8460
+              ]
+            ],
+            [
+              [
+                8247,
+                8339,
+                9238
+              ],
+              [
+                8408,
+                8460,
+                8409
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8406,
+                8687,
+                8701
+              ]
+            ],
+            [
+              [
+                8339,
+                9244,
+                9238
+              ],
+              [
+                8406,
+                8701,
+                8407
+              ]
+            ]
+          ]
+        },
+        "right_distal_arm_torso_head": {
+          "exact_triangle_crossings": 15,
+          "minimum_vertex_surface_distance_m": 0.0017988100880756974,
+          "first_crossing_source_faces": [
+            [
+              [
+                2891,
+                3918,
+                3924
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                2995,
+                3918
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                3930,
+                2994
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ],
+            [
+              [
+                2891,
+                3930,
+                2994
+              ],
+              [
+                3196,
+                3446,
+                3198
+              ]
+            ],
+            [
+              [
+                2891,
+                3924,
+                3930
+              ],
+              [
+                3196,
+                3447,
+                3446
+              ]
+            ]
+          ]
+        }
+      },
+      "issues": [
+        "left_distal_arm_torso_head source-bound actual skin crossings 40",
+        "right_distal_arm_torso_head source-bound actual skin crossings 15"
+      ],
+      "endpoint_all_bone_matrix_max_delta": 0.0
+    }
+  ],
+  "scope": "Isolated one-route witness; primary visual/source acceptance pending, no full151 mesh QA/export.",
+  "hand_orientation": "Forearm-local endpoint quaternion interpolation with smooth5(p)"
+}

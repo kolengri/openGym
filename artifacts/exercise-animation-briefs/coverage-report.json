@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "catalogue_record_count": 6554,
+  "canonical_count": 5632,
+  "alias_count": 922,
+  "canonical_status_counts": {
+    "source_complete_for_storyboard": 1290,
+    "needs_review": 4342
+  },
+  "all_record_status_counts": {
+    "source_complete_for_storyboard": 1618,
+    "needs_review": 4936
+  },
+  "canonical_storyboard_readiness_counts": {
+    "proposal_ready_for_review": 5473,
+    "blocked_on_source_resolution": 159
+  },
+  "storyboard_blocker_counts": {
+    "initial_body_support_unresolved": 89,
+    "legs_feet_staging_unresolved": 69,
+    "unverified_apparatus_without_supported_base": 56,
+    "arms_hands_staging_unresolved": 28,
+    "resistance_or_apparatus_not_realized_in_steps": 21,
+    "movement_pattern_unspecified": 1
+  },
+  "authored_staging_field_status_counts": {
+    "source_cue_reuse": 11359,
+    "authored_scene_blocking": 5632,
+    "authored_from_source_posture": 4388,
+    "authored_from_source_context": 615,
+    "authored_functional_contact": 351,
+    "unresolved": 176,
+    "authored_from_named_pose": 3,
+    "authored_laterality_and_contacts": 2,
+    "authored_from_source_limb_cue": 2
+  },
+  "animation_ready_count": 0,
+  "readiness_definition": "source_complete_for_storyboard means all automatic cue checks passed and no listed source/inventory gap was detected. It is not biomechanical review, motion validation, or production animation approval.",
+  "review_reason_counts_canonical": {
+    "starting_legs_feet_missing": 1369,
+    "starting_arms_hands_missing": 1299,
+    "legs_feet_missing": 1217,
+    "arms_hands_missing": 954,
+    "starting_body_pose_missing": 795,
+    "prop_not_instruction_verified": 639,
+    "named_pose_requires_geometry": 245,
+    "inventory_unresolved": 92,
+    "equipment_not_mapped": 23,
+    "prop_text_conflict": 2,
+    "movement_pattern_unspecified": 1
+  },
+  "prop_adjudication_counts": {
+    "conflict": 2,
+    "equipment_metadata_supported": 1501,
+    "title_or_inference_unverified": 639,
+    "instruction_or_needs_supported": 3605,
+    "optional_or_alternative": 562,
+    "description_supported": 219
+  },
+  "first_five_ids": [
+    "5965",
+    "5915",
+    "5887",
+    "0001",
+    "9066"
+  ],
+  "selected_pilot_authoring_overrides": [
+    "5965"
+  ],
+  "source_corpus_sha256": "97646752a532d0f45fdca124919f378045d747d3feb045ff266c84084072c214",
+  "input_files": [
+    {
+      "path": "artifacts/exercise-props-inventory/exercise-coverage.json",
+      "sha256": "ab88cd332a8607ddbaa180ca084517f51ac5d614b4548a4dae09d282a925b9db"
+    },
+    {
+      "path": "artifacts/exercise-props-inventory/inventory.json",
+      "sha256": "da97a18e3be32b3bf58b11ee13f99890236b79a294a2e8aa98efa165f5fddd34"
+    },
+    {
+      "path": "artifacts/exercise-props-inventory/aliases.json",
+      "sha256": "ae9172d434b5b7d26e07dbe90cade9de01c0b5c313fefc7b1b4788021ee3ae77"
+    },
+    {
+      "path": "frontend/src/lib/exercise-muscle-map.json",
+      "sha256": "568e83b15b0a30d07843720a49389e206d0e1436711865f27eb63192ab580fb9"
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "errors": [],
+    "evidence_references_checked": 195685,
+    "unique_evidence_locations_checked": 75995,
+    "all_original_instructions_preserved": true,
+    "all_records_covered_uniquely": true,
+    "all_alias_targets_resolve": true,
+    "catalogue_media_opened": false
+  },
+  "limitations": [
+    "Source text is normalized and supplemented with labeled reversible staging proposals; neither is verification that the exercise text or proposed pose is anatomically correct or safe.",
+    "Heuristic cue and phase extraction can miss paraphrases or conflate position and movement. Original steps and complete original records are retained for review.",
+    "An inventory prop supported by a text mention still needs placement/contact review. Optional/alternative language can describe multiple scene choices.",
+    "The props inventory is not a verified ontology. Only a narrow standing/bench contradiction is automatically rejected; unrecognized contradictions can remain.",
+    "Absence of documented props does not establish prop-free execution; body weight is a resistance label.",
+    "Named poses do not supply exact geometry. Labeled posture-based staging proposals may supply initial hand/foot placements and a first side; no missing footfall sequence, apparatus-specific dimensions, numerical joint angles, activation curves or tempo are invented.",
+    "Aliases inherit motion and muscle cues from their canonical record; figure identity does not imply a separate movement or new anatomy.",
+    "Raw target and secondaryMuscles labels are preserved. Existing catalogue display maps are included separately, without synthesizing physiological activation measurements.",
+    "No licensed Gym Visual media was opened, copied, analyzed, or used as AI input. Only repository text/JSON sources were read."
+  ]
+}

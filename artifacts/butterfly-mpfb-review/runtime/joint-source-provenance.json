@@ -1,0 +1,19 @@
+{
+  "source_packet_sha256": "41ec378cdfc7dcf1ab99156b983dc2ca173970dc6a17f0d4e74877251a1dbed2",
+  "joint_only_sha256": "c0c3918dcc747bbb0841c69db71b1826b5e682bc4d6d805627b7e37d6455b539",
+  "arrays_byte_equal": true,
+  "included_arrays": [
+    "times",
+    "bone_names",
+    "bone_world_matrices",
+    "knee_circle_radians"
+  ],
+  "excluded_vertex_sample_arrays": [
+    "source_ids",
+    "native_positions",
+    "padded_native_positions",
+    "native_fixed_triangles"
+  ],
+  "vertices_in_delivery": false,
+  "purpose": "Joint animation authoring data and timing only; native per-vertex samples remain local QA."
+}

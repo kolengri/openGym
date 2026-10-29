@@ -1,0 +1,842 @@
+{
+  "scope": "Final ten-action batch 007 acceptance check; distinct from the earlier eight-action diagnostic subset.",
+  "source_revision": "cbf4375ba2ff1e6a051f25b37198f593e69bf6b1",
+  "exercise_ids": [
+    "4437",
+    "10058",
+    "4436",
+    "4702",
+    "4715",
+    "1368",
+    "2761",
+    "2762",
+    "3294",
+    "3905"
+  ],
+  "build_manifest_sha256": "7f6bb9f0b1050a02f7ade5de81a0748a076c71d768d22016cc861eeca7838a03",
+  "viewer_sha256": "13210020d4c98c9265b508355cc707cc60c243240fc2f909a29bdbc9323fa391",
+  "commands": [
+    {
+      "command": "node artifacts/exercise-batches/batch-007/build.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-007/logs/build-initial.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/fit-cameras.mjs 007",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-007/logs/fit-cameras-final10.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/build.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-007/logs/build-final10-fitted.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/verify.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-007/logs/verify-final10.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/capture-peaks.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-007/logs/capture-peaks-final10.log"
+    }
+  ],
+  "input_invariants": {
+    "source_model_clip_reference_unchanged": true,
+    "cameras_changed_only_by_width": true,
+    "camera_other_fields_include_angles_targets_labels_and_frame_source_ids": true,
+    "records": {
+      "1368": {
+        "before": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "camera_without_widths_sha256": "749a0e7941b493e3887dbeaf69afcdef92f10e5c310e74112670d3c86fa94e02",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "2583869a0b373dd1da90580a837d0d2dd679b169f70eeed454c5fca4d5b74096",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "references": {
+            "dq-reference.json.gz": "2ac160d76da1ebeb67771579f7e2e0c7daa708ee03d7bef5e959ff03ffb57924",
+            "runtime-surface-reference.json": "710021d2cf35f4833cfcd06f24c1c0fb3ebd35073c95a75be414457294c18752"
+          }
+        },
+        "after": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "camera_without_widths_sha256": "749a0e7941b493e3887dbeaf69afcdef92f10e5c310e74112670d3c86fa94e02",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "2583869a0b373dd1da90580a837d0d2dd679b169f70eeed454c5fca4d5b74096",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "references": {
+            "dq-reference.json.gz": "2ac160d76da1ebeb67771579f7e2e0c7daa708ee03d7bef5e959ff03ffb57924",
+            "runtime-surface-reference.json": "710021d2cf35f4833cfcd06f24c1c0fb3ebd35073c95a75be414457294c18752"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "2761": {
+        "before": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "camera_without_widths_sha256": "749a0e7941b493e3887dbeaf69afcdef92f10e5c310e74112670d3c86fa94e02",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "5342831054c4c1bd16809661d655e83a35eeb44b65ea403353625077392ce6a7",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "references": {
+            "dq-reference.json.gz": "b124e8586f03e3900679d79905957e6d87cc2fc68bb1b82cc452114da7d604ca",
+            "runtime-surface-reference.json": "2d6243d1b85dbe20e65c5864ddd656edb7f8b299e371ca1b8a9573e89f406895"
+          }
+        },
+        "after": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "camera_without_widths_sha256": "749a0e7941b493e3887dbeaf69afcdef92f10e5c310e74112670d3c86fa94e02",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "5342831054c4c1bd16809661d655e83a35eeb44b65ea403353625077392ce6a7",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "references": {
+            "dq-reference.json.gz": "b124e8586f03e3900679d79905957e6d87cc2fc68bb1b82cc452114da7d604ca",
+            "runtime-surface-reference.json": "2d6243d1b85dbe20e65c5864ddd656edb7f8b299e371ca1b8a9573e89f406895"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "2762": {
+        "before": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "camera_without_widths_sha256": "749a0e7941b493e3887dbeaf69afcdef92f10e5c310e74112670d3c86fa94e02",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "4653ec180562fac0b65e8083b531687a441053da32d2a84109b0b71b77afabf5",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "references": {
+            "dq-reference.json.gz": "64af0aa1d8e0f79a8f4331ba3f2df64fdb2780aac38d59b18be4c8ba9152fc5e",
+            "runtime-surface-reference.json": "5c0ac1855d67d612159797fb9a3c1d10ca5a5c5e519ec857dcc5cbbd08dadeb1"
+          }
+        },
+        "after": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "camera_without_widths_sha256": "749a0e7941b493e3887dbeaf69afcdef92f10e5c310e74112670d3c86fa94e02",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "4653ec180562fac0b65e8083b531687a441053da32d2a84109b0b71b77afabf5",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "references": {
+            "dq-reference.json.gz": "64af0aa1d8e0f79a8f4331ba3f2df64fdb2780aac38d59b18be4c8ba9152fc5e",
+            "runtime-surface-reference.json": "5c0ac1855d67d612159797fb9a3c1d10ca5a5c5e519ec857dcc5cbbd08dadeb1"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "3294": {
+        "before": {
+          "camera_sha256": "88d79918b23e8994585ceb31be3f37ef4ba7a178a528e008931db0be67608b0f",
+          "camera_without_widths_sha256": "e16bb43e0df205c5fd63531ce2d251706e1a0e73673e46432cc120c08a57df19",
+          "widths": [
+            2.55,
+            2.55
+          ],
+          "clip_sha256": "5ec2ee1ede1d61c28016e4d03fb984b1e3d749fce7274ca888f6ae6fe5e144d6",
+          "source_sha256": "e8225427a8c96ea56caecd5efc1bdd988f23b2469c72e9972274f7cf4e657102",
+          "model_sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0",
+          "references": {
+            "dq-reference.json.gz": "62291e879c7dbe8ecc1aef0698f44ffc7429adad600bf0ed07866d3b66047d13",
+            "normal-reference.json.gz": "862433132dfeb1b19194273ee0c820d7a5138121bd960b6366ad2b1feec024a8",
+            "runtime-surface-reference.json": "3288952f1a8b4064a8810065df05ff5e7a15206cec51ec058597faa6d01a8fd8"
+          }
+        },
+        "after": {
+          "camera_sha256": "88d79918b23e8994585ceb31be3f37ef4ba7a178a528e008931db0be67608b0f",
+          "camera_without_widths_sha256": "e16bb43e0df205c5fd63531ce2d251706e1a0e73673e46432cc120c08a57df19",
+          "widths": [
+            2.55,
+            2.55
+          ],
+          "clip_sha256": "5ec2ee1ede1d61c28016e4d03fb984b1e3d749fce7274ca888f6ae6fe5e144d6",
+          "source_sha256": "e8225427a8c96ea56caecd5efc1bdd988f23b2469c72e9972274f7cf4e657102",
+          "model_sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0",
+          "references": {
+            "dq-reference.json.gz": "62291e879c7dbe8ecc1aef0698f44ffc7429adad600bf0ed07866d3b66047d13",
+            "normal-reference.json.gz": "862433132dfeb1b19194273ee0c820d7a5138121bd960b6366ad2b1feec024a8",
+            "runtime-surface-reference.json": "3288952f1a8b4064a8810065df05ff5e7a15206cec51ec058597faa6d01a8fd8"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "3905": {
+        "before": {
+          "camera_sha256": "2fc9063ec777269e533cae7d84e00b5e59bd771da9aa9a09da4a1daeb6e5eb99",
+          "camera_without_widths_sha256": "645d41931efb20a41a3a68f54b645536e370aa3126607120e2e42b88fe1469bb",
+          "widths": [
+            2.4,
+            2.4
+          ],
+          "clip_sha256": "c9434d12fea20628808e9aa0382bead1594040de84ebdf329645f30f1258fc74",
+          "source_sha256": "90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34",
+          "model_sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+          "references": {
+            "dq-reference.json.gz": "c13fd063b4da4409abf689f0d2be6c91e93d1a752fe3487311524eb6ac84a018",
+            "normal-reference.json.gz": "dc9936296cf9fefb15945b12258bc3144191ea9e957da813c8a99256b05fa1b5",
+            "runtime-surface-reference.json": "a7620243c6b2a208cb2f8ebb161bde0f77c3c2a9d24cfaca95837e749a682a6a"
+          }
+        },
+        "after": {
+          "camera_sha256": "49fb7aed9101b9359ddcea69fabd17a5737635a1d1c84abd49f02bf6518de3e8",
+          "camera_without_widths_sha256": "645d41931efb20a41a3a68f54b645536e370aa3126607120e2e42b88fe1469bb",
+          "widths": [
+            3.75,
+            3.69
+          ],
+          "clip_sha256": "c9434d12fea20628808e9aa0382bead1594040de84ebdf329645f30f1258fc74",
+          "source_sha256": "90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34",
+          "model_sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+          "references": {
+            "dq-reference.json.gz": "c13fd063b4da4409abf689f0d2be6c91e93d1a752fe3487311524eb6ac84a018",
+            "normal-reference.json.gz": "dc9936296cf9fefb15945b12258bc3144191ea9e957da813c8a99256b05fa1b5",
+            "runtime-surface-reference.json": "a7620243c6b2a208cb2f8ebb161bde0f77c3c2a9d24cfaca95837e749a682a6a"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "4436": {
+        "before": {
+          "camera_sha256": "ff8ce84fe80c812e65743a69e14c08cab6b89caa4bc6e8d0b1d0e559a70b87f2",
+          "camera_without_widths_sha256": "3cca596f9fe5d5ae4973e9c7eadb667ede659740ff42f05dc087dc9db1a3a0c6",
+          "widths": [
+            3.82,
+            3.76
+          ],
+          "clip_sha256": "dae9eeb3400f41f221a3a98d719432ada1632cd9d60f022cca209606f16eca00",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+          "references": {
+            "dq-reference.json.gz": "3ce6bbb5c31fbe8812503ed752236c9629bd40236dbc888ee6d0bc828f21e0d6",
+            "normal-reference.json.gz": "4c8e055c1738bc5338ed4895c6ea1e4c0fd2170659a2b0d6cff8f1d3a9b1e49c",
+            "runtime-surface-reference.json": "f6016a6b74bdd09f89bf68bd8a461bcf6689b5b29876dbf24525db3a6fa4d8ca"
+          }
+        },
+        "after": {
+          "camera_sha256": "ff8ce84fe80c812e65743a69e14c08cab6b89caa4bc6e8d0b1d0e559a70b87f2",
+          "camera_without_widths_sha256": "3cca596f9fe5d5ae4973e9c7eadb667ede659740ff42f05dc087dc9db1a3a0c6",
+          "widths": [
+            3.82,
+            3.76
+          ],
+          "clip_sha256": "dae9eeb3400f41f221a3a98d719432ada1632cd9d60f022cca209606f16eca00",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+          "references": {
+            "dq-reference.json.gz": "3ce6bbb5c31fbe8812503ed752236c9629bd40236dbc888ee6d0bc828f21e0d6",
+            "normal-reference.json.gz": "4c8e055c1738bc5338ed4895c6ea1e4c0fd2170659a2b0d6cff8f1d3a9b1e49c",
+            "runtime-surface-reference.json": "f6016a6b74bdd09f89bf68bd8a461bcf6689b5b29876dbf24525db3a6fa4d8ca"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "4437": {
+        "before": {
+          "camera_sha256": "0abc2e6b9c0b50f501f61f84bb21030b87e12977348680d045f02f6add0a962a",
+          "camera_without_widths_sha256": "3cca596f9fe5d5ae4973e9c7eadb667ede659740ff42f05dc087dc9db1a3a0c6",
+          "widths": [
+            3.75,
+            3.71
+          ],
+          "clip_sha256": "ba4adf88451dae9d8ec5e479be073cfbd082ce59c87859f984f8add28898de49",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+          "references": {
+            "dq-reference.json.gz": "f38071d9971f481e9787ae379cad850067757544a0d1e547256d2b6aa9528b17",
+            "normal-reference.json.gz": "a51842165b9749f8334e580036eb626bff243c5d84a0c6b39c008be0510bbf60",
+            "runtime-surface-reference.json": "93940723b2df041fdc3ef6118587465bb1201e275614e7531a0f3adf13362061"
+          }
+        },
+        "after": {
+          "camera_sha256": "0abc2e6b9c0b50f501f61f84bb21030b87e12977348680d045f02f6add0a962a",
+          "camera_without_widths_sha256": "3cca596f9fe5d5ae4973e9c7eadb667ede659740ff42f05dc087dc9db1a3a0c6",
+          "widths": [
+            3.75,
+            3.71
+          ],
+          "clip_sha256": "ba4adf88451dae9d8ec5e479be073cfbd082ce59c87859f984f8add28898de49",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+          "references": {
+            "dq-reference.json.gz": "f38071d9971f481e9787ae379cad850067757544a0d1e547256d2b6aa9528b17",
+            "normal-reference.json.gz": "a51842165b9749f8334e580036eb626bff243c5d84a0c6b39c008be0510bbf60",
+            "runtime-surface-reference.json": "93940723b2df041fdc3ef6118587465bb1201e275614e7531a0f3adf13362061"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "4702": {
+        "before": {
+          "camera_sha256": "3d49f947505f341defb27fd0bca8e3a135b5d56b90ada973674c630b57c3a41a",
+          "camera_without_widths_sha256": "35d5ba5e740760eb04d66ff9760f3b223be3b8dfc454f4826d7dd9d79ba42532",
+          "widths": [
+            2.81,
+            2.82
+          ],
+          "clip_sha256": "7a96b18649cac1b3a6ce5a01431c784bae29627097dc59d081e4c4a28a039220",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0",
+          "references": {
+            "dq-reference.json.gz": "9129c092d92bebe3f993b16bc62707dc59e066f4239b2bb05c328e4db0140576",
+            "normal-reference.json.gz": "2fede1766ff8ee43d5cb6c9b68975b3ba333ce5f82cc23a94ebe6605fd14fadd",
+            "runtime-surface-reference.json": "4dfafbe9a0422fa54d692a1aaea0622573a2829b5391e2a14637e7dfc18dc793"
+          }
+        },
+        "after": {
+          "camera_sha256": "3d49f947505f341defb27fd0bca8e3a135b5d56b90ada973674c630b57c3a41a",
+          "camera_without_widths_sha256": "35d5ba5e740760eb04d66ff9760f3b223be3b8dfc454f4826d7dd9d79ba42532",
+          "widths": [
+            2.81,
+            2.82
+          ],
+          "clip_sha256": "7a96b18649cac1b3a6ce5a01431c784bae29627097dc59d081e4c4a28a039220",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0",
+          "references": {
+            "dq-reference.json.gz": "9129c092d92bebe3f993b16bc62707dc59e066f4239b2bb05c328e4db0140576",
+            "normal-reference.json.gz": "2fede1766ff8ee43d5cb6c9b68975b3ba333ce5f82cc23a94ebe6605fd14fadd",
+            "runtime-surface-reference.json": "4dfafbe9a0422fa54d692a1aaea0622573a2829b5391e2a14637e7dfc18dc793"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "4715": {
+        "before": {
+          "camera_sha256": "3d49f947505f341defb27fd0bca8e3a135b5d56b90ada973674c630b57c3a41a",
+          "camera_without_widths_sha256": "35d5ba5e740760eb04d66ff9760f3b223be3b8dfc454f4826d7dd9d79ba42532",
+          "widths": [
+            2.81,
+            2.82
+          ],
+          "clip_sha256": "40d6fe1bb496e5db2730f05947a0fd01c9385dda0542fc3612c13ddce8af5f6b",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0",
+          "references": {
+            "dq-reference.json.gz": "7dbe5e707e42ae50283aed035020857038cfd90a8511c0e434978920e9e6da59",
+            "normal-reference.json.gz": "78b5d657d8e7dc27d1a9df89ac08d8df7d977a6a1f7572283d7e5069deb2bdd2",
+            "runtime-surface-reference.json": "283bb174f7c4a5bba1be187df1acb3a38293b9d31178c91f741a8deb093efe16"
+          }
+        },
+        "after": {
+          "camera_sha256": "3d49f947505f341defb27fd0bca8e3a135b5d56b90ada973674c630b57c3a41a",
+          "camera_without_widths_sha256": "35d5ba5e740760eb04d66ff9760f3b223be3b8dfc454f4826d7dd9d79ba42532",
+          "widths": [
+            2.81,
+            2.82
+          ],
+          "clip_sha256": "40d6fe1bb496e5db2730f05947a0fd01c9385dda0542fc3612c13ddce8af5f6b",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0",
+          "references": {
+            "dq-reference.json.gz": "7dbe5e707e42ae50283aed035020857038cfd90a8511c0e434978920e9e6da59",
+            "normal-reference.json.gz": "78b5d657d8e7dc27d1a9df89ac08d8df7d977a6a1f7572283d7e5069deb2bdd2",
+            "runtime-surface-reference.json": "283bb174f7c4a5bba1be187df1acb3a38293b9d31178c91f741a8deb093efe16"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      },
+      "10058": {
+        "before": {
+          "camera_sha256": "eada118456a2b912a9256568242d61176e15f2c230800b33bbbe05a853d4195d",
+          "camera_without_widths_sha256": "f4de0977285d46ff01b357e4d1482966cd76094bcee2988e50ff7182c4f88548",
+          "widths": [
+            1.9,
+            1.9
+          ],
+          "clip_sha256": "c494645a87a120ad9318a44c4109938b682abd5aa259fa33d4e41bea542c717c",
+          "source_sha256": "7bde624e1e24d6b94c9f3724cdbb4333d56aad51a2a86eac4f3e573e2e4a4d76",
+          "model_sha256": "d306f59c96bbdcf9208bf32027b1043cf3462ed0054e57ed2ed23ebab6e4e8a4",
+          "references": {
+            "linear-vertex-reference.json.gz": "c42ca10638387406922819c8ab80fd446f933a1d92a363596eb4f9752d220e6e",
+            "runtime-surface-reference.json": "114897005117ee375f6985ea3f085bf9a93fcb1f47aaa287d424d2e6ba4c40fe",
+            "topology-reference.json.gz": "9423ce8587725f9c844d84e633e89131d191f05adafd2d96767c4af255b8c628"
+          }
+        },
+        "after": {
+          "camera_sha256": "dfb4f23c2d2d08740c12c84d958516121ca27bb952b83e7b632c34033b501f3e",
+          "camera_without_widths_sha256": "f4de0977285d46ff01b357e4d1482966cd76094bcee2988e50ff7182c4f88548",
+          "widths": [
+            2.54,
+            2.87
+          ],
+          "clip_sha256": "c494645a87a120ad9318a44c4109938b682abd5aa259fa33d4e41bea542c717c",
+          "source_sha256": "7bde624e1e24d6b94c9f3724cdbb4333d56aad51a2a86eac4f3e573e2e4a4d76",
+          "model_sha256": "d306f59c96bbdcf9208bf32027b1043cf3462ed0054e57ed2ed23ebab6e4e8a4",
+          "references": {
+            "linear-vertex-reference.json.gz": "c42ca10638387406922819c8ab80fd446f933a1d92a363596eb4f9752d220e6e",
+            "runtime-surface-reference.json": "114897005117ee375f6985ea3f085bf9a93fcb1f47aaa287d424d2e6ba4c40fe",
+            "topology-reference.json.gz": "9423ce8587725f9c844d84e633e89131d191f05adafd2d96767c4af255b8c628"
+          }
+        },
+        "checks": {
+          "camera_only_widths": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "references_unchanged": true
+        }
+      }
+    }
+  },
+  "verification": {
+    "result": "passed",
+    "selected_action_count": 10,
+    "exercises": [
+      {
+        "id": "4437",
+        "duration": 5,
+        "displayMode": "load",
+        "sourceSurfacePhases": 14,
+        "warmPixels": 2185,
+        "cyanPixels": 0
+      },
+      {
+        "id": "10058",
+        "duration": 8,
+        "displayMode": "load",
+        "sourceSurfacePhases": 5,
+        "warmPixels": 3348,
+        "cyanPixels": 0
+      },
+      {
+        "id": "4436",
+        "duration": 5,
+        "displayMode": "load",
+        "sourceSurfacePhases": 13,
+        "warmPixels": 4137,
+        "cyanPixels": 0
+      },
+      {
+        "id": "4702",
+        "duration": 5,
+        "displayMode": "load",
+        "sourceSurfacePhases": 11,
+        "warmPixels": 2740,
+        "cyanPixels": 0
+      },
+      {
+        "id": "4715",
+        "duration": 5,
+        "displayMode": "load",
+        "sourceSurfacePhases": 11,
+        "warmPixels": 2740,
+        "cyanPixels": 0
+      },
+      {
+        "id": "1368",
+        "duration": 12,
+        "displayMode": "load",
+        "sourceSurfacePhases": 18,
+        "warmPixels": 1286,
+        "cyanPixels": 0
+      },
+      {
+        "id": "2761",
+        "duration": 5,
+        "displayMode": "load",
+        "sourceSurfacePhases": 11,
+        "warmPixels": 1925,
+        "cyanPixels": 0
+      },
+      {
+        "id": "2762",
+        "duration": 5,
+        "displayMode": "load",
+        "sourceSurfacePhases": 11,
+        "warmPixels": 1170,
+        "cyanPixels": 0
+      },
+      {
+        "id": "3294",
+        "duration": 5,
+        "displayMode": "load",
+        "sourceSurfacePhases": 11,
+        "warmPixels": 2331,
+        "cyanPixels": 0
+      },
+      {
+        "id": "3905",
+        "duration": 8,
+        "displayMode": "load",
+        "sourceSurfacePhases": 12,
+        "warmPixels": 1133,
+        "cyanPixels": 0
+      }
+    ],
+    "fields": {
+      "colorTextures": 0,
+      "shadows": false,
+      "ambientOcclusion": false,
+      "video": "none",
+      "mediaRequests": []
+    },
+    "touch": {
+      "orbit": true,
+      "pinch": true,
+      "reset": true,
+      "seekEndResume": true,
+      "latestSelectionWins": true,
+      "noOverflowWidths": [
+        320,
+        768,
+        1024,
+        1440
+      ]
+    },
+    "errors": [],
+    "maxima": {
+      "jointErrorMeters": 0.00004127068117430342,
+      "surfaceParityErrorMeters": 8.639654028863575e-7,
+      "allVertexDQErrorMeters": 0.00004882280619751085
+    }
+  },
+  "capture": {
+    "poses": 49,
+    "screenshots": 98,
+    "posesByExercise": {
+      "1368": [
+        {
+          "id": "1368",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "1368",
+          "label": "left-lateral",
+          "time": 1.0625
+        },
+        {
+          "id": "1368",
+          "label": "left-dorsal-ccw",
+          "time": 1.625
+        },
+        {
+          "id": "1368",
+          "label": "left-dorsal-cw",
+          "time": 4.25
+        },
+        {
+          "id": "1368",
+          "label": "right-dorsal-ccw",
+          "time": 7.625
+        },
+        {
+          "id": "1368",
+          "label": "right-dorsal-cw",
+          "time": 10.25
+        },
+        {
+          "id": "1368",
+          "label": "return",
+          "time": 11.8
+        }
+      ],
+      "2761": [
+        {
+          "id": "2761",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "2761",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "2761",
+          "label": "right",
+          "time": 3.75
+        },
+        {
+          "id": "2761",
+          "label": "return",
+          "time": 4.8
+        }
+      ],
+      "2762": [
+        {
+          "id": "2762",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "2762",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "2762",
+          "label": "right",
+          "time": 3.75
+        },
+        {
+          "id": "2762",
+          "label": "return",
+          "time": 4.8
+        }
+      ],
+      "3294": [
+        {
+          "id": "3294",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "3294",
+          "label": "right-load",
+          "time": 1
+        },
+        {
+          "id": "3294",
+          "label": "left-load",
+          "time": 3.5
+        },
+        {
+          "id": "3294",
+          "label": "return",
+          "time": 4.8
+        }
+      ],
+      "3905": [
+        {
+          "id": "3905",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "3905",
+          "label": "forward-large",
+          "time": 2.5
+        },
+        {
+          "id": "3905",
+          "label": "forward-upper",
+          "time": 3.3333333333333335
+        },
+        {
+          "id": "3905",
+          "label": "reversal",
+          "time": 4
+        },
+        {
+          "id": "3905",
+          "label": "reverse-large",
+          "time": 5.5
+        },
+        {
+          "id": "3905",
+          "label": "return",
+          "time": 7.95
+        }
+      ],
+      "4436": [
+        {
+          "id": "4436",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "4436",
+          "label": "step-transition",
+          "time": 0.3333333333333333
+        },
+        {
+          "id": "4436",
+          "label": "right-step",
+          "time": 0.6
+        },
+        {
+          "id": "4436",
+          "label": "left-step",
+          "time": 1.8333333333333333
+        },
+        {
+          "id": "4436",
+          "label": "return",
+          "time": 4.933333333333334
+        }
+      ],
+      "4437": [
+        {
+          "id": "4437",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "4437",
+          "label": "left-curl-right-punch",
+          "time": 0.3333333333333333
+        },
+        {
+          "id": "4437",
+          "label": "retraction",
+          "time": 0.7666666666666667
+        },
+        {
+          "id": "4437",
+          "label": "right-curl-left-punch",
+          "time": 1.1666666666666667
+        },
+        {
+          "id": "4437",
+          "label": "return",
+          "time": 4.933333333333334
+        }
+      ],
+      "4702": [
+        {
+          "id": "4702",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "4702",
+          "label": "right-load",
+          "time": 1
+        },
+        {
+          "id": "4702",
+          "label": "left-load",
+          "time": 3.5
+        },
+        {
+          "id": "4702",
+          "label": "return",
+          "time": 4.8
+        }
+      ],
+      "4715": [
+        {
+          "id": "4715",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "4715",
+          "label": "right-load",
+          "time": 1
+        },
+        {
+          "id": "4715",
+          "label": "left-load",
+          "time": 3.5
+        },
+        {
+          "id": "4715",
+          "label": "return",
+          "time": 4.8
+        }
+      ],
+      "10058": [
+        {
+          "id": "10058",
+          "label": "start",
+          "time": 0
+        },
+        {
+          "id": "10058",
+          "label": "first-motion",
+          "time": 0.03333333333333333
+        },
+        {
+          "id": "10058",
+          "label": "left-half-kneel",
+          "time": 1.6
+        },
+        {
+          "id": "10058",
+          "label": "hip-transition",
+          "time": 5.033333333333333
+        },
+        {
+          "id": "10058",
+          "label": "right-half-kneel",
+          "time": 5.6
+        },
+        {
+          "id": "10058",
+          "label": "return",
+          "time": 7.9
+        }
+      ]
+    },
+    "manifest": "artifacts/exercise-batches/batch-007/capture-peaks.json",
+    "screenshotPattern": "artifacts/exercise-batches/batch-007/{neutral,zones}-<exercise>-<pose>.png"
+  },
+  "eight_action_diagnostic": "Historical evidence only; this receipt covers the final ten-action build."
+}

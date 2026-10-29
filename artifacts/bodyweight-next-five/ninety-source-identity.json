@@ -1,0 +1,108 @@
+{
+  "source": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-five/bodyweight-five.blend",
+  "source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "output": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-next-five/repair-90/full-body-v2/source.blend",
+  "output_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
+  "vertices": 10582,
+  "polygons": 10590,
+  "triangles": 21160,
+  "bones": 51,
+  "binding_and_rest_geometry_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "original_binding_rest_uv_source_index_unchanged": true,
+  "helpers": false,
+  "morphs": true,
+  "morph_count": 4,
+  "correctives": [
+    {
+      "name": "Sit90_10565_Upright",
+      "id": "10565",
+      "seconds": 0,
+      "method": "Exact original cage CorrectiveSmooth target, complete pelvis/upper-thigh/shoulder/elbow neighborhoods with feathered margins. No Multires or singular inverse LBS. Runtime non-armature modifiers remain disabled.",
+      "affected_vertices": 1885,
+      "max_offset_m": 0.05225064978003502,
+      "p95_offset_m": 0.018848473206162453,
+      "inverse_DQ_error_max_m": 2.5284578325873637e-07,
+      "rest_basis_weights_uv_source_ids_unchanged": true,
+      "normal_export": "Matching standard glTF POSITION and NORMAL morph targets."
+    },
+    {
+      "name": "Sit90_10565_Hinge",
+      "id": "10565",
+      "seconds": 2.5,
+      "method": "Exact original cage CorrectiveSmooth target, complete pelvis/upper-thigh/shoulder/elbow neighborhoods with feathered margins. No Multires or singular inverse LBS. Runtime non-armature modifiers remain disabled.",
+      "affected_vertices": 1885,
+      "max_offset_m": 0.05989902839064598,
+      "p95_offset_m": 0.02163364551961422,
+      "inverse_DQ_error_max_m": 2.341717172323992e-07,
+      "rest_basis_weights_uv_source_ids_unchanged": true,
+      "normal_export": "Matching standard glTF POSITION and NORMAL morph targets."
+    },
+    {
+      "name": "Sit90_6560_Upright",
+      "id": "6560",
+      "seconds": 0,
+      "method": "Exact original cage CorrectiveSmooth target, complete pelvis/upper-thigh/shoulder/elbow neighborhoods with feathered margins. No Multires or singular inverse LBS. Runtime non-armature modifiers remain disabled.",
+      "affected_vertices": 1885,
+      "max_offset_m": 0.04649415239691734,
+      "p95_offset_m": 0.01900751143693924,
+      "inverse_DQ_error_max_m": 2.8246196660242734e-07,
+      "rest_basis_weights_uv_source_ids_unchanged": true,
+      "normal_export": "Matching standard glTF POSITION and NORMAL morph targets."
+    },
+    {
+      "name": "Sit90_6560_Hinge",
+      "id": "6560",
+      "seconds": 2.5,
+      "method": "Exact original cage CorrectiveSmooth target, complete pelvis/upper-thigh/shoulder/elbow neighborhoods with feathered margins. No Multires or singular inverse LBS. Runtime non-armature modifiers remain disabled.",
+      "affected_vertices": 1887,
+      "max_offset_m": 0.05989902839064598,
+      "p95_offset_m": 0.02137436345219612,
+      "inverse_DQ_error_max_m": 2.1900144899933143e-07,
+      "rest_basis_weights_uv_source_ids_unchanged": true,
+      "normal_export": "Matching standard glTF POSITION and NORMAL morph targets."
+    }
+  ],
+  "skinning": "dualQuaternion",
+  "modifier_policy": "Only PreserveVolume Armature enabled. Four baked local original-cage targets active by clip; no source Smooth/Multires at runtime.",
+  "actions": [
+    "Exercise_10565",
+    "Exercise_6560"
+  ],
+  "duration_seconds": 5,
+  "preview_hold_seconds": 1,
+  "source_workout_hold_seconds": [
+    20,
+    30
+  ],
+  "original_three_asset_immutable": {
+    "blend_sha256": "fb85a7c06814982d20211332fee958e71084660326d1b07ffec35d29cc47f109",
+    "glb_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37"
+  },
+  "export": {
+    "status": "native_source_and_ThreeJS_CPU_DQ_morph_parity_passed_actual_GPU_review_pending",
+    "source": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-next-five/repair-90/full-body-v2/source.blend",
+    "source_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
+    "output": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/bodyweight-next-five/repair-90/full-body-v2/motion.glb",
+    "sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+    "bytes": 1305964,
+    "meshes": 1,
+    "skins": 1,
+    "bones": 51,
+    "triangles": 21160,
+    "materials": 1,
+    "color_textures": 0,
+    "source_index": "_SOURCE_INDEX",
+    "source_vertices": 10582,
+    "animations": [
+      "Exercise_10565",
+      "Exercise_6560"
+    ],
+    "morph_position_targets": 4,
+    "morph_normal_targets": 4,
+    "skinning": "dualQuaternion",
+    "generic_LBS_quality_approved": false,
+    "modifiers": "Only PreserveVolume Armature enabled. Four baked local original-cage targets active by clip; no source Smooth/Multires at runtime.",
+    "export_adapter": "Temporary muted KEY NLA tracks expose both existing KEY action slots to Blender5.2 ACTIONS exporter. Frozen source is not resaved or modified."
+  },
+  "status": "versioned_source_and_CPU_parity_passed_primary_GPU_appearance_acceptance_pending"
+}

@@ -1,0 +1,101 @@
+{
+  "read_only": true,
+  "dependencies": [
+    {
+      "path": "artifacts/exercise-batches/batch-009/contexts/1843.json",
+      "bytes": 60982,
+      "sha256": "ea3abd418a80c6e69647b8ebb6e822d4b67b5695d46d4b677961ad2cb5d91cc7"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/source-resolutions.json",
+      "bytes": 3666,
+      "sha256": "ec1d33776a323e559a6f52dc8527ba99388841dad6bc971f162c68491dea2319"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/asset-interface.json",
+      "bytes": 3714,
+      "sha256": "acb7430e0b2aa17fbf665f2bb3253064b8302d2adad30a0580f683e04940e396"
+    },
+    {
+      "path": "catalogue/exercises/1843.json",
+      "bytes": 704,
+      "sha256": "fb8cbb38c5e44bfdeac7344c826942d2edac13a5840941ac22f39290249b3c6f"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/1368/source.blend",
+      "bytes": 14897509,
+      "sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/assets/1368/motion.glb",
+      "bytes": 1015348,
+      "sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/ankle-family/pose-contract.json",
+      "bytes": 32288,
+      "sha256": "81adeb23a1cd643703474e8fa993b46999960b3c0b5a1f1a8a416c1d2d4a9977"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/ankle-family/binding-receipt.json",
+      "bytes": 1300698,
+      "sha256": "368844dcdc8e770b173ebacc446e106d6c0ee51cf9520efbe3186605cdbc798b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/ankle-family/source-verification.json",
+      "bytes": 22377,
+      "sha256": "71326fc6e990790ff30f4499df172211a921e8205940ea0db19475b162db4f2b"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "bytes": 4194,
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "bytes": 14997498,
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "bytes": 18948,
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/bodyweight-next-five/warning_observer.py",
+      "bytes": 2618,
+      "sha256": "ce8fd9d86a22df849c9db3f00b22900b99af758305a7914654bf6879b90806e8"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/upright-family/triangle_intersection.py",
+      "bytes": 1428,
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "bytes": 5062,
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/build/three.module.js",
+      "bytes": 662772,
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 117570,
+      "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "bytes": 16590,
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b"
+    }
+  ],
+  "tools": {
+    "blender": "/opt/homebrew/bin/blender5.2.3 LTS",
+    "blender_contract": "-b -t 2 --python-exit-code 1 --factory-startup",
+    "runtime": "Existing Three.js/GLTFLoader in artifacts/first-exercise-3d/runtime/node_modules; no installation or shared-runtime mutation."
+  },
+  "canonical_source_license": "Blender Studio Human Base Mesh, CC0. Canonical original source hash is retained in source-verification.json."
+}

@@ -1,0 +1,100 @@
+{
+  "id": "1512",
+  "name": "all fours squad stretch",
+  "action": "Exercise_1512",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "primary": [
+    "quads"
+  ],
+  "secondary": [
+    "hamstrings",
+    "glutes"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {
+    "quads": [
+      "L"
+    ],
+    "hamstrings": [
+      "L"
+    ],
+    "glutes": [
+      "L"
+    ]
+  },
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "skinning": "dualQuaternion",
+  "interpretation": "Anatomical LEFT all-fours quadriceps stretch. Enter by extending the left hip and bending the knee; the left hand approaches outside the thigh and lightly holds the ankle. The right palm, knee and resting foot support the body while the torso remains neutral and pelvis level. Mirror the entire action and highlights for the other side. The five-second demonstration uses2sentry/1shold/2sreturn; retain the source20\u201330second workout hold separately.",
+  "source_cue_disagreement": {
+    "description": "Pull one foot toward the glutes from all fours.",
+    "instructions": "Instruction2 combines straight back and knee bent; instruction3 lowers the hips.",
+    "resolution": "Straight back is interpreted as the backward thigh trajectory, with a flexed knee throughout. The left hand loosely holds the left ankle and draws the foot toward the gluteal region. A restrained level-pelvis lower is authored; no straight-and-bent knee is depicted.",
+    "authored_numeric_choices_not_source_facts": {
+      "common_trunk_world_X_pitch_degrees": 84,
+      "moving_thigh_world_YZ_sweep_degrees": 110,
+      "moving_knee_flexion_hold_degrees": 130,
+      "moving_hip_extension_relative_to_trunk_hold_degrees": 26,
+      "pelvic_lower_m": 0.004,
+      "resting_shin_rise_degrees": 2.65
+    }
+  },
+  "authored_choices": {
+    "timing": "A five-second teaching demonstration, not a real-time20\u201330second hold.",
+    "contacts": "Right palm/knee/foot are fixed in tangential placement; skin support and actual whole arms/hands vs both whole legs checked over151frames.",
+    "hand": "Loose C-shaped ankle contact; source gives foot pull, exact hand/ankle relationship and finger articulation are authored.",
+    "skinning": "Original connected body with239source-bound high-waist binding changes and3compact POSITION/NORMAL pose keys. Native Smooth and Multires disabled. Shared DQ adapter required.",
+    "cameras": "Exactly2whole-body orthographic views, side and quad/ankle oblique; scale is horizontal width."
+  },
+  "source": {
+    "path": "catalogue/exercises/1512.json",
+    "sha256": "1537bfbe79171564d9286f0449793eb919696374cc7ed30846235dd8a0701d80",
+    "description": "On all fours you pull one foot toward your glutes to stretch the front of the thigh. It eases tight quads.",
+    "instructions": [
+      "Start on all fours with your hands directly under your shoulders and your knees directly under your hips.",
+      "Extend one leg straight back, keeping your knee bent and your foot flexed.",
+      "Slowly lower your hips towards the ground, feeling a stretch in your quads.",
+      "Hold this position for 20-30 seconds.",
+      "Switch legs and repeat the stretch on the other side."
+    ],
+    "target": "quads",
+    "secondaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "textSource": "exercisedb"
+  },
+  "provenance": {
+    "body": "Accepted Blender Studio CC0 continuous mannequin through bodyweight-five.blend; no topology or original Basis/rest/UV edits.",
+    "motion": "Original analytic authoring from catalogue text; no restricted exercise still/video used."
+  },
+  "runtime_adapter": {
+    "path": "artifacts/exercise-batches/dual-quaternion.js",
+    "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "changed": false
+  },
+  "readiness": "frozen_for_primary_visual_and_runtime_review_not_production_approved"
+}

@@ -1,0 +1,16 @@
+"""Actual heel/calf/pelvis and hand-staging readback plus floor-plane proof."""
+from pathlib import Path
+import bpy,json,math,hashlib,numpy as np
+from mathutils import Vector
+P=Path(__file__).resolve().parent;B=P.parent
+bpy.ops.wm.open_mainfile(filepath=str(P/'source.blend'));b=bpy.data.objects['SK_BlenderStudioHuman'];r=bpy.data.objects['RIG_BlenderStudioHuman'];s=bpy.context.scene;names={g.index:g.name for g in b.vertex_groups}
+def w(v,prefixes):return sum(g.weight for g in v.groups if names[g.group].startswith(tuple(prefixes)))
+contract=json.loads((P/'pose-contract.json').read_text());heels={side:[v.index for v in b.data.vertices if v.co.x*sign>.08 and v.co.y>0 and v.co.z<.18 and w(v,[side+'Foot',side+'Leg'])>.8]for side,sign in [('Left',1),('Right',-1)]};calves={side:[v.index for v in b.data.vertices if .15<v.co.z<.48 and w(v,[side+'Leg'])>.8]for side in ['Left','Right']}
+rows=[]
+for id,f in [('2761',0),('2761',37),('2762',37),('1368',60)]:
+ r.animation_data.action=bpy.data.actions['Exercise_'+id];s.frame_set(f+1);bpy.context.view_layer.update();e=b.evaluated_get(bpy.context.evaluated_depsgraph_get());m=e.to_mesh();p=np.array([v.co[:]for v in m.vertices]);angle=math.degrees((r.pose.bones['LeftLeg'].head-r.pose.bones['LeftUpLeg'].head).angle(r.pose.bones['LeftFoot'].head-r.pose.bones['LeftLeg'].head));row={'id':id,'frame':f,'floor_min_z_m':float(p[:,2].min()),'pelvic_min_z_m':float(p[contract['pelvic_original_ids'],2].min()),'knee_flexion_degrees':angle,'heel_skin_min_z_m':{side:float(p[ids,2].min())for side,ids in heels.items()},'calf_skin_min_z_m':{side:float(p[ids,2].min())for side,ids in calves.items()},'wrist_deviation_degrees':{side:math.degrees((r.pose.bones[side+'Hand'].head-r.pose.bones[side+'ForeArm'].head).angle(r.pose.bones[side+'Middle1'].head-r.pose.bones[side+'Hand'].head))for side in ['Left','Right']}};rows.append(row);e.to_mesh_clear()
+contract['authored_knee_flexion_degrees']=rows[0]['knee_flexion_degrees'];contract['heel_skin_original_ids']=heels;contract['calf_original_ids']=calves;contract['hands']='Relaxed palm-down upper-thigh rest, no grip; body support is pelvis and nonlifted heel/calf skin.';(P/'pose-contract.json').write_text(json.dumps(contract,indent=2)+'\n')
+mesh=bpy.data.meshes.new('DiagnosticFloor');mesh.from_pydata([(-1.2,-1.6,0),(1.2,-1.6,0),(1.2,.7,0),(-1.2,.7,0)],[],[(0,1,2,3)]);floor=bpy.data.objects.new('DiagnosticFloorPlaneZ0',mesh);s.collection.objects.link(floor);mat=bpy.data.materials.new('DiagnosticFloor');mat.diffuse_color=(.12,.14,.16,1);floor.data.materials.append(mat)
+for id,f in [('2761',37),('1368',60)]:
+ r.animation_data.action=bpy.data.actions['Exercise_'+id];s.frame_set(f+1);bpy.context.view_layer.update();camera=s.camera;camera.location=(3.8,-.2,.7);target=Vector((0,-.35,.4));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();camera.data.ortho_scale=2.1;s.render.filepath=str(B/'assets'/id/'early-support-plane.png');bpy.ops.render.render(write_still=True)
+(P/'early-contact-readback.json').write_text(json.dumps({'source_sha256':hashlib.sha256((P/'source.blend').read_bytes()).hexdigest(),'samples':rows,'floor_plane_z_m':0,'diagnostic_plane_not_saved_or_exported':True},indent=2)+'\n');print(json.dumps(rows,indent=2))

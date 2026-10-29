@@ -1,0 +1,205 @@
+{
+  "status": "primary_accepted_closed_fist_connected_MCP_shape_for_user_review; actual_GPU_review_root_owned",
+  "user_feedback": "Both hands in front of torso are not actually closed into fists.",
+  "old_sources_models": {
+    "4437": {
+      "clip.json": "ba4adf88451dae9d8ec5e479be073cfbd082ce59c87859f984f8add28898de49",
+      "cameras.json": "0abc2e6b9c0b50f501f61f84bb21030b87e12977348680d045f02f6add0a962a",
+      "source.blend": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+      "motion.glb": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc"
+    },
+    "4436": {
+      "clip.json": "dae9eeb3400f41f221a3a98d719432ada1632cd9d60f022cca209606f16eca00",
+      "cameras.json": "ff8ce84fe80c812e65743a69e14c08cab6b89caa4bc6e8d0b1d0e559a70b87f2",
+      "source.blend": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+      "motion.glb": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc"
+    },
+    "3531": {
+      "clip.json": "2da1724daa7239c9ecbaba07039fdcd0e74332904a8a9a24226ea40f2ed56b10",
+      "cameras.json": "f93024d4ac82c73595ae56553ebf1df0272c4cf55449f9373dc225616e857a8d",
+      "source.blend": "dd74caa91937a734c5d15773be533f334498f495d426506a2a24502714be8316",
+      "motion.glb": "91ccfbd3afa7969641b7e27e1cdc390fd3e622c13da03446175cfaff5a2133b0"
+    }
+  },
+  "causes_and_rejected_history": [
+    {
+      "cause": "Original60/70/30deg finger chains were separated hooks; thumb aimed normal to palm instead of resting across curled index.",
+      "measurement": "Original distal-cap palm gaps up to19.67mm and thumb35.61mm; source3531 hand geometry/weights exact and hand-local pose within0.559micrometers of4437."
+    },
+    {
+      "cause": "Generic80/100/45deg clench penetrated actual palm. Rejected before promotion.",
+      "worst_cap_local_signed_depth_m": -0.01595
+    },
+    {
+      "cause": "Dorsal-normal-only186-ID target pinned opposite Hand/digit1 vertices at visible wedge. Same field capped5mm left residual; untruncated normal-only field still pinned all four corners of visible faces. Both were rejected.",
+      "raycast_faces": [
+        [
+          4851,
+          4852,
+          4940,
+          4943
+        ],
+        [
+          4926,
+          5056,
+          5085,
+          4943
+        ],
+        [
+          5055,
+          5056,
+          5058,
+          5057
+        ]
+      ],
+      "old_corner_mask": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0.725234
+        ]
+      ],
+      "final_corner_mask": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "accepted_change": {
+    "finger_pose": "One actual-skin PIP solve per digit with75deg MCP/35deg DIP, mirrored thumb-opposition solve to curledIndex/Middle surface. Wrist unchanged.",
+    "component": "One504-ID additive C1 Hand/digit1 target, same native CorrectiveSmooth20x1 length-weighted construction and exact inverse blendedDQ rotation. Normal cutoff removed; coherent both-side collar plus3-ring feather away from405 frozen actual contact vertices. No new cap, no topology/Basis/weights change.",
+    "maximum_source_delta_m": 0.014997021588178156,
+    "maximum_world_delta_all151_m": 0.014997170460563898,
+    "protected_actual_contact_vertices": 405,
+    "exterior_all151_delta_m": 0,
+    "action_weights": {
+      "Exercise_4437": 1,
+      "Exercise_3531": 1,
+      "Exercise_4436": 0
+    },
+    "per_digit_angles_degrees": {
+      "Index": [
+        75.0,
+        61.3232421875,
+        35.0
+      ],
+      "Middle": [
+        75.0,
+        62.12890625,
+        35.0
+      ],
+      "Ring": [
+        75.0,
+        66.42578125,
+        35.0
+      ],
+      "Little": [
+        75.0,
+        85.3955078125,
+        35.0
+      ]
+    }
+  },
+  "contact": {
+    "Left": {
+      "minimum_distal_palm_local_signed_m": -0.001264581260329578,
+      "thumb_to_index_middle_distance_m": 0.001261574332602322,
+      "thumb_to_index_middle_exact_crossings": 0
+    },
+    "Right": {
+      "minimum_distal_palm_local_signed_m": -0.0012312869184825104,
+      "thumb_to_index_middle_distance_m": 0.0010440112091600895,
+      "thumb_to_index_middle_exact_crossings": 0
+    }
+  },
+  "preservation": {
+    "native_all151_nonfinger_matrix_error": 0,
+    "native_all151_4436_allskin_error": 0,
+    "actual_decoded_all151": {
+      "3531": {
+        "original_glb_sha256": "91ccfbd3afa7969641b7e27e1cdc390fd3e622c13da03446175cfaff5a2133b0",
+        "new_glb_sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1",
+        "frames": 151,
+        "maximum_nonfinger_or_unaffected_bone_matrix_error": 0,
+        "maximum_nonhand_or_unaffected_skin_error_m": 0,
+        "nonidentical_preserved_skin_elements": 0,
+        "scope": "All21nonfinger bones and every source vertex outside original hand/finger influences"
+      },
+      "4436": {
+        "original_glb_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+        "new_glb_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+        "frames": 151,
+        "maximum_nonfinger_or_unaffected_bone_matrix_error": 0,
+        "maximum_nonhand_or_unaffected_skin_error_m": 0,
+        "nonidentical_preserved_skin_elements": 0,
+        "scope": "Entire51bones/full10582skin"
+      },
+      "4437": {
+        "original_glb_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+        "new_glb_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+        "frames": 151,
+        "maximum_nonfinger_or_unaffected_bone_matrix_error": 0,
+        "maximum_nonhand_or_unaffected_skin_error_m": 0,
+        "nonidentical_preserved_skin_elements": 0,
+        "scope": "All21nonfinger bones and every source vertex outside original hand/finger influences"
+      }
+    },
+    "untouched_assets": {
+      "3480": {
+        "every_existing_file_byte_exact": true,
+        "files": 64,
+        "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+        "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d"
+      },
+      "4918": {
+        "every_existing_file_byte_exact": true,
+        "files": 53,
+        "source_sha256": "5be07ced001992d15b16c86ccdb04f1aa0f09168d1d55b7fb0acbaac3fe0cafe",
+        "glb_sha256": "e7cc94794e0a5dbb166371669742278dfe1440abf5ede8ad7b12551a42e4e501"
+      }
+    },
+    "Basis_rest_UV_topology_normalized_max4_weights": true,
+    "cameras_byte_exact": true,
+    "tempo_trajectories_support_wrist_unchanged": true
+  },
+  "standard_export_semantics": "Blender omitted all-zero pairedKEY track with saved mesh default1. Append explicit standardglTF151 zero/one scalar channels and default0; originalBIN prefix/geometry/skin/nonweight payload retained. No runtime workaround.",
+  "limitations": [
+    "Original polygonal hand/skin facets retained; no remesh.",
+    "Local palm nearest-normal4mm tolerance and contact distances are surface proxies, not global/continuous-time hand collision or clinical certification.",
+    "Discrete151native/actualdecoded source checks are distinct from root actualGPU/user acceptance."
+  ],
+  "scope": "No Git, paid tools, videos, runtime/viewer/root metadata changes. 3480 uses a different relaxed sprinter-hand recipe without closed-fist source cue and is unchanged;4918 unchanged.",
+  "id": "4436",
+  "source_sha256": "b52a836da56d04bbd63a38b370f4d2a759d82f34ca5ab756264c56cca1d4d6c3",
+  "glb_sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+  "family_report": "../../upright-family/fist-feedback-repair.json"
+}

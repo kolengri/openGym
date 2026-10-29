@@ -1,0 +1,1601 @@
+{
+  "$schema": "./region-map.schema.json",
+  "version": "1.1.0",
+  "notice": "Illustrative artist-authored masks on an original CC0 mesh. Not anatomical segmentation, EMG, physiological activation, or medical guidance.",
+  "body": {
+    "name": "SK_BlenderStudioHuman",
+    "source": "Blender Studio Human Base Meshes v1.4.1 / realistic male / CC0",
+    "base_vertices": 10582,
+    "base_polygons": 10590,
+    "units": "m",
+    "height": 1.8,
+    "front": "-Y",
+    "left": "+X",
+    "rest_sha256": "50b4584dbbfe10ddb5058c82644ceb4ea38b6792d3f3ce264ea694b0c8a09c4d"
+  },
+  "catalogue": {
+    "canonical_records": 5632,
+    "distinct_names": 57,
+    "alias_stubs": 922,
+    "fields": [
+      "target",
+      "secondaryMuscles",
+      "muscleMap.primaries",
+      "muscleMap.secondaries"
+    ]
+  },
+  "regions": {
+    "pectoralis_clavicular.L": {
+      "label": "Pectoralis major, clavicular region",
+      "side": "L",
+      "group": "chest",
+      "visibility": "superficial",
+      "fiber_direction": "fan",
+      "weighted_vertices": 34,
+      "core_vertices": 25,
+      "max_weight": 1.0
+    },
+    "pectoralis_clavicular.R": {
+      "label": "Pectoralis major, clavicular region",
+      "side": "R",
+      "group": "chest",
+      "visibility": "superficial",
+      "fiber_direction": "fan",
+      "weighted_vertices": 34,
+      "core_vertices": 26,
+      "max_weight": 1.0
+    },
+    "pectoralis_sternal.L": {
+      "label": "Pectoralis major, sternocostal region",
+      "side": "L",
+      "group": "chest",
+      "visibility": "superficial",
+      "fiber_direction": "fan",
+      "weighted_vertices": 40,
+      "core_vertices": 30,
+      "max_weight": 1.0
+    },
+    "pectoralis_sternal.R": {
+      "label": "Pectoralis major, sternocostal region",
+      "side": "R",
+      "group": "chest",
+      "visibility": "superficial",
+      "fiber_direction": "fan",
+      "weighted_vertices": 40,
+      "core_vertices": 30,
+      "max_weight": 1.0
+    },
+    "deltoid_anterior.L": {
+      "label": "Anterior deltoid",
+      "side": "L",
+      "group": "deltoids",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 30,
+      "core_vertices": 20,
+      "max_weight": 1.0
+    },
+    "deltoid_anterior.R": {
+      "label": "Anterior deltoid",
+      "side": "R",
+      "group": "deltoids",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 30,
+      "core_vertices": 20,
+      "max_weight": 1.0
+    },
+    "deltoid_lateral.L": {
+      "label": "Lateral deltoid",
+      "side": "L",
+      "group": "deltoids",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 26,
+      "core_vertices": 10,
+      "max_weight": 1.0
+    },
+    "deltoid_lateral.R": {
+      "label": "Lateral deltoid",
+      "side": "R",
+      "group": "deltoids",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 26,
+      "core_vertices": 10,
+      "max_weight": 1.0
+    },
+    "deltoid_posterior.L": {
+      "label": "Posterior deltoid",
+      "side": "L",
+      "group": "deltoids",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 14,
+      "core_vertices": 9,
+      "max_weight": 1.0
+    },
+    "deltoid_posterior.R": {
+      "label": "Posterior deltoid",
+      "side": "R",
+      "group": "deltoids",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 14,
+      "core_vertices": 9,
+      "max_weight": 1.0
+    },
+    "biceps.L": {
+      "label": "Biceps brachii",
+      "side": "L",
+      "group": "biceps",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 60,
+      "core_vertices": 45,
+      "max_weight": 1.0
+    },
+    "biceps.R": {
+      "label": "Biceps brachii",
+      "side": "R",
+      "group": "biceps",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 60,
+      "core_vertices": 45,
+      "max_weight": 1.0
+    },
+    "brachialis_visible.L": {
+      "label": "Brachialis visible lateral strip",
+      "side": "L",
+      "group": "biceps",
+      "visibility": "partial_surface",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 63,
+      "core_vertices": 45,
+      "max_weight": 1.0
+    },
+    "brachialis_visible.R": {
+      "label": "Brachialis visible lateral strip",
+      "side": "R",
+      "group": "biceps",
+      "visibility": "partial_surface",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 62,
+      "core_vertices": 44,
+      "max_weight": 1.0
+    },
+    "triceps_long.L": {
+      "label": "Triceps brachii, long head region",
+      "side": "L",
+      "group": "triceps",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 36,
+      "core_vertices": 31,
+      "max_weight": 1.0
+    },
+    "triceps_long.R": {
+      "label": "Triceps brachii, long head region",
+      "side": "R",
+      "group": "triceps",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 36,
+      "core_vertices": 31,
+      "max_weight": 1.0
+    },
+    "triceps_lateral.L": {
+      "label": "Triceps brachii, lateral head region",
+      "side": "L",
+      "group": "triceps",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 46,
+      "core_vertices": 34,
+      "max_weight": 1.0
+    },
+    "triceps_lateral.R": {
+      "label": "Triceps brachii, lateral head region",
+      "side": "R",
+      "group": "triceps",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 46,
+      "core_vertices": 34,
+      "max_weight": 1.0
+    },
+    "forearm_flexors.L": {
+      "label": "Forearm flexor compartment",
+      "side": "L",
+      "group": "forearm",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 144,
+      "core_vertices": 109,
+      "max_weight": 1.0
+    },
+    "forearm_flexors.R": {
+      "label": "Forearm flexor compartment",
+      "side": "R",
+      "group": "forearm",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 143,
+      "core_vertices": 112,
+      "max_weight": 1.0
+    },
+    "forearm_extensors.L": {
+      "label": "Forearm extensor compartment",
+      "side": "L",
+      "group": "forearm",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 46,
+      "core_vertices": 26,
+      "max_weight": 1.0
+    },
+    "forearm_extensors.R": {
+      "label": "Forearm extensor compartment",
+      "side": "R",
+      "group": "forearm",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 45,
+      "core_vertices": 26,
+      "max_weight": 1.0
+    },
+    "brachioradialis.L": {
+      "label": "Brachioradialis",
+      "side": "L",
+      "group": "forearm",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 82,
+      "core_vertices": 67,
+      "max_weight": 1.0
+    },
+    "brachioradialis.R": {
+      "label": "Brachioradialis",
+      "side": "R",
+      "group": "forearm",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 82,
+      "core_vertices": 67,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_1.L": {
+      "label": "Rectus abdominis block 1 (superior to inferior)",
+      "side": "L",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 8,
+      "core_vertices": 6,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_1.R": {
+      "label": "Rectus abdominis block 1 (superior to inferior)",
+      "side": "R",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 8,
+      "core_vertices": 6,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_2.L": {
+      "label": "Rectus abdominis block 2 (superior to inferior)",
+      "side": "L",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 4,
+      "core_vertices": 4,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_2.R": {
+      "label": "Rectus abdominis block 2 (superior to inferior)",
+      "side": "R",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 4,
+      "core_vertices": 4,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_3.L": {
+      "label": "Rectus abdominis block 3 (superior to inferior)",
+      "side": "L",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 1,
+      "core_vertices": 1,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_3.R": {
+      "label": "Rectus abdominis block 3 (superior to inferior)",
+      "side": "R",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 1,
+      "core_vertices": 1,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_4.L": {
+      "label": "Rectus abdominis block 4 (superior to inferior)",
+      "side": "L",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 1,
+      "core_vertices": 1,
+      "max_weight": 1.0
+    },
+    "rectus_abdominis_4.R": {
+      "label": "Rectus abdominis block 4 (superior to inferior)",
+      "side": "R",
+      "group": "abs",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 1,
+      "core_vertices": 1,
+      "max_weight": 1.0
+    },
+    "external_oblique.L": {
+      "label": "External oblique",
+      "side": "L",
+      "group": "obliques",
+      "visibility": "superficial",
+      "fiber_direction": "inferomedial",
+      "weighted_vertices": 59,
+      "core_vertices": 44,
+      "max_weight": 1.0
+    },
+    "external_oblique.R": {
+      "label": "External oblique",
+      "side": "R",
+      "group": "obliques",
+      "visibility": "superficial",
+      "fiber_direction": "inferomedial",
+      "weighted_vertices": 59,
+      "core_vertices": 44,
+      "max_weight": 1.0
+    },
+    "serratus_1.L": {
+      "label": "Serratus anterior slip 1",
+      "side": "L",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 6,
+      "core_vertices": 3,
+      "max_weight": 1.0
+    },
+    "serratus_1.R": {
+      "label": "Serratus anterior slip 1",
+      "side": "R",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 6,
+      "core_vertices": 3,
+      "max_weight": 1.0
+    },
+    "serratus_2.L": {
+      "label": "Serratus anterior slip 2",
+      "side": "L",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 12,
+      "core_vertices": 8,
+      "max_weight": 1.0
+    },
+    "serratus_2.R": {
+      "label": "Serratus anterior slip 2",
+      "side": "R",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 12,
+      "core_vertices": 9,
+      "max_weight": 1.0
+    },
+    "serratus_3.L": {
+      "label": "Serratus anterior slip 3",
+      "side": "L",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 10,
+      "core_vertices": 5,
+      "max_weight": 1.0
+    },
+    "serratus_3.R": {
+      "label": "Serratus anterior slip 3",
+      "side": "R",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 10,
+      "core_vertices": 5,
+      "max_weight": 1.0
+    },
+    "serratus_4.L": {
+      "label": "Serratus anterior slip 4",
+      "side": "L",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 6,
+      "core_vertices": 4,
+      "max_weight": 1.0
+    },
+    "serratus_4.R": {
+      "label": "Serratus anterior slip 4",
+      "side": "R",
+      "group": "serratus",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 6,
+      "core_vertices": 4,
+      "max_weight": 1.0
+    },
+    "trapezius_upper.L": {
+      "label": "Upper trapezius",
+      "side": "L",
+      "group": "trapezius",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 35,
+      "core_vertices": 27,
+      "max_weight": 1.0
+    },
+    "trapezius_upper.R": {
+      "label": "Upper trapezius",
+      "side": "R",
+      "group": "trapezius",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 36,
+      "core_vertices": 29,
+      "max_weight": 1.0
+    },
+    "trapezius_middle.L": {
+      "label": "Middle trapezius",
+      "side": "L",
+      "group": "trapezius",
+      "visibility": "superficial",
+      "fiber_direction": "transverse",
+      "weighted_vertices": 17,
+      "core_vertices": 16,
+      "max_weight": 1.0
+    },
+    "trapezius_middle.R": {
+      "label": "Middle trapezius",
+      "side": "R",
+      "group": "trapezius",
+      "visibility": "superficial",
+      "fiber_direction": "transverse",
+      "weighted_vertices": 17,
+      "core_vertices": 16,
+      "max_weight": 1.0
+    },
+    "trapezius_lower.L": {
+      "label": "Lower trapezius",
+      "side": "L",
+      "group": "trapezius",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 9,
+      "core_vertices": 8,
+      "max_weight": 1.0
+    },
+    "trapezius_lower.R": {
+      "label": "Lower trapezius",
+      "side": "R",
+      "group": "trapezius",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 10,
+      "core_vertices": 8,
+      "max_weight": 1.0
+    },
+    "rhomboid_projection.L": {
+      "label": "Rhomboids, surface projection through trapezius",
+      "side": "L",
+      "group": "upper-back",
+      "visibility": "deep_projection",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 12,
+      "core_vertices": 8,
+      "max_weight": 1.0
+    },
+    "rhomboid_projection.R": {
+      "label": "Rhomboids, surface projection through trapezius",
+      "side": "R",
+      "group": "upper-back",
+      "visibility": "deep_projection",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 12,
+      "core_vertices": 8,
+      "max_weight": 1.0
+    },
+    "infraspinatus.L": {
+      "label": "Infraspinatus region",
+      "side": "L",
+      "group": "upper-back",
+      "visibility": "partial_surface",
+      "fiber_direction": "fan",
+      "weighted_vertices": 11,
+      "core_vertices": 9,
+      "max_weight": 1.0
+    },
+    "infraspinatus.R": {
+      "label": "Infraspinatus region",
+      "side": "R",
+      "group": "upper-back",
+      "visibility": "partial_surface",
+      "fiber_direction": "fan",
+      "weighted_vertices": 11,
+      "core_vertices": 9,
+      "max_weight": 1.0
+    },
+    "teres_major.L": {
+      "label": "Teres major region",
+      "side": "L",
+      "group": "upper-back",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 2,
+      "core_vertices": 2,
+      "max_weight": 1.0
+    },
+    "teres_major.R": {
+      "label": "Teres major region",
+      "side": "R",
+      "group": "upper-back",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 2,
+      "core_vertices": 2,
+      "max_weight": 1.0
+    },
+    "latissimus_dorsi.L": {
+      "label": "Latissimus dorsi",
+      "side": "L",
+      "group": "upper-back",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 57,
+      "core_vertices": 44,
+      "max_weight": 1.0
+    },
+    "latissimus_dorsi.R": {
+      "label": "Latissimus dorsi",
+      "side": "R",
+      "group": "upper-back",
+      "visibility": "superficial",
+      "fiber_direction": "superolateral",
+      "weighted_vertices": 58,
+      "core_vertices": 44,
+      "max_weight": 1.0
+    },
+    "erector_spinae.L": {
+      "label": "Erector spinae surface columns",
+      "side": "L",
+      "group": "lower-back",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 14,
+      "core_vertices": 8,
+      "max_weight": 1.0
+    },
+    "erector_spinae.R": {
+      "label": "Erector spinae surface columns",
+      "side": "R",
+      "group": "lower-back",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 14,
+      "core_vertices": 8,
+      "max_weight": 1.0
+    },
+    "gluteus_maximus.L": {
+      "label": "Gluteus maximus",
+      "side": "L",
+      "group": "gluteal",
+      "visibility": "superficial",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 22,
+      "core_vertices": 17,
+      "max_weight": 1.0
+    },
+    "gluteus_maximus.R": {
+      "label": "Gluteus maximus",
+      "side": "R",
+      "group": "gluteal",
+      "visibility": "superficial",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 22,
+      "core_vertices": 17,
+      "max_weight": 1.0
+    },
+    "gluteus_medius_visible.L": {
+      "label": "Gluteus medius visible lateral region",
+      "side": "L",
+      "group": "gluteal",
+      "visibility": "superficial",
+      "fiber_direction": "fan",
+      "weighted_vertices": 8,
+      "core_vertices": 6,
+      "max_weight": 1.0
+    },
+    "gluteus_medius_visible.R": {
+      "label": "Gluteus medius visible lateral region",
+      "side": "R",
+      "group": "gluteal",
+      "visibility": "superficial",
+      "fiber_direction": "fan",
+      "weighted_vertices": 9,
+      "core_vertices": 6,
+      "max_weight": 1.0
+    },
+    "tensor_fasciae_latae.L": {
+      "label": "Tensor fasciae latae",
+      "side": "L",
+      "group": "gluteal",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 16,
+      "core_vertices": 14,
+      "max_weight": 1.0
+    },
+    "tensor_fasciae_latae.R": {
+      "label": "Tensor fasciae latae",
+      "side": "R",
+      "group": "gluteal",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 16,
+      "core_vertices": 14,
+      "max_weight": 1.0
+    },
+    "rectus_femoris.L": {
+      "label": "Rectus femoris",
+      "side": "L",
+      "group": "quadriceps",
+      "visibility": "superficial",
+      "fiber_direction": "bipennate",
+      "weighted_vertices": 13,
+      "core_vertices": 12,
+      "max_weight": 1.0
+    },
+    "rectus_femoris.R": {
+      "label": "Rectus femoris",
+      "side": "R",
+      "group": "quadriceps",
+      "visibility": "superficial",
+      "fiber_direction": "bipennate",
+      "weighted_vertices": 13,
+      "core_vertices": 12,
+      "max_weight": 1.0
+    },
+    "vastus_lateralis.L": {
+      "label": "Vastus lateralis",
+      "side": "L",
+      "group": "quadriceps",
+      "visibility": "superficial",
+      "fiber_direction": "inferomedial",
+      "weighted_vertices": 41,
+      "core_vertices": 27,
+      "max_weight": 1.0
+    },
+    "vastus_lateralis.R": {
+      "label": "Vastus lateralis",
+      "side": "R",
+      "group": "quadriceps",
+      "visibility": "superficial",
+      "fiber_direction": "inferomedial",
+      "weighted_vertices": 41,
+      "core_vertices": 28,
+      "max_weight": 1.0
+    },
+    "vastus_medialis.L": {
+      "label": "Vastus medialis",
+      "side": "L",
+      "group": "quadriceps",
+      "visibility": "superficial",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 15,
+      "core_vertices": 10,
+      "max_weight": 1.0
+    },
+    "vastus_medialis.R": {
+      "label": "Vastus medialis",
+      "side": "R",
+      "group": "quadriceps",
+      "visibility": "superficial",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 14,
+      "core_vertices": 11,
+      "max_weight": 1.0
+    },
+    "sartorius.L": {
+      "label": "Sartorius",
+      "side": "L",
+      "group": "hip-flexors",
+      "visibility": "superficial",
+      "fiber_direction": "oblique",
+      "weighted_vertices": 11,
+      "core_vertices": 7,
+      "max_weight": 1.0
+    },
+    "sartorius.R": {
+      "label": "Sartorius",
+      "side": "R",
+      "group": "hip-flexors",
+      "visibility": "superficial",
+      "fiber_direction": "oblique",
+      "weighted_vertices": 11,
+      "core_vertices": 7,
+      "max_weight": 1.0
+    },
+    "adductor_longus.L": {
+      "label": "Adductor longus and medial compartment",
+      "side": "L",
+      "group": "adductors",
+      "visibility": "superficial",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 12,
+      "core_vertices": 10,
+      "max_weight": 1.0
+    },
+    "adductor_longus.R": {
+      "label": "Adductor longus and medial compartment",
+      "side": "R",
+      "group": "adductors",
+      "visibility": "superficial",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 12,
+      "core_vertices": 10,
+      "max_weight": 1.0
+    },
+    "adductor_magnus_visible.L": {
+      "label": "Adductor magnus visible medial region",
+      "side": "L",
+      "group": "adductors",
+      "visibility": "partial_surface",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 13,
+      "core_vertices": 12,
+      "max_weight": 1.0
+    },
+    "adductor_magnus_visible.R": {
+      "label": "Adductor magnus visible medial region",
+      "side": "R",
+      "group": "adductors",
+      "visibility": "partial_surface",
+      "fiber_direction": "inferolateral",
+      "weighted_vertices": 13,
+      "core_vertices": 11,
+      "max_weight": 1.0
+    },
+    "iliopsoas_projection.L": {
+      "label": "Iliopsoas, illustrative surface projection",
+      "side": "L",
+      "group": "hip-flexors",
+      "visibility": "deep_projection",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 6,
+      "core_vertices": 6,
+      "max_weight": 1.0
+    },
+    "iliopsoas_projection.R": {
+      "label": "Iliopsoas, illustrative surface projection",
+      "side": "R",
+      "group": "hip-flexors",
+      "visibility": "deep_projection",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 6,
+      "core_vertices": 6,
+      "max_weight": 1.0
+    },
+    "biceps_femoris.L": {
+      "label": "Biceps femoris",
+      "side": "L",
+      "group": "hamstring",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 23,
+      "core_vertices": 19,
+      "max_weight": 1.0
+    },
+    "biceps_femoris.R": {
+      "label": "Biceps femoris",
+      "side": "R",
+      "group": "hamstring",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 23,
+      "core_vertices": 19,
+      "max_weight": 1.0
+    },
+    "semitendinosus.L": {
+      "label": "Semitendinosus / medial hamstring region",
+      "side": "L",
+      "group": "hamstring",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 16,
+      "core_vertices": 12,
+      "max_weight": 1.0
+    },
+    "semitendinosus.R": {
+      "label": "Semitendinosus / medial hamstring region",
+      "side": "R",
+      "group": "hamstring",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 15,
+      "core_vertices": 12,
+      "max_weight": 1.0
+    },
+    "semimembranosus_visible.L": {
+      "label": "Semimembranosus visible medial region",
+      "side": "L",
+      "group": "hamstring",
+      "visibility": "partial_surface",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 13,
+      "core_vertices": 9,
+      "max_weight": 1.0
+    },
+    "semimembranosus_visible.R": {
+      "label": "Semimembranosus visible medial region",
+      "side": "R",
+      "group": "hamstring",
+      "visibility": "partial_surface",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 14,
+      "core_vertices": 9,
+      "max_weight": 1.0
+    },
+    "gastrocnemius_medial.L": {
+      "label": "Medial gastrocnemius head",
+      "side": "L",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 23,
+      "core_vertices": 14,
+      "max_weight": 1.0
+    },
+    "gastrocnemius_medial.R": {
+      "label": "Medial gastrocnemius head",
+      "side": "R",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 22,
+      "core_vertices": 14,
+      "max_weight": 1.0
+    },
+    "gastrocnemius_lateral.L": {
+      "label": "Lateral gastrocnemius head",
+      "side": "L",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 22,
+      "core_vertices": 14,
+      "max_weight": 1.0
+    },
+    "gastrocnemius_lateral.R": {
+      "label": "Lateral gastrocnemius head",
+      "side": "R",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 22,
+      "core_vertices": 14,
+      "max_weight": 1.0
+    },
+    "soleus_lateral.L": {
+      "label": "Soleus visible lateral strip",
+      "side": "L",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 31,
+      "core_vertices": 24,
+      "max_weight": 1.0
+    },
+    "soleus_lateral.R": {
+      "label": "Soleus visible lateral strip",
+      "side": "R",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 31,
+      "core_vertices": 24,
+      "max_weight": 1.0
+    },
+    "soleus_medial.L": {
+      "label": "Soleus visible medial strip",
+      "side": "L",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 38,
+      "core_vertices": 25,
+      "max_weight": 1.0
+    },
+    "soleus_medial.R": {
+      "label": "Soleus visible medial strip",
+      "side": "R",
+      "group": "calves",
+      "visibility": "superficial",
+      "fiber_direction": "pennate",
+      "weighted_vertices": 38,
+      "core_vertices": 25,
+      "max_weight": 1.0
+    },
+    "tibialis_anterior.L": {
+      "label": "Tibialis anterior",
+      "side": "L",
+      "group": "tibialis",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 56,
+      "core_vertices": 33,
+      "max_weight": 1.0
+    },
+    "tibialis_anterior.R": {
+      "label": "Tibialis anterior",
+      "side": "R",
+      "group": "tibialis",
+      "visibility": "superficial",
+      "fiber_direction": "longitudinal",
+      "weighted_vertices": 56,
+      "core_vertices": 35,
+      "max_weight": 1.0
+    },
+    "sternocleidomastoid.L": {
+      "label": "Sternocleidomastoid",
+      "side": "L",
+      "group": "neck",
+      "visibility": "superficial",
+      "fiber_direction": "oblique",
+      "weighted_vertices": 154,
+      "core_vertices": 82,
+      "max_weight": 1.0
+    },
+    "sternocleidomastoid.R": {
+      "label": "Sternocleidomastoid",
+      "side": "R",
+      "group": "neck",
+      "visibility": "superficial",
+      "fiber_direction": "oblique",
+      "weighted_vertices": 153,
+      "core_vertices": 82,
+      "max_weight": 1.0
+    }
+  },
+  "mappings": {
+    "pectorals": {
+      "status": "surface",
+      "regions": [
+        "pectoralis_clavicular.L",
+        "pectoralis_clavicular.R",
+        "pectoralis_sternal.L",
+        "pectoralis_sternal.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "chest": {
+      "status": "surface",
+      "regions": [
+        "pectoralis_clavicular.L",
+        "pectoralis_clavicular.R",
+        "pectoralis_sternal.L",
+        "pectoralis_sternal.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "upper chest": {
+      "status": "surface",
+      "regions": [
+        "pectoralis_clavicular.L",
+        "pectoralis_clavicular.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "delts": {
+      "status": "surface",
+      "regions": [
+        "deltoid_anterior.L",
+        "deltoid_anterior.R",
+        "deltoid_lateral.L",
+        "deltoid_lateral.R",
+        "deltoid_posterior.L",
+        "deltoid_posterior.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "deltoids": {
+      "status": "surface",
+      "regions": [
+        "deltoid_anterior.L",
+        "deltoid_anterior.R",
+        "deltoid_lateral.L",
+        "deltoid_lateral.R",
+        "deltoid_posterior.L",
+        "deltoid_posterior.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "shoulders": {
+      "status": "surface",
+      "regions": [
+        "deltoid_anterior.L",
+        "deltoid_anterior.R",
+        "deltoid_lateral.L",
+        "deltoid_lateral.R",
+        "deltoid_posterior.L",
+        "deltoid_posterior.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "rear deltoids": {
+      "status": "surface",
+      "regions": [
+        "deltoid_posterior.L",
+        "deltoid_posterior.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "biceps": {
+      "status": "surface",
+      "regions": [
+        "biceps.L",
+        "biceps.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "brachialis": {
+      "status": "partial_surface",
+      "regions": [
+        "brachialis_visible.L",
+        "brachialis_visible.R"
+      ],
+      "reason": "Only the lateral visible strip is shown; the remaining brachialis lies deep to biceps."
+    },
+    "triceps": {
+      "status": "surface",
+      "regions": [
+        "triceps_long.L",
+        "triceps_long.R",
+        "triceps_lateral.L",
+        "triceps_lateral.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "forearm": {
+      "status": "group_proxy",
+      "regions": [
+        "forearm_flexors.L",
+        "forearm_flexors.R",
+        "forearm_extensors.L",
+        "forearm_extensors.R",
+        "brachioradialis.L",
+        "brachioradialis.R"
+      ],
+      "reason": "Forearm compartment proxy; hand intrinsic muscles and wrist joints are not painted."
+    },
+    "forearms": {
+      "status": "group_proxy",
+      "regions": [
+        "forearm_flexors.L",
+        "forearm_flexors.R",
+        "forearm_extensors.L",
+        "forearm_extensors.R",
+        "brachioradialis.L",
+        "brachioradialis.R"
+      ],
+      "reason": "Forearm compartment proxy; hand intrinsic muscles and wrist joints are not painted."
+    },
+    "grip muscles": {
+      "status": "group_proxy",
+      "regions": [
+        "forearm_flexors.L",
+        "forearm_flexors.R",
+        "forearm_extensors.L",
+        "forearm_extensors.R",
+        "brachioradialis.L",
+        "brachioradialis.R"
+      ],
+      "reason": "Forearm compartment proxy; hand intrinsic muscles and wrist joints are not painted."
+    },
+    "wrists": {
+      "status": "group_proxy",
+      "regions": [
+        "forearm_flexors.L",
+        "forearm_flexors.R",
+        "forearm_extensors.L",
+        "forearm_extensors.R",
+        "brachioradialis.L",
+        "brachioradialis.R"
+      ],
+      "reason": "Forearm compartment proxy; hand intrinsic muscles and wrist joints are not painted."
+    },
+    "wrist flexors": {
+      "status": "surface",
+      "regions": [
+        "forearm_flexors.L",
+        "forearm_flexors.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "wrist extensors": {
+      "status": "surface",
+      "regions": [
+        "forearm_extensors.L",
+        "forearm_extensors.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "abs": {
+      "status": "surface",
+      "regions": [
+        "rectus_abdominis_1.L",
+        "rectus_abdominis_1.R",
+        "rectus_abdominis_2.L",
+        "rectus_abdominis_2.R",
+        "rectus_abdominis_3.L",
+        "rectus_abdominis_3.R",
+        "rectus_abdominis_4.L",
+        "rectus_abdominis_4.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "abdominals": {
+      "status": "surface",
+      "regions": [
+        "rectus_abdominis_1.L",
+        "rectus_abdominis_1.R",
+        "rectus_abdominis_2.L",
+        "rectus_abdominis_2.R",
+        "rectus_abdominis_3.L",
+        "rectus_abdominis_3.R",
+        "rectus_abdominis_4.L",
+        "rectus_abdominis_4.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "core": {
+      "status": "group_proxy",
+      "regions": [
+        "rectus_abdominis_1.L",
+        "rectus_abdominis_1.R",
+        "rectus_abdominis_2.L",
+        "rectus_abdominis_2.R",
+        "rectus_abdominis_3.L",
+        "rectus_abdominis_3.R",
+        "rectus_abdominis_4.L",
+        "rectus_abdominis_4.R",
+        "external_oblique.L",
+        "external_oblique.R",
+        "erector_spinae.L",
+        "erector_spinae.R"
+      ],
+      "reason": "Broad training term; superficial abdominal wall and erector columns proxy the group, not all deep stabilizers."
+    },
+    "lower abs": {
+      "status": "group_proxy",
+      "regions": [
+        "rectus_abdominis_3.L",
+        "rectus_abdominis_3.R",
+        "rectus_abdominis_4.L",
+        "rectus_abdominis_4.R"
+      ],
+      "reason": "Inferior display blocks of the same rectus abdominis, not separate muscles."
+    },
+    "obliques": {
+      "status": "surface",
+      "regions": [
+        "external_oblique.L",
+        "external_oblique.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "serratus": {
+      "status": "partial_surface",
+      "regions": [
+        "serratus_1.L",
+        "serratus_1.R",
+        "serratus_2.L",
+        "serratus_2.R",
+        "serratus_3.L",
+        "serratus_3.R",
+        "serratus_4.L",
+        "serratus_4.R"
+      ],
+      "reason": "Visible anterolateral slips only; not the portion deep to the scapula."
+    },
+    "serratus anterior": {
+      "status": "partial_surface",
+      "regions": [
+        "serratus_1.L",
+        "serratus_1.R",
+        "serratus_2.L",
+        "serratus_2.R",
+        "serratus_3.L",
+        "serratus_3.R",
+        "serratus_4.L",
+        "serratus_4.R"
+      ],
+      "reason": "Visible anterolateral slips only; not the portion deep to the scapula."
+    },
+    "lats": {
+      "status": "surface",
+      "regions": [
+        "latissimus_dorsi.L",
+        "latissimus_dorsi.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "latissimus dorsi": {
+      "status": "surface",
+      "regions": [
+        "latissimus_dorsi.L",
+        "latissimus_dorsi.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "traps": {
+      "status": "surface",
+      "regions": [
+        "trapezius_upper.L",
+        "trapezius_upper.R",
+        "trapezius_middle.L",
+        "trapezius_middle.R",
+        "trapezius_lower.L",
+        "trapezius_lower.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "trapezius": {
+      "status": "surface",
+      "regions": [
+        "trapezius_upper.L",
+        "trapezius_upper.R",
+        "trapezius_middle.L",
+        "trapezius_middle.R",
+        "trapezius_lower.L",
+        "trapezius_lower.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "upper back": {
+      "status": "group_proxy",
+      "regions": [
+        "infraspinatus.L",
+        "infraspinatus.R",
+        "teres_major.L",
+        "teres_major.R",
+        "latissimus_dorsi.L",
+        "latissimus_dorsi.R",
+        "trapezius_upper.L",
+        "trapezius_upper.R",
+        "trapezius_middle.L",
+        "trapezius_middle.R",
+        "trapezius_lower.L",
+        "trapezius_lower.R"
+      ],
+      "reason": "Training group combines lats, trapezius and visible posterior scapular regions; deep rhomboids are omitted unless requested explicitly."
+    },
+    "upper-back": {
+      "status": "group_proxy",
+      "regions": [
+        "infraspinatus.L",
+        "infraspinatus.R",
+        "teres_major.L",
+        "teres_major.R",
+        "latissimus_dorsi.L",
+        "latissimus_dorsi.R",
+        "trapezius_upper.L",
+        "trapezius_upper.R",
+        "trapezius_middle.L",
+        "trapezius_middle.R",
+        "trapezius_lower.L",
+        "trapezius_lower.R"
+      ],
+      "reason": "Training group combines lats, trapezius and visible posterior scapular regions; deep rhomboids are omitted unless requested explicitly."
+    },
+    "back": {
+      "status": "group_proxy",
+      "regions": [
+        "infraspinatus.L",
+        "infraspinatus.R",
+        "teres_major.L",
+        "teres_major.R",
+        "latissimus_dorsi.L",
+        "latissimus_dorsi.R",
+        "trapezius_upper.L",
+        "trapezius_upper.R",
+        "trapezius_middle.L",
+        "trapezius_middle.R",
+        "trapezius_lower.L",
+        "trapezius_lower.R"
+      ],
+      "reason": "Training group combines lats, trapezius and visible posterior scapular regions; deep rhomboids are omitted unless requested explicitly."
+    },
+    "rhomboids": {
+      "status": "deep_projection",
+      "regions": [
+        "rhomboid_projection.L",
+        "rhomboid_projection.R"
+      ],
+      "reason": "Rhomboids are deep to trapezius; this is an overlaid surface projection, not exposed rhomboid tissue."
+    },
+    "rotator cuff": {
+      "status": "deep_projection",
+      "regions": [
+        "infraspinatus.L",
+        "infraspinatus.R"
+      ],
+      "reason": "Only a posterior infraspinatus area proxy is visible; supraspinatus, subscapularis and deep cuff tendons are not claimed as surface segmentation."
+    },
+    "levator scapulae": {
+      "status": "deep_projection",
+      "regions": [
+        "trapezius_upper.L",
+        "trapezius_upper.R"
+      ],
+      "reason": "Approximate upper trapezius surface proxy over the deep levator scapulae; the muscles are not equivalent."
+    },
+    "lower back": {
+      "status": "group_proxy",
+      "regions": [
+        "erector_spinae.L",
+        "erector_spinae.R"
+      ],
+      "reason": "Erector spinae surface columns proxy lower back; spine denotes a training target, not muscle tissue."
+    },
+    "lower-back": {
+      "status": "group_proxy",
+      "regions": [
+        "erector_spinae.L",
+        "erector_spinae.R"
+      ],
+      "reason": "Erector spinae surface columns proxy lower back; spine denotes a training target, not muscle tissue."
+    },
+    "spine": {
+      "status": "group_proxy",
+      "regions": [
+        "erector_spinae.L",
+        "erector_spinae.R"
+      ],
+      "reason": "Erector spinae surface columns proxy lower back; spine denotes a training target, not muscle tissue."
+    },
+    "glutes": {
+      "status": "surface",
+      "regions": [
+        "gluteus_maximus.L",
+        "gluteus_maximus.R",
+        "gluteus_medius_visible.L",
+        "gluteus_medius_visible.R",
+        "tensor_fasciae_latae.L",
+        "tensor_fasciae_latae.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "gluteal": {
+      "status": "surface",
+      "regions": [
+        "gluteus_maximus.L",
+        "gluteus_maximus.R",
+        "gluteus_medius_visible.L",
+        "gluteus_medius_visible.R",
+        "tensor_fasciae_latae.L",
+        "tensor_fasciae_latae.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "abductors": {
+      "status": "group_proxy",
+      "regions": [
+        "gluteus_medius_visible.L",
+        "gluteus_medius_visible.R",
+        "tensor_fasciae_latae.L",
+        "tensor_fasciae_latae.R"
+      ],
+      "reason": "Visible gluteus medius and tensor fasciae latae; deep gluteus minimus is omitted."
+    },
+    "quads": {
+      "status": "partial_surface",
+      "regions": [
+        "rectus_femoris.L",
+        "rectus_femoris.R",
+        "vastus_lateralis.L",
+        "vastus_lateralis.R",
+        "vastus_medialis.L",
+        "vastus_medialis.R"
+      ],
+      "reason": "Rectus femoris, vastus medialis and lateralis are visible; deep vastus intermedius is intentionally omitted."
+    },
+    "quadriceps": {
+      "status": "partial_surface",
+      "regions": [
+        "rectus_femoris.L",
+        "rectus_femoris.R",
+        "vastus_lateralis.L",
+        "vastus_lateralis.R",
+        "vastus_medialis.L",
+        "vastus_medialis.R"
+      ],
+      "reason": "Rectus femoris, vastus medialis and lateralis are visible; deep vastus intermedius is intentionally omitted."
+    },
+    "hamstring": {
+      "status": "surface",
+      "regions": [
+        "biceps_femoris.L",
+        "biceps_femoris.R",
+        "semitendinosus.L",
+        "semitendinosus.R",
+        "semimembranosus_visible.L",
+        "semimembranosus_visible.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "hamstrings": {
+      "status": "surface",
+      "regions": [
+        "biceps_femoris.L",
+        "biceps_femoris.R",
+        "semitendinosus.L",
+        "semitendinosus.R",
+        "semimembranosus_visible.L",
+        "semimembranosus_visible.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "adductors": {
+      "status": "partial_surface",
+      "regions": [
+        "adductor_longus.L",
+        "adductor_longus.R",
+        "adductor_magnus_visible.L",
+        "adductor_magnus_visible.R"
+      ],
+      "reason": "Visible medial thigh/adductor regions; deep origins and other groin anatomy are omitted."
+    },
+    "groin": {
+      "status": "partial_surface",
+      "regions": [
+        "adductor_longus.L",
+        "adductor_longus.R",
+        "adductor_magnus_visible.L",
+        "adductor_magnus_visible.R"
+      ],
+      "reason": "Visible medial thigh/adductor regions; deep origins and other groin anatomy are omitted."
+    },
+    "inner thighs": {
+      "status": "partial_surface",
+      "regions": [
+        "adductor_longus.L",
+        "adductor_longus.R",
+        "adductor_magnus_visible.L",
+        "adductor_magnus_visible.R"
+      ],
+      "reason": "Visible medial thigh/adductor regions; deep origins and other groin anatomy are omitted."
+    },
+    "hip flexors": {
+      "status": "deep_projection",
+      "regions": [
+        "sartorius.L",
+        "sartorius.R",
+        "iliopsoas_projection.L",
+        "iliopsoas_projection.R"
+      ],
+      "reason": "Iliopsoas is deep: a limited anterior hip projection plus visible sartorius region, not exposed iliopsoas tissue."
+    },
+    "hip-flexors": {
+      "status": "deep_projection",
+      "regions": [
+        "sartorius.L",
+        "sartorius.R",
+        "iliopsoas_projection.L",
+        "iliopsoas_projection.R"
+      ],
+      "reason": "Iliopsoas is deep: a limited anterior hip projection plus visible sartorius region, not exposed iliopsoas tissue."
+    },
+    "calves": {
+      "status": "surface",
+      "regions": [
+        "gastrocnemius_medial.L",
+        "gastrocnemius_medial.R",
+        "gastrocnemius_lateral.L",
+        "gastrocnemius_lateral.R",
+        "soleus_lateral.L",
+        "soleus_lateral.R",
+        "soleus_medial.L",
+        "soleus_medial.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "soleus": {
+      "status": "partial_surface",
+      "regions": [
+        "soleus_lateral.L",
+        "soleus_lateral.R",
+        "soleus_medial.L",
+        "soleus_medial.R"
+      ],
+      "reason": "Visible medial/lateral strips beside and below gastrocnemius; no false full superficial soleus patch."
+    },
+    "shins": {
+      "status": "surface",
+      "regions": [
+        "tibialis_anterior.L",
+        "tibialis_anterior.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "sternocleidomastoid": {
+      "status": "surface",
+      "regions": [
+        "sternocleidomastoid.L",
+        "sternocleidomastoid.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "cardiovascular system": {
+      "status": "systemic",
+      "regions": [],
+      "reason": "System-level exercise demand has no localized muscle surface."
+    },
+    "hands": {
+      "status": "unsupported",
+      "regions": [],
+      "reason": "No defensible individual intrinsic hand/foot or ankle stabilizer segmentation is authored for this mannequin."
+    },
+    "feet": {
+      "status": "unsupported",
+      "regions": [],
+      "reason": "No defensible individual intrinsic hand/foot or ankle stabilizer segmentation is authored for this mannequin."
+    },
+    "ankles": {
+      "status": "unsupported",
+      "regions": [],
+      "reason": "No defensible individual intrinsic hand/foot or ankle stabilizer segmentation is authored for this mannequin."
+    },
+    "ankle stabilizers": {
+      "status": "unsupported",
+      "regions": [],
+      "reason": "No defensible individual intrinsic hand/foot or ankle stabilizer segmentation is authored for this mannequin."
+    }
+  },
+  "sources": [
+    {
+      "title": "OpenStax Anatomy and Physiology 2e, 11.4",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax",
+      "use": "Abdominal layer ordering and rectus/oblique arrangement."
+    },
+    {
+      "title": "OpenStax Anatomy and Physiology 2e, 11.5",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs",
+      "use": "Chest/shoulder/upper limb superficial shape, back muscle layering and cuff limitations."
+    },
+    {
+      "title": "OpenStax Anatomy and Physiology 2e, 11.6",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+      "use": "Pelvic/thigh/leg compartments and deep vs visible regions."
+    }
+  ]
+}

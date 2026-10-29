@@ -1,0 +1,24 @@
+{
+  "status": "frozen_same_selectors_as_original151_surface_check",
+  "sha256": "bd185444e62e0fef62d918ad02fa208e57af5fa6ed70fae241326b9aa08e2cf0",
+  "selection": "Existing contact_common.load hand/leg/glute selectors and unchanged original hip-ROI-descendant/replacement-face predicate; no threshold or support-mask changes.",
+  "inputs": {
+    "artifacts/mannequin-mpfb-prototype/local-topology-repair/static-cage.npz": "4af3509d242014df5d82d0afa2fc774c33b04ae9c11f95b5823a3d58f500b84e",
+    "artifacts/mannequin-mpfb-prototype/composed-bind/composed-cage.npz": "b84300ccdea22f9908944175c6d5fc4aee051f5d786c47298acc55b86ee1c9ff",
+    "artifacts/mannequin-mpfb-prototype/grounding-report.json": "db4b91a83673c1bb46b8a94b7dfe7a0b35ecb3c4827f17a24a2b976d58853f39",
+    "artifacts/mannequin-mpfb-prototype/neutral-cage.npz": "1b2725fedff13585d625ee9e37ea9256b0dc374574a07d739d32b94fbad50218",
+    "artifacts/mannequin-mpfb-prototype/neutral-rig-inspection.json": "450b062d56ab0bc87f9f60b2165c61b4e2cd9edfb68400bef5e169b576bd6361",
+    "artifacts/mannequin-mpfb-prototype/local-topology-repair/transferred-weights.json": "71e47e9defaeeef666cdc56110c06199d95dd24df8c0f158899dcfd2e47aa33a",
+    "artifacts/mannequin-mpfb-prototype/historical-upright/upright-surface-inspection.json": "04e40ca130cf705ef77ed488a2764af2c824af775cc1ddee96c03efcb8cc4fcd",
+    "artifacts/mannequin-mpfb-prototype/crossing-localization.json": "dc36fa57a415ef92c52315fc0f67a659b3b305cb9bf960e75313a130cc90219d",
+    "artifacts/mannequin-mpfb-prototype/seated-cage-cleanup/bind-input.npz": "25ac025849323a6cae2533c644a2ebf0ac0353296607c7c736acee7635edabd5"
+  },
+  "data_counts": {
+    "vertices": 13408,
+    "triangles": 26812,
+    "hip_faces": 1800,
+    "hand_faces": 6766,
+    "leg_faces": 6665,
+    "glute_vertices": 102
+  }
+}

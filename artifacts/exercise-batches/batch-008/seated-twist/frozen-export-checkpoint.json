@@ -1,0 +1,70 @@
+{
+  "id": "6121",
+  "status": "SOURCE_EXPORT_AND_REFS_FROZEN_NATIVE151_PASS_DECODED_PENDING",
+  "files": {
+    "source.blend": {
+      "sha256": "8861f6ec1015db6b3bbf5d1a4f603877a5c2469ebe7f4cbe6f52ea62b60cf697",
+      "bytes": 13862702
+    },
+    "motion.glb": {
+      "sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+      "bytes": 1003756
+    },
+    "clip.json": {
+      "sha256": "dffbae06ebe3210e5ad004b75af2803ee9dd81f43ae63484553315d7d7bd8e6d",
+      "bytes": 2654
+    },
+    "cameras.json": {
+      "sha256": "379f3b984a2f9efc3801f110db1b2198af4a36ab9e421eeac403cb239c5118fd",
+      "bytes": 346
+    },
+    "pose-samples.json": {
+      "sha256": "161c052805d2fcf0049d6d450c897e8b625d065589f8c1c321b9eff47ad2ce4f",
+      "bytes": 125209
+    },
+    "runtime-surface-reference.json": {
+      "sha256": "418358dc1c41401feb0cd8f44c851d7467d0a367c025f60e37df6ddf6c52c050",
+      "bytes": 3060206
+    },
+    "source-morph-samples.json": {
+      "sha256": "c686344df1fc2a34d5e6cabd42c58a56060bd16c756979a77fa8e395faf9b822",
+      "bytes": 23528
+    },
+    "dq-reference.json.gz": {
+      "sha256": "3bed85d98f589cbcb6b455f311d1f4e82f8c71ec666f026880f02ad3e815aa7f",
+      "bytes": 3468952
+    },
+    "joint-normal-reference.json.gz": {
+      "sha256": "abdcc95de904741267e17523cb8a6b00d45611c2eaf0f090d8bc6e75d0fb6108",
+      "bytes": 871592
+    }
+  },
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.3,
+      "label": "Release hands"
+    },
+    {
+      "start": 0.3,
+      "end": 1.3,
+      "label": "Place foot outside opposite thigh"
+    },
+    {
+      "start": 1.3,
+      "end": 2,
+      "label": "Hug knee and gently twist"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold supported twist"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Release and extend legs"
+    }
+  ],
+  "camera_ownership_after_checkpoint": "primary may changecamera2/width; author will not rewrite cameras.json"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "1977",
+  "action": "Exercise_1977",
+  "name": "adduction of arm in back stretch",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "primary": [
+    "delts"
+  ],
+  "secondary": [
+    "triceps",
+    "upper back"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {
+    "delts": [
+      "L"
+    ],
+    "triceps": [
+      "L"
+    ],
+    "upper back": [
+      "L"
+    ]
+  },
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "skinning": "linear",
+  "interpretation": "Representative anatomical LEFT arm reaches behind the back; the RIGHT hand grasps the left wrist and gently draws it across the rear of the body while the shoulders remain level. Mirror the complete action and anatomical highlights for the other side. The five-second demonstration compresses the source 20\u201330-second workout hold. The source training labels do not establish physiological recruitment or clinical joint limits.",
+  "authored_choices": {
+    "stance": "Standing option explicitly allowed by the source; original supported bilateral foot/knee/hip/pelvis rest geometry. Exact stance and initial open arm placement are reversible staging choices.",
+    "timing": "0\u20132s enter,2\u20133s hold,3\u20135s reverse release/return; the source workout hold remains20\u201330s.",
+    "path": "Active arm reaches rear space first. Assisting hand approaches around the torso, then acquires the wrist; the contact goal is transported with the active forearm during the cross-body draw.",
+    "hands": "Relaxed active hand preserves source wrist/forearm segment relationship. Assisting thumb opposition and per-digit flexion are authored to form a loose surface C-grasp, with clearance checked on actual skin.",
+    "frame": "Parallel-transport the original elbow bend direction along the moving shoulder/wrist axis, then gradually apply the fixed endpoint twist. This preserves the reviewed lowered-elbow hold without a near-axis point-pole flip. Forearms transport with their upper arms; the active hand retains its rest wrist relationship.",
+    "skin": "Armature-only linear original cage. Bilateral bounded shoulder weight-boundary diffusion, at most four influences; original Basis, rest skeleton, topology, UV and original vertex IDs preserved. No shape keys, DQ, textures or native smoothing mask.",
+    "cameras": "Posterior oblique exposes the left deltoid/upper back and wrist grasp. Complementary left side exposes rear shoulder extension and torso clearance. Root may fit horizontal width.",
+    "muscle_display": "Root integrates diffuse cyan zones on the selected LEFT source delts/triceps/upper-back proxy only; inactive body remains neutral. Artistic emphasis is stable across phases, without physiological intensity claims."
+  },
+  "source": {
+    "path": "catalogue/exercises/1977.json",
+    "sha256": "63b512f23c306229375a0e0ec0cf6ce94340fbf2f94d43e2227d2d41e5c735f9",
+    "instruction_pointer": "/instructions",
+    "instructions": [
+      "Stand or sit tall.",
+      "Reach one arm behind your back.",
+      "Grab that wrist with the other hand and gently pull it across your body.",
+      "Keep your shoulders level.",
+      "Hold for 20-30 seconds, then switch sides."
+    ],
+    "target": "delts",
+    "secondaryMuscles": [
+      "triceps",
+      "upper back"
+    ],
+    "textSource": "opengym"
+  },
+  "provenance": {
+    "body": "Continuous Blender Studio Human Base Meshes CC0 mannequin through immutable bodyweight-five.blend.",
+    "motion": "Original analytic authoring from authorized catalogue text only; no Gym Visual media or captured-motion reuse."
+  },
+  "readiness": "authored_for_review_not_production_approved",
+  "unresolved_source_blockers": []
+}

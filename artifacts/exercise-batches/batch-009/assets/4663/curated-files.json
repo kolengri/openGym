@@ -1,0 +1,353 @@
+{
+  "id": "4663",
+  "status": "local_native_decoded_QA_complete_primary_integration_pending",
+  "source_and_motion_frozen": true,
+  "source_sha256": "686cfaeeadc3d177adfe55901b72b6fca318247c59d25c8cff6eed48e075b6ea",
+  "glb_sha256": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+  "included_files": [
+    {
+      "path": "source.blend",
+      "sha256": "686cfaeeadc3d177adfe55901b72b6fca318247c59d25c8cff6eed48e075b6ea",
+      "bytes": 13625494
+    },
+    {
+      "path": "motion.glb",
+      "sha256": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+      "bytes": 875052
+    },
+    {
+      "path": "clip.json",
+      "sha256": "844fceb72477567a13d88a4f5ff9f5a62212dd23c9891524000a938bd0b92710",
+      "bytes": 3249
+    },
+    {
+      "path": "cameras.json",
+      "sha256": "28e3942a064d52c2ef4c500f93e54e1b55fbaca448180e10d8ca4a9c7ab3933a",
+      "bytes": 343
+    },
+    {
+      "path": "authoring-context.json",
+      "sha256": "9a21bd3b8dded9d72eac92e711640cc6f30943fbe026b9ff9d599c26d7095229",
+      "bytes": 61352
+    },
+    {
+      "path": "pose-samples.json",
+      "sha256": "177479cc49a5ef03ad0742888d92bc258139b71ecd9754df8432a45418d9cdee",
+      "bytes": 56539
+    },
+    {
+      "path": "runtime-surface-reference.json",
+      "sha256": "65c62cfb0d9c1d285040550872aa8bc7454a9783082ae991cebe26e805de5434",
+      "bytes": 5689540
+    },
+    {
+      "path": "surface-landmarks.json",
+      "sha256": "e6ab5968112dc21a3285a8f6dda03ab684dcd017ad6cdf62b07bd7adea94b734",
+      "bytes": 486237
+    },
+    {
+      "path": "dq-reference.json.gz",
+      "sha256": "09946f0a0a645ecaf8e66189b98c7ef025a922212126967f6d2bcb9ef7fbee03",
+      "bytes": 1415444
+    },
+    {
+      "path": "normal-reference.json.gz",
+      "sha256": "f0b3064f135f3e077500e4ae69a248a1e2202641ed3d60f327ef700cbb7d7c34",
+      "bytes": 1738108
+    },
+    {
+      "path": "source-verification.json",
+      "sha256": "c1888904d92bb06ab2cdb4ca07ef908ef72e786a18c341cc8854ad4511f11816",
+      "bytes": 755059
+    },
+    {
+      "path": "surface-contact-report.json",
+      "sha256": "064f06125ab7f01ffa32b35b1a193582c575cff44c25c10521a9b53fc9638bc7",
+      "bytes": 1462563
+    },
+    {
+      "path": "raw-asset-qa.json",
+      "sha256": "e43534b84dade55bf1f1b83286a13fd0f660451b2e43f55f64b590924f2dd94c",
+      "bytes": 4792
+    },
+    {
+      "path": "export-verification.json",
+      "sha256": "b6955944ed348c8ac5b9df14180fdeeb0801662ce8310309b49e2d434f653f96",
+      "bytes": 21838
+    },
+    {
+      "path": "decoded-physical-report.json",
+      "sha256": "91a581e8aae245c03319f318cd33f138bcd2697fcf450aa00339d065037b87bc",
+      "bytes": 1462289
+    },
+    {
+      "path": "decoded-source-readback.json",
+      "sha256": "c1888904d92bb06ab2cdb4ca07ef908ef72e786a18c341cc8854ad4511f11816",
+      "bytes": 755059
+    },
+    {
+      "path": "delivery-report.json",
+      "sha256": "e87c0437c53bf0b00e7f01c367e22841bc21945ea40027a9188d044bc1d97160",
+      "bytes": 3379
+    },
+    {
+      "path": "local-binding-report.json",
+      "sha256": "8beb772bb2c22a137ddb93e2fe74ff0f2d363540113e3ceaa96295291afcff81",
+      "bytes": 388
+    },
+    {
+      "path": "early-proof-readback.json",
+      "sha256": "86bc23e8de4247e7c671e3251efab13fd128352941786b78b4240871df6a4f6e",
+      "bytes": 85314
+    },
+    {
+      "path": "README.md",
+      "sha256": "a50ce5ef25217d0bac2c0ce87344da5be21d68886628815f471816d34f7f3dda",
+      "bytes": 2041
+    },
+    {
+      "path": "early-start-side_whole_body.png",
+      "sha256": "0eb2fc922392ca32f6e5c727d9cd21f991d9efac44093cb4dbac9e6c1d85669e",
+      "bytes": 233320
+    },
+    {
+      "path": "early-start-oblique_whole_body.png",
+      "sha256": "bc35a28e0b848c37e9250062efcdd1dfb798e59cff5e2f6ec4c632e9a13286a6",
+      "bytes": 263199
+    },
+    {
+      "path": "early-intermediate-side_whole_body.png",
+      "sha256": "fd17da7789041d7f72dfc2c2098a4a0d426473bcb0aee4ca123ee4406866df9c",
+      "bytes": 234296
+    },
+    {
+      "path": "early-intermediate-oblique_whole_body.png",
+      "sha256": "44b547998dd11b11dd8bbaf0a68b1b4ed4a993291049b1ba4b3ef75270bf5a61",
+      "bytes": 265302
+    },
+    {
+      "path": "early-peak-side_whole_body.png",
+      "sha256": "d17c6d8b629b0f2400c3ece1e46ebcb69e34a46377a104336167e2c5b5b5cdbf",
+      "bytes": 236960
+    },
+    {
+      "path": "early-peak-oblique_whole_body.png",
+      "sha256": "a18616acbe736923964af1dd699a580ed2833070e344cf7d5b9c5f4d886e0b07",
+      "bytes": 263507
+    },
+    {
+      "path": "early-lower-side_whole_body.png",
+      "sha256": "eaf3a1e777d2e4d54905f2de5ef2cad60b5c3f4597bf7ee6084c30f6a551a5d6",
+      "bytes": 234296
+    },
+    {
+      "path": "early-lower-oblique_whole_body.png",
+      "sha256": "7d69aca6965a01cbe71e7aecdf0607a00feb87e616ac248dd4817b7d766c7044",
+      "bytes": 265302
+    },
+    {
+      "path": "early-return-side_whole_body.png",
+      "sha256": "8f72579dd98b02f3b2a385ef4a15fa1a23f1aa75a75b4fb7bec0588d1e9d01ba",
+      "bytes": 233320
+    },
+    {
+      "path": "early-return-oblique_whole_body.png",
+      "sha256": "400d1dfc7c22e949e77e714ac5e1b3e3d67120ecdfff99f1b6d98844fd8f08d6",
+      "bytes": 263199
+    },
+    {
+      "path": "qa-random.png",
+      "sha256": "c4fe739c4f8fb134d294b73710b2cd9e7db47961aa70d9265c18a067bea28025",
+      "bytes": 970344
+    },
+    {
+      "path": "qa-random_right.png",
+      "sha256": "daac2f29d3441b2a6fb3c3dc9e39e97357e748be8430984811221be6ac180b02",
+      "bytes": 258340
+    },
+    {
+      "path": "qa-random_top.png",
+      "sha256": "80e227ab907051f2b15dae76b452202dad8a9a8312a6196577ebe934bd210736",
+      "bytes": 273978
+    },
+    {
+      "path": "qa-random_three_quarter.png",
+      "sha256": "96ae65d6ec7b2bdccb81e3cde1a34780b1f6b962f42d88860ca2702f48ecca9e",
+      "bytes": 263974
+    },
+    {
+      "path": "qa-random_bottom.png",
+      "sha256": "f64a2db62d0a6b4ae0183de3d03022f5f7c7c3822fdaece316a35f8029b953aa",
+      "bytes": 276985
+    },
+    {
+      "path": "qa-wire.png",
+      "sha256": "0d971b59af751a94cb90d8197b086cfb2504c2ee43f6e1299547c4f0d0c94306",
+      "bytes": 1015898
+    },
+    {
+      "path": "qa-wire_right.png",
+      "sha256": "e192bb109df6ae8a676f3c8662dd1e392eb834870dac228d01933eb6ab5cc004",
+      "bytes": 268467
+    },
+    {
+      "path": "qa-wire_top.png",
+      "sha256": "6f09f4a54e3c8081157cd246564f3d0731fa402b6ee3866c3dd966c5a590d066",
+      "bytes": 304503
+    },
+    {
+      "path": "qa-wire_three_quarter.png",
+      "sha256": "3fa5a840d48684d39b0c4bea52e6c79b3a20573c0e21053ef8a1a4c2b12e1c73",
+      "bytes": 271406
+    },
+    {
+      "path": "qa-wire_bottom.png",
+      "sha256": "1c2d31ff4fe255c1d9a6a3bcc25807ecd7e1e708cc5339907bc403827602784e",
+      "bytes": 300408
+    },
+    {
+      "path": "source-provenance.json",
+      "sha256": "3f68f37b1bd3260990ac23e59e4cd25dd5909b020a296a2f8565a4191cf8d6c3",
+      "bytes": 6281
+    },
+    {
+      "path": "curated-files.json",
+      "self": true
+    }
+  ],
+  "read_only_dependencies": [
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/source.blend",
+      "sha256": "b8499ef44ef06bb5f9ae85edf787b86021cbe555cdce9e1220a01bc5f566a332",
+      "role": "Accepted exact native resting source; action identity only changes"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/motion.glb",
+      "sha256": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00",
+      "role": "Accepted exact resting GLB binary/samplers/morphs"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/6539/delivery-report.json",
+      "sha256": "819e2d5467ae5e85e536b11080335556f4da69d14c9b8bd2fdc84c6071aa4be1",
+      "role": "Accepted resting mechanics/GPU lineage and retained fold warnings"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/native-identity.json",
+      "sha256": "f360c9327d4d7f77b8b75b8630edc304077e6c8d20889a4912e540fd12926426",
+      "role": "Prior4365\u21926539 native exact identity receipt"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/resting-reuse/decoded-identity.json",
+      "sha256": "e576cc3f0e0dea4448b8841a3fc1dfe1a66a052829b2cad47a876bdb50698b0c",
+      "role": "Prior4365\u21926539 actual decoded identity receipt"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/source.blend",
+      "sha256": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c",
+      "role": "Accepted unchanged prone binding; old action removed"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/assets/4935/local-binding-report.json",
+      "sha256": "a74dc91974f7fb50bb3c8460450a0acb0bf05fe092e006ea32274b209bf45be2",
+      "role": "Accepted prone binding signature"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045",
+      "role": "Invariant source rig math/helper extraction"
+    },
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+      "role": "Canonical CC0 Basis/rest/UV/topology source"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c",
+      "role": "Read-only rig math functions extracted by authoring helper"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/palm_frame.py",
+      "sha256": "31b8baf5d66e9ebe3f9b4eac1efcdeace1dcd2d48345d8e3a84cf8d106da32d7",
+      "role": "Source-derived true palm plane frame"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+      "role": "Unchanged DQ POSITION/NORMAL shared adapter"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/resting-repair/resting_checks.py",
+      "sha256": "1f421c67b98d4110d345d7c025fd6714dfaef11cbd5a62b80efd39eb7c34d2b3",
+      "role": "Established source shoulder attachment ROI; diagnostic scope only"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/package-lock.json",
+      "sha256": "ee452d9a3fca4320321ba6b3a3a860cb421f31d4aa4f8111d738f3f7d33ceeab",
+      "role": "Existing project runtime dependency lock"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b",
+      "role": "Mandatory game profile QA implementation"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/review_shots.py",
+      "sha256": "ffd4361f313592b67c124cdf0ec54b8d9866c9b29eefdac5c47731ce133d3f01",
+      "role": "Native solid/wire review implementation"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/asset-interface.json",
+      "sha256": "acb7430e0b2aa17fbf665f2bb3253064b8302d2adad30a0580f683e04940e396",
+      "role": "Current asset interface"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/authoring-handoff.md",
+      "sha256": "ddd7b130754a80f9203b18bd624cf1f7def375c53b0306b5787ec6a62a27beb6",
+      "role": "Authoring acceptance contract"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/source-resolutions.json",
+      "sha256": "ec1d33776a323e559a6f52dc8527ba99388841dad6bc971f162c68491dea2319",
+      "role": "Source-specific staging boundary"
+    },
+    {
+      "path": "catalogue/exercises/1315.json",
+      "sha256": "403f8ec112ecbdf6c8c1f432b5e27bdd4be680811296cc76516f2ae04e192736",
+      "role": "Source instruction labels/hold"
+    },
+    {
+      "path": "catalogue/exercises/4663.json",
+      "sha256": "837b75832d7c3752ce1c41337c53ea784ad78dfa49f4ba268dd6d155e44ea5f3",
+      "role": "Source instruction labels"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/contexts/1315.json",
+      "sha256": "88711d86763b0f732bcbeb0bfa8b4452a8dd74c6ac579a6747db8ab3af6189b2",
+      "role": "Current intake context"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/contexts/4663.json",
+      "sha256": "9a21bd3b8dded9d72eac92e711640cc6f30943fbe026b9ff9d599c26d7095229",
+      "role": "Current intake context"
+    }
+  ],
+  "root_integration_may_update": [
+    "clip.json",
+    "cameras.json"
+  ],
+  "excluded": [
+    "*.log",
+    "__pycache__",
+    "*.blend1",
+    "trials",
+    "temporary decoded exchanges",
+    "environments",
+    "runtime vertex/frame caches"
+  ],
+  "self_integrity": {
+    "algorithm": "SHA256",
+    "canonicalization": "UTF-8 compact JSON sorted keys excluding self_integrity; no newline",
+    "sha256": "04d7f74e1c9a4d4172c682a96ccce1c2fed174f59017d7edb4f0ed6444d7ac7f"
+  }
+}

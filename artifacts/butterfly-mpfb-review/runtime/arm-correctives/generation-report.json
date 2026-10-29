@@ -1,0 +1,69 @@
+{
+  "status": "two_key_target_predicted_pass_pending_actualGLB_all151",
+  "checks": {
+    "optimizer_success": true,
+    "all151_halfspace_slack_mm": true,
+    "source_displacement_cap8mm": true,
+    "exterior_complete_arm_exact_zero": true,
+    "feet_glute_exact_zero": true,
+    "bind_loop_morph_weights_exact_zero": true,
+    "finger_ratio_at_least08_all151": true,
+    "whole_skin_floor_ge_minus035mm_all151": true,
+    "no_affected_face_reversal_all151": true,
+    "no_zero_area_all151": true,
+    "predicted_key_and_loop_complete_arm_leg_zero": true
+  },
+  "method": "One joint12DOF(or6DOF per actual contact cluster) convex contact-halfspace/SLSQP solve; source paired rigid cores,18mm geodesicC1 feather, inverse actual blended skin maps atq=.5/1, all151 moving-leg contact halfspaces, per-vertex8mm source balls. No native pose/topology/weight/geometry-method variants.",
+  "optimizer_message": "Optimization terminated successfully",
+  "iterations": 2,
+  "objective": 0.20931137449726128,
+  "input_hashes": {
+    "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/butterfly-mpfb-review/runtime/mesh-input.json": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+    "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/butterfly-mpfb-review/runtime/motion-input.json": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337"
+  },
+  "source_motion_sha256": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+  "weight_override_sha256": null,
+  "baseline_actual_reconstruction_error_m": 8.434843429915365e-08,
+  "all151_halfspace_count": 691448,
+  "exact_unique_halfspaces": 309383,
+  "all151_halfspace_slack_minimum_mm": -2.220446049250313e-16,
+  "source_cap_slack_minimum_mm2": 63.0574786679217,
+  "maximum_per_target_source_displacement_m": [
+    0.00012477153249019652,
+    0.0009625602738687498
+  ],
+  "minimum_finger_material_ratio_all151": 0.854104974777643,
+  "whole_skin_floor_minimum_m": -9.274924556136839e-18,
+  "active_vertex_count": 112,
+  "cluster_count": 2,
+  "variable_count": 12,
+  "predicted_key_checks": [
+    {
+      "frame": 0,
+      "arm_leg_count": 0,
+      "hand_leg_count": 0,
+      "arm_leg_pairs": []
+    },
+    {
+      "frame": 30,
+      "arm_leg_count": 0,
+      "hand_leg_count": 0,
+      "arm_leg_pairs": []
+    },
+    {
+      "frame": 60,
+      "arm_leg_count": 0,
+      "hand_leg_count": 0,
+      "arm_leg_pairs": []
+    },
+    {
+      "frame": 150,
+      "arm_leg_count": 0,
+      "hand_leg_count": 0,
+      "arm_leg_pairs": []
+    }
+  ],
+  "actual_full151_proof_pending": true,
+  "hip_acceptance_owned_elsewhere": true,
+  "seconds": 5.637239875039086
+}

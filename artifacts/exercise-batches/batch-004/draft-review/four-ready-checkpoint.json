@@ -1,0 +1,373 @@
+{
+  "packet": "batch-004 four-ready source-bound checkpoint",
+  "created_at_utc": "2026-10-29T02:38:32+00:00",
+  "source_identity": {
+    "repository_head": "468c026db0adb250bb2de7e7b197c8510903460e",
+    "branch": "t3/upgrade-exercise-animations"
+  },
+  "scope": {
+    "assets": [
+      "1980",
+      "2098",
+      "1977",
+      "0003"
+    ],
+    "curated_list": "artifacts/exercise-batches/batch-004/draft-review/curated-four-paths.json",
+    "curated_path_count": 150,
+    "curated_existing_path_count": 150,
+    "curated_total_bytes": 104133512,
+    "paths_outside_four_asset_folders": [],
+    "missing_curated_paths": []
+  },
+  "assets": {
+    "1980": {
+      "manifest": "artifacts/exercise-batches/batch-004/assets/1980/delivery-report.json",
+      "delivery_status": "asset_authored_and_verified_pending_primary_runtime_acceptance",
+      "current": {
+        "source.blend": {
+          "bytes": 13606015,
+          "sha256": "dd754f2d5a63a124c2a3967dd8b56156501beb0821d4d60b04e714315de3c563",
+          "manifest_expected": {
+            "bytes": 13606015,
+            "sha256": "dd754f2d5a63a124c2a3967dd8b56156501beb0821d4d60b04e714315de3c563"
+          },
+          "manifest_match": true
+        },
+        "motion.glb": {
+          "bytes": 869740,
+          "sha256": "0401f605041f07ae13a8017ba31bc489050c9d76cb4d6ae5ca413c09f4b2e7b6",
+          "manifest_expected": {
+            "bytes": 869740,
+            "sha256": "0401f605041f07ae13a8017ba31bc489050c9d76cb4d6ae5ca413c09f4b2e7b6"
+          },
+          "manifest_match": true
+        },
+        "clip.json": {
+          "bytes": 3691,
+          "sha256": "044bb7b02cd105266657242bfe78db6074d4a5a82a575388a2e53a67e50ecb1e",
+          "manifest_expected": {
+            "bytes": 3691,
+            "sha256": "044bb7b02cd105266657242bfe78db6074d4a5a82a575388a2e53a67e50ecb1e"
+          },
+          "manifest_match": true
+        },
+        "cameras.json": {
+          "bytes": 355,
+          "sha256": "02443039141e810f602145d434572ef94e3c526bcfc032da3bab1d3a715700e4",
+          "manifest_expected": {
+            "bytes": 356,
+            "sha256": "58790f0c68d8534616bd2509c8c9303a63cd5153bfaa4456598bd087c0cadb99"
+          },
+          "manifest_match": false
+        }
+      },
+      "published_clip_metadata": {
+        "id": "1980",
+        "action": "Exercise_1980",
+        "duration_seconds": 5,
+        "frames": 150,
+        "fps": 30,
+        "skinning": "linear"
+      },
+      "delivery_metadata_hashes": {
+        "source_sha256": "dd754f2d5a63a124c2a3967dd8b56156501beb0821d4d60b04e714315de3c563",
+        "glb_sha256": "0401f605041f07ae13a8017ba31bc489050c9d76cb4d6ae5ca413c09f4b2e7b6"
+      },
+      "listed_hashed_file_count": 32,
+      "listed_total_bytes": 26590352,
+      "missing_manifest_files": [],
+      "known_camera_override_mismatches": [
+        {
+          "path": "cameras.json",
+          "actual_bytes": 355,
+          "actual_sha256": "02443039141e810f602145d434572ef94e3c526bcfc032da3bab1d3a715700e4",
+          "expected_bytes": 356,
+          "expected_sha256": "58790f0c68d8534616bd2509c8c9303a63cd5153bfaa4456598bd087c0cadb99",
+          "match": false
+        }
+      ],
+      "unexpected_manifest_mismatches": [],
+      "source_hash_matches_delivery_metadata": true,
+      "glb_hash_matches_delivery_metadata": true,
+      "clip_hash_matches_manifest": true,
+      "camera_override_is_documented": true
+    },
+    "2098": {
+      "manifest": "artifacts/exercise-batches/batch-004/assets/2098/curated-files.json",
+      "delivery_status": "frozen_for_primary_review",
+      "current": {
+        "source.blend": {
+          "bytes": 13614235,
+          "sha256": "35f8d1cdff57834b527d8a672b1ae7fdef0fa62e4888c82f9f24261f38c6af33",
+          "manifest_expected": {
+            "bytes": 13614235,
+            "sha256": "35f8d1cdff57834b527d8a672b1ae7fdef0fa62e4888c82f9f24261f38c6af33"
+          },
+          "manifest_match": true
+        },
+        "motion.glb": {
+          "bytes": 896316,
+          "sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed",
+          "manifest_expected": {
+            "bytes": 896316,
+            "sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed"
+          },
+          "manifest_match": true
+        },
+        "clip.json": {
+          "bytes": 4306,
+          "sha256": "c15eb26d9e72c50251f242ab829ee3b721aca0a6848bf5f6e2664e519333d8a7",
+          "manifest_expected": {
+            "bytes": 4306,
+            "sha256": "c15eb26d9e72c50251f242ab829ee3b721aca0a6848bf5f6e2664e519333d8a7"
+          },
+          "manifest_match": true
+        },
+        "cameras.json": {
+          "bytes": 23932,
+          "sha256": "736c65e0704f1130229a421911b851ff1b37eec784851666a7a3f701ba243c99",
+          "manifest_expected": {
+            "bytes": 352,
+            "sha256": "143fb6199a3f4f524298712fb4eeb955ec59d07b95e791f78815af39792121d7"
+          },
+          "manifest_match": false
+        }
+      },
+      "published_clip_metadata": {
+        "id": "2098",
+        "action": "Exercise_2098",
+        "duration_seconds": 5,
+        "frames": 150,
+        "fps": 30,
+        "skinning": "linear"
+      },
+      "delivery_metadata_hashes": {
+        "source_sha256": "35f8d1cdff57834b527d8a672b1ae7fdef0fa62e4888c82f9f24261f38c6af33",
+        "glb_sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed"
+      },
+      "listed_hashed_file_count": 38,
+      "listed_total_bytes": 28354748,
+      "missing_manifest_files": [],
+      "known_camera_override_mismatches": [
+        {
+          "path": "cameras.json",
+          "actual_bytes": 23932,
+          "actual_sha256": "736c65e0704f1130229a421911b851ff1b37eec784851666a7a3f701ba243c99",
+          "expected_bytes": 352,
+          "expected_sha256": "143fb6199a3f4f524298712fb4eeb955ec59d07b95e791f78815af39792121d7",
+          "match": false
+        }
+      ],
+      "unexpected_manifest_mismatches": [],
+      "source_hash_matches_delivery_metadata": true,
+      "glb_hash_matches_delivery_metadata": true,
+      "clip_hash_matches_manifest": true,
+      "camera_override_is_documented": true
+    },
+    "1977": {
+      "manifest": "artifacts/exercise-batches/batch-004/assets/1977/curated-files.json",
+      "delivery_status": "frozen",
+      "current": {
+        "source.blend": {
+          "bytes": 13654513,
+          "sha256": "d3c7ccb8dbf57c8a5d203371211e031c4ed27cabc241fc0627bafa7e39344ae5",
+          "manifest_expected": {
+            "bytes": 13654513,
+            "sha256": "d3c7ccb8dbf57c8a5d203371211e031c4ed27cabc241fc0627bafa7e39344ae5"
+          },
+          "manifest_match": true
+        },
+        "motion.glb": {
+          "bytes": 936964,
+          "sha256": "4d9b486e8e8047e0dc07a021d11f76064bdcdf307854f14ecae0903c036948bd",
+          "manifest_expected": {
+            "bytes": 936964,
+            "sha256": "4d9b486e8e8047e0dc07a021d11f76064bdcdf307854f14ecae0903c036948bd"
+          },
+          "manifest_match": true
+        },
+        "clip.json": {
+          "bytes": 3941,
+          "sha256": "86531ff1a5e053dd44a2f0ac6a6cd5118f88e7b79a28c1569ff4d8a610bf6ef5",
+          "manifest_expected": {
+            "bytes": 3941,
+            "sha256": "86531ff1a5e053dd44a2f0ac6a6cd5118f88e7b79a28c1569ff4d8a610bf6ef5"
+          },
+          "manifest_match": true
+        },
+        "cameras.json": {
+          "bytes": 358,
+          "sha256": "46ad861c07c05552eb4878da43526f28ca6397c833c6e7b2e0134fd6c35b3001",
+          "manifest_expected": {
+            "bytes": 360,
+            "sha256": "a11bcbe65d0f2e1506abd4c928db02bb434e79b6ae15e31c882339f32eabd79e"
+          },
+          "manifest_match": false
+        }
+      },
+      "published_clip_metadata": {
+        "id": "1977",
+        "action": "Exercise_1977",
+        "duration_seconds": 5,
+        "frames": 150,
+        "fps": 30,
+        "skinning": "linear"
+      },
+      "delivery_metadata_hashes": {
+        "source_sha256": "d3c7ccb8dbf57c8a5d203371211e031c4ed27cabc241fc0627bafa7e39344ae5",
+        "glb_sha256": "4d9b486e8e8047e0dc07a021d11f76064bdcdf307854f14ecae0903c036948bd"
+      },
+      "listed_hashed_file_count": 35,
+      "listed_total_bytes": 25485461,
+      "missing_manifest_files": [],
+      "known_camera_override_mismatches": [
+        {
+          "path": "cameras.json",
+          "actual_bytes": 358,
+          "actual_sha256": "46ad861c07c05552eb4878da43526f28ca6397c833c6e7b2e0134fd6c35b3001",
+          "expected_bytes": 360,
+          "expected_sha256": "a11bcbe65d0f2e1506abd4c928db02bb434e79b6ae15e31c882339f32eabd79e",
+          "match": false
+        }
+      ],
+      "unexpected_manifest_mismatches": [],
+      "source_hash_matches_delivery_metadata": true,
+      "glb_hash_matches_delivery_metadata": true,
+      "clip_hash_matches_manifest": true,
+      "camera_override_is_documented": true
+    },
+    "0003": {
+      "manifest": "artifacts/exercise-batches/batch-004/assets/0003/delivery-report.json",
+      "delivery_status": "source_and_cpu_qa_complete_primary_gpu_review_pending",
+      "current": {
+        "source.blend": {
+          "bytes": 13924336,
+          "sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+          "manifest_expected": {
+            "bytes": 13924336,
+            "sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe"
+          },
+          "manifest_match": true
+        },
+        "motion.glb": {
+          "bytes": 1140376,
+          "sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4",
+          "manifest_expected": {
+            "bytes": 1140376,
+            "sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4"
+          },
+          "manifest_match": true
+        },
+        "clip.json": {
+          "bytes": 4567,
+          "sha256": "ff08eef89112166c1250a4e81596b41a6c2d081285a92ce36287c37511f655c0",
+          "manifest_expected": {
+            "bytes": 4567,
+            "sha256": "ff08eef89112166c1250a4e81596b41a6c2d081285a92ce36287c37511f655c0"
+          },
+          "manifest_match": true
+        },
+        "cameras.json": {
+          "bytes": 329,
+          "sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+          "manifest_expected": {
+            "bytes": 329,
+            "sha256": "65c97ae0a938d20ff894bc718581a40e792a98559e33e96046c7038b115ed01b"
+          },
+          "manifest_match": false
+        }
+      },
+      "published_clip_metadata": {
+        "id": "0003",
+        "action": "Exercise_0003",
+        "duration_seconds": 5,
+        "frames": 150,
+        "fps": 30,
+        "skinning": "dualQuaternion"
+      },
+      "delivery_metadata_hashes": {
+        "source_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+        "glb_sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4"
+      },
+      "listed_hashed_file_count": 41,
+      "listed_total_bytes": 23677666,
+      "missing_manifest_files": [],
+      "known_camera_override_mismatches": [
+        {
+          "path": "cameras.json",
+          "actual_bytes": 329,
+          "actual_sha256": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891",
+          "expected_bytes": 329,
+          "expected_sha256": "65c97ae0a938d20ff894bc718581a40e792a98559e33e96046c7038b115ed01b",
+          "match": false
+        }
+      ],
+      "unexpected_manifest_mismatches": [],
+      "source_hash_matches_delivery_metadata": true,
+      "glb_hash_matches_delivery_metadata": true,
+      "clip_hash_matches_manifest": true,
+      "camera_override_is_documented": true
+    }
+  },
+  "aggregate": {
+    "unexpected_mismatch_count": 0,
+    "known_camera_override_count": 4,
+    "all_source_and_glb_hashes_match_delivery_metadata": true,
+    "all_clip_hashes_match_manifests": true,
+    "all_curated_paths_valid": true
+  },
+  "historical_shared_runtime_evidence": {
+    "verification_receipt": {
+      "path": "artifacts/exercise-batches/batch-004/verification.json",
+      "sha256": "3fd08b78250aa3cac26dfc56f6b732337986fff9a596f243bc232e3edc3352a3",
+      "ok": true,
+      "scope": "Actual Three.js/Chromium/Metal and mobile touch emulation; no physical device or production application integration claim.",
+      "models": {
+        "1980": {
+          "current_source_sha256": "dd754f2d5a63a124c2a3967dd8b56156501beb0821d4d60b04e714315de3c563",
+          "current_glb_sha256": "0401f605041f07ae13a8017ba31bc489050c9d76cb4d6ae5ca413c09f4b2e7b6",
+          "verification_glb_sha256": "0401f605041f07ae13a8017ba31bc489050c9d76cb4d6ae5ca413c09f4b2e7b6",
+          "verification_glb_matches_current": true
+        },
+        "2098": {
+          "current_source_sha256": "35f8d1cdff57834b527d8a672b1ae7fdef0fa62e4888c82f9f24261f38c6af33",
+          "current_glb_sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed",
+          "verification_glb_sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed",
+          "verification_glb_matches_current": true
+        },
+        "1977": {
+          "current_source_sha256": "d3c7ccb8dbf57c8a5d203371211e031c4ed27cabc241fc0627bafa7e39344ae5",
+          "current_glb_sha256": "4d9b486e8e8047e0dc07a021d11f76064bdcdf307854f14ecae0903c036948bd",
+          "verification_glb_sha256": "4d9b486e8e8047e0dc07a021d11f76064bdcdf307854f14ecae0903c036948bd",
+          "verification_glb_matches_current": true
+        },
+        "0003": {
+          "current_source_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+          "current_glb_sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4",
+          "verification_glb_sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4",
+          "verification_glb_matches_current": true
+        }
+      }
+    },
+    "independent_runtime_detail_framing_review": {
+      "path": "artifacts/exercise-batches/runtime-detail-framing-code-review.json",
+      "sha256": "1af01f69641d1655baa7f63ad6a3a99081581d4dddbb62c172e732ceb8994159",
+      "fingerprint": "e8e34455941532a164b856a90eeb4a9c6a7079bc832cd8dbf7583d889711f0ed",
+      "fingerprint_construction": "SHA256 of sorted path + NUL + file-SHA256-hex + LF records",
+      "review_status": "no_actionable_findings_in_scoped_integrated_diff",
+      "reviewed_source_fingerprint_is_current": false
+    },
+    "limitation": "Historical evidence applies to the exact older runtime source/model hashes recorded in those receipts. Shared builder/verifier mixed-body atlas changes are in progress; no old common-runtime fingerprint is asserted as current or accepted."
+  },
+  "readiness": {
+    "four_asset_checkpoint": "source-bound curation checkpoint only; primary acceptance remains pending",
+    "batch_004_readiness": "pending",
+    "exercise_4512": "pending; native figures not re-reviewed in this packet"
+  },
+  "evidence_inputs": [
+    "artifacts/exercise-batches/batch-004/draft-review/curated-four-paths.json",
+    "artifacts/exercise-batches/batch-004/draft-review/curation-four.json",
+    "artifacts/exercise-batches/batch-004/verification.json",
+    "artifacts/exercise-batches/runtime-detail-framing-code-review.json"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+  "initial_reach_diagnostic": "initial-reach-diagnostic.json",
+  "rejected_ankle_raw_receipt": "rejected-ankle-regression.json",
+  "rejected_ankle_source_sha256": "f7414087b7ae025480e0cc4d20a56c067f9b2ade1436bddbb01ed09a905272b6",
+  "rejected_mixed_ankle_edge_ratio_range": [
+    0.4242194164867414,
+    1.2468494833167185
+  ],
+  "rejected_curl_edge": {
+    "ids": [
+      5161,
+      5162
+    ],
+    "planted_length_m": 0.007349705592664563,
+    "collapsed_length_m": 0.0031178368817264207,
+    "ratio": 0.42421248612164886
+  },
+  "cause_and_repair": "The initial standing height exceeded reach; corrected stance flexion31.53\u00b0 then exposed the additive-angle mistake:130\u00b0increment produced160.47\u00b0total. The final hinge controls130\u00b0TOTAL, transports thigh24\u00b0, and caps extra ankle bend10\u00b0rather than25\u00b0. No mesh, rest or binding change.",
+  "thresholds_and_edge_domains_unchanged_through_ankle_repair": true,
+  "current_native_mixed_ankle_edge_ratio_range": [
+    0.7287049977801984,
+    1.1051228705455494
+  ],
+  "current_decoded_mixed_ankle_edge_ratio_range": [
+    0.7287127349363232,
+    1.1051366965230023
+  ],
+  "small_original_lower_knee_facet_retained": true
+}

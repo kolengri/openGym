@@ -1,0 +1,9 @@
+# 3905 — arm circles
+
+Eight-second forward/reverse `Exercise_3905`: three progressively larger forward circles, then three reverse circles. Source10–15workout repetitions before reversing remains separate. Arms stay near shoulder height, elbows retain 12° soft flexion, shoulders do not shrug, wrists remain connected and fingers are open/relaxed. Source labels remain `delts`; secondaries `rotator cuff`, `trapezius`, `upper back`.
+
+Original 10582 vertices / 21160 triangles / 51 bones, Basis/rest/UV/topology/source IDs and upper-body weights are exact. Only the bounded distal plantar recipe is reused; no harmonic shoulder/Neck/Head overlay or corrective geometry. Actual native and decoded 241-sample support/floor/stationarity/limb-triangle/positive-area/loop gates pass. Native and independent actual decoded wrist angles confirm +3 forward / −3 reverse turns. Native sole/clavicle drift is zero; decoded sole drift is zero. Full-cycle DQ skin error is2.268µm; game QA has zero errors/warnings. NORMAL parity passes. Actual neutral front/back and wire proofs, reverse-direction plot and useful GPU timestamps are supplied.
+
+Root selected the fallback under existing batch authority; no separate user reply is claimed. Root owns actual GPU acceptance, muscle fields and camera-width integration. Small original low-poly contours remain. Local/discrete checks do not certify global/continuous-time nonintersection or clinical relaxation. No video, paid tool, runtime vertex cache, old-asset/shared-runtime edit or Git mutation was made.
+
+Source SHA256 `90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34`. GLB SHA256 `9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f`. `curated-files.json` is the explicit asset packet; `authoring-family.json` names the separate reproducible family dependencies.

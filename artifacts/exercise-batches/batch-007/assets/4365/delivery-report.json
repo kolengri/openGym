@@ -1,0 +1,340 @@
+{
+  "id": "4365",
+  "status": "accepted_for_user_review",
+  "source_sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd",
+  "glb_sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5",
+  "action": "Exercise_4365",
+  "duration_seconds": 5,
+  "source_hold_recommendation_seconds": [
+    30,
+    60
+  ],
+  "skinning": "dualQuaternion",
+  "runtime_adapter": "artifacts/exercise-batches/dual-quaternion.js",
+  "runtime_adapter_sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+  "invariants": {
+    "basis": true,
+    "rest": true,
+    "UV": true,
+    "topology": true,
+    "source_ids": 10582,
+    "bones": 51,
+    "original_deform_weights_exact": true,
+    "maximum_influences": 4,
+    "normalization_max_error": 1.341104507446289e-07
+  },
+  "native151_ok": true,
+  "decoded151_ok": true,
+  "minimum_native_body_floor_m": 0.0004985332489013672,
+  "minimum_decoded_body_floor_m": 0.0004986723652109504,
+  "maximum_native_parity_error": {
+    "position_m": 1.9652027410577947e-06,
+    "joint_m": 1.1699072376722408e-06,
+    "deformation_matrix": 1.5497207641601562e-06,
+    "shader_normal_degrees": 0.004708050761781299,
+    "morph_weight": 3.5762786865234375e-07
+  },
+  "native_loop_skin_error_m": 0.0,
+  "decoded_loop_skin_error_m": 1.9144512947692867e-07,
+  "maximum_native_joint_step": {
+    "from": 23,
+    "to": 24,
+    "bone": "RightIndex1",
+    "degrees": 4.522798030660726
+  },
+  "maximum_native_skin_step": {
+    "from": 31,
+    "to": 32,
+    "source_id": 8036,
+    "m": 0.04875529889477925
+  },
+  "maximum_dorsum_skin_drift_m": 1.0334872040030526e-05,
+  "maximum_hold_skin_drift_m": 1.1937698821478985e-07,
+  "minimum_triangle_area_m2": 4.368274486144755e-08,
+  "minimum_unnormalized_source_morph_normal_length": 0.9141844146738554,
+  "whole_arm_hand_vs_leg_crossings": 0,
+  "game_QA": {
+    "errors": 0,
+    "warnings": 0,
+    "frames": [
+      0,
+      30,
+      35,
+      45,
+      46,
+      54,
+      75,
+      96,
+      105,
+      120,
+      150
+    ]
+  },
+  "localized_self_fold_warnings": {
+    "shoulders": {
+      "maximum_pairs": 27,
+      "worst_frames": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "peak_pairs": 3
+    },
+    "hips": {
+      "maximum_pairs": 101,
+      "worst_frames": [
+        46,
+        104
+      ],
+      "peak_pairs": 71
+    },
+    "knees": {
+      "maximum_pairs": 98,
+      "worst_frames": [
+        11,
+        139
+      ],
+      "peak_pairs": 86
+    }
+  },
+  "component": {
+    "source_sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd",
+    "key": "RestingHipVolume",
+    "construction": "One local native CorrectiveSmooth ORCO rest-shape target on the complete hip/thigh/waist collar, inverse normalized DQ rotation. No inherited binding repair or old inverse-LBS feather.",
+    "local_operator": {
+      "factor": 1,
+      "iterations": 20,
+      "smooth_type": "SIMPLE",
+      "rest_source": "ORCO",
+      "scope": "C1 sourceZ band .61..1.25m with90mm collars and |sourceX|<.32m/50mm feather; original shoulder/arm/finger/head/neck groups and sourceZ<.61m are pinned. Entire diagnosed127-pair hip core has weight1."
+    },
+    "original_weights_exact": true,
+    "no_displacement_cap": true,
+    "construction_maximum_world_delta_m": 0.10973293250068683,
+    "construction_maximum_source_delta_m": 0.10973291255518877,
+    "final_applied_maximum_source_delta_m": 0.10973290785596991,
+    "maximum_inverse_condition": 1.000000238418579,
+    "maximum_native_target_error_m": 2.1076716720783168e-07,
+    "outside_position_error_m": 0.0,
+    "protected_contact_position_error_m": 0.0,
+    "normal_domain_note": "Corresponding key NORMAL comes from independently calculated source-key normals; source-domain normal change extends one ring beyond POSITION where topology requires. Both are standard GLTF additive targets before DQ.",
+    "drive": {
+      "method": "One source POSITION/NORMAL component, zero below measured native original-DQ first hip-fold onset; quintic smootherstep of measured bilateral pelvis-relative femur flexion up to accepted peak. No extra target or fitted angle grid.",
+      "first_baseline_fold_frame": 40,
+      "last_unfolded_hip_flexion_degrees": 113.7267705629593,
+      "peak_hip_flexion_degrees": 139.696834316767,
+      "neutral_key": 0,
+      "peak_key": 1
+    },
+    "compact_exact_final_coordinates": "hip-volume-final.npz",
+    "raw_construction": "hip-volume-component.npz",
+    "normal_reference": "../assets/4365/joint-normal-reference.json.gz"
+  },
+  "native_visual_review": "Primary accepted peak,1.5/1.8s entry and corresponding return, worst-hipf46 and worst-shoulderf35 native silhouettes/interpolation for user review. Concave/shaded creases and localized crossing warnings remain.",
+  "primary_GPU_review": {
+    "accepted": true,
+    "owner": "primary",
+    "model_sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5",
+    "scope": "Actual unshadowed GPU start,shoulder entry,hip entry,hold and return plus supported-hold zones. Primary independently inspected hold-zones and hip-entry-neutral and accepted coherent back/hip with minor waist crease, no detached ribbon.",
+    "capture_manifest_at_review_sha256": "41a44b58efbd1e07612e1f8a2c10a64200fa4ee49ed81440358b6da5657e49d3",
+    "primary_reported_capture_total": 22,
+    "primary_reported_page_errors": 0,
+    "evidence": [
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "start-neutral",
+        "time": 0,
+        "zones": false,
+        "file": "007-4365-start-neutral.png",
+        "png_sha256": "d8f176007ad05016d057799dcfcc33760b5f672a06bdac7bdeb1f68cc108af57",
+        "source_viewer_sha256": "e68ceb9cc606887451ffd416ee71cbb920e7961d4299f95a527f71434f03480e",
+        "source_manifest_sha256": "ffa181e6215b49a137dbafaa69cc7afc5ed9b3ee10f77cbd87f8915d305bd361",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582
+        },
+        "local_file": "gpu-start-neutral.png",
+        "original_capture_file": "../feedback-resting-fists/007-4365-start-neutral.png"
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "shoulder-entry-neutral",
+        "time": 1.1666666666666667,
+        "zones": false,
+        "file": "007-4365-shoulder-entry-neutral.png",
+        "png_sha256": "183ad6a266381177fd93d57e03ac0881e5972faf1cf1bbc35add888c7693419f",
+        "source_viewer_sha256": "e68ceb9cc606887451ffd416ee71cbb920e7961d4299f95a527f71434f03480e",
+        "source_manifest_sha256": "ffa181e6215b49a137dbafaa69cc7afc5ed9b3ee10f77cbd87f8915d305bd361",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 1.1666666666666667,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582
+        },
+        "local_file": "gpu-shoulder-entry-neutral.png",
+        "original_capture_file": "../feedback-resting-fists/007-4365-shoulder-entry-neutral.png"
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "hip-entry-neutral",
+        "time": 1.5333333333333334,
+        "zones": false,
+        "file": "007-4365-hip-entry-neutral.png",
+        "png_sha256": "df945aaa862d333cb3e847264ec7247da0861f2d8081b6ad46a1db2287f4b4ad",
+        "source_viewer_sha256": "e68ceb9cc606887451ffd416ee71cbb920e7961d4299f95a527f71434f03480e",
+        "source_manifest_sha256": "ffa181e6215b49a137dbafaa69cc7afc5ed9b3ee10f77cbd87f8915d305bd361",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 1.5333333333333334,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.7401241375354641
+            ]
+          ],
+          "source_vertices": 10582
+        },
+        "local_file": "gpu-hip-entry-neutral.png",
+        "original_capture_file": "../feedback-resting-fists/007-4365-hip-entry-neutral.png"
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "hold-neutral",
+        "time": 2.5,
+        "zones": false,
+        "file": "007-4365-hold-neutral.png",
+        "png_sha256": "02cfd38166e8539f849b6252e325b97d01a4ef75ff58e728efc3e913f4471830",
+        "source_viewer_sha256": "e68ceb9cc606887451ffd416ee71cbb920e7961d4299f95a527f71434f03480e",
+        "source_manifest_sha256": "ffa181e6215b49a137dbafaa69cc7afc5ed9b3ee10f77cbd87f8915d305bd361",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 2.5,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582
+        },
+        "local_file": "gpu-hold-neutral.png",
+        "original_capture_file": "../feedback-resting-fists/007-4365-hold-neutral.png"
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "hold-zones",
+        "time": 2.5,
+        "zones": true,
+        "file": "007-4365-hold-zones.png",
+        "png_sha256": "697bfa3c5affa28ba5f962b8bb2ec0870b6b9cbb1a1ef6d7985573bfe2f44eae",
+        "source_viewer_sha256": "e68ceb9cc606887451ffd416ee71cbb920e7961d4299f95a527f71434f03480e",
+        "source_manifest_sha256": "ffa181e6215b49a137dbafaa69cc7afc5ed9b3ee10f77cbd87f8915d305bd361",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 2.5,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582
+        },
+        "local_file": "gpu-hold-zones.png",
+        "original_capture_file": "../feedback-resting-fists/007-4365-hold-zones.png"
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "return-neutral",
+        "time": 3.5,
+        "zones": false,
+        "file": "007-4365-return-neutral.png",
+        "png_sha256": "0cacddfd104a02dfab0ed71e6f8b369ca4b2c7e5ce3a12a07d0712b4515fb951",
+        "source_viewer_sha256": "e68ceb9cc606887451ffd416ee71cbb920e7961d4299f95a527f71434f03480e",
+        "source_manifest_sha256": "ffa181e6215b49a137dbafaa69cc7afc5ed9b3ee10f77cbd87f8915d305bd361",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 3.5,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.6172001957893372
+            ]
+          ],
+          "source_vertices": 10582
+        },
+        "local_file": "gpu-return-neutral.png",
+        "original_capture_file": "../feedback-resting-fists/007-4365-return-neutral.png"
+      }
+    ],
+    "retained_limitations": "Minor concave/shaded waist/joint creases and localized self-fold diagnostics remain. This is user-review acceptance, not a global collision-free or production-approval claim."
+  },
+  "source_primary_label": "spine, displayed by the primary source-aware spine proxy; no measured muscle activation claim.",
+  "preserved_10058": {
+    "source_sha256": "7bde624e1e24d6b94c9f3724cdbb4333d56aad51a2a86eac4f3e573e2e4a4d76",
+    "glb_sha256": "d306f59c96bbdcf9208bf32027b1043cf3462ed0054e57ed2ed23ebab6e4e8a4"
+  }
+}

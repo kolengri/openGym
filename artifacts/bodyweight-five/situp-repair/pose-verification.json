@@ -1,0 +1,133 @@
+{
+  "ok": true,
+  "source_blend_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "scope": "Selected sampled poses, evaluated skin floor bounds and exact loop joint closure; 0001 additionally checks authored pelvic/heel/sole/head/hand surface patches on native and linear skin. Not a coaching/biomechanical certification or issue closure.",
+  "clips": [
+    {
+      "id": "0001",
+      "loop_max_joint_translation_error_m": 0.0,
+      "poses": [
+        {
+          "frame": 0,
+          "body_min_z": 0.0007910357089713216,
+          "contacts": {
+            "LeftFoot": {
+              "min_z": 0.0017773937433958054,
+              "max_z": 0.11542774736881256
+            },
+            "LeftHand": {
+              "min_z": 0.0025761378929018974,
+              "max_z": 0.0901489108800888
+            },
+            "RightFoot": {
+              "min_z": 0.0017762989737093449,
+              "max_z": 0.11588696390390396
+            },
+            "RightHand": {
+              "min_z": 0.0028763925656676292,
+              "max_z": 0.09028075635433197
+            }
+          }
+        },
+        {
+          "frame": 30,
+          "body_min_z": 0.0008723149076104164,
+          "contacts": {
+            "LeftFoot": {
+              "min_z": 0.0017775370506569743,
+              "max_z": 0.11545661091804504
+            },
+            "LeftHand": {
+              "min_z": 0.39782264828681946,
+              "max_z": 0.4867869019508362
+            },
+            "RightFoot": {
+              "min_z": 0.0017763216746971011,
+              "max_z": 0.11591744422912598
+            },
+            "RightHand": {
+              "min_z": 0.3980683386325836,
+              "max_z": 0.4869143068790436
+            }
+          }
+        },
+        {
+          "frame": 60,
+          "body_min_z": 0.0009220799547620118,
+          "contacts": {
+            "LeftFoot": {
+              "min_z": 0.0017775704618543386,
+              "max_z": 0.11547377705574036
+            },
+            "LeftHand": {
+              "min_z": 0.5710487365722656,
+              "max_z": 0.6848718523979187
+            },
+            "RightFoot": {
+              "min_z": 0.0017761560156941414,
+              "max_z": 0.11593548208475113
+            },
+            "RightHand": {
+              "min_z": 0.5710386037826538,
+              "max_z": 0.6849762797355652
+            }
+          }
+        },
+        {
+          "frame": 90,
+          "body_min_z": 0.0008723149076104164,
+          "contacts": {
+            "LeftFoot": {
+              "min_z": 0.0017775370506569743,
+              "max_z": 0.11545661091804504
+            },
+            "LeftHand": {
+              "min_z": 0.39782264828681946,
+              "max_z": 0.4867869019508362
+            },
+            "RightFoot": {
+              "min_z": 0.0017763216746971011,
+              "max_z": 0.11591744422912598
+            },
+            "RightHand": {
+              "min_z": 0.3980683386325836,
+              "max_z": 0.4869143068790436
+            }
+          }
+        },
+        {
+          "frame": 120,
+          "body_min_z": 0.0007910357089713216,
+          "contacts": {
+            "LeftFoot": {
+              "min_z": 0.0017773937433958054,
+              "max_z": 0.11542774736881256
+            },
+            "LeftHand": {
+              "min_z": 0.0025761378929018974,
+              "max_z": 0.0901489108800888
+            },
+            "RightFoot": {
+              "min_z": 0.0017762989737093449,
+              "max_z": 0.11588696390390396
+            },
+            "RightHand": {
+              "min_z": 0.0028763925656676292,
+              "max_z": 0.09028075635433197
+            }
+          }
+        }
+      ],
+      "authored_surface_contact_checks": {
+        "pass": true,
+        "paths": [
+          "native",
+          "linear_cage"
+        ],
+        "samples": 18,
+        "landmarks": "situp-repair/landmarks.json",
+        "issues_closed": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "stage": "source publication A and pinned-inline verification",
+  "repository": {
+    "remote": "https://github.com/kolengri/openGym.git",
+    "branch": "t3/upgrade-exercise-animations",
+    "source_commit": "55c2d51d4745d92ba9618f3bef39468a6a7fb655",
+    "source_delivery_sha256": "06295945af105fba664f6522bc853ebbc716bab0a42842432b52b324c50bdcba"
+  },
+  "publication": {
+    "operation": "normal git push origin t3/upgrade-exercise-animations",
+    "exit_code": 0,
+    "result": "55c2d51d4745d92ba9618f3bef39468a6a7fb655 pushed; remote advanced from c7d44162 to 55c2d51",
+    "pr_url": "https://github.com/kolengri/openGym/pull/3",
+    "link_pull_request": {
+      "success": true,
+      "alreadyLinked": true,
+      "result": "PR #3 linked to this thread"
+    },
+    "pr_body_updated": false,
+    "ci_review_snapshot_taken": false
+  },
+  "pin": {
+    "path": "artifacts/exercise-batches/batch-008/source-revision.json",
+    "revision": "55c2d51d4745d92ba9618f3bef39468a6a7fb655"
+  },
+  "pinned_build": {
+    "command": "node artifacts/exercise-batches/batch-008/build.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-008/logs/pinned-build.log",
+    "build_manifest_sha256": "a91e49955e33ab6e3a7e81e49f4ed3402f38e333bcb1ec4b74dd06f616c061cc",
+    "model_revision": "55c2d51d4745d92ba9618f3bef39468a6a7fb655",
+    "exercise_ids": [
+      "6121",
+      "5172",
+      "1987",
+      "6014",
+      "1986",
+      "6539",
+      "3214",
+      "3204",
+      "4935",
+      "3483"
+    ],
+    "offline_html_bytes": 9807931,
+    "offline_html_sha256": "efa2c0d2748b10e27aa3bc4e6ca045f1155a8a1e0282680b9d50b26e292c7146",
+    "expected_offline_html_sha256": "efa2c0d2748b10e27aa3bc4e6ca045f1155a8a1e0282680b9d50b26e292c7146",
+    "inline_html_bytes": 172727,
+    "inline_html_sha256": "cd4280343c57cbdb1bd106c6dd7f1db4750b611a9ee05c8f24d92b5b29f261db"
+  },
+  "pinned_inline_verification": {
+    "command": "node artifacts/exercise-batches/batch-008/verify-inline.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-008/logs/pinned-verify-inline.log",
+    "result": {
+      "ok": true,
+      "all_10_actions_selected": true,
+      "actions": [
+        "Exercise_6121",
+        "Exercise_5172",
+        "Exercise_1987",
+        "Exercise_6014",
+        "Exercise_1986",
+        "Exercise_6539",
+        "Exercise_3214",
+        "Exercise_3204",
+        "Exercise_4935",
+        "Exercise_3483"
+      ],
+      "all_unique_public_model_bytes_verified": true,
+      "unique_public_model_sha256": {
+        "1987": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+        "3204": "3334f0c740b2d506b200c619244d8cf5608aa9691562906a1ab33cca203119d0",
+        "3214": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+        "4935": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+        "5172": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+        "6121": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+        "6539": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00"
+      },
+      "errors": [],
+      "live_canvas_replaces_poster": true,
+      "live_pose_changes": true,
+      "input_bytes": 172727,
+      "external_resources": 13,
+      "settled_png": "artifacts/exercise-batches/batch-008/inline-settled.png",
+      "settled_png_sha256": "c1b04bdd3edc5f097da4fe93c2a4a6d336c2c5ace7aabc911d32551df2f68208"
+    }
+  },
+  "reused_checks": "Nine previously accepted native/decoded author receipts and the all-ten local verifier/capture receipts were reused; no native, offline, or capture checks were rerun in this pinned stage.",
+  "preserved_unrelated_tracked_hashes": {
+    "artifacts/exercise-animation-briefs/generation-contract.json": "7477ec7d5c9d96bd7ed604bc35868343bcce3e92e8da54a097c9d6f0702e993c",
+    "artifacts/exercise-batches/batch-002/contexts/10565.json": "6114cf960e2db4171a23a30dced9691118879747b5322946f1c32ecd1d27eaf5",
+    "artifacts/exercise-batches/batch-002/contexts/4007.json": "17529e73d83ecb9dac1ab9652f28dfae2c8615dd7cbd542ac291fae3effdfca8",
+    "artifacts/exercise-batches/batch-002/contexts/5265.json": "d5fd37c45976e7deb8450519a65892f68f1092ade5a9356ec63080dc503d5d89",
+    "artifacts/exercise-batches/batch-002/contexts/6428.json": "0abf50b7c24e513380fcccde2ac9da65ddeed6d97418d0010c135126fce6f77b",
+    "artifacts/exercise-batches/batch-002/contexts/6560.json": "ecb678575124cc5c1f0fa3512b8dc06178b3b4e6b3956f3547b0caf80430ead8",
+    "artifacts/exercise-batches/batch-002/primary-review.json": "f1af2c53e38ba31148b0eae53cc2b79bc4e24c830e9ca7dc39256b25d5b61bcf",
+    "artifacts/exercise-generation/0001.json": "6135d58fac521ac6bd0d6de7a610eefe82894121d37a301446ccdbfec497e629",
+    "artifacts/exercise-generation/0004.json": "81f2e79acb22ca193c5adba04362715de2762cb4b5ee9a71d83c8ed9bc8dc4f0",
+    "artifacts/exercise-generation/5915.json": "8d604037d32452bc9e83658e90060ec5796dd983059cbca89406eee1d60f75f1"
+  },
+  "next_stage": "Root-owned HTML preview/render and metadata B remain pending; no CI/review snapshot taken in stage A."
+}

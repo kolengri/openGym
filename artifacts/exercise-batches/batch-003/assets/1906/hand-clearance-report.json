@@ -1,0 +1,118 @@
+{
+  "ok": true,
+  "source_sha256": "e6d3e9d866291229bcd17961ebcbb1031b4c2c14a705981bbccfd48a349fdbfe",
+  "maximum_permitted_penetration_m": 0.003,
+  "method": "Nearest actual torso/leg triangles and their outward normals; articulated hand/finger surfaces sampled on native and linear skins at the recorded affected poses. Arm attachment surfaces excluded. No intended hand/body contact.",
+  "limitations": "Sampled nearest-surface signed-distance approximation, not continuous collision proof.",
+  "failures": [],
+  "samples": [
+    {
+      "path": "native",
+      "frame": 30,
+      "hands": {
+        "L": {
+          "surface_samples": 2782,
+          "minimum_distance_m": 0.17587435245513916,
+          "minimum_signed_distance_m": 0.17510929482523352,
+          "maximum_penetration_m": 0
+        },
+        "R": {
+          "surface_samples": 2783,
+          "minimum_distance_m": 0.1334858536720276,
+          "minimum_signed_distance_m": 0.13215322427276988,
+          "maximum_penetration_m": 0
+        }
+      }
+    },
+    {
+      "path": "native",
+      "frame": 75,
+      "hands": {
+        "L": {
+          "surface_samples": 2782,
+          "minimum_distance_m": 0.09063142538070679,
+          "minimum_signed_distance_m": 0.09062290942529216,
+          "maximum_penetration_m": 0
+        },
+        "R": {
+          "surface_samples": 2783,
+          "minimum_distance_m": 0.1334877610206604,
+          "minimum_signed_distance_m": 0.13316691200679998,
+          "maximum_penetration_m": 0
+        }
+      }
+    },
+    {
+      "path": "native",
+      "frame": 120,
+      "hands": {
+        "L": {
+          "surface_samples": 2782,
+          "minimum_distance_m": 0.17587435245513916,
+          "minimum_signed_distance_m": 0.17510929482523352,
+          "maximum_penetration_m": 0
+        },
+        "R": {
+          "surface_samples": 2783,
+          "minimum_distance_m": 0.1334858536720276,
+          "minimum_signed_distance_m": 0.13215322427276988,
+          "maximum_penetration_m": 0
+        }
+      }
+    },
+    {
+      "path": "linear",
+      "frame": 30,
+      "hands": {
+        "L": {
+          "surface_samples": 697,
+          "minimum_distance_m": 0.1763007938861847,
+          "minimum_signed_distance_m": 0.1745936688967049,
+          "maximum_penetration_m": 0
+        },
+        "R": {
+          "surface_samples": 697,
+          "minimum_distance_m": 0.13570643961429596,
+          "minimum_signed_distance_m": 0.135706437547924,
+          "maximum_penetration_m": 0
+        }
+      }
+    },
+    {
+      "path": "linear",
+      "frame": 75,
+      "hands": {
+        "L": {
+          "surface_samples": 697,
+          "minimum_distance_m": 0.09105601161718369,
+          "minimum_signed_distance_m": 0.0863069121260196,
+          "maximum_penetration_m": 0
+        },
+        "R": {
+          "surface_samples": 697,
+          "minimum_distance_m": 0.13570643961429596,
+          "minimum_signed_distance_m": 0.135706437547924,
+          "maximum_penetration_m": 0
+        }
+      }
+    },
+    {
+      "path": "linear",
+      "frame": 120,
+      "hands": {
+        "L": {
+          "surface_samples": 697,
+          "minimum_distance_m": 0.1763007938861847,
+          "minimum_signed_distance_m": 0.1745936688967049,
+          "maximum_penetration_m": 0
+        },
+        "R": {
+          "surface_samples": 697,
+          "minimum_distance_m": 0.13570643961429596,
+          "minimum_signed_distance_m": 0.135706437547924,
+          "maximum_penetration_m": 0
+        }
+      }
+    }
+  ]
+}

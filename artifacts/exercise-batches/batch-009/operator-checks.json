@@ -1,0 +1,888 @@
+{
+  "task": "batch-009 prepared checks",
+  "status": "complete",
+  "source": {
+    "branch": "t3/upgrade-exercise-animations",
+    "head": "24a70cab0b8d0663ca871a205171d66198658386",
+    "root_integration_sha256": "ecc65a85540e7d1372e8924f3a6c7c509fa4076a1d20f4489012d62d2dee7924"
+  },
+  "scope": {
+    "exercise_ids": [
+      "1986",
+      "1843",
+      "3220",
+      "3672",
+      "6097",
+      "1405",
+      "4515",
+      "1315",
+      "3995",
+      "1404",
+      "4663"
+    ],
+    "author_and_native_physics_receipts_reused": true,
+    "models_clips_atlas_and_build_inputs_frozen_during_run": true,
+    "camera_width_fitting_authorized": true,
+    "inline_verification": "not_run; no source-revision.json was supplied"
+  },
+  "commands": [
+    {
+      "command": "node artifacts/exercise-batches/batch-009/build.mjs",
+      "exit_status": 0,
+      "log": "artifacts/exercise-batches/batch-009/logs/final-build-before-camera-fit.log",
+      "result": "offline_bytes=8906040; inline_bytes=null"
+    },
+    {
+      "command": "node artifacts/exercise-batches/fit-cameras.mjs 009",
+      "exit_status": 0,
+      "log": "artifacts/exercise-batches/batch-009/logs/final-fit-cameras.log",
+      "result": "all 11 camera fits completed"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-009/build.mjs",
+      "exit_status": 0,
+      "log": "artifacts/exercise-batches/batch-009/logs/final-build-after-camera-fit.log",
+      "result": "offline_bytes=8906040; inline_bytes=null"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-009/verify.mjs",
+      "exit_status": 0,
+      "log": "artifacts/exercise-batches/batch-009/logs/final-verify.log",
+      "result": "ok=true; 11 exercises; no runtime errors; actual Chromium/Metal and mobile touch emulation"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-009/capture-peaks.mjs",
+      "exit_status": 0,
+      "log": "artifacts/exercise-batches/batch-009/logs/final-capture-peaks.log",
+      "result": "80 poses, 160 screenshots, 0 errors"
+    }
+  ],
+  "camera_fit": {
+    "path": "artifacts/exercise-batches/batch-009/camera-fit.json",
+    "margin": 0.1,
+    "evidence": [
+      {
+        "id": "1986",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8979283705668882,
+          0.8984088223738861
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.68,
+          3.77
+        ]
+      },
+      {
+        "id": "1843",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8965698303862243,
+          0.8975116249287017
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.55,
+          1.96
+        ]
+      },
+      {
+        "id": "3220",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8986117356521888,
+          0.8988067360857401
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          4.07,
+          4.1
+        ]
+      },
+      {
+        "id": "3672",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.899388111697354,
+          0.8988068923753327
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          4.26,
+          4.1
+        ]
+      },
+      {
+        "id": "6097",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8986116885512437,
+          0.8988066682042009
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          4.07,
+          4.1
+        ]
+      },
+      {
+        "id": "1405",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8981480521963306,
+          0.8992144787366106
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.93,
+          3.87
+        ]
+      },
+      {
+        "id": "4515",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8981480521963306,
+          0.8992144787366106
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.93,
+          3.87
+        ]
+      },
+      {
+        "id": "1315",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8841109572428492,
+          0.867215218614908
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.5,
+          2.98
+        ]
+      },
+      {
+        "id": "3995",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8981480521963306,
+          0.8992144787366106
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.93,
+          3.87
+        ]
+      },
+      {
+        "id": "1404",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8981482925556812,
+          0.8992144306852928
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.93,
+          3.87
+        ]
+      },
+      {
+        "id": "4663",
+        "sampledRuntimeFrames": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100,
+          105,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          145,
+          150
+        ],
+        "framingSourceVertices": [
+          10582,
+          10582
+        ],
+        "originalMaxAbsNDC": [
+          0.8196984845424843,
+          0.5595757244333068
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.65,
+          2.8
+        ]
+      }
+    ]
+  },
+  "pose_capture": {
+    "path": "artifacts/exercise-batches/batch-009/capture-peaks.json",
+    "poses": 80,
+    "screenshots": 160,
+    "viewer_sha256": "cf4a7533120e416a940f0311e03e9b121046139ae820eb52eb1dcf4e9cd6bce7",
+    "build_manifest_sha256": "976f5d7141ce7b5c7d58246e55ab19cf93eef9251d5489bb329e6182325254a6",
+    "pose_plan_sha256": "7317515c4e297f7540536eb1c61c528bd70eb51471926ba5a42e0b007ec68cba",
+    "errors": []
+  },
+  "identities": {
+    "before_path": "artifacts/exercise-batches/batch-009/logs/final-input-identities-before.json",
+    "before": {
+      "branch": "t3/upgrade-exercise-animations",
+      "head": "24a70cab0b8d0663ca871a205171d66198658386",
+      "ids": [
+        "1986",
+        "1843",
+        "3220",
+        "3672",
+        "6097",
+        "1405",
+        "4515",
+        "1315",
+        "3995",
+        "1404",
+        "4663"
+      ],
+      "models": {
+        "1315": "56f6b3af6060d8e38f86f2cbf60a8e6ee7b2bd2d3fb6837e31ab7708e0525c44",
+        "1404": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "1405": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "1843": "f6287112cc152e73da3e7fbbef0c5421dd073b64c53a543163dd021714b54716",
+        "1986": "e252e8bb2d874dccae75c1cc63c514f2f7c16021a62236e16e49c5b3b7e36535",
+        "3220": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+        "3672": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+        "3995": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "4515": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "4663": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+        "6097": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9"
+      },
+      "clips": {
+        "1315": "6ffbf6ce408fe26f1af3f8df0dd884bd64f1bf6a9e2657cd7faebc952976a2cd",
+        "1404": "be28024edfda241bd3280b2572f41e28840e94ebbe9cb93c9c652d12a4f40989",
+        "1405": "0d67d7b7d4f09130e23601553ed8dd27e23ea6ed4d232042cccb1f7ebb131be8",
+        "1843": "105cfe7fd8e800de1fa1541ce236861a2b5e0ade76559a1f437573469a9436f1",
+        "1986": "69738c035ce1090297afb5a0005841f0460e86da83d41227ca19e3bc646e08dd",
+        "3220": "1f50af17825dc1840c95f32201dea1b04a1b8cbfd34d4fcb0a1c95bee6d6bebe",
+        "3672": "5057f20ba52c47a868bbf80e7ce2a21958b3f8011321fdc25a806132e375ff14",
+        "3995": "66afa67c3528197a81f93943ffa77aa421a0fcea35663b6438f684a938aaf026",
+        "4515": "f2d77c82bd8f8c8b772a9d07af621a79e1cef967e6ad25d73ce726b7b4b0d06d",
+        "4663": "844fceb72477567a13d88a4f5ff9f5a62212dd23c9891524000a938bd0b92710",
+        "6097": "1cea03bdf1241ac100ff04746a886704187806378038c6db4eaf5b3fac86405f"
+      },
+      "cameras": {
+        "1315": "2e8875ab88f2057339b899a9fdae78d6950e503e3b99cf715c957ceef79531f1",
+        "1404": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "1405": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "1843": "b1ffbccc4ac250d8b1a0858c5cabc22f64d8047b61459682fa14d723547e902c",
+        "1986": "ffbb4874753dab1f56f942da1e3ed54881221ac2787fc8ba56566102aa3e35a0",
+        "3220": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4",
+        "3672": "2b5147ee7ceb427f5aa9e68738feab20d0efc8f9c1b860e593c19254c2a9c4a2",
+        "3995": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "4515": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "4663": "28e3942a064d52c2ef4c500f93e54e1b55fbaca448180e10d8ca4a9c7ab3933a",
+        "6097": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4"
+      },
+      "sharedInputs": {
+        "selection.json": "11eda1a0953f857537ec8a9beaf5145d1bc062e2b74f557f139db7ae440397a7",
+        "display-roles.json": "4cdab42aff2a751fa37303d3cdf1ac690fde61c98af6267975eac0ffa41723e1",
+        "phase-labels.json": "0d4893c05648642b9fa6e32a76d1635fd0b9f4e9350f352ada3663a4c3b29c6d",
+        "staging-amendments.json": "e0897a00531296ad634edf4ec1f72a075426d43055569f40fba362939eb40c2b",
+        "presentation.json": "bb7434b0a93792d878ac54e198a9192a756bf27e93efa5fc2a6165ca2f59e516",
+        "muscle-atlas.json": "ca962f887504856aafd865e497270c8df9ad101af86e5e7b902ab270ef655cc5",
+        "template.html": "db37c4e31df84e547f8ce9ef4c3eb68a6377d96c8341545aa77e3b2c2974ed91",
+        "viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+        "build.mjs": "ecb79771638ad7c9cb11a06d7cb3164378f20d888f1f63bcfd16b879c430d130",
+        "../build-review.mjs": "4eca2781193a5cd713b52cab571ef609fdb2eb5652ef5440065debc01628dd9a",
+        "verify.mjs": "03b4d832c57ab03434075a13a12e470d12c3a0c582b079a6b5ad1fdaef5b5646",
+        "capture-peaks.mjs": "448250ac3c9478305518ba472d54f95d38574131089c174a6d67c38f89f0f081",
+        "../fit-cameras.mjs": "902c12067774a7de2bdb2122e9c2b3e40a3b1feb012b21af20fdc6053b22ed54",
+        "root-integration.json": "ecc65a85540e7d1372e8924f3a6c7c509fa4076a1d20f4489012d62d2dee7924"
+      },
+      "atlasOverrides": {},
+      "previous_manifest_input_hashes": {
+        "artifacts/exercise-batches/batch-009/build.mjs": "ecb79771638ad7c9cb11a06d7cb3164378f20d888f1f63bcfd16b879c430d130",
+        "artifacts/exercise-batches/batch-009/template.html": "db37c4e31df84e547f8ce9ef4c3eb68a6377d96c8341545aa77e3b2c2974ed91",
+        "artifacts/exercise-batches/batch-009/viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+        "artifacts/exercise-batches/batch-009/presentation.json": "bb7434b0a93792d878ac54e198a9192a756bf27e93efa5fc2a6165ca2f59e516",
+        "artifacts/exercise-batches/build-review.mjs": "4eca2781193a5cd713b52cab571ef609fdb2eb5652ef5440065debc01628dd9a",
+        "artifacts/exercise-batches/batch-002/viewer.js": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3",
+        "artifacts/exercise-batches/dual-quaternion.js": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+        "artifacts/chaturanga-heatmap/heat-field.js": "5ab692d60bb56eaa12b4364cefc3a49b12573c3fca659445deffd5a0863c0e6f",
+        "artifacts/chaturanga-heatmap/heat-material.js": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e",
+        "artifacts/exercise-batches/batch-009/muscle-atlas.json": "ca962f887504856aafd865e497270c8df9ad101af86e5e7b902ab270ef655cc5",
+        "artifacts/exercise-batches/batch-009/phase-labels.json": "0d4893c05648642b9fa6e32a76d1635fd0b9f4e9350f352ada3663a4c3b29c6d",
+        "artifacts/exercise-batches/batch-009/selection.json": "11eda1a0953f857537ec8a9beaf5145d1bc062e2b74f557f139db7ae440397a7",
+        "artifacts/exercise-batches/batch-009/display-roles.json": "4cdab42aff2a751fa37303d3cdf1ac690fde61c98af6267975eac0ffa41723e1",
+        "artifacts/exercise-batches/batch-009/staging-amendments.json": "3763ebb8902f378f378025f8019177ed094d5adb83af45b069786eb190b05fa1",
+        "artifacts/exercise-batches/batch-009/assets/1986/clip.json": "69738c035ce1090297afb5a0005841f0460e86da83d41227ca19e3bc646e08dd",
+        "artifacts/exercise-batches/batch-009/assets/1986/cameras.json": "ffbb4874753dab1f56f942da1e3ed54881221ac2787fc8ba56566102aa3e35a0",
+        "artifacts/exercise-batches/batch-009/assets/1843/clip.json": "105cfe7fd8e800de1fa1541ce236861a2b5e0ade76559a1f437573469a9436f1",
+        "artifacts/exercise-batches/batch-009/assets/1843/cameras.json": "b1ffbccc4ac250d8b1a0858c5cabc22f64d8047b61459682fa14d723547e902c",
+        "artifacts/exercise-batches/batch-009/assets/3220/clip.json": "1f50af17825dc1840c95f32201dea1b04a1b8cbfd34d4fcb0a1c95bee6d6bebe",
+        "artifacts/exercise-batches/batch-009/assets/3220/cameras.json": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4",
+        "artifacts/exercise-batches/batch-009/assets/3672/clip.json": "5057f20ba52c47a868bbf80e7ce2a21958b3f8011321fdc25a806132e375ff14",
+        "artifacts/exercise-batches/batch-009/assets/3672/cameras.json": "2b5147ee7ceb427f5aa9e68738feab20d0efc8f9c1b860e593c19254c2a9c4a2",
+        "artifacts/exercise-batches/batch-009/assets/6097/clip.json": "1cea03bdf1241ac100ff04746a886704187806378038c6db4eaf5b3fac86405f",
+        "artifacts/exercise-batches/batch-009/assets/6097/cameras.json": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4",
+        "artifacts/exercise-batches/batch-009/assets/1405/clip.json": "04e62f46e1c5617c3e365a041e5907debbe5009d965c53e915d8829d117cbdb8",
+        "artifacts/exercise-batches/batch-009/assets/1405/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/4515/clip.json": "7d10ed864a138ac0fee95a53363d4b4f95825376ed32d89284b46ba344acf51f",
+        "artifacts/exercise-batches/batch-009/assets/4515/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/1315/clip.json": "6ffbf6ce408fe26f1af3f8df0dd884bd64f1bf6a9e2657cd7faebc952976a2cd",
+        "artifacts/exercise-batches/batch-009/assets/1315/cameras.json": "2e8875ab88f2057339b899a9fdae78d6950e503e3b99cf715c957ceef79531f1",
+        "artifacts/exercise-batches/batch-009/assets/3995/clip.json": "7e47d8c61cd5d48878973e206d0fc8f34d8f1c1e3292c10f5863f5ad3d5a2c87",
+        "artifacts/exercise-batches/batch-009/assets/3995/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/1404/clip.json": "18e3f73df0c6a4579bdb14c8f5fd463df77d2c5c2c6c653a7184d96174a41210",
+        "artifacts/exercise-batches/batch-009/assets/1404/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/4663/clip.json": "844fceb72477567a13d88a4f5ff9f5a62212dd23c9891524000a938bd0b92710",
+        "artifacts/exercise-batches/batch-009/assets/4663/cameras.json": "28e3942a064d52c2ef4c500f93e54e1b55fbaca448180e10d8ca4a9c7ab3933a"
+      }
+    },
+    "after": {
+      "branch": "t3/upgrade-exercise-animations",
+      "head": "24a70cab0b8d0663ca871a205171d66198658386",
+      "ids": [
+        "1986",
+        "1843",
+        "3220",
+        "3672",
+        "6097",
+        "1405",
+        "4515",
+        "1315",
+        "3995",
+        "1404",
+        "4663"
+      ],
+      "models": {
+        "1315": "56f6b3af6060d8e38f86f2cbf60a8e6ee7b2bd2d3fb6837e31ab7708e0525c44",
+        "1404": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "1405": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "1843": "f6287112cc152e73da3e7fbbef0c5421dd073b64c53a543163dd021714b54716",
+        "1986": "e252e8bb2d874dccae75c1cc63c514f2f7c16021a62236e16e49c5b3b7e36535",
+        "3220": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+        "3672": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+        "3995": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "4515": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+        "4663": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+        "6097": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9"
+      },
+      "clips": {
+        "1315": "6ffbf6ce408fe26f1af3f8df0dd884bd64f1bf6a9e2657cd7faebc952976a2cd",
+        "1404": "be28024edfda241bd3280b2572f41e28840e94ebbe9cb93c9c652d12a4f40989",
+        "1405": "0d67d7b7d4f09130e23601553ed8dd27e23ea6ed4d232042cccb1f7ebb131be8",
+        "1843": "105cfe7fd8e800de1fa1541ce236861a2b5e0ade76559a1f437573469a9436f1",
+        "1986": "69738c035ce1090297afb5a0005841f0460e86da83d41227ca19e3bc646e08dd",
+        "3220": "1f50af17825dc1840c95f32201dea1b04a1b8cbfd34d4fcb0a1c95bee6d6bebe",
+        "3672": "5057f20ba52c47a868bbf80e7ce2a21958b3f8011321fdc25a806132e375ff14",
+        "3995": "66afa67c3528197a81f93943ffa77aa421a0fcea35663b6438f684a938aaf026",
+        "4515": "f2d77c82bd8f8c8b772a9d07af621a79e1cef967e6ad25d73ce726b7b4b0d06d",
+        "4663": "844fceb72477567a13d88a4f5ff9f5a62212dd23c9891524000a938bd0b92710",
+        "6097": "1cea03bdf1241ac100ff04746a886704187806378038c6db4eaf5b3fac86405f"
+      },
+      "cameras": {
+        "1315": "2e8875ab88f2057339b899a9fdae78d6950e503e3b99cf715c957ceef79531f1",
+        "1404": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "1405": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "1843": "b1ffbccc4ac250d8b1a0858c5cabc22f64d8047b61459682fa14d723547e902c",
+        "1986": "ffbb4874753dab1f56f942da1e3ed54881221ac2787fc8ba56566102aa3e35a0",
+        "3220": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4",
+        "3672": "2b5147ee7ceb427f5aa9e68738feab20d0efc8f9c1b860e593c19254c2a9c4a2",
+        "3995": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "4515": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "4663": "28e3942a064d52c2ef4c500f93e54e1b55fbaca448180e10d8ca4a9c7ab3933a",
+        "6097": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4"
+      },
+      "sharedInputs": {
+        "selection.json": "11eda1a0953f857537ec8a9beaf5145d1bc062e2b74f557f139db7ae440397a7",
+        "display-roles.json": "4cdab42aff2a751fa37303d3cdf1ac690fde61c98af6267975eac0ffa41723e1",
+        "phase-labels.json": "0d4893c05648642b9fa6e32a76d1635fd0b9f4e9350f352ada3663a4c3b29c6d",
+        "staging-amendments.json": "e0897a00531296ad634edf4ec1f72a075426d43055569f40fba362939eb40c2b",
+        "presentation.json": "bb7434b0a93792d878ac54e198a9192a756bf27e93efa5fc2a6165ca2f59e516",
+        "muscle-atlas.json": "ca962f887504856aafd865e497270c8df9ad101af86e5e7b902ab270ef655cc5",
+        "template.html": "db37c4e31df84e547f8ce9ef4c3eb68a6377d96c8341545aa77e3b2c2974ed91",
+        "viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+        "build.mjs": "ecb79771638ad7c9cb11a06d7cb3164378f20d888f1f63bcfd16b879c430d130",
+        "../build-review.mjs": "4eca2781193a5cd713b52cab571ef609fdb2eb5652ef5440065debc01628dd9a",
+        "verify.mjs": "03b4d832c57ab03434075a13a12e470d12c3a0c582b079a6b5ad1fdaef5b5646",
+        "capture-peaks.mjs": "448250ac3c9478305518ba472d54f95d38574131089c174a6d67c38f89f0f081",
+        "../fit-cameras.mjs": "902c12067774a7de2bdb2122e9c2b3e40a3b1feb012b21af20fdc6053b22ed54",
+        "root-integration.json": "ecc65a85540e7d1372e8924f3a6c7c509fa4076a1d20f4489012d62d2dee7924"
+      },
+      "build_manifest_input_hashes": {
+        "artifacts/exercise-batches/batch-009/build.mjs": "ecb79771638ad7c9cb11a06d7cb3164378f20d888f1f63bcfd16b879c430d130",
+        "artifacts/exercise-batches/batch-009/template.html": "db37c4e31df84e547f8ce9ef4c3eb68a6377d96c8341545aa77e3b2c2974ed91",
+        "artifacts/exercise-batches/batch-009/viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+        "artifacts/exercise-batches/batch-009/presentation.json": "bb7434b0a93792d878ac54e198a9192a756bf27e93efa5fc2a6165ca2f59e516",
+        "artifacts/exercise-batches/build-review.mjs": "4eca2781193a5cd713b52cab571ef609fdb2eb5652ef5440065debc01628dd9a",
+        "artifacts/exercise-batches/batch-002/viewer.js": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3",
+        "artifacts/exercise-batches/dual-quaternion.js": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+        "artifacts/chaturanga-heatmap/heat-field.js": "5ab692d60bb56eaa12b4364cefc3a49b12573c3fca659445deffd5a0863c0e6f",
+        "artifacts/chaturanga-heatmap/heat-material.js": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e",
+        "artifacts/exercise-batches/batch-009/muscle-atlas.json": "ca962f887504856aafd865e497270c8df9ad101af86e5e7b902ab270ef655cc5",
+        "artifacts/exercise-batches/batch-009/phase-labels.json": "0d4893c05648642b9fa6e32a76d1635fd0b9f4e9350f352ada3663a4c3b29c6d",
+        "artifacts/exercise-batches/batch-009/selection.json": "11eda1a0953f857537ec8a9beaf5145d1bc062e2b74f557f139db7ae440397a7",
+        "artifacts/exercise-batches/batch-009/display-roles.json": "4cdab42aff2a751fa37303d3cdf1ac690fde61c98af6267975eac0ffa41723e1",
+        "artifacts/exercise-batches/batch-009/staging-amendments.json": "e0897a00531296ad634edf4ec1f72a075426d43055569f40fba362939eb40c2b",
+        "artifacts/exercise-batches/batch-009/assets/1986/clip.json": "69738c035ce1090297afb5a0005841f0460e86da83d41227ca19e3bc646e08dd",
+        "artifacts/exercise-batches/batch-009/assets/1986/cameras.json": "ffbb4874753dab1f56f942da1e3ed54881221ac2787fc8ba56566102aa3e35a0",
+        "artifacts/exercise-batches/batch-009/assets/1843/clip.json": "105cfe7fd8e800de1fa1541ce236861a2b5e0ade76559a1f437573469a9436f1",
+        "artifacts/exercise-batches/batch-009/assets/1843/cameras.json": "b1ffbccc4ac250d8b1a0858c5cabc22f64d8047b61459682fa14d723547e902c",
+        "artifacts/exercise-batches/batch-009/assets/3220/clip.json": "1f50af17825dc1840c95f32201dea1b04a1b8cbfd34d4fcb0a1c95bee6d6bebe",
+        "artifacts/exercise-batches/batch-009/assets/3220/cameras.json": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4",
+        "artifacts/exercise-batches/batch-009/assets/3672/clip.json": "5057f20ba52c47a868bbf80e7ce2a21958b3f8011321fdc25a806132e375ff14",
+        "artifacts/exercise-batches/batch-009/assets/3672/cameras.json": "2b5147ee7ceb427f5aa9e68738feab20d0efc8f9c1b860e593c19254c2a9c4a2",
+        "artifacts/exercise-batches/batch-009/assets/6097/clip.json": "1cea03bdf1241ac100ff04746a886704187806378038c6db4eaf5b3fac86405f",
+        "artifacts/exercise-batches/batch-009/assets/6097/cameras.json": "a8fdb0aec031d958533089c9a8babb0c908e635a57e1c3e5b97e18d45e3e3ec4",
+        "artifacts/exercise-batches/batch-009/assets/1405/clip.json": "0d67d7b7d4f09130e23601553ed8dd27e23ea6ed4d232042cccb1f7ebb131be8",
+        "artifacts/exercise-batches/batch-009/assets/1405/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/4515/clip.json": "f2d77c82bd8f8c8b772a9d07af621a79e1cef967e6ad25d73ce726b7b4b0d06d",
+        "artifacts/exercise-batches/batch-009/assets/4515/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/1315/clip.json": "6ffbf6ce408fe26f1af3f8df0dd884bd64f1bf6a9e2657cd7faebc952976a2cd",
+        "artifacts/exercise-batches/batch-009/assets/1315/cameras.json": "2e8875ab88f2057339b899a9fdae78d6950e503e3b99cf715c957ceef79531f1",
+        "artifacts/exercise-batches/batch-009/assets/3995/clip.json": "66afa67c3528197a81f93943ffa77aa421a0fcea35663b6438f684a938aaf026",
+        "artifacts/exercise-batches/batch-009/assets/3995/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/1404/clip.json": "be28024edfda241bd3280b2572f41e28840e94ebbe9cb93c9c652d12a4f40989",
+        "artifacts/exercise-batches/batch-009/assets/1404/cameras.json": "e09fe34a60cf61f7b08a8cbcd11c3ad64319a3bc60c39f63ea4b47487c3309d6",
+        "artifacts/exercise-batches/batch-009/assets/4663/clip.json": "844fceb72477567a13d88a4f5ff9f5a62212dd23c9891524000a938bd0b92710",
+        "artifacts/exercise-batches/batch-009/assets/4663/cameras.json": "28e3942a064d52c2ef4c500f93e54e1b55fbaca448180e10d8ca4a9c7ab3933a"
+      }
+    },
+    "stability": {
+      "models": true,
+      "clips": true,
+      "atlas": true,
+      "nonCameraSharedInputs": true,
+      "runnerInput": true,
+      "rootIntegration": true
+    },
+    "models_clips_atlas_and_nonCamera_inputs_unchanged": true,
+    "camera_changes_intentional": true,
+    "final_build_manifest_sha256": "976f5d7141ce7b5c7d58246e55ab19cf93eef9251d5489bb329e6182325254a6",
+    "final_viewer_sha256": "cf4a7533120e416a940f0311e03e9b121046139ae820eb52eb1dcf4e9cd6bce7"
+  },
+  "superseded_previous_failure": {
+    "summary": "Earlier verification attempt failed on a stale native DQ reference for 1405 before final author inputs were frozen; that run stopped before peak capture.",
+    "log": "artifacts/exercise-batches/batch-009/logs/verify.log"
+  },
+  "completion": "all_selected_normal_viewer_checks_passed"
+}

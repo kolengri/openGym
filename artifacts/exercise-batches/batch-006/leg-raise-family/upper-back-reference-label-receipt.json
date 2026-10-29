@@ -1,0 +1,32 @@
+{
+  "reason": "Export verifier erroneously applied2mm floor support to diagnostic3303, whose accepted frozen pose was4.987mm. Geometry and original lumbar/pelvic/head criteria were untouched.",
+  "retained_raw3303": true,
+  "actual_original_protected_upperback_floor_ids": [
+    3311,
+    8568
+  ],
+  "new_geometry_or_target_changes": false,
+  "static_bindings": {
+    "3311": {
+      "Spine": 0.09389153122901917,
+      "Spine1": 0.9061084389686584
+    },
+    "8568": {
+      "Spine": 0.09746485948562622,
+      "Spine1": 0.9025351405143738
+    }
+  },
+  "all151_native_anchor_skin_drift_m": 0.0,
+  "support_profile_or_pelvic_masks_changed": false,
+  "rejected_mislabeled_reference": {
+    "patch": "upper_back_anchor",
+    "source_ids": [
+      3303
+    ],
+    "state": "supported",
+    "erroneous_threshold_m": 0.002,
+    "actual_native_minimum_m": 0.004986763000488281,
+    "failed_assertion": "AssertionError [ERR_ASSERTION]: decoded support upper_back_anchor frame0",
+    "why_rejected": "The new verifier mislabeled a preserved5mm diagnostic point as a2mm support anchor; the original lumbar/pelvic criteria never included that point."
+  }
+}

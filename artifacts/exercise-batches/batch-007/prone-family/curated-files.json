@@ -1,0 +1,123 @@
+{
+  "family": "prone-family",
+  "included_files": [
+    {
+      "path": "build.py",
+      "sha256": "9edc913f02c86cad673416f133b97b508c6334cb988cf4cb1cb826c66d90757e",
+      "bytes": 6860
+    },
+    {
+      "path": "motion.py",
+      "sha256": "a0bd4672d11bb2bf08d7186866d8c68b207f48a8246cd5122d0bc43270833920",
+      "bytes": 6147
+    },
+    {
+      "path": "palm_frame.py",
+      "sha256": "31b8baf5d66e9ebe3f9b4eac1efcdeace1dcd2d48345d8e3a84cf8d106da32d7",
+      "bytes": 1117
+    },
+    {
+      "path": "export_motion.py",
+      "sha256": "2afe08ce55d74b56e1e7eca28695e412e429c959d9a2957df00c58e1f4a50a48",
+      "bytes": 1790
+    },
+    {
+      "path": "verify_native.py",
+      "sha256": "a4cca3e6d51ea32920fc6eda1fd3b23f19ac53ca579a57a8cdbef01fb11fa35b",
+      "bytes": 11180
+    },
+    {
+      "path": "verify_export.mjs",
+      "sha256": "6bce76c45e10d3b9453884a5853e7e4918dafa8c7e352e41be0aa7b2c18e254c",
+      "bytes": 6587
+    },
+    {
+      "path": "review.py",
+      "sha256": "ab65376ed6a3787ade7a885c31f665240bd9c07880faf05b2fbbc558cc317995",
+      "bytes": 1700
+    },
+    {
+      "path": "write_metadata.py",
+      "sha256": "0739aeb54121f80d35395626b873213477023dd1a67a73b4b23e20396a43e6ee",
+      "bytes": 3637
+    },
+    {
+      "path": "finalize.py",
+      "sha256": "121e1680d844b0e23063f917b7a7060275ffadd1872532cd5bf6c50d4e3cd84a",
+      "bytes": 6972
+    },
+    {
+      "path": "README.md",
+      "sha256": "6e1a28056b40aa592d95f65bd13be7304193ce9603413ade6c4fa7540221f520",
+      "bytes": 3999
+    },
+    {
+      "path": "superseded-diagnostics.json",
+      "sha256": "3d2ad6a0fa64fcb2c5dcb4b72bdb0c97c243b3dfe3e945a91a68213bd7f76857",
+      "bytes": 1483
+    },
+    {
+      "path": "delivery-report.json",
+      "sha256": "7669320a38f520b89799738f07eb16c2da3f05238f2d3fa3f4df809287085b1c",
+      "bytes": 9096
+    },
+    {
+      "path": "../assets/4702/curated-files.json",
+      "sha256": "dc9e8ca2c14958683c990f88ff04600b9cb7f9307235387479841c3b98f2d546",
+      "bytes": 7119
+    },
+    {
+      "path": "../assets/4715/curated-files.json",
+      "sha256": "0a5d11ee7a806bad70b7a63f9c92f43cb411225c4b38dd8f9f5e506f45c9d9a9",
+      "bytes": 7119
+    },
+    {
+      "path": "../assets/3294/curated-files.json",
+      "sha256": "d42e4dbf28002208ca80e202416fbf40f32d8d4612cfad5b6b06b2e4bce707cb",
+      "bytes": 7119
+    }
+  ],
+  "excluded": [
+    "logs",
+    "__pycache__",
+    "diagnostic/test scripts",
+    "trial reports",
+    "temporary decoded buffers",
+    "backups",
+    "environments"
+  ],
+  "exact_readonly_inputs": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/asset-interface.json",
+      "sha256": "9aca7f26bbbf18c1ccdfba986e6ba410124a7adbe740f4a8f1dd29fdfd4785ef"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/authoring-handoff.md",
+      "sha256": "10958b8716392c3aea0740d4eab897b9c763631df158a097436af7765d5b7c97"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/upright-cardio-family/binding.py",
+      "sha256": "1e98c62c894dcfc97264fe54590fe24c88a30a3d895ee9ec75b65daa445dfecb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/upright-cardio-family/verify_export.mjs",
+      "sha256": "26d4101c80f04631ec5ae3a3685f926e004e2f31ff659404300bd6012585728e"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    }
+  ]
+}

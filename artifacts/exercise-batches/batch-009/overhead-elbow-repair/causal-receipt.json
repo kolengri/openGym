@@ -1,0 +1,69 @@
+{
+  "rejected_asset": "batch008 user-rejected exercise5,1986",
+  "source_instructions": [
+    "Raise one arm overhead and bend the elbow, palm resting on your upper back.",
+    "Use your other hand to hold the elbow.",
+    "Gently press the elbow back and down.",
+    "Keep your ribs down and chest open.",
+    "Hold for 20-30 seconds, then switch sides."
+  ],
+  "observed_old_route": "Working elbow turned inward rapidly while both wrists travelled overhead; old contact-valid hold and arc-length retiming did not constrain anatomical sequencing or joint frame roll.",
+  "repair": "Working shoulder elevates0..0.7s, then elbow/wrist fold and palm settles0.7..1.3s. Assisting wrist follows one outside chest/temple Bezier arc1.3..2s; a low lateral elbow pole creates an early bent chain, then moves posterior for contact. The proven outside shoulder axial frame follows its reachable elbow direction. Release reverses the clear route. No straight assisting overhead waypoint or whole-path arc-length retiming.",
+  "additional_measured_findings": [
+    {
+      "finding": "Full151 checks exposed76.48degree assisting forearm roll and a5.04mm ring-tip graze not present in sparse checks.",
+      "change": "Replace projected world-pole and independent forearm frame with continuous bend-plane and forearm transport; use120ms C1 assistance rate ramps and a measured4mm outward near-contact wrist bulge. Spread grip closure1.6..2.0s instead of compressing it at the end. Final151 native and actual decoded checks must pass."
+    },
+    {
+      "finding": "Root GPU rejected simultaneous assisting straight-arm overhead elevation before the working palm settled.",
+      "change": "Sequence working lift/fold first, then a bent assisting outside approach."
+    },
+    {
+      "finding": "Sparse31-key early interpolation changed the fast assisting wrist midpoint by approximately0.17m, hiding the actual analytic path.",
+      "change": "Early live review now uses all151 actual baked keys. Baked native proof frames match the final transport route; heavy physical checks remain a separate stage."
+    },
+    {
+      "finding": "Dense first local-FK assisting route left its forearm hanging down outside.",
+      "change": "Use a single outside wrist arc with a low lateral elbow pole so the hand rises before the elbow."
+    },
+    {
+      "finding": "Inherited assisting forearm endpoint crossed the occiput despite palm/elbow contact.",
+      "change": "Move assisting elbow posterior, keeping its hand goal."
+    },
+    {
+      "finding": "Forcing a new assisting elbow-plane axial frame caused18 proximal upper-arm/scapula triangle crossings. Source3911/3917/3918 crossed torso2295/2296/2389.",
+      "change": "Transport inherited upper-arm axial frame to the posterior elbow direction, then transport forearm from that frame. Final full-cycle crossings are checked."
+    },
+    {
+      "finding": "Coordinate-only back patch included arm/elbow triangles, including source8179/8264/8178.",
+      "change": "Intersect back coordinates with dominant original torso weights. Keep independent actual arm/head and arm/torso triangle tests; do not relax penetration bounds."
+    },
+    {
+      "finding": "Folding before the upper arm cleared the crown caused a true proximal-forearm/head crossing.",
+      "change": "Finish outside-forward upper-arm elevation before most of the elbow fold; keep palm landing behind the crown."
+    },
+    {
+      "finding": "Late assisting wrist orientation briefly sent the thumb through the working forearm.",
+      "change": "Complete local wrist alignment before grip acquisition."
+    }
+  ],
+  "unchanged_domains": [
+    "Original Basis",
+    "UVs",
+    "Topology",
+    "Rest skeleton",
+    "Source IDs",
+    "51bones",
+    "Accepted shoulder and plantar binding",
+    "Working palm target",
+    "Released1987 files"
+  ],
+  "changed_domains": [
+    "1986 bone animation only",
+    "Assisting elbow geometry and coherent frame",
+    "Source-backed contact segmentation and additional full-arm checks"
+  ],
+  "final_source_sha256": "5032e96ff3af6a5ee010c8ca3f2f53be6d734ab473f6ddd90a580ce03bef467f",
+  "final_glb_sha256": "e252e8bb2d874dccae75c1cc63c514f2f7c16021a62236e16e49c5b3b7e36535",
+  "gpu_acceptance_owner": "Root"
+}

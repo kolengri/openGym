@@ -1,0 +1,32 @@
+{
+  "foot_regression_pass": true,
+  "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+  "rejected_source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+  "frames": 151,
+  "gates": {
+    "ankle_edges_stable_relative_to_actual_planted_shape": true,
+    "forefoot_edges_stable_relative_to_actual_planted_shape": true,
+    "no_ankle_relative_roll": true,
+    "no_shin_rotation_snap": true,
+    "ankle_and_knee_trajectory_retained": true
+  },
+  "baseline_maximum_ankle_edge_change_from_planted": 5.679445951245459,
+  "repaired_maximum_ankle_edge_change_from_planted": 6.434125996102047e-05,
+  "baseline_maximum_forefoot_edge_change_from_planted": 5.679445951245459,
+  "repaired_maximum_forefoot_edge_change_from_planted": 0.0004348720970573927,
+  "baseline_ankle_relative_quaternion_drift": 1.410003794175764,
+  "repaired_ankle_relative_quaternion_drift": 6.759939326175305e-07,
+  "baseline_maximum_late_rotation_degrees": {
+    "LeftLeg": 135.35031072623994,
+    "LeftFoot": 6.654509874370853,
+    "LeftToeBase": 6.654392480494494
+  },
+  "repaired_maximum_late_rotation_degrees": {
+    "LeftLeg": 8.448486380631381,
+    "LeftFoot": 8.44839331930394,
+    "LeftToeBase": 8.44839331930394
+  },
+  "maximum_ankle_knee_trajectory_change_m": 2.980232238769531e-07,
+  "threshold_basis": "0.2% relative edge-shape drift bounds deformation of the preserved planted foot, not medical joint ranges. 10 degrees/sample bounds the authored smooth 152.35 degree hinge transport at 30 fps; current analytical maximum is 8.45 degrees/sample.",
+  "scope": "Actual native DQ skin, source-bound mixed ankle and whole-forefoot edges across all151 samples. Tests internal shape and roll directly. Grasp acceptance and final export remain separate."
+}

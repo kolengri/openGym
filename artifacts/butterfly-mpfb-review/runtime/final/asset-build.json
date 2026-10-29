@@ -1,0 +1,46 @@
+{
+  "status": "exported_pending_actual_surface_contact_and_browser_review",
+  "bytes": 1912868,
+  "sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+  "vertices": 13405,
+  "triangles": 26806,
+  "bones": 46,
+  "deformationGroups": 45,
+  "runtimeWeightOverride": {
+    "sha256": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9",
+    "vertices": 547
+  },
+  "correctiveTargets": {
+    "sha256": "6ad3a8a53cb6f30737e4bd42cb87f9ebf9f6534442408e7cfd839def26319742",
+    "names": [
+      "KneesOutHalfArmContact",
+      "KneesOutFullArmContact"
+    ]
+  },
+  "animations": [
+    {
+      "name": "Exercise_4512",
+      "duration": 5
+    }
+  ],
+  "maximumTRSDecompositionComponentError": 0.000003175380409191353,
+  "maximumGLBCodecSurfaceErrorMeters": 4.59941800820109e-8,
+  "maximumNativeDeltaApproximationSurfaceErrorMeters": 7.66991789629143e-8,
+  "maximumBindSurfaceErrorMeters": 3.9100246392968527e-8,
+  "maximumLoopSurfaceErrorMeters": 3.892064610267638e-8,
+  "samples": {
+    "file": "runtime-linear-samples.bin",
+    "shape": [
+      151,
+      13405,
+      3
+    ],
+    "dtype": "little-endian-float32",
+    "space": "BlenderZup mesh local"
+  },
+  "standardGLB": true,
+  "customSkinningShaderRequired": false,
+  "vertexCacheInDelivery": false,
+  "textures": 0,
+  "promotion_map": {}
+}

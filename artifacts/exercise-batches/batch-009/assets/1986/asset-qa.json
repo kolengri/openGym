@@ -1,0 +1,28 @@
+{
+  "pass": true,
+  "source_sha256": "5032e96ff3af6a5ee010c8ca3f2f53be6d734ab473f6ddd90a580ce03bef467f",
+  "profile": "game",
+  "samples": [
+    0,
+    30,
+    48,
+    75,
+    120
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "frame": 48,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "frame": 75,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    }
+  ],
+  "warning_policy": "Warnings retained as exact findings. Original topology and UVs are invariant; hidden back-to-back near-contact faces or pose proximity are not deleted solely to reduce triangles. Review their actual solid/wire appearance. No global self-collision claim."
+}

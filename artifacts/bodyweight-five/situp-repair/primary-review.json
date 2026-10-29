@@ -1,0 +1,33 @@
+{
+  "exercise_id": "0001",
+  "status": "candidate_accepted_for_user_review",
+  "source_blend_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "model_sha256": "57c22f5285db503cf2e7a7d561fa6fb62bda40cd6e7e7e7ab930decfecd7fd45",
+  "reviewed_images_sha256": {
+    "situp-repair/proof-side-000.png": "ee8bc9d79140e294c8aa8bbe96bd49abdc9c3138b3ed8afafbf9e0c7e62ad4d2",
+    "situp-repair/proof-side-060.png": "2d63350bf4527659d3126e82e77f511743939f89301156042d2b63afd47b506b",
+    "situp-repair/proof-oblique-000.png": "dc35c7de7a71e30219564dedddaf758c40d7c50c5a28d76f7815a834727922af",
+    "situp-repair/proof-oblique-060.png": "2fed160896683d678e48bfdce4a106e1a89b6534c9e84bd7b01718a7b08ff2fb",
+    "situp-repair/native-random.png": "119570c5da184cab8ea6ff6668c80ff2eb25fa20cff30b1c5f76f7b1230f7a24",
+    "situp-repair/native-wire.png": "7f5c86c079013bff7f6f1a777537cfb81e6af1dab82e984989012f40f0abb318",
+    "decoded-0001-mid.png": "424d093d3aef015c1e73448cadd706750bae6d34b912f85d894cb066d313fd3e",
+    "decoded-0001-sheet.png": "ab19696fca3bdfe638846966ccd7fc1f8777a276d6f3e78bf04e88fd6d5c431b"
+  },
+  "primary_visual_observations": [
+    "Feet and pelvis share a convincing floor in side and oblique checker-ground proofs.",
+    "Open elbow placement, hand separation and head rest are readable through start, top and decoded return samples.",
+    "No detached limb parts, shorts or explicit genital anatomy; random and wire views preserve a continuous human silhouette.",
+    "Delivered MP4 samples show selected muscle regions on uniform neutral skin, without body cast shadows."
+  ],
+  "native_and_linear_surface_samples": 18,
+  "actual_glb_surface_samples": 9,
+  "native_warnings_accepted": {
+    "source_mouth_pairs": 7,
+    "source_toe_fold_pairs": 2,
+    "right_axillary_upper_arm_fold_pairs": 5,
+    "reason": "Hidden opposite-facing skin folds; zero QA errors and no overlapping hands. Detailed source correspondence retained separately."
+  },
+  "review_scope": "Selected start/top side/oblique native proofs, multi-angle solid/wire and five decoded MP4 phase samples; every delivered0001media frame decoded by prepared checks. Not continuous physical collision, biomechanics or physical-device certification.",
+  "user_review": "pending",
+  "contract_issues_closed": false
+}

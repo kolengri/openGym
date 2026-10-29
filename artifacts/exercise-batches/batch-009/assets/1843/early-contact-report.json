@@ -1,0 +1,1151 @@
+{
+  "ok": true,
+  "source_sha256": "6015f443dc30fd10f61999ebb05d4d73adf4122953a3c1e51851eb1e2b925dee",
+  "frames": 13,
+  "native_frame_origin": 1,
+  "source_vertices": 10582,
+  "triangles": 21160,
+  "bones": 51,
+  "source_and_binding_exact_to_accepted1368": true,
+  "maximum_lower_body_matrix_delta": 1.6689300537109375e-06,
+  "maximum_native_decoded_skin_error_m": null,
+  "loop_error_m": 0.0,
+  "maximum_bone_step_degrees": {
+    "Hips": 0,
+    "Spine": 0,
+    "Spine1": 0,
+    "Neck": 0.6572987724645343,
+    "Head": 1.8804883226181452,
+    "LeftShoulder": 0,
+    "LeftArm": 5.562867633197572,
+    "LeftForeArm": 8.9679453188993,
+    "LeftHand": 13.930679661334171,
+    "LeftLittle1": 13.930679661334171,
+    "LeftLittle2": 13.930679661334171,
+    "LeftLittle3": 13.930679661334171,
+    "LeftRing1": 13.93062331227352,
+    "LeftRing2": 13.930679661334171,
+    "LeftRing3": 13.930679661334171,
+    "LeftMiddle1": 13.930679661334171,
+    "LeftMiddle2": 13.930679661334171,
+    "LeftMiddle3": 13.930679661334171,
+    "LeftIndex1": 13.93062331227352,
+    "LeftIndex2": 13.930679661334171,
+    "LeftIndex3": 13.93062331227352,
+    "LeftThumb1": 13.93062331227352,
+    "LeftThumb2": 13.930679661334171,
+    "LeftThumb3": 13.930679661334171,
+    "RightShoulder": 0,
+    "RightArm": 14.377455995323045,
+    "RightForeArm": 14.093630045684105,
+    "RightHand": 14.105984150345366,
+    "RightThumb1": 14.105984150345366,
+    "RightThumb2": 14.106040499406017,
+    "RightThumb3": 14.105984150345366,
+    "RightIndex1": 14.105984150345366,
+    "RightIndex2": 14.105928655058358,
+    "RightIndex3": 14.105984150345366,
+    "RightMiddle1": 14.105928655058358,
+    "RightMiddle2": 14.105984150345366,
+    "RightMiddle3": 14.105984150345366,
+    "RightRing1": 14.105928655058358,
+    "RightRing2": 14.105928655058358,
+    "RightRing3": 14.105984150345366,
+    "RightLittle1": 14.105984150345366,
+    "RightLittle2": 14.105984150345366,
+    "RightLittle3": 14.105984150345366,
+    "LeftUpLeg": 0,
+    "LeftLeg": 0,
+    "LeftFoot": 0,
+    "LeftToeBase": 0,
+    "RightUpLeg": 0,
+    "RightLeg": 0,
+    "RightFoot": 0,
+    "RightToeBase": 0
+  },
+  "minimum_triangle_area_m2": 2.5194724499075568e-08,
+  "failures": [],
+  "samples": [
+    {
+      "frame": 0,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 5.8950563683915755e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.5116471648216248,
+          "median_distance_m": 0.5746284127235413,
+          "minimum_signed_normal_distance_m": 0.238541753962636,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.5311431288719177,
+          "median_distance_m": 0.5661020874977112,
+          "minimum_signed_normal_distance_m": 0.24478374049067497,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.4421895146369934,
+          "median_distance_m": 0.5027892589569092,
+          "minimum_signed_normal_distance_m": 0.0992622897028923,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.5262409448623657,
+          "median_distance_m": 0.5913373231887817,
+          "minimum_signed_normal_distance_m": 0.2675696015357971,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.5114572644233704,
+          "median_distance_m": 0.5744218826293945,
+          "minimum_signed_normal_distance_m": 0.26500181667506695,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.5301046371459961,
+          "median_distance_m": 0.5651805400848389,
+          "minimum_signed_normal_distance_m": 0.2713985498994589,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.442221075296402,
+          "median_distance_m": 0.5025221407413483,
+          "minimum_signed_normal_distance_m": 0.0971971396356821,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.5242900848388672,
+          "median_distance_m": 0.5903831124305725,
+          "minimum_signed_normal_distance_m": 0.28512379340827465,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 3.519877837788295e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.5096595287322998,
+          "median_distance_m": 0.5668262243270874,
+          "minimum_signed_normal_distance_m": 0.2715182416141033,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.5294067859649658,
+          "median_distance_m": 0.5642252564430237,
+          "minimum_signed_normal_distance_m": 0.2751092966645956,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.44075140357017517,
+          "median_distance_m": 0.5011413097381592,
+          "minimum_signed_normal_distance_m": 0.16634961869567633,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.5229601263999939,
+          "median_distance_m": 0.5781059265136719,
+          "minimum_signed_normal_distance_m": 0.5153114162385464,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.5124617218971252,
+          "median_distance_m": 0.5762102603912354,
+          "minimum_signed_normal_distance_m": 0.06652486138045788,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.5310689806938171,
+          "median_distance_m": 0.5666184425354004,
+          "minimum_signed_normal_distance_m": 0.26854758337140083,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.44352054595947266,
+          "median_distance_m": 0.503134548664093,
+          "minimum_signed_normal_distance_m": 0.06838707393035293,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.5261155366897583,
+          "median_distance_m": 0.5948907732963562,
+          "minimum_signed_normal_distance_m": 0.26107557490468025,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.5194724499075568e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.4828074276447296,
+          "median_distance_m": 0.5325647592544556,
+          "minimum_signed_normal_distance_m": 0.4715411588549614,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.5001717209815979,
+          "median_distance_m": 0.5332398116588593,
+          "minimum_signed_normal_distance_m": 0.49630673974752426,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.435802698135376,
+          "median_distance_m": 0.4880431741476059,
+          "minimum_signed_normal_distance_m": 0.2898227609694004,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.48499801754951477,
+          "median_distance_m": 0.5415155291557312,
+          "minimum_signed_normal_distance_m": 0.4715411588549614,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.4865133762359619,
+          "median_distance_m": 0.5457682609558105,
+          "minimum_signed_normal_distance_m": 0.35547972097992897,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.502960205078125,
+          "median_distance_m": 0.5385867953300476,
+          "minimum_signed_normal_distance_m": 0.36664917692542076,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.43559426069259644,
+          "median_distance_m": 0.4885628968477249,
+          "minimum_signed_normal_distance_m": 0.1871192823164165,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.49314871430397034,
+          "median_distance_m": 0.5603716373443604,
+          "minimum_signed_normal_distance_m": 0.3677668571472168,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 35,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.4028012454509735,
+          "median_distance_m": 0.4625133275985718,
+          "minimum_signed_normal_distance_m": 0.4019550085067749,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.4319922626018524,
+          "median_distance_m": 0.46318913996219635,
+          "minimum_signed_normal_distance_m": 0.4257602356374264,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.4179364740848541,
+          "median_distance_m": 0.4538535177707672,
+          "minimum_signed_normal_distance_m": 0.32594762183725834,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.4028012454509735,
+          "median_distance_m": 0.47048917412757874,
+          "minimum_signed_normal_distance_m": 0.4019550085067749,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.3840402364730835,
+          "median_distance_m": 0.4585699141025543,
+          "minimum_signed_normal_distance_m": 0.21004169713705778,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.4119383692741394,
+          "median_distance_m": 0.44748902320861816,
+          "minimum_signed_normal_distance_m": 0.21271776407957077,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.39778050780296326,
+          "median_distance_m": 0.44219087064266205,
+          "minimum_signed_normal_distance_m": 0.1659135539084673,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.3840402364730835,
+          "median_distance_m": 0.47154781222343445,
+          "minimum_signed_normal_distance_m": 0.37445665430277586,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.14326129853725433,
+          "median_distance_m": 0.22540324926376343,
+          "minimum_signed_normal_distance_m": 0.1342681534588337,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.14326129853725433,
+          "median_distance_m": 0.1617957279086113,
+          "minimum_signed_normal_distance_m": 0.13691905373707414,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.1725178211927414,
+          "median_distance_m": 0.2616374343633652,
+          "minimum_signed_normal_distance_m": 0.1720516923815012,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.14865054190158844,
+          "median_distance_m": 0.2474585920572281,
+          "minimum_signed_normal_distance_m": 0.1422935351729393,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.18096210062503815,
+          "median_distance_m": 0.2764614522457123,
+          "minimum_signed_normal_distance_m": 0.18009166690171696,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.1857706606388092,
+          "median_distance_m": 0.21825402975082397,
+          "minimum_signed_normal_distance_m": 0.1831770398421213,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.20215128362178802,
+          "median_distance_m": 0.2846856564283371,
+          "minimum_signed_normal_distance_m": 0.13821749249473214,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.18703337013721466,
+          "median_distance_m": 0.3053779900074005,
+          "minimum_signed_normal_distance_m": 0.18349200626835227,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 55,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.005079859402030706,
+          "median_distance_m": 0.06019267067313194,
+          "minimum_signed_normal_distance_m": 0.005046256992500275,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 18
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.005079859402030706,
+          "median_distance_m": 0.01807587780058384,
+          "minimum_signed_normal_distance_m": 0.005046256992500275,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 13
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.06015688180923462,
+          "median_distance_m": 0.143125519156456,
+          "minimum_signed_normal_distance_m": 0.059986036736518145,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.026662668213248253,
+          "median_distance_m": 0.07567255198955536,
+          "minimum_signed_normal_distance_m": 0.024981312875752337,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.004380259197205305,
+          "median_distance_m": 0.06407476216554642,
+          "minimum_signed_normal_distance_m": 0.0043802592263091356,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 14
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.004380259197205305,
+          "median_distance_m": 0.02308419905602932,
+          "minimum_signed_normal_distance_m": 0.0043802592263091356,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 8
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.035276859998703,
+          "median_distance_m": 0.09858431667089462,
+          "minimum_signed_normal_distance_m": 0.035160663072019815,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.007707094307988882,
+          "median_distance_m": 0.07543390989303589,
+          "minimum_signed_normal_distance_m": 0.007707094744546339,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 3
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.0011972455540671945,
+          "median_distance_m": 0.05282304808497429,
+          "minimum_signed_normal_distance_m": 0.0011966449965257198,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 31
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.0011972455540671945,
+          "median_distance_m": 0.01416390435770154,
+          "minimum_signed_normal_distance_m": 0.0011966449965257198,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 19
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.05449693277478218,
+          "median_distance_m": 0.13442138582468033,
+          "minimum_signed_normal_distance_m": 0.05421632016077638,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.013928390108048916,
+          "median_distance_m": 0.06639190763235092,
+          "minimum_signed_normal_distance_m": 0.013928391155786812,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.0014350670389831066,
+          "median_distance_m": 0.0515918992459774,
+          "minimum_signed_normal_distance_m": 0.0014350671408465132,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 23
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.0014350670389831066,
+          "median_distance_m": 0.018124163150787354,
+          "minimum_signed_normal_distance_m": 0.0014350671408465132,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 11
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.0264580138027668,
+          "median_distance_m": 0.088308896869421,
+          "minimum_signed_normal_distance_m": 0.0264580138027668,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.004892166703939438,
+          "median_distance_m": 0.05691153556108475,
+          "minimum_signed_normal_distance_m": 0.004892165937647519,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 4
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.0011972455540671945,
+          "median_distance_m": 0.05282304808497429,
+          "minimum_signed_normal_distance_m": 0.0011966449965257198,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 31
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.0011972455540671945,
+          "median_distance_m": 0.01416390435770154,
+          "minimum_signed_normal_distance_m": 0.0011966449965257198,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 19
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.05449693277478218,
+          "median_distance_m": 0.13442138582468033,
+          "minimum_signed_normal_distance_m": 0.05421632016077638,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.013928390108048916,
+          "median_distance_m": 0.06639190763235092,
+          "minimum_signed_normal_distance_m": 0.013928391155786812,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.0014350670389831066,
+          "median_distance_m": 0.0515918992459774,
+          "minimum_signed_normal_distance_m": 0.0014350671408465132,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 23
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.0014350670389831066,
+          "median_distance_m": 0.018124163150787354,
+          "minimum_signed_normal_distance_m": 0.0014350671408465132,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 11
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.0264580138027668,
+          "median_distance_m": 0.088308896869421,
+          "minimum_signed_normal_distance_m": 0.0264580138027668,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.004892166703939438,
+          "median_distance_m": 0.05691153556108475,
+          "minimum_signed_normal_distance_m": 0.004892165937647519,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 4
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.0011972455540671945,
+          "median_distance_m": 0.05282304808497429,
+          "minimum_signed_normal_distance_m": 0.0011966449965257198,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 31
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.0011972455540671945,
+          "median_distance_m": 0.01416390435770154,
+          "minimum_signed_normal_distance_m": 0.0011966449965257198,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 19
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.05449693277478218,
+          "median_distance_m": 0.13442138582468033,
+          "minimum_signed_normal_distance_m": 0.05421632016077638,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.013928390108048916,
+          "median_distance_m": 0.06639190763235092,
+          "minimum_signed_normal_distance_m": 0.013928391155786812,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.0014350670389831066,
+          "median_distance_m": 0.0515918992459774,
+          "minimum_signed_normal_distance_m": 0.0014350671408465132,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 23
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.0014350670389831066,
+          "median_distance_m": 0.018124163150787354,
+          "minimum_signed_normal_distance_m": 0.0014350671408465132,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 11
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.0264580138027668,
+          "median_distance_m": 0.088308896869421,
+          "minimum_signed_normal_distance_m": 0.0264580138027668,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.004892166703939438,
+          "median_distance_m": 0.05691153556108475,
+          "minimum_signed_normal_distance_m": 0.004892165937647519,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 4
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.14326129853725433,
+          "median_distance_m": 0.22540324926376343,
+          "minimum_signed_normal_distance_m": 0.1342681534588337,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.14326129853725433,
+          "median_distance_m": 0.1617957279086113,
+          "minimum_signed_normal_distance_m": 0.13691905373707414,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.1725178211927414,
+          "median_distance_m": 0.2616374343633652,
+          "minimum_signed_normal_distance_m": 0.1720516923815012,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.14865054190158844,
+          "median_distance_m": 0.2474585920572281,
+          "minimum_signed_normal_distance_m": 0.1422935351729393,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.18096210062503815,
+          "median_distance_m": 0.2764614522457123,
+          "minimum_signed_normal_distance_m": 0.18009166690171696,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.1857706606388092,
+          "median_distance_m": 0.21825402975082397,
+          "minimum_signed_normal_distance_m": 0.1831770398421213,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.20215128362178802,
+          "median_distance_m": 0.2846856564283371,
+          "minimum_signed_normal_distance_m": 0.13821749249473214,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.18703337013721466,
+          "median_distance_m": 0.3053779900074005,
+          "minimum_signed_normal_distance_m": 0.18349200626835227,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 2.52295976880792e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.44473186135292053,
+          "median_distance_m": 0.4976513981819153,
+          "minimum_signed_normal_distance_m": 0.4351113438606262,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.46748605370521545,
+          "median_distance_m": 0.4993581622838974,
+          "minimum_signed_normal_distance_m": 0.4640078470110893,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.429463267326355,
+          "median_distance_m": 0.4721025228500366,
+          "minimum_signed_normal_distance_m": 0.3100828714668751,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.44473186135292053,
+          "median_distance_m": 0.5047045946121216,
+          "minimum_signed_normal_distance_m": 0.4351113438606262,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.36433306336402893,
+          "median_distance_m": 0.4285077750682831,
+          "minimum_signed_normal_distance_m": -0.07532354816794395,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.4042578637599945,
+          "median_distance_m": 0.4424823522567749,
+          "minimum_signed_normal_distance_m": -0.044102449901402,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.397000253200531,
+          "median_distance_m": 0.43798333406448364,
+          "minimum_signed_normal_distance_m": 0.2711190693080425,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.36433306336402893,
+          "median_distance_m": 0.4275611937046051,
+          "minimum_signed_normal_distance_m": -0.013175634667277336,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 135,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 3.519877837788295e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.5096595287322998,
+          "median_distance_m": 0.5668262243270874,
+          "minimum_signed_normal_distance_m": 0.2715182416141033,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.5294067859649658,
+          "median_distance_m": 0.5642252564430237,
+          "minimum_signed_normal_distance_m": 0.2751092966645956,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.44075140357017517,
+          "median_distance_m": 0.5011413097381592,
+          "minimum_signed_normal_distance_m": 0.16634961869567633,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.5229601263999939,
+          "median_distance_m": 0.5781059265136719,
+          "minimum_signed_normal_distance_m": 0.5153114162385464,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.5124617218971252,
+          "median_distance_m": 0.5762102603912354,
+          "minimum_signed_normal_distance_m": 0.06652486138045788,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.5310689806938171,
+          "median_distance_m": 0.5666184425354004,
+          "minimum_signed_normal_distance_m": 0.26854758337140083,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.44352054595947266,
+          "median_distance_m": 0.503134548664093,
+          "minimum_signed_normal_distance_m": 0.06838707393035293,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.5261155366897583,
+          "median_distance_m": 0.5948907732963562,
+          "minimum_signed_normal_distance_m": 0.26107557490468025,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "floor_min_z_m": 0.0014998838305473328,
+      "support_min_z_m": {
+        "pelvis": 0.001499950885772705,
+        "Left_heel": 0.0014998838305473328,
+        "Right_heel": 0.0014999359846115112
+      },
+      "minimum_triangle_area_m2": 5.8950563683915755e-08,
+      "triangle_crossings": {
+        "Left_arm_vs_head": 0,
+        "Right_arm_vs_head": 0,
+        "Left_arm_vs_neck": 0,
+        "Right_arm_vs_neck": 0,
+        "Left_arm_vs_torso": 0,
+        "Right_arm_vs_torso": 0,
+        "Left_arm_vs_Left_leg": 0,
+        "Left_arm_vs_Right_leg": 0,
+        "Right_arm_vs_Left_leg": 0,
+        "Right_arm_vs_Right_leg": 0,
+        "Left_leg_vs_Right_leg": 0,
+        "Left_hand_vs_Right_arm": 0,
+        "Right_hand_vs_Left_arm": 0
+      },
+      "head_contact": {
+        "Left_hand": {
+          "minimum_distance_m": 0.5116471648216248,
+          "median_distance_m": 0.5746284127235413,
+          "minimum_signed_normal_distance_m": 0.238541753962636,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_palm": {
+          "minimum_distance_m": 0.5311431288719177,
+          "median_distance_m": 0.5661020874977112,
+          "minimum_signed_normal_distance_m": 0.24478374049067497,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_forearm": {
+          "minimum_distance_m": 0.4421895146369934,
+          "median_distance_m": 0.5027892589569092,
+          "minimum_signed_normal_distance_m": 0.0992622897028923,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Left_digits": {
+          "minimum_distance_m": 0.5262409448623657,
+          "median_distance_m": 0.5913373231887817,
+          "minimum_signed_normal_distance_m": 0.2675696015357971,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_hand": {
+          "minimum_distance_m": 0.5114572644233704,
+          "median_distance_m": 0.5744218826293945,
+          "minimum_signed_normal_distance_m": 0.26500181667506695,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_palm": {
+          "minimum_distance_m": 0.5301046371459961,
+          "median_distance_m": 0.5651805400848389,
+          "minimum_signed_normal_distance_m": 0.2713985498994589,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_forearm": {
+          "minimum_distance_m": 0.442221075296402,
+          "median_distance_m": 0.5025221407413483,
+          "minimum_signed_normal_distance_m": 0.0971971396356821,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        },
+        "Right_digits": {
+          "minimum_distance_m": 0.5242900848388672,
+          "median_distance_m": 0.5903831124305725,
+          "minimum_signed_normal_distance_m": 0.28512379340827465,
+          "inside_more4mm_ids": [],
+          "within12mm_count": 0
+        }
+      }
+    }
+  ],
+  "limitations": "Discrete triangle crossing and local signed-nearest diagnostics, not a global enclosed-volume/continuous collision certificate. Contact proximity alone does not establish visual believability.",
+  "receipt_origin": "Final151 native readback selection supersedes the early13-sample candidate."
+}

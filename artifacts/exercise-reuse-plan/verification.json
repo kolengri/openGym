@@ -1,0 +1,34 @@
+{
+  "command": "python3 artifacts/exercise-reuse-plan/build_plan.py",
+  "status": "passed",
+  "checks": {
+    "all_canonical_ids_assigned_once": true,
+    "aliases_excluded_from_motion_mapping": true,
+    "aliases_resolve_to_canonical": true,
+    "live_alias_chains_match": true,
+    "whole_catalogue_partition_reconciles": true,
+    "live_catalogue_matches_briefs": true,
+    "prop_partition_reconciles": true,
+    "prop_parent_ids_valid": true,
+    "prop_incidence_lists_match_coverage": true,
+    "exact_duplicate_pairs_reconciled": true,
+    "protected_heel_touch_and_90_90_remain_separate": true,
+    "family_totals_reconcile": true
+  },
+  "check_count": 12,
+  "artifact_sha256": {
+    "README.md": "b8c1dc64136c0f53974fbff2aae4454f7a79d7eb728185518716d495914287ef",
+    "build_plan.py": "53fc9f0013c44eb895488dba4d4b700aad4b84af238f9d7f00c6b99712d91909",
+    "exercise-mapping.csv": "918de1f05e7c87001fe6126845cddaf4adacaf5940eeb0e41f08a1941fb7716e",
+    "exercise-mapping.jsonl.gz": "b490d6b8e5b9004fb2c734c48bc6a1f321e5d7f47a260257af1b8f6d6601c03a",
+    "families.json": "54b9dc1960c2c2f31f4f85286564d32b4865eba9e3436bf78e542a1f4bf935ad",
+    "generator-recipes.json": "5e105334f6a8f8a7d965458154c0d4f3c75cc1ac8d115c60dee8aa959bd754fe",
+    "props-reuse.json": "a6a860fd40daef00eac3e12c7fb3d0c83affbb6db079bb0addba9a7ba8b7c6df",
+    "reference-reuse.json": "0c87e0d0878c8319ce84a26f0298145b7032950fbca94dac8953d6ae6332aab0",
+    "summary.html": "c7b7221af64dfa45e36e0f0ade2dcd5258d569fc6d0b24e5b2f27b41c95d75de",
+    "summary.json": "93df51230c2b2c388e8b7faa04f82b694210d79b92492c0fb181d57b2536c543"
+  },
+  "html_bytes": 7751,
+  "visual_preview": "Not performed here; primary owns html_preview/html_render integration.",
+  "limits": "Counts and evidence reconciled locally; no production clip, machine geometry, or anatomical animation approval is implied."
+}

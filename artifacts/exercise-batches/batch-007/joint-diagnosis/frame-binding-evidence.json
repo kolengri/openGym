@@ -1,0 +1,496 @@
+{
+  "source_sha256": "99b2084976b01f73ec126f88cb7f5616cca7f63264781df0fbeeb076ca936d3c",
+  "environment": {
+    "ok": true,
+    "blender": "5.2.3 LTS",
+    "python": "3.13.13",
+    "background": true,
+    "file": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/exercise-batches/batch-007/kneeling-family/joint5-source.blend",
+    "engines": [
+      "BLENDER_EEVEE",
+      "BLENDER_WORKBENCH",
+      "CYCLES"
+    ],
+    "engine": "BLENDER_WORKBENCH",
+    "gpu": {
+      "backend": "METAL",
+      "devices": [
+        "Apple M5 (GPU - 10 cores)"
+      ]
+    },
+    "addons_enabled": [
+      "bl_ext.user_default.mpfb",
+      "bl_pkg",
+      "cycles",
+      "io_anim_bvh",
+      "io_curve_svg",
+      "io_mesh_uv_layout",
+      "io_scene_fbx",
+      "io_scene_gltf2",
+      "pose_library",
+      "rigify"
+    ],
+    "rigify_available": true,
+    "units": {
+      "system": "METRIC",
+      "scale_length": 1.0,
+      "length": "METERS"
+    },
+    "color": {
+      "view": "Standard",
+      "look": "None",
+      "display": "sRGB"
+    },
+    "frame_range": [
+      1,
+      151,
+      30
+    ],
+    "objects": {
+      "MESH": 1,
+      "ARMATURE": 1,
+      "CAMERA": 1
+    },
+    "data": {
+      "meshes": 1,
+      "materials": 1,
+      "images": 1,
+      "actions": 2,
+      "node_groups": 0,
+      "collections": 19
+    }
+  },
+  "scope": "No saved mesh, bone, action, binding or modifier edits; original weights reconstructed in NumPy from existing receipts.",
+  "actual_frame": 76,
+  "frames": [
+    {
+      "bone": "LeftArm",
+      "parent": "LeftShoulder",
+      "actual_vs_parent_carried_minimum_swing_twist_degrees": 75.90183635941153,
+      "same_bone_axis_error": 6.664001874625056e-08,
+      "minimum_swing_axis_error": 3.0282737959774696e-07,
+      "parent_deform_angle_degrees": 82.50251751293351,
+      "actual_relative_parent_deform_angle_degrees": 145.47201905632954,
+      "carried_relative_parent_deform_angle_degrees": 135.78314983185632
+    },
+    {
+      "bone": "RightArm",
+      "parent": "RightShoulder",
+      "actual_vs_parent_carried_minimum_swing_twist_degrees": 75.91072243552172,
+      "same_bone_axis_error": 1.3838839248572819e-07,
+      "minimum_swing_axis_error": 4.853754483134249e-07,
+      "parent_deform_angle_degrees": 82.50251751293351,
+      "actual_relative_parent_deform_angle_degrees": 145.47682750950523,
+      "carried_relative_parent_deform_angle_degrees": 135.7866195679547
+    },
+    {
+      "bone": "LeftUpLeg",
+      "parent": "Hips",
+      "actual_vs_parent_carried_minimum_swing_twist_degrees": 50.82501538776315,
+      "same_bone_axis_error": 3.919883500923486e-07,
+      "minimum_swing_axis_error": 2.086162567138672e-07,
+      "parent_deform_angle_degrees": 74.99999184178138,
+      "actual_relative_parent_deform_angle_degrees": 132.26610784329833,
+      "carried_relative_parent_deform_angle_degrees": 126.77458110909473
+    },
+    {
+      "bone": "RightUpLeg",
+      "parent": "Hips",
+      "actual_vs_parent_carried_minimum_swing_twist_degrees": 50.82501538776315,
+      "same_bone_axis_error": 3.919883500923486e-07,
+      "minimum_swing_axis_error": 2.086162567138672e-07,
+      "parent_deform_angle_degrees": 74.99999184178138,
+      "actual_relative_parent_deform_angle_degrees": 132.26610784329833,
+      "carried_relative_parent_deform_angle_degrees": 126.77458110909473
+    }
+  ],
+  "witnesses": [
+    {
+      "id": 4287,
+      "basis": [
+        -0.23341527581214905,
+        0.03927988186478615,
+        1.4514533281326294
+      ],
+      "current_weights": {
+        "Spine1": 0.14628037810325623,
+        "Neck": 0.27088895440101624,
+        "Head": 0.06418739259243011,
+        "RightArm": 0.5186432600021362
+      },
+      "original_weights": {
+        "RightShoulder": 0.19884106516838074,
+        "RightArm": 0.8011589646339417
+      },
+      "current_singular_values": [
+        0.9989815927512276,
+        0.13681419439662457,
+        0.13579582463680712
+      ],
+      "original_singular_values": [
+        1.0000000015202912,
+        0.6472211070120257,
+        0.6472209457425809
+      ],
+      "current_condition": 7.356497119282238,
+      "original_condition": 1.5450674272801133,
+      "parent_carried_current_weights_singular_values": [
+        0.9917815751756216,
+        0.2755175615219656,
+        0.26729919162152793
+      ],
+      "parent_carried_current_weights_condition": 3.710380002120982,
+      "parent_carried_original_weights_singular_values": [
+        1.000000018178336,
+        0.6730780722014899,
+        0.6730780598843156
+      ],
+      "parent_carried_original_weights_condition": 1.485711803397974,
+      "virtual_original_minus_current_posed_m": [
+        -0.00022425151226362905,
+        0.004060829462640608,
+        0.0073179966355310655
+      ],
+      "virtual_original_minus_current_length_m": 0.008372198004290541
+    },
+    {
+      "id": 9583,
+      "basis": [
+        0.23372241854667664,
+        0.039347678422927856,
+        1.4515204429626465
+      ],
+      "current_weights": {
+        "Spine1": 0.14596803486347198,
+        "Neck": 0.26980116963386536,
+        "Head": 0.06470166891813278,
+        "LeftArm": 0.5195291042327881
+      },
+      "original_weights": {
+        "LeftShoulder": 0.20062986016273499,
+        "LeftArm": 0.7993700504302979
+      },
+      "current_singular_values": [
+        0.9989820136912005,
+        0.13739031118063416,
+        0.13637239554670108
+      ],
+      "original_singular_values": [
+        0.9999997763161016,
+        0.6441980497540505,
+        0.644197881295737
+      ],
+      "current_condition": 7.325397560748256,
+      "original_condition": 1.5523177044679286,
+      "parent_carried_current_weights_singular_values": [
+        0.9917863675585834,
+        0.27574097554152127,
+        0.2675273718481294
+      ],
+      "parent_carried_current_weights_condition": 3.70723324760056,
+      "parent_carried_original_weights_singular_values": [
+        0.9999999474344214,
+        0.6703425041516218,
+        0.6703424877599962
+      ],
+      "parent_carried_original_weights_condition": 1.491774675921263,
+      "virtual_original_minus_current_posed_m": [
+        0.0002236029942426776,
+        0.004036622931568257,
+        0.007273322984735542
+      ],
+      "virtual_original_minus_current_length_m": 0.008321391123542946
+    },
+    {
+      "id": 3141,
+      "basis": [
+        -0.22274892032146454,
+        0.07514126598834991,
+        1.4460361003875732
+      ],
+      "current_weights": {
+        "Spine1": 0.1621348261833191,
+        "Neck": 0.2781957983970642,
+        "Head": 0.059431977570056915,
+        "RightArm": 0.5002374053001404
+      },
+      "original_weights": {
+        "RightShoulder": 0.22928713262081146,
+        "RightArm": 0.7707128524780273
+      },
+      "current_singular_values": [
+        0.9989220026539949,
+        0.13377009188188707,
+        0.13269211776746584
+      ],
+      "original_singular_values": [
+        0.9999999530235628,
+        0.5961395625830757,
+        0.5961394191312004
+      ],
+      "current_condition": 7.528118621217122,
+      "original_condition": 1.6774598708485664,
+      "parent_carried_current_weights_singular_values": [
+        0.9912888594095001,
+        0.27580095474883853,
+        0.2670898538593439
+      ],
+      "parent_carried_current_weights_condition": 3.7114433404555203,
+      "parent_carried_original_weights_singular_values": [
+        0.9999999665445743,
+        0.6270984744653515,
+        0.6270984672982303
+      ],
+      "parent_carried_original_weights_condition": 1.5946458470117784,
+      "virtual_original_minus_current_posed_m": [
+        -0.0041579162949218484,
+        0.011076825237947924,
+        -0.01171033730583515
+      ],
+      "virtual_original_minus_current_length_m": 0.016646811258738146
+    },
+    {
+      "id": 8398,
+      "basis": [
+        0.22273126244544983,
+        0.07494822889566422,
+        1.4459151029586792
+      ],
+      "current_weights": {
+        "Spine1": 0.16184943914413452,
+        "Neck": 0.2771577835083008,
+        "Head": 0.05994986742734909,
+        "LeftArm": 0.501042902469635
+      },
+      "original_weights": {
+        "LeftShoulder": 0.23076291382312775,
+        "LeftArm": 0.7692370414733887
+      },
+      "current_singular_values": [
+        0.9989221524870477,
+        0.1338841155917825,
+        0.13280633104672013
+      ],
+      "original_singular_values": [
+        0.9999998212525991,
+        0.5937103397801415,
+        0.5937101882345375
+      ],
+      "current_condition": 7.52164557678832,
+      "original_condition": 1.6843231614842396,
+      "parent_carried_current_weights_singular_values": [
+        0.991291503570086,
+        0.2758094298927989,
+        0.26710095564599695
+      ],
+      "parent_carried_current_weights_condition": 3.7112989774693923,
+      "parent_carried_original_weights_singular_values": [
+        0.9999999834366828,
+        0.6249251325203301,
+        0.6249251242830448
+      ],
+      "parent_carried_original_weights_condition": 1.6001916782973777,
+      "virtual_original_minus_current_posed_m": [
+        0.004091853411481883,
+        0.010938313985341924,
+        -0.01153605474471675
+      ],
+      "virtual_original_minus_current_length_m": 0.01641555775038072
+    },
+    {
+      "id": 3323,
+      "basis": [
+        -0.1725977510213852,
+        0.012666002847254276,
+        0.968038022518158
+      ],
+      "current_weights": {
+        "Hips": 0.5068468451499939,
+        "Spine": 0.050732195377349854,
+        "RightUpLeg": 0.44242092967033386
+      },
+      "original_weights": {
+        "Hips": 0.07281173020601273,
+        "Spine": 0.03312762454152107,
+        "RightUpLeg": 0.8940606117248535
+      },
+      "current_singular_values": [
+        0.9998196394694867,
+        0.4032906008197518,
+        0.40311070248858805
+      ],
+      "original_singular_values": [
+        0.9999122816429435,
+        0.8189875308556162,
+        0.8189009619529781
+      ],
+      "current_condition": 2.480260715721859,
+      "original_condition": 1.2210417719601594,
+      "parent_carried_current_weights_singular_values": [
+        0.9988926367112344,
+        0.4483430902946793,
+        0.447236461832326
+      ],
+      "parent_carried_current_weights_condition": 2.2334776386942496,
+      "parent_carried_original_weights_singular_values": [
+        0.9994645178451883,
+        0.828428028978699,
+        0.8278939064307218
+      ],
+      "parent_carried_original_weights_condition": 1.2072374371665018,
+      "virtual_original_minus_current_posed_m": [
+        0.01297139929759264,
+        0.03027634540351265,
+        0.03777780968729921
+      ],
+      "virtual_original_minus_current_length_m": 0.050120626447603255
+    },
+    {
+      "id": 8580,
+      "basis": [
+        0.1715889573097229,
+        0.012540528550744057,
+        0.9679000377655029
+      ],
+      "current_weights": {
+        "Hips": 0.5020875930786133,
+        "Spine": 0.05508189648389816,
+        "LeftUpLeg": 0.44283050298690796
+      },
+      "original_weights": {
+        "Hips": 0.07063974440097809,
+        "Spine": 0.03833059221506119,
+        "LeftUpLeg": 0.8910295963287354
+      },
+      "current_singular_values": [
+        0.9998061682937103,
+        0.4018243707778136,
+        0.40163097928860153
+      ],
+      "original_singular_values": [
+        0.9999047813064428,
+        0.8129430148975885,
+        0.8128489743100686
+      ],
+      "current_condition": 2.489365163177006,
+      "original_condition": 1.230123691987363,
+      "parent_carried_current_weights_singular_values": [
+        0.9988094188755453,
+        0.4471985640623093,
+        0.4460086951967877
+      ],
+      "parent_carried_current_weights_condition": 2.2394393419501637,
+      "parent_carried_original_weights_singular_values": [
+        0.9994183255110473,
+        0.8227763084282426,
+        0.8221960220001873
+      ],
+      "parent_carried_original_weights_condition": 1.2155475078555167,
+      "virtual_original_minus_current_posed_m": [
+        -0.012817020262894135,
+        0.029864710542744755,
+        0.0374020490333023
+      ],
+      "virtual_original_minus_current_length_m": 0.049548866950828635
+    },
+    {
+      "id": 8690,
+      "basis": [
+        0.168125182390213,
+        -0.01685660518705845,
+        0.9707247614860535
+      ],
+      "current_weights": {
+        "Hips": 0.5340470671653748,
+        "Spine": 0.06332187354564667,
+        "LeftUpLeg": 0.40263107419013977
+      },
+      "original_weights": {
+        "Hips": 0.09211257100105286,
+        "Spine": 0.05290753021836281,
+        "LeftUpLeg": 0.854979932308197
+      },
+      "current_singular_values": [
+        0.9997794747670107,
+        0.4255420100435926,
+        0.42532184144592683
+      ],
+      "original_singular_values": [
+        0.9998719789874727,
+        0.7524014757115546,
+        0.7522744769214658
+      ],
+      "current_condition": 2.350642213360485,
+      "original_condition": 1.329131865644639,
+      "parent_carried_current_weights_singular_values": [
+        0.9986442752869195,
+        0.46791325360647396,
+        0.4665581623294294
+      ],
+      "parent_carried_current_weights_condition": 2.140449692919084,
+      "parent_carried_original_weights_singular_values": [
+        0.9992153589962122,
+        0.7659735460791647,
+        0.7651901406346405
+      ],
+      "parent_carried_original_weights_condition": 1.3058393018073569,
+      "virtual_original_minus_current_posed_m": [
+        -0.017005463214121164,
+        0.027858012704956914,
+        0.06057681748271637
+      ],
+      "virtual_original_minus_current_length_m": 0.06880992273888048
+    },
+    {
+      "id": 3432,
+      "basis": [
+        -0.16832414269447327,
+        -0.01684643141925335,
+        0.9707505702972412
+      ],
+      "current_weights": {
+        "Hips": 0.5376067161560059,
+        "Spine": 0.05915877968072891,
+        "RightUpLeg": 0.40323448181152344
+      },
+      "original_weights": {
+        "Hips": 0.09396567940711975,
+        "Spine": 0.04936905577778816,
+        "RightUpLeg": 0.8566651940345764
+      },
+      "current_singular_values": [
+        0.9997920971133749,
+        0.42614489489456026,
+        0.42593738704848594
+      ],
+      "original_singular_values": [
+        0.9998762623277523,
+        0.7558845129985665,
+        0.7557619046087869
+      ],
+      "current_condition": 2.347274804969316,
+      "original_condition": 1.323004316875867,
+      "parent_carried_current_weights_singular_values": [
+        0.9987224004675289,
+        0.46833417794326526,
+        0.467057250668111
+      ],
+      "parent_carried_current_weights_condition": 2.138329720904423,
+      "parent_carried_original_weights_singular_values": [
+        0.9992423923183146,
+        0.7692077637676721,
+        0.7684514988900282
+      ],
+      "parent_carried_original_weights_condition": 1.3003324136417809,
+      "virtual_original_minus_current_posed_m": [
+        0.017058889362658092,
+        0.027972625140884222,
+        0.06077807225831916
+      ],
+      "virtual_original_minus_current_length_m": 0.06904670543188358
+    }
+  ],
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "reconstructed_original_weight_max_error_against_original_blend": 0.0,
+  "basis_max_error_against_original_blend": 0.0
+}

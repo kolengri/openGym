@@ -1,0 +1,138 @@
+{
+  "id": "6014",
+  "status": "native_decoded_export_game_pass; root_GPU_pending",
+  "source_sha256": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+  "glb_sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+  "runtime_binding_sha256": "6c3c40b3a5ba6fcbe33e75b6599b21233b8ad03d29b0bd028e0efcff967f1b38",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "source_invariants_pass": true,
+  "game_qa_zero_errors": true,
+  "game_qa_warnings": [],
+  "useful_GPU_poses": [
+    {
+      "frame": 0,
+      "seconds": 0.0,
+      "action": "Exercise_6014",
+      "phase": "Both soles supported, source-rest lowered arms"
+    },
+    {
+      "frame": 9,
+      "seconds": 0.3,
+      "action": "Exercise_6014",
+      "phase": "Left step rising with arms"
+    },
+    {
+      "frame": 18.75,
+      "seconds": 0.625,
+      "action": "Exercise_6014",
+      "phase": "Left knee lift and overhead arms"
+    },
+    {
+      "frame": 37.5,
+      "seconds": 1.25,
+      "action": "Exercise_6014",
+      "phase": "Both soles and arms returned"
+    },
+    {
+      "frame": 56.25,
+      "seconds": 1.875,
+      "action": "Exercise_6014",
+      "phase": "Right knee lift and overhead arms"
+    },
+    {
+      "frame": 150,
+      "seconds": 5.0,
+      "action": "Exercise_6014",
+      "phase": "Exact loop return"
+    }
+  ],
+  "metrics": {
+    "native_integer_samples": 151,
+    "decoded_integer_samples": 151,
+    "minimum_native_floor_z_m": 0.0009996849112212658,
+    "minimum_decoded_floor_z_m": 0.000999876530840993,
+    "native_loop_m": 0.0,
+    "decoded_loop_m": 2.4177105336767364e-07,
+    "maximum_full_cycle_native_decoded_error_m": 4.475070773668256e-06,
+    "maximum_NORMAL_vector_error": 8.187660755892303e-05,
+    "maximum_morph_NORMAL_vector_error": 0.00012798824818796936,
+    "native_arm_leg_triangle_crossings": 0,
+    "decoded_arm_leg_triangle_crossings": 0,
+    "native_arm_self_crossings": 0,
+    "decoded_arm_self_crossings": 0,
+    "maximum_influences": 4,
+    "maximum_weight_partition_error": 1.341104507446289e-07,
+    "forefoot_edge_ratio_range": [
+      0.9999413127573363,
+      1.0000654120386967
+    ],
+    "mixed_ankle_edge_ratio_range": [
+      0.942072424648987,
+      1.0238236471725195
+    ],
+    "maximum_leg_foot_orientation_step_degrees": 2.6044219937385007
+  },
+  "bounded_limitations": [
+    "Original low-poly skin/finger facets and lower-axilla crease remain; the crest/scapula component has root native acceptance pending actual unshadowed GPU review.",
+    "Authored extent/cadence are illustration choices, not source tempo or measured muscle activation.",
+    "Local discrete checks do not establish clinical or continuous/global collision freedom."
+  ],
+  "remaining": [
+    "Root actual unshadowed GPU playback acceptance, fields and camera-width integration."
+  ],
+  "shoulder_component": {
+    "archive_sha256": "f78f91bbd0c1d64a1d944980993228952a3ec83a50386c332a2e52f02bd1a958",
+    "POSITION_ids": 1288,
+    "NORMAL_ids": 1403,
+    "union_ids": 1472,
+    "protected_POSITION_ids": 2653,
+    "maximum_rest_delta_m": 0.057562295347452164,
+    "declared_bound_m": 0.058,
+    "6014_weights_exact_zero": true,
+    "retained_shape_limitation": "Original lower-axilla crease retained exactly; not a global collision-free claim."
+  },
+  "files_sha256": {
+    "README.md": "347c1f3e3136d793d6e4fb5ac8db117561b9ff044b4ab620f9a2a71483ddefff",
+    "asset-qa.json": "e423c43393f871046a8e9b1bb9dd5127fd428d835b0b715bebb703e227965fa5",
+    "authoring-context.json": "404e6a5af25d0c46e5a9f21e7b835739049dbd2f4c9ab674dd00cd62140893d0",
+    "authoring-family.json": "cfd443b5bfd7c211838cd78e4ae816ebec33bf0449cf42ef610777e50a019c93",
+    "cameras.json": "bad1e28e8aab337f9fc2d05082a2ca745baaee8ce24d92af3ae2ca5225a129ab",
+    "clip.json": "99461426537a1b51953e6422070b87a1e46719a894d94d7ce122a1543fec0686",
+    "curated-files.json": "b1e31b0babfeb69330108bea27b0adf6fd986de1916dc5661622340e97d5232e",
+    "decoded-physical-report.json": "556a73207fd3c0dc172a6724c00a8cb4cd3f874dc91fd023203874f4ffd7f64c",
+    "decoded-source-readback.json": "76b63da121dd35cb6eb53c3234c457ff992256473b51f590de0e4cbf2ee3dd2f",
+    "dq-reference.json.gz": "c7330c154a1bed41ab7e81ed91265c2c5d200f62479600acde453858f3224444",
+    "early-report.json": "54b9aa4fe2422bf9ed19bdb43ba4cb3c47fdcd88bf89718c4f6394dced43cf92",
+    "environment.json": "7c1530de9b8e6f6c69eace3a703dbe35ed76f8975d2e6521b67c05ba6ab53940",
+    "export-verification.json": "6063353bee42f09b320a271b47099533323c2b68d7aa2bcb4f4b3f81ebae00a6",
+    "local-binding-report.json": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e",
+    "morph-weight-export.json": "3c09cc67b112776189816c2494472f86736934590e941f01c01ff7f1b4f35b58",
+    "motion-witnesses.json": "0775358421e9e67ee5a54b12dd4405a6978b2ff25ddcce8b9ebec627ff61027f",
+    "motion.glb": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+    "neutral-final-left-knee-overhead-front_oblique_whole_body.png": "596492908974acbd558a404b3a48ae7e584236edecbb9051402812fa13208c57",
+    "neutral-final-left-knee-overhead-side_whole_body.png": "d85190cd84516ac3df4d0d236864eb63f839b1ff407799336bcd1ad8e85ed48a",
+    "neutral-final-loop-return-front_oblique_whole_body.png": "fc5144a471e01506834a05bf731276b04ef88d4ccb0d8875528c60438046e78c",
+    "neutral-final-loop-return-side_whole_body.png": "cdc9dd6e0e06b3d865780a878df63266894b6a48575aa38f7e56c0bfc991d402",
+    "neutral-final-return-low-front_oblique_whole_body.png": "cf342f92ffe8d417c2a19893da10d608741ee1f11335b1a99896c3ad8ba88576",
+    "neutral-final-return-low-side_whole_body.png": "225cad559e757ecaba703c41d163b9a0235569e1e18b6aade71eb32dd719f658",
+    "neutral-final-right-knee-overhead-front_oblique_whole_body.png": "648ce8a03a543cbd00bf2fed98b900d7af3fd354278af148db806fc2db717aa7",
+    "neutral-final-right-knee-overhead-side_whole_body.png": "5947c1bd395fb05f8c7547a42f1e54a5a5ba074f9296944633c977e0edb68c4b",
+    "neutral-final-rising-step-front_oblique_whole_body.png": "5e5b9621f78356efcc36d98a5ca6357d041697d0c1b379c0ae3cbe1a896c971b",
+    "neutral-final-rising-step-side_whole_body.png": "8d424a459f4b0b36696c30c7a69edb1b1b65809008a9e01fc0c2b0106220a20c",
+    "neutral-final-start-low-front_oblique_whole_body.png": "1012eb9a162fd57771fc95293f298ec047b68ee8dfdd648cfa5e1a162c30fe02",
+    "neutral-final-start-low-side_whole_body.png": "ca7d96602c2cd07a50325a7e17097fd077bbbef58e629db8ce6226b586086880",
+    "normal-reference.json.gz": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5",
+    "pose-samples.json": "26671f923bc00bc1ddb1df7d683d23e568952c84235650b6e46d498f4c491be4",
+    "proof-receipt.json": "b20e5029b002bb6caca94825c6ee4259e0ca08492051f1878624f8ae62439ac9",
+    "qa-random.png": "450f8a2793d17b2df021c61115207cb5e35289658e02fd2e958b97e622c78e33",
+    "qa-render-receipt.json": "652cf45cc899cdbab89a679dd1726afacd187f5b59383990cd8b4c39453e7544",
+    "qa-wire.png": "a4ccca334300e56c2798babbab47190b734331ad4a5581cccd0ec641bbdc128b",
+    "raw-asset-qa.json": "249f1a3a889fca2235bb9611ae3971ccfc048a891cb404ec0dd2e68a168e63d2",
+    "runtime-surface-reference.json": "cb4e8f2027a8a6723b2dba9bb688ae275e203cf114240e46064967919bdee3cc",
+    "source-identity-reuse.json": "20a2a3243bae9d5c1ee24437da573fc25787721cf4b46a48b03f53d30d19b2cf",
+    "source-verification.json": "475296c873eb05fc8c02801cc0f0a2b74e73b28fdddede03c2708443a0ebb83d",
+    "source.blend": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+    "surface-contact-report.json": "636158708410892595a29860cc3740db41ba0add481c2d29a3095c1f76870ccc",
+    "surface-landmarks.json": "49294bde50cd80ef2c204ebbbe7c973f3ad8bb27493b39b04d38402835ad9a18"
+  }
+}

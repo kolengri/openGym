@@ -1,0 +1,41 @@
+{
+  "pass": true,
+  "method": "Complete Blender5.2's omitted second KEY action with standard glTF weights.\n\nThis writes normal glTF animation data, not a vertex cache or runtime adapter.\nThe source body's actual151 saved-action weights remain the sole inputs.\n",
+  "source_sha256": "e9eef5aa5a78c76a0e8b5261739a3cdba3a8b673c8ead2262ffc93a99e465d44",
+  "native_morph_schedule_sha256": "8a9e9af060c3824588d5f42bfb881a057b5022169954529209eea07fb07f016a",
+  "exporter_glb_before_sha256": "d91595a04db88eb7e530ef9bfe4c72a575742257f5eacf841a112d94058cfe89",
+  "completed_glb_sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701",
+  "added_action": "Exercise_4354",
+  "added_path": "weights",
+  "target_node": 51,
+  "target_names": [
+    "Shoulder0006Center",
+    "Shoulder0006Left",
+    "Shoulder0006Right",
+    "Shoulder4354Center",
+    "Shoulder4354Left",
+    "Shoulder4354Right"
+  ],
+  "frames": 151,
+  "interpolation": "LINEAR",
+  "existing_binary_prefix_bit_exact": true,
+  "existing_binary_prefix_sha256": "05433ceaf9a51b8276a4bde2b761e4c5a42582b623c4659e713776d54439ca33",
+  "existing_json_preserved_except_buffers_length_accessors_views_and_added_weights_channel": true,
+  "added_binary_views": [
+    {
+      "byte_offset": 1180292,
+      "byte_length": 604,
+      "sha256": "1088dfeaba49fb061cd497baf31bd798b63f56e133cab7e0b1bd16261bbca84f",
+      "accessor": 290
+    },
+    {
+      "byte_offset": 1180896,
+      "byte_length": 3624,
+      "sha256": "d11b33bbe0fa892e50aeeccfa1e21588d189ffc208fa9b904b505f11b2b009a5",
+      "accessor": 291
+    }
+  ],
+  "geometry_bones_position_normal_targets_changed": false,
+  "source_changed": false,
+  "runtime_cache_written": false
+}

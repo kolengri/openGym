@@ -1,0 +1,572 @@
+{
+  "schema_version": "1.0.0",
+  "source_basis": "Local English text and inventory only; no licensed media, embeddings or external requests.",
+  "input_sha256": {
+    "artifacts/exercise-animation-briefs/briefs.jsonl.gz": "52a8dd017e7e28ec4241a08c1b8e323e1af6c7e0bcd65508e5e48ba222711c8b",
+    "artifacts/exercise-animation-briefs/aliases.json": "2e46c4f40e3c65c76fcfbe960b513bf8497408106e0c3efdad5b0f641cf9517f",
+    "artifacts/exercise-props-inventory/inventory.json": "da97a18e3be32b3bf58b11ee13f99890236b79a294a2e8aa98efa165f5fddd34",
+    "artifacts/exercise-props-inventory/exercise-coverage.json": "ab88cd332a8607ddbaa180ca084517f51ac5d614b4548a4dae09d282a925b9db",
+    "artifacts/exercise-props-inventory/summary.json": "b34fb8d0df22b361bca1cb47bec0ae990df0b86fd361023cb8776252ff3cad28"
+  },
+  "catalogue_content_sha256": "7023c59be4ecacfe1c29c262caaffce0f22727912ca29db37e3c38c474874f62",
+  "alias_source_content_sha256": "392e1e96a070651577bdb772d9ef83d673eecf50ac02a00e7ec891ddfaeb92e7",
+  "counts": {
+    "catalogue_records": 6554,
+    "canonical_exercises": 5632,
+    "figure_aliases": 922,
+    "exact_editorial_duplicate_groups": 2,
+    "exact_editorial_reductions": 2,
+    "distinct_editorial_specs_after_confirmed_reuse": 5630,
+    "identical_instruction_groups": 37,
+    "identical_instruction_only_potential_reduction_UNSAFE": 51,
+    "family_buckets_including_individual_review": 67,
+    "individual_review_exercises": 784,
+    "source_status": {
+      "source_complete_for_storyboard": 1290,
+      "needs_review": 4342
+    },
+    "storyboard_status": {
+      "proposal_ready_for_review": 5473,
+      "blocked_on_source_resolution": 159
+    },
+    "prop_coverage_status": {
+      "no_prop_documented_in_text": 1487,
+      "mapped_props": 4053,
+      "unresolved_prop_geometry": 92
+    },
+    "prop_rows": 212,
+    "buildable_base_props": 164,
+    "prop_variants": 31,
+    "prop_attachments": 11,
+    "unresolved_props": 6,
+    "machine_base_contracts": 67,
+    "prop_exercise_incidences": 6528,
+    "unique_prop_affected_exercises": 4145
+  },
+  "confirmed_reuse": {
+    "alias_reference_tasks_avoided": 922,
+    "canonical_spec_tasks_avoided": 2,
+    "canonical_duplicate_groups": [
+      [
+        "0576",
+        "0577"
+      ],
+      [
+        "0655",
+        "0656"
+      ]
+    ],
+    "ready_shared_clips_confirmed": 0,
+    "meaning": "References/specifications can share authoring. Neither identical text nor an alias proves a production clip is ready; unresolved mechanics must first be resolved."
+  },
+  "scenarios": {
+    "literal_cue_profiles": {
+      "candidate_distinct_profiles": 5620,
+      "possible_duplicate_profile_reduction": 12,
+      "multi_id_groups": 11,
+      "ids_in_multi_id_groups": 23,
+      "status": "unvalidated planning scenario; each divergent source guard requires a parameter solution or split"
+    },
+    "parameterized_profiles": {
+      "candidate_distinct_profiles": 5616,
+      "possible_duplicate_profile_reduction": 16,
+      "multi_id_groups": 14,
+      "ids_in_multi_id_groups": 30,
+      "status": "unvalidated planning scenario; each divergent source guard requires a parameter solution or split"
+    },
+    "shared_pose_templates": {
+      "candidate_template_tasks": 1609,
+      "possible_repeated_scaffold_tasks_avoided": 4023,
+      "multi_id_groups": 470,
+      "ids_in_multi_id_groups": 4493,
+      "status": "estimated generator/scaffold tasks; all per-ID semantic/contact profiles survive; not a clip-equivalence claim"
+    },
+    "apparatus_specific_templates": {
+      "candidate_template_tasks": 3010,
+      "possible_repeated_scaffold_tasks_avoided": 2622,
+      "multi_id_groups": 748,
+      "ids_in_multi_id_groups": 3370,
+      "status": "estimated generator/scaffold tasks; all per-ID semantic/contact profiles survive; not a clip-equivalence claim"
+    }
+  },
+  "base_clip_forecast": {
+    "status": "conditional seed/generator task bracket; not approved or measured final clip count",
+    "initial_seed_generator_lower": 1609,
+    "initial_seed_generator_upper": 3010,
+    "literal_profile_scenario": 5620,
+    "source_safe_ceiling": 5630,
+    "assumptions": [
+      "One seed/generator demonstration per family/pose/category (lower) or additionally resistance/scene bases (upper); one individually reviewed seed per unclassified exercise.",
+      "The shared generator accepts explicit per-ID motion subtype, contacts, grip, side order, amplitude and timing. Unsupported subtypes split the generator; separate final clips can still be baked for every ID.",
+      "Every source difference is reviewed; no source gap permits invented mechanics. The bracket assumes parameter/controller implementation and may rise toward 5,630 separately resolved specifications if it fails.",
+      "This counts repeated scaffold/seed authoring tasks only, excluding per-ID profiles, review, support solving, apparatus construction, rendering, and exports."
+    ]
+  },
+  "review_reason_counts": {
+    "prop_text_conflict": 2,
+    "starting_legs_feet_missing": 1369,
+    "legs_feet_missing": 1217,
+    "starting_arms_hands_missing": 1299,
+    "starting_body_pose_missing": 795,
+    "prop_not_instruction_verified": 639,
+    "equipment_not_mapped": 23,
+    "arms_hands_missing": 954,
+    "named_pose_requires_geometry": 245,
+    "inventory_unresolved": 92,
+    "movement_pattern_unspecified": 1
+  },
+  "props": {
+    "base_ids": [
+      "dumbbell",
+      "barbell",
+      "ez_bar",
+      "trap_bar",
+      "kettlebell",
+      "weight_plate",
+      "sandbag",
+      "macebell",
+      "bottle",
+      "band_unspecified",
+      "band_anchor",
+      "cable_station",
+      "landmine_base",
+      "bench",
+      "bench_preacher",
+      "bench_hyper45",
+      "bench_hyper_horizontal",
+      "ghd",
+      "chair",
+      "box",
+      "step",
+      "platform",
+      "stairs",
+      "rack",
+      "pullup_bar",
+      "dip_bars",
+      "parallettes",
+      "captains_chair",
+      "wall_bars",
+      "suspension_straps",
+      "rings",
+      "suspension_anchor",
+      "stability_ball",
+      "medicine_ball",
+      "massage_ball",
+      "bosu",
+      "foam_roller",
+      "ab_wheel",
+      "mat",
+      "ab_mat",
+      "towel",
+      "slider",
+      "stick",
+      "strap",
+      "support_block",
+      "trampoline",
+      "punching_bag",
+      "small_ball",
+      "agility_ball",
+      "balloon",
+      "floor_markers",
+      "bed_sheet",
+      "monkey_bars",
+      "support_bar",
+      "yoga_bolster",
+      "cone",
+      "hurdle",
+      "agility_ladder",
+      "jump_rope",
+      "battle_rope",
+      "climb_rope",
+      "rope_anchor",
+      "weight_vest",
+      "ankle_weight",
+      "backpack",
+      "wrist_roller",
+      "hand_gripper",
+      "sledgehammer",
+      "tire",
+      "wall",
+      "doorframe",
+      "outdoor_bicycle",
+      "pushup_handles",
+      "balance_board",
+      "balance_pad",
+      "knee_pad",
+      "table",
+      "handrail",
+      "padded_seat",
+      "punch_mitt",
+      "kick_pad",
+      "hula_hoop",
+      "inline_skates",
+      "pool",
+      "strongman_log",
+      "strongman_stone",
+      "strongman_yoke",
+      "strongman_frame",
+      "strongman_keg",
+      "strongman_car",
+      "strongman_shield",
+      "strongman_wheelbarrow",
+      "strongman_iron_block",
+      "strongman_mas_board",
+      "strongman_conan",
+      "strongman_hercules",
+      "strongman_viking",
+      "strongman_height_weight",
+      "smith",
+      "pilates_reformer",
+      "assisted_dip_pullup",
+      "belt_squat",
+      "legpress_vertical",
+      "legpress_horizontal",
+      "legpress_angled",
+      "hack_squat",
+      "pendulum_squat",
+      "squat_lever",
+      "abductor_adductor_standing",
+      "abductor_seated",
+      "adductor_seated",
+      "leg_extension",
+      "legcurl_seated",
+      "legcurl_lying",
+      "legcurl_kneeling",
+      "hip_thrust",
+      "glute_kickback",
+      "reverse_hyper",
+      "back_extension",
+      "calf_donkey",
+      "calf_seated",
+      "calf_standing",
+      "tibialis",
+      "chest_decline",
+      "chest_incline",
+      "chest_lying",
+      "chest_standing",
+      "chest_press",
+      "chest_fly",
+      "rear_delt",
+      "shoulder_press",
+      "lateral_raise",
+      "pulldown",
+      "high_row",
+      "row_chest_supported",
+      "row_tbar",
+      "row_seated",
+      "pullover",
+      "biceps_curl",
+      "triceps_dip",
+      "triceps_extension",
+      "shrug",
+      "gripper_machine",
+      "neck_machine",
+      "ab_coaster",
+      "ab_swing",
+      "ab_crunch_lying",
+      "ab_crunch_seated",
+      "torso_rotation",
+      "deadlift_lever",
+      "stepper",
+      "stepmill",
+      "curved_treadmill",
+      "treadmill",
+      "elliptical",
+      "air_bike",
+      "recumbent_bike",
+      "stationary_bike",
+      "rower",
+      "arm_ergometer",
+      "skierg",
+      "power_sled",
+      "tank_sled",
+      "vibration_plate"
+    ],
+    "variant_ids": [
+      "band_loop",
+      "band_tube",
+      "bench_flat",
+      "bench_incline",
+      "bench_decline",
+      "strongman_axle",
+      "legpress_horizontal__outdoor",
+      "pendulum_squat__plate_loaded",
+      "squat_lever__plate_loaded",
+      "leg_extension__plate_loaded",
+      "legcurl_seated__plate_loaded",
+      "hip_thrust__plate_loaded",
+      "calf_seated__plate_loaded",
+      "chest_incline__stack",
+      "chest_incline__plate_loaded",
+      "chest_lying__plate_loaded",
+      "chest_press__stack",
+      "chest_press__plate_loaded",
+      "chest_press__outdoor",
+      "rear_delt__plate_loaded",
+      "shoulder_press__plate_loaded",
+      "lateral_raise__plate_loaded",
+      "pulldown__plate_loaded",
+      "pulldown__outdoor",
+      "high_row__plate_loaded",
+      "row_tbar__plate_loaded",
+      "row_seated__plate_loaded",
+      "biceps_curl__plate_loaded",
+      "triceps_dip__plate_loaded",
+      "neck_machine__plate_loaded",
+      "deadlift_lever__plate_loaded"
+    ],
+    "attachment_ids": [
+      "cable_handle",
+      "cable_rope",
+      "cable_straight_bar",
+      "cable_v_bar",
+      "cable_lat_bar",
+      "ankle_cuff",
+      "landmine_handle",
+      "barbell_rest",
+      "weight_belt",
+      "head_harness",
+      "nordic_anchor"
+    ],
+    "unresolved_ids": [
+      "weight_unspecified",
+      "ball_unspecified",
+      "rope_unspecified",
+      "strongman_carry_handles",
+      "wheel_unspecified",
+      "machine_unspecified"
+    ],
+    "distinct_machine_contract_ids": [
+      "cable_station",
+      "smith",
+      "pilates_reformer",
+      "assisted_dip_pullup",
+      "belt_squat",
+      "legpress_vertical",
+      "legpress_horizontal",
+      "legpress_angled",
+      "hack_squat",
+      "pendulum_squat",
+      "squat_lever",
+      "abductor_adductor_standing",
+      "abductor_seated",
+      "adductor_seated",
+      "leg_extension",
+      "legcurl_seated",
+      "legcurl_lying",
+      "legcurl_kneeling",
+      "hip_thrust",
+      "glute_kickback",
+      "reverse_hyper",
+      "back_extension",
+      "calf_donkey",
+      "calf_seated",
+      "calf_standing",
+      "tibialis",
+      "chest_decline",
+      "chest_incline",
+      "chest_lying",
+      "chest_standing",
+      "chest_press",
+      "chest_fly",
+      "rear_delt",
+      "shoulder_press",
+      "lateral_raise",
+      "pulldown",
+      "high_row",
+      "row_chest_supported",
+      "row_tbar",
+      "row_seated",
+      "pullover",
+      "biceps_curl",
+      "triceps_dip",
+      "triceps_extension",
+      "shrug",
+      "gripper_machine",
+      "neck_machine",
+      "ab_coaster",
+      "ab_swing",
+      "ab_crunch_lying",
+      "ab_crunch_seated",
+      "torso_rotation",
+      "deadlift_lever",
+      "stepper",
+      "stepmill",
+      "curved_treadmill",
+      "treadmill",
+      "elliptical",
+      "air_bike",
+      "recumbent_bike",
+      "stationary_bike",
+      "rower",
+      "arm_ergometer",
+      "skierg",
+      "power_sled",
+      "tank_sled",
+      "vibration_plate"
+    ]
+  },
+  "upstream_inventory_issues": [
+    {
+      "exercise_id": "2707",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2708",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2711",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2713",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2714",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2715",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2716",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2717",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2718",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2719",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2720",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2721",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2722",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2723",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2724",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2725",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2726",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2727",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2728",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2733",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2734",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "2735",
+      "issue": "Coarse equipment enum conflicts with named strongman implement; textual implement takes precedence."
+    },
+    {
+      "exercise_id": "5965",
+      "issue": "stick in drill name may mean landing/hold cue; instructions specify no physical stick"
+    },
+    {
+      "exercise_id": "10198",
+      "name": "sled alternating single leg negative press",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "1447",
+      "name": "lever calf stretch (plate loaded)",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2197",
+      "name": "run on treadmill",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2722",
+      "name": "strongman hood stones",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2724",
+      "name": "strongman atlas stones",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "2734",
+      "name": "strongman barbell farmers walk",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "3637",
+      "name": "wheel run",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "4245",
+      "name": "single leg board jump",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "5965",
+      "name": "1 2 stick drill",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "6550",
+      "name": "incline push up on a smith bar",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    },
+    {
+      "exercise_id": "8610",
+      "name": "chinese plank",
+      "issue": "Review geometry or terminology against owner intent; text/metadata alone is insufficient."
+    }
+  ],
+  "checks": {
+    "all_canonical_ids_assigned_once": true,
+    "aliases_excluded_from_motion_mapping": true,
+    "aliases_resolve_to_canonical": true,
+    "live_alias_chains_match": true,
+    "whole_catalogue_partition_reconciles": true,
+    "live_catalogue_matches_briefs": true,
+    "prop_partition_reconciles": true,
+    "prop_parent_ids_valid": true,
+    "prop_incidence_lists_match_coverage": true,
+    "exact_duplicate_pairs_reconciled": true,
+    "protected_heel_touch_and_90_90_remain_separate": true,
+    "family_totals_reconcile": true
+  }
+}

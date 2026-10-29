@@ -1,0 +1,70 @@
+{
+  "blender": "5.2.3 LTS",
+  "catalogue_records": 5632,
+  "distinct_names": 57,
+  "mapped_names": 57,
+  "regions": 96,
+  "nonempty_regions": 96,
+  "original_vertex_count": 10582,
+  "original_face_count": 10590,
+  "triangles": 21160,
+  "topology_and_coordinates_unchanged": true,
+  "rest_sha256": "50b4584dbbfe10ddb5058c82644ceb4ea38b6792d3f3ce264ea694b0c8a09c4d",
+  "deterministic_colors": true,
+  "strict_unknown_rejected": true,
+  "nan_strength_rejected": true,
+  "no_extra_surface_meshes": true,
+  "rendered_pngs": [
+    "neutral-front.png",
+    "neutral-side.png",
+    "neutral-back.png",
+    "activation-front.png",
+    "activation-side.png",
+    "activation-back.png"
+  ],
+  "exported_textures": [
+    "textures/neutral.png",
+    "textures/5965-activation.png",
+    "textures/5965-roles.png",
+    "textures/5915-activation.png",
+    "textures/5915-roles.png",
+    "textures/5887-activation.png",
+    "textures/5887-roles.png",
+    "textures/0001-activation.png",
+    "textures/0001-roles.png",
+    "textures/9066-activation.png",
+    "textures/9066-roles.png"
+  ],
+  "packed_texture": true,
+  "elapsed_seconds": 12.668,
+  "claim": "Illustrative surface masks; not anatomical segmentation or EMG.",
+  "all_region_weights_finite": true,
+  "all_catalogue_names_resolve": true,
+  "mapping_references_valid": true,
+  "biceps_excludes_biceps_femoris": true,
+  "schema_validation": "JSON parsed and required keys/statuses/references checked with standard library; no third-party JSON Schema validator installed.",
+  "inactive_vertex_colors_uniform": true,
+  "inactive_texture_pixels_uniform": true,
+  "unselected_vertex_and_texture_colors_unchanged": true,
+  "selected_fiber_detail_retained": true,
+  "show_inactive_anatomy_default": false,
+  "optional_detailed_neutral_available": true,
+  "global_shader_bump": false,
+  "lighting": {
+    "cast_shadows": false,
+    "cavity_ao": false,
+    "specular_highlights": false,
+    "ambient_rgb": [
+      0.55,
+      0.55,
+      0.55
+    ],
+    "diffuse_fill_strengths": [
+      0.45,
+      0.06,
+      0.04,
+      0.02
+    ],
+    "user_preferences_saved": false
+  }
+}

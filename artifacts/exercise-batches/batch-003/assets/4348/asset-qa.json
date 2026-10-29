@@ -1,0 +1,342 @@
+{
+  "pass": true,
+  "source_sha256": "c84b9489cae7d1f1f471afef5938b6534fd8c5c2bb0ffda6bf42183c0f7b44f3",
+  "samples": [
+    {
+      "path": "native",
+      "frame": 75,
+      "report": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris"
+        ],
+        "ground_z": 0.0016,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SK_BlenderStudioHuman",
+            "tri_pairs": 9
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 42342,
+            "faces": 42340,
+            "tris": 84680,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": [
+        {
+          "evaluated_quad_ids": [
+            1132,
+            1169
+          ],
+          "triangle_ids": [
+            1132,
+            43509
+          ],
+          "source_face_sets": [
+            32,
+            33
+          ],
+          "centers_world_m": [
+            [
+              -0.1319834291934967,
+              0.6693270206451416,
+              0.024928143247961998
+            ],
+            [
+              -0.13241690397262573,
+              0.6683067083358765,
+              0.02661643549799919
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6680,
+            9202
+          ],
+          "triangle_ids": [
+            6680,
+            9202
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.014972349628806114,
+              -0.6043014526367188,
+              0.4466882646083832
+            ],
+            [
+              -0.015306765213608742,
+              -0.6048803925514221,
+              0.44688689708709717
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            6874,
+            9201
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.016849100589752197,
+              -0.6038921475410461,
+              0.4479404091835022
+            ],
+            [
+              -0.01662479154765606,
+              -0.6045953035354614,
+              0.447821706533432
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            9201,
+            6874
+          ],
+          "triangle_ids": [
+            9201,
+            49214
+          ],
+          "source_face_sets": [
+            7,
+            22
+          ],
+          "centers_world_m": [
+            [
+              -0.01662479154765606,
+              -0.6045953035354614,
+              0.447821706533432
+            ],
+            [
+              -0.01641843095421791,
+              -0.6040390729904175,
+              0.4470333755016327
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            22029,
+            21990
+          ],
+          "triangle_ids": [
+            22029,
+            64330
+          ],
+          "source_face_sets": [
+            53,
+            49
+          ],
+          "centers_world_m": [
+            [
+              0.1325782835483551,
+              0.668362021446228,
+              0.026584547013044357
+            ],
+            [
+              0.13214434683322906,
+              0.6693820357322693,
+              0.024897640570998192
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            27732,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018644412979483604,
+              -0.603395938873291,
+              0.44920143485069275
+            ],
+            [
+              0.018093209713697433,
+              -0.6042077541351318,
+              0.44882866740226746
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6873,
+            8585
+          ],
+          "triangle_ids": [
+            49213,
+            50925
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.018139898777008057,
+              -0.6036057472229004,
+              0.44839105010032654
+            ],
+            [
+              -0.017845235764980316,
+              -0.6043277978897095,
+              0.4479261338710785
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            6874,
+            9201
+          ],
+          "triangle_ids": [
+            49214,
+            51541
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              -0.01641843095421791,
+              -0.6040390729904175,
+              0.4470333755016327
+            ],
+            [
+              -0.01652810350060463,
+              -0.6046685576438904,
+              0.44690608978271484
+            ]
+          ]
+        },
+        {
+          "evaluated_quad_ids": [
+            27732,
+            29443
+          ],
+          "triangle_ids": [
+            70072,
+            71783
+          ],
+          "source_face_sets": [
+            22,
+            7
+          ],
+          "centers_world_m": [
+            [
+              0.018253812566399574,
+              -0.6035237312316895,
+              0.4483320116996765
+            ],
+            [
+              0.018093209713697433,
+              -0.6042077541351318,
+              0.44882866740226746
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "linear",
+      "frame": 75,
+      "report": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0017,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SK_BlenderStudioHuman": {
+            "verts": 10582,
+            "faces": 10590,
+            "tris": 21160,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 0,
+            "uv_maps": 1,
+            "uv_oob_pct": 84.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 47.2
+          }
+        }
+      },
+      "warning_locations": []
+    }
+  ]
+}

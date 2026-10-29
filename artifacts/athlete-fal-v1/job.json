@@ -1,0 +1,30 @@
+{
+  "status": "submitted",
+  "recipe": {
+    "endpoint_id": "meshy/v7.1/image-to-3d",
+    "input": {
+      "image_url": "https://v3b.fal.media/files/b/0ab02183/EGCusLqyoA_e7WzjHW17g_athlete-reference.png",
+      "model_type": "standard",
+      "topology": "quad",
+      "target_polycount": 30000,
+      "symmetry_mode": "on",
+      "should_remesh": true,
+      "should_texture": true,
+      "enable_pbr": true,
+      "pose_mode": "a-pose",
+      "enable_rigging": true,
+      "rigging_height_meters": 1.8,
+      "enable_animation": false,
+      "enable_safety_checker": true
+    },
+    "note": "These are the submitted inputs, not resolved server defaults. For a variation, copy them and change only requested fields; reuse returned_seed when supported by the schema. Source URLs may expire."
+  },
+  "request_id": "01a1801d-46ba-7f82-aa44-30fad3e0e8a9",
+  "endpoint_id": "meshy/v7.1/image-to-3d",
+  "status_url": "https://queue.fal.run/meshy/v7.1/requests/01a1801d-46ba-7f82-aa44-30fad3e0e8a9/status",
+  "response_url": "https://queue.fal.run/meshy/v7.1/requests/01a1801d-46ba-7f82-aa44-30fad3e0e8a9",
+  "cancel_url": "https://queue.fal.run/meshy/v7.1/requests/01a1801d-46ba-7f82-aa44-30fad3e0e8a9/cancel",
+  "poll_after_seconds": 20,
+  "polling_hint": "Wait poll_after_seconds before calling check_job with the same request_id and status_url. This interval is not an ETA. Report meaningful status changes rather than repeating unchanged progress. Do not submit another job to check progress.",
+  "hint": "Job submitted. Use check_job with status_url: it waits up to 40 seconds per call while the job runs and returns its result in the same call once it is COMPLETED (get_job_result with response_url also works)."
+}

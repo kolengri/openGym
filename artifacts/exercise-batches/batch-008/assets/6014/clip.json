@@ -1,0 +1,51 @@
+{
+  "id": "6014",
+  "name": "arm raise step in place",
+  "action": "Exercise_6014",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "cardiovascular system"
+  ],
+  "secondary": [
+    "shoulders",
+    "quadriceps",
+    "calves"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Stand tall with your feet hip-width apart.",
+    "Step in place, lifting your knees.",
+    "Raise your arms overhead as you step.",
+    "Lower them as you continue.",
+    "Keep a steady rhythm for 30-60 seconds."
+  ],
+  "source_record_sha256": "544106f78f5c1d5030eedeeaffdfec4654fd77163c3ff67561a759c60e548060",
+  "source_hold_recommendation_seconds": null,
+  "source_workout_interval_seconds": [
+    30,
+    60
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 2.5,
+      "label": "Alternating knee lifts and overhead raises"
+    },
+    {
+      "start": 2.5,
+      "end": 5,
+      "label": "Continue stepping and lowering arms"
+    }
+  ],
+  "interpretation": "Five-second authored illustration. Four gentle alternating140mm ankle lifts with matching arm raises; one foot always supported, no flight. Shin-relative foot/forefoot transport preserves ankle shape. Lowered arms retain the original source-rest upperarm/forearm frames (28.24degree upperarm abduction); coherent joint interpolation blends into the authored overhead frame. Source30\u201360second workout interval remains separate; cadence and range are authored choices. Open relaxed hands, no fists; current-scapula transported upperarm orientation and original upper-body weights preserved. Numerical staging is not a source tempo or measured activation.",
+  "review_status": "151_native_decoded_export_game_gates_passed; root_GPU_review_pending",
+  "source_sha256": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+  "glb_sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+  "authoring_family": "../../standing-dynamic"
+}

@@ -1,0 +1,230 @@
+{
+  "family": "batch006-standing-leg-family",
+  "status": "root_accepted_3479_repair_3480_preserved",
+  "canonical_final_asset": "../assets/3479",
+  "source_sha256": "4571ffd3407966fcfd13b87f300d500647b6bf957132a99c2e181b56e3724c3a",
+  "glb_sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
+  "3480_existing_manifest_untouched": "../assets/3480/curated-files.json",
+  "self_hash": "This manifest intentionally does not hash itself.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "78bea4c24787c549ad4de297643ac4e0dbbf791bfab2d653708118949a4ec6ab",
+      "bytes": 3547
+    },
+    {
+      "path": "delivery-report.json",
+      "sha256": "5715a89eaed275d37cd13a08bb6186b03872a5435d8d79917b74e7ef507dc62b",
+      "bytes": 6734
+    },
+    {
+      "path": "export-manifest.json",
+      "sha256": "920143cf6c48668f3bd84e5d8189537214e1e4044af290d8bd9626e5df789797",
+      "bytes": 710
+    },
+    {
+      "path": "motion-repair-report.json",
+      "sha256": "420a51af0ac6e531657e0f6880620441f7cb9cc98a18cc940caeb0848703ea92",
+      "bytes": 5371
+    },
+    {
+      "path": "invariant-report.json",
+      "sha256": "7cd2db2ebf500067ba024d0756c7a14bf7319f81baf9377e2b9dac7fd0d2184f",
+      "bytes": 673
+    },
+    {
+      "path": "binding-report.json",
+      "sha256": "b98164468f64a47e92c3f84c6e2158df6a30267d55e165b4063804782214ddcd",
+      "bytes": 1910936
+    },
+    {
+      "path": "saved-binding-provenance.json",
+      "sha256": "b7c2f1f58cc24fdfe3f9de47a7dc989da20443f5b0a68641ff870e30e26d017f",
+      "bytes": 819176
+    },
+    {
+      "path": "joint-target-report.json",
+      "sha256": "6f628f385a80879306739cb67f9897b435df6596e949ff7eca11912a9539797d",
+      "bytes": 230125
+    },
+    {
+      "path": "contact-landmarks.json",
+      "sha256": "660c92a9ab74d2a87c29991d93d822ae476a762ebfdf0f0ee43ae897a69cf925",
+      "bytes": 1755
+    },
+    {
+      "path": "kinematic-state.json",
+      "sha256": "359170ea4f4b0761ed02e008fec1be554f660af7b1f9054825f94152664b2a49",
+      "bytes": 430456
+    },
+    {
+      "path": "target-errors.json",
+      "sha256": "e4ac61dc060c04cc3f6b9ac8dea9b984f010091ae921bdb660f61f5cce02e5e9",
+      "bytes": 63081
+    },
+    {
+      "path": "poses.py",
+      "sha256": "a4853bcbd7acf478ae66607f04f7900cbda53f8e0b1038815afd9921aa319b14",
+      "bytes": 11089
+    },
+    {
+      "path": "geometry_checks.py",
+      "sha256": "07c428dad8b98f34fb4d30394388ee083ef2827fe7fee7a03b6a935cf13858ed",
+      "bytes": 5883
+    },
+    {
+      "path": "verify_invariants.py",
+      "sha256": "b2a9cc29035cc4c23786b5b63587e12d67f5203aa94093995d536a065b05406e",
+      "bytes": 3170
+    },
+    {
+      "path": "verify_native.py",
+      "sha256": "ab9bbbc5d2e1c882d72758d16b48d89857208e21b51742871d85a55a2950c53f",
+      "bytes": 9114
+    },
+    {
+      "path": "verify_export.mjs",
+      "sha256": "ca656f5e820bc7838aab0f2357f2b97605c9bdac370146fed3bc56ba60607e74",
+      "bytes": 9111
+    },
+    {
+      "path": "verify_runtime_stream.mjs",
+      "sha256": "f3f8b5e66c05124f52953ea5adef3655288ffcf10acb7e6018ac43805e744e11",
+      "bytes": 3624
+    },
+    {
+      "path": "verify_runtime_stream.py",
+      "sha256": "dc577941c5c87f6f8d5710dc4bd19bdcb586044357855ae2aae72e0b93cb372a",
+      "bytes": 3954
+    },
+    {
+      "path": "proof_final.py",
+      "sha256": "dd75254ab4615b3c996990fdd83d0bb068d29bbc3bc7ee93d57601b3e50f5f10",
+      "bytes": 3894
+    },
+    {
+      "path": "curate.py",
+      "sha256": "b886b3065d54aa97645fcfe586795b2cdd63fcc02cb3dae6843088c58c2ac5de",
+      "bytes": 16794
+    },
+    {
+      "path": "squat-feedback/revised_poses.py",
+      "sha256": "9ec14226b4e989fcb07b7abac9ee1ac354b960fdfe21466be8696b8da69b29a4",
+      "bytes": 1810
+    },
+    {
+      "path": "squat-feedback/revise_source.py",
+      "sha256": "19110d83cb8a0e5417c1bc15b00b4adc13726fde4ae416238dcb7e0df667966f",
+      "bytes": 7457
+    },
+    {
+      "path": "squat-feedback/export_replacement.py",
+      "sha256": "97a08a6f2922bf42ebb3f101ffeab89bf86af179274d9cf76b6810c2ea3f81b3",
+      "bytes": 1085
+    },
+    {
+      "path": "squat-feedback/pack_replacement.py",
+      "sha256": "ae38ab104d7f2bee518fd6113e80b912844573fc814ef07b04f3e6850a11d43e",
+      "bytes": 3614
+    },
+    {
+      "path": "squat-feedback/verify_3480_unchanged.py",
+      "sha256": "ab1bcc71b2beecd7f9c25d5134b49e6665a1886ce213a8607134cbfbed3a5f05",
+      "bytes": 2443
+    },
+    {
+      "path": "squat-feedback/restore_shared_defaults.py",
+      "sha256": "2af21721b5d09100611e044ce744169a00a23f383c6df0766ade1fc19258a776",
+      "bytes": 1458
+    },
+    {
+      "path": "squat-feedback/capture_after.mjs",
+      "sha256": "10aebdd1c3286ca99c85180889d43301c70beb8f46676c82bbc5a5cea6942c21",
+      "bytes": 2904
+    },
+    {
+      "path": "squat-feedback/capture_peak.mjs",
+      "sha256": "7d79100e327ec0baeee8484bc24cbb742502a5f49172db7bef64852e483249bd",
+      "bytes": 2731
+    },
+    {
+      "path": "squat-feedback/curate_repair.py",
+      "sha256": "b174aac5c90409bf82817a453205447129fbd547d512bb7403b5b9cac6ce24ca",
+      "bytes": 19028
+    },
+    {
+      "path": "squat-feedback/3480-before-file-hashes.json",
+      "sha256": "c3e02e8d7eb451438f317eb5f5f1c6c690104f132c67d2fb00186c825342cce6",
+      "bytes": 6302
+    },
+    {
+      "path": "squat-feedback/3480-preservation-report.json",
+      "sha256": "3cf633d71a5f3b4465c55389bdce83c0b7dbcd9bbe391fec789fded44f5f82b9",
+      "bytes": 35135
+    },
+    {
+      "path": "squat-feedback/export-preservation-report.json",
+      "sha256": "5eb222c1b68d5080a1035c048011b7a87e0db1616790c8718742d5b957a4ab41",
+      "bytes": 935
+    },
+    {
+      "path": "squat-feedback/unkeyed-defaults-restoration.json",
+      "sha256": "c27b7e9e8c7e23c8cf4b8142717b595318c9bb14c86f7a67f195de182a0c84e2",
+      "bytes": 7106
+    },
+    {
+      "path": "squat-feedback/before-gpu-0.600.png",
+      "sha256": "f38b3cf5d684df43daf497af14555dc68b5127ee93d92b19cf96fd75cca59911",
+      "bytes": 37639
+    },
+    {
+      "path": "squat-feedback/before-gpu-0.800.png",
+      "sha256": "4bc6fdadc52f8dd9041562a392c2412eb80c33f40f7e1636c96f729f194e8043",
+      "bytes": 41716
+    },
+    {
+      "path": "squat-feedback/after-gpu-deep-squat.png",
+      "sha256": "ed677143cdc6d0795533fa27f55e5ff9c274eaae05f19c28dd64f92ef49d17df",
+      "bytes": 37639
+    },
+    {
+      "path": "squat-feedback/after-gpu-rise.png",
+      "sha256": "e3a6d2f42b6005143a1f57ac374c481f5f9b45e21986192a29ef6aa0b4b75487",
+      "bytes": 41401
+    },
+    {
+      "path": "squat-feedback/after-gpu-full-stand.png",
+      "sha256": "8758f89f2e9b910151628fdab4c313dd27f7fff12d85bbb51b71af5fcec01e78",
+      "bytes": 42555
+    },
+    {
+      "path": "squat-feedback/after-gpu-support-transfer.png",
+      "sha256": "517c98695786b2799929bbd4734303364c0f7cca48ac8b4476437c0d7685d0f1",
+      "bytes": 43611
+    },
+    {
+      "path": "squat-feedback/after-gpu-heel-touch.png",
+      "sha256": "0b3073efe27ff717402edeb5af2ee59f2a2828dc3a486d876d5149882ee853ce",
+      "bytes": 41437
+    },
+    {
+      "path": "squat-feedback/after-gpu-return.png",
+      "sha256": "0166c69102108927d33b7bc79037e5ce6ea4272615a1a35c656c8209392df500",
+      "bytes": 43972
+    },
+    {
+      "path": "squat-feedback/after-gpu-side-kick-peak.png",
+      "sha256": "269574b860d31f50bfc87955c8c212ba4e7788eaa07182a5ea5d3edff216193a",
+      "bytes": 41829
+    }
+  ],
+  "exclusions": [
+    "unlisted files",
+    "logs",
+    "trial/candidate viewer bundles",
+    "temporary .blend/.glb and backups",
+    "environments",
+    "__pycache__",
+    "runtime frame caches"
+  ]
+}

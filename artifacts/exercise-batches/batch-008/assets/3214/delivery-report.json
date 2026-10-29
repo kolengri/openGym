@@ -1,0 +1,157 @@
+{
+  "id": "3214",
+  "status": "all151native_actual_decoded_DQ_NORMAL_support_foot_clearance_loop_game_gates_passed; root_GPU_pending",
+  "source_sha256": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+  "glb_sha256": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+  "original_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "runtime_binding_sha256": "6c3c40b3a5ba6fcbe33e75b6599b21233b8ad03d29b0bd028e0efcff967f1b38",
+  "action": "Exercise_3214",
+  "duration_seconds": 5,
+  "frames": 150,
+  "full151_native_pass": true,
+  "full151_actual_decoded_pass": true,
+  "source_invariants_pass": true,
+  "game_qa_zero_errors": true,
+  "game_qa_warnings": [
+    {
+      "frame": 33,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
+      ]
+    },
+    {
+      "frame": 108,
+      "warnings": [
+        "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+      ]
+    }
+  ],
+  "useful_GPU_times": [
+    {
+      "time": 0,
+      "purpose": "two-foot shoulder-width start / open arms"
+    },
+    {
+      "time": 0.65,
+      "purpose": "right-side hinge transition / stance heel and ball"
+    },
+    {
+      "time": 1.1,
+      "purpose": "right reach peak / left rear leg"
+    },
+    {
+      "time": 2.15,
+      "purpose": "late right return / coherent ankle"
+    },
+    {
+      "time": 2.5,
+      "purpose": "full upright bilateral reset"
+    },
+    {
+      "time": 3.15,
+      "purpose": "mirrored transition"
+    },
+    {
+      "time": 3.6,
+      "purpose": "left reach peak / right rear leg"
+    },
+    {
+      "time": 4.65,
+      "purpose": "late left return / coherent ankle"
+    },
+    {
+      "time": 5,
+      "purpose": "exact loop closure"
+    }
+  ],
+  "metrics": {
+    "source_vertices": 10582,
+    "bones": 51,
+    "triangles": 21160,
+    "source_samples": 151,
+    "native_decoded_maximum_error_m": 2.945293764378059e-06,
+    "five_pose_DQ_maximum_error_m": 2.701296405240653e-06,
+    "maximum_joint_error_m": 1.6888534104643873e-06,
+    "five_pose_full_source_normal_maximum_angle_degrees": 0.004700572679917477,
+    "minimum_native_floor_z_m": 0.0005732025601901114,
+    "minimum_actual_decoded_floor_z_m": 0.0005733341095037758,
+    "minimum_triangle_area_m2": 5.889887727267368e-08,
+    "loop_skin_error_m": 2.414264045062609e-07,
+    "maximum_supported_patch_drift_m": 7.571109813440713e-07,
+    "minimum_balance_proxy_hull_margin_m": 0.01739368155360796,
+    "maximum_soft_knee_flexion_degrees": 27.577594104643822,
+    "forefoot_edge_ratio_range": [
+      0.9999230121445468,
+      1.0000763380249567
+    ],
+    "mixed_ankle_edge_ratio_range": [
+      0.672626645392534,
+      1.2095830747307401
+    ],
+    "whole_arm_hand_vs_leg_triangle_crossings": 0,
+    "reach_peaks": {
+      "Right": {
+        "frame": 33,
+        "minimum_distal_hand_z_m": 0.23802556097507477,
+        "minimum_hand_to_stance_toe_skin_m": 0.2962605446973064,
+        "interpretation": "Towards toes; no grasp/floor contact required."
+      },
+      "Left": {
+        "frame": 108,
+        "minimum_distal_hand_z_m": 0.23824305832386017,
+        "minimum_hand_to_stance_toe_skin_m": 0.29637059204279964,
+        "interpretation": "Towards toes; no grasp/floor contact required."
+      }
+    }
+  },
+  "bounded_limitations": [
+    "No compulsory toe grasp or floor-hand contact: reach is bounded by unchanged proportions.",
+    "Homogeneous volume-centroid projection is an authored geometric guard; no anatomical mass or clinical stability claim.",
+    "Discrete full-cycle and local checks cover named support, foot shape and arm-vs-leg domains; no global collision-free guarantee.",
+    "Original low-poly body/finger contours remain."
+  ],
+  "remaining": [
+    "Root actual GPU playback acceptance, fields, camera-width integration and batch publication."
+  ],
+  "files_sha256": {
+    "README.md": "4d825b3a72a2069691f393143a9ca0e3ac5452c9d2c0617273b06e5b94f14e89",
+    "asset-qa.json": "18ef19dc32e648fe20aca6a73bac42109353e484fe98d90a2a20acb2cee97155",
+    "authoring-context.json": "676ba945eee8153e4b40ef135084851062f36802aecbf5c287ce4e2326f94209",
+    "cameras.json": "eedd8f449a0cfe0186827cd6c5f3218f102666e997414fa42293f93647a8e4ba",
+    "clip.json": "503d427faf5ae75a4b278624432c5de309cb5f51428ccf50c41e3125df811800",
+    "curated-files.json": "d4314fbeade81cdced1aeecf14e1e02237be490c4e1d0f772dc0208cd9be3936",
+    "decoded-physical-report.json": "31d9b6f1e997d750400371183e8490a48cd81014b9c66c0f1aa070e72d6969ce",
+    "decoded-source-readback.json": "2396b7b6131a5acaef00811e18ff097ec3a3faa991eb92b3248ab5ebf660924c",
+    "dq-reference.json.gz": "039c8a6dcf3415e3ab41cef1041c4afb9a3d9bfc9450bb4ba14ddffc0f42b2fa",
+    "early-balance-diagnostic.json": "1bc6a487088199777c706e23d2cd02cbbc54201e8f3942207edfd46644e4ee57",
+    "early-left-reach-0.png": "dd382511b215dfecd2719885ab9612881df2ad544520a6e98a4aed75e0cf6dfa",
+    "early-left-reach-1.png": "74e7875d0d82e939f97989f2bbd91ac2a50c674b5fe05cb1be6723e3fb152681",
+    "early-left-return-0.png": "6d8f4f714ec9be8f01ff33e196b6158aefa65244c2f5e7d6f651b0c4c613fef4",
+    "early-left-return-1.png": "4b7c36cbec3e4093c0626d050e8363502512ced16a0a68cdb0283de94c5d2edd",
+    "early-loop-return-0.png": "6a3080a56bc1d6b81cfd93fc4ca96748e9db46d7f750e6e2f4aca55b8eb57cc3",
+    "early-loop-return-1.png": "144abfa8245edfe4ead2ac49e0df17aeb5327b46a2ff1839a312cebb19920039",
+    "early-report.json": "31e4c186d888ad93605adada3080591e6aae9f3c8cf0ed5ffe5c9b2aad47e2c3",
+    "early-right-reach-0.png": "f43bfeec35c81a1ad0bebd148d3241fe8fc8f80353a4dc3f98affc666131811d",
+    "early-right-reach-1.png": "1a661bee04904f3a66d0da247adc8ead93cf518afcf39fd27243e24dd4f31059",
+    "early-right-return-0.png": "fc8dc09a03e89b496388e09009e09f4a78141557b617ed7075b2eb28f6ec3216",
+    "early-right-return-1.png": "30e20cef3231568c9ec84e731e64347da441d5291c5006eb18efd7d4a8358f0b",
+    "early-start-0.png": "ac36a0cf506f702c2b499d398e8e8fead09162147f25290a16a6c6da0397a406",
+    "early-start-1.png": "f7d5c38f8e1d6fb51e63ac51915a854691970e4c3172d64d802003fdbcb7ac51",
+    "environment.json": "589e10f05fe74379ce4bcc90d34220fe0a7333d3e086c8c9d7789708dbcf66fa",
+    "export-verification.json": "ab55c6e5ce96df9cf2e4ad5713c4ac9c88af488d8b1e0f34c52b243403c88325",
+    "local-binding-report.json": "cb72db0c48deea84975208418b6caa92e9509aef4da4be89a2af58329a1ec37e",
+    "motion-witnesses.json": "7609deb07be2bb58755555c877edd66c87b0fdd6f896adbd0197bcaeffedd337",
+    "motion.glb": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+    "normal-reference.json.gz": "47eb392dcf310708b33ed3f42709ee4b674333d1f1b4c89bc4d1f6f1ac43ca1e",
+    "pose-samples.json": "f925aeaa256b2c04a93ad9d261bc4d30935f918d4c06bbde83a7aa231367776b",
+    "qa-random.png": "00b30fac785af32a5ae0a47a76a56f39770908afaf432b77a0dc467dec6c350c",
+    "qa-render-receipt.json": "55f128999da72239a9f08eb6673437f35a12c3efe1f19a4407b488026be6083b",
+    "qa-wire.png": "79dc06c1df62a73749f6ee839ec6ee7846520150f8416a2ac39eb40bf977a1f4",
+    "raw-asset-qa.json": "324a2cfddc0327ca29d70fb7b8872f85263ff6bc3ccd4f87e20c6feb60f9fc1a",
+    "runtime-surface-reference.json": "3a433966e9e209a86960096080d75174f2c382c22212b94d429968e8126c898f",
+    "source-verification.json": "2396b7b6131a5acaef00811e18ff097ec3a3faa991eb92b3248ab5ebf660924c",
+    "source.blend": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+    "surface-contact-report.json": "76effa50470a99e818cf34bc366627999b5209a06b2a5c313d64e55c57142ec9",
+    "surface-landmarks.json": "a0ec1acc7ae35ac1c25bdac074cea1a01cbbe2b950b2cd48a116779801f622cc"
+  }
+}

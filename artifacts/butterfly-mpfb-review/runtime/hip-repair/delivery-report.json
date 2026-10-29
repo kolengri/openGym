@@ -1,0 +1,64 @@
+{
+  "status": "actual_glb_all151_hip_pass_no_hip_corrective_required",
+  "actual_glb_sha256": "ee20ac0a034f91afcaaa03d50425e0c2bb35ca1052109813ce4e0cd6719bbf5b",
+  "actual_samples_sha256": "ab9c618d930c7e426d0b63d44ae3c24eab09c5ccc532d47a8c24b6f933b71ab0",
+  "override_sha256": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9",
+  "mesh_input_sha256": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+  "motion_input_sha256": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+  "verification_input_sha256": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+  "frames": 151,
+  "hip_face_count": 1814,
+  "weight_affected_face_count": 1227,
+  "union_checked_face_count": 1932,
+  "checks": {
+    "all151_exact_hip_zero": true,
+    "all151_exact_affected_zero": true,
+    "all151_orientation_ratio_at_least_point1": true,
+    "all151_zero_reversed_faces": true,
+    "all151_positive_triangle_areas": true,
+    "all151_exterior_samples_bit_exact": true,
+    "all151_protected_samples_bit_exact": true,
+    "all151_floor_and_glute_gap_identical_to_baseline": true,
+    "all_inputs_unchanged": true
+  },
+  "minimum_orientation_ratio": 0.9456312057094564,
+  "whole_floor_minimum_m": -4.654152618854823e-09,
+  "maximum_glute_gap_m": 0.0007005100487731397,
+  "maximum_active_surface_change_from_baseline_m": 0.013155045302231013,
+  "bind_codec_error_m": 3.9100246392968527e-08,
+  "loop_codec_error_m": 3.892064610267638e-08,
+  "maximum_actual_glb_codec_error_m": 4.59941800820109e-08,
+  "new_global_pairs_proof": "All affected-face vs all pairs are zero. Every other triangle is composed exclusively of bit-exact exterior vertices at every frame, so no new global intersection can occur outside the checked domain.",
+  "runtime_only_weight_change": true,
+  "native_weights_geometry_faces_uv_motion_frozen": true,
+  "hip_corrective_targets_required": false,
+  "hand_and_arm_status": "Not accepted here; independent targets and final integration belong to primary. Remaining global contacts are disclosed, not promoted as whole-body pass.",
+  "domain_counts": {
+    "core_count": 438,
+    "active_count": 547,
+    "fixed_boundary_count": 137,
+    "affected_face_count": 1227,
+    "hip_verification_face_count": 1814
+  },
+  "maximum_discarded_top4_mass": 0.030823762201691363,
+  "harmonic_equation_residual_max": 1.5505562567188045e-12,
+  "minimum_global_triangle_area_m2": 1.4122995150103898e-08,
+  "global_exact_pair_count_range": [
+    134,
+    186
+  ],
+  "foot_minima_m": {
+    "support_foot.L": 0.00019980913202743977,
+    "support_foot.R": 0.00019974952738266438
+  },
+  "integration": {
+    "weight_override": "runtime-weight-override.json",
+    "correctives": null,
+    "primary_owns_hand_arm_targets_and_final_integrated_verification": true
+  },
+  "limits": [
+    "All151 refers to the 151 frozen sampled times, not a continuous-time certificate.",
+    "Runtime harmonic weights can change moving hip surface positions by up to13.155mm relative to the failing binding. No static geometry or source-space corrective displacement was added.",
+    "Hand/arm contacts remain outside this acceptance; no whole-body physical PASS claim."
+  ]
+}

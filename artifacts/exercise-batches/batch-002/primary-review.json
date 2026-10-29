@@ -1,0 +1,142 @@
+{
+  "status": "reopened_user_feedback_pending_view_identity_and_region",
+  "not_production_approved": true,
+  "exercise_ids": [
+    "5265",
+    "4007",
+    "6428",
+    "10565",
+    "6560"
+  ],
+  "models": {
+    "default": {
+      "path": "artifacts/bodyweight-next-five/next-five.glb",
+      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+      "bytes": 1325048,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_4007",
+        "Exercise_5265",
+        "Exercise_6428",
+        "Exercise_6560"
+      ]
+    },
+    "ninety-repaired": {
+      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+      "sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+      "bytes": 1305964,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_6560"
+      ]
+    }
+  },
+  "source_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
+  "camera_presets_sha256": {
+    "artifacts/bodyweight-next-five/camera-presets.json": "62d60c500557c7211a2b00c5794b0e92fb67878e8807e0ed78ca57b7656ada74",
+    "artifacts/bodyweight-next-five/ninety-camera-presets.json": "ea23d2f34db002bb94fc3adaad84eebb73c3ad22e2d005a8621f1fe7aecd08e8"
+  },
+  "visual_evidence": {
+    "live-entry-10565.png": "2cff085224eecfd032342fcd5dfc1923884fde12e33e513d44713668bba86d99",
+    "live-entry-6560.png": "d06cd812887ee5bd8bba5294be448aef4a6b17e32469cc617e50908c27901897",
+    "live-start-10565.png": "95ee982bc8304cbb525abf5ffd26cfff2621af2b198a04f8c8f3e7350a676b82",
+    "live-start-6560.png": "299502dfe5d1b48f26209345057856b6df6d1f5ad57346cf4dbc6a038b46693e",
+    "neutral-10565.png": "d1557c96f6d0b0a656f09ae7631ce8a1c12588c41bdca205ffa8266650f04409",
+    "neutral-6560.png": "a3b5bc85e056325491212268b88c131aabdb1703baf85f0d9573dced0e0b23ae",
+    "review-10565.png": "eeb83b76543d1d9f957532c4f378893d6bf028523ff3f76076a08ca5f6d56ac7",
+    "review-4007.png": "7a9e4a9f3306f1d438de34264dd0689b503f27aed22e32ecfaf5e7b9a9ecad47",
+    "review-5265.png": "ba43c13751fc37c8e9082cf5f19cf901b598c4fb5f30eb5037e5959d89dd8eb2",
+    "review-6428.png": "36b88515f0538fb6d28308b31d754aff39821f821208ca3ba69be0051c7a7338",
+    "review-6560.png": "bc1757d2695380931c938dee4fb780d2f3bdb173d701f9111be31edfda8983d7",
+    "zones-10565.png": "c02ec7ea117f4e1de34e4d2d8a346f73aeabc6d29b8e30b2a23d63a0968f933a",
+    "zones-6560.png": "8aa787d6794ed1ab9327d1137f83eda97a23834952b7bc9264e06d0f5396a865"
+  },
+  "primary_visual_review": "Actual common Three.js neutral/zone hold views and entry view inspected. Whole-body layout, round glute/hip transition, elbow/forearm continuity and separate hand supports are materially improved. Scoped independent Terra/high review agrees for shown start/entry/hinge samples. Small groin cage crease remains; posterior contour is partly occluded in recommended views and complemented by native rear/side proofs and free orbit. This does not establish user acceptance.",
+  "corrected_findings": [
+    "Both rejected90/90 variants remain historical; old numeric PASS is not appearance acceptance.",
+    "Corrected135-degree thigh layout to front-forward/rear-side and aligned hinge over front leg.",
+    "Corrected shoulder and full arm/elbow frames, separate shin/knee hands and floor supports.",
+    "Original Basis/UV/rest/weights/source IDs and51bones retained, with four compact local POSITION/NORMAL targets.",
+    "First-three source assets remain byte-identical and use original linear skinning.",
+    "Actual five-second live playback uses2-second entry,1-second hold and2-second return; source20–30-second workout hold is separate."
+  ],
+  "checks": [
+    "../../bodyweight-next-five/ninety-pose-verification.json",
+    "../../bodyweight-next-five/ninety-asset-qa.json",
+    "../../bodyweight-next-five/ninety-warning-dispositions.json",
+    "../../bodyweight-next-five/repair-90/full-body-v2/hand-contact-summary.json",
+    "verification.json",
+    "finishing-check-report.json",
+    "whole-body-v2-visual-review.json",
+    "../runtime-code-review.json"
+  ],
+  "accepted_native_warnings": "Two hidden opposite-facing triangle pairs retained to preserve original connected topology/source IDs; no mandatory geometry errors. See current source-bound ninety-warning-dispositions.json. Previous18-observation dispositions were for the rejected v1 source.",
+  "contact_scope": "Actual source/runtime skin illustration witnesses, not clinical certification. Press right wrist reaches60–89degrees forearm-to-Middle1 direction and is reviewed as a substantially extended support hand. Source full-path hand/leg penetration remains within declared4mm illustration band; exact limits are in v2 REPORT.md.",
+  "independent_code_review": "This inline delivery bundles the existing independently reviewed runtime recorded in ../runtime-code-review.json. Its production rendering execution is unchanged; current work on companion detail-framing QA is outside this source/presentation delivery.",
+  "inline_acceptance": {
+    "status": "published_current_model_network_checks_passed_user_review_pending",
+    "revision": "664bcdf8707d17720f695411d86969ee375afdc3",
+    "evidence": "inline-verification.json",
+    "live_widget_attachment": "76260ce7-924b-4d92-a902-e3eaf39d62ae-366bed7e-e8e7-4dd7-98d5-825acc60f5ec-html"
+  },
+  "user_rejection": {
+    "exercise_ids": [
+      "10565",
+      "6560"
+    ],
+    "findings": [
+      "Pelvis/glute volume collapses to a pinched wedge; hip/thigh junction is visibly folded.",
+      "The middle hold makes the review animation unnecessarily long."
+    ],
+    "required_demo_timing": {
+      "duration_seconds": 5,
+      "hinge_seconds": 2,
+      "hold_seconds": 1,
+      "return_seconds": 2
+    },
+    "source_hold_recommendation_seconds": [
+      20,
+      30
+    ]
+  },
+  "second_user_rejection": {
+    "feedback": "90/90 все равно с фигурой не так все",
+    "scope": "Whole-body appearance; previous local and numeric PASS does not establish user acceptance.",
+    "repair_path": "../../bodyweight-next-five/repair-90/full-body-v2/"
+  },
+  "historical_rejected_evidence": {
+    "model_sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+    "visual_evidence": {
+      "review-5265.png": "b3a89dd890e80fc79a04f56bedea4c652dd88d64574f93071252e3dbf15884ad",
+      "review-4007.png": "4c8a16e308497824923bc54df04d281aa037acafce94d1632b768fd8797cd89a",
+      "review-6428.png": "36b88515f0538fb6d28308b31d754aff39821f821208ca3ba69be0051c7a7338",
+      "review-10565.png": "0918584f9080fbb86cc72c763224a418b5976b1d161e23013c257238300449fc",
+      "review-6560.png": "6a3da4791fa114c2eecb9db65de1bfbde4f979eee1812179696231a1a71c1fea",
+      "mobile.png": "fce52b1755c1167ac055b762b2fb8c5dcdfb3542e6bddd2497d5e3ebbec85fa5"
+    },
+    "inline_source_revision": "53ec8539d4a38ee0453f0a906496af9f022d677d"
+  },
+  "superseded_v1_model": {
+    "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+    "sha256": "5f384ae3a1c9353e14288345a63055080b9fce0f99d0cb2837f825aa8b1b16e0",
+    "bytes": 965540,
+    "bones": 51,
+    "animations": [
+      "Exercise_10565",
+      "Exercise_6560"
+    ]
+  },
+  "scope_limits": [
+    "Curated images cover shown poses, not continuous motion/collision by themselves.",
+    "Runtime checks separately measure playback, alpha, controls and sampled native parity.",
+    "Production app integration and physical-device testing were not performed."
+  ],
+  "latest_user_feedback": {
+    "feedback": "90 90 опять согнуло человека",
+    "status": "unresolved",
+    "view_identity": "not confirmed: previous live widget used rejected d957 source; new v2 was previously shown only as three static views",
+    "action": "Displayed the published 664bcdf v2 live viewer; requested affected body region and whether feedback referred to old live or new static views. No additional geometry changes inferred from silence."
+  }
+}

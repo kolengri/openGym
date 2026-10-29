@@ -1,0 +1,3242 @@
+{
+  "actual_saved_matrix_max_error": 1.430511474609375e-06,
+  "contact_offsets_m": {
+    "Left_foot": -0.0020003956053406,
+    "Right_foot": -0.0020004221480339765
+  },
+  "proofs": [
+    {
+      "frame": 0,
+      "view": "side_whole_body",
+      "file": "early-start-side_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 0,
+      "view": "oblique_whole_body",
+      "file": "early-start-oblique_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 30,
+      "view": "side_whole_body",
+      "file": "early-curl-side_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 30,
+      "view": "oblique_whole_body",
+      "file": "early-curl-oblique_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 72,
+      "view": "side_whole_body",
+      "file": "early-peak-side_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 72,
+      "view": "oblique_whole_body",
+      "file": "early-peak-oblique_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 120,
+      "view": "side_whole_body",
+      "file": "early-lower-side_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 120,
+      "view": "oblique_whole_body",
+      "file": "early-lower-oblique_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 150,
+      "view": "side_whole_body",
+      "file": "early-return-side_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 150,
+      "view": "oblique_whole_body",
+      "file": "early-return-oblique_whole_body.png",
+      "pre_post_render_skin_delta_m": 0
+    }
+  ],
+  "witness": [
+    {
+      "envelope": 0.0,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 0,
+      "root_z_m": 0.11776171684265137,
+      "floor_min_z_m": 0.0009970664978027344,
+      "pelvis_min_z_m": 0.0009970664978027344,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999961979687214,
+        "Left_hand": 0.04945772886276245,
+        "Right_foot": 0.0009998866589739919,
+        "Right_hand": 0.049441516399383545
+      }
+    },
+    {
+      "envelope": 4.5146604938271606e-05,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 1,
+      "root_z_m": 0.1177618956565857,
+      "floor_min_z_m": 0.000996708869934082,
+      "pelvis_min_z_m": 0.000996708869934082,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001275222748518,
+        "Left_hand": 0.04952836036682129,
+        "Right_foot": 0.0009999452158808708,
+        "Right_hand": 0.04951143264770508
+      }
+    },
+    {
+      "envelope": 0.00035209876543209874,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 2,
+      "root_z_m": 0.11776559114456177,
+      "floor_min_z_m": 0.0009968876838684082,
+      "pelvis_min_z_m": 0.0009968876838684082,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999077301472425,
+        "Left_hand": 0.05000615119934082,
+        "Right_foot": 0.0009999071480706334,
+        "Right_hand": 0.049989402294158936
+      }
+    },
+    {
+      "envelope": 0.0011581250000000003,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 3,
+      "root_z_m": 0.1177747106552124,
+      "floor_min_z_m": 0.0009967684745788574,
+      "pelvis_min_z_m": 0.0009967684745788574,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001795599237084,
+        "Left_hand": 0.05125844478607178,
+        "Right_foot": 0.00099999422673136,
+        "Right_hand": 0.05124211311340332
+      }
+    },
+    {
+      "envelope": 0.002674567901234568,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 4,
+      "root_z_m": 0.11779223442077637,
+      "floor_min_z_m": 0.0009963512420654297,
+      "pelvis_min_z_m": 0.0009963512420654297,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001194896176457,
+        "Left_hand": 0.05361771583557129,
+        "Right_foot": 0.0009999460307881236,
+        "Right_hand": 0.0536007285118103
+      }
+    },
+    {
+      "envelope": 0.005087770061728394,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 5,
+      "root_z_m": 0.11781995058059692,
+      "floor_min_z_m": 0.0009958744049072266,
+      "pelvis_min_z_m": 0.0009958744049072266,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999944400973618,
+        "Left_hand": 0.0573725700378418,
+        "Right_foot": 0.0009999730391427875,
+        "Right_hand": 0.0573543906211853
+      }
+    },
+    {
+      "envelope": 0.008560000000000003,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 6,
+      "root_z_m": 0.11785988569259644,
+      "floor_min_z_m": 0.000995635986328125,
+      "pelvis_min_z_m": 0.000995635986328125,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999093599617481,
+        "Left_hand": 0.06277531385421753,
+        "Right_foot": 0.0009999843314290047,
+        "Right_hand": 0.06275707483291626
+      }
+    },
+    {
+      "envelope": 0.013230378086419754,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 7,
+      "root_z_m": 0.11791317224502564,
+      "floor_min_z_m": 0.0009943246841430664,
+      "pelvis_min_z_m": 0.0009943246841430664,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000004238449037,
+        "Left_hand": 0.0700453519821167,
+        "Right_foot": 0.000999939045868814,
+        "Right_hand": 0.0700257420539856
+      }
+    },
+    {
+      "envelope": 0.019215802469135804,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 8,
+      "root_z_m": 0.11798183679580689,
+      "floor_min_z_m": 0.0009932518005371094,
+      "pelvis_min_z_m": 0.0009932518005371094,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000355541706085,
+        "Left_hand": 0.07936692237854004,
+        "Right_foot": 0.0010000165784731507,
+        "Right_hand": 0.07934588193893433
+      }
+    },
+    {
+      "envelope": 0.026611875,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 9,
+      "root_z_m": 0.11806689262390137,
+      "floor_min_z_m": 0.000992119312286377,
+      "pelvis_min_z_m": 0.000992119312286377,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999492904171348,
+        "Left_hand": 0.09089022874832153,
+        "Right_foot": 0.0009998916648328304,
+        "Right_hand": 0.0908670425415039
+      }
+    },
+    {
+      "envelope": 0.035493827160493825,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 10,
+      "root_z_m": 0.11816851854324341,
+      "floor_min_z_m": 0.0009906291961669922,
+      "pelvis_min_z_m": 0.0009906291961669922,
+      "patch_min_z_m": {
+        "Left_foot": 0.00100004393607378,
+        "Left_hand": 0.10473376512527466,
+        "Right_foot": 0.0009999105241149664,
+        "Right_hand": 0.10470843315124512
+      }
+    },
+    {
+      "envelope": 0.04591744598765431,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 11,
+      "root_z_m": 0.11828784704208374,
+      "floor_min_z_m": 0.0009891390800476074,
+      "pelvis_min_z_m": 0.0009891390800476074,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000899201259017,
+        "Left_hand": 0.1209833025932312,
+        "Right_foot": 0.0010000992333516479,
+        "Right_hand": 0.12095636129379272
+      }
+    },
+    {
+      "envelope": 0.05792000000000001,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 12,
+      "root_z_m": 0.11842493772506714,
+      "floor_min_z_m": 0.0009868144989013672,
+      "pelvis_min_z_m": 0.0009868144989013672,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000541806221008,
+        "Left_hand": 0.13969635963439941,
+        "Right_foot": 0.0009997524321079254,
+        "Right_hand": 0.13966578245162964
+      }
+    },
+    {
+      "envelope": 0.0715211651234568,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 13,
+      "root_z_m": 0.11858044624328613,
+      "floor_min_z_m": 0.0009848475456237793,
+      "pelvis_min_z_m": 0.0009848475456237793,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001064511016011,
+        "Left_hand": 0.16089487075805664,
+        "Right_foot": 0.0010000606998801231,
+        "Right_hand": 0.16086119413375854
+      }
+    },
+    {
+      "envelope": 0.08672395061728395,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 14,
+      "root_z_m": 0.1187539553642273,
+      "floor_min_z_m": 0.000982820987701416,
+      "pelvis_min_z_m": 0.000982820987701416,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000229618512094,
+        "Left_hand": 0.18457138538360596,
+        "Right_foot": 0.0009999122703447938,
+        "Right_hand": 0.18453389406204224
+      }
+    },
+    {
+      "envelope": 0.103515625,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 15,
+      "root_z_m": 0.11894498825073242,
+      "floor_min_z_m": 0.000980079174041748,
+      "pelvis_min_z_m": 0.000980079174041748,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999005123972893,
+        "Left_hand": 0.21068602800369263,
+        "Right_foot": 0.001000015763565898,
+        "Right_hand": 0.21064406633377075
+      }
+    },
+    {
+      "envelope": 0.12186864197530864,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 16,
+      "root_z_m": 0.11915354490280151,
+      "floor_min_z_m": 0.0009775757789611816,
+      "pelvis_min_z_m": 0.0009775757789611816,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001437040045857,
+        "Left_hand": 0.23916512727737427,
+        "Right_foot": 0.0010001686168834567,
+        "Right_hand": 0.23911958932876587
+      }
+    },
+    {
+      "envelope": 0.14174156635802468,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 17,
+      "root_z_m": 0.11937908887863159,
+      "floor_min_z_m": 0.0009747743606567383,
+      "pelvis_min_z_m": 0.0009747743606567383,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000065472908318,
+        "Left_hand": 0.26990532875061035,
+        "Right_foot": 0.0009999971371144056,
+        "Right_hand": 0.26985543966293335
+      }
+    },
+    {
+      "envelope": 0.16308000000000003,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 18,
+      "root_z_m": 0.11962066650390625,
+      "floor_min_z_m": 0.0009720325469970703,
+      "pelvis_min_z_m": 0.0009720325469970703,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999070316553116,
+        "Left_hand": 0.30277013778686523,
+        "Right_foot": 0.000999986194074154,
+        "Right_hand": 0.302714467048645
+      }
+    },
+    {
+      "envelope": 0.18581750771604935,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 19,
+      "root_z_m": 0.11987750291824341,
+      "floor_min_z_m": 0.000969231128692627,
+      "pelvis_min_z_m": 0.000969231128692627,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999286849051714,
+        "Left_hand": 0.3375888466835022,
+        "Right_foot": 0.0009999286849051714,
+        "Right_hand": 0.33752816915512085
+      }
+    },
+    {
+      "envelope": 0.20987654320987653,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 20,
+      "root_z_m": 0.12014858484268189,
+      "floor_min_z_m": 0.0009664297103881836,
+      "pelvis_min_z_m": 0.0009664297103881836,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000544134527445,
+        "Left_hand": 0.37416335940361023,
+        "Right_foot": 0.0010000794427469373,
+        "Right_hand": 0.37409722805023193
+      }
+    },
+    {
+      "envelope": 0.23516937499999996,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 21,
+      "root_z_m": 0.12043295860290527,
+      "floor_min_z_m": 0.000964045524597168,
+      "pelvis_min_z_m": 0.000964045524597168,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000391630455852,
+        "Left_hand": 0.41226476430892944,
+        "Right_foot": 0.0009998416062444448,
+        "Right_hand": 0.412193238735199
+      }
+    },
+    {
+      "envelope": 0.26159901234567895,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 22,
+      "root_z_m": 0.12072895526885986,
+      "floor_min_z_m": 0.0009614229202270508,
+      "pelvis_min_z_m": 0.0009614229202270508,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000139009207487,
+        "Left_hand": 0.4516391158103943,
+        "Right_foot": 0.0010000427719205618,
+        "Right_hand": 0.4515618085861206
+      }
+    },
+    {
+      "envelope": 0.2890601311728396,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 23,
+      "root_z_m": 0.1210359787940979,
+      "floor_min_z_m": 0.0009590983390808105,
+      "pelvis_min_z_m": 0.0009590983390808105,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000000862404704,
+        "Left_hand": 0.4910435676574707,
+        "Right_foot": 0.000999903422780335,
+        "Right_hand": 0.4909974932670593
+      }
+    },
+    {
+      "envelope": 0.31744000000000006,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 24,
+      "root_z_m": 0.1213523006439209,
+      "floor_min_z_m": 0.0009570717811584473,
+      "pelvis_min_z_m": 0.0009570717811584473,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000461479648948,
+        "Left_hand": 0.529508113861084,
+        "Right_foot": 0.0010000132024288177,
+        "Right_hand": 0.5294612646102905
+      }
+    },
+    {
+      "envelope": 0.34661940586419754,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 25,
+      "root_z_m": 0.12167607307434082,
+      "floor_min_z_m": 0.0009549260139465332,
+      "pelvis_min_z_m": 0.0009549260139465332,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009998682653531432,
+        "Left_hand": 0.5682975053787231,
+        "Right_foot": 0.0009998653549700975,
+        "Right_hand": 0.5682498216629028
+      }
+    },
+    {
+      "envelope": 0.3764735802469136,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 26,
+      "root_z_m": 0.12200652122497559,
+      "floor_min_z_m": 0.0009534358978271484,
+      "pelvis_min_z_m": 0.0009534358978271484,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001563932746649,
+        "Left_hand": 0.6071149110794067,
+        "Right_foot": 0.0010000198381021619,
+        "Right_hand": 0.6070662140846252
+      }
+    },
+    {
+      "envelope": 0.40687312500000006,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 27,
+      "root_z_m": 0.12234173774719238,
+      "floor_min_z_m": 0.0009521842002868652,
+      "pelvis_min_z_m": 0.0009521842002868652,
+      "patch_min_z_m": {
+        "Left_foot": 0.00100016500800848,
+        "Left_hand": 0.6431469321250916,
+        "Right_foot": 0.0010000532492995262,
+        "Right_hand": 0.6432607769966125
+      }
+    },
+    {
+      "envelope": 0.437684938271605,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 28,
+      "root_z_m": 0.12268041133880615,
+      "floor_min_z_m": 0.0009514689445495605,
+      "pelvis_min_z_m": 0.0009514689445495605,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000424226745963,
+        "Left_hand": 0.6779168248176575,
+        "Right_foot": 0.0009999304311349988,
+        "Right_hand": 0.6780238747596741
+      }
+    },
+    {
+      "envelope": 0.4687731404320987,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 29,
+      "root_z_m": 0.12302057504653931,
+      "floor_min_z_m": 0.0009504556655883789,
+      "pelvis_min_z_m": 0.0009504556655883789,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002406779676676,
+        "Left_hand": 0.7118152379989624,
+        "Right_foot": 0.0010002540657296777,
+        "Right_hand": 0.7119147777557373
+      }
+    },
+    {
+      "envelope": 0.5,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 30,
+      "root_z_m": 0.12336079835891724,
+      "floor_min_z_m": 0.0009500980377197266,
+      "pelvis_min_z_m": 0.0009500980377197266,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999917820096016,
+        "Left_hand": 0.744598925113678,
+        "Right_foot": 0.0010001561604440212,
+        "Right_hand": 0.7446900010108948
+      }
+    },
+    {
+      "envelope": 0.5312268595679013,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 31,
+      "root_z_m": 0.12369976997375488,
+      "floor_min_z_m": 0.0009500384330749512,
+      "pelvis_min_z_m": 0.0009500384330749512,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001228656619787,
+        "Left_hand": 0.776045560836792,
+        "Right_foot": 0.0010001325281336904,
+        "Right_hand": 0.7761285305023193
+      }
+    },
+    {
+      "envelope": 0.562315061728395,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 32,
+      "root_z_m": 0.12403599977493286,
+      "floor_min_z_m": 0.0009500384330749512,
+      "pelvis_min_z_m": 0.0009500384330749512,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999940326437354,
+        "Left_hand": 0.8059528470039368,
+        "Right_foot": 0.0009999106405302882,
+        "Right_hand": 0.8060067296028137
+      }
+    },
+    {
+      "envelope": 0.593126875,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 33,
+      "root_z_m": 0.12436787843704224,
+      "floor_min_z_m": 0.000950932502746582,
+      "pelvis_min_z_m": 0.000950932502746582,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001134360209107,
+        "Left_hand": 0.8341579437255859,
+        "Right_foot": 0.0010002111084759235,
+        "Right_hand": 0.8341659307479858
+      }
+    },
+    {
+      "envelope": 0.6235264197530863,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 34,
+      "root_z_m": 0.12469379663467407,
+      "floor_min_z_m": 0.0009518265724182129,
+      "pelvis_min_z_m": 0.0009518265724182129,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000420734286308,
+        "Left_hand": 0.8605247735977173,
+        "Right_foot": 0.0010000178590416908,
+        "Right_hand": 0.8604907393455505
+      }
+    },
+    {
+      "envelope": 0.6533805941358025,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 35,
+      "root_z_m": 0.12501262187957762,
+      "floor_min_z_m": 0.0009529590606689453,
+      "pelvis_min_z_m": 0.0009529590606689453,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000606998801231,
+        "Left_hand": 0.884914755821228,
+        "Right_foot": 0.001000251853838563,
+        "Right_hand": 0.8848825693130493
+      }
+    },
+    {
+      "envelope": 0.6825600000000001,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 36,
+      "root_z_m": 0.1253229236602783,
+      "floor_min_z_m": 0.0009543299674987793,
+      "pelvis_min_z_m": 0.0009543299674987793,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999941103160381,
+        "Left_hand": 0.9073076844215393,
+        "Right_foot": 0.0010000952752307057,
+        "Right_hand": 0.9072776436805725
+      }
+    },
+    {
+      "envelope": 0.7109398688271605,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 37,
+      "root_z_m": 0.1256235098838806,
+      "floor_min_z_m": 0.0009559392929077148,
+      "pelvis_min_z_m": 0.0009559392929077148,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000377660617232,
+        "Left_hand": 0.9276794195175171,
+        "Right_foot": 0.0009999832836911082,
+        "Right_hand": 0.9276511073112488
+      }
+    },
+    {
+      "envelope": 0.738400987654321,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 38,
+      "root_z_m": 0.12591312885284422,
+      "floor_min_z_m": 0.0009579658508300781,
+      "pelvis_min_z_m": 0.0009579658508300781,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999859612435102,
+        "Left_hand": 0.9460345506668091,
+        "Right_foot": 0.0010001190239563584,
+        "Right_hand": 0.9460077285766602
+      }
+    },
+    {
+      "envelope": 0.7648306250000002,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 39,
+      "root_z_m": 0.12619070768356322,
+      "floor_min_z_m": 0.0009598135948181152,
+      "pelvis_min_z_m": 0.0009598135948181152,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000154297798872,
+        "Left_hand": 0.9624152183532715,
+        "Right_foot": 0.0010001063346862793,
+        "Right_hand": 0.9623900055885315
+      }
+    },
+    {
+      "envelope": 0.7901234567901235,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 40,
+      "root_z_m": 0.12645565032958983,
+      "floor_min_z_m": 0.0009620785713195801,
+      "pelvis_min_z_m": 0.0009620785713195801,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000049291178584,
+        "Left_hand": 0.976885974407196,
+        "Right_foot": 0.0010000728070735931,
+        "Right_hand": 0.9768628478050232
+      }
+    },
+    {
+      "envelope": 0.8141824922839505,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 41,
+      "root_z_m": 0.1267061686515808,
+      "floor_min_z_m": 0.0009639859199523926,
+      "pelvis_min_z_m": 0.0009639859199523926,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000577894970775,
+        "Left_hand": 0.989539384841919,
+        "Right_foot": 0.0010000995825976133,
+        "Right_hand": 0.9895181655883789
+      }
+    },
+    {
+      "envelope": 0.8369199999999999,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 42,
+      "root_z_m": 0.1269423222541809,
+      "floor_min_z_m": 0.0009663701057434082,
+      "pelvis_min_z_m": 0.0009663701057434082,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000679176300764,
+        "Left_hand": 1.000488519668579,
+        "Right_foot": 0.0010000934125855565,
+        "Right_hand": 1.0004688501358032
+      }
+    },
+    {
+      "envelope": 0.8582584336419755,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 43,
+      "root_z_m": 0.12716333627700804,
+      "floor_min_z_m": 0.00096893310546875,
+      "pelvis_min_z_m": 0.00096893310546875,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002092458307743,
+        "Left_hand": 1.0098602771759033,
+        "Right_foot": 0.00100018794182688,
+        "Right_hand": 1.0098419189453125
+      }
+    },
+    {
+      "envelope": 0.8781313580246911,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 44,
+      "root_z_m": 0.1273683166503906,
+      "floor_min_z_m": 0.0009710192680358887,
+      "pelvis_min_z_m": 0.0009710192680358887,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000737383961678,
+        "Left_hand": 1.0177487134933472,
+        "Right_foot": 0.0010000256588682532,
+        "Right_hand": 1.017749547958374
+      }
+    },
+    {
+      "envelope": 0.896484375,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 45,
+      "root_z_m": 0.1275567865371704,
+      "floor_min_z_m": 0.0009731650352478027,
+      "pelvis_min_z_m": 0.0009731650352478027,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999723406508565,
+        "Left_hand": 1.0242985486984253,
+        "Right_foot": 0.0010002030758187175,
+        "Right_hand": 1.02430260181427
+      }
+    },
+    {
+      "envelope": 0.9132760493827164,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 46,
+      "root_z_m": 0.12772904396057128,
+      "floor_min_z_m": 0.0009753108024597168,
+      "pelvis_min_z_m": 0.0009753108024597168,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999721078202128,
+        "Left_hand": 1.0297099351882935,
+        "Right_foot": 0.001000010292045772,
+        "Right_hand": 1.0297164916992188
+      }
+    },
+    {
+      "envelope": 0.9284788348765431,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 47,
+      "root_z_m": 0.12788467168807982,
+      "floor_min_z_m": 0.0009774565696716309,
+      "pelvis_min_z_m": 0.0009774565696716309,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000316464342177,
+        "Left_hand": 1.0340663194656372,
+        "Right_foot": 0.0010002445196732879,
+        "Right_hand": 1.0340818166732788
+      }
+    },
+    {
+      "envelope": 0.9420800000000001,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 48,
+      "root_z_m": 0.1280234909057617,
+      "floor_min_z_m": 0.000979304313659668,
+      "pelvis_min_z_m": 0.000979304313659668,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999998146668077,
+        "Left_hand": 1.0375295877456665,
+        "Right_foot": 0.0009999913163483143,
+        "Right_hand": 1.0375440120697021
+      }
+    },
+    {
+      "envelope": 0.9540825540123458,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 49,
+      "root_z_m": 0.1281455612182617,
+      "floor_min_z_m": 0.0009805560111999512,
+      "pelvis_min_z_m": 0.0009805560111999512,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999944595620036,
+        "Left_hand": 1.0402170419692993,
+        "Right_foot": 0.0009999749017879367,
+        "Right_hand": 1.0402469635009766
+      }
+    },
+    {
+      "envelope": 0.964506172839506,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 50,
+      "root_z_m": 0.12825171709060668,
+      "floor_min_z_m": 0.0009822249412536621,
+      "pelvis_min_z_m": 0.0009822249412536621,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002761846408248,
+        "Left_hand": 1.0422911643981934,
+        "Right_foot": 0.0010001467308029532,
+        "Right_hand": 1.0423200130462646
+      }
+    },
+    {
+      "envelope": 0.9733881249999993,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 51,
+      "root_z_m": 0.12834160089492797,
+      "floor_min_z_m": 0.000983595848083496,
+      "pelvis_min_z_m": 0.000983595848083496,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001404443755746,
+        "Left_hand": 1.0438460111618042,
+        "Right_foot": 0.0010001661721616983,
+        "Right_hand": 1.0438531637191772
+      }
+    },
+    {
+      "envelope": 0.9807841975308639,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 52,
+      "root_z_m": 0.12841652393341063,
+      "floor_min_z_m": 0.0009847283363342285,
+      "pelvis_min_z_m": 0.0009847283363342285,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999971991404891,
+        "Left_hand": 1.0450034141540527,
+        "Right_foot": 0.001000103889964521,
+        "Right_hand": 1.0450077056884766
+      }
+    },
+    {
+      "envelope": 0.9867696219135813,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 53,
+      "root_z_m": 0.12847726106643675,
+      "floor_min_z_m": 0.0009855031967163086,
+      "pelvis_min_z_m": 0.0009855031967163086,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999947777017951,
+        "Left_hand": 1.0458613634109497,
+        "Right_foot": 0.0010000141337513924,
+        "Right_hand": 1.0458638668060303
+      }
+    },
+    {
+      "envelope": 0.9914399999999998,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 54,
+      "root_z_m": 0.12852446794509886,
+      "floor_min_z_m": 0.000986337661743164,
+      "pelvis_min_z_m": 0.000986337661743164,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000370675697923,
+        "Left_hand": 1.04647958278656,
+        "Right_foot": 0.0009999917820096016,
+        "Right_hand": 1.0464800596237183
+      }
+    },
+    {
+      "envelope": 0.9949122299382724,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 55,
+      "root_z_m": 0.1285595154762268,
+      "floor_min_z_m": 0.0009867548942565918,
+      "pelvis_min_z_m": 0.0009867548942565918,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001477785408497,
+        "Left_hand": 1.0469117164611816,
+        "Right_foot": 0.0010001069167628884,
+        "Right_hand": 1.0469117164611816
+      }
+    },
+    {
+      "envelope": 0.9973254320987655,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 56,
+      "root_z_m": 0.12858383417129515,
+      "floor_min_z_m": 0.000987231731414795,
+      "pelvis_min_z_m": 0.000987231731414795,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000126707367599,
+        "Left_hand": 1.047197937965393,
+        "Right_foot": 0.0009999716421589255,
+        "Right_hand": 1.047196626663208
+      }
+    },
+    {
+      "envelope": 0.9988418749999991,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 57,
+      "root_z_m": 0.12859927177429198,
+      "floor_min_z_m": 0.0009875893592834473,
+      "pelvis_min_z_m": 0.0009875893592834473,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002835188061,
+        "Left_hand": 1.0473545789718628,
+        "Right_foot": 0.0009999634930863976,
+        "Right_hand": 1.0473692417144775
+      }
+    },
+    {
+      "envelope": 0.9996479012345685,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 58,
+      "root_z_m": 0.12860725879669188,
+      "floor_min_z_m": 0.0009873509407043457,
+      "pelvis_min_z_m": 0.0009873509407043457,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000161748379469,
+        "Left_hand": 1.0474090576171875,
+        "Right_foot": 0.0010001308983191848,
+        "Right_hand": 1.0474591255187988
+      }
+    },
+    {
+      "envelope": 0.9999548533950608,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 59,
+      "root_z_m": 0.12861029863357543,
+      "floor_min_z_m": 0.0009872913360595703,
+      "pelvis_min_z_m": 0.0009872913360595703,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000076998025179,
+        "Left_hand": 1.0474296808242798,
+        "Right_foot": 0.0010001246118918061,
+        "Right_hand": 1.0474928617477417
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 60,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 61,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 62,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 63,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 64,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 65,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 66,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 67,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 68,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 69,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 70,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 71,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 72,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 73,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 74,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 75,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 76,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 77,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 78,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 79,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 80,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 81,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 82,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 83,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Tall pause",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 84,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 1.0,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 85,
+      "root_z_m": 0.1286108350753784,
+      "floor_min_z_m": 0.0009874701499938965,
+      "pelvis_min_z_m": 0.0009874701499938965,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999934118241072,
+        "Left_hand": 1.0474324226379395,
+        "Right_foot": 0.001000179909169674,
+        "Right_hand": 1.0474976301193237
+      }
+    },
+    {
+      "envelope": 0.9999548533950617,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 86,
+      "root_z_m": 0.12861029863357543,
+      "floor_min_z_m": 0.0009872913360595703,
+      "pelvis_min_z_m": 0.0009872913360595703,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000076998025179,
+        "Left_hand": 1.0474296808242798,
+        "Right_foot": 0.0010001246118918061,
+        "Right_hand": 1.0474928617477417
+      }
+    },
+    {
+      "envelope": 0.9996479012345679,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 87,
+      "root_z_m": 0.12860725879669188,
+      "floor_min_z_m": 0.0009873509407043457,
+      "pelvis_min_z_m": 0.0009873509407043457,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000161748379469,
+        "Left_hand": 1.0474090576171875,
+        "Right_foot": 0.0010001308983191848,
+        "Right_hand": 1.0474591255187988
+      }
+    },
+    {
+      "envelope": 0.998841875,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 88,
+      "root_z_m": 0.12859927177429198,
+      "floor_min_z_m": 0.0009875893592834473,
+      "pelvis_min_z_m": 0.0009875893592834473,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002835188061,
+        "Left_hand": 1.0473545789718628,
+        "Right_foot": 0.0009999634930863976,
+        "Right_hand": 1.0473692417144775
+      }
+    },
+    {
+      "envelope": 0.9973254320987655,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 89,
+      "root_z_m": 0.12858383417129515,
+      "floor_min_z_m": 0.000987231731414795,
+      "pelvis_min_z_m": 0.000987231731414795,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000126707367599,
+        "Left_hand": 1.047197937965393,
+        "Right_foot": 0.0009999716421589255,
+        "Right_hand": 1.047196626663208
+      }
+    },
+    {
+      "envelope": 0.9949122299382716,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 90,
+      "root_z_m": 0.1285595154762268,
+      "floor_min_z_m": 0.0009867548942565918,
+      "pelvis_min_z_m": 0.0009867548942565918,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001477785408497,
+        "Left_hand": 1.0469117164611816,
+        "Right_foot": 0.0010001069167628884,
+        "Right_hand": 1.0469117164611816
+      }
+    },
+    {
+      "envelope": 0.99144,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 91,
+      "root_z_m": 0.12852446794509886,
+      "floor_min_z_m": 0.000986337661743164,
+      "pelvis_min_z_m": 0.000986337661743164,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000370675697923,
+        "Left_hand": 1.04647958278656,
+        "Right_foot": 0.0009999917820096016,
+        "Right_hand": 1.0464800596237183
+      }
+    },
+    {
+      "envelope": 0.9867696219135802,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 92,
+      "root_z_m": 0.12847726106643675,
+      "floor_min_z_m": 0.0009855031967163086,
+      "pelvis_min_z_m": 0.0009855031967163086,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999947777017951,
+        "Left_hand": 1.0458613634109497,
+        "Right_foot": 0.0010000141337513924,
+        "Right_hand": 1.0458638668060303
+      }
+    },
+    {
+      "envelope": 0.9807841975308642,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 93,
+      "root_z_m": 0.12841652393341063,
+      "floor_min_z_m": 0.0009847283363342285,
+      "pelvis_min_z_m": 0.0009847283363342285,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999971991404891,
+        "Left_hand": 1.0450034141540527,
+        "Right_foot": 0.001000103889964521,
+        "Right_hand": 1.0450077056884766
+      }
+    },
+    {
+      "envelope": 0.973388125,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 94,
+      "root_z_m": 0.12834160089492797,
+      "floor_min_z_m": 0.000983595848083496,
+      "pelvis_min_z_m": 0.000983595848083496,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001404443755746,
+        "Left_hand": 1.0438460111618042,
+        "Right_foot": 0.0010001661721616983,
+        "Right_hand": 1.0438531637191772
+      }
+    },
+    {
+      "envelope": 0.9645061728395061,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 95,
+      "root_z_m": 0.12825171709060668,
+      "floor_min_z_m": 0.0009822249412536621,
+      "pelvis_min_z_m": 0.0009822249412536621,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002761846408248,
+        "Left_hand": 1.0422911643981934,
+        "Right_foot": 0.0010001467308029532,
+        "Right_hand": 1.0423200130462646
+      }
+    },
+    {
+      "envelope": 0.9540825540123457,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 96,
+      "root_z_m": 0.1281455612182617,
+      "floor_min_z_m": 0.0009805560111999512,
+      "pelvis_min_z_m": 0.0009805560111999512,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999944595620036,
+        "Left_hand": 1.0402170419692993,
+        "Right_foot": 0.0009999749017879367,
+        "Right_hand": 1.0402469635009766
+      }
+    },
+    {
+      "envelope": 0.94208,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 97,
+      "root_z_m": 0.1280234909057617,
+      "floor_min_z_m": 0.000979304313659668,
+      "pelvis_min_z_m": 0.000979304313659668,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999998146668077,
+        "Left_hand": 1.0375295877456665,
+        "Right_foot": 0.0009999913163483143,
+        "Right_hand": 1.0375440120697021
+      }
+    },
+    {
+      "envelope": 0.9284788348765431,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 98,
+      "root_z_m": 0.12788467168807982,
+      "floor_min_z_m": 0.0009774565696716309,
+      "pelvis_min_z_m": 0.0009774565696716309,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000316464342177,
+        "Left_hand": 1.0340663194656372,
+        "Right_foot": 0.0010002445196732879,
+        "Right_hand": 1.0340818166732788
+      }
+    },
+    {
+      "envelope": 0.913276049382716,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 99,
+      "root_z_m": 0.12772904396057128,
+      "floor_min_z_m": 0.0009753108024597168,
+      "pelvis_min_z_m": 0.0009753108024597168,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999721078202128,
+        "Left_hand": 1.0297099351882935,
+        "Right_foot": 0.001000010292045772,
+        "Right_hand": 1.0297164916992188
+      }
+    },
+    {
+      "envelope": 0.896484375,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 100,
+      "root_z_m": 0.1275567865371704,
+      "floor_min_z_m": 0.0009731650352478027,
+      "pelvis_min_z_m": 0.0009731650352478027,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999723406508565,
+        "Left_hand": 1.0242985486984253,
+        "Right_foot": 0.0010002030758187175,
+        "Right_hand": 1.02430260181427
+      }
+    },
+    {
+      "envelope": 0.8781313580246913,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 101,
+      "root_z_m": 0.1273683166503906,
+      "floor_min_z_m": 0.0009710192680358887,
+      "pelvis_min_z_m": 0.0009710192680358887,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000737383961678,
+        "Left_hand": 1.0177487134933472,
+        "Right_foot": 0.0010000256588682532,
+        "Right_hand": 1.017749547958374
+      }
+    },
+    {
+      "envelope": 0.8582584336419753,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 102,
+      "root_z_m": 0.12716333627700804,
+      "floor_min_z_m": 0.00096893310546875,
+      "pelvis_min_z_m": 0.00096893310546875,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002092458307743,
+        "Left_hand": 1.0098602771759033,
+        "Right_foot": 0.00100018794182688,
+        "Right_hand": 1.0098419189453125
+      }
+    },
+    {
+      "envelope": 0.83692,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 103,
+      "root_z_m": 0.1269423222541809,
+      "floor_min_z_m": 0.0009663701057434082,
+      "pelvis_min_z_m": 0.0009663701057434082,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000679176300764,
+        "Left_hand": 1.000488519668579,
+        "Right_foot": 0.0010000934125855565,
+        "Right_hand": 1.0004688501358032
+      }
+    },
+    {
+      "envelope": 0.8141824922839507,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 104,
+      "root_z_m": 0.1267061686515808,
+      "floor_min_z_m": 0.0009639859199523926,
+      "pelvis_min_z_m": 0.0009639859199523926,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000577894970775,
+        "Left_hand": 0.989539384841919,
+        "Right_foot": 0.0010000995825976133,
+        "Right_hand": 0.9895181655883789
+      }
+    },
+    {
+      "envelope": 0.7901234567901234,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 105,
+      "root_z_m": 0.12645565032958983,
+      "floor_min_z_m": 0.0009620785713195801,
+      "pelvis_min_z_m": 0.0009620785713195801,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000049291178584,
+        "Left_hand": 0.976885974407196,
+        "Right_foot": 0.0010000728070735931,
+        "Right_hand": 0.9768628478050232
+      }
+    },
+    {
+      "envelope": 0.7648306250000001,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 106,
+      "root_z_m": 0.12619070768356322,
+      "floor_min_z_m": 0.0009598135948181152,
+      "pelvis_min_z_m": 0.0009598135948181152,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000154297798872,
+        "Left_hand": 0.9624152183532715,
+        "Right_foot": 0.0010001063346862793,
+        "Right_hand": 0.9623900055885315
+      }
+    },
+    {
+      "envelope": 0.738400987654321,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 107,
+      "root_z_m": 0.12591312885284422,
+      "floor_min_z_m": 0.0009579658508300781,
+      "pelvis_min_z_m": 0.0009579658508300781,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999859612435102,
+        "Left_hand": 0.9460345506668091,
+        "Right_foot": 0.0010001190239563584,
+        "Right_hand": 0.9460077285766602
+      }
+    },
+    {
+      "envelope": 0.7109398688271604,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 108,
+      "root_z_m": 0.1256235098838806,
+      "floor_min_z_m": 0.0009559392929077148,
+      "pelvis_min_z_m": 0.0009559392929077148,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000377660617232,
+        "Left_hand": 0.9276794195175171,
+        "Right_foot": 0.0009999832836911082,
+        "Right_hand": 0.9276511073112488
+      }
+    },
+    {
+      "envelope": 0.68256,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 109,
+      "root_z_m": 0.1253229236602783,
+      "floor_min_z_m": 0.0009543299674987793,
+      "pelvis_min_z_m": 0.0009543299674987793,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999941103160381,
+        "Left_hand": 0.9073076844215393,
+        "Right_foot": 0.0010000952752307057,
+        "Right_hand": 0.9072776436805725
+      }
+    },
+    {
+      "envelope": 0.6533805941358024,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 110,
+      "root_z_m": 0.12501262187957762,
+      "floor_min_z_m": 0.0009529590606689453,
+      "pelvis_min_z_m": 0.0009529590606689453,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000606998801231,
+        "Left_hand": 0.884914755821228,
+        "Right_foot": 0.001000251853838563,
+        "Right_hand": 0.8848825693130493
+      }
+    },
+    {
+      "envelope": 0.6235264197530864,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 111,
+      "root_z_m": 0.12469379663467407,
+      "floor_min_z_m": 0.0009518265724182129,
+      "pelvis_min_z_m": 0.0009518265724182129,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000420734286308,
+        "Left_hand": 0.8605247735977173,
+        "Right_foot": 0.0010000178590416908,
+        "Right_hand": 0.8604907393455505
+      }
+    },
+    {
+      "envelope": 0.5931268749999999,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 112,
+      "root_z_m": 0.12436787843704224,
+      "floor_min_z_m": 0.000950932502746582,
+      "pelvis_min_z_m": 0.000950932502746582,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001134360209107,
+        "Left_hand": 0.8341579437255859,
+        "Right_foot": 0.0010002111084759235,
+        "Right_hand": 0.8341659307479858
+      }
+    },
+    {
+      "envelope": 0.562315061728395,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 113,
+      "root_z_m": 0.12403599977493286,
+      "floor_min_z_m": 0.0009500384330749512,
+      "pelvis_min_z_m": 0.0009500384330749512,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999940326437354,
+        "Left_hand": 0.8059528470039368,
+        "Right_foot": 0.0009999106405302882,
+        "Right_hand": 0.8060067296028137
+      }
+    },
+    {
+      "envelope": 0.5312268595679013,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 114,
+      "root_z_m": 0.12369976997375488,
+      "floor_min_z_m": 0.0009500384330749512,
+      "pelvis_min_z_m": 0.0009500384330749512,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001228656619787,
+        "Left_hand": 0.776045560836792,
+        "Right_foot": 0.0010001325281336904,
+        "Right_hand": 0.7761285305023193
+      }
+    },
+    {
+      "envelope": 0.5,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 115,
+      "root_z_m": 0.12336079835891724,
+      "floor_min_z_m": 0.0009500980377197266,
+      "pelvis_min_z_m": 0.0009500980377197266,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999917820096016,
+        "Left_hand": 0.744598925113678,
+        "Right_foot": 0.0010001561604440212,
+        "Right_hand": 0.7446900010108948
+      }
+    },
+    {
+      "envelope": 0.4687731404320987,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 116,
+      "root_z_m": 0.12302057504653931,
+      "floor_min_z_m": 0.0009504556655883789,
+      "pelvis_min_z_m": 0.0009504556655883789,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010002406779676676,
+        "Left_hand": 0.7118152379989624,
+        "Right_foot": 0.0010002540657296777,
+        "Right_hand": 0.7119147777557373
+      }
+    },
+    {
+      "envelope": 0.43768493827160504,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 117,
+      "root_z_m": 0.12268041133880615,
+      "floor_min_z_m": 0.0009514689445495605,
+      "pelvis_min_z_m": 0.0009514689445495605,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000424226745963,
+        "Left_hand": 0.6779168248176575,
+        "Right_foot": 0.0009999304311349988,
+        "Right_hand": 0.6780238747596741
+      }
+    },
+    {
+      "envelope": 0.40687312499999995,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 118,
+      "root_z_m": 0.12234173774719238,
+      "floor_min_z_m": 0.0009521842002868652,
+      "pelvis_min_z_m": 0.0009521842002868652,
+      "patch_min_z_m": {
+        "Left_foot": 0.00100016500800848,
+        "Left_hand": 0.6431469321250916,
+        "Right_foot": 0.0010000532492995262,
+        "Right_hand": 0.6432607769966125
+      }
+    },
+    {
+      "envelope": 0.3764735802469137,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 119,
+      "root_z_m": 0.12200652122497559,
+      "floor_min_z_m": 0.0009534358978271484,
+      "pelvis_min_z_m": 0.0009534358978271484,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001563932746649,
+        "Left_hand": 0.6071149110794067,
+        "Right_foot": 0.0010000198381021619,
+        "Right_hand": 0.6070662140846252
+      }
+    },
+    {
+      "envelope": 0.3466194058641975,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 120,
+      "root_z_m": 0.12167607307434082,
+      "floor_min_z_m": 0.0009549260139465332,
+      "pelvis_min_z_m": 0.0009549260139465332,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009998682653531432,
+        "Left_hand": 0.5682975053787231,
+        "Right_foot": 0.0009998653549700975,
+        "Right_hand": 0.5682498216629028
+      }
+    },
+    {
+      "envelope": 0.31743999999999994,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 121,
+      "root_z_m": 0.1213523006439209,
+      "floor_min_z_m": 0.0009570717811584473,
+      "pelvis_min_z_m": 0.0009570717811584473,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000461479648948,
+        "Left_hand": 0.529508113861084,
+        "Right_foot": 0.0010000132024288177,
+        "Right_hand": 0.5294612646102905
+      }
+    },
+    {
+      "envelope": 0.28906013117283946,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 122,
+      "root_z_m": 0.1210359787940979,
+      "floor_min_z_m": 0.0009590983390808105,
+      "pelvis_min_z_m": 0.0009590983390808105,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000000862404704,
+        "Left_hand": 0.4910435676574707,
+        "Right_foot": 0.000999903422780335,
+        "Right_hand": 0.4909974932670593
+      }
+    },
+    {
+      "envelope": 0.26159901234567895,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 123,
+      "root_z_m": 0.12072895526885986,
+      "floor_min_z_m": 0.0009614229202270508,
+      "pelvis_min_z_m": 0.0009614229202270508,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000139009207487,
+        "Left_hand": 0.4516391158103943,
+        "Right_foot": 0.0010000427719205618,
+        "Right_hand": 0.4515618085861206
+      }
+    },
+    {
+      "envelope": 0.2351693749999998,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 124,
+      "root_z_m": 0.12043295860290527,
+      "floor_min_z_m": 0.000964045524597168,
+      "pelvis_min_z_m": 0.000964045524597168,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000391630455852,
+        "Left_hand": 0.41226476430892944,
+        "Right_foot": 0.0009998416062444448,
+        "Right_hand": 0.412193238735199
+      }
+    },
+    {
+      "envelope": 0.20987654320987648,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 125,
+      "root_z_m": 0.12014858484268189,
+      "floor_min_z_m": 0.0009664297103881836,
+      "pelvis_min_z_m": 0.0009664297103881836,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000544134527445,
+        "Left_hand": 0.37416335940361023,
+        "Right_foot": 0.0010000794427469373,
+        "Right_hand": 0.37409722805023193
+      }
+    },
+    {
+      "envelope": 0.18581750771604955,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 126,
+      "root_z_m": 0.11987750291824341,
+      "floor_min_z_m": 0.000969231128692627,
+      "pelvis_min_z_m": 0.000969231128692627,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999286849051714,
+        "Left_hand": 0.3375888466835022,
+        "Right_foot": 0.0009999286849051714,
+        "Right_hand": 0.33752816915512085
+      }
+    },
+    {
+      "envelope": 0.1630800000000001,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 127,
+      "root_z_m": 0.11962066650390625,
+      "floor_min_z_m": 0.0009720325469970703,
+      "pelvis_min_z_m": 0.0009720325469970703,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999070316553116,
+        "Left_hand": 0.30277013778686523,
+        "Right_foot": 0.000999986194074154,
+        "Right_hand": 0.302714467048645
+      }
+    },
+    {
+      "envelope": 0.14174156635802448,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 128,
+      "root_z_m": 0.11937908887863159,
+      "floor_min_z_m": 0.0009747743606567383,
+      "pelvis_min_z_m": 0.0009747743606567383,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000065472908318,
+        "Left_hand": 0.26990532875061035,
+        "Right_foot": 0.0009999971371144056,
+        "Right_hand": 0.26985543966293335
+      }
+    },
+    {
+      "envelope": 0.12186864197530889,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 129,
+      "root_z_m": 0.11915354490280151,
+      "floor_min_z_m": 0.0009775757789611816,
+      "pelvis_min_z_m": 0.0009775757789611816,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001437040045857,
+        "Left_hand": 0.23916512727737427,
+        "Right_foot": 0.0010001686168834567,
+        "Right_hand": 0.23911958932876587
+      }
+    },
+    {
+      "envelope": 0.103515625,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 130,
+      "root_z_m": 0.11894498825073242,
+      "floor_min_z_m": 0.000980079174041748,
+      "pelvis_min_z_m": 0.000980079174041748,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999005123972893,
+        "Left_hand": 0.21068602800369263,
+        "Right_foot": 0.001000015763565898,
+        "Right_hand": 0.21064406633377075
+      }
+    },
+    {
+      "envelope": 0.08672395061728355,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 131,
+      "root_z_m": 0.1187539553642273,
+      "floor_min_z_m": 0.000982820987701416,
+      "pelvis_min_z_m": 0.000982820987701416,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000229618512094,
+        "Left_hand": 0.18457138538360596,
+        "Right_foot": 0.0009999122703447938,
+        "Right_hand": 0.18453389406204224
+      }
+    },
+    {
+      "envelope": 0.07152116512345685,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 132,
+      "root_z_m": 0.11858044624328613,
+      "floor_min_z_m": 0.0009848475456237793,
+      "pelvis_min_z_m": 0.0009848475456237793,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001064511016011,
+        "Left_hand": 0.16089487075805664,
+        "Right_foot": 0.0010000606998801231,
+        "Right_hand": 0.16086119413375854
+      }
+    },
+    {
+      "envelope": 0.05791999999999986,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 133,
+      "root_z_m": 0.11842493772506714,
+      "floor_min_z_m": 0.0009868144989013672,
+      "pelvis_min_z_m": 0.0009868144989013672,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000541806221008,
+        "Left_hand": 0.13969635963439941,
+        "Right_foot": 0.0009997524321079254,
+        "Right_hand": 0.13966578245162964
+      }
+    },
+    {
+      "envelope": 0.04591744598765424,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 134,
+      "root_z_m": 0.11828784704208374,
+      "floor_min_z_m": 0.0009891390800476074,
+      "pelvis_min_z_m": 0.0009891390800476074,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000899201259017,
+        "Left_hand": 0.1209833025932312,
+        "Right_foot": 0.0010000992333516479,
+        "Right_hand": 0.12095636129379272
+      }
+    },
+    {
+      "envelope": 0.035493827160493985,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 135,
+      "root_z_m": 0.11816851854324341,
+      "floor_min_z_m": 0.0009906291961669922,
+      "pelvis_min_z_m": 0.0009906291961669922,
+      "patch_min_z_m": {
+        "Left_foot": 0.00100004393607378,
+        "Left_hand": 0.10473376512527466,
+        "Right_foot": 0.0009999105241149664,
+        "Right_hand": 0.10470843315124512
+      }
+    },
+    {
+      "envelope": 0.02661187500000073,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 136,
+      "root_z_m": 0.11806689262390137,
+      "floor_min_z_m": 0.000992119312286377,
+      "pelvis_min_z_m": 0.000992119312286377,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999492904171348,
+        "Left_hand": 0.09089022874832153,
+        "Right_foot": 0.0009998916648328304,
+        "Right_hand": 0.0908670425415039
+      }
+    },
+    {
+      "envelope": 0.019215802469136123,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 137,
+      "root_z_m": 0.11798183679580689,
+      "floor_min_z_m": 0.0009932518005371094,
+      "pelvis_min_z_m": 0.0009932518005371094,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010000355541706085,
+        "Left_hand": 0.07936692237854004,
+        "Right_foot": 0.0010000165784731507,
+        "Right_hand": 0.07934588193893433
+      }
+    },
+    {
+      "envelope": 0.013230378086418693,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 138,
+      "root_z_m": 0.11791317224502564,
+      "floor_min_z_m": 0.0009943246841430664,
+      "pelvis_min_z_m": 0.0009943246841430664,
+      "patch_min_z_m": {
+        "Left_foot": 0.001000004238449037,
+        "Left_hand": 0.0700453519821167,
+        "Right_foot": 0.000999939045868814,
+        "Right_hand": 0.0700257420539856
+      }
+    },
+    {
+      "envelope": 0.008560000000000234,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 139,
+      "root_z_m": 0.11785988569259644,
+      "floor_min_z_m": 0.000995635986328125,
+      "pelvis_min_z_m": 0.000995635986328125,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999093599617481,
+        "Left_hand": 0.06277531385421753,
+        "Right_foot": 0.0009999843314290047,
+        "Right_hand": 0.06275707483291626
+      }
+    },
+    {
+      "envelope": 0.005087770061727559,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 140,
+      "root_z_m": 0.11781995058059692,
+      "floor_min_z_m": 0.0009958744049072266,
+      "pelvis_min_z_m": 0.0009958744049072266,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999944400973618,
+        "Left_hand": 0.0573725700378418,
+        "Right_foot": 0.0009999730391427875,
+        "Right_hand": 0.0573543906211853
+      }
+    },
+    {
+      "envelope": 0.002674567901234548,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 141,
+      "root_z_m": 0.11779223442077637,
+      "floor_min_z_m": 0.0009963512420654297,
+      "pelvis_min_z_m": 0.0009963512420654297,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001194896176457,
+        "Left_hand": 0.05361771583557129,
+        "Right_foot": 0.0009999460307881236,
+        "Right_hand": 0.0536007285118103
+      }
+    },
+    {
+      "envelope": 0.001158125000000898,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 142,
+      "root_z_m": 0.1177747106552124,
+      "floor_min_z_m": 0.0009967684745788574,
+      "pelvis_min_z_m": 0.0009967684745788574,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001795599237084,
+        "Left_hand": 0.05125844478607178,
+        "Right_foot": 0.00099999422673136,
+        "Right_hand": 0.05124211311340332
+      }
+    },
+    {
+      "envelope": 0.00035209876543151886,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 143,
+      "root_z_m": 0.11776559114456177,
+      "floor_min_z_m": 0.0009968876838684082,
+      "pelvis_min_z_m": 0.0009968876838684082,
+      "patch_min_z_m": {
+        "Left_foot": 0.0009999077301472425,
+        "Left_hand": 0.05000615119934082,
+        "Right_foot": 0.0009999071480706334,
+        "Right_hand": 0.049989402294158936
+      }
+    },
+    {
+      "envelope": 4.514660493915024e-05,
+      "sweep": 0.0,
+      "phase": "Lower with control",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 144,
+      "root_z_m": 0.1177618956565857,
+      "floor_min_z_m": 0.000996708869934082,
+      "pelvis_min_z_m": 0.000996708869934082,
+      "patch_min_z_m": {
+        "Left_foot": 0.0010001275222748518,
+        "Left_hand": 0.04952836036682129,
+        "Right_foot": 0.0009999452158808708,
+        "Right_hand": 0.04951143264770508
+      }
+    },
+    {
+      "envelope": 0.0,
+      "sweep": 0.0,
+      "phase": "Supine",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 145,
+      "root_z_m": 0.11776171684265137,
+      "floor_min_z_m": 0.0009970664978027344,
+      "pelvis_min_z_m": 0.0009970664978027344,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999961979687214,
+        "Left_hand": 0.04945772886276245,
+        "Right_foot": 0.0009998866589739919,
+        "Right_hand": 0.049441516399383545
+      }
+    },
+    {
+      "envelope": 0.0,
+      "sweep": 0.0,
+      "phase": "Supine",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 146,
+      "root_z_m": 0.11776171684265137,
+      "floor_min_z_m": 0.0009970664978027344,
+      "pelvis_min_z_m": 0.0009970664978027344,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999961979687214,
+        "Left_hand": 0.04945772886276245,
+        "Right_foot": 0.0009998866589739919,
+        "Right_hand": 0.049441516399383545
+      }
+    },
+    {
+      "envelope": 0.0,
+      "sweep": 0.0,
+      "phase": "Supine",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 147,
+      "root_z_m": 0.11776171684265137,
+      "floor_min_z_m": 0.0009970664978027344,
+      "pelvis_min_z_m": 0.0009970664978027344,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999961979687214,
+        "Left_hand": 0.04945772886276245,
+        "Right_foot": 0.0009998866589739919,
+        "Right_hand": 0.049441516399383545
+      }
+    },
+    {
+      "envelope": 0.0,
+      "sweep": 0.0,
+      "phase": "Supine",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 148,
+      "root_z_m": 0.11776171684265137,
+      "floor_min_z_m": 0.0009970664978027344,
+      "pelvis_min_z_m": 0.0009970664978027344,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999961979687214,
+        "Left_hand": 0.04945772886276245,
+        "Right_foot": 0.0009998866589739919,
+        "Right_hand": 0.049441516399383545
+      }
+    },
+    {
+      "envelope": 0.0,
+      "sweep": 0.0,
+      "phase": "Supine",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 149,
+      "root_z_m": 0.11776171684265137,
+      "floor_min_z_m": 0.0009970664978027344,
+      "pelvis_min_z_m": 0.0009970664978027344,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999961979687214,
+        "Left_hand": 0.04945772886276245,
+        "Right_foot": 0.0009998866589739919,
+        "Right_hand": 0.049441516399383545
+      }
+    },
+    {
+      "envelope": 0.0,
+      "sweep": 0.0,
+      "phase": "Curl upright",
+      "reach_errors_m": {
+        "Left_ankle": 0.0,
+        "Left_wrist": 0.0,
+        "Right_ankle": 0.0,
+        "Right_wrist": 0.0
+      },
+      "frame": 150,
+      "root_z_m": 0.11776171684265137,
+      "floor_min_z_m": 0.0009970664978027344,
+      "pelvis_min_z_m": 0.0009970664978027344,
+      "patch_min_z_m": {
+        "Left_foot": 0.000999961979687214,
+        "Left_hand": 0.04945772886276245,
+        "Right_foot": 0.0009998866589739919,
+        "Right_hand": 0.049441516399383545
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "1987": {
+    "reason": "The posterior contact view is retained; an anterior companion exposes the source-listed chest and deltoid stretch fields. Geometry, motion and target are unchanged. Final horizontal width fitting remains separate.",
+    "authored_camera_sha256": "354574d04124ea365efed8681b1266ed95e0381dc310e235b6df9e6ec92fe2b3",
+    "integrated_camera_sha256_before_width_fit": "27629a3d263ddc7c8c9b99be468d38782b7dd2c562b17a308afdaa1f8017b233",
+    "old_second": {
+      "label": "side_whole_body",
+      "position": [
+        5,
+        0.8,
+        2.1
+      ],
+      "target": [
+        0,
+        0.03,
+        0.98
+      ],
+      "scale": 2.2
+    },
+    "new_second": {
+      "label": "anterior_muscles_oblique",
+      "position": [
+        4,
+        -3,
+        2.1
+      ],
+      "target": [
+        0,
+        0.03,
+        0.98
+      ],
+      "scale": 2.2
+    },
+    "final_fitted_camera_sha256": "77f8499e1e97bbbd42750138dad11a673bad43375a464d4aa211e32f1e8005af"
+  },
+  "6121": {
+    "reason": "Retain motion profile and add posterior view to expose primary spine and glute stretch fields. Same camera target and unchanged model/motion; horizontal width fit is separate.",
+    "authored_camera_sha256": "379f3b984a2f9efc3801f110db1b2198af4a36ab9e421eeac403cb239c5118fd",
+    "integrated_camera_sha256_before_width_fit": "40546e394726745e965b00410586847880ff9a24e44e85de450e8e4f49b0eadb",
+    "old_second": {
+      "label": "Whole body oblique",
+      "position": [
+        3.3,
+        -4.5,
+        2
+      ],
+      "target": [
+        0,
+        -0.35,
+        0.4
+      ],
+      "scale": 2.05
+    },
+    "new_second": {
+      "label": "posterior_spine_oblique",
+      "position": [
+        -3.3,
+        4.5,
+        2
+      ],
+      "target": [
+        0,
+        -0.35,
+        0.4
+      ],
+      "scale": 2.05
+    },
+    "final_fitted_camera_sha256": "36234fb9c7ca7077897146a627738c4b754d7d842fbb1394f44ea67c463d2f37"
+  },
+  "width_fit": {
+    "receipt": "camera-fit.json",
+    "sha256": "fedc3e9e83ae2347f38221f99b4bf89dde03cd937a93fac4f37fbf58940feab3",
+    "scope": "Widths only;positions, targets and model/motion remain unchanged."
+  }
+}

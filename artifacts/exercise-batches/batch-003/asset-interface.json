@@ -1,0 +1,68 @@
+{
+  "coordinate_system": "Original Blender rig, meters, Z up/front -Y. Runtime converts [x,y,z] to [x,z,-y].",
+  "source_frames": "Native frames 1..151 map to runtime frames 0..150 at 30 fps (five seconds).",
+  "clip.json": {
+    "id": "<id>",
+    "action": "Exercise_<id>",
+    "duration": 5,
+    "duration_seconds": 5,
+    "frames": 150,
+    "fps": 30,
+    "primary": [
+      "<source target label>"
+    ],
+    "secondary": [
+      "<source secondary label>"
+    ],
+    "display_mode": "stretch or heat",
+    "highlight_sides": {},
+    "phases": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "Enter"
+      },
+      {
+        "start": 2,
+        "end": 3,
+        "label": "Hold"
+      },
+      {
+        "start": 3,
+        "end": 5,
+        "label": "Return"
+      }
+    ],
+    "interpretation": "Explicit authored staging choices, source limits and relevant display notes.",
+    "source_hold_recommendation_seconds": [
+      20,
+      30
+    ],
+    "skinning": "linear or dualQuaternion; omitted means linear"
+  },
+  "cameras.json": "Array of exactly2objects{label,position:[x,y,z],target:[x,y,z],scale}; orthographic horizontal world width, fit all phases with readable relevant muscles/contacts.",
+  "pose-samples.json": "Array of{id,frame,joints:{<bone-name>:[x,y,z]}}; frame is runtime frame0..150. Include all51bones at start, intermediates, hold and return.",
+  "runtime-surface-reference.json": {
+    "source_sha256": "SHA256of your source.blend",
+    "source_vertices": 10582,
+    "samples": [
+      {
+        "id": "<id>",
+        "frame": 0,
+        "global_floor_z": 0.0017,
+        "patches": {
+          "<authored_support_patch_name>": {
+            "indices": [
+              0
+            ],
+            "min_z": 0,
+            "max_z": 0
+          }
+        },
+        "floor_plane_z": 0
+      }
+    ]
+  },
+  "notes": "Interface examples are not literal measurements or patch indices. Record the measured actual deformed-skin minimum in global_floor_z and the separate support plane in floor_plane_z. Keep original 51-bone binding/Basis/rest/UV/source IDs. Declare each local POSITION/NORMAL corrective and its default/animated weight. Native Smooth/Multires previews are separate from the explicitly chosen runtime linear or DQ cage. 6033 has tuck/extend phases; 4348 is intentionally static and retains the source 15\u201330-second hold. Do not invent motion merely to satisfy a generic movement test.",
+  "dq-reference.json.gz": "For DQ assets only: {source_sha256,source_vertices:10582,samples:[{id,frame,positions:[[x,y,z],...]}]}; all original IDs in order, at frames 0/30/75/120/150 with only Armature enabled. Include current pose-corrective influences."
+}

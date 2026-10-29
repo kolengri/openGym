@@ -1,0 +1,129 @@
+{
+  "exercise_id": "3480",
+  "status": "frozen_root_accepted_user_review_candidate",
+  "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+  "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+  "shared_family_manifest": "../../standing-leg-family/curated-files.json",
+  "self_hash": "This manifest intentionally does not hash itself.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "7b46db3d682fbb1a1f476e2306c269f34e1ad240165912c08d15ffd5ca6fb8b3",
+      "bytes": 2776
+    },
+    {
+      "path": "delivery-report.json",
+      "sha256": "c6be0057b7b5c3f13724b634fdf56932c63becde056bfdff5255cf14db39e111",
+      "bytes": 4722
+    },
+    {
+      "path": "source.blend",
+      "sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+      "bytes": 14494969
+    },
+    {
+      "path": "motion.glb",
+      "sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+      "bytes": 1143612
+    },
+    {
+      "path": "clip.json",
+      "sha256": "44a87761b06057f4cf85abcbdbe86db16e81add1b86e5b84299db73c30e62b5c",
+      "bytes": 3857
+    },
+    {
+      "path": "cameras.json",
+      "sha256": "c9cf051230b1566b1c96e0d813d2d181680b136fbf35ed090652493e6264ff01",
+      "bytes": 358
+    },
+    {
+      "path": "authoring-context.json",
+      "sha256": "7036cd170becf8c2b7c0565e8fbebd6dbf41f3dc1bb82e845821872c2850f566",
+      "bytes": 60330
+    },
+    {
+      "path": "pose-samples.json",
+      "sha256": "a2493f0657793086640458e208c833e3d9052a876c48aca24b5b33c369e7cb59",
+      "bytes": 95631
+    },
+    {
+      "path": "runtime-surface-reference.json",
+      "sha256": "aa5ebceba09f5253efcd72b07619601d8707d52422002a420a39ea578df8dd00",
+      "bytes": 15102
+    },
+    {
+      "path": "linear-vertex-reference.json.gz",
+      "sha256": "a9edfca7078e1c4550730c2da210ce6df750620bbad4f80709a270ef5a0e8804",
+      "bytes": 2889747
+    },
+    {
+      "path": "topology-reference.json.gz",
+      "sha256": "f5e5641e7706643c5e06376e0c048ab94372200ff9ff466fb7678abf37501ef9",
+      "bytes": 114011
+    },
+    {
+      "path": "landmarks.json",
+      "sha256": "f03d4dd6905008cf4bbc079c90dee6a61e720a29318da8c26bc5d2d8d22cc01c",
+      "bytes": 80988
+    },
+    {
+      "path": "asset-qa.json",
+      "sha256": "6c06767cba1a7310461ccd6dfcd5b460815aef154c3dcf3ea4d5ade5b155c6ab",
+      "bytes": 4032
+    },
+    {
+      "path": "surface-contact-report.json",
+      "sha256": "6c29736497b43cc48e8c2131c0831e8b329f1bcdfa06c46f18b01d27b8cda4a5",
+      "bytes": 2008572
+    },
+    {
+      "path": "runtime-physics-report.json",
+      "sha256": "9a164c5590b76476212bf668e3b5b0fe55d97849c51a36ab7d3583c7198f2801",
+      "bytes": 2024366
+    },
+    {
+      "path": "export-parity-report.json",
+      "sha256": "47895d95ec3a4310710649cc7edcac3d1a50d6769ac1c1323a8188c74e8298f8",
+      "bytes": 3221
+    },
+    {
+      "path": "proof-manifest.json",
+      "sha256": "c9e83cec3fb9a1d0bea839c6d76ffa03ff69fb4fc5d251b63799f80d90454f7c",
+      "bytes": 3285
+    },
+    {
+      "path": "review-start-neutral.png",
+      "sha256": "dfc02c026266eddbc00fa79186ac9a4ff44e6db0b8566b81adf6f46ea121bd1c",
+      "bytes": 219200
+    },
+    {
+      "path": "review-deep-left-neutral.png",
+      "sha256": "a0acb87ee8db39016230591ad7539a05b3f28d68c25eb3f01659555b6b284420",
+      "bytes": 190557
+    },
+    {
+      "path": "review-deep-left-wire.png",
+      "sha256": "685aaf1971c2dce07918e31e25e483de1032559f38911b22d28cb88424eb37dc",
+      "bytes": 206739
+    },
+    {
+      "path": "review-deep-right-neutral.png",
+      "sha256": "7217bf2fac1211f09f5ab971eb1f6d9f4737f6604c7652d7025dfad1984d333c",
+      "bytes": 201352
+    },
+    {
+      "path": "review-return-neutral.png",
+      "sha256": "563a8c2c65a251a38de4c9479cb2848da1ea82942e0cedc386cef2d6d338338f",
+      "bytes": 219236
+    }
+  ],
+  "exclusions": [
+    "all historical early/causal/path/fingertip/relaxed/edge/joint trial stills",
+    "logs",
+    "backups",
+    "__pycache__",
+    "environments",
+    "runtime caches",
+    "unlisted files"
+  ]
+}

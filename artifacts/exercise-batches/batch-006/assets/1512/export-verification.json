@@ -1,0 +1,726 @@
+{
+  "ok": true,
+  "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+  "sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+  "bytes": 1170452,
+  "animations": [
+    "Exercise_1512"
+  ],
+  "duration_seconds": 5,
+  "bones": 51,
+  "original_vertex_ids": 10582,
+  "triangles": 21160,
+  "morph_position_targets": [
+    "LocalStart",
+    "LocalEntry",
+    "LocalHold"
+  ],
+  "morph_normal_targets": [
+    "LocalStart",
+    "LocalEntry",
+    "LocalHold"
+  ],
+  "maximum_basis_normal_vector_error": 0.00008187660755892303,
+  "maximum_target_normal_vector_errors": [
+    0.00008187660755892303,
+    0.00008447662658670609,
+    0.00008187660755892303
+  ],
+  "normal_scope": "Every GLTFLoader UV-split Basis/key NORMAL compared to independently calculated source rest normals. Three morphs before unit DQ rotation, which preserves this vector-error bound. Actual GPU raster appearance remains primary-owned.",
+  "maximum_full_dq_vertex_error_m": 0.000020969293280804236,
+  "maximum_joint_error_m": 9.138204044860782e-7,
+  "maximum_surface_error_m": 0.0000014629666762408428,
+  "maximum_morph_weight_error": 4.1777693138289607e-8,
+  "loop_skin_error_m": 3.5372075795867926e-7,
+  "samples": [
+    {
+      "frame": 0,
+      "joint_error_m": 6.573074226534784e-7,
+      "surface_error_m": 9.036670976066268e-7,
+      "morph_weights": [
+        1,
+        0,
+        0
+      ],
+      "floor_min_z": 0.0018990904662048447,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.003000517088524557,
+          "max_z": 0.013173317922844596,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Left": {
+          "min_z": 0.0051315606750244325,
+          "max_z": 0.0149607784769204,
+          "fraction_near_floor": 0.8333333333333334
+        },
+        "foot_Left": {
+          "min_z": 0.008528338788089451,
+          "max_z": 0.01482458696303289,
+          "fraction_near_floor": 0.53125
+        },
+        "palm_Right": {
+          "min_z": 0.003000006077666595,
+          "max_z": 0.01320083648787107,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.005090333854696122,
+          "max_z": 0.015048284258973366,
+          "fraction_near_floor": 0.8333333333333334
+        },
+        "foot_Right": {
+          "min_z": 0.008558927409135456,
+          "max_z": 0.01485502655666203,
+          "fraction_near_floor": 0.53125
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "joint_error_m": 5.670260188531951e-7,
+      "surface_error_m": 0.0000014629666762408428,
+      "morph_weights": [
+        0.38629451394081116,
+        0.6137055158615112,
+        0
+      ],
+      "floor_min_z": 0.0018991282833156209,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.2972840205802695,
+          "max_z": 0.31749324649108973,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.10318406038796413,
+          "max_z": 0.132176382713468,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.5466435704191442,
+          "max_z": 0.5620803863539949,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.003000053252260604,
+          "max_z": 0.013198097713111423,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0038412412280734165,
+          "max_z": 0.013842599322188232,
+          "fraction_near_floor": 0.8333333333333334
+        },
+        "foot_Right": {
+          "min_z": 0.007321641144959354,
+          "max_z": 0.013617738637583865,
+          "fraction_near_floor": 0.625
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "joint_error_m": 7.610848559748724e-7,
+      "surface_error_m": 0.0000010105409055643231,
+      "morph_weights": [
+        0,
+        0.44045509690562595,
+        0.5595449030943563
+      ],
+      "floor_min_z": 0.0007391656827575865,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.46879593833239097,
+          "max_z": 0.4982031865431481,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.4723246514966874,
+          "max_z": 0.4952583738705097,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8974978250789782,
+          "max_z": 0.9128136597395843,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.003000094262706976,
+          "max_z": 0.013194117557349783,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0020524940008815884,
+          "max_z": 0.012119476406152102,
+          "fraction_near_floor": 0.8333333333333334
+        },
+        "foot_Right": {
+          "min_z": 0.005550089961715465,
+          "max_z": 0.01184618728097031,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "joint_error_m": 7.968374545524591e-7,
+      "surface_error_m": 9.06062559330167e-7,
+      "morph_weights": [
+        0,
+        0.1901950240135193,
+        0.8098049759864807
+      ],
+      "floor_min_z": 0.0002979304910483982,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6643726724865866,
+          "max_z": 0.6963354639619013,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.5795692216914906,
+          "max_z": 0.5923509417457338,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8450955591959829,
+          "max_z": 0.8567500408249336,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.0030002123362378175,
+          "max_z": 0.01319322228980957,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0016068525894621377,
+          "max_z": 0.011690972441600694,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005108892894232275,
+          "max_z": 0.011404990789089908,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 39,
+      "joint_error_m": 8.042160172632229e-7,
+      "surface_error_m": 0.0000011181043285205777,
+      "morph_weights": [
+        0,
+        0.17391304507895886,
+        0.8260869400199012
+      ],
+      "floor_min_z": 0.0002695683585771935,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6837039684723292,
+          "max_z": 0.7155385444192169,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.5862929578160501,
+          "max_z": 0.5983293110722074,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8399564913241919,
+          "max_z": 0.8513695116142106,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.003000037079054274,
+          "max_z": 0.013192984123955864,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.001578161887802576,
+          "max_z": 0.011663403271629541,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005080516023235074,
+          "max_z": 0.011376614538276514,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 40,
+      "joint_error_m": 8.857386574675504e-7,
+      "surface_error_m": 9.25029160352782e-7,
+      "morph_weights": [
+        0,
+        0.17276752131643744,
+        0.8272324786835448
+      ],
+      "floor_min_z": 0.0002674681747523444,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6841930596488841,
+          "max_z": 0.7160273633386701,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.5867818980664451,
+          "max_z": 0.5988186174960057,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8404452677856182,
+          "max_z": 0.8518582879840619,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.0030000892311109473,
+          "max_z": 0.013193029814677959,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0015761533881076262,
+          "max_z": 0.011661466444883278,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005078365159098264,
+          "max_z": 0.01137446219063476,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "joint_error_m": 7.915540740431912e-7,
+      "surface_error_m": 9.478153444622751e-7,
+      "morph_weights": [
+        0,
+        0.13943465054035187,
+        0.8605653643608093
+      ],
+      "floor_min_z": 0.00020976937899469528,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6983544338458749,
+          "max_z": 0.7301809993040937,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.6009380212586846,
+          "max_z": 0.6129859616279623,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8545988055266622,
+          "max_z": 0.8660118251434114,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.002999945622477407,
+          "max_z": 0.013192770367124518,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.001517686427216336,
+          "max_z": 0.011605299900452087,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005020775579723649,
+          "max_z": 0.011316875134030138,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "joint_error_m": 8.986491982615096e-7,
+      "surface_error_m": 9.138698728362338e-7,
+      "morph_weights": [
+        0,
+        0,
+        1
+      ],
+      "floor_min_z": -0.000029705693655207588,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.7558448902675738,
+          "max_z": 0.7876407689345328,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.6583828474930646,
+          "max_z": 0.6704913239687162,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.9120586727259463,
+          "max_z": 0.9234716917913577,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.002999963862119759,
+          "max_z": 0.013192226056613854,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0012758426271545775,
+          "max_z": 0.011373017339134012,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.0047812469358751025,
+          "max_z": 0.01107734582211134,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "joint_error_m": 8.986491982615096e-7,
+      "surface_error_m": 9.138698728362338e-7,
+      "morph_weights": [
+        0,
+        0,
+        1
+      ],
+      "floor_min_z": -0.000029705693655207588,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.7558448902675738,
+          "max_z": 0.7876407689345328,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.6583828474930646,
+          "max_z": 0.6704913239687162,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.9120586727259463,
+          "max_z": 0.9234716917913577,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.002999963862119759,
+          "max_z": 0.013192226056613854,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0012758426271545775,
+          "max_z": 0.011373017339134012,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.0047812469358751025,
+          "max_z": 0.01107734582211134,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "joint_error_m": 9.138204044860782e-7,
+      "surface_error_m": 9.19261462621093e-7,
+      "morph_weights": [
+        0,
+        0,
+        1
+      ],
+      "floor_min_z": -0.000029703492647747964,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.7558449395192831,
+          "max_z": 0.7876408181635064,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.6583827078765825,
+          "max_z": 0.6704911667548288,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.9120586683746281,
+          "max_z": 0.9234716881547389,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.0030000385680954977,
+          "max_z": 0.013192312992586941,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0012758072752423466,
+          "max_z": 0.011372984387946539,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.004781268687648194,
+          "max_z": 0.01107736769217918,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 105,
+      "joint_error_m": 7.915540740431912e-7,
+      "surface_error_m": 9.478153444622751e-7,
+      "morph_weights": [
+        0,
+        0.13943465054035187,
+        0.8605653643608093
+      ],
+      "floor_min_z": 0.00020976937899469528,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6983544338458749,
+          "max_z": 0.7301809993040937,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.6009380212586846,
+          "max_z": 0.6129859616279623,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8545988055266622,
+          "max_z": 0.8660118251434114,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.002999945622477407,
+          "max_z": 0.013192770367124518,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.001517686427216336,
+          "max_z": 0.011605299900452087,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005020775579723649,
+          "max_z": 0.011316875134030138,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 111,
+      "joint_error_m": 8.042160172330342e-7,
+      "surface_error_m": 0.0000011181043285205777,
+      "morph_weights": [
+        0,
+        0.173913045078953,
+        0.8260869400199071
+      ],
+      "floor_min_z": 0.0002695683585771935,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6837039684723292,
+          "max_z": 0.7155385444192169,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.5862929578160501,
+          "max_z": 0.5983293110722074,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8399564913241919,
+          "max_z": 0.8513695116142106,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.003000037079054274,
+          "max_z": 0.013192984123955864,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.001578161887802576,
+          "max_z": 0.011663403271629541,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005080516023235074,
+          "max_z": 0.011376614538276514,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 115,
+      "joint_error_m": 6.060760596922737e-7,
+      "surface_error_m": 9.101642485975612e-7,
+      "morph_weights": [
+        0,
+        0.17391304671764374,
+        0.8260869383811951
+      ],
+      "floor_min_z": 0.00026957251901305046,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6923091685695938,
+          "max_z": 0.7241643129723966,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.5862929440748958,
+          "max_z": 0.5983292844256773,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8399565038428853,
+          "max_z": 0.8513695243142857,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.003000041844798851,
+          "max_z": 0.013192981465376397,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0015782150125442929,
+          "max_z": 0.01166344542767922,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005080509719807183,
+          "max_z": 0.011376608361243379,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 120,
+      "joint_error_m": 7.968374545524591e-7,
+      "surface_error_m": 9.06062559330167e-7,
+      "morph_weights": [
+        0,
+        0.1901950240135193,
+        0.8098049759864807
+      ],
+      "floor_min_z": 0.0002979304910483982,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.6643726724865866,
+          "max_z": 0.6963354639619013,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.5795692216914906,
+          "max_z": 0.5923509417457338,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.8450955591959829,
+          "max_z": 0.8567500408249336,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.0030002123362378175,
+          "max_z": 0.01319322228980957,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0016068525894621377,
+          "max_z": 0.011690972441600694,
+          "fraction_near_floor": 1
+        },
+        "foot_Right": {
+          "min_z": 0.005108892894232275,
+          "max_z": 0.011404990789089908,
+          "fraction_near_floor": 1
+        }
+      }
+    },
+    {
+      "frame": 135,
+      "joint_error_m": 5.670260188531951e-7,
+      "surface_error_m": 0.0000014629666762408428,
+      "morph_weights": [
+        0.38629451394081116,
+        0.6137055158615112,
+        0
+      ],
+      "floor_min_z": 0.0018991282833156209,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.2972840205802695,
+          "max_z": 0.31749324649108973,
+          "fraction_near_floor": 0
+        },
+        "knee_Left": {
+          "min_z": 0.10318406038796413,
+          "max_z": 0.132176382713468,
+          "fraction_near_floor": 0
+        },
+        "foot_Left": {
+          "min_z": 0.5466435704191442,
+          "max_z": 0.5620803863539949,
+          "fraction_near_floor": 0
+        },
+        "palm_Right": {
+          "min_z": 0.003000053252260604,
+          "max_z": 0.013198097713111423,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.0038412412280734165,
+          "max_z": 0.013842599322188232,
+          "fraction_near_floor": 0.8333333333333334
+        },
+        "foot_Right": {
+          "min_z": 0.007321641144959354,
+          "max_z": 0.013617738637583865,
+          "fraction_near_floor": 0.625
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "joint_error_m": 6.573074226534784e-7,
+      "surface_error_m": 9.036670976066268e-7,
+      "morph_weights": [
+        1,
+        0,
+        0
+      ],
+      "floor_min_z": 0.0018990904662048447,
+      "patches": {
+        "palm_Left": {
+          "min_z": 0.00300021324117139,
+          "max_z": 0.0131730036919806,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Left": {
+          "min_z": 0.0051315606750244325,
+          "max_z": 0.0149607784769204,
+          "fraction_near_floor": 0.8333333333333334
+        },
+        "foot_Left": {
+          "min_z": 0.008528338788089451,
+          "max_z": 0.01482458696303289,
+          "fraction_near_floor": 0.53125
+        },
+        "palm_Right": {
+          "min_z": 0.003000006077666595,
+          "max_z": 0.01320083648787107,
+          "fraction_near_floor": 0.8181818181818182
+        },
+        "knee_Right": {
+          "min_z": 0.005090333854696122,
+          "max_z": 0.015048284258973366,
+          "fraction_near_floor": 0.8333333333333334
+        },
+        "foot_Right": {
+          "min_z": 0.008558927409135456,
+          "max_z": 0.01485502655666203,
+          "fraction_near_floor": 0.53125
+        }
+      }
+    }
+  ],
+  "scope": "Actual canonical GLB + exact shared optional CPU DQ adapter against the corrective-bearing native DQ cage. No generic linear-skin appearance claim."
+}

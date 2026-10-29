@@ -1,0 +1,104 @@
+{
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_hold_recommendation_seconds": null,
+  "skinning": "dualQuaternion",
+  "native_frame_origin": 1,
+  "asset": "floor-crunch",
+  "review_status": "frozen_user_review_candidate_not_production_approved",
+  "shared_motion": {
+    "family": "batch006-grounded-floor-crunch",
+    "physical_actions": [
+      "Exercise_0006",
+      "Exercise_4354"
+    ],
+    "identity_difference": "Distinct source movements and action tracks: lateral same-side heel reach versus opposite elbow/knee upper-trunk rotation."
+  },
+  "provenance": {
+    "body": "Original Blender Studio CC0 Human Base Mesh via accepted artifacts/bodyweight-five/bodyweight-five.blend",
+    "accepted_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "restricted_media_used": false,
+    "paid_generation_used": false,
+    "text": "catalogue/exercises/4354.json"
+  },
+  "id": "4354",
+  "action": "Exercise_4354",
+  "name": "alternate oblique crunch",
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "obliques",
+    "hip flexors"
+  ],
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "obliques",
+      "hip flexors"
+    ]
+  },
+  "source_instructions": [
+    "Lie on your back with knees bent and hands behind your head.",
+    "Lift your shoulders off the floor.",
+    "Twist and bring one elbow toward the opposite knee.",
+    "Return to center and switch sides.",
+    "Move slowly and avoid pulling on your neck."
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 1.25,
+      "label": "Right elbow toward left knee"
+    },
+    {
+      "start": 1.25,
+      "end": 2.5,
+      "label": "Return to center"
+    },
+    {
+      "start": 2.5,
+      "end": 3.75,
+      "label": "Left elbow toward right knee"
+    },
+    {
+      "start": 3.75,
+      "end": 5,
+      "label": "Return to center"
+    }
+  ],
+  "interpretation": "Five-second controlled alternating oblique crunch. Bent knees and both grounded feet are a compatible authored staging choice; the source does not prescribe tabletop legs or pedalling. Upper-trunk curl and axial rotation bring each elbow toward the opposite knee while separate relaxed palms cradle the occiput and fingers stay relaxed. Hands travel with the head and do not pull the neck. The elbow approaches rather than forcing contact with the knee. Numerical timing, stance and range are authored illustration choices.",
+  "disclosures": [
+    "Root owns final runtime/GPU, muscle fields and user acceptance.",
+    "Original Basis/rest/UV/topology/source IDs are preserved; local runtime binding and explicit compact joint components are declared separately."
+  ],
+  "authored_choices": {
+    "base": "Supine, fixed bent legs, both feet grounded; ankle centers340mm apart and360mm caudal to hip-root Y. Source-pose interpretation is declared separately per exercise.",
+    "skin": "Immutable original cage/Basis/rest/UV/IDs. Source-anatomy upper-waist/posterior glute and plantar binding reused; one declared source-knee harmonic field; six shoulder-only compact POSITION/NORMAL targets with40mm cap.",
+    "timing": "One full alternating left/right cycle over5seconds at30fps, native frames1..151. Center at0/2.5/5s, opposite peaks1.25/3.75s.",
+    "root_and_floor": "One constant pelvic root for both clips; actual skin and separate floor plane measured. Source lumbar arch is observed rather than flattened.",
+    "runtime": "Optional exact shared DQ adapter is required; native and full decoded source-domain parity are checked. Root owns actual GPU, muscle fields and final camera fitting."
+  },
+  "correctives": {
+    "names": [
+      "Shoulder0006Center",
+      "Shoulder0006Left",
+      "Shoulder0006Right",
+      "Shoulder4354Center",
+      "Shoulder4354Left",
+      "Shoulder4354Right"
+    ],
+    "position_targets": 6,
+    "normal_targets": 6,
+    "maximum_source_delta_m": 0.04,
+    "weights": "Three nonnegative sine-partition weights for the active action; the other action shoulder keys remain zero.",
+    "knee_morphs": 0,
+    "construction": "Source-local native diagnostic displacements mapped by inverse unit-DQ rotation. C1 source collars and radial cap; only Armature enabled in final source/runtime proof."
+  }
+}

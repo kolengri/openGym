@@ -1,0 +1,1219 @@
+{
+  "task": "Batch 006/007 feedback checks, revised actual-GPU capture after culling/aspect fix",
+  "head": "e08ae06492b49e66eae46a6d14a5a8d755f6f44e",
+  "branch": "t3/upgrade-exercise-animations",
+  "supersedes": {
+    "previousCaptureCount": 22,
+    "previousCapturePath": "artifacts/exercise-batches/batch-007/feedback-resting-fists/capture.json",
+    "note": "The previous 22-still result is superseded; capture.json now contains only the revised 24-still result."
+  },
+  "commands": [
+    {
+      "command": "node artifacts/exercise-batches/batch-006/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/build-006-v2.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/build-007-v2.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-006/verify.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/verify-006-v2.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/verify.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/verify-007-v2.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-007/feedback-resting-fists/capture.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-007/feedback-resting-fists/logs/capture-feedback-v2.log"
+    }
+  ],
+  "runtimeChange": {
+    "path": "artifacts/exercise-batches/batch-002/viewer.js",
+    "beforeHeadSha256": "97509ce317027e520ad6bc8ffd19ca386bba7913095dfb6c935f173e9117f492",
+    "afterSha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3",
+    "buildManifestInputSha256": {
+      "006": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3",
+      "007": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3"
+    },
+    "assetSourceModelClipCameraAndReferenceHashesStable": true,
+    "differences": []
+  },
+  "builds": {
+    "006": {
+      "path": "artifacts/exercise-batches/batch-006/build-manifest.json",
+      "sha256": "c64ad6cba0824e696be0321960214ff0ff93c1b35aca0fea71c96cc1e38e0bb8",
+      "offlineHtml": {
+        "bytes": 9739666,
+        "sha256": "3609572fae94c71f79d4d1589ca4f1c7ee21400f6aee9282f1cd3b74cd26c638"
+      },
+      "inlineHtml": {
+        "bytes": 211208,
+        "sha256": "3572d406c3f37348806e90a4f54e94895c179946e89289b5cbbb6627e29c5595"
+      },
+      "exerciseIds": [
+        "1512",
+        "3479",
+        "0006",
+        "4918",
+        "4826",
+        "4001",
+        "3590",
+        "4354",
+        "3531",
+        "3480",
+        "5106"
+      ],
+      "models": {
+        "1512": {
+          "path": "artifacts/exercise-batches/batch-006/assets/1512/motion.glb",
+          "sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+          "bytes": 1170452,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_1512"
+          ]
+        },
+        "3531": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1",
+          "bytes": 944756,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_3531"
+          ]
+        },
+        "4918": {
+          "path": "artifacts/exercise-batches/batch-006/assets/4918/motion.glb",
+          "sha256": "e7cc94794e0a5dbb166371669742278dfe1440abf5ede8ad7b12551a42e4e501",
+          "bytes": 897932,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_4918"
+          ]
+        },
+        "standing-leg-family": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3479/motion.glb",
+          "sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
+          "bytes": 1229380,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_3479",
+            "Exercise_3480"
+          ]
+        },
+        "floor-crunch": {
+          "path": "artifacts/exercise-batches/batch-006/assets/0006/motion.glb",
+          "sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701",
+          "bytes": 1270268,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_0006",
+            "Exercise_4354"
+          ]
+        },
+        "leg-raise-family": {
+          "path": "artifacts/exercise-batches/batch-006/assets/4826/motion.glb",
+          "sha256": "091187f5d3b26154a432e608a1f3ac1eb64c70c88d411583ab0bfb12533c67ea",
+          "bytes": 1215372,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_3590",
+            "Exercise_4001",
+            "Exercise_4826",
+            "Exercise_5106"
+          ]
+        }
+      },
+      "runtimeInputSha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3"
+    },
+    "007": {
+      "path": "artifacts/exercise-batches/batch-007/build-manifest.json",
+      "sha256": "d087c8ff5f88cff4697a78af0d883fe1844ddf8d433f1b6166e4abfc45c1e807",
+      "offlineHtml": {
+        "bytes": 9544748,
+        "sha256": "ddd9d1fcd219e3aca6034f6e8e08275e0761e785a3c3cb74577d6aa135df1d4e"
+      },
+      "inlineHtml": {
+        "bytes": 218693,
+        "sha256": "ca06a3ff32c25920956c85110d29a088564b5b6e5c2edb526eb2d6264808e031"
+      },
+      "exerciseIds": [
+        "4437",
+        "10058",
+        "4436",
+        "4702",
+        "4715",
+        "4365",
+        "1368",
+        "2761",
+        "2762",
+        "3294",
+        "3905"
+      ],
+      "models": {
+        "3294": {
+          "path": "artifacts/exercise-batches/batch-007/assets/3294/motion.glb",
+          "sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0",
+          "bytes": 895956,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_3294"
+          ]
+        },
+        "3905": {
+          "path": "artifacts/exercise-batches/batch-007/assets/3905/motion.glb",
+          "sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+          "bytes": 873308,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_3905"
+          ]
+        },
+        "4365": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5",
+          "bytes": 960332,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_4365"
+          ]
+        },
+        "4437": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390",
+          "bytes": 991960,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_4436",
+            "Exercise_4437"
+          ]
+        },
+        "4702": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4702/motion.glb",
+          "sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0",
+          "bytes": 938872,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_4702",
+            "Exercise_4715"
+          ]
+        },
+        "10058": {
+          "path": "artifacts/exercise-batches/batch-007/assets/10058/motion.glb",
+          "sha256": "d306f59c96bbdcf9208bf32027b1043cf3462ed0054e57ed2ed23ebab6e4e8a4",
+          "bytes": 880328,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_10058"
+          ]
+        },
+        "seated-ankle": {
+          "path": "artifacts/exercise-batches/batch-007/assets/1368/motion.glb",
+          "sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+          "bytes": 1015348,
+          "bones": 51,
+          "sourceVertices": 10582,
+          "animations": [
+            "Exercise_1368",
+            "Exercise_2761",
+            "Exercise_2762"
+          ]
+        }
+      },
+      "runtimeInputSha256": "142543b73ee24e8361e97f24daace1bc321ced4e5104679f37ea5492edc9d6c3"
+    }
+  },
+  "verifiers": {
+    "006": {
+      "ok": true,
+      "selectedActionCount": 11,
+      "errors": [],
+      "maxJointErrorMeters": 0.0000016793000310779598,
+      "maxSurfaceParityErrorMeters": 8.064678217456489e-7,
+      "maxAllVertexDQErrorMeters": 0.000020969293280804236,
+      "transparentCanvas": true,
+      "colorTextures": 0,
+      "shadows": false,
+      "ao": false,
+      "noVideo": true,
+      "touchOrbit": true,
+      "pinch": true,
+      "reset": true,
+      "seekEndResume": true,
+      "noOverflowWidths": [
+        320,
+        768,
+        1024,
+        1440
+      ],
+      "metricsByAction": [
+        {
+          "id": "1512",
+          "duration": 5,
+          "warmPixels": 0,
+          "cyanPixels": 5233,
+          "sourceSurfacePhases": 16,
+          "asset": "1512"
+        },
+        {
+          "id": "3479",
+          "duration": 8,
+          "warmPixels": 6441,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 5,
+          "asset": "standing-leg-family"
+        },
+        {
+          "id": "0006",
+          "duration": 5,
+          "warmPixels": 1733,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 13,
+          "asset": "floor-crunch"
+        },
+        {
+          "id": "4918",
+          "duration": 5,
+          "warmPixels": 3200,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 18,
+          "asset": "4918"
+        },
+        {
+          "id": "4826",
+          "duration": 5,
+          "warmPixels": 2664,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 9,
+          "asset": "leg-raise-family"
+        },
+        {
+          "id": "4001",
+          "duration": 5,
+          "warmPixels": 2276,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 9,
+          "asset": "leg-raise-family"
+        },
+        {
+          "id": "3590",
+          "duration": 5,
+          "warmPixels": 2276,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 9,
+          "asset": "leg-raise-family"
+        },
+        {
+          "id": "4354",
+          "duration": 5,
+          "warmPixels": 4076,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 13,
+          "asset": "floor-crunch"
+        },
+        {
+          "id": "3531",
+          "duration": 5,
+          "warmPixels": 2327,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 18,
+          "asset": "3531"
+        },
+        {
+          "id": "3480",
+          "duration": 5,
+          "warmPixels": 3418,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 5,
+          "asset": "standing-leg-family"
+        },
+        {
+          "id": "5106",
+          "duration": 5,
+          "warmPixels": 1469,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 9,
+          "asset": "leg-raise-family"
+        }
+      ]
+    },
+    "007": {
+      "ok": true,
+      "selectedActionCount": 11,
+      "errors": [],
+      "maxJointErrorMeters": 0.00004127068117430342,
+      "maxSurfaceParityErrorMeters": 0.000001171272987043892,
+      "maxAllVertexDQErrorMeters": 0.00004882280619751085,
+      "transparentCanvas": true,
+      "colorTextures": 0,
+      "shadows": false,
+      "ao": false,
+      "noVideo": true,
+      "touchOrbit": true,
+      "pinch": true,
+      "reset": true,
+      "seekEndResume": true,
+      "noOverflowWidths": [
+        320,
+        768,
+        1024,
+        1440
+      ],
+      "metricsByAction": [
+        {
+          "id": "4437",
+          "duration": 5,
+          "warmPixels": 2185,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 14,
+          "asset": "4437"
+        },
+        {
+          "id": "10058",
+          "duration": 8,
+          "warmPixels": 3348,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 5,
+          "asset": "10058"
+        },
+        {
+          "id": "4436",
+          "duration": 5,
+          "warmPixels": 4137,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 13,
+          "asset": "4437"
+        },
+        {
+          "id": "4702",
+          "duration": 5,
+          "warmPixels": 2740,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 11,
+          "asset": "4702"
+        },
+        {
+          "id": "4715",
+          "duration": 5,
+          "warmPixels": 2740,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 11,
+          "asset": "4702"
+        },
+        {
+          "id": "4365",
+          "duration": 5,
+          "warmPixels": 0,
+          "cyanPixels": 2074,
+          "sourceSurfacePhases": 20,
+          "asset": "4365"
+        },
+        {
+          "id": "1368",
+          "duration": 12,
+          "warmPixels": 1286,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 18,
+          "asset": "seated-ankle"
+        },
+        {
+          "id": "2761",
+          "duration": 5,
+          "warmPixels": 1925,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 11,
+          "asset": "seated-ankle"
+        },
+        {
+          "id": "2762",
+          "duration": 5,
+          "warmPixels": 1170,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 11,
+          "asset": "seated-ankle"
+        },
+        {
+          "id": "3294",
+          "duration": 5,
+          "warmPixels": 2331,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 11,
+          "asset": "3294"
+        },
+        {
+          "id": "3905",
+          "duration": 8,
+          "warmPixels": 1133,
+          "cyanPixels": 0,
+          "sourceSurfacePhases": 12,
+          "asset": "3905"
+        }
+      ]
+    }
+  },
+  "capture": {
+    "scope": "Selected actual GPU feedback poses. Hand crops override only diagnostic camera configuration; baseline model bytes come from the declared immutable Git revision.",
+    "count": 24,
+    "planSamples": 24,
+    "planSha256": "b929bdc8787300ff3f3ff00db81508677be13031ebecc822dade1ff1a4ff60a9",
+    "errors": [],
+    "allCharacterDrawCallsPositive": true,
+    "trianglesPerSample": [
+      21160
+    ],
+    "frustumCullingPerSample": [
+      "[false]"
+    ],
+    "occupiedPixels": {
+      "minimum": 23349,
+      "maximum": 315182,
+      "allAboveThreshold": true
+    },
+    "samples": [
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "start-neutral",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-start-neutral.png",
+        "pngSha256": "d8f176007ad05016d057799dcfcc33760b5f672a06bdac7bdeb1f68cc108af57",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 39121
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "start-zones",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-start-zones.png",
+        "pngSha256": "baf3a8abc72c4a6614c4fe26392215cb607510d26858f51774bbe8d3c1e850a7",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 39121
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "shoulder-entry-neutral",
+        "time": 1.1666666666666667,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-shoulder-entry-neutral.png",
+        "pngSha256": "183ad6a266381177fd93d57e03ac0881e5972faf1cf1bbc35add888c7693419f",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 1.1666666666666667,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 34676
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "shoulder-entry-zones",
+        "time": 1.1666666666666667,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-shoulder-entry-zones.png",
+        "pngSha256": "c7bf397ac7d891ef3a24e7cbd46086445e2669a869a640929fa7ee858ef58102",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 1.1666666666666667,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 34676
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "hip-entry-neutral",
+        "time": 1.5333333333333334,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-hip-entry-neutral.png",
+        "pngSha256": "df945aaa862d333cb3e847264ec7247da0861f2d8081b6ad46a1db2287f4b4ad",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 1.5333333333333334,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.7401241375354641
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 29453
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "hip-entry-zones",
+        "time": 1.5333333333333334,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-hip-entry-zones.png",
+        "pngSha256": "7409686280f4c02cea95d914bfc4f7349ab6259aece2e3f4ea6de8e392212f49",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 1.5333333333333334,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.7401241375354641
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 29453
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "hold-neutral",
+        "time": 2.5,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-hold-neutral.png",
+        "pngSha256": "02cfd38166e8539f849b6252e325b97d01a4ef75ff58e728efc3e913f4471830",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 2.5,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 28344
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "hold-zones",
+        "time": 2.5,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-hold-zones.png",
+        "pngSha256": "697bfa3c5affa28ba5f962b8bb2ec0870b6b9cbb1a1ef6d7985573bfe2f44eae",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 2.5,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 28344
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "return-neutral",
+        "time": 3.5,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-return-neutral.png",
+        "pngSha256": "0cacddfd104a02dfab0ed71e6f8b369ca4b2c7e5ce3a12a07d0712b4515fb951",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 3.5,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.6172001957893372
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 29808
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "return-zones",
+        "time": 3.5,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-return-zones.png",
+        "pngSha256": "249ca9f7ed048893b747a040c7145621fedf81e16e694f37a99fda9c883a4aa6",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 3.5,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.6172001957893372
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 29808
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "finish-neutral",
+        "time": 4.95,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-finish-neutral.png",
+        "pngSha256": "5b846e6f9a38d4d01874445d9b87be69fbaf129c45aba550067d693b8fbc2050",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 4.95,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 39105
+      },
+      {
+        "batch": "007",
+        "id": "4365",
+        "label": "finish-zones",
+        "time": 4.95,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4365-finish-zones.png",
+        "pngSha256": "f3fa9d69e3b731aca58a2d02ccab1acac18979dd42ad8d3adc0d59c3934ca50c",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4365/motion.glb",
+          "sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5"
+        },
+        "state": {
+          "id": "4365",
+          "action": "Exercise_4365",
+          "time": 4.95,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 39105
+      },
+      {
+        "batch": "007",
+        "id": "4437",
+        "label": "guard-body",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4437-guard-body.png",
+        "pngSha256": "27f67cae8dbe00b019c6057478745f5ebf2487381d2843d16a8e91c4059b3b1a",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+        },
+        "state": {
+          "id": "4437",
+          "action": "Exercise_4437",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 23349
+      },
+      {
+        "batch": "007",
+        "id": "4437",
+        "label": "right-peak-body",
+        "time": 0.3333333333333333,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4437-right-peak-body.png",
+        "pngSha256": "62d6099b70b7f9ef40055b2b2d66d1196f9c46bdf51f2ac6fc955a5422172652",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+        },
+        "state": {
+          "id": "4437",
+          "action": "Exercise_4437",
+          "time": 0.3333333333333333,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 26129
+      },
+      {
+        "batch": "007",
+        "id": "4437",
+        "label": "hand-palmar-before",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4437-hand-palmar-before.png",
+        "pngSha256": "f024e9c3812177284ae55c4f13eaf30e1338cd1e867c89f4f93f1cac71e04885",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc",
+          "revision": "e08ae06492b49e66eae46a6d14a5a8d755f6f44e"
+        },
+        "state": {
+          "id": "4437",
+          "action": "Exercise_4437",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            []
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 315182
+      },
+      {
+        "batch": "007",
+        "id": "4437",
+        "label": "hand-palmar-after",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4437-hand-palmar-after.png",
+        "pngSha256": "0903430d20c2ec1d346f2d87284ae2c54cbb2cadae1c5d9ce289c74598fd068e",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+        },
+        "state": {
+          "id": "4437",
+          "action": "Exercise_4437",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 302234
+      },
+      {
+        "batch": "007",
+        "id": "4437",
+        "label": "hand-dorsal-after",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4437-hand-dorsal-after.png",
+        "pngSha256": "324b643954dfdfed475575e8c8286fb2e470547b64a857ba1e330a9dfbe13b0e",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+        },
+        "state": {
+          "id": "4437",
+          "action": "Exercise_4437",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 296747
+      },
+      {
+        "batch": "006",
+        "id": "3531",
+        "label": "guard-body",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/006-3531-guard-body.png",
+        "pngSha256": "082bd8243c1d58c98b300d92a747b0ae1e18449cee1a8dc22ce5627836acb721",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+        },
+        "state": {
+          "id": "3531",
+          "action": "Exercise_3531",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 23864
+      },
+      {
+        "batch": "006",
+        "id": "3531",
+        "label": "right-peak-body",
+        "time": 0.26666666666666666,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/006-3531-right-peak-body.png",
+        "pngSha256": "df13110eceb3c97fc4eebd6b3a7b2ca52762aef918576e15a34213a6f63dcc43",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+        },
+        "state": {
+          "id": "3531",
+          "action": "Exercise_3531",
+          "time": 0.26666666666666666,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 24664
+      },
+      {
+        "batch": "006",
+        "id": "3531",
+        "label": "hand-palmar-before",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/006-3531-hand-palmar-before.png",
+        "pngSha256": "caad4f0c3746277d4d641c948ebfc8fadad85be73b264a13ba62df57c3e5faee",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "91ccfbd3afa7969641b7e27e1cdc390fd3e622c13da03446175cfaff5a2133b0",
+          "revision": "e08ae06492b49e66eae46a6d14a5a8d755f6f44e"
+        },
+        "state": {
+          "id": "3531",
+          "action": "Exercise_3531",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            []
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 315181
+      },
+      {
+        "batch": "006",
+        "id": "3531",
+        "label": "hand-palmar-after",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/006-3531-hand-palmar-after.png",
+        "pngSha256": "b06550ba26f9a8a6b3b323b474ce53239c5cc8ea2c6676723b4271f073e3ac9d",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+        },
+        "state": {
+          "id": "3531",
+          "action": "Exercise_3531",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 302234
+      },
+      {
+        "batch": "006",
+        "id": "3531",
+        "label": "hand-dorsal-after",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/006-3531-hand-dorsal-after.png",
+        "pngSha256": "e6902f0cc586c12d1915a22ac98f478b074355418cb2c8229ed7b86422ed9f04",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+        },
+        "state": {
+          "id": "3531",
+          "action": "Exercise_3531",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 296747
+      },
+      {
+        "batch": "007",
+        "id": "4437",
+        "label": "hand-profile-after",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/007-4437-hand-profile-after.png",
+        "pngSha256": "2a168ef52674265c4da84935836e00d7f5e51c8fa162fc043b42994ca71e629d",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-007/assets/4437/motion.glb",
+          "sha256": "e317b33ac6f5d9cb6cfd350f2656eeaca95ff8cc114b020bc52102c1eebb1390"
+        },
+        "state": {
+          "id": "4437",
+          "action": "Exercise_4437",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 90553
+      },
+      {
+        "batch": "006",
+        "id": "3531",
+        "label": "hand-profile-after",
+        "time": 0,
+        "file": "artifacts/exercise-batches/batch-007/feedback-resting-fists/006-3531-hand-profile-after.png",
+        "pngSha256": "7dffabb7276b480d8b7aeab4f8a859de660e3533eaa2f788ab56d6f36160199c",
+        "model": {
+          "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+          "sha256": "99d5315d88ea3ae34018318d2066939be4c5b38f79660aa7e14f96b49ebe76d1"
+        },
+        "state": {
+          "id": "3531",
+          "action": "Exercise_3531",
+          "time": 0,
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1
+            ]
+          ],
+          "source_vertices": 10582,
+          "draw_calls": 1,
+          "triangles": 21160,
+          "frustum_culling": [
+            false
+          ]
+        },
+        "occupiedPixels": 90557
+      }
+    ]
+  },
+  "captureDiagnosis": {
+    "path": "artifacts/exercise-batches/batch-007/feedback-resting-fists/hand-capture-diagnosis.json",
+    "sha256": "799a87ea13046cc5be2e69ff79726c5b16ca5c8ce7cbf6466f565a963849fc97",
+    "status": "enriched diagnosis receipt; actual-image acceptance remains with root",
+    "findings": "Earlier batch 006 blank capture was a stale cached DQ bounding sphere; batch 007 hand crop was distorted by CSS aspect mismatch. The revised capture asserts nonzero draw calls, triangles, and occupied canvas pixels."
+  },
+  "runtimeLimits": "Offline check stage only. Native checks reused; no new inline/pin/publication checks. Root visual acceptance remains pending; no final hand-GPU acceptance is claimed."
+}

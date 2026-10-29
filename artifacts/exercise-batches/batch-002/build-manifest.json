@@ -1,0 +1,85 @@
+{
+  "batch": "002",
+  "exercise_ids": [
+    "5265",
+    "4007",
+    "6428",
+    "10565",
+    "6560"
+  ],
+  "initial_exercise_id": "10565",
+  "models": {
+    "default": {
+      "path": "artifacts/bodyweight-next-five/next-five.glb",
+      "sha256": "30879dd944cba7d92b6d1f09e195019889c2ab8f36d0a356bec75ebe2569ba37",
+      "bytes": 1325048,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_4007",
+        "Exercise_5265",
+        "Exercise_6428",
+        "Exercise_6560"
+      ]
+    },
+    "ninety-repaired": {
+      "path": "artifacts/bodyweight-next-five/ninety-repaired.glb",
+      "sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+      "bytes": 1305964,
+      "bones": 51,
+      "animations": [
+        "Exercise_10565",
+        "Exercise_6560"
+      ]
+    }
+  },
+  "model_revision": "664bcdf8707d17720f695411d86969ee375afdc3",
+  "selected_regions": [
+    "rectus_abdominis_1.L",
+    "rectus_abdominis_1.R",
+    "rectus_abdominis_2.L",
+    "rectus_abdominis_2.R",
+    "rectus_abdominis_3.L",
+    "rectus_abdominis_3.R",
+    "rectus_abdominis_4.L",
+    "rectus_abdominis_4.R",
+    "external_oblique.L",
+    "external_oblique.R",
+    "sartorius.L",
+    "sartorius.R",
+    "iliopsoas_projection.L",
+    "iliopsoas_projection.R",
+    "gluteus_maximus.L",
+    "gluteus_medius_visible.L",
+    "tensor_fasciae_latae.L",
+    "adductor_longus.L",
+    "adductor_longus.R",
+    "adductor_magnus_visible.L",
+    "adductor_magnus_visible.R",
+    "erector_spinae.L",
+    "erector_spinae.R"
+  ],
+  "video_outputs": [],
+  "frame_sequence_outputs": [],
+  "runtime": "Three.js0.186.1 / WebGLRenderer",
+  "scope": "Live review artifact; application integration and physical mobile testing remain separate.",
+  "display_role_note": "Artistic source-label emphasis: cyan stretching, warm load. Not measured EMG, force, temperature or recruitment.",
+  "offline_html_bytes": 4192259,
+  "offline_html_sha256": "3a71ca034e51f0692766ec92ff2bf24d2186ea4e54268460aaae6f7bc904383f",
+  "inline_html_bytes": 104864,
+  "inline_html_sha256": "b2c25178c0bde57c2c00233615bb584f65d7b77ab06f6726b946dae63f5cd124",
+  "input_files_sha256": {
+    "artifacts/exercise-batches/batch-002/build.mjs": "595f2376f33984405b0a5fec3040020a18252028e58b967b9448db007e61f362",
+    "artifacts/exercise-batches/batch-002/template.html": "755e848af1942d350e5ddc2775eb52cacdfecd76f334e97f3bf2a47e82a8e0b2",
+    "artifacts/exercise-batches/batch-002/viewer.js": "85202f9267252b2eb4291675d21b088f2ab7648b5401d487558afe5de0ce8be3",
+    "artifacts/exercise-batches/batch-002/presentation.json": "77cbf290c1c7a1c665431ce4ea0e0e40cc3257cb079ec810393e67facc8dae41",
+    "artifacts/exercise-batches/build-review.mjs": "8dff7c7c3f5cd81763f873ae953b32454bc5541cbb0f2ae93571a5d761d65425",
+    "artifacts/exercise-batches/dual-quaternion.js": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "artifacts/chaturanga-heatmap/heat-field.js": "e44dc66c993c5695382b1d6535b6a5dc65ecfbad375ac9cfcc8c3859ab33dddd",
+    "artifacts/chaturanga-heatmap/heat-material.js": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e",
+    "artifacts/bodyweight-next-five/clips.json": "f720e3848d0106bb261449193b3196be52e54ac02eb666bfdeedb6cff9c46ddf",
+    "artifacts/bodyweight-next-five/camera-presets.json": "62d60c500557c7211a2b00c5794b0e92fb67878e8807e0ed78ca57b7656ada74",
+    "artifacts/bodyweight-next-five/ninety-clips.json": "fed85939179896a6a6b6f64b8ad30a3d6bd3174c74b808668a43b2b8407cf376",
+    "artifacts/bodyweight-next-five/ninety-camera-presets.json": "ea23d2f34db002bb94fc3adaad84eebb73c3ad22e2d005a8621f1fe7aecd08e8"
+  }
+}

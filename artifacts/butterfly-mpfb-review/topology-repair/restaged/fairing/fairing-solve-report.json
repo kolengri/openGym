@@ -1,0 +1,95 @@
+{
+  "status": "numeric_pass_pending_primary_visual_acceptance",
+  "method": "One uniform-Laplacian bending-energy SLSQP solve with per-vertex8mm/taper balls and projected-area ratio>=0.1, followed by collision-feasible scalar step selection; no topology variants",
+  "source_static_sha256": "eab5cdfa9565c10384d546308c737109e48c0fba8c564b85bd07426f94aa67a0",
+  "solve_success": true,
+  "solve_message": "Optimization terminated successfully",
+  "iterations": 119,
+  "solve_seconds": 5.034323957981542,
+  "analytic_jacobian_max_check_error": 2.6697311028556214e-09,
+  "objective_delta_at_solved_target": -38.16801603603228,
+  "accepted_alpha": 1.0,
+  "line_search": [
+    {
+      "alpha": 1.0,
+      "pass": true,
+      "checks": {
+        "float64": {
+          "unexpected_pairs": 0,
+          "local_pairs": 0,
+          "minimum_projected_area_ratio": 0.09999999999952384,
+          "minimum_area_m2": 1.422449303362918e-08
+        },
+        "float32": {
+          "unexpected_pairs": 0,
+          "local_pairs": 0,
+          "minimum_projected_area_ratio": 0.0999865217714874,
+          "minimum_area_m2": 1.422449303362918e-08
+        }
+      }
+    }
+  ],
+  "maximum_displacement_m": 0.007999904432660803,
+  "moved_vertices": 190,
+  "outside_free_mask_bit_exact": true,
+  "protected_and_cap_vertices_bit_exact": true,
+  "triangles_source_ids_uv_full_weights_provenance_unchanged": true,
+  "topology": {
+    "vertices": 13405,
+    "faces": 26806,
+    "edges": 40209,
+    "euler_characteristic": 2,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "inconsistent_winding_edges": 0,
+    "nonmanifold_vertex_links": [],
+    "duplicate_faces": 0
+  },
+  "strict_pelvic_expanded_patch_vs_all_pairs_float32": [],
+  "visible_crease_dihedral_percentiles_before": [
+    48.11646317797743,
+    104.132681348478,
+    116.80168732409278,
+    127.69273503805367,
+    155.04233574626366,
+    158.5234893370787
+  ],
+  "visible_crease_dihedral_percentiles_after": [
+    0.8023649370496223,
+    16.450289720724996,
+    31.282006495428195,
+    52.07874499934291,
+    123.09723508159587,
+    160.54498962518312
+  ],
+  "all_high_angle_edges_over120_before": 25,
+  "all_high_angle_edges_over120_after": 4,
+  "generated_geometry_provenance": "Additional bounded fairing correction from frozen static P0; original source attribute samples/UV/full weights are unchanged, and do not reconstruct fairing geometry.",
+  "new_geometry_sha256": "10eafc68e2c26ff59b855128cb33a494dfca7c9a886916ee18a716e954f6b7ae",
+  "promotion_map": {},
+  "float32_serialization_guard_max_m": 1.0000000002209639e-07,
+  "final_numeric_checks": {
+    "float64": {
+      "exact_local_vs_all_pairs": [],
+      "unexpected_global_pairs": [],
+      "strict_local_vs_all_pairs": [],
+      "global_exact_pair_count": 182,
+      "minimum_triangle_area_m2": 1.422449303362918e-08,
+      "zero_area_faces": [],
+      "minimum_affected_projected_area_ratio": 0.09999899989727916,
+      "signed_volume_m3": 0.06140318184989668
+    },
+    "float32": {
+      "exact_local_vs_all_pairs": [],
+      "unexpected_global_pairs": [],
+      "strict_local_vs_all_pairs": [],
+      "global_exact_pair_count": 182,
+      "minimum_triangle_area_m2": 1.422449303362918e-08,
+      "zero_area_faces": [],
+      "minimum_affected_projected_area_ratio": 0.0999972529211161,
+      "signed_volume_m3": 0.0614031818594398
+    }
+  },
+  "old_static_geometry_unchanged": true
+}

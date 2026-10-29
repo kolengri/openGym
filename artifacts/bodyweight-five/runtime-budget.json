@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "objects": {
+    "SK_BlenderStudioHuman": {
+      "tris": 21160,
+      "verts": 10582,
+      "materials": 1,
+      "modifiers": [
+        "ARMATURE",
+        "CORRECTIVE_SMOOTH",
+        "MULTIRES"
+      ],
+      "uv_maps": 2,
+      "shape_keys": 0
+    }
+  },
+  "total_tris": 21160,
+  "total_verts": 10582,
+  "draw_calls_est": 1,
+  "unique_materials": 1,
+  "textures": [
+    {
+      "name": "MuscleAtlas_SK_BlenderStudioHuman",
+      "size": [
+        2048,
+        1024
+      ],
+      "mb": 10.7
+    }
+  ],
+  "texture_vram_mb_uncompressed": 10.7,
+  "bones": 51,
+  "kind": "character",
+  "budget": {
+    "name": "web",
+    "limits": {
+      "char_tris": 30000,
+      "prop_tris": 10000,
+      "materials": 2,
+      "tex": 2048,
+      "bones": 100
+    },
+    "over": [],
+    "pass": true
+  }
+}

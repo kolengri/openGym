@@ -1,0 +1,33 @@
+{
+  "id": "1368",
+  "action": "Exercise_1368",
+  "ok": true,
+  "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+  "glb_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+  "native_samples": 361,
+  "decoded_samples": 361,
+  "decoded_triangle_crossings": 0,
+  "native_loop_skin_error_m": 0.0,
+  "decoded_loop_skin_error_m": 1.4931163131832646e-07,
+  "minimum_native_floor_z_m": 0.001499950885772705,
+  "minimum_actual_arm_hand_thigh_signed_clearance_m": 0.006826604887464782,
+  "wrist_deviation_degrees": [
+    29.636313752090388,
+    33.40716898530063
+  ],
+  "maximum_native_bone_length_error_m": 2.980232238769531e-07,
+  "maximum_native_arm_chain_gap_m": 2.8115454709698567e-07,
+  "maximum_full_native_decoded_DQ_vertex_error_m": 2.0605913494992057e-06,
+  "maximum_all_frame_native_decoded_joint_error_m": 1.0070374831512557e-06,
+  "foot_regression": {
+    "shin_relative_excursion_degrees": 11.999977282041973,
+    "world_foot_step_degrees": 1.0849711740665884,
+    "shin_relative_step_degrees": 1.1981034392709178,
+    "rigid_toe_relative_error_degrees": 0.0
+  },
+  "game_qa_samples": 6,
+  "game_qa_errors": 0,
+  "game_qa_warnings": 0,
+  "primary_gpu_review": "pending; primary-owned",
+  "limits": "Discrete30fps triangle crossing and edge/support gates; not continuous-time collision or enclosed-volume proof. Foot edge thresholds are artifact regression guards. Original mannequin facet/crease detail remains."
+}

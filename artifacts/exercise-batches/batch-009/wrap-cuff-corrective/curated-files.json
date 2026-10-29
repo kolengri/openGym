@@ -1,0 +1,198 @@
+{
+  "component": "3995 accepted held shoulder/axillary cuff POSITION+NORMAL target",
+  "status": "Held component accepted and import verified; full-cycle midpoint shape unresolved and excluded.",
+  "archive_sha256": "32711c5d0e73e06372aa2b037403763e2e263e10a27d42864e1a1ba4fb5677ca",
+  "included_files": [
+    {
+      "path": "README.md",
+      "sha256": "4556ca043f58f7a38bfa455d6509c8ebc2f531b2d9f53d706b0d2b1aed42b687",
+      "bytes": 8247
+    },
+    {
+      "path": "dependencies.json",
+      "sha256": "a6095f4562371a4ff8364ef0bf5e4ee069a18286233a79213a7336bcbf01e368",
+      "bytes": 3644
+    },
+    {
+      "path": "environment.json",
+      "sha256": "51b6e079f4d18c5d31ea095608fe3df9c8c29c32c1d462d6c68268e4d9449c3a",
+      "bytes": 463
+    },
+    {
+      "path": "corrective.py",
+      "sha256": "df1d4737bd54dfb2b58505ac06f117d9e7ee2cf4ec2f3e802bca23d7ee9552b5",
+      "bytes": 2965
+    },
+    {
+      "path": "wrap-cuff-target.npz",
+      "sha256": "32711c5d0e73e06372aa2b037403763e2e263e10a27d42864e1a1ba4fb5677ca",
+      "bytes": 249889
+    },
+    {
+      "path": "component.json",
+      "sha256": "bf744179d867a7c91d1919945564bb68fd4e59b5d4bfd42a04b697f2b97e856c",
+      "bytes": 125659
+    },
+    {
+      "path": "capture.json",
+      "sha256": "765d9b81e30c0645b979911af0f4d8bc2ba3bfeb89a0da6f94516f269c2346a9",
+      "bytes": 1970
+    },
+    {
+      "path": "capture.py",
+      "sha256": "6313b0f134f808e67acace536993cd27f384ee56e6af722d671d36be73616142",
+      "bytes": 2976
+    },
+    {
+      "path": "contact.py",
+      "sha256": "9a0a5785a372559b09a5c216f155c680ef9f625646a3d9d7db0bf2e465f82866",
+      "bytes": 3366
+    },
+    {
+      "path": "held-contact.json",
+      "sha256": "150ad4eec44e5e90636b5be23eb3aaec2d7c849dfae46f200bf24c08e4ed09bc",
+      "bytes": 14681
+    },
+    {
+      "path": "construct.py",
+      "sha256": "2badce975f633b6c3585977d5bd4090853dbc06e1df122de2c391a213af40c83",
+      "bytes": 9534
+    },
+    {
+      "path": "contact_fairness.py",
+      "sha256": "12abc60843df958f0ab4fbc75a2329b0392a5edde12618497ab1fe0a888d6e47",
+      "bytes": 5139
+    },
+    {
+      "path": "clearance-domains.npz",
+      "sha256": "b84a8d9a8ae51ac9321ccaff37833e892111883da4ca290b0f88d61b43296848",
+      "bytes": 86492
+    },
+    {
+      "path": "accepted-position.npz",
+      "sha256": "a50d65d6c27e7b18a9aeb962919f9ff196b4dae19ce295d3c6a4d7b26415d4f9",
+      "bytes": 101075
+    },
+    {
+      "path": "accepted-construction.json",
+      "sha256": "359af8d4ed33d14c8384793719785f0cc8a57f7b722bcc2a99a2783708f969c4",
+      "bytes": 203304
+    },
+    {
+      "path": "accepted-held-reference.npz",
+      "sha256": "ed193b417e1b4f9fa880ae6a9fc0d94dd91f748622df858173cff2180784c3c6",
+      "bytes": 237285
+    },
+    {
+      "path": "measure_target.py",
+      "sha256": "75f6bc83de799a6142795718d8f06c7d6c8692f519888234d13fbb664f3fa6ab",
+      "bytes": 2155
+    },
+    {
+      "path": "finalize.py",
+      "sha256": "6fb88072ac557e3d9ab2760e32b9b5056124bbc3036762a0938f924bad4de176",
+      "bytes": 11496
+    },
+    {
+      "path": "verify_import.py",
+      "sha256": "d60e8164386df2a98fcf5dccffa03687877c67703dd918394b737f5e49843e87",
+      "bytes": 3292
+    },
+    {
+      "path": "import-verification.json",
+      "sha256": "3037bf9be14a00aed211a6e1e172d7969aa54f60ee2260ee8a0b5c4ccbb5cd94",
+      "bytes": 748
+    },
+    {
+      "path": "preview.py",
+      "sha256": "3236bebf199b466c10ff29569e9ecd152f7a9da22e1d773b6054bd09797b1636",
+      "bytes": 4039
+    },
+    {
+      "path": "preview-a50d65d6c27e.json",
+      "sha256": "7132eda0e66c97410785e96c1ea35a5f245d5d5e8c47f477a31aa6fe481cbe33",
+      "bytes": 8406
+    },
+    {
+      "path": "normal-boundary.json",
+      "sha256": "0deb198be93f5b6df488108cd27582b3bacc578dd77895327873e2279f92e8ad",
+      "bytes": 4958
+    },
+    {
+      "path": "boundary-contact-classification.json",
+      "sha256": "c709ce305642d1413642036d3ab7f6bba183fb70ec13e7ed79425ffe306a9f13",
+      "bytes": 7591
+    },
+    {
+      "path": "evidence/f18-boundary-input.json",
+      "sha256": "47c5ad2036cb8f1fdd29c90bb68759bbe14ab729d8df668643d4949e356dd5f7",
+      "bytes": 2824
+    },
+    {
+      "path": "inputs-contact/source.blend",
+      "sha256": "88c2da9b30955e3793637fe5f8a086e0ca7339d395cf20997d6b3fdcac817c1e",
+      "bytes": 14984577
+    },
+    {
+      "path": "inputs-contact/motion.py",
+      "sha256": "cefda51b202ea6effbb910c83a79e052d60aab43fa106e00e42df8b8c7f1e259",
+      "bytes": 7310
+    },
+    {
+      "path": "inputs-contact/held-contract.json",
+      "sha256": "8c84491ab0cfea730851824854d5e43a74a49ce584c21d7dc5339f28a6068a62",
+      "bytes": 644
+    },
+    {
+      "path": "qa-wire.png",
+      "sha256": "de4a18e5eefd85df6564590b6ba87ea822b840641e6588a3a5e9063859a5efc4",
+      "bytes": 1194677
+    },
+    {
+      "path": "qa-wire_front.png",
+      "sha256": "685ea40861944408b79a20d2b6d504d838f332a760aef57d3d55ef82b19f6acf",
+      "bytes": 425482
+    },
+    {
+      "path": "qa-wire_right.png",
+      "sha256": "73b65ef00b4369777d621b347d8c380b657a16707073bfd9befad3486dc2d71f",
+      "bytes": 427997
+    },
+    {
+      "path": "qa-wire_back.png",
+      "sha256": "23ea8c64219ee98b3813d087fef90fc0d27b40f4ab3115b2c756ebf9fc4a7ba4",
+      "bytes": 434651
+    },
+    {
+      "path": "proofs/a50d65d6c27e/neutral-front.png",
+      "sha256": "80c9050412a45249be9a5308dd6a38be092b6a39299e34ce1432e9676f7c7a55",
+      "bytes": 575510
+    },
+    {
+      "path": "proofs/a50d65d6c27e/neutral-side.png",
+      "sha256": "96f2142203910d647d60987b6dc99102220b6e3fe1629610388a16e459ae903a",
+      "bytes": 497525
+    },
+    {
+      "path": "proofs/a50d65d6c27e/neutral-rear.png",
+      "sha256": "76feae81d737ba3cc94b1b759a67af483a3eb83697c4a06376e429f754eb2117",
+      "bytes": 561991
+    },
+    {
+      "path": "proofs/a50d65d6c27e/held-front.png",
+      "sha256": "07826a12948693ef1e79e36ec1bae9d356d2b4fd6031d9ad3f4a47dce79a3e8c",
+      "bytes": 572525
+    },
+    {
+      "path": "proofs/a50d65d6c27e/held-side.png",
+      "sha256": "a0c2ac2283f72df139c6846875f2fc1a54d5911eeefdb3c53e805df8e35ac92f",
+      "bytes": 544152
+    },
+    {
+      "path": "proofs/a50d65d6c27e/held-rear.png",
+      "sha256": "e168ee26518afc6c013ec4da41b9790dbbfbb658e8ecda6cf0b8d32298bfdc0d",
+      "bytes": 561136
+    }
+  ],
+  "excluded": "Working blends, capture.npz (derivable), caches/logs, old input snapshots, failed construction variants and all unaccepted mid-wrap targets/proofs. This manifest intentionally does not claim full-cycle acceptance."
+}

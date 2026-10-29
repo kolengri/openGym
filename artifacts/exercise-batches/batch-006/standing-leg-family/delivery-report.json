@@ -1,0 +1,163 @@
+{
+  "status": "root_accepted_3479_motion_repair_3480_preserved",
+  "canonical_asset": "assets/3479",
+  "asset_key": "standing-leg-family",
+  "source_sha256": "4571ffd3407966fcfd13b87f300d500647b6bf957132a99c2e181b56e3724c3a",
+  "glb_sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
+  "shared_physical_geometry_count": 1,
+  "actions": {
+    "Exercise_3479": {
+      "duration_seconds": 8,
+      "frames": 240
+    },
+    "Exercise_3480": {
+      "duration_seconds": 5,
+      "frames": 150,
+      "unchanged": true
+    }
+  },
+  "same_bytes_in_per_id_containers": false,
+  "explanation": "3479 canonical container has appended replacement3479 animation. Its original complete BIN prefix, physical geometry, rest hierarchy and3480 animation/accessors are byte-identical. The standalone3480 file retains its original bytes and receipts.",
+  "invariants": {
+    "ok": true,
+    "source_sha256": "4571ffd3407966fcfd13b87f300d500647b6bf957132a99c2e181b56e3724c3a",
+    "basis_exact": true,
+    "rest_exact": true,
+    "uv_exact": true,
+    "topology_exact": true,
+    "source_ids_exact": true,
+    "bones": 51,
+    "source_vertices": 10582,
+    "triangles": 21160,
+    "maximum_influences": 4,
+    "actual_changed_binding_vertices": 3029,
+    "declared_binding_vertices": 5611,
+    "binding_exterior_exact": true,
+    "corrective_exteriors_exact": true,
+    "maximum_saved_source_target_delta_m": 0.025000032037496567,
+    "nla_discovery": "Inactive KEY association3480 is explicitly muted with use_nla=False; only the selected active action evaluates natively."
+  },
+  "motion_repair_report": "motion-repair-report.json",
+  "per_exercise": {
+    "3479": {
+      "exercise_id": "3479",
+      "status": "root_accepted_eight_second_choreography_revision_for_user_review",
+      "source_sha256": "4571ffd3407966fcfd13b87f300d500647b6bf957132a99c2e181b56e3724c3a",
+      "glb_sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
+      "asset_key": "standing-leg-family",
+      "action": "Exercise_3479",
+      "duration_seconds": 8,
+      "fps": 30,
+      "frames": 240,
+      "native_frame_origin": 1,
+      "source_vertices": 10582,
+      "exported_vertices": 12010,
+      "triangles": 21160,
+      "bones": 51,
+      "maximum_influences": 4,
+      "materials": 1,
+      "textures": 0,
+      "position_normal_targets": 4,
+      "frames_sampled_native": 241,
+      "frames_sampled_decoded": 241,
+      "full_source_reference_frames": [
+        0,
+        27,
+        80,
+        200,
+        240
+      ],
+      "native_loop_vertex_error_m": 0.0,
+      "decoded_loop_vertex_error_m": 2.1445560294739704e-07,
+      "maximum_decoded_native_position_error_m": 1.7460805610598126e-06,
+      "maximum_reference_joint_error_m": 1.0021095595348297e-06,
+      "maximum_shader_normal_angle_degrees": 0.00610910536508578,
+      "minimum_body_z_m": 0.0002999041462317109,
+      "minimum_triangle_area_m2": 5.881850742783279e-08,
+      "maximum_arm_hand_leg_intersections": 0,
+      "maximum_support_centroid_drift_m": 8.457618557618617e-07,
+      "heel_contact": {
+        "full_contact_samples": 22,
+        "finger_to_heel_point_m_range": [
+          0.002999960331419679,
+          0.0030004387308679753
+        ],
+        "whole_hand_to_heel_surface_m_range": [
+          0.002365667140111327,
+          0.0024232263676822186
+        ]
+      },
+      "mandatory_game_qa": {
+        "pass": true,
+        "errors": 0,
+        "retained_warnings": [
+          {
+            "frame": 27,
+            "warnings": [
+              "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
+            ]
+          }
+        ],
+        "reason": "Two back-to-back facet pairs remain at the accepted parallel squat in the original continuous cage. Removing faces would violate required topology. Residual creases are disclosed; no globally collision-free claim."
+      },
+      "local_face_diagnostics": {
+        "pelvis_thigh": {
+          "minimum_area_ratio": 0.01737951533741531,
+          "maximum_opposed_shader_normal_faces": 32,
+          "maximum_disjoint_self_intersection_pairs": 110
+        },
+        "knees": {
+          "minimum_area_ratio": 0.009879400025155909,
+          "maximum_opposed_shader_normal_faces": 35,
+          "maximum_disjoint_self_intersection_pairs": 104
+        },
+        "shoulders": {
+          "minimum_area_ratio": 0.07946901461143506,
+          "maximum_opposed_shader_normal_faces": 9,
+          "maximum_disjoint_self_intersection_pairs": 44
+        },
+        "LungeLeftPopliteal_affected_star": {
+          "minimum_area_ratio": 0.009879400025155909,
+          "maximum_opposed_shader_normal_faces": 16,
+          "maximum_disjoint_self_intersection_pairs": 52
+        },
+        "LungeRightPopliteal_affected_star": {
+          "minimum_area_ratio": 0.013238368001285201,
+          "maximum_opposed_shader_normal_faces": 19,
+          "maximum_disjoint_self_intersection_pairs": 59
+        },
+        "HeelTouchLeftShoulder_affected_star": {
+          "minimum_area_ratio": 0.15158760154560502,
+          "maximum_opposed_shader_normal_faces": 7,
+          "maximum_disjoint_self_intersection_pairs": 19
+        },
+        "HeelTouchRightShoulder_affected_star": {
+          "minimum_area_ratio": 0.07946901461143506,
+          "maximum_opposed_shader_normal_faces": 8,
+          "maximum_disjoint_self_intersection_pairs": 25
+        }
+      },
+      "motion_repair_report": "../../standing-leg-family/motion-repair-report.json",
+      "3480_preservation_report": "../../standing-leg-family/squat-feedback/3480-preservation-report.json",
+      "export_preservation_report": "../../standing-leg-family/squat-feedback/export-preservation-report.json",
+      "limits": [
+        "The old five-second motion was rejected; current eight-second sequencing was reviewed in actual GPU proofs.",
+        "All241 discrete30Hz path samples are checked, not just the pose extrema. No continuous-time or clinical claim.",
+        "Localized nonadjacent self-fold and opposed-normal counts are diagnostic and retained.",
+        "Original3480 files and its shared-container animation/geometry are preserved exactly."
+      ]
+    },
+    "3480": {
+      "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+      "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+      "original_delivery_report": "../assets/3480/delivery-report.json",
+      "preservation_report": "squat-feedback/3480-preservation-report.json"
+    }
+  },
+  "root_owned_remaining": [
+    "shared presentation8s note and translated phases",
+    "camera fitting",
+    "viewer/publication",
+    "final user acceptance"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "exercise_id": "3480",
+  "status": "frozen_root_accepted_bounded_shape_for_user_review",
+  "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
+  "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+  "asset_key": "standing-leg-family",
+  "action": "Exercise_3480",
+  "source_vertices": 10582,
+  "exported_vertices": 12010,
+  "triangles": 21160,
+  "bones": 51,
+  "maximum_influences": 4,
+  "materials": 1,
+  "textures": 0,
+  "position_normal_targets": 4,
+  "duration_seconds": 5,
+  "native_frame_origin": 1,
+  "frames_sampled_native": 151,
+  "frames_sampled_decoded": 151,
+  "full_source_reference_frames": [
+    0,
+    15,
+    37,
+    112,
+    150
+  ],
+  "native_loop_vertex_error_m": 0.0,
+  "decoded_loop_vertex_error_m": 2.0511250703887e-07,
+  "maximum_decoded_native_position_error_m": 1.1313112316192572e-06,
+  "maximum_reference_joint_error_m": 8.652309585349845e-07,
+  "maximum_shader_normal_angle_degrees": 0.00536175485189999,
+  "minimum_body_z_m": 0.0002996824332512915,
+  "minimum_knee_skin_z_m": 0.16073226928710938,
+  "minimum_triangle_area_m2": 5.88754837637946e-08,
+  "maximum_arm_hand_leg_intersections": 0,
+  "maximum_support_centroid_drift_m": 6.432442331843702e-07,
+  "maximum_native_joint_step_degrees": 14.097359778769516,
+  "maximum_native_joint_step_frame": 9,
+  "heel_contact": null,
+  "mandatory_game_qa": {
+    "pass": true,
+    "errors": 0,
+    "retained_warnings": [
+      {
+        "frame": 37,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ]
+      },
+      {
+        "frame": 112,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (1 pairs) - delete to save tris"
+        ]
+      }
+    ],
+    "reason": "Warnings identify a few back-to-back facets in local joint folds of the single continuous original body. The bounded visible candidate was accepted with residual creases. Deleting faces would violate the required original topology/source IDs; warnings are retained without claiming globally collision-free skin."
+  },
+  "local_face_diagnostics": {
+    "pelvis_thigh": {
+      "minimum_area_ratio": 0.11507463284797693,
+      "maximum_opposed_shader_normal_faces": 33,
+      "maximum_disjoint_self_intersection_pairs": 63
+    },
+    "knees": {
+      "minimum_area_ratio": 0.01176419028504637,
+      "maximum_opposed_shader_normal_faces": 11,
+      "maximum_disjoint_self_intersection_pairs": 38
+    },
+    "shoulders": {
+      "minimum_area_ratio": 0.2921924360203968,
+      "maximum_opposed_shader_normal_faces": 0,
+      "maximum_disjoint_self_intersection_pairs": 0
+    },
+    "LungeLeftPopliteal_affected_star": {
+      "minimum_area_ratio": 0.01176419028504637,
+      "maximum_opposed_shader_normal_faces": 11,
+      "maximum_disjoint_self_intersection_pairs": 37
+    },
+    "LungeRightPopliteal_affected_star": {
+      "minimum_area_ratio": 0.012484155569213527,
+      "maximum_opposed_shader_normal_faces": 11,
+      "maximum_disjoint_self_intersection_pairs": 38
+    },
+    "HeelTouchLeftShoulder_affected_star": {
+      "minimum_area_ratio": 0.29590646362233375,
+      "maximum_opposed_shader_normal_faces": 0,
+      "maximum_disjoint_self_intersection_pairs": 0
+    },
+    "HeelTouchRightShoulder_affected_star": {
+      "minimum_area_ratio": 0.2921924360203968,
+      "maximum_opposed_shader_normal_faces": 0,
+      "maximum_disjoint_self_intersection_pairs": 0
+    }
+  },
+  "self_fold_policy": "Localized exact nonadjacent self-fold counts and opposed shader normals are diagnostics. Root accepted bounded joint8 shape with residual joint creases; this is not a globally collision-free claim.",
+  "root_acceptance": "Root reviewed joint8 changed knee, shoulder/kick and heel-contact whole-body proofs and accepted the fixed25mm candidate with residual joint crease detail. Path, weights and target cap then frozen.",
+  "runtime_method": "Actual decoded project Three.js GLTFLoader/AnimationMixer plus four-influence linear skinning and four compact additive POSITION/NORMAL targets. Shader normals independently compared with source-derived normals and the exact skinnormal_vertex equation. CPU-decoded evidence; actual browser/GPU review remains root-owned.",
+  "limitations": [
+    "Discrete30Hz evidence; no continuous-time or clinical guarantee.",
+    "Localized exact self-fold and opposed-normal witnesses are retained; no global zero-self-collision claim.",
+    "The25mm C1 cap intentionally leaves residual joint crease detail.",
+    "No runtime DQ, frame cache, pose cache, smoothing, video or paid generation."
+  ],
+  "shared_family_report": "../../standing-leg-family/delivery-report.json"
+}

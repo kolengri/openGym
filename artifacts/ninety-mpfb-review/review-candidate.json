@@ -1,0 +1,28 @@
+{
+  "status": "physical_runtime_pass_ready_for_user_shape_review",
+  "exerciseId": "10565",
+  "modelSha256": "d6c160b3bcaace820ba04b92c6e7ed8ade940a252f70f67f088ff77837609ac3",
+  "modelBytes": 2510292,
+  "assetScope": "Separate interactive review candidate; app integration and other seated variants remain outside this acceptance.",
+  "checks": {
+    "all151_actual_loaded_glb_hip_and_hand_contacts_clear": true,
+    "all151_groin_orientation_guards_pass": true,
+    "source_p0_and_loop_preserved_within_float32_transport": true,
+    "actual_browser_transparent_no_shadow_no_texture": true
+  },
+  "evidence": {
+    "artifacts/ninety-mpfb-review/asset-build.json": "6fdf745ab15ad423aeba792155a707c9d75775ca498f5727ba80261a7448d18f",
+    "artifacts/ninety-mpfb-review/surface-verification.json": "a10a0a508320d815f4aeae27e3c8e6062ff5e3c64e933db821017d54ba3e515e",
+    "artifacts/ninety-mpfb-review/visual-review.json": "41fc4b5a171706a2da5877c29366f03bd5fc9b13978e8212a3f9f6859f404a5b",
+    "artifacts/ninety-mpfb-review/verification-input.npz": "bd185444e62e0fef62d918ad02fa208e57af5fa6ed70fae241326b9aa08e2cf0",
+    "artifacts/ninety-mpfb-review/runtime-weight-override.json": "a60f2fab5cb2043e787baa5deaefcc713deb677eb0a819f1b95869b60e25411f",
+    "artifacts/ninety-mpfb-review/combined-correctives.json": "f0cbddf731e7a189ff05968b3893e6e0fac3ade5e092c095392b1893339ce71a"
+  },
+  "limits": [
+    "Finite151samples, not continuous collision proof.",
+    "Pre-existing axilla/knee contacts remain; no global intersection-free claim.",
+    "User review of the new animated pelvis/thigh appearance remains pending."
+  ],
+  "reviewer": "primary, supported by frozen numerical and independent visual receipts",
+  "promotion_map": {}
+}

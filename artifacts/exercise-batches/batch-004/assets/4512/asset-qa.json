@@ -1,0 +1,80 @@
+{
+  "status": "all_declared_checks_pass_pending_user_shape_approval",
+  "runtime_sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+  "static_qa": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "hidden back-to-back faces: MPFB_Butterfly_HipRepair_STATIC_REVIEW (10 pairs) - delete to save tris"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [
+      {
+        "where": "MPFB_Butterfly_HipRepair_STATIC_REVIEW",
+        "tri_pairs": 10
+      }
+    ],
+    "enclosed": [],
+    "objects": {
+      "MPFB_Butterfly_HipRepair_STATIC_REVIEW": {
+        "verts": 13405,
+        "faces": 26806,
+        "tris": 26806,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.02,
+        "uv_coverage_pct": 60.4
+      }
+    }
+  },
+  "runtime_surface_checks": {
+    "all_hip_roi_descendants_and_replacement_faces_clear": true,
+    "all_complete_hand_vs_leg_faces_clear": true,
+    "whole_skin_floor_penetration_below_0p35mm": true,
+    "actual_inferior_glute_gap_below_2mm": true,
+    "all_feet_remain_within_1mm_of_floor": true,
+    "no_zero_area_faces": true,
+    "all_complete_arm_vs_leg_faces_clear": true
+  },
+  "composition_checks": {
+    "sample_shapes_are_151x13405x3_float32": true,
+    "hip_and_arm_active_domains_disjoint": true,
+    "final_matches_hip_candidate_on_verification_mask_or_affected_face_vertices": true,
+    "final_matches_arm_candidate_on_complete_arm_hand_and_corrective_vertices": true,
+    "remaining_vertices_match_baseline": true,
+    "feet_and_glute_match_both_candidates": true,
+    "mesh_geometry_hash_matches_both_existing_receipts": true,
+    "motion_topology_hash_matches_both_existing_receipts": true,
+    "verification_input_hash_matches_provenance_and_hip_receipt": true,
+    "hip_weight_overlay_hash_matches_composition_and_final_build": true,
+    "hip_and_arm_receipts_record_same_unchanged_geometry_topology_inputs": true,
+    "arm_corrective_source_hash_matches_composition": true,
+    "final_combined_corrective_hash_matches_build": true
+  },
+  "warnings": [
+    "10 opposing proximity pairs:9 unchanged source-complement pairs and1 explicit cap pair separated by0.4mm. Closed topology and nonzero geometry retained; no z-fighting error.",
+    "Small upper gluteal notch and angular lateral hip crease remain for user review.",
+    "Global counts can include contacts outside the selected hip/hand scopes. Remaining pairs require separate localization; no global intersection-free claim."
+  ]
+}

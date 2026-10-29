@@ -1,0 +1,57 @@
+{
+  "contract_version": 1,
+  "hand_vertices_in_mask": 3188,
+  "hands": [
+    {
+      "source_material": "Material_0",
+      "hand_material": "HandFace_CleanSkin_0",
+      "faces": 4281,
+      "sampled_skin_srgb": [
+        0.8196079134941101,
+        0.6549019813537598,
+        0.5686274766921997
+      ],
+      "source_color_preserved": "Image_0",
+      "color_image": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/athlete-clean-v2/handface-color-0.png",
+      "normal_image": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/athlete-clean-v2/handface-normal-0.png"
+    }
+  ],
+  "vertex_count_before": 18415,
+  "face_count_before": 29210,
+  "rig_bones": 24,
+  "nose": {
+    "moved_vertices": 102,
+    "max_forward_displacement_m": 0.014460715057179082,
+    "affected_bounds_m": [
+      [
+        -0.015009438656059526,
+        -0.11248553978311548,
+        1.6171726628279828
+      ],
+      [
+        0.03619888701590401,
+        -0.08779311937556145,
+        1.6838360219336437
+      ]
+    ],
+    "nasal_root_y_m": -0.10379905468674622,
+    "tip_before_y_m": -0.11248553978311548,
+    "tip_after_y_m": -0.12694625484029456,
+    "projection_from_root_before_m": 0.008686485096369267,
+    "projection_from_root_after_m": 0.023147200153548347,
+    "preserved_unaffected_corner_normals": 86933,
+    "max_unaffected_normal_vector_delta": 0.0,
+    "encoded_normals_outside_nose_support_restored_exactly": true,
+    "nose_normal_support_vertices": 145
+  },
+  "vertices_changed_outside_nose": 0,
+  "vertex_count_after": 18415,
+  "face_count_after": 29210,
+  "custom_normals_retained": true,
+  "nonhand_material_assignments_changed": 0,
+  "source_images_unchanged": {
+    "Image_0": true,
+    "normal": true,
+    "Image_1": true
+  }
+}

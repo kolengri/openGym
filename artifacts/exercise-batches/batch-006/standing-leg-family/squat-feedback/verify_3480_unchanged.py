@@ -1,0 +1,12 @@
+"""Unchanged3480 file bytes plus all151 actual native matrix/skin fingerprints."""
+from pathlib import Path
+import bpy,numpy as np,json,hashlib
+P=Path(__file__).resolve().parent;B=P.parents[1];sha=lambda b:hashlib.sha256(b).hexdigest();snap=json.loads((P/'3480-before-file-hashes.json').read_text());current={str(f.relative_to(B/'assets/3480')):sha(f.read_bytes()) for f in (B/'assets/3480').rglob('*') if f.is_file()};required={x['path'] for x in json.loads((B/'assets/3480/curated-files.json').read_text())['files']}|{'curated-files.json'};assert required<=set(current);assert set(current)<=set(snap);assert all(snap[n]==v for n,v in current.items())
+rows=[]
+for filename in ['3480','3479']:
+ source=B/'assets'/filename/'source.blend';bpy.ops.wm.open_mainfile(filepath=str(source));body=bpy.data.objects['SK_BlenderStudioHuman'];rig=bpy.data.objects['RIG_BlenderStudioHuman'];a=bpy.data.actions['Exercise_3480'];rig.animation_data.action=a;keys=body.data.shape_keys;keys.animation_data.action=a;keys.animation_data.action_slot=next(x for x in a.slots if x.target_id_type=='KEY');scene=bpy.context.scene;frames=[]
+ for f in range(151):
+  scene.frame_set(f+1);bpy.context.view_layer.update();bones=np.array([np.array(pb.matrix) for pb in rig.pose.bones],np.float32);ev=body.evaluated_get(bpy.context.evaluated_depsgraph_get());me=ev.to_mesh();X=np.array([ev.matrix_world@v.co for v in me.vertices],np.float32);ev.to_mesh_clear();frames.append({'frame':f,'bone_matrices_sha256':sha(bones.tobytes()),'skin_positions_sha256':sha(X.tobytes())})
+ rows.append(frames)
+assert rows[0]==rows[1],'3480 actual native frame changed'
+report={'ok':True,'scope':'Every existing3480 file remains byte-identical. All151 native selected3480 action matrices and full skin positions compare bit-exact between its original source and the revised3479 source. No position cache is stored, only verification fingerprints.','unchanged_file_count':len(current),'all_published3480_files_present_and_exact':True,'missing_unpublished_local_files_allowed_for_replay':sorted(set(snap)-set(current)),'3480_original_source_sha256':snap['source.blend'],'3480_original_glb_sha256':snap['motion.glb'],'revised_source_sha256':sha((B/'assets/3479/source.blend').read_bytes()),'native_bone_and_skin_bit_exact':True,'samples':rows[0]};(P/'3480-preservation-report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='samples'}))

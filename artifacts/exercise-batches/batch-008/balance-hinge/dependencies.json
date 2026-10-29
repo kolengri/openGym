@@ -1,0 +1,65 @@
+{
+  "source_sha256": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+  "read_only_workspace_files": [
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/plantar_binding.py",
+      "sha256": "72676e1d9856fdc0f3c534590c345405a5a494cf5a0c82df0dd3d5b4abfb6cdc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/check_motion.py",
+      "sha256": "c9cc23979ac62185940a5f712e32e95628a6173e57fd8af7875dc6508f1d3d8d"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/arm-circle-family/triangle_intersection.py",
+      "sha256": "0cd7c56affb7fd757622199bc4803c326106281e66819077cd69ebba6fc97e36"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/build/three.module.js",
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    },
+    {
+      "path": "artifacts/first-exercise-3d/runtime/node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+      "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16"
+    },
+    {
+      "path": "catalogue/exercises/3214.json",
+      "sha256": "c5d1885fa2c64bcfe9b9dd05d72bc277d678b5e9fcfae07d9c0917e62c95f666"
+    }
+  ],
+  "external_read_only_helpers": [
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-core/scripts/env_report.py",
+      "sha256": "e628feed806dd265e0c1ce803d92591aac208a9f463d8c47cbb939476d3b347a"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/qa_check.py",
+      "sha256": "11b4fa11244bfa6719689a06eec58c050a3ad5b6d17ac0f75113f332f97b274b"
+    },
+    {
+      "path": "/Users/kolengri/.codex/skills/blender-asset-qa/scripts/review_shots.py",
+      "sha256": "ffd4361f313592b67c124cdf0ec54b8d9866c9b29eefdac5c47731ce133d3f01"
+    }
+  ],
+  "execution": {
+    "blender": "/opt/homebrew/bin/blender -b -t2 --python-exit-code1",
+    "version": "5.2.3",
+    "installations": false
+  },
+  "library_note": "Existing Three.js package is reused read-only; GLTFLoader transitive imports resolve inside that same installed package. No runtime frame/vertex cache is a delivered input."
+}

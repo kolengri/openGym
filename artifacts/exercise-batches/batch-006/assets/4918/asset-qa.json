@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "source_sha256": "5be07ced001992d15b16c86ccdb04f1aa0f09168d1d55b7fb0acbaac3fe0cafe",
+  "raw_report": "raw-asset-qa.json",
+  "zero_errors": true,
+  "warnings": [
+    {
+      "frame": 20,
+      "warning": "asset lowest point z=0.2325 (not resting on ground plane z=0)",
+      "disposition": "Expected during explicitly declared flight; grounded-only support gates are checked independently."
+    },
+    {
+      "frame": 58,
+      "warning": "asset lowest point z=0.2553 (not resting on ground plane z=0)",
+      "disposition": "Expected during explicitly declared flight; grounded-only support gates are checked independently."
+    }
+  ],
+  "claim_limit": "Mandatory game profile; no clinical or globally self-intersection-free claim."
+}

@@ -1,0 +1,34 @@
+{
+  "status": "prepared_pending_actual_runtime_zone_review",
+  "source_vertices": 13405,
+  "selected_regions": [
+    "adductor_longus.L",
+    "adductor_longus.R",
+    "adductor_magnus_visible.L",
+    "adductor_magnus_visible.R"
+  ],
+  "region_seed_counts": {
+    "adductor_longus.L": 55,
+    "adductor_longus.R": 55,
+    "adductor_magnus_visible.L": 22,
+    "adductor_magnus_visible.R": 22
+  },
+  "existing_registration_maximum_error": {
+    "adductor_longus.L": 4.84619140594944e-07,
+    "adductor_longus.R": 4.966735840383762e-07,
+    "adductor_magnus_visible.L": 4.5724105834921147e-07,
+    "adductor_magnus_visible.R": 4.5724105834921147e-07
+  },
+  "new_vertex_policy": "Equal contribution once per distinct incident birth triangle, matching the skin-weight transfer.",
+  "notice": "Artist-authored visible adductor surface fields. Deep origins are omitted; no measured temperature or recruitment claim.",
+  "input_sha256": {
+    "artifacts/butterfly-mpfb-review/prepare_heat.py": "674db9ceb4d42efe6aaef0d4932d2048445929bec51d2b44dbb677e108255cd5",
+    "artifacts/mannequin-muscle-atlas/muscle_atlas.py": "6862b6b901272d5c4fa4eabc4457d7a96e14fdafdc691875000481ecfa2ce022",
+    "artifacts/mannequin-mpfb-prototype/neutral-cage.npz": "1b2725fedff13585d625ee9e37ea9256b0dc374574a07d739d32b94fbad50218",
+    "artifacts/ninety-mpfb-review/mesh-preparation.json": "7f94997df7fc37cf4032b16e48ff70fa309de08f60463086c969546cfff39cbf",
+    "artifacts/ninety-mpfb-review/heat-regions.json": "3354296cfbbeebfb98cd283a3936beca706947f5bff7447c75e3ed4e9388cd04",
+    "artifacts/ninety-mpfb-review/mesh-input.json": "e8e938fff2a9cb9abe0fb7ee0f714441d58561d7f917d3399f8085a81b4adbe5",
+    "artifacts/butterfly-mpfb-review/runtime/composed-cage.npz": "39081100da1bc71cefde2ea76e29cb9655646920b4fd582d45a7e178015a54a4",
+    "artifacts/butterfly-mpfb-review/topology-repair/restaged/new-vertex-provenance.json": "8ad0316234be112be3b4d26f87bcbbc265baa7c8e50c64b3d2429a75283d90f4"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "saved_float32_pad_target_verified",
+  "checks": {
+    "saved_float32_target_strict_hand_leg_zero": true,
+    "source_ids_exact": true,
+    "fixed_triangles_exact": true,
+    "outside_hand_positions_exact": true,
+    "saved_native_joint_M0_exact": true,
+    "float32_target_displacement_cap_2mm": true,
+    "saved_material_thickness_ratio_at_least_08": true,
+    "source_native_snapshot_hash_exact": true
+  },
+  "strict_hand_leg_crossings": {
+    "count": 0,
+    "broad_phase_candidates": 0,
+    "touched_source_ids": [],
+    "world_bounds_m": null,
+    "pairs": []
+  },
+  "maximum_float32_coordinate_transport_error_m": 1.4883033583323879e-08,
+  "minimum_saved_finger_material_pair_ratio": 0.8541053591919153,
+  "native_joint_M0_maximum_readback_error": 0.0,
+  "artifact": "readback-target.npz",
+  "normals": "Area-weighted fixed-triangle geometric normals; normal deltas are separately provided for composition",
+  "no_source_native_pose_or_topology_change": true
+}

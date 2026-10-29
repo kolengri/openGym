@@ -1,0 +1,82 @@
+{
+  "id": "3483",
+  "name": "around the world superman hold",
+  "action": "Exercise_3483",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "glutes"
+  ],
+  "secondary": [
+    "lower back",
+    "hamstrings",
+    "rear deltoids",
+    "core"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Lie face down with your arms extended overhead and legs straight.",
+    "Lift your arms, chest and legs a few centimetres off the floor.",
+    "Sweep your arms out to the sides and down toward your hips in a wide arc.",
+    "Sweep them back overhead along the same path.",
+    "Keep your neck neutral and legs lifted throughout.",
+    "Lower down with control after your set."
+  ],
+  "source_hold_recommendation_seconds": null,
+  "phases": [
+    {
+      "start": 0,
+      "end": 0.8,
+      "label": "Lift chest, arms and both legs"
+    },
+    {
+      "start": 0.8,
+      "end": 2.4,
+      "label": "Wide overhead-to-hips sweep"
+    },
+    {
+      "start": 2.4,
+      "end": 4,
+      "label": "Wide hips-to-overhead sweep"
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "label": "Lower with control"
+    }
+  ],
+  "interpretation": "Source-equivalent4935/3483 share one physical model and bilateral motion path, with distinct Exercise_4935/Exercise_3483 action identities and source muscle labels. Both straight legs lift together and remain lifted through the full wide overhead-to-hips-to-overhead arm sweep. Anterior pelvic skin remains supported, while modest upper-thoracic extension lifts the chest; neck/head orientation follows the upper trunk. Source-length arms sweep155degrees in the floor plane with7degrees authored elbow flexion, open relaxed source fingers and palms toward the floor. The authored leg angle progresses from8.4degrees below horizontal to5.6degrees below horizontal, lifting the distal skin only a few centimetres. The five-second timing,1mm contact offset and exact numeric angles are authored illustration choices, not source measurements. The isometric hold record retains the sustained bilateral lift throughout the sweep and controls the final lowering.",
+  "source_roles": {
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "lower back",
+      "hamstrings",
+      "rear deltoids",
+      "core"
+    ]
+  },
+  "authored_numeric_parameters_not_source_measurements": true,
+  "diagnostic_peak_seconds": [
+    0.8,
+    1.6,
+    2.4,
+    4
+  ],
+  "source_model_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "shared_model_id": "4935",
+  "geometry_rest_uv_source_ids_preserved": true,
+  "runtime_frame_vertex_cache": false,
+  "shape_correctives": [],
+  "known_shape_limits": [
+    "Original low-poly shoulder/armpit and hip facets remain visible; no global collision-free or clinical claim."
+  ],
+  "floor_plane_z_m": 0,
+  "heat_role_note": "Root supplies source-label artistic warm fields; labels do not establish measured activation."
+}

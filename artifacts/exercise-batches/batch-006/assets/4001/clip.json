@@ -1,0 +1,121 @@
+{
+  "id": "4001",
+  "name": "alternate leg raise with head up",
+  "action": "Exercise_4001",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "hip flexors",
+    "lower abs"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 1.25,
+      "label": "Left raises; right lowers"
+    },
+    {
+      "start": 1.25,
+      "end": 3.75,
+      "label": "Left lowers; right raises"
+    },
+    {
+      "start": 3.75,
+      "end": 5,
+      "label": "Return through neutral transfer"
+    }
+  ],
+  "interpretation": "Continuous alternating straight-leg raises from authored4degree low position to source-compatible90degree vertical. The low foot stays airborne. The five-second loop begins at the raised mid-transfer; it does not depict the initial floor setup or claim grounded heels. Head is slightly lifted.",
+  "source_setup": "Lie on your back with your head slightly lifted.",
+  "loop_initial_state": "Both straight legs47degrees above horizontal, already in the continuous transfer.",
+  "head_condition": "Slightly lifted; actual occiput skin must stay off floor.",
+  "arms_hands": "Arms relaxed beside torso; palms/fingers near floor. Explicit source cue for4826/3590, authored neutral support for4001/5106.",
+  "source_instructions": [
+    "Lie on your back with your head slightly lifted.",
+    "Raise one leg to vertical.",
+    "Lower it without touching the floor.",
+    "Raise the other leg.",
+    "Keep your lower back pressed down."
+  ],
+  "source_hold_recommendation_seconds": null,
+  "source_record_sha256": "a1eb823ad40b28d7d0619596de766e7841e0b8634c0dbff53538f2f6d469792e",
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hip flexors",
+      "lower abs"
+    ]
+  },
+  "authored_ranges": {
+    "leg_elevation_degrees": [
+      4,
+      90
+    ],
+    "ankle_plantarflexion_degrees": [
+      22,
+      22
+    ],
+    "toe_extension_degrees": [
+      0,
+      0
+    ],
+    "five_second_loop_tempo": "Authored demonstration timing; no measured speed, load or recruitment is claimed."
+  },
+  "source_resolution": "Explicit straight/elevated source leg cues override the context generator generic bent-knee/grounded-foot fallback.",
+  "shared_physical_resource": {
+    "motion": "../../leg-raise-family/motion.glb",
+    "source": "../../leg-raise-family/source.blend",
+    "action_identity": "Exercise_4001",
+    "identical_leg_action_as": []
+  },
+  "review_status": "frozen_user_review_candidate_native_export_physics_passed_gpu_review_root_owned",
+  "limits": "Illustration staging and source-bound surface QC, not clinical validation or a globally collision-free certificate.",
+  "asset": "leg-raise-family",
+  "physical_source": "../../leg-raise-family/source.blend",
+  "cervical_attachment": {
+    "maximum_source_delta_m": 0.008,
+    "weight": 0.6218309238136919,
+    "remaining_small_contour_crease": "Disclosed and accepted for this user-review illustration batch."
+  },
+  "provenance": {
+    "body": "Original continuous Blender Studio CC0 Human Base Mesh",
+    "canonical_source": "artifacts/bodyweight-five/bodyweight-five.blend",
+    "canonical_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "text": "catalogue/exercises/4001.json",
+    "restricted_media_used": false,
+    "paid_generation_used": false
+  },
+  "correctives": {
+    "support_position_normal_targets": 6,
+    "cervical_position_normal_targets": 1,
+    "support_maximum_rest_delta_m": {
+      "raise": 0.0060312869,
+      "toe": 0.0031317501
+    },
+    "cervical_maximum_rest_delta_m": 0.008,
+    "cervical_weight": 0.6218309238136919,
+    "cervical_remaining_small_contour_crease": "Disclosed and accepted by root; no further shape change.",
+    "construction": "Original Basis/rest/UV/IDs preserved. New C2 source support fields and one compact C2 posterior cervical attachment field; actual DQ skin and NORMAL transport verified. No bicycle pose keys, guards or schedules imported."
+  },
+  "shared_motion": {
+    "family": "leg-raise-family",
+    "actions": [
+      "Exercise_4826",
+      "Exercise_4001",
+      "Exercise_3590",
+      "Exercise_5106"
+    ],
+    "identity_difference": "4826/3590 preserve separate catalogue/action identities with exact same physical track;4001 raises head and uses safe cervical field amplitude;5106 keeps both legs82\u201390deg and alternates ceilingward toe reach."
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "scope": "Batch 007 diagnostic subset only; 8 manifest IDs, excluding author-blocked 10058 and 4365.",
+  "source_revision": "cbf4375ba2ff1e6a051f25b37198f593e69bf6b1",
+  "build_manifest_sha256": "3248efe71bf3d99e14b7a5af3508fa37b526674869986aa9038dbfeca830ef6f",
+  "exercise_ids": [
+    "1368",
+    "2761",
+    "2762",
+    "3294",
+    "4436",
+    "4437",
+    "4702",
+    "4715"
+  ],
+  "camera_fit": {
+    "command": "node artifacts/exercise-batches/fit-cameras.mjs 007",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-007/logs/fit-cameras.log",
+    "width_only_assertion": true,
+    "records": {
+      "1368": {
+        "before": {
+          "camera_sha256": "db63c30700c955bec8684a1a21c05181f18ce6a0d2b6d81d253456d7d0704193",
+          "widths": [
+            2.05,
+            0.85
+          ],
+          "clip_sha256": "2583869a0b373dd1da90580a837d0d2dd679b169f70eeed454c5fca4d5b74096",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        "after": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "2583869a0b373dd1da90580a837d0d2dd679b169f70eeed454c5fca4d5b74096",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": true
+        }
+      },
+      "2761": {
+        "before": {
+          "camera_sha256": "db63c30700c955bec8684a1a21c05181f18ce6a0d2b6d81d253456d7d0704193",
+          "widths": [
+            2.05,
+            0.85
+          ],
+          "clip_sha256": "5342831054c4c1bd16809661d655e83a35eeb44b65ea403353625077392ce6a7",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        "after": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "5342831054c4c1bd16809661d655e83a35eeb44b65ea403353625077392ce6a7",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": true
+        }
+      },
+      "2762": {
+        "before": {
+          "camera_sha256": "db63c30700c955bec8684a1a21c05181f18ce6a0d2b6d81d253456d7d0704193",
+          "widths": [
+            2.05,
+            0.85
+          ],
+          "clip_sha256": "4653ec180562fac0b65e8083b531687a441053da32d2a84109b0b71b77afabf5",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        "after": {
+          "camera_sha256": "0f9aa04891be889e0973c8c8a0f98bd222121e269bf5a6bd9bf0938ed9fcde9d",
+          "widths": [
+            2.42,
+            0.85
+          ],
+          "clip_sha256": "4653ec180562fac0b65e8083b531687a441053da32d2a84109b0b71b77afabf5",
+          "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+          "model_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": true
+        }
+      },
+      "3294": {
+        "before": {
+          "camera_sha256": "22ae3345650c85b6d41411213f78ce6243c80fdd174fe99da001779f41adaa5b",
+          "widths": [
+            2.55,
+            2.55
+          ],
+          "clip_sha256": "5ec2ee1ede1d61c28016e4d03fb984b1e3d749fce7274ca888f6ae6fe5e144d6",
+          "source_sha256": "e8225427a8c96ea56caecd5efc1bdd988f23b2469c72e9972274f7cf4e657102",
+          "model_sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0"
+        },
+        "after": {
+          "camera_sha256": "22ae3345650c85b6d41411213f78ce6243c80fdd174fe99da001779f41adaa5b",
+          "widths": [
+            2.55,
+            2.55
+          ],
+          "clip_sha256": "5ec2ee1ede1d61c28016e4d03fb984b1e3d749fce7274ca888f6ae6fe5e144d6",
+          "source_sha256": "e8225427a8c96ea56caecd5efc1bdd988f23b2469c72e9972274f7cf4e657102",
+          "model_sha256": "15dec7ef21cb622012aa522fff06e27d28aa6af557b575ee1fa9a36584e518b0"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": false
+        }
+      },
+      "4436": {
+        "before": {
+          "camera_sha256": "12d0790a97861cd046d2ae29a2fe99ae1885a66aba1879a04a3bb4865709fc81",
+          "widths": [
+            2.25,
+            2.25
+          ],
+          "clip_sha256": "dae9eeb3400f41f221a3a98d719432ada1632cd9d60f022cca209606f16eca00",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc"
+        },
+        "after": {
+          "camera_sha256": "ff8ce84fe80c812e65743a69e14c08cab6b89caa4bc6e8d0b1d0e559a70b87f2",
+          "widths": [
+            3.82,
+            3.76
+          ],
+          "clip_sha256": "dae9eeb3400f41f221a3a98d719432ada1632cd9d60f022cca209606f16eca00",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": true
+        }
+      },
+      "4437": {
+        "before": {
+          "camera_sha256": "12d0790a97861cd046d2ae29a2fe99ae1885a66aba1879a04a3bb4865709fc81",
+          "widths": [
+            2.25,
+            2.25
+          ],
+          "clip_sha256": "ba4adf88451dae9d8ec5e479be073cfbd082ce59c87859f984f8add28898de49",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc"
+        },
+        "after": {
+          "camera_sha256": "0abc2e6b9c0b50f501f61f84bb21030b87e12977348680d045f02f6add0a962a",
+          "widths": [
+            3.75,
+            3.71
+          ],
+          "clip_sha256": "ba4adf88451dae9d8ec5e479be073cfbd082ce59c87859f984f8add28898de49",
+          "source_sha256": "ff2a33626e3e2cd3fbe0fc9f4c6119a1d3dd012021862fe9d4afb2c0453b2d28",
+          "model_sha256": "5d496955455c4e7a7a01267aef9333e0b3cefb380ba2d427141e1c54c97205cc"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": true
+        }
+      },
+      "4702": {
+        "before": {
+          "camera_sha256": "22ae3345650c85b6d41411213f78ce6243c80fdd174fe99da001779f41adaa5b",
+          "widths": [
+            2.55,
+            2.55
+          ],
+          "clip_sha256": "7a96b18649cac1b3a6ce5a01431c784bae29627097dc59d081e4c4a28a039220",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0"
+        },
+        "after": {
+          "camera_sha256": "3d49f947505f341defb27fd0bca8e3a135b5d56b90ada973674c630b57c3a41a",
+          "widths": [
+            2.81,
+            2.82
+          ],
+          "clip_sha256": "7a96b18649cac1b3a6ce5a01431c784bae29627097dc59d081e4c4a28a039220",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": true
+        }
+      },
+      "4715": {
+        "before": {
+          "camera_sha256": "22ae3345650c85b6d41411213f78ce6243c80fdd174fe99da001779f41adaa5b",
+          "widths": [
+            2.55,
+            2.55
+          ],
+          "clip_sha256": "40d6fe1bb496e5db2730f05947a0fd01c9385dda0542fc3612c13ddce8af5f6b",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0"
+        },
+        "after": {
+          "camera_sha256": "3d49f947505f341defb27fd0bca8e3a135b5d56b90ada973674c630b57c3a41a",
+          "widths": [
+            2.81,
+            2.82
+          ],
+          "clip_sha256": "40d6fe1bb496e5db2730f05947a0fd01c9385dda0542fc3612c13ddce8af5f6b",
+          "source_sha256": "2848722511da6da58de748167326615befd2bf5b05e06042bc555fef84a97bd7",
+          "model_sha256": "7ec0a7519bd8b1e2485f9a8cacf550fe362cfbdd1e7e4b2f4654a49a538fafe0"
+        },
+        "checks": {
+          "camera_width_only": true,
+          "clip_unchanged": true,
+          "source_unchanged": true,
+          "model_unchanged": true,
+          "camera_width_changed": true
+        }
+      }
+    }
+  },
+  "diagnostic_build": {
+    "command": "node artifacts/exercise-batches/batch-007/diagnostic-build.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-007/logs/diagnostic-build.log",
+    "exercise_count": 8,
+    "physical_model_count": 4
+  },
+  "verification": {
+    "command": "node artifacts/exercise-batches/batch-007/verify.mjs",
+    "exit_code": 1,
+    "log": "artifacts/exercise-batches/batch-007/logs/verify-schema-failure.log",
+    "failure": "AssertionError [ERR_ASSERTION]: 1368 frame0 patchpelvic_support: actual[0.00150010135056039,0.008543251475928992], native[undefined,undefined]",
+    "stack": "verifyReview (artifacts/exercise-batches/verify-review.mjs:165:12); artifacts/exercise-batches/batch-007/verify.mjs:2:1"
+  },
+  "capture": {
+    "command": "node artifacts/exercise-batches/batch-007/capture-peaks.mjs",
+    "result": "not run",
+    "reason": "Stopped after the meaningful verification failure as instructed."
+  },
+  "limits": [
+    "No changes to clips, source bodies, or model bytes were observed in the eight-ID scope.",
+    "Camera fields other than width, including angles, targets, labels, and frame source IDs, remained unchanged.",
+    "The existing pre-fit 37-pose capture was not repeated and does not represent the fitted diagnostic build."
+  ],
+  "reference_normalization_retry": {
+    "reference_receipt": "artifacts/exercise-batches/batch-007/reference-normalization.json",
+    "scope": "Added omitted scalar min_z/max_z from existing native positions for 200 patches across 1368, 2761 and 2762; positions and indices unchanged.",
+    "build_manifest_sha256": "3248efe71bf3d99e14b7a5af3508fa37b526674869986aa9038dbfeca830ef6f",
+    "verification": {
+      "command": "node artifacts/exercise-batches/batch-007/verify.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-007/logs/verify-reference-normalized.log",
+      "result": "passed",
+      "selected_action_count": 8,
+      "runtime_errors": 0
+    },
+    "capture": {
+      "command": "node artifacts/exercise-batches/batch-007/capture-peaks.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-007/logs/capture-peaks-reference-normalized.log",
+      "result": "passed",
+      "poses": 37,
+      "screenshots": 74,
+      "manifest": "artifacts/exercise-batches/batch-007/capture-peaks.json",
+      "screenshot_pattern": "artifacts/exercise-batches/batch-007/{neutral,zones}-<exercise>-<pose>.png"
+    },
+    "acceptance_scope": "Eight-action diagnostic subset only; final ten-action batch acceptance was not run."
+  },
+  "preserved_initial_failure_log": "artifacts/exercise-batches/batch-007/logs/verify-schema-failure.log",
+  "excluded_author_blocked_ids": [
+    "10058",
+    "4365"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "ok": true,
+  "source_sha256": "026db4baa0185082af3deda03edbec24cac1e04c9b61eceefe96adff9741ae06",
+  "glb_sha256": "2a109b9f6ea9a99ac5de7f83f7e18610ad2b036e54a16942221bcf3c4c2acb6f",
+  "actual_action": "Exercise_3948",
+  "shared_actions": [
+    "Exercise_3948",
+    "Exercise_4714"
+  ],
+  "identical_action_tracks": true,
+  "shared_geometry_count": 1,
+  "duration_seconds": 5,
+  "source_vertices": 10582,
+  "exported_vertices": 12010,
+  "triangles": 21160,
+  "bones": 51,
+  "maximum_influences": 4,
+  "maximum_weight_normalization_error": 4.470348358154297e-8,
+  "morph_targets": 3,
+  "position_normal_targets": 3,
+  "source_index_complete": true,
+  "oriented_source_triangles_preserved": true,
+  "textures": 0,
+  "materials": 1,
+  "max_skin_error_m": 9.365294093198601e-7,
+  "max_joint_error_m": 8.558086788766289e-7,
+  "max_shader_normal_angle_degrees": 0.005602666740799681,
+  "loop_skin_error_m": 1.0356350553807584e-7,
+  "method": "Actual project Three.js GLTFLoader, AnimationMixer, Skeleton and applyBoneTransform. Source native positions and all 51 joints compared after Blender-to-runtime coordinate conversion. Normals evaluated with the exact Three.js skinnormal_vertex four-matrix equation and independently recorded native source normals transformed by source pose/bind matrices. Three bounded POSITION/NORMAL morphs are included in both independent native-source position and exact runtime shader-normal equations.",
+  "contact_transfer": "Complete original-index positions and unchanged triangles transfer the source-bound contact measurements to the actual Three.js linear runtime.",
+  "source_contact_ok": false,
+  "samples": [
+    {
+      "frame": 0,
+      "max_skin_error_m": 5.197568798622663e-7,
+      "mean_skin_error_m": 1.3098198892167565e-7,
+      "max_joint_error_m": 4.0228182680477774e-7,
+      "max_shader_normal_angle_degrees": 0.004685649239260022,
+      "minimum_unnormalized_shader_normal_length": 0.8821641554214509
+    },
+    {
+      "frame": 15,
+      "max_skin_error_m": 8.662862399263734e-7,
+      "mean_skin_error_m": 2.4269294336166623e-7,
+      "max_joint_error_m": 8.001257063566295e-7,
+      "max_shader_normal_angle_degrees": 0.004695219553855543,
+      "minimum_unnormalized_shader_normal_length": 0.8767635959314672
+    },
+    {
+      "frame": 30,
+      "max_skin_error_m": 7.724701427975064e-7,
+      "mean_skin_error_m": 2.3679226308238136e-7,
+      "max_joint_error_m": 6.702402210306874e-7,
+      "max_shader_normal_angle_degrees": 0.004688212427522268,
+      "minimum_unnormalized_shader_normal_length": 0.8357008199172986
+    },
+    {
+      "frame": 45,
+      "max_skin_error_m": 9.365294093198601e-7,
+      "mean_skin_error_m": 2.347271763519538e-7,
+      "max_joint_error_m": 8.558086788766289e-7,
+      "max_shader_normal_angle_degrees": 0.004682772478478811,
+      "minimum_unnormalized_shader_normal_length": 0.6904202072750474
+    },
+    {
+      "frame": 60,
+      "max_skin_error_m": 7.79382175155564e-7,
+      "mean_skin_error_m": 2.7430005631930983e-7,
+      "max_joint_error_m": 8.200537422707835e-7,
+      "max_shader_normal_angle_degrees": 0.004672297868465901,
+      "minimum_unnormalized_shader_normal_length": 0.5957767691606304
+    },
+    {
+      "frame": 75,
+      "max_skin_error_m": 8.224411370329294e-7,
+      "mean_skin_error_m": 2.860036510394183e-7,
+      "max_joint_error_m": 8.509123369292707e-7,
+      "max_shader_normal_angle_degrees": 0.005602666740799681,
+      "minimum_unnormalized_shader_normal_length": 0.5667504125276328
+    },
+    {
+      "frame": 90,
+      "max_skin_error_m": 7.79382175155564e-7,
+      "mean_skin_error_m": 2.7430005631930983e-7,
+      "max_joint_error_m": 8.200537422707835e-7,
+      "max_shader_normal_angle_degrees": 0.004672297868465901,
+      "minimum_unnormalized_shader_normal_length": 0.5957767691606304
+    },
+    {
+      "frame": 105,
+      "max_skin_error_m": 9.365294093198601e-7,
+      "mean_skin_error_m": 2.347271763519538e-7,
+      "max_joint_error_m": 8.558086788766289e-7,
+      "max_shader_normal_angle_degrees": 0.004682772478478811,
+      "minimum_unnormalized_shader_normal_length": 0.6904202072750474
+    },
+    {
+      "frame": 120,
+      "max_skin_error_m": 7.724701427975064e-7,
+      "mean_skin_error_m": 2.3679226308238136e-7,
+      "max_joint_error_m": 6.702402210306874e-7,
+      "max_shader_normal_angle_degrees": 0.004688212427522268,
+      "minimum_unnormalized_shader_normal_length": 0.8357008199172986
+    },
+    {
+      "frame": 135,
+      "max_skin_error_m": 8.662862399263734e-7,
+      "mean_skin_error_m": 2.4269294336166623e-7,
+      "max_joint_error_m": 8.001257063566295e-7,
+      "max_shader_normal_angle_degrees": 0.004695219553855543,
+      "minimum_unnormalized_shader_normal_length": 0.8767635959314672
+    },
+    {
+      "frame": 150,
+      "max_skin_error_m": 5.206612036911954e-7,
+      "mean_skin_error_m": 1.414736541695171e-7,
+      "max_joint_error_m": 3.9401625967675324e-7,
+      "max_shader_normal_angle_degrees": 0.004688696882273726,
+      "minimum_unnormalized_shader_normal_length": 0.8821642204674236
+    }
+  ]
+}

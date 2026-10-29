@@ -1,0 +1,40 @@
+{
+  "id": "3220",
+  "source_sha256": "eafd8a3ba0e34e9fcc19cf080352de813d9fe87ad05b4bb93cffd0e6308e3862",
+  "glb_sha256": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+  "source_vertices": 10582,
+  "bones": 51,
+  "triangles": 21160,
+  "native_and_actual_decoded_frames": 151,
+  "all_151_reach_residuals_m": 0,
+  "maximum_decoded_native_position_error_m": 2.1955364278702625e-06,
+  "maximum_DQ_shader_NORMAL_vector_error": 8.178377376890634e-05,
+  "loop_skin_error_m": 1.802055034406159e-07,
+  "minimum_triangle_area_m2": 5.8884476456461766e-08,
+  "minimum_skin_floor_z_m": 0.0009996502194553614,
+  "maximum_grounded_toe_anchor_step_m": 3.725290298461914e-07,
+  "forefoot_edge_ratio": [
+    0.9999574439576926,
+    1.0000538440666884
+  ],
+  "mixed_ankle_edge_ratio": [
+    0.7363886633615266,
+    1.1737328318227134
+  ],
+  "arm_leg_crossings": 0,
+  "bilateral_leg_crossings": 0,
+  "arm_self_crossings": 0,
+  "game_QA_errors": 0,
+  "retained_warnings": [
+    {
+      "frame": 36,
+      "warnings": [
+        "asset lowest point z=0.1807 (not resting on ground plane z=0)"
+      ]
+    }
+  ],
+  "morphs": 0,
+  "corrective_reset": "Not applicable; no targets/tracks.",
+  "root_GPU_accepted": true,
+  "scope": "Complete native and actual decoded DQ skin, declared full heel/ball or rear-forefoot support, foot shape and limb checks; no global collision-free or clinical claim."
+}

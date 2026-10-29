@@ -1,0 +1,83 @@
+{
+  "id": "4918",
+  "name": "alternate high hop",
+  "action": "Exercise_4918",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "cardiovascular system"
+  ],
+  "secondary": [
+    "calves",
+    "quadriceps",
+    "glutes"
+  ],
+  "display_primary": [
+    "calves",
+    "quadriceps"
+  ],
+  "display_secondary": [
+    "glutes"
+  ],
+  "display_role_basis": "Source-informed artistic visible load proxies; cardiovascular system is not a surface muscle. Source target/secondary labels are retained, not rewritten; no measured activation claim.",
+  "source_roles": {
+    "primary": [
+      "cardiovascular system"
+    ],
+    "secondary": [
+      "calves",
+      "quadriceps",
+      "glutes"
+    ]
+  },
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Stand tall with your arms ready to swing.",
+    "Hop off one foot and drive the opposite knee up.",
+    "Land softly on the ball of your foot.",
+    "Switch legs on the next hop.",
+    "Swing your arms in rhythm with your legs.",
+    "Keep a quick, bouncy pace."
+  ],
+  "source_hold_recommendation_seconds": null,
+  "source_workout_interval_seconds": null,
+  "phases": [
+    {
+      "start": 0,
+      "end": 5,
+      "label": "Four alternating spring hops with declared ground/flight phases"
+    }
+  ],
+  "interpretation": "Authored slowed five-second demonstration, not a claimed source tempo or clinical/force/stability certification. Four one-foot spring hops with opposite knee drive, 0.30-second ballistic flight per hop, toe push-off and ball landing; knee/ankle flexion and opposing arm swing absorb/prepare each contact.",
+  "source_record_sha256": "39616cbb9ea7a608656e28608dd42d2d6043247a1c17d5e82f008fd939fe181c",
+  "review_status": "native_source_and_decoded_gates_passed; primary_actual_GPU_review_pending",
+  "source_sha256": "5be07ced001992d15b16c86ccdb04f1aa0f09168d1d55b7fb0acbaac3fe0cafe",
+  "glb_sha256": "e7cc94794e0a5dbb166371669742278dfe1440abf5ede8ad7b12551a42e4e501",
+  "authoring_family": "../../upright-cardio-family",
+  "source_invariant_reference": "source-verification.json",
+  "local_binding_reference": "local-binding-report.json",
+  "flight_windows_seconds": [
+    [
+      0.525,
+      0.825
+    ],
+    [
+      1.775,
+      2.075
+    ],
+    [
+      3.025,
+      3.325
+    ],
+    [
+      4.275,
+      4.575
+    ]
+  ],
+  "authored_hops_per_demo": 4
+}

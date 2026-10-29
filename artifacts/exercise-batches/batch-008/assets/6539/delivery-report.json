@@ -1,0 +1,161 @@
+{
+  "id": "6539",
+  "status": "exact_accepted_motion_reuse_for_user_review",
+  "source_sha256": "b8499ef44ef06bb5f9ae85edf787b86021cbe555cdce9e1220a01bc5f566a332",
+  "glb_sha256": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00",
+  "action": "Exercise_6539",
+  "duration_seconds": 5,
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "skinning": "dualQuaternion",
+  "runtime_adapter": "artifacts/exercise-batches/dual-quaternion.js",
+  "runtime_adapter_sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+  "invariants": {
+    "basis": true,
+    "rest": true,
+    "UV": true,
+    "topology": true,
+    "source_ids": 10582,
+    "bones": 51,
+    "original_deform_weights_exact": true,
+    "maximum_influences": 4,
+    "normalization_max_error": 1.341104507446289e-07
+  },
+  "native151_ok": true,
+  "decoded151_ok": true,
+  "minimum_native_body_floor_m": 0.0004985332489013672,
+  "minimum_decoded_body_floor_m": 0.0004986723652109504,
+  "maximum_native_parity_error": {
+    "position_m": 1.9652027410577947e-06,
+    "joint_m": 1.1699072376722408e-06,
+    "deformation_matrix": 1.5497207641601562e-06,
+    "shader_normal_degrees": 0.004708050761781299,
+    "morph_weight": 3.5762786865234375e-07
+  },
+  "native_loop_skin_error_m": 0.0,
+  "decoded_loop_skin_error_m": 1.9144512947692867e-07,
+  "maximum_native_joint_step": {
+    "from": 23,
+    "to": 24,
+    "bone": "RightIndex1",
+    "degrees": 4.522798030660726
+  },
+  "maximum_native_skin_step": {
+    "from": 31,
+    "to": 32,
+    "source_id": 8036,
+    "m": 0.04875529889477925
+  },
+  "maximum_dorsum_skin_drift_m": 1.0334872040030526e-05,
+  "maximum_hold_skin_drift_m": 1.1937698821478985e-07,
+  "minimum_triangle_area_m2": 4.368274486144755e-08,
+  "minimum_unnormalized_source_morph_normal_length": 0.9141844146738554,
+  "whole_arm_hand_vs_leg_crossings": 0,
+  "game_QA": {
+    "errors": 0,
+    "warnings": 0,
+    "frames": [
+      0,
+      30,
+      75,
+      120,
+      150
+    ]
+  },
+  "localized_self_fold_warnings": {
+    "shoulders": {
+      "maximum_pairs": 27,
+      "worst_frames": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "peak_pairs": 3
+    },
+    "hips": {
+      "maximum_pairs": 101,
+      "worst_frames": [
+        46,
+        104
+      ],
+      "peak_pairs": 71
+    },
+    "knees": {
+      "maximum_pairs": 98,
+      "worst_frames": [
+        11,
+        139
+      ],
+      "peak_pairs": 86
+    }
+  },
+  "component": {
+    "source_sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd",
+    "key": "RestingHipVolume",
+    "construction": "One local native CorrectiveSmooth ORCO rest-shape target on the complete hip/thigh/waist collar, inverse normalized DQ rotation. No inherited binding repair or old inverse-LBS feather.",
+    "local_operator": {
+      "factor": 1,
+      "iterations": 20,
+      "smooth_type": "SIMPLE",
+      "rest_source": "ORCO",
+      "scope": "C1 sourceZ band .61..1.25m with90mm collars and |sourceX|<.32m/50mm feather; original shoulder/arm/finger/head/neck groups and sourceZ<.61m are pinned. Entire diagnosed127-pair hip core has weight1."
+    },
+    "original_weights_exact": true,
+    "no_displacement_cap": true,
+    "construction_maximum_world_delta_m": 0.10973293250068683,
+    "construction_maximum_source_delta_m": 0.10973291255518877,
+    "final_applied_maximum_source_delta_m": 0.10973290785596991,
+    "maximum_inverse_condition": 1.000000238418579,
+    "maximum_native_target_error_m": 2.1076716720783168e-07,
+    "outside_position_error_m": 0.0,
+    "protected_contact_position_error_m": 0.0,
+    "normal_domain_note": "Corresponding key NORMAL comes from independently calculated source-key normals; source-domain normal change extends one ring beyond POSITION where topology requires. Both are standard GLTF additive targets before DQ.",
+    "drive": {
+      "method": "One source POSITION/NORMAL component, zero below measured native original-DQ first hip-fold onset; quintic smootherstep of measured bilateral pelvis-relative femur flexion up to accepted peak. No extra target or fitted angle grid.",
+      "first_baseline_fold_frame": 40,
+      "last_unfolded_hip_flexion_degrees": 113.7267705629593,
+      "peak_hip_flexion_degrees": 139.696834316767,
+      "neutral_key": 0,
+      "peak_key": 1
+    },
+    "compact_exact_final_coordinates": "hip-volume-final.npz",
+    "raw_construction": "hip-volume-component.npz",
+    "normal_reference": "../assets/4365/joint-normal-reference.json.gz"
+  },
+  "source_primary_label": "Source lats primary; source labels are separate from exact reused physical motion. No measured muscle activation claim.",
+  "primary": [
+    "lats"
+  ],
+  "secondary": [
+    "shoulders",
+    "lower back"
+  ],
+  "primary_GPU_review": {
+    "lineage": "Accepted4365 GPU raster; identity exact at all151 decoded frames. Parent owns optional new6539 UI review.",
+    "accepted_model_sha256": "7000b0cbc7d4e7c73825d73510cd4037a56b2451febc0eeae28877e455cc4ee5",
+    "new_model_sha256": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00"
+  },
+  "reuse": {
+    "refit": false,
+    "native151_identity_max_m": 0,
+    "decoded151_identity_max_m": 0,
+    "binary_geometry_weights_morphs_sampler_accessors_exact": true
+  }
+}

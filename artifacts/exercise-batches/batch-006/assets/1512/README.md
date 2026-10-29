@@ -1,0 +1,28 @@
+# 1512 foot-return and grasp repair
+
+The corrected foot and collar brace were visually accepted by root. The foot now follows a continuous sagittal shin frame with the planted ankle shape held relative to that frame. Foot and ToeBase rotate together. The ankle/knee trajectory, 130° hold knee flexion, neutral trunk, right-side supports and fixed bone lengths are preserved. No body fairing, weight edit or corrective target was added.
+
+The rejected animation counter-rotated the foot in world space while a shortest-arc shin frame passed through its antipodal singularity. The shin jumped 135.35° in one 30 fps sample; blended ankle edges compressed to 9.23% of rest length and stretched to 4.50×. Native close views and the primary-owned actual GPU `before-4.40.png` reproduce the severe hook. Generic positive areas and transport parity did not reach this internal shape defect.
+
+The new targeted regression fails that old motion and passes all 151 native and actual decoded samples. Maximum internal edge-length change from the actual planted foot is 0.0435% native and 0.000868% decoded, versus 567.94% in the rejected motion. Leg, Foot and ToeBase advance together by at most 8.45° per frame without the roll discontinuity. Maximum ankle/knee trajectory change is below 0.3 µm. Exact source-bound domains, thresholds, old/new measurements and late-return proofs are in `foot-return-repair/`.
+
+The old finger fit belonged to collapsed ankle skin and failed on the corrected foot. One authorized constrained re-fit positions a meaningful palm/thumb/index brace while the remaining digits stay visibly curved outside the skin. An outward closing/opening arc derived from actual thumb skin normals prevents intermediate penetration without changing the held pose. The active wrist deviates by at most 15.017°; fixed arm reach margin is 8.813 mm. Across all 151 native samples, local signed diagnostics record no penetration. Held minimum skin clearance is 1.000 mm, palm minimum 1.005 mm, and at least 24 hand vertices lie within 5 mm of the collar. Contact coordinates and full-cycle wrist/hand-frame readback are retained. Every digit need not touch within 5 mm.
+
+Final affected checks pass:
+
+- All 151 native and decoded samples retain floor tolerance, actual right palm/knee/foot support, positive triangle areas and native joint positions.
+- Actual decoded whole-arm/hand/finger versus both whole-leg triangles have zero confirmed crossings, with one boundary ring retained.
+- Maximum full-source native/decoded DQ position error is 20.970 µm. Native skin loop error is zero; decoded loop error is 0.354 µm.
+- Mandatory game QA at start, approach, grasp, hold and release has zero errors and zero warnings.
+- Actual saved weights are normalized within 1.602e-7 with at most four influences. Basis/rest/UV/topology/source IDs remain exact, with the recorded binding/key domains and protected posterior waist unchanged outside their explicit masks.
+- Bone scales, lengths and connected arm/digit chains pass; native bones and full skin are identical before and after the staged renders.
+
+The editable source and canonical GLB retain the original Blender Studio CC0 body: 10,582 original vertices, 21,160 triangles and 51 bones. The historical 239-ID binding and three compact POSITION/NORMAL keys are reused exactly as technical body components. Earlier 1512 motion is user-rejected history. All non-Armature modifiers remain disabled; the unchanged shared DQ adapter is required.
+
+The catalogue description asks to pull a foot toward the glutes, while its instruction combines “straight back” with a bent knee. Backward motion is interpreted as the thigh trajectory, retaining a bent knee and a restrained level-pelvis lower. Exact grasp, angles and timing are authored choices. Anatomical left is shown; mirror the whole action and highlights for the other side. The 2 s entry / 1 s hold / 2 s return demonstration is separate from the source 20–30 s workout hold. Native frames 1–151 map to runtime 0–150 at 30 fps. Digits close at 1.1–1.3 s, remain in the foot frame through pull/hold/unload at 1.3–3.7 s, and open before retraction.
+
+`early-grasp-detail.png`, `early-release-detail.png`, `foot-return-repair/repaired-hold-wholebody.png` and `foot-return-repair/repaired-late-return-wholebody.png` show the settled repair. Native start/hold wire inspections are retained. The two runtime camera definitions remain primary-owned; the companion tracks 1,816 unique active hand/foot IDs through the full cycle, with the complete body retained. Width fitting and actual GPU late-return review are integrated by the primary.
+
+Reproduce with Blender 5.2.3 LTS, two threads and `--python-exit-code 1`: run `build_motion.py`, `inspect_grasp.py`, `foot-return-repair/diagnose.py`, `foot-return-repair/compare_foot.py`, `verify_asset.py -- --game-qa`, `verify_source.py`, `export_motion.py`, `diagnose_warnings.py`, and `render_qa.py`; then run `node verify_export.mjs --triangles` and `python3 finalize_packet.py`. Existing accepted parameter receipts rebuild the fixed motion; re-running the diagnostic numerical fit is not required. The verifier resumes the Three.js LoopOnce action before each random-access sample, preventing endpoint pause from contaminating later traversal.
+
+`curated-files.json` is the delivery boundary. It excludes intermediate blend backups, failed probes, raw trials, logs, caches and environments. Discrete surface checks do not certify continuous-time or enclosed-volume nonintersection. Residual angular bent-knee detail of the preserved body remains visible. Primary-owned actual GPU acceptance and final user review are separate. No video or runtime frame/vertex cache was generated.

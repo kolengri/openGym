@@ -1,0 +1,23 @@
+{
+  "source_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
+  "model_sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+  "geometry_errors": 0,
+  "warning_observations": 2,
+  "scope": "Current v2 mandatory game-asset QA at the held pose, complemented by full-path source invariants and actual runtime/source appearance review. The previous18-observation report described the user-rejected v1 source.",
+  "warnings": [
+    {
+      "kind": "hidden_back_to_back_faces",
+      "triangle_pairs": 2,
+      "disposition": "accepted_warning_only",
+      "reason": "Opposite-facing internal fold contacts are a warning, with no same-facing z-fighting or mandatory geometry error. Curated solid/wire and actual runtime views show no corresponding visible tear. Preserve the original connected topology and original source IDs rather than delete continuous skin faces.",
+      "evidence": [
+        "ninety-asset-qa.json",
+        "repair-90/full-body-v2/REPORT.md",
+        "../exercise-batches/batch-002/whole-body-v2-visual-review.json"
+      ]
+    }
+  ],
+  "preserved_source_note": "Original UV tiles extend outside0\u20131; no textures are exported. Original Basis/rest/UV/weights/source IDs and51bones retained.",
+  "historical_superseded_source_sha256": "eae482f6ed3b6030e97d6f37b48f232a3a865659ec8a7af63903708f300afd7f",
+  "historical_warning_observations": 18
+}

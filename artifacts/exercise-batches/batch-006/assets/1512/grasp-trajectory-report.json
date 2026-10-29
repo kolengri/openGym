@@ -1,0 +1,2349 @@
+{
+  "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+  "frames": 151,
+  "contact_frame": "LeftFoot native bone frame, fixed hand matrix from acquisition through pull/hold/unload, runtime frames 39..111.",
+  "foot_local_grasp_matrix": [
+    [
+      0.29150331020355225,
+      0.7788297533988953,
+      0.5553823709487915,
+      -0.0595313124358654
+    ],
+    [
+      -0.26756101846694946,
+      -0.4910370409488678,
+      0.8290311694145203,
+      0.0720059722661972
+    ],
+    [
+      0.9183878302574158,
+      -0.3902638554573059,
+      0.0652458518743515,
+      0.11532954126596451
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "palm_source_id": 10338,
+  "palm_source_coordinate": [
+    0.4037880301475525,
+    -0.0540812611579895,
+    0.8850126266479492
+  ],
+  "foot_anchor_source_coordinate": [
+    0.24786752462387085,
+    0.07898891717195511,
+    0.06836807727813721
+  ],
+  "foot_anchor_source_normal": [
+    0.8861042857170105,
+    0.3625732660293579,
+    0.28872087597846985
+  ],
+  "held_matrix_maximum_error": 7.152557373046875e-07,
+  "active_airborne_wrist_deviation_max_degrees": 15.017120286567664,
+  "planted_wrist_note": "Floor planting and replanting deliberately use wrist extension; active-airborne maximum excludes those transitions. All151 wrist deviations remain in early-native-readback.json.",
+  "maximum_recorded_local_penetration_m": 0,
+  "held_minimum_part_clearance_m": 0.001000122330879094,
+  "held_palm_minimum_clearance_m": 0.0010045763196586677,
+  "held_minimum_hand_vertices_within5mm": 24,
+  "object_normal_angle_note": "Sampled object contact normals are descriptive, not a force-closure gate. Root accepted meaningful palm/thumb/index contact with remaining digits curved outside the corrected collar.",
+  "reach_comparison": {
+    "rejected_baseline_actual_wrist_distance_m": 0.523525357156917,
+    "current_actual_wrist_distance_m": 0.520327330328182,
+    "unchanged_upper_plus_forearm_length_m": 0.529140293598175,
+    "actual_wrist_distance_reduction_m": 0.0031980268287349345,
+    "old_target_overreach_m": 0,
+    "new_reach_margin_m": 0.008812963269993035,
+    "authored_change": "Continuous shin-relative foot transport and one causally necessary collar/digit re-fit; ankle trajectory, thigh115degrees, knee130degrees and torso/support preserved. This comparison uses actual baseline/current wrists, not an incompatible fixed local grasp in another foot frame."
+  },
+  "stages": [
+    {
+      "frame": 0,
+      "time_seconds": 0.0,
+      "wrist_deviation_degrees": 92.98089513375766,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.773446261882782,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10080,
+            "distance_m": 0.773446261882782,
+            "hand_position": [
+              0.17319826781749725,
+              -0.4034152626991272,
+              0.01931154727935791
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.8285817503929138,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10013,
+            "distance_m": 0.8285817503929138,
+            "hand_position": [
+              0.12807050347328186,
+              -0.4630271792411804,
+              0.01066446304321289
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.8956295847892761,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9768,
+            "distance_m": 0.8956295847892761,
+            "hand_position": [
+              0.13456466794013977,
+              -0.5310743451118469,
+              0.05197906494140625
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.8997439742088318,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10196,
+            "distance_m": 0.8997439742088318,
+            "hand_position": [
+              0.16664910316467285,
+              -0.532295823097229,
+              0.0663367509841919
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.9003891944885254,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10197,
+            "distance_m": 0.9003891944885254,
+            "hand_position": [
+              0.19370019435882568,
+              -0.5303329229354858,
+              0.0655369758605957
+            ],
+            "foot_position": [
+              0.15067556500434875,
+              0.36897018551826477,
+              0.07571053504943848
+            ],
+            "foot_normal": [
+              0.8830288648605347,
+              0.17464204132556915,
+              0.43561455607414246
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.8952944278717041,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9729,
+            "distance_m": 0.8952944278717041,
+            "hand_position": [
+              0.2246374785900116,
+              -0.5230553150177002,
+              0.05641353130340576
+            ],
+            "foot_position": [
+              0.15067556500434875,
+              0.36897018551826477,
+              0.07571053504943848
+            ],
+            "foot_normal": [
+              0.8830288648605347,
+              0.17464204132556915,
+              0.43561455607414246
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "time_seconds": 0.8333333333333334,
+      "wrist_deviation_degrees": 11.948586938726798,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.25729140639305115,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10249,
+            "distance_m": 0.25729140639305115,
+            "hand_position": [
+              0.28757864236831665,
+              0.04164358600974083,
+              0.5523108243942261
+            ],
+            "foot_position": [
+              0.12527741491794586,
+              0.16731438040733337,
+              0.7074366807937622
+            ],
+            "foot_normal": [
+              0.6164205074310303,
+              -0.524287760257721,
+              -0.5874930024147034
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.3066173493862152,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9967,
+            "distance_m": 0.3066173493862152,
+            "hand_position": [
+              0.27732381224632263,
+              0.08273249864578247,
+              0.44480329751968384
+            ],
+            "foot_position": [
+              0.11755143105983734,
+              0.28506049513816833,
+              0.6107863187789917
+            ],
+            "foot_normal": [
+              0.6879059076309204,
+              -0.6631379723548889,
+              -0.2950142025947571
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.23455296456813812,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9874,
+            "distance_m": 0.23455296456813812,
+            "hand_position": [
+              0.25912052392959595,
+              0.14345493912696838,
+              0.4886341691017151
+            ],
+            "foot_position": [
+              0.11755143105983734,
+              0.28506049513816833,
+              0.6107863187789917
+            ],
+            "foot_normal": [
+              0.6879059076309204,
+              -0.6631379723548889,
+              -0.2950142025947571
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.2092798799276352,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9886,
+            "distance_m": 0.2092798799276352,
+            "hand_position": [
+              0.2564910054206848,
+              0.15391701459884644,
+              0.5253740549087524
+            ],
+            "foot_position": [
+              0.11755143105983734,
+              0.28506049513816833,
+              0.6107863187789917
+            ],
+            "foot_normal": [
+              0.6879059076309204,
+              -0.6631379723548889,
+              -0.2950142025947571
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.20123539865016937,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9682,
+            "distance_m": 0.20123539865016937,
+            "hand_position": [
+              0.25371938943862915,
+              0.13346430659294128,
+              0.5559700727462769
+            ],
+            "foot_position": [
+              0.13131195306777954,
+              0.17019888758659363,
+              0.711413562297821
+            ],
+            "foot_normal": [
+              0.6164205074310303,
+              -0.524287760257721,
+              -0.5874930024147034
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.18908171355724335,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10126,
+            "distance_m": 0.18908171355724335,
+            "hand_position": [
+              0.26313385367393494,
+              0.1059563010931015,
+              0.5920495390892029
+            ],
+            "foot_position": [
+              0.13131195306777954,
+              0.17019888758659363,
+              0.711413562297821
+            ],
+            "foot_normal": [
+              0.6164205074310303,
+              -0.524287760257721,
+              -0.5874930024147034
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 32,
+      "time_seconds": 1.0666666666666667,
+      "wrist_deviation_degrees": 5.405517577080226,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.03824586793780327,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.038185226905625314,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.03824586793780327,
+            "hand_position": [
+              0.18502052128314972,
+              0.09503070265054703,
+              0.7478893995285034
+            ],
+            "foot_position": [
+              0.15035848319530487,
+              0.07964730262756348,
+              0.7429254651069641
+            ],
+            "foot_normal": [
+              0.8979678750038147,
+              0.399101197719574,
+              0.18539665639400482
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.05223811790347099,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10051,
+            "distance_m": 0.05223811790347099,
+            "hand_position": [
+              0.18394804000854492,
+              0.1521207094192505,
+              0.7056801915168762
+            ],
+            "foot_position": [
+              0.13173158466815948,
+              0.1508416384458542,
+              0.706471860408783
+            ],
+            "foot_normal": [
+              0.9838982820510864,
+              0.1546631157398224,
+              -0.08957468718290329
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.08106830716133118,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9773,
+            "distance_m": 0.08106830716133118,
+            "hand_position": [
+              0.20178768038749695,
+              0.1995803415775299,
+              0.7410160899162292
+            ],
+            "foot_position": [
+              0.127047598361969,
+              0.1723969429731369,
+              0.7252981662750244
+            ],
+            "foot_normal": [
+              0.9180701375007629,
+              0.31754031777381897,
+              0.2373085916042328
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.08715084195137024,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9749,
+            "distance_m": 0.08715084195137024,
+            "hand_position": [
+              0.20132288336753845,
+              0.1954837143421173,
+              0.7708654999732971
+            ],
+            "foot_position": [
+              0.12215238064527512,
+              0.17372094094753265,
+              0.7416476607322693
+            ],
+            "foot_normal": [
+              0.7819409370422363,
+              0.38496941328048706,
+              0.4902723729610443
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.08846548944711685,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9709,
+            "distance_m": 0.08846548944711685,
+            "hand_position": [
+              0.19652891159057617,
+              0.1822337508201599,
+              0.7896937131881714
+            ],
+            "foot_position": [
+              0.12144507467746735,
+              0.1655236780643463,
+              0.7459977865219116
+            ],
+            "foot_normal": [
+              0.7195174694061279,
+              0.1837245523929596,
+              0.6697313189506531
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.08346594125032425,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9734,
+            "distance_m": 0.08346594125032425,
+            "hand_position": [
+              0.18739891052246094,
+              0.15362635254859924,
+              0.8028795719146729
+            ],
+            "foot_position": [
+              0.12727947533130646,
+              0.1214398741722107,
+              0.7547521591186523
+            ],
+            "foot_normal": [
+              0.4819476306438446,
+              0.370962917804718,
+              0.7937965393066406
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 36,
+      "time_seconds": 1.2,
+      "wrist_deviation_degrees": 5.711858391544468,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.023560266941785812,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.023498932307120413,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.023560266941785812,
+            "hand_position": [
+              0.1721181571483612,
+              0.08991730958223343,
+              0.7406432032585144
+            ],
+            "foot_position": [
+              0.1505892276763916,
+              0.08074315637350082,
+              0.7379180788993835
+            ],
+            "foot_normal": [
+              0.8979678750038147,
+              0.399101197719574,
+              0.18539665639400482
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.01583928056061268,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.015835789312404813,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9963,
+            "distance_m": 0.01583928056061268,
+            "hand_position": [
+              0.1412561535835266,
+              0.19599170982837677,
+              0.6748719811439514
+            ],
+            "foot_position": [
+              0.12590035796165466,
+              0.199793741106987,
+              0.6756637692451477
+            ],
+            "foot_normal": [
+              0.9692007899284363,
+              -0.24450214207172394,
+              -0.02947123721241951
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.036382317543029785,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.03634722251445055,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9872,
+            "distance_m": 0.036382317543029785,
+            "hand_position": [
+              0.14701533317565918,
+              0.23077556490898132,
+              0.7302559018135071
+            ],
+            "foot_position": [
+              0.11848925799131393,
+              0.22214150428771973,
+              0.7093899250030518
+            ],
+            "foot_normal": [
+              0.7604422569274902,
+              0.22604747116565704,
+              0.6087940335273743
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.048204947263002396,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9888,
+            "distance_m": 0.048204947263002396,
+            "hand_position": [
+              0.14353924989700317,
+              0.2241116166114807,
+              0.7606481909751892
+            ],
+            "foot_position": [
+              0.11353196203708649,
+              0.19773541390895844,
+              0.7336745858192444
+            ],
+            "foot_normal": [
+              0.49554944038391113,
+              0.6402167677879333,
+              0.5869866609573364
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.04779696837067604,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9841,
+            "distance_m": 0.04779696837067604,
+            "hand_position": [
+              0.1387976109981537,
+              0.19975513219833374,
+              0.7855887413024902
+            ],
+            "foot_position": [
+              0.11248467117547989,
+              0.17679835855960846,
+              0.7529518604278564
+            ],
+            "foot_normal": [
+              0.7819409370422363,
+              0.38496941328048706,
+              0.4902723729610443
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.06855231523513794,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9734,
+            "distance_m": 0.06855231523513794,
+            "hand_position": [
+              0.17474466562271118,
+              0.1488197147846222,
+              0.7959526777267456
+            ],
+            "foot_position": [
+              0.12708188593387604,
+              0.12218669056892395,
+              0.7544995546340942
+            ],
+            "foot_normal": [
+              0.4819476306438446,
+              0.370962917804718,
+              0.7937965393066406
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 39,
+      "time_seconds": 1.3,
+      "wrist_deviation_degrees": 13.226498256963259,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.0010046252282336354,
+          "vertices_within5mm_foot": 4,
+          "min_close_signed_m": 0.0010045763196586677,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.0010046252282336354,
+            "hand_position": [
+              0.1507188379764557,
+              0.08392585068941116,
+              0.7347882390022278
+            ],
+            "foot_position": [
+              0.1497793346643448,
+              0.08357034623622894,
+              0.7347733378410339
+            ],
+            "foot_normal": [
+              0.9361082911491394,
+              0.3516726791858673,
+              0.005252957344055176
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.001004474819637835,
+          "vertices_within5mm_foot": 14,
+          "min_close_signed_m": 0.0010004604737332556,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9969,
+            "distance_m": 0.001004474819637835,
+            "hand_position": [
+              0.10735735297203064,
+              0.1516885906457901,
+              0.6829898357391357
+            ],
+            "foot_position": [
+              0.10684803128242493,
+              0.15146712958812714,
+              0.6838268041610718
+            ],
+            "foot_normal": [
+              0.5577911138534546,
+              0.1487826257944107,
+              -0.8165371417999268
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.0039997403509914875,
+          "vertices_within5mm_foot": 6,
+          "min_close_signed_m": 0.00399954376189271,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9858,
+            "distance_m": 0.0039997403509914875,
+            "hand_position": [
+              0.12668240070343018,
+              0.19673040509223938,
+              0.7119839787483215
+            ],
+            "foot_position": [
+              0.12287025898694992,
+              0.19634635746479034,
+              0.7108359336853027
+            ],
+            "foot_normal": [
+              0.9518692493438721,
+              0.1058407798409462,
+              0.2876501977443695
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.011962215416133404,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.011953543522395194,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9885,
+            "distance_m": 0.011962215416133404,
+            "hand_position": [
+              0.13262829184532166,
+              0.1842239499092102,
+              0.7387733459472656
+            ],
+            "foot_position": [
+              0.12169712036848068,
+              0.180613175034523,
+              0.7355227470397949
+            ],
+            "foot_normal": [
+              0.9180701375007629,
+              0.31754031777381897,
+              0.2373085916042328
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.021406756713986397,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.0213123532012105,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9637,
+            "distance_m": 0.021406756713986397,
+            "hand_position": [
+              0.1337488889694214,
+              0.16811323165893555,
+              0.7644009590148926
+            ],
+            "foot_position": [
+              0.11938714981079102,
+              0.16531860828399658,
+              0.7487747073173523
+            ],
+            "foot_normal": [
+              0.7195174694061279,
+              0.1837245523929596,
+              0.6697313189506531
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.04518610239028931,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9904,
+            "distance_m": 0.04518610239028931,
+            "hand_position": [
+              0.12458345293998718,
+              0.15871256589889526,
+              0.8008561730384827
+            ],
+            "foot_position": [
+              0.10866913199424744,
+              0.15959984064102173,
+              0.7585746049880981
+            ],
+            "foot_normal": [
+              0.3034694194793701,
+              -0.10411036014556885,
+              0.947136402130127
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 40,
+      "time_seconds": 1.3333333333333333,
+      "wrist_deviation_degrees": 13.202221203332094,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.0010049159172922373,
+          "vertices_within5mm_foot": 4,
+          "min_close_signed_m": 0.0010048638552646594,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.0010049159172922373,
+            "hand_position": [
+              0.15070860087871552,
+              0.08379426598548889,
+              0.7352773547172546
+            ],
+            "foot_position": [
+              0.1497688591480255,
+              0.08343858271837234,
+              0.7352621555328369
+            ],
+            "foot_normal": [
+              0.9361087083816528,
+              0.3516714870929718,
+              0.005248855799436569
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.0010043344227597117,
+          "vertices_within5mm_foot": 14,
+          "min_close_signed_m": 0.0010003196184698027,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9969,
+            "distance_m": 0.0010043344227597117,
+            "hand_position": [
+              0.10734686255455017,
+              0.15155692398548126,
+              0.683478832244873
+            ],
+            "foot_position": [
+              0.10683761537075043,
+              0.1513354778289795,
+              0.6843156814575195
+            ],
+            "foot_normal": [
+              0.5577894449234009,
+              0.14878544211387634,
+              -0.8165376782417297
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.003999524749815464,
+          "vertices_within5mm_foot": 6,
+          "min_close_signed_m": 0.0039993283462536056,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9858,
+            "distance_m": 0.003999524749815464,
+            "hand_position": [
+              0.1266719102859497,
+              0.19659873843193054,
+              0.7124724984169006
+            ],
+            "foot_position": [
+              0.12285997718572617,
+              0.1962146908044815,
+              0.7113245129585266
+            ],
+            "foot_normal": [
+              0.9518706202507019,
+              0.10584103316068649,
+              0.28764575719833374
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.011962131597101688,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.011953459877986461,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9885,
+            "distance_m": 0.011962131597101688,
+            "hand_position": [
+              0.13261783123016357,
+              0.18409210443496704,
+              0.739262044429779
+            ],
+            "foot_position": [
+              0.12168674170970917,
+              0.18048135936260223,
+              0.7360114455223083
+            ],
+            "foot_normal": [
+              0.918069064617157,
+              0.3175419569015503,
+              0.23731057345867157
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.02140658162534237,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.021312194992788136,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9637,
+            "distance_m": 0.02140658162534237,
+            "hand_position": [
+              0.13373839855194092,
+              0.16798141598701477,
+              0.7648895978927612
+            ],
+            "foot_position": [
+              0.11937665939331055,
+              0.1651867926120758,
+              0.7492635846138
+            ],
+            "foot_normal": [
+              0.7195194959640503,
+              0.1837199330329895,
+              0.6697303652763367
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.04518566653132439,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9904,
+            "distance_m": 0.04518566653132439,
+            "hand_position": [
+              0.12457290291786194,
+              0.15858080983161926,
+              0.8013445734977722
+            ],
+            "foot_position": [
+              0.10865835845470428,
+              0.15946748852729797,
+              0.7590635418891907
+            ],
+            "foot_normal": [
+              0.30347582697868347,
+              -0.10410631448030472,
+              0.9471348524093628
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 60,
+      "time_seconds": 2.0,
+      "wrist_deviation_degrees": 12.148982981427679,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.001040561473928392,
+          "vertices_within5mm_foot": 4,
+          "min_close_signed_m": 0.0010401970040874176,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.001040561473928392,
+            "hand_position": [
+              0.1491805464029312,
+              0.057585813105106354,
+              0.8069041967391968
+            ],
+            "foot_position": [
+              0.14820927381515503,
+              0.05721384286880493,
+              0.8068720102310181
+            ],
+            "foot_normal": [
+              0.9361085891723633,
+              0.35167211294174194,
+              0.0052462308667600155
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.0010045580565929413,
+          "vertices_within5mm_foot": 14,
+          "min_close_signed_m": 0.0010005442345573101,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9969,
+            "distance_m": 0.0010045580565929413,
+            "hand_position": [
+              0.1057920753955841,
+              0.1253189593553543,
+              0.7550917863845825
+            ],
+            "foot_position": [
+              0.10528269410133362,
+              0.12509748339653015,
+              0.7559288144111633
+            ],
+            "foot_normal": [
+              0.5577908158302307,
+              0.1487785279750824,
+              -0.8165379762649536
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.003999591339379549,
+          "vertices_within5mm_foot": 6,
+          "min_close_signed_m": 0.0039993951832002494,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9858,
+            "distance_m": 0.003999591339379549,
+            "hand_position": [
+              0.12511709332466125,
+              0.17036083340644836,
+              0.7840861678123474
+            ],
+            "foot_position": [
+              0.12130509316921234,
+              0.16997675597667694,
+              0.7829381823539734
+            ],
+            "foot_normal": [
+              0.9518702030181885,
+              0.10584264248609543,
+              0.2876465320587158
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.01196215022355318,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.011953477864153683,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9885,
+            "distance_m": 0.01196215022355318,
+            "hand_position": [
+              0.13106301426887512,
+              0.15785443782806396,
+              0.8108755946159363
+            ],
+            "foot_position": [
+              0.12013190984725952,
+              0.15424367785453796,
+              0.8076249957084656
+            ],
+            "foot_normal": [
+              0.918068528175354,
+              0.3175426125526428,
+              0.23731163144111633
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.02140694484114647,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.021312521945219487,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9637,
+            "distance_m": 0.02140694484114647,
+            "hand_position": [
+              0.13218361139297485,
+              0.14174365997314453,
+              0.8365033864974976
+            ],
+            "foot_position": [
+              0.11782181262969971,
+              0.1389492303133011,
+              0.8208768963813782
+            ],
+            "foot_normal": [
+              0.7195189595222473,
+              0.18372035026550293,
+              0.6697307825088501
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.045185815542936325,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9904,
+            "distance_m": 0.045185815542936325,
+            "hand_position": [
+              0.12301826477050781,
+              0.13234302401542664,
+              0.8729581236839294
+            ],
+            "foot_position": [
+              0.10710377991199493,
+              0.13322988152503967,
+              0.8306769132614136
+            ],
+            "foot_normal": [
+              0.3034805655479431,
+              -0.10410583764314651,
+              0.9471333026885986
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 75,
+      "time_seconds": 2.5,
+      "wrist_deviation_degrees": 12.148982981427679,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.001040561473928392,
+          "vertices_within5mm_foot": 4,
+          "min_close_signed_m": 0.0010401970040874176,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.001040561473928392,
+            "hand_position": [
+              0.1491805464029312,
+              0.057585813105106354,
+              0.8069041967391968
+            ],
+            "foot_position": [
+              0.14820927381515503,
+              0.05721384286880493,
+              0.8068720102310181
+            ],
+            "foot_normal": [
+              0.9361085891723633,
+              0.35167211294174194,
+              0.0052462308667600155
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.0010045580565929413,
+          "vertices_within5mm_foot": 14,
+          "min_close_signed_m": 0.0010005442345573101,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9969,
+            "distance_m": 0.0010045580565929413,
+            "hand_position": [
+              0.1057920753955841,
+              0.1253189593553543,
+              0.7550917863845825
+            ],
+            "foot_position": [
+              0.10528269410133362,
+              0.12509748339653015,
+              0.7559288144111633
+            ],
+            "foot_normal": [
+              0.5577908158302307,
+              0.1487785279750824,
+              -0.8165379762649536
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.003999591339379549,
+          "vertices_within5mm_foot": 6,
+          "min_close_signed_m": 0.0039993951832002494,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9858,
+            "distance_m": 0.003999591339379549,
+            "hand_position": [
+              0.12511709332466125,
+              0.17036083340644836,
+              0.7840861678123474
+            ],
+            "foot_position": [
+              0.12130509316921234,
+              0.16997675597667694,
+              0.7829381823539734
+            ],
+            "foot_normal": [
+              0.9518702030181885,
+              0.10584264248609543,
+              0.2876465320587158
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.01196215022355318,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.011953477864153683,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9885,
+            "distance_m": 0.01196215022355318,
+            "hand_position": [
+              0.13106301426887512,
+              0.15785443782806396,
+              0.8108755946159363
+            ],
+            "foot_position": [
+              0.12013190984725952,
+              0.15424367785453796,
+              0.8076249957084656
+            ],
+            "foot_normal": [
+              0.918068528175354,
+              0.3175426125526428,
+              0.23731163144111633
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.02140694484114647,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.021312521945219487,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9637,
+            "distance_m": 0.02140694484114647,
+            "hand_position": [
+              0.13218361139297485,
+              0.14174365997314453,
+              0.8365033864974976
+            ],
+            "foot_position": [
+              0.11782181262969971,
+              0.1389492303133011,
+              0.8208768963813782
+            ],
+            "foot_normal": [
+              0.7195189595222473,
+              0.18372035026550293,
+              0.6697307825088501
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.045185815542936325,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9904,
+            "distance_m": 0.045185815542936325,
+            "hand_position": [
+              0.12301826477050781,
+              0.13234302401542664,
+              0.8729581236839294
+            ],
+            "foot_position": [
+              0.10710377991199493,
+              0.13322988152503967,
+              0.8306769132614136
+            ],
+            "foot_normal": [
+              0.3034805655479431,
+              -0.10410583764314651,
+              0.9471333026885986
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 90,
+      "time_seconds": 3.0,
+      "wrist_deviation_degrees": 12.148982981427679,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.001040561473928392,
+          "vertices_within5mm_foot": 4,
+          "min_close_signed_m": 0.0010401970040874176,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.001040561473928392,
+            "hand_position": [
+              0.1491805464029312,
+              0.057585813105106354,
+              0.8069041967391968
+            ],
+            "foot_position": [
+              0.14820927381515503,
+              0.05721384286880493,
+              0.8068720102310181
+            ],
+            "foot_normal": [
+              0.9361085891723633,
+              0.35167211294174194,
+              0.0052462308667600155
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.0010045580565929413,
+          "vertices_within5mm_foot": 14,
+          "min_close_signed_m": 0.0010005442345573101,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9969,
+            "distance_m": 0.0010045580565929413,
+            "hand_position": [
+              0.1057920753955841,
+              0.1253189593553543,
+              0.7550917863845825
+            ],
+            "foot_position": [
+              0.10528269410133362,
+              0.12509748339653015,
+              0.7559288144111633
+            ],
+            "foot_normal": [
+              0.5577908158302307,
+              0.1487785279750824,
+              -0.8165379762649536
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.003999591339379549,
+          "vertices_within5mm_foot": 6,
+          "min_close_signed_m": 0.0039993951832002494,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9858,
+            "distance_m": 0.003999591339379549,
+            "hand_position": [
+              0.12511709332466125,
+              0.17036083340644836,
+              0.7840861678123474
+            ],
+            "foot_position": [
+              0.12130509316921234,
+              0.16997675597667694,
+              0.7829381823539734
+            ],
+            "foot_normal": [
+              0.9518702030181885,
+              0.10584264248609543,
+              0.2876465320587158
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.01196215022355318,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.011953477864153683,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9885,
+            "distance_m": 0.01196215022355318,
+            "hand_position": [
+              0.13106301426887512,
+              0.15785443782806396,
+              0.8108755946159363
+            ],
+            "foot_position": [
+              0.12013190984725952,
+              0.15424367785453796,
+              0.8076249957084656
+            ],
+            "foot_normal": [
+              0.918068528175354,
+              0.3175426125526428,
+              0.23731163144111633
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.02140694484114647,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.021312521945219487,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9637,
+            "distance_m": 0.02140694484114647,
+            "hand_position": [
+              0.13218361139297485,
+              0.14174365997314453,
+              0.8365033864974976
+            ],
+            "foot_position": [
+              0.11782181262969971,
+              0.1389492303133011,
+              0.8208768963813782
+            ],
+            "foot_normal": [
+              0.7195189595222473,
+              0.18372035026550293,
+              0.6697307825088501
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.045185815542936325,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9904,
+            "distance_m": 0.045185815542936325,
+            "hand_position": [
+              0.12301826477050781,
+              0.13234302401542664,
+              0.8729581236839294
+            ],
+            "foot_position": [
+              0.10710377991199493,
+              0.13322988152503967,
+              0.8306769132614136
+            ],
+            "foot_normal": [
+              0.3034805655479431,
+              -0.10410583764314651,
+              0.9471333026885986
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 111,
+      "time_seconds": 3.7,
+      "wrist_deviation_degrees": 13.226498256963259,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.0010046252282336354,
+          "vertices_within5mm_foot": 4,
+          "min_close_signed_m": 0.0010045763196586677,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.0010046252282336354,
+            "hand_position": [
+              0.1507188379764557,
+              0.08392585068941116,
+              0.7347882390022278
+            ],
+            "foot_position": [
+              0.1497793346643448,
+              0.08357034623622894,
+              0.7347733378410339
+            ],
+            "foot_normal": [
+              0.9361082911491394,
+              0.3516726791858673,
+              0.005252957344055176
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.001004474819637835,
+          "vertices_within5mm_foot": 14,
+          "min_close_signed_m": 0.0010004604737332556,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9969,
+            "distance_m": 0.001004474819637835,
+            "hand_position": [
+              0.10735735297203064,
+              0.1516885906457901,
+              0.6829898357391357
+            ],
+            "foot_position": [
+              0.10684803128242493,
+              0.15146712958812714,
+              0.6838268041610718
+            ],
+            "foot_normal": [
+              0.5577911138534546,
+              0.1487826257944107,
+              -0.8165371417999268
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.0039997403509914875,
+          "vertices_within5mm_foot": 6,
+          "min_close_signed_m": 0.00399954376189271,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9858,
+            "distance_m": 0.0039997403509914875,
+            "hand_position": [
+              0.12668240070343018,
+              0.19673040509223938,
+              0.7119839787483215
+            ],
+            "foot_position": [
+              0.12287025898694992,
+              0.19634635746479034,
+              0.7108359336853027
+            ],
+            "foot_normal": [
+              0.9518692493438721,
+              0.1058407798409462,
+              0.2876501977443695
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.011962215416133404,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.011953543522395194,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9885,
+            "distance_m": 0.011962215416133404,
+            "hand_position": [
+              0.13262829184532166,
+              0.1842239499092102,
+              0.7387733459472656
+            ],
+            "foot_position": [
+              0.12169712036848068,
+              0.180613175034523,
+              0.7355227470397949
+            ],
+            "foot_normal": [
+              0.9180701375007629,
+              0.31754031777381897,
+              0.2373085916042328
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.021406756713986397,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.0213123532012105,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9637,
+            "distance_m": 0.021406756713986397,
+            "hand_position": [
+              0.1337488889694214,
+              0.16811323165893555,
+              0.7644009590148926
+            ],
+            "foot_position": [
+              0.11938714981079102,
+              0.16531860828399658,
+              0.7487747073173523
+            ],
+            "foot_normal": [
+              0.7195174694061279,
+              0.1837245523929596,
+              0.6697313189506531
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.04518610239028931,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9904,
+            "distance_m": 0.04518610239028931,
+            "hand_position": [
+              0.12458345293998718,
+              0.15871256589889526,
+              0.8008561730384827
+            ],
+            "foot_position": [
+              0.10866913199424744,
+              0.15959984064102173,
+              0.7585746049880981
+            ],
+            "foot_normal": [
+              0.3034694194793701,
+              -0.10411036014556885,
+              0.947136402130127
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 115,
+      "time_seconds": 3.8333333333333335,
+      "wrist_deviation_degrees": 2.323805592679231,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.029483314603567123,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.029436564829666167,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.029483314603567123,
+            "hand_position": [
+              0.1771361082792282,
+              0.09245331585407257,
+              0.7434185147285461
+            ],
+            "foot_position": [
+              0.15041552484035492,
+              0.08059442788362503,
+              0.7395918965339661
+            ],
+            "foot_normal": [
+              0.8979678750038147,
+              0.399101197719574,
+              0.18539665639400482
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.03446869179606438,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.03446732202428393,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9925,
+            "distance_m": 0.03446869179606438,
+            "hand_position": [
+              0.16249269247055054,
+              0.2061648964881897,
+              0.6844907402992249
+            ],
+            "foot_position": [
+              0.12869961559772491,
+              0.2119683474302292,
+              0.6809638738632202
+            ],
+            "foot_normal": [
+              0.9790473580360413,
+              -0.17702659964561462,
+              0.10063740611076355
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.05689351633191109,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9869,
+            "distance_m": 0.05689351633191109,
+            "hand_position": [
+              0.1605488657951355,
+              0.2433183193206787,
+              0.7423095107078552
+            ],
+            "foot_position": [
+              0.11661715060472488,
+              0.22932761907577515,
+              0.7089757919311523
+            ],
+            "foot_normal": [
+              0.7604422569274902,
+              0.22604747116565704,
+              0.6087940335273743
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.072716623544693,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9881,
+            "distance_m": 0.072716623544693,
+            "hand_position": [
+              0.15504854917526245,
+              0.2406502068042755,
+              0.7752043008804321
+            ],
+            "foot_position": [
+              0.11356431245803833,
+              0.1988040804862976,
+              0.7325936555862427
+            ],
+            "foot_normal": [
+              0.49554944038391113,
+              0.6402167677879333,
+              0.5869866609573364
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.06948566436767578,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9692,
+            "distance_m": 0.06948566436767578,
+            "hand_position": [
+              0.14775294065475464,
+              0.21475720405578613,
+              0.799420952796936
+            ],
+            "foot_position": [
+              0.11278301477432251,
+              0.1799277663230896,
+              0.7505100965499878
+            ],
+            "foot_normal": [
+              0.7819409370422363,
+              0.38496941328048706,
+              0.4902723729610443
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.07449255883693695,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9734,
+            "distance_m": 0.07449255883693695,
+            "hand_position": [
+              0.17964991927146912,
+              0.15121851861476898,
+              0.7985782623291016
+            ],
+            "foot_position": [
+              0.12703433632850647,
+              0.12236638367176056,
+              0.7544387578964233
+            ],
+            "foot_normal": [
+              0.4819476306438446,
+              0.370962917804718,
+              0.7937965393066406
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 118,
+      "time_seconds": 3.933333333333333,
+      "wrist_deviation_degrees": 5.405517577080226,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.03824586793780327,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": 0.038185226905625314,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10115,
+            "distance_m": 0.03824586793780327,
+            "hand_position": [
+              0.18502052128314972,
+              0.09503070265054703,
+              0.7478893995285034
+            ],
+            "foot_position": [
+              0.15035848319530487,
+              0.07964730262756348,
+              0.7429254651069641
+            ],
+            "foot_normal": [
+              0.8979678750038147,
+              0.399101197719574,
+              0.18539665639400482
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.05223811790347099,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10051,
+            "distance_m": 0.05223811790347099,
+            "hand_position": [
+              0.18394804000854492,
+              0.1521207094192505,
+              0.7056801915168762
+            ],
+            "foot_position": [
+              0.13173158466815948,
+              0.1508416384458542,
+              0.706471860408783
+            ],
+            "foot_normal": [
+              0.9838982820510864,
+              0.1546631157398224,
+              -0.08957468718290329
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.08106830716133118,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9773,
+            "distance_m": 0.08106830716133118,
+            "hand_position": [
+              0.20178768038749695,
+              0.1995803415775299,
+              0.7410160899162292
+            ],
+            "foot_position": [
+              0.127047598361969,
+              0.1723969429731369,
+              0.7252981662750244
+            ],
+            "foot_normal": [
+              0.9180701375007629,
+              0.31754031777381897,
+              0.2373085916042328
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.08715084195137024,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9749,
+            "distance_m": 0.08715084195137024,
+            "hand_position": [
+              0.20132288336753845,
+              0.1954837143421173,
+              0.7708654999732971
+            ],
+            "foot_position": [
+              0.12215238064527512,
+              0.17372094094753265,
+              0.7416476607322693
+            ],
+            "foot_normal": [
+              0.7819409370422363,
+              0.38496941328048706,
+              0.4902723729610443
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.08846548944711685,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9709,
+            "distance_m": 0.08846548944711685,
+            "hand_position": [
+              0.19652891159057617,
+              0.1822337508201599,
+              0.7896937131881714
+            ],
+            "foot_position": [
+              0.12144507467746735,
+              0.1655236780643463,
+              0.7459977865219116
+            ],
+            "foot_normal": [
+              0.7195174694061279,
+              0.1837245523929596,
+              0.6697313189506531
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.08346594125032425,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9734,
+            "distance_m": 0.08346594125032425,
+            "hand_position": [
+              0.18739891052246094,
+              0.15362635254859924,
+              0.8028795719146729
+            ],
+            "foot_position": [
+              0.12727947533130646,
+              0.1214398741722107,
+              0.7547521591186523
+            ],
+            "foot_normal": [
+              0.4819476306438446,
+              0.370962917804718,
+              0.7937965393066406
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 140,
+      "time_seconds": 4.666666666666667,
+      "wrist_deviation_degrees": 59.63021522798762,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.7630197405815125,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10112,
+            "distance_m": 0.7630197405815125,
+            "hand_position": [
+              0.2548713982105255,
+              -0.3319128751754761,
+              0.20466434955596924
+            ],
+            "foot_position": [
+              0.12981896102428436,
+              0.42057859897613525,
+              0.18684151768684387
+            ],
+            "foot_normal": [
+              0.6879059672355652,
+              -0.003300804877653718,
+              0.725792407989502
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.8199277520179749,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10051,
+            "distance_m": 0.8199277520179749,
+            "hand_position": [
+              0.20565542578697205,
+              -0.3966250717639923,
+              0.20121699571609497
+            ],
+            "foot_position": [
+              0.11490762233734131,
+              0.4182055592536926,
+              0.19134819507598877
+            ],
+            "foot_normal": [
+              0.30872318148612976,
+              -0.07617012411355972,
+              0.9480971097946167
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.8532766699790955,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9773,
+            "distance_m": 0.8532766699790955,
+            "hand_position": [
+              0.22300294041633606,
+              -0.42720499634742737,
+              0.1503918170928955
+            ],
+            "foot_position": [
+              0.11490762233734131,
+              0.4182055592536926,
+              0.19134819507598877
+            ],
+            "foot_normal": [
+              0.30872318148612976,
+              -0.07617012411355972,
+              0.9480971097946167
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.8386692404747009,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9750,
+            "distance_m": 0.8386692404747009,
+            "hand_position": [
+              0.24302318692207336,
+              -0.40818437933921814,
+              0.12598955631256104
+            ],
+            "foot_position": [
+              0.12955346703529358,
+              0.4205363392829895,
+              0.18692176043987274
+            ],
+            "foot_normal": [
+              0.30872318148612976,
+              -0.07617012411355972,
+              0.9480971097946167
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.8193817138671875,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9708,
+            "distance_m": 0.8193817138671875,
+            "hand_position": [
+              0.25271815061569214,
+              -0.3868340253829956,
+              0.12075763940811157
+            ],
+            "foot_position": [
+              0.12981896102428436,
+              0.42057859897613525,
+              0.18684151768684387
+            ],
+            "foot_normal": [
+              0.6879059672355652,
+              -0.003300804877653718,
+              0.725792407989502
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.7908375263214111,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10288,
+            "distance_m": 0.7908375263214111,
+            "hand_position": [
+              0.2623990476131439,
+              -0.3561396300792694,
+              0.11934906244277954
+            ],
+            "foot_position": [
+              0.12981896102428436,
+              0.42057859897613525,
+              0.18684151768684387
+            ],
+            "foot_normal": [
+              0.6879059672355652,
+              -0.003300804877653718,
+              0.725792407989502
+            ]
+          }
+        }
+      }
+    },
+    {
+      "frame": 150,
+      "time_seconds": 5.0,
+      "wrist_deviation_degrees": 92.98089513375766,
+      "parts": {
+        "palm": {
+          "min_foot_unsigned_m": 0.773446261882782,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10080,
+            "distance_m": 0.773446261882782,
+            "hand_position": [
+              0.17319826781749725,
+              -0.4034152626991272,
+              0.01931154727935791
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Thumb": {
+          "min_foot_unsigned_m": 0.8285817503929138,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10013,
+            "distance_m": 0.8285817503929138,
+            "hand_position": [
+              0.12807050347328186,
+              -0.4630271792411804,
+              0.01066446304321289
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Index": {
+          "min_foot_unsigned_m": 0.8956295847892761,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9768,
+            "distance_m": 0.8956295847892761,
+            "hand_position": [
+              0.13456466794013977,
+              -0.5310743451118469,
+              0.05197906494140625
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Middle": {
+          "min_foot_unsigned_m": 0.8997439742088318,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10196,
+            "distance_m": 0.8997439742088318,
+            "hand_position": [
+              0.16664910316467285,
+              -0.532295823097229,
+              0.0663367509841919
+            ],
+            "foot_position": [
+              0.07043930143117905,
+              0.3622419238090515,
+              0.05711139738559723
+            ],
+            "foot_normal": [
+              -0.9909517765045166,
+              0.13421830534934998,
+              0.00047504561371169984
+            ]
+          }
+        },
+        "Ring": {
+          "min_foot_unsigned_m": 0.9003891944885254,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 10197,
+            "distance_m": 0.9003891944885254,
+            "hand_position": [
+              0.19370019435882568,
+              -0.5303329229354858,
+              0.0655369758605957
+            ],
+            "foot_position": [
+              0.15067556500434875,
+              0.36897018551826477,
+              0.07571053504943848
+            ],
+            "foot_normal": [
+              0.8830288648605347,
+              0.17464204132556915,
+              0.43561455607414246
+            ]
+          }
+        },
+        "Little": {
+          "min_foot_unsigned_m": 0.8952944278717041,
+          "vertices_within5mm_foot": 0,
+          "min_close_signed_m": null,
+          "over1mm_inside": 0,
+          "worst": [],
+          "closest_contact": {
+            "original_id": 9729,
+            "distance_m": 0.8952944278717041,
+            "hand_position": [
+              0.2246374785900116,
+              -0.5230553150177002,
+              0.05641353130340576
+            ],
+            "foot_position": [
+              0.15067556500434875,
+              0.36897018551826477,
+              0.07571053504943848
+            ],
+            "foot_normal": [
+              0.8830288648605347,
+              0.17464204132556915,
+              0.43561455607414246
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "limits": "Nearest-normal signed distances are local diagnostics. Complete decoded triangle crossing results are separate; discrete samples do not certify continuous-time or enclosed-volume nonintersection."
+}

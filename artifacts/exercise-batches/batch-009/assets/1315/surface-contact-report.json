@@ -1,0 +1,78 @@
+{
+  "ok": true,
+  "receipt_kind": "exact_motion_reuse",
+  "source_sha256": "b7fa88d4f190b0f78e00f70d6c2b547598ca8ca50beac19d5a27a679c2c1c572",
+  "accepted_original_source_sha256": "85bca4ebfe5fee6a3038bee4cf39e528ffc3dd42c133888c286d960d33a92fdd",
+  "original_delivery_receipt_sha256": "432a258fd229a556abb4bef0c1e3537ac5cb9d9020ceb0584cec7812e2501bc0",
+  "native_identity_receipt": "../../resting-reuse/native-identity.json",
+  "decoded_identity_receipt": "../../resting-reuse/decoded-identity.json",
+  "current_decoded151": "runtime-physics-report.json",
+  "native151_physical_measurements_reused": {
+    "minimum_native_body_floor_m": 0.0004985332489013672,
+    "native_loop_skin_error_m": 0.0,
+    "maximum_native_joint_step": {
+      "from": 23,
+      "to": 24,
+      "bone": "RightIndex1",
+      "degrees": 4.522798030660726
+    },
+    "maximum_native_skin_step": {
+      "from": 31,
+      "to": 32,
+      "source_id": 8036,
+      "m": 0.04875529889477925
+    },
+    "maximum_dorsum_skin_drift_m": 1.0334872040030526e-05,
+    "maximum_hold_skin_drift_m": 1.1937698821478985e-07,
+    "minimum_triangle_area_m2": 4.368274486144755e-08,
+    "whole_arm_hand_vs_leg_crossings": 0,
+    "localized_self_fold_warnings": {
+      "shoulders": {
+        "maximum_pairs": 27,
+        "worst_frames": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ],
+        "peak_pairs": 3
+      },
+      "hips": {
+        "maximum_pairs": 101,
+        "worst_frames": [
+          46,
+          104
+        ],
+        "peak_pairs": 71
+      },
+      "knees": {
+        "maximum_pairs": 98,
+        "worst_frames": [
+          11,
+          139
+        ],
+        "peak_pairs": 86
+      }
+    }
+  },
+  "reason": "Exact actual all151 native skin and matrix identity plus independent all151 decoded skin/matrix identity permits reuse of accepted physical measurements. Current asset was separately checked against native source and complete skin support/area/arm-leg gates.",
+  "reuse_evidence": {
+    "origin": "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/exercise-batches/batch-008/assets/6539/surface-contact-report.json",
+    "origin_sha256": "8efe35a88dda94ee2d16f2b2781c1d4afb705a479e38d242d868445992804ecc",
+    "method": "Mechanics inherited through all151 native and decoded exact identity; no refit or independent exercise mechanics rerun."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "review": "Focused actual-GPU still recheck of 1512 foot return and 3479 squat sequence",
+  "source_identity": {
+    "build_manifest": "artifacts/exercise-batches/batch-006/build-manifest.json",
+    "build_manifest_sha256": "7fd2884308316aa809f482e342ebdf5f301d12d27e32c9bc488398db48c25025",
+    "binding": "Model SHA-256 values recorded in after.json and after-3479.json match the 1512 and standing-leg-family entries in the current build manifest, respectively. The manifest hash was recomputed. The handoff states that phase-label translation changed after capture while geometry and camera did not; that statement was not independently checked."
+  },
+  "inspected_files": [
+    "artifacts/exercise-batches/batch-006/foot-return-review/before-4.40.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/after-4.10.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/after-4.40.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/after-4.70.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/before-3479-0.60.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/after-3479-0.90.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/after-3479-1.70.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/after-3479-1.95.png",
+    "artifacts/exercise-batches/batch-006/foot-return-review/after-3479-2.55.png"
+  ],
+  "result": "accepted within the focused still-review scope",
+  "defects": [],
+  "findings": [
+    "The conspicuous hooked-back foot in the 1512 before 4.40 view is absent in the corresponding after view. The inspected after poses show no material foot kink or abrupt-looking anatomical shape at displayed scale.",
+    "The 3479 samples show the retained deep squat, a standing pose, a weight-shift pose and a raised-leg kick. No impossible whole-body squat or transfer pose is apparent in these samples."
+  ],
+  "limits": [
+    "Selected stills do not establish continuous motion, transition smoothness, timing, or full choreography between samples.",
+    "This review does not verify source/contact/runtime gates, medical quality, audio, or other exercises. Model identity is bound through the capture metadata and manifest; image provenance itself was not independently reproduced."
+  ]
+}

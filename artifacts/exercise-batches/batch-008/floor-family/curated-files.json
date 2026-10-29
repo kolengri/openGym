@@ -1,0 +1,164 @@
+{
+  "family": "floor-family",
+  "included_files": [
+    {
+      "path": "build.py",
+      "sha256": "e589473b67c2256a5661efa6c18f2287365f887d38e86d30b7064ebffefc66f6",
+      "bytes": 7066
+    },
+    {
+      "path": "motion.py",
+      "sha256": "358cc05ca31ac1234ba1cc70cd104300b9be333aa388667e229dfe9c840f4939",
+      "bytes": 5572
+    },
+    {
+      "path": "export_motion.py",
+      "sha256": "2afe08ce55d74b56e1e7eca28695e412e429c959d9a2957df00c58e1f4a50a48",
+      "bytes": 1790
+    },
+    {
+      "path": "verify_native.py",
+      "sha256": "22e5f3b83fce3b99834a82b497635680df9bedfc17144283d532351b799ebd6b",
+      "bytes": 13169
+    },
+    {
+      "path": "verify_export.mjs",
+      "sha256": "4690bbfe9927417f4abd2016c83aa2e0ca34be52e3250ebf3ff6cdb2fba84a3d",
+      "bytes": 7724
+    },
+    {
+      "path": "review.py",
+      "sha256": "664fd507f766919fb3ba66abe9f6361268cc8e119ac54aad2ec6c94732c6896a",
+      "bytes": 2364
+    },
+    {
+      "path": "write_metadata.py",
+      "sha256": "31dd7dd1382d8e61ed17250f1d0e552b4255a8ebee27dad5c9ec16851b8abd1b",
+      "bytes": 3805
+    },
+    {
+      "path": "finalize.py",
+      "sha256": "cb0abc238f32a55ecc61180739e9875dd3c47536ea001da2e42681619bfa8a51",
+      "bytes": 8085
+    },
+    {
+      "path": "README.md",
+      "sha256": "d34f5f00863e85ef800d7fffe87bc7ef63cb1b0ee7a18f7afaebe9576f8c962f",
+      "bytes": 3467
+    },
+    {
+      "path": "superseded-diagnostics.json",
+      "sha256": "cc8d6d361b877e3de683e8384769e09544a4c3e6598f7c9d1cc910264ecb3814",
+      "bytes": 1147
+    },
+    {
+      "path": "delivery-report.json",
+      "sha256": "a404695548c2fa4a2ad2815ffe2bc2f60ec4567f681f6da8c7237be249c60025",
+      "bytes": 12291
+    },
+    {
+      "path": "../assets/3204/curated-files.json",
+      "sha256": "e13f22941a1a1c36bcb905afcfacba3e10c85af09ed09cb1668767efd9a7ecae",
+      "bytes": 8876
+    },
+    {
+      "path": "../assets/4935/curated-files.json",
+      "sha256": "ac4f223d074b2de0b8d7eda8f4202b7d96e3d58b91474acafa9327a01fa28166",
+      "bytes": 8915
+    },
+    {
+      "path": "../assets/3483/curated-files.json",
+      "sha256": "28961977d6e3e99a76d950f4996f4b8e00694bbbe69c20ff9a6804a21c754fc3",
+      "bytes": 8915
+    },
+    {
+      "path": "curated-files.json",
+      "self": true,
+      "integrity": "self_integrity.sha256 canonical JSON rule"
+    }
+  ],
+  "read_only_dependencies": [
+    {
+      "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+      "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070"
+    },
+    {
+      "path": "artifacts/bodyweight-five/build_motion.py",
+      "sha256": "fea9bc1b45e48fa621732be972d8bf995b0f9c2f2101c89e29d7190b70d6800c"
+    },
+    {
+      "path": "artifacts/bodyweight-five/inspect_situp_contacts.py",
+      "sha256": "d13d9d0ca70ad294b82694f93492283bf202eefa5400daaaeccefb8080a7c034"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-005/findings.md",
+      "sha256": "46d1e810fcd1025b45b5df10fa39ffc99e336118454cd6dce8057e603d9a00bc"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-006/upright-cardio-family/binding.py",
+      "sha256": "1e98c62c894dcfc97264fe54590fe24c88a30a3d895ee9ec75b65daa445dfecb"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/motion.py",
+      "sha256": "a0bd4672d11bb2bf08d7186866d8c68b207f48a8246cd5122d0bc43270833920"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-007/prone-family/palm_frame.py",
+      "sha256": "31b8baf5d66e9ebe3f9b4eac1efcdeace1dcd2d48345d8e3a84cf8d106da32d7"
+    },
+    {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/asset-interface.json",
+      "sha256": "acb7430e0b2aa17fbf665f2bb3253064b8302d2adad30a0580f683e04940e396"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/authoring-handoff.md",
+      "sha256": "6334a023ddd9f22480e3014b08c79bd1b5b4368eb97c811b99d34c54390aca95"
+    },
+    {
+      "path": "catalogue/exercises/3204.json",
+      "sha256": "ec84b5f0ef9e9fcf9387faa2204937d66424b3e21479e3c1d97abf258bd3db0c"
+    },
+    {
+      "path": "catalogue/exercises/4935.json",
+      "sha256": "627a34fb91751fefbb8aed409ce3600b65e04af150348138adf32e0af4d842b2"
+    },
+    {
+      "path": "catalogue/exercises/3483.json",
+      "sha256": "db7a885f75900f65694cd7ea43f0235802e8866c587bdc68601818a25efa01a9"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/3204.json",
+      "sha256": "7999da46673d24d9d8d85a39e4243ce848a497af5d8a45fd2fb3ba0c4278c95c"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/4935.json",
+      "sha256": "415aeb63863597973936c25cb6a6cebc4a763310650253f14f0302e2cd2915fd"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-008/contexts/3483.json",
+      "sha256": "f38d21be5ad67c9aaa7bceb309d379dfd660ffb098117cc4205c8c587e6af5cd"
+    }
+  ],
+  "excluded": [
+    "logs",
+    "__pycache__",
+    "raw-diagnostics",
+    "trial reports",
+    "temporary decoded buffers",
+    "backups",
+    "environments"
+  ],
+  "self_integrity": {
+    "algorithm": "SHA256",
+    "canonicalization": "UTF-8 JSON; sorted keys; compact separators; omit self_integrity; no trailing newline",
+    "sha256": "76e74b8d99291a5b6017b967c4ff020a46e9874aebc6bb5d478e07129429688d"
+  }
+}

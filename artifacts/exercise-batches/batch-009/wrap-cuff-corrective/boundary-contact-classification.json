@@ -1,0 +1,260 @@
+{
+  "status": "anatomical_classification_only_frozen_target_unchanged",
+  "integrated_source_sha256": "9f84266e9800722a9ed8ba59decccf5de7f6fa2291471ed89f01b66d082c0226",
+  "input_diagnosis_sha256": "47c5ad2036cb8f1fdd29c90bb68759bbe14ab729d8df668643d4949e356dd5f7",
+  "runtime_frame": 18,
+  "reported_repeated_runtime_frames": [
+    18,
+    57,
+    93,
+    132
+  ],
+  "source_faces": {
+    "proximal_right_axillary_upper_arm": [
+      3088,
+      3101,
+      3083
+    ],
+    "upper_pectoral_clavicular_chest": [
+      2287,
+      4030,
+      3997
+    ]
+  },
+  "observations": {
+    "upper_arm_longitudinal_fraction": [
+      0.25213189337779984,
+      0.19992175600033862,
+      0.3099809997721031
+    ],
+    "source_face_centroid_distance_m": 0.23267227411270142,
+    "minimum_source_triangle_edge_graph_distance_m": 0.3358979560434818,
+    "share_source_vertex": false,
+    "both_faces_original_triangles": true,
+    "A_against_B_plane": {
+      "oriented_plane_normal": [
+        0.07218499302943174,
+        -0.8195545699151465,
+        0.5684361298444531
+      ],
+      "signed_vertex_distances_to_other_plane_m": [
+        0.009481254591697678,
+        -0.03256847799291999,
+        0.018333254714363183
+      ],
+      "other_triangle_area_m2": 0.00012899674056737867
+    },
+    "B_against_A_plane": {
+      "oriented_plane_normal": [
+        0.42736898820045305,
+        -0.22839908818664567,
+        -0.8747511671555687
+      ],
+      "signed_vertex_distances_to_other_plane_m": [
+        -0.02122059839666895,
+        0.0017803194715859533,
+        -0.011373225615580075
+      ],
+      "other_triangle_area_m2": 0.0005248195545391435
+    },
+    "posed_A_bounds_m": [
+      [
+        -0.08227233588695526,
+        -0.09634101390838623,
+        1.3993148803710938
+      ],
+      [
+        -0.0589623749256134,
+        -0.04119560122489929,
+        1.4102540016174316
+      ]
+    ],
+    "posed_B_bounds_m": [
+      [
+        -0.07385708391666412,
+        -0.08016658574342728,
+        1.4018733501434326
+      ],
+      [
+        -0.0628739446401596,
+        -0.06597977876663208,
+        1.4227681159973145
+      ]
+    ],
+    "exact_finite_triangle_intersection": {
+      "segment_length_m": 0.0014577889131869304,
+      "endpoints_m": [
+        [
+          -0.06937024272114822,
+          -0.07860382362931896,
+          1.4039973593577408
+        ],
+        [
+          -0.07065572776191865,
+          -0.07906849701300844,
+          1.4034906490145893
+        ]
+      ],
+      "A_barycentric_endpoints": [
+        [
+          0.3366061034776723,
+          0.30163251088880894,
+          0.3617613856335188
+        ],
+        [
+          0.4102287205798443,
+          0.28882926469349585,
+          0.30094201472665993
+        ]
+      ],
+      "B_barycentric_endpoints": [
+        [
+          2.220446049250313e-15,
+          0.8646509773762023,
+          0.13534902262379542
+        ],
+        [
+          0.0774021055065437,
+          0.9225978944934574,
+          -1.0547259316061607e-15
+        ]
+      ],
+      "maximum_endpoint_plane_residual_m": 5.724587470723463e-17,
+      "B_positive_side_vertex_source_id": 4030,
+      "B_positive_side_plane_excursion_m": 0.0017803194715859533,
+      "B_positive_side_area_fraction_before_finite_A_clipping": 0.010476299329334268
+    }
+  },
+  "source_vertex_rows": [
+    {
+      "source_id": 3088,
+      "canonical_position_m": [
+        -0.204488143324852,
+        0.11899866908788681,
+        1.3505650758743286
+      ],
+      "canonical_weights": {
+        "Spine1": 0.074111208319664,
+        "RightShoulder": 0.11986479163169861,
+        "RightArm": 0.8060239553451538
+      },
+      "inside_position_support": true,
+      "protected_position": false,
+      "source_mask": 0.9629998803138733,
+      "source_delta_m": [
+        0.06886695325374603,
+        -0.016843650490045547,
+        0.07837450504302979
+      ]
+    },
+    {
+      "source_id": 3101,
+      "canonical_position_m": [
+        -0.1780354231595993,
+        0.1406162977218628,
+        1.3533638715744019
+      ],
+      "canonical_weights": {
+        "Spine1": 0.1299036145210266,
+        "RightShoulder": 0.24264423549175262,
+        "RightArm": 0.6274521946907043
+      },
+      "inside_position_support": true,
+      "protected_position": false,
+      "source_mask": 1.0,
+      "source_delta_m": [
+        0.09785299748182297,
+        -0.016410566866397858,
+        0.09434425085783005
+      ]
+    },
+    {
+      "source_id": 3083,
+      "canonical_position_m": [
+        -0.1910385638475418,
+        0.1147201731801033,
+        1.3234076499938965
+      ],
+      "canonical_weights": {
+        "Spine1": 0.1445382833480835,
+        "RightShoulder": 0.10189861804246902,
+        "RightArm": 0.7535631060600281
+      },
+      "inside_position_support": true,
+      "protected_position": false,
+      "source_mask": 1.0,
+      "source_delta_m": [
+        0.09460628032684326,
+        -0.01986813172698021,
+        0.1050088107585907
+      ]
+    },
+    {
+      "source_id": 2287,
+      "canonical_position_m": [
+        -0.07590090483427048,
+        -0.049316439777612686,
+        1.4363515377044678
+      ],
+      "canonical_weights": {
+        "Spine1": 0.42468807101249695,
+        "Neck": 0.5753119587898254
+      },
+      "inside_position_support": true,
+      "protected_position": false,
+      "source_mask": 0.7006499767303467,
+      "source_delta_m": [
+        0.004361492581665516,
+        -0.0035494414623826742,
+        0.0030228772666305304
+      ]
+    },
+    {
+      "source_id": 4030,
+      "canonical_position_m": [
+        -0.07247902452945709,
+        -0.06351926177740097,
+        1.4153953790664673
+      ],
+      "canonical_weights": {
+        "Spine1": 0.6433033347129822,
+        "Neck": 0.3566966652870178
+      },
+      "inside_position_support": true,
+      "protected_position": false,
+      "source_mask": 0.6225970983505249,
+      "source_delta_m": [
+        0.004464063793420792,
+        -0.003515289630740881,
+        0.0031542566139250994
+      ]
+    },
+    {
+      "source_id": 3997,
+      "canonical_position_m": [
+        -0.06417712569236755,
+        -0.05258552357554436,
+        1.431647777557373
+      ],
+      "canonical_weights": {
+        "Spine1": 0.4576118588447571,
+        "Neck": 0.5423881411552429
+      },
+      "inside_position_support": true,
+      "protected_position": false,
+      "source_mask": 0.5607014894485474,
+      "source_delta_m": [
+        0.0027809818275272846,
+        -0.0022083562798798084,
+        0.001959972782060504
+      ]
+    }
+  ],
+  "classification": "Specific proximal axillary-cuff / upper-pectoral contact within the accepted correction domain. The mixed Spine1/Neck chest weights do not make this anatomical neck contact. Neither face belongs to distal arm, hand, or true head/neck POSITION protection. The faces are not original cofaces or immediate source neighbors.",
+  "limits": "Triangle plane distances bound local crossing geometry, not volumetric penetration depth. Regional anatomical classification alone does not prove visual acceptance; root owns the unique f18 native proof review. No broad Neck semantic exemption is justified.",
+  "proofs": [
+    "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/exercise-batches/batch-009/assets/3995/boundary-9f84266e9800-f18-front.png",
+    "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/exercise-batches/batch-009/assets/3995/boundary-9f84266e9800-f18-side.png",
+    "/Users/kolengri/.t3/worktrees/open-gym/t3-e76395b0/artifacts/exercise-batches/batch-009/assets/3995/boundary-9f84266e9800-f18-rear.png"
+  ]
+}

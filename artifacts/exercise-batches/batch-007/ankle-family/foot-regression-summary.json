@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1368",
+    "ok": true,
+    "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+    "glb_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+    "frames": 361,
+    "maximums": {
+      "shin_relative_excursion_degrees": 11.999977282041973,
+      "world_foot_step_degrees": 1.0849711740665884,
+      "shin_relative_step_degrees": 1.1981034392709178,
+      "rigid_toe_relative_error_degrees": 0.0
+    },
+    "skin_edge_regression": {
+      "native": {
+        "mixed_ankle_ratio_min": 0.7731675491079759,
+        "mixed_ankle_ratio_max": 1.2288398424020222,
+        "rigid_forefoot_max_fractional_edge_change": 0.0001852585865668166
+      },
+      "decoded": {
+        "mixed_ankle_ratio_min": 0.773158845658404,
+        "mixed_ankle_ratio_max": 1.2288264536212414,
+        "rigid_forefoot_max_fractional_edge_change": 4.0334402484631937e-13
+      }
+    },
+    "scope": "Actual saved native shin/Foot/ToeBase frames plus all-frame native and actual decoded internal skin-edge readback. Excursion<35\u00b0, step<3\u00b0 at30fps and constant Foot/ToeBase relation target the late-return hook/roll failure. Mixed ankle edge ratio[0.4,2.5] is an artifact guard, not a clinical or anatomical-quality claim. Forefoot drift<0.002."
+  },
+  {
+    "id": "2761",
+    "ok": true,
+    "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+    "glb_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+    "frames": 151,
+    "maximums": {
+      "shin_relative_excursion_degrees": 14.99992699287945,
+      "world_foot_step_degrees": 0.8079353395971391,
+      "shin_relative_step_degrees": 0.8318016213827504,
+      "rigid_toe_relative_error_degrees": 0.0
+    },
+    "skin_edge_regression": {
+      "native": {
+        "mixed_ankle_ratio_min": 0.7216232381868414,
+        "mixed_ankle_ratio_max": 1.234028916398439,
+        "rigid_forefoot_max_fractional_edge_change": 0.00015187604508648533
+      },
+      "decoded": {
+        "mixed_ankle_ratio_min": 0.721608592896849,
+        "mixed_ankle_ratio_max": 1.2340270306716767,
+        "rigid_forefoot_max_fractional_edge_change": 4.4209080840573733e-13
+      }
+    },
+    "scope": "Actual saved native shin/Foot/ToeBase frames plus all-frame native and actual decoded internal skin-edge readback. Excursion<35\u00b0, step<3\u00b0 at30fps and constant Foot/ToeBase relation target the late-return hook/roll failure. Mixed ankle edge ratio[0.4,2.5] is an artifact guard, not a clinical or anatomical-quality claim. Forefoot drift<0.002."
+  },
+  {
+    "id": "2762",
+    "ok": true,
+    "source_sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe",
+    "glb_sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2",
+    "frames": 151,
+    "maximums": {
+      "shin_relative_excursion_degrees": 30.000007665015225,
+      "world_foot_step_degrees": 1.5445552866880001,
+      "shin_relative_step_degrees": 1.6636142351011964,
+      "rigid_toe_relative_error_degrees": 0.0
+    },
+    "skin_edge_regression": {
+      "native": {
+        "mixed_ankle_ratio_min": 0.6971346153551413,
+        "mixed_ankle_ratio_max": 1.5683646135702587,
+        "rigid_forefoot_max_fractional_edge_change": 0.00017167945203522272
+      },
+      "decoded": {
+        "mixed_ankle_ratio_min": 0.6971291042688104,
+        "mixed_ankle_ratio_max": 1.5683646688074373,
+        "rigid_forefoot_max_fractional_edge_change": 3.8324898810060404e-13
+      }
+    },
+    "scope": "Actual saved native shin/Foot/ToeBase frames plus all-frame native and actual decoded internal skin-edge readback. Excursion<35\u00b0, step<3\u00b0 at30fps and constant Foot/ToeBase relation target the late-return hook/roll failure. Mixed ankle edge ratio[0.4,2.5] is an artifact guard, not a clinical or anatomical-quality claim. Forefoot drift<0.002."
+  }
+]

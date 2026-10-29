@@ -1,0 +1,116 @@
+{
+  "status": "ready_for_root_integration_and_gpu_review",
+  "source_sha256": "e9eef5aa5a78c76a0e8b5261739a3cdba3a8b673c8ead2262ffc93a99e465d44",
+  "motion_sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701",
+  "physical_glb_count": 1,
+  "actions": [
+    "Exercise_0006",
+    "Exercise_4354"
+  ],
+  "per_id_paths_are_hardlinks": true,
+  "source_vertices": 10582,
+  "triangles": 21160,
+  "bones": 51,
+  "basis_rest_uv_topology_ids_exact": true,
+  "actual_maximum_influences": 4,
+  "actual_maximum_weight_sum_error": 1.341104507446289e-07,
+  "runtime_binding_sha256": "1aef16bd7e6fe4bf89883f1a3aeadcebdd8ded05593a297c62d214b764973b3a",
+  "knee_morphs": 0,
+  "shoulder_position_normal_targets": 6,
+  "metrics": {
+    "0006": {
+      "native_frames": 151,
+      "decoded_frames": 151,
+      "native_arm_hand_leg_clearance_m": 0.0035947184078395367,
+      "decoded_arm_hand_leg_clearance_m": 0.0035957423970103264,
+      "decoded_minimum_triangle_area_m2": 5.895891339989388e-08,
+      "decoded_floor_min_z_m": -0.002370120472314774,
+      "fixed_foot_skin_drift_m": 0,
+      "full_source_dq_error_m": 2.0274847293664e-06,
+      "joint_error_m": 8.219335950587753e-07,
+      "loop_skin_error_m": 1.8747073975391346e-07,
+      "maximum_normal_error": 8.251404033661755e-05,
+      "game_errors": 0,
+      "game_warnings": [
+        {
+          "frame": 0,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        },
+        {
+          "frame": 37.5,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        },
+        {
+          "frame": 75,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        },
+        {
+          "frame": 112.5,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        }
+      ]
+    },
+    "4354": {
+      "native_frames": 151,
+      "decoded_frames": 151,
+      "native_arm_hand_leg_clearance_m": 0.3353370428085327,
+      "decoded_arm_hand_leg_clearance_m": 0.335337370634079,
+      "decoded_minimum_triangle_area_m2": 5.8958918282427366e-08,
+      "decoded_floor_min_z_m": -0.0023700845151124472,
+      "fixed_foot_skin_drift_m": 0,
+      "full_source_dq_error_m": 1.588748510504471e-06,
+      "joint_error_m": 9.087715649372747e-07,
+      "loop_skin_error_m": 1.809298765831899e-07,
+      "maximum_normal_error": 8.251404033661755e-05,
+      "game_errors": 0,
+      "game_warnings": [
+        {
+          "frame": 0,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        },
+        {
+          "frame": 37.5,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        },
+        {
+          "frame": 75,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        },
+        {
+          "frame": 112.5,
+          "warnings": [
+            "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+          ]
+        }
+      ]
+    }
+  },
+  "plantar_pad_contract_sha256": "8697c557418c4a7fdc8eee173cbbbb14970cdb91f34bc7ccaac49fcfe07308a1",
+  "export_channel_receipt_sha256": "93f4725dbf4ab83fad897a0c60dd22368510a785a7756eb6913a40c503bdbe6d",
+  "root_shape_acceptance": "Root accepted rounded knee/40mm shoulder4354 and near-contact0006; no further cosmetic change after acceptance.",
+  "remaining_scope": [
+    "Actual GPU raster/DQ normal/heat-field review and camera-width integration belong to root.",
+    "Ground warning\u22122.4mm retained against unchanged4mm illustration tolerance.",
+    "No global/continuous-time collision or clinical validation claim."
+  ],
+  "raw_failed_history_retained": true,
+  "paid_services_videos_runtime_caches_git_used": false,
+  "per_id_manifests": [
+    "../assets/0006/curated-files.json",
+    "../assets/4354/curated-files.json"
+  ]
+}

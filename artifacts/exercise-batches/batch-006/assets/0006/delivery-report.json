@@ -1,0 +1,60 @@
+{
+  "id": "0006",
+  "status": "ready_for_root_integration_and_gpu_review",
+  "action": "Exercise_0006",
+  "source_sha256": "e9eef5aa5a78c76a0e8b5261739a3cdba3a8b673c8ead2262ffc93a99e465d44",
+  "motion_sha256": "90f9bb5ef26b20b9c79c2396b325ff5368efac68b6eb164b6263423bc37b0701",
+  "duration_seconds": 5,
+  "native_frames": 151,
+  "shared_family_manifest": "../../floor-crunch-family/curated-files.json",
+  "metrics": {
+    "native_frames": 151,
+    "decoded_frames": 151,
+    "native_arm_hand_leg_clearance_m": 0.0035947184078395367,
+    "decoded_arm_hand_leg_clearance_m": 0.0035957423970103264,
+    "decoded_minimum_triangle_area_m2": 5.895891339989388e-08,
+    "decoded_floor_min_z_m": -0.002370120472314774,
+    "fixed_foot_skin_drift_m": 0,
+    "full_source_dq_error_m": 2.0274847293664e-06,
+    "joint_error_m": 8.219335950587753e-07,
+    "loop_skin_error_m": 1.8747073975391346e-07,
+    "maximum_normal_error": 8.251404033661755e-05,
+    "game_errors": 0,
+    "game_warnings": [
+      {
+        "frame": 0,
+        "warnings": [
+          "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+        ]
+      },
+      {
+        "frame": 37.5,
+        "warnings": [
+          "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+        ]
+      },
+      {
+        "frame": 75,
+        "warnings": [
+          "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+        ]
+      },
+      {
+        "frame": 112.5,
+        "warnings": [
+          "asset lowest point z=-0.0024 (not resting on ground plane z=0)"
+        ]
+      }
+    ]
+  },
+  "all_required_local_checks_passed": true,
+  "game_warning_disposition": "Repeated\u22122.4mm lowest-point warning accepted against the unchanged4mm illustration floor tolerance; no floor-perfect claim.",
+  "source_role_text": "clip.json",
+  "runtime_skinning": "dualQuaternion; exact shared optional adapter",
+  "raw_forefoot_contract_history": "../../floor-crunch-family/plantar-pad-contract.json",
+  "remaining_root_scope": [
+    "GPU raster/normal/heat review",
+    "camera fitting",
+    "final user acceptance"
+  ]
+}

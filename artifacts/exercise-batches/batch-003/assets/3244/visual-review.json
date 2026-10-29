@@ -1,0 +1,36 @@
+{
+  "id": "3244",
+  "status": "authored_asset_checks_passed_runtime_integration_owned_by_primary",
+  "viewed_by": "3244 author agent",
+  "heat": "off in all curated proofs",
+  "viewed_files": [
+    "early-start-side.png",
+    "early-peak-side.png",
+    "early-return-side.png",
+    "early-peak-oblique.png",
+    "native-start-side-solid.png",
+    "native-peak-side-solid.png",
+    "native-peak-oblique-solid.png",
+    "native-peak-oblique-wire.png",
+    "exported-start-side-solid.png",
+    "exported-peak-side-solid.png",
+    "exported-return-side-solid.png",
+    "exported-peak-oblique-solid.png",
+    "exported-peak-oblique-wire.png"
+  ],
+  "findings": [
+    "Stationary ventral pelvis and relaxed extended legs remain supported through the press-up.",
+    "Natural bent elbows, open palms and articulated distal finger pads; no observed hand/body intersection.",
+    "The source-native smooth version and independently reconstructed GLB cage preserve the glute silhouette.",
+    "Exported proof normals are evaluated from actual glTF normals across original UV splits; custom normals avoid introducing false proof-only UV seams."
+  ],
+  "accepted_inherited_warnings": [],
+  "remaining_issues": [],
+  "scope_limits": [
+    "Floor bands are illustration approximations; minor floor intrusion is measured rather than hidden.",
+    "Native corrective/subdivision is not baked into the live GLB cage.",
+    "Root owns live Three.js playback, alpha, interaction, shared heat-field and integration verification."
+  ],
+  "source_sha256": "7a9b32c54489fa4640292688cd03ce6a643fdd8731820e111f3fc8499e87a4b4",
+  "motion_sha256": "77cfeb4a8b8f379656be51f9cf9050b20e61cffa7443d8a6266bf995b5b652b7"
+}

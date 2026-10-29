@@ -1,0 +1,249 @@
+{
+  "status": "complete_live_review_sources_and_embedded_delivery_accepted",
+  "exercise_ids": [
+    "6121",
+    "5172",
+    "1987",
+    "6014",
+    "1986",
+    "6539",
+    "3214",
+    "3204",
+    "4935",
+    "3483"
+  ],
+  "accepted_released_models": {
+    "3204": "3334f0c740b2d506b200c619244d8cf5608aa9691562906a1ab33cca203119d0",
+    "3214": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+    "3483": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+    "4935": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+    "6539": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00",
+    "1986": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+    "1987": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+    "5172": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+    "6014": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+    "6121": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a"
+  },
+  "completed_five_diagnostic": {
+    "scope": "Released 6539,3214,3204,4935,3483 only;15 selected two-view poses,30 PNGs. Final all-ten viewer acceptance remains pending.",
+    "operator_receipt": "logs/completed-five-checks.json",
+    "capture_receipt": "logs/completed-five/capture-peaks.json",
+    "build_manifest_sha256": "587a70ede24166430dc252de64a4d67f305ce674fff63d44a700a4d1fd44cf59",
+    "page_errors": [],
+    "widths_only": true
+  },
+  "root_visual_findings": [
+    "3204 full upright posture keeps bent knees and connected hips; neutral and abdominal fields inspected in two actual GPU views. Actual support-plane evidence is separate native/decoded geometry, not this perspective image.",
+    "6539 inherits accepted4365 shape through exact151-sample native and decoded identity; its distinct lat stretch field is visible in actual GPU views.",
+    "3214 alternating balance reaches towards the shin/toes without forced grasp. Source says towards toes; the displayed range does not imply physical toe contact. Pelvis and shoulder contours accepted in actual GPU views.",
+    "4935/3483 share one bilateral prone lift and arm sweep; source roles differ. Distinct erector-spinae and glute-dominant fields are visible in actual GPU views.",
+    "Inactive surface remains plain and unshadowed; screenshots use an opaque review backdrop while the renderer canvas itself is transparent."
+  ],
+  "remaining_acceptance": [],
+  "limits": [
+    "Illustrative fields are not physiological temperature or measured recruitment.",
+    "No production app integration or physical-device performance evidence.",
+    "Selected stills do not replace full-cycle mechanics and do not establish global collision freedom."
+  ],
+  "released_native_asset_count": 10,
+  "released_standing_grips": {
+    "standing": {
+      "ids": [
+        "5172",
+        "6014"
+      ],
+      "source_sha256": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+      "model_sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+      "author_delivery": "standing-dynamic/delivery-report.json",
+      "remaining": "No subset-specific GPU issue remains;final all-ten integrated viewer checks pending."
+    },
+    "grips": {
+      "ids": [
+        "1987",
+        "1986"
+      ],
+      "source_sha256": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138",
+      "model_sha256": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+      "author_delivery": "rotator-grips/delivery-report.json",
+      "remaining": "No subset-specific GPU issue remains;final all-ten integrated viewer checks pending."
+    }
+  },
+  "standing_grips_diagnostic": {
+    "operator_receipt": "logs/standing-grips-checks.json",
+    "capture_receipt": "logs/standing-grips/capture-peaks.json",
+    "build_manifest_sha256": "9cef2652d123e9003351727f2db3e3d369aef2c400b34ef5cc7915ba9a8464a4",
+    "poses": 21,
+    "images": 42,
+    "errors": [],
+    "root_acceptance": "Accepted selected actual neutral/field views on these exact released models.5172 rounded shoulder remains connected; native clay lower-axilla crease is not a black gap in the unshadowed body view.1986critical1s/46/30/47/30 and held grips accepted; tiny axillary opening is associated with raised-arm pose, not a torn clavicle.1987 anterior companion exposes chest/delt fields.6014 supported alternating steps preserve foot/ankle silhouette."
+  },
+  "6121_final_geometry": {
+    "source_sha256": "8861f6ec1015db6b3bbf5d1a4f603877a5c2469ebe7f4cbe6f52ea62b60cf697",
+    "model_sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+    "native_shape_acceptance": "Selected held margin and changed frame24 transit side/oblique accepted; connected silhouette and undistorted foot. ActualGPUreview remains separate.",
+    "contact_mechanics": "151native and actualdecoded samples have zero complete-bilateral and arm/hand-versus-leg crossings; actual minimum bilateral clearance1.450753mm. A12mm C1 ankle-clearance arc and existing-contact-field lead sqrt(k)-k solve the transition with zero endpoint change and totaladditional contact<=40mm.",
+    "binding": "Canonical Basis/rest/UV/topology unchanged. Accepted1368 seating binding with255 inherited semantic hip rows restored to original; full lineage in source-verification.json.",
+    "warnings": "Localized shared-pelvis/hip/knee/shoulder crease diagnostics and source17419 baseline-relative normal warning retained. Positive actual area/material orientation;17419 itself has zero nonadjacent crossings. No global collision-free claim.",
+    "physics_receipt": "assets/6121/runtime-physics-report.json",
+    "export_receipt": "assets/6121/export-verification.json",
+    "game_receipt": "assets/6121/asset-qa.json",
+    "actual_GPU_acceptance": {
+      "status": "accepted",
+      "model_sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+      "images": [
+        {
+          "id": "6121",
+          "label": "thigh-transit",
+          "time": 0.8,
+          "zones": false,
+          "file": "neutral-6121-thigh-transit.png",
+          "png_sha256": "36f555d0cf6c3f51d9729d9cbc8dd617df69f39d3e1e878d1ffdfbce536e521a",
+          "model": {
+            "path": "artifacts/exercise-batches/batch-008/assets/6121/motion.glb",
+            "sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+            "bytes": 1003756,
+            "bones": 51,
+            "sourceVertices": 10582,
+            "animations": [
+              "Exercise_6121"
+            ]
+          },
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.3305606863726798,
+              0.2443833818218196
+            ]
+          ],
+          "draw_calls": 1,
+          "triangles": 21160,
+          "occupied_pixels": 68058
+        },
+        {
+          "id": "6121",
+          "label": "foot-transit",
+          "time": 0.9333333333333333,
+          "zones": false,
+          "file": "neutral-6121-foot-transit.png",
+          "png_sha256": "e36199f46e5a511de6e31f248df6fbfa95617bb55d4e241b4baf0d4f1c78357a",
+          "model": {
+            "path": "artifacts/exercise-batches/batch-008/assets/6121/motion.glb",
+            "sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+            "bytes": 1003756,
+            "bones": 51,
+            "sourceVertices": 10582,
+            "animations": [
+              "Exercise_6121"
+            ]
+          },
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              0.7171290990433792,
+              0.12970564242983998
+            ]
+          ],
+          "draw_calls": 1,
+          "triangles": 21160,
+          "occupied_pixels": 67353
+        },
+        {
+          "id": "6121",
+          "label": "peak",
+          "time": 2.5,
+          "zones": false,
+          "file": "neutral-6121-peak.png",
+          "png_sha256": "ffc98b62e22a2ba6d609265e2169a623fea91936954840dfccf7f8901eb5f22b",
+          "model": {
+            "path": "artifacts/exercise-batches/batch-008/assets/6121/motion.glb",
+            "sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+            "bytes": 1003756,
+            "bones": 51,
+            "sourceVertices": 10582,
+            "animations": [
+              "Exercise_6121"
+            ]
+          },
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1,
+              0
+            ]
+          ],
+          "draw_calls": 1,
+          "triangles": 21160,
+          "occupied_pixels": 75397
+        },
+        {
+          "id": "6121",
+          "label": "peak",
+          "time": 2.5,
+          "zones": true,
+          "file": "zones-6121-peak.png",
+          "png_sha256": "2ba3f7649165904cb38d96dc410625976f6fb286c5c19612abb3b478858b5a1f",
+          "model": {
+            "path": "artifacts/exercise-batches/batch-008/assets/6121/motion.glb",
+            "sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+            "bytes": 1003756,
+            "bones": 51,
+            "sourceVertices": 10582,
+            "animations": [
+              "Exercise_6121"
+            ]
+          },
+          "skinning": "dualQuaternion",
+          "morph_weights": [
+            [
+              1,
+              0
+            ]
+          ],
+          "draw_calls": 1,
+          "triangles": 21160,
+          "occupied_pixels": 75397
+        }
+      ],
+      "findings": "Critical thigh/foot transit remains connected with plain neutral contour and undistorted foot. Held pose and posterior stretch fields visible in actual GPU views. Localized compressed crease remains documented; targeted physical checks separately prove support and bilateral clearance."
+    }
+  },
+  "all_ten_browser": {
+    "operator_receipt": "operator-checks.json",
+    "verification_receipt": "verification.json",
+    "capture_receipt": "capture-peaks.json",
+    "offline_viewer_sha256": "efa2c0d2748b10e27aa3bc4e6ca045f1155a8a1e0282680b9d50b26e292c7146",
+    "capture_manifest_sha256": "9b38771a575235616d78e297f083fe800861fc9ab2bca41094fc11aaa0a92f99",
+    "model_count": 7,
+    "catalogue_actions": 10,
+    "distinct_physical_motions": 9,
+    "captured_poses": 52,
+    "captured_images": 104,
+    "errors": [],
+    "pre_pin_build_manifest_sha256": "217459742e9a6ae05b0b3551e3b05822bbd1b3ea7dafc86ee4095efc95c3abe9",
+    "pin_policy": "The later source pin affects immutable URLs and delivery metadata only. The accepted offline viewer bytes, all models and inputs must remain unchanged; pinned inline verification is separate."
+  },
+  "accepted_source_commit": "55c2d51d4745d92ba9618f3bef39468a6a7fb655",
+  "immutable_inline_delivery": {
+    "model_revision": "55c2d51d4745d92ba9618f3bef39468a6a7fb655",
+    "build_manifest_sha256": "a91e49955e33ab6e3a7e81e49f4ed3402f38e333bcb1ec4b74dd06f616c061cc",
+    "inline_sha256": "cd4280343c57cbdb1bd106c6dd7f1db4750b611a9ee05c8f24d92b5b29f261db",
+    "inline_bytes": 172727,
+    "offline_bytes_unchanged": true,
+    "inline_verification": "inline-verification.json",
+    "inline_verification_sha256": "9e5fcffc2800b021fa26dc8bc2a1ca0205a37167ecb31b07b2d04c4f771ad0f9",
+    "host_delivery": "inline-delivery.json",
+    "all_ten_live_actions": [
+      "Exercise_6121",
+      "Exercise_5172",
+      "Exercise_1987",
+      "Exercise_6014",
+      "Exercise_1986",
+      "Exercise_6539",
+      "Exercise_3214",
+      "Exercise_3204",
+      "Exercise_4935",
+      "Exercise_3483"
+    ],
+    "errors": []
+  }
+}

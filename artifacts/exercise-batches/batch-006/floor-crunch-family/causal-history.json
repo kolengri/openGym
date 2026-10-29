@@ -1,0 +1,424 @@
+{
+  "status": "diagnostic_history_only_rejected_candidates_not_delivered",
+  "knee": {
+    "initial_internal_angle_degrees": 31.9149673,
+    "cause": "Original femur/shin skin weights cross20\u219280% within roughly30mm on actual raycast cap faces; very close grounded feet amplified the fold.",
+    "initial_cap_source_face_ids": [
+      {
+        "pixel": [
+          285,
+          278
+        ],
+        "face": 3811,
+        "source_ids": [
+          3508,
+          3550,
+          3551,
+          3509
+        ],
+        "neutral_positions_m": [
+          [
+            -0.1357928067445755,
+            0.002995929913595319,
+            0.4691303074359894
+          ],
+          [
+            -0.1211288794875145,
+            0.01385759562253952,
+            0.4739101827144623
+          ],
+          [
+            -0.11051610112190247,
+            0.0011395247420296073,
+            0.5018956661224365
+          ],
+          [
+            -0.12647666037082672,
+            -0.01061229407787323,
+            0.49820271134376526
+          ]
+        ],
+        "weights": {
+          "3508": {
+            "RightUpLeg": 0.22590306401252747,
+            "RightLeg": 0.7740969061851501
+          },
+          "3550": {
+            "RightUpLeg": 0.3202848732471466,
+            "RightLeg": 0.6797151565551758
+          },
+          "3551": {
+            "RightUpLeg": 0.8184012770652771,
+            "RightLeg": 0.1815987378358841
+          },
+          "3509": {
+            "RightUpLeg": 0.7852002382278442,
+            "RightLeg": 0.21479980647563934
+          }
+        },
+        "posed_hit": [
+          -0.16995787620544434,
+          -0.2619737982749939,
+          0.46719294786453247
+        ],
+        "knee_component_delta_m": {
+          "3508": 0.024999997988015738,
+          "3550": 0.025000001257649243,
+          "3551": 0.02500001490006536,
+          "3509": 0.02499999368155761
+        }
+      },
+      {
+        "pixel": [
+          295,
+          286
+        ],
+        "face": 3662,
+        "source_ids": [
+          3570,
+          3633,
+          3634,
+          3571
+        ],
+        "neutral_positions_m": [
+          [
+            -0.0870644822716713,
+            0.03622689098119736,
+            0.5073691606521606
+          ],
+          [
+            -0.09850384294986725,
+            0.01804858073592186,
+            0.5058576464653015
+          ],
+          [
+            -0.10777884721755981,
+            0.028168687596917152,
+            0.47730302810668945
+          ],
+          [
+            -0.09585648775100708,
+            0.04410107061266899,
+            0.4785540699958801
+          ]
+        ],
+        "weights": {
+          "3570": {
+            "RightUpLeg": 0.855877697467804,
+            "RightLeg": 0.14412231743335724
+          },
+          "3633": {
+            "RightUpLeg": 0.8543775677680969,
+            "RightLeg": 0.14562249183654785
+          },
+          "3634": {
+            "RightUpLeg": 0.5941182971000671,
+            "RightLeg": 0.4058816730976105
+          },
+          "3571": {
+            "RightUpLeg": 0.6497594714164734,
+            "RightLeg": 0.3502405881881714
+          }
+        },
+        "posed_hit": [
+          -0.1395552158355713,
+          -0.23609218001365662,
+          0.45143717527389526
+        ],
+        "knee_component_delta_m": {
+          "3570": 0.02499999970241333,
+          "3633": 0.024999978383848178,
+          "3634": 0.02500000266736592,
+          "3571": 0.02499999873834892
+        }
+      }
+    ],
+    "rejected_component": {
+      "name": "KneeVolume",
+      "applied_cap_m": 0.025,
+      "uncapped_requirement_m": 0.06232732,
+      "reason": "Square cap persisted; removed. No62mm inverse smoothing promoted."
+    },
+    "accepted_reconstruction": "One source-edge harmonic knee weight collar; knee-binding-receipt.json. No knee morph remains."
+  },
+  "shoulder": {
+    "actual_ray_faces": [
+      {
+        "pixel": [
+          587,
+          372
+        ],
+        "face": 8273,
+        "source_ids": [
+          8346,
+          8246,
+          8541,
+          8364
+        ],
+        "neutral_positions_m": [
+          [
+            0.20534786581993103,
+            -0.02940373495221138,
+            1.3573009967803955
+          ],
+          [
+            0.2164200246334076,
+            -0.0238055270165205,
+            1.3560588359832764
+          ],
+          [
+            0.2159634381532669,
+            -0.03370942175388336,
+            1.384877324104309
+          ],
+          [
+            0.20448242127895355,
+            -0.03744181990623474,
+            1.3741892576217651
+          ]
+        ],
+        "weights": {
+          "8346": {
+            "Spine1": 0.06390009820461273,
+            "LeftShoulder": 0.09508826583623886,
+            "LeftArm": 0.8410115838050842
+          },
+          "8246": {
+            "Spine1": 0.02830715849995613,
+            "LeftShoulder": 0.061441946774721146,
+            "LeftArm": 0.9102509617805481
+          },
+          "8541": {
+            "Spine1": 0.018477052450180054,
+            "LeftShoulder": 0.11342805624008179,
+            "LeftArm": 0.8680949211120605
+          },
+          "8364": {
+            "Spine1": 0.057847365736961365,
+            "LeftShoulder": 0.13247743248939514,
+            "LeftArm": 0.8096752166748047
+          }
+        },
+        "posed_hit": [
+          0.24007415771484375,
+          0.48406028747558594,
+          0.1849524974822998
+        ],
+        "shoulder_delta_m": {
+          "8346": 0.02499996199700785,
+          "8246": 0.022220931653937608,
+          "8541": 0.019314565970463812,
+          "8364": 0.024804345716056067
+        }
+      },
+      {
+        "pixel": [
+          620,
+          365
+        ],
+        "face": 9213,
+        "source_ids": [
+          9176,
+          9607,
+          9606,
+          9177
+        ],
+        "neutral_positions_m": [
+          [
+            0.27571743726730347,
+            0.014221884310245514,
+            1.305229663848877
+          ],
+          [
+            0.2658647298812866,
+            0.004815180320292711,
+            1.2980927228927612
+          ],
+          [
+            0.27417272329330444,
+            0.0015894557582214475,
+            1.2797613143920898
+          ],
+          [
+            0.2841387093067169,
+            0.010477200150489807,
+            1.2863349914550781
+          ]
+        ],
+        "weights": {
+          "9176": {
+            "LeftArm": 1.0
+          },
+          "9607": {
+            "LeftArm": 1.0
+          },
+          "9606": {
+            "LeftArm": 1.0
+          },
+          "9177": {
+            "LeftArm": 1.0
+          }
+        },
+        "posed_hit": [
+          0.26508355140686035,
+          0.602475643157959,
+          0.16812658309936523
+        ],
+        "shoulder_delta_m": {
+          "9176": 0.0005439707523090238,
+          "9607": 0.0008379190570600773,
+          "9606": 0.00011257645170242083,
+          "9177": 0.00012233584308613728
+        }
+      },
+      {
+        "pixel": [
+          563,
+          361
+        ],
+        "face": 8462,
+        "source_ids": [
+          8599,
+          8600,
+          8732,
+          8731
+        ],
+        "neutral_positions_m": [
+          [
+            0.18579046428203583,
+            -0.043424926698207855,
+            1.415496587753296
+          ],
+          [
+            0.17228679358959198,
+            -0.041169341653585434,
+            1.4322125911712646
+          ],
+          [
+            0.1646476835012436,
+            -0.04574887454509735,
+            1.4217158555984497
+          ],
+          [
+            0.17734000086784363,
+            -0.04846947640180588,
+            1.4038448333740234
+          ]
+        ],
+        "weights": {
+          "8599": {
+            "Spine1": 0.03010370209813118,
+            "LeftShoulder": 0.3415810763835907,
+            "LeftArm": 0.628315269947052
+          },
+          "8600": {
+            "Spine1": 0.014944666065275669,
+            "LeftShoulder": 0.5622442364692688,
+            "LeftArm": 0.4228110909461975
+          },
+          "8732": {
+            "Spine1": 0.04877479001879692,
+            "LeftShoulder": 0.5650126338005066,
+            "LeftArm": 0.386212557554245
+          },
+          "8731": {
+            "Spine1": 0.06362137943506241,
+            "LeftShoulder": 0.3538067042827606,
+            "LeftArm": 0.5825719833374023
+          }
+        },
+        "posed_hit": [
+          0.1952049732208252,
+          0.4346647262573242,
+          0.22434139251708984
+        ],
+        "shoulder_delta_m": {
+          "8599": 0.024704424093185264,
+          "8600": 0.024431726130622302,
+          "8732": 0.024489915738344376,
+          "8731": 0.024999956396785084
+        }
+      },
+      {
+        "pixel": [
+          550,
+          370
+        ],
+        "face": 8657,
+        "source_ids": [
+          8669,
+          8683,
+          8684,
+          8670
+        ],
+        "neutral_positions_m": [
+          [
+            0.1581609696149826,
+            -0.06329447776079178,
+            1.3828595876693726
+          ],
+          [
+            0.14703980088233948,
+            -0.07305178046226501,
+            1.3737411499023438
+          ],
+          [
+            0.1581723988056183,
+            -0.07495421171188354,
+            1.3506077527999878
+          ],
+          [
+            0.1690640151500702,
+            -0.06276419758796692,
+            1.3607784509658813
+          ]
+        ],
+        "weights": {
+          "8669": {
+            "Spine1": 1.0
+          },
+          "8683": {
+            "Spine": 0.0696692168712616,
+            "Spine1": 0.930330753326416
+          },
+          "8684": {
+            "Spine": 0.14299586415290833,
+            "Spine1": 0.8570041656494141
+          },
+          "8670": {
+            "Spine": 0.08506132662296295,
+            "Spine1": 0.9149386882781982
+          }
+        },
+        "posed_hit": [
+          0.1933140754699707,
+          0.3770585060119629,
+          0.21853852272033691
+        ],
+        "shoulder_delta_m": {
+          "8669": 0.011247811283261418,
+          "8683": 0.005765514607529338,
+          "8684": 0.005580915697029717,
+          "8670": 0.013043857252181138
+        }
+      }
+    ],
+    "diagnosis": "Actual mixed chest/clavicle/upper-arm geometric axillary crease;25mm cap saturated at relevant faces. The same anatomically bounded source field with one40mm cap was accepted. No normal-only concealment or weight grid."
+  },
+  "heel_reach": {
+    "rejected": "Wide T sweep was replaced by source-compatible alongside-torso arms. An inward-facing hand orientation caused7mm finger floor penetration and was removed.",
+    "moving_frame_failure": "Shoulder-relative inactive wrist was dragged medially by the lateral crunch; inactive thumb faces4635/4657/4656/4636 intersected proximal thigh faces3723/3860/3859/3725. The inactive wrist now stays in the outer leg corridor.",
+    "near_contact": "An initially49.6mm gap was rejected. One actual-surface scalar contact solve gives3.6mm active fingertip/outer-heel gap; heel-contact-solve.json. Final palms face floor, whole-arm/leg intersections0."
+  },
+  "forefoot_contract": {
+    "raw_masks": "Original forefoot_L/R239-ID masks and all raw metrics retained under original names in raw-forefoot-failed-contact-report.json /raw-forefoot-failed-landmarks.json.",
+    "failure": "19.2469%within12mm failed the originally declared20% raw-mask criterion at all151frames. Mask includes curved toe sidewalls up to34.65mm above original sole.",
+    "approved_source_rule": "Original Basis normalZ<\u22120.7, frozen31IDs/foot, selects downward plantar pads without deformed-position selection. New separate plantar_pad_L/R93.55%within12mm at unchanged20% criterion. Existing0006all151stream reused; no pose or threshold change.",
+    "contract": "plantar-pad-contract.json"
+  },
+  "export": {
+    "limitation": "Blender5.2.3 exported both skeleton actions but omitted4354 KEY/morph action.",
+    "bounded_completion": "One standard glTF weights channel from actual151 native weights; all existing binary bytes, skeleton, geometry and POSITION/NORMAL buffers remain exact. export-morph-channel-receipt.json."
+  },
+  "floor_warning": "Native and decoded minimum near\u22122.37mm is retained and accepted against the predeclared4mm illustration floor tolerance. Game QA has no errors; no floor-perfect claim."
+}

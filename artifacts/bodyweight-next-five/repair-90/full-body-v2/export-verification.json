@@ -1,0 +1,148 @@
+{
+  "ok": true,
+  "failures": [],
+  "source_sha256": "f0ea8944dc965b252c8a714add28f69ee0ecfc6671bf8c4a2c731626c28634a4",
+  "glb_sha256": "f16ea375579e2a749553ed597a4a7608ff8d7537c21c263530e4422d85548249",
+  "bytes": 1305964,
+  "meshes": 1,
+  "skins": 1,
+  "bones": 51,
+  "triangles": 21160,
+  "source_vertices": 10582,
+  "exported_uv_split_vertices": 12010,
+  "materials": 1,
+  "textures": 0,
+  "animations": [
+    "Exercise_10565",
+    "Exercise_6560"
+  ],
+  "position_morphs": 4,
+  "normal_morphs": 4,
+  "target_names": [
+    "Sit90_10565_Upright",
+    "Sit90_10565_Hinge",
+    "Sit90_6560_Upright",
+    "Sit90_6560_Hinge"
+  ],
+  "basis_normal_error_max": 8.187660755892303e-05,
+  "target_normal_error_max": {
+    "Sit90_10565_Upright": 8.187660755892303e-05,
+    "Sit90_10565_Hinge": 8.187660755892303e-05,
+    "Sit90_6560_Upright": 8.266676463456927e-05,
+    "Sit90_6560_Hinge": 8.187660755892303e-05
+  },
+  "normal_comparison_scope": "All exported UV-split vertices against source rest normal witnesses. Actual GPU DQ/morph raster appearance remains primary-owned.",
+  "morph_samples": [
+    {
+      "action": "Exercise_10565",
+      "time": 0,
+      "weights": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_10565",
+      "time": 1,
+      "weights": [
+        0.5,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_10565",
+      "time": 2.5,
+      "weights": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_10565",
+      "time": 4,
+      "weights": [
+        0.5,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_10565",
+      "time": 5,
+      "weights": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_6560",
+      "time": 0,
+      "weights": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_6560",
+      "time": 1,
+      "weights": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_6560",
+      "time": 2.5,
+      "weights": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_6560",
+      "time": 4,
+      "weights": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "error": 0.0
+    },
+    {
+      "action": "Exercise_6560",
+      "time": 5,
+      "weights": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "error": 0.0
+    }
+  ],
+  "actual_threejs_visual_acceptance": false
+}

@@ -1,0 +1,74 @@
+{
+  "id": "3204",
+  "name": "arms overhead full sit-up (male)",
+  "action": "Exercise_3204",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "hip flexors",
+    "lower back"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Extend your arms overhead, keeping them straight.",
+    "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is upright.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "source_hold_recommendation_seconds": null,
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Curl to upright"
+    },
+    {
+      "start": 2,
+      "end": 2.8333333333333335,
+      "label": "Tall pause"
+    },
+    {
+      "start": 2.8333333333333335,
+      "end": 4.833333333333333,
+      "label": "Lower with control"
+    },
+    {
+      "start": 4.833333333333333,
+      "end": 5,
+      "label": "Supine reset"
+    }
+  ],
+  "interpretation": "Full upright overhead sit-up, distinct from the earlier approximately45degree three-quarter sit-up. Both knees stay bent and both independent heel/forefoot patches stay planted on the pelvic support plane. Absolute lumbar/thoracic pitch progresses continuously from89degrees behind vertical to14/1degrees behind vertical, with the pelvis rotating16degrees; per-frame native pelvic skin support is solved at1mm above z=0. Arms stay overhead relative to the upper trunk with7degrees authored elbow flexion, relaxed open source fingers and inward palms. The neck and head follow the trunk without an independent head pull. Two-second rise,25/30second tall pause, two-second lowering and5/30second reset are authored illustration choices; the source only asks for a brief pause and slow lowering.",
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hip flexors",
+      "lower back"
+    ]
+  },
+  "authored_numeric_parameters_not_source_measurements": true,
+  "diagnostic_peak_seconds": [
+    2.4
+  ],
+  "source_model_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+  "shared_model_id": null,
+  "geometry_rest_uv_source_ids_preserved": true,
+  "runtime_frame_vertex_cache": false,
+  "shape_correctives": [],
+  "known_shape_limits": [
+    "Original low-poly shoulder/armpit and hip facets remain visible; no global collision-free or clinical claim."
+  ],
+  "floor_plane_z_m": 0,
+  "heat_role_note": "Root supplies source-label artistic warm fields; labels do not establish measured activation."
+}

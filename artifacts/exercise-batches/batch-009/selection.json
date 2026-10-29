@@ -1,0 +1,87 @@
+{
+  "batch": "009",
+  "exercise_ids": [
+    "1986",
+    "1843",
+    "3220",
+    "3672",
+    "6097",
+    "1405",
+    "4515",
+    "1315",
+    "3995",
+    "1404",
+    "4663"
+  ],
+  "new_exercise_ids": [
+    "1843",
+    "3220",
+    "3672",
+    "6097",
+    "1405",
+    "4515",
+    "1315",
+    "3995",
+    "1404",
+    "4663"
+  ],
+  "bonus_exercise_ids": [
+    "1986"
+  ],
+  "order": "Continue canonical body-weight records sorted by casefolded English name then ID after3483, excluding apparatus identified in instructions. Prepend the user-requested repair of batch008 item5 as a bonus.",
+  "skipped": [
+    {
+      "id": "4229",
+      "reason": "Requires curved treadmill and handles"
+    },
+    {
+      "id": "4442",
+      "reason": "Requires bench and sturdy post/rack"
+    },
+    {
+      "id": "3502",
+      "reason": "Requires wall/support held for balance"
+    },
+    {
+      "id": "3297",
+      "reason": "Requires pull-up bar"
+    }
+  ],
+  "reuse_groups": {
+    "overhead_elbow_repair": [
+      "1986"
+    ],
+    "seated_neck": [
+      "1843"
+    ],
+    "locomotion": [
+      "3220",
+      "3672",
+      "6097"
+    ],
+    "standing_arms": [
+      "1405",
+      "4515",
+      "3995",
+      "1404"
+    ],
+    "floor": [
+      "1315",
+      "4663"
+    ]
+  },
+  "equivalent_source_records": [
+    "1315 can reuse the accepted4365/6539 kneeling rest motion and binding exactly where the source allows relaxed forward arms; retain its own spine/lower-back/glute labels and30\u201360s source hold.",
+    "1404 and1405 share a standing reach/clasp domain but differ in crossed-arm/overhead instructions. Share geometry if compatible, preserve distinct motions.",
+    "4663 may reuse accepted prone binding but keeps legs grounded and hands palm-up beside the trunk; the4935/3483 raised-leg arm sweep is not the same movement."
+  ],
+  "authoring_families": [
+    "overhead-elbow-repair",
+    "seated-neck",
+    "locomotion",
+    "standing-arms",
+    "floor-family",
+    "wrap-cuff-corrective"
+  ],
+  "deferred": []
+}

@@ -1,0 +1,29 @@
+{
+  "original_CC0_body": {
+    "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+    "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "original_binding_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b"
+  },
+  "selective_read_only_reuse": {
+    "rig_math": {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    "plantar_recipe_only": {
+      "path": "artifacts/exercise-batches/batch-006/upright-cardio-family/binding.py",
+      "sha256": "1e98c62c894dcfc97264fe54590fe24c88a30a3d895ee9ec75b65daa445dfecb",
+      "scope": "Only distal plantar algorithm extracted; waist/shoulder/Neck/Head changes excluded."
+    },
+    "continuous_arm_transport": {
+      "path": "artifacts/exercise-batches/batch-007/upright-family/motion.py",
+      "sha256": "2c51a8259ae02cb27fe2befdc8afcd29eeeb045fecede45db63f68ba9403a4d9",
+      "scope": "Read-only source of connected clavicle/arm/forearm/wrist helpers; new circle trajectory/open hands."
+    },
+    "DQ_adapter": {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+      "modified": false
+    }
+  },
+  "rights": "Catalogue text and accepted CC0 body only; no restricted Gym Visual media, paid generation or videos."
+}

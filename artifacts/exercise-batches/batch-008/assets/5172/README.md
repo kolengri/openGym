@@ -1,0 +1,9 @@
+# 5172 — arm crossover
+
+Five-second authored illustration. Two crossovers alternate upper forearm, with105mm wrist elevation offsets,120degree swing and34.431645degree protraction atcross/3degree retraction atopening. Hip-width standing feet are chosen because leg placement is missing from source. Open relaxed hands, no fists; current-scapula transported upperarm orientation and original upper-body weights preserved. Numerical staging is not a source tempo or measured activation.
+
+Original10582 vertices /21160 triangles /51 bones, Basis/rest/UV/topology/source IDs remain invariant. Read-only distal plantar recipe and declared local components are documented in `local-binding-report.json` / family dependencies. Source muscle labels remain literal: primary ['pectorals'], secondary ['shoulders', 'upper chest']. The cardiovascular-system label has no visible surface; root-owned artistic display proxies do not alter catalogue labels.
+
+Actual native and decoded151-sample physical/clearance/positive-area/loop gates pass. Game QA has zero errors; retained warnings: []. Full-cycle native/decoded DQ error 2.092µm. Five complete source-domain witnesses are0/30/75/120/150; sparse51-joint and sole-patch references include distinct extrema and return. NORMAL parity passes. Original low-poly hand/upperarm facets remain; discrete/local checks are not clinical or continuous global collision certification.
+
+Root owns actual GPU acceptance, fields and camera widths. Source SHA256 `7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72`; GLB SHA256 `b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2`. Shared physical container carries two separately named actions; source labels and useful GPU timestamps remain per asset. No old assets/shared runtime/Git mutations.

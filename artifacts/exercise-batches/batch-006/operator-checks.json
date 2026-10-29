@@ -1,0 +1,210 @@
+{
+  "repository": "kolengri/openGym",
+  "branch": "t3/upgrade-exercise-animations",
+  "head": "802bec5d2d99d25315e1331e55d54249e6109b94",
+  "base": "main",
+  "pull_request": "https://github.com/kolengri/openGym/pull/3",
+  "build_manifest": {
+    "path": "artifacts/exercise-batches/batch-006/build-manifest.json",
+    "sha256": "924f18905a05386fe88df00a2fa811e08ffca04a260f168d04ade157de0c8a83",
+    "stable": true
+  },
+  "initial_attempt": {
+    "command": "node artifacts/exercise-batches/batch-006/verify.mjs",
+    "exit_code": 1,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify-schema-failure.log",
+    "failure": "0006 frame0 patchsole_L bounds were undefined in the required reference summary."
+  },
+  "authorized_repair": {
+    "receipt": "artifacts/exercise-batches/batch-006/reference-normalization.json",
+    "scope": "Filled omitted scalar patch min_z/max_z in six supplied reference JSONs from their existing native positions; positions, indices and other metadata unchanged."
+  },
+  "retry": {
+    "command": "node artifacts/exercise-batches/batch-006/verify.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify.log",
+    "result": "passed",
+    "evidence": "Actual Three.js/Chromium/Metal and mobile touch emulation; 11 actions selected; all listed mechanics, parity, rendering and interaction assertions passed; zero runtime errors."
+  },
+  "capture": {
+    "command": "node artifacts/exercise-batches/batch-006/capture-peaks.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/capture-peaks.log",
+    "result": "passed",
+    "poses": 20,
+    "screenshots": 40,
+    "manifest": "artifacts/exercise-batches/batch-006/capture-peaks.json",
+    "screenshots_pattern": "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png"
+  },
+  "generated_evidence": [
+    "artifacts/exercise-batches/batch-006/logs/verify-schema-failure.log",
+    "artifacts/exercise-batches/batch-006/logs/verify.log",
+    "artifacts/exercise-batches/batch-006/logs/capture-peaks.log",
+    "artifacts/exercise-batches/batch-006/capture-peaks.json",
+    "artifacts/exercise-batches/batch-006/operator-checks.json",
+    "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png (40 screenshots)"
+  ],
+  "pinned_inline": {
+    "source_revision": "57a98d8af5642cb5ebf55031fddffdaf0d975ce8",
+    "build_manifest_sha256": "c1f013d7c3e4237fb4c6dee07a5b37fd444f34d1e55206e92c8dc48a42e122f7",
+    "inline_bytes": 206836,
+    "command": "node artifacts/exercise-batches/batch-006/verify-inline.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify-inline.log",
+    "result": "passed",
+    "action_count": 11,
+    "live_canvas_replaces_poster": true,
+    "external_resource_count": 12,
+    "evidence": "Verified actual public six model byte hashes against exact commit 57a98d8af5642cb5ebf55031fddffdaf0d975ce8."
+  },
+  "feedback_follow_up": {
+    "source_revision": "9e04568ce88f5b59501fd54db2968a931b7370f4",
+    "build_manifest_sha256": "7fd2884308316aa809f482e342ebdf5f301d12d27e32c9bc488398db48c25025",
+    "verify": {
+      "command": "node artifacts/exercise-batches/batch-006/verify.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-006/logs/verify-feedback.log",
+      "actions_selected": 11,
+      "errors": 0
+    },
+    "capture": {
+      "command": "node artifacts/exercise-batches/batch-006/capture-peaks.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-006/logs/capture-feedback.log",
+      "poses": 23,
+      "screenshots": 46,
+      "evidence_manifest": "artifacts/exercise-batches/batch-006/capture-peaks.json",
+      "selected_poses": [
+        {
+          "id": "1512",
+          "label": "approach",
+          "time": 1
+        },
+        {
+          "id": "1512",
+          "label": "grasp",
+          "time": 1.5
+        },
+        {
+          "id": "1512",
+          "label": "hold",
+          "time": 2.5
+        },
+        {
+          "id": "1512",
+          "label": "release",
+          "time": 3.7
+        },
+        {
+          "id": "1512",
+          "label": "late-return",
+          "time": 4.4
+        },
+        {
+          "id": "3479",
+          "label": "deep-squat",
+          "time": 0.9
+        },
+        {
+          "id": "3479",
+          "label": "stand-transfer",
+          "time": 1.85
+        },
+        {
+          "id": "3479",
+          "label": "kick",
+          "time": 2.3666666666666667
+        },
+        {
+          "id": "3479",
+          "label": "heel-touch",
+          "time": 2.6666666666666665
+        },
+        {
+          "id": "3480",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "3480",
+          "label": "right",
+          "time": 3.75
+        },
+        {
+          "id": "3531",
+          "label": "right-punch",
+          "time": 0.26666666666666666
+        },
+        {
+          "id": "3531",
+          "label": "left-punch",
+          "time": 1.1
+        },
+        {
+          "id": "3590",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4001",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4354",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4354",
+          "label": "right",
+          "time": 3.75
+        },
+        {
+          "id": "4826",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4918",
+          "label": "left-flight",
+          "time": 0.675
+        },
+        {
+          "id": "4918",
+          "label": "right-flight",
+          "time": 1.925
+        },
+        {
+          "id": "5106",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "0006",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "0006",
+          "label": "right",
+          "time": 3.75
+        }
+      ],
+      "screenshot_pattern": "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png"
+    }
+  },
+  "pinned_inline_feedback": {
+    "source_revision": "33f2bb8b8208cf2f2c9de7a38230130cbb002169",
+    "build_manifest_sha256": "d9d8ec5026364f761996fd1a457028ba3cf60ee51ce74a883e11907d81f71192",
+    "command": "node artifacts/exercise-batches/batch-006/verify-inline.mjs",
+    "exit_code": 0,
+    "log": "artifacts/exercise-batches/batch-006/logs/verify-inline-feedback.log",
+    "result": "passed",
+    "action_count": 11,
+    "includes_eight_second_3479": true,
+    "public_model_byte_hashes_match_exact_revision": true,
+    "live_canvas_replaces_poster": true,
+    "external_resource_count": 12
+  }
+}

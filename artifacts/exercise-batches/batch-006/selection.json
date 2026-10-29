@@ -1,0 +1,156 @@
+{
+  "batch": "006",
+  "selection_rule": "Next ten canonical body-weight records without documented props after1512, casefolded English name thenID.",
+  "user_authorization": "Fix1512 and continue in batches of ten.",
+  "exercises": [
+    {
+      "id": "3479",
+      "name": "alternate heel touch side kick squat",
+      "source_path": "catalogue/exercises/3479.json",
+      "source_sha256": "97b00551c8362af9caa4d85ed8b412757a6c9dcfdde9a476a093f37f4272c1b9",
+      "primary": [
+        "quads"
+      ],
+      "secondary": [
+        "glutes",
+        "hip flexors",
+        "core"
+      ]
+    },
+    {
+      "id": "0006",
+      "name": "alternate heel touchers",
+      "source_path": "catalogue/exercises/0006.json",
+      "source_sha256": "1488628ceac26f30714f37b21f613ccc70fb440c570a79b7b053d94e4a1f1712",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques"
+      ]
+    },
+    {
+      "id": "4918",
+      "name": "alternate high hop",
+      "source_path": "catalogue/exercises/4918.json",
+      "source_sha256": "39616cbb9ea7a608656e28608dd42d2d6043247a1c17d5e82f008fd939fe181c",
+      "primary": [
+        "cardiovascular system"
+      ],
+      "secondary": [
+        "calves",
+        "quadriceps",
+        "glutes"
+      ]
+    },
+    {
+      "id": "4826",
+      "name": "alternate leg raise",
+      "source_path": "catalogue/exercises/4826.json",
+      "source_sha256": "f45c6c0e277e1295640dfd187e4f1ec8f145f8acb272dbf0ff0deaedde7bb789",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "lower abs",
+        "hip flexors",
+        "core"
+      ]
+    },
+    {
+      "id": "4001",
+      "name": "alternate leg raise with head up",
+      "source_path": "catalogue/exercises/4001.json",
+      "source_sha256": "a1eb823ad40b28d7d0619596de766e7841e0b8634c0dbff53538f2f6d469792e",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "hip flexors",
+        "lower abs"
+      ]
+    },
+    {
+      "id": "3590",
+      "name": "alternate lying floor leg raise",
+      "source_path": "catalogue/exercises/3590.json",
+      "source_sha256": "1483a064546569a8e7284132b8d402cb693a73244ee408f79ad05fd11f03f0f3",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "lower abs",
+        "hip flexors"
+      ]
+    },
+    {
+      "id": "4354",
+      "name": "alternate oblique crunch",
+      "source_path": "catalogue/exercises/4354.json",
+      "source_sha256": "a6c71bf11605c28fdad596ea8390b0eefe4a7d168b64f355039d3c74af97d252",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques",
+        "hip flexors"
+      ]
+    },
+    {
+      "id": "3531",
+      "name": "alternate punching",
+      "source_path": "catalogue/exercises/3531.json",
+      "source_sha256": "2d75d23e2c9fd1fa4dbfb961c7b09f8f440da8aebcc71f984ee7a29e70f40641",
+      "primary": [
+        "cardiovascular system"
+      ],
+      "secondary": [
+        "shoulders",
+        "triceps",
+        "core",
+        "obliques"
+      ]
+    },
+    {
+      "id": "3480",
+      "name": "alternate sprinter lunge",
+      "source_path": "catalogue/exercises/3480.json",
+      "source_sha256": "b0b6ec1365fc12e75fe4d7a98e347199226d8138528e8a36309843c3c6e3c10f",
+      "primary": [
+        "quads"
+      ],
+      "secondary": [
+        "glutes",
+        "hamstrings",
+        "hip flexors"
+      ]
+    },
+    {
+      "id": "5106",
+      "name": "alternate toe tap leg lift",
+      "source_path": "catalogue/exercises/5106.json",
+      "source_sha256": "dac21e2aaf75167a28b8444896b3956dcf3a2f356f934277faa749f5e57c30e6",
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "lower abs",
+        "hip flexors"
+      ]
+    }
+  ],
+  "separate_repair": {
+    "id": "1512",
+    "source_batch": "005",
+    "status": "user_rejected_motion_requires_repair"
+  },
+  "reuse_decisions": {
+    "4826/3590": "Compatible flat-head alternating leg raises: share a body and compatible trajectory, distinct source/action/field identities.",
+    "4001": "Head-up variant may share the same physical mesh with a separate action if the complete source cues remain satisfied.",
+    "5106": "Both legs stay raised; alternating upward reaches are distinct from scissors. Declare a coherent source interpretation before authoring.",
+    "4354": "Cross-body elbow-to-opposite-knee action; reuse the proven abdominal body/support only when floor stance matches.",
+    "0006": "Side heel reaches with bent grounded feet, not a cross crunch.",
+    "3479/3480": "Reuse successful squat plantar/joint foundation; side kick+heel touch and reverse lunge remain separate trajectories.",
+    "4918/3531": "Reuse neutral articulated body; one-foot airborne hops and alternating punches need separate mechanics."
+  }
+}

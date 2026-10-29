@@ -1,0 +1,54 @@
+{
+  "id": "3905",
+  "name": "arm circles",
+  "action": "Exercise_3905",
+  "duration": 8,
+  "duration_seconds": 8,
+  "frames": 240,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "delts"
+  ],
+  "secondary": [
+    "rotator cuff",
+    "trapezius",
+    "upper back"
+  ],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Stand tall with your arms out to the sides at shoulder height.",
+    "Make small circles forward.",
+    "Gradually make the circles larger.",
+    "Do 10 to 15 circles, then reverse direction.",
+    "Keep your shoulders relaxed.",
+    "Breathe normally."
+  ],
+  "source_record_sha256": "3dd7e616b67e3f7cbad54618b449b9ea9469cf8ecfb44e4775ef9cbfab52055a",
+  "source_hold_recommendation_seconds": null,
+  "source_workout_interval_seconds": null,
+  "source_repetitions_before_reverse": [
+    10,
+    15
+  ],
+  "authored_demo_circles_per_direction": 3,
+  "phases": [
+    {
+      "start": 0,
+      "end": 4,
+      "label": "Three forward circles, gradually larger"
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "label": "Three reverse circles, return to small radius"
+    }
+  ],
+  "interpretation": "Eight-second authored demonstration: three forward circles growing wrist radius 45\u2192140 mm, then three reverse circles returning to 45 mm. Source 10\u201315 circles before reversing is retained separately; demo cadence/count are not source workout claims. Arms remain near shoulder height, elbows have 12\u00b0 soft flexion, hands are open/relaxed, shoulders do not shrug and both actual soles remain stationary/supported. Original Shoulder/Arm/Neck/Head weights are exact; only the diagnosed distal plantar recipe is reused. Mirror-time poses are identical while travel direction reverses; assess direction in playback. No measured activation or clinical claim.",
+  "review_status": "241_native_decoded_export_game_gates_passed; root_GPU_review_pending",
+  "source_sha256": "90f89ecd35de3e5573254f36d493558d6693b8899114e9ac885e731e2d179c34",
+  "glb_sha256": "9b6c1e1ee4e4b72736b946dfdb5fca85150ec62b7c278aaf48720cc7a70b156f",
+  "authoring_family": "../../arm-circle-family"
+}

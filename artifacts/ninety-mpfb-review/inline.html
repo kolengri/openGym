@@ -1,0 +1,579 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>90/90 · мягкие зоны растяжения</title>
+<style>
+:root{color-scheme:light dark;--foreground:light-dark(#202932,#edf1f4);--muted-foreground:light-dark(#5c6871,#acb7c0);--border:light-dark(#d1d9df,#44515a);--secondary:light-dark(#edf1f4,#26323a)}
+*{box-sizing:border-box}body{margin:0;padding:0;background:transparent;color:var(--foreground);font:14px/1.5 system-ui,sans-serif}main{margin:0}h2{font-size:19px;margin:0 0 3px;font-weight:650}p{margin:5px 0 12px;color:var(--muted-foreground)}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}button,select{font:inherit;padding:7px 10px;color:var(--foreground);background:var(--secondary);border:1px solid var(--border);border-radius:7px}button{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #ea8950;outline-offset:3px}.tools label{display:flex;align-items:center;gap:6px}.tools select{max-width:100%}
+#stage{position:relative;overflow:hidden;border-radius:10px;min-height:180px}#stage[data-background=dark]{background:#161d24}#stage[data-background=white]{background:#fff}#stage[data-background=checker]{background:repeating-conic-gradient(#d7dce1 0% 25%,#f4f6f8 0% 50%) 0/24px 24px}canvas{display:block;width:100%;height:auto;background:transparent;touch-action:none}#poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}#loading{position:absolute;bottom:8px;left:8px;padding:4px 7px;border-radius:4px;font-size:12px;background:#161d24cc;color:#fff}#loading[hidden]{display:none}
+.scrub{display:flex;align-items:center;gap:12px;margin:12px 0}#timeline{flex:1;min-width:80px}#phase{font-size:12px;width:140px;text-align:right;color:var(--muted-foreground)}input[type=range]{accent-color:#dd713b}.strength input{width:95px}.zones{font-size:12px;display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}.zones span:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;background:#ef592c}.zones .secondary:before{background:#eba34c}.note{font-size:12px;margin:12px 0 0}
+@media(max-width:539px){#stage{min-height:180px}.tools{gap:7px}button,select{font-size:13px}.tools label{font-size:13px}.zones{gap:8px}}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}nav button{font-size:12px;padding:6px 9px}nav button[aria-pressed=true]{border-color:#e39c6c;background:light-dark(#f5e9dd,#4b3528)}#legend[data-mode=stretch] span:before{background:#63c9e5}#legend[data-mode=stretch] .secondary:before{background:#9bc9d9}#movement-note{font-size:12px;min-height:36px}#phase{line-height:1.2}#stage:focus-visible{outline:2px solid #e39c6c;outline-offset:3px}nav{display:none}</style></head><body><main>
+<nav id="exercises" aria-label="Выбор упражнения"></nav><h2 id="exercise-title">90/90 · наклон вперёд</h2><p id="exercise-description">Поверните модель пальцем или мышью</p>
+<div class="tools"><label>Ракурс <select id="view"><option value="dual">Два рекомендуемых</option><option value="front">Мышцы и движение</option><option value="back">Опоры и поза</option></select></label><button id="reset" type="button">Вернуть ракурс</button><label>Фон <select id="background"><option value="dark">Тёмный</option><option value="white">Белый</option><option value="checker">Прозрачность</option></select></label></div>
+<div id="stage" data-background="dark"><canvas width="1296" height="786" aria-label="Живая 3D-анимация упражнения с мягкими зонами мышц"></canvas><span id="loading" role="status">Загружается 3D…</span></div>
+<div class="scrub"><button id="play" type="button">Пауза</button><input id="timeline" type="range" min="0" max="4" step="0.001" value="0" aria-label="Положение движения"><span id="phase" aria-live="off">Начальная позиция</span></div>
+<div class="tools"><label><input id="zones" type="checkbox" checked>Подсветка</label><label class="strength">Яркость <input id="strength" type="range" min="0.55" max="1.35" step="0.01" value="1" aria-label="Яркость горячей зоны"></label></div>
+<div class="zones" id="legend"><span id="main-zone"></span><span class="secondary" id="additional-zone"></span></div><p id="movement-note"></p>
+<p class="note">Тёплые зоны — нагрузка; голубые — растяжение. Это условные зоны упражнения, а не измерение активации или силы. Остальное тело нейтральное.</p>
+</main><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script><script id="heat-data" type="application/json">{"sourceVertices":13408,"regions":{"adductor_longus.L":{"indices":[10974,11019,11025,11029,11030,11031,11047,11050,11051,11053,11058,11066,11069,11070,11071,11072,11074,11077,11085,11088,11089,11091,11093,11104,11107,11108,11110,11112,11126,12979,13317,13318,13319,13322,13323,13367,13368,13369,13371,13372,13373,13374,13375,13376,13377,13378,13379,13380,13382,13383,13384,13385,13388,13389,13390,13391,13392,13393,13394,13395,13398,13399,13400,13401,13402,13403,13404,13405,13406,13407],"weights":[1,1,1,1,0.17063,0.073678,1,1,0.560916,0.3725,0.072999,1,1,0.912018,0.02474,0.666965,0.006264,0.283992,1,1,0.645164,0.676418,0.041152,0.964198,1,0.235688,0.05585,0.07934,0.006849,0.00794,1,1,0.439092,0.395985,0.086441,0.006688,0.017304,0.010875,0.023417,0.032155,0.039952,0.020513,0.070087,0.205372,0.087598,0.089249,0.037966,0.075776,0.038733,0.190185,0.092041,0.098482,0.015251,0.100746,0.103849,0.103976,0.269326,0.187846,0.666667,0.666667,0.011528,0.666667,0.040963,0.110585,0.117415,0.105491,0.325487,0.313676,0.319244,0.622638]},"adductor_longus.R":{"indices":[4349,4354,4382,4408,4411,4416,4419,4423,4424,4426,4442,4445,4446,4448,4453,4461,4464,4465,4466,4467,4469,4472,4480,4483,4484,4486,4488,4499,4502,4503,4505,4507,4521,6397,6736,6737,6738,6741,6742],"weights":[0.063417,1,0.025735,1,0.72762,1,1,1,0.17063,0.073678,1,1,0.560917,0.3725,0.072998,1,1,0.912018,0.02474,0.666965,0.006264,0.283992,1,1,0.645164,0.676417,0.041152,0.9642,1,0.235688,0.05585,0.079341,0.006849,0.00794,1,1,0.43909,0.395983,0.086441]},"adductor_magnus_visible.L":{"indices":[11031,11035,11036,11038,11053,11055,11057,11072,11074,11076,11091,11093,11095,11110,11112,11114,11131,11150,11169,13322,13323,13324,13367,13368,13369,13371,13372,13373,13374,13375,13376,13377,13378,13379,13380,13382,13383,13384,13385],"weights":[0.319431,0.583449,1,0.24541,0.645269,1,1,0.546035,0.996448,0.999077,0.404449,0.976339,0.967993,0.050329,0.953917,0.704114,0.968146,0.73125,0.056058,0.289367,0.949709,0.987804,0.028997,0.075022,0.047147,0.041729,0.056779,0.173212,0.087623,0.121982,0.355758,0.152054,0.154892,0.120823,0.241892,0.122476,0.366773,0.183066,0.182822]},"adductor_magnus_visible.R":{"indices":[4426,4430,4431,4433,4448,4450,4452,4467,4469,4471,4486,4488,4490,4505,4507,4509,4526,4545,4564,6741,6742,6743],"weights":[0.319432,0.58345,1,0.245409,0.645269,1,1,0.546035,0.996448,0.999077,0.404449,0.976339,0.967993,0.050329,0.953917,0.704115,0.968146,0.731255,0.056057,0.289366,0.949709,0.987804]},"erector_spinae.L":{"indices":[10647,10648,10659,10660,10661,10672,10673,10674,10685,10686,10687,10699,10700,10701,10713,10714,10715,10788,10789,10790,10819,10820,10821,10825,10826,10827,10831,10832,10833,10998,11003,11004],"weights":[0.568875,0.062619,0.42336,1,0.845243,0.690823,1,0.996202,0.709456,1,1,0.627155,1,1,0.487707,1,1,0.524118,1,1,0.565239,1,1,0.670894,1,1,0.77665,1,0.878856,0.091763,0.544525,1]},"erector_spinae.R":{"indices":[3986,3987,3999,4000,4001,4013,4014,4015,4027,4028,4029,4042,4043,4044,4057,4058,4059,4145,4146,4147,4178,4179,4180,4185,4186,4187,4192,4193,4194,4386,4392,4393],"weights":[0.568875,0.062619,0.42336,1,0.845243,0.690823,1,0.996202,0.709456,1,1,0.627155,1,1,0.487707,1,1,0.524118,1,1,0.565239,1,1,0.670894,1,1,0.77665,1,0.878856,0.091763,0.544525,1]},"gluteus_maximus.L":{"indices":[10805,10806,10815,10816,10822,10823,10824,10828,10829,10830,10831,10832,10835,10836,10837,10838,10839,10840,10841,10843,10844,10845,10846,10847,10848,10849,10850,10852,10853,10854,10855,10856,10859,10860,10861,10862,10863,10867,10868,10869,10875,10876,10883,10884,10891,10899,10900,10902,10905,10906,10908,10911,10912,10914,10917,10918,10920,10923,10924,10926,10929,10930,10932,10935,10936,10938,10941,10942,10944,10999,11000,11001,11002,11003,11004,11005,11007,11011],"weights":[0.230136,0.591313,0.651398,0.006483,0.581482,0.44845,0.094678,0.697252,0.642656,0.580565,0.509547,0.275649,0.622755,0.878281,0.919786,0.852963,0.765776,0.675924,0.414784,0.862438,0.963348,0.957335,0.935129,0.850096,0.749864,0.648948,0.213094,0.997802,0.856387,0.764502,0.655708,0.196862,0.986713,0.937457,0.726051,0.603774,0.041507,0.919634,0.829907,0.467004,0.80004,0.718141,0.683748,0.612962,0.126769,0.542733,0.862637,0.03317,0.660984,0.934792,0.214979,0.611196,0.833435,0.3513,0.492914,0.849075,0.30669,0.480515,0.804681,0.223286,0.499711,0.716496,0.172992,0.4831,0.618671,0.129559,0.280585,0.306791,0.007463,0.82618,0.765512,0.693876,0.73919,0.614252,0.357137,0.765827,0.347594,0.766978]},"gluteus_medius_visible.L":{"indices":[10899,10900,10902,10905,10906,10908,10911,10914],"weights":[0.577061,0.077427,0.010993,0.628524,0.35333,0.028429,0.660277,0.078041]},"iliopsoas_projection.R":{"indices":[4318,4321,4322,4324,4327,4328,4330,4333,4334,4339,4345],"weights":[0.010062,1,1,0.951999,1,1,1,1,0.966667,1,0.429864]},"sartorius.R":{"indices":[4307,4308,4309,4310,4410,4417,4418,4428,4443,4460,4462,4479,4491,4510,4518,4537,4540,4560,4561,6402,6754,6755],"weights":[0.018135,0.033087,0.147691,0.160127,0.96776,0.580895,0.387892,0.016611,1,0.23098,0.706675,1,1,0.032822,0.901818,0.235174,0.636681,0.756413,0.044767,0.232944,0.903514,0.053556]},"tensor_fasciae_latae.L":{"indices":[10913,10919,10920,10921,10925,10926,10927,10931,10932,10933,10937],"weights":[0.197125,0.50598,0.011233,0.339765,0.615483,0.086772,0.264864,0.445277,0.058405,0.051229,0.029468]}},"initialExerciseId":"10565","exercises":[{"id":"10565","title":"90/90 · наклон вперёд","shortTitle":"90/90","description":"Растяжка · наклон над передней голенью с ровной спиной","mainLabel":"Растяжение — основной акцент: ягодичные","additionalLabel":"Дополнительно по описанию: сгибатели бедра, приводящие и поясница","note":"Обе ноги согнуты примерно под 90°. Показана одна сторона; для второй положение зеркальное. Демо: 5 секунд, из них 1 секунда удержания. В упражнении удерживайте растяжку 20–30 секунд.","asset":"default","skinning":"linear","expectedBones":116,"displayMode":"stretch","primary":["gluteus_maximus.L","gluteus_medius_visible.L","tensor_fasciae_latae.L"],"secondary":["adductor_longus.L","adductor_longus.R","adductor_magnus_visible.L","adductor_magnus_visible.R","erector_spinae.L","erector_spinae.R","iliopsoas_projection.R","sartorius.R"],"cameras":[{"position":[3.4,3,1.8],"target":[0,0,0.38],"scale":2.02},{"position":[-3.4,-4,2],"target":[0,-0.02,0.42],"scale":2.18}],"phases":[{"start":0,"end":2,"label":"Наклон вперёд"},{"start":2,"end":3,"label":"Удержание"},{"start":3,"end":5,"label":"Возврат в исходную"}]}],"assets":{"default":{"modelUrl":"https://raw.githubusercontent.com/kolengri/openGym/a375a1a82c85a04d63298d56c7f655376aa69f2e/artifacts/ninety-mpfb-review/ninety.glb"}}}</script><script type="module">// artifacts/exercise-batches/batch-002/viewer.js
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+// artifacts/chaturanga-heatmap/heat-field.js
+import { BufferAttribute } from "three";
+function attachHeatField(mesh, config) {
+  const source = mesh.geometry.getAttribute("_source_index");
+  if (!source) throw Error("The model has no original-vertex lookup");
+  const count = config.sourceVertices, adjacency = Array.from({ length: count }, () => /* @__PURE__ */ new Map());
+  const positions = mesh.geometry.getAttribute("position"), rest = new Array(count);
+  for (let i = 0; i < source.count; i++) {
+    const id = Math.round(source.getX(i));
+    rest[id] ??= [positions.getX(i), positions.getY(i), positions.getZ(i)];
+  }
+  const index = mesh.geometry.index;
+  function edge(a, b) {
+    if (a === b || adjacency[a].has(b)) return;
+    const distance = Math.hypot(...rest[a].map((value, axis) => value - rest[b][axis]));
+    adjacency[a].set(b, distance);
+    adjacency[b].set(a, distance);
+  }
+  for (let i = 0; i < (index?.count ?? source.count); i += 3) {
+    const ids = [0, 1, 2].map((offset) => Math.round(source.getX(index ? index.getX(i + offset) : i + offset)));
+    edge(ids[0], ids[1]);
+    edge(ids[1], ids[2]);
+    edge(ids[2], ids[0]);
+  }
+  function field(names, falloff) {
+    let values = new Float32Array(count);
+    for (const name of names) {
+      const region = config.regions[name];
+      if (!region) throw Error("Unknown heat region: " + name);
+      region.indices.forEach((id, index2) => {
+        values[id] = Math.max(values[id], region.weights[index2]);
+      });
+    }
+    for (let pass = 0; pass < 22; pass++) {
+      const next = values.slice();
+      adjacency.forEach((neighbors, id) => {
+        for (const [neighbor, distance] of neighbors) next[id] = Math.max(next[id], values[neighbor] * Math.exp(-distance / falloff));
+      });
+      values = next;
+    }
+    for (let pass = 0; pass < 3; pass++) {
+      const next = values.slice();
+      adjacency.forEach((neighbors, id) => {
+        if (!neighbors.size) return;
+        let sum = 0;
+        for (const neighbor of neighbors.keys()) sum += values[neighbor];
+        next[id] = 0.45 * values[id] + 0.55 * sum / neighbors.size;
+      });
+      values = next;
+    }
+    const maximum = Math.max(...values);
+    if (maximum <= 0) throw Error("Empty heat field");
+    return values.map((value) => value / maximum);
+  }
+  const primary = field(config.primary, 0.036), secondary = field(config.secondary, 0.032);
+  const attribute = new Float32Array(source.count * 2);
+  for (let i = 0; i < source.count; i++) {
+    const id = Math.round(source.getX(i));
+    attribute[i * 2] = primary[id];
+    attribute[i * 2 + 1] = secondary[id];
+  }
+  mesh.geometry.setAttribute("heatZone", new BufferAttribute(attribute, 2));
+  return {
+    primary,
+    secondary,
+    sourceVertexCount: count,
+    exportedVertexCount: source.count,
+    falloffMeters: { primary: 0.036, secondary: 0.032 },
+    diffusionPasses: 22,
+    smoothingPasses: 3
+  };
+}
+
+// artifacts/chaturanga-heatmap/heat-material.js
+import { Color, MeshStandardMaterial } from "three";
+function createHeatMaterial() {
+  const uniforms = {
+    heatEnabled: { value: 1 },
+    heatStrength: { value: 1 },
+    heatPhase: { value: 1 },
+    heatAmber: { value: new Color("#f7a64b") },
+    heatRed: { value: new Color("#f24720") },
+    heatCore: { value: new Color("#ffe09a") }
+  };
+  const material = new MeshStandardMaterial({ color: "#aeb8bf", roughness: 1, metalness: 0 });
+  material.onBeforeCompile = (shader) => {
+    Object.assign(shader.uniforms, uniforms);
+    shader.vertexShader = shader.vertexShader.replace(
+      "#include <common>",
+      "#include <common>\nattribute vec2 heatZone;\nvarying vec2 vHeatZone;"
+    ).replace("#include <begin_vertex>", "#include <begin_vertex>\nvHeatZone = heatZone;");
+    shader.fragmentShader = shader.fragmentShader.replace("#include <common>", `#include <common>
+   varying vec2 vHeatZone;
+   uniform float heatEnabled;
+   uniform float heatStrength;
+   uniform float heatPhase;
+   uniform vec3 heatAmber;
+   uniform vec3 heatRed;
+   uniform vec3 heatCore;`).replace("#include <opaque_fragment>", `
+   float zone = clamp(max(vHeatZone.x, vHeatZone.y * .49) * heatPhase, 0.0, 1.0);
+   float coverage = smoothstep(.055, .68, zone) * heatEnabled;
+   coverage = clamp(coverage * heatStrength, 0.0, .97);
+   vec3 warmth = mix(heatAmber, heatRed, smoothstep(.30, .78, zone));
+   warmth = mix(warmth, heatCore, smoothstep(.79, 1.0, zone) * .85);
+   float form = clamp(dot(outgoingLight, vec3(.2126, .7152, .0722)), .35, 1.0);
+   outgoingLight = mix(outgoingLight, warmth * (.82 + form * .18), coverage);
+   #include <opaque_fragment>`);
+  };
+  material.customProgramCacheKey = () => "surface-heat-zone-v1";
+  return { material, uniforms };
+}
+
+// artifacts/exercise-batches/dual-quaternion.js
+import { Matrix4, Mesh, Quaternion, Vector3 } from "three";
+var limit = 64;
+var declarations = `
+#ifdef USE_SKINNING
+uniform bool dqEnabled;
+uniform vec4 dqReal[64];
+uniform vec4 dqDual[64];
+vec3 dqRotate(vec4 q, vec3 v) {
+ return v + 2.0 * cross(q.xyz, cross(q.xyz, v) + q.w * v);
+}
+void dqBlend(out vec4 real, out vec4 dual) {
+ ivec4 indices = ivec4(skinIndex);
+ vec4 reference = dqReal[indices.x];
+ real = vec4(0.0); dual = vec4(0.0);
+ for (int i = 0; i < 4; i++) {
+  float weight = skinWeight[i] * (dot(reference, dqReal[indices[i]]) < 0.0 ? -1.0 : 1.0);
+  real += dqReal[indices[i]] * weight;
+  dual += dqDual[indices[i]] * weight;
+ }
+ float magnitude = max(length(real), 0.000001);
+ real /= magnitude; dual /= magnitude;
+}
+#endif`;
+function addDualQuaternionSkinning(material) {
+  const uniforms = { dqEnabled: { value: false }, dqReal: { value: new Float32Array(limit * 4) }, dqDual: { value: new Float32Array(limit * 4) } };
+  const compile = material.onBeforeCompile, key = material.customProgramCacheKey.bind(material);
+  material.onBeforeCompile = (shader, renderer) => {
+    compile.call(material, shader, renderer);
+    Object.assign(shader.uniforms, uniforms);
+    shader.vertexShader = shader.vertexShader.replace("#include <common>", "#include <common>\n" + declarations).replace("#include <skinnormal_vertex>", `
+   #ifdef USE_SKINNING
+   if (dqEnabled) {
+    vec4 real, dual; dqBlend(real, dual);
+    objectNormal = (bindMatrixInverse * vec4(dqRotate(real, (bindMatrix * vec4(objectNormal, 0.0)).xyz), 0.0)).xyz;
+    #ifdef USE_TANGENT
+    objectTangent = (bindMatrixInverse * vec4(dqRotate(real, (bindMatrix * vec4(objectTangent, 0.0)).xyz), 0.0)).xyz;
+    #endif
+   } else {
+    #include <skinnormal_vertex>
+   }
+   #endif`).replace("#include <skinning_vertex>", `
+   #ifdef USE_SKINNING
+   if (dqEnabled) {
+    vec4 real, dual; dqBlend(real, dual);
+    vec3 translation = 2.0 * (real.w * dual.xyz - dual.w * real.xyz + cross(real.xyz, dual.xyz));
+    vec3 point = (bindMatrix * vec4(transformed, 1.0)).xyz;
+    transformed = (bindMatrixInverse * vec4(dqRotate(real, point) + translation, 1.0)).xyz;
+   } else {
+    #include <skinning_vertex>
+   }
+   #endif`);
+  };
+  material.customProgramCacheKey = () => key() + "-optional-rigid-dq-v1";
+  const matrix = new Matrix4(), position = new Vector3(), scale = new Vector3(), real = new Quaternion(), dual = new Quaternion();
+  function update(mesh, enabled) {
+    uniforms.dqEnabled.value = enabled;
+    if (!enabled) return;
+    if (mesh.skeleton.bones.length > limit) throw Error("DQ bone budget exceeded");
+    mesh.skeleton.update();
+    for (let index = 0; index < mesh.skeleton.bones.length; index++) {
+      matrix.fromArray(mesh.skeleton.boneMatrices, index * 16).decompose(position, real, scale);
+      if (Math.max(Math.abs(scale.x - 1), Math.abs(scale.y - 1), Math.abs(scale.z - 1)) > 1e-4)
+        throw Error("Rigid DQ skinning requires unit bone scale");
+      real.normalize();
+      dual.set(position.x, position.y, position.z, 0).multiply(real);
+      uniforms.dqReal.value.set(real.toArray(), index * 4);
+      uniforms.dqDual.value.set(dual.toArray().map((value) => value * 0.5), index * 4);
+    }
+  }
+  function installSurfaceProbe(mesh) {
+    const linear = mesh.getVertexPosition;
+    const qr = new Quaternion(), qd = new Quaternion(), offset = new Vector3();
+    mesh.getVertexPosition = function(index, target) {
+      if (!uniforms.dqEnabled.value) return linear.call(this, index, target);
+      Mesh.prototype.getVertexPosition.call(this, index, target);
+      target.applyMatrix4(this.bindMatrix);
+      const indices = this.geometry.getAttribute("skinIndex"), weights = this.geometry.getAttribute("skinWeight");
+      const first = indices.getX(index) * 4, r = uniforms.dqReal.value, d = uniforms.dqDual.value;
+      qr.set(0, 0, 0, 0);
+      qd.set(0, 0, 0, 0);
+      for (let slot = 0; slot < 4; slot++) {
+        const bone = indices.getComponent(index, slot) * 4;
+        const sign = r[first] * r[bone] + r[first + 1] * r[bone + 1] + r[first + 2] * r[bone + 2] + r[first + 3] * r[bone + 3] < 0 ? -1 : 1;
+        const weight = weights.getComponent(index, slot) * sign;
+        qr.x += r[bone] * weight;
+        qr.y += r[bone + 1] * weight;
+        qr.z += r[bone + 2] * weight;
+        qr.w += r[bone + 3] * weight;
+        qd.x += d[bone] * weight;
+        qd.y += d[bone + 1] * weight;
+        qd.z += d[bone + 2] * weight;
+        qd.w += d[bone + 3] * weight;
+      }
+      const inverse = 1 / Math.max(qr.length(), 1e-6);
+      qr.set(qr.x * inverse, qr.y * inverse, qr.z * inverse, qr.w * inverse);
+      qd.set(qd.x * inverse, qd.y * inverse, qd.z * inverse, qd.w * inverse);
+      offset.set(
+        2 * (qr.w * qd.x - qd.w * qr.x + qr.y * qd.z - qr.z * qd.y),
+        2 * (qr.w * qd.y - qd.w * qr.y + qr.z * qd.x - qr.x * qd.z),
+        2 * (qr.w * qd.z - qd.w * qr.z + qr.x * qd.y - qr.y * qd.x)
+      );
+      return target.applyQuaternion(qr).add(offset).applyMatrix4(this.bindMatrixInverse);
+    };
+  }
+  return { update, installSurfaceProbe };
+}
+
+// artifacts/exercise-batches/batch-002/viewer.js
+async function main() {
+  const config = JSON.parse(document.querySelector("#heat-data").textContent);
+  const stage = document.querySelector("#stage"), canvas = document.querySelector("canvas");
+  function describe(item) {
+    document.querySelector("#exercise-title").textContent = item.title;
+    document.querySelector("#exercise-description").textContent = item.description;
+    document.querySelector("#movement-note").textContent = item.note;
+    document.querySelector("#main-zone").textContent = item.mainLabel;
+    document.querySelector("#additional-zone").textContent = item.additionalLabel;
+    document.querySelector("#legend").dataset.mode = item.displayMode;
+    canvas.setAttribute("aria-label", item.title + " \xB7 \u0436\u0438\u0432\u0430\u044F 3D-\u0430\u043D\u0438\u043C\u0430\u0446\u0438\u044F \u0441 \u043C\u044F\u0433\u043A\u0438\u043C\u0438 \u0437\u043E\u043D\u0430\u043C\u0438 \u043C\u044B\u0448\u0446");
+  }
+  const initial = config.exercises.find((item) => item.id === config.initialExerciseId) ?? config.exercises[0];
+  describe(initial);
+  document.querySelector("#view").value = initial.displayMode === "stretch" ? "dual" : "front";
+  const initialWidth = Math.max(240, stage.clientWidth), dual = initial.displayMode === "stretch", stacked = dual && initialWidth < 540;
+  const initialPanelHeight = Math.round((dual && !stacked ? (initialWidth - 12) / 2 : initialWidth) / 1.65);
+  canvas.style.height = (stacked ? initialPanelHeight * 2 + 12 : initialPanelHeight) + "px";
+  for (const item of config.exercises) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.id = item.id;
+    button.textContent = item.shortTitle;
+    button.disabled = true;
+    button.setAttribute("aria-pressed", String(item.id === initial.id));
+    button.onclick = () => select(item.id);
+    document.querySelector("#exercises").append(button);
+  }
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setClearColor(0, 0);
+  renderer.shadowMap.enabled = false;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  const loader = new GLTFLoader();
+  const scene = new THREE.Scene();
+  scene.add(new THREE.AmbientLight(16777215, 2.5));
+  const light = new THREE.DirectionalLight(16777215, 1);
+  light.position.set(1, 3, 5);
+  scene.add(light);
+  const { material, uniforms } = createHeatMaterial(), assetCache = /* @__PURE__ */ new Map();
+  const dq = addDualQuaternionSkinning(material);
+  let gltf, meshes = [], bones = /* @__PURE__ */ new Map(), mixer, selection = 0;
+  async function loadAsset(key) {
+    if (!assetCache.has(key)) {
+      const pending = (async () => {
+        const asset = config.assets?.[key] ?? config;
+        const gltf2 = asset.model ? await loader.parseAsync(Uint8Array.from(atob(asset.model), (c) => c.charCodeAt(0)).buffer, "") : await loader.loadAsync(asset.modelUrl);
+        const meshes2 = [], bones2 = /* @__PURE__ */ new Map();
+        gltf2.scene.traverse((object) => {
+          if (object.isBone) bones2.set(object.name, object);
+          if (!object.isMesh) return;
+          meshes2.push(object);
+          for (const old of Array.isArray(object.material) ? object.material : [object.material]) {
+            old.map?.dispose();
+            old.dispose();
+          }
+          object.material = material;
+          object.castShadow = false;
+          object.receiveShadow = false;
+          dq.installSurfaceProbe(object);
+        });
+        return { gltf: gltf2, meshes: meshes2, bones: bones2, mixer: new THREE.AnimationMixer(gltf2.scene), fields: /* @__PURE__ */ new Map() };
+      })().catch((error) => {
+        if (assetCache.get(key) === pending) assetCache.delete(key);
+        throw error;
+      });
+      assetCache.set(key, pending);
+    }
+    return assetCache.get(key);
+  }
+  const cameras = [0, 1].map(() => new THREE.OrthographicCamera(-1, 1, 1, -1, 0.01, 30));
+  const toThree = ([x, y, z]) => new THREE.Vector3(x, z, -y);
+  const controls = new OrbitControls(cameras[0], canvas);
+  controls.enablePan = false;
+  controls.enableDamping = false;
+  controls.minZoom = 0.65;
+  controls.maxZoom = 2.8;
+  let exercise, clip, action, fields, linked, entries = [], mode = "front", time = 0, playing = true, last = performance.now(), poseUpdates = 0;
+  function render() {
+    renderer.setScissorTest(false);
+    renderer.clear(true, true, true);
+    renderer.setScissorTest(true);
+    for (const entry of entries) {
+      renderer.setViewport(entry.x, entry.y, entry.width, entry.height);
+      renderer.setScissor(entry.x, entry.y, entry.width, entry.height);
+      renderer.render(scene, entry.camera);
+    }
+    renderer.setScissorTest(false);
+  }
+  function layout() {
+    if (!exercise) return;
+    const width = Math.max(240, stage.clientWidth), dual2 = mode === "dual", stacked2 = dual2 && width < 540;
+    const panelWidth = dual2 && !stacked2 ? (width - 12) / 2 : width;
+    const panelHeight = Math.round(panelWidth / 1.65), height = stacked2 ? panelHeight * 2 + 12 : panelHeight;
+    renderer.setSize(width, height, false);
+    canvas.style.height = height + "px";
+    const chosen = dual2 ? [0, 1] : [mode === "front" ? 0 : 1];
+    entries = chosen.map((index, position) => {
+      const camera = cameras[index], halfWidth = exercise.cameras[index].scale / 2;
+      camera.left = -halfWidth;
+      camera.right = halfWidth;
+      camera.top = halfWidth / (panelWidth / panelHeight);
+      camera.bottom = -camera.top;
+      camera.updateProjectionMatrix();
+      return {
+        camera,
+        width: panelWidth,
+        height: panelHeight,
+        x: stacked2 ? 0 : position * (panelWidth + 12),
+        y: stacked2 ? position === 0 ? panelHeight + 12 : 0 : 0
+      };
+    });
+    render();
+  }
+  function reset() {
+    linked = null;
+    exercise.cameras.forEach((preset, index2) => {
+      cameras[index2].position.copy(toThree(preset.position));
+      cameras[index2].zoom = 1;
+      cameras[index2].lookAt(toThree(preset.target));
+      cameras[index2].updateProjectionMatrix();
+    });
+    const index = mode === "back" ? 1 : 0;
+    controls.object = cameras[index];
+    controls.target.copy(toThree(exercise.cameras[index].target));
+    controls.update();
+    if (mode === "dual") linked = {
+      rotation: cameras[0].quaternion.clone(),
+      target: toThree(exercise.cameras[1].target),
+      offset: cameras[1].position.clone().sub(toThree(exercise.cameras[1].target))
+    };
+    layout();
+  }
+  function pose(value) {
+    time = Math.max(0, Math.min(clip.duration, value));
+    action.paused = false;
+    action.enabled = true;
+    mixer.setTime(time);
+    scene.updateMatrixWorld(true);
+    for (const mesh of meshes) dq.update(mesh, exercise.skinning === "dualQuaternion");
+    poseUpdates++;
+    uniforms.heatPhase.value = 1;
+    const phase = exercise.phases.find((phase2) => time >= phase2.start && time < phase2.end) ?? exercise.phases.at(-1);
+    document.querySelector("#phase").textContent = phase?.label ?? "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435";
+    document.querySelector("#timeline").value = String(time);
+    render();
+  }
+  async function select(id) {
+    const candidate = config.exercises.find((item) => item.id === id), request = ++selection;
+    if (!candidate) throw Error("Unknown exercise: " + id);
+    const loading = document.querySelector("#loading");
+    loading.textContent = "\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442\u0441\u044F 3D\u2026";
+    loading.hidden = false;
+    let asset;
+    try {
+      asset = await loadAsset(candidate.asset ?? "default");
+    } catch (error) {
+      if (request !== selection) return false;
+      if (!gltf) throw error;
+      loading.textContent = "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0443\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435. \u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0435\u0433\u043E \u0435\u0449\u0451 \u0440\u0430\u0437.";
+      return false;
+    }
+    if (request !== selection) return;
+    if (gltf) scene.remove(gltf.scene);
+    ({ gltf, meshes, bones, mixer } = asset);
+    scene.add(gltf.scene);
+    exercise = candidate;
+    clip = gltf.animations.find((item) => item.name === "Exercise_" + id);
+    if (!clip) throw Error("Animation is missing: " + id);
+    mixer.stopAllAction();
+    action = mixer.clipAction(clip).reset().setLoop(THREE.LoopOnce, 1);
+    action.clampWhenFinished = true;
+    action.play();
+    if (!asset.fields.has(id)) asset.fields.set(id, meshes.map((mesh) => {
+      const field = attachHeatField(mesh, { ...config, ...exercise });
+      return { field, attribute: mesh.geometry.getAttribute("heatZone") };
+    }));
+    fields = asset.fields.get(id);
+    meshes.forEach((mesh, index) => mesh.geometry.setAttribute("heatZone", fields[index].attribute));
+    const palette = exercise.displayMode === "stretch" ? ["#72b4cf", "#2297c3", "#b1f2f3"] : ["#f7a64b", "#f24720", "#ffe09a"];
+    ["heatAmber", "heatRed", "heatCore"].forEach((name, i) => uniforms[name].value.set(palette[i]));
+    describe(exercise);
+    mode = exercise.displayMode === "stretch" ? "dual" : "front";
+    document.querySelector("#view").value = mode;
+    document.querySelector("#timeline").max = String(clip.duration);
+    document.querySelectorAll("#exercises button").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.id === id)));
+    playing = true;
+    document.querySelector("#play").textContent = "\u041F\u0430\u0443\u0437\u0430";
+    reset();
+    pose(0);
+    document.querySelector("#loading").hidden = true;
+  }
+  controls.addEventListener("change", () => {
+    if (linked) {
+      const rotation = cameras[0].quaternion.clone().multiply(linked.rotation.clone().invert());
+      cameras[1].position.copy(linked.offset).applyQuaternion(rotation).add(linked.target);
+      cameras[1].zoom = cameras[0].zoom;
+      cameras[1].lookAt(linked.target);
+      cameras[1].updateProjectionMatrix();
+    }
+    render();
+  });
+  document.querySelector("#play").onclick = () => {
+    playing = !playing;
+    document.querySelector("#play").textContent = playing ? "\u041F\u0430\u0443\u0437\u0430" : "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C";
+  };
+  document.querySelector("#reset").onclick = reset;
+  document.querySelector("#view").onchange = (event) => {
+    mode = event.target.value;
+    reset();
+  };
+  document.querySelector("#background").onchange = (event) => {
+    stage.dataset.background = event.target.value;
+  };
+  document.querySelector("#zones").onchange = (event) => {
+    uniforms.heatEnabled.value = Number(event.target.checked);
+    render();
+  };
+  document.querySelector("#strength").oninput = (event) => {
+    uniforms.heatStrength.value = Number(event.target.value);
+    render();
+  };
+  document.querySelector("#timeline").oninput = (event) => {
+    playing = false;
+    document.querySelector("#play").textContent = "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C";
+    pose(Number(event.target.value));
+  };
+  new ResizeObserver(layout).observe(stage);
+  await select(initial.id);
+  document.querySelector("#poster")?.remove();
+  document.querySelectorAll("#exercises button").forEach((button) => {
+    button.disabled = false;
+  });
+  window.heatReady = true;
+  window.heatSelect = select;
+  window.heatFrame = (value) => {
+    playing = false;
+    document.querySelector("#play").textContent = "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C";
+    pose(value);
+  };
+  window.heatSkinning = (value) => {
+    if (!["linear", "dualQuaternion"].includes(value)) throw Error("Unknown skinning mode");
+    exercise.skinning = value;
+    pose(time);
+  };
+  window.heatProbe = () => {
+    const gl = renderer.getContext(), pixel = new Uint8Array(4);
+    gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixel);
+    return {
+      exerciseId: exercise.id,
+      time,
+      playing,
+      duration: clip.duration,
+      action: clip.name,
+      mode,
+      displayMode: exercise.displayMode,
+      asset: exercise.asset ?? "default",
+      loadedAssets: assetCache.size,
+      skinning: exercise.skinning ?? "linear",
+      viewportCount: entries.length,
+      cameras: cameras.map((camera) => ({ position: camera.position.toArray(), zoom: camera.zoom })),
+      panEnabled: controls.enablePan,
+      heatEnabled: uniforms.heatEnabled.value,
+      heatPhase: uniforms.heatPhase.value,
+      heatStrength: uniforms.heatStrength.value,
+      meshes: meshes.length,
+      bones: bones.size,
+      poseUpdates,
+      colorTextures: material.map ? 1 : 0,
+      ao: !!material.aoMap,
+      shadows: renderer.shadowMap.enabled,
+      transparentCanvas: renderer.getContextAttributes().alpha && scene.background === null,
+      cornerAlpha: pixel[3],
+      sourceVertices: fields[0].field.sourceVertexCount,
+      primary: Array.from(fields[0].field.primary),
+      secondary: Array.from(fields[0].field.secondary),
+      morphWeights: meshes.map((mesh) => Array.from(mesh.morphTargetInfluences ?? [])),
+      joints: Object.fromEntries([...bones].map(([name, bone]) => [name, bone.getWorldPosition(new THREE.Vector3()).toArray()]))
+    };
+  };
+  window.heatSurface = (ids) => {
+    const result = {}, point = new THREE.Vector3();
+    for (const mesh of meshes) {
+      const source = mesh.geometry.getAttribute("_source_index");
+      mesh.skeleton.update();
+      for (let i = 0; i < source.count; i++) {
+        const id = Math.round(source.getX(i));
+        if (ids && !ids.includes(id)) continue;
+        mesh.getVertexPosition(i, point);
+        mesh.localToWorld(point);
+        result[id] = point.toArray();
+      }
+    }
+    return result;
+  };
+  window.heatFrustum = (ids) => entries.map(({ camera }) => {
+    const min = [Infinity, Infinity], max = [-Infinity, -Infinity], point = new THREE.Vector3();
+    const selected = ids ? new Set(ids) : null, seen = /* @__PURE__ */ new Set();
+    camera.updateMatrixWorld(true);
+    for (const mesh of meshes) {
+      mesh.skeleton.update();
+      const source = mesh.geometry.getAttribute("_source_index");
+      for (let i = 0; i < mesh.geometry.getAttribute("position").count; i++) {
+        const id = Math.round(source.getX(i));
+        if (selected && !selected.has(id)) continue;
+        seen.add(id);
+        mesh.getVertexPosition(i, point);
+        mesh.localToWorld(point);
+        point.project(camera);
+        for (const [axis, value] of [point.x, point.y].entries()) {
+          min[axis] = Math.min(min[axis], value);
+          max[axis] = Math.max(max[axis], value);
+        }
+      }
+    }
+    return { min, max, sourceVertices: seen.size };
+  });
+  function tick(now) {
+    const delta = Math.min(0.1, (now - last) / 1e3);
+    last = now;
+    if (playing) pose((time + delta) % clip.duration);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+main().catch((error) => {
+  window.heatError = error.message;
+  const loading = document.querySelector("#loading");
+  loading.textContent = "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0442\u043A\u0440\u044B\u0442\u044C 3D. ";
+  const retry = document.createElement("button");
+  retry.type = "button";
+  retry.textContent = "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u0435\u0449\u0451 \u0440\u0430\u0437";
+  retry.onclick = () => window.location.reload();
+  loading.append(retry);
+  loading.hidden = false;
+});
+</script></body></html>

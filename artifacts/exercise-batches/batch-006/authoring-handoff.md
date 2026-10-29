@@ -1,0 +1,31 @@
+# Batch 006 authoring contract
+
+The user requests ten new live animations and repair of 1512's hand/ankle grasp. This is GLB + Three.js only: no generated video, runtime frame/vertex caches, paid generation, or restricted Gym Visual derivatives. Root owns shared runtime, batch metadata, heat fields, camera-width fitting, acceptance, Git and publication. Authors own only assigned asset/family directories and must preserve others' edits. Do not spawn children or make Git mutations.
+
+## Inputs and reuse
+
+Read the assigned catalogue record and frozen context, batch-006/asset-interface.json, batch-005/findings.md, and the relevant successful asset example. Original source is the now-tracked CC0 artifacts/bodyweight-five/bodyweight-five.blend (SHA256 fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070). Safe bootstrap: artifacts/exercise-batches/batch-003/authoring.py initialize(). Keep the existing body/skeleton where compatible. Do not use rejected 90/90/butterfly shapes as foundations. Use one physical GLB with multiple action identities when source cues and pose domains are compatible; keep separate clip metadata, muscle labels and native references. Do not invent a model-specific API if existing helpers match.
+
+Relevant examples: batch-005/assets/3948 (grounded plantar binding, forward arms, capped local LBS keys); batch-005/assets/2395 (safe glute binding, additive shoulder component, actual DQ export); batch-005/assets/5266 and batch-005/posture-support (profile-based pressed lower-back support and exact component composition). That support pose/field is not automatically compatible with new straight-leg or grounded-foot mechanics. Preserve the frozen 97 domain only when actually reusing that packet; never silently refit or overwrite its files. Put all new pose-specific inputs and targets in your owned folder.
+
+## Visible acceptance
+
+Source movement and natural continuous motion take priority over passing transport metrics. One dynamic demonstration is a full five-second left/right cycle; use a deliberate sequence for complex squat/kick/lunge rather than rushing through a long middle hold. Stretch 1512 retains 2s entry/1s hold/2s return and a separate source 20–30s workout hold. Record authored angles/timing/contact interpretations separately from source facts. Prefer two recommended whole-body views showing relevant muscles and hands; root adjusts only widths. Transparent canvas, neutral inactive body, soft artistic warm load/cyan stretch zones, no body shadows/AO/color textures; root binds fields after author handoff.
+
+Grounded poses require actual sole/palm/knee/pelvic skin support, not only bone endpoints. Airborne phases must be declared and have continuous takeoff/landing; do not force ground contact during flight. Hands must remain anatomically connected, readable and correctly oriented. A grasp requires a reachable hand path, stable contact during the hold and coherent release; a passing nearest-vertex distance does not prove a believable grasp. Do not hide failures through camera choice.
+
+## Evidence and bounded corrections
+
+Read applicable blender-core, blender-animation, blender-character-rigging, blender-export-pipelines and blender-asset-qa skills. Use /opt/homebrew/bin/blender -t 2 --python-exit-code 1 for scripts; local NumPy/SciPy/libigl environment is artifacts/mannequin-mpfb-prototype/local-topology-repair/dependencies/venv/bin/python. Do not install new tools or edit shared skills.
+
+Before rendering, isolate the correct rig action and assert actual bone matrices. Cached Blender VertexGroupElement references are unsafe during membership deletion: install by stable names and read back ACTUAL saved weights (normalized, <=4 influences), not only solver arrays. Clear/restore source actions appropriately; compare evaluated full skin before and after render to detect inherited-action overrides. Basis/rest/UV/source IDs/topology remain invariant unless a specific causal incompatibility is reported to root. Compact additive POSITION/NORMAL correctives are permitted with explicit affected domains, displacement and exterior invariance. Preserve original components when adding a new one; do not silently remove old guards. On repeated failure, return the cause and one bounded remedy instead of a parameter grid.
+
+Deliver source.blend, motion.glb, clip.json with Exercise_<id>, cameras.json, pose-samples.json, the existing source/runtime surface interface and required DQ/LBS full-source reference receipts (five diagnostic poses, not runtime caches). All 151 native/actual-decoded samples must cover declared source physics, whole arm/hand-versus-leg clearance, loop closure, positive areas and appropriate support/floor gates. Keep raw failures/warnings distinct from mandatory game QA; no globally collision-free or clinical claim. Mandatory game-profile QA must have zero errors; explain retained warnings. Preserve exact model/source hashes and an explicit curated-files.json excluding logs, caches, trials, backups and environments. Root may update camera-width/clip-heat hashes after handoff with a separate integration receipt.
+
+Show a few distinct neutral start/peak/return proofs before the expensive final export/check pass. A static pose is not motion acceptance. Use exact native and actual GPU evidence; imported Blender normal shading is not authoritative when actual source/GPU position and normal transport agree. Label user-rejected1512 history accurately.
+
+## Follow-up motion requirements
+
+1512 requires a continuous shin orientation through antipodal directions and coherent shin-relative Foot/ToeBase transport. Compare internal ankle and forefoot deformation with the planted shape over the complete native and decoded cycle; positive areas and hand contact alone missed the rejected hook. Refit the collar grasp only after correcting foot anatomy. Include actual GPU late-return poses around4.1,4.4 and4.7seconds.
+
+3479 uses an eight-second bilateral demonstration: descend, fully stand, transfer support, then kick and touch the heel. A kick must not begin during the deep-squat rise.3531 uses six alternating punches in five seconds, with distinct attack, retraction and guard phases; the old two-punch timing is rejected. Original source descriptions remain distinct from these authored timing choices.

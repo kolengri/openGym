@@ -1,0 +1,92 @@
+{
+  "status": "arm_correctives_actual151_pass_pending_primary_disjoint_hip_composition",
+  "scope": "Owned arm-correctives folder only; native/source/parent/shared files unchanged",
+  "input_hashes": {
+    "mesh-input.json": {
+      "sha256": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+      "bytes": 3779687
+    },
+    "motion-input.json": {
+      "sha256": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+      "bytes": 4087459
+    },
+    "progress.json": {
+      "sha256": "150e0b865957a46229c4b121e3d7916f9ba911a88e5628e58247dcbe57f1731f",
+      "bytes": 4542
+    },
+    "joint-motion-source.npz": {
+      "sha256": "c0c3918dcc747bbb0841c69db71b1826b5e682bc4d6d805627b7e37d6455b539",
+      "bytes": 359891
+    },
+    "verification-input.npz": {
+      "sha256": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+      "bytes": 280795
+    },
+    "composed-cage.npz": {
+      "sha256": "39081100da1bc71cefde2ea76e29cb9655646920b4fd582d45a7e178015a54a4",
+      "bytes": 1409420
+    },
+    "baseline/motion.glb": {
+      "sha256": "14f63fc81ef93b292e104e5a9d71999169432d5e2c5b9194f1e5ca2504b45398",
+      "bytes": 1266236
+    },
+    "baseline/runtime-linear-samples.bin": {
+      "sha256": "36aa6eb6e1dc9d7bacf7cb0b34ad59965582c162682db889b5d0104789d0d905",
+      "bytes": 24289860
+    }
+  },
+  "sourceMotionSha256": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+  "weightOverrideSha256": null,
+  "corrective_json": "arm-correctives.json",
+  "corrective_sha256": "3fb3a2fb3295f8a6f9371f012de9c9d939938254e4a3c1214ad3de39b9631ddc",
+  "actual_glb": "motion.glb",
+  "actual_glb_sha256": "9913eff696e4ed0baadab6065b0c2139125b6df8b2ab4b37d6a5640cb0a3f4e0",
+  "frames": 151,
+  "source_vertices": 13405,
+  "deformation_groups": 45,
+  "standard_glb_bones_including_root": 46,
+  "standard_morph_targets": 2,
+  "maximum_per_target_source_displacement_m": [
+    0.00012477153249019652,
+    0.0009625602738687498
+  ],
+  "active_vertex_count": 112,
+  "active_hip_domain_overlap_indices": [],
+  "active_negative_provenance_count": 0,
+  "all151_actual_checks": {
+    "all151_actual_complete_arm_leg_exact_zero": true,
+    "all151_actual_complete_hand_leg_exact_zero": true,
+    "all151_actual_nonhand_arm_leg_exact_zero": true,
+    "all151_actual_affected_domain_vs_all_exact_zero": true,
+    "all151_actual_finger_thickness_ratio_ge08": true,
+    "all151_actual_whole_floor_ge_minus035mm": true,
+    "all151_actual_no_zero_area": true,
+    "all151_actual_no_affected_face_reversal": true,
+    "all151_actual_exterior_bit_exact": true,
+    "all151_actual_feet_glute_bit_exact": true,
+    "source_two_target_displacement_cap8mm": true,
+    "bind_loop_actual_exact_to_baseline": true,
+    "corrective_times_and_weights_match_knee_progress": true,
+    "expected_source_motion_hash": true,
+    "baseline_weight_override_null": true,
+    "standardGLB_without_custom_skin_or_cache": true,
+    "actual_reconstruction_within1micrometer": true
+  },
+  "minimum_finger_material_thickness_ratio": 0.8541045326525736,
+  "whole_skin_floor_minimum_m": -4.654152618854823e-09,
+  "complete_arm_vertex_minimum_signed_gap_m": 2.847747273516205e-05,
+  "no_native_pose_topology_binding_weight_edit": true,
+  "hip_final_acceptance_owned_elsewhere": true,
+  "composition_contract": "Primary can add these two sparse deltas to disjoint hip targets under the same schedule, rebind weightOverrideSha256, and independently verify all151 actual combined hip/hand/completearm triangles.",
+  "local_qa_only": [
+    "runtime-linear-samples.bin",
+    "baseline-contact-witnesses.npz"
+  ],
+  "no_vertex_sequence_in_delivery": true,
+  "receipts": {
+    "domain": "domain.json",
+    "generation": "generation-report.json",
+    "actual_all151_triangle_proof": "actual-verification.json",
+    "geometry": "geometry-QA.json"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "4515",
+  "name": "back pec stretch v. 2",
+  "action": "Exercise_4515",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "native_frame_origin": 1,
+  "skinning": "dualQuaternion",
+  "primary": [
+    "pectorals"
+  ],
+  "secondary": [
+    "shoulders",
+    "upper chest"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {},
+  "source_instructions": [
+    "Stand tall with your feet hip-width apart.",
+    "Clasp your hands together behind your back.",
+    "Straighten your arms and lift them gently away from your body.",
+    "Open your chest and pull your shoulder blades together.",
+    "Hold for 20-30 seconds while breathing slowly.",
+    "Release and repeat."
+  ],
+  "source_record_sha256": "fb6440b2f938ed55a7735d9d5af6beede5b0f2d02b95a6efaa5165b37da40eef",
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "interpretation": "Clasp hands behind the body with straight but soft elbows, then gently lift away while opening the chest. Source20\u201330s is separate from5s2/1/2 review. Fingers must form a visible coherent clasp without piercing palms, torso or opposite forearm. Exact reach, elbow poles and cadence are authored. Grip acquisition follows reachable arm placement; reverse path releases fingers before unwinding. Preserved shoulder correctives have explicit zero tracks. The separately authored WrapRightOverCuff POSITION/NORMAL component follows the3995 shoulder-protraction fraction and resets explicitly in all other actions.",
+  "review_status": "early_native_motion_pending",
+  "source_sha256": "e3523a98e7301e3e6d1ae274ee006e82d7edfd4c2f4b0d52e133beaf381ee12c"
+}

@@ -1,0 +1,127 @@
+{
+  "source_sha256": "026db4baa0185082af3deda03edbec24cac1e04c9b61eceefe96adff9741ae06",
+  "blender": "5.2.3 LTS",
+  "source_vertices": 10582,
+  "source_faces": 10590,
+  "source_triangles": 21160,
+  "bones": 51,
+  "materials": 1,
+  "actions": [
+    "Exercise_3948",
+    "Exercise_4714"
+  ],
+  "native_action_channels_identical": true,
+  "channels_per_action": {
+    "Exercise_3948": 360,
+    "Exercise_4714": 360
+  },
+  "key_names": [
+    "Basis",
+    "SquatStanding",
+    "SquatHalf",
+    "SquatParallel"
+  ],
+  "maximum_influences": 4,
+  "maximum_weight_error": 1.3224780559539795e-07,
+  "native_armature_only": true,
+  "modifiers": [
+    {
+      "name": "Armature",
+      "type": "ARMATURE",
+      "enabled": true
+    },
+    {
+      "name": "JointSurfaceCorrective",
+      "type": "CORRECTIVE_SMOOTH",
+      "enabled": false
+    },
+    {
+      "name": "Multires",
+      "type": "MULTIRES",
+      "enabled": false
+    }
+  ],
+  "samples": [
+    {
+      "frame": 0,
+      "dimensions_xyz_m": [
+        0.5908920764923096,
+        0.7852888703346252,
+        1.7990002632141113
+      ],
+      "bounds": [
+        [
+          -0.2953614890575409,
+          -0.6255747079849243,
+          0.00019989482825621963
+        ],
+        [
+          0.2955305874347687,
+          0.15971414744853973,
+          1.799200177192688
+        ]
+      ],
+      "active_native_bone_action": "Exercise_3948",
+      "active_native_key_action": "Exercise_3948",
+      "key_values": {
+        "SquatStanding": 1.0,
+        "SquatHalf": 0.0,
+        "SquatParallel": 0.0
+      }
+    },
+    {
+      "frame": 37,
+      "dimensions_xyz_m": [
+        0.5908926129341125,
+        0.8633651733398438,
+        1.5417510271072388
+      ],
+      "bounds": [
+        [
+          -0.2953617572784424,
+          -0.5843251943588257,
+          0.00019992423767689615
+        ],
+        [
+          0.29553085565567017,
+          0.27903997898101807,
+          1.5419509410858154
+        ]
+      ],
+      "active_native_bone_action": "Exercise_3948",
+      "active_native_key_action": "Exercise_3948",
+      "key_values": {
+        "SquatStanding": 0.02094241976737976,
+        "SquatHalf": 0.9790575504302979,
+        "SquatParallel": 0.0
+      }
+    },
+    {
+      "frame": 75,
+      "dimensions_xyz_m": [
+        0.5908918380737305,
+        0.9263221025466919,
+        1.25571608543396
+      ],
+      "bounds": [
+        [
+          -0.29536134004592896,
+          -0.5380585789680481,
+          0.00020010751904919744
+        ],
+        [
+          0.2955304980278015,
+          0.3882635235786438,
+          1.2559162378311157
+        ]
+      ],
+      "active_native_bone_action": "Exercise_3948",
+      "active_native_key_action": "Exercise_3948",
+      "key_values": {
+        "SquatStanding": 0.0,
+        "SquatHalf": 0.0,
+        "SquatParallel": 1.0
+      }
+    }
+  ]
+}

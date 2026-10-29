@@ -1,0 +1,30 @@
+{
+  "original_body": {
+    "path": "artifacts/bodyweight-five/bodyweight-five.blend",
+    "sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
+    "license": "CC0",
+    "original_binding_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b"
+  },
+  "read_only_reuse": {
+    "binding_source": {
+      "path": "artifacts/exercise-batches/batch-006/upright-cardio-family/binding.py",
+      "sha256": "1e98c62c894dcfc97264fe54590fe24c88a30a3d895ee9ec75b65daa445dfecb",
+      "copy_identical": true
+    },
+    "rig_math_helper": {
+      "path": "artifacts/exercise-batches/batch-003/authoring.py",
+      "sha256": "dbcf7c4c4a192e3172ca1b619f4cec185292f9ad896ab92e9083641e0b64f045"
+    },
+    "exact_triangle_kernel": {
+      "path": "artifacts/exercise-batches/batch-006/assets/1512/verify_decoded_contacts.py",
+      "sha256": "efaa5a539193c063587af9beee2cf5017dbb8e8ca8982b437d18bb603badb324",
+      "reuse": "Only the intersect function copied into local helper; original file never executed for writes."
+    },
+    "runtime_DQ_adapter": {
+      "path": "artifacts/exercise-batches/dual-quaternion.js",
+      "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+      "modified": false
+    }
+  },
+  "rights": "Only catalogue text and the accepted CC0 body used; no Gym Visual media, paid services or videos."
+}

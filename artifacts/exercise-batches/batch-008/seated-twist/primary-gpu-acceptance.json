@@ -1,0 +1,36 @@
+{
+  "accepted": true,
+  "glb_sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+  "reported_by": "Primary agent actualGPU review, corroborated by batch-008/visual-review.json",
+  "views": [
+    "neutral thigh transit0.8s",
+    "neutral foot transit0.933333s",
+    "held neutral",
+    "held posterior stretch fields"
+  ],
+  "finding": "6121 critical0.8/0.933333s neutral transit, held neutral and posterior stretch fields accepted on final GLB75c04592. Canonical body contour remains connected; foot is undistorted. Native/decoded support and complete-bilateral clearance remain separate receipts.",
+  "retained_warning": "6121 retains localized inherited crease/self-fold diagnostics, including a source17419 relative-normal flag. Complete bilateral limb surfaces pass targeted151-sample clearance; this does not establish global collision freedom.",
+  "all_ten_browser_receipt": {
+    "switches": 10,
+    "poses": 52,
+    "PNG_stills": 104,
+    "errors": 0,
+    "checks": "Support/DQ/pinch/reset/transparency/responsive; reported by primary."
+  },
+  "root_evidence": {
+    "capture_manifest_sha256": "9b38771a575235616d78e297f083fe800861fc9ab2bca41094fc11aaa0a92f99",
+    "verification_sha256": "adcdfc4ef8706925e449525349501ed7b25919caa4b0030e031639a2465318eb",
+    "build_manifest_sha256": "217459742e9a6ae05b0b3551e3b05822bbd1b3ea7dafc86ee4095efc95c3abe9",
+    "operator_receipt": "operator-checks.json",
+    "inspected_final_files": [
+      "neutral-6121-thigh-transit.png",
+      "neutral-6121-foot-transit.png",
+      "neutral-6121-peak.png",
+      "zones-6121-peak.png",
+      "mobile.png"
+    ],
+    "prior_nine_selected_GPU_acceptance_reused": true,
+    "scope": "All final camera fits preserve author geometry, motion, targets and selected view directions. Prior nine exact model hashes match the accepted subset GPU receipts."
+  },
+  "camera_ownership": "Final posterior camera2 and horizontal widthfit are primary-owned; author did not modify them after frozen checkpoint."
+}

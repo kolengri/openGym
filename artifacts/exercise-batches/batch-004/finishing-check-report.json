@@ -1,0 +1,212 @@
+{
+  "status": "five_runtime_candidates_pass_pending_user_approval",
+  "commands": [
+    {
+      "command": "node artifacts/exercise-batches/fit-cameras.mjs 004",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-004/draft-review/fit-cameras.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-004/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-004/draft-review/build.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-004/verify.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-004/draft-review/verify.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-004/build.mjs",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-004/draft-review/final-build.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/capture-review.mjs 004",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-004/draft-review/capture-review.log"
+    },
+    {
+      "command": "Chromium headless / Metal: select 0003, dual view, capture at 1.25 seconds with zones off/on",
+      "exit": 0,
+      "log": "artifacts/exercise-batches/batch-004/draft-review/cross-capture.log"
+    }
+  ],
+  "assets": {
+    "1980": {
+      "source_blend_sha256": "dd754f2d5a63a124c2a3967dd8b56156501beb0821d4d60b04e714315de3c563",
+      "glb_sha256": "0401f605041f07ae13a8017ba31bc489050c9d76cb4d6ae5ca413c09f4b2e7b6",
+      "clip_sha256": "044bb7b02cd105266657242bfe78db6074d4a5a82a575388a2e53a67e50ecb1e"
+    },
+    "2098": {
+      "source_blend_sha256": "35f8d1cdff57834b527d8a672b1ae7fdef0fa62e4888c82f9f24261f38c6af33",
+      "glb_sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed",
+      "clip_sha256": "c15eb26d9e72c50251f242ab829ee3b721aca0a6848bf5f6e2664e519333d8a7"
+    },
+    "1977": {
+      "source_blend_sha256": "d3c7ccb8dbf57c8a5d203371211e031c4ed27cabc241fc0627bafa7e39344ae5",
+      "glb_sha256": "4d9b486e8e8047e0dc07a021d11f76064bdcdf307854f14ecae0903c036948bd",
+      "clip_sha256": "86531ff1a1e053dd44a2f0ac6a6cd5118f88e7b79a28c1569ff4d8a610bf6ef5"
+    },
+    "4512": {
+      "source_blend_sha256": "97ddbf339eb6818574a1500ebbfa57d044e80bf07169bf21981a65da5c13dafc",
+      "glb_sha256": "10398c49c510fecd1a719f712fc17264f2dc1b13a7c57d69cf692668dc2ba95b",
+      "clip_sha256": "0799480a0344e9e0381bd8f52fff7a32338619d0261e860663360cd35943f246"
+    },
+    "0003": {
+      "source_blend_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+      "glb_sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4",
+      "clip_sha256": "ff08eef89112166c1250a4e81596b41a6c2d081285a92ce36287c37511f655c0"
+    }
+  },
+  "camera_widths": {
+    "1980": [
+      3.4,
+      3.44
+    ],
+    "2098": [
+      3.32,
+      3.44
+    ],
+    "1977": [
+      3.36,
+      3.35
+    ],
+    "4512": [
+      1.78,
+      1.83
+    ],
+    "0003": [
+      2.57,
+      2.35
+    ]
+  },
+  "camera_hashes_pre_fit": {
+    "1980": "58790f0c68d8534616bd2509c8c9303a63cd5153bfaa4456598bd087c0cadb99",
+    "2098": "143fb6199a3f4f524298712fb4eeb955ec59d07b95e791f78815af39792121d7",
+    "1977": "a11bcbe65d0f2e1506abd4c928db02bb434e79b6ae15e31c882339f32eabd79e",
+    "4512": "15b2a7b09431f2ae8b9185f1224e124588263dca5985ea725752d3a4b91873f7",
+    "0003": "65c97ae0a938d20ff894bc718581a40e792a98559e33e96046c7038b115ed01b"
+  },
+  "camera_hashes_post_fit": {
+    "1980": "02443039141e810f602145d434572ef94e3c526bcfc032da3bab1d3a715700e4",
+    "2098": "600e3ad0dcbd6ea10081f4287657debaa61189367247e601c05cbcf0bc96d4a7",
+    "1977": "46ad861c07c05552eb4878da43526f28ca6397c833c6e7b2e0134fd6c35b3001",
+    "4512": "8381bf79d0fb47b21f2b04bf35d92eb498573e4b10322af1ee4d40d4f1e8a0c3",
+    "0003": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891"
+  },
+  "runtime_script_sha256": {
+    "batch-004/build.mjs": "0085a6c1dc7464426c033ee2262b810b9c02849baa141d6accd531f79c166aa4",
+    "batch-004/verify.mjs": "a5382d1330c73c7de018c53e47254d93083a59d0bb13a7c2f0f5a48fe8e3f24c",
+    "batch-004/viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+    "batch-004/template.html": "a431f2881de38bdb4cb1a3658951af289b6d7e8a9995f644df1bbe067ae7ea9a",
+    "fit-cameras.mjs": "2cc4cbfc05fcc8fd95bee3b2f24cfac80f61886f884157c33366f2dcb26e9e18",
+    "capture-review.mjs": "ad14499d50ece9aa93abb2dfa7987bc5ef98fce6533ec50e6e9a9649718e4963",
+    "build-review.mjs": "8dff7c7c3f5cd81763f873ae953b32454bc5541cbb0f2ae93571a5d761d65425",
+    "dual-quaternion.js": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54"
+  },
+  "verification": {
+    "ok": true,
+    "max_joint_error_m": 1.0449756249691698e-06,
+    "max_surface_parity_error_m": 7.665712178361872e-07,
+    "max_all_vertex_dq_error_m": 1.4942389958767461e-06,
+    "live_hold_drift_m": {
+      "1980": 0,
+      "2098": 0,
+      "1977": 0,
+      "4512": 1.3947004136484323e-16
+    },
+    "0003_cross_mechanics_m": {
+      "time_1.25": {
+        "crossed": 0.4608968354723039,
+        "same_side": 0.5454945861442647
+      },
+      "time_3.75": {
+        "crossed": 0.4607630811022042,
+        "same_side": 0.5454945861442647
+      }
+    },
+    "transparent_canvas": true,
+    "shadows": false,
+    "ao": false,
+    "color_textures": 0,
+    "action_switching": true,
+    "latest_selection_wins": true,
+    "touch_orbit": true,
+    "pinch": true,
+    "reset": true,
+    "seek_end_resume": true,
+    "errors": [],
+    "evidence": "artifacts/exercise-batches/batch-004/verification.json"
+  },
+  "screenshots": [
+    "artifacts/exercise-batches/batch-004/neutral-0003-cross.png",
+    "artifacts/exercise-batches/batch-004/zones-0003-cross.png",
+    "artifacts/exercise-batches/batch-004/neutral-0003.png",
+    "artifacts/exercise-batches/batch-004/zones-0003.png",
+    "artifacts/exercise-batches/batch-004/review-0003.png",
+    "artifacts/exercise-batches/batch-004/review-1980.png",
+    "artifacts/exercise-batches/batch-004/review-2098.png",
+    "artifacts/exercise-batches/batch-004/review-1977.png",
+    "artifacts/exercise-batches/batch-004/review-4512.png"
+  ],
+  "visual_acceptance": "See visual-review.json: 1980/2098/1977/0003 pass only their shown visual scope;4512 rejected and isolated repair pending. Numeric PASS below belongs to original source/cameras/runtime recorded by those commands, before2098 detail integration.",
+  "pending_changes": [
+    "2098 explicit hands/forearms companion framing and bounded projection QA filter",
+    "4512 anterior groin shape repair"
+  ],
+  "latest_detail_integration": {
+    "status": "checks_passed_not_4512_visual_acceptance",
+    "commands": [
+      {
+        "command": "node artifacts/exercise-batches/batch-004/verify.mjs",
+        "exit": 0,
+        "log": "draft-review/verify-detail-framing.log"
+      },
+      {
+        "command": "node artifacts/exercise-batches/batch-004/build.mjs",
+        "exit": 0,
+        "log": "draft-review/final-build-detail-framing.log"
+      }
+    ],
+    "verification_sha256": "3fd08b78250aa3cac26dfc56f6b732337986fff9a596f243bc232e3edc3352a3",
+    "current_camera_sha256": {
+      "1980": "02443039141e810f602145d434572ef94e3c526bcfc032da3bab1d3a715700e4",
+      "2098": "736c65e0704f1130229a421911b851ff1b37eec784851666a7a3f701ba243c99",
+      "1977": "46ad861c07c05552eb4878da43526f28ca6397c833c6e7b2e0134fd6c35b3001",
+      "4512": "8381bf79d0fb47b21f2b04bf35d92eb498573e4b10322af1ee4d40d4f1e8a0c3",
+      "0003": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891"
+    },
+    "current_2098_widths": [
+      3.32,
+      1.12
+    ],
+    "detail_framing_counts": [
+      10582,
+      1926
+    ],
+    "source_runtime_assets_changed": false,
+    "independent_code_review": "../runtime-detail-framing-code-review.json",
+    "visual_review": "visual-review.json",
+    "limits": "The earlier camera/hash fields retain their initial receipt values. Current 4512 is still visually rejected; a replacement requires affected checks and appearance acceptance."
+  },
+  "historical_status": "current_runtime_checks_passed_four_scoped_visual_pass_one_rejected",
+  "latest_runtime_integration": {
+    "glb_sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+    "all151_surface": "artifacts/butterfly-mpfb-review/runtime/final/surface-verification.json",
+    "composition": "artifacts/butterfly-mpfb-review/runtime/final/integration-verification.json",
+    "five_browser_checks": "verification.json",
+    "independent_source_review": "draft-review/mixed-body-code-review.json",
+    "visual_acceptance": "visual-review.json",
+    "production_approved": false,
+    "public_inline_verification": "inline-verification.json",
+    "immutable_model_revision": "e55cb193a12c2c250afc6361102d7fd79fb238a1",
+    "html_preview_and_render": "Actual HTML previewed and rendered in the user thread; independent URL-mode browser check passes."
+  },
+  "ci_disclosure": {
+    "observed_source_commit": "e55cb193a12c2c250afc6361102d7fd79fb238a1",
+    "cla": "Failed: committers of PR3 must sign CLA. No signature performed.",
+    "job_url": "https://github.com/kolengri/openGym/actions/runs/40814616411/job/123252680795",
+    "ongoing_monitoring": false
+  }
+}

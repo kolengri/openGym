@@ -1,0 +1,45 @@
+{
+  "id": "1987",
+  "source_sha256": "43b365d87cd3c7f2566695b735a068de773427d41c6ad875ed1d26471a90dbb3",
+  "glb_sha256": "ca583ebabd85a85df782d04454cfd9310b72a4809ed0b180f9c526ba1c750789",
+  "native": {
+    "ok": true,
+    "native_integer_frames": 151,
+    "minimum_floor_z_m": 0.0009998363675549626,
+    "minimum_triangle_area_m2": 5.895894757469265e-08,
+    "loop_skin_error_m": 0.0,
+    "maximum_joint_step_degrees": 16.27606246193171,
+    "triangle_crossings": 0
+  },
+  "actual_decoded": {
+    "ok": true,
+    "maximum_full_cycle_native_decoded_error_m": 1.6713231674206201e-06,
+    "minimum_floor_z_m": 0.0009998020250350237,
+    "minimum_triangle_area_m2": 5.895894757469265e-08,
+    "loop_skin_error_m": 1.228781230931777e-07,
+    "triangle_crossings": 0
+  },
+  "game_qa": {
+    "pass": true,
+    "error_count": 0,
+    "warnings": [
+      {
+        "frame": 0,
+        "warnings": []
+      },
+      {
+        "frame": 30,
+        "warnings": []
+      },
+      {
+        "frame": 75,
+        "warnings": []
+      },
+      {
+        "frame": 120,
+        "warnings": []
+      }
+    ]
+  },
+  "limits": "Local original mesh facets and modest skin folds retained. Source workout hold shortened only for demonstration; mirrored side is not included in this single-side clip. CPU actual decoded transport evidence is separate from root-owned actual GPU/fields/framing acceptance."
+}

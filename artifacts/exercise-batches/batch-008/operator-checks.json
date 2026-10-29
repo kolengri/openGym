@@ -1,0 +1,2042 @@
+{
+  "stage": "batch-008 final all-ten offline/actual-GPU checks",
+  "repository": {
+    "branch": "t3/upgrade-exercise-animations",
+    "head": "c7d44162be89c6220a65f24e3e8ce141d8d727bd"
+  },
+  "scope": [
+    "6121",
+    "5172",
+    "1987",
+    "6014",
+    "1986",
+    "6539",
+    "3214",
+    "3204",
+    "4935",
+    "3483"
+  ],
+  "commands": [
+    {
+      "command": "node artifacts/exercise-batches/batch-008/build.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-008/logs/normal-build-before-fit.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/fit-cameras.mjs 008",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-008/logs/normal-fit-cameras.log",
+      "fitter_sha256": "eb8625d519c5031df64f6de2ca532130515c545a1220447af5a15c0247cfe931"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-008/build.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-008/logs/normal-build-after-fit.log"
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-008/verify.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-008/logs/normal-verify.log",
+      "result": {
+        "ok": true,
+        "selectedActionCount": 10,
+        "errors": [],
+        "warnings": [],
+        "maxJointErrorMeters": 0.000001799735554532887,
+        "maxSurfaceParityErrorMeters": 0.0000014832392731811694,
+        "maxAllVertexDQErrorMeters": 0.000007692970568402481,
+        "transparentCanvas": true,
+        "colorTextures": 0,
+        "shadows": false,
+        "ao": false,
+        "noVideo": true,
+        "touchOrbit": true,
+        "pinch": true,
+        "reset": true
+      }
+    },
+    {
+      "command": "node artifacts/exercise-batches/batch-008/capture-peaks.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-008/logs/normal-capture-peaks.log",
+      "result": {
+        "poses": 52,
+        "screenshots": 104,
+        "errors": []
+      }
+    }
+  ],
+  "native_receipts": "Reused the nine previously accepted native/decoded receipts; no native 151-sample author checks were rerun.",
+  "input_baseline_path": "artifacts/exercise-batches/batch-008/logs/normal-input-baseline.json",
+  "source_model_clip_reference_audit": {
+    "1986": {
+      "before": {
+        "source": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138",
+        "model": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+        "clip": "84490cddc9964895f80de84ff25f73488d7e3fe3a1b4efd650b43d5b3c20f39e",
+        "camera": "c38c186f9e54bea6aa5ef0c9f56182a5029d0d4ddb0d4f93ece1a8d2680a6e5b",
+        "references": {
+          "dq-reference.json.gz": "d21c38e8841b4229c1fc7a2793acaeb5750753c88b834e8ddfb9c802a7c28722",
+          "normal-reference.json.gz": "3e32e4ce306fff331cc93c1730da2de464211ee9e2b1e91b4db87e0718820098",
+          "runtime-surface-reference.json": "41391bad898dd99412d949e230f7e5e6c2987abcc9715ecd720bd0a6bcbbdd96"
+        }
+      },
+      "after": {
+        "source": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138",
+        "model": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+        "clip": "84490cddc9964895f80de84ff25f73488d7e3fe3a1b4efd650b43d5b3c20f39e",
+        "camera": "c38c186f9e54bea6aa5ef0c9f56182a5029d0d4ddb0d4f93ece1a8d2680a6e5b",
+        "references": {
+          "dq-reference.json.gz": "d21c38e8841b4229c1fc7a2793acaeb5750753c88b834e8ddfb9c802a7c28722",
+          "normal-reference.json.gz": "3e32e4ce306fff331cc93c1730da2de464211ee9e2b1e91b4db87e0718820098",
+          "runtime-surface-reference.json": "41391bad898dd99412d949e230f7e5e6c2987abcc9715ecd720bd0a6bcbbdd96"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "c38c186f9e54bea6aa5ef0c9f56182a5029d0d4ddb0d4f93ece1a8d2680a6e5b",
+      "camera_hash_after": "c38c186f9e54bea6aa5ef0c9f56182a5029d0d4ddb0d4f93ece1a8d2680a6e5b"
+    },
+    "1987": {
+      "before": {
+        "source": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138",
+        "model": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+        "clip": "8fd059e223b6a84c31842e51868a4d41ca573e88b10a51882a5be1f3c968f487",
+        "camera": "77f8499e1e97bbbd42750138dad11a673bad43375a464d4aa211e32f1e8005af",
+        "references": {
+          "dq-reference.json.gz": "eecb33d34198a8199ef95a12c0c85f6c8925ecea08899584fd5a4ca7194c33ff",
+          "normal-reference.json.gz": "a76d5dd5a7b5f775d9912ce0c885ae3149e5472b579d775f3254780b0bb493d9",
+          "runtime-surface-reference.json": "0dd7e25e00bf5eede7ed568b27064b9182f8f1d1bfa31bf0686c98c4246a9120"
+        }
+      },
+      "after": {
+        "source": "39bc57db4c9d4fc5fb5b24f9802858ae1acd62280881d522372218307c5e3138",
+        "model": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+        "clip": "8fd059e223b6a84c31842e51868a4d41ca573e88b10a51882a5be1f3c968f487",
+        "camera": "77f8499e1e97bbbd42750138dad11a673bad43375a464d4aa211e32f1e8005af",
+        "references": {
+          "dq-reference.json.gz": "eecb33d34198a8199ef95a12c0c85f6c8925ecea08899584fd5a4ca7194c33ff",
+          "normal-reference.json.gz": "a76d5dd5a7b5f775d9912ce0c885ae3149e5472b579d775f3254780b0bb493d9",
+          "runtime-surface-reference.json": "0dd7e25e00bf5eede7ed568b27064b9182f8f1d1bfa31bf0686c98c4246a9120"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "77f8499e1e97bbbd42750138dad11a673bad43375a464d4aa211e32f1e8005af",
+      "camera_hash_after": "77f8499e1e97bbbd42750138dad11a673bad43375a464d4aa211e32f1e8005af"
+    },
+    "3204": {
+      "before": {
+        "source": "0c8801cec290f641d3365fbbce7e0b37cee1b8e47a6514a553691f23580d4b65",
+        "model": "3334f0c740b2d506b200c619244d8cf5608aa9691562906a1ab33cca203119d0",
+        "clip": "faecbdc72ab87720589db13867aaf47a94b165f860cd481a6c30e066cf3b933b",
+        "camera": "e17ac13e5faeced049de04e2c1c2137a7f2eb87d568d2ad0d7b30f196379daf2",
+        "references": {
+          "dq-reference.json.gz": "9449eb2ae56494ca8ddb150468f085592bf118daa043390620dd3919ba39449b",
+          "normal-reference.json.gz": "ef6511d9aab270896e3492c25ecd82e45761c265633e37e99a12635c9795df54",
+          "runtime-surface-reference.json": "e2744f3df32cf237a0e91c2caedae01a6da6c15b89a1b4231de3d4ae98b17038"
+        }
+      },
+      "after": {
+        "source": "0c8801cec290f641d3365fbbce7e0b37cee1b8e47a6514a553691f23580d4b65",
+        "model": "3334f0c740b2d506b200c619244d8cf5608aa9691562906a1ab33cca203119d0",
+        "clip": "faecbdc72ab87720589db13867aaf47a94b165f860cd481a6c30e066cf3b933b",
+        "camera": "e17ac13e5faeced049de04e2c1c2137a7f2eb87d568d2ad0d7b30f196379daf2",
+        "references": {
+          "dq-reference.json.gz": "9449eb2ae56494ca8ddb150468f085592bf118daa043390620dd3919ba39449b",
+          "normal-reference.json.gz": "ef6511d9aab270896e3492c25ecd82e45761c265633e37e99a12635c9795df54",
+          "runtime-surface-reference.json": "e2744f3df32cf237a0e91c2caedae01a6da6c15b89a1b4231de3d4ae98b17038"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "e17ac13e5faeced049de04e2c1c2137a7f2eb87d568d2ad0d7b30f196379daf2",
+      "camera_hash_after": "e17ac13e5faeced049de04e2c1c2137a7f2eb87d568d2ad0d7b30f196379daf2"
+    },
+    "3214": {
+      "before": {
+        "source": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+        "model": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+        "clip": "503d427faf5ae75a4b278624432c5de309cb5f51428ccf50c41e3125df811800",
+        "camera": "9cf2a0638170400f36b2898604e11e39d667c7fb4a40af243775154bc94443cf",
+        "references": {
+          "dq-reference.json.gz": "039c8a6dcf3415e3ab41cef1041c4afb9a3d9bfc9450bb4ba14ddffc0f42b2fa",
+          "normal-reference.json.gz": "47eb392dcf310708b33ed3f42709ee4b674333d1f1b4c89bc4d1f6f1ac43ca1e",
+          "runtime-surface-reference.json": "3a433966e9e209a86960096080d75174f2c382c22212b94d429968e8126c898f"
+        }
+      },
+      "after": {
+        "source": "7bc9040afa86c2ce6907e5ec16f3c3e66bc3086c86d06648d95b71cdc2c8b47b",
+        "model": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+        "clip": "503d427faf5ae75a4b278624432c5de309cb5f51428ccf50c41e3125df811800",
+        "camera": "9cf2a0638170400f36b2898604e11e39d667c7fb4a40af243775154bc94443cf",
+        "references": {
+          "dq-reference.json.gz": "039c8a6dcf3415e3ab41cef1041c4afb9a3d9bfc9450bb4ba14ddffc0f42b2fa",
+          "normal-reference.json.gz": "47eb392dcf310708b33ed3f42709ee4b674333d1f1b4c89bc4d1f6f1ac43ca1e",
+          "runtime-surface-reference.json": "3a433966e9e209a86960096080d75174f2c382c22212b94d429968e8126c898f"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "9cf2a0638170400f36b2898604e11e39d667c7fb4a40af243775154bc94443cf",
+      "camera_hash_after": "9cf2a0638170400f36b2898604e11e39d667c7fb4a40af243775154bc94443cf"
+    },
+    "3483": {
+      "before": {
+        "source": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c",
+        "model": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+        "clip": "e05e2ddfb6e894025da5154d30fce26554bb4e8c6d19d0a477b75dd06e330c6c",
+        "camera": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c",
+        "references": {
+          "dq-reference.json.gz": "a6b0b15eb0e5ae988714190331adb935ce161117d1a207d2e3ada9890bed6298",
+          "normal-reference.json.gz": "00a4748ab68f1c08718296895deabe2752ced02b4a4fd0c25dbd996d427c4d03",
+          "runtime-surface-reference.json": "aeba739b6acb4cebd0b9fedfbd7ef390e64c8cf6a5af708f717055ae018e70a7"
+        }
+      },
+      "after": {
+        "source": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c",
+        "model": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+        "clip": "e05e2ddfb6e894025da5154d30fce26554bb4e8c6d19d0a477b75dd06e330c6c",
+        "camera": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c",
+        "references": {
+          "dq-reference.json.gz": "a6b0b15eb0e5ae988714190331adb935ce161117d1a207d2e3ada9890bed6298",
+          "normal-reference.json.gz": "00a4748ab68f1c08718296895deabe2752ced02b4a4fd0c25dbd996d427c4d03",
+          "runtime-surface-reference.json": "aeba739b6acb4cebd0b9fedfbd7ef390e64c8cf6a5af708f717055ae018e70a7"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c",
+      "camera_hash_after": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c"
+    },
+    "4935": {
+      "before": {
+        "source": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c",
+        "model": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+        "clip": "7e621edecd126c5cc9da3faf0a028d321493c4b4c07701004c114c7f07d62bf8",
+        "camera": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c",
+        "references": {
+          "dq-reference.json.gz": "7f2dd229cfd4c3f47737a8af4361affaa9157b714dc6384802a21f76874e09f0",
+          "normal-reference.json.gz": "3a087316d960e0ed9f4ce521116bac1aaeba3974e8b7be24051beeeda715e2a2",
+          "runtime-surface-reference.json": "6a227e12056f5fb7d3f7b56850ad5c72bb163fac43faedc3d7eb90a3f6e156e5"
+        }
+      },
+      "after": {
+        "source": "6646ee75bcdf898610bb3222adaed3af213657b3fb3b3ff3d9a02602bded8b8c",
+        "model": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+        "clip": "7e621edecd126c5cc9da3faf0a028d321493c4b4c07701004c114c7f07d62bf8",
+        "camera": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c",
+        "references": {
+          "dq-reference.json.gz": "7f2dd229cfd4c3f47737a8af4361affaa9157b714dc6384802a21f76874e09f0",
+          "normal-reference.json.gz": "3a087316d960e0ed9f4ce521116bac1aaeba3974e8b7be24051beeeda715e2a2",
+          "runtime-surface-reference.json": "6a227e12056f5fb7d3f7b56850ad5c72bb163fac43faedc3d7eb90a3f6e156e5"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c",
+      "camera_hash_after": "09a0995531e087bd7c959f6c785f902fa404d3d7f719f7055af85144f227665c"
+    },
+    "5172": {
+      "before": {
+        "source": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+        "model": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+        "clip": "b1e8c68ef15a59b16995a6d580f8175d0914582e46acc8a9c0bf822de65d33f9",
+        "camera": "d3bd7d69ceaaa9237517f82327ff91d8ac1f235d83f0c91dc90c34b522f97a9d",
+        "references": {
+          "dq-reference.json.gz": "811e587e8a76ffd47d14c420fff6879ba9d7b490aa967dc53e8dda9adb6dec14",
+          "normal-reference.json.gz": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5",
+          "runtime-surface-reference.json": "6f7acdbdfd3a9d3f78115baee528462496db97b44b37f5fb1b1821c2168f09e0"
+        }
+      },
+      "after": {
+        "source": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+        "model": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+        "clip": "b1e8c68ef15a59b16995a6d580f8175d0914582e46acc8a9c0bf822de65d33f9",
+        "camera": "d3bd7d69ceaaa9237517f82327ff91d8ac1f235d83f0c91dc90c34b522f97a9d",
+        "references": {
+          "dq-reference.json.gz": "811e587e8a76ffd47d14c420fff6879ba9d7b490aa967dc53e8dda9adb6dec14",
+          "normal-reference.json.gz": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5",
+          "runtime-surface-reference.json": "6f7acdbdfd3a9d3f78115baee528462496db97b44b37f5fb1b1821c2168f09e0"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "d3bd7d69ceaaa9237517f82327ff91d8ac1f235d83f0c91dc90c34b522f97a9d",
+      "camera_hash_after": "d3bd7d69ceaaa9237517f82327ff91d8ac1f235d83f0c91dc90c34b522f97a9d"
+    },
+    "6014": {
+      "before": {
+        "source": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+        "model": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+        "clip": "99461426537a1b51953e6422070b87a1e46719a894d94d7ce122a1543fec0686",
+        "camera": "cc13430588b0c50ab09def5253accd4d9f6a269e3a6704a6031126a32d84c892",
+        "references": {
+          "dq-reference.json.gz": "c7330c154a1bed41ab7e81ed91265c2c5d200f62479600acde453858f3224444",
+          "normal-reference.json.gz": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5",
+          "runtime-surface-reference.json": "cb4e8f2027a8a6723b2dba9bb688ae275e203cf114240e46064967919bdee3cc"
+        }
+      },
+      "after": {
+        "source": "7ab909b3098b2fe4bb2e272708d7bce4a0fcbb6853b712e8ab92b59ef6170f72",
+        "model": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+        "clip": "99461426537a1b51953e6422070b87a1e46719a894d94d7ce122a1543fec0686",
+        "camera": "cc13430588b0c50ab09def5253accd4d9f6a269e3a6704a6031126a32d84c892",
+        "references": {
+          "dq-reference.json.gz": "c7330c154a1bed41ab7e81ed91265c2c5d200f62479600acde453858f3224444",
+          "normal-reference.json.gz": "ffd9c2c79c4fce6465bad232c05287255b8fd982c54a27237925dcffa0565ec5",
+          "runtime-surface-reference.json": "cb4e8f2027a8a6723b2dba9bb688ae275e203cf114240e46064967919bdee3cc"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "cc13430588b0c50ab09def5253accd4d9f6a269e3a6704a6031126a32d84c892",
+      "camera_hash_after": "cc13430588b0c50ab09def5253accd4d9f6a269e3a6704a6031126a32d84c892"
+    },
+    "6121": {
+      "before": {
+        "source": "8861f6ec1015db6b3bbf5d1a4f603877a5c2469ebe7f4cbe6f52ea62b60cf697",
+        "model": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+        "clip": "dffbae06ebe3210e5ad004b75af2803ee9dd81f43ae63484553315d7d7bd8e6d",
+        "camera": "40546e394726745e965b00410586847880ff9a24e44e85de450e8e4f49b0eadb",
+        "references": {
+          "dq-reference.json.gz": "3bed85d98f589cbcb6b455f311d1f4e82f8c71ec666f026880f02ad3e815aa7f",
+          "joint-normal-reference.json.gz": "abdcc95de904741267e17523cb8a6b00d45611c2eaf0f090d8bc6e75d0fb6108",
+          "runtime-surface-reference.json": "418358dc1c41401feb0cd8f44c851d7467d0a367c025f60e37df6ddf6c52c050",
+          "topology-reference.json.gz": "ab5ba00dc79658ee567d354a1d082ed62198595544cd2acb363c0faa80841409"
+        }
+      },
+      "after": {
+        "source": "8861f6ec1015db6b3bbf5d1a4f603877a5c2469ebe7f4cbe6f52ea62b60cf697",
+        "model": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+        "clip": "dffbae06ebe3210e5ad004b75af2803ee9dd81f43ae63484553315d7d7bd8e6d",
+        "camera": "36234fb9c7ca7077897146a627738c4b754d7d842fbb1394f44ea67c463d2f37",
+        "references": {
+          "dq-reference.json.gz": "3bed85d98f589cbcb6b455f311d1f4e82f8c71ec666f026880f02ad3e815aa7f",
+          "joint-normal-reference.json.gz": "abdcc95de904741267e17523cb8a6b00d45611c2eaf0f090d8bc6e75d0fb6108",
+          "runtime-surface-reference.json": "418358dc1c41401feb0cd8f44c851d7467d0a367c025f60e37df6ddf6c52c050",
+          "topology-reference.json.gz": "ab5ba00dc79658ee567d354a1d082ed62198595544cd2acb363c0faa80841409"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "40546e394726745e965b00410586847880ff9a24e44e85de450e8e4f49b0eadb",
+      "camera_hash_after": "36234fb9c7ca7077897146a627738c4b754d7d842fbb1394f44ea67c463d2f37"
+    },
+    "6539": {
+      "before": {
+        "source": "b8499ef44ef06bb5f9ae85edf787b86021cbe555cdce9e1220a01bc5f566a332",
+        "model": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00",
+        "clip": "9520775ec46cadd3063e27160e6d7ecb9414912f37188a0301231e2f855a3de6",
+        "camera": "83b9704cf53b3a08e495774371d6a0544f65261285c7d22d66097ca89fda5339",
+        "references": {
+          "dq-reference.json.gz": "99dd3a0c45f32a30e6e1aeeb67c7c0fbf2e29d0ca08f1cfcddbcf06c1a0d896d",
+          "joint-normal-reference.json.gz": "af00346c69d970a13dcad80d4cdfda9e0e165e3c5dae71ea65047f1887e3cfaa",
+          "runtime-surface-reference.json": "243f629752bf7deac6ca184cba0eb40f4b44714e90b0a6e6926c0f442c07fd49",
+          "topology-reference.json.gz": "791d0b24bb941a59e0237427d0dd60cb495d8d2f566cc992a5c0d299d7a77647"
+        }
+      },
+      "after": {
+        "source": "b8499ef44ef06bb5f9ae85edf787b86021cbe555cdce9e1220a01bc5f566a332",
+        "model": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00",
+        "clip": "9520775ec46cadd3063e27160e6d7ecb9414912f37188a0301231e2f855a3de6",
+        "camera": "83b9704cf53b3a08e495774371d6a0544f65261285c7d22d66097ca89fda5339",
+        "references": {
+          "dq-reference.json.gz": "99dd3a0c45f32a30e6e1aeeb67c7c0fbf2e29d0ca08f1cfcddbcf06c1a0d896d",
+          "joint-normal-reference.json.gz": "af00346c69d970a13dcad80d4cdfda9e0e165e3c5dae71ea65047f1887e3cfaa",
+          "runtime-surface-reference.json": "243f629752bf7deac6ca184cba0eb40f4b44714e90b0a6e6926c0f442c07fd49",
+          "topology-reference.json.gz": "791d0b24bb941a59e0237427d0dd60cb495d8d2f566cc992a5c0d299d7a77647"
+        }
+      },
+      "source_model_clip_reference_hashes_unchanged": true,
+      "camera_hash_before": "83b9704cf53b3a08e495774371d6a0544f65261285c7d22d66097ca89fda5339",
+      "camera_hash_after": "83b9704cf53b3a08e495774371d6a0544f65261285c7d22d66097ca89fda5339"
+    }
+  },
+  "final_build": {
+    "manifest_path": "artifacts/exercise-batches/batch-008/build-manifest.json",
+    "manifest_sha256": "217459742e9a6ae05b0b3551e3b05822bbd1b3ea7dafc86ee4095efc95c3abe9",
+    "viewer_path": "artifacts/exercise-batches/batch-008/viewer.html",
+    "viewer_sha256": "efa2c0d2748b10e27aa3bc4e6ca045f1155a8a1e0282680b9d50b26e292c7146",
+    "offline_bytes": 9807931,
+    "model_assets": {
+      "1987": {
+        "path": "artifacts/exercise-batches/batch-008/assets/1987/motion.glb",
+        "sha256": "5ab926060efc3b0ba303a2239b5a92e76e28da6e1e3f63c08567090eac364997",
+        "bytes": 1061416,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_1986",
+          "Exercise_1987"
+        ]
+      },
+      "3204": {
+        "path": "artifacts/exercise-batches/batch-008/assets/3204/motion.glb",
+        "sha256": "3334f0c740b2d506b200c619244d8cf5608aa9691562906a1ab33cca203119d0",
+        "bytes": 884012,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_3204"
+        ]
+      },
+      "3214": {
+        "path": "artifacts/exercise-batches/batch-008/assets/3214/motion.glb",
+        "sha256": "af2f97e305d57c4baf0f86ad90d09f027a8fea6e9e898e159601eb6d064e48fd",
+        "bytes": 895544,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_3214"
+        ]
+      },
+      "4935": {
+        "path": "artifacts/exercise-batches/batch-008/assets/4935/motion.glb",
+        "sha256": "e9bab594c2979f6ba16bcd22ed3d81508440c4355a84b523563b3102bf11d8e8",
+        "bytes": 903420,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_3483",
+          "Exercise_4935"
+        ]
+      },
+      "5172": {
+        "path": "artifacts/exercise-batches/batch-008/assets/5172/motion.glb",
+        "sha256": "b6461269ae0546cfd33f34262afe6173ca7820490e54b134eb5c0cf986bf6bd2",
+        "bytes": 1078452,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_5172",
+          "Exercise_6014"
+        ]
+      },
+      "6121": {
+        "path": "artifacts/exercise-batches/batch-008/assets/6121/motion.glb",
+        "sha256": "75c04592c2f778aee7a8e70118f010a685775175682b6b28747d6b3d0114861a",
+        "bytes": 1003756,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_6121"
+        ]
+      },
+      "6539": {
+        "path": "artifacts/exercise-batches/batch-008/assets/6539/motion.glb",
+        "sha256": "bdc138957fb25c6f5773c4069a44dd7442ef7b8a7bc4d70607bbbdb4282a5c00",
+        "bytes": 960332,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_6539"
+        ]
+      }
+    }
+  },
+  "verify_summary": {
+    "ok": true,
+    "scope": "Actual Three.js/Chromium/Metal and mobile touch emulation; no physical device or production application integration claim.",
+    "selected_action_count": 10,
+    "errors": [],
+    "warnings": [],
+    "max_joint_error_meters": 0.000001799735554532887,
+    "max_surface_parity_error_meters": 0.0000014832392731811694,
+    "max_all_vertex_dq_error_meters": 0.000007692970568402481,
+    "mechanics": [
+      {
+        "id": "6121",
+        "fullNativeDQWitnesses": 6,
+        "maxAllVertexDQErrorMeters": 0.000007692970568402481
+      },
+      {
+        "id": "6121",
+        "livePlayback": {
+          "durationSeconds": 5,
+          "holdSeconds": 1,
+          "sampleTimes": [
+            0.4001,
+            1.5,
+            2.1165999999999987,
+            2.916599999999997,
+            3.516599999999996,
+            4.7165
+          ],
+          "holdDriftMeters": 0,
+          "wallSeconds": 5.017399999976158,
+          "wrapObserved": true
+        }
+      },
+      {
+        "id": "5172",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.0000014673350816112018
+      },
+      {
+        "id": "1987",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.000001308826051795422
+      },
+      {
+        "id": "1987",
+        "livePlayback": {
+          "durationSeconds": 5,
+          "holdSeconds": 1,
+          "sampleTimes": [
+            0.40000000000000013,
+            1.5166000000000015,
+            2.116600000000002,
+            2.9165000000000005,
+            3.5164999999999993,
+            4.716400000000008
+          ],
+          "holdDriftMeters": 0,
+          "wallSeconds": 5.019,
+          "wrapObserved": true
+        }
+      },
+      {
+        "id": "6014",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.000001495250822490067
+      },
+      {
+        "id": "1986",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.0000016886460424405797
+      },
+      {
+        "id": "1986",
+        "livePlayback": {
+          "durationSeconds": 5,
+          "holdSeconds": 1,
+          "sampleTimes": [
+            0.41660000000000214,
+            1.516600000000003,
+            2.116500000000002,
+            2.9165,
+            3.516499999999999,
+            4.716500000000005
+          ],
+          "holdDriftMeters": 0,
+          "wallSeconds": 5.016599999904632,
+          "wrapObserved": true
+        }
+      },
+      {
+        "id": "6539",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.0000014922330256846605
+      },
+      {
+        "id": "6539",
+        "livePlayback": {
+          "durationSeconds": 5,
+          "holdSeconds": 1,
+          "sampleTimes": [
+            0.4166999999999971,
+            1.5000000000000004,
+            2.1166,
+            2.916599999999998,
+            3.5165999999999964,
+            4.716500000000006
+          ],
+          "holdDriftMeters": 0,
+          "wallSeconds": 5.016899999976158,
+          "wrapObserved": true
+        }
+      },
+      {
+        "id": "3214",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.000002701296405240653
+      },
+      {
+        "id": "3204",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.0000035324081152809546
+      },
+      {
+        "id": "4935",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.00000596481759839585
+      },
+      {
+        "id": "3483",
+        "fullNativeDQWitnesses": 5,
+        "maxAllVertexDQErrorMeters": 0.00000596481759839585
+      }
+    ]
+  },
+  "capture_manifest": {
+    "path": "artifacts/exercise-batches/batch-008/capture-peaks.json",
+    "sha256": "9b38771a575235616d78e297f083fe800861fc9ab2bca41094fc11aaa0a92f99",
+    "viewer_sha256": "efa2c0d2748b10e27aa3bc4e6ca045f1155a8a1e0282680b9d50b26e292c7146",
+    "build_manifest_sha256": "217459742e9a6ae05b0b3551e3b05822bbd1b3ea7dafc86ee4095efc95c3abe9",
+    "pose_plan_sha256": "10fa7c012143d2e218b9eced65b2d62aa201979f5eafa3630fd4a76324c15689",
+    "pose_count": 52,
+    "screenshot_count": 104,
+    "errors": [],
+    "png_paths": [
+      "artifacts/exercise-batches/batch-008/neutral-1986-start.png",
+      "artifacts/exercise-batches/batch-008/zones-1986-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-1986-early.png",
+      "artifacts/exercise-batches/batch-008/zones-1986-early.png",
+      "artifacts/exercise-batches/batch-008/neutral-1986-elbow.png",
+      "artifacts/exercise-batches/batch-008/zones-1986-elbow.png",
+      "artifacts/exercise-batches/batch-008/neutral-1986-wrist-before.png",
+      "artifacts/exercise-batches/batch-008/zones-1986-wrist-before.png",
+      "artifacts/exercise-batches/batch-008/neutral-1986-wrist-after.png",
+      "artifacts/exercise-batches/batch-008/zones-1986-wrist-after.png",
+      "artifacts/exercise-batches/batch-008/neutral-1986-hold.png",
+      "artifacts/exercise-batches/batch-008/zones-1986-hold.png",
+      "artifacts/exercise-batches/batch-008/neutral-1986-return.png",
+      "artifacts/exercise-batches/batch-008/zones-1986-return.png",
+      "artifacts/exercise-batches/batch-008/neutral-1987-start.png",
+      "artifacts/exercise-batches/batch-008/zones-1987-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-1987-entry.png",
+      "artifacts/exercise-batches/batch-008/zones-1987-entry.png",
+      "artifacts/exercise-batches/batch-008/neutral-1987-hold.png",
+      "artifacts/exercise-batches/batch-008/zones-1987-hold.png",
+      "artifacts/exercise-batches/batch-008/neutral-1987-return.png",
+      "artifacts/exercise-batches/batch-008/zones-1987-return.png",
+      "artifacts/exercise-batches/batch-008/neutral-3204-start.png",
+      "artifacts/exercise-batches/batch-008/zones-3204-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-3204-entry.png",
+      "artifacts/exercise-batches/batch-008/zones-3204-entry.png",
+      "artifacts/exercise-batches/batch-008/neutral-3204-upright.png",
+      "artifacts/exercise-batches/batch-008/zones-3204-upright.png",
+      "artifacts/exercise-batches/batch-008/neutral-3204-return.png",
+      "artifacts/exercise-batches/batch-008/zones-3204-return.png",
+      "artifacts/exercise-batches/batch-008/neutral-3204-finish.png",
+      "artifacts/exercise-batches/batch-008/zones-3204-finish.png",
+      "artifacts/exercise-batches/batch-008/neutral-3214-start.png",
+      "artifacts/exercise-batches/batch-008/zones-3214-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-3214-right-transfer.png",
+      "artifacts/exercise-batches/batch-008/zones-3214-right-transfer.png",
+      "artifacts/exercise-batches/batch-008/neutral-3214-right-reach.png",
+      "artifacts/exercise-batches/batch-008/zones-3214-right-reach.png",
+      "artifacts/exercise-batches/batch-008/neutral-3214-left-reach.png",
+      "artifacts/exercise-batches/batch-008/zones-3214-left-reach.png",
+      "artifacts/exercise-batches/batch-008/neutral-3214-return.png",
+      "artifacts/exercise-batches/batch-008/zones-3214-return.png",
+      "artifacts/exercise-batches/batch-008/neutral-3483-start.png",
+      "artifacts/exercise-batches/batch-008/zones-3483-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-3483-lift.png",
+      "artifacts/exercise-batches/batch-008/zones-3483-lift.png",
+      "artifacts/exercise-batches/batch-008/neutral-3483-hips.png",
+      "artifacts/exercise-batches/batch-008/zones-3483-hips.png",
+      "artifacts/exercise-batches/batch-008/neutral-3483-overhead.png",
+      "artifacts/exercise-batches/batch-008/zones-3483-overhead.png",
+      "artifacts/exercise-batches/batch-008/neutral-3483-lower.png",
+      "artifacts/exercise-batches/batch-008/zones-3483-lower.png",
+      "artifacts/exercise-batches/batch-008/neutral-4935-start.png",
+      "artifacts/exercise-batches/batch-008/zones-4935-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-4935-lift.png",
+      "artifacts/exercise-batches/batch-008/zones-4935-lift.png",
+      "artifacts/exercise-batches/batch-008/neutral-4935-hips.png",
+      "artifacts/exercise-batches/batch-008/zones-4935-hips.png",
+      "artifacts/exercise-batches/batch-008/neutral-4935-overhead.png",
+      "artifacts/exercise-batches/batch-008/zones-4935-overhead.png",
+      "artifacts/exercise-batches/batch-008/neutral-4935-lower.png",
+      "artifacts/exercise-batches/batch-008/zones-4935-lower.png",
+      "artifacts/exercise-batches/batch-008/neutral-5172-start.png",
+      "artifacts/exercise-batches/batch-008/zones-5172-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-5172-right-over.png",
+      "artifacts/exercise-batches/batch-008/zones-5172-right-over.png",
+      "artifacts/exercise-batches/batch-008/neutral-5172-open.png",
+      "artifacts/exercise-batches/batch-008/zones-5172-open.png",
+      "artifacts/exercise-batches/batch-008/neutral-5172-left-over.png",
+      "artifacts/exercise-batches/batch-008/zones-5172-left-over.png",
+      "artifacts/exercise-batches/batch-008/neutral-5172-return.png",
+      "artifacts/exercise-batches/batch-008/zones-5172-return.png",
+      "artifacts/exercise-batches/batch-008/neutral-6014-start.png",
+      "artifacts/exercise-batches/batch-008/zones-6014-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-6014-right-step.png",
+      "artifacts/exercise-batches/batch-008/zones-6014-right-step.png",
+      "artifacts/exercise-batches/batch-008/neutral-6014-left-step.png",
+      "artifacts/exercise-batches/batch-008/zones-6014-left-step.png",
+      "artifacts/exercise-batches/batch-008/neutral-6014-next-right.png",
+      "artifacts/exercise-batches/batch-008/zones-6014-next-right.png",
+      "artifacts/exercise-batches/batch-008/neutral-6014-next-left.png",
+      "artifacts/exercise-batches/batch-008/zones-6014-next-left.png",
+      "artifacts/exercise-batches/batch-008/neutral-6121-start.png",
+      "artifacts/exercise-batches/batch-008/zones-6121-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-6121-thigh-transit.png",
+      "artifacts/exercise-batches/batch-008/zones-6121-thigh-transit.png",
+      "artifacts/exercise-batches/batch-008/neutral-6121-foot-transit.png",
+      "artifacts/exercise-batches/batch-008/zones-6121-foot-transit.png",
+      "artifacts/exercise-batches/batch-008/neutral-6121-entry.png",
+      "artifacts/exercise-batches/batch-008/zones-6121-entry.png",
+      "artifacts/exercise-batches/batch-008/neutral-6121-peak.png",
+      "artifacts/exercise-batches/batch-008/zones-6121-peak.png",
+      "artifacts/exercise-batches/batch-008/neutral-6121-return.png",
+      "artifacts/exercise-batches/batch-008/zones-6121-return.png",
+      "artifacts/exercise-batches/batch-008/neutral-6121-finish.png",
+      "artifacts/exercise-batches/batch-008/zones-6121-finish.png",
+      "artifacts/exercise-batches/batch-008/neutral-6539-start.png",
+      "artifacts/exercise-batches/batch-008/zones-6539-start.png",
+      "artifacts/exercise-batches/batch-008/neutral-6539-entry.png",
+      "artifacts/exercise-batches/batch-008/zones-6539-entry.png",
+      "artifacts/exercise-batches/batch-008/neutral-6539-hold.png",
+      "artifacts/exercise-batches/batch-008/zones-6539-hold.png",
+      "artifacts/exercise-batches/batch-008/neutral-6539-return.png",
+      "artifacts/exercise-batches/batch-008/zones-6539-return.png"
+    ],
+    "captures": [
+      {
+        "id": "1986",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1986-start.png",
+        "sha256": "7e55aff1c7dff51d2d4a9afb7a74a8fb36f391fed9cb7608bc0310890c12ba20",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21266
+      },
+      {
+        "id": "1986",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1986-start.png",
+        "sha256": "288ce8e187f2584bde7b491999094cf61b1c6fda2cc8745d03a0e45eb268e81a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21266
+      },
+      {
+        "id": "1986",
+        "label": "early",
+        "time": 0.6,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1986-early.png",
+        "sha256": "70214c06bba63eac596a9dd1030a3bbd88698566cbd612d62929bc1dac898619",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23252
+      },
+      {
+        "id": "1986",
+        "label": "early",
+        "time": 0.6,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1986-early.png",
+        "sha256": "a3592e692b17ad8ea120df4892fb92d9db1797a269978db7715daf0ae72f293a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23252
+      },
+      {
+        "id": "1986",
+        "label": "elbow",
+        "time": 1,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1986-elbow.png",
+        "sha256": "9fa2959691b24d3e317a6416a5787aaea514d88d11873214c8382d4840a64955",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23002
+      },
+      {
+        "id": "1986",
+        "label": "elbow",
+        "time": 1,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1986-elbow.png",
+        "sha256": "2c732764ca2071d927dc00176eb3e7712b593831dfabbf8b3ecc5a4ae774fcff",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23002
+      },
+      {
+        "id": "1986",
+        "label": "wrist-before",
+        "time": 1.5333333333333334,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1986-wrist-before.png",
+        "sha256": "a75c51098dd9ddff873060a99e2c47f40456d85068c7130d3c1776c1d8cb85e6",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21802
+      },
+      {
+        "id": "1986",
+        "label": "wrist-before",
+        "time": 1.5333333333333334,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1986-wrist-before.png",
+        "sha256": "db16e3f9a18d81811405a1adf3fb67e87d510ef9c470899d6222a2a5816fe122",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21802
+      },
+      {
+        "id": "1986",
+        "label": "wrist-after",
+        "time": 1.5666666666666667,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1986-wrist-after.png",
+        "sha256": "79792dca6d1cb8fe84c713d95dd287c3a3a331f5b8ab1cd3bd0acff0520c1cd1",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21632
+      },
+      {
+        "id": "1986",
+        "label": "wrist-after",
+        "time": 1.5666666666666667,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1986-wrist-after.png",
+        "sha256": "20fc6dc8c9863fe3e3b56ceefed11bc18c5f9414e0e470a61373ee6ba000b1b2",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21632
+      },
+      {
+        "id": "1986",
+        "label": "hold",
+        "time": 2.5,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1986-hold.png",
+        "sha256": "423a0760f1ed4789716d946dcce307efbd5266ba8959356b77139a48726b72b9",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 20458
+      },
+      {
+        "id": "1986",
+        "label": "hold",
+        "time": 2.5,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1986-hold.png",
+        "sha256": "2e8168a170151ac4084949f86aa7e92555994d98042462696a2cf1315da7b52c",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 20458
+      },
+      {
+        "id": "1986",
+        "label": "return",
+        "time": 4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1986-return.png",
+        "sha256": "9fa2959691b24d3e317a6416a5787aaea514d88d11873214c8382d4840a64955",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23002
+      },
+      {
+        "id": "1986",
+        "label": "return",
+        "time": 4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1986-return.png",
+        "sha256": "2c732764ca2071d927dc00176eb3e7712b593831dfabbf8b3ecc5a4ae774fcff",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23002
+      },
+      {
+        "id": "1987",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1987-start.png",
+        "sha256": "e1a6f88da406f881d722149d48039867f4d97e2bf3f3d05ec7196106d1e1f3e8",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 30093
+      },
+      {
+        "id": "1987",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1987-start.png",
+        "sha256": "e48b6bf1c6eb89bf8606968b53471ffc36c06d5bf000985c11e8cbbfd973dca2",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 30093
+      },
+      {
+        "id": "1987",
+        "label": "entry",
+        "time": 1,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1987-entry.png",
+        "sha256": "43bfa10e2f12eb15e51627258eeffbdfd0d2e575453c8007550b59ff08a07bd8",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 28005
+      },
+      {
+        "id": "1987",
+        "label": "entry",
+        "time": 1,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1987-entry.png",
+        "sha256": "555216145ab4ab9daa68a9a3cf1e12c3d851835361c669497c39f28ef19dd13e",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 28005
+      },
+      {
+        "id": "1987",
+        "label": "hold",
+        "time": 2.5,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1987-hold.png",
+        "sha256": "eab3d26de1f90e763e0248ecd493c46a75ca6f46ef345c16d4dae1fe7669bf4a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 27611
+      },
+      {
+        "id": "1987",
+        "label": "hold",
+        "time": 2.5,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1987-hold.png",
+        "sha256": "ee24ec81e2ce20a8a260992a041cde917689a4f7c1ee3d84293897d1a365dfe9",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 27611
+      },
+      {
+        "id": "1987",
+        "label": "return",
+        "time": 4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-1987-return.png",
+        "sha256": "43bfa10e2f12eb15e51627258eeffbdfd0d2e575453c8007550b59ff08a07bd8",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 28005
+      },
+      {
+        "id": "1987",
+        "label": "return",
+        "time": 4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-1987-return.png",
+        "sha256": "555216145ab4ab9daa68a9a3cf1e12c3d851835361c669497c39f28ef19dd13e",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 28005
+      },
+      {
+        "id": "3204",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3204-start.png",
+        "sha256": "4e1a117e53da309a67fc42f932ded5e259bfb93f07b71dc935f76915fdc36943",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 33586
+      },
+      {
+        "id": "3204",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3204-start.png",
+        "sha256": "c64228e96e83763918387a0d73ad6858715a4965f18afd7cab9a678391280863",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 33586
+      },
+      {
+        "id": "3204",
+        "label": "entry",
+        "time": 1,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3204-entry.png",
+        "sha256": "530ba94238842a9532d98fe13a9c57d7ba8d97e21e5f3c124dcd8108f761677d",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36106
+      },
+      {
+        "id": "3204",
+        "label": "entry",
+        "time": 1,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3204-entry.png",
+        "sha256": "9c172a60d435a57bcd2bb5226d5773f29d97d16a32f835762fc7cb9d49ea6c09",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36106
+      },
+      {
+        "id": "3204",
+        "label": "upright",
+        "time": 2.5,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3204-upright.png",
+        "sha256": "81351584d2e6db778075264211be84be716762460c22e9d96c4bedf18233ad38",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 34610
+      },
+      {
+        "id": "3204",
+        "label": "upright",
+        "time": 2.5,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3204-upright.png",
+        "sha256": "23359baf099f52a0a69b86b5e3d9a4cef43f707af12f1d0891ea9bbef55eda68",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 34610
+      },
+      {
+        "id": "3204",
+        "label": "return",
+        "time": 4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3204-return.png",
+        "sha256": "58b33814dfadd60204f0c76f5bd29d216659cd3d576cf170f43b1c7b7e37d941",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 35736
+      },
+      {
+        "id": "3204",
+        "label": "return",
+        "time": 4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3204-return.png",
+        "sha256": "171184ffa185011cc8d854df983d1c0b3d5a7baf35b2b82074f2793859c68739",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 35736
+      },
+      {
+        "id": "3204",
+        "label": "finish",
+        "time": 4.95,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3204-finish.png",
+        "sha256": "69c2627b043393a0d2539a17b1b2c8e211f46597ce02886b09d30871f7145319",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 33586
+      },
+      {
+        "id": "3204",
+        "label": "finish",
+        "time": 4.95,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3204-finish.png",
+        "sha256": "01f59198898062cb8a483d9e03f6560c22adea30547aef1d0b7a9629341c0239",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 33586
+      },
+      {
+        "id": "3214",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3214-start.png",
+        "sha256": "6863e82ea07f636b35a63b87fe6b273b68e5a9b43fe2b198da01a1b8154bdfae",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 25963
+      },
+      {
+        "id": "3214",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3214-start.png",
+        "sha256": "772b7a2677a663ef01fe6deb03dcb3754ae227873e97294a788a06033e0ce191",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 25963
+      },
+      {
+        "id": "3214",
+        "label": "right-transfer",
+        "time": 0.25,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3214-right-transfer.png",
+        "sha256": "7ae1379598d2277503b3cf566ca597e02f9a26a5848d8024d15555a941256849",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 26119
+      },
+      {
+        "id": "3214",
+        "label": "right-transfer",
+        "time": 0.25,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3214-right-transfer.png",
+        "sha256": "f09fc2e23e1ab76f817fa22c0af4eb13127f4c01caf04e2cd2661fedf9753c97",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 26119
+      },
+      {
+        "id": "3214",
+        "label": "right-reach",
+        "time": 1.1,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3214-right-reach.png",
+        "sha256": "621de20dd8449d880296f00b6ded6f87eebdd66ba267d12265b46e3bf8f39f5c",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23300
+      },
+      {
+        "id": "3214",
+        "label": "right-reach",
+        "time": 1.1,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3214-right-reach.png",
+        "sha256": "22d37ce191385c5d3a4b4c450eaa85f34c559b84d963f1185d881ccb8540b79b",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23300
+      },
+      {
+        "id": "3214",
+        "label": "left-reach",
+        "time": 3.6,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3214-left-reach.png",
+        "sha256": "17c15882eefdfd7fb0cad9ed7b1b4fc491e2fc66fd39ca5317601463264bf755",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 25494
+      },
+      {
+        "id": "3214",
+        "label": "left-reach",
+        "time": 3.6,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3214-left-reach.png",
+        "sha256": "9a5e16c1c76c8d8f4de647c69c3fbd684fdbe507c565ef78d67bfc62c95705b7",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 25494
+      },
+      {
+        "id": "3214",
+        "label": "return",
+        "time": 4.65,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3214-return.png",
+        "sha256": "35a1cf6437dd3e4641b5e099487e2e2d29fbdf8c335c84d2a58c7f035e313f29",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 25752
+      },
+      {
+        "id": "3214",
+        "label": "return",
+        "time": 4.65,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3214-return.png",
+        "sha256": "2bda55de69cc933d7a1c69ceec8a88bf462360b9cb56ef77d10b20b558b7ea3a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 25752
+      },
+      {
+        "id": "3483",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3483-start.png",
+        "sha256": "9d21003193ddbb69995a0efded55a4203d28aa5a3e8861801d51ea8b51887e8a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40759
+      },
+      {
+        "id": "3483",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3483-start.png",
+        "sha256": "01b8535803520f6a07285f5f19016003f51eab8af412bdec3912c1ace07c3a77",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40759
+      },
+      {
+        "id": "3483",
+        "label": "lift",
+        "time": 0.8,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3483-lift.png",
+        "sha256": "e412d103cd2cc176d064f05fbef54fefea9b465907b905fc53abbc6dbecd6010",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "3483",
+        "label": "lift",
+        "time": 0.8,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3483-lift.png",
+        "sha256": "1a704525f08c21798fc8fccec5b95890cfd2c3bb81f33be067523ac63d7026f9",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "3483",
+        "label": "hips",
+        "time": 2.4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3483-hips.png",
+        "sha256": "5d6c5b9554620f192701f319b72d53c303f8c707134b431d91ebb7a2753fcac6",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36565
+      },
+      {
+        "id": "3483",
+        "label": "hips",
+        "time": 2.4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3483-hips.png",
+        "sha256": "25b49ab10e9b0b2c6d555e50aa9a7ff67053373693519a4089d17159c3990cfb",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36565
+      },
+      {
+        "id": "3483",
+        "label": "overhead",
+        "time": 4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3483-overhead.png",
+        "sha256": "e412d103cd2cc176d064f05fbef54fefea9b465907b905fc53abbc6dbecd6010",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "3483",
+        "label": "overhead",
+        "time": 4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3483-overhead.png",
+        "sha256": "1a704525f08c21798fc8fccec5b95890cfd2c3bb81f33be067523ac63d7026f9",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "3483",
+        "label": "lower",
+        "time": 4.65,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-3483-lower.png",
+        "sha256": "8a8c7678c7f82cc1202fd9d13ab7769130403aa8c245e4cec37d6fe85a44aec1",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40575
+      },
+      {
+        "id": "3483",
+        "label": "lower",
+        "time": 4.65,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-3483-lower.png",
+        "sha256": "ca56d5040ae4b23de2371fca23d3bb411cca3e3578980e4b1a5a15a5cb779d91",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40575
+      },
+      {
+        "id": "4935",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-4935-start.png",
+        "sha256": "9d21003193ddbb69995a0efded55a4203d28aa5a3e8861801d51ea8b51887e8a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40759
+      },
+      {
+        "id": "4935",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-4935-start.png",
+        "sha256": "f1193cc8aef1b8bf339ea34e3491d88836c1979a0c3147ca7bc51db25665b932",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40759
+      },
+      {
+        "id": "4935",
+        "label": "lift",
+        "time": 0.8,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-4935-lift.png",
+        "sha256": "e412d103cd2cc176d064f05fbef54fefea9b465907b905fc53abbc6dbecd6010",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "4935",
+        "label": "lift",
+        "time": 0.8,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-4935-lift.png",
+        "sha256": "73209a487e37ca81e1db8220badc47c2dfaf529682ab05c98cbd51fbf2dbf084",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "4935",
+        "label": "hips",
+        "time": 2.4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-4935-hips.png",
+        "sha256": "5d6c5b9554620f192701f319b72d53c303f8c707134b431d91ebb7a2753fcac6",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36565
+      },
+      {
+        "id": "4935",
+        "label": "hips",
+        "time": 2.4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-4935-hips.png",
+        "sha256": "1583a06d73817b3bce8d257998c2724966d0dc387f27cb0e0b6406939959ea4c",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36565
+      },
+      {
+        "id": "4935",
+        "label": "overhead",
+        "time": 4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-4935-overhead.png",
+        "sha256": "e412d103cd2cc176d064f05fbef54fefea9b465907b905fc53abbc6dbecd6010",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "4935",
+        "label": "overhead",
+        "time": 4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-4935-overhead.png",
+        "sha256": "73209a487e37ca81e1db8220badc47c2dfaf529682ab05c98cbd51fbf2dbf084",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39939
+      },
+      {
+        "id": "4935",
+        "label": "lower",
+        "time": 4.65,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-4935-lower.png",
+        "sha256": "8a8c7678c7f82cc1202fd9d13ab7769130403aa8c245e4cec37d6fe85a44aec1",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40575
+      },
+      {
+        "id": "4935",
+        "label": "lower",
+        "time": 4.65,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-4935-lower.png",
+        "sha256": "ac5ab9e18a357f560bbef2c57612aff481f99d579286c320c752f992b78a49e8",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 40575
+      },
+      {
+        "id": "5172",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-5172-start.png",
+        "sha256": "70f59256ed69016702c66b1732b9ae8733308977c04ea0106752d682921b6ec1",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21332
+      },
+      {
+        "id": "5172",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-5172-start.png",
+        "sha256": "e7a7777a6237169f28105f1be57e767aa9f704b72794d619a1b703cf8bba8c0a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21332
+      },
+      {
+        "id": "5172",
+        "label": "right-over",
+        "time": 1.25,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-5172-right-over.png",
+        "sha256": "eb0d2ea7ed5adef5e3ddb3a5945e39af833be11e9f9f724499327d9442c2ecb0",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 22766
+      },
+      {
+        "id": "5172",
+        "label": "right-over",
+        "time": 1.25,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-5172-right-over.png",
+        "sha256": "71d5001ae3c95e24645dda2e8d887a528589d0782a8961c2160f3da8ffad0c46",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 22766
+      },
+      {
+        "id": "5172",
+        "label": "open",
+        "time": 2.5,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-5172-open.png",
+        "sha256": "70f59256ed69016702c66b1732b9ae8733308977c04ea0106752d682921b6ec1",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21332
+      },
+      {
+        "id": "5172",
+        "label": "open",
+        "time": 2.5,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-5172-open.png",
+        "sha256": "e7a7777a6237169f28105f1be57e767aa9f704b72794d619a1b703cf8bba8c0a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21332
+      },
+      {
+        "id": "5172",
+        "label": "left-over",
+        "time": 3.75,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-5172-left-over.png",
+        "sha256": "68ee73ec17ade5fad5bacc8481ba37445e8b6c4dd5bf54ac7997421638ddff86",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 22659
+      },
+      {
+        "id": "5172",
+        "label": "left-over",
+        "time": 3.75,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-5172-left-over.png",
+        "sha256": "206e75e3943d7e2abc1c7c5ed7365d69fdd8a1de16fea71f14044c6d05d4383b",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 22659
+      },
+      {
+        "id": "5172",
+        "label": "return",
+        "time": 4.5,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-5172-return.png",
+        "sha256": "b1d4de446fc33beb7f60aee6bc50eb9206f87af0f4af4e68767f86e391cdf592",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21809
+      },
+      {
+        "id": "5172",
+        "label": "return",
+        "time": 4.5,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-5172-return.png",
+        "sha256": "9edab1eeb60cd024076b702a0ece8bd1a4075ecc776cd75013e5e11fa30a1fd9",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21809
+      },
+      {
+        "id": "6014",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6014-start.png",
+        "sha256": "bbdf5a83adba79f838147fd265dc6534b1f94ace7a482999e3096043ae0c432c",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21038
+      },
+      {
+        "id": "6014",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6014-start.png",
+        "sha256": "27b56d2489dc2721f9d3a60a55d455acd83e5bdd9213fb26da18820657df842f",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 21038
+      },
+      {
+        "id": "6014",
+        "label": "right-step",
+        "time": 0.625,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6014-right-step.png",
+        "sha256": "8fe26c67f6506bf3696986137661f2931ce6ba3baa95a1b52f1ec9e397baecc1",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23807
+      },
+      {
+        "id": "6014",
+        "label": "right-step",
+        "time": 0.625,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6014-right-step.png",
+        "sha256": "ed187fb2393e4b2b5dc63ef37bb695a38b13ccea404d41b64acafdece229a752",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23807
+      },
+      {
+        "id": "6014",
+        "label": "left-step",
+        "time": 1.875,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6014-left-step.png",
+        "sha256": "c1bc7f2cfa19b50abefc33c093ea6c7f88c547ab37121543ee0ae5b311bb3ccf",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 24329
+      },
+      {
+        "id": "6014",
+        "label": "left-step",
+        "time": 1.875,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6014-left-step.png",
+        "sha256": "f10f0627cbf012cb628f9642b4d850192fd66a643f12f239719843c15682c7a4",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 24329
+      },
+      {
+        "id": "6014",
+        "label": "next-right",
+        "time": 3.125,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6014-next-right.png",
+        "sha256": "0394f0c0852e7ff6610e756e516dd4657c2715ebd7c84c2204d1dafc158212ef",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23807
+      },
+      {
+        "id": "6014",
+        "label": "next-right",
+        "time": 3.125,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6014-next-right.png",
+        "sha256": "067e39641d129af8d2b889c1d18662d4e010038d81ff9d6ff43f31874fb4bc55",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 23807
+      },
+      {
+        "id": "6014",
+        "label": "next-left",
+        "time": 4.375,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6014-next-left.png",
+        "sha256": "684dd13a71b3a622535e20eff4ba6cf02dba76da5946ef03ef1c9d4901597bcd",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 24329
+      },
+      {
+        "id": "6014",
+        "label": "next-left",
+        "time": 4.375,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6014-next-left.png",
+        "sha256": "5b320fb27e98c9e7f572972aaf0cc916b2426b886c78f2e01592e5d56cd56683",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 24329
+      },
+      {
+        "id": "6121",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6121-start.png",
+        "sha256": "dee45c40e8f0762c295482175a5d79dcbc043d1860a37f6409ced34e1130617a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 63322
+      },
+      {
+        "id": "6121",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6121-start.png",
+        "sha256": "4d2459305d366a6048092f66a26752b721a422b3523bee9013b62ac52680171f",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 63322
+      },
+      {
+        "id": "6121",
+        "label": "thigh-transit",
+        "time": 0.8,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6121-thigh-transit.png",
+        "sha256": "36f555d0cf6c3f51d9729d9cbc8dd617df69f39d3e1e878d1ffdfbce536e521a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 68058
+      },
+      {
+        "id": "6121",
+        "label": "thigh-transit",
+        "time": 0.8,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6121-thigh-transit.png",
+        "sha256": "da14371f3e6fd1ea446ebdb174a17a72ea5eb2b5b49c5e49abd59fbbad9a81b0",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 68058
+      },
+      {
+        "id": "6121",
+        "label": "foot-transit",
+        "time": 0.9333333333333333,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6121-foot-transit.png",
+        "sha256": "e36199f46e5a511de6e31f248df6fbfa95617bb55d4e241b4baf0d4f1c78357a",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 67353
+      },
+      {
+        "id": "6121",
+        "label": "foot-transit",
+        "time": 0.9333333333333333,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6121-foot-transit.png",
+        "sha256": "ee093cb730ca949bab64a320bb0f9e67a70637221dff74292e26692a98356690",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 67353
+      },
+      {
+        "id": "6121",
+        "label": "entry",
+        "time": 1,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6121-entry.png",
+        "sha256": "8f3e03b2b43c041330044661696a08dd656d3ebc0f20c288a42afc4458eb7da3",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 67951
+      },
+      {
+        "id": "6121",
+        "label": "entry",
+        "time": 1,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6121-entry.png",
+        "sha256": "b902e019a4ac29bbf4fec7dbcf25cb30c4deb1bc992b34d03f506ef5564a5a7c",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 67951
+      },
+      {
+        "id": "6121",
+        "label": "peak",
+        "time": 2.5,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6121-peak.png",
+        "sha256": "ffc98b62e22a2ba6d609265e2169a623fea91936954840dfccf7f8901eb5f22b",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 75397
+      },
+      {
+        "id": "6121",
+        "label": "peak",
+        "time": 2.5,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6121-peak.png",
+        "sha256": "2ba3f7649165904cb38d96dc410625976f6fb286c5c19612abb3b478858b5a1f",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 75397
+      },
+      {
+        "id": "6121",
+        "label": "return",
+        "time": 4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6121-return.png",
+        "sha256": "8f3e03b2b43c041330044661696a08dd656d3ebc0f20c288a42afc4458eb7da3",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 67951
+      },
+      {
+        "id": "6121",
+        "label": "return",
+        "time": 4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6121-return.png",
+        "sha256": "b902e019a4ac29bbf4fec7dbcf25cb30c4deb1bc992b34d03f506ef5564a5a7c",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 67951
+      },
+      {
+        "id": "6121",
+        "label": "finish",
+        "time": 4.95,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6121-finish.png",
+        "sha256": "6c74bad9316ff5bf54c1024127542c4b7cdef070c9c59f92b6ad2deaee85535e",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 63477
+      },
+      {
+        "id": "6121",
+        "label": "finish",
+        "time": 4.95,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6121-finish.png",
+        "sha256": "3f8b7c4a21df014cd1cd625c68469cb349942875ed6680b1dd5f3876052bc8a3",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 63477
+      },
+      {
+        "id": "6539",
+        "label": "start",
+        "time": 0,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6539-start.png",
+        "sha256": "d8f176007ad05016d057799dcfcc33760b5f672a06bdac7bdeb1f68cc108af57",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39121
+      },
+      {
+        "id": "6539",
+        "label": "start",
+        "time": 0,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6539-start.png",
+        "sha256": "d796143a2c84af9474bf94699f1aa63bd0247d7f64201c49d853eab617a24092",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 39121
+      },
+      {
+        "id": "6539",
+        "label": "entry",
+        "time": 1,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6539-entry.png",
+        "sha256": "b906a49314bd101bf37030edc1d7b5f7878b75a6dce038cd591f283246055108",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36677
+      },
+      {
+        "id": "6539",
+        "label": "entry",
+        "time": 1,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6539-entry.png",
+        "sha256": "0b8e6cccf25b1ebd56dfaf549bc6b9c57fd45dc9b9197e6398aab9281e037ac9",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36677
+      },
+      {
+        "id": "6539",
+        "label": "hold",
+        "time": 2.5,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6539-hold.png",
+        "sha256": "02cfd38166e8539f849b6252e325b97d01a4ef75ff58e728efc3e913f4471830",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 28344
+      },
+      {
+        "id": "6539",
+        "label": "hold",
+        "time": 2.5,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6539-hold.png",
+        "sha256": "8451b35e98d994406e8c6399f15f4d2f31845a1093ec50656ecacf226e79a25b",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 28344
+      },
+      {
+        "id": "6539",
+        "label": "return",
+        "time": 4,
+        "zones": false,
+        "path": "artifacts/exercise-batches/batch-008/neutral-6539-return.png",
+        "sha256": "a9cc1fd303edbcbea050413206d4c46820169d2bacdd81e0534909d7a91d5b18",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36677
+      },
+      {
+        "id": "6539",
+        "label": "return",
+        "time": 4,
+        "zones": true,
+        "path": "artifacts/exercise-batches/batch-008/zones-6539-return.png",
+        "sha256": "29708a5a04c90563bdd3eb62ba4bf3dd031d4333c1b682565e898751a91bf190",
+        "draw_calls": 1,
+        "triangles": 21160,
+        "occupied_pixels": 36677
+      }
+    ]
+  },
+  "camera_width_fit": {
+    "path": "artifacts/exercise-batches/batch-008/camera-fit.json",
+    "evidence": [
+      {
+        "id": "6121",
+        "originalMaxAbsNDC": [
+          0.9457479158798239,
+          0.7920103587008724
+        ],
+        "widthFactors": [
+          1.0508310176442488,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.16,
+          2.05
+        ]
+      },
+      {
+        "id": "5172",
+        "originalMaxAbsNDC": [
+          0.8981483301054348,
+          0.8993791279695551
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.93,
+          3.9
+        ]
+      },
+      {
+        "id": "1987",
+        "originalMaxAbsNDC": [
+          0.8996364746766239,
+          0.8981534150064034
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.6,
+          3.71
+        ]
+      },
+      {
+        "id": "6014",
+        "originalMaxAbsNDC": [
+          0.8980333422499721,
+          0.8991058747280188
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.94,
+          4.02
+        ]
+      },
+      {
+        "id": "1986",
+        "originalMaxAbsNDC": [
+          0.8993734304373062,
+          0.8985318804310255
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.95,
+          4.08
+        ]
+      },
+      {
+        "id": "6539",
+        "originalMaxAbsNDC": [
+          0.8841109572428492,
+          0.8976996547168191
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.5,
+          2.98
+        ]
+      },
+      {
+        "id": "3214",
+        "originalMaxAbsNDC": [
+          0.898788270456464,
+          0.8997036488753484
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          3.57,
+          3.58
+        ]
+      },
+      {
+        "id": "3204",
+        "originalMaxAbsNDC": [
+          0.8967696820445882,
+          0.8985005988434972
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.7,
+          3.27
+        ]
+      },
+      {
+        "id": "4935",
+        "originalMaxAbsNDC": [
+          0.898343855982246,
+          0.7803414140027811
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.69,
+          2.8
+        ]
+      },
+      {
+        "id": "3483",
+        "originalMaxAbsNDC": [
+          0.898343855982246,
+          0.7803414140027811
+        ],
+        "widthFactors": [
+          1,
+          1
+        ],
+        "finalHorizontalWidths": [
+          2.69,
+          2.8
+        ]
+      }
+    ],
+    "fitter_sha256": "eb8625d519c5031df64f6de2ca532130515c545a1220447af5a15c0247cfe931",
+    "change_contract": "The selected fitter samples the actual viewer and only assigns cameras[index].scale; angles, targets, labels and other camera fields are not written by the fit operation."
+  },
+  "preserved_unrelated_tracked_worktree_files": {
+    "artifacts/exercise-animation-briefs/generation-contract.json": {
+      "expected": "7477ec7d5c9d96bd7ed604bc35868343bcce3e92e8da54a097c9d6f0702e993c",
+      "actual": "7477ec7d5c9d96bd7ed604bc35868343bcce3e92e8da54a097c9d6f0702e993c",
+      "unchanged": true
+    },
+    "artifacts/exercise-batches/batch-002/contexts/10565.json": {
+      "expected": "6114cf960e2db4171a23a30dced9691118879747b5322946f1c32ecd1d27eaf5",
+      "actual": "6114cf960e2db4171a23a30dced9691118879747b5322946f1c32ecd1d27eaf5",
+      "unchanged": true
+    },
+    "artifacts/exercise-batches/batch-002/contexts/4007.json": {
+      "expected": "17529e73d83ecb9dac1ab9652f28dfae2c8615dd7cbd542ac291fae3effdfca8",
+      "actual": "17529e73d83ecb9dac1ab9652f28dfae2c8615dd7cbd542ac291fae3effdfca8",
+      "unchanged": true
+    },
+    "artifacts/exercise-batches/batch-002/contexts/5265.json": {
+      "expected": "d5fd37c45976e7deb8450519a65892f68f1092ade5a9356ec63080dc503d5d89",
+      "actual": "d5fd37c45976e7deb8450519a65892f68f1092ade5a9356ec63080dc503d5d89",
+      "unchanged": true
+    },
+    "artifacts/exercise-batches/batch-002/contexts/6428.json": {
+      "expected": "0abf50b7c24e513380fcccde2ac9da65ddeed6d97418d0010c135126fce6f77b",
+      "actual": "0abf50b7c24e513380fcccde2ac9da65ddeed6d97418d0010c135126fce6f77b",
+      "unchanged": true
+    },
+    "artifacts/exercise-batches/batch-002/contexts/6560.json": {
+      "expected": "ecb678575124cc5c1f0fa3512b8dc06178b3b4e6b3956f3547b0caf80430ead8",
+      "actual": "ecb678575124cc5c1f0fa3512b8dc06178b3b4e6b3956f3547b0caf80430ead8",
+      "unchanged": true
+    },
+    "artifacts/exercise-batches/batch-002/primary-review.json": {
+      "expected": "f1af2c53e38ba31148b0eae53cc2b79bc4e24c830e9ca7dc39256b25d5b61bcf",
+      "actual": "f1af2c53e38ba31148b0eae53cc2b79bc4e24c830e9ca7dc39256b25d5b61bcf",
+      "unchanged": true
+    },
+    "artifacts/exercise-generation/0001.json": {
+      "expected": "6135d58fac521ac6bd0d6de7a610eefe82894121d37a301446ccdbfec497e629",
+      "actual": "6135d58fac521ac6bd0d6de7a610eefe82894121d37a301446ccdbfec497e629",
+      "unchanged": true
+    },
+    "artifacts/exercise-generation/0004.json": {
+      "expected": "81f2e79acb22ca193c5adba04362715de2762cb4b5ee9a71d83c8ed9bc8dc4f0",
+      "actual": "81f2e79acb22ca193c5adba04362715de2762cb4b5ee9a71d83c8ed9bc8dc4f0",
+      "unchanged": true
+    },
+    "artifacts/exercise-generation/5915.json": {
+      "expected": "8d604037d32452bc9e83658e90060ec5796dd983059cbca89406eee1d60f75f1",
+      "actual": "8d604037d32452bc9e83658e90060ec5796dd983059cbca89406eee1d60f75f1",
+      "unchanged": true
+    }
+  },
+  "assertions": {
+    "all_ten_selected": true,
+    "all_ten_browser_verify_passed": true,
+    "source_model_clip_reference_hashes_unchanged": true,
+    "all_capture_draw_calls_positive": true,
+    "all_capture_occupied_pixels_positive": true,
+    "unrelated_tracked_files_unchanged": true
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "family": "seated-ankle",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3506,
+      "sha256": "4274d0502656fb71c0e9b8fa9e56f42e3e3e4047d9e0db17fc83425655e8be4f"
+    },
+    {
+      "path": "source.blend",
+      "bytes": 14897509,
+      "sha256": "9f60ed33387dffdfe3da62f0371c9a36c6735791d9bff6a4d0246cf9834585fe"
+    },
+    {
+      "path": "motion.glb",
+      "bytes": 1015348,
+      "sha256": "ca2a98118f63430c4c3fe26d7d0eed30f5e75196a5a54930a7a1ce30788cf4d2"
+    },
+    {
+      "path": "ankle_pose.py",
+      "bytes": 5681,
+      "sha256": "a0c1cbca5126cbd656593fc5a6a61a54f1b0a343f8ad70801cb1c5e70b4f3df7"
+    },
+    {
+      "path": "build_family.py",
+      "bytes": 9549,
+      "sha256": "5f8a9f1e749956bcb6b253cfde0cf5a476bdb336e0b98edac7007e92fdc512ce"
+    },
+    {
+      "path": "inspect_early.py",
+      "bytes": 3258,
+      "sha256": "d495d02de9e07ef82124c89dae40d12c4328813a26d898ebde32cca835033a7f"
+    },
+    {
+      "path": "verify_source.py",
+      "bytes": 4067,
+      "sha256": "355e34dd73ebd1a2ce789de2704a4e88f5e65acc81799eff9fb854c616c758af"
+    },
+    {
+      "path": "verify_native.py",
+      "bytes": 10649,
+      "sha256": "52018c45d648670075e29e33ebf3cfdc2fb47c4cb9d5e58420954e9eb3516ca3"
+    },
+    {
+      "path": "export_motion.py",
+      "bytes": 1292,
+      "sha256": "b87f0f6e4083fe3e5d890402803eea1cd855e5d463a19b4165f15ac1fb20ca05"
+    },
+    {
+      "path": "verify_export.mjs",
+      "bytes": 6709,
+      "sha256": "fc7ea25462d166c7ce6b06d906af1506871eb4b6e413f88a6b5821b6fb701b82"
+    },
+    {
+      "path": "verify_decoded.py",
+      "bytes": 5427,
+      "sha256": "2a1178b16eee1485f6849b04d8625c525f3a1b2ba1d00cd219027060f5bad179"
+    },
+    {
+      "path": "verify_foot_motion.py",
+      "bytes": 3371,
+      "sha256": "dea38eb6627b060a8e8316fea31054b0a990b42337ed1935bf05b11a1f663fe2"
+    },
+    {
+      "path": "render_wire_proof.py",
+      "bytes": 1896,
+      "sha256": "46aad8db605ffbeddebe1650e834fe08d04eaeb362f55dd0328f822fc55432c2"
+    },
+    {
+      "path": "package_family.py",
+      "bytes": 17261,
+      "sha256": "05773b9541886bdeac5b1c666e60c17903bfdbd51b3ebfacb6a3da52c372c02b"
+    },
+    {
+      "path": "pose-contract.json",
+      "bytes": 32288,
+      "sha256": "81adeb23a1cd643703474e8fa993b46999960b3c0b5a1f1a8a416c1d2d4a9977"
+    },
+    {
+      "path": "binding-receipt.json",
+      "bytes": 1300698,
+      "sha256": "368844dcdc8e770b173ebacc446e106d6c0ee51cf9520efbe3186605cdbc798b"
+    },
+    {
+      "path": "source-verification.json",
+      "bytes": 22377,
+      "sha256": "71326fc6e990790ff30f4499df172211a921e8205940ea0db19475b162db4f2b"
+    },
+    {
+      "path": "basis-normal-reference.json.gz",
+      "bytes": 291427,
+      "sha256": "84adee5add6b3295065a17659c72921030ce6d6ff584a66d197cd7fe43aa5dfc"
+    },
+    {
+      "path": "early-proof-readback.json",
+      "bytes": 4985,
+      "sha256": "8be1c823610f68642286a32e2d3fe43a46a094ded404d83d5b153d97b00046bf"
+    },
+    {
+      "path": "early-contact-readback.json",
+      "bytes": 2336,
+      "sha256": "e70a46062014376dbbc91c3057bc3611c572001480d5bbc46730ecb8df47e8b3"
+    },
+    {
+      "path": "native-summary.json",
+      "bytes": 421,
+      "sha256": "e82cb58b8685b67859069b7eb6ae13428019f6daf7a39b2085d7441e791f90e7"
+    },
+    {
+      "path": "foot-regression-summary.json",
+      "bytes": 3901,
+      "sha256": "dfe5d2b46a4c5519a6173020c4dd58549e79ae3e3550ec58b87f7883e4538ebd"
+    },
+    {
+      "path": "wire-proof.json",
+      "bytes": 934,
+      "sha256": "a655f7fa85c8867b65dcc24376ccce05869799e100c478bd88dda484d04db619"
+    },
+    {
+      "path": "verification-summary.json",
+      "bytes": 5424,
+      "sha256": "17ad5a855cdec99c00ee3d98c90fbeb970984e0601e4fc24bdba6f693a2c0aa5"
+    },
+    {
+      "path": "review-timestamps.json",
+      "bytes": 1403,
+      "sha256": "23fe70faa13deb8b589d971777e7c8eb1c72d72cf9987f524ca4904b4dd010f4"
+    }
+  ],
+  "asset_manifests": [
+    {
+      "path": "assets/1368/curated-files.json",
+      "sha256": "5a738980435de9f05dcf679f3b20fa5e0fad1988434c1cc2fe0bf7b2eb4be32e"
+    },
+    {
+      "path": "assets/2761/curated-files.json",
+      "sha256": "8ae247ab58e474565a91f6fafc1a96ba23202c8ab22167b5a4f0d5f0fa1fc760"
+    },
+    {
+      "path": "assets/2762/curated-files.json",
+      "sha256": "e35a4d3498b9ddf5a6967ce891653a6f328796e135262a95ad75b75b0ec2676b"
+    }
+  ],
+  "excluded": "Unlisted files, failed diagnostics, logs, trials, caches, environments and backups. Manifest does not hash itself."
+}

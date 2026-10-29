@@ -1,0 +1,95 @@
+{
+  "status": "local_checks_passed_awaiting_user_review",
+  "batch": "003",
+  "not_production_approved": true,
+  "models": {
+    "1777": {
+      "path": "artifacts/exercise-batches/batch-003/assets/1777/motion.glb",
+      "sha256": "a4c646a2c6333fc67fc968dfd2d6d13d00138ee5f5cdb03e56dd81371f568b7f",
+      "bytes": 879444,
+      "bones": 51,
+      "animations": [
+        "Exercise_1777"
+      ]
+    },
+    "1906": {
+      "path": "artifacts/exercise-batches/batch-003/assets/1906/motion.glb",
+      "sha256": "da9eec0be34e40f3e54c361fef26b52153c4db494123ee676b4e0a6d88bd9316",
+      "bytes": 1053304,
+      "bones": 51,
+      "animations": [
+        "Exercise_1906"
+      ]
+    },
+    "3244": {
+      "path": "artifacts/exercise-batches/batch-003/assets/3244/motion.glb",
+      "sha256": "77cfeb4a8b8f379656be51f9cf9050b20e61cffa7443d8a6266bf995b5b652b7",
+      "bytes": 882088,
+      "bones": 51,
+      "animations": [
+        "Exercise_3244"
+      ]
+    },
+    "4348": {
+      "path": "artifacts/exercise-batches/batch-003/assets/4348/motion.glb",
+      "sha256": "0d7b71203d9c7918358ec9abce8b805f4d50d3e7ababf74b4c04949bec49de13",
+      "bytes": 1193736,
+      "bones": 51,
+      "animations": [
+        "Exercise_4348"
+      ]
+    },
+    "6033": {
+      "path": "artifacts/exercise-batches/batch-003/assets/6033/motion.glb",
+      "sha256": "8a928882f94a9935ebf46abf1d7538f9b9d276abc52edc941d6710dee67bdcb2",
+      "bytes": 945416,
+      "bones": 51,
+      "animations": [
+        "Exercise_6033"
+      ]
+    }
+  },
+  "visual_evidence": {
+    "zones-6033.png": "8c415e872b5ca633f783fd8086bad9db4113922e8dcf16d93676fdca14bca247",
+    "neutral-4348.png": "1453802e5042e0d8d8ad1b98cd5289647c8cba67059a9282f50daf228e6a5ec7",
+    "zones-1777.png": "554a60df7830efe5b60776deab6150fa16705ac6e4ea1362b32555e4b930e8f6",
+    "review-1777.png": "7248fb82dfe36ef7fd81b83b4ec431c9a955f1111929df68890a8af2c33c28ba",
+    "neutral-1906.png": "334c50f974fcab741c65f310610a37da6dfead5f5efd31a69c4f5a2d6e931119",
+    "review-6033.png": "422674e828e54d7dd7f31eba27b28d179467ecbba7ec54331081f748b121d20e",
+    "neutral-3244.png": "088773cd4de8a61e3186d3354b52e54f7cb36d4b8152093bd2cc66e9ff106898",
+    "review-4348.png": "0ef4b80d26ecf50489a4c14761a686ae0dbeeb9890316427cd7dcbc31c2e8d30",
+    "zones-1906.png": "00fa70e6156fb9503d10928097043a6fce19f31caded55e44406ba6ab34d453f",
+    "zones-3244.png": "3cd9dce2f558a860476e0764c94924a9bc047ab5f41206a55bb59e561c908e77",
+    "mobile.png": "679fa2e2c7ba6b520b16249e1b939f90b2b0f3e530ba2937cda649858d16e59c",
+    "zones-4348.png": "0d119ed97a0d1668907043db66a3719a8899c20557d8ea749d69d1a85ebd1e17",
+    "review-1906.png": "f3e436a808b0bb2a54b83a8d588abb074050c3fa9e1a54a83a598d06ddede340",
+    "neutral-1777.png": "8bc1692e60379b4e5c34246875d8d3728c714f3ecdadbb357a0ea7f0617c993d",
+    "neutral-6033.png": "68815f5387bc806eaa6b202ae1fcf1092ff52519e09559215392d1e99dcd187b",
+    "review-3244.png": "7b9017dcfc262cfe377ae05c5c1be28ce2dabe00ea72f0e233a86ee390749bee",
+    "review-6033-entry.png": "89be4417ec123955a1ccc39413237fbe300ed6c885055ef074d701765cce41d3",
+    "inline-settled.png": "c563a9d60598c186072d5522b9ea6b463496554e14faa783342c08085d264429"
+  },
+  "primary_visual_review": "Actual Three.js neutral and selected-zone views pass for all five candidates. Terra/high reviewed the same current runtime stills; 6033 received a targeted recheck after the knee repair. Source-native intermediate proofs and sampled parity/contact receipts complement these single-pose stills.",
+  "per_exercise": {
+    "6033": "Original DQ binding retains pelvic volume. Whole-knee POSITION/NORMAL corrective removes the broad cut-looking cap; small residual base-cage faceting remains. Elevated recommended view exposes the abdominal zone better; knees still occlude part at peak. Primary also inspected actual Three.js mid-flexion at 1.2 seconds after the final corrective; knee transitions remain natural.",
+    "4348": "Static source-prescribed brace. One constant local corrective removes angular waist/armpit folds. Runtime normal path reviewed rather than a misleading importer preview.",
+    "3244": "Low prone chest lift with supported pelvis. Cyan abdominal/chest stretch zones visible in side/oblique views.",
+    "1906": "Selected left knee fall-out with the other leg extended and pelvis supported. One bounded animated groin/knee corrective; no need for a relaxed 8 mm hand penetration band.",
+    "1777": "Plain linear skin with one action and no morph targets. Joined hands clear the scalp through entry; interlacing is too small to resolve at full-body screenshot scale, with source close-up/clearance evidence retained."
+  },
+  "checks": [
+    "verification.json",
+    "runtime-contacts.json",
+    "../runtime-code-review.json",
+    "inline-verification.json"
+  ],
+  "independent_code_review": "Reusable runtime passed independent Sol 6.1/xhigh review and targeted R1 failed-load/race/retry verification. Media QA and appearance are separate.",
+  "scope_limits": [
+    "Curated screenshots establish the shown appearance, not exact contact or timing by themselves.",
+    "Runtime source-bound checks are sampled illustration evidence, not clinical/coaching approval or continuous collision proof.",
+    "Physical-device testing and production application integration were not performed."
+  ],
+  "inline_source_revision": "d957ecdbf2b854e028653afb563cd522de0ccfd2",
+  "inline_html_sha256": "29f1490612cd3936843441c2da50bde7e6b4cd86172ec7d53de75ad3398d3b3a",
+  "inline_acceptance": "Passed actual public model-byte/hash checks, all five action selections, live pose change, poster replacement, alpha and no media/error checks. Host HTML preview/render shown separately; startup snapshots may capture the honest loading poster."
+}

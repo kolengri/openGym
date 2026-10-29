@@ -1,0 +1,2668 @@
+{
+  "ok": true,
+  "previous_source_sha256": "5588b98e6ce66b85d05f25cde916721bb8b6e925574330d5ab2e28627b1df4c5",
+  "source_sha256": "dd74caa91937a734c5d15773be533f334498f495d426506a2a24502714be8316",
+  "runtime_binding_sha256": "185b028576708385e433d9d296ddda84e24f879dfb34f895fbbf242cd835c8ec",
+  "change": "Animation timing only: six alternating punches in five seconds on accepted native keyed path. No mesh/binding/stance/fist/wrist/extent change.",
+  "punch_count": 6,
+  "per_punch_frames": 25,
+  "attack_frames": [
+    2,
+    8
+  ],
+  "return_frames": [
+    8,
+    21
+  ],
+  "guard_gap_frames": 6,
+  "attack_seconds": 0.2,
+  "retraction_seconds": 0.43333333333333335,
+  "guard_gap_seconds": 0.2,
+  "peak_frames": [
+    8,
+    33,
+    58,
+    83,
+    108,
+    133
+  ],
+  "envelope": "Piecewise quintic smoothstep, zero first/second derivative at guard and peak; runtime samples baked30fps with linear translation/quaternion interpolation.",
+  "source_workout_interval_seconds": [
+    30,
+    60
+  ],
+  "maximum_saved_151_matrix_error": 0,
+  "preserved_accepted_poses": {
+    "guard": {
+      "frame": 0,
+      "previous_accepted_frame": 0,
+      "full_skin_error_m": 0.0,
+      "maximum_bone_matrix_error": 0.0
+    },
+    "right_peak": {
+      "frame": 8,
+      "previous_accepted_frame": 37.5,
+      "full_skin_error_m": 0.0,
+      "maximum_bone_matrix_error": 0.0
+    },
+    "left_peak": {
+      "frame": 33,
+      "previous_accepted_frame": 112.5,
+      "full_skin_error_m": 0.0,
+      "maximum_bone_matrix_error": 0.0
+    }
+  },
+  "proofs": [
+    {
+      "frame": 0,
+      "time_seconds": 0.0,
+      "file": "fast-guard.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 5,
+      "time_seconds": 0.16666666666666666,
+      "file": "fast-right-attack.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 8,
+      "time_seconds": 0.26666666666666666,
+      "file": "fast-right-punch.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 16,
+      "time_seconds": 0.5333333333333333,
+      "file": "fast-right-retraction.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 25,
+      "time_seconds": 0.8333333333333334,
+      "file": "fast-between-punches-guard.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 33,
+      "time_seconds": 1.1,
+      "file": "fast-left-punch.png",
+      "pre_post_render_skin_delta_m": 0
+    },
+    {
+      "frame": 150,
+      "time_seconds": 5.0,
+      "file": "fast-guard-return.png",
+      "pre_post_render_skin_delta_m": 0
+    }
+  ],
+  "samples": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 1,
+      "time": 0.03333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 2,
+      "time": 0.06666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 3,
+      "time": 0.1,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.035493827160493825,
+      "right_extension": 0.035493827160493825,
+      "left_extension": 0.0,
+      "accepted_source_frame": 4.52471302832606
+    },
+    {
+      "frame": 4,
+      "time": 0.13333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.20987654320987653,
+      "right_extension": 0.20987654320987653,
+      "left_extension": 0.0,
+      "accepted_source_frame": 11.360851854472008
+    },
+    {
+      "frame": 5,
+      "time": 0.16666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.5,
+      "right_extension": 0.5,
+      "left_extension": 0.0,
+      "accepted_source_frame": 18.750000000000004
+    },
+    {
+      "frame": 6,
+      "time": 0.2,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.7901234567901235,
+      "right_extension": 0.7901234567901235,
+      "left_extension": 0.0,
+      "accepted_source_frame": 26.139148145527997
+    },
+    {
+      "frame": 7,
+      "time": 0.23333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.964506172839506,
+      "right_extension": 0.964506172839506,
+      "left_extension": 0.0,
+      "accepted_source_frame": 32.97528697167393
+    },
+    {
+      "frame": 8,
+      "time": 0.26666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 1.0,
+      "right_extension": 1.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 37.5
+    },
+    {
+      "frame": 9,
+      "time": 0.3,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.995957370594113,
+      "right_extension": 0.995957370594113,
+      "left_extension": 0.0,
+      "accepted_source_frame": 35.98107473483718
+    },
+    {
+      "frame": 10,
+      "time": 0.3333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.9714726644455995,
+      "right_extension": 0.9714726644455995,
+      "left_extension": 0.0,
+      "accepted_source_frame": 33.44837895626414
+    },
+    {
+      "frame": 11,
+      "time": 0.36666666666666664,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.915718852765875,
+      "right_extension": 0.915718852765875,
+      "left_extension": 0.0,
+      "accepted_source_frame": 30.468064501330126
+    },
+    {
+      "frame": 12,
+      "time": 0.4,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.8265951687750644,
+      "right_extension": 0.8265951687750644,
+      "left_extension": 0.0,
+      "accepted_source_frame": 27.24636953711403
+    },
+    {
+      "frame": 13,
+      "time": 0.43333333333333335,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.7087879383667346,
+      "right_extension": 0.7087879383667346,
+      "left_extension": 0.0,
+      "accepted_source_frame": 23.892007662941218
+    },
+    {
+      "frame": 14,
+      "time": 0.4666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.5718314107726242,
+      "right_extension": 0.5718314107726242,
+      "left_extension": 0.0,
+      "accepted_source_frame": 20.470802877299274
+    },
+    {
+      "frame": 15,
+      "time": 0.5,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.4281685892273758,
+      "right_extension": 0.4281685892273758,
+      "left_extension": 0.0,
+      "accepted_source_frame": 17.029197122700726
+    },
+    {
+      "frame": 16,
+      "time": 0.5333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.2912120616332653,
+      "right_extension": 0.2912120616332653,
+      "left_extension": 0.0,
+      "accepted_source_frame": 13.60799233705878
+    },
+    {
+      "frame": 17,
+      "time": 0.5666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.17340483122493577,
+      "right_extension": 0.17340483122493577,
+      "left_extension": 0.0,
+      "accepted_source_frame": 10.253630462885978
+    },
+    {
+      "frame": 18,
+      "time": 0.6,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.08428114723412472,
+      "right_extension": 0.08428114723412472,
+      "left_extension": 0.0,
+      "accepted_source_frame": 7.031935498669865
+    },
+    {
+      "frame": 19,
+      "time": 0.6333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.0285273355544009,
+      "right_extension": 0.0285273355544009,
+      "left_extension": 0.0,
+      "accepted_source_frame": 4.051621043735888
+    },
+    {
+      "frame": 20,
+      "time": 0.6666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.004042629405887621,
+      "right_extension": 0.004042629405887621,
+      "left_extension": 0.0,
+      "accepted_source_frame": 1.5189252651629337
+    },
+    {
+      "frame": 21,
+      "time": 0.7,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 22,
+      "time": 0.7333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 23,
+      "time": 0.7666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 24,
+      "time": 0.8,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 25,
+      "time": 0.8333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 26,
+      "time": 0.8666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 27,
+      "time": 0.9,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 28,
+      "time": 0.9333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.035493827160493825,
+      "right_extension": 0.0,
+      "left_extension": 0.035493827160493825,
+      "accepted_source_frame": 79.52471302832606
+    },
+    {
+      "frame": 29,
+      "time": 0.9666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.20987654320987653,
+      "right_extension": 0.0,
+      "left_extension": 0.20987654320987653,
+      "accepted_source_frame": 86.360851854472
+    },
+    {
+      "frame": 30,
+      "time": 1.0,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.5,
+      "right_extension": 0.0,
+      "left_extension": 0.5,
+      "accepted_source_frame": 93.75
+    },
+    {
+      "frame": 31,
+      "time": 1.0333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.7901234567901235,
+      "right_extension": 0.0,
+      "left_extension": 0.7901234567901235,
+      "accepted_source_frame": 101.139148145528
+    },
+    {
+      "frame": 32,
+      "time": 1.0666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.964506172839506,
+      "right_extension": 0.0,
+      "left_extension": 0.964506172839506,
+      "accepted_source_frame": 107.97528697167394
+    },
+    {
+      "frame": 33,
+      "time": 1.1,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 1.0,
+      "right_extension": 0.0,
+      "left_extension": 1.0,
+      "accepted_source_frame": 112.5
+    },
+    {
+      "frame": 34,
+      "time": 1.1333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.995957370594113,
+      "right_extension": 0.0,
+      "left_extension": 0.995957370594113,
+      "accepted_source_frame": 110.98107473483718
+    },
+    {
+      "frame": 35,
+      "time": 1.1666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.9714726644455995,
+      "right_extension": 0.0,
+      "left_extension": 0.9714726644455995,
+      "accepted_source_frame": 108.44837895626415
+    },
+    {
+      "frame": 36,
+      "time": 1.2,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.915718852765875,
+      "right_extension": 0.0,
+      "left_extension": 0.915718852765875,
+      "accepted_source_frame": 105.46806450133013
+    },
+    {
+      "frame": 37,
+      "time": 1.2333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.8265951687750644,
+      "right_extension": 0.0,
+      "left_extension": 0.8265951687750644,
+      "accepted_source_frame": 102.24636953711403
+    },
+    {
+      "frame": 38,
+      "time": 1.2666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.7087879383667346,
+      "right_extension": 0.0,
+      "left_extension": 0.7087879383667346,
+      "accepted_source_frame": 98.89200766294121
+    },
+    {
+      "frame": 39,
+      "time": 1.3,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.5718314107726242,
+      "right_extension": 0.0,
+      "left_extension": 0.5718314107726242,
+      "accepted_source_frame": 95.47080287729928
+    },
+    {
+      "frame": 40,
+      "time": 1.3333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.4281685892273758,
+      "right_extension": 0.0,
+      "left_extension": 0.4281685892273758,
+      "accepted_source_frame": 92.02919712270072
+    },
+    {
+      "frame": 41,
+      "time": 1.3666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.2912120616332653,
+      "right_extension": 0.0,
+      "left_extension": 0.2912120616332653,
+      "accepted_source_frame": 88.60799233705877
+    },
+    {
+      "frame": 42,
+      "time": 1.4,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.17340483122493577,
+      "right_extension": 0.0,
+      "left_extension": 0.17340483122493577,
+      "accepted_source_frame": 85.25363046288598
+    },
+    {
+      "frame": 43,
+      "time": 1.4333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.08428114723412472,
+      "right_extension": 0.0,
+      "left_extension": 0.08428114723412472,
+      "accepted_source_frame": 82.03193549866987
+    },
+    {
+      "frame": 44,
+      "time": 1.4666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.0285273355544009,
+      "right_extension": 0.0,
+      "left_extension": 0.0285273355544009,
+      "accepted_source_frame": 79.05162104373589
+    },
+    {
+      "frame": 45,
+      "time": 1.5,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.004042629405887621,
+      "right_extension": 0.0,
+      "left_extension": 0.004042629405887621,
+      "accepted_source_frame": 76.51892526516293
+    },
+    {
+      "frame": 46,
+      "time": 1.5333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 47,
+      "time": 1.5666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 48,
+      "time": 1.6,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 49,
+      "time": 1.6333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 1,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 50,
+      "time": 1.6666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 51,
+      "time": 1.7,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 52,
+      "time": 1.7333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 53,
+      "time": 1.7666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.035493827160493825,
+      "right_extension": 0.035493827160493825,
+      "left_extension": 0.0,
+      "accepted_source_frame": 4.52471302832606
+    },
+    {
+      "frame": 54,
+      "time": 1.8,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.20987654320987653,
+      "right_extension": 0.20987654320987653,
+      "left_extension": 0.0,
+      "accepted_source_frame": 11.360851854472008
+    },
+    {
+      "frame": 55,
+      "time": 1.8333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.5,
+      "right_extension": 0.5,
+      "left_extension": 0.0,
+      "accepted_source_frame": 18.750000000000004
+    },
+    {
+      "frame": 56,
+      "time": 1.8666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.7901234567901235,
+      "right_extension": 0.7901234567901235,
+      "left_extension": 0.0,
+      "accepted_source_frame": 26.139148145527997
+    },
+    {
+      "frame": 57,
+      "time": 1.9,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.964506172839506,
+      "right_extension": 0.964506172839506,
+      "left_extension": 0.0,
+      "accepted_source_frame": 32.97528697167393
+    },
+    {
+      "frame": 58,
+      "time": 1.9333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 1.0,
+      "right_extension": 1.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 37.5
+    },
+    {
+      "frame": 59,
+      "time": 1.9666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.995957370594113,
+      "right_extension": 0.995957370594113,
+      "left_extension": 0.0,
+      "accepted_source_frame": 35.98107473483718
+    },
+    {
+      "frame": 60,
+      "time": 2.0,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.9714726644455995,
+      "right_extension": 0.9714726644455995,
+      "left_extension": 0.0,
+      "accepted_source_frame": 33.44837895626414
+    },
+    {
+      "frame": 61,
+      "time": 2.033333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.915718852765875,
+      "right_extension": 0.915718852765875,
+      "left_extension": 0.0,
+      "accepted_source_frame": 30.468064501330126
+    },
+    {
+      "frame": 62,
+      "time": 2.066666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.8265951687750644,
+      "right_extension": 0.8265951687750644,
+      "left_extension": 0.0,
+      "accepted_source_frame": 27.24636953711403
+    },
+    {
+      "frame": 63,
+      "time": 2.1,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.7087879383667346,
+      "right_extension": 0.7087879383667346,
+      "left_extension": 0.0,
+      "accepted_source_frame": 23.892007662941218
+    },
+    {
+      "frame": 64,
+      "time": 2.1333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.5718314107726242,
+      "right_extension": 0.5718314107726242,
+      "left_extension": 0.0,
+      "accepted_source_frame": 20.470802877299274
+    },
+    {
+      "frame": 65,
+      "time": 2.1666666666666665,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.4281685892273758,
+      "right_extension": 0.4281685892273758,
+      "left_extension": 0.0,
+      "accepted_source_frame": 17.029197122700726
+    },
+    {
+      "frame": 66,
+      "time": 2.2,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.2912120616332653,
+      "right_extension": 0.2912120616332653,
+      "left_extension": 0.0,
+      "accepted_source_frame": 13.60799233705878
+    },
+    {
+      "frame": 67,
+      "time": 2.2333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.17340483122493577,
+      "right_extension": 0.17340483122493577,
+      "left_extension": 0.0,
+      "accepted_source_frame": 10.253630462885978
+    },
+    {
+      "frame": 68,
+      "time": 2.2666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.08428114723412472,
+      "right_extension": 0.08428114723412472,
+      "left_extension": 0.0,
+      "accepted_source_frame": 7.031935498669865
+    },
+    {
+      "frame": 69,
+      "time": 2.3,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.0285273355544009,
+      "right_extension": 0.0285273355544009,
+      "left_extension": 0.0,
+      "accepted_source_frame": 4.051621043735888
+    },
+    {
+      "frame": 70,
+      "time": 2.3333333333333335,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.004042629405887621,
+      "right_extension": 0.004042629405887621,
+      "left_extension": 0.0,
+      "accepted_source_frame": 1.5189252651629337
+    },
+    {
+      "frame": 71,
+      "time": 2.3666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 72,
+      "time": 2.4,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 73,
+      "time": 2.433333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 74,
+      "time": 2.466666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 2,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 75,
+      "time": 2.5,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 76,
+      "time": 2.533333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 77,
+      "time": 2.566666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 78,
+      "time": 2.6,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.035493827160493825,
+      "right_extension": 0.0,
+      "left_extension": 0.035493827160493825,
+      "accepted_source_frame": 79.52471302832606
+    },
+    {
+      "frame": 79,
+      "time": 2.6333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.20987654320987653,
+      "right_extension": 0.0,
+      "left_extension": 0.20987654320987653,
+      "accepted_source_frame": 86.360851854472
+    },
+    {
+      "frame": 80,
+      "time": 2.6666666666666665,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.5,
+      "right_extension": 0.0,
+      "left_extension": 0.5,
+      "accepted_source_frame": 93.75
+    },
+    {
+      "frame": 81,
+      "time": 2.7,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.7901234567901235,
+      "right_extension": 0.0,
+      "left_extension": 0.7901234567901235,
+      "accepted_source_frame": 101.139148145528
+    },
+    {
+      "frame": 82,
+      "time": 2.7333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.964506172839506,
+      "right_extension": 0.0,
+      "left_extension": 0.964506172839506,
+      "accepted_source_frame": 107.97528697167394
+    },
+    {
+      "frame": 83,
+      "time": 2.7666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 1.0,
+      "right_extension": 0.0,
+      "left_extension": 1.0,
+      "accepted_source_frame": 112.5
+    },
+    {
+      "frame": 84,
+      "time": 2.8,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.995957370594113,
+      "right_extension": 0.0,
+      "left_extension": 0.995957370594113,
+      "accepted_source_frame": 110.98107473483718
+    },
+    {
+      "frame": 85,
+      "time": 2.8333333333333335,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.9714726644455995,
+      "right_extension": 0.0,
+      "left_extension": 0.9714726644455995,
+      "accepted_source_frame": 108.44837895626415
+    },
+    {
+      "frame": 86,
+      "time": 2.8666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.915718852765875,
+      "right_extension": 0.0,
+      "left_extension": 0.915718852765875,
+      "accepted_source_frame": 105.46806450133013
+    },
+    {
+      "frame": 87,
+      "time": 2.9,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.8265951687750644,
+      "right_extension": 0.0,
+      "left_extension": 0.8265951687750644,
+      "accepted_source_frame": 102.24636953711403
+    },
+    {
+      "frame": 88,
+      "time": 2.933333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.7087879383667346,
+      "right_extension": 0.0,
+      "left_extension": 0.7087879383667346,
+      "accepted_source_frame": 98.89200766294121
+    },
+    {
+      "frame": 89,
+      "time": 2.966666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.5718314107726242,
+      "right_extension": 0.0,
+      "left_extension": 0.5718314107726242,
+      "accepted_source_frame": 95.47080287729928
+    },
+    {
+      "frame": 90,
+      "time": 3.0,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.4281685892273758,
+      "right_extension": 0.0,
+      "left_extension": 0.4281685892273758,
+      "accepted_source_frame": 92.02919712270072
+    },
+    {
+      "frame": 91,
+      "time": 3.033333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.2912120616332653,
+      "right_extension": 0.0,
+      "left_extension": 0.2912120616332653,
+      "accepted_source_frame": 88.60799233705877
+    },
+    {
+      "frame": 92,
+      "time": 3.066666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.17340483122493577,
+      "right_extension": 0.0,
+      "left_extension": 0.17340483122493577,
+      "accepted_source_frame": 85.25363046288598
+    },
+    {
+      "frame": 93,
+      "time": 3.1,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.08428114723412472,
+      "right_extension": 0.0,
+      "left_extension": 0.08428114723412472,
+      "accepted_source_frame": 82.03193549866987
+    },
+    {
+      "frame": 94,
+      "time": 3.1333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.0285273355544009,
+      "right_extension": 0.0,
+      "left_extension": 0.0285273355544009,
+      "accepted_source_frame": 79.05162104373589
+    },
+    {
+      "frame": 95,
+      "time": 3.1666666666666665,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.004042629405887621,
+      "right_extension": 0.0,
+      "left_extension": 0.004042629405887621,
+      "accepted_source_frame": 76.51892526516293
+    },
+    {
+      "frame": 96,
+      "time": 3.2,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 97,
+      "time": 3.2333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 98,
+      "time": 3.2666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 99,
+      "time": 3.3,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 3,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 100,
+      "time": 3.3333333333333335,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 101,
+      "time": 3.3666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 102,
+      "time": 3.4,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 103,
+      "time": 3.433333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.035493827160493825,
+      "right_extension": 0.035493827160493825,
+      "left_extension": 0.0,
+      "accepted_source_frame": 4.52471302832606
+    },
+    {
+      "frame": 104,
+      "time": 3.466666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.20987654320987653,
+      "right_extension": 0.20987654320987653,
+      "left_extension": 0.0,
+      "accepted_source_frame": 11.360851854472008
+    },
+    {
+      "frame": 105,
+      "time": 3.5,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.5,
+      "right_extension": 0.5,
+      "left_extension": 0.0,
+      "accepted_source_frame": 18.750000000000004
+    },
+    {
+      "frame": 106,
+      "time": 3.533333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.7901234567901235,
+      "right_extension": 0.7901234567901235,
+      "left_extension": 0.0,
+      "accepted_source_frame": 26.139148145527997
+    },
+    {
+      "frame": 107,
+      "time": 3.566666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Attack",
+      "punch_extension": 0.964506172839506,
+      "right_extension": 0.964506172839506,
+      "left_extension": 0.0,
+      "accepted_source_frame": 32.97528697167393
+    },
+    {
+      "frame": 108,
+      "time": 3.6,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 1.0,
+      "right_extension": 1.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 37.5
+    },
+    {
+      "frame": 109,
+      "time": 3.6333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.995957370594113,
+      "right_extension": 0.995957370594113,
+      "left_extension": 0.0,
+      "accepted_source_frame": 35.98107473483718
+    },
+    {
+      "frame": 110,
+      "time": 3.6666666666666665,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.9714726644455995,
+      "right_extension": 0.9714726644455995,
+      "left_extension": 0.0,
+      "accepted_source_frame": 33.44837895626414
+    },
+    {
+      "frame": 111,
+      "time": 3.7,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.915718852765875,
+      "right_extension": 0.915718852765875,
+      "left_extension": 0.0,
+      "accepted_source_frame": 30.468064501330126
+    },
+    {
+      "frame": 112,
+      "time": 3.7333333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.8265951687750644,
+      "right_extension": 0.8265951687750644,
+      "left_extension": 0.0,
+      "accepted_source_frame": 27.24636953711403
+    },
+    {
+      "frame": 113,
+      "time": 3.7666666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.7087879383667346,
+      "right_extension": 0.7087879383667346,
+      "left_extension": 0.0,
+      "accepted_source_frame": 23.892007662941218
+    },
+    {
+      "frame": 114,
+      "time": 3.8,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.5718314107726242,
+      "right_extension": 0.5718314107726242,
+      "left_extension": 0.0,
+      "accepted_source_frame": 20.470802877299274
+    },
+    {
+      "frame": 115,
+      "time": 3.8333333333333335,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.4281685892273758,
+      "right_extension": 0.4281685892273758,
+      "left_extension": 0.0,
+      "accepted_source_frame": 17.029197122700726
+    },
+    {
+      "frame": 116,
+      "time": 3.8666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.2912120616332653,
+      "right_extension": 0.2912120616332653,
+      "left_extension": 0.0,
+      "accepted_source_frame": 13.60799233705878
+    },
+    {
+      "frame": 117,
+      "time": 3.9,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.17340483122493577,
+      "right_extension": 0.17340483122493577,
+      "left_extension": 0.0,
+      "accepted_source_frame": 10.253630462885978
+    },
+    {
+      "frame": 118,
+      "time": 3.933333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.08428114723412472,
+      "right_extension": 0.08428114723412472,
+      "left_extension": 0.0,
+      "accepted_source_frame": 7.031935498669865
+    },
+    {
+      "frame": 119,
+      "time": 3.966666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.0285273355544009,
+      "right_extension": 0.0285273355544009,
+      "left_extension": 0.0,
+      "accepted_source_frame": 4.051621043735888
+    },
+    {
+      "frame": 120,
+      "time": 4.0,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.004042629405887621,
+      "right_extension": 0.004042629405887621,
+      "left_extension": 0.0,
+      "accepted_source_frame": 1.5189252651629337
+    },
+    {
+      "frame": 121,
+      "time": 4.033333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 122,
+      "time": 4.066666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 123,
+      "time": 4.1,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 124,
+      "time": 4.133333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 4,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 125,
+      "time": 4.166666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 126,
+      "time": 4.2,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 127,
+      "time": 4.233333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 128,
+      "time": 4.266666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.035493827160493825,
+      "right_extension": 0.0,
+      "left_extension": 0.035493827160493825,
+      "accepted_source_frame": 79.52471302832606
+    },
+    {
+      "frame": 129,
+      "time": 4.3,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.20987654320987653,
+      "right_extension": 0.0,
+      "left_extension": 0.20987654320987653,
+      "accepted_source_frame": 86.360851854472
+    },
+    {
+      "frame": 130,
+      "time": 4.333333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.5,
+      "right_extension": 0.0,
+      "left_extension": 0.5,
+      "accepted_source_frame": 93.75
+    },
+    {
+      "frame": 131,
+      "time": 4.366666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.7901234567901235,
+      "right_extension": 0.0,
+      "left_extension": 0.7901234567901235,
+      "accepted_source_frame": 101.139148145528
+    },
+    {
+      "frame": 132,
+      "time": 4.4,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Attack",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Attack",
+      "punch_extension": 0.964506172839506,
+      "right_extension": 0.0,
+      "left_extension": 0.964506172839506,
+      "accepted_source_frame": 107.97528697167394
+    },
+    {
+      "frame": 133,
+      "time": 4.433333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 1.0,
+      "right_extension": 0.0,
+      "left_extension": 1.0,
+      "accepted_source_frame": 112.5
+    },
+    {
+      "frame": 134,
+      "time": 4.466666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.995957370594113,
+      "right_extension": 0.0,
+      "left_extension": 0.995957370594113,
+      "accepted_source_frame": 110.98107473483718
+    },
+    {
+      "frame": 135,
+      "time": 4.5,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.9714726644455995,
+      "right_extension": 0.0,
+      "left_extension": 0.9714726644455995,
+      "accepted_source_frame": 108.44837895626415
+    },
+    {
+      "frame": 136,
+      "time": 4.533333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.915718852765875,
+      "right_extension": 0.0,
+      "left_extension": 0.915718852765875,
+      "accepted_source_frame": 105.46806450133013
+    },
+    {
+      "frame": 137,
+      "time": 4.566666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.8265951687750644,
+      "right_extension": 0.0,
+      "left_extension": 0.8265951687750644,
+      "accepted_source_frame": 102.24636953711403
+    },
+    {
+      "frame": 138,
+      "time": 4.6,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.7087879383667346,
+      "right_extension": 0.0,
+      "left_extension": 0.7087879383667346,
+      "accepted_source_frame": 98.89200766294121
+    },
+    {
+      "frame": 139,
+      "time": 4.633333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.5718314107726242,
+      "right_extension": 0.0,
+      "left_extension": 0.5718314107726242,
+      "accepted_source_frame": 95.47080287729928
+    },
+    {
+      "frame": 140,
+      "time": 4.666666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.4281685892273758,
+      "right_extension": 0.0,
+      "left_extension": 0.4281685892273758,
+      "accepted_source_frame": 92.02919712270072
+    },
+    {
+      "frame": 141,
+      "time": 4.7,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.2912120616332653,
+      "right_extension": 0.0,
+      "left_extension": 0.2912120616332653,
+      "accepted_source_frame": 88.60799233705877
+    },
+    {
+      "frame": 142,
+      "time": 4.733333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.17340483122493577,
+      "right_extension": 0.0,
+      "left_extension": 0.17340483122493577,
+      "accepted_source_frame": 85.25363046288598
+    },
+    {
+      "frame": 143,
+      "time": 4.766666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.08428114723412472,
+      "right_extension": 0.0,
+      "left_extension": 0.08428114723412472,
+      "accepted_source_frame": 82.03193549866987
+    },
+    {
+      "frame": 144,
+      "time": 4.8,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.0285273355544009,
+      "right_extension": 0.0,
+      "left_extension": 0.0285273355544009,
+      "accepted_source_frame": 79.05162104373589
+    },
+    {
+      "frame": 145,
+      "time": 4.833333333333333,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Retraction",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Retraction",
+      "punch_extension": 0.004042629405887621,
+      "right_extension": 0.0,
+      "left_extension": 0.004042629405887621,
+      "accepted_source_frame": 76.51892526516293
+    },
+    {
+      "frame": 146,
+      "time": 4.866666666666666,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 147,
+      "time": 4.9,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 148,
+      "time": 4.933333333333334,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 149,
+      "time": 4.966666666666667,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 5,
+      "punch_side": "Left",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    },
+    {
+      "frame": 150,
+      "time": 0.0,
+      "grounded": [
+        "Left",
+        "Right"
+      ],
+      "phase": "Guard",
+      "flight": false,
+      "punch_index": 0,
+      "punch_side": "Right",
+      "punch_phase": "Guard",
+      "punch_extension": 0.0,
+      "right_extension": 0.0,
+      "left_extension": 0.0,
+      "accepted_source_frame": 0
+    }
+  ]
+}

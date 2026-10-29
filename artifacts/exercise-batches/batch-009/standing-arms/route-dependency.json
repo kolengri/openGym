@@ -1,0 +1,86 @@
+{
+  "root_native_route_accepted": true,
+  "scope": "3995 only; continuous source-authored bone route; no topology, binding or component change. Preserve other3actions, actual open/held native channels and originalp held-cuff scalar.",
+  "helper_sha256": "e7c6f436b867a668f46efd48ad9f08e64715fa96fcc6970b13776e8f1b1415b4",
+  "archive_sha256": "c0417c262db584c2e0f54844c7e7f683ffdfd02db2407f5330cf94ef8537202b",
+  "witness151_sha256": "23e5e3874c6aec05b8d63cea026330a76f00f026445195ead15009d25770f711",
+  "files": [
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/coherent_route.py",
+      "sha256": "e7c6f436b867a668f46efd48ad9f08e64715fa96fcc6970b13776e8f1b1415b4",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_route.py",
+      "role": "Side-effect-free accepted route evaluator; standard library, NumPy, mathutils only"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/coherent-route-coefficients.npz",
+      "sha256": "c0417c262db584c2e0f54844c7e7f683ffdfd02db2407f5330cf94ef8537202b",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent-route-coefficients.npz",
+      "role": "Hash-frozen spatial coefficients, transport tables, source endpoints and exact native endpoint local channels"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/coherent-hand-matrices.npz",
+      "sha256": "23e5e3874c6aec05b8d63cea026330a76f00f026445195ead15009d25770f711",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent-hand-matrices.npz",
+      "role": "Accepted 151-frame desired matrix witness in archive bone-name order"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/frozen-route-parity.json",
+      "sha256": "bf84bbc77ed02bc8e6d8f85acc723a6f0a9e87b87e1a0c304bcdd442c7f3169b",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/frozen-route-parity.json",
+      "role": "Independent standalone evaluator parity: exact zero across151 integer and9 fractional samples"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/coherent-hand-report.json",
+      "sha256": "5584187253c97952f813862c716d51d0db9e7fd2e1945e5728efcf2a60a57d1d",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent-hand-report.json",
+      "role": "Corrected accepted construction method, bone continuity, sparse geometry and unresolved raw crossing evidence"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/route-integration-handoff.md",
+      "sha256": "2f4785b85c80fab0766be4d785f3d7194da01e662e2e3bccbe42c08a42adaf68",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/integration-handoff.md",
+      "role": "Concise endpoint, quaternion, progress, dependency and integration contract"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/coherent_hand_mid-front.png",
+      "sha256": "199a75b5d1e48650b2bdf0d9f062b262ee3cac01e5bbd5c80fe46cd4ca4a4fcd",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_hand_mid-front.png",
+      "role": "Primary-accepted provisional native early-midpoint front view"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/coherent_hand_mid-side.png",
+      "sha256": "cffa8e16153a9b67afddcc8fa3933eff3b5df56318cef8eb8eaace0a2c8a08e3",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_hand_mid-side.png",
+      "role": "Primary-accepted provisional native early-midpoint side view"
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-009/standing-arms/coherent_hand_mid-rear.png",
+      "sha256": "23744602d182f7dfcd0847759050449ab0922fe8e4e0fabfd6018815156b2b29",
+      "frozen_origin": "artifacts/exercise-batches/batch-009/midwrap-geometry-diagnosis/coherent_hand_mid-rear.png",
+      "role": "Primary-accepted provisional native early-midpoint rear view"
+    }
+  ],
+  "accepted_manifest_sha256": "548e034763157d5e47369133b5dc422e1d4c30ef62b77f98a5326f7c2d52b771",
+  "integration_numeric_policy": "Rigid quaternion normalization on dynamic intermediate bones matches the existing production convention; static trunk/head/feet and open/held native local channels remain exact. No wrist/elbow target or transport coefficient changes.",
+  "acquisition_extension": {
+    "files": [
+      {
+        "path": "artifacts/exercise-batches/batch-009/standing-arms/wrap_acquisition.py",
+        "sha256": "a0f26f87f8c3e1099ac87905920334a2af857b885e28b9053963f4523cc1f410"
+      },
+      {
+        "path": "artifacts/exercise-batches/batch-009/standing-arms/wrist-detour.json",
+        "sha256": "3eb9a513d2ac9ca80d8c53a2529e936e5b68c1ed28383460ffc679f6ce79c176"
+      }
+    ],
+    "amplitude_m": 0.19319430809214422,
+    "root_native_shape_accepted": true,
+    "physical_witness": "wrist-detour-witness.json",
+    "protection": "Originalopen/heldnativechannels,Rightwholechain/trunk/head/feet,forearm-localHandinterpolation,componentp andother3actions unchanged"
+  },
+  "untouched_reference": {
+    "path": "artifacts/exercise-batches/batch-009/standing-arms/untouched-route-reference.npz",
+    "sha256": "c15b0705be52810bb95cd12350672b987f52a60e40a05e910e35e34f60e52824",
+    "role": "Frozen151 native matrices of accepted unchanged33bones; no rejected fullmodel dependency"
+  }
+}
