@@ -85,7 +85,7 @@ public class GarminCloudClientTest {
 
     @Test public void distinguishesAuthenticationRejectionAndAmbiguousResponses() {
         failure("auth_required", 401, "private");
-        failure("auth_required", 403, "private");
+        failure("upload_failed", 403, "private");
         failure("upload_failed", 400, "private");
         failure("upload_failed", 422, "private");
         failure("upload_failed", 200, "{\"detailedImportResult\":{\"successes\":[],\"failures\":[{}]}}");

@@ -33,7 +33,8 @@ async function plugin() {
 export async function garminCloudStatus() {
   const { client: p } = await plugin() || {}
   if (!p) return { available: false, connected: false }
-  try { return await p.status() } catch { return { available: false, connected: false } }
+  try { return await p.status() }
+  catch { return { available: true, connected: false, error: 'storage_unavailable' } }
 }
 export async function connectGarminCloud() {
   const { client: p } = await plugin() || {}
@@ -142,6 +143,7 @@ export function drainGarminCloudUploads(store) {
 
 export async function uploadGarminWorkout(store, wid, { retry = false } = {}) {
   const status = await garminCloudStatus()
+  if (status.error) throw Object.assign(new Error('Garmin storage is unavailable.'), { code: status.error })
   if (!status.connected || status.sessionId !== store.getState().S.garminCloudSessionId) throw Object.assign(new Error('Connect this profile to Garmin Connect first.'), { code: 'auth_required' })
   if (!completed(store.getState().S.workouts.find(w => w.id === wid))) throw Object.assign(new Error('This workout has no completed sets.'), { code: 'invalid_fit' })
   store.getState().update(s => {

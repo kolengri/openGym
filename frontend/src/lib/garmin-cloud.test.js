@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { beforeEach, expect, it, vi } from 'vitest'
-import { appendGarminCloudHeartRate, drainGarminCloudUploads, queueGarminCloudUpload, startGarminCloudSync, uploadGarminWorkout, _setGarminCloudPluginForTest } from './garmin-cloud.js'
+import { appendGarminCloudHeartRate, drainGarminCloudUploads, garminCloudStatus, queueGarminCloudUpload, startGarminCloudSync, uploadGarminWorkout, _setGarminCloudPluginForTest } from './garmin-cloud.js'
 import { workoutFit } from './fit-export.js'
 import { toBase64 } from './media-store-fs.js'
 import { buildCompletedWorkout } from './finish-workout.js'
@@ -20,6 +20,13 @@ let bridge
 beforeEach(() => {
   bridge = { status: vi.fn(async () => ({ available: true, connected: true, sessionId: 'synthetic-session' })), upload: vi.fn(async () => ({ status: 'uploaded', activityId: 'synthetic-activity' })), disconnect: vi.fn(async () => {}) }
   _setGarminCloudPluginForTest(bridge)
+})
+
+it('distinguishes unavailable native storage from a missing Garmin integration', async () => {
+  bridge.status.mockRejectedValue(Object.assign(new Error('synthetic storage failure'), { code: 'storage_unavailable' }))
+  expect(await garminCloudStatus()).toEqual({ available: true, connected: false, error: 'storage_unavailable' })
+  _setGarminCloudPluginForTest(null)
+  expect(await garminCloudStatus()).toEqual({ available: false, connected: false })
 })
 
 it('queues only deliberately enabled new completions and never uploads plain imported history', async () => {

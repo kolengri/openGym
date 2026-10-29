@@ -22,7 +22,7 @@ public final class GarminCloudPlugin extends Plugin {
     @PluginMethod public void status(PluginCall call) {
         GarminCloudStore.IO.execute(() -> {
             try { call.resolve(status(GarminCloudStore.open(getContext()))); }
-            catch (Exception ignored) { call.resolve(new JSObject().put("available", true).put("connected", false)); }
+            catch (Exception ignored) { reject(call, "storage_unavailable"); }
         });
     }
 
@@ -176,13 +176,7 @@ public final class GarminCloudPlugin extends Plugin {
                 try {
                     result = new GarminCloudClient().upload(fit, call.getString("filename"), store.token(), store.csrf());
                 } catch (GarminCloudClient.Failure failure) {
-                    if (!failure.code.equals("unknown_result")) {
-                        try {
-                            if (!wasUnknown) store.definitelyFailed(workout);
-                            if (failure.code.equals("auth_required")) store.invalidate();
-                        } catch (Exception ignored) { reject(call, "unknown_result"); return; }
-                    }
-                    reject(call, wasUnknown && !failure.code.equals("auth_required") ? "unknown_result" : failure.code);
+                    reject(call, recordUploadFailure(store, workout, wasUnknown, failure));
                     return;
                 }
                 try { store.complete(workout, result); }
@@ -191,6 +185,18 @@ public final class GarminCloudPlugin extends Plugin {
             } catch (GarminCloudClient.Failure failure) { reject(call, failure.code); }
             catch (Exception ignored) { reject(call, "storage_unavailable"); }
         });
+    }
+
+    /** IO-owned failure transition; never discard an earlier ambiguous upload receipt. */
+    static String recordUploadFailure(GarminCloudStore store, String workout, boolean wasUnknown,
+                                     GarminCloudClient.Failure failure) {
+        if (!failure.code.equals("unknown_result")) {
+            try {
+                if (!wasUnknown) store.definitelyFailed(workout);
+                if (failure.code.equals("auth_required")) store.invalidate();
+            } catch (Exception ignored) { return "unknown_result"; }
+        }
+        return wasUnknown && !failure.code.equals("auth_required") ? "unknown_result" : failure.code;
     }
 
     private void resolve(PluginCall call, GarminCloudClient.Outcome receipt) {

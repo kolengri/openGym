@@ -151,7 +151,9 @@ final class GarminCloudClient {
     }
 
     static Outcome response(int status, String body) throws Failure {
-        if (status == 401 || status == 403) throw new Failure("auth_required");
+        if (status == 401) throw new Failure("auth_required");
+        // A forbidden upload does not establish that the saved session is invalid.
+        if (status == 403) throw new Failure("upload_failed");
         if (status == 409) return new Outcome("duplicate", null);
         if (status == 400 || status == 404 || status == 413 || status == 415 || status == 422)
             throw new Failure("upload_failed");

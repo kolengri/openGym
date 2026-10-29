@@ -10,7 +10,8 @@ export default function GarminCloudSettings() {
   const [status, setStatus] = useState(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState(false)
-  useEffect(() => { let stopped = false; garminCloudStatus().then(s => { if (!stopped) setStatus(s) }); return () => { stopped = true } }, [])
+  const [statusAttempt, setStatusAttempt] = useState(0)
+  useEffect(() => { let stopped = false; garminCloudStatus().then(s => { if (!stopped) setStatus(s) }); return () => { stopped = true } }, [statusAttempt])
   if (!status?.available) return null
   const connected = status.connected && status.sessionId === state.garminCloudSessionId
   const connect = async () => {
@@ -43,9 +44,12 @@ export default function GarminCloudSettings() {
     finally { setBusy(false) }
   }
   return <Section className="garmin-cloud-settings" title={t('Garmin Connect uploads')} footer={t('Sign in on Garmin’s own page. openGym keeps the resulting session only on this phone.')}>
-    <Row icon="watch" title="Garmin Connect" subtitle={t(connected ? 'Connected to Garmin Connect' : 'Garmin Connect is not connected')} />
+    <Row icon="watch" title="Garmin Connect" subtitle={status.error
+      ? t('The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.')
+      : t(connected ? 'Connected to Garmin Connect' : 'Garmin Connect is not connected')} />
     <div className="garmin-actions">
-    {!connected && <Button disabled={busy || !!state.active} onClick={connect}>{t('Sign in to Garmin Connect')}</Button>}
+    {status.error && <Button onClick={() => setStatusAttempt(value => value + 1)}>{t('Retry')}</Button>}
+    {!connected && !status.error && <Button disabled={busy || !!state.active} onClick={connect}>{t('Sign in to Garmin Connect')}</Button>}
     {connected && <Button disabled={busy || !!state.active} onClick={disconnect}>{t('Disconnect Garmin Connect')}</Button>}
     </div>
     <Row title={t('Upload new workouts automatically')} subtitle={t('Automatic upload is available after signing in. Change this setting between workouts.')}>
