@@ -6,7 +6,7 @@ These are source-bound authoring decisions and observed defects, not clinical va
 
 The user rejected the previous all-fours stretch specifically because of the hand and foot grasp. Actual saved-action inspection found a 60.65 degree wrist deviation at hold and a 109.70 degree airborne maximum. The hand quaternion moved independently of the forearm and foot. Contact appeared only near the hold, with no acquisition, close, unload or open sequence. A few nearby fingertip vertices did not establish an enclosed foot or opposed thumb.
 
-The replacement stages approach, closure, foot-local hold, unloading, opening and retraction. Airborne wrist alignment follows the forearm. The first broad mid-foot fit put ring/little fingers 22–27 mm inside the foot and was rejected. The accepted heel/ankle-collar hold uses a declared five-degree thigh adjustment and a coherent C-shaped palm/thumb/finger brace. Active wrist deviation is at most 17.846 degrees; held minimum clearance is 0.572 mm, palm clearance 2.816 mm, and foot-local hand transform drift is below 4.77e-7. All 151 decoded samples have no confirmed arm/hand-to-leg triangle crossings. The 75.7-degree angle between object contact normals is descriptive, not an anatomical thumb-opposition or force-closure requirement. Body fairing cannot repair an incorrect grasp.
+The first replacement staged approach, closure, foot-local hold, unloading, opening and retraction. Airborne wrist alignment followed the forearm. A broad mid-foot fit put ring/little fingers 22–27 mm inside the foot and was rejected. The initially accepted heel/ankle-collar hold used a declared five-degree thigh adjustment and a C-shaped palm/thumb/finger brace. Its historical active wrist maximum was17.846 degrees, held minimum clearance0.572 mm and palm clearance2.816 mm; all151 sampled arm/leg crossing checks passed. The user subsequently rejected the ankle shape, which those checks did not cover. This fit is superseded by the follow-up below. The75.7-degree angle between object contact normals is descriptive, not an anatomical thumb-opposition or force-closure requirement. Body fairing cannot repair an incorrect grasp.
 
 ## Heel reaches and cross crunches
 
@@ -33,6 +33,16 @@ Old bicycle pose-space targets and their schedule are not reused blindly. New bo
 3531 keeps a staggered stance, closed fists, aligned wrists and alternating forward punches. Finger curls and thumb opposition use the actual hand-local palmar frame. A world-lateral axis left C-shaped hands and overfolded fingers. The local palm-depth tolerance is a proxy, not a certificate of globally absent finger self-intersections.
 
 Cardiovascular system remains the source training target for 4918 and 3531. Visible muscle fields use explicitly declared proxies from source secondary labels: calves/quadriceps plus glutes for hops; shoulders/triceps plus core/obliques for punches.
+
+## Follow-up motion rejection
+
+The user subsequently rejected the late foot deformation in1512, the squat quality in3479 and the slow3531 punches. The earlier hand/contact and positive-triangle gates did not establish natural internal ankle shape or readable whole-body sequencing. Late return and deep-squat poses were missing from the original selected GPU stills.
+
+1512's original shortest-arc shin orientation crosses an antipodal singularity during return. The observed physical frame-to-frame shin rotation jumps135.35 degrees, while the independently animated world-space foot rotates only6.43 degrees. The ankle region consequently compresses to0.0923 of a rest edge and stretches other edges4.50 times. Preserving the old held foot orientation also retains a large internal ankle distortion; a continuous shin frame and coherent shin-relative foot/toe motion are required before refitting the analytic collar attachment. A contact-distance pass cannot certify this joint's deformation.
+
+3531's two punches in five seconds were too slow. Retiming the accepted path to six alternating punches keeps the accepted guard and extreme native poses bit-exact while changing attack, retraction and guard timing. Numeric timing and later final receipts are authoring choices, not clinical measurements.
+
+The settled follow-up uses continuous shin frames and a fixed shin-relative ankle/toe shape, followed by one constrained collar/hand re-fit. Actual decoded internal-foot edge drift stays below0.01percent of the planted reference across all151samples; the rejected version exceeded500percent. Zero sampled hand/leg crossings and zero mandatory game errors/warnings are separate receipts.3479now completes a full stand and support transfer before the kick in an8second cycle; all241native/decoded samples pass while3480is preserved.3531has six independently counted extension peaks in5seconds, with accepted guard/extreme skin poses unchanged.
 
 ## Integration and evidence
 

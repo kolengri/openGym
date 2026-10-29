@@ -4,8 +4,8 @@
   "models": {
     "1512": {
       "path": "artifacts/exercise-batches/batch-006/assets/1512/motion.glb",
-      "sha256": "05408ed5b88318c897e4a801eab1455c4a99e1dcad6b1697770ddeb2c44718c1",
-      "bytes": 1172844,
+      "sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+      "bytes": 1170452,
       "bones": 51,
       "sourceVertices": 10582,
       "animations": [
@@ -14,7 +14,7 @@
     },
     "3531": {
       "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
-      "sha256": "f280164c36d439d97466382e4f79be65aecb62842111a4b2154ba9e03335064e",
+      "sha256": "91ccfbd3afa7969641b7e27e1cdc390fd3e622c13da03446175cfaff5a2133b0",
       "bytes": 890764,
       "bones": 51,
       "sourceVertices": 10582,
@@ -34,8 +34,8 @@
     },
     "standing-leg-family": {
       "path": "artifacts/exercise-batches/batch-006/assets/3479/motion.glb",
-      "sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
-      "bytes": 1143612,
+      "sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
+      "bytes": 1229380,
       "bones": 51,
       "sourceVertices": 10582,
       "animations": [
@@ -72,10 +72,10 @@
     {
       "id": "1512",
       "duration": 5,
-      "maxJointErrorMeters": 8.237817234681143e-7,
+      "maxJointErrorMeters": 9.138204044860782e-7,
       "reviewTime": 2.5,
       "warmPixels": 0,
-      "cyanPixels": 5192,
+      "cyanPixels": 5233,
       "sourceSurfacePhases": 16,
       "displayMode": "stretch",
       "holdSeconds": 1,
@@ -84,10 +84,10 @@
     },
     {
       "id": "3479",
-      "duration": 5,
-      "maxJointErrorMeters": 0.0000018108426276503,
-      "reviewTime": 1.25,
-      "warmPixels": 4387,
+      "duration": 8,
+      "maxJointErrorMeters": 0.0000013523600927653894,
+      "reviewTime": 2,
+      "warmPixels": 6441,
       "cyanPixels": 0,
       "sourceSurfacePhases": 5,
       "displayMode": "load",
@@ -176,11 +176,11 @@
     {
       "id": "3531",
       "duration": 5,
-      "maxJointErrorMeters": 0.0000015928296330828674,
+      "maxJointErrorMeters": 0.0000015926528941647225,
       "reviewTime": 1.25,
-      "warmPixels": 2465,
+      "warmPixels": 2326,
       "cyanPixels": 0,
-      "sourceSurfacePhases": 18,
+      "sourceSurfacePhases": 17,
       "displayMode": "load",
       "holdSeconds": null,
       "asset": "3531",
@@ -225,15 +225,15 @@
         "durationSeconds": 5,
         "holdSeconds": 1,
         "sampleTimes": [
-          0.4000000000000001,
-          1.516699999999999,
+          0.4,
+          1.5166000000000002,
           2.1165999999999987,
           2.916499999999997,
-          3.5165999999999964,
-          4.716500000000003
+          3.5165999999999955,
+          4.716500000000004
         ],
         "holdDriftMeters": 0,
-        "wallSeconds": 5.015899999976158,
+        "wallSeconds": 5.018299999952316,
         "wrapObserved": true
       }
     },
@@ -270,7 +270,7 @@
     {
       "id": "3531",
       "fullNativeDQWitnesses": 5,
-      "maxAllVertexDQErrorMeters": 0.0000024037766808384333
+      "maxAllVertexDQErrorMeters": 0.0000023373042823590303
     },
     {
       "id": "5106",
@@ -278,7 +278,7 @@
       "maxAllVertexDQErrorMeters": 8.71414282734289e-7
     }
   ],
-  "maxJointErrorMeters": 0.0000018108426276503,
+  "maxJointErrorMeters": 0.0000016793000310779598,
   "maxSurfaceParityErrorMeters": 8.064678217456489e-7,
   "maxAllVertexDQErrorMeters": 0.000020969293280804236,
   "transparentCanvas": true,

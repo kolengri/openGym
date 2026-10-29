@@ -63,7 +63,7 @@
     }
   },
   "authored_choices": {
-    "grasp": "Palm, thumb and all four digits form the visually accepted collar C-grasp. Small positive skin clearance prevents penetration; this is an authored visual contact interpretation, not a force-closure simulation.",
+    "grasp": "Corrected-foot collar brace: meaningful palm, thumb and index contact, with all other digits curved outside the skin. The prior collapsed-foot fit is rejected history. One bounded constrained re-fit and a measured closure/opening clearance arc preserve a neutral wrist and fixed arm lengths.",
     "staging_seconds": {
       "approach": [
         0,
@@ -94,10 +94,11 @@
         5
       ]
     },
-    "reach": "One authorized 5 degree extension adjustment improves fixed-grasp wrist reach by 24.654 mm while retaining 130 degree hold knee flexion, neutral trunk and actual support.",
+    "reach": "Current actual wrist target is520.327mm from shoulder against529.140mm fixed arm length, giving8.813mm margin. Ankle/knee trajectory, thigh115degrees and hold knee130degrees are preserved by this repair.",
     "contacts": "Right palm/knee/foot remain supported; complete arm/hand/finger versus both complete legs checked at all 151 native and decoded samples.",
     "geometry": "Original connected body, 239 previously diagnosed source binding changes and three original compact POSITION/NORMAL keys reused exactly. No new body fairing, weight edit, topology edit or native smoothing.",
-    "cameras": "Whole-body quad/grasp oblique plus a fixed hand/foot side companion framed from 1816 unique original IDs through the entire cycle; width fitting remains primary-owned."
+    "cameras": "Whole-body quad/grasp oblique plus a fixed hand/foot side companion framed from 1816 unique original IDs through the entire cycle; width fitting remains primary-owned.",
+    "foot_transport": "Continuous sagittal shin frame transports the actual planted shin-relative ankle shape. Foot and ToeBase rotate together; no world-space counter-rotation or shortest-arc shin singularity. All151 internal-foot edge shape samples are regressed against planted skin."
   },
   "source": {
     "path": "catalogue/exercises/1512.json",
@@ -126,5 +127,5 @@
     "sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
     "changed": false
   },
-  "readiness": "shape_accepted_native_export_game_qa_pass_primary_gpu_and_heat_integration_pending"
+  "readiness": "corrected_foot_and_collar_shape_accepted_native_and_game_qa_pass_decoded_and_primary_gpu_pending"
 }

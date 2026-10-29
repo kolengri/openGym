@@ -3,9 +3,9 @@
   "asset": "standing-leg-family",
   "action": "Exercise_3479",
   "name": "alternate heel touch side kick squat",
-  "duration": 5,
-  "duration_seconds": 5,
-  "frames": 150,
+  "duration": 8,
+  "duration_seconds": 8,
+  "frames": 240,
   "fps": 30,
   "native_frame_origin": 1,
   "primary": [
@@ -39,48 +39,78 @@
   "phases": [
     {
       "start": 0,
-      "end": 0.6,
-      "label": "Squat"
+      "end": 0.9,
+      "label": "Descend"
     },
     {
-      "start": 0.6,
-      "end": 1.2,
-      "label": "Stand and left side kick"
+      "start": 0.9,
+      "end": 1.7,
+      "label": "Stand"
     },
     {
-      "start": 1.2,
-      "end": 1.55,
-      "label": "Left heel touch"
+      "start": 1.7,
+      "end": 1.95,
+      "label": "Transfer weight before left kick"
     },
     {
-      "start": 1.55,
-      "end": 2.5,
-      "label": "Return"
+      "start": 1.95,
+      "end": 2.55,
+      "label": "Controlled left side kick"
     },
     {
-      "start": 2.5,
-      "end": 3.1,
-      "label": "Squat"
+      "start": 2.55,
+      "end": 2.9,
+      "label": "Touch left heel"
     },
     {
-      "start": 3.1,
-      "end": 3.7,
-      "label": "Stand and right side kick"
+      "start": 2.9,
+      "end": 3.85,
+      "label": "Return left foot"
     },
     {
-      "start": 3.7,
-      "end": 4.05,
-      "label": "Right heel touch"
+      "start": 3.85,
+      "end": 4,
+      "label": "Recenter"
     },
     {
-      "start": 4.05,
-      "end": 5,
-      "label": "Return"
+      "start": 4,
+      "end": 4.9,
+      "label": "Descend"
+    },
+    {
+      "start": 4.9,
+      "end": 5.7,
+      "label": "Stand"
+    },
+    {
+      "start": 5.7,
+      "end": 5.95,
+      "label": "Transfer weight before right kick"
+    },
+    {
+      "start": 5.95,
+      "end": 6.55,
+      "label": "Controlled right side kick"
+    },
+    {
+      "start": 6.55,
+      "end": 6.9,
+      "label": "Touch right heel"
+    },
+    {
+      "start": 6.9,
+      "end": 7.85,
+      "label": "Return right foot"
+    },
+    {
+      "start": 7.85,
+      "end": 8,
+      "label": "Recenter"
     }
   ],
   "source_hold_recommendation_seconds": null,
   "skinning": "linear",
-  "interpretation": "Two hip-width squats alternate a left and right side kick. Each kick extends laterally, then rechambers slightly while the trunk bends toward that side to permit a same-side relaxed little-fingertip edge tap on the medial/posterior heel. The source does not specify kick height, trunk angle, contact finger or numeric timing; these are authored choices. Actual fingertip and whole-hand skin contact distances are measured separately. There is no wrapped grasp or added forearm supination. Takeoff and landing are declared airborne; the opposite sole stays planted.",
+  "interpretation": "Two complete hip-width squats alternate same-side heel-touch side kicks over an authored eight-second bilateral cycle. Each squat descends for0.9s and returns fully to standing over0.8s with both soles planted. A separate0.25s soft-knee weight transfer precedes foot lift. Only then does the accepted lateral kick, slight rechamber and relaxed little-fingertip medial/posterior heel tap run, followed by controlled landing and recentering. The source specifies no numerical duration, so the rejected five-second overlap is replaced rather than compressed. Squat depth, weights, four capped target shapes and the reachable neutral-wrist contact method are unchanged.",
   "shared_geometry": {
     "family": "batch006-standing-leg-family",
     "physical_glb": "assets/3479/motion.glb",
@@ -88,8 +118,9 @@
       "Exercise_3479",
       "Exercise_3480"
     ],
-    "same_bytes_in_both_assets": true,
-    "distinct_motion": true
+    "same_bytes_in_both_assets": false,
+    "distinct_motion": true,
+    "3480_preservation": "The3479 canonical container retains original3480 geometry, joint hierarchy, animation objects/accessors and complete original BIN prefix byte-exact. Per-ID3480 source/GLB files remain byte-identical to the previously accepted delivery."
   },
   "correctives": {
     "names": [
@@ -117,8 +148,9 @@
     "restricted_media_used": false,
     "paid_generation_used": false
   },
-  "review_status": "root_accepted_bounded_shape_for_user_review_not_production_approval",
+  "review_status": "user_rejected_five_second_motion_revised_eight_second_choreography_candidate",
   "disclosures": [
+    "The original five-second squat/kick overlap was user-rejected. This revision changes only3479 chronology and support-weight transfer; visible motion acceptance is separate from transport checks.",
     "Residual local joint crease detail remains under the fixed25mm cap; uncapped requirements are retained.",
     "Localized nonadjacent self-fold counts and opposed shader normals are diagnostic. No global collision-free or clinical claim.",
     "Muscle fields, camera width fitting, actual browser/GPU acceptance and final integration remain root-owned."

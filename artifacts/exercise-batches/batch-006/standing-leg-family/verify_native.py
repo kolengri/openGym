@@ -23,10 +23,11 @@ for v in body.data.vertices:
  if row!=OW[v.index]:changed.append({'source_id':v.index,'before':OW[v.index],'after':row})
 (P/'saved-binding-provenance.json').write_text(json.dumps({'source_sha256':source_sha,'binding_sha256':binding['binding_hash'],'actual_saved_max_influences':max(len(v.groups) for v in body.data.vertices),'actual_changed_vertex_count':len(changed),'changes':changed},indent=2)+'\n')
 sys.path.insert(0,str(Path.home()/'.codex/skills/blender-asset-qa/scripts'));import qa_check
-for id in ['3479','3480']:
+for id in (['3479'] if '--only-3479' in sys.argv else ['3479','3480']):
  out=P.parent/'assets'/id;act=bpy.data.actions['Exercise_'+id];rig.animation_data.action=act;keys.animation_data.action=act;keys.animation_data.action_slot=next(x for x in act.slots if x.target_id_type=='KEY');checks.previous={};checks.witnesses={};checks.witnesslookup={};rows=[];refs=[];surfaces=[];samples=[];fail=[];first=None;prev=None;maxstep=0;maxstepframe=None;qa=[]
- reference_frames=[0,18,40,115,150] if id=='3479' else [0,15,37,112,150];qa_frames=[0,18,31,40,115] if id=='3479' else [0,37,112]
- for f in range(151):
+ last=round(json.loads((out/'clip.json').read_text())['duration_seconds']*30)
+ reference_frames=[0,27,80,200,240] if id=='3479' and last==240 else ([0,18,40,115,150] if id=='3479' else [0,15,37,112,150]);qa_frames=[0,27,59,71,80,111,200] if id=='3479' and last==240 else ([0,18,31,40,115] if id=='3479' else [0,37,112])
+ for f in range(last+1):
   s.frame_set(f+1);bpy.context.view_layer.update();ev=body.evaluated_get(bpy.context.evaluated_depsgraph_get());me=ev.to_mesh();X=np.array([ev.matrix_world@v.co for v in me.vertices]);ev.to_mesh_clear();matrices=np.array([np.array(rig.pose.bones[g.name].matrix@rig.data.bones[g.name].matrix_local.inverted())[:3,:3] for g in body.vertex_groups]);inputN=rn.copy()
   for key in keys.key_blocks:
    if key.name!='Basis':inputN+=key.value*(keynormals[key.name]-rn)
@@ -42,13 +43,13 @@ for id in ['3479','3480']:
   prev=q
   if f in reference_frames:
    refs.append({'id':id,'frame':f,'vertices':X.tolist(),'shader_normals':N.tolist()});surfaces.append({'id':id,'frame':f,'global_floor_z':row['minimum_body_z'],'floor_plane_z':0,'patches':{side+'_'+name:{'indices':ids.tolist(),'min_z':float(X[ids,2].min()),'max_z':float(X[ids,2].max())} for side,patches in checks.soles.items() for name,ids in patches.items()}})
-  if f in [0,15,18,30,31,37,40,60,75,90,105,112,115,135,145,150]:samples.append({'id':id,'frame':f,'joints':{pb.name:list(rig.matrix_world@pb.head) for pb in rig.pose.bones}})
+  if f in ([0,14,27,39,51,58,59,71,80,105,111,116,120,147,171,178,179,191,200,231,240] if last==240 else [0,15,18,30,31,37,40,60,75,90,105,112,115,135,145,150]):samples.append({'id':id,'frame':f,'joints':{pb.name:list(rig.matrix_world@pb.head) for pb in rig.pose.bones}})
   if f in qa_frames:
    result=qa_check.run(objects=[body.name],profile='game');qa.append({'frame':f,'qa':result})
    if not result['pass']:fail.append({'frame':f,'issue':'mandatory_game_QA'})
  loop=float(np.linalg.norm(X-first,axis=1).max())
  if loop>1e-6:fail.append({'issue':'loop_closure'})
- report={'ok':not fail,'source_sha256':source_sha,'sampling':{'frames':151,'fps':30,'native_frame_origin':1},'invariants':{'original_source_sha256':a.SOURCE_SHA,'basis':True,'rest':True,'uv':True,'topology':True,'source_ids':10582,'bones':51,'maximum_weights':4,'targets':4,'maximum_source_delta_m':.025,'runtime':'standard linear; only Armature enabled'},'loop_vertex_error_m':loop,'maximum_joint_step_radians':maxstep,'maximum_joint_step_frame':maxstepframe,'self_fold_policy':'Exact nonadjacent local self-folds and opposed shader normals are localized diagnostics, not a global zero-self-collision claim. Root accepted the bounded visible joint8 candidate with residual joint crease detail.','failures':fail,'samples':rows,'crossing_witnesses':checks.witnesses}
+ report={'ok':not fail,'source_sha256':source_sha,'sampling':{'frames':last+1,'fps':30,'duration_seconds':last/30,'native_frame_origin':1},'invariants':{'original_source_sha256':a.SOURCE_SHA,'basis':True,'rest':True,'uv':True,'topology':True,'source_ids':10582,'bones':51,'maximum_weights':4,'targets':4,'maximum_source_delta_m':.025,'runtime':'standard linear; only Armature enabled'},'loop_vertex_error_m':loop,'maximum_joint_step_radians':maxstep,'maximum_joint_step_frame':maxstepframe,'self_fold_policy':'Exact nonadjacent local self-folds and opposed shader normals are localized diagnostics, not a global zero-self-collision claim. Root accepted the bounded visible joint8 candidate with residual joint crease detail.','failures':fail,'samples':rows,'crossing_witnesses':checks.witnesses}
  (out/'surface-contact-report.json').write_text(json.dumps(report,indent=2)+'\n');(out/'asset-qa.json').write_text(json.dumps({'source_sha256':source_sha,'pass':all(q['qa']['pass'] for q in qa),'checks':qa},indent=2)+'\n');(out/'pose-samples.json').write_text(json.dumps(samples,indent=2)+'\n');(out/'runtime-surface-reference.json').write_text(json.dumps({'reference_kind':'native-armature-only-standard-linear-with-four-bounded-morphs','source_sha256':source_sha,'source_vertices':10582,'coordinate_frame':'Blender Zup metres, original source IDs','floor_plane_z':0,'samples':surfaces},separators=(',',':'))+'\n')
  with gzip.open(out/'linear-vertex-reference.json.gz','wt') as stream:json.dump(refs,stream,separators=(',',':'))
  with gzip.open(out/'topology-reference.json.gz','wt') as stream:json.dump({'source_sha256':source_sha,'source_vertices':10582,'triangles':T.tolist()},stream,separators=(',',':'))

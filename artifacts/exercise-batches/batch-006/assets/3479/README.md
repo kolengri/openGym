@@ -1,19 +1,17 @@
-# 3479 — alternate heel touch side kick squat
+# 3479 — squat, side kick and same-side heel touch
 
-A complete bilateral squat, side-kick and same-side heel-touch cycle. The relaxed little-fingertip edge touches medial/posterior heel skin after the kick rechambers. The support sole stays planted; airborne takeoff and landing are explicit.
+The rejected five-second sequence lifted the kicking leg while the body was still rising from the deepest squat. The repaired eight-second bilateral cycle completes each two-foot squat and stand, transfers weight, then performs the accepted kick/touch/return. The deep squat, contact method, binding and four target shapes are unchanged. The source catalogue does not prescribe five seconds.
 
-One shared original body/rig contains two distinct actions, `Exercise_3479` and `Exercise_3480`. Both asset folders contain identical GLB/source bytes; `clip.asset` is `standing-leg-family`, so integration should cache one geometry. Root owns that mapping and the muscle fields.
+Per side: 0–0.9s descend;0.9–1.7s stand;1.7–1.95s weight transfer;1.95–3.85s kick, fingertip tap and return;3.85–4s recenter. The second side repeats at+4s. Maximum lateral kick is71/30s; heel touch80/30s. Root reviewed the actual GPU deep-squat/full-stand/transfer/kick proofs and accepted this one chronology revision. Final user acceptance remains separate.
 
-The original CC0 Blender Studio body retains exact Basis, rest matrices, UVs, topology, 10,582 source IDs and 51 bones. The accepted squat binding is reused with a toe-preserving grounded plantar overlay. Actual saved weights are normalized with at most four influences. Four compact POSITION/NORMAL targets treat only the diagnosed mirrored lunge popliteal and heel-touch shoulder collars. Source displacement is capped at 25 mm with C1 collars; uncapped fairing requirements of approximately49–52mm are disclosed in the family target report. All feet, fingers and target exteriors remain exact. Runtime skinning is standard linear.
+All241 native and decoded30Hz samples pass declared floor/support, complete arm/hand versus leg clearance, positive-area and loop checks. Maximum decoded/native skin error is1.746µm; loop error0.214µm. Five complete original-source position/normal references and all51 native bone positions also pass export parity. Mandatory game QA has zero errors. Two back-to-back facet pairs remain at the parallel squat; residual local joint creases/self-fold diagnostics are retained. No globally collision-free or clinical claim.
 
-All151 native and decoded samples pass floor, declared sole/toe support, complete arm/hand versus leg clearance, positive-area and loop checks. Maximum decoded/native position error: 1.974 µm. Decoded loop error: 0.214 µm. Minimum body height: 0.2999 mm above the floor. The full-source reference has five poses; all51 native bone positions and independent shader normals are checked. This is CPU-decoded Three.js evidence; browser/GPU acceptance remains root-owned.
+Basis, rest, UVs, topology,10,582 source IDs,51bones and the four25mm-capped POSITION/NORMAL target shapes stay exact. Runtime remains standard linear.
 
-Mandatory game QA has zero errors. Retained warnings: 18: hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris. These local folded facets belong to the continuous original body; deleting them would change protected topology. Root accepted the bounded visible candidate with remaining joint creases. Exact local self-fold witnesses and opposed-normal counts remain in the full reports; this is not a globally collision-free or clinical claim.
+The canonical shared GLB is this folder's `motion.glb`. It retains every original geometry/rest/material byte and the original3480 animation/accessor payloads; only3479 animation data is appended/replaced. The per-ID3480 source/GLB and every other3480 file are untouched. Its151 native bone/skin fingerprints also remain bit-exact. See the family preservation reports.
 
-`review-*.png` are transparent neutral/wire stills of the final saved source, with action/key/skin readback in `proof-manifest.json`. `delivery-report.json` collects measurements and limits. `curated-files.json` is the publication list; historical trials, logs, backups and caches are excluded. Shared generation/check scripts and binding/target provenance are in `../../standing-leg-family/`.
+`review-*.png` are final neutral/wire proofs with native action/key/skin readback. Selected before/after actual GPU evidence and repair scripts are in `../../standing-leg-family/squat-feedback/`. The curated manifests exclude logs, candidate bundles, backups and caches. Root owns shared presentation/camera fitting/viewer publication.
 
-Source SHA256: `f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab`
+Source SHA256: `4571ffd3407966fcfd13b87f300d500647b6bf957132a99c2e181b56e3724c3a`
 
-GLB SHA256: `3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d`
-
-The decoded fingertip-to-heel point gap is approximately 3 mm; the nearest whole-hand/heel surface gap is 2.365–2.423 mm during full contact. No palm-centroid shortcut is used as a contact gate.
+GLB SHA256: `a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a`

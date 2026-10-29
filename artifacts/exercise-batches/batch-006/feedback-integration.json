@@ -1,0 +1,75 @@
+{
+  "scope": "Follow-up repair of1512 internal foot/shin continuity,3479 squat sequencing and3531 punch tempo. Original unaffected physical resources remain byte-exact;3480 action preservation is separately proven by its author. Width fitting does not alter camera angles/targets or source/clip/model data.",
+  "baseline_revision": "9e04568ce88f5b59501fd54db2968a931b7370f4",
+  "current_build_manifest_sha256": "7fd2884308316aa809f482e342ebdf5f301d12d27e32c9bc488398db48c25025",
+  "changed_models": {
+    "1512": {
+      "path": "artifacts/exercise-batches/batch-006/assets/1512/motion.glb",
+      "sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+      "bytes": 1170452,
+      "bones": 51,
+      "sourceVertices": 10582,
+      "animations": [
+        "Exercise_1512"
+      ]
+    },
+    "3531": {
+      "path": "artifacts/exercise-batches/batch-006/assets/3531/motion.glb",
+      "sha256": "91ccfbd3afa7969641b7e27e1cdc390fd3e622c13da03446175cfaff5a2133b0",
+      "bytes": 890764,
+      "bones": 51,
+      "sourceVertices": 10582,
+      "animations": [
+        "Exercise_3531"
+      ]
+    },
+    "standing-leg-family": {
+      "path": "artifacts/exercise-batches/batch-006/assets/3479/motion.glb",
+      "sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
+      "bytes": 1229380,
+      "bones": 51,
+      "sourceVertices": 10582,
+      "animations": [
+        "Exercise_3479",
+        "Exercise_3480"
+      ]
+    }
+  },
+  "unchanged_models": [
+    "4918",
+    "floor-crunch",
+    "leg-raise-family"
+  ],
+  "duration_seconds": {
+    "1512": 5,
+    "3479": 8,
+    "3531": 5
+  },
+  "punches_per_five_seconds": 6,
+  "camera_width_changes": {
+    "1512": {
+      "cameras.json": {
+        "before_sha256": "950127e806045a59b259c8b514b3c900cb4aaf8782a58ba0849234da5ebe733f",
+        "after_sha256": "8dcaa4cbd133c43c8ca476f6820d7117107d1dbb0b8ffabcbaf7dad88307d1a1"
+      }
+    },
+    "3479": {},
+    "0006": {},
+    "4918": {},
+    "4826": {},
+    "4001": {},
+    "3590": {},
+    "4354": {},
+    "3531": {},
+    "3480": {},
+    "5106": {}
+  },
+  "native_reference_summary_normalization": "reference-normalization.json remains valid for the unchanged six floor records.",
+  "public_inline_status": "awaiting_new_immutable_model_pin",
+  "targeted_foot_regression": "assets/1512/foot-return-repair/",
+  "native_acceptance": {
+    "1512": "All151 native/decoded foot deformation continuity, support/contact/parity and zero game errors/warnings.",
+    "3479": "All241 revised native/decoded samples; preserved3480 source and exported action proof.",
+    "3531": "Six independently counted elbow-extension peaks, unchanged accepted guard/peak poses, all151 native/decoded and zero game errors/warnings."
+  }
+}

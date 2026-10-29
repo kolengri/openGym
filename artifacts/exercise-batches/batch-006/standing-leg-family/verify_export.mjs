@@ -30,7 +30,7 @@ assert.equal(meshes.length, 1);
 assert.equal(model.animations.length, 2);
 const clip = model.animations.find(value => value.name === 'Exercise_'+id);
 assert.equal(clip.name,'Exercise_'+id);
-assert.equal(clip.duration,5);
+assert.equal(clip.duration,JSON.parse(await readFile(new URL('clip.json',root))).duration_seconds);
 assert.deepEqual(model.animations.map(x=>x.name).sort(),['Exercise_3479','Exercise_3480']);
 const mesh = meshes[0];
 const geometry = mesh.geometry;
@@ -81,7 +81,7 @@ for (const ref of reference) {
     const error = actual.distanceTo(convert(ref.vertices[original]));
     maxPosition = Math.max(maxPosition, error);
     sumPosition += error;
-    if (ref.frame === 0 || ref.frame === 150) evaluated.push(actual.toArray());
+    if (ref.frame === 0 || ref.frame === Math.round(clip.duration*30)) evaluated.push(actual.toArray());
     const skinMatrix = new THREE.Matrix4();
     skinMatrix.elements.fill(0);
     let totalWeight = 0;

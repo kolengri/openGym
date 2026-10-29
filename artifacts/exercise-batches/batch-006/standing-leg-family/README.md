@@ -1,31 +1,26 @@
-# Shared standing-leg family — batch006
+# Shared standing-leg family — feedback repair
 
-Two distinct text-authored five-second bilateral actions share one immutable-source body, linear rig and four compact local targets. Canonical final files are in `../assets/3479/`; identical bytes are also supplied in3480 for the per-asset contract. Integration should cache asset key `standing-leg-family` once and select the corresponding action.
+The current canonical3479 action is an eight-second bilateral squat/kick/touch cycle. The user rejected the old five-second overlap: kick takeoff occurred during the rise from the deepest squat. This one revision completes the squat and full stand, transfers weight with both soles planted, then runs the accepted kick/contact/retract method. No shape bank, weight, topology or deep-squat/contact geometry revision. Root inspected the actual GPU stages and accepted the sequence.
 
-The original Blender Studio CC0 source and helper `batch-003/authoring.py` are unchanged. Binding provenance reuses the accepted batch005 squat recipe, replacing only its rigid plantar Foot overlay with the original local Foot/Toe ratio so the rear toe articulation can stay planted. The saved-weight report records actual memberships by stable names.
+Canonical runtime asset is `../assets/3479/motion.glb` under key `standing-leg-family`. The original full GLB BIN prefix and physical-body records remain exact. Only3479 animation sampler data is appended and its animation object replaced.3480's animation/accessors remain byte-exact, all64 existing3480 files remain unchanged, and all151 native bone/skin fingerprints compare bit-exact. The standalone3480 source/GLB retain their original hashes and receipts; the two per-ID containers now intentionally differ.
 
-The heel-touch contact is an authored same-side relaxed little-fingertip edge tap on medial/posterior heel skin. A middle-finger target caused the outer hand edge to cross the ankle; the outer edge target resolves the whole-hand geometry while keeping the wrist in the source neutral relation. Native DQ improved the elbow but caused a gross hip bulge, so it was rejected. Runtime remains linear. The lunge trajectory is separate, with upright torso, fixed planted portions and naturally curled sprint hands.
+Four original capped local POSITION/NORMAL keys remain unchanged. Unkeyed pose-bone scale defaults are explicitly preserved during action authoring; otherwise matrix decomposition can perturb shared finger defaults by float ULPs despite identical untouched curves.
 
-Root accepted the final joint8 visible candidate with residual shoulder/knee crease detail and froze the25mm target cap. Only one bounded native local-fairing construction was used for each mirrored shoulder or popliteal collar. Uncapped requirements and inverse-map conditions remain in `joint-target-report.json`. All target exterior vertices are pinned exactly; no feet/fingers/head or global body warp.
+Affected3479 verification covers all241 native/decoded30Hz frames, five full-source references, mandatory game QA and selected actual GPU motion stages. Local self-fold/normal diagnostics and residual joint creases remain disclosed. `motion-repair-report.json` distinguishes visible acceptance from transport checks.
 
-Blender5.2.3 ACTIONS exports inactive armature OBJECT slots automatically, but only discovers inactive KEY slots through NLA. `package.py` retains an explicitly muted inactive3480 KEY strip with `use_nla=False`; this standard export association adds both morph channels without changing native evaluation. Both actual decoded actions and shader normals pass.
-
-Rebuild/check from workspace root, offline with two Blender threads:
+Repair from the preserved3480 baseline, from workspace root:
 
 ```sh
-/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/build_draft.py
-/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/build_joint_targets.py
-/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/package.py
+/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/squat-feedback/revise_source.py
+/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/squat-feedback/export_replacement.py
+python3 artifacts/exercise-batches/batch-006/standing-leg-family/squat-feedback/pack_replacement.py
+/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/squat-feedback/verify_3480_unchanged.py
 /opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/verify_invariants.py
-/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/verify_native.py
+/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/verify_native.py -- --only-3479
 node artifacts/exercise-batches/batch-006/standing-leg-family/verify_export.mjs 3479
-node artifacts/exercise-batches/batch-006/standing-leg-family/verify_export.mjs 3480
 node artifacts/exercise-batches/batch-006/standing-leg-family/verify_runtime_stream.mjs 3479
-node artifacts/exercise-batches/batch-006/standing-leg-family/verify_runtime_stream.mjs 3480
-/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/proof_final.py
+/opt/homebrew/bin/blender -b --factory-startup --offline-mode -t 2 --python-exit-code 1 --python artifacts/exercise-batches/batch-006/standing-leg-family/proof_final.py -- --only-3479
 python3 artifacts/exercise-batches/batch-006/standing-leg-family/curate.py
 ```
 
-The runtime checker streams one ascending traversal of each actual decoded clip directly to Blender; no vertex/frame cache is stored. `LoopOnce` is never traversed again after its clamped endpoint. Five diagnostic full-source references per clip are verification data, not runtime playback data.
-
-`curated-files.json` lists only final reports and reproducible source/check scripts. Generated intermediate/family copies of `.blend`/GLB, logs, trials, backups and environments remain local and are excluded. Root owns muscle fields, camera width fitting, viewer mapping, browser/GPU acceptance and final user approval.
+The old body/binding/target construction scripts remain provenance for the preserved baseline. Use the repair entrypoint above for current3479; do not regenerate its accepted target bank or overwrite3480. Root owns shared viewer/presentation/camera fitting and publication. Logs, candidate bundles, temporary blend/GLB copies and caches are excluded from curated publication.

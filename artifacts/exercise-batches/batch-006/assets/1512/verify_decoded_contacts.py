@@ -4,7 +4,7 @@ The Node verifier passes positions only through stdin. No runtime frame cache
 or temporary geometry file is written. BVH overlap is broad phase; mathutils
 ray/triangle and coplanar segment tests determine actual crossings.
 """
-import sys,json,hashlib
+import sys,json,hashlib,math
 from pathlib import Path
 from mathutils import Vector,geometry
 from mathutils.bvhtree import BVHTree
@@ -33,7 +33,12 @@ def intersect(a,b):
  return False
 
 samples=[];crossings=[];domains=packet['domains']
+foot_rows=[];foot_domain=packet['foot_domain'];first=packet['frames'][0]['positions']
+initial_lengths={name:[math.dist(first[i],first[j])for i,j in edges]for name,edges in foot_domain.items()}
 for sample in packet['frames']:
+ foot_row={'frame':sample['frame']}
+ for name,edges in foot_domain.items():foot_row[name+'_maximum_change_from_planted']=max(abs(math.dist(sample['positions'][i],sample['positions'][j])/base-1)for(i,j),base in zip(edges,initial_lengths[name]))
+ foot_rows.append(foot_row)
  points=[Vector(p)for p in sample['positions']]
  trees={name:BVHTree.FromPolygons(points,triangles,epsilon=0)for name,triangles in domains.items()}
  checks={}
@@ -51,5 +56,8 @@ for sample in packet['frames']:
  samples.append({'frame':sample['frame'],'pairs':checks})
 report={'pass':not crossings,'source_sha256':packet['source_sha256'],'glb_sha256':packet['glb_sha256'],'adapter_sha256':packet['adapter_sha256'],'frames':len(samples),'reference_kind':'Actual GLTFLoader canonical GLB, animated POSITION/NORMAL key weights, and unchanged shared DQ adapter, original-ID positions passed in memory.','domain':'All actual exported triangles incident on any>50%arm/hand/finger or whole-leg weighted vertex; one boundary ring retained. Both whole arms/hands vs both whole thighs/calves/feet.','domain_triangle_counts':{name:len(triangles)for name,triangles in domains.items()},'method':'Blender BVHTree broad phase followed by mathutils ray-triangle segment tests in both directions and coplanar2Dcontainment/edge tests. Shared-original-ID adjacency excluded.','numeric_tolerance_m':TOL,'triangle_crossing_count':sum(len(x['crossings'])for x in crossings),'crossings':crossings,'samples':samples,'limits':'Discrete151frame surface crossing check; no continuous-time or fully-enclosed-volume certification. Positive-clearance/nearest-normal penetration diagnostics remain separate.'}
 (P/'decoded-triangle-contact-report.json').write_text(json.dumps(report,indent=2)+'\n')
+foot_report={'pass':all(row[name+'_maximum_change_from_planted']<.002 for row in foot_rows for name in foot_domain),'source_sha256':packet['source_sha256'],'glb_sha256':packet['glb_sha256'],'adapter_sha256':packet['adapter_sha256'],'frames':151,'maximum_ankle_edge_change_from_planted':max(row['ankle_edges_maximum_change_from_planted']for row in foot_rows),'maximum_forefoot_edge_change_from_planted':max(row['foot_edges_maximum_change_from_planted']for row in foot_rows),'threshold':.002,'samples':foot_rows,'scope':'Actual decoded canonical GLB and exact shared DQ adapter, original-ID mixed ankle and whole forefoot edges. Internal shape regression relative to actual planted skin; reaches the rejected hook missed by generic positive-area checks.'}
+(P/'foot-return-repair/decoded-foot-regression.json').write_text(json.dumps(foot_report,indent=2)+'\n')
 print(json.dumps({'decoded_triangle_pass':report['pass'],'frames':len(samples),'triangle_crossings':report['triangle_crossing_count'],'domain_triangles':report['domain_triangle_counts']}))
 assert report['pass']
+assert foot_report['pass'],foot_report

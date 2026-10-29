@@ -12,7 +12,7 @@ const proc=spawn('/opt/homebrew/bin/blender',['-t','2','-b','--factory-startup',
 proc.stdout.on('data',data=>process.stdout.write(data));proc.stderr.on('data',data=>process.stderr.write(data));const completion=once(proc,'exit');
 const position=geometry.getAttribute('position'),normal=geometry.getAttribute('normal'),source=geometry.getAttribute('_source_index'),skinIndex=geometry.getAttribute('skinIndex'),skinWeight=geometry.getAttribute('skinWeight');
 const point=new THREE.Vector3(),direction=new THREE.Vector3(),delta=new THREE.Vector3();
-for(let frame=0;frame<=150;frame++){
+for(let frame=0;frame<=Math.round(clip.duration*30);frame++){
  mixer.setTime(frame/30);model.scene.updateMatrixWorld(true);mesh.skeleton.update();
  const bones=mesh.skeleton.bones.map((_,i)=>new THREE.Matrix4().fromArray(mesh.skeleton.boneMatrices,i*16));const worldNormals=new THREE.Matrix3().getNormalMatrix(mesh.matrixWorld);const output=Buffer.alloc(8+10582*24);output.writeUInt32LE(frame,0);output.writeUInt32LE(10582,4);const values=new Float32Array(output.buffer,output.byteOffset+8,10582*6);
  for(let index=0;index<position.count;index++){

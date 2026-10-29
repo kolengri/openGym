@@ -14,7 +14,8 @@ for (const file of ['.gitignore', 'README.md', 'selection.json', 'user-feedback.
  'muscle-atlas-provenance.json', 'presentation.json', 'phase-labels.json', 'findings.md',
  'capture-peaks.mjs', 'capture-peaks.json', 'curate.mjs', 'camera-fit.json',
  'root-integration.json', 'reference-normalization.json', 'build-manifest.json', 'verification.json', 'runtime-contacts.json',
- 'visual-review.json', 'visual-grasp-review.json', 'operator-checks.json', 'poster.png', 'mobile.png']) add(new URL(file, root));
+ 'visual-review.json', 'visual-grasp-review.json', 'operator-checks.json', 'poster.png', 'mobile.png',
+ 'capture-foot-return.mjs', 'feedback-baseline.json', 'feedback-integration.json']) add(new URL(file, root));
 for (const id of ids) {
  add(new URL(`contexts/${id}.json`, root));
  add(new URL(`review-${id}.png`, root));
@@ -30,6 +31,14 @@ for (const directory of [...ids.map(id => `assets/${id}/`), 'floor-crunch-family
 }
 for (const path of Object.keys(build.input_files_sha256)) add(new URL(path, repo));
 for (const sample of (await read(new URL('capture-peaks.json', root))).evidence) add(new URL(sample.file, root));
+const feedback = new URL('foot-return-review/', root);
+for (const name of ['before.json', 'after.json', 'before-3479.json', 'after-3479.json', 'after-3531.json']) {
+ const file = new URL(name, feedback);
+ try {
+  const receipt = await read(file); add(file);
+  for (const sample of receipt.files) add(new URL(sample.file, feedback));
+ } catch (error) { if (error.code !== 'ENOENT') throw error; }
+}
 for (const file of ['build-review.mjs', 'fit-cameras.mjs', 'verify-review.mjs', 'verify-inline.mjs']) add(new URL('../' + file, root));
 for (const file of ['source-revision.json', 'inline.html', 'inline-verification.json', 'inline-settled.png', 'inline-delivery.json', 'publication-report.json']) {
  const url = new URL(file, root);

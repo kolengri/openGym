@@ -16,7 +16,7 @@ This review adds ten equipment-free catalogue records and replaces the user-reje
 | 3480 | Alternate sprinter lunge | Reverse steps with opposite arm drive and declared foot transfer. |
 | 5106 | Alternate toe tap leg lift | Both legs stay near vertical; alternating restrained upward reaches. |
 
-Dynamic demonstrations show both sides in five seconds. The stretch has a two-second entry, one-second demonstration hold and two-second return; its catalogue workout hold of 20–30 seconds is stated separately. Joint angles, motion tempo, contact staging and the precise upward-reach mechanism of 5106 are declared authoring choices, not source measurements. Cardiovascular system remains the original target for hops and punches; visible muscle fields use explicitly declared proxies from the source secondary labels.
+Most dynamic demonstrations show both sides in five seconds. The complex squat/kick/heel-touch combination uses eight seconds so the model stands and transfers weight before lifting a foot. Punching uses six alternating punches per five seconds. The stretch has a two-second entry, one-second demonstration hold and two-second return; its catalogue workout hold of 20–30 seconds is stated separately. Joint angles, motion tempo, contact staging and the precise upward-reach mechanism of 5106 are declared authoring choices, not source measurements. Cardiovascular system remains the original target for hops and punches; visible muscle fields use explicitly declared proxies from the source secondary labels.
 
 ## Playback and reuse
 

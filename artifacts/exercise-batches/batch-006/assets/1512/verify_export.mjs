@@ -132,7 +132,8 @@ if(process.argv.includes('--triangles')){
  }
  const physicalReport={pass:true,source_sha256:sourceSha,glb_sha256:sha(bytes),frames:151,minimum_triangle_area_m2:minimumArea,maximum_joint_error_m:maximumAllFrameJointError,minimum_floor_z:Math.min(...physics.map(row=>row.floor_min_z)),samples:physics,scope:'All151 actual GLTFLoader plus exact shared DQ adapter samples: full skin floor/positive areas, actual source-bound support patches and all51 native joint heads. Discrete sampled evidence; no continuous-time collision claim.'};
  await writeFile(new URL('decoded-physical-report.json',root),JSON.stringify(physicalReport,null,2)+'\n');
- const packet={source_sha256:sourceSha,glb_sha256:sha(bytes),adapter_sha256:sha(await readFile(new URL('../../../dual-quaternion.js',root))),domains,frames};
+ const footDomain=await json('foot-return-repair/repaired-native-diagnosis.json');assert.equal(footDomain.source_sha256,sourceSha);
+ const packet={source_sha256:sourceSha,glb_sha256:sha(bytes),adapter_sha256:sha(await readFile(new URL('../../../dual-quaternion.js',root))),domains,frames,foot_domain:{ankle_edges:footDomain.ankle_edges,foot_edges:footDomain.foot_edges}};
  const result=spawnSync('/opt/homebrew/bin/blender',['-b','-t','2','--python-exit-code','1','--factory-startup','--python',fileURLToPath(new URL('verify_decoded_contacts.py',root))],{input:JSON.stringify(packet),encoding:'utf8',maxBuffer:16*1024*1024});
  process.stdout.write(result.stdout||'');process.stderr.write(result.stderr||'');assert.equal(result.status,0,'Decoded DQ triangle crossing check');
 }

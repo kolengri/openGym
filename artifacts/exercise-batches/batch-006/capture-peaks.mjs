@@ -6,15 +6,15 @@ import {chromium} from '../../first-exercise-3d/runtime/node_modules/playwright-
 // A few diagnostic poses per action; no animation frame sequence or runtime cache.
 const root = new URL('./', import.meta.url);
 const poses = {
- '1512': [['approach', 1], ['grasp', 1.5], ['hold', 2.5], ['release', 3.7]],
- '3479': [['kick', 1], ['heel-touch', 40 / 30]],
+ '1512': [['approach', 1], ['grasp', 1.5], ['hold', 2.5], ['release', 3.7], ['late-return', 4.4]],
+ '3479': [['deep-squat', .9], ['stand-transfer', 1.85], ['kick', 71 / 30], ['heel-touch', 80 / 30]],
  '0006': [['left', 1.25], ['right', 3.75]],
  '4918': [['left-flight', .675], ['right-flight', 1.925]],
  '4826': [['left', 1.25]],
  '4001': [['left', 1.25]],
  '3590': [['left', 1.25]],
  '4354': [['left', 1.25], ['right', 3.75]],
- '3531': [['right-punch', 1.25], ['left-punch', 3.75]],
+ '3531': [['right-punch', 8 / 30], ['left-punch', 33 / 30]],
  '3480': [['left', 1.25], ['right', 3.75]],
  '5106': [['left', 1.25]],
 };

@@ -56,5 +56,142 @@
     "live_canvas_replaces_poster": true,
     "external_resource_count": 12,
     "evidence": "Verified actual public six model byte hashes against exact commit 57a98d8af5642cb5ebf55031fddffdaf0d975ce8."
+  },
+  "feedback_follow_up": {
+    "source_revision": "9e04568ce88f5b59501fd54db2968a931b7370f4",
+    "build_manifest_sha256": "7fd2884308316aa809f482e342ebdf5f301d12d27e32c9bc488398db48c25025",
+    "verify": {
+      "command": "node artifacts/exercise-batches/batch-006/verify.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-006/logs/verify-feedback.log",
+      "actions_selected": 11,
+      "errors": 0
+    },
+    "capture": {
+      "command": "node artifacts/exercise-batches/batch-006/capture-peaks.mjs",
+      "exit_code": 0,
+      "log": "artifacts/exercise-batches/batch-006/logs/capture-feedback.log",
+      "poses": 23,
+      "screenshots": 46,
+      "evidence_manifest": "artifacts/exercise-batches/batch-006/capture-peaks.json",
+      "selected_poses": [
+        {
+          "id": "1512",
+          "label": "approach",
+          "time": 1
+        },
+        {
+          "id": "1512",
+          "label": "grasp",
+          "time": 1.5
+        },
+        {
+          "id": "1512",
+          "label": "hold",
+          "time": 2.5
+        },
+        {
+          "id": "1512",
+          "label": "release",
+          "time": 3.7
+        },
+        {
+          "id": "1512",
+          "label": "late-return",
+          "time": 4.4
+        },
+        {
+          "id": "3479",
+          "label": "deep-squat",
+          "time": 0.9
+        },
+        {
+          "id": "3479",
+          "label": "stand-transfer",
+          "time": 1.85
+        },
+        {
+          "id": "3479",
+          "label": "kick",
+          "time": 2.3666666666666667
+        },
+        {
+          "id": "3479",
+          "label": "heel-touch",
+          "time": 2.6666666666666665
+        },
+        {
+          "id": "3480",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "3480",
+          "label": "right",
+          "time": 3.75
+        },
+        {
+          "id": "3531",
+          "label": "right-punch",
+          "time": 0.26666666666666666
+        },
+        {
+          "id": "3531",
+          "label": "left-punch",
+          "time": 1.1
+        },
+        {
+          "id": "3590",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4001",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4354",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4354",
+          "label": "right",
+          "time": 3.75
+        },
+        {
+          "id": "4826",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "4918",
+          "label": "left-flight",
+          "time": 0.675
+        },
+        {
+          "id": "4918",
+          "label": "right-flight",
+          "time": 1.925
+        },
+        {
+          "id": "5106",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "0006",
+          "label": "left",
+          "time": 1.25
+        },
+        {
+          "id": "0006",
+          "label": "right",
+          "time": 3.75
+        }
+      ],
+      "screenshot_pattern": "artifacts/exercise-batches/batch-006/{neutral,zones}-<exercise>-<pose>.png"
+    }
   }
 }

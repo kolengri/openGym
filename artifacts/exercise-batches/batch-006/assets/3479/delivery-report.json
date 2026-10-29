@@ -1,10 +1,14 @@
 {
   "exercise_id": "3479",
-  "status": "frozen_root_accepted_bounded_shape_for_user_review",
-  "source_sha256": "f716265a508389e5a72a151d65234341fb3013939df66b90d532df91a1bc60ab",
-  "glb_sha256": "3fc9b638106efc8cb697fc49f5149535cb3e45d81f6d3b875788feaaa5c7c96d",
+  "status": "root_accepted_eight_second_choreography_revision_for_user_review",
+  "source_sha256": "4571ffd3407966fcfd13b87f300d500647b6bf957132a99c2e181b56e3724c3a",
+  "glb_sha256": "a37e56a8e28b785fafd01806641f90dd88dff05a6fa178703affa4233904fd8a",
   "asset_key": "standing-leg-family",
   "action": "Exercise_3479",
+  "duration_seconds": 8,
+  "fps": 30,
+  "frames": 240,
+  "native_frame_origin": 1,
   "source_vertices": 10582,
   "exported_vertices": 12010,
   "triangles": 21160,
@@ -13,38 +17,33 @@
   "materials": 1,
   "textures": 0,
   "position_normal_targets": 4,
-  "duration_seconds": 5,
-  "native_frame_origin": 1,
-  "frames_sampled_native": 151,
-  "frames_sampled_decoded": 151,
+  "frames_sampled_native": 241,
+  "frames_sampled_decoded": 241,
   "full_source_reference_frames": [
     0,
-    18,
-    40,
-    115,
-    150
+    27,
+    80,
+    200,
+    240
   ],
   "native_loop_vertex_error_m": 0.0,
   "decoded_loop_vertex_error_m": 2.1445560294739704e-07,
-  "maximum_decoded_native_position_error_m": 1.974221099636278e-06,
-  "maximum_reference_joint_error_m": 9.586242661960326e-07,
-  "maximum_shader_normal_angle_degrees": 0.0061091016662103885,
-  "minimum_body_z_m": 0.00029988985625095665,
-  "minimum_knee_skin_z_m": 0.31066256761550903,
-  "minimum_triangle_area_m2": 5.882578877843482e-08,
+  "maximum_decoded_native_position_error_m": 1.7460805610598126e-06,
+  "maximum_reference_joint_error_m": 1.0021095595348297e-06,
+  "maximum_shader_normal_angle_degrees": 0.00610910536508578,
+  "minimum_body_z_m": 0.0002999041462317109,
+  "minimum_triangle_area_m2": 5.881850742783279e-08,
   "maximum_arm_hand_leg_intersections": 0,
-  "maximum_support_centroid_drift_m": 5.492616297509913e-07,
-  "maximum_native_joint_step_degrees": 25.10992746670037,
-  "maximum_native_joint_step_frame": 29,
+  "maximum_support_centroid_drift_m": 8.457618557618617e-07,
   "heel_contact": {
     "full_contact_samples": 22,
     "finger_to_heel_point_m_range": [
-      0.002999870377178106,
-      0.00300043124156595
+      0.002999960331419679,
+      0.0030004387308679753
     ],
     "whole_hand_to_heel_surface_m_range": [
-      0.0023653965909034014,
-      0.002423213329166174
+      0.002365667140111327,
+      0.0024232263676822186
     ]
   },
   "mandatory_game_qa": {
@@ -52,59 +51,58 @@
     "errors": 0,
     "retained_warnings": [
       {
-        "frame": 18,
+        "frame": 27,
         "warnings": [
           "hidden back-to-back faces: SK_BlenderStudioHuman (2 pairs) - delete to save tris"
         ]
       }
     ],
-    "reason": "Warnings identify a few back-to-back facets in local joint folds of the single continuous original body. The bounded visible candidate was accepted with residual creases. Deleting faces would violate the required original topology/source IDs; warnings are retained without claiming globally collision-free skin."
+    "reason": "Two back-to-back facet pairs remain at the accepted parallel squat in the original continuous cage. Removing faces would violate required topology. Residual creases are disclosed; no globally collision-free claim."
   },
   "local_face_diagnostics": {
     "pelvis_thigh": {
-      "minimum_area_ratio": 0.01738005422176208,
+      "minimum_area_ratio": 0.01737951533741531,
       "maximum_opposed_shader_normal_faces": 32,
       "maximum_disjoint_self_intersection_pairs": 110
     },
     "knees": {
-      "minimum_area_ratio": 0.0024743403857786154,
-      "maximum_opposed_shader_normal_faces": 36,
-      "maximum_disjoint_self_intersection_pairs": 102
+      "minimum_area_ratio": 0.009879400025155909,
+      "maximum_opposed_shader_normal_faces": 35,
+      "maximum_disjoint_self_intersection_pairs": 104
     },
     "shoulders": {
-      "minimum_area_ratio": 0.07918589262036108,
+      "minimum_area_ratio": 0.07946901461143506,
       "maximum_opposed_shader_normal_faces": 9,
       "maximum_disjoint_self_intersection_pairs": 44
     },
     "LungeLeftPopliteal_affected_star": {
-      "minimum_area_ratio": 0.008936672478568353,
-      "maximum_opposed_shader_normal_faces": 18,
-      "maximum_disjoint_self_intersection_pairs": 57
+      "minimum_area_ratio": 0.009879400025155909,
+      "maximum_opposed_shader_normal_faces": 16,
+      "maximum_disjoint_self_intersection_pairs": 52
     },
     "LungeRightPopliteal_affected_star": {
-      "minimum_area_ratio": 0.0024743403857786154,
-      "maximum_opposed_shader_normal_faces": 20,
-      "maximum_disjoint_self_intersection_pairs": 65
+      "minimum_area_ratio": 0.013238368001285201,
+      "maximum_opposed_shader_normal_faces": 19,
+      "maximum_disjoint_self_intersection_pairs": 59
     },
     "HeelTouchLeftShoulder_affected_star": {
-      "minimum_area_ratio": 0.15328364359961116,
+      "minimum_area_ratio": 0.15158760154560502,
       "maximum_opposed_shader_normal_faces": 7,
       "maximum_disjoint_self_intersection_pairs": 19
     },
     "HeelTouchRightShoulder_affected_star": {
-      "minimum_area_ratio": 0.07918589262036108,
+      "minimum_area_ratio": 0.07946901461143506,
       "maximum_opposed_shader_normal_faces": 8,
       "maximum_disjoint_self_intersection_pairs": 25
     }
   },
-  "self_fold_policy": "Localized exact nonadjacent self-fold counts and opposed shader normals are diagnostics. Root accepted bounded joint8 shape with residual joint creases; this is not a globally collision-free claim.",
-  "root_acceptance": "Root reviewed joint8 changed knee, shoulder/kick and heel-contact whole-body proofs and accepted the fixed25mm candidate with residual joint crease detail. Path, weights and target cap then frozen.",
-  "runtime_method": "Actual decoded project Three.js GLTFLoader/AnimationMixer plus four-influence linear skinning and four compact additive POSITION/NORMAL targets. Shader normals independently compared with source-derived normals and the exact skinnormal_vertex equation. CPU-decoded evidence; actual browser/GPU review remains root-owned.",
-  "limitations": [
-    "Discrete30Hz evidence; no continuous-time or clinical guarantee.",
-    "Localized exact self-fold and opposed-normal witnesses are retained; no global zero-self-collision claim.",
-    "The25mm C1 cap intentionally leaves residual joint crease detail.",
-    "No runtime DQ, frame cache, pose cache, smoothing, video or paid generation."
-  ],
-  "shared_family_report": "../../standing-leg-family/delivery-report.json"
+  "motion_repair_report": "../../standing-leg-family/motion-repair-report.json",
+  "3480_preservation_report": "../../standing-leg-family/squat-feedback/3480-preservation-report.json",
+  "export_preservation_report": "../../standing-leg-family/squat-feedback/export-preservation-report.json",
+  "limits": [
+    "The old five-second motion was rejected; current eight-second sequencing was reviewed in actual GPU proofs.",
+    "All241 discrete30Hz path samples are checked, not just the pose extrema. No continuous-time or clinical claim.",
+    "Localized nonadjacent self-fold and opposed-normal counts are diagnostic and retained.",
+    "Original3480 files and its shared-container animation/geometry are preserved exactly."
+  ]
 }

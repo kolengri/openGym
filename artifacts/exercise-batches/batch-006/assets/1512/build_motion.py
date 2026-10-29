@@ -24,6 +24,7 @@ FINGER_CLOSED={digit:[-3,75,45] for digit in ['Index','Middle','Ring','Little']}
 FINGER_CLOSED['Thumb']=[20,25,15]
 THUMB_OPPOSITION=40
 BASE_REL=None
+CLOSURE_ARC_FOOT_LOCAL=(-.002462023636326194,.0002567582705523819,.002086180727928877)
 
 def ease_between(t,start,end):return a.ease((t-start)/(end-start))
 def leg_amount(t):
@@ -74,8 +75,18 @@ def lower_body(t):
         beta=math.radians(2.65+(155-2.65)*min(1,u/ACQ))if side=='Left'else math.radians(2.65)
         ankle=knee+a.V((0,math.cos(beta),math.sin(beta)))*a.length[side+'Leg']
         d[side+'UpLeg']=Matrix.Translation(hip)@a.orient(side+'UpLeg',knee-hip).to_matrix().to_4x4()
-        d[side+'Leg']=Matrix.Translation(knee)@a.orient(side+'Leg',ankle-knee).to_matrix().to_4x4()
-        fq=a.foot_rotation(side,150-120*min(1,u/ACQ)if side=='Left'else 150)
+        if side=='Left':
+            # Transport the planted ankle frame through the sagittal hinge.
+            # A shortest-arc shin frame flips near the antipodal direction;
+            # an unrelated world foot curve then crushes the blended ankle.
+            initial=math.radians(2.65)
+            hinge=a.rx(math.degrees(beta-initial))
+            legq=hinge@a.orient(side+'Leg',(0,math.cos(initial),math.sin(initial)))
+            fq=hinge@a.foot_rotation(side,150)
+        else:
+            legq=a.orient(side+'Leg',ankle-knee)
+            fq=a.foot_rotation(side,150)
+        d[side+'Leg']=Matrix.Translation(knee)@legq.to_matrix().to_4x4()
         d[side+'Foot']=Matrix.Translation(ankle)@(fq@a.rest[side+'Foot'].to_quaternion()).to_matrix().to_4x4()
         toe=d[side+'Foot']@a.rest[side+'Foot'].inverted()@a.heads[side+'ToeBase']
         d[side+'ToeBase']=Matrix.Translation(toe)@(fq@a.rest[side+'ToeBase'].to_quaternion()).to_matrix().to_4x4()
@@ -113,7 +124,7 @@ def aligned_grip(d):
         direction=(virtual-elbow).normalized()
     hq=grip_rotation(direction,normal);wrist=elbow+direction*a.length['LeftForeArm']
     error=(wrist+hq@source_offset-target).length
-    assert error<.0002,('Palm virtual-chain target',error)
+    assert error<.0002,('Palm virtual-chain target unreachable; actual surface target error m',error,'target',list(target),'shoulder',list(sh),'arm lengths m',[a.length['LeftArm'],a.length['LeftForeArm']])
     return Matrix.Translation(wrist)@(hq@a.rest['LeftHand'].to_quaternion()).to_matrix().to_4x4(),target
 
 def floor_hand(side,d):
@@ -132,7 +143,14 @@ def free_hand(d,t):
     if tau<.30:wrist=start.lerp(lift,ease_between(tau,0,.30))
     elif tau<.85:wrist=lift.lerp(way,ease_between(tau,.30,.85))
     elif tau<1.05:wrist=way.lerp(pre,ease_between(tau,.85,1.05))
-    else:wrist=locked.translation+out*(.040*(1-ease_between(tau,1.05,1.30))**.7)
+    else:
+        # The new thumb wrap needs a small outward arc while it closes.
+        # This clears the measured 1.04mm intermediate intrusion, then
+        # reaches the unchanged stable collar frame with zero end speed.
+        closing=max(0,min(1,(tau-1.10)/.20))
+        clearance_arc=.0035*math.sin(math.pi*closing)**2
+        arc_normal=acq['LeftFoot'].to_3x3()@a.V(CLOSURE_ARC_FOOT_LOCAL)
+        wrist=locked.translation+out*(.040*(1-ease_between(tau,1.05,1.30))**.7+clearance_arc)+arc_normal*math.sin(math.pi*closing)**2
     elbow,wrist=arm_chain(d,'Left',wrist)
     fore=(wrist-elbow).normalized();neutral=grip_rotation(fore,(-1,0,0))
     if tau<.55:hq=startq.slerp(neutral,ease_between(tau,.05,.55))
@@ -144,13 +162,14 @@ def free_hand(d,t):
     close=ease_between(tau,1.10,1.30)
     return hand,close
 
-def pose(t):
+def pose(t,enforce_reach=True):
     d=lower_body(t)
     wr,q=floor_hand('Right',d);_,wr=arm_chain(d,'Right',wr)
     d['RightHand']=Matrix.Translation(wr)@(q@a.rest['RightHand'].to_quaternion()).to_matrix().to_4x4()
     if 1.3<=t<=3.7:
         hand=d['LeftFoot']@GRIP_REL;_,wr=arm_chain(d,'Left',hand.translation)
-        assert(wr-hand.translation).length<1e-5,'Unreachable held foot-local wrist'
+        distance=(hand.translation-shoulder(d,'Left')).length
+        if enforce_reach:assert(wr-hand.translation).length<1e-5,('Unreachable held foot-local wrist','time',t,'target_distance_m',distance,'arm_length_m',a.length['LeftArm']+a.length['LeftForeArm'],'reach_deficit_m',distance-a.length['LeftArm']-a.length['LeftForeArm'],'target',list(hand.translation))
         d['LeftHand']=hand;close=1
     else:d['LeftHand'],close=free_hand(d,t)
     for name,(h,tail,parent,digit,index)in a.finger_specs.items():
@@ -219,7 +238,20 @@ def prepare(use_fit=True):
     if use_fit and (P/'grip-pose-fit.json').exists():
         fit=json.loads((P/'grip-pose-fit.json').read_text())
         if fit.get('accepted',False) or '--candidate-fit' in sys.argv:configure_fit(fit['parameters'])
+    shift_transport_grasp(True)
     return palm_source_id
+
+def shift_transport_grasp(write_receipt=False):
+    # The causally repaired foot frame puts the prior attachment 0.681mm
+    # beyond fixed arm reach. Root authorized one 2mm collar translation;
+    # retain all finger parameters and never satisfy it by IK clamping.
+    hold=lower_body(2);hand=hold['LeftFoot']@GRIP_REL
+    toward=(shoulder(hold,'Left')-hand.translation).normalized()
+    displacement=hold['LeftFoot'].to_3x3().inverted()@(toward*.002)
+    before=(hand.translation-shoulder(hold,'Left')).length
+    GRIP_REL.translation+=displacement
+    after=((hold['LeftFoot']@GRIP_REL).translation-shoulder(hold,'Left')).length
+    if write_receipt:(P/'foot-return-repair'/'attachment-shift.json').write_text(json.dumps({'method':'One authorized 2mm foot-local collar translation toward the hold shoulder, retained during the later authorized bounded digit re-fit.','foot_local_displacement_m':list(displacement),'displacement_length_m':displacement.length,'before_wrist_target_distance_m':before,'after_wrist_target_distance_m':after,'unchanged_arm_length_m':a.length['LeftArm']+a.length['LeftForeArm'],'after_reach_margin_m':a.length['LeftArm']+a.length['LeftForeArm']-after},indent=2)+'\n')
 
 def configure_fit(x):
     global GRIP_REL,THUMB_OPPOSITION,FINGER_CLOSED

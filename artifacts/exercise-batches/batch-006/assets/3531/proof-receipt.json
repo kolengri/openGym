@@ -1,19 +1,41 @@
 {
-  "source_sha256": "5588b98e6ce66b85d05f25cde916721bb8b6e925574330d5ab2e28627b1df4c5",
-  "sampled_pre_camera_source_sha256": "3552b6fedd0554c89515932bf1ec1a009c5b379be447381f70d311dc58379c89",
+  "source_sha256": "dd74caa91937a734c5d15773be533f334498f495d426506a2a24502714be8316",
   "native_keyed_proofs": [
-    "neutral-guard.png",
-    "neutral-right-punch.png",
-    "neutral-left-punch.png",
-    "neutral-guard-return.png",
-    "fist-close.png"
+    "fast-guard.png",
+    "fast-right-attack.png",
+    "fast-right-punch.png",
+    "fast-right-retraction.png",
+    "fast-between-punches-guard.png",
+    "fast-left-punch.png",
+    "fast-guard-return.png"
   ],
+  "timing_envelope": "punch-timing-envelope.svg",
+  "preserved_accepted_poses": {
+    "guard": {
+      "frame": 0,
+      "previous_accepted_frame": 0,
+      "full_skin_error_m": 0.0,
+      "maximum_bone_matrix_error": 0.0
+    },
+    "right_peak": {
+      "frame": 8,
+      "previous_accepted_frame": 37.5,
+      "full_skin_error_m": 0.0,
+      "maximum_bone_matrix_error": 0.0
+    },
+    "left_peak": {
+      "frame": 33,
+      "previous_accepted_frame": 112.5,
+      "full_skin_error_m": 0.0,
+      "maximum_bone_matrix_error": 0.0
+    }
+  },
   "pre_post_render_complete_surface_delta_m": 0,
-  "maximum_saved_151_bone_matrix_error": 1.1920928955078125e-06,
-  "accepted_by_primary_for_bounded_user_review": true,
-  "actual_GPU_acceptance": "Primary-owned final integration stage",
+  "render_readback": "timing-render-readback.json",
+  "shape_acceptance": "Previous accepted guard/peak skin and matrices are bit-exact; only timing changed.",
+  "faster_rhythm_actual_GPU_acceptance": "Primary-owned",
   "limitations": [
-    "Original low-poly finger/skin seams remain visible.",
-    "Local palm nearest-normal depth tolerance4mm does not prove global finger self-intersection freedom."
+    "Original low-poly finger seams remain.",
+    "Local palm depth proxy4mm is not proof of global finger self-intersection freedom."
   ]
 }

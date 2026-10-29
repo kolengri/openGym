@@ -1,7 +1,13 @@
 """Assert completed receipts and write explicit delivery manifests; retain trials locally."""
 from pathlib import Path
 import json,hashlib
-P=Path(__file__).resolve().parent;B=P.parent;A=B/'assets';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+P=Path(__file__).resolve().parent;B=P.parent;A=B/'assets';
+# The feedback repair keeps3480 byte-identical and curates only3479 plus family receipts.
+if json.loads((A/'3479/clip.json').read_text())['duration_seconds']==8:
+ import runpy
+ runpy.run_path(str(P/'squat-feedback/curate_repair.py'),run_name='__main__')
+ raise SystemExit
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 manifest=json.loads((P/'export-manifest.json').read_text());source_sha=manifest['source_sha256'];glb_sha=manifest['glb_sha256'];inv=json.loads((P/'invariant-report.json').read_text());assert inv['ok'] and inv['source_sha256']==source_sha
 family={'status':'frozen_root_accepted_user_review_candidate','physical_geometry':1,'actions':['Exercise_3479','Exercise_3480'],'source_sha256':source_sha,'glb_sha256':glb_sha,'canonical_asset':'assets/3479','runtime_asset_key':'standing-leg-family','runtime_skinning':'standard linear','source_invariants':inv,'per_exercise':{},'root_owned_remaining':['muscle fields','viewer asset-key mapping','camera width fitting','browser/GPU acceptance','final user approval'],'shared_export_correction':'Blender5.2.3 ACTIONS gathers inactive OBJECT slots on a sole armature, but inactive KEY slots require an NLA association. Source retains one muted3480 KEY strip with use_nla=False. Both exported actions have all four explicit morph channels; native and decoded receipts pass.'}
 for id in ['3479','3480']:

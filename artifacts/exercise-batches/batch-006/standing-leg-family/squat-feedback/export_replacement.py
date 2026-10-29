@@ -1,0 +1,5 @@
+"""Export candidate3479 curves; final packing preserves the old physical body."""
+from pathlib import Path
+import bpy
+P=Path(__file__).resolve().parent;source=P.parents[1]/'assets/3479/source.blend';bpy.ops.wm.open_mainfile(filepath=str(source));body=bpy.data.objects['SK_BlenderStudioHuman'];rig=bpy.data.objects['RIG_BlenderStudioHuman'];bpy.ops.object.select_all(action='DESELECT');body.select_set(True);rig.select_set(True);bpy.context.view_layer.objects.active=rig
+assert bpy.ops.export_scene.gltf(filepath=str(P/'replacement-curves.glb'),export_format='GLB',use_selection=True,export_animations=True,export_animation_mode='ACTIONS',export_force_sampling=True,export_frame_range=True,export_frame_step=1,export_skins=True,export_all_influences=False,export_apply=False,export_morph=True,export_morph_normal=True,export_merge_animation='ACTION',export_attributes=True,export_materials='EXPORT',export_vertex_color='NONE',export_anim_slide_to_zero=True,export_rest_position_armature=True,export_influence_nb=4,export_cameras=False,export_lights=False,export_yup=True)=={'FINISHED'}

@@ -1,7 +1,7 @@
 {
   "status": "accepted_for_user_review",
   "scope": "Native shape acceptance followed by selected actual Three.js GPU poses and source-bound browser mechanics. This is media acceptance, not clinical validation or production application integration.",
-  "build_manifest_sha256": "924f18905a05386fe88df00a2fa811e08ffca04a260f168d04ade157de0c8a83",
+  "build_manifest_sha256": "7fd2884308316aa809f482e342ebdf5f301d12d27e32c9bc488398db48c25025",
   "initial_exercise_id": "1512",
   "actions": [
     "1512",
@@ -19,66 +19,50 @@
   "physical_glb_count": 6,
   "primary_inspected_gpu_images": [
     {
-      "path": "zones-3479-heel-touch.png",
-      "sha256": "db59f10679ee5c3686a69dc9cdc5f97d38e763de39c4de10d348744f86af2ee9"
+      "path": "foot-return-review/after-4.40.png",
+      "sha256": "a2ca417649fda5cfc23124b39d18a46b999989f38680ea3f8bc8fe3ef540a396"
     },
     {
-      "path": "zones-3479-kick.png",
-      "sha256": "c04ad57c24ee17cdec45e42db3655adfbb6f58a4cb5f1eb1d03c1ff9104b6e58"
+      "path": "foot-return-review/after-4.70.png",
+      "sha256": "f11aef350019d00c617e5d4d95108cb829b45e73e9e58dc7e4c237df72598bc9"
     },
     {
-      "path": "zones-3480-left.png",
-      "sha256": "4d83423bf7944739ecfca5fa208a76c482242cd55478e64e1ee191326fa15729"
+      "path": "foot-return-review/after-3479-1.95.png",
+      "sha256": "485ff9af4649c155e0a4a0d4f36ec6f904858633539adbfbee4b70a0b1452346"
     },
     {
-      "path": "zones-0006-left.png",
-      "sha256": "7c8903c14112426e094c56c0b6f580b385fde52eba238a18600b423efb8bf1c5"
+      "path": "foot-return-review/after-3531-0.27.png",
+      "sha256": "64ce9e0e5892fde2c3d04b767f6e013809b9c39b1aadc6c442766d9eadaf4c3f"
     },
     {
-      "path": "zones-4354-left.png",
-      "sha256": "b18118d3258fd0a1a08531911742f170294dd9b8c273c30b3a023e99dcb27296"
+      "path": "zones-1512-late-return.png",
+      "sha256": "ff01bc469ff7c7e2e647158dae6bbb3b0f58b82085db62a6559624bbab8ae3ce"
     },
     {
-      "path": "zones-4918-left-flight.png",
-      "sha256": "5cf0d73eb765bb17545896075f3f7fb698dd4ee084c4759e8990f27ba3700d5f"
+      "path": "zones-3479-deep-squat.png",
+      "sha256": "9cc21ccf689fe3950dd3b047a9aa676aea50653552ae47432383462fff3c6e7d"
+    },
+    {
+      "path": "zones-3479-stand-transfer.png",
+      "sha256": "d228b54ae5332cf1fb0d1ebe5132445a6434e35283967f00149241c367fe412e"
     },
     {
       "path": "zones-3531-right-punch.png",
-      "sha256": "ad0ae6439933a3e00f85073979cfdd93556b449592b9c6133be6f9db2b114e1c"
-    },
-    {
-      "path": "zones-5106-left.png",
-      "sha256": "51336368b447007fd677b6f2b73eefea9388c725fa2d8f4cc88bde480000756b"
-    },
-    {
-      "path": "zones-1512-hold.png",
-      "sha256": "d53443bcf5643d10f3da9906a17120482964a331d52a81f6223183571b80cd35"
-    },
-    {
-      "path": "neutral-1512-hold.png",
-      "sha256": "5a9c5c09933980a2b20ea02aba10f94aef5e11183471377cc0f0096801dff125"
-    },
-    {
-      "path": "zones-4826-left.png",
-      "sha256": "f80372efec471e3cd21303471edbcb2f3fbdf618d8cfa0258a724b382362acb0"
-    },
-    {
-      "path": "zones-4001-left.png",
-      "sha256": "63f5cc370e509849df95982fd2f7b870f37f00bb7c7b530535497fe397a7a625"
+      "sha256": "9364c4346f6bce690d0d21cd3983890eb64d28cfde4b41617597b44f73b29880"
     }
   ],
   "independent_focused_still_review": "visual-grasp-review.json",
   "observations": [
-    "The repaired stretch has a coherent forearm/wrist line and C-shaped heel/ankle hold, with a useful companion view. Native closeups and actual decoded151-frame contact checks support the overlapping digit contact; similarly colored GPU stills alone do not resolve every digit.",
-    "Warm regions remain visible over neutral inactive skin; stretching uses cyan. Recommended paired views expose the relevant sides and retain a whole-body companion.",
-    "Heel reaches, side kick, grounded-leg cross crunch, reverse lunge, high-knee flight, closed-fist punch and near-vertical leg reach are distinct at their inspected extrema.",
-    "Small residual shoulder/knee/neck contours are acceptable for this review batch and are documented; no globally self-collision-free or force-closure claim."
+    "The user-rejected hook is absent in actualGPU4.4second return. Corrected shin-relative foot shape and collar hold are supported by all151 native/decoded targeted internal-foot regressions and actual contacts.",
+    "3479has a distinct fully upright and support-transfer interval before its side kick. Its8second cycle replaces the simultaneous deep-squat rise and kick.",
+    "3531has six alternating punches in5seconds, with independent native/decoded elbow-extension peak counting and accepted guard/peak skin preserved.",
+    "Other physical bodies and3480action remain unchanged as recorded infeedback-integration and author receipts. Minor original joint contours remain; no clinical/globalselfcollision claim."
   ],
   "browser_receipt": {
     "path": "verification.json",
     "ok": true,
     "selected_actions": 11,
-    "max_joint_error_m": 1.8108426276503e-06,
+    "max_joint_error_m": 1.6793000310779598e-06,
     "max_surface_error_m": 8.064678217456489e-07,
     "max_native_dq_error_m": 2.0969293280804236e-05,
     "transparent": true,
@@ -91,5 +75,6 @@
   "limits": [
     "Selected stills do not establish continuous choreography by themselves. The live5-second stretch loop, native/decoded151-frame mechanics and runtime seeking have separate receipts.",
     "No physical-device performance measurement or production application integration is claimed."
-  ]
+  ],
+  "follow_up_feedback": "user-feedback.json"
 }

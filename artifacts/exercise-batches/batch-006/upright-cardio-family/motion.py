@@ -9,9 +9,25 @@ def ease(t):
 def hermite(t,x0,x1,v0,v1,duration):
  return (2*t**3-3*t*t+1)*x0+(t**3-2*t*t+t)*duration*v0+(-2*t**3+3*t*t)*x1+(t**3-t*t)*duration*v1
 
+def punch_envelope(frame):
+ """Six alternating punches:200ms attack,433ms return,200ms guard gap.
+
+ This is authored demonstration timing, independent of the source30–60s interval.
+ """
+ f=frame%150;step=int(f//25);u=f-step*25
+ def smooth5(x):
+  x=max(0.,min(1.,x));return x*x*x*(x*(x*6-15)+10)
+ if u<2:p=0.;phase='Guard'
+ elif u<8:p=smooth5((u-2)/6);phase='Attack'
+ elif u<21:p=1-smooth5((u-8)/13);phase='Retraction'
+ else:p=0.;phase='Guard'
+ side='Right'if step%2==0 else'Left'
+ return {'punch_index':step,'punch_side':side,'punch_phase':phase,'punch_extension':p,
+         'right_extension':p if side=='Right'else 0.,'left_extension':p if side=='Left'else 0.}
+
 def schedule(frame,exercise):
  t=(frame/30)%5
- if exercise=='3531':return {'time':t,'grounded':['Left','Right'],'phase':'Alternating guard, punch and retraction','flight':False}
+ if exercise=='3531':return {'time':t,'grounded':['Left','Right'],'phase':punch_envelope(frame)['punch_phase'],'flight':False,**punch_envelope(frame)}
  step=min(HOPS-1,int(t*HOPS/5));u=t*HOPS/5-step;support='Right'if step%2==0 else'Left';drive='Left'if support=='Right'else'Right'
  grounded=[support]if u<=TAKEOFF else [drive]if u>=LAND else []
  phase='Preload'if u<.18 else'Toe push-off'if u<=TAKEOFF else'Flight with opposite knee drive'if u<LAND else'Soft ball landing'if u<.84 else'Recover'
@@ -54,7 +70,7 @@ def pose(a,frame,exercise,ground_offsets=None):
    feet[side]=(ankle,fq,a.rx(toe_pitch)@yaw)
    effect=-sign*arm_swing;wrists[side]=root+Vector((sign*.35,-.12-.22*effect,.20+.15*effect));poles[side]=root+Vector((sign*.43,.14,-.05))
  else:
-  swing=math.sin(2*math.pi*t/5);right=max(0,swing)**2;left=max(0,-swing)**2;twist=8*(right-left);root=Vector((-.012*(right-left),.03,.925-.006*(right+left)));d=a.torso(root,[2,2,2,0,0],twist=twist)
+  envelope=punch_envelope(frame);right=envelope['right_extension'];left=envelope['left_extension'];twist=8*(right-left);root=Vector((-.012*(right-left),.03,.925-.006*(right+left)));d=a.torso(root,[2,2,2,0,0],twist=twist)
   for side,sign in [('Left',1),('Right',-1)]:
    fq=a.rz(-sign*10);ankle=Vector((sign*.175,-.15 if side=='Left'else .18,a.sole_height(side,fq)-.002+offsets.get(side,0)));feet[side]=(ankle,fq,fq)
    sh=d['Spine1']@a.rest['Spine1'].inverted()@a.heads[side+'Shoulder'];chest_q=d['Spine1'].to_quaternion()@a.rest['Spine1'].to_quaternion().inverted();armhead=sh+chest_q@(a.heads[side+'Arm']-a.heads[side+'Shoulder'])

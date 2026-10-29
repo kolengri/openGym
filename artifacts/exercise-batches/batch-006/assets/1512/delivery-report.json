@@ -2,10 +2,10 @@
   "exercise_id": "1512",
   "status": "shape_accepted_final_asset_gates_pass_primary_integration_pending",
   "production_approved": false,
-  "frozen_at_utc": "2026-10-29T11:08:45.655432+00:00",
+  "frozen_at_utc": "2026-10-29T12:07:35.510418+00:00",
   "ownership": "artifacts/exercise-batches/batch-006/assets/1512",
-  "source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
-  "glb_sha256": "05408ed5b88318c897e4a801eab1455c4a99e1dcad6b1697770ddeb2c44718c1",
+  "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+  "glb_sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
   "source_input_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
   "source_mechanics": "Anatomical LEFT all-fours quadriceps stretch. The left hand lifts, approaches with a forearm-aligned wrist, closes around the heel/ankle collar before the pull, and remains fixed in the foot frame through pull, hold and unloading. The fingers open before the arm retracts. The right palm, knee and resting foot support the body. Mirror the complete action and highlights for the other side. This five-second demonstration is separate from the source 20\u201330 second workout hold.",
   "source_cue_disagreement": {
@@ -22,13 +22,13 @@
     }
   },
   "repair": {
-    "cause": "Rejected motion independently interpolated wrist rotation and finger poses; acquisition was late and wrist deviation reached 60.65 degrees during hold.",
-    "change": "Forearm-aligned approach, reachable same-side collar C-grasp, opposed thumb/fingers, foot-local stable pull/hold/unload, visible opening before retraction. No new geometry fairing.",
-    "visual_acceptance": "Root accepted current early-grasp-detail, early-release-detail and early-hold-side on 2026-10-29; shape/path frozen."
+    "cause": "The rejected return independently counter-rotated the world foot while shortest-arc shin orientation crossed an antipodal singularity. This caused a135.35degree shin roll step and extreme mixed ankle/forefoot edge distortion.",
+    "change": "Continuous sagittal shin transport preserves the planted shin-relative foot shape and rigid Foot/ToeBase relationship. Recomputed collar attachment, one constrained digit re-fit and measured closing/opening arc retain a reachable coherent brace. No geometry fairing, binding change or limb stretch.",
+    "visual_acceptance": "Root accepted corrected foot shape and the new collar brace/arm line on2026-10-29. The final arc clears all151 native samples; pose/path frozen."
   },
   "invariants": {
     "pass": true,
-    "source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+    "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
     "accepted_source_sha256": "fbf635733118dc190fdb3cefabcde7fe4367bbccfa40aa3495a2ab2e7537d070",
     "geometry_rest_uv_sha256": "8727ad935b8ff72b5df350e581931938fa50bce6c4abaa33e910236dd578aae3",
     "basis_rest_uv_topology_identical_to_accepted_source": true,
@@ -296,7 +296,7 @@
     "scope": "Read-only source-bound invariants, no save; DQ adapter required and native Smooth/Multires disabled."
   },
   "actual_saved_weights": {
-    "source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+    "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
     "readback": "Actual saved/reopened Blender VertexGroupElement values, not solver arrays.",
     "vertices": 10582,
     "maximum_influences": 4,
@@ -354,8 +354,8 @@
           "changed_vertices_over1e_minus8_m": 1478,
           "maximum_rest_delta_m": 0.035145662534550204,
           "p95_rest_delta_among_changed_m": 0.029137387381012892,
-          "maximum_evaluated_target_delta_m": 0.03514565208882605,
-          "p95_evaluated_target_delta_among_changed_m": 0.029137400617391212,
+          "maximum_evaluated_target_delta_m": 0.035145672631770035,
+          "p95_evaluated_target_delta_among_changed_m": 0.029137398340361685,
           "maximum_outside_declared_mask_delta_m": 0.0,
           "maximum_protected_posterior_waist_delta_m": 0.0,
           "source_coordinate_bounds_of_changed_vertices": {
@@ -378,7 +378,7 @@
           "changed_vertices_over1e_minus8_m": 1478,
           "maximum_rest_delta_m": 0.03631688066466501,
           "p95_rest_delta_among_changed_m": 0.02956011414998736,
-          "maximum_evaluated_target_delta_m": 0.03631687575263923,
+          "maximum_evaluated_target_delta_m": 0.03631691991241466,
           "p95_evaluated_target_delta_among_changed_m": 0.02956014886890323,
           "maximum_outside_declared_mask_delta_m": 0.0,
           "maximum_protected_posterior_waist_delta_m": 0.0,
@@ -399,6 +399,49 @@
     ]
   },
   "verification": {
+    "internal_foot_native": {
+      "foot_regression_pass": true,
+      "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+      "rejected_source_sha256": "0da01fc5d97a5ac4b88408087cbe28762ddebe2d358ce84385a3910cc66cd63e",
+      "frames": 151,
+      "gates": {
+        "ankle_edges_stable_relative_to_actual_planted_shape": true,
+        "forefoot_edges_stable_relative_to_actual_planted_shape": true,
+        "no_ankle_relative_roll": true,
+        "no_shin_rotation_snap": true,
+        "ankle_and_knee_trajectory_retained": true
+      },
+      "baseline_maximum_ankle_edge_change_from_planted": 5.679445951245459,
+      "repaired_maximum_ankle_edge_change_from_planted": 6.434125996102047e-05,
+      "baseline_maximum_forefoot_edge_change_from_planted": 5.679445951245459,
+      "repaired_maximum_forefoot_edge_change_from_planted": 0.0004348720970573927,
+      "baseline_ankle_relative_quaternion_drift": 1.410003794175764,
+      "repaired_ankle_relative_quaternion_drift": 6.759939326175305e-07,
+      "baseline_maximum_late_rotation_degrees": {
+        "LeftLeg": 135.35031072623994,
+        "LeftFoot": 6.654509874370853,
+        "LeftToeBase": 6.654392480494494
+      },
+      "repaired_maximum_late_rotation_degrees": {
+        "LeftLeg": 8.448486380631381,
+        "LeftFoot": 8.44839331930394,
+        "LeftToeBase": 8.44839331930394
+      },
+      "maximum_ankle_knee_trajectory_change_m": 2.980232238769531e-07,
+      "threshold_basis": "0.2% relative edge-shape drift bounds deformation of the preserved planted foot, not medical joint ranges. 10 degrees/sample bounds the authored smooth 152.35 degree hinge transport at 30 fps; current analytical maximum is 8.45 degrees/sample.",
+      "scope": "Actual native DQ skin, source-bound mixed ankle and whole-forefoot edges across all151 samples. Tests internal shape and roll directly. Grasp acceptance and final export remain separate."
+    },
+    "internal_foot_decoded": {
+      "pass": true,
+      "source_sha256": "ebef98f864e3810749e5796f3733905470ef387a01673117acf7a9bf7afa45eb",
+      "glb_sha256": "cd52f7d6fe0ace5322a32a982c5ccd748be3c95c7bcf2850408695157c9e862a",
+      "adapter_sha256": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+      "frames": 151,
+      "maximum_ankle_edge_change_from_planted": 6.614519316938683e-06,
+      "maximum_forefoot_edge_change_from_planted": 8.680188160803404e-06,
+      "threshold": 0.002,
+      "scope": "Actual decoded canonical GLB and exact shared DQ adapter, original-ID mixed ankle and whole forefoot edges. Internal shape regression relative to actual planted skin; reaches the rejected hook missed by generic positive-area checks."
+    },
     "native_full151": {
       "pass": true,
       "minimum_floor_z": -3.022700548171997e-05,
@@ -407,30 +450,30 @@
     },
     "native_grasp": {
       "maximum_recorded_local_penetration_m": 0,
-      "held_minimum_part_clearance_m": 0.0005719063738069963,
-      "held_palm_minimum_clearance_m": 0.0028155676277492603,
-      "held_foot_local_hand_matrix_maximum_error": 4.76837158203125e-07,
-      "active_airborne_wrist_deviation_max_degrees": 17.84593021624036,
+      "held_minimum_part_clearance_m": 0.001000122330879094,
+      "held_palm_minimum_clearance_m": 0.0010045763196586677,
+      "held_foot_local_hand_matrix_maximum_error": 7.152557373046875e-07,
+      "active_airborne_wrist_deviation_max_degrees": 15.017120286567664,
       "reach_comparison": {
-        "same_fixed_foot_local_grasp_old_pose_target_wrist_distance_m": 0.548179830390321,
-        "repaired_pose_actual_wrist_distance_m": 0.523525357156917,
+        "rejected_baseline_actual_wrist_distance_m": 0.523525357156917,
+        "current_actual_wrist_distance_m": 0.520327330328182,
         "unchanged_upper_plus_forearm_length_m": 0.529140293598175,
-        "reach_improvement_m": 0.024654473233404084,
-        "old_target_overreach_m": 0.019039536792145983,
-        "new_reach_margin_m": 0.0056149364412581,
-        "authored_change": "Final thigh115versus110degrees, shin155versus150degrees; knee flexion stays130degrees, torso/support unchanged."
+        "actual_wrist_distance_reduction_m": 0.0031980268287349345,
+        "old_target_overreach_m": 0,
+        "new_reach_margin_m": 0.008812963269993035,
+        "authored_change": "Continuous shin-relative foot transport and one causally necessary collar/digit re-fit; ankle trajectory, thigh115degrees, knee130degrees and torso/support preserved. This comparison uses actual baseline/current wrists, not an incompatible fixed local grasp in another foot frame."
       }
     },
     "native_limb_integrity": {
       "maximum_bone_scale_deviation": 1.1920928955078125e-06,
-      "maximum_bone_length_error_m": 2.682209014892578e-07,
-      "maximum_connected_chain_gap_m": 3.40125328615705e-07
+      "maximum_bone_length_error_m": 2.384185791015625e-07,
+      "maximum_connected_chain_gap_m": 3.9368405382701475e-07
     },
     "decoded_full151": {
       "pass": true,
       "frames": 151,
       "minimum_triangle_area_m2": 5.895908085078573e-08,
-      "maximum_joint_error_m": 9.429294181731601e-07,
+      "maximum_joint_error_m": 1.0447243706314927e-06,
       "minimum_floor_z": -2.9705693655207588e-05
     },
     "decoded_arm_leg_triangles": {
@@ -447,9 +490,9 @@
     },
     "export": {
       "ok": true,
-      "bytes": 1172844,
+      "bytes": 1170452,
       "maximum_full_dq_vertex_error_m": 2.0969293280804236e-05,
-      "maximum_joint_error_m": 8.237817234681144e-07,
+      "maximum_joint_error_m": 9.138204044860782e-07,
       "maximum_surface_error_m": 1.4629666762408428e-06,
       "maximum_basis_normal_vector_error": 8.187660755892303e-05,
       "maximum_target_normal_vector_errors": [
@@ -493,64 +536,21 @@
       },
       {
         "frame": 40,
-        "pairs": 2,
-        "original_ids": [
-          [
-            5950,
-            5961,
-            5962,
-            6188,
-            6208,
-            6222
-          ],
-          [
-            5633,
-            5635,
-            5909,
-            9942,
-            9943,
-            9951
-          ]
-        ]
+        "pairs": 0,
+        "original_ids": []
       },
       {
         "frame": 75,
-        "pairs": 2,
-        "original_ids": [
-          [
-            5950,
-            5961,
-            5962,
-            6188,
-            6208,
-            6222
-          ],
-          [
-            5633,
-            5635,
-            5909,
-            9942,
-            9943,
-            9951
-          ]
-        ]
+        "pairs": 0,
+        "original_ids": []
       },
       {
         "frame": 115,
-        "pairs": 1,
-        "original_ids": [
-          [
-            5950,
-            5961,
-            5962,
-            6188,
-            6208,
-            6222
-          ]
-        ]
+        "pairs": 0,
+        "original_ids": []
       }
     ],
-    "explanation": "One close folded left ankle skin pair at grasp/hold/release; an additional thumb/collar pair within the checker 1 mm coplanar-nearness threshold at grasp/hold. Full actual decoded triangle tests confirm zero arm/leg crossings. No topology deletion is appropriate for these continuous skin/contact surfaces."
+    "explanation": "No game-profile warnings remain at start, approach, grasp, hold or release; exact warning-location receipt is empty at all five poses."
   },
   "runtime_adapter": {
     "path": "artifacts/exercise-batches/dual-quaternion.js",

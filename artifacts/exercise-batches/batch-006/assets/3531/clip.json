@@ -55,16 +55,116 @@
   "phases": [
     {
       "start": 0,
+      "end": 0.06666666666666667,
+      "label": "Guard"
+    },
+    {
+      "start": 0.06666666666666667,
+      "end": 0.26666666666666666,
+      "label": "Right straight punch"
+    },
+    {
+      "start": 0.26666666666666666,
+      "end": 0.7,
+      "label": "Right retraction"
+    },
+    {
+      "start": 0.7,
+      "end": 0.9,
+      "label": "Guard"
+    },
+    {
+      "start": 0.9,
+      "end": 1.1,
+      "label": "Left straight punch"
+    },
+    {
+      "start": 1.1,
+      "end": 1.5333333333333334,
+      "label": "Left retraction"
+    },
+    {
+      "start": 1.5333333333333334,
+      "end": 1.7333333333333334,
+      "label": "Guard"
+    },
+    {
+      "start": 1.7333333333333334,
+      "end": 1.9333333333333333,
+      "label": "Right straight punch"
+    },
+    {
+      "start": 1.9333333333333333,
+      "end": 2.3666666666666667,
+      "label": "Right retraction"
+    },
+    {
+      "start": 2.3666666666666667,
+      "end": 2.566666666666667,
+      "label": "Guard"
+    },
+    {
+      "start": 2.566666666666667,
+      "end": 2.7666666666666666,
+      "label": "Left straight punch"
+    },
+    {
+      "start": 2.7666666666666666,
+      "end": 3.2,
+      "label": "Left retraction"
+    },
+    {
+      "start": 3.2,
+      "end": 3.4,
+      "label": "Guard"
+    },
+    {
+      "start": 3.4,
+      "end": 3.6,
+      "label": "Right straight punch"
+    },
+    {
+      "start": 3.6,
+      "end": 4.033333333333333,
+      "label": "Right retraction"
+    },
+    {
+      "start": 4.033333333333333,
+      "end": 4.233333333333333,
+      "label": "Guard"
+    },
+    {
+      "start": 4.233333333333333,
+      "end": 4.433333333333334,
+      "label": "Left straight punch"
+    },
+    {
+      "start": 4.433333333333334,
+      "end": 4.866666666666666,
+      "label": "Left retraction"
+    },
+    {
+      "start": 4.866666666666666,
       "end": 5,
-      "label": "Right punch and retraction; left punch and retraction"
+      "label": "Guard"
     }
   ],
-  "interpretation": "Authored slowed five-second demonstration, not a claimed source tempo or clinical/force/stability certification. Fixed staggered stance, closed guard fists and alternating forward punches;17-degree soft elbow at extension,8-degree upper torso rotation; no strike target or impact props. Source30\u201360second workout interval retained separately.",
+  "interpretation": "Six alternating straight punches in five seconds:0.20s attack,0.433s retraction and0.20s guard gap between attacks, with a smooth loop. Timing is authored, not claimed source cadence. Accepted staggered stance, closed fist/wrist alignment,17-degree soft elbow extent and8-degree upper-torso rotation are preserved by retiming the accepted keyed path. Source30\u201360second workout interval is retained separately. Source cardiovascular target is unchanged; visible display proxies are artistic, not measured activation.",
   "source_record_sha256": "2d75d23e2c9fd1fa4dbfb961c7b09f8f440da8aebcc71f984ee7a29e70f40641",
-  "review_status": "native_source_and_decoded_gates_passed; primary_actual_GPU_review_pending",
-  "source_sha256": "5588b98e6ce66b85d05f25cde916721bb8b6e925574330d5ab2e28627b1df4c5",
-  "glb_sha256": "f280164c36d439d97466382e4f79be65aecb62842111a4b2154ba9e03335064e",
+  "review_status": "faster_six_punch_native_and_decoded_gates_passed; root_actual_GPU_rhythm_review_pending",
+  "source_sha256": "dd74caa91937a734c5d15773be533f334498f495d426506a2a24502714be8316",
+  "glb_sha256": "91ccfbd3afa7969641b7e27e1cdc390fd3e622c13da03446175cfaff5a2133b0",
   "authoring_family": "../../upright-cardio-family",
   "source_invariant_reference": "source-verification.json",
-  "local_binding_reference": "local-binding-report.json"
+  "local_binding_reference": "local-binding-report.json",
+  "authored_punches_per_demo": 6,
+  "punch_peak_frames": [
+    8,
+    33,
+    58,
+    83,
+    108,
+    133
+  ],
+  "punch_timing_reference": "punch-timing-report.json"
 }
