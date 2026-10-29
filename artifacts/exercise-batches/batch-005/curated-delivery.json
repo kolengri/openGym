@@ -1179,8 +1179,8 @@
     },
     {
       "path": "artifacts/exercise-batches/batch-005/build-manifest.json",
-      "sha256": "c9eb00305d2bfc658094ce8b39f2e7eab415f09d667faba3f2403448134f5a86",
-      "bytes": 5758
+      "sha256": "9692bb8d321697146591912d01d254638611f70190149574f73e841c1a49a99c",
+      "bytes": 5860
     },
     {
       "path": "artifacts/exercise-batches/batch-005/build.mjs",
@@ -1228,14 +1228,34 @@
       "bytes": 59857
     },
     {
+      "path": "artifacts/exercise-batches/batch-005/delivery-status.json",
+      "sha256": "07ced003d1bc5a4835a5bf2d798b0aa561416a229b4308d78b6b2711c2057e9c",
+      "bytes": 2402
+    },
+    {
       "path": "artifacts/exercise-batches/batch-005/findings.md",
       "sha256": "46d1e810fcd1025b45b5df10fa39ffc99e336118454cd6dce8057e603d9a00bc",
       "bytes": 6685
     },
     {
       "path": "artifacts/exercise-batches/batch-005/finishing-check-report.json",
-      "sha256": "3c02bf86bad79409009cd0bc343c62f89e15c339f84049532a4ca0924a1b1786",
-      "bytes": 20896
+      "sha256": "b0ace5acb969fb614c2054b2f75a9901863c21d2c37f94ca5a82fad24f990993",
+      "bytes": 26593
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-005/inline-settled.png",
+      "sha256": "702f623ec00946b9480725af9b53610c399b74fa66cb8563224d2cf922313489",
+      "bytes": 106123
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-005/inline-verification.json",
+      "sha256": "6cdb4c27d8934281409481116afb985218d8b24db16c95d5b34425124de6a049",
+      "bytes": 2894
+    },
+    {
+      "path": "artifacts/exercise-batches/batch-005/inline.html",
+      "sha256": "2784ed8fcadf1b1d991b9aee97e60173a01ae60f4dc7ebedc755265a68a826eb",
+      "bytes": 250487
     },
     {
       "path": "artifacts/exercise-batches/batch-005/mobile.png",
@@ -1483,6 +1503,11 @@
       "bytes": 1273
     },
     {
+      "path": "artifacts/exercise-batches/batch-005/source-revision.json",
+      "sha256": "b5645f2bb20a9dfcf15e80f71607e933d02910c4c4caf5f3194a6973cdcfe366",
+      "bytes": 201
+    },
+    {
       "path": "artifacts/exercise-batches/batch-005/template.html",
       "sha256": "c77531b69ceedc3d59bbeb95845fa193dbe689a9a8d6a8d004b6673d64a3c236",
       "bytes": 4869
@@ -1568,6 +1593,9 @@
       "bytes": 4090
     }
   ],
-  "total_bytes": 157576823,
-  "manifest_self_hash_policy": "This manifest is staged separately and does not hash itself."
+  "total_bytes": 157944729,
+  "manifest_self_hash_policy": "This manifest is staged separately and does not hash itself.",
+  "model_revision": "be48d3105bf963f5148e2cb70474243d50617bbb",
+  "public_inline_verified": true,
+  "source_pin_note": "Final inline metadata and publication receipts were added after the immutable model commit; the tested offline payload and runtime inputs remain unchanged."
 }

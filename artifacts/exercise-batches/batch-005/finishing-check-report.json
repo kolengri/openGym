@@ -2,13 +2,13 @@
   "packet": "batch-005 finishing checks",
   "observed_at_utc": "2026-10-29T10:07:07+00:00",
   "source_identity": {
-    "head": "cd870e15dd6b5e807e8a80d652f61b32fa58f70b",
+    "head": "be48d3105bf963f5148e2cb70474243d50617bbb",
     "branch": "t3/upgrade-exercise-animations"
   },
   "build_manifest": {
     "path": "artifacts/exercise-batches/batch-005/build-manifest.json",
-    "sha256": "c9eb00305d2bfc658094ce8b39f2e7eab415f09d667faba3f2403448134f5a86",
-    "model_revision": null,
+    "sha256": "9692bb8d321697146591912d01d254638611f70190149574f73e841c1a49a99c",
+    "model_revision": "be48d3105bf963f5148e2cb70474243d50617bbb",
     "all_20_input_hashes_match": true,
     "input_file_count": 20,
     "input_hash_checks": [
@@ -179,7 +179,11 @@
           "Exercise_4714"
         ]
       }
-    }
+    },
+    "offline_html_bytes": 7033735,
+    "offline_html_sha256": "5139c49abd47deaf98ed86a057f9a03870909ab68022e93f071abba468a6d986",
+    "inline_html_bytes": 250487,
+    "inline_html_sha256": "2784ed8fcadf1b1d991b9aee97e60173a01ae60f4dc7ebedc755265a68a826eb"
   },
   "verification": {
     "command": "node artifacts/exercise-batches/batch-005/verify.mjs",
@@ -510,7 +514,109 @@
   "reused_evidence_and_limits": [
     "Existing native 151-sample, DQ/NORMAL, source-weight, and game receipts were not rerun.",
     "Peak proof screenshots from capture-peaks.mjs were reused; no duplicate peak captures were generated.",
-    "No production integration, physical mobile, clinical anatomy, or global collision-free claim."
+    "Inline URL-mode verification passed from immutable source revision be48d3105bf963f5148e2cb70474243d50617bbb; no production integration, physical mobile, clinical anatomy, or global collision-free claim."
   ],
-  "known_evidence_gap": "The verify command result JSON is a complete success receipt (ok=true, errors=[]), but its exact child-process exit status and raw stdout were not persisted because the wrapper attempted to write the log before creating draft-review/. The command was not rerun; verify-final.log preserves the recovered receipt and this limitation."
+  "known_evidence_gap": "The verify command result JSON is a complete success receipt (ok=true, errors=[]), but its exact child-process exit status and raw stdout were not persisted because the wrapper attempted to write the log before creating draft-review/. The command was not rerun; verify-final.log preserves the recovered receipt and this limitation.",
+  "source_pin_update": {
+    "source_revision_path": "artifacts/exercise-batches/batch-005/source-revision.json",
+    "source_revision_sha256": "b5645f2bb20a9dfcf15e80f71607e933d02910c4c4caf5f3194a6973cdcfe366",
+    "pinned_revision": "be48d3105bf963f5148e2cb70474243d50617bbb",
+    "role": "Immutable source commit containing all four physical GLBs and five action identities; inline review fetches these exact bytes.",
+    "offline_payload_unchanged": {
+      "bytes": 7033735,
+      "sha256": "5139c49abd47deaf98ed86a057f9a03870909ab68022e93f071abba468a6d986",
+      "pre_pin_build_manifest_sha256": "5139c49abd47deaf98ed86a057f9a03870909ab68022e93f071abba468a6d986",
+      "matches_pre_pin_payload": true
+    },
+    "inline_payload": {
+      "bytes": 250487,
+      "sha256": "2784ed8fcadf1b1d991b9aee97e60173a01ae60f4dc7ebedc755265a68a826eb"
+    },
+    "runtime_inputs_unchanged": true,
+    "basis": "The existing report records all 20 build-manifest input hashes matching before the source pin was added; the primary reports those 20 runtime input hashes remain unchanged."
+  },
+  "inline_verification": {
+    "command": "node artifacts/exercise-batches/batch-005/verify-inline.mjs",
+    "exit_status": 0,
+    "log_path": "artifacts/exercise-batches/batch-005/draft-review/verify-inline-final.log",
+    "log_sha256": "0dea635a3f3eabf15837e3560d745e9793fc0ef2f09356fe0024cfbf8a7ccf26",
+    "receipt_path": "artifacts/exercise-batches/batch-005/inline-verification.json",
+    "receipt_sha256": "6cdb4c27d8934281409481116afb985218d8b24db16c95d5b34425124de6a049",
+    "receipt_ok": true,
+    "scope": "Actual URL-mode Three.js preview; pinned public model bytes verified and all five live actions selected.",
+    "model_revision": "be48d3105bf963f5148e2cb70474243d50617bbb",
+    "models": {
+      "1512": {
+        "path": "artifacts/exercise-batches/batch-005/assets/1512/motion.glb",
+        "sha256": "db52d2d4532f3de8a856b487b9d9063ca2dcb4043485d97911b356e6dc814759",
+        "bytes": 1170728,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_1512"
+        ]
+      },
+      "2395": {
+        "path": "artifacts/exercise-batches/batch-005/assets/2395/motion.glb",
+        "sha256": "c8de01ca6d5d651ac124830555dc8c6d41b988f1dcb9a0a350143e9369663847",
+        "bytes": 1153252,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_2395"
+        ]
+      },
+      "5266": {
+        "path": "artifacts/exercise-batches/batch-005/assets/5266/motion.glb",
+        "sha256": "09eb09b459cf510129df914e2b75cab6302b703e4c392ff25278c45ef539937d",
+        "bytes": 1129532,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_5266"
+        ]
+      },
+      "squat": {
+        "path": "artifacts/exercise-batches/batch-005/assets/3948/motion.glb",
+        "sha256": "2a109b9f6ea9a99ac5de7f83f7e18610ad2b036e54a16942221bcf3c4c2acb6f",
+        "bytes": 1225712,
+        "bones": 51,
+        "sourceVertices": 10582,
+        "animations": [
+          "Exercise_3948",
+          "Exercise_4714"
+        ]
+      }
+    },
+    "actions": [
+      "Exercise_2395",
+      "Exercise_3948",
+      "Exercise_4714",
+      "Exercise_5266",
+      "Exercise_1512"
+    ],
+    "input_bytes": 250487,
+    "liveCanvasReplacesPoster": true,
+    "livePoseChanges": true,
+    "mediaRequests": [],
+    "console_errors": [],
+    "public_model_urls": [
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/2395/motion.glb",
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/3948/motion.glb",
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/5266/motion.glb",
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/1512/motion.glb"
+    ],
+    "externalResources": [
+      "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+      "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/loaders/GLTFLoader.js",
+      "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/controls/OrbitControls.js",
+      "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/utils/BufferGeometryUtils.js",
+      "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/utils/SkeletonUtils.js",
+      "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js",
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/2395/motion.glb",
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/3948/motion.glb",
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/5266/motion.glb",
+      "https://raw.githubusercontent.com/kolengri/openGym/be48d3105bf963f5148e2cb70474243d50617bbb/artifacts/exercise-batches/batch-005/assets/1512/motion.glb"
+    ]
+  }
 }
