@@ -1,18 +1,24 @@
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {parseArgs} from 'node:util';
-import {resolve} from 'node:path';
+import {basename, resolve, sep} from 'node:path';
+import {pathToFileURL} from 'node:url';
 import * as THREE from '../first-exercise-3d/runtime/node_modules/three/build/three.module.js';
 import {GLTFExporter} from '../first-exercise-3d/runtime/node_modules/three/examples/jsm/exporters/GLTFExporter.js';
 import {GLTFLoader} from '../first-exercise-3d/runtime/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 const here = new URL('./', import.meta.url);
-const read = async name => JSON.parse(await readFile(new URL(name, here)));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const {values: options} = parseArgs({options: {
  'weight-override': {type: 'string'}, correctives: {type: 'string'}, 'output-dir': {type: 'string'},
+ 'input-dir': {type: 'string'}, 'exercise-id': {type: 'string', default: '10565'},
+ 'model-name': {type: 'string', default: 'ninety.glb'}, 'root-name': {type: 'string', default: 'Seated90'},
 }});
-const outputDirectory = options['output-dir'] ? resolve(options['output-dir']) : new URL('./', here);
+const inputDirectory = options['input-dir'] ? pathToFileURL(resolve(options['input-dir']) + sep) : here;
+const read = async name => JSON.parse(await readFile(new URL(name, inputDirectory)));
+const exerciseId = options['exercise-id'], modelName = options['model-name'];
+if (!/^\d{4,5}$/.test(exerciseId) || basename(modelName) !== modelName || !modelName.endsWith('.glb')) throw Error('Invalid exercise identity or model filename');
+const outputDirectory = options['output-dir'] ? resolve(options['output-dir']) : inputDirectory;
 await mkdir(outputDirectory, {recursive: true});
 const writeOutput = (name, bytes) => writeFile(typeof outputDirectory === 'string'
  ? resolve(outputDirectory, name) : new URL(name, outputDirectory), bytes);
@@ -27,6 +33,7 @@ globalThis.FileReader ??= class {
  }
 };
 const meshInput = await read('mesh-input.json'), motion = await read('motion-input.json');
+if (motion.clip_name !== 'Exercise_' + exerciseId) throw Error('Source action does not match the exercise identity');
 const override = await optionalInput(options['weight-override']);
 const correctiveInput = await optionalInput(options.correctives);
 const runtimeWeights = motion.weights.map(values => ({...values}));
@@ -51,7 +58,7 @@ geometry.setIndex(meshInput.triangles.flat());
 const correctives = correctiveInput?.data;
 const morphDeltas = [];
 if (correctives) {
- if (correctives.sourceMotionSha256 !== hash(await readFile(new URL('motion-input.json', here))))
+ if (correctives.sourceMotionSha256 !== hash(await readFile(new URL('motion-input.json', inputDirectory))))
   throw Error('Correctives use a different source motion');
  if (correctives.targets.length !== 2 || correctives.times.length !== motion.times.length || correctives.weights.length !== motion.times.length)
   throw Error('Expected two corrective targets over the complete clip');
@@ -96,7 +103,7 @@ runtimeWeights.forEach((values, vertex) => {
 });
 geometry.setAttribute('skinIndex', new THREE.Uint16BufferAttribute(indices, 4));
 geometry.setAttribute('skinWeight', new THREE.Float32BufferAttribute(weights, 4));
-const root = new THREE.Group(); root.name = 'Seated90'; root.rotation.x = -Math.PI / 2;
+const root = new THREE.Group(); root.name = options['root-name']; root.rotation.x = -Math.PI / 2;
 const jointRoot = new THREE.Bone(); jointRoot.name = 'ExerciseRoot'; root.add(jointRoot);
 const bones = [jointRoot];
 motion.groups.forEach((members, group) => {
@@ -137,12 +144,12 @@ if (correctives) tracks.push(new THREE.NumberKeyframeTrack(mesh.uuid + '.morphTa
 const clip = new THREE.AnimationClip(motion.clip_name, 5, tracks);
 clip.optimize();
 root.userData = {assetLicense: 'CC0-1.0', source: 'MakeHuman community MPFB2v2.0.18',
- sourceExerciseId: '10565', runtimeSkinning: 'standardLinearSeatedBind',
+ sourceExerciseId: exerciseId, runtimeSkinning: 'standardLinearSeatedBind',
  timing: {durationSeconds: 5, enterSeconds: 2, holdSeconds: 1, returnSeconds: 2},
  anatomicalRig: 'Preserved in native authoring files; this skin contains clip-specific deformation groups.'};
 const output = await new GLTFExporter().parseAsync(root, {binary: true, animations: [clip], trs: true});
 const bytes = Buffer.from(output);
-await writeOutput('ninety.glb', bytes);
+await writeOutput(modelName, bytes);
 const loaded = await new GLTFLoader().parseAsync(output, '');
 const meshes = []; loaded.scene.traverse(object => {if (object.isSkinnedMesh) meshes.push(object);});
 if (meshes.length !== 1 || loaded.animations.length !== 1) throw Error('Unexpected GLB structure');

@@ -1,0 +1,94 @@
+{
+  "id": "4512",
+  "name": "adductor stretch",
+  "action": "Exercise_4512",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "duration_frames": 150,
+  "fps": 30,
+  "skinning": "linear",
+  "bones": 46,
+  "source_vertices": 13405,
+  "primary": [
+    "adductors"
+  ],
+  "secondary": [
+    "inner thighs",
+    "groin"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {},
+  "heat_regions_file": "heat-regions.json",
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "source_instructions": [
+    "Sit on the floor with the soles of your feet together.",
+    "Hold your ankles and sit tall.",
+    "Let your knees fall out to the sides.",
+    "Gently press your elbows on your thighs.",
+    "Hold for 20-30 seconds.",
+    "Release slowly."
+  ],
+  "interpretation": "Seated butterfly with soles together, both hands holding the ankles and long spine. Knees gently lower and open while elbows follow the thighs, hold for one second and return. The trunk stays fixed; the five-second preview abbreviates the source20\u201330second workout hold.",
+  "explicit_staging": {
+    "knees": "Authored six-degree knee-circle movement around fixed hip/ankle endpoints; knee flexion stays125.084degrees and the knees remain above the floor.",
+    "trunk": "Long straight trunk held at its authored15degree initial inclination; no forward-hinge motion.",
+    "hands": "Ankle material tracking preserves relaxed grip; maximum native wrist shift9.404mm and rotation4.885degrees.",
+    "elbows": "Full lower-arm skin constraint follows the thigh; a narrow elbow-only selector is insufficient.",
+    "runtime": "Seated repaired bind and native sampled joint TRS; standard linear skinning with up tofour normalized grouped influences. Native Bbone/PreserveVolume appearance is a separate reference."
+  },
+  "source_roles": {
+    "primary": [
+      "adductors"
+    ],
+    "secondary": [
+      "inner thighs",
+      "groin"
+    ]
+  },
+  "muscle_mapping": "Visible adductor longus and medial adductor magnus surface regions. Inner-thigh/groin labels overlap this compartment; deep origins are omitted.",
+  "muscle_notice": "Illustrative soft stretch zones, not measured temperature, activation or force.",
+  "source_sha256": "b5e8da32ede6e808c29744b77f942d4fa014429e3e6a8742315bb6363b3b2753",
+  "source_record_sha256": "0044f83093459b06950ebc7449fcbcd8e709f394e7a632ea068eece1b748f3e5",
+  "provenance": {
+    "text": "catalogue/exercises/4512.json",
+    "body": "CC0 MakeHuman/MPFB body and native rig; local hip topology repair, fairing and disjoint hand-pad fit are declared by their reports.",
+    "native_action": "artifacts/butterfly-mpfb-review/native-motion-knees/native-joint-reference.blend",
+    "restricted_media_used": false,
+    "paid_generation_used": false
+  },
+  "review_status": "integrated_runtime_pending_visual_review",
+  "production_ready": false,
+  "readiness": "authored_for_review_not_production_approved",
+  "runtime_glb_sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+  "source_authoring_role": "Native kinematic reference only; source.blend is not an exact standard-linear surface reference. Rebuild final runtime from the declared mesh/motion/weight/corrective inputs.",
+  "runtime_inputs": {
+    "mesh": "artifacts/butterfly-mpfb-review/runtime/mesh-input.json",
+    "motion": "artifacts/butterfly-mpfb-review/runtime/motion-input.json",
+    "weights": "artifacts/butterfly-mpfb-review/runtime/hip-repair/runtime-weight-override.json",
+    "correctives": "artifacts/butterfly-mpfb-review/runtime/final/combined-correctives.json"
+  },
+  "known_visual_limits": [
+    "Small upper gluteal notch and angular lateral hip crease remain for user review."
+  ]
+}

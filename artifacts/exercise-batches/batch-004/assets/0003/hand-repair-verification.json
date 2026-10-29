@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "previous_source_sha256": "953abb1f3c6703fcfabca67b452759146789e77018ac3055b955fe6ec61d897f",
+  "source_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+  "baseline_receipt": "hand-repair-baseline.json",
+  "sample_frames": [
+    0,
+    12.5,
+    19,
+    30,
+    37.5,
+    56,
+    75,
+    94,
+    112.5,
+    120,
+    131,
+    137.5,
+    150
+  ],
+  "protected_joints_per_frame": 17,
+  "maximum_protected_joint_change_m": 0.0,
+  "maximum_frozen_pelvic_surface_change_m": 0.0,
+  "pelvic_original_indices_unchanged": true,
+  "wrist_shift_range_m": [
+    0.00299874545829108,
+    0.0030002629578871616
+  ],
+  "maximum_wrist_shift_deviation_from_authored3mm_m": 1.2545417089199207e-06,
+  "minimum_opposing_hand_unsigned_gap_m": 0.0030771493911743164,
+  "minimum_opposing_hand_nearest_normal_signed_gap_m": 0.0021371088223531842,
+  "scope": "Only the authorized head-relative lateral wrist targets moved 3 mm per side. The arm IK responds locally; protected torso, shoulder origins, leg joints and frozen original-ID pelvic supports remain unchanged within 1 micrometre. No new key, helper, weight, Basis, rest, UV or support-mask change."
+}

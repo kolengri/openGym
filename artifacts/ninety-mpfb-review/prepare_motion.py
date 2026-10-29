@@ -2,6 +2,7 @@
 import argparse
 import json
 from pathlib import Path
+import re
 
 import numpy as np
 
@@ -24,7 +25,14 @@ def evaluate(positions, trajectories, weights):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--motion", type=Path, required=True)
+    parser.add_argument("--input-dir", type=Path, default=HERE)
+    parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--exercise-id", default="10565")
     args = parser.parse_args()
+    if not re.fullmatch(r"[0-9]{4,5}", args.exercise_id):
+        parser.error("Exercise identity must contain four or five digits")
+    output = args.output_dir or args.input_dir
+    output.mkdir(parents=True, exist_ok=True)
     source = np.load(args.motion)
     times = source["times"].astype(np.float64)
     names = source["bone_names"].tolist()
@@ -32,7 +40,7 @@ def main():
     assert matrices.shape == (151, len(names), 4, 4)
     assert len(times) == 151 and times[0] == 0 and abs(times[-1] - 5) < 1e-6
     assert (np.diff(times) > 0).all() and np.isfinite(matrices).all()
-    mesh = json.loads((HERE / "mesh-input.json").read_text())
+    mesh = json.loads((args.input_dir / "mesh-input.json").read_text())
     positions = np.array(mesh["positions"], dtype=np.float64)
     used = sorted(set().union(*(w for w in mesh["weights"])))
     indices = np.array([names.index(name) for name in used])
@@ -68,11 +76,11 @@ def main():
     final_samples = evaluate(positions, trajectories, pruned)
     coalescing_error = np.linalg.norm(grouped_samples - expected, axis=2)
     pruning_error = np.linalg.norm(final_samples - grouped_samples, axis=2)
-    (HERE / "expected-linear-samples.bin").write_bytes(final_samples.astype("<f4").tobytes())
+    (output / "expected-linear-samples.bin").write_bytes(final_samples.astype("<f4").tobytes())
     runtime = {"times": times.tolist(), "trajectories": trajectories.tolist(),
                "bind_trajectories": matrices[:, indices[representatives]].tolist(),
-               "groups": memberships, "weights": pruned, "clip_name": "Exercise_10565"}
-    (HERE / "motion-input.json").write_text(json.dumps(runtime, separators=(",", ":")) + "\n")
+               "groups": memberships, "weights": pruned, "clip_name": "Exercise_" + args.exercise_id}
+    (output / "motion-input.json").write_text(json.dumps(runtime, separators=(",", ":")) + "\n")
     report = {
         "status": "prepared_pending_actual_glb_skinning_and_contact_review",
         "native_used_bones": len(used), "runtime_deformation_groups": len(memberships),
@@ -90,7 +98,7 @@ def main():
         "native_skin_boundary": "SeatedP0 is baked from repaired native skin. Subsequent standardlinear joint skinning does not reproduce nativeBbone curves or maskedPreserveVolume exactly.",
         "no_vertex_cache_in_delivery": True, "promotion_map": {},
     }
-    (HERE / "motion-preparation.json").write_text(json.dumps(report, indent=2) + "\n")
+    (output / "motion-preparation.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps({key: value for key, value in report.items() if key not in ["groups", "expected_samples"]}))
 
 

@@ -1,0 +1,480 @@
+{
+  "id": "0003",
+  "status": "source_and_cpu_qa_complete_primary_gpu_review_pending",
+  "source_shape_approval": "Primary approved the actual local-corrective DQ cage. The only later shape change is the authorized 3 mm lateral hand separation per side, verified against the frozen prior receipts. Final GPU/viewer gates remain primary-owned.",
+  "skinning": "dualQuaternion",
+  "binding_rest_uv_sha256": "227ede3fc31d1a2b47ff40f20a4a7288fe7bb36179add23bae953993826c8b7b",
+  "files": {
+    "source.blend": {
+      "bytes": 13924336,
+      "sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe"
+    },
+    "motion.glb": {
+      "bytes": 1140376,
+      "sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4"
+    },
+    "clip.json": {
+      "bytes": 4567,
+      "sha256": "ff08eef89112166c1250a4e81596b41a6c2d081285a92ce36287c37511f655c0"
+    },
+    "cameras.json": {
+      "bytes": 329,
+      "sha256": "65c97ae0a938d20ff894bc718581a40e792a98559e33e96046c7038b115ed01b"
+    },
+    "build_motion.py": {
+      "bytes": 8855,
+      "sha256": "ba5121140e9a92a4a9dea861cd2562aefc20477f1c219b0a4aaeb4ab4faff557"
+    },
+    "air_bike_pose.py": {
+      "bytes": 7658,
+      "sha256": "7a6d370482c26d701ab0b226fe476bafa3c73d3ba749f4db261fdce7c23a7de0"
+    },
+    "joint_correctives.py": {
+      "bytes": 5860,
+      "sha256": "00d8ab36f8450f2f089ed06c6707496460ed970e83afdff0d054baf37ac80273"
+    },
+    "local_joint_target.py": {
+      "bytes": 3365,
+      "sha256": "1b28e4b9f4a4ce52416aed0677f49b017dbc85cba434735af273b5e71bae2a34"
+    },
+    "write_metadata.py": {
+      "bytes": 7276,
+      "sha256": "a9ca50055c2dbeff4f48fb2061eb80a6093583aefa798aa370156bbcef38706a"
+    },
+    "verify_asset.py": {
+      "bytes": 16008,
+      "sha256": "6056667d97bec71f97c601aff3a9557295def1e11acc37ee5697194489b22b93"
+    },
+    "verify_corrective_source.py": {
+      "bytes": 3247,
+      "sha256": "4c31f2539513954787482965e22da75a96df6e5bfffb85e7848298aacd98569e"
+    },
+    "verify_export.mjs": {
+      "bytes": 8024,
+      "sha256": "13cb344b3a78988b99a2d805e47dd9a2b423507ed2eef08d37dbc3518b3fa726"
+    },
+    "render_export.py": {
+      "bytes": 1907,
+      "sha256": "c3553fd4ddec6bb74cb681c8d556b37de821d4f3e756e5e58185ce4e3f5dac00"
+    },
+    "verify_hand_repair.py": {
+      "bytes": 3348,
+      "sha256": "506bbfd49ce3d3f2a6b2f0071ff8e3ad08a9622f73e498137baec0a4fa2ec19b"
+    },
+    "pose-samples.json": {
+      "bytes": 77239,
+      "sha256": "352114406989d1320be2a003a3cbadaca525be3e70d5784b50250138c7464501"
+    },
+    "source-morph-samples.json": {
+      "bytes": 2253,
+      "sha256": "4b22004c0973f774dfcedc7146a43edf91557c8a0a856323dde6f0ff2730f0a8"
+    },
+    "runtime-surface-reference.json": {
+      "bytes": 3229145,
+      "sha256": "ce33ec0d5ca5d543ff8354c7e407d3690de8b332d096e33ebf7a3c3d2ea324d1"
+    },
+    "dq-reference.json.gz": {
+      "bytes": 1404404,
+      "sha256": "665eed4ea36a194be8424a3715ca22a144de0c32d71b46fb27a49bdea89b94a9"
+    },
+    "joint-normal-reference.json.gz": {
+      "bytes": 1161595,
+      "sha256": "1f00c49b405d5cf03427b685e2843224e89377c786bbb2cca18a2748737314dc"
+    },
+    "landmarks.json": {
+      "bytes": 53881,
+      "sha256": "c2e09cf00096fd96efd8930379ce80c322b26cab322527cda7b9482e7f28a74c"
+    },
+    "cross-pair-witnesses.json": {
+      "bytes": 1421,
+      "sha256": "0879a0871320a4136ff6c951d380189ee155cf53145a31a5eff66849231d6961"
+    },
+    "authoring-context.json": {
+      "bytes": 61069,
+      "sha256": "7835ba3771a097a947e30ebcdc7452291b24697abbe9a111f01012338fcd7d68"
+    },
+    "build-report.json": {
+      "bytes": 144329,
+      "sha256": "f1796b4dc83248725887988076d47b00ad3b698f85964af1c3bb40423852b0ca"
+    },
+    "joint-corrective-report.json": {
+      "bytes": 125650,
+      "sha256": "15806dea44889cb380f1b91b2439f68a40d6af05a10db4639ec301f67d0ebbff"
+    },
+    "source-verification.json": {
+      "bytes": 696,
+      "sha256": "dacc09a1bef7ecf4589adb65d8c84535b341eb11122179d3274dbdc4fef9177e"
+    },
+    "surface-contact-report.json": {
+      "bytes": 206888,
+      "sha256": "bf903c8451b27b1d9e33620c3e68a523e26c4e7b440de0d768c79a13bfc5a356"
+    },
+    "asset-qa.json": {
+      "bytes": 19954,
+      "sha256": "c98821fdae1e04cc8a3adc79edcc05598a84b442957fe4648beaeca6fc11f0b9"
+    },
+    "export-verification.json": {
+      "bytes": 19170,
+      "sha256": "dadbf4f9fe7424850f0b995720a7592237cfe2988f325f4ea86d9f469c92825d"
+    },
+    "hand-separation-report.json": {
+      "bytes": 891,
+      "sha256": "d7d4c38920d88e23d6e941455d505f769ef7a481e17bdbb3dd8c37fa755878b3"
+    },
+    "hand-repair-verification.json": {
+      "bytes": 1182,
+      "sha256": "28dc6b766588fd1f519bbaca0374e2148f23c7b3a1f9e880b1f0a29642d0e985"
+    },
+    "early-start-side.png": {
+      "bytes": 188696,
+      "sha256": "e75781bb656786b48d1eee5b6bea9b4b2bd74f4fb2dd9a64cfab31330ab8a785"
+    },
+    "early-start-rear.png": {
+      "bytes": 204635,
+      "sha256": "3b7d68f1087ae7c99e5356f8c7afa624803c0a87c91d16e632796a88b4e23468"
+    },
+    "early-right-elbow-left-knee-side.png": {
+      "bytes": 207686,
+      "sha256": "11bc03ed60fe907f32fb065cecffbe18ea7405d532f33d0ffe44e08509f205cd"
+    },
+    "early-right-elbow-left-knee-oblique.png": {
+      "bytes": 232741,
+      "sha256": "571d3510f4f2603f0bedc0df27cd8c47ffd71bee4a93ae5040628ef40dd300ec"
+    },
+    "early-left-elbow-right-knee-oblique.png": {
+      "bytes": 218953,
+      "sha256": "c94d6fc8570503d7bb10cebc88dcb78b8958d2d9a3846f95ae2d61452fc5fe8f"
+    },
+    "early-peak-rear.png": {
+      "bytes": 228080,
+      "sha256": "5a400de71bdd0687e376d3b2b378721f5268f4dedc541e88454553c82b08c9fd"
+    },
+    "dq-cage-blend-oblique.png": {
+      "bytes": 222072,
+      "sha256": "af49b0254cc8824b0239cc3da552858d0fc92bbed96a38e459941d794095a744"
+    },
+    "wire-start-side.png": {
+      "bytes": 204459,
+      "sha256": "66aa1a6efa353aef78511cdb01cebb6d78995f098d4c4e9e995687b29bba7314"
+    },
+    "wire-peak-oblique.png": {
+      "bytes": 246159,
+      "sha256": "126546d5a9f345f423751479ad144ae48ff117435f47049bba6d5c00e65045b9"
+    },
+    "README.md": {
+      "bytes": 7542,
+      "sha256": "777eafb8434731d22fb8611f6c78f658404e61c275a6f015ed641ab55ba538f8"
+    },
+    "hand-repair-baseline.json": {
+      "bytes": 53985,
+      "sha256": "66682df1337371cdfa37ac5bfd3d5acb107233233e15215b9d3bd61a277b02fb"
+    }
+  },
+  "curated_delivery": {
+    "source_and_runtime": [
+      "source.blend",
+      "motion.glb",
+      "clip.json",
+      "cameras.json"
+    ],
+    "reproduction": [
+      "build_motion.py",
+      "air_bike_pose.py",
+      "joint_correctives.py",
+      "local_joint_target.py",
+      "write_metadata.py",
+      "verify_asset.py",
+      "verify_corrective_source.py",
+      "verify_export.mjs",
+      "render_export.py",
+      "verify_hand_repair.py"
+    ],
+    "source_bound_references": [
+      "pose-samples.json",
+      "source-morph-samples.json",
+      "runtime-surface-reference.json",
+      "dq-reference.json.gz",
+      "joint-normal-reference.json.gz",
+      "landmarks.json",
+      "cross-pair-witnesses.json",
+      "authoring-context.json"
+    ],
+    "qa_receipts": [
+      "build-report.json",
+      "joint-corrective-report.json",
+      "source-verification.json",
+      "surface-contact-report.json",
+      "asset-qa.json",
+      "export-verification.json",
+      "hand-separation-report.json",
+      "hand-repair-verification.json"
+    ],
+    "viewed_source_proofs": [
+      "early-start-side.png",
+      "early-start-rear.png",
+      "early-right-elbow-left-knee-side.png",
+      "early-right-elbow-left-knee-oblique.png",
+      "early-left-elbow-right-knee-oblique.png",
+      "early-peak-rear.png",
+      "dq-cage-blend-oblique.png",
+      "wire-start-side.png",
+      "wire-peak-oblique.png"
+    ],
+    "delivery_reports": [
+      "README.md",
+      "delivery-report.json"
+    ],
+    "historical_scope_baseline": [
+      "hand-repair-baseline.json"
+    ]
+  },
+  "source_geometry": {
+    "original_vertices": 10582,
+    "triangles": 21160,
+    "bones": 51,
+    "actions": [
+      "Exercise_0003"
+    ],
+    "action_slots": [
+      "OBJECT",
+      "KEY"
+    ],
+    "materials": 1,
+    "textures": 0,
+    "helpers_added": 0,
+    "weights_changed": false,
+    "basis_rest_uv_changed": false,
+    "position_morphs": 3,
+    "normal_morphs": 3
+  },
+  "corrective": {
+    "names": [
+      "JointNeutral",
+      "JointRightCross",
+      "JointLeftCross"
+    ],
+    "maximum_actual_rest_displacement_m": 0.05276146819288466,
+    "maximum_affected_original_vertices_per_key": 1528,
+    "maximum_vertex_and_region": {
+      "original_id": 8353,
+      "source_coordinate": [
+        0.18036319315433502,
+        0.0016185124404728413,
+        1.3296512365341187
+      ],
+      "nearest_source_joint": "LeftArm",
+      "anatomical_region": "Left shoulder/axilla transition"
+    },
+    "flank_guard_amplitudes_m": [
+      0.01169804891982033,
+      0.014063733814609718,
+      0.015739590092533264
+    ],
+    "frozen_pelvic_support_maximum_rest_delta_m": 0.0,
+    "global_corrective_smooth_enabled": false,
+    "method": "Three state keys: exact native original-cage local joint smoothing mapped by inverse unit DQ rotation, plus one smoothly feathered posterior flank pocket per key. No global smoothing, helper, weight or Basis edit."
+  },
+  "checks": {
+    "minimum_actual_floor_z_m": 0.0009996891021728516,
+    "minimum_pelvic_near_fraction": 0.25,
+    "minimum_foot_clearance_m": 0.10065432637929916,
+    "minimum_near_floor_pelvic_patch_area_m2": 0.001213007402839139,
+    "minimum_hand_head_signed_distance_m": 0.004223933012326597,
+    "maximum_wrist_direction_deviation_degrees": 34.99998617522053,
+    "lumbar_patch_minimum_gap_range_m": [
+      0.002669215202331543,
+      0.009617805480957031
+    ],
+    "lumbar_patch_all_vertex_gap_range_m": [
+      0.002669215202331543,
+      0.06244993209838867
+    ],
+    "maximum_full_dq_vertex_error_m": 1.4942389958767461e-06,
+    "maximum_joint_error_m": 1.0449756249691698e-06,
+    "maximum_surface_error_m": 1.4942389958767461e-06,
+    "maximum_morph_weight_error": 1.0939969807832739e-07,
+    "maximum_normal_vector_error": 8.187660755892303e-05,
+    "loop_skin_error_m": 1.7678536888043258e-07,
+    "minimum_opposing_hand_unsigned_gap_m": 0.0030771493911743164,
+    "minimum_opposing_hand_nearest_normal_signed_gap_m": 0.0021371088223531842,
+    "maximum_protected_joint_change_due_to_hand_repair_m": 0.0,
+    "maximum_frozen_pelvic_surface_change_due_to_hand_repair_m": 0.0
+  },
+  "coverage": {
+    "floor_support_and_airborne_feet_frames": 151,
+    "detailed_contact_head_wrist_and_bone_samples": [
+      0,
+      12.5,
+      19,
+      30,
+      37.5,
+      56,
+      75,
+      94,
+      112.5,
+      120,
+      131,
+      137.5,
+      150
+    ],
+    "full_original_id_dq_reference_frames": [
+      0,
+      30,
+      75,
+      120,
+      150
+    ],
+    "morph_normal_check": "Every exported UV-split Basis and all3full-key normal values compared independently; source normals are morphed before unit DQ rotation. This does not claim Blender reimport shading equals the final shader."
+  },
+  "asset_qa_binding": {
+    "source_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+    "asset_qa_sha256": "c98821fdae1e04cc8a3adc79edcc05598a84b442957fe4648beaeca6fc11f0b9",
+    "surface_contact_report_sha256": "bf903c8451b27b1d9e33620c3e68a523e26c4e7b440de0d768c79a13bfc5a356",
+    "correctives": [
+      "JointNeutral",
+      "JointRightCross",
+      "JointLeftCross"
+    ],
+    "geometry_checks": [
+      {
+        "path": "dq_cage",
+        "runtime_frame": 0,
+        "native_frame": 1,
+        "pass": true,
+        "warnings": []
+      },
+      {
+        "path": "dq_cage",
+        "runtime_frame": 19,
+        "native_frame": 20,
+        "pass": true,
+        "warnings": []
+      },
+      {
+        "path": "dq_cage",
+        "runtime_frame": 37.5,
+        "native_frame": 38.5,
+        "pass": true,
+        "warnings": []
+      },
+      {
+        "path": "dq_cage",
+        "runtime_frame": 112.5,
+        "native_frame": 113.5,
+        "pass": true,
+        "warnings": []
+      },
+      {
+        "path": "native",
+        "runtime_frame": 0,
+        "native_frame": 1,
+        "pass": true,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (9 pairs) - delete to save tris",
+          "asset lowest point z=0.0056 (not resting on ground plane z=0)"
+        ]
+      },
+      {
+        "path": "native",
+        "runtime_frame": 37.5,
+        "native_frame": 38.5,
+        "pass": true,
+        "warnings": [
+          "hidden back-to-back faces: SK_BlenderStudioHuman (12 pairs) - delete to save tris",
+          "asset lowest point z=0.0027 (not resting on ground plane z=0)"
+        ]
+      }
+    ]
+  },
+  "cross_pair_witnesses": {
+    "source_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+    "motion_sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4",
+    "initial_knee_internal_angles_degrees": {
+      "Left": 89.99999006954488,
+      "Right": 89.99999006954488
+    },
+    "samples": [
+      {
+        "time": 1.25,
+        "frame": 37.5,
+        "elbow": "RightForeArm",
+        "knee": "LeftLeg",
+        "extended_leg": "Right",
+        "paired_joint_distance_m": 0.4608968011771415,
+        "initial_paired_joint_distance_m": 0.9303728913734456,
+        "same_side_knee_distance_m": 1.0328441520095029,
+        "inactive_elbow_to_target_knee_distance_m": 0.5454946988617859,
+        "extended_knee_internal_angle_degrees": 169.31224408473318,
+        "elbow_knee_contact_claim": false
+      },
+      {
+        "time": 3.75,
+        "frame": 112.5,
+        "elbow": "LeftForeArm",
+        "knee": "RightLeg",
+        "extended_leg": "Left",
+        "paired_joint_distance_m": 0.4607631796882765,
+        "initial_paired_joint_distance_m": 0.9303728913734456,
+        "same_side_knee_distance_m": 1.0328749036175455,
+        "inactive_elbow_to_target_knee_distance_m": 0.5454946816127259,
+        "extended_knee_internal_angle_degrees": 169.31225313339684,
+        "elbow_knee_contact_claim": false
+      }
+    ],
+    "basis": "Joint-centre distances in Blender world metres. Source says toward; no elbow-knee surface contact or clinical range is claimed."
+  },
+  "lumbar_policy": "Natural lumbar arch is observed honestly, with no whole-lumbar contact or zero-gap requirement. True posterior pelvic support remains mandatory. Support indices/illustration thresholds were not revised after QA.",
+  "native_preview_warning_disposition": "Runtime DQ cage has zero warnings at all4geometry checks. Separate disabled Multires preview has9/12hidden back-to-back pair warnings and2.7/5.6mm ground-gap notices atpeak/start. Preserve original topology; these preview-only thin-fold warnings are retained and located in asset-qa.json. They do not describe the saved/runtime cage. Global CorrectiveSmooth never doubles the baked local keys.",
+  "native_preview_contact_differences": [
+    "native frame30 pelvic_support_L: unsupported",
+    "native frame30 pelvic_support_R: unsupported",
+    "native frame37.5 pelvic_support_L: unsupported",
+    "native frame37.5 pelvic_support_R: unsupported",
+    "native frame112.5 pelvic_support_L: unsupported",
+    "native frame112.5 pelvic_support_R: unsupported",
+    "native frame120 pelvic_support_L: unsupported",
+    "native frame120 pelvic_support_R: unsupported"
+  ],
+  "shared_read_only_dependencies": [
+    "artifacts/exercise-batches/batch-003/authoring.py",
+    "artifacts/bodyweight-five/bodyweight-five.blend",
+    "artifacts/bodyweight-next-five/warning_observer.py",
+    "artifacts/exercise-batches/dual-quaternion.js",
+    "artifacts/first-exercise-3d/runtime/node_modules/three",
+    "~/.codex/skills/blender-asset-qa/scripts/qa_check.py"
+  ],
+  "excluded_diagnostics": [
+    "blocked-checkpoint.json",
+    "early-report.json",
+    "source-plane-diagnostic.json",
+    "support-posture-solve.json",
+    "staging-witnesses.json",
+    "local-native-target-report.json",
+    "diagnose_skin.py",
+    "inspect_staging.py",
+    "solve_support_posture.py",
+    "preview_local_target.py",
+    "diagnostic-*.png",
+    "local-native-target-*.png",
+    "exported-dq-*.png",
+    "native-*.png",
+    "*.log",
+    "__pycache__"
+  ],
+  "exclusion_basis": "Rejected pose/support trials and raw-target probes are historical. Blender GLB reimport stills are geometry diagnostics with unreliable imported morph normals, not final GPU appearance proof. Optional Multires stills are separate. Primary actual Three.js screenshots are outside this owned folder.",
+  "remaining_review": "Primary owns actual GPU skin/normal appearance, heat zones, alpha, controls, live loops and final camera fit. Small original-cage faceting may remain; no clinical, EMG, continuous-collision or production certification is implied.",
+  "scope": "Only batch-004/assets/0003 written. No Git, new agents, shared file edits, paid jobs, videos or frame sequences. Completed6033 preserved.",
+  "hand_repair": {
+    "previous_source_sha256": "953abb1f3c6703fcfabca67b452759146789e77018ac3055b955fe6ec61d897f",
+    "source_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+    "authorized_change": "3 mm lateral head-relative wrist target movement per side; existing arm IK responds locally. No other pose/support/key-strategy change.",
+    "baseline": "hand-repair-baseline.json",
+    "verification": "hand-repair-verification.json",
+    "hand_surface_check": "hand-separation-report.json",
+    "wrist_shift_range_m": [
+      0.00299874545829108,
+      0.0030002629578871616
+    ],
+    "protected_joints_and_pelvic_surfaces_unchanged": true
+  }
+}

@@ -244,3 +244,72 @@ bridge or detached junction. A close angular groin crease and the uncertain leg
 shading boundary remain disclosed. User approval of the new interactive candidate
 is pending; the published older 90/90 assets are still rejected. The separate
 candidate and reproducible joint-only inputs are in `../ninety-mpfb-review/`.
+
+## Butterfly: distinguish compressed staging from a pelvic topology defect
+
+The first MPFB butterfly cage (`43320780e38d25863d3f67b52a520e6b3fed04906f9ee2455496c6bc5e16b6a2`)
+is not accepted. Three native views look more plausible than the rejected old
+body, but complete-hand checks find 543 strict hand/leg pairs and penetration
+up to 30.55 mm. A palm-centre clearance of 1.5 mm does not establish safe fingers.
+Resolve this through wrist/finger articulation and actual skin contact before
+considering any small residual pad compression.
+
+The apparent 148-pair pelvic failure contains two different causes: 140 hip-fold
+crossings and eight remote lower-thigh/shin crossings. The exact-CGAL count is
+156, including the same eight remote pairs. A single local groin hull cannot
+resolve both causes safely. The crossing domain has six components and seven
+boundary loops; connecting those components would risk fusing separate leg
+surfaces. The topology specialist therefore stopped before generating a hull.
+
+The same native pose has 139.55-degree knee flexion and only 11.99-degree elbow
+flexion: the feet are close to the pelvis while the arms are almost at maximum
+reach. A single mechanics-guided restaging moves the ankles approximately 10 cm
+forward and inclines the long, straight torso by 15 degrees. Reach preflight gives
+125.08-degree knee flexion, 39.78-degree predicted elbow flexion and 487.30 mm wrist
+reach within the unchanged 518.19 mm arm length. These are authored illustration
+choices and preflight measurements, not validated final skin or clinical angles.
+
+Classify opposing sole regions separately. In the first cage, minimum gaps are
+2.94 mm at the heel, 0.80 mm at the ball and 14.20 mm at the toe tips. A median
+distance over the entire arched sole neither proves nor disproves useful contact.
+Foot yaw/spacing must be checked against heel and forefoot skin, without changing
+the foot shape. New staging, topology, motion and exported contact acceptance are
+still pending under `../butterfly-mpfb-review/`.
+
+The restaged pose resolves the remote knee class, but positive hand-vertex
+distances still miss 32 triangle-chord crossings. Refined thumb/web interiors
+reach 1.0665 mm inside the opposing skin. One disjoint local material target,
+with rigid contact cores and a geodesic feather, clears all hand/leg triangles
+after actual Blender float32 readback. Maximum displacement is 1.5165 mm;
+finger thickness remains at least 85.4% of the source measure. Whole triangles,
+not only vertices or the palm centre, are the required contact evidence.
+
+The bilateral local hull preserves its exterior boundary but initially adds
+one handle. Boundary equality and manifold edges therefore do not prove the
+correct body topology: the complete connected body must retain Euler
+characteristic 2. The added handle is a 13.20 mm three-edge cycle enclosing
+a tiny empty tunnel. One documented cut, duplicated banks and two generated
+caps restore the required topology; a 0.20 mm outward bank displacement clears
+the caps. Generated cap geometry is explicitly distinguished from original
+birth-triangle geometry. Its attributes retain separate bank/corner provenance.
+The structural adapter has 13,405 vertices and 26,806 faces. A conspicuous
+jagged lateral glute/thigh crease remains visually rejected and is undergoing
+one bounded local fairing; this is not a final shape acceptance.
+
+Do not borrow the forward-hinge motion from 90/90 for this exercise. Holding
+the wrists and legs fixed while adding that hinge produces a real forearm/shin
+crossing: source vertex 3799 reaches 5.229 mm penetration at 2.344 degrees.
+The opposing source vertices are dominated by DEF-shin weights, correcting
+the initial generic "forearm/thigh" label. An elbow-only contact patch misses
+the offending proximal forearm just outside its 50 mm selector. The source
+cue is to let the knees fall out; the replacement motion keeps the long torso
+stable and coordinates knee lowering, complete-arm clearance and ankle-skin
+grip. That path still requires complete native and actual runtime validation.
+
+## Final 4512 runtime integration
+
+The accepted bounded butterfly candidate uses the faired 13,405-vertex seated cage and the native six-degree knee-opening path, with the trunk held fixed. One runtime harmonic extension over 547 local hip vertices removes the binding reversal; no hip morph is needed. Two compact hand targets affect 112 disjoint vertices, at most 0.125/0.963 mm. The integrated GLB SHA-256 is `b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5`.
+
+All 151 actual decoded samples pass exact hip, complete-arm/leg and complete-hand/leg checks, positive areas and floor/support checks. Final samples match the independently accepted hip and hand candidates exactly on their respective domains. Minimum hip material orientation ratio is 0.945631; minimum finger thickness ratio is 0.854105. Maximum glute gap is 0.701 mm, feet remain about0.200 mm above the plane. Global source contacts outside these domains remain disclosed.
+
+Actual neutral and cyan-zone renderer views show continuous glutes without the rejected broad anterior wedge. A small upper gluteal notch and angular lateral crease remain disclosed for user review. Numeric parity does not override silhouette rejection. The native Blender action supplies joint references; the final standard-linear surface is rebuilt from explicit geometry, weights and targets. Older 4512 trials remain rejected. 6560 still requires a separate accepted replacement.

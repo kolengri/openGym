@@ -1,0 +1,371 @@
+{
+  "status": "accepted_by_primary_for_bounded_motion_runtime_review_candidate",
+  "artifact_hashes": {
+    "static-cage.npz": "10eafc68e2c26ff59b855128cb33a494dfca7c9a886916ee18a716e954f6b7ae",
+    "final-target.npz": "88df5cb404c05d1bca409178523e7b89de750198c021aba828d0d7fa3d109e73",
+    "butterfly-hip-faired.blend": "bd335b81b7351f96b8d7028b3fe1064d05a7ac4d76260837f2a8c768cd6608ad",
+    "faired-front-oblique.png": "00116c251ce787f6cd4637b50b462017df6dc6f1c8ea5b67c678073980668a20",
+    "faired-rear-oblique.png": "5961d228274e65e1e671fcdcf31d32b0ddb5c9f51b714bf69747081fdc924f7e",
+    "faired-side.png": "cd5fdaa755a499c713ecf68b4e356dea648e88a2cc93f31d15e505fe008854bc"
+  },
+  "unchanged_attribute_files": {
+    "transferred-weights.json": {
+      "path": "../transferred-weights.json",
+      "sha256": "cbab8a13cdd947d27c8de8c490a18340d70609f0ccf9e62197a46a537bb8bec3"
+    },
+    "new-vertex-provenance.json": {
+      "path": "../new-vertex-provenance.json",
+      "sha256": "8ad0316234be112be3b4d26f87bcbbc265baa7c8e50c64b3d2429a75283d90f4"
+    },
+    "generated-cap-provenance.json": {
+      "path": "../generated-cap-provenance.json",
+      "sha256": "6dc211ff45437f92f9742bda7ff5ed41a23eed5c2ad20f59089a8aec7b94a7d2"
+    }
+  },
+  "unchanged_npz_arrays": {
+    "triangles": true,
+    "source_ids": true,
+    "birth": true,
+    "patch_faces": true,
+    "cap_faces": true,
+    "corner_uv": true,
+    "corner_barycentric": true,
+    "corner_attribute_birth": true,
+    "neutral_positions": true,
+    "attribute_sample_positions": true,
+    "geometry_displacement": true,
+    "source_origin_local_splice_vertex": true
+  },
+  "expanded_changed_face_domain_topology": {
+    "vertices": 264,
+    "faces": 450,
+    "edges": 712,
+    "euler_characteristic": 2,
+    "components": 2,
+    "boundary_edges": 74,
+    "nonmanifold_edges": 0,
+    "inconsistent_winding_edges": 0,
+    "nonmanifold_vertex_links": [],
+    "duplicate_faces": 0
+  },
+  "expanded_domain_boundary_positions_bit_exact": true,
+  "expanded_domain_boundary_source_ids": [
+    [
+      4003,
+      4017
+    ],
+    [
+      4017,
+      4031
+    ],
+    [
+      4049,
+      4063
+    ],
+    [
+      4063,
+      4196
+    ],
+    [
+      4196,
+      4197
+    ],
+    [
+      4391,
+      4198
+    ],
+    [
+      4300,
+      4306
+    ],
+    [
+      4306,
+      4312
+    ],
+    [
+      4198,
+      4207
+    ],
+    [
+      4216,
+      4225
+    ],
+    [
+      4225,
+      4234
+    ],
+    [
+      4234,
+      4300
+    ],
+    [
+      4312,
+      4403
+    ],
+    [
+      4520,
+      4500
+    ],
+    [
+      4497,
+      4496
+    ],
+    [
+      4496,
+      4506
+    ],
+    [
+      10664,
+      10667
+    ],
+    [
+      10662,
+      10663
+    ],
+    [
+      10663,
+      10664
+    ],
+    [
+      10787,
+      10688
+    ],
+    [
+      10705,
+      10787
+    ],
+    [
+      4207,
+      4216
+    ],
+    [
+      10852,
+      10844
+    ],
+    [
+      11077,
+      11055
+    ],
+    [
+      13345,
+      11096
+    ],
+    [
+      11096,
+      11077
+    ],
+    [
+      11115,
+      13345
+    ],
+    [
+      10693,
+      -125
+    ],
+    [
+      4022,
+      4008
+    ],
+    [
+      4403,
+      4437
+    ],
+    [
+      4506,
+      4525
+    ],
+    [
+      4525,
+      4520
+    ],
+    [
+      4500,
+      6753
+    ],
+    [
+      10667,
+      10680
+    ],
+    [
+      4197,
+      4391
+    ],
+    [
+      11009,
+      10835
+    ],
+    [
+      11055,
+      11021
+    ],
+    [
+      11138,
+      11143
+    ],
+    [
+      11143,
+      11124
+    ],
+    [
+      13349,
+      11118
+    ],
+    [
+      4036,
+      4143
+    ],
+    [
+      4143,
+      4022
+    ],
+    [
+      6753,
+      4481
+    ],
+    [
+      10786,
+      10693
+    ],
+    [
+      10680,
+      10786
+    ],
+    [
+      11099,
+      13349
+    ],
+    [
+      4481,
+      -23
+    ],
+    [
+      4008,
+      4005
+    ],
+    [
+      4004,
+      4003
+    ],
+    [
+      4005,
+      4004
+    ],
+    [
+      4031,
+      4144
+    ],
+    [
+      4144,
+      4049
+    ],
+    [
+      4437,
+      4459
+    ],
+    [
+      4478,
+      6749
+    ],
+    [
+      4459,
+      4478
+    ],
+    [
+      6749,
+      4497
+    ],
+    [
+      10675,
+      10662
+    ],
+    [
+      10688,
+      10675
+    ],
+    [
+      10718,
+      10705
+    ],
+    [
+      10834,
+      10718
+    ],
+    [
+      10835,
+      10834
+    ],
+    [
+      10836,
+      11009
+    ],
+    [
+      10936,
+      10930
+    ],
+    [
+      10942,
+      10936
+    ],
+    [
+      10844,
+      10836
+    ],
+    [
+      10860,
+      10852
+    ],
+    [
+      10868,
+      10860
+    ],
+    [
+      10930,
+      10868
+    ],
+    [
+      11021,
+      10942
+    ],
+    [
+      11118,
+      11138
+    ],
+    [
+      11114,
+      11115
+    ],
+    [
+      11124,
+      11114
+    ],
+    [
+      -23,
+      4036
+    ],
+    [
+      -125,
+      11099
+    ]
+  ],
+  "whole_body_bounds_exact": true,
+  "visual_review": "Viewed all3 final images. Rear sawtooth seam materially reduced, residual short upper notch remains. Broad angular side crease remains. Root must decide whether remaining shape is acceptable.",
+  "no_motion_or_export": true,
+  "promotion_map": {},
+  "primary_visual_decision": {
+    "reviewed_images": [
+      "faired-front-oblique.png",
+      "faired-rear-oblique.png",
+      "faired-side.png"
+    ],
+    "accepted_scope": "Bounded motion/runtime user-review candidate only",
+    "full_anatomy_or_catalogue_approval": false,
+    "observed_improvements": "Most rear jagged points removed; continuous glute/thigh contours; no broad interthigh bridge",
+    "remaining_limits": [
+      "Short upper notch",
+      "Angular side crease"
+    ],
+    "geometry_and_attributes_frozen": true
+  },
+  "raw_game_qa_pass": true,
+  "warning_disposition": "10 opposing proximity pairs:9 unchanged source-complement pairs plus1 pair formed by the2 explicit generated caps, separated by0.4mm. No duplicate, degenerate, nonmanifold or z-fighting error remains."
+}

@@ -53,6 +53,7 @@ function assertState(value, id) {
  assert.equal(value.action, 'Exercise_' + id); assert.equal(value.meshes, 1); assert.equal(value.bones, exercise.expectedBones);
  assert.equal(value.asset, exercise.asset);
  assert.equal(value.skinning, exercise.skinning);
+ assert.equal(value.sourceVertices, exercise.sourceVertices ?? config.sourceVertices);
  assert.equal(value.colorTextures, 0); assert.equal(value.ao, false); assert.equal(value.shadows, false);
  assert.equal(value.transparentCanvas, true); assert.equal(value.cornerAlpha, 0); assert.equal(value.panEnabled, false);
 }
@@ -88,8 +89,21 @@ try {
    const state = await probe(page); assertState(state, id);
    if (['5265', '4007', '6428'].includes(id)) assert.ok(state.morphWeights.flat().every(value => Math.abs(value) < 1e-6), `${id}: a corrective leaked into an unchanged action`);
    jointSamples.push(state.joints);
-   const frusta = await page.evaluate(() => window.heatFrustum());
-   assert.ok(frusta.every(({min, max}) => [...min, ...max].every(value => Math.abs(value) < 1)), `${id}: a recommended view crops the posed body at frame${sample.frame}: ${JSON.stringify(frusta)}`);
+   const exercise = config.exercises.find(item => item.id === id);
+   const hasDetail = exercise.cameras.some(camera => camera.frameSourceIds);
+   assert.ok(exercise.cameras.some(camera => !camera.frameSourceIds), `${id}: missing whole-body companion`);
+   const frusta = hasDetail ? await page.evaluate(({cameras, sourceVertices}) => {
+    const result = [], select = document.querySelector('#view');
+    for (const [index, mode] of ['front', 'back'].entries()) {
+     select.value = mode; select.dispatchEvent(new Event('change'));
+     const [bounds] = window.heatFrustum(cameras[index].frameSourceIds);
+     if (bounds.sourceVertices !== (cameras[index].frameSourceIds?.length ?? sourceVertices)) throw Error('Missing framing source vertices');
+     result.push(bounds);
+    }
+    select.value = 'front'; select.dispatchEvent(new Event('change'));
+    return result;
+   }, {cameras: exercise.cameras, sourceVertices: exercise.sourceVertices ?? config.sourceVertices}) : await page.evaluate(() => window.heatFrustum());
+   assert.ok(frusta.every(({min, max}) => [...min, ...max].every(value => Math.abs(value) < 1)), `${id}: a recommended view crops its declared framing region at frame${sample.frame}: ${JSON.stringify(frusta)}`);
    for (const [name, [x, y, z]] of Object.entries(sample.joints)) {
     const expected = [x, z, -y];
     jointError = Math.max(jointError, Math.hypot(...state.joints[name].map((v, axis) => v - expected[axis])));
@@ -103,7 +117,7 @@ try {
    for (const witness of witnesses) {
     await page.evaluate(time => window.heatFrame(time), witness.frame / 30);
     const actual = await page.evaluate(() => window.heatSurface());
-    assert.equal(witness.positions.length, 10582);
+    assert.equal(witness.positions.length, config.exercises.find(item => item.id === id).sourceVertices ?? config.sourceVertices);
     for (const [index, [x, y, z]] of witness.positions.entries())
      error = Math.max(error, Math.hypot(actual[index][0] - x, actual[index][1] - z, actual[index][2] + y));
    }
@@ -138,7 +152,7 @@ try {
   for (const row of rows) {
    await page.evaluate(time => window.heatFrame(time), row.frame / 30);
    const actual = await page.evaluate(() => window.heatSurface());
-   assert.equal(Object.keys(actual).length, 10582);
+   assert.equal(Object.keys(actual).length, config.exercises.find(item => item.id === id).sourceVertices ?? config.sourceVertices);
    const floor = Math.min(...Object.values(actual).map(point => point[1]));
    assert.ok(Math.abs(floor - row.global_floor_z) < .0001,
     `${id} frame${row.frame}: actual floor${floor}, native reference${row.global_floor_z}`);

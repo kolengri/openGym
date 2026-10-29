@@ -1,0 +1,127 @@
+{
+  "batch": "004",
+  "exercise_ids": [
+    "1980",
+    "2098",
+    "1977",
+    "4512",
+    "0003"
+  ],
+  "initial_exercise_id": "1980",
+  "models": {
+    "1977": {
+      "path": "artifacts/exercise-batches/batch-004/assets/1977/motion.glb",
+      "sha256": "4d9b486e8e8047e0dc07a021d11f76064bdcdf307854f14ecae0903c036948bd",
+      "bytes": 936964,
+      "bones": 51,
+      "sourceVertices": 10582,
+      "animations": [
+        "Exercise_1977"
+      ]
+    },
+    "1980": {
+      "path": "artifacts/exercise-batches/batch-004/assets/1980/motion.glb",
+      "sha256": "0401f605041f07ae13a8017ba31bc489050c9d76cb4d6ae5ca413c09f4b2e7b6",
+      "bytes": 869740,
+      "bones": 51,
+      "sourceVertices": 10582,
+      "animations": [
+        "Exercise_1980"
+      ]
+    },
+    "2098": {
+      "path": "artifacts/exercise-batches/batch-004/assets/2098/motion.glb",
+      "sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed",
+      "bytes": 896316,
+      "bones": 51,
+      "sourceVertices": 10582,
+      "animations": [
+        "Exercise_2098"
+      ]
+    },
+    "4512": {
+      "path": "artifacts/exercise-batches/batch-004/assets/4512/motion.glb",
+      "sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+      "bytes": 1912868,
+      "bones": 46,
+      "sourceVertices": 13405,
+      "animations": [
+        "Exercise_4512"
+      ]
+    },
+    "0003": {
+      "path": "artifacts/exercise-batches/batch-004/assets/0003/motion.glb",
+      "sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4",
+      "bytes": 1140376,
+      "bones": 51,
+      "sourceVertices": 10582,
+      "animations": [
+        "Exercise_0003"
+      ]
+    }
+  },
+  "model_revision": null,
+  "selected_regions": [
+    "deltoid_anterior.L",
+    "deltoid_lateral.L",
+    "deltoid_posterior.L",
+    "infraspinatus.L",
+    "teres_major.L",
+    "latissimus_dorsi.L",
+    "trapezius_upper.L",
+    "trapezius_middle.L",
+    "trapezius_lower.L",
+    "forearm_flexors.L",
+    "forearm_extensors.L",
+    "brachioradialis.L",
+    "triceps_long.L",
+    "triceps_lateral.L",
+    "adductor_longus.L",
+    "adductor_longus.R",
+    "adductor_magnus_visible.L",
+    "adductor_magnus_visible.R",
+    "rectus_abdominis_1.L",
+    "rectus_abdominis_1.R",
+    "rectus_abdominis_2.L",
+    "rectus_abdominis_2.R",
+    "rectus_abdominis_3.L",
+    "rectus_abdominis_3.R",
+    "rectus_abdominis_4.L",
+    "rectus_abdominis_4.R",
+    "sartorius.L",
+    "sartorius.R",
+    "iliopsoas_projection.L",
+    "iliopsoas_projection.R"
+  ],
+  "video_outputs": [],
+  "frame_sequence_outputs": [],
+  "runtime": "Three.js0.186.1 / WebGLRenderer",
+  "scope": "Live review artifact; application integration and physical mobile testing remain separate.",
+  "display_role_note": "Artistic source-label emphasis: cyan stretching, warm load. Not measured EMG, force, temperature or recruitment.",
+  "offline_html_bytes": 8378251,
+  "offline_html_sha256": "d4f196d73fa24205e246d13c007e652746ad3ef8d141ed037e74c5af3714183d",
+  "inline_html_bytes": null,
+  "inline_html_sha256": null,
+  "input_files_sha256": {
+    "artifacts/exercise-batches/batch-004/build.mjs": "dbded4ba27f4db64299a9a3a0a023a41a3c94dac417cc3000d99817b8b10de98",
+    "artifacts/exercise-batches/batch-004/template.html": "a431f2881de38bdb4cb1a3658951af289b6d7e8a9995f644df1bbe067ae7ea9a",
+    "artifacts/exercise-batches/batch-004/viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+    "artifacts/exercise-batches/batch-004/presentation.json": "acf94729e5899facbab74b8b7e73ecd7126df552f8e3ee8d40225c1ee70aef52",
+    "artifacts/exercise-batches/build-review.mjs": "e2e435bdf39567a07d269606d5c2756f780fd2d9e46360e67ccf04d395db31c6",
+    "artifacts/exercise-batches/batch-002/viewer.js": "97509ce317027e520ad6bc8ffd19ca386bba7913095dfb6c935f173e9117f492",
+    "artifacts/exercise-batches/dual-quaternion.js": "f14e21f31c58c651753fac387e6b9b44bd887bafee74f3e90f507b3df0d09a54",
+    "artifacts/chaturanga-heatmap/heat-field.js": "e44dc66c993c5695382b1d6535b6a5dc65ecfbad375ac9cfcc8c3859ab33dddd",
+    "artifacts/chaturanga-heatmap/heat-material.js": "a4f8484116a4ad1022fe5ef7e86124a3f4f052d1b587d9dfa7582fe0d2cae49e",
+    "artifacts/exercise-batches/batch-004/assets/1980/clip.json": "044bb7b02cd105266657242bfe78db6074d4a5a82a575388a2e53a67e50ecb1e",
+    "artifacts/exercise-batches/batch-004/assets/1980/cameras.json": "02443039141e810f602145d434572ef94e3c526bcfc032da3bab1d3a715700e4",
+    "artifacts/exercise-batches/batch-004/assets/2098/clip.json": "c15eb26d9e72c50251f242ab829ee3b721aca0a6848bf5f6e2664e519333d8a7",
+    "artifacts/exercise-batches/batch-004/assets/2098/cameras.json": "736c65e0704f1130229a421911b851ff1b37eec784851666a7a3f701ba243c99",
+    "artifacts/exercise-batches/batch-004/assets/1977/clip.json": "86531ff1a5e053dd44a2f0ac6a6cd5118f88e7b79a28c1569ff4d8a610bf6ef5",
+    "artifacts/exercise-batches/batch-004/assets/1977/cameras.json": "46ad861c07c05552eb4878da43526f28ca6397c833c6e7b2e0134fd6c35b3001",
+    "artifacts/exercise-batches/batch-004/assets/4512/heat-regions.json": "d3325f40689323cf12227b6915fd8a84c4b254981e8264c9f900a322c3217934",
+    "artifacts/exercise-batches/batch-004/assets/4512/clip.json": "8f1cefe5bf63d93772a752cccf50f3b6dcbd6f1b20a8af1e76ef580945bf8cce",
+    "artifacts/exercise-batches/batch-004/assets/4512/cameras.json": "f3bd11afdc892d687b58436124e41b16a7db9b1b925929733b5482ef34e8490b",
+    "artifacts/exercise-batches/batch-004/assets/0003/clip.json": "ff08eef89112166c1250a4e81596b41a6c2d081285a92ce36287c37511f655c0",
+    "artifacts/exercise-batches/batch-004/assets/0003/cameras.json": "9d85bedeec8aef8b698c8c7cdc82eeb4f53734f74ad18a5e6ab58e86c5306891"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "status": "saved_fairing_pending_primary_shape_acceptance",
+  "readback_checks": {
+    "positions_exact_float32": true,
+    "triangles_unchanged": true,
+    "source_ids_unchanged": true,
+    "corner_uv_unchanged": true,
+    "full_weights_unchanged": true,
+    "exterior_vertices_bit_exact": true,
+    "protected_and_cap_bank_vertices_bit_exact": true,
+    "prior_static_blend_unchanged": true,
+    "prior_static_npz_unchanged": true
+  },
+  "qa": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "hidden back-to-back faces: MPFB_Butterfly_HipRepair_STATIC_REVIEW (10 pairs) - delete to save tris"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [
+      {
+        "where": "MPFB_Butterfly_HipRepair_STATIC_REVIEW",
+        "tri_pairs": 10
+      }
+    ],
+    "enclosed": [],
+    "objects": {
+      "MPFB_Butterfly_HipRepair_STATIC_REVIEW": {
+        "verts": 13405,
+        "faces": 26806,
+        "tris": 26806,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.02,
+        "uv_coverage_pct": 60.4
+      }
+    }
+  },
+  "blend_sha256": "bd335b81b7351f96b8d7028b3fe1064d05a7ac4d76260837f2a8c768cd6608ad",
+  "geometry_sha256": "10eafc68e2c26ff59b855128cb33a494dfca7c9a886916ee18a716e954f6b7ae",
+  "images": {
+    "front-oblique": {
+      "path": "faired-front-oblique.png",
+      "sha256": "00116c251ce787f6cd4637b50b462017df6dc6f1c8ea5b67c678073980668a20"
+    },
+    "rear-oblique": {
+      "path": "faired-rear-oblique.png",
+      "sha256": "5961d228274e65e1e671fcdcf31d32b0ddb5c9f51b714bf69747081fdc924f7e"
+    },
+    "side": {
+      "path": "faired-side.png",
+      "sha256": "cd5fdaa755a499c713ecf68b4e356dea648e88a2cc93f31d15e505fe008854bc"
+    }
+  },
+  "promotion_map": {}
+}

@@ -1,0 +1,280 @@
+{
+  "scope": "Local-only final 4512 integration source comparison; no application-code changes.",
+  "checks": {
+    "sample_shapes_are_151x13405x3_float32": true,
+    "hip_and_arm_active_domains_disjoint": true,
+    "final_matches_hip_candidate_on_verification_mask_or_affected_face_vertices": true,
+    "final_matches_arm_candidate_on_complete_arm_hand_and_corrective_vertices": true,
+    "remaining_vertices_match_baseline": true,
+    "feet_and_glute_match_both_candidates": true,
+    "mesh_geometry_hash_matches_both_existing_receipts": true,
+    "motion_topology_hash_matches_both_existing_receipts": true,
+    "verification_input_hash_matches_provenance_and_hip_receipt": true,
+    "hip_weight_overlay_hash_matches_composition_and_final_build": true,
+    "hip_and_arm_receipts_record_same_unchanged_geometry_topology_inputs": true,
+    "arm_corrective_source_hash_matches_composition": true,
+    "final_combined_corrective_hash_matches_build": true
+  },
+  "identities": {
+    "samples": {
+      "final": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/final/runtime-linear-samples.bin",
+        "sha256": "40e78495c53a72bdb75a1825eba1e924d1a6621b80fdaa175973255dbdc84666",
+        "bytes": 24289860,
+        "shape": [
+          151,
+          13405,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "hip": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/hip-repair/harmonic-glb/runtime-linear-samples.bin",
+        "sha256": "ab9c618d930c7e426d0b63d44ae3c24eab09c5ccc532d47a8c24b6f933b71ab0",
+        "bytes": 24289860,
+        "shape": [
+          151,
+          13405,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "arm": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/arm-correctives/runtime-linear-samples.bin",
+        "sha256": "21b8a8080d8f2232e6ee300f57450eff605045fc7df7560b0aa37578b8722cca",
+        "bytes": 24289860,
+        "shape": [
+          151,
+          13405,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "baseline": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/baseline/runtime-linear-samples.bin",
+        "sha256": "36aa6eb6e1dc9d7bacf7cb0b34ad59965582c162682db889b5d0104789d0d905",
+        "bytes": 24289860,
+        "shape": [
+          151,
+          13405,
+          3
+        ],
+        "dtype": "float32"
+      }
+    },
+    "final_glb": {
+      "path": "artifacts/butterfly-mpfb-review/runtime/final/motion.glb",
+      "sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+      "bytes": 1912868,
+      "expected_sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+      "matches_frozen_identity": true,
+      "asset_build_sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5"
+    }
+  },
+  "receipt_comparisons": {
+    "mesh_geometry_hash": {
+      "actual": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+      "hip_receipt": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+      "arm_receipt": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735"
+    },
+    "motion_topology_hash": {
+      "actual": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+      "hip_receipt": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+      "arm_receipt": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337"
+    },
+    "verification_input_hash": {
+      "actual": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+      "provenance": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+      "hip_receipt": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+      "arm_provenance_source": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402"
+    },
+    "hip_overlay_hash": {
+      "actual": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9",
+      "composition": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9",
+      "final_asset_build": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9"
+    },
+    "arm_overlay_hash": {
+      "actual": "3fb3a2fb3295f8a6f9371f012de9c9d939938254e4a3c1214ad3de39b9631ddc",
+      "composition": "3fb3a2fb3295f8a6f9371f012de9c9d939938254e4a3c1214ad3de39b9631ddc",
+      "final_asset_build": "6ad3a8a53cb6f30737e4bd42cb87f9ebf9f6534442408e7cfd839def26319742"
+    },
+    "files": {
+      "mesh-input.json": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/mesh-input.json",
+        "sha256": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735"
+      },
+      "motion-input.json": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/motion-input.json",
+        "sha256": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337"
+      },
+      "verification-input.npz": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/verification-input.npz",
+        "sha256": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402"
+      },
+      "hip-domain.npz": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/hip-repair/domain.npz",
+        "sha256": "0a9ed560cd3995513fd48d8817d3ad32ba8dadc39bf1c6765d48e0ffba64756e"
+      },
+      "arm-domain.npz": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/arm-correctives/domain.npz",
+        "sha256": "46333b1226b76b768dcc8ee50a7e2f7feacea5882a1293811404630be7d4938c"
+      },
+      "hip-weight-overlay.json": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/hip-repair/runtime-weight-override.json",
+        "sha256": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9"
+      },
+      "arm-correctives.json": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/arm-correctives/arm-correctives.json",
+        "sha256": "3fb3a2fb3295f8a6f9371f012de9c9d939938254e4a3c1214ad3de39b9631ddc"
+      },
+      "final-combined-correctives.json": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/final/combined-correctives.json",
+        "sha256": "6ad3a8a53cb6f30737e4bd42cb87f9ebf9f6534442408e7cfd839def26319742"
+      },
+      "final-composition.json": {
+        "path": "artifacts/butterfly-mpfb-review/runtime/final/composition.json",
+        "sha256": "f951c929105cf3954a947e4afb8bf0e5fb58216b7a95384807e16774f9321bf4"
+      }
+    },
+    "arm_corrective_source_hash": {
+      "actual": "3fb3a2fb3295f8a6f9371f012de9c9d939938254e4a3c1214ad3de39b9631ddc",
+      "composition": "3fb3a2fb3295f8a6f9371f012de9c9d939938254e4a3c1214ad3de39b9631ddc"
+    },
+    "final_combined_corrective_targets_hash": {
+      "actual": "6ad3a8a53cb6f30737e4bd42cb87f9ebf9f6534442408e7cfd839def26319742",
+      "final_asset_build": "6ad3a8a53cb6f30737e4bd42cb87f9ebf9f6534442408e7cfd839def26319742"
+    }
+  },
+  "failures": [],
+  "domains": {
+    "hip_active_vertices": 547,
+    "hip_verification_or_affected_face_vertices": 684,
+    "hip_affected_faces": 1227,
+    "arm_active_corrective_vertices": 112,
+    "arm_complete_arm_hand_or_corrective_vertices": 5114,
+    "domain_intersection_count": 0,
+    "feet_or_glute_vertices": 2468
+  },
+  "historical_receipts": {
+    "hip": {
+      "path": "artifacts/butterfly-mpfb-review/runtime/hip-repair/actual-glb-verification.json",
+      "sha256": "96dcac5b496736c385f1aa0aa9802edbb91f6c22b856c71a43a8b0fe738a820e",
+      "status": "actual_glb_all151_hip_pass_no_hip_corrective_required",
+      "actual_glb_sha256": "ee20ac0a034f91afcaaa03d50425e0c2bb35ca1052109813ce4e0cd6719bbf5b",
+      "actual_samples_sha256": "ab9c618d930c7e426d0b63d44ae3c24eab09c5ccc532d47a8c24b6f933b71ab0",
+      "checks": {
+        "all151_exact_hip_zero": true,
+        "all151_exact_affected_zero": true,
+        "all151_orientation_ratio_at_least_point1": true,
+        "all151_zero_reversed_faces": true,
+        "all151_positive_triangle_areas": true,
+        "all151_exterior_samples_bit_exact": true,
+        "all151_protected_samples_bit_exact": true,
+        "all151_floor_and_glute_gap_identical_to_baseline": true,
+        "all_inputs_unchanged": true
+      },
+      "mesh_input_sha256": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+      "motion_input_sha256": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337"
+    },
+    "arm": {
+      "path": "artifacts/butterfly-mpfb-review/runtime/arm-correctives/actual-verification.json",
+      "sha256": "08954822658928b476092df53a608fb81b7b35389d7b826e29d29482d288759e",
+      "status": "actual_standardGLB_all151_arm_hand_contact_pass_pending_disjoint_hip_composition",
+      "actual_samples_sha256": "21b8a8080d8f2232e6ee300f57450eff605045fc7df7560b0aa37578b8722cca",
+      "checks": {
+        "all151_actual_complete_arm_leg_exact_zero": true,
+        "all151_actual_complete_hand_leg_exact_zero": true,
+        "all151_actual_nonhand_arm_leg_exact_zero": true,
+        "all151_actual_affected_domain_vs_all_exact_zero": true,
+        "all151_actual_finger_thickness_ratio_ge08": true,
+        "all151_actual_whole_floor_ge_minus035mm": true,
+        "all151_actual_no_zero_area": true,
+        "all151_actual_no_affected_face_reversal": true,
+        "all151_actual_exterior_bit_exact": true,
+        "all151_actual_feet_glute_bit_exact": true,
+        "source_two_target_displacement_cap8mm": true,
+        "bind_loop_actual_exact_to_baseline": true,
+        "corrective_times_and_weights_match_knee_progress": true,
+        "expected_source_motion_hash": true,
+        "baseline_weight_override_null": true,
+        "standardGLB_without_custom_skin_or_cache": true,
+        "actual_reconstruction_within1micrometer": true
+      }
+    }
+  },
+  "surface_verifier": {
+    "path": "artifacts/butterfly-mpfb-review/runtime/final/surface-verification.json",
+    "sha256": "19ad502c44d7a942f7b85d9abf860c40fe2dd95551764b9fadf8029a51aea613",
+    "status": "surface_pass_pending_actual_visual_review",
+    "sample_sha256": "40e78495c53a72bdb75a1825eba1e924d1a6621b80fdaa175973255dbdc84666",
+    "verification_input_sha256": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+    "checks": {
+      "all_hip_roi_descendants_and_replacement_faces_clear": true,
+      "all_complete_hand_vs_leg_faces_clear": true,
+      "whole_skin_floor_penetration_below_0p35mm": true,
+      "actual_inferior_glute_gap_below_2mm": true,
+      "all_feet_remain_within_1mm_of_floor": true,
+      "no_zero_area_faces": true,
+      "all_complete_arm_vs_leg_faces_clear": true
+    },
+    "command_exit_status": 0
+  },
+  "overall_status": "passed_source_composition_and_surface_checks_pending_visual_review",
+  "failed_checks": [],
+  "final_batch_verifier": {
+    "command": "node artifacts/exercise-batches/batch-004/verify.mjs",
+    "exit_status": 0,
+    "result_path": "artifacts/exercise-batches/batch-004/verification.json",
+    "result_sha256": "296569e2d18b043eb8c7383c1d1ab09b5b037de9e030351a4afbf8889ce9594e",
+    "log_path": "artifacts/exercise-batches/batch-004/draft-review/final-five-verification.log",
+    "log_sha256": "404db62a8d29ec11283b15381568e37d8b13208bc4f1d644245e21f8219871da",
+    "ok": true,
+    "errors": [],
+    "scope": "Actual Three.js/Chromium/Metal and mobile touch emulation; no physical device or production application integration claim.",
+    "integrated_4512_model": {
+      "path": "artifacts/exercise-batches/batch-004/assets/4512/motion.glb",
+      "sha256": "b87a562c19b476849ce77f7603d5f8b38585965bd416c5fefd4716008bb27bc5",
+      "bytes": 1912868,
+      "bones": 46,
+      "sourceVertices": 13405,
+      "animations": [
+        "Exercise_4512"
+      ]
+    },
+    "exercise_4512": {
+      "id": "4512",
+      "duration": 5,
+      "maxJointErrorMeters": 1.1443916996305594e-16,
+      "reviewTime": 2.5,
+      "warmPixels": 0,
+      "cyanPixels": 835,
+      "sourceSurfacePhases": 11,
+      "displayMode": "stretch",
+      "holdSeconds": 1,
+      "asset": "4512",
+      "bones": 46
+    },
+    "mechanics_4512": {
+      "id": "4512",
+      "livePlayback": {
+        "durationSeconds": 5,
+        "holdSeconds": 1,
+        "sampleTimes": [
+          0.4167000000000007,
+          1.500000000000001,
+          2.1000000000000028,
+          2.9165999999999994,
+          3.5165999999999977,
+          4.716500000000006
+        ],
+        "holdDriftMeters": 1.3877787807814457e-17,
+        "wallSeconds": 5.015600000023841,
+        "wrapObserved": true
+      }
+    }
+  },
+  "remaining_scope_limits": [
+    "Native figures were not re-reviewed in this packet.",
+    "No production integration or physical-device claim."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "pose_accepted_for_bounded_local_repairs_only",
+  "reviewer": "root",
+  "evidence_sha256": {
+    "artifacts/butterfly-mpfb-review/native-restaging/butterfly-restaged-native.blend": "7d34e83cc84f821cacb1188cc0e044fc38640401d3d5d00c6d4c4b65f785ce9b",
+    "artifacts/butterfly-mpfb-review/native-restaging/restaged-native-cage.npz": "d70a164c2ba82ed3dcfad1f26a0dc6c293a98da96d6108308339c371fe586210",
+    "artifacts/butterfly-mpfb-review/native-restaging/native-front-oblique.png": "92910bd5f39d758dc9b9eca0f22cd606aefe5b0b03bc0fe23baae39f4a1091c1",
+    "artifacts/butterfly-mpfb-review/native-restaging/native-rear-oblique.png": "bcdeadab755fa513d2ef8225b93cdb58405761f4ccd1a0b2fdd66298d59961bf",
+    "artifacts/butterfly-mpfb-review/native-restaging/native-side.png": "2eae745c353380ea4bc7dc1d669b26763bba28a384c647d701cb19f0feaefa83",
+    "artifacts/butterfly-mpfb-review/native-restaging/checkpoint-summary.json": "eceaef1fdecdac1cd1f70296b00501d9fe318a33142b29105ce6eb412f40cca6",
+    "artifacts/butterfly-mpfb-review/native-restaging/native-contact-inspection.json": "b14c2d39a1106a7f70342c27deedaf8a448a2e4789c68c0db83ab9e225c85546"
+  },
+  "observations": [
+    "Three native views show a plausible bilateral seated butterfly, bent elbows and relaxed ankle grip.",
+    "Posterior glute/thigh contours are continuous but local lateral hip creases remain conspicuous.",
+    "No clothing or genital detail is present in the visible mannequin."
+  ],
+  "open_issues": [
+    "153 full pelvic-ROI pairs remain; the separate source-family knee/shin class is zero. Hip-fold localization/topology repair remains necessary.",
+    "32 hand/leg triangle-chord crossings remain despite positive hand-vertex signed distances. Full triangle contact must be repaired and rechecked.",
+    "No motion or runtime acceptance follows from this static pose review."
+  ],
+  "allowed_next": [
+    "One local hip-only hull/splice and bounded fairing with unchanged complement and explicit attribute provenance.",
+    "Disjoint residual hand-contact correction no greater than2mm, preserving fingertip thickness and outside geometry.",
+    "Separate native control-motion prototype with fixed ankle grip and supported feet/pelvis."
+  ],
+  "production_approved": false
+}

@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import {relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {build} from '../first-exercise-3d/runtime/node_modules/esbuild/lib/main.js';
+import {GLTFLoader} from '../first-exercise-3d/runtime/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 const hash = value => createHash('sha256').update(value).digest('hex');
 const repo = new URL('../../', import.meta.url);
@@ -14,14 +15,21 @@ const translatedPhases = {
  'Hinge forward over the front shin': 'Наклон над голенью', 'Hold the hip stretch for 1 second': 'Удержание', 'Return upright': 'Возврат в исходную',
 };
 
-export async function buildReview({root, batch, ids, clips, cameras, presentation, assetFiles, initialExerciseId, inputFiles = []}) {
+export async function buildReview({root, batch, ids, clips, cameras, presentation, assetFiles, initialExerciseId, inputFiles = [], atlasOverrides = {}}) {
  const atlas = JSON.parse(await readFile(new URL('../bodyweight-five/runtime-muscles.json', import.meta.url)));
  const models = {}, encodedAssets = {};
  for (const [key, file] of Object.entries(assetFiles)) {
   const bytes = await readFile(file), document = JSON.parse(bytes.subarray(20, 20 + bytes.readUInt32LE(12)).toString());
   if (document.meshes.length !== 1 || document.skins.length !== 1 || document.images?.length) throw Error('Expected one untextured continuous skin: ' + key);
+  const loaded = await new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength), '');
+  const meshes = []; loaded.scene.traverse(object => {if (object.isMesh) meshes.push(object);});
+  const source = meshes[0]?.geometry.getAttribute('_source_index');
+  if (meshes.length !== 1 || !source) throw Error('Missing single-body source lookup: ' + key);
+  const sourceIds = new Set(Array.from({length: source.count}, (_, index) => source.getX(index)));
+  const sourceVertices = sourceIds.size;
+  if (!sourceVertices || [...sourceIds].some(id => !Number.isInteger(id) || id < 0 || id >= sourceVertices)) throw Error('Source lookup is not a dense original-vertex domain: ' + key);
   models[key] = {path: relative(fileURLToPath(repo), fileURLToPath(file)), sha256: hash(bytes), bytes: bytes.length,
-   bones: document.skins[0].joints.length, animations: document.animations.map(action => action.name)};
+   bones: document.skins[0].joints.length, sourceVertices, animations: document.animations.map(action => action.name)};
   encodedAssets[key] = {model: bytes.toString('base64')};
  }
  const selected = new Set();
@@ -35,9 +43,19 @@ export async function buildReview({root, batch, ids, clips, cameras, presentatio
    }))];
   }
   const primary = regions(clip.primary), secondary = regions(clip.secondary);
+  const override = atlasOverrides[id], sourceVertices = models[asset].sourceVertices;
+  if (override && (!override.regions || typeof override.regions !== 'object' || Array.isArray(override.regions))) throw Error('Missing body-specific muscle regions: ' + id);
+  if ((override?.sourceVertices ?? atlas.source_vertices) !== sourceVertices) throw Error('Muscle atlas does not match body topology: ' + id);
+  for (const name of [...primary, ...secondary]) {
+   const region = (override?.regions ?? atlas.regions)[name];
+   if (!region || !region.indices.length || region.indices.length !== region.weights.length ||
+    region.indices.some(index => !Number.isInteger(index) || index < 0 || index >= sourceVertices) ||
+    region.weights.some(value => !Number.isFinite(value) || value < 0 || value > 1)) throw Error('Invalid muscle region for body: ' + id + '/' + name);
+  }
   for (const region of [...primary, ...secondary]) selected.add(region);
   if (!primary.length || !secondary.length || cameras[id]?.length !== 2 || !clip.phases?.length) throw Error('Missing roles, views or phases: ' + id);
-  return {id, ...presentation[id], asset, expectedBones: models[asset].bones, skinning: clip.skinning ?? 'linear', primary, secondary,
+  return {id, ...presentation[id], asset, expectedBones: models[asset].bones, sourceVertices,
+   ...(override ? {regions: override.regions} : {}), skinning: clip.skinning ?? 'linear', primary, secondary,
    phases: clip.phases.map(phase => ({...phase, label: translatedPhases[phase.label] ?? phase.label})), cameras: cameras[id],
    displayMode: clip.display_mode === 'stretch' ? 'stretch' : 'load'};
  });

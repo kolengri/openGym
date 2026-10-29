@@ -1,0 +1,37 @@
+{
+  "source_sha256": "499763d1dd004eee635cdd829b4efaa0e307c3e613058cf6aa4b9e9289f668fe",
+  "motion_sha256": "0cbb282620f167c2f84685adfcb308677b81b9384f611a970372482137d121b4",
+  "initial_knee_internal_angles_degrees": {
+    "Left": 89.99999006954488,
+    "Right": 89.99999006954488
+  },
+  "samples": [
+    {
+      "time": 1.25,
+      "frame": 37.5,
+      "elbow": "RightForeArm",
+      "knee": "LeftLeg",
+      "extended_leg": "Right",
+      "paired_joint_distance_m": 0.4608968011771415,
+      "initial_paired_joint_distance_m": 0.9303728913734456,
+      "same_side_knee_distance_m": 1.0328441520095029,
+      "inactive_elbow_to_target_knee_distance_m": 0.5454946988617859,
+      "extended_knee_internal_angle_degrees": 169.31224408473318,
+      "elbow_knee_contact_claim": false
+    },
+    {
+      "time": 3.75,
+      "frame": 112.5,
+      "elbow": "LeftForeArm",
+      "knee": "RightLeg",
+      "extended_leg": "Left",
+      "paired_joint_distance_m": 0.4607631796882765,
+      "initial_paired_joint_distance_m": 0.9303728913734456,
+      "same_side_knee_distance_m": 1.0328749036175455,
+      "inactive_elbow_to_target_knee_distance_m": 0.5454946816127259,
+      "extended_knee_internal_angle_degrees": 169.31225313339684,
+      "elbow_knee_contact_claim": false
+    }
+  ],
+  "basis": "Joint-centre distances in Blender world metres. Source says toward; no elbow-knee surface contact or clinical range is claimed."
+}

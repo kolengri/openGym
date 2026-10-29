@@ -1,0 +1,199 @@
+{
+  "id": "2098",
+  "status": "frozen_for_primary_review",
+  "source_sha256": "35f8d1cdff57834b527d8a672b1ae7fdef0fa62e4888c82f9f24261f38c6af33",
+  "glb_sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed",
+  "notes": "Only these files plus this manifest are proposed for delivery; local build/QA logs are retained as supplementary evidence. No videos, DQ caches or diagnostic candidates.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6727,
+      "sha256": "96252c3c7469796fb37c0fb04f04d9a2026edaa0ebe9d15fae36096276009661"
+    },
+    {
+      "path": "source.blend",
+      "bytes": 13614235,
+      "sha256": "35f8d1cdff57834b527d8a672b1ae7fdef0fa62e4888c82f9f24261f38c6af33"
+    },
+    {
+      "path": "motion.glb",
+      "bytes": 896316,
+      "sha256": "4870528ba9034643617f816aec430bb794dcee77710fc20ca03ee6a2f4bb94ed"
+    },
+    {
+      "path": "clip.json",
+      "bytes": 4306,
+      "sha256": "c15eb26d9e72c50251f242ab829ee3b721aca0a6848bf5f6e2664e519333d8a7"
+    },
+    {
+      "path": "cameras.json",
+      "bytes": 352,
+      "sha256": "143fb6199a3f4f524298712fb4eeb955ec59d07b95e791f78815af39792121d7"
+    },
+    {
+      "path": "pose-samples.json",
+      "bytes": 65134,
+      "sha256": "7e032924f771e63238103472fb7482bfcc3f44cd57dda4b975101f8923a1ceb9"
+    },
+    {
+      "path": "authoring-context.json",
+      "bytes": 60279,
+      "sha256": "765db3aa157e66e2ca372cb6358ca30a1d09b8743cd251877721266b1bf8d92b"
+    },
+    {
+      "path": "runtime-surface-reference.json",
+      "bytes": 27062,
+      "sha256": "94414d5cad04648d9c94df8ddad8b585659fbc21266a440aa3b98ed2186731f2"
+    },
+    {
+      "path": "surface-landmarks.json",
+      "bytes": 81583,
+      "sha256": "de2982ed334d586e8a66bf7440fe37ccc9075d561371d680ec433b77cfcbc083"
+    },
+    {
+      "path": "linear-vertex-reference.json",
+      "bytes": 7265208,
+      "sha256": "b2d5134b1fa8c999363e54b68d49ff5e7c79262b2f824198da33055940368941"
+    },
+    {
+      "path": "asset-qa.json",
+      "bytes": 2447,
+      "sha256": "493b45fdac4fcf8eccb19d66e7843b3bd28ac1f1378102fc65e79e3fdc8fd382"
+    },
+    {
+      "path": "surface-contact-report.json",
+      "bytes": 296912,
+      "sha256": "885c21d71524e2dcbdc3ecfd138f19a7c7029afe53aa3963b076c869f47484de"
+    },
+    {
+      "path": "geometry-support-report.json",
+      "bytes": 9156,
+      "sha256": "4c05a358ec90c47d10f69bce5a8ac8cd38b6f7e1e04d150b7f20ebdc0f4e4317"
+    },
+    {
+      "path": "arm-clearance-report.json",
+      "bytes": 12636,
+      "sha256": "fd152885e9a5dde562e5014f1bb2246a2130b672595d741d9661b01d3f5b45d2"
+    },
+    {
+      "path": "export-parity-report.json",
+      "bytes": 2871,
+      "sha256": "170828b87898c082188f5d53762f9ceb76ae6376104816d56dd749fbc27640f9"
+    },
+    {
+      "path": "delivery-report.json",
+      "bytes": 4721,
+      "sha256": "c1c7b3801300516fae94de22ed6d321dc87d09e459137fd13c1c95690f15f88a"
+    },
+    {
+      "path": "build_motion.py",
+      "bytes": 6754,
+      "sha256": "35c56bb27f4299ce732c4885076e266e640d5b29cdc4052b15866f8311eef3b1"
+    },
+    {
+      "path": "verify_asset.py",
+      "bytes": 8156,
+      "sha256": "707deeca26db51f760f544db34fe029721a78dc3afd082afc058b482f8de96bf"
+    },
+    {
+      "path": "verify_limb_clearance.py",
+      "bytes": 1764,
+      "sha256": "8b39e1ab5dc187893d5e0d5ef9eac3d8e522c840a1da8f0428986be76488be02"
+    },
+    {
+      "path": "export_motion.py",
+      "bytes": 1349,
+      "sha256": "278be4f4986c566c99217a7585fc161a3183e2c82b9d16c36353bf3d7f429a74"
+    },
+    {
+      "path": "verify_export.py",
+      "bytes": 5068,
+      "sha256": "8dd0a3bf324f3fcfdf3801d1a933e090d9c92a1a81b36b4afef8ab3e80147391"
+    },
+    {
+      "path": "finalize_evidence.py",
+      "bytes": 6946,
+      "sha256": "c1d588954d8a545ffd507d1b13d1dc9dc7c89bb74f594f4aff4cc0f8448c8aa9"
+    },
+    {
+      "path": "render_contact_palm.py",
+      "bytes": 502,
+      "sha256": "f0f4cef62b6c4f10a411d5ffcaf7a6c64074ab8142be58990408f04f7d499226"
+    },
+    {
+      "path": "render_contact_reverse.py",
+      "bytes": 503,
+      "sha256": "fa2234152a593b69c74115b726137ed0e316d593de10c8b5eb4ddd9e1fb3d69d"
+    },
+    {
+      "path": "early-entry-hands.png",
+      "bytes": 464581,
+      "sha256": "52cd8e02fc86d7364fc4377f5093075d85e75b91e882f05897dc75e52bd56a0a"
+    },
+    {
+      "path": "early-entry-oblique.png",
+      "bytes": 412923,
+      "sha256": "1c850bab995402fd48cd91940b13ce6fd066bf5a658a9226fd0ae59efb1f1415"
+    },
+    {
+      "path": "early-entry-rear.png",
+      "bytes": 399100,
+      "sha256": "ef7e93415b9170486516e4fd4d9463437a2715ffacb0bc7f824b0f2cc8ac2bd3"
+    },
+    {
+      "path": "early-entry-side.png",
+      "bytes": 384651,
+      "sha256": "75985e7b4c3a19c6cb44633fed7cc8b9d5f825721be86d0d17d6a3349aafa14b"
+    },
+    {
+      "path": "early-hold-hands.png",
+      "bytes": 577907,
+      "sha256": "209bc848a2566a17b7f60e2065c1382504d6a1db8d09746bd85d36b8b56e51ae"
+    },
+    {
+      "path": "early-hold-oblique.png",
+      "bytes": 414187,
+      "sha256": "d3182a4b03dad52ac3c08ee4b07b63e1587dd01bb198937d09cd58179a2789d3"
+    },
+    {
+      "path": "early-hold-rear.png",
+      "bytes": 396565,
+      "sha256": "e9852b42fa2c64d72078350002f77686e118eb6219ca74e4d441708eac3e54c5"
+    },
+    {
+      "path": "early-hold-side.png",
+      "bytes": 381037,
+      "sha256": "f1b3c38271bc52afdbe622e9c387942f971d430e4f6eca2b5836fe009bcbc03d"
+    },
+    {
+      "path": "early-hold-wire.png",
+      "bytes": 470652,
+      "sha256": "323af47e7cf327ae361e55738cf5b2ffcbe2f8e94741b502f09c47b8843cb183"
+    },
+    {
+      "path": "early-start-hands.png",
+      "bytes": 438331,
+      "sha256": "8ae4ba3d661aba0b533658d33badba5c7c97cf4fc8bfc3eeac8c2cfcb9cd1899"
+    },
+    {
+      "path": "early-start-oblique.png",
+      "bytes": 416309,
+      "sha256": "a5f0be937f279119be03b117fe3d924897df27cb3d97665f1acefc00032c5524"
+    },
+    {
+      "path": "early-start-rear.png",
+      "bytes": 400396,
+      "sha256": "42a6ac72da8cdb42e628241ba453096ac70db3eac6e9ee8083c2cf741a203727"
+    },
+    {
+      "path": "early-start-side.png",
+      "bytes": 388234,
+      "sha256": "b55cd9ddfa4ab61883684a9cfc29fe22157b6cf1cdaeed5a6485649cbae1ace0"
+    },
+    {
+      "path": "hold-hands-reverse.png",
+      "bytes": 405308,
+      "sha256": "0d26f66b626e5503267942565b0581c9e77cef9dc0aa53b3f814f40093088682"
+    }
+  ]
+}

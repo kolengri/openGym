@@ -1,0 +1,69 @@
+{
+  "status": "harmonic_override_written_pending_actual_glb",
+  "input_hashes": {
+    "mesh-input.json": "ad1210756f669d83b0507073fe62e8548dbae7444f01171847530e8663976735",
+    "motion-input.json": "7f615437e83b1e02f709bc8f2fdecd8b7d29532a2b5c7108af87311856358337",
+    "verification-input.npz": "fb2df0ea1105783a66d2c6cd615f9a4245ed521c19cfbd786f2a74e865fc3402",
+    "baseline/motion.glb": "14f63fc81ef93b292e104e5a9d71999169432d5e2c5b9194f1e5ca2504b45398"
+  },
+  "domain_counts": {
+    "core_count": 438,
+    "active_count": 547,
+    "fixed_boundary_count": 137,
+    "affected_face_count": 1227,
+    "hip_verification_face_count": 1814
+  },
+  "harmonic_equation_residual_max": 1.5505562567188045e-12,
+  "maximum_discarded_top4_mass": 0.030823762201691363,
+  "checks": {
+    "exterior_and_protected_weights_exact": true,
+    "max4_nonnegative_normalized": true,
+    "native_inputs_unchanged": true
+  },
+  "analytical_key_samples": [
+    {
+      "frame": 0,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "orientation_failed_faces": [],
+      "minimum_orientation_ratio": 0.9999999999999996
+    },
+    {
+      "frame": 30,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "orientation_failed_faces": [],
+      "minimum_orientation_ratio": 0.9714484276012939
+    },
+    {
+      "frame": 60,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "orientation_failed_faces": [],
+      "minimum_orientation_ratio": 0.9456310457524062
+    },
+    {
+      "frame": 90,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "orientation_failed_faces": [],
+      "minimum_orientation_ratio": 0.9456310457524062
+    },
+    {
+      "frame": 120,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "orientation_failed_faces": [],
+      "minimum_orientation_ratio": 0.9714484276012939
+    },
+    {
+      "frame": 150,
+      "hip_pairs": [],
+      "hip_pair_count": 0,
+      "orientation_failed_faces": [],
+      "minimum_orientation_ratio": 0.9999999999999996
+    }
+  ],
+  "override_sha256": "7d72d0a93d4f8e00fa39da1a0a6ee1f165b0d7b7be58550e11b72994a6d7acb9",
+  "promotion_map": {}
+}

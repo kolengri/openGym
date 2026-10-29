@@ -1,0 +1,983 @@
+{
+  "status": "bounded_residual_pad_target_pass",
+  "checks": {
+    "strict_hand_leg_zero": true,
+    "maximum_displacement_within_2mm": true,
+    "finger_material_pair_ratio_at_least_08": true,
+    "outside_hand_exact": true,
+    "wrist_region_exact": true,
+    "legs_pelvis_and_all_other_source_skin_exact": true,
+    "source_snapshot_hash_exact": true
+  },
+  "trace": [
+    {
+      "iteration": 0,
+      "strict_hand_leg_pairs": 32,
+      "maximum_displacement_m": 0.0,
+      "updates": [
+        {
+          "source_face": 17031,
+          "signed_depth_m": -1.969732375073363e-05,
+          "outward_update_m": [
+            0.00023507529112976044,
+            -0.0003851627407129854,
+            0.00013040252088103443
+          ]
+        },
+        {
+          "source_face": 17224,
+          "signed_depth_m": -7.616440325364238e-05,
+          "outward_update_m": [
+            0.0003771200426854193,
+            -0.00022453539713751525,
+            -0.0002901953412219882
+          ]
+        },
+        {
+          "source_face": 19725,
+          "signed_depth_m": -0.0010662826825864613,
+          "outward_update_m": [
+            -0.0008669502567499876,
+            0.0005217418074607849,
+            0.0011292898561805487
+          ]
+        },
+        {
+          "source_face": 3792,
+          "signed_depth_m": -1.955566688138788e-05,
+          "outward_update_m": [
+            -0.00023500333190895617,
+            -0.00038504687836393714,
+            0.00013036432210355997
+          ]
+        },
+        {
+          "source_face": 3987,
+          "signed_depth_m": -7.616439961566357e-05,
+          "outward_update_m": [
+            -0.00037712030461989343,
+            -0.00022453596466220915,
+            -0.00029019455541856587
+          ]
+        },
+        {
+          "source_face": 6486,
+          "signed_depth_m": -0.001066487981006503,
+          "outward_update_m": [
+            0.0008670686511322856,
+            0.0005218084552325308,
+            0.0011294441064819694
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 1,
+      "strict_hand_leg_pairs": 0,
+      "maximum_displacement_m": 0.0015164880808616254
+    }
+  ],
+  "strict_hand_leg_crossings": {
+    "count": 0,
+    "broad_phase_candidates": 0,
+    "touched_source_ids": [],
+    "world_bounds_m": null,
+    "pairs": []
+  },
+  "complete_hand_contacts": {
+    "L": {
+      "vertex_count": 1682,
+      "minimum_signed_gap_m": 0.0003239644286168186,
+      "minimum_unsigned_gap_m": 0.0003239644574932754,
+      "signed_gap_percentiles_m": {
+        "0": 0.0003239644286168186,
+        "5": 0.002325444972302649,
+        "50": 0.014221016344777127,
+        "95": 0.05379971639486023,
+        "100": 0.08122062313486822
+      },
+      "vertices_below_minus_025mm": 0,
+      "vertices_within_2mm": 69,
+      "deepest_source_id": 9198,
+      "deepest_world_m": [
+        0.15967383980751038,
+        -0.37178120017051697,
+        0.09942013025283813
+      ],
+      "negative_source_ids": []
+    },
+    "R": {
+      "vertex_count": 1682,
+      "minimum_signed_gap_m": 0.00030177413486853766,
+      "minimum_unsigned_gap_m": 0.00030177412554621696,
+      "signed_gap_percentiles_m": {
+        "0": 0.00030177413486853766,
+        "5": 0.0023757950462822922,
+        "50": 0.014271346357418224,
+        "95": 0.05452586536666777,
+        "100": 0.08121916678646812
+      },
+      "vertices_below_minus_025mm": 0,
+      "vertices_within_2mm": 69,
+      "deepest_source_id": 2530,
+      "deepest_world_m": [
+        -0.15967458486557007,
+        -0.37178054451942444,
+        0.09941983222961426
+      ],
+      "negative_source_ids": []
+    }
+  },
+  "maximum_displacement_m": 0.0015164880808616254,
+  "active_vertex_count": 376,
+  "minimum_finger_material_pair_ratio": 0.8541053591919153,
+  "thickness_pairs": [
+    {
+      "bone": "DEF-f_index.01.L",
+      "source_ids": [
+        9615,
+        9933
+      ],
+      "neutral_pair_distance_m": 0.011903352104127407,
+      "posed_pair_distance_m": 0.011229065246880054,
+      "ratio": 0.9433531956923673,
+      "corrected_pair_distance_m": 0.011229065049897584,
+      "corrected_ratio": 0.9433531791438802
+    },
+    {
+      "bone": "DEF-f_index.02.L",
+      "source_ids": [
+        8734,
+        8663
+      ],
+      "neutral_pair_distance_m": 0.01819843426346779,
+      "posed_pair_distance_m": 0.015543530695140362,
+      "ratio": 0.8541136270356523,
+      "corrected_pair_distance_m": 0.01554353105217403,
+      "corrected_ratio": 0.8541136466545746
+    },
+    {
+      "bone": "DEF-f_index.03.L",
+      "source_ids": [
+        9643,
+        9479
+      ],
+      "neutral_pair_distance_m": 0.011518456041812897,
+      "posed_pair_distance_m": 0.01193922571837902,
+      "ratio": 1.0365300414429415,
+      "corrected_pair_distance_m": 0.011939226128341822,
+      "corrected_ratio": 1.0365300770347603
+    },
+    {
+      "bone": "DEF-f_middle.01.L",
+      "source_ids": [
+        9948,
+        8769
+      ],
+      "neutral_pair_distance_m": 0.018204107880592346,
+      "posed_pair_distance_m": 0.017494799569249153,
+      "ratio": 0.9610358103788543,
+      "corrected_pair_distance_m": 0.01749479889988382,
+      "corrected_ratio": 0.9610357736088385
+    },
+    {
+      "bone": "DEF-f_middle.02.L",
+      "source_ids": [
+        9665,
+        9512
+      ],
+      "neutral_pair_distance_m": 0.011250331066548824,
+      "posed_pair_distance_m": 0.010305581614375114,
+      "ratio": 0.9160247421533415,
+      "corrected_pair_distance_m": 0.010305581881104302,
+      "corrected_ratio": 0.916024765861905
+    },
+    {
+      "bone": "DEF-f_middle.03.L",
+      "source_ids": [
+        9662,
+        9513
+      ],
+      "neutral_pair_distance_m": 0.008789527229964733,
+      "posed_pair_distance_m": 0.008924729190766811,
+      "ratio": 1.015382165304768,
+      "corrected_pair_distance_m": 0.008924729605882253,
+      "corrected_ratio": 1.0153822125331835
+    },
+    {
+      "bone": "DEF-f_ring.01.L",
+      "source_ids": [
+        8973,
+        9540
+      ],
+      "neutral_pair_distance_m": 0.007547391578555107,
+      "posed_pair_distance_m": 0.007205809932202101,
+      "ratio": 0.9547417617334757,
+      "corrected_pair_distance_m": 0.007205810391684085,
+      "corrected_ratio": 0.9547418226130497
+    },
+    {
+      "bone": "DEF-f_ring.02.L",
+      "source_ids": [
+        9696,
+        8951
+      ],
+      "neutral_pair_distance_m": 0.006799871101975441,
+      "posed_pair_distance_m": 0.006254698149859905,
+      "ratio": 0.9198259872959714,
+      "corrected_pair_distance_m": 0.006254698068371324,
+      "corrected_ratio": 0.9198259753121294
+    },
+    {
+      "bone": "DEF-f_ring.03.L",
+      "source_ids": [
+        9102,
+        8975
+      ],
+      "neutral_pair_distance_m": 0.0129769342020154,
+      "posed_pair_distance_m": 0.012944256886839867,
+      "ratio": 0.9974818925127586,
+      "corrected_pair_distance_m": 0.012540290773924172,
+      "corrected_ratio": 0.9663523432196016
+    },
+    {
+      "bone": "DEF-f_pinky.01.L",
+      "source_ids": [
+        9756,
+        9580
+      ],
+      "neutral_pair_distance_m": 0.012287456542253494,
+      "posed_pair_distance_m": 0.011921591125428677,
+      "ratio": 0.9702244792836745,
+      "corrected_pair_distance_m": 0.011921591339521403,
+      "corrected_ratio": 0.9702244967073558
+    },
+    {
+      "bone": "DEF-f_pinky.02.L",
+      "source_ids": [
+        9729,
+        9595
+      ],
+      "neutral_pair_distance_m": 0.010209749452769756,
+      "posed_pair_distance_m": 0.009302550926804543,
+      "ratio": 0.9111438992541483,
+      "corrected_pair_distance_m": 0.009302551118245916,
+      "corrected_ratio": 0.9111439180049877
+    },
+    {
+      "bone": "DEF-f_pinky.03.L",
+      "source_ids": [
+        9270,
+        9196
+      ],
+      "neutral_pair_distance_m": 0.012451943010091782,
+      "posed_pair_distance_m": 0.01242239959537983,
+      "ratio": 0.9976274052420567,
+      "corrected_pair_distance_m": 0.012422398978473645,
+      "corrected_ratio": 0.9976273556990911
+    },
+    {
+      "bone": "DEF-thumb.01.L",
+      "source_ids": [
+        9869,
+        10491
+      ],
+      "neutral_pair_distance_m": 0.035033922642469406,
+      "posed_pair_distance_m": 0.03215080872178078,
+      "ratio": 0.9177050783004923,
+      "corrected_pair_distance_m": 0.032150808135521576,
+      "corrected_ratio": 0.9177050615664484
+    },
+    {
+      "bone": "DEF-thumb.02.L",
+      "source_ids": [
+        10261,
+        10295
+      ],
+      "neutral_pair_distance_m": 0.01943172700703144,
+      "posed_pair_distance_m": 0.031165318563580513,
+      "ratio": 1.603836784671956,
+      "corrected_pair_distance_m": 0.030913560294134296,
+      "corrected_ratio": 1.5908807427640432
+    },
+    {
+      "bone": "DEF-thumb.03.L",
+      "source_ids": [
+        9407,
+        9377
+      ],
+      "neutral_pair_distance_m": 0.022504189983010292,
+      "posed_pair_distance_m": 0.022241318598389626,
+      "ratio": 0.9883190026026654,
+      "corrected_pair_distance_m": 0.022241319275996624,
+      "corrected_ratio": 0.9883190327129249
+    },
+    {
+      "bone": "DEF-f_index.01.R",
+      "source_ids": [
+        2947,
+        3265
+      ],
+      "neutral_pair_distance_m": 0.011903427541255951,
+      "posed_pair_distance_m": 0.011228887364268303,
+      "ratio": 0.9433322734439499,
+      "corrected_pair_distance_m": 0.011228886979275241,
+      "corrected_ratio": 0.9433322411009075
+    },
+    {
+      "bone": "DEF-f_index.02.R",
+      "source_ids": [
+        2066,
+        1995
+      ],
+      "neutral_pair_distance_m": 0.018198393285274506,
+      "posed_pair_distance_m": 0.015543345361948013,
+      "ratio": 0.8541053662426966,
+      "corrected_pair_distance_m": 0.015543345233635122,
+      "corrected_ratio": 0.8541053591919153
+    },
+    {
+      "bone": "DEF-f_index.03.R",
+      "source_ids": [
+        2975,
+        2811
+      ],
+      "neutral_pair_distance_m": 0.011518486775457859,
+      "posed_pair_distance_m": 0.011939398013055325,
+      "ratio": 1.0365422338717523,
+      "corrected_pair_distance_m": 0.011939397601291367,
+      "corrected_ratio": 1.0365421981236573
+    },
+    {
+      "bone": "DEF-f_middle.01.R",
+      "source_ids": [
+        3280,
+        2101
+      ],
+      "neutral_pair_distance_m": 0.018204055726528168,
+      "posed_pair_distance_m": 0.01749524474143982,
+      "ratio": 0.961063018278096,
+      "corrected_pair_distance_m": 0.017495244162672365,
+      "corrected_ratio": 0.9610629864847714
+    },
+    {
+      "bone": "DEF-f_middle.02.R",
+      "source_ids": [
+        2997,
+        2844
+      ],
+      "neutral_pair_distance_m": 0.011250333860516548,
+      "posed_pair_distance_m": 0.010305806063115597,
+      "ratio": 0.9160444650699828,
+      "corrected_pair_distance_m": 0.010305806381412494,
+      "corrected_ratio": 0.9160444933622008
+    },
+    {
+      "bone": "DEF-f_middle.03.R",
+      "source_ids": [
+        2994,
+        2845
+      ],
+      "neutral_pair_distance_m": 0.008789533749222755,
+      "posed_pair_distance_m": 0.008924712426960468,
+      "ratio": 1.015379504942417,
+      "corrected_pair_distance_m": 0.008924712161711581,
+      "corrected_ratio": 1.015379474764606
+    },
+    {
+      "bone": "DEF-f_ring.01.R",
+      "source_ids": [
+        2305,
+        2872
+      ],
+      "neutral_pair_distance_m": 0.007547429762780666,
+      "posed_pair_distance_m": 0.007206094451248646,
+      "ratio": 0.9547746289451704,
+      "corrected_pair_distance_m": 0.007206094431071074,
+      "corrected_ratio": 0.9547746262717343
+    },
+    {
+      "bone": "DEF-f_ring.02.R",
+      "source_ids": [
+        3028,
+        2283
+      ],
+      "neutral_pair_distance_m": 0.00679981242865324,
+      "posed_pair_distance_m": 0.0062546622939407825,
+      "ratio": 0.9198286510940671,
+      "corrected_pair_distance_m": 0.0062546624417208355,
+      "corrected_ratio": 0.9198286728270273
+    },
+    {
+      "bone": "DEF-f_ring.03.R",
+      "source_ids": [
+        2434,
+        2307
+      ],
+      "neutral_pair_distance_m": 0.012976850382983685,
+      "posed_pair_distance_m": 0.012944157235324383,
+      "ratio": 0.9974806561920316,
+      "corrected_pair_distance_m": 0.012540202202845631,
+      "corrected_ratio": 0.9663517596911942
+    },
+    {
+      "bone": "DEF-f_pinky.01.R",
+      "source_ids": [
+        3088,
+        2912
+      ],
+      "neutral_pair_distance_m": 0.012287412770092487,
+      "posed_pair_distance_m": 0.011921604163944721,
+      "ratio": 0.9702289966983006,
+      "corrected_pair_distance_m": 0.011921604844132797,
+      "corrected_ratio": 0.9702290520547934
+    },
+    {
+      "bone": "DEF-f_pinky.02.R",
+      "source_ids": [
+        3061,
+        2927
+      ],
+      "neutral_pair_distance_m": 0.010209784843027592,
+      "posed_pair_distance_m": 0.009302760474383831,
+      "ratio": 0.911161265140354,
+      "corrected_pair_distance_m": 0.009302760628792133,
+      "corrected_ratio": 0.9111612802639149
+    },
+    {
+      "bone": "DEF-f_pinky.03.R",
+      "source_ids": [
+        2602,
+        2528
+      ],
+      "neutral_pair_distance_m": 0.012451859191060066,
+      "posed_pair_distance_m": 0.012422331608831882,
+      "ratio": 0.997628660766628,
+      "corrected_pair_distance_m": 0.012422331546786207,
+      "corrected_ratio": 0.9976286557837837
+    },
+    {
+      "bone": "DEF-thumb.01.R",
+      "source_ids": [
+        3201,
+        3825
+      ],
+      "neutral_pair_distance_m": 0.03503381088376045,
+      "posed_pair_distance_m": 0.032150816172361374,
+      "ratio": 0.9177082184703046,
+      "corrected_pair_distance_m": 0.032150816665921324,
+      "corrected_ratio": 0.917708232558408
+    },
+    {
+      "bone": "DEF-thumb.02.R",
+      "source_ids": [
+        3593,
+        3627
+      ],
+      "neutral_pair_distance_m": 0.01943172514438629,
+      "posed_pair_distance_m": 0.03116540238261223,
+      "ratio": 1.6038412519238276,
+      "corrected_pair_distance_m": 0.030913604467445368,
+      "corrected_ratio": 1.5908831685166216
+    },
+    {
+      "bone": "DEF-thumb.03.R",
+      "source_ids": [
+        2739,
+        2709
+      ],
+      "neutral_pair_distance_m": 0.022504210472106934,
+      "posed_pair_distance_m": 0.022241361439228058,
+      "ratio": 0.9883200064625832,
+      "corrected_pair_distance_m": 0.022241361899062617,
+      "corrected_ratio": 0.9883200268958511
+    }
+  ],
+  "active_source_ids": [
+    2090,
+    2093,
+    2094,
+    2097,
+    2106,
+    2107,
+    2110,
+    2130,
+    2134,
+    2135,
+    2161,
+    2162,
+    2163,
+    2164,
+    2166,
+    2167,
+    2168,
+    2169,
+    2175,
+    2178,
+    2179,
+    2180,
+    2181,
+    2182,
+    2183,
+    2185,
+    2187,
+    2188,
+    2190,
+    2191,
+    2193,
+    2194,
+    2195,
+    2196,
+    2197,
+    2200,
+    2201,
+    2206,
+    2207,
+    2209,
+    2214,
+    2215,
+    2217,
+    2226,
+    2227,
+    2234,
+    2235,
+    2236,
+    2237,
+    2238,
+    2239,
+    2240,
+    2241,
+    2245,
+    2246,
+    2253,
+    2255,
+    2257,
+    2258,
+    2280,
+    2309,
+    2310,
+    2311,
+    2312,
+    2314,
+    2317,
+    2318,
+    2319,
+    2326,
+    2332,
+    2333,
+    2334,
+    2335,
+    2337,
+    2338,
+    2340,
+    2341,
+    2343,
+    2344,
+    2363,
+    2366,
+    2367,
+    2369,
+    2396,
+    2398,
+    2399,
+    2401,
+    2404,
+    2406,
+    2407,
+    2409,
+    2410,
+    2411,
+    2412,
+    2413,
+    2414,
+    2417,
+    2418,
+    2422,
+    2424,
+    2425,
+    2429,
+    2432,
+    2433,
+    2434,
+    2435,
+    2436,
+    2439,
+    2441,
+    2442,
+    2444,
+    2446,
+    2450,
+    2451,
+    2453,
+    2455,
+    2456,
+    2457,
+    2461,
+    2464,
+    2466,
+    2470,
+    2471,
+    2472,
+    2473,
+    2827,
+    2830,
+    2844,
+    2849,
+    2852,
+    2853,
+    2875,
+    2877,
+    2878,
+    2884,
+    2886,
+    2889,
+    2896,
+    2898,
+    2900,
+    2904,
+    2983,
+    2984,
+    2990,
+    2996,
+    2997,
+    2998,
+    2999,
+    3000,
+    3001,
+    3002,
+    3007,
+    3008,
+    3015,
+    3016,
+    3020,
+    3022,
+    3026,
+    3032,
+    3033,
+    3037,
+    3040,
+    3041,
+    3042,
+    3044,
+    3045,
+    3048,
+    3050,
+    3051,
+    3052,
+    3053,
+    3057,
+    3059,
+    3060,
+    3179,
+    3211,
+    3617,
+    3620,
+    3627,
+    3630,
+    3632,
+    3633,
+    3637,
+    3640,
+    3642,
+    3819,
+    3820,
+    3821,
+    8758,
+    8761,
+    8762,
+    8765,
+    8774,
+    8775,
+    8778,
+    8798,
+    8802,
+    8803,
+    8829,
+    8830,
+    8831,
+    8832,
+    8834,
+    8835,
+    8836,
+    8837,
+    8843,
+    8846,
+    8847,
+    8848,
+    8849,
+    8850,
+    8851,
+    8853,
+    8855,
+    8856,
+    8858,
+    8859,
+    8861,
+    8862,
+    8863,
+    8864,
+    8865,
+    8868,
+    8869,
+    8874,
+    8875,
+    8877,
+    8882,
+    8883,
+    8885,
+    8894,
+    8895,
+    8902,
+    8903,
+    8904,
+    8905,
+    8906,
+    8907,
+    8908,
+    8909,
+    8913,
+    8914,
+    8921,
+    8923,
+    8925,
+    8926,
+    8948,
+    8977,
+    8978,
+    8979,
+    8980,
+    8982,
+    8985,
+    8986,
+    8987,
+    8994,
+    9000,
+    9001,
+    9002,
+    9003,
+    9005,
+    9006,
+    9008,
+    9009,
+    9011,
+    9012,
+    9031,
+    9034,
+    9035,
+    9037,
+    9064,
+    9066,
+    9067,
+    9069,
+    9072,
+    9074,
+    9075,
+    9077,
+    9078,
+    9079,
+    9080,
+    9081,
+    9082,
+    9085,
+    9086,
+    9090,
+    9092,
+    9093,
+    9097,
+    9100,
+    9101,
+    9102,
+    9103,
+    9104,
+    9107,
+    9109,
+    9110,
+    9112,
+    9114,
+    9118,
+    9119,
+    9121,
+    9123,
+    9124,
+    9125,
+    9129,
+    9132,
+    9134,
+    9138,
+    9139,
+    9140,
+    9141,
+    9495,
+    9498,
+    9512,
+    9517,
+    9520,
+    9521,
+    9543,
+    9545,
+    9546,
+    9552,
+    9554,
+    9557,
+    9564,
+    9566,
+    9568,
+    9572,
+    9651,
+    9652,
+    9658,
+    9664,
+    9665,
+    9666,
+    9667,
+    9668,
+    9669,
+    9670,
+    9675,
+    9676,
+    9683,
+    9684,
+    9688,
+    9690,
+    9694,
+    9700,
+    9701,
+    9705,
+    9708,
+    9709,
+    9710,
+    9712,
+    9713,
+    9716,
+    9718,
+    9719,
+    9720,
+    9721,
+    9725,
+    9727,
+    9728,
+    9847,
+    9879,
+    10285,
+    10288,
+    10295,
+    10298,
+    10300,
+    10301,
+    10305,
+    10308,
+    10310,
+    10485,
+    10486,
+    10487
+  ],
+  "clusters": [
+    {
+      "source_faces": [
+        17031,
+        18502
+      ],
+      "core_source_ids": [
+        8834,
+        8903,
+        8904,
+        9512,
+        9665
+      ],
+      "translation_m": [
+        0.00023507529112976044,
+        -0.0003851627407129854,
+        0.00013040252088103443
+      ]
+    },
+    {
+      "source_faces": [
+        17224,
+        17393
+      ],
+      "core_source_ids": [
+        9006,
+        9078,
+        9093,
+        9107
+      ],
+      "translation_m": [
+        0.0003771200426854193,
+        -0.00022453539713751525,
+        -0.0002901953412219882
+      ]
+    },
+    {
+      "source_faces": [
+        19725,
+        19727
+      ],
+      "core_source_ids": [
+        9847,
+        10308,
+        10310,
+        10485
+      ],
+      "translation_m": [
+        -0.0008669502567499876,
+        0.0005217418074607849,
+        0.0011292898561805487
+      ]
+    },
+    {
+      "source_faces": [
+        3792,
+        5265
+      ],
+      "core_source_ids": [
+        2166,
+        2235,
+        2236,
+        2844,
+        2997
+      ],
+      "translation_m": [
+        -0.00023500333190895617,
+        -0.00038504687836393714,
+        0.00013036432210355997
+      ]
+    },
+    {
+      "source_faces": [
+        3987,
+        4154
+      ],
+      "core_source_ids": [
+        2338,
+        2410,
+        2425,
+        2439
+      ],
+      "translation_m": [
+        -0.00037712030461989343,
+        -0.00022453596466220915,
+        -0.00029019455541856587
+      ]
+    },
+    {
+      "source_faces": [
+        6486,
+        6488
+      ],
+      "core_source_ids": [
+        3179,
+        3640,
+        3642,
+        3819
+      ],
+      "translation_m": [
+        0.0008670686511322856,
+        0.0005218084552325308,
+        0.0011294441064819694
+      ]
+    }
+  ],
+  "method": "One bounded target. A rigid small translation of each local contact-material core, with source paired dorsal material included to preserve thickness; geodesic18mm C1 feather; original wrist/outside-hand fixed. No rig, source mesh, weights, UV or topology edit.",
+  "source_native_sha256": "7d34e83cc84f821cacb1188cc0e044fc38640401d3d5d00c6d4c4b65f785ce9b",
+  "native_motion_source_remains_unmodified": true
+}

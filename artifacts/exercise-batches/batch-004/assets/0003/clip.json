@@ -1,0 +1,124 @@
+{
+  "id": "0003",
+  "name": "air bike",
+  "action": "Exercise_0003",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "duration_frames": 150,
+  "fps": 30,
+  "skinning": "dualQuaternion",
+  "bones": 51,
+  "primary": [
+    "abs"
+  ],
+  "secondary": [
+    "hip flexors"
+  ],
+  "stretch": [],
+  "display_mode": "heat",
+  "highlight_sides": {},
+  "phases": [
+    {
+      "start": 0,
+      "end": 1.25,
+      "label": "Right elbow toward left knee; right leg extends"
+    },
+    {
+      "start": 1.25,
+      "end": 2.5,
+      "label": "Return through raised-knee centre"
+    },
+    {
+      "start": 2.5,
+      "end": 3.75,
+      "label": "Left elbow toward right knee; left leg extends"
+    },
+    {
+      "start": 3.75,
+      "end": 5,
+      "label": "Return through raised-knee centre"
+    }
+  ],
+  "cross_pair_witnesses": [
+    {
+      "time": 1.25,
+      "frame": 37.5,
+      "elbow": "RightForeArm",
+      "knee": "LeftLeg",
+      "extended_leg": "Right"
+    },
+    {
+      "time": 3.75,
+      "frame": 112.5,
+      "elbow": "LeftForeArm",
+      "knee": "RightLeg",
+      "extended_leg": "Left"
+    }
+  ],
+  "source_hold_recommendation_seconds": null,
+  "source_instructions": [
+    "Lie flat on your back with your hands placed behind your head.",
+    "Lift your legs off the ground and bend your knees at a 90-degree angle.",
+    "Bring your right elbow towards your left knee while simultaneously straightening your right leg.",
+    "Return to the starting position and repeat the movement on the opposite side, bringing your left elbow towards your right knee while straightening your left leg.",
+    "Continue alternating sides in a pedaling motion for the desired number of repetitions."
+  ],
+  "interpretation": "One controlled alternating supine bicycle crunch. Raised legs start with knees90degrees. Separate relaxed palms remain behind the head; the active elbow approaches the opposite knee while the other leg straightens. Pelvis remains supported and both feet stay airborne. The natural lumbar arch is retained. Five-second pace is authored; source specifies desired repetitions.",
+  "explicit_staging": {
+    "hands": "Separate palms cradle the occiput with gently articulated fingers; source palm plane is measured from original geometry. No neck pull.",
+    "wrists": "35degree palm/forearm deviation is an authored staging bound, not a clinical range.",
+    "back": "Posterior pelvic skin is supported; lumbar gap is measured without claiming whole-lumbar contact.",
+    "timing": "Opposite peaks at1.25/3.75seconds; one complete5second alternating cycle."
+  },
+  "source_roles": {
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hip flexors"
+    ]
+  },
+  "muscle_display_roles": {
+    "abs": {
+      "role": "main",
+      "mapping": "Superficial rectus abdominis regions"
+    },
+    "hip flexors": {
+      "role": "additional",
+      "mapping": "Visible sartorius and limited deep iliopsoas surface projection; not exposed iliopsoas tissue."
+    }
+  },
+  "artistic_emphasis": "Stable soft warm main/additional zones; neutral inactive body. No phase-dependent physiological recruitment claim.",
+  "correctives": {
+    "names": [
+      "JointNeutral",
+      "JointRightCross",
+      "JointLeftCross"
+    ],
+    "position_targets": 3,
+    "normal_targets": 3,
+    "method": "Three state keys: exact native original-cage local joint smoothing mapped by inverse unit DQ rotation, plus one smoothly feathered posterior flank pocket per key. No global smoothing, helper, weight or Basis edit.",
+    "maximum_rest_delta_m": 0.05276146819288466,
+    "flank_guard_amplitudes_m": [
+      0.01169804891982033,
+      0.014063733814609718,
+      0.015739590092533264
+    ],
+    "basis_rest_uv_weights_unchanged": true,
+    "global_corrective_smooth_enabled": false
+  },
+  "source_gaps": {
+    "timing": "Desired repetitions, no speed; one5second cycle authored.",
+    "hand_detail": "Hands behind head is sourced; separate palm placement/finger curl authored.",
+    "other_joint_angles": "Only starting90degree knees are sourced; remaining angles are illustration targets, not validated clinical ranges."
+  },
+  "source_record_sha256": "266be2bcfacac364fffdf5aa99f5ac4123ffb7195620b3595b6c90ff1d961431",
+  "provenance": {
+    "text": "catalogue/exercises/0003.json",
+    "body": "Original Blender Studio CC0 Human Base Mesh in artifacts/bodyweight-five/bodyweight-five.blend",
+    "restricted_media_used": false,
+    "paid_generation_used": false
+  },
+  "review_status": "source_and_cpu_checks_complete_primary_runtime_review_pending"
+}

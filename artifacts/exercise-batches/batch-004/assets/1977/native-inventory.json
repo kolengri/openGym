@@ -1,0 +1,81 @@
+{
+  "ok": true,
+  "source_sha256": "d3c7ccb8dbf57c8a5d203371211e031c4ed27cabc241fc0627bafa7e39344ae5",
+  "blender_version": "5.2.3 LTS",
+  "platform": "darwin",
+  "objects": {
+    "MESH": 1,
+    "ARMATURE": 1,
+    "CAMERA": 2
+  },
+  "bones": 51,
+  "actions": [
+    "Exercise_1977"
+  ],
+  "dimensions_m_at_start": [
+    0.9380464553833008,
+    0.3093615770339966,
+    1.8000000715255737
+  ],
+  "units": {
+    "scale_length": 1.0,
+    "system": "METRIC"
+  },
+  "native_frames": [
+    1,
+    151
+  ],
+  "fps": 30,
+  "material_count": 1,
+  "body_image_texture_nodes": 0,
+  "cameras": [
+    {
+      "name": "posterior_wrist_grasp",
+      "type": "ORTHO",
+      "position": [
+        2.299999952316284,
+        5.0,
+        2.0
+      ],
+      "native_ortho_vertical_scale": 2.5799999237060547
+    },
+    {
+      "name": "left_side_shoulder_extension",
+      "type": "ORTHO",
+      "position": [
+        5.0,
+        0.8999999761581421,
+        1.7000000476837158
+      ],
+      "native_ortho_vertical_scale": 2.5799999237060547
+    }
+  ],
+  "cameras_json_scale": "horizontal world width; root fits final viewport width",
+  "render": {
+    "engine": "BLENDER_WORKBENCH",
+    "film_transparent": true,
+    "shadows": false,
+    "cavity_ao": false,
+    "specular_overlay": false
+  },
+  "modifiers": [
+    {
+      "name": "Armature",
+      "type": "ARMATURE",
+      "viewport": true,
+      "render": true
+    },
+    {
+      "name": "JointSurfaceCorrective",
+      "type": "CORRECTIVE_SMOOTH",
+      "viewport": false,
+      "render": false
+    },
+    {
+      "name": "Multires",
+      "type": "MULTIRES",
+      "viewport": false,
+      "render": false
+    }
+  ]
+}

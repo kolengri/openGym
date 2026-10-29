@@ -1,0 +1,86 @@
+{
+  "id": "1980",
+  "action": "Exercise_1980",
+  "name": "across chest shoulder stretch",
+  "duration": 5,
+  "duration_seconds": 5,
+  "frames": 150,
+  "fps": 30,
+  "primary": [
+    "delts"
+  ],
+  "secondary": [
+    "rear deltoids",
+    "upper back"
+  ],
+  "display_mode": "stretch",
+  "highlight_sides": {
+    "delts": [
+      "L"
+    ],
+    "rear deltoids": [
+      "L"
+    ],
+    "upper back": [
+      "L"
+    ]
+  },
+  "phases": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "Enter"
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "label": "Hold"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "Return"
+    }
+  ],
+  "source_hold_recommendation_seconds": [
+    20,
+    30
+  ],
+  "skinning": "linear",
+  "interpretation": "Representative anatomical LEFT arm reaches straight across the chest; RIGHT forearm supports and gently presses the left arm toward the torso. The supporting hand stays open and relaxed and does not pull the left wrist. Shoulders stay down, the torso stays tall, and both feet and the pelvis retain the original stable standing geometry. Mirror the complete action and anatomical highlights to demonstrate the other side. The 5-second illustration compresses the source 20\u201330-second workout hold; kinematic easing is not a physiological recruitment curve.",
+  "authored_choices": {
+    "stance": "Original bilateral standing foot, knee, hip and pelvis geometry; source does not prescribe exact foot placement.",
+    "timing": "0\u20132 enter, 2\u20133 quiet hold, 3\u20135 release and return.",
+    "range": "Author-chosen comfortable cross-body reach; source provides no numerical angles.",
+    "support": "Opposite forearm surface, above the supporting elbow, against the active arm near its elbow; relaxed hand is not the support.",
+    "shoulder_frame": "Transported forearm frame, diagnosed humeral roll and small forward clavicle motion without shoulder elevation.",
+    "skin": "Linear source-indexed cage with one bounded left-shoulder weight-boundary diffusion; no shape keys, no DQ, no native smoothing mask.",
+    "muscle_display": "Cyan stretching fields on LEFT source delts/rear deltoids and LEFT upper back only. Inactive body is uniform neutral. Shared runtime field integration is primary-owned.",
+    "cameras": "Left posterior oblique exposes the trained left shoulder and upper back; complementary front oblique exposes forearm contact and the straight active arm. Root may fit widths.",
+    "source_order": "Active LEFT arm reaches by 1.30 s, supporting RIGHT forearm enters 1.25\u20132.0 s; hold 2\u20133 s; release removes support before the left arm lowers. Reversible source-step staging within the five-second envelope."
+  },
+  "source": {
+    "path": "catalogue/exercises/1980.json",
+    "sha256": "1b7aa87b3ee308ba47f1c6bb271e1e53b139f86a3e56eb2576af1863826f7b60",
+    "instruction_pointer": "/instructions",
+    "instructions": [
+      "Stand tall and bring one arm straight across your chest.",
+      "Use your other forearm to press the arm gently toward your body.",
+      "Keep the shoulder relaxed and down.",
+      "Feel the stretch in the back of the shoulder.",
+      "Hold for 20-30 seconds, then switch sides."
+    ],
+    "target": "delts",
+    "secondaryMuscles": [
+      "rear deltoids",
+      "upper back"
+    ],
+    "textSource": "opengym"
+  },
+  "provenance": {
+    "body": "Original continuous Blender Studio CC0 mannequin from immutable bodyweight-five source.",
+    "motion": "Original analytic authoring from catalogue text only; no restricted GymVisual image/video derivatives."
+  },
+  "readiness": "authored_for_review_not_production_approved",
+  "unresolved_source_blockers": []
+}

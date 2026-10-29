@@ -1,0 +1,1572 @@
+{
+  "schema_version": "1.0.0",
+  "requested_id": "1977",
+  "canonical_id": "1977",
+  "alias_resolution": null,
+  "not_production_approved": true,
+  "readiness": {
+    "status": "requires_review",
+    "source_blockers": [],
+    "unresolved_source_blockers": [],
+    "authored_source_resolutions": {},
+    "known_open_issue_ids": [],
+    "blocking_issue_ids": []
+  },
+  "source_brief": {
+    "schema_version": "1.0.0",
+    "id": "1977",
+    "canonical_id": "1977",
+    "record_kind": "canonical",
+    "name": "adduction of arm in back stretch",
+    "category": "stretching",
+    "body_part": "shoulders",
+    "status": "needs_review",
+    "animation_ready": false,
+    "starting_position": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Stand or sit tall.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/0",
+              "quote": "Stand or sit tall."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "movement": {
+      "status": "source_steps_present",
+      "phases": [
+        {
+          "text": "Stand or sit tall.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/0",
+              "quote": "Stand or sit tall."
+            }
+          ],
+          "step_number": 1,
+          "tags": [
+            "setup_or_position"
+          ]
+        },
+        {
+          "text": "Reach one arm behind your back.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/1",
+              "quote": "Reach one arm behind your back."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Grab that wrist with the other hand and gently pull it across your body.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/2",
+              "quote": "Grab that wrist with the other hand and gently pull it across your body."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "setup_or_position",
+            "movement"
+          ]
+        },
+        {
+          "text": "Keep your shoulders level.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/3",
+              "quote": "Keep your shoulders level."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "hold_or_constraint"
+          ]
+        },
+        {
+          "text": "Hold for 20-30 seconds, then switch sides.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/4",
+              "quote": "Hold for 20-30 seconds, then switch sides."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "setup_or_position",
+            "hold_or_constraint",
+            "return_or_side_change",
+            "timing_or_repetition"
+          ]
+        }
+      ],
+      "phase_interpretation": "Ordered original instruction steps with heuristic tags; a step can combine setup, motion and constraints. Not generated keyframes."
+    },
+    "arms_hands": {
+      "status": "source_cues_present",
+      "cues": [
+        {
+          "text": "Reach one arm behind your back.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/1",
+              "quote": "Reach one arm behind your back."
+            }
+          ],
+          "step_number": 2,
+          "tags": [
+            "movement"
+          ]
+        },
+        {
+          "text": "Grab that wrist with the other hand and gently pull it across your body.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/2",
+              "quote": "Grab that wrist with the other hand and gently pull it across your body."
+            }
+          ],
+          "step_number": 3,
+          "tags": [
+            "setup_or_position",
+            "movement"
+          ]
+        },
+        {
+          "text": "Keep your shoulders level.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/3",
+              "quote": "Keep your shoulders level."
+            }
+          ],
+          "step_number": 4,
+          "tags": [
+            "hold_or_constraint"
+          ]
+        }
+      ],
+      "missing_detail": null,
+      "context_cues": [
+        {
+          "text": "adduction of arm in back stretch",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/name",
+              "quote": "adduction of arm in back stretch"
+            }
+          ],
+          "source_field": "name"
+        },
+        {
+          "text": "Reaching one arm behind your back and pulling it across to stretch the shoulder.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/description",
+              "quote": "Reaching one arm behind your back and pulling it across to stretch the shoulder."
+            }
+          ],
+          "source_field": "description"
+        }
+      ],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "legs_feet": {
+      "status": "missing_in_source",
+      "cues": [],
+      "missing_detail": "Initial and/or moving leg/foot placement is not specified in the source steps.",
+      "context_cues": [],
+      "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+    },
+    "equipment_scene": {
+      "declared_equipment": {
+        "value": "body weight",
+        "evidence": [
+          {
+            "path": "catalogue/exercises/1977.json",
+            "pointer": "/equipment",
+            "quote": "body weight"
+          }
+        ]
+      },
+      "needs": {
+        "value": [],
+        "evidence": []
+      },
+      "props": [],
+      "contacts": {
+        "status": "missing_in_source",
+        "cues": [],
+        "missing_detail": "No explicit scene contact cue identified; absence is not proof of free-space motion.",
+        "context_cues": [],
+        "context_interpretation": "Title/description context is retained separately; it does not establish detailed instruction-step geometry."
+      },
+      "prop_summary": "no_prop_documented_in_text",
+      "equipment_free_candidate": true,
+      "interpretation": "Body weight describes resistance, not scene contents. Inventory is a candidate list, not verified geometry. Floor/ground contacts are retained even for equipment-free candidates."
+    },
+    "muscles": {
+      "primary": [
+        {
+          "name": "delts",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/target",
+              "quote": "delts"
+            }
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "triceps",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/secondaryMuscles/0",
+              "quote": "triceps"
+            }
+          ]
+        },
+        {
+          "name": "upper back",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/secondaryMuscles/1",
+              "quote": "upper back"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Source training labels, not measured activation, contraction intensity, or necessarily anatomical muscles (for example cardiovascular system, ankles, core)."
+    },
+    "source_constraints": {
+      "hold": false,
+      "hold_explicit": false,
+      "timing_and_ranges": [
+        {
+          "text": "Hold for 20-30 seconds, then switch sides.",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/4",
+              "quote": "Hold for 20-30 seconds, then switch sides."
+            }
+          ],
+          "step_number": 5,
+          "tags": [
+            "setup_or_position",
+            "hold_or_constraint",
+            "return_or_side_change",
+            "timing_or_repetition"
+          ]
+        }
+      ],
+      "interpretation": "Retain source timing/range cues. No universal tempo, joint angle, side order or anatomical precision is invented."
+    },
+    "review_reasons": [
+      {
+        "code": "starting_arms_hands_missing",
+        "message": "Arm/hand movement cues exist, but initial hand placement or arm position is not explicitly stated.",
+        "evidence": []
+      },
+      {
+        "code": "legs_feet_missing",
+        "message": "No explicit leg/foot cue was found in the instruction steps.",
+        "evidence": []
+      }
+    ],
+    "production_review_required": [
+      "Approve complete contact/pose geometry, range of motion and timing for this individual exercise.",
+      "Approve safe joint motion and visible primary/secondary muscle highlights; text labels do not supply muscle activation curves."
+    ],
+    "source": {
+      "path": "catalogue/exercises/1977.json",
+      "sha256": "63b512f23c306229375a0e0ec0cf6ce94340fbf2f94d43e2227d2d41e5c735f9",
+      "text_source": "opengym",
+      "original_record": {
+        "id": "1977",
+        "name": "adduction of arm in back stretch",
+        "bodyPart": "shoulders",
+        "equipment": "body weight",
+        "target": "delts",
+        "secondaryMuscles": [
+          "triceps",
+          "upper back"
+        ],
+        "category": "stretching",
+        "description": "Reaching one arm behind your back and pulling it across to stretch the shoulder.",
+        "instructions": [
+          "Stand or sit tall.",
+          "Reach one arm behind your back.",
+          "Grab that wrist with the other hand and gently pull it across your body.",
+          "Keep your shoulders level.",
+          "Hold for 20-30 seconds, then switch sides."
+        ],
+        "textSource": "opengym"
+      }
+    },
+    "derivation": "Deterministic text extraction with heuristic cue classification and separately labeled reversible authored staging. Source cues are quoted; props are adjudicated conservatively. No licensed images or videos were read.",
+    "source_completeness": {
+      "status": "needs_review",
+      "review_reason_count": 2
+    },
+    "authored_staging": {
+      "pose_class": "seated",
+      "pose_choice_basis": "source_classification",
+      "starting_position": {
+        "proposal": "Stand or sit tall.",
+        "status": "source_cue_reuse",
+        "authoring_basis": {
+          "type": "source_cues",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/0",
+              "quote": "Stand or sit tall."
+            }
+          ],
+          "rationale": ""
+        },
+        "source_verified": true,
+        "requires_owner_review": true
+      },
+      "arms_hands": {
+        "proposal": "Rest relaxed hands beside the thighs until the source's arm movement begins; use documented handles or loads when present.",
+        "status": "authored_from_source_posture",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/0",
+              "quote": "Stand or sit tall."
+            }
+          ],
+          "rationale": "Initial arm position was not explicit; this is a neutral staging choice compatible with the inferred support pose."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "legs_feet": {
+        "proposal": "For an otherwise unspecified seated setup, place the feet in a stable comfortable support position; preserve any source-defined footrests, pedals, leg pads or floor contact.",
+        "status": "authored_from_source_posture",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/0",
+              "quote": "Stand or sit tall."
+            }
+          ],
+          "rationale": "Initial leg placement was not explicit; this is a reversible balance/support choice, not a replacement for source movement."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "equipment_contacts": {
+        "proposal": "Retain every explicit contact in equipment_scene.contacts. Use only the documented prop choices: no additional prop is established. Do not assign unknown apparatus dimensions, pad settings, attachment heights or load values.",
+        "status": "authored_scene_blocking",
+        "authoring_basis": {
+          "type": "reversible_staging_choice",
+          "evidence": [
+            {
+              "path": "catalogue/exercises/1977.json",
+              "pointer": "/instructions/0",
+              "quote": "Stand or sit tall."
+            }
+          ],
+          "rationale": "Scene support follows the source posture; unsupported inventory candidates are excluded from this proposal, not silently asserted."
+        },
+        "source_verified": false,
+        "requires_owner_review": true
+      },
+      "movement_policy": "Use the complete ordered source phases and retain all individual constraints. No missing footfall sequence, load path, apparatus setting, timing or joint range is invented by these placement proposals.",
+      "status": "proposal_ready_for_review",
+      "blockers": [],
+      "interpretation": "Usable blocking proposals where source posture/contact allows them; authored placements are reversible choices, not verified exercise mechanics or production-ready animation."
+    },
+    "storyboard_readiness": {
+      "status": "proposal_ready_for_review",
+      "blockers": []
+    }
+  },
+  "selected_pilot_authoring_override": null,
+  "delivery_policy": {
+    "application_format": "GLB + Three.js live animation",
+    "generate_video": false,
+    "generate_frame_sequences": false,
+    "existing_video_artifacts": "Historical batch001 only; preserve without regeneration.",
+    "current_request_scope": [
+      "10565",
+      "6560",
+      "1980",
+      "2098",
+      "1977",
+      "4512",
+      "0003"
+    ],
+    "further_exercises": "User authorized batch 004 only plus the reopened whole-body 90/90 repair. Deliver for review before further rollout."
+  },
+  "visualization_policy": {
+    "candidate": "surface_heat_zone",
+    "status": "user_approved_for_next_five",
+    "exercise_id": "5915",
+    "inactive_body": "Uniform neutral skin; no painted muscle fibers or hard region boundaries.",
+    "main_additional": "Diffuse heat cue from selected source regions; stronger main areas and softer additional areas.",
+    "phase_strength": "Stable authored artistic emphasis; no invented phase-dependent recruitment or measured physiological claim.",
+    "stretch_palette": "Diffuse cyan for stretching exercises; keep source training labels separate from contraction/load claims. No measured force, temperature or EMG interpretation.",
+    "approved_style_exercise_id": "5915",
+    "current_batch": [
+      "1980",
+      "2098",
+      "1977",
+      "4512",
+      "0003"
+    ],
+    "additional_authorized_batch": {
+      "batch": "004",
+      "exercise_ids": [
+        "1980",
+        "2098",
+        "1977",
+        "4512",
+        "0003"
+      ],
+      "style": "Approved soft zones, cyan stretching/warm load, neutral inactive body, true alpha and no body shadows/AO.",
+      "execution": "One asset author per exercise, bounded by six total active agents including root; separate whole-body 90/90 repair."
+    },
+    "parallel_repair_batch": [
+      "10565",
+      "6560"
+    ]
+  },
+  "baseline_requirements": [
+    {
+      "id": "INTAKE-IDENTITY",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Resolve the requested ID to one of the existing canonical catalogue IDs; carry complete instructions, evidence, original record/hash, alias resolution and all source gaps into the authoring context.",
+      "acceptance_check": "Prepared packet resolves an existing ID, preserves all source steps/reasons and includes the baseline requirement IDs and relevant known issues.",
+      "evidence": [
+        {
+          "source_ref": "briefs",
+          "path": "briefs.jsonl.gz"
+        },
+        {
+          "source_ref": "aliases",
+          "path": "aliases.json"
+        },
+        {
+          "source_ref": "coverage",
+          "path": "coverage-report.json"
+        },
+        {
+          "source_ref": "review_queue",
+          "path": "review-queue.json"
+        },
+        {
+          "source_ref": "packet_preparer",
+          "path": "prepare_generation.py"
+        }
+      ],
+      "current_evidence_status": "implemented_packet_preparation",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "INTAKE-SOURCE-DISPOSITION",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Keep source facts, reversible authored choices, measured-but-unapproved values and unresolved decisions separate. Do not treat source completeness or a staging proposal as production acceptance.",
+      "acceptance_check": "Each critical choice cites source evidence or an explicit authoring basis; unresolved source blockers remain visible, and conflict dispositions are recorded.",
+      "evidence": [
+        {
+          "source_ref": "selected_pilot",
+          "path": "selected-first-five.json"
+        },
+        {
+          "source_ref": "coverage",
+          "path": "coverage-report.json"
+        },
+        {
+          "source_ref": "review_queue",
+          "path": "review-queue.json"
+        }
+      ],
+      "current_evidence_status": "contract_required_per_exercise",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "RIGHTS-TEXT-AND-CC0",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Use repository exercise text with notices and the accepted CC0 continuous body. Do not open, feed to AI, trace, copy or derive animations from Gym Visual media.",
+      "acceptance_check": "Inputs/provenance identify authorized text/body sources and exclude restricted exercise media; required notices are retained.",
+      "evidence": [
+        {
+          "source_ref": "media_restrictions",
+          "path": "../../catalogue/media/NOTICE.md"
+        },
+        {
+          "source_ref": "text_notices",
+          "path": "THIRD_PARTY_NOTICES.md"
+        },
+        {
+          "source_ref": "body_provenance",
+          "path": "../human-animation-base/README.md"
+        }
+      ],
+      "current_evidence_status": "established_input_policy",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "BODY-CONTINUITY",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Preserve the accepted continuous CC0 skin, source geometry and atlas binding. Do not recreate clothing, add disconnected muscle shells or generate new all-body textures that reintroduce seams.",
+      "acceptance_check": "Confirm source signature, one connected body, finite weights and unchanged intended topology; inspect posed skin for seams and intersections.",
+      "evidence": [
+        {
+          "source_ref": "body_provenance",
+          "path": "../human-animation-base/README.md"
+        },
+        {
+          "source_ref": "runtime_qa",
+          "path": "../bodyweight-five/runtime-asset-qa.json"
+        },
+        {
+          "source_ref": "atlas_checks",
+          "path": "../mannequin-muscle-atlas/verification.json"
+        }
+      ],
+      "current_evidence_status": "current_asset_topology_measured_future_poses_unreviewed",
+      "automatic_production_approval": false,
+      "local_repair_policy": {
+        "order": "Correct exercise layout and parent-relative axial frames first; compare the actual runtime cage before considering skin repair.",
+        "weights": "Diagnosed bounded local weight diffusion or attachment edits must snapshot integer group IDs before mutation, normalize to at most four influences, preserve exact weights outside the declared region and report original/new binding identities. A source-coordinate field or automatic heat candidate earns acceptance only by better posed anatomy.",
+        "correctives": "A few local POSITION/NORMAL targets may reproduce a justified original-cage surface target. Report affected source IDs, posed/rest displacement, conditioning and transition error. Reject unstable inverse fitting, global body warps, per-frame caches and native-only Smooth/Multires fixes.",
+        "appearance": "DQ preserves volume but cannot certify correct layout or attachments. Original-weight preservation, numerical parity, low floor minimum and topology PASS do not accept a visibly distorted person."
+      }
+    },
+    {
+      "id": "MOTION-ACTION-ISOLATION",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Create an exercise-specific action; remove inherited source actions and do not reuse the former squat trajectory or a generic bobbing cycle for unrelated exercises.",
+      "acceptance_check": "Clip/action ID, phase order and sampled geometry correspond to this exercise and its recorded authoring choices.",
+      "evidence": [
+        {
+          "source_ref": "build_report",
+          "path": "../bodyweight-five/build-report.json"
+        },
+        {
+          "source_ref": "pilot_readme",
+          "path": "../bodyweight-five/README.md"
+        },
+        {
+          "source_ref": "pilot_authoring_entrypoint",
+          "path": "../bodyweight-five/build_motion.py"
+        }
+      ],
+      "current_evidence_status": "current_five_authored_actions_recorded",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "CONTACT-SURFACE-PATCHES",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Name actual evaluated-skin contact patches and supporting surfaces per phase. Global minZ, a single bone target or whole-group extrema cannot by themselves establish contact.",
+      "acceptance_check": "For each active support, inspect signed distance distribution, near-contact area/fraction, penetration and tangential drift in a declared world frame, on native and runtime skins.",
+      "evidence": [
+        {
+          "source_ref": "pose_checks",
+          "path": "../bodyweight-five/pose-verification.json"
+        },
+        {
+          "source_ref": "build_report",
+          "path": "../bodyweight-five/build-report.json"
+        },
+        {
+          "source_ref": "situp_investigation",
+          "path": "../bodyweight-five/situp-contact-investigation.json"
+        }
+      ],
+      "current_evidence_status": "open_0001_per_patch_acceptance_required",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "CONTACT-COUPLED-SOLUTION",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Solve simultaneous pelvis/heel/sole/palm supports together with lumbar clearance and joint pose. Do not translate the whole body by an illustrative glute-proxy gap.",
+      "acceptance_check": "Intended contacts share the declared support plane/geometry without back/limb penetration; lifted contacts stay clear in their noncontact phases; review start/mid/top and transitions.",
+      "evidence": [
+        {
+          "source_ref": "situp_investigation",
+          "path": "../bodyweight-five/situp-contact-investigation.json"
+        },
+        {
+          "source_ref": "source_0001",
+          "path": "../../catalogue/exercises/0001.json"
+        }
+      ],
+      "current_evidence_status": "open_0001_not_solved",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "POSE-JOINT-TARGETS",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Define exercise-specific joint/segment targets, angle conventions, poles, ranges, phase timing and rotation continuity. Unsupported numerical limits remain null/unapproved.",
+      "acceptance_check": "Measurements state reference frame/basis; no unexplained target, elbow/knee flip, limb twist or self-intersection; source torso angles are not relabeled validated anatomical limits.",
+      "evidence": [
+        {
+          "source_ref": "source_0001",
+          "path": "../../catalogue/exercises/0001.json"
+        },
+        {
+          "source_ref": "pose_samples",
+          "path": "../bodyweight-five/pose-samples.json"
+        },
+        {
+          "source_ref": "situp_investigation",
+          "path": "../bodyweight-five/situp-contact-investigation.json"
+        }
+      ],
+      "current_evidence_status": "contract_required_no_universal_validated_limits",
+      "automatic_production_approval": false,
+      "observed_failure_modes": [
+        {
+          "case_ids": [
+            "10565",
+            "6560"
+          ],
+          "failure": "Correct knee bend axes hid a 135-degree inter-thigh layout and a trunk hinge away from the front thigh.",
+          "required_check": "Inspect torso-relative femur directions and the complete seated layout before surface fitting; limb endpoints and knee angle alone are insufficient."
+        },
+        {
+          "case_ids": [
+            "4512"
+          ],
+          "failure": "Keeping the standing pelvic frame while rotating only femurs produced a glute/thigh shelf; a high-knee workaround became a deep tuck.",
+          "required_check": "Author the seated pelvic frame and global tall trunk separately. Record actual hip/knee/ankle positions and pelvis-relative segment angles, not just pole coordinates. Preserve plausible whole-body seating and actual supports together."
+        },
+        {
+          "case_ids": [
+            "0003",
+            "1977"
+          ],
+          "failure": "Endpoint-preserving shortest-arc or world-rest arm rotations left sheared elbows, shoulder pinches or excessive wrist bend.",
+          "required_check": "Transport limb frames relative to the moving chest/pelvis and map the original flexion plane to the actual bend plane. Review elbow, palm and proximal-finger directions through the full action. Measured illustration angles are not clinical limits."
+        }
+      ]
+    },
+    {
+      "id": "POSE-HANDS-FINGERS",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Specify palm orientation, grip or open-hand contact and articulated fingers together with shoulder/elbow/wrist pose. For 0001 resolve palm/head placement and natural arm bends.",
+      "acceptance_check": "Review both hands and elbows at start/mid/top; check actual palm/head/support clearances, wrist orientation and intersections, not only rig endpoints.",
+      "evidence": [
+        {
+          "source_ref": "pilot_clips",
+          "path": "../bodyweight-five/clips.json"
+        },
+        {
+          "source_ref": "situp_investigation",
+          "path": "../bodyweight-five/situp-contact-investigation.json"
+        },
+        {
+          "source_ref": "pose_checks",
+          "path": "../bodyweight-five/pose-verification.json"
+        }
+      ],
+      "current_evidence_status": "open_0001_hand_head_pose",
+      "automatic_production_approval": false,
+      "observed_failure_modes": [
+        {
+          "case_ids": [
+            "2098",
+            "10565",
+            "6560",
+            "1977"
+          ],
+          "failure": "A whole-hand or whole-thumb minimum concealed distal fingertip gaps or crossings.",
+          "required_check": "Use immutable original-ID distal digit patches plus actual palm/finger triangles, grasp close-ups from both sides and acquisition/release clearance. Keep hand/head or hand/leg checks separate from hand/hand separation."
+        }
+      ]
+    },
+    {
+      "id": "MOTION-HOP-PHASES",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Where the exercise hops, author grounded compression, forefoot push-off, flight and controlled landing with coherent knee/hip/travel and free-leg behavior.",
+      "acceptance_check": "Sample every support-state transition and inspect actual decoded/runtime motion from complementary views; no planted-foot sliding or rigid whole-body bobbing.",
+      "evidence": [
+        {
+          "source_ref": "pilot_clips",
+          "path": "../bodyweight-five/clips.json"
+        },
+        {
+          "source_ref": "pose_checks",
+          "path": "../bodyweight-five/pose-verification.json"
+        },
+        {
+          "source_ref": "pilot_readme",
+          "path": "../bodyweight-five/README.md"
+        }
+      ],
+      "current_evidence_status": "9066_revised_and_sampled_not_biomechanically_certified",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "MUSCLE-ROLES-AND-LATERALITY",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Retain catalogue labels; explicitly record illustrative main/additional/stretch overrides and actual anatomical L/R sides per phase. Keep inactive skin uniformly neutral with no inactive fibers.",
+      "acceptance_check": "Retain source main/additional/stretch semantics and anatomical sides. Heat-zone5915candidate uses soft warm intensity without painted muscle contours; inactive areas remain neutral. Role colors and artistic phase emphasis are not EMG or measured instantaneous recruitment.",
+      "evidence": [
+        {
+          "source_ref": "atlas_readme",
+          "path": "../mannequin-muscle-atlas/README.md"
+        },
+        {
+          "source_ref": "atlas_checks",
+          "path": "../mannequin-muscle-atlas/verification.json"
+        },
+        {
+          "source_ref": "pilot_clips",
+          "path": "../bodyweight-five/clips.json"
+        },
+        {
+          "source_ref": "render_report",
+          "path": "../bodyweight-five/render-report.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
+        }
+      ],
+      "current_evidence_status": "current_neutral_and_selection_checks_measured_per_exercise_review_required",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "MUSCLE-MAPPING-SEMANTICS",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Resolve exact region IDs and review group/proxy meaning. Surface/deep/group/proxy/systemic/unsupported statuses remain explicit; do not invent localized patches for unsupported/systemic labels.",
+      "acceptance_check": "Unknown names are flagged; region references exist; selected region groups match the intended concept or an explicit proxy explanation. Focused biceps selection excludes biceps_femoris.",
+      "evidence": [
+        {
+          "source_ref": "atlas_map",
+          "path": "../mannequin-muscle-atlas/region-map.json"
+        },
+        {
+          "source_ref": "atlas_checks",
+          "path": "../mannequin-muscle-atlas/verification.json"
+        },
+        {
+          "source_ref": "atlas_readme",
+          "path": "../mannequin-muscle-atlas/README.md"
+        }
+      ],
+      "current_evidence_status": "focused_biceps_fix_measured_reference_validity_not_global_physiology_review",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "VIEW-COMPLEMENTARY-COVERAGE",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Choose recommended views that collectively expose movement, relevant contacts and selected visible muscle regions; add views for occlusion rather than mirrored duplicates.",
+      "acceptance_check": "Coverage records name region/side/phase and a useful view, or an explicit deep/unsupported/occlusion limitation; review actual images/runtime.",
+      "evidence": [
+        {
+          "source_ref": "camera_presets",
+          "path": "../bodyweight-five/camera-presets.json"
+        },
+        {
+          "source_ref": "render_report",
+          "path": "../bodyweight-five/render-report.json"
+        }
+      ],
+      "current_evidence_status": "current_camera_choices_recorded_complete_visibility_not_certified",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "MATERIAL-COLOR-INTEGRITY",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Disable cast shadows, cavity/AO and specular overlays in native and runtime rendering; do not bake background, fake cavities or all-body fibers into the selected atlas.",
+      "acceptance_check": "Inspect overlapping limbs and selected/unselected pixels in actual native/runtime output; verify lighting flags and uniform inactive body.",
+      "evidence": [
+        {
+          "source_ref": "render_report",
+          "path": "../bodyweight-five/render-report.json"
+        },
+        {
+          "source_ref": "runtime_checks",
+          "path": "../bodyweight-five/runtime-verification.json"
+        },
+        {
+          "source_ref": "atlas_checks",
+          "path": "../mannequin-muscle-atlas/verification.json"
+        }
+      ],
+      "current_evidence_status": "current_flags_and_neutral_output_measured",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "RUNTIME-ATLAS-UV",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Retain original-source correspondence across glTF UV splits. If bitmap atlases are used, preserve their exported UV channel1; source-index heat attributes do not require color textures.",
+      "acceptance_check": "Texture paths report the correct atlas channel when used; heat-field paths resolve _SOURCE_INDEX and share scalar values across seam copies. Selected fields follow the deformed skin.",
+      "evidence": [
+        {
+          "source_ref": "runtime_checks",
+          "path": "../bodyweight-five/runtime-verification.json"
+        },
+        {
+          "source_ref": "runtime_source",
+          "path": "../bodyweight-five/runtime_viewer.js"
+        },
+        {
+          "source_ref": "atlas_readme",
+          "path": "../mannequin-muscle-atlas/README.md"
+        }
+      ],
+      "current_evidence_status": "current_channel_and_source_index_measured",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "RUNTIME-RESOURCE-REUSE",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Share one rig/skeleton/mixer update across synchronized views. Reuse a surface scalar attribute for the heat candidate, with no color textures. Legacy bitmap paths use2048x1024 atlases with a lazy neutral/active cache, disposal and stale-load protection.",
+      "acceptance_check": "Probe one model/skeleton/mixer and one pose update for all views. The heat candidate uses zero color textures; bitmap paths retain at most neutral/current color states. Distinguish internal bone textures from color textures.",
+      "evidence": [
+        {
+          "source_ref": "runtime_checks",
+          "path": "../bodyweight-five/runtime-verification.json"
+        },
+        {
+          "source_ref": "runtime_budget",
+          "path": "../bodyweight-five/runtime-budget.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
+        }
+      ],
+      "current_evidence_status": "current_two_color_cache_and_shared_mixer_measured",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "RUNTIME-NATIVE-PARITY",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Check actual exported runtime against Blender and acknowledge runtime cage versus native corrective-smooth/subdivision differences. Bone parity alone does not validate skin contact or appearance.",
+      "acceptance_check": "Compare sampled bones plus relevant evaluated surface patches, atlas placement, contact appearance and visibility in both paths.",
+      "evidence": [
+        {
+          "source_ref": "runtime_checks",
+          "path": "../bodyweight-five/runtime-verification.json"
+        },
+        {
+          "source_ref": "runtime_qa",
+          "path": "../bodyweight-five/runtime-asset-qa.json"
+        },
+        {
+          "source_ref": "pilot_readme",
+          "path": "../bodyweight-five/README.md"
+        }
+      ],
+      "current_evidence_status": "sampled_bone_parity_measured_skin_contact_scope_incomplete",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "OUTPUT-TRUE-ALPHA",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Deliver live GLB + Three.js with a genuinely transparent canvas. Do not generate videos or frame sequences for the current application workflow. CSS backgrounds are independently selectable.",
+      "acceptance_check": "Verify alpha context, null scene background, zero clear alpha and empty corner pixels in the actual live canvas; no video elements or media requests. Old WebM/MP4 receipts are historical only.",
+      "evidence": [
+        {
+          "source_ref": "runtime_checks",
+          "path": "../bodyweight-five/runtime-verification.json"
+        },
+        {
+          "source_ref": "alpha_checks",
+          "path": "../bodyweight-five/transparency-verification.json"
+        },
+        {
+          "source_ref": "encoding_report",
+          "path": "../bodyweight-five/encoding-report.json"
+        },
+        {
+          "source_ref": "decoded_video_checks",
+          "path": "../bodyweight-five/video-review.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
+        }
+      ],
+      "current_evidence_status": "live_heat_canvas_verified; legacy_video_receipts_historical",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "OUTPUT-LOOP-AND-DECODE",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Check actual GLB pose/contact continuity and live-loop playback, including resume after seeking to the endpoint. Do not encode or decode new videos for this workflow.",
+      "acceptance_check": "Record exact model/runtime hashes, action duration, sampled pose parity and loop/restart interaction in Three.js. Confirm zero video outputs/requests. Historical decode receipts do not replace live runtime checks.",
+      "evidence": [
+        {
+          "source_ref": "pose_checks",
+          "path": "../bodyweight-five/pose-verification.json"
+        },
+        {
+          "source_ref": "decoded_video_checks",
+          "path": "../bodyweight-five/video-review.json"
+        },
+        {
+          "source_ref": "alpha_checks",
+          "path": "../bodyweight-five/transparency-verification.json"
+        },
+        {
+          "source_ref": "encoding_report",
+          "path": "../bodyweight-five/encoding-report.json"
+        },
+        {
+          "source_ref": "heat_checks",
+          "path": "../chaturanga-heatmap/verification.json"
+        }
+      ],
+      "current_evidence_status": "live_chaturanga_pose_loop_and_endpoint_resume_verified",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "PLAYBACK-INTERACTION",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Open at the exercise recommended camera(s); provide finger orbit, pinch zoom, reset to recommended camera, continued motion during camera interaction and no panning. Retain extra views when muscles are hidden.",
+      "acceptance_check": "In the actual runtime, record camera change for orbit/zoom, stable pan target, recommended-view reset and advancing animation time; distinguish emulated touch from a physical-device check.",
+      "evidence": [
+        {
+          "source_ref": "camera_presets",
+          "path": "../bodyweight-five/camera-presets.json"
+        },
+        {
+          "source_ref": "runtime_checks",
+          "path": "../bodyweight-five/runtime-verification.json"
+        },
+        {
+          "source_ref": "runtime_source",
+          "path": "../bodyweight-five/runtime_viewer.js"
+        },
+        {
+          "source_ref": "touch_checks",
+          "path": "../bodyweight-five/touch-verification.json"
+        },
+        {
+          "source_ref": "touch_checker",
+          "path": "../bodyweight-five/check_touch.mjs"
+        }
+      ],
+      "current_evidence_status": "implemented_and_mobile_emulation_verified_in_review_player_physical_devices_and_real_app_unverified",
+      "automatic_production_approval": false
+    },
+    {
+      "id": "ACCEPTANCE-HONESTY",
+      "applies_to": "all_canonical_exercises_and_resolved_aliases",
+      "requirement": "Preserve open issues and actual evidence scope. Existing-source checks are reusable only for unchanged inputs; no catalogue-wide production, anatomy, coaching or EMG certification is implied.",
+      "acceptance_check": "Readiness lists unresolved fields and issue IDs; issue closure names changed asset/hash, per-contact/pose visual receipts and relevant runtime/decoded checks. Remediation drafts retain their open status.",
+      "evidence": [
+        {
+          "source_ref": "coverage",
+          "path": "coverage-report.json"
+        },
+        {
+          "source_ref": "review_queue",
+          "path": "review-queue.json"
+        },
+        {
+          "source_ref": "situp_investigation",
+          "path": "../bodyweight-five/situp-contact-investigation.json"
+        },
+        {
+          "source_ref": "packet_preparer",
+          "path": "prepare_generation.py"
+        }
+      ],
+      "current_evidence_status": "required_for_all_future_preparation",
+      "automatic_production_approval": false
+    }
+  ],
+  "evidence_status_policy": {
+    "source": "Verbatim catalogue/asset metadata with path/pointer/hash; not independent truth validation.",
+    "authored_choice": "Reversible design/staging interpretation with rationale and scope; never source-verified merely because implemented.",
+    "measured_unapproved": "A measured value without an accepted technique/range/contact interpretation; not an acceptance threshold.",
+    "fixed_measured": "A specific implemented correction with a receipt covering that exact property; no wider inference.",
+    "implemented_sampled": "Implemented and sampled, with declared frames/platform and remaining unmeasured behavior.",
+    "open": "Reported or unresolved; must retain remediation and evidence and cannot be silently treated as passed.",
+    "not_run": "Required evidence has not been collected for this exercise/asset revision.",
+    "not_applicable": "Explicit reason why a conditional check does not apply.",
+    "closure_rule": "Only evidence for the changed property and asset revision can close its issue; global floor/bone-loop passes do not close 0001 contacts/arms.",
+    "no_claims": [
+      "No physiological activation curves or EMG claims.",
+      "No universal validated joint limits or inferred apparatus dimensions.",
+      "No automatic production-ready status from a source brief or context packet."
+    ],
+    "verification_context_fields": [
+      "asset_path",
+      "asset_sha256",
+      "native_or_runtime",
+      "platform",
+      "hardware_or_emulation",
+      "frames_or_phase_intervals",
+      "measurement_definition",
+      "scope_limitations",
+      "review_status"
+    ]
+  },
+  "per_exercise_intake_template": {
+    "canonical_id": null,
+    "requested_id": null,
+    "alias_resolution": null,
+    "status": "draft",
+    "production_ready": false,
+    "source": {
+      "brief_path": "briefs.jsonl.gz",
+      "canonical_record_sha256": null,
+      "instruction_evidence": [],
+      "original_instructions": [],
+      "source_gaps": [],
+      "source_blockers": []
+    },
+    "applicable_requirement_ids": [
+      "INTAKE-IDENTITY",
+      "INTAKE-SOURCE-DISPOSITION",
+      "RIGHTS-TEXT-AND-CC0",
+      "BODY-CONTINUITY",
+      "MOTION-ACTION-ISOLATION",
+      "CONTACT-SURFACE-PATCHES",
+      "CONTACT-COUPLED-SOLUTION",
+      "POSE-JOINT-TARGETS",
+      "POSE-HANDS-FINGERS",
+      "MOTION-HOP-PHASES",
+      "MUSCLE-ROLES-AND-LATERALITY",
+      "MUSCLE-MAPPING-SEMANTICS",
+      "VIEW-COMPLEMENTARY-COVERAGE",
+      "MATERIAL-COLOR-INTEGRITY",
+      "RUNTIME-ATLAS-UV",
+      "RUNTIME-RESOURCE-REUSE",
+      "RUNTIME-NATIVE-PARITY",
+      "OUTPUT-TRUE-ALPHA",
+      "OUTPUT-LOOP-AND-DECODE",
+      "PLAYBACK-INTERACTION",
+      "ACCEPTANCE-HONESTY"
+    ],
+    "authored_choices": [
+      {
+        "id": null,
+        "field": null,
+        "value": null,
+        "basis_kind": null,
+        "source_evidence": [],
+        "rationale": null,
+        "scope": null,
+        "review_status": "unreviewed"
+      }
+    ],
+    "coordinates": {
+      "units": "m",
+      "world_up": null,
+      "body_front": null,
+      "anatomical_left": null,
+      "screen_direction_mapping": null,
+      "runtime_axis_transform": null
+    },
+    "movement_phases": [
+      {
+        "id": null,
+        "source_step_numbers": [],
+        "description": null,
+        "time_or_frames": null,
+        "support_states": [],
+        "joint_target_ids": [],
+        "source_or_authored": null
+      }
+    ],
+    "support_surfaces": [
+      {
+        "id": null,
+        "type": null,
+        "source_evidence": [],
+        "world_transform": null,
+        "geometry_reference": null
+      }
+    ],
+    "contact_patches": [
+      {
+        "id": null,
+        "anatomical_side": null,
+        "body_mesh": null,
+        "selector": {
+          "kind": "source_vertex_ids_or_triangles",
+          "source_vertex_ids": [],
+          "source_triangles": [],
+          "landmark_label": null,
+          "landmark_review_status": "unreviewed",
+          "proxy_scope": null,
+          "runtime_correspondence": "_SOURCE_INDEX"
+        },
+        "support_surface_id": null,
+        "support_geometry": {
+          "kind": null,
+          "world_transform": null,
+          "plane_point_m": null,
+          "plane_normal": null
+        },
+        "phase_states": [
+          {
+            "phase_id": null,
+            "state": null
+          }
+        ],
+        "metrics_required": [
+          "signed_distance_distribution",
+          "near_contact_area_or_fraction",
+          "max_penetration",
+          "tangential_drift",
+          "surface_normal_relation"
+        ],
+        "tolerances": {
+          "max_gap_m": null,
+          "max_penetration_m": null,
+          "max_tangential_drift_m": null,
+          "min_contact_area_or_fraction": null,
+          "basis": null,
+          "review_status": "unapproved"
+        },
+        "evidence": [],
+        "status": "unresolved"
+      }
+    ],
+    "joint_targets": [
+      {
+        "id": null,
+        "joint_or_segment": null,
+        "anatomical_side": null,
+        "phase_ids": [],
+        "position_target": null,
+        "rotation_target": null,
+        "ik_pole": null,
+        "angle": {
+          "value": null,
+          "unit": "degrees",
+          "convention": null,
+          "reference_frame": null,
+          "basis_kind": null,
+          "source_evidence": [],
+          "review_status": "unapproved"
+        },
+        "range": {
+          "minimum": null,
+          "maximum": null,
+          "basis": null,
+          "review_status": "unapproved"
+        },
+        "rotation_continuity": null,
+        "intersection_checks": []
+      }
+    ],
+    "hand_pose": [
+      {
+        "anatomical_side": null,
+        "phase_ids": [],
+        "palm_facing": null,
+        "finger_configuration": null,
+        "grip_or_light_touch": null,
+        "opposing_surface_patch": null,
+        "clearance_basis": null,
+        "review_status": "unreviewed"
+      }
+    ],
+    "muscle_roles": [
+      {
+        "catalogue_name": null,
+        "role": null,
+        "anatomical_sides": [],
+        "phase_ids": [],
+        "atlas_region_ids": [],
+        "mapping_status": null,
+        "proxy_or_unsupported_notice": null,
+        "source_or_authored_basis": null,
+        "activation_measurement_claim": false
+      }
+    ],
+    "views": [
+      {
+        "id": null,
+        "recommended_on_open": false,
+        "camera_reference": null,
+        "position": null,
+        "target": null,
+        "projection": null,
+        "coverage": [
+          {
+            "atlas_region_id": null,
+            "side": null,
+            "phase_ids": [],
+            "visibility_status": null,
+            "occlusion_or_proxy_note": null
+          }
+        ],
+        "contact_visibility": []
+      }
+    ],
+    "runtime": {
+      "atlas_uv_channel": 1,
+      "texture_size_px": [
+        2048,
+        1024
+      ],
+      "color_cache": "none_for_heat_field; lazy_neutral_active_only_for_legacy_bitmap_mode",
+      "stale_switch_guard": true,
+      "model_instances": 1,
+      "mixer_instances": 1,
+      "pose_updates_per_frame": 1,
+      "alpha_context": true,
+      "scene_background": null,
+      "clear_alpha": 0,
+      "cast_shadows": false,
+      "ao_or_cavity": false,
+      "specular_overlay": false,
+      "interaction": {
+        "recommended_camera_at_open": true,
+        "finger_orbit": true,
+        "pinch_zoom": true,
+        "reset_to_recommended_camera": true,
+        "camera_changes_preserve_animation_time": true,
+        "motion_continues": true,
+        "panning_enabled": false,
+        "evidence_status": "not_run"
+      },
+      "surface_heat_field": {
+        "status": "candidate_awaiting_confirmation",
+        "original_vertex_attribute": "_SOURCE_INDEX",
+        "color_textures": 0,
+        "hard_painted_muscle_boundaries": false,
+        "phase_intensity_is_measured": false
+      }
+    },
+    "exports": [
+      {
+        "path": null,
+        "sha256": null,
+        "container": null,
+        "alpha_required": null,
+        "fallback_background": null,
+        "fps": null,
+        "frame_count": null,
+        "duration_seconds": null,
+        "audio_tracks": null,
+        "decoded_all_frames": false,
+        "loop_checks": [],
+        "alpha_checks": []
+      }
+    ],
+    "acceptance": {
+      "contact_review": "not_run",
+      "joint_and_hand_pose_review": "not_run",
+      "intersection_review": "not_run",
+      "muscle_role_and_side_review": "not_run",
+      "visibility_review": "not_run",
+      "runtime_parity_review": "not_run",
+      "playback_review": "not_run",
+      "decoded_output_review": "not_run",
+      "open_issue_ids": [],
+      "evidence": []
+    },
+    "delivery_policy": {
+      "application_format": "GLB + Three.js live animation",
+      "generate_video": false,
+      "generate_frame_sequences": false,
+      "existing_video_artifacts": "Historical batch001 only; preserve without regeneration.",
+      "current_request_scope": [
+        "5915"
+      ],
+      "further_exercises": "Wait for user approval of the chaturanga heat-zone example."
+    }
+  },
+  "per_exercise_overrides": {
+    "status": "authorized_prototype_in_progress",
+    "timing_policy": "Five-second demonstration. Stretches enter 0–2s, hold 2–3s, return 3–5s; retain source 20–30-second workout hold separately. Air bike 0003 uses a complete alternating five-second cycle.",
+    "source_policy": "Preserve source hand, arm, leg and support cues. One-sided stretches show one representative anatomical side, with explicit mirror note. Do not add unsourced training muscles.",
+    "shape_policy": "Whole-body natural proportions and skin take precedence over numeric parity. Prefer original 51-bone binding/Basis/rest/UV/source IDs. If diagnosed pose/frame fixes are insufficient, bounded local weights (maximum four influences) or a few local POSITION/NORMAL correctives may be used, with original Basis/UV/source IDs retained and the new binding explicitly declared. No blind helper-bone fits or large inverse offsets.",
+    "required_qa": [
+      "Inspect neutral runtime-faithful side/oblique/rear start, entry and hold/peak skin before full QA; no swollen deltoids, warped pelvis, skirt-like groin, sheared elbows or flat cut knee caps.",
+      "Verify source-specific hand/arm contacts and head/body clearance through entry, not just endpoints; planted feet/pelvis and airborne limbs must be checked on actual skin.",
+      "Choose default views exposing trained regions and complementary contacts; actual canvas alpha, no shadows/AO, orbit/touch/pinch/reset and pose continuation remain required."
+    ]
+  },
+  "known_open_issues": [],
+  "muscle_name_mappings": {
+    "delts": {
+      "status": "surface",
+      "regions": [
+        "deltoid_anterior.L",
+        "deltoid_anterior.R",
+        "deltoid_lateral.L",
+        "deltoid_lateral.R",
+        "deltoid_posterior.L",
+        "deltoid_posterior.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "triceps": {
+      "status": "surface",
+      "regions": [
+        "triceps_long.L",
+        "triceps_long.R",
+        "triceps_lateral.L",
+        "triceps_lateral.R"
+      ],
+      "reason": "Illustrative visible superficial surface regions."
+    },
+    "upper back": {
+      "status": "group_proxy",
+      "regions": [
+        "infraspinatus.L",
+        "infraspinatus.R",
+        "teres_major.L",
+        "teres_major.R",
+        "latissimus_dorsi.L",
+        "latissimus_dorsi.R",
+        "trapezius_upper.L",
+        "trapezius_upper.R",
+        "trapezius_middle.L",
+        "trapezius_middle.R",
+        "trapezius_lower.L",
+        "trapezius_lower.R"
+      ],
+      "reason": "Training group combines lats, trapezius and visible posterior scapular regions; deep rhomboids are omitted unless requested explicitly."
+    }
+  },
+  "contract_source_registry": {
+    "briefs": {
+      "path": "briefs.jsonl.gz",
+      "path_base": "generation-contract.json directory"
+    },
+    "coverage": {
+      "path": "coverage-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "review_queue": {
+      "path": "review-queue.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "aliases": {
+      "path": "aliases.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "selected_pilot": {
+      "path": "selected-first-five.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "text_notices": {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "catalogue_policy": {
+      "path": "../../catalogue/README.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "media_restrictions": {
+      "path": "../../catalogue/media/NOTICE.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "source_0001": {
+      "path": "../../catalogue/exercises/0001.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "pilot_readme": {
+      "path": "../bodyweight-five/README.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "pilot_clips": {
+      "path": "../bodyweight-five/clips.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "camera_presets": {
+      "path": "../bodyweight-five/camera-presets.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "body_provenance": {
+      "path": "../human-animation-base/README.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "atlas_readme": {
+      "path": "../mannequin-muscle-atlas/README.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "atlas_map": {
+      "path": "../mannequin-muscle-atlas/region-map.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "atlas_checks": {
+      "path": "../mannequin-muscle-atlas/verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "build_report": {
+      "path": "../bodyweight-five/build-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "pose_checks": {
+      "path": "../bodyweight-five/pose-verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "pose_samples": {
+      "path": "../bodyweight-five/pose-samples.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "render_report": {
+      "path": "../bodyweight-five/render-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "runtime_checks": {
+      "path": "../bodyweight-five/runtime-verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "runtime_qa": {
+      "path": "../bodyweight-five/runtime-asset-qa.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "runtime_budget": {
+      "path": "../bodyweight-five/runtime-budget.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "runtime_source": {
+      "path": "../bodyweight-five/runtime_viewer.js",
+      "path_base": "generation-contract.json directory"
+    },
+    "alpha_checks": {
+      "path": "../bodyweight-five/transparency-verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "encoding_report": {
+      "path": "../bodyweight-five/encoding-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "decoded_video_checks": {
+      "path": "../bodyweight-five/video-review.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_investigation": {
+      "path": "../bodyweight-five/situp-contact-investigation.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_measurement_script": {
+      "path": "../bodyweight-five/inspect_situp_contacts.py",
+      "path_base": "generation-contract.json directory"
+    },
+    "packet_preparer": {
+      "path": "prepare_generation.py",
+      "path_base": "generation-contract.json directory"
+    },
+    "pilot_authoring_entrypoint": {
+      "path": "../bodyweight-five/build_motion.py",
+      "path_base": "generation-contract.json directory"
+    },
+    "native_pose_checker": {
+      "path": "../bodyweight-five/verify_poses.py",
+      "path_base": "generation-contract.json directory"
+    },
+    "runtime_checker": {
+      "path": "../bodyweight-five/verify_runtime.mjs",
+      "path_base": "generation-contract.json directory"
+    },
+    "touch_checks": {
+      "path": "../bodyweight-five/touch-verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "touch_checker": {
+      "path": "../bodyweight-five/check_touch.mjs",
+      "path_base": "generation-contract.json directory"
+    },
+    "atlas_asset_qa": {
+      "path": "../mannequin-muscle-atlas/asset-qa.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_landmarks": {
+      "path": "../bodyweight-five/situp-repair/landmarks.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_candidate_checks": {
+      "path": "../bodyweight-five/situp-repair/contact-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_runtime_surface_checks": {
+      "path": "../bodyweight-five/situp-repair/runtime-contact-report.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "situp_candidate_proof": {
+      "path": "../bodyweight-five/situp-repair/proof-manifest.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "review_batch_001": {
+      "path": "../exercise-batches/batch-001/manifest.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "original_situp_investigation": {
+      "path": "../exercise-batches/batch-001/previous-situp-contact-investigation.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "heat_demo": {
+      "path": "../chaturanga-heatmap/README.md",
+      "path_base": "generation-contract.json directory"
+    },
+    "heat_checks": {
+      "path": "../chaturanga-heatmap/verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "heat_inline_checks": {
+      "path": "../chaturanga-heatmap/inline-verification.json",
+      "path_base": "generation-contract.json directory"
+    },
+    "heat_build": {
+      "path": "../chaturanga-heatmap/build-manifest.json",
+      "path_base": "generation-contract.json directory"
+    }
+  },
+  "input_files": [
+    {
+      "path": "artifacts/exercise-animation-briefs/briefs.jsonl.gz",
+      "sha256": "52a8dd017e7e28ec4241a08c1b8e323e1af6c7e0bcd65508e5e48ba222711c8b"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/generation-contract.json",
+      "sha256": "7477ec7d5c9d96bd7ed604bc35868343bcce3e92e8da54a097c9d6f0702e993c"
+    },
+    {
+      "path": "artifacts/exercise-animation-briefs/selected-first-five.json",
+      "sha256": "a1e7f00193d81e7230d7afe8e50107cf3a371d1ddeb9d6fcb1eb6fb029df45e6"
+    },
+    {
+      "path": "artifacts/mannequin-muscle-atlas/region-map.json",
+      "sha256": "05994fed348105e414d075d887f4a59599951a4aa762560d98cc08d5dd083268"
+    }
+  ]
+}

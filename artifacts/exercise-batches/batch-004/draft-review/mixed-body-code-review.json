@@ -1,0 +1,42 @@
+{
+  "status": "accepted_no_open_code_findings",
+  "base": "468c026db0adb250bb2de7e7b197c8510903460e",
+  "reviewer": {
+    "model": "gpt-6.1-sol",
+    "effort": "xhigh",
+    "agent": "mixed_body_runtime_review"
+  },
+  "files": {
+    "artifacts/butterfly-mpfb-review/prepare_asset.py": "66f84e8cb3ba2c3a8a6ced078a265c8b6d4adae347f142f66cd44eeac252a017",
+    "artifacts/butterfly-mpfb-review/prepare_heat.py": "674db9ceb4d42efe6aaef0d4932d2048445929bec51d2b44dbb677e108255cd5",
+    "artifacts/exercise-batches/batch-004/assets/2098/cameras.json": "736c65e0704f1130229a421911b851ff1b37eec784851666a7a3f701ba243c99",
+    "artifacts/exercise-batches/batch-004/build.mjs": "dbded4ba27f4db64299a9a3a0a023a41a3c94dac417cc3000d99817b8b10de98",
+    "artifacts/exercise-batches/batch-004/template.html": "a431f2881de38bdb4cb1a3658951af289b6d7e8a9995f644df1bbe067ae7ea9a",
+    "artifacts/exercise-batches/batch-004/verify-inline.mjs": "17a717293d2ed5ab46cde156d0fe3fdfd65b71804c08196ca1b1c014e15a9b66",
+    "artifacts/exercise-batches/batch-004/verify.mjs": "a5382d1330c73c7de018c53e47254d93083a59d0bb13a7c2f0f5a48fe8e3f24c",
+    "artifacts/exercise-batches/batch-004/viewer.js": "b1e8a1dc2b7836b3d94850274817e3f7bd65c5bc128f71741984dc2caa4d5b92",
+    "artifacts/exercise-batches/build-review.mjs": "e2e435bdf39567a07d269606d5c2756f780fd2d9e46360e67ccf04d395db31c6",
+    "artifacts/exercise-batches/fit-cameras.mjs": "a7a37364ef25d6aeda6a6c5de0b37595db271d51b46373312521870ef22882d1",
+    "artifacts/exercise-batches/verify-body-atlas.mjs": "de91b3a9299abfb5b985624bda1b473b39e1bc2a79d43eb1c45188acc4719d2c",
+    "artifacts/exercise-batches/verify-review.mjs": "c9db6fce28b16ca557eff980a3ef4fe3527340278424a99586141e35ddc073b2",
+    "artifacts/ninety-mpfb-review/build_asset.mjs": "bd8a4b4cc21ff90588bd5f9529d46d16b763adada0f7155504745d4c39487bfb",
+    "artifacts/ninety-mpfb-review/prepare_motion.py": "f43276d36a67df05a123c4746cd219d9d42c0dbd95eb210d77d699904a3fc46f",
+    "artifacts/ninety-mpfb-review/verify_surface.py": "11c7c722cfb710573532e40062aca00bfb2351101e0d494dd1aacdabddfb69f5"
+  },
+  "fingerprint": "73444cdf04a4f34c7c0b3edcda27d12224eaf549697af54eb4a6454fa5f100ae",
+  "resolved_findings": {
+    "R1": "Camera fit evidence uses the current exercise source-vertex count.",
+    "R2": "Heat provenance includes the consumed reference source-ID mapping, imported field definitions and script.",
+    "fairing_scope": "All declared fairing-affected faces are included in hip checks."
+  },
+  "simpler_equivalent_solution": "No justified material simplification found. Existing GLTFLoader, heat attachment, field generator and motion grouping are reused.",
+  "reused_receipts": [
+    "artifacts/exercise-batches/batch-004/draft-review/mixed-topology/verification.json",
+    "artifacts/ninety-mpfb-review/adapter-check/generic-cli/asset-build.json",
+    "artifacts/ninety-mpfb-review/adapter-check/generic-motion/compatibility.json"
+  ],
+  "limitations": [
+    "Source review only. Geometry, physical checks, final viewer and user approval are separate acceptance scopes."
+  ],
+  "fingerprint_format": "SHA-256 of sorted repository-relative path + NUL + file SHA-256 + LF records"
+}
