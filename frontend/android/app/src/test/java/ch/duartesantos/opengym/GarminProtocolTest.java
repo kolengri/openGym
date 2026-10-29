@@ -21,8 +21,16 @@ public class GarminProtocolTest {
             .getJSONObject("active").getJSONArray("entries").getJSONObject(0);
         assertEquals(5.5, actual.getDouble("goalKm"), 0.00001);
         assertEquals(1200, actual.getJSONArray("sets").getJSONObject(0).getInt("sec"));
+        Map<?, ?> wire = GarminProtocol.wire(actual);
+        assertTrue(wire.get("goalKm") instanceof Double);
+        Map<?, ?> decoded = (Map<?, ?>) IQMessageHelper.INSTANCE.convertToJava(Serializer.deserialize(Serializer.serialize(wire)).get(0));
+        assertEquals(5.5, ((Number) decoded.get("goalKm")).doubleValue(), 0.00001);
         cardio.put("goalKm", -1);
         assertThrows(IllegalArgumentException.class, () -> GarminProtocol.snapshot(input.toString(), 9));
+    }
+    @Test public void jsonDecimalNormalizationRetainsSafeNumericBounds() throws Exception {
+        assertThrows(IllegalArgumentException.class, () -> GarminProtocol.parse("{\"n\":9007199254740991.1}"));
+        assertThrows(IllegalArgumentException.class, () -> GarminProtocol.parse("{\"n\":-9007199254740991.1}"));
     }
     @Test public void cardioWarmupDoesNotBlockFollowingStrengthExercises() throws Exception {
         JSONObject input = new JSONObject(snapshot());

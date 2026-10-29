@@ -48,6 +48,17 @@ function type(input, value) {
 }
 
 describe('the incline column', () => {
+  it('can add incline to a goals-only treadmill row in the regular and focus views', () => {
+    for (const workoutView of ['full', 'focus']) {
+      mount(TREADMILL, [{ min: 20, done: false }], { workoutView })
+      const input = container.querySelector('input[aria-label="incline"]')
+      expect(input).not.toBeNull()
+      expect(input.closest('details').open).toBe(false)
+      type(input, '4.5')
+      expect(stored().incline).toBe(4.5)
+      expect(stored().speed).toBeUndefined()
+    }
+  })
   it('keeps legacy incline in secondary controls while primary fields record time and distance', () => {
     mount(TREADMILL, [{ min: 20, speed: 5, done: false }])
     expect(cells()).toHaveLength(2)

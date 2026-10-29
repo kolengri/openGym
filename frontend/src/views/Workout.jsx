@@ -660,7 +660,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
         onClick={() => onStartTimed(i)}><Icon name="play" /></button>}
       <Check checked={s.done} label={sideTagOf(s) ? t('Set {0} ({1}) done', setNumOf(s, i), sideTagOf(s)) : t('Set {0} done', setNumOf(s, i))} onChange={() => onToggle(i)} />
     </div>
-    {cardio && (s.speed != null || hasIncline(s)) && <details className="small dim" style={{ marginBottom: 8 }}>
+    {cardio && (inclineFits(ex) || s.speed != null || hasIncline(s)) && <details className="small dim" style={{ marginBottom: 8 }}>
       <summary>{t('More')}</summary>
       <div className="row cfgrow">
         {s.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} ariaLabel="speed" value={toSpeed(s.speed, speedUnit)} step={0.5} onChange={v => onField(i, 'speed', fromSpeed(v, speedUnit))} />}

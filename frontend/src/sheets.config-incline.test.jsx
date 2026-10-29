@@ -43,6 +43,15 @@ beforeEach(() => {
 afterEach(() => { act(() => { mounted.splice(0).forEach(root => root.unmount()) }) })
 
 describe('incline in a treadmill\'s settings (Discord)', () => {
+  it('offers incline under More for a fresh goals-only treadmill slot', () => {
+    const v = open(EXIDX[TREADMILL], { sets: 1, mode: 'cardio', min: 20 })
+    expect(v.primaryLabels()).toEqual(['Time goal (min)', 'Distance goal (km)'])
+    expect(v.details().open).toBe(false)
+    v.more()
+    v.type(v.field('Incline (%)'), '6')
+    v.save()
+    expect(v.onSave.mock.calls[0][0]).toEqual({ sets: 1, mode: 'cardio', min: 20, incline: 6 })
+  })
   it('keeps legacy incline editable under More and saves it on the slot', () => {
     const v = open(EXIDX[TREADMILL], { sets: 1, min: 30, speed: 5 })
     expect(v.primaryLabels()).toEqual(['Time goal (min)', 'Distance goal (km)'])

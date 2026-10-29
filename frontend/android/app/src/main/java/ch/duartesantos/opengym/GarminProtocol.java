@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -256,6 +257,13 @@ final class GarminProtocol {
             List<Object> out = new ArrayList<>();
             for (int i = 0; i < array.length(); i++) out.add(javaValue(array.get(i), depth + 1, budget));
             return out;
+        }
+        // org.json on the JVM parses fractional JSON numbers as BigDecimal; the
+        // Connect IQ serializer accepts Double, as Android's JSON parser produces.
+        if (value instanceof BigDecimal) {
+            BigDecimal decimal = (BigDecimal) value;
+            if (decimal.abs().compareTo(BigDecimal.valueOf(MAX_SAFE_INTEGER)) > 0) fail("Invalid Garmin number");
+            value = decimal.doubleValue();
         }
         primitive(value);
         return value;

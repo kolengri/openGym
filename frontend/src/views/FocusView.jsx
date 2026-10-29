@@ -338,7 +338,7 @@ export default function FocusView({
           style={effortTint ? { color: effortTint, borderColor: effortTint, background: `color-mix(in srgb, ${effortTint} 20%, var(--surface-2))` } : undefined}
           aria-label={t(EFFORT[effort].hd)} disabled={readOnly} onClick={openEffort}>{effortValue == null ? t(EFFORT[effort].hd) : fmtNum(effortValue)}</button>}
       </div>
-      {mode === 'cardio' && (set.speed != null || hasIncline(set)) && <details className="small dim">
+      {mode === 'cardio' && (inclineFits(ex) || set.speed != null || hasIncline(set)) && <details className="small dim">
         <summary>{t('More')}</summary>
         <div className="row cfgrow">
           {set.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} ariaLabel="speed" value={toSpeed(set.speed, speedUnit)} step={0.5} disabled={readOnly} onChange={value => onField(setIdx, 'speed', fromSpeed(value, speedUnit))} />}

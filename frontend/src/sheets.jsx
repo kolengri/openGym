@@ -2086,8 +2086,8 @@ function ExConfig({ ex, existing, onSave, onDelete, onReplace, close, routine, i
     </div>
     {cardio && <>
       <div className="small dim" role={cardioGoalMissing ? 'alert' : undefined} style={{ marginTop: -10, marginBottom: 18 }}>{t('Set a time or distance goal. Zero leaves a goal off.')}</div>
-      {/* Older plans retain their interval, speed and incline settings as secondary controls. */}
-      {(c.sets > 1 || c.speed != null || c.incline > 0) && <details style={{ marginBottom: 18 }}>
+      {/* Incline and older interval/speed settings remain secondary to cardio goals. */}
+      {(inclineFits(ex) || c.sets > 1 || c.speed != null || c.incline > 0) && <details style={{ marginBottom: 18 }}>
         <summary>{t('More')}</summary>
         <div className="row cfgrow">
           {c.sets > 1 && <Stepper label={t('Intervals')} value={c.sets} step={1} min={1} decimal={false} onChange={v => setC(x => ({ ...x, sets: v }))} />}
