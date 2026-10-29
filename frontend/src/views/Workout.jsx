@@ -345,7 +345,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       {wc.steppers && <button aria-label={t('Decrease')} onClick={() => bump(s, i, col, -1)}><Icon name="minus" /></button>}
       <span className="val">{col.f === 'w'
         ? <MixedWeightField decimal value={s.w ?? ''} unit={S.unit} exerciseId={entry.id} onChange={(v, guard) => onField(i, 'w', v, guard)} />
-        : <NumberField decimal={col.dec} nullable={col.opt} aria-label={col.hd} value={viewOf(col, s[col.f]) ?? ''}
+        : <NumberField decimal={col.dec} nullable={col.opt} aria-label={col.hd} value={viewOf(col, s[col.f]) ?? (col.opt ? null : '')}
           onChange={v => onField(i, col.f, col.store ? col.store(v) : v)} />}</span>
       {wc.steppers && <button aria-label={t('Increase')} onClick={() => bump(s, i, col, 1)}><Icon name="plus" /></button>}
     </div>

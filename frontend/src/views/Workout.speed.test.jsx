@@ -50,6 +50,29 @@ function type(value) {
 }
 
 describe('cardio speed in the set row', () => {
+  describe.each(['cards', 'list', 'compact'])('%s measurement drafts', workoutView => {
+    it.each([['min', 'Duration (min)'], ['km', 'Distance (km)']])('preserves decimal drafts and clearing for %s', (field, label) => {
+      mount({ workoutView })
+      act(() => useStore.getState().update(s => {
+        s.active.entries[0] = { id: BIKE, target: { mode: 'cardio', sets: 1 }, sets: [{ done: false }] }
+      }))
+      const input = () => container.querySelector(`input[aria-label="${label}"]`)
+      const type = value => act(() => {
+        Object.getOwnPropertyDescriptor(input().constructor.prototype, 'value').set.call(input(), value)
+        input().dispatchEvent(new Event('input', { bubbles: true }))
+      })
+      for (const prefix of ['', '0']) for (const separator of ['.', ',']) {
+        type(prefix + separator)
+        expect(input().value).toBe(prefix + '.')
+        type(input().value + '5')
+        expect(useStore.getState().S.active.entries[0].sets[0][field]).toBe(0.5)
+        type('')
+        expect(input().value).toBe('')
+        expect(useStore.getState().S.active.entries[0].sets[0]).not.toHaveProperty(field)
+      }
+    })
+  })
+
   it('logs nullable kilometers independently from the target and never copies a goal into a result', () => {
     mount({ unit: 'lb', speedUnit: 'mph' })
     act(() => useStore.getState().update(s => {
