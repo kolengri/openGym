@@ -1,0 +1,109 @@
+{
+  "stage": "A",
+  "status": "passed",
+  "source": {
+    "repository": "kolengri/openGym",
+    "remote": "https://github.com/kolengri/openGym.git",
+    "branch": "t3/upgrade-exercise-animations",
+    "accepted_commit": "cbab32c2b99560e884dd139ed39861b65205c875",
+    "source_revision_path": "artifacts/exercise-batches/batch-009/source-revision.json"
+  },
+  "publication": {
+    "operation": "normal push",
+    "exit_status": 0,
+    "receipt": "To https://github.com/kolengri/openGym.git; 24a70cab..cbab32c2 HEAD -> t3/upgrade-exercise-animations",
+    "pr_url": "https://github.com/kolengri/openGym/pull/3",
+    "t3_link": {
+      "result": "success",
+      "already_linked": true
+    }
+  },
+  "checks": {
+    "commands": [
+      {
+        "command": "node artifacts/exercise-batches/batch-009/build.mjs",
+        "exit_status": 0,
+        "log": "artifacts/exercise-batches/batch-009/logs/publication-build-A.log",
+        "offline_bytes": 8906040,
+        "inline_bytes": 145798
+      },
+      {
+        "command": "node artifacts/exercise-batches/batch-009/verify-inline.mjs",
+        "exit_status": 0,
+        "log": "artifacts/exercise-batches/batch-009/logs/verify-inline-A.log"
+      }
+    ],
+    "public_live_inline": {
+      "receipt": "artifacts/exercise-batches/batch-009/inline-verification.json",
+      "ok": true,
+      "model_revision": "cbab32c2b99560e884dd139ed39861b65205c875",
+      "revision_matches_accepted": true,
+      "actions": [
+        "Exercise_1986",
+        "Exercise_1843",
+        "Exercise_3220",
+        "Exercise_3672",
+        "Exercise_6097",
+        "Exercise_1405",
+        "Exercise_4515",
+        "Exercise_1315",
+        "Exercise_3995",
+        "Exercise_1404",
+        "Exercise_4663"
+      ],
+      "live_canvas_replaces_poster": true,
+      "live_pose_changes": true,
+      "external_resource_count": 12,
+      "external_resource_hosts": [
+        "cdn.jsdelivr.net",
+        "raw.githubusercontent.com"
+      ],
+      "media_requests": [],
+      "errors": [],
+      "public_models": {
+        "1315": {
+          "path": "artifacts/exercise-batches/batch-009/assets/1315/motion.glb",
+          "sha256": "56f6b3af6060d8e38f86f2cbf60a8e6ee7b2bd2d3fb6837e31ab7708e0525c44"
+        },
+        "1405": {
+          "path": "artifacts/exercise-batches/batch-009/assets/1405/motion.glb",
+          "sha256": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d"
+        },
+        "1843": {
+          "path": "artifacts/exercise-batches/batch-009/assets/1843/motion.glb",
+          "sha256": "f6287112cc152e73da3e7fbbef0c5421dd073b64c53a543163dd021714b54716"
+        },
+        "1986": {
+          "path": "artifacts/exercise-batches/batch-009/assets/1986/motion.glb",
+          "sha256": "e252e8bb2d874dccae75c1cc63c514f2f7c16021a62236e16e49c5b3b7e36535"
+        },
+        "4663": {
+          "path": "artifacts/exercise-batches/batch-009/assets/4663/motion.glb",
+          "sha256": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e"
+        },
+        "locomotion": {
+          "path": "artifacts/exercise-batches/batch-009/assets/3220/motion.glb",
+          "sha256": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "offline_html_sha256": "cf4a7533120e416a940f0311e03e9b121046139ae820eb52eb1dcf4e9cd6bce7",
+    "inline_html_sha256": "c05b196a2aa1e0d5980af7bc4120c6c1007992769c7402fe711b23c201009d6c",
+    "build_manifest_sha256": "1221d597bcf4a9d22fb34aff21ba506380347712dc676dc641c4269a7f91f0d0",
+    "build_manifest_inline_html_sha256": "c05b196a2aa1e0d5980af7bc4120c6c1007992769c7402fe711b23c201009d6c",
+    "source_revision_sha256": "c270b7aa51e11db1aa0253bd3eac0a1a1cf9235b77688df3c33f94c442fabf3e",
+    "inline_verification_sha256": "5877ab1642b6d4df3a9be2862ba2d87f24345b3c58c0b68b6f92b656485e1b48",
+    "normal_viewer_report": "artifacts/exercise-batches/batch-009/operator-checks.json"
+  },
+  "review_and_ci": {
+    "independent_final_code_review": "exempt per primary review-scope decision under adaptive-orchestration final-code-review.md",
+    "ci_status": "not observed at stage A",
+    "pr_reviews": "not observed at stage A"
+  },
+  "prior_failure": {
+    "summary": "Superseded stale native DQ reference for 1405 from before final author inputs were frozen; retained in the normal operator report and logs.",
+    "log": "artifacts/exercise-batches/batch-009/logs/verify.log"
+  }
+}

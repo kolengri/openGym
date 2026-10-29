@@ -1,0 +1,73 @@
+{
+  "status": "passed_local_and_pinned_public_live_review",
+  "reviewer": "Primary agent. Frozen author and specialist evidence is reused only where complete native/decoded identity establishes equivalence.",
+  "exercise_ids": [
+    "1986",
+    "1843",
+    "3220",
+    "3672",
+    "6097",
+    "1405",
+    "4515",
+    "1315",
+    "3995",
+    "1404",
+    "4663"
+  ],
+  "model_sha256_by_exercise": {
+    "1843": "f6287112cc152e73da3e7fbbef0c5421dd073b64c53a543163dd021714b54716",
+    "3220": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+    "3672": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+    "6097": "3095df8b32f6b6d264007e6d94f767841ac08d291f3e6e060f50fa4b5ca3ede9",
+    "1315": "56f6b3af6060d8e38f86f2cbf60a8e6ee7b2bd2d3fb6837e31ab7708e0525c44",
+    "4663": "add827c93b08ba697625c24dc3bae31ab24621130a521008c031a949dd53935e",
+    "1986": "e252e8bb2d874dccae75c1cc63c514f2f7c16021a62236e16e49c5b3b7e36535",
+    "1405": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+    "4515": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+    "3995": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d",
+    "1404": "5c960475287e6aa14852cf3acfcc2d88a8ea15a1db47b0c406a21c81459d584d"
+  },
+  "normal_viewer": {
+    "verification_sha256": "dcd2b2279b3c536d304976c127263b5740ad857a07c39ac75f58e09e6d1bfe3b",
+    "capture_sha256": "420f28a6b7062de2bf5d02fdbdddf4165391c4d0198cdfeb11a175ed05b72f7f",
+    "offline_sha256": "cf4a7533120e416a940f0311e03e9b121046139ae820eb52eb1dcf4e9cd6bce7",
+    "poses": 80,
+    "screenshots": 160,
+    "errors": 0
+  },
+  "actual_primary_inspection": [
+    "1986: final e252e8bb whole-body and hand-detail GPU views show working-arm lift and fold before the assisting hand approaches.",
+    "1843: final f6287112 seated neck motion, support, hand contacts and muscle fields inspected in both recommended views.",
+    "3220/3672/6097: 3095df8b locomotion poses and fields inspected; grounded and airborne phases remain distinct.",
+    "1315: exact 151-state resting-pose reuse, side view and elevated posterior fields accepted. 4663: prone palms-up motion, grounded legs, small chest lift and fields accepted.",
+    "1404/4515: accepted 25b5af54 clasp gestures. 1405: accepted f8795993 acquisition and raised-reach details. Final 5c960475 preserves complete native/decoded POSITION, NORMAL and 51-bone identity exactly for these three actions.",
+    "3995: final 5c960475 actual GPU plan covers 20 poses, including the former crossings at frames 21, 22, 23 and 53. Whole-body and cuff-detail views show connected shoulders and clear hands. Complete native/decoded 151-state checks report zero hard crossings.",
+    "Final normal-viewer poster, mobile emulation image and self-hug review inspected. Browser verification passed all 11 exercises."
+  ],
+  "presentation": {
+    "transparent_canvas": true,
+    "shadows": false,
+    "inactive_body": "Plain neutral body; only selected muscle fields are emphasized.",
+    "muscle_fields": "Soft load/stretch surface fields are visible in a recommended view or its companion. They are illustrative, not measured EMG or temperature.",
+    "interaction": [
+      "orbit",
+      "touch orbit",
+      "pinch",
+      "reset",
+      "seek/resume",
+      "backgroundchange"
+    ],
+    "live_GLB": true
+  },
+  "explicit_limits": [
+    "Localized attachment creases remain documented. Zero targeted hard crossings is not a claim of global collision freedom.",
+    "Physical mobile devices, clinical recruitment and production application integration were not tested."
+  ],
+  "public_delivery": {
+    "verification": "inline-verification.json",
+    "receipt": "inline-delivery.json",
+    "source_revision": "cbab32c2b99560e884dd139ed39861b65205c875",
+    "inline_sha256": "c05b196a2aa1e0d5980af7bc4120c6c1007992769c7402fe711b23c201009d6c",
+    "offline_sha256": "cf4a7533120e416a940f0311e03e9b121046139ae820eb52eb1dcf4e9cd6bce7"
+  }
+}
