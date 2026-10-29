@@ -302,10 +302,10 @@ export default function FocusView({
       <div data-testid="focus-set" className={(set.done ? 'complete ' : '') + (locked ? 'locked' : '')}>
         {isSideSet(set) ? <div className="focus-sides">{sideFields('L')}{sideFields('R')}</div> : <>
           {mode === 'cardio' ? <>
-            <Stepper label={t('Duration (min)')} ariaLabel="duration" value={set.min ?? ''} step={1} disabled={readOnly}
-              onChange={value => onField(setIdx, 'min', value > 0 ? value : null)} />
-            <Stepper label={t('Distance (km)')} ariaLabel="distance" value={set.km ?? ''} step={0.1} disabled={readOnly}
-              onChange={value => onField(setIdx, 'km', value > 0 ? value : null)} />
+            <Stepper label={t('Duration (min)')} ariaLabel="duration" value={set.min ?? null} nullable step={1} disabled={readOnly}
+              onChange={value => onField(setIdx, 'min', value)} />
+            <Stepper label={t('Distance (km)')} ariaLabel="distance" value={set.km ?? null} nullable step={0.1} disabled={readOnly}
+              onChange={value => onField(setIdx, 'km', value)} />
           </> : <>
             <Stepper label={t('Load ({0})', S.unit)} ariaLabel="load" value={set.w || 0} step={loadStep} onStep={stepLoad} disabled={readOnly}
               onChange={value => onField(setIdx, 'w', value)} />

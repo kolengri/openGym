@@ -28,7 +28,7 @@ afterEach(() => { act(() => root.unmount()); host.remove(); mocks.charts = [] })
 
 function mount(settings) {
   mocks.S = { body: 'male', effort: 'none', targetW: null, bodyweight: [], routines: [], exWeights: {}, ...settings,
-    workouts: [session('2026-09-01', [8, 9.66]), session('2026-09-08', [16.09])] }
+    workouts: [session('2026-09-01', [8, 9.66]), session('2026-09-08', [16.09])], ...settings }
   host = document.createElement('div')
   document.body.appendChild(host)
   root = createRoot(host)
@@ -50,5 +50,37 @@ describe('Stats — cardio speed', () => {
     expect(chart.unit).toBe('km/h')
     expect(chart.points.map(p => p.y)).toEqual([9.66, 16.09])
     expect(host.textContent).toContain('16.1 km/h')
+  })
+})
+
+describe('Stats — cardio measurements', () => {
+  const measured = (d, sets) => ({ ...session(d, []), entries: [{ id: BIKE,
+    target: { mode: 'cardio', sets: 1, min: 99, km: 99 }, sets }] })
+
+  it('charts distance totals and the latest results without mixing in legacy speed or goals', () => {
+    const chart = mount({ unit: 'lb', workouts: [
+      session('2026-09-01', [16.09]),
+      measured('2026-09-08', [{ min: 20, km: 5, done: true }]),
+      measured('2026-09-15', [{ km: 0.5, done: true }, { km: 1, done: true }, { km: 100, done: false }]),
+    ] })
+    expect(chart.unit).toBe('km')
+    expect(chart.points.map(p => p.y)).toEqual([5, 1.5])
+    expect(host.textContent).toContain('1.5 km')
+    expect(host.textContent).toContain('20 min · 5 km')
+    expect(host.textContent).toContain('Distance (km)')
+    expect(host.textContent).not.toContain('99')
+  })
+
+  it('charts duration totals for time-only sessions and keeps the measure consistent', () => {
+    const chart = mount({ unit: 'kg', workouts: [
+      session('2026-09-01', [16.09]),
+      measured('2026-09-08', [{ min: 20, km: 5, done: true }]),
+      measured('2026-09-15', [{ min: 10, done: true }, { min: 15, done: true }, { min: 100, done: false }]),
+      measured('2026-09-22', [{ km: 99, min: 99, done: false }]),
+    ] })
+    expect(chart.unit).toBe('min')
+    expect(chart.points.map(p => p.y)).toEqual([20, 20, 25])
+    expect(host.textContent).toContain('25 min')
+    expect(host.textContent).toContain('Duration (min)')
   })
 })
