@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { configureGarmin, garminDevices, garminHeartRate, garminSnapshot, garminStatus, isGarminEvent, receiveGarminHeartRate, _resetGarminForTest, _setGarminPluginForTest } from './garmin-sync.js'
+import { configureGarmin, garminConnection, garminDevices, garminHeartRate, garminSnapshot, garminStatus, isGarminEvent, receiveGarminHeartRate, _resetGarminForTest, _setGarminPluginForTest } from './garmin-sync.js'
 import { applyEvents, bindWatchAppActions, bindWatchActions, buildSnapshot, drainWatchEvents, patchSetIn, startWatchSync, _resetWatchSync, _setWatchPluginForTest } from './watch-sync.js'
 
 beforeEach(() => { localStorage.clear(); _resetGarminForTest(); _resetWatchSync() })
@@ -73,6 +73,10 @@ describe('Garmin snapshot boundary', () => {
 
 describe('live heart rate', () => {
   const at = 1800000000000
+  it.each([undefined, null])('has no sample or previous sample without a workout: %s', wid => {
+    expect(garminHeartRate(wid, at)).toBeNull()
+    expect(garminConnection(wid, at)).toMatchObject({ hasWorkout: false, sample: null, hadSample: false })
+  })
   it('accepts only current, valid samples for this exact workout and expires them', () => {
     expect(receiveGarminHeartRate({ wid: 'other', bpm: 120, at }, 'workout-1', at)).toBe(false)
     expect(receiveGarminHeartRate({ wid: 'workout-1', bpm: 900, at }, 'workout-1', at)).toBe(false)

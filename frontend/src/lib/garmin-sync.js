@@ -52,7 +52,7 @@ export function garminConnection(wid, now = Date.now()) {
     lastConfirmedAt: same ? diagnostics.lastConfirmedAt || null : null,
     watchPending: same && Number.isInteger(diagnostics.watchPending) && diagnostics.watchPending >= 0 ? diagnostics.watchPending : null,
     phonePending: same && Number.isInteger(diagnostics.phonePending) && diagnostics.phonePending >= 0 ? diagnostics.phonePending : null,
-    sample: garminHeartRate(wid, now), hadSample: heartRate?.wid === wid,
+    sample: garminHeartRate(wid, now), hadSample: heartRate !== null && heartRate.wid === wid,
   }
 }
 
@@ -97,7 +97,7 @@ export function receiveGarminHeartRate(sample, wid, now = Date.now()) {
   return true
 }
 
-export const garminHeartRate = (wid, now = Date.now()) => heartRate?.wid === wid && now - heartRate.at <= GARMIN_HR_MAX_AGE ? heartRate : null
+export const garminHeartRate = (wid, now = Date.now()) => heartRate !== null && heartRate.wid === wid && now - heartRate.at <= GARMIN_HR_MAX_AGE ? heartRate : null
 
 // Allowlist the existing snapshot. Even an accidentally added credential/history field must not
 // cross this boundary. Never trim running sets to fit; an incomplete plan could log the wrong set.
