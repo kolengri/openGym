@@ -9,6 +9,10 @@ dashboard. The generated bitmap assets are named OpenGym Mono. Four sizes keep
 labels readable on the 454-pixel AMOLED and 280-pixel Solar targets without
 allocating native oversized label fonts.
 
+Exercise names containing characters outside this bitmap set use the watch's
+native font, retaining its glyph coverage for accents and other scripts. Native
+font metrics also determine whether the title band can fit one or two rows.
+
 To regenerate, create a local virtual environment, install `requirements.txt`, and
 run `scripts/garmin-fonts.py` from the repository root. Pillow rasterizes glyphs;
 fontTools and Brotli decode the source WOFF2. The generator writes standard

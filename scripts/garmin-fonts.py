@@ -11,6 +11,7 @@ from fontTools.ttLib import TTFont
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "garmin/assets/fonts/IBMPlexMono-Medium.woff2"
 OUT = ROOT / "garmin/resources/fonts"
+# Keep WorkoutView.fontForTitle's coverage predicate aligned with this set.
 CHARS = "".join(chr(c) for c in range(32, 127)) + "".join(chr(c) for c in range(0x400, 0x460)) + "×–—…·"
 
 

@@ -98,13 +98,25 @@ class WorkoutView extends WatchUi.View {
             text(dc,w*0.52,h*0.05,pending.toString(),smallFont,SUBTLE,w*0.1);
         }
     }
+    function fontForTitle(name, compact) {
+        // Match scripts/garmin-fonts.py; use native coverage for every other script.
+        var chars = name.toCharArray();
+        for (var i=0; i<chars.size(); i++) {
+            var c = chars[i].toNumber();
+            if ((c >= 32 && c < 127) || (c >= 0x400 && c < 0x460) || c == 0xd7 || c == 0x2013 || c == 0x2014 || c == 0x2026 || c == 0xb7) { continue; }
+            return Graphics.FONT_XTINY;
+        }
+        return compact ? smallFont : titleFont;
+    }
     function title(dc, name) {
         name = WorkoutLayout.normalize(name);
         var w = dc.getWidth(); var h = dc.getHeight(); var top = h*0.205; var bottom = h*0.335;
-        var font = titleFont; var height = dc.getFontHeight(font);
+        var font = fontForTitle(name,false); var height = dc.getFontHeight(font);
         if (dc.getTextWidthInPixels(name,font) <= w*0.74) { line(dc,top+(bottom-top-height)/2,name,font,INK); return; }
-        font = smallFont; height = dc.getFontHeight(font); var width = w*0.76;
+        font = fontForTitle(name,true); height = dc.getFontHeight(font); var width = w*0.76;
         if (dc.getTextWidthInPixels(name,font) <= width) { line(dc,top+(bottom-top-height)/2,name,font,INK); return; }
+        // Native font heights vary by device; do not let a second row cover zones.
+        if (2*height > bottom-top) { line(dc,top+(bottom-top-height)/2,name,font,INK); return; }
         var count = WorkoutLayout.prefix(dc,name,font,width);
         text(dc,w/2,top,WorkoutLayout.trim(name.substring(0,count)),font,INK,width);
         text(dc,w/2,bottom-height,WorkoutLayout.trim(name.substring(count,name.length())),font,INK,width);

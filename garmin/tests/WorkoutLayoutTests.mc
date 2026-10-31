@@ -80,6 +80,26 @@ function nativeDashboardRendersLongNamesNoticesAlertsAndIdle(logger) {
 }
 
 (:test)
+function localizedExerciseTitlesRetainNativeGlyphCoverage(logger) {
+    var settings = System.getDeviceSettings(); var w = settings.screenWidth; var h = settings.screenHeight;
+    var bitmap = Graphics.createBufferedBitmap({:width=>w,:height=>h}).get();
+    var dc = bitmap.getDc(); var app = new RenderFixture(w); var view = new WorkoutView(app);
+    view.fonts(w);
+    Test.assertEqual(view.fontForTitle("Lat pulldown",false),view.titleFont);
+    Test.assertEqual(view.fontForTitle("Тяга блока",true),view.smallFont);
+    var names = ["Bankdrücken","Élévations latérales","Wiosłowanie","Πιέσεις πάγκου","ベンチプレス","卧推","ضغط الصدر","Café raise"];
+    for (var i=0; i<names.size(); i++) {
+        Test.assertEqual(view.fontForTitle(names[i],false),Graphics.FONT_XTINY);
+        Test.assertEqual(view.fontForTitle(names[i],true),Graphics.FONT_XTINY);
+        app.model.active()["entries"][0]["name"] = names[i]; view.onUpdate(dc);
+    }
+    // Exercise the native-font overflow path without encroaching on the HR strip.
+    app.model.active()["entries"][0]["name"] = "Élévations latérales avec haltères et pause en position haute";
+    view.onUpdate(dc);
+    return true;
+}
+
+(:test)
 function resourceLanguageMatchesNativeWatchLocaleAndDiagnosticsUseResources(logger) {
     var russian = System.getDeviceSettings().systemLanguage == System.LANGUAGE_RUS;
     var label = GymUi.string(Rez.Strings.StartSet);
