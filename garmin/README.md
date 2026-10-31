@@ -68,40 +68,46 @@ the physical Bluetooth transport.
 
 ## Watch controls
 
-The dashboard shows current sensor HR even without a workout
-(`HR --` until a valid reading arrives). The watch locale selects Russian labels
-when set to Russian, with English as the fallback for other locales. Exercise
-names retain the phone's text and use up to two measured lines, with an ellipsis
-when the remaining name exceeds the round display's available width. A `+N`
-header suffix shows pending watch commands; **Status** in the menu provides the
-queue details and installed build version. The compact Russian HR label **ЧСС** is used when space requires it.
-Start a workout on the phone to populate
-exercise, current set, weight and reps. Idle explicitly says **No workout
-connected / Start on phone**. The physical **MENU** or **BACK** key opens status,
-reconnect and exit; there is no on-screen Menu button.
+The EMBER × PIXEL dashboard uses large matrix numerals, an orange progress ring at
+the screen perimeter, and one large circular action. Header content stays inside
+the curved display's safe area. Heart rate appears once, beside a drawn heart.
+Five colored segments show the watch's configured generic heart-rate zones; the
+current zone is taller, outlined, and marked with a pointer. No Z1–Z5 text is
+shown. Missing HR or invalid/unavailable profile zones leave the strip neutral.
+The companion reads zones through Garmin's `UserProfile` permission; it does not
+invent thresholds or send profile data to the phone.
 
-- Tap **Start set** to start an explicit local elapsed `mm:ss` timer, for reps or
-  timed sets or cardio. Tap **Complete set** to record completion. Cardio records
-  actual elapsed time back to the phone in minutes, preserving its speed and incline.
-  Rep-set timing is a local
-  display only; it does not add seconds or a start event to the phone protocol.
-- The large timer panel shows **REST** with remaining `mm:ss` during rest and
-  **SET TIME** with elapsed `mm:ss` during a started set. Timed rows also show
-  their target. Cardio shows its planned duration instead of weight and reps;
-  an optional kilometer goal is labelled as a target, never a measured distance.
-  A distance-only goal still has a stopwatch; enter the actual distance on the phone.
-  bodyweight exercises show reps prominently, with added load below when present.
-  Both timers freeze on pause, and set timing survives restart and
-  same-set phone snapshots. Changing the exercise or planned row layout clears
-  local timing and per-set HR, including replacements at unchanged array indices.
-- Tap **Next ex** to select the next exercise. After the final exercise is
-  complete, the primary button becomes **Finish workout**, requiring confirmation.
-- Press the physical **MENU** or **BACK** key for pause/resume, skip rest, next exercise,
-  finish/save, discard, recording/sync status, reconnect and exit.
-- **START** retains its shortcut: complete the next unfinished rep set, or start
-  then complete a timed set. **DOWN** selects the next exercise. **MENU** or
-  **BACK** opens the menu. Physical keys remain available when touch is disabled
-  in the watch's system settings.
+Exercise names retain the phone's text and use up to two measured lines, with an
+ellipsis when the name exceeds the available space. Before a strength set, the
+main number shows the prescribed load or bodyweight reps. The header gives the
+current set out of the total, including the side for unilateral sets. During
+rest, the countdown stays prominent while the next unfinished set's actual load,
+reps, and set number remain visible. Supersets follow the model's selected next
+exercise rather than assuming the next array index.
+
+- Press **START** or tap the large action to start the displayed set, then press
+  again to complete it. Both inputs use the same command and finish confirmation.
+  During an active rest, the skip icon skips rest; the following play action
+  starts the upcoming set. Pause/resume remains available through the physical
+  **MENU** or **BACK** key. Reaching a timer target never completes a set.
+- Cardio shows an elapsed stopwatch with planned time and optional kilometer goals
+  explicitly labeled as targets. Distance-only cardio still has a stopwatch;
+  enter measured distance on the phone. Timed progress uses elapsed time divided
+  by the configured time target. Strength progress counts completed sets/sides;
+  rest progress counts down the remaining fraction. All progress is clamped.
+- Timers freeze on pause. Set timing survives restart and same-set phone
+  snapshots. Changing the exercise or planned row layout clears local timing and
+  per-set HR, including replacements at unchanged array indices. Rep-set timing
+  stays local and does not alter the phone protocol.
+- **DOWN** selects the next exercise. After the final exercise is complete, the
+  primary action finishes the workout with confirmation. **MENU** or **BACK**
+  opens pause/resume, skip rest, next exercise, finish/save, discard, recording and
+  sync status, reconnect, and exit. There is no on-screen Menu or hidden next
+  touch region. Physical inputs remain available with system touch disabled.
+- A compact queue indicator appears only while watch commands await sync. The
+  menu's **Status** item gives queue details and the installed build version.
+  Idle explicitly says **No workout connected / Start on phone**.
+
 - Workout menu actions and finish/discard/exit confirmations are bound to the
   workout ID at opening. An old menu cannot control a replacement workout.
   Status and reconnect remain available after a workout changes.
@@ -167,3 +173,12 @@ No proprietary Training Effect, recovery or automatic exercise-recognition
 metrics are promised. FIT appearance in Garmin Connect, transfer to Strava, HR
 sensor behavior, Bluetooth operation with Android asleep, and device-specific
 recording lifecycle require physical tactix 8 validation.
+
+## Dashboard font assets
+
+Normal builds use the checked-in bitmap fonts under `resources/fonts/`; no Python
+dependency is needed to build the app. The unmodified IBM Plex Mono source font,
+OFL license, provenance, and optional regeneration dependencies are under
+`assets/fonts/`. Run `scripts/garmin-fonts.py` from an isolated Python environment
+with those dependencies to regenerate the AMOLED and Solar label fonts. The
+matrix digits and icons are drawn directly by Monkey C.

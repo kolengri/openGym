@@ -1,16 +1,16 @@
 import Toybox.Lang;
 
-// Rendering and hit testing share these rectangles, including on round displays.
+// The primary action is the only on-screen control; DOWN remains next exercise.
 module WorkoutControls {
     function rect(id, w, h) {
-        if (id.equals("primary")) { return [(w*0.18).toNumber(), (h*0.64).toNumber(), (w*0.64).toNumber(), (h*0.13).toNumber()]; }
-        if (id.equals("next")) { return [(w*0.26).toNumber(), (h*0.78).toNumber(), (w*0.48).toNumber(), (h*0.10).toNumber()]; }
+        if (id.equals("primary")) { return [(w*0.396).toNumber(), (h*0.756).toNumber(), (w*0.208).toNumber(), (h*0.208).toNumber()]; }
         return null;
     }
     function contains(r, x, y) { return x >= r[0] && y >= r[1] && x < r[0]+r[2] && y < r[1]+r[3]; }
     function hit(w, h, x, y, active, modal) {
-        if (contains(rect("primary",w,h),x,y) && (active || modal)) { return modal ? "dismiss" : "primary"; }
-        if (!modal && active && contains(rect("next",w,h),x,y)) { return "next"; }
+        var r = rect("primary",w,h); var radius = r[2]/2.0;
+        var dx = x-(r[0]+radius); var dy = y-(r[1]+r[3]/2.0);
+        if (contains(r,x,y) && dx*dx+dy*dy <= radius*radius && (active || modal)) { return modal ? "dismiss" : "primary"; }
         return null;
     }
     function primary(model, at) {

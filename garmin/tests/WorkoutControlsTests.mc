@@ -368,21 +368,19 @@ function touchUsesDrawnBoundsForBothDevicesAndIgnoresBackground(logger) {
     var sizes = [280,454];
     for (var i=0;i<sizes.size();i++) {
         var w = sizes[i]; var r = WorkoutControls.rect("primary",w,w);
-        Test.assertEqual(WorkoutControls.hit(w,w,r[0],r[1],true,false),"primary");
-        Test.assert(WorkoutControls.hit(w,w,r[0]+r[2],r[1],true,false) == null);
-        Test.assert(WorkoutControls.hit(w,w,r[0],r[1]+r[3],true,false) == null);
+        var x = r[0]+r[2]/2; var y = r[1]+r[3]/2;
+        Test.assertEqual(WorkoutControls.hit(w,w,x,y,true,false),"primary");
+        Test.assert(WorkoutControls.hit(w,w,r[0],r[1],true,false) == null);
+        Test.assert(WorkoutControls.hit(w,w,r[0]+r[2],y,true,false) == null);
+        Test.assert(WorkoutControls.hit(w,w,x,r[1]+r[3],true,false) == null);
         Test.assert(WorkoutControls.hit(w,w,w/2,w/2,true,false) == null);
-        Test.assert(WorkoutControls.hit(w,w,r[0],r[1],false,false) == null);
-        Test.assertEqual(WorkoutControls.hit(w,w,r[0],r[1],false,true),"dismiss");
-        var next = WorkoutControls.rect("next",w,w);
-        Test.assert(WorkoutControls.hit(w,w,next[0],next[1],true,true) == null);
-        Test.assertEqual(WorkoutControls.hit(w,w,next[0],next[1],true,false),"next");
+        Test.assert(WorkoutControls.hit(w,w,x,y,false,false) == null);
+        Test.assertEqual(WorkoutControls.hit(w,w,x,y,false,true),"dismiss");
+        Test.assert(WorkoutControls.rect("next",w,w) == null);
         Test.assert(WorkoutControls.rect("menu",w,w) == null);
-        Test.assert(WorkoutControls.hit(w,w,next[0],next[1],false,false) == null);
         Test.assert(WorkoutControls.hit(w,w,(w*0.82).toNumber(),(w*0.82).toNumber(),true,false) == null);
     }
-    Test.assertEqual(WorkoutControls.clock(65),"01:05");
-    Test.assertEqual(WorkoutControls.clock(0),"00:00");
+    Test.assertEqual(WorkoutControls.clock(65),"01:05"); Test.assertEqual(WorkoutControls.clock(0),"00:00");
     return true;
 }
 
@@ -404,7 +402,7 @@ function decimalLabelsRemoveFloatNoiseWithoutChangingStoredValues(logger) {
 
 (:test)
 function allButtonCornersFitRoundScreenWithAnInset(logger) {
-    var sizes = [280,454]; var ids = ["primary","next"];
+    var sizes = [280,454]; var ids = ["primary"];
     for (var i=0;i<sizes.size();i++) {
         var w = sizes[i]; var center = w/2.0; var radius = w*0.48;
         for (var j=0;j<ids.size();j++) {
@@ -423,7 +421,7 @@ function allButtonCornersFitRoundScreenWithAnInset(logger) {
 (:test)
 function actualTouchDelegateStartsCompletesDismissesAndKeepsConfirmation(logger) {
     var app = new TouchFixtureApp(280); var delegate = new TouchFixtureDelegate(app);
-    var p = WorkoutControls.rect("primary",280,280); var x = p[0]+1; var y = p[1]+1;
+    var p = WorkoutControls.rect("primary",280,280); var x = p[0]+p[2]/2; var y = p[1]+p[3]/2;
     Test.assert(delegate.tapAt(x,y)); Test.assertEqual(app.calls[0],"startSet");
     app.at += 5000l;
     Test.assert(delegate.tapAt(x,y)); Test.assertEqual(app.calls[1],"setDone");
@@ -433,8 +431,7 @@ function actualTouchDelegateStartsCompletesDismissesAndKeepsConfirmation(logger)
     app.notice = "Test notice";
     Test.assert(delegate.onSelect()); Test.assert(app.notice == null); Test.assertEqual(app.calls.size(),count);
     Test.assert(delegate.tapAt(x,y)); Test.assertEqual(app.calls[count],"skipRest");
-    var r = WorkoutControls.rect("next",280,280);
-    Test.assert(delegate.tapAt(r[0]+1,r[1]+1)); Test.assertEqual(delegate.menus,0);
+    Test.assert(delegate.onNextPage()); Test.assertEqual(delegate.menus,0);
     Test.assertEqual(app.calls[app.calls.size()-1],"next");
     Test.assert(!delegate.tapAt(140,140));
     app.model.active()["cur"] = 1; app.model.active()["rest"] = null;
@@ -445,12 +442,15 @@ function actualTouchDelegateStartsCompletesDismissesAndKeepsConfirmation(logger)
 }
 
 (:test)
-function physicalKeysRetainTheirExistingActions(logger) {
+function physicalStartMatchesVisiblePrimaryAndNavigationRemainsAvailable(logger) {
     var app = new TouchFixtureApp(280); var delegate = new TouchFixtureDelegate(app);
     Test.assert(delegate.keyAction(WatchUi.KEY_ENTER));
-    Test.assertEqual(app.calls[0],"setDone");
+    Test.assertEqual(app.calls[0],"startSet");
+    Test.assert(!app.model.active()["entries"][0]["sets"][0]["done"]);
+    app.at += 2000l; Test.assert(delegate.keyAction(WatchUi.KEY_ENTER));
+    Test.assertEqual(app.calls[1],"setDone");
     Test.assert(app.model.active()["entries"][0]["sets"][0]["done"]);
-    Test.assert(delegate.keyAction(WatchUi.KEY_DOWN)); Test.assertEqual(app.calls[1],"next");
+    Test.assert(delegate.keyAction(WatchUi.KEY_DOWN)); Test.assertEqual(app.calls[2],"next");
     Test.assert(delegate.keyAction(WatchUi.KEY_MENU)); Test.assertEqual(delegate.menus,1);
     Test.assert(delegate.keyAction(WatchUi.KEY_ESC)); Test.assertEqual(delegate.menus,2);
     Test.assert(!delegate.keyAction(WatchUi.KEY_UP));
