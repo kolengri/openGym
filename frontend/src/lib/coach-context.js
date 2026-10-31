@@ -8,8 +8,9 @@
 // otherwise be answered without the workout it is about. Only the numbers go: exercise ids,
 // planned or extra, targets and logged sets — no notes, media or device bookkeeping.
 import { isWarmupRow } from './workout-model.js'
+import { modeOf } from './history.js'
 
-const SET_KEYS = ['w', 'r', 'sec', 'min', 'speed', 'rir', 'rpe']
+const SET_KEYS = ['w', 'r', 'sec', 'min', 'km', 'speed', 'rir', 'rpe']
 
 /** The running session as the Coach reads it, or null when there is none (or it is a history edit). */
 export function todayForCoach(S, now = Date.now()) {
@@ -23,7 +24,12 @@ export function todayForCoach(S, now = Date.now()) {
     entries: a.entries.filter(Boolean).map(e => ({
       id: e.id,
       ...(e.extra === true ? { extra: true } : {}),
-      ...(e.target && typeof e.target === 'object' ? { target: { sets: e.target.sets, reps: e.target.reps, sec: e.target.sec, weight: e.target.weight } } : {}),
+      ...(e.target && typeof e.target === 'object' ? { target: {
+        sets: e.target.sets, reps: e.target.reps, sec: e.target.sec, weight: e.target.weight,
+        ...(modeOf({ ...e.target, id: e.id }) === 'cardio' ? { mode: 'cardio',
+          ...Object.fromEntries(['min', 'km', 'speed'].filter(k => Number.isFinite(e.target[k])).map(k => [k, e.target[k]])),
+        } : {}),
+      } } : {}),
       sets: (Array.isArray(e.sets) ? e.sets : []).filter(Boolean).map(s => {
         const o = { done: s.done === true }
         if (isWarmupRow(s)) o.warmup = true

@@ -52,7 +52,7 @@ export function garminConnection(wid, now = Date.now()) {
     lastConfirmedAt: same ? diagnostics.lastConfirmedAt || null : null,
     watchPending: same && Number.isInteger(diagnostics.watchPending) && diagnostics.watchPending >= 0 ? diagnostics.watchPending : null,
     phonePending: same && Number.isInteger(diagnostics.phonePending) && diagnostics.phonePending >= 0 ? diagnostics.phonePending : null,
-    sample: garminHeartRate(wid, now), hadSample: heartRate?.wid === wid,
+    sample: garminHeartRate(wid, now), hadSample: heartRate !== null && heartRate.wid === wid,
   }
 }
 
@@ -97,7 +97,7 @@ export function receiveGarminHeartRate(sample, wid, now = Date.now()) {
   return true
 }
 
-export const garminHeartRate = (wid, now = Date.now()) => heartRate?.wid === wid && now - heartRate.at <= GARMIN_HR_MAX_AGE ? heartRate : null
+export const garminHeartRate = (wid, now = Date.now()) => heartRate !== null && heartRate.wid === wid && now - heartRate.at <= GARMIN_HR_MAX_AGE ? heartRate : null
 
 // Allowlist the existing snapshot. Even an accidentally added credential/history field must not
 // cross this boundary. Never trim running sets to fit; an incomplete plan could log the wrong set.
@@ -119,9 +119,14 @@ export function garminSnapshot(snapshot, { timer = null, paused = false, sourceA
       const unit = units.find(u => u.includes(entryIdx)) || [entryIdx]
       return {
         ...pick(entry, ['id', 'name', 'mode', 'restSec', 'bodyweight', 'perSide', 'group', 'assisted', 'step']),
+        ...(entry.mode === 'cardio' && Number.isFinite(target.km) && target.km > 0 ? { goalKm: target.km } : {}),
         ...(source ? { restSec: ownExerciseRest(target) ?? snapshot.restSec, sideRestSec: sideRestFor(target, { timed: false }) || 0 } : {}),
         sets: (entry.sets || []).map((set, setIdx) => ({
           ...pick(set, ['w', 'r', 'sec', 'done', 'warmup', 'at']),
+          // Cardio stores minutes on the phone; the existing timed wire field uses seconds.
+          // Match the watch's whole-second timer so ACK round trips retain row identity.
+          ...(entry.mode === 'cardio' && Number.isFinite(rows[setIdx]?.min ?? target.min) && (rows[setIdx]?.min ?? target.min) > 0
+            ? { sec: Math.round((rows[setIdx]?.min ?? target.min) * 60) } : {}),
           ...(source ? { restSec: ownSetRest(rows[setIdx]) ?? warmupRestSecFor(source, setIdx,
             restSecFor(sources, unit, snapshot.restSec, { idx: entryIdx, sec: pyramidRestFor(target, rows, setIdx) }), warmupRestSec) } : {}),
           ...(unsupportedSet(rows[setIdx]) ? { unsupported: true } : {}),

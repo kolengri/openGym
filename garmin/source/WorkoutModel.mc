@@ -86,6 +86,7 @@ module GymData {
         var items2 = a["entries"]; for (var idx2 = 0; idx2 < items2.size(); idx2++) { var e = items2[idx2];
             if (!(e instanceof Dictionary) || !text(e["id"]) || !text(e["name"]) || !text(e["mode"]) || !(e["sets"] instanceof Array) || e["sets"].size() > 80) { return false; }
             if (e["restSec"] != null && !value(e["restSec"], 0, 86400)) { return false; }
+            if (e["goalKm"] != null && !value(e["goalKm"], 0, 10000)) { return false; }
             if (e["sideRestSec"] != null && !value(e["sideRestSec"], 0, 86400)) { return false; }
             if (e["group"] != null && !text(e["group"])) { return false; }
             var items3 = e["sets"]; for (var idx3 = 0; idx3 < items3.size(); idx3++) { var row = items3[idx3];
@@ -362,6 +363,7 @@ class WorkoutModel {
         var row = c["side"] == null ? c["row"] : c["row"]["sides"][c["side"]];
         // Time-per-side has no per-side seconds in the phone schema. Refuse it.
         if (GymData.is(mode,"time")) { return c["side"] == null && GymData.value(row["sec"], 1, 86400); }
+        if (GymData.is(mode,"cardio")) { return c["side"] == null; }
         return GymData.is(mode,"reps") && GymData.value(row["r"], 1, 10000);
     }
     function rowTarget(row) {
@@ -402,7 +404,7 @@ class WorkoutModel {
     }
     function startTimed(now) {
         var c = current();
-        if (c == null || !GymData.is(c["entry"]["mode"],"time")) { error = "Timed set unavailable"; return false; }
+        if (c == null || (!GymData.is(c["entry"]["mode"],"time") && !GymData.is(c["entry"]["mode"],"cardio"))) { error = "Timed set unavailable"; return false; }
         return startSet(now);
     }
     function startSet(now) {
@@ -427,12 +429,13 @@ class WorkoutModel {
         var fields = {"exId"=>c["exId"], "entryIdx"=>c["entryIdx"], "setIdx"=>c["setIdx"]};
         if (c["side"] != null) { fields["side"] = c["side"]; }
         var row = c["side"] == null ? c["row"] : c["row"]["sides"][c["side"]];
-        if (GymData.is(c["entry"]["mode"],"time")) {
+        var cardio = GymData.is(c["entry"]["mode"],"cardio");
+        if (GymData.is(c["entry"]["mode"],"time") || cardio) {
             if (data["timing"] == null) { return startTimed(now); }
             if (elapsed(now) < 1) { error = "Timer just started"; return false; }
             fields["sec"] = elapsed(now);
         } else { fields["r"] = row["r"]; }
-        if (row["w"] != null) { fields["w"] = row["w"]; }
+        if (!cardio && row["w"] != null) { fields["w"] = row["w"]; }
         if (data["hr"] != null && data["hr"]["count"] > 0) {
             var h = data["hr"];
             fields["hr"] = {"avg"=>(h["sum"] / h["count"]).toNumber(), "max"=>h["max"]};
@@ -468,7 +471,7 @@ class WorkoutModel {
     function sample(bpm, now) {
         var c = current();
         if (c == null || paused() || restLeft(now) > 0 || !GymData.value(bpm, 25, 250)) { return; }
-        if (GymData.is(c["entry"]["mode"],"time") && data["timing"] == null) { return; }
+        if ((GymData.is(c["entry"]["mode"],"time") || GymData.is(c["entry"]["mode"],"cardio")) && data["timing"] == null) { return; }
         var key = identity(c);
         if (data["hr"] == null || !data["hr"]["key"].equals(key)) { data["hr"] = {"key"=>key, "sum"=>0, "count"=>0, "max"=>0}; }
         var h = data["hr"];

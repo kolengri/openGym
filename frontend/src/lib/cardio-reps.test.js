@@ -34,6 +34,6 @@ describe('counted bodyweight cardio', () => {
 
   it.each(['0685', '3556', '1161'])('leaves %s in cardio', id => {
     expect(isCardio(id)).toBe(true)
-    expect(defaultConfig(id)).toEqual({ sets: 1, min: 20, speed: 8 })
+    expect(defaultConfig(id)).toEqual({ sets: 1, mode: 'cardio', min: 20 })
   })
 })

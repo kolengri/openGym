@@ -45,13 +45,13 @@ export const workoutAt = w => {
 // A routine entry can now say so explicitly:
 //   reps   — weight × reps      sets look like { w, r }
 //   time   — a work duration    sets look like { sec, w }   (w = 0 for bodyweight)
-//   cardio — duration + speed   sets look like { min, speed }
+//   cardio — duration + distance   sets look like { min?, km? }; legacy speed is kept
 // Older cardio configs have min/speed but no mode. Keep reading those as cardio even if the
 // catalogue later corrects the exercise's body part (e.g. jumping jacks, issue #678).
 export function modeOf(cfg) {
   const m = cfg && cfg.mode
   if (m === 'reps' || m === 'time' || m === 'cardio') return m
-  if (cfg?.min != null || cfg?.speed != null) return 'cardio'
+  if (cfg?.min != null || cfg?.km != null || cfg?.speed != null) return 'cardio'
   return isCardio(cfg && cfg.id) ? 'cardio' : 'reps'
 }
 export const isTimed = cfg => modeOf(cfg) === 'time'
@@ -146,13 +146,13 @@ export function setLabel(id, s, cfg, speedUnit) {
   let mode = modeOf(c)
   // A set saved by an older build carries no target with it; the set's own fields still say what
   // it was — seconds for a timed set, minutes for cardio — so those are not read back as "0 reps".
-  if (!cfg && !(s.r > 0)) { if (s.min > 0 || s.speed > 0) mode = 'cardio'; else if (s.sec > 0) mode = 'time' }
+  if (!cfg && !(s.r > 0)) { if (s.min > 0 || s.km > 0 || s.speed > 0) mode = 'cardio'; else if (s.sec > 0) mode = 'time' }
   // A target with no mode of its own takes it from the exercise, and an exercise can change: a
   // custom one moved to Cardio after months of rep sets read them all as "0 min @ 0 km/h", next
   // to the volume those same sets still count. A set with reps and nothing cardio was a rep set.
-  if (!EXPLICIT_MODES.has(cfg?.mode) && mode !== 'reps' && s.r > 0 && !(s.min > 0 || s.speed > 0 || s.sec > 0)) mode = 'reps'
+  if (!EXPLICIT_MODES.has(cfg?.mode) && mode !== 'reps' && s.r > 0 && !(s.min > 0 || s.km > 0 || s.speed > 0 || s.sec > 0)) mode = 'reps'
   // A treadmill grade rides along when the set has one (lib/incline.js); a flat set reads as it did.
-  if (mode === 'cardio') return `${s.min || 0} min @ ${fmtSpeed(s.speed || 0, speedUnit)}` + (hasIncline(s) ? ' · ' + t('{0}% incline', fmtNum(Number(s.incline))) : '')
+  if (mode === 'cardio') return cardioLabel(s, speedUnit)
   // A set taken to failure carries its "F" behind the numbers, the mark lifting logs use for it;
   // the history, the text export and the set menu all read it from here.
   const fail = isFailureSet(s) ? ' ' + t('F') : ''
@@ -209,7 +209,7 @@ export function setLabel(id, s, cfg, speedUnit) {
 // left alone, so an entry saved without a mode (a plank logged as reps) still reads as it did.
 export function defaultConfig(id, mode) {
   const m = mode || (isHold(id) ? 'time' : modeOf({ id }))
-  if (m === 'cardio') return { sets: 1, min: 20, speed: 8 }
+  if (m === 'cardio') return { sets: 1, mode: 'cardio', min: 20 }
   // Written only when it is true, so a barbell config is byte-for-byte what it was before
   // the flag existed and a plan file gains nothing it does not need.
   const bw = isBodyweightEq(id) ? { bodyweight: true } : {}
@@ -222,7 +222,7 @@ export function defaultConfig(id, mode) {
 // side is stored without the flag, and must not get it back.
 export function pickedExerciseConfig(id, mode) {
   const cfg = defaultConfig(id, mode)
-  if (!isOneLimb(id) || !('mode' in cfg)) return cfg
+  if (cfg.mode === 'cardio' || !isOneLimb(id) || !('mode' in cfg)) return cfg
   return { ...cfg, side: true, ...(cfg.mode === 'reps' ? { reps: 20 } : {}) }
 }
 // A double-progression range is stored as its top (`reps`) and its bottom (`repsMin`), and
@@ -231,11 +231,23 @@ export function pickedExerciseConfig(id, mode) {
 const hasRange = cfg => cfg.repsMin > 0 && cfg.repsMin < cfg.reps
 const repsOf = (cfg, fmt = v => String(v)) => (hasRange(cfg) ? `${fmt(cfg.repsMin)}–${fmt(cfg.reps)}` : fmt(cfg.reps))
 
+// Goals and results use the same units, but callers pass only their own fields. Never derive
+// an actual distance from a goal or invent a speed for a time-only session.
+export function cardioLabel(value, speedUnit) {
+  const parts = []
+  if (value.min > 0) parts.push(`${fmtNum(Number(value.min))} min`)
+  if (value.km > 0) parts.push(`${fmtNum(Number(value.km))} km`)
+  let label = parts.join(' · ')
+  if (value.speed > 0) label += (label ? ' @ ' : '') + fmtSpeed(value.speed, speedUnit)
+  if (hasIncline(value)) label += (label ? ' · ' : '') + t('{0}% incline', fmtNum(Number(value.incline)))
+  return label || '–'
+}
+
 /** "2 × 10", "3 × 8–12", "2 × 0:45": what a plan asks for per set, without its load. */
 export function setsRepsOf(cfg) {
   const mode = modeOf(cfg)
   const n = cfg.sets || 1
-  if (mode === 'cardio') return `${n} × ${cfg.min || 20} min`
+  if (mode === 'cardio') return `${n > 1 ? n + ' × ' : ''}${cardioLabel({ min: cfg.min, km: cfg.km })}`
   if (mode === 'time') return `${n} × ${fmtSec(cfg.sec || 45)}`
   if (isPyramid(cfg)) return pyramidLabel(cfg.pyramid)
   // Triple progression's set range reads as a range too: "3–5 × 8–12".
@@ -254,7 +266,7 @@ export function exLine(cfg, unit, speedUnit) {
   const load = !cfg.weight ? ''
     : backoff ? ' · ' + (isBw(cfg) ? '+' : '') + backoffWeights(cfg.weight, n, backoff).map(fmtNum).join(' → ') + ' ' + unit
       : ' · ' + (isBw(cfg) ? '+' : '') + fmtNum(cfg.weight) + ' ' + unit
-  if (mode === 'cardio') return `${n} × ${cfg.min || 20} min @ ${fmtSpeed(cfg.speed || 8, speedUnit)}` + (hasIncline(cfg) ? ' · ' + t('{0}% incline', fmtNum(Number(cfg.incline))) : '')
+  if (mode === 'cardio') return `${n} × ${cardioLabel(cfg, speedUnit)}`
   // A timed hold has no rep count to spell a split out of ("8/side" below) — "per side" says it
   // happens twice, once each side (buildWorkSets), rather than trying to divide a duration.
   if (mode === 'time') return `${setsRepsOf(cfg)}${load}${isPerSide(cfg) ? ' · ' + t('per side') : ''}`
@@ -597,7 +609,8 @@ function buildWorkSets(S, cfg, options = {}) {
       const prev = prevAt(i)
       // The grade is last time's when it had one, else the routine's own (set in the exercise's
       // settings, Discord "can not set incline"): a flat walk last time never hides it.
-      sets.push({ min: prev ? prev.min : (cfg.min || 20), speed: prev ? prev.speed : (cfg.speed || 8), ...inclineFrom(hasIncline(prev) ? prev : cfg), done: false })
+      const source = prev || cfg
+      sets.push({ ...(source.min > 0 ? { min: source.min } : {}), ...(source.speed != null ? { speed: source.speed } : {}), ...inclineFrom(hasIncline(prev) ? prev : cfg), done: false })
     }
     return sets
   }

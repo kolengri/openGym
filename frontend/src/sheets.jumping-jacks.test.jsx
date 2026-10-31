@@ -34,14 +34,15 @@ describe('jumping-jack exercise settings', () => {
     const { labels } = open()
     expect(labels).toContain('Sets')
     expect(labels).toContain('Reps')
-    expect(labels).not.toContain('Minutes')
+    expect(labels).not.toContain('Time goal (min)')
     expect(labels).not.toContain('Intervals')
   })
 
   it('keeps the cardio form and values when editing a plan saved before the catalogue fix', () => {
-    const { labels, save, onSave } = open({ sets: 2, min: 5, speed: 8 })
+    const { host, labels, save, onSave } = open({ sets: 2, min: 5, speed: 8 })
     expect(labels).toContain('Intervals')
-    expect(labels).toContain('Minutes')
+    expect([...host.querySelector('.cfgrow').querySelectorAll('.stp-l')].map(el => el.textContent)).toEqual(['Time goal (min)', 'Distance goal (km)'])
+    expect(host.querySelector('details').open).toBe(false)
     expect(labels).not.toContain('Reps')
     save()
     expect(onSave).toHaveBeenCalledWith(expect.objectContaining({ sets: 2, min: 5, speed: 8 }))

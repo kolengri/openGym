@@ -7,6 +7,19 @@ import { buildSnapshot, applyEvents, bindWatchAppActions, patchSetIn, _resetWatc
 
 beforeEach(() => { localStorage.clear(); _resetWatchSync() })
 
+it('applies late Garmin cardio time to a saved workout in minutes, once', () => {
+  const state = { unit: 'kg', active: null, workouts: [{ id: 'finished', entries: [
+    { id: 'run', target: { mode: 'cardio' }, sets: [{ min: 20, speed: 9, incline: 2, done: false }] },
+  ] }] }
+  const patchSet = vi.fn((where, fields, opts) => { patchSetIn(state, where, fields, null, opts) })
+  bindWatchAppActions({ patchSet })
+  const ev = { id: 'late-cardio', type: 'setDone', source: 'garmin', wid: 'finished', exId: 'run', entryIdx: 0, setIdx: 0, sec: 615, at: 1800000000000 }
+  expect(applyEvents([ev, ev], () => ({ S: state }))).toEqual(['late-cardio', 'late-cardio'])
+  expect(patchSet).toHaveBeenCalledTimes(1)
+  expect(state.workouts[0].entries[0].sets[0]).toMatchObject({ min: 10.25, speed: 9, incline: 2, done: true })
+  expect(state.workouts[0].entries[0].sets[0].sec).toBeUndefined()
+})
+
 const sideRow = (Ld = false) => ({ w: 20, r: 16, done: false, sides: { L: { w: 20, r: 8, done: Ld }, R: { w: 20, r: 8, done: false } } })
 
 const S = () => ({

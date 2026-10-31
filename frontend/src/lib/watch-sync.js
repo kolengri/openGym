@@ -45,7 +45,9 @@ const okBw = v => { const n = num(v); return n != null && n > 0 && n < 700 }
 // One side of a per-side set, from the watch: 'L', 'R', or none (the whole set).
 const sideOf = v => (v === 'L' || v === 'R' ? v : null)
 // What a tick of a hold (`sec`) or of one side carries besides the numbers; nothing for a plain set.
-const extraOf = ev => ({ ...(num(ev.sec) != null ? { sec: num(ev.sec) } : {}), ...(sideOf(ev.side) ? { side: sideOf(ev.side) } : {}), ...effortFrom(ev) })
+const durationOf = (ev, entry) => num(ev.sec) == null ? {} :
+  modeOf({ ...entry?.target, id: entry?.id }) === 'cardio' ? { min: num(ev.sec) / 60 } : { sec: num(ev.sec) }
+const extraOf = (ev, entry) => ({ ...durationOf(ev, entry), ...(sideOf(ev.side) ? { side: sideOf(ev.side) } : {}), ...effortFrom(ev) })
 // The effort the watch logged on a set: { rpe } or { rir } on the half-point grid, inside the
 // phone's own scale (lib/history.js EFFORT); nothing for none, or for a number that does not hold up.
 export function effortFrom (ev) {
@@ -271,7 +273,8 @@ export function applyEvents (events, getState, { appliedIds = null, persistAppli
       // A workout already running on the phone is kept; one with the watch's id is this one.
     } else if (ev.type === 'setDone' && saved) {
       if (!appHandlers) break
-      const fields = { done: true, ...(num(ev.w) != null ? { w: num(ev.w) } : {}), ...(num(ev.r) != null ? { r: num(ev.r) } : {}), ...(num(ev.sec) != null ? { sec: num(ev.sec) } : {}), ...(num(ev.at) ? { at: num(ev.at) } : {}), ...effortFrom(ev) }
+      const entry = saved.entries?.[entryIndexOf(saved, ev)]
+      const fields = { done: true, ...(num(ev.w) != null ? { w: num(ev.w) } : {}), ...(num(ev.r) != null ? { r: num(ev.r) } : {}), ...durationOf(ev, entry), ...(num(ev.at) ? { at: num(ev.at) } : {}), ...effortFrom(ev) }
       const hr = sanitizeHr(ev.hr)
       if (hr) fields.hr = hr
       appHandlers.patchSet({ wid: ev.wid, exId: ev.exId, entryIdx: ev.entryIdx, setIdx: ev.setIdx, ...(sideOf(ev.side) ? { side: sideOf(ev.side) } : {}) }, fields, { ifNewer: num(ev.at) })
@@ -283,7 +286,7 @@ export function applyEvents (events, getState, { appliedIds = null, persistAppli
       }
       const idx = entryIndexOf(A, ev)
       const set = idx >= 0 ? A.entries[idx].sets?.[ev.setIdx] : null
-      if (set) handlers.setDone(idx, ev.setIdx, { w: num(ev.w), r: num(ev.r), at: num(ev.at), hr: sanitizeHr(ev.hr), ...extraOf(ev), ...(ev.source === 'garmin' ? { source: 'garmin' } : {}) })
+      if (set) handlers.setDone(idx, ev.setIdx, { w: num(ev.w), r: num(ev.r), at: num(ev.at), hr: sanitizeHr(ev.hr), ...extraOf(ev, A.entries[idx]), ...(ev.source === 'garmin' ? { source: 'garmin' } : {}) })
     } else if (['selectExercise', 'pause', 'skipRest'].includes(ev.type) && A && ev.wid === A.id) {
       if (!appHandlers) break
       if (ev.type === 'selectExercise') {

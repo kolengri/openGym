@@ -2790,4 +2790,10 @@ export default {
   "Last night average": "Genomsnitt för förra natten",
   "Unit not verified; original Garmin value.": "Måttenheten är inte verifierad; ursprungligt Garmin-värde.",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "Tidsmål (min)",
+  "Distance goal (km)": "Distansmål (km)",
+  "Distance (km)": "Distans (km)",
+  "Set a time or distance goal. Zero leaves a goal off.": "Ange ett tids- eller distansmål. Noll stänger av det målet.",
+
 }

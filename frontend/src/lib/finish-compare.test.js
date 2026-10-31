@@ -1,10 +1,22 @@
 import { describe, it, expect } from 'vitest'
-import { finishCompare, trendOf } from './finish-compare.js'
+import { finishCompare, finishCardio, trendOf } from './finish-compare.js'
 
 const set = (w, r, extra = {}) => ({ w, r, done: true, ...extra })
 const routine = { id: 'r1', name: 'A', prog: 'linear', ex: [{ id: 'bench', sets: 3, reps: 5, weight: 60, mode: 'reps' }] }
 const workout = (id, d, sets, more = {}) => ({ id, d, start: Date.parse(d + 'T10:00:00'), end: Date.parse(d + 'T11:00:00'),
   entries: [{ id: 'bench', rid: 'r1', target: { ...routine.ex[0] }, sets }], ...more })
+
+describe('cardio results on the finish summary', () => {
+  it('includes completed distance-only results without counting goals or unfinished rows', () => {
+    const completed = { km: 4.8, done: true }
+    const target = { mode: 'cardio', km: 5 }
+    const w = { entries: [{ id: 'run', target, sets: [
+      completed, { km: 3, done: false }, { km: 0, done: true }, { done: true },
+    ] }] }
+    expect(finishCardio(w)).toEqual([{ id: 'run', target, sets: [completed] }])
+    expect(finishCardio({ entries: [{ id: 'run', target, sets: [{ done: true }] }] })).toEqual([])
+  })
+})
 
 describe('last time and next time on the finish summary (#324)', () => {
   it('compares by the heaviest set, then by reps', () => {

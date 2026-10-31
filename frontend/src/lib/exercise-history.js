@@ -8,12 +8,12 @@ import { currentDbLoad, historyAs, volumeFactor, workoutAs } from './dumbbells.j
 // last few sessions, derived in a single pass over the log so the sheet can memoise the
 // result and never rescan on a re-render.
 //
-// The chart plots ONE number per session, chosen the way Stats does it:
+// The chart plots ONE number per session:
 //   reps   — the heaviest completed work set (metric 'weight'); an exercise never loaded
 //            (pull-ups, push-ups) plots its best rep count instead (metric 'reps'), because
 //            that is the thing improving
 //   time   — the longest completed hold, in seconds (metric 'sec')
-//   cardio — the minutes logged that session (metric 'min')
+//   cardio — session totals in kilometers or minutes, chosen from the latest measured session
 // The mode is the one the exercise was logged in most recently; a session logged in another
 // mode still appears in the list (its sets are labelled by their own target) but gets no point
 // and no value, so the curve never mixes seconds with kilos.
@@ -56,9 +56,16 @@ export function exerciseHistory(S, exId, { limit = HISTORY_SESSIONS } = {}) {
 
   const mode = logged[logged.length - 1].mode
   const repsOnly = mode === 'reps' && !logged.some(l => l.mode === 'reps' && bestWeightForEntry(l.en) > 0)
-  const metric = mode === 'cardio' ? 'min' : mode === 'time' ? 'sec' : repsOnly ? 'reps' : 'weight'
+  let cardioMetric = 'min'
+  if (mode === 'cardio') for (let i = logged.length - 1; i >= 0; i--) {
+    const item = logged[i]
+    if (item.mode !== 'cardio') continue
+    if (item.rows.some(s => s.km > 0)) { cardioMetric = 'km'; break }
+    if (item.rows.some(s => s.min > 0)) break
+  }
+  const metric = mode === 'cardio' ? cardioMetric : mode === 'time' ? 'sec' : repsOnly ? 'reps' : 'weight'
   const valueOf = ({ en, rows }) => {
-    if (metric === 'min') return rows.reduce((a, s) => a + (Number(s.min) || 0), 0)
+    if (metric === 'min' || metric === 'km') return rows.reduce((a, s) => a + (Number(s[metric]) || 0), 0)
     if (metric === 'sec') return Math.max(0, ...rows.map(s => Number(s.sec) || 0))
     if (metric === 'reps') return Math.max(0, ...rows.map(completedRepsOf))
     return bestWeightForEntry(en)
@@ -97,7 +104,8 @@ export function exerciseHistory(S, exId, { limit = HISTORY_SESSIONS } = {}) {
  * (#173) — the answer to "last time was a bad day, what can I actually do". It is the heaviest
  * completed work set, and of equally heavy ones the one with the most reps: the same "heaviest"
  * the Best chip and a PR mean, which on an assistance machine is the least help. A timed exercise
- * compares holds, then their load; cardio compares minutes, then speed. An exercise never loaded
+ * compares holds, then their load; cardio uses distance when its latest measured session has
+ * kilometers, otherwise minutes and then speed. An exercise never loaded
  * (pull-ups) comes down to its reps that way.
  *
  * Unlike "Last time" this looks across every routine: a record belongs to the exercise, not to
@@ -122,17 +130,32 @@ export function bestSetFor(S, exId, mode = modeOf({ id: exId }), as) {
   // Stored order is not always the order things happened in (a moved session keeps its place
   // until it is filed again), so a tie is settled by the start time, not by which came first
   // in the array; within one session the set logged first keeps it.
-  let best = null
+  let best = null, bestDistance = null, latestCardioMetric = null, latestCardioAt = -Infinity
   for (const stored of S?.workouts || []) {
     const w = as ? workoutAs(stored, exId, as) : stored
     let t = null
+    let cardioMetric = null
     for (const en of w.entries || []) {
       if (en.id !== exId) continue
       for (const set of metricRowsForEntry(en, mode)) {
         t ??= workoutAt(w)
         if (!best || better(set, best.set) || (!better(best.set, set) && t < best.t)) best = { d: w.d, set, target: en.target || null, t }
+        if (mode === 'cardio') {
+          if (set.km > 0) {
+            cardioMetric = 'km'
+            if (!bestDistance || Number(set.km) > Number(bestDistance.set.km) ||
+              (Number(set.km) === Number(bestDistance.set.km) && t < bestDistance.t)) {
+              bestDistance = { d: w.d, set, target: en.target || null, t }
+            }
+          } else if (set.min > 0 && !cardioMetric) cardioMetric = 'min'
+        }
       }
     }
+    if (cardioMetric && t >= latestCardioAt) {
+      latestCardioAt = t
+      latestCardioMetric = cardioMetric
+    }
   }
+  if (latestCardioMetric === 'km') best = bestDistance
   return best && { d: best.d, set: best.set, target: best.target }
 }

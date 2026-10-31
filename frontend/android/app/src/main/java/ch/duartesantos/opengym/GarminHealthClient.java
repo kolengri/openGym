@@ -218,7 +218,7 @@ final class GarminHealthClient {
             if (reader.nextClean() != 0 || !(value == JSONObject.NULL || value instanceof JSONObject || value instanceof JSONArray))
                 throw new Exception();
             if (value instanceof JSONObject && ((JSONObject) value).optBoolean("privacyProtected", false))
-                throw new GarminCloudClient.Failure("auth_required");
+                return JSONObject.NULL;
             return value;
         } catch (GarminCloudClient.Failure failure) { throw failure; }
         catch (Exception ignored) { throw new GarminCloudClient.Failure("invalid_response"); }

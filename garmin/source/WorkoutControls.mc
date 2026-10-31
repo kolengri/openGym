@@ -1,16 +1,16 @@
 import Toybox.Lang;
 
-// Rendering and hit testing share these rectangles, including on round displays.
+// The primary action is the only on-screen control; DOWN remains next exercise.
 module WorkoutControls {
     function rect(id, w, h) {
-        if (id.equals("primary")) { return [(w*0.18).toNumber(), (h*0.64).toNumber(), (w*0.64).toNumber(), (h*0.13).toNumber()]; }
-        if (id.equals("next")) { return [(w*0.26).toNumber(), (h*0.78).toNumber(), (w*0.48).toNumber(), (h*0.10).toNumber()]; }
+        if (id.equals("primary")) { return [(w*0.396).toNumber(), (h*0.756).toNumber(), (w*0.208).toNumber(), (h*0.208).toNumber()]; }
         return null;
     }
     function contains(r, x, y) { return x >= r[0] && y >= r[1] && x < r[0]+r[2] && y < r[1]+r[3]; }
     function hit(w, h, x, y, active, modal) {
-        if (contains(rect("primary",w,h),x,y) && (active || modal)) { return modal ? "dismiss" : "primary"; }
-        if (!modal && active && contains(rect("next",w,h),x,y)) { return "next"; }
+        var r = rect("primary",w,h); var radius = r[2]/2.0;
+        var dx = x-(r[0]+radius); var dy = y-(r[1]+r[3]/2.0);
+        if (contains(r,x,y) && dx*dx+dy*dy <= radius*radius && (active || modal)) { return modal ? "dismiss" : "primary"; }
         return null;
     }
     function primary(model, at) {
@@ -29,6 +29,28 @@ module WorkoutControls {
         if (action.equals("finish")) { return GymUi.string(Rez.Strings.FinishWorkout); }
         if (action.equals("next")) { return GymUi.string(Rez.Strings.NextExercise); }
         return action.equals("startSet") ? GymUi.string(Rez.Strings.StartSet) : GymUi.string(Rez.Strings.CompleteSet);
+    }
+    // The main number is what the exercise asks for, rather than an empty load.
+    function prescription(c, unit) {
+        var row = c["side"] == null ? c["row"] : c["row"]["sides"][c["side"]];
+        var mode = c["entry"]["mode"];
+        if (GymData.is(mode,"time") || GymData.is(mode,"cardio")) {
+            var km = c["entry"]["goalKm"];
+            var distance = km != null && km > 0 ? decimal(km)+" "+GymUi.string(Rez.Strings.Kilometers) : null;
+            var timed = GymData.value(c["row"]["sec"],1,86400);
+            var detail = GymUi.string(Rez.Strings.Target)+(!timed || distance == null ? "" : " "+distance);
+            if (GymData.is(mode,"time") && row["w"] != null && row["w"] > 0) { detail += " · "+decimal(row["w"])+" "+unit; }
+            return {"value"=>timed ? clock(c["row"]["sec"]) : (distance == null ? "--:--" : distance),
+                "detail"=>detail};
+        }
+        var load = row["w"];
+        var bw = c["entry"]["bodyweight"] == true || load == null || load == 0;
+        var reps = row["r"] == null ? "--" : decimal(row["r"]);
+        if (bw) {
+            return {"value"=>reps+" "+GymUi.string(Rez.Strings.Reps),
+                "detail"=>load != null && load > 0 ? "+"+decimal(load)+" "+unit : GymUi.string(Rez.Strings.Bodyweight)};
+        }
+        return {"value"=>decimal(load)+" "+unit, "detail"=>reps+" "+GymUi.string(Rez.Strings.Reps)};
     }
     function clock(seconds) {
         seconds = (seconds < 0 ? 0 : seconds).toNumber();
@@ -92,7 +114,8 @@ class WorkoutAlerts {
         key = t == null ? null : t["key"];
         var target = c == null ? null : c["row"]["sec"];
         if (!GymData.is(key,timedKey) || timedTarget != target) { timedKey = key; timedTarget = target; timedFired = false; }
-        if (t != null && c != null && model.supported(c) && GymData.is(c["entry"]["mode"],"time") &&
+        if (t != null && c != null && model.supported(c) &&
+            (GymData.is(c["entry"]["mode"],"time") || GymData.is(c["entry"]["mode"],"cardio")) && GymData.value(target,1,86400) &&
             !model.paused() && !timedFired && model.elapsed(at) >= c["row"]["sec"]) {
             timedFired = true;
             result = {"kind"=>"timed", "wid"=>model.wid(), "key"=>key, "target"=>target};

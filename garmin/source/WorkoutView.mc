@@ -4,108 +4,197 @@ import Toybox.Lang;
 import Toybox.System;
 
 class WorkoutView extends WatchUi.View {
-    var app;
-    function initialize(owner) { View.initialize(); app = owner; }
-    function onShow() { app.enableTouch(); }
-    function text(dc, x, y, value, font, color, width) {
-        dc.setColor(color, Graphics.COLOR_TRANSPARENT);
-        // A smaller font before truncation keeps values and long names readable.
-        if (dc.getTextWidthInPixels(value,font) > width) { font = Graphics.FONT_XTINY; }
-        width = width < WorkoutLayout.roundWidth(dc.getWidth(),dc.getHeight(),y,dc.getFontHeight(font)) ? width : WorkoutLayout.roundWidth(dc.getWidth(),dc.getHeight(),y,dc.getFontHeight(font));
-        value = WorkoutLayout.ellipsis(dc,value,font,width);
-        dc.drawText(x,y,font,value,Graphics.TEXT_JUSTIFY_CENTER);
+    var app; var smallFont; var titleFont; var glyphs;
+    const BACKGROUND = 0x10131a;
+    const INK = 0xffc96d;
+    const SUBTLE = 0xd3bda3;
+    const ACCENT = 0xff8d32;
+    const TRACK = 0x493c30;
+    function initialize(owner) {
+        View.initialize(); app = owner;
+        glyphs = {"0"=>"111101101101111","1"=>"010110010010111","2"=>"111001111100111","3"=>"111001111001111",
+            "4"=>"101101111001001","5"=>"111100111001111","6"=>"111100111101111","7"=>"111001010010010",
+            "8"=>"111101111101111","9"=>"111101111001111","/"=>"001001010100100","-"=>"000000111000000",
+            ":"=>"01010","."=>"00001"};
     }
-    function line(dc, y, value, font, color) { text(dc,dc.getWidth()/2,y,value,font,color,dc.getWidth()*0.82); }
-    function button(dc, id, label, enabled, primary) {
-        var r = WorkoutControls.rect(id,dc.getWidth(),dc.getHeight());
-        var color = enabled ? Graphics.COLOR_GREEN : Graphics.COLOR_DK_GRAY;
-        dc.setColor(primary ? color : Graphics.COLOR_BLACK,Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(r[0],r[1],r[2],r[3],5);
+    function onShow() { app.enableTouch(); app.refreshHeartRateZones(); }
+    function fonts(w) {
+        if (smallFont != null) { return; }
+        smallFont = WatchUi.loadResource(w > 300 ? Rez.Fonts.SmallAmoled : Rez.Fonts.SmallSolar);
+        titleFont = WatchUi.loadResource(w > 300 ? Rez.Fonts.TitleAmoled : Rez.Fonts.TitleSolar);
+    }
+    function text(dc, x, y, value, font, color, width) {
+        var chord = WorkoutLayout.roundWidth(dc.getWidth(),dc.getHeight(),y,dc.getFontHeight(font));
+        if (width > chord) { width = chord; }
+        value = WorkoutLayout.ellipsis(dc,value,font,width);
         dc.setColor(color,Graphics.COLOR_TRANSPARENT);
-        dc.drawRoundedRectangle(r[0],r[1],r[2],r[3],5);
-        var font = Graphics.FONT_XTINY;
-        text(dc,r[0]+r[2]/2,r[1]+(r[3]-dc.getFontHeight(font))/2,label,font,primary ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE,r[2]-6);
+        dc.drawText(x.toNumber(),y.toNumber(),font,value,Graphics.TEXT_JUSTIFY_CENTER);
+    }
+    function line(dc, y, value, font, color) { text(dc,dc.getWidth()/2,y,value,font,color,dc.getWidth()*0.74); }
+    function icon(dc, kind, x, y, size, color) {
+        dc.setColor(color,Graphics.COLOR_TRANSPARENT);
+        var s = size/2.0; dc.setPenWidth(size > 16 ? 2 : 1);
+        if (kind.equals("heart")) {
+            dc.drawLine(x-s,y-s/3,x-s/2,y-s*0.7); dc.drawLine(x-s/2,y-s*0.7,x,y-s/3);
+            dc.drawLine(x,y-s/3,x+s/2,y-s*0.7); dc.drawLine(x+s/2,y-s*0.7,x+s,y-s/3);
+            dc.drawLine(x+s,y-s/3,x+s*0.8,y+s/3); dc.drawLine(x+s*0.8,y+s/3,x,y+s);
+            dc.drawLine(x,y+s,x-s*0.8,y+s/3); dc.drawLine(x-s*0.8,y+s/3,x-s,y-s/3);
+        } else if (kind.equals("clock")) {
+            dc.drawCircle(x,y,s); dc.drawLine(x,y,x,y-s*0.6); dc.drawLine(x,y,x+s*0.5,y+s*0.3);
+        } else if (kind.equals("weight")) {
+            dc.drawLine(x-s*0.5,y-s,x-s*0.5,y+s); dc.drawLine(x+s*0.5,y-s,x+s*0.5,y+s);
+            dc.drawLine(x-s,y-s*0.5,x-s,y+s*0.5); dc.drawLine(x+s,y-s*0.5,x+s,y+s*0.5); dc.drawLine(x-s*0.5,y,x+s*0.5,y);
+        } else if (kind.equals("target")) {
+            dc.drawLine(x-s*0.5,y+s,x-s*0.5,y-s); dc.drawLine(x-s*0.5,y-s,x+s,y-s*0.5); dc.drawLine(x+s,y-s*0.5,x-s*0.5,y);
+        } else if (kind.equals("body")) {
+            dc.drawCircle(x,y-s*0.6,s*0.35); dc.drawLine(x-s,y+s,x-s,y+s*0.25); dc.drawLine(x-s,y+s*0.25,x,y);
+            dc.drawLine(x,y,x+s,y+s*0.25); dc.drawLine(x+s,y+s*0.25,x+s,y+s);
+        } else if (kind.equals("phone")) {
+            dc.drawRectangle(x-s*0.6,y-s,s*1.2,s*2); dc.drawLine(x-s*0.3,y+s*0.7,x+s*0.3,y+s*0.7);
+        } else if (kind.equals("queue")) {
+            dc.drawLine(x-s,y,x+s,y); dc.drawLine(x+s/3,y-s*0.6,x+s,y); dc.drawLine(x+s,y,x+s/3,y+s*0.6);
+        } else {
+            dc.drawLine(x-s,y,x+s,y); dc.drawLine(x+s/3,y-s*0.6,x+s,y); dc.drawLine(x+s,y,x+s/3,y+s*0.6);
+        }
+        dc.setPenWidth(1);
+    }
+    function progress(dc, fraction) {
+        var w = dc.getWidth(); var h = dc.getHeight(); var radius = w*0.482;
+        dc.setPenWidth(w > 300 ? 7 : 4); dc.setColor(TRACK,Graphics.COLOR_TRANSPARENT); dc.drawCircle(w/2,h/2,radius);
+        dc.setColor(ACCENT,Graphics.COLOR_TRANSPARENT);
+        // Equal drawArc angles mean a full circle, so never draw a zero sweep.
+        var sweep = (WorkoutDashboard.clamp(fraction)*360).toNumber();
+        if (sweep >= 360) { dc.drawCircle(w/2,h/2,radius); }
+        else if (sweep > 0) { dc.drawArc(w/2,h/2,radius,Graphics.ARC_CLOCKWISE,90,(450-sweep)%360); }
+        dc.setPenWidth(1);
+    }
+    function phaseLabel(dc, phase, warmup) {
+        var full = warmup ? GymUi.string(Rez.Strings.Warmup)+" "+phase : phase;
+        return dc.getTextWidthInPixels(full,smallFont) <= dc.getWidth()*0.29 ? full : phase;
+    }
+    function header(dc, phase, showZones) {
+        var w = dc.getWidth(); var h = dc.getHeight(); var y = h*0.13; var height = dc.getFontHeight(smallFont);
+        var colors = [0xa6afb9,0x6dbbff,0x99df80,0xffb35b,0xff7781];
+        var zone = WorkoutDashboard.zone(app.heartRate,app.heartRateZones);
+        var color = zone == null ? SUBTLE : colors[zone-1];
+        var bpm = app.heartRate == null ? "--" : WorkoutControls.decimal(app.heartRate);
+        icon(dc,"heart",w*0.31,y+height*0.5,w*0.034,color);
+        dc.setColor(color,Graphics.COLOR_TRANSPARENT); dc.drawText(w*0.35,y,smallFont,bpm,Graphics.TEXT_JUSTIFY_LEFT);
+        text(dc,w*0.63,y,phase,smallFont,INK,w*0.29);
+        var barW = w*0.069; var gap = w*0.012; var start = (w-5*barW-4*gap)/2; var bottom = h*0.375;
+        var known = WorkoutDashboard.validZones(app.heartRateZones) && app.heartRate != null;
+        for (var i=0; showZones && i<5; i++) {
+            var selected = zone == i+1; var barH = h*(selected ? 0.026 : 0.014);
+            var x = start+i*(barW+gap); var top = bottom-barH;
+            dc.setColor(known ? colors[i] : TRACK,Graphics.COLOR_TRANSPARENT); dc.fillRoundedRectangle(x,top,barW,barH,2);
+            if (selected) {
+                dc.setColor(0xfff4df,Graphics.COLOR_TRANSPARENT); dc.drawRoundedRectangle(x,top,barW,barH,2);
+                dc.fillPolygon([[x+barW/2-w*0.0065,bottom+w*0.008],[x+barW/2+w*0.0065,bottom+w*0.008],[x+barW/2,bottom+w*0.0145]]);
+            }
+        }
+        var pending = app.model.data["outbox"].size();
+        if (pending > 0) {
+            icon(dc,"queue",w*0.46,h*0.072,w*0.025,SUBTLE);
+            text(dc,w*0.52,h*0.05,pending.toString(),smallFont,SUBTLE,w*0.1);
+        }
+    }
+    function fontForTitle(name, compact) {
+        // Match scripts/garmin-fonts.py; use native coverage for every other script.
+        var chars = name.toCharArray();
+        for (var i=0; i<chars.size(); i++) {
+            var c = chars[i].toNumber();
+            if ((c >= 32 && c < 127) || (c >= 0x400 && c < 0x460) || c == 0xd7 || c == 0x2013 || c == 0x2014 || c == 0x2026 || c == 0xb7) { continue; }
+            return Graphics.FONT_XTINY;
+        }
+        return compact ? smallFont : titleFont;
+    }
+    function title(dc, name) {
+        name = WorkoutLayout.normalize(name);
+        var w = dc.getWidth(); var h = dc.getHeight(); var top = h*0.205; var bottom = h*0.335;
+        var font = fontForTitle(name,false); var height = dc.getFontHeight(font);
+        if (dc.getTextWidthInPixels(name,font) <= w*0.74) { line(dc,top+(bottom-top-height)/2,name,font,INK); return; }
+        font = fontForTitle(name,true); height = dc.getFontHeight(font); var width = w*0.76;
+        if (dc.getTextWidthInPixels(name,font) <= width) { line(dc,top+(bottom-top-height)/2,name,font,INK); return; }
+        // Native font heights vary by device; do not let a second row cover zones.
+        if (2*height > bottom-top) { line(dc,top+(bottom-top-height)/2,name,font,INK); return; }
+        var count = WorkoutLayout.prefix(dc,name,font,width);
+        text(dc,w/2,top,WorkoutLayout.trim(name.substring(0,count)),font,INK,width);
+        text(dc,w/2,bottom-height,WorkoutLayout.trim(name.substring(count,name.length())),font,INK,width);
+    }
+    function digits(dc, value) {
+        var w = dc.getWidth(); var h = dc.getHeight(); var units = 0;
+        for (var i=0; i<value.length(); i++) { var ch = value.substring(i,i+1); units += ch.equals(":") || ch.equals(".") ? 2 : 4; }
+        var cell = w*0.036;
+        if (cell*units > w*0.72) { cell = w*0.72/units; }
+        var x = (w-units*cell)/2+cell/2; var top = h*0.40; var gap = cell*0.2;
+        dc.setColor(INK,Graphics.COLOR_TRANSPARENT);
+        for (var j=0; j<value.length(); j++) {
+            var c = value.substring(j,j+1); var pattern = glyphs[c];
+            var columns = c.equals(":") || c.equals(".") ? 1 : 3;
+            if (pattern != null) {
+                for (var row=0; row<5; row++) {
+                    for (var col=0; col<columns; col++) {
+                        var index = row*columns+col;
+                        if (pattern.substring(index,index+1).equals("1")) { dc.fillRectangle(x+col*cell,top+row*cell,cell-gap,cell-gap); }
+                    }
+                }
+            }
+            x += (columns+1)*cell;
+        }
+    }
+    function detail(dc, value, kind) {
+        var w = dc.getWidth(); var h = dc.getHeight(); var y = h*0.674;
+        var width = w*0.70; value = WorkoutLayout.ellipsis(dc,value,smallFont,width-w*0.06);
+        var total = dc.getTextWidthInPixels(value,smallFont)+w*0.055; var x = (w-total)/2;
+        icon(dc,kind,x+w*0.016,y+dc.getFontHeight(smallFont)/2,w*0.032,SUBTLE);
+        dc.setColor(SUBTLE,Graphics.COLOR_TRANSPARENT); dc.drawText(x+w*0.05,y,smallFont,value,Graphics.TEXT_JUSTIFY_LEFT);
+    }
+    function button(dc, command, dismiss) {
+        var r = WorkoutControls.rect("primary",dc.getWidth(),dc.getHeight());
+        var x = r[0]+r[2]/2; var y = r[1]+r[3]/2; var s = r[2]*0.24;
+        dc.setColor(command == null && !dismiss ? TRACK : ACCENT,Graphics.COLOR_TRANSPARENT); dc.fillCircle(x,y,r[2]/2);
+        dc.setColor(BACKGROUND,Graphics.COLOR_TRANSPARENT); dc.setPenWidth(dc.getWidth() > 300 ? 4 : 3);
+        if (dismiss || GymData.is(command,"setDone") || GymData.is(command,"finish")) {
+            dc.drawLine(x-s,y,x-s*0.2,y+s*0.65); dc.drawLine(x-s*0.2,y+s*0.65,x+s,y-s*0.7);
+        } else if (GymData.is(command,"startSet") || GymData.is(command,"pause")) {
+            dc.fillPolygon([[x-s*0.6,y-s],[x+s,y],[x-s*0.6,y+s]]);
+        } else if (GymData.is(command,"skipRest")) {
+            dc.fillPolygon([[x-s,y-s],[x+s*0.6,y],[x-s,y+s]]); dc.drawLine(x+s,y-s,x+s,y+s);
+        } else if (command != null) {
+            dc.drawLine(x-s,y,x+s,y); dc.drawLine(x+s*0.2,y-s*0.8,x+s,y); dc.drawLine(x+s,y,x+s*0.2,y+s*0.8);
+        } else { icon(dc,"phone",x,y,s,BACKGROUND); }
+        dc.setPenWidth(1);
     }
     function onUpdate(dc) {
-        dc.setColor(Graphics.COLOR_WHITE,Graphics.COLOR_BLACK); dc.clear();
-        var h = dc.getHeight(); var w = dc.getWidth();
+        var w = dc.getWidth(); var h = dc.getHeight(); fonts(w);
         app.viewWidth = w; app.viewHeight = h;
-        var tiny = Graphics.FONT_XTINY; var green = Graphics.COLOR_GREEN;
-        var model = app.model; var a = model.active(); var at = app.now();
-        var layout = WorkoutLayout.metrics(dc,w,h);
-        // The reference's divided dashboard, using measured HR and workout data.
-        dc.setColor(green,Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(w*0.40,h*0.055,w*0.60,h*0.055);
-        var headerWidth = WorkoutLayout.roundWidth(w,h,layout["headerY"],dc.getFontHeight(tiny));
-        var hrLabel = WorkoutLayout.header(dc,GymUi.string(Rez.Strings.HeartRate),GymUi.string(Rez.Strings.HeartRateCompact),
-            app.heartRate == null ? "--" : WorkoutControls.decimal(app.heartRate),model.data["outbox"].size(),headerWidth);
-        line(dc,layout["headerY"],hrLabel,tiny,Graphics.COLOR_WHITE);
-        dc.setColor(Graphics.COLOR_DK_GRAY,Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(w*0.16,layout["headerBottom"],w*0.84,layout["headerBottom"]);
+        dc.setColor(INK,BACKGROUND); dc.clear();
+        var data = WorkoutDashboard.present(app.model,app.now());
+        progress(dc,data == null ? 0.0 : data["progress"]);
+        var overlay = app.notice != null || app.timerAlert != null;
+        header(dc,data == null ? "" : phaseLabel(dc,data["phase"],data["warmup"]),data != null && !overlay);
         if (app.notice != null || app.timerAlert != null) {
-            var alert = app.timerAlert;
-            if (app.notice != null) {
-                var msg = WorkoutLayout.normalize(GymUi.message(app.notice));
-                var y = h*0.26; var height = dc.getFontHeight(tiny);
-                var limit = WorkoutControls.rect("primary",w,h)[1]-layout["gap"];
-                var first = true;
-                while (msg.length() > 0 && y+height <= limit) {
-                    var width = WorkoutLayout.roundWidth(w,h,y,height);
-                    var last = y+2*height+layout["gap"] > limit;
-                    var count = last ? msg.length() : WorkoutLayout.prefix(dc,msg,tiny,width);
-                    line(dc,y,msg.substring(0,count),tiny,first ? Graphics.COLOR_YELLOW : Graphics.COLOR_WHITE);
-                    msg = WorkoutLayout.trim(msg.substring(count,msg.length()));
-                    y += height+layout["gap"]; first = false;
-                }
-            } else {
-                line(dc,h*0.29,alert["kind"].equals("rest") ? GymUi.string(Rez.Strings.RestComplete) : GymUi.string(Rez.Strings.TargetReached),Graphics.FONT_SMALL,green);
-                line(dc,h*0.43,alert["kind"].equals("rest") ? GymUi.string(Rez.Strings.ReadyNextSet) : GymUi.string(Rez.Strings.TimerContinues),tiny,Graphics.COLOR_WHITE);
-                line(dc,h*0.53,GymUi.string(Rez.Strings.DismissContinue),tiny,Graphics.COLOR_LT_GRAY);
+            var message = app.notice == null ? GymUi.string(app.timerAlert["kind"].equals("rest") ? Rez.Strings.RestComplete : Rez.Strings.TargetReached) : GymUi.message(app.notice);
+            var remaining = WorkoutLayout.normalize(message); var y = h*0.28; var height = dc.getFontHeight(smallFont);
+            var end = WorkoutControls.rect("primary",w,h)[1]-h*0.02;
+            while (remaining.length() > 0 && y+height <= end) {
+                var last = y+2*height+4 > end;
+                var count = last ? remaining.length() : WorkoutLayout.prefix(dc,remaining,smallFont,w*0.72);
+                line(dc,y,remaining.substring(0,count),smallFont,INK);
+                remaining = WorkoutLayout.trim(remaining.substring(count,remaining.length())); y += height+4;
             }
-            button(dc,"primary",GymUi.string(Rez.Strings.Dismiss),true,true);
-            return;
+            button(dc,null,true); return;
         }
-        if (a == null) {
-            line(dc,h*0.26,"openGym",Graphics.FONT_SMALL,green);
-            line(dc,h*0.39,GymUi.string(Rez.Strings.NoWorkout),tiny,Graphics.COLOR_WHITE);
-            line(dc,h*0.49,GymUi.string(Rez.Strings.StartPhone),Graphics.FONT_SMALL,Graphics.COLOR_WHITE);
-            line(dc,h*0.63,GymUi.message(app.recordingStatus),tiny,Graphics.COLOR_LT_GRAY);
-            line(dc,h*0.63+dc.getFontHeight(tiny)+layout["gap"],WatchUi.loadResource(Rez.Strings.AppVersion)+" | "+GymUi.string(Rez.Strings.Queue)+" "+model.data["outbox"].size().toString(),tiny,Graphics.COLOR_LT_GRAY);
-            return;
+        if (data == null) {
+            line(dc,h*0.26,"openGym",titleFont,INK);
+            line(dc,h*0.44,GymUi.string(Rez.Strings.NoWorkout),smallFont,SUBTLE);
+            line(dc,h*0.52,GymUi.string(Rez.Strings.StartPhone),smallFont,INK);
+            line(dc,h*0.64,GymUi.message(app.recordingStatus),smallFont,SUBTLE);
+            line(dc,h*0.73,WatchUi.loadResource(Rez.Strings.AppVersion),smallFont,SUBTLE); return;
         }
-        var e = a["entries"][a["cur"]]; var c = model.current();
-        var title = WorkoutLayout.title(dc,e["name"],w,h,layout);
-        dc.setColor(Graphics.COLOR_WHITE,Graphics.COLOR_TRANSPARENT);
-        for (var i = 0; i < title["rows"].size(); i++) {
-            var rowTitle = title["rows"][i];
-            dc.drawText(w/2,rowTitle[1],title["font"],rowTitle[0],Graphics.TEXT_JUSTIFY_CENTER);
-        }
-        dc.setColor(Graphics.COLOR_DK_GRAY,Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(w*0.10,layout["titleBottom"]+layout["gap"],w*0.90,layout["titleBottom"]+layout["gap"]);
-        dc.drawLine(w*0.50,layout["fieldTop"],w*0.50,layout["fieldBottom"]);
-        var left = w*0.28; var right = w*0.72; var width = w*0.40;
-        var label = GymUi.string(Rez.Strings.Exercise)+" "+(a["cur"]+1).toString()+" / "+a["entries"].size().toString();
-        var value = GymUi.string(Rez.Strings.Complete); var detail = GymUi.string(Rez.Strings.AllSetsDone);
-        if (c != null) {
-            var row = c["side"] == null ? c["row"] : c["row"]["sides"][c["side"]];
-            label = (c["row"]["warmup"] == true ? GymUi.string(Rez.Strings.Warmup)+" " : GymUi.string(Rez.Strings.Set)+" ")+(c["setIdx"]+1).toString()+" / "+e["sets"].size().toString()+(c["side"] == null ? "" : " "+GymUi.side(c["side"]));
-            value = row["w"] == null ? GymUi.string(Rez.Strings.Bodyweight) : WorkoutControls.decimal(row["w"])+" "+GymUi.unit(model.state["unit"]);
-            detail = GymData.is(e["mode"],"time") ? (c["row"]["sec"] == null ? GymUi.string(Rez.Strings.Target)+" --:--" : GymUi.string(Rez.Strings.Target)+" "+WorkoutControls.clock(c["row"]["sec"])) : (row["r"] == null ? "?" : WorkoutControls.decimal(row["r"]))+" "+GymUi.string(Rez.Strings.Reps);
-        }
-        text(dc,left,layout["labelY"],label,tiny,Graphics.COLOR_LT_GRAY,width);
-        text(dc,left,layout["valueY"],value,layout["valueFont"],Graphics.COLOR_WHITE,width);
-        text(dc,left,layout["detailY"],detail,tiny,Graphics.COLOR_WHITE,width);
-        var rest = model.restLeft(at);
-        var timerLabel = rest > 0 ? GymUi.string(Rez.Strings.Rest) : GymUi.string(Rez.Strings.SetTime);
-        var timer = rest > 0 ? rest : model.elapsed(at);
-        if (model.paused()) { timerLabel = GymUi.string(Rez.Strings.Paused); }
-        text(dc,right,layout["labelY"],timerLabel,tiny,green,width);
-        text(dc,right,layout["valueY"],WorkoutControls.clock(timer),layout["valueFont"],Graphics.COLOR_WHITE,width);
-        var timerDetail = rest > 0 ? GymUi.string(Rez.Strings.Remaining) : (model.data["timing"] == null ? GymUi.string(Rez.Strings.TapStart) : GymUi.string(Rez.Strings.Elapsed));
-        text(dc,right,layout["detailY"],timerDetail,tiny,Graphics.COLOR_LT_GRAY,width);
-        var command = WorkoutControls.primary(model,at);
-        button(dc,"primary",WorkoutControls.label(command),command != null,true);
-        button(dc,"next",GymUi.string(Rez.Strings.NextShort),true,false);
+        title(dc,data["title"]); digits(dc,data["main"]);
+        line(dc,h*0.59,data["unit"],smallFont,SUBTLE);
+        detail(dc,data["detail"],data["detailIcon"]); button(dc,data["command"],false);
     }
 }
 
@@ -127,7 +216,15 @@ class WorkoutDelegate extends WatchUi.InputDelegate {
         if (key == WatchUi.KEY_ESC) { return onBack(); }
         return false;
     }
-    function onSelect() { if (!dismiss()) { app.action("setDone"); } return true; }
+    function onSelect() { return primaryAction(); }
+    function primaryAction() {
+        if (dismiss()) { return true; }
+        var command = WorkoutControls.primary(app.model,app.now());
+        if (command != null) {
+            if (command.equals("finish")) { confirmFinish(); } else { app.action(command); }
+        }
+        return true;
+    }
     function onNextPage() { if (!dismiss()) { app.action("next"); } return true; }
     function onBack() { return dismiss() ? true : onMenu(); }
     function onTap(event) {
@@ -139,12 +236,7 @@ class WorkoutDelegate extends WatchUi.InputDelegate {
         var hit = WorkoutControls.hit(app.viewWidth,app.viewHeight,x,y,app.model.active() != null,app.notice != null || app.timerAlert != null);
         if (hit == null) { return false; }
         if (hit.equals("dismiss")) { return dismiss(); }
-        if (hit.equals("next")) { app.action("next"); return true; }
-        var command = WorkoutControls.primary(app.model,app.now());
-        if (command != null) {
-            if (command.equals("finish")) { confirmFinish(); } else { app.action(command); }
-        }
-        return true;
+        return primaryAction();
     }
     function confirmFinish() {
         WatchUi.pushView(new WatchUi.Confirmation(GymUi.string(Rez.Strings.ConfirmFinish)),new WorkoutConfirm(app,"finish",app.model.wid()),WatchUi.SLIDE_UP);
@@ -180,7 +272,7 @@ class WorkoutMenu extends WatchUi.Menu2InputDelegate {
         if (!id.equals("status") && !id.equals("reconnect") && !sameWorkout(workout,app.model.wid())) {
             app.notice = GymUi.string(Rez.Strings.WorkoutChanged); WatchUi.requestUpdate(); return;
         }
-        if (id.equals("status")) { app.notice = GymUi.message(app.recordingStatus)+". "+GymUi.string(Rez.Strings.PendingCommands)+" "+app.model.data["outbox"].size().toString(); WatchUi.requestUpdate(); }
+        if (id.equals("status")) { app.notice = WatchUi.loadResource(Rez.Strings.AppVersion)+". "+GymUi.message(app.recordingStatus)+". "+GymUi.string(Rez.Strings.PendingCommands)+" "+app.model.data["outbox"].size().toString(); WatchUi.requestUpdate(); }
         else if (id.equals("finish") || id.equals("discard")) {
             confirm(id);
         } else if (id.equals("reconnect")) { app.lastHelloAt = 0l; app.tick(); }

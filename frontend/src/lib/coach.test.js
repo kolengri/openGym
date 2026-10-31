@@ -108,6 +108,39 @@ describe('plan fingerprint', () => {
     }
   })
 
+  it('fingerprints distance goals on both runtimes while retaining legacy plan hashes', () => {
+    const S = state({ routines: [{ id: 'cardio', name: 'Cardio',
+      ex: [{ id: '2138', mode: 'cardio', sets: 1, min: 20, speed: 8 }] }], week: {} })
+    // Captured from the previous algorithm, so an update does not stale unchanged plans.
+    expect(planHash(S)).toBe('ee270109e6aaf193')
+    const withGoal = structuredClone(S)
+    withGoal.routines[0].ex[0].km = 5
+    expect(canonicalPlan(withGoal).routines[0].ex[0].km).toBe(5)
+    expect(canonicalPlan(withGoal)).toEqual(serverPayload.canonicalPlan(withGoal))
+    expect(planHash(withGoal)).toBe(serverHashPlan(serverPayload.canonicalPlan(withGoal)))
+    expect(planHash(withGoal)).not.toBe(planHash(S))
+    const before = planHash(withGoal)
+    withGoal.routines[0].ex[0].km = 6
+    expect(planHash(withGoal)).not.toBe(before)
+    expect(planHash(withGoal)).toBe(serverHashPlan(serverPayload.canonicalPlan(withGoal)))
+    withGoal.routines[0].ex[0].km = 0
+    expect(planHash(withGoal)).toBe(planHash(S))
+    const reps = state(), stray = state()
+    stray.routines[0].ex[0].km = 5
+    expect(planHash(stray)).toBe(planHash(reps))
+  })
+
+  it('fingerprints implicit distance configs with the same mode on both runtimes', () => {
+    const S = state({ routines: [{ id: 'cardio', name: 'Cardio', ex: [{ id: 'custom-run', sets: 1, km: 5 }] }] })
+    expect(canonicalPlan(S).routines[0].ex[0]).toMatchObject({ mode: 'cardio', km: 5 })
+    expect(canonicalPlan(S)).toEqual(serverPayload.canonicalPlan(S))
+    expect(planHash(S)).toBe(serverHashPlan(serverPayload.canonicalPlan(S)))
+    const before = planHash(S)
+    S.routines[0].ex[0].km = 6
+    expect(planHash(S)).not.toBe(before)
+    expect(planHash(S)).toBe(serverHashPlan(serverPayload.canonicalPlan(S)))
+  })
+
   it('a combined day changes the fingerprint, and routine order within a day matters', () => {
     const S = state()
     expect(planHash(state({ week: { ...S.week, 3: ['r2', 'r1'] } }))).not.toBe(planHash(S))

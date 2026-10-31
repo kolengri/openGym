@@ -550,18 +550,36 @@ export default function Stats() {
       desc: snapshot.desc || entry?.desc || '',
     }
   }
-  // Cardio is charted and ranked in the profile's speed unit; the sets keep km/h (lib/speed.js).
+  // Pick one measure from the latest logged cardio session, then use it throughout the
+  // series. Distance and duration are session totals; legacy speed remains a top speed.
   const speedUnit = speedUnitOf(S)
+  const cardioMeasureOf = id => {
+    for (let i = workouts.length - 1; i >= 0; i--) {
+      const data = metricDataOf(workouts[i], id)
+      if (data.mode !== 'cardio') continue
+      for (const field of ['km', 'speed', 'min']) {
+        if (data.rows.some(row => row[field] > 0)) return field
+      }
+    }
+    return 'speed'
+  }
+  const cardioValue = (rows, field) => field === 'speed'
+    ? Math.max(0, ...rows.map(row => toSpeed(row.speed || 0, speedUnit)))
+    : rows.reduce((total, row) => total + (row[field] > 0 ? row[field] : 0), 0)
+  const cardioUnit = field => field === 'km' ? 'km' : field === 'min' ? 'min' : speedLabel(speedUnit)
   const currentOf = id => {
+    let cardioMeasure = null
     for (let i = workouts.length - 1; i >= 0; i--) {
       const data = metricDataOf(workouts[i], id)
       if (!data.mode) continue
       const mode = data.mode
+      if (mode === 'cardio') cardioMeasure ??= cardioMeasureOf(id)
       const rows = data.rows
       const mx = mode === 'reps'
         ? data.best
-        : Math.max(0, ...rows.map(s => mode === 'cardio' ? toSpeed(s.speed || 0, speedUnit) : mode === 'time' ? (s.sec || 0) : (s.w || 0)))
-      if (mx > 0) return { mx, unit: mode === 'cardio' ? speedLabel(speedUnit) : mode === 'time' ? 's' : S.unit }
+        : mode === 'cardio' ? cardioValue(rows, cardioMeasure)
+        : Math.max(0, ...rows.map(s => mode === 'time' ? (s.sec || 0) : (s.w || 0)))
+      if (mx > 0) return { mx, unit: mode === 'cardio' ? cardioUnit(cardioMeasure) : mode === 'time' ? 's' : S.unit }
       // Unloaded reps work still has a current figure — its rep count. Without this the whole
       // picker label went blank and the exercise sorted to the bottom as if it had no history.
       if (mode === 'reps') {
@@ -598,8 +616,9 @@ export default function Stats() {
   // its own, which is also the honest reading: that is when load became the thing improving.
   const repsOnly = curEx && curMode === 'reps' && !workouts.some(w =>
     entriesForExercise(w, curEx).some(en => bestWeightForEntry(en) > 0))
-  const metric = s => curCardio ? toSpeed(s.speed || 0, speedUnit) : curTimed ? (s.sec || 0) : (s.w || 0)
-  const exUnit = curCardio ? speedLabel(speedUnit) : curTimed ? 's' : repsOnly ? t('reps') : S.unit
+  const cardioMeasure = curCardio ? cardioMeasureOf(curEx) : null
+  const metric = s => curTimed ? (s.sec || 0) : (s.w || 0)
+  const exUnit = curCardio ? cardioUnit(cardioMeasure) : curTimed ? 's' : repsOnly ? t('reps') : S.unit
   let exPts = [], exList = [], exBest = 0
   if (curEx) {
     workouts.forEach(w => {
@@ -609,11 +628,12 @@ export default function Stats() {
         const representative = data.entries.at(-1)?.entry
         const mx = curMode === 'reps'
           ? (repsOnly ? Math.max(0, ...doneSets.map(completedRepsOf)) : data.best)
+          : curCardio ? cardioValue(doneSets, cardioMeasure)
           : Math.max(0, ...doneSets.map(metric))
         if (mx > 0) {
           exPts.push({ t: w.start, y: mx, d: w.d, sets: doneSets, target: representative?.target })
           // Weighted work on an assistance machine reads the other way: the smallest load is the
-          // best (issue #232). Reps, duration and speed are always "more is better".
+          // best (issue #232). Reps, duration, distance and speed use their maximum.
           const better = curMode === 'reps' && !repsOnly ? betterWeight(curEx, exBest || mx, mx) : Math.max(exBest, mx)
           exBest = exBest > 0 ? better : mx
         }
@@ -829,7 +849,7 @@ export default function Stats() {
           <div style={{ marginTop: 8 }}>{exList.map((p, i) => <div key={i} className="row between small" style={{ padding: '6px 0', borderBottom: 'var(--hair) solid var(--sep)' }}>
             <span className="muted">{fmtDate(p.d, true)}</span><span>{p.sets.map(s => setLabel(curEx, s, p.target, speedUnit)).join('  ')}</span></div>)}</div>
           <div className="small dim" style={{ marginTop: 8 }}>
-            {onSets ? (perSet.metric === 'reps' ? t('Reps in each working set, one line per set number') : t('Estimated 1RM of each working set, one line per set number')) : onRel ? (relUsed === 'top' ? t('Heaviest set as a share of body weight, per workout') : t('Estimated 1RM as a share of body weight, per workout')) : onMax ? <>{t('Most reps in a Max set per workout')} · {t('Best:')}{' '}<b className="accent">{maxBest} {t('reps')}</b></> : onEff ? t('Average effort per workout') : onE1 ? t('Estimated 1RM per workout') : curCardio ? t('Top speed per workout') : curTimed ? t('Longest hold per workout') : repsOnly ? t('Most reps in a set per workout') : t('Best set weight per workout')}
+            {onSets ? (perSet.metric === 'reps' ? t('Reps in each working set, one line per set number') : t('Estimated 1RM of each working set, one line per set number')) : onRel ? (relUsed === 'top' ? t('Heaviest set as a share of body weight, per workout') : t('Estimated 1RM as a share of body weight, per workout')) : onMax ? <>{t('Most reps in a Max set per workout')} · {t('Best:')}{' '}<b className="accent">{maxBest} {t('reps')}</b></> : onEff ? t('Average effort per workout') : onE1 ? t('Estimated 1RM per workout') : curCardio ? (cardioMeasure === 'km' ? t('Distance (km)') : cardioMeasure === 'min' ? t('Duration (min)') : t('Top speed per workout')) : curTimed ? t('Longest hold per workout') : repsOnly ? t('Most reps in a set per workout') : t('Best set weight per workout')}
             {onRel ? <> · {t('Best:')}{' '}<b className="accent">{fmtNum(Math.max(0, ...relPts.map(p => p.y * 100)))} % BW</b></>
               : onEff || onMax || onSets ? '' : <> · {t('Best:')}{' '}<b className="accent">{fmtNum(onE1 ? e1Best.est : exBest)} {onE1 ? S.unit : exUnit}</b></>}
           </div>

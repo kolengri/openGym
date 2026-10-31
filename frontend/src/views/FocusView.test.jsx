@@ -187,3 +187,32 @@ describe('Focus view cardio speed', () => {
     expect(stored()).toBe(8.5)
   })
 })
+
+describe('Focus cardio measurement drafts', () => {
+  it.each(['distance', 'duration'])('preserves leading zero and both decimal separators in %s', field => {
+    mount({ id: '2138', target: { mode: 'cardio', sets: 1 }, sets: [{ done: false }] })
+    const key = field === 'distance' ? 'km' : 'min'
+    const input = () => container.querySelector(`input[aria-label="${field}"]`)
+    const type = value => act(() => {
+      Object.getOwnPropertyDescriptor(input().constructor.prototype, 'value').set.call(input(), value)
+      input().dispatchEvent(new Event('input', { bubbles: true }))
+    })
+    for (const separator of ['.', ',']) {
+      type('0')
+      expect(input().value).toBe('0')
+      type('0' + separator)
+      expect(input().value).toBe('0.')
+      type(input().value + '5')
+      expect(useStore.getState().S.active.entries[0].sets[0][key]).toBe(0.5)
+      type('')
+      expect(input().value).toBe('')
+      expect(useStore.getState().S.active.entries[0].sets[0]).not.toHaveProperty(key)
+    }
+    type('.')
+    expect(input().value).toBe('.')
+    type(input().value + '5')
+    expect(useStore.getState().S.active.entries[0].sets[0][key]).toBe(0.5)
+    act(() => container.querySelector(`button[aria-label="Increase ${field}"]`).click())
+    expect(useStore.getState().S.active.entries[0].sets[0][key]).toBe(field === 'distance' ? 0.6 : 1.5)
+  })
+})
