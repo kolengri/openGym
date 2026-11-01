@@ -48,6 +48,10 @@ public class RestAlertPlugin extends Plugin {
     }
 
     static void emit(String type, long endsAt, long totalMs, long leftMs, boolean paused) {
+        emit(type, endsAt, totalMs, leftMs, paused, "");
+    }
+
+    static void emit(String type, long endsAt, long totalMs, long leftMs, boolean paused, String timerKey) {
         if (instance == null) return;
         JSObject data = new JSObject();
         data.put("type", type);
@@ -55,6 +59,7 @@ public class RestAlertPlugin extends Plugin {
         data.put("totalMs", totalMs);
         data.put("leftMs", leftMs);
         data.put("paused", paused);
+        data.put("timerKey", timerKey);
         instance.notifyListeners("rest", data);
     }
 
@@ -63,6 +68,11 @@ public class RestAlertPlugin extends Plugin {
         Context ctx = getContext();
         if (ctx == null) {
             call.reject("no context");
+            return;
+        }
+        if (Boolean.TRUE.equals(call.getBoolean("restored", Boolean.FALSE))
+                && RestTimerService.restoreTimer(ctx, call.getString("wid", ""), call.getString("timerKey", ""), !Boolean.FALSE.equals(call.getBoolean("controls", Boolean.TRUE)))) {
+            call.resolve();
             return;
         }
         long at = number(call, "at", -1);
@@ -93,9 +103,36 @@ public class RestAlertPlugin extends Plugin {
                 call.getString("importance", "high"),
                 Boolean.TRUE.equals(call.getBoolean("localOnly", Boolean.FALSE)),
                 call.getString("countdownTitle", "Rest"),
-                number(call, "totalMs", 0)
+                number(call, "totalMs", 0),
+                !Boolean.FALSE.equals(call.getBoolean("controls", Boolean.TRUE)),
+                call.getString("timerKey", "")
         );
         call.resolve();
+    }
+
+    /** Workout lifetime is independent of the rest alarm: cancel() only clears the timer. */
+    @PluginMethod
+    public void workout(PluginCall call) {
+        Context ctx = getContext();
+        if (ctx == null) { call.reject("no context"); return; }
+        Context app = ctx.getApplicationContext();
+        Intent i = new Intent(app, RestTimerService.class).setAction(RestAlert.ACTION_WORKOUT);
+        i.putExtra("active", Boolean.TRUE.equals(call.getBoolean("active", Boolean.FALSE)));
+        i.putExtra("reconcile", Boolean.TRUE.equals(call.getBoolean("reconcile", Boolean.FALSE)));
+        i.putExtra("hasRest", Boolean.TRUE.equals(call.getBoolean("hasRest", Boolean.FALSE)));
+        i.putExtra("wid", call.getString("wid", ""));
+        i.putExtra("workoutTitle", call.getString("title", "openGym"));
+        i.putExtra("exercise", call.getString("exercise", ""));
+        i.putExtra("detail", call.getString("detail", ""));
+        i.putExtra("done", (int) number(call, "done", 0));
+        i.putExtra("total", (int) number(call, "total", 0));
+        i.putExtra("accent", (int) number(call, "accent", 0xFF30D158L));
+        i.putExtra("ink", (int) number(call, "ink", 0xFF000000L));
+        try {
+            if (Boolean.TRUE.equals(call.getBoolean("active", Boolean.FALSE)) && android.os.Build.VERSION.SDK_INT >= 26) app.startForegroundService(i);
+            else app.startService(i);
+            call.resolve();
+        } catch (Exception e) { call.reject("workout notification not started", e); }
     }
 
     /**
@@ -162,11 +199,17 @@ public class RestAlertPlugin extends Plugin {
             return;
         }
         Context app = ctx.getApplicationContext();
+        if (Boolean.TRUE.equals(call.getBoolean("restored", Boolean.FALSE))
+                && RestTimerService.restoreTimer(app, call.getString("wid", ""), call.getString("timerKey", ""), true)) {
+            call.resolve();
+            return;
+        }
         RestAlert.cancelAlarmOnly(app, (int) number(call, "id", RestAlert.NOTIFICATION_ID));
         Intent i = new Intent(app, RestTimerService.class);
         i.setAction(RestAlert.ACTION_HOLD);
         i.putExtra("leftMs", number(call, "leftMs", 0));
         i.putExtra("totalMs", number(call, "totalMs", 0));
+        i.putExtra("timerKey", call.getString("timerKey", ""));
         try { app.startService(i); } catch (Exception ignored) { /* no countdown on screen to hold */ }
         call.resolve();
     }

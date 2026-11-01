@@ -35,6 +35,21 @@ afterEach(() => {
 })
 
 describe('the rest timer after the app process was killed', () => {
+  it('keeps a timer identity through time adjustments and restoration, and replaces it for a new rest', () => {
+    useUI.getState().startRest(90, 0)
+    const key = useUI.getState().timer.nativeKey
+    expect(key).toBeTruthy()
+    useUI.getState().addRest(15)
+    useUI.getState().pauseRest()
+    expect(JSON.parse(localStorage.getItem(REST_KEY)).nativeKey).toBe(key)
+    useUI.setState({ timer: null })
+    // Simulate the page going away, while retaining its private saved timer.
+    localStorage.setItem(REST_KEY, JSON.stringify({ nativeKey: key, endsAt: 0, total: 105, paused: true, left: 105 }))
+    expect(restoreRest()).toBe(true)
+    expect(useUI.getState().timer.nativeKey).toBe(key)
+    useUI.getState().startRest(90, 0)
+    expect(useUI.getState().timer.nativeKey).not.toBe(key)
+  })
   it('is kept where a new process can read it', () => {
     useUI.getState().startRest(90, 0)
     expect(JSON.parse(localStorage.getItem(REST_KEY))).toMatchObject({ total: 90, forIdx: 0 })
@@ -54,7 +69,7 @@ describe('the rest timer after the app process was killed', () => {
   it('a paused one is held again in the notification', () => {
     localStorage.setItem(REST_KEY, JSON.stringify({ endsAt: 0, total: 90, forIdx: 0, kind: null, paused: true, left: 33 }))
     expect(restoreRest()).toBe(true)
-    expect(holdRestAlert).toHaveBeenCalledWith(33, 90)
+    expect(holdRestAlert).toHaveBeenCalledWith(33, 90, { restored: true, wid: useStore.getState().S.active.id, timerKey: useUI.getState().timer.nativeKey })
     expect(armRestAlert).not.toHaveBeenCalled()
   })
 })

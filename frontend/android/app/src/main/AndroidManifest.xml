@@ -85,7 +85,7 @@
             android:foregroundServiceType="specialUse">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="Shows how long is left in the rest between sets." />
+                android:value="Shows the active workout, current exercise and set, and accurate work/rest countdowns while training." />
         </service>
 
         <!-- The background check before a nudge or a reminder (NudgeCheckJob): asks the paired

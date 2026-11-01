@@ -6,8 +6,8 @@
 // The native side is mocked at lib/rest-alert.js; MOBILE is on, so useUI takes the app's path.
 import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest'
 
-const h = vi.hoisted(() => ({ native: null }))
-vi.mock('../lib/mobile.js', async importOriginal => ({ ...(await importOriginal()), MOBILE: true }))
+const h = vi.hoisted(() => ({ native: null, platform: 'android' }))
+vi.mock('../lib/mobile.js', async importOriginal => ({ ...(await importOriginal()), MOBILE: true, nativePlatform: async () => h.platform }))
 vi.mock('../lib/rest-alert.js', () => ({
   armRestAlert: vi.fn(() => Promise.resolve(true)),
   holdRestAlert: vi.fn(),
@@ -37,6 +37,7 @@ const fromNotification = (type, leftSec, totalSec, paused = false) =>
 
 let originalSettings
 beforeEach(() => {
+  h.platform = 'android'
   vi.useFakeTimers()
   originalSettings = useStore.getState().S
   useStore.setState({ S: { ...originalSettings, sound: true, timerFlash: false }, user: null })
@@ -156,12 +157,12 @@ describe('the server push in the Android app', () => {
     expect(pushes()).toEqual([])
   })
 
-  it('stands in when the alarm could not be scheduled, for that rest only', async () => {
+  it('does not create a separate completion push when the native Android alarm fails', async () => {
     useStore.setState({ user: { id: 'u1' } })
     armRestAlert.mockResolvedValueOnce(false)
     useUI.getState().startRest(90)
     await vi.advanceTimersByTimeAsync(0)
-    expect(pushes()).toEqual([90])
+    expect(pushes()).toEqual([])
 
     api.mockClear()
     armRestAlert.mockResolvedValueOnce(false)
@@ -169,6 +170,14 @@ describe('the server push in the Android app', () => {
     useUI.getState().stopRest()   // skipped before the schedule came back
     await vi.advanceTimersByTimeAsync(0)
     expect(pushes()).toEqual([])
+  })
+  it('preserves the iPhone fallback when its native alert could not be scheduled', async () => {
+    h.platform = 'ios'
+    useStore.setState({ user: { id: 'u1' } })
+    armRestAlert.mockResolvedValueOnce(false)
+    useUI.getState().startRest(90)
+    await vi.advanceTimersByTimeAsync(0)
+    expect(pushes()).toEqual([90])
   })
 })
 

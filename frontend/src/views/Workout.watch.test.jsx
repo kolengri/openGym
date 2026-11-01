@@ -50,15 +50,16 @@ describe('a set ticked on the watch', () => {
     expect(set).toMatchObject({ min: 12.55, speed: 8, incline: 3, done: true, hr: { avg: 135, max: 150 } })
     expect(set.sec).toBeUndefined()
   })
-  it('resumes a Garmin pause from the phone and resumes the rest timer', () => {
+  it('keeps a Garmin pause intact without showing watch controls or an empty heart-rate card', () => {
     act(() => {
       useStore.getState().update(s => { s.active.watchPaused = true })
       useUI.getState().startRest(90, 0)
       useUI.getState().pauseRest()
     })
-    act(() => container.querySelector('[aria-label="Resume Garmin workout"]').click())
-    expect(useStore.getState().S.active.watchPaused).toBe(false)
-    expect(useUI.getState().timer.paused).not.toBe(true)
+    expect(container.querySelector('[aria-label="Resume Garmin workout"]')).toBeNull()
+    expect(container.querySelector('.garmin-live')).toBeNull()
+    expect(useStore.getState().S.active.watchPaused).toBe(true)
+    expect(useUI.getState().timer.paused).toBe(true)
   })
 
   it('does not start an expired rest when an offline Garmin tick arrives late', () => {
