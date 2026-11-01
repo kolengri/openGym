@@ -1,5 +1,15 @@
 // Russian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  'Sign in to Garmin Connect again in Settings. Your saved session was not accepted.': 'Войдите в Garmin Connect заново в настройках. Сервис не принял сохранённую сессию.',
+  'Your Garmin Connect session has expired. Sign in again in Settings.': 'Сессия Garmin Connect истекла. Войдите заново в настройках.',
+  'Garmin session expiration could not be checked.': 'Не удалось проверить срок действия сессии Garmin.',
+  'Could not reach Garmin Connect. Check your connection and retry.': 'Не удалось связаться с Garmin Connect. Проверьте интернет-соединение и повторите попытку.',
+  'Garmin rejected the upload. Check your access in Garmin Connect and try again later.': 'Garmin отклонил выгрузку. Проверьте доступ в Garmin Connect и повторите попытку позже.',
+  'This workout could not be exported as a valid FIT file.': 'Не удалось создать корректный FIT-файл этой тренировки.',
+  'This profile is linked to another Garmin session. Check Garmin Connect before reconnecting this profile; automatic replay is blocked.': 'Этот профиль связан с другой сессией Garmin. Проверьте Garmin Connect перед повторным подключением профиля; автоматическая повторная выгрузка заблокирована.',
+  'This workout has a receipt for a different FIT file. Check Garmin Connect; automatic replay is blocked.': 'В журнале есть результат выгрузки другого FIT-файла этой тренировки. Проверьте Garmin Connect; автоматическая повторная выгрузка заблокирована.',
+  'The workout could not be saved on this phone. Check local storage and retry.': 'Не удалось сохранить тренировку на телефоне. Проверьте локальное хранилище и повторите попытку.',
+  'The Garmin action was cancelled. Try again when you are ready.': 'Действие Garmin отменено. Повторите попытку, когда будете готовы.',
   'Watch app connected': 'Приложение на часах подключено',
   "Watch Bluetooth connected": "Часы подключены по Bluetooth",
   "Watch app is not responding": "Приложение на часах не отвечает",

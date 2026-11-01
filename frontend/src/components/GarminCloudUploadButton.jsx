@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Button } from './ui.jsx'
 import { useStore } from '../store/useStore.js'
 import { t } from '../lib/i18n.js'
-import { garminCloudStatus, uploadGarminWorkout } from '../lib/garmin-cloud.js'
+import { garminCloudErrorMessage, garminCloudStatus, uploadGarminWorkout } from '../lib/garmin-cloud.js'
 
 export default function GarminCloudUploadButton({ workout }) {
   const state = useStore(s => s.S)
@@ -18,6 +18,7 @@ export default function GarminCloudUploadButton({ workout }) {
   const job = state.workouts.find(w => w.id === workout.id)?.garminCloudUpload
   const done = ['uploaded', 'duplicate'].includes(job?.status)
   const pending = job?.status === 'uploading'
+  const failureCode = error || (job?.status === 'failed' ? job.error || 'upload_failed' : null)
   const upload = async () => {
     setBusy(true); setError(false)
     try { await uploadGarminWorkout(useStore, workout.id, { retry: job?.error === 'unknown_result' }) }
@@ -31,11 +32,9 @@ export default function GarminCloudUploadButton({ workout }) {
           : job?.status === 'failed' ? t('Retry Garmin upload') : t('Upload to Garmin Connect')}
     </Button>
     {!job && <p className="small muted">{t('Use this for workouts that are not already in Garmin Connect.')}</p>}
-    {(error || job?.status === 'failed') && <p className="small muted" role="alert">
-      {job?.error === 'unknown_result' ? t('Garmin may already have received this workout. Check Connect before retrying.')
-        : ['session_changed', 'content_changed'].includes(job?.error) ? t('This workout has a receipt from another connection or different file. Check Garmin Connect; automatic replay is blocked.')
-          : ['receipt_limit', 'storage_unavailable'].includes(error || job?.error) ? t('The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.')
-        : !state.garminCloudSessionId ? t('Connect Garmin in Settings before uploading.') : t('Garmin upload failed. Reconnect or retry.')}
+    {failureCode && <p className="small muted" role="alert">{t(garminCloudErrorMessage(failureCode))}</p>}
+    {job?.error === 'unknown_result' && failureCode !== 'unknown_result' && <p className="small muted" role="alert">
+      {t(garminCloudErrorMessage('unknown_result'))}
     </p>}
   </div>
 }

@@ -73,27 +73,41 @@ final class GarminCloudClient {
         return csrf == null || (csrf.length() <= 512 && csrf.matches("[A-Za-z0-9._~-]+"));
     }
 
+    /** Local expiry hint only: decoding a claim does not verify Garmin's signature/session. */
+    static String authState(String token, long now, java.util.function.Function<String, byte[]> decoder) {
+        if (!validToken(token)) return "missing";
+        try {
+            byte[] payload = decoder.apply(token.split("\\.")[1]);
+            if (payload == null || payload.length > 8192) return "unknown";
+            Object exp = new JSONObject(new String(payload, StandardCharsets.UTF_8)).opt("exp");
+            if (!(exp instanceof Number)) return "unknown";
+            double seconds = ((Number) exp).doubleValue();
+            if (!Double.isFinite(seconds)) return "unknown";
+            return seconds * 1000 <= now ? "expired" : "ready";
+        } catch (Exception ignored) { return "unknown"; }
+    }
+
     static void validateBase64(String value) throws Failure {
         if (value == null || value.length() == 0 || value.length() > ((MAX_FIT_BYTES + 2) / 3) * 4
             || value.length() % 4 != 0)
-            throw new Failure("upload_failed");
+            throw new Failure("invalid_fit");
         int padding = value.endsWith("==") ? 2 : value.endsWith("=") ? 1 : 0;
         for (int i = 0; i < value.length() - padding; i++) {
             char c = value.charAt(i);
             if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && !(c >= '0' && c <= '9') && c != '+' && c != '/')
-                throw new Failure("upload_failed");
+                throw new Failure("invalid_fit");
         }
     }
 
     static void validateFit(byte[] fit) throws Failure {
-        if (fit == null || fit.length < 15 || fit.length > MAX_FIT_BYTES) throw new Failure("upload_failed");
+        if (fit == null || fit.length < 15 || fit.length > MAX_FIT_BYTES) throw new Failure("invalid_fit");
         int header = fit[0] & 255;
         long data = (fit[4] & 255L) | ((fit[5] & 255L) << 8)
             | ((fit[6] & 255L) << 16) | ((fit[7] & 255L) << 24);
         if ((header != 12 && header != 14) || data < 1 || header + data + 2 != fit.length
             || fit[8] != '.' || fit[9] != 'F' || fit[10] != 'I' || fit[11] != 'T'
             || (header == 14 && (fit[12] != 0 || fit[13] != 0) && crc(fit, 14) != 0)
-            || crc(fit, fit.length) != 0) throw new Failure("upload_failed");
+            || crc(fit, fit.length) != 0) throw new Failure("invalid_fit");
     }
 
     static int crc(byte[] data, int length) {

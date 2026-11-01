@@ -26,8 +26,10 @@ public final class GarminCloudPlugin extends Plugin {
         });
     }
 
-    private JSObject status(GarminCloudStore store) {
-        JSObject result = new JSObject().put("available", true).put("connected", store.connected());
+    static JSObject status(GarminCloudStore store) {
+        // connected is credential presence, retained for receipt reconciliation. The UI uses
+        // authState to distinguish an expired session without mistaking it for a storage failure.
+        JSObject result = new JSObject().put("available", true).put("connected", store.connected()).put("authState", store.authState());
         if (store.connected()) result.put("sessionId", store.sessionId());
         return result;
     }
@@ -168,23 +170,30 @@ public final class GarminCloudPlugin extends Plugin {
                 byte[] fit = Base64.decode(encoded, Base64.NO_WRAP);
                 GarminCloudClient.validateFit(fit);
                 store = GarminCloudStore.open(getContext());
-                boolean wasUnknown = store.uncertain(workout);
-                GarminCloudClient.Outcome receipt = store.begin(call.getString("sessionId"), workout,
-                    GarminCloudClient.sha256(fit), Boolean.TRUE.equals(call.getBoolean("retryUnknown", false)));
-                if (receipt != null) { resolve(call, receipt); return; }
-                GarminCloudClient.Outcome result;
-                try {
-                    result = new GarminCloudClient().upload(fit, call.getString("filename"), store.token(), store.csrf());
-                } catch (GarminCloudClient.Failure failure) {
-                    reject(call, recordUploadFailure(store, workout, wasUnknown, failure));
-                    return;
-                }
-                try { store.complete(workout, result); }
-                catch (Exception ignored) { reject(call, "unknown_result"); return; }
-                resolve(call, result);
+                resolve(call, uploadOnce(store, call.getString("sessionId"), workout,
+                    GarminCloudClient.sha256(fit), Boolean.TRUE.equals(call.getBoolean("retryUnknown", false)),
+                    () -> new GarminCloudClient().upload(fit, call.getString("filename"), store.token(), store.csrf())));
             } catch (GarminCloudClient.Failure failure) { reject(call, failure.code); }
             catch (Exception ignored) { reject(call, "storage_unavailable"); }
         });
+    }
+
+    interface Upload { GarminCloudClient.Outcome send() throws GarminCloudClient.Failure; }
+
+    /** Receipt/readiness ordering is shared by the native bridge and offline no-POST tests. */
+    static GarminCloudClient.Outcome uploadOnce(GarminCloudStore store, String session, String workout,
+                                               String sha, boolean retryUnknown, Upload upload) throws Exception {
+        boolean wasUnknown = store.uncertain(workout);
+        GarminCloudClient.Outcome receipt = store.begin(session, workout, sha, retryUnknown);
+        if (receipt != null) return receipt;
+        GarminCloudClient.Outcome result;
+        try { result = upload.send(); }
+        catch (GarminCloudClient.Failure failure) {
+            throw new GarminCloudClient.Failure(recordUploadFailure(store, workout, wasUnknown, failure));
+        }
+        try { store.complete(workout, result); }
+        catch (Exception ignored) { throw new GarminCloudClient.Failure("unknown_result"); }
+        return result;
     }
 
     /** IO-owned failure transition; never discard an earlier ambiguous upload receipt. */
