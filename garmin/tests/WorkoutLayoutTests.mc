@@ -128,6 +128,56 @@ class PhoneStatusFixture extends OpenGymApp {
 }
 
 (:test)
+class DeferredRecordingFixture extends PhoneStatusFixture {
+    var reconciliations = 0;
+    function initialize() { PhoneStatusFixture.initialize(); }
+    function reconcileRecording() { reconciliations += 1; }
+}
+
+(:test)
+function recordingSaveRunsAfterTheSnapshotOrCommandCallback(logger) {
+    var app = new DeferredRecordingFixture();
+    app.receive(WorkoutFixtures.snapshot(2));
+    Test.assert(app.recordingPending);
+    Test.assertEqual(app.reconciliations,0);
+    app.tick();
+    Test.assertEqual(app.reconciliations,1);
+    Test.assert(!app.recordingPending);
+    app.tick();
+    Test.assertEqual(app.reconciliations,1);
+    Test.assert(app.action("startSet"));
+    Test.assertEqual(app.reconciliations,1);
+    app.tick();
+    Test.assertEqual(app.reconciliations,2);
+    return true;
+}
+
+(:test)
+class ShutdownRecordingFixture extends PhoneStatusFixture {
+    var discarded = null;
+    function initialize() { PhoneStatusFixture.initialize(); recording = {}; recordingWid = model.wid(); }
+    function completeRecording(discard) { discarded = discard; recording = null; }
+}
+
+(:test)
+function exitBeforeRecordingTickHonorsDurableDiscard(logger) {
+    var local = new ShutdownRecordingFixture();
+    Test.assert(local.action("discard")); Test.assert(local.recordingPending);
+    local.onStop(null); Test.assertEqual(local.discarded,true);
+    var phone = new ShutdownRecordingFixture();
+    var snap = WorkoutFixtures.snapshot(2);
+    snap["state"]["active"] = null; snap["state"]["discarded"] = ["workout-a"];
+    phone.receive(snap); Test.assert(phone.recordingPending);
+    phone.onStop(null); Test.assertEqual(phone.discarded,true);
+    var active = new ShutdownRecordingFixture();
+    active.onStop(null); Test.assertEqual(active.discarded,false);
+    var failed = new ShutdownRecordingFixture(); failed.durable = false;
+    Test.assert(!failed.action("discard"));
+    failed.onStop(null); Test.assertEqual(failed.discarded,false);
+    return true;
+}
+
+(:test)
 function helloReportsOnlyAppliedStateAndKeepsExistingProtocol(logger) {
     var app = new PhoneStatusFixture();
     var hello = app.hello();
