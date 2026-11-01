@@ -8,7 +8,7 @@ import { workoutControls } from '../lib/workout-controls.js'
 import { useUI } from '../store/useUI.js'
 import { EXIDX, exOr, betterWeight } from '../lib/exercises.js'
 import { usesBar } from '../lib/bar.js'
-import { loadKindFor, baseWeightFor, inventoryFor, rowLoad, sameLoad, plateDelta, dropGrid } from '../lib/plates.js'
+import { loadKindFor, baseWeightFor, inventoryFor, ownsPlates, rowLoad, sameLoad, plateDelta, dropGrid } from '../lib/plates.js'
 import { effectiveRoutines, effectiveRoutineIds, lastEntryFor, bestWeightFor, bestWeightForEntry, freestyleConfig, pickedExerciseConfig, setsDoneActive, setUnitsTotal, supersetUnits, unitOf, setLabel, modeOf, isBw, isPerSide, repStep, EFFORT, effortOf, stepEffort, capEffort, cascadeWeight, insertWarmupRow, barFloor, makeWarmupAt, canBeWarmup, makeWorkAt, removeRowAt, removeLastSet, setSpanAt, copyRowAt, copySpanAt, insertRowAt, pairAdjacent, unpairSuperset, cleanupSg, applyIntensifierPlan, pinnedNoteFor, exNoteFor, setsRepsOf, sessionVolume } from '../lib/history.js'
 import { fmtNum, fmtPlate, fmtVol, exerciseNameText, fmtDate, fmtDaysAgo, todayISO, exCount, DAYN } from '../lib/format.js'
 import { speedUnitOf, toSpeed, fromSpeed } from '../lib/speed.js'
@@ -361,6 +361,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   // is not in the sequence.
   const plateLoading = mode === 'reps' && !editing
   const loadKind = plateLoading ? loadKindFor(S, cfg) : 'none'
+  const countedPlates = ownsPlates(S)
   const base = baseWeightFor(S, entry.id)
   const loadSeq = loadKind === 'none' ? [] : (() => {
     const inv = inventoryFor(S)
@@ -395,14 +396,17 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     const prev = p >= 0 ? loadSeq[p].load : null
     if (prev && sameLoad(prev, L)) return null
     // "+" between plates: "45 + 5 per side" reads as a sum, a dot did not (Boris, 2026-09-13).
-    const stack = L.plates.map(w => fmtPlate(w)).join(' + ')
+    // The standard rack is an assumption, not a counted inventory. Converted lb loads can
+    // fall between its kg sizes: show the requested amount instead of claiming plates are missing.
+    const showAmount = !countedPlates && L.missing > 0
+    const stack = showAmount ? fmtPlate(L.perSide) + ' ' + S.unit : L.plates.map(w => fmtPlate(w)).join(' + ')
     const text = L.barOnly ? t('Bar only')
       : L.kind === 'pairs' ? t('{0} per side', stack || '–') : t('Load {0}', stack || '–')
-    const d = prev && !dense ? plateDelta(prev.plates, L.plates) : null
+    const d = prev && !dense && !showAmount && (countedPlates || prev.missing === 0) ? plateDelta(prev.plates, L.plates) : null
     const moves = d ? [...d.strip.map(w => '−' + fmtPlate(w)), ...d.add.map(w => '+' + fmtPlate(w))] : []
     return <div className="plateline">
       <Icon name="plate" />
-      <span>{text}{L.missing > 0 && <> · <span className="short">{t('{0} short', fmtPlate(L.missing) + ' ' + S.unit)}</span></>}</span>
+      <span>{text}{countedPlates && L.missing > 0 && <> · <span className="short">{t('{0} short', fmtPlate(L.missing) + ' ' + S.unit)}</span></>}</span>
       {moves.length > 0 && <span className="moves">{moves.join(' ')}</span>}
     </div>
   }

@@ -114,6 +114,16 @@ describe('plate line under set rows', () => {
     expect(container.querySelector('.plateline .short').textContent).toBe('2.5 lb short')
   })
 
+  it('shows unmatched default loads as amounts and does not invent restacking moves around them', () => {
+    mount([entry(SQUAT, [work(51.7515), work(60), work(80)])], { unit: 'kg', plates: {} })
+    expect(lines()).toEqual([
+      { text: '15.88 kg per side', moves: null },
+      { text: '20 per side', moves: null },
+      { text: '25 + 5 per side', moves: '−20 +25 +5' },
+    ])
+    expect(container.querySelector('.plateline .short')).toBeNull()
+  })
+
   it('"no bar" (an explicit 0) loads the whole total', () => {
     mount([entry(SQUAT, [work(90)], { w: 90 })], { barWeights: { [SQUAT]: 0 } })
     expect(lines()).toEqual([{ text: '45 per side', moves: null }])
