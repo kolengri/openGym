@@ -3,8 +3,6 @@ import { garminConnection, garminStatus, onGarminChange } from '../lib/garmin-sy
 import { t } from '../lib/i18n.js'
 import { fmtAgo } from '../lib/format.js'
 import Icon from './Icon.jsx'
-import { useStore } from '../store/useStore.js'
-import { useUI } from '../store/useUI.js'
 import './GarminLiveStatus.css'
 
 export function GarminConnectionDetails({ connection }) {
@@ -24,7 +22,7 @@ export function GarminConnectionDetails({ connection }) {
   </div>
 }
 
-export default function GarminLiveStatus({ wid, paused }) {
+export default function GarminLiveStatus({ wid }) {
   const [, tick] = useState(0)
   useEffect(() => {
     let gone = false, reading = false
@@ -42,15 +40,8 @@ export default function GarminLiveStatus({ wid, paused }) {
   }, [wid])
   const connection = garminConnection(wid)
   const sample = connection.sample
-  if (!connection.enabled && !sample && !paused) return null
-  return <div className="garmin-live" role="status" aria-label={t('Garmin connection')}>
-    <GarminConnectionDetails connection={connection} />
-    <span><Icon name="heart" /> {sample ? t('{0} bpm', sample.bpm)
-      : t(connection.hadSample ? 'Heart rate data is stale' : 'Heart rate unavailable')}</span>
-    {!sample && connection.replying && <small>{t('Open openGym on the watch and wear it snugly to receive heart rate.')}</small>}
-    {paused && <><span>{t('Paused on Garmin')}</span><button className="btn ghost" aria-label={t('Resume Garmin workout')} onClick={() => {
-      useStore.getState().update(s => { if (s.active?.id === wid) s.active.watchPaused = false })
-      useUI.getState().resumeRest()
-    }}>{t('Resume')}</button></>}
+  if (!connection.enabled || !connection.connected || !sample) return null
+  return <div className="garmin-live" role="status" aria-label={t('Heart rate')}>
+    <span><Icon name="heart" /> {t('{0} bpm', sample.bpm)}</span>
   </div>
 }

@@ -2202,7 +2202,7 @@ function ActiveWorkout() {
     {listMode && chipRow}
     </div>
     {editing && <p className="muted small">{t('Editing a saved workout. Date and duration stay unchanged.')}</p>}
-    {!editing && !A.backfill && <GarminLiveStatus wid={A.id} paused={A.watchPaused} />}
+    {!editing && !A.backfill && <GarminLiveStatus wid={A.id} />}
     {A.backfill && <div className="muted small" style={{ marginBottom: 8 }}>{t('Logging a past workout, so no rest timers.')}</div>}
 
     {A.entries.length ? (listMode ? (
