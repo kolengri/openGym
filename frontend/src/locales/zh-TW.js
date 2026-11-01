@@ -2736,4 +2736,10 @@ export default {
   "Last night average": "昨夜平均值",
   "Unit not verified; original Garmin value.": "單位尚未確認；顯示 Garmin 原始值。",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "時間目標（分鐘）",
+  "Distance goal (km)": "距離目標（公里）",
+  "Distance (km)": "距離（公里）",
+  "Set a time or distance goal. Zero leaves a goal off.": "設定時間或距離目標。零表示不設定該目標。",
+
 }

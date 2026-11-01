@@ -2798,4 +2798,10 @@ export default {
   "Last night average": "متوسط الليلة الماضية",
   "Unit not verified; original Garmin value.": "لم يتم التحقق من الوحدة؛ هذه قيمة Garmin الأصلية.",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "الوقت المستهدف (دقيقة)",
+  "Distance goal (km)": "المسافة المستهدفة (كم)",
+  "Distance (km)": "المسافة (كم)",
+  "Set a time or distance goal. Zero leaves a goal off.": "حدّد وقتًا أو مسافة مستهدفة. الصفر يعني عدم تحديد هدف.",
+
 }

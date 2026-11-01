@@ -30,7 +30,7 @@ const state = (extra = {}) => ({
     },
     {
       id: 'w2', d: '2026-03-02', start: at('2026-03-02', 20), end: at('2026-03-02', 20, 40),
-      name: 'Cardio', entries: [{ id: '3666', sets: [{ min: 22.5, speed: 6.4, incline: 8, done: true }, { min: 10, speed: 0, done: true }] }],
+      name: 'Cardio', entries: [{ id: '3666', sets: [{ min: 22.5, km: 2.4, speed: 6.4, incline: 8, done: true }, { min: 10, speed: 0, done: true }] }],
     },
     { id: 'w3', d: '2026-03-05', start: at('2026-03-05', 7), end: at('2026-03-05', 7), name: '=HYPERLINK("x")', entries: [{ id: '0043', sets: [{ w: 100, r: 5, done: true }] }] },
   ],

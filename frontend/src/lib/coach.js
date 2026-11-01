@@ -99,6 +99,7 @@ export function canonicalPlan(S) {
           reps: mode === 'reps' ? (e.reps || 0) : 0,
           sec: mode === 'time' ? (e.sec || 0) : 0,
           min: mode === 'cardio' ? (e.min || 0) : 0,
+          km: mode === 'cardio' ? (e.km || 0) : 0,
           speed: mode === 'cardio' ? (e.speed || 0) : 0,
           weight: mode === 'cardio' ? 0 : (e.weight || 0),
           prog: e.prog || '', inc: e.inc || 0, repsMin: e.repsMin || 0, repsMax: e.repsMax || 0,
@@ -117,10 +118,11 @@ export function canonicalPlan(S) {
 
 /** FNV-1a-ish 64-bit fingerprint. Mirror of hashPlan in api/coach/core/plan-hash.js. */
 export function hashPlan(plan) {
+  // Keep fingerprints of legacy plans unchanged; distance adds a token only when enabled.
   const canon = JSON.stringify({
     routines: (plan?.routines || []).map(r => [r.id, r.name, r.prog, (r.ex || []).map(e =>
       [e.id, e.mode, e.sets, e.reps, e.sec, e.min, e.speed, e.weight, e.prog, e.inc,
-        e.repsMin, e.repsMax, e.bodyweight, e.side, e.sg].join(':')
+        e.repsMin, e.repsMax, e.bodyweight, e.side, e.sg].join(':') + (Number(e.km) > 0 ? ':km=' + e.km : '')
     )]),
     // `plan` is a canonicalPlan output, so each day is already an array. `{1:['r1']}` → "1=r1",
     // byte-identical to the pre-upgrade fingerprint; `{3:['r2','r3']}` → "3=r2+r3". Weekday

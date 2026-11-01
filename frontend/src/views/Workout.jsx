@@ -12,7 +12,7 @@ import { loadKindFor, baseWeightFor, inventoryFor, rowLoad, sameLoad, plateDelta
 import { effectiveRoutines, effectiveRoutineIds, lastEntryFor, bestWeightFor, bestWeightForEntry, freestyleConfig, pickedExerciseConfig, setsDoneActive, setUnitsTotal, supersetUnits, unitOf, setLabel, modeOf, isBw, isPerSide, repStep, EFFORT, effortOf, stepEffort, capEffort, cascadeWeight, insertWarmupRow, barFloor, makeWarmupAt, canBeWarmup, makeWorkAt, removeRowAt, removeLastSet, setSpanAt, copyRowAt, copySpanAt, insertRowAt, pairAdjacent, unpairSuperset, cleanupSg, applyIntensifierPlan, pinnedNoteFor, exNoteFor, setsRepsOf, sessionVolume } from '../lib/history.js'
 import { fmtNum, fmtPlate, fmtVol, exerciseNameText, fmtDate, fmtDaysAgo, todayISO, exCount, DAYN } from '../lib/format.js'
 import { speedUnitOf, toSpeed, fromSpeed } from '../lib/speed.js'
-import { clampIncline, hasIncline, inclineFits, inclineFrom, INCLINE_STEP } from '../lib/incline.js'
+import { clampIncline, inclineFits, inclineFrom, INCLINE_STEP } from '../lib/incline.js'
 import { beep, vibrate, unlock } from '../lib/sound.js'
 import { pinState } from '../lib/queue.js'
 import { t, tn, exerciseNameFor, exerciseNameClass } from '../lib/i18n.js'
@@ -34,7 +34,7 @@ import { afterScrollRestore, scrollRestorePending } from '../components/Modals.j
 import { effortColor } from '../lib/effort.js'
 import Elapsed from '../components/Elapsed.jsx'
 import Icon from '../components/Icon.jsx'
-import { Button, Check, NumberField } from '../components/ui.jsx'
+import { Button, Check, NumberField, Stepper } from '../components/ui.jsx'
 import { defaultIncrement, weightIncrement, stepWeight } from '../lib/progression.js'
 import { progressionGuidance } from '../lib/progression-copy.js'
 import { buildPlannedEntry, buildSessionEntry, plannedConfigOf, builtOutOfProgression } from '../lib/session-start.js'
@@ -99,7 +99,7 @@ const viewOf = (col, value) => (col.view && value != null && value !== '' ? col.
 // on the wrong side of their numbers and the numbers after them turned round (8×15).
 const RTL_LETTER = /[֐-ࣿיִ-﷿ﹰ-﻿]/
 
-/* ---------- one exercise block (reps: weight×reps · time: a held duration · cardio: duration+speed) ---------- */
+/* ---------- one exercise block (reps: weight×reps · time: a held duration · cardio: duration+distance) ---------- */
 // `compact` shrinks the block for a superset member; `dense` (compact view) goes further and
 // drops everything that is not a set you are logging — media, tag chips, the note lines, the
 // "last time" recap and the progression line — leaving the name, the ⋯ menu, the one-line plan
@@ -237,6 +237,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   // An entry built before plans were stamped, and a freestyle one, has no plan to show.
   const planned = entry.planned && mode !== 'cardio' ? entry.planned : null
   const planLine = (() => {
+    if (cardio && (entry.target?.min > 0 || entry.target?.km > 0)) return <div className="small dim planline" style={{ marginBottom: 4 }}>{t('Goal')}: {setsRepsOf({ ...entry.target, mode: 'cardio' })}</div>
     if (!planned) return null
     const today = entry.target || {}
     // A pyramid reads as its targets, as on the routine row: "12 · 8 · 6 · Max · 12", never the
@@ -302,14 +303,13 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   // The reps column is the total in every mode, unilateral included — the stepper walks in
   // twos there so the number you land on is one you can actually split evenly.
   const repCol = { f: 'r', step: repStep(cfg), dec: false, hd: t('Reps') }
-  const col1 = cardio ? { f: 'min', step: 1, dec: false, hd: t('Duration (min)') }
+  const col1 = cardio ? { f: 'min', step: 1, dec: true, opt: true, hd: t('Duration (min)') }
     : timed ? { f: 'sec', step: 5, dec: false, hd: t('Seconds') }
       : loadCol
-  // Speed is stored in km/h and shown in the profile's unit (lib/speed.js): `view` turns the
-  // stored number into the one on screen, `store` the one typed or stepped back into km/h.
+  // Distance is entered in kilometers independently of its planned goal. Legacy speed remains
+  // in the profile's chosen unit in the secondary controls and history labels.
   const speedUnit = speedUnitOf(S)
-  const col2 = cardio ? { f: 'speed', step: 0.5, dec: true, hd: speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)'),
-    view: v => toSpeed(v, speedUnit), store: v => fromSpeed(v, speedUnit) }
+  const col2 = cardio ? { f: 'km', step: 0.1, dec: true, opt: true, hd: t('Distance (km)') }
     : timed ? loadCol : repCol
   // Effort (RIR or RPE, whichever the profile logs) only makes sense for weighted rep sets,
   // not cardio/timed holds, and is opt-in since it adds a third stepper to every row. `opt`
@@ -318,12 +318,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   const eff = EFFORT[kind]
   // The effort column carries the scale key (`eff`) and its field name; unlike weight/reps it
   // is not a stepper — it opens a colour-coded picker (see effortCell). `f` is s.rir or s.rpe.
-  // Cardio's third column is the treadmill's incline (lib/incline.js), on the exercises that have
-  // one and on any whose rows already carry a grade. `opt` again: a cleared field is no incline,
-  // and `store` keeps whatever is typed on the half percent between 0 and 40.
-  const inclineCol = cardio && (inclineFits(ex) || entry.sets.some(hasIncline))
-    ? { f: 'incline', step: INCLINE_STEP, dec: true, opt: true, hd: t('Incline (%)'), store: clampIncline } : null
-  const col3 = cardio ? inclineCol : mode === 'reps' && eff ? { f: eff.f, eff: kind, hd: t(eff.hd) } : null
+  const col3 = mode === 'reps' && eff ? { f: eff.f, eff: kind, hd: t(eff.hd) } : null
   // The effort column walks its own scale — see stepEffort. Weight and reps step up from 0
   // with no ceiling, as they always did.
   const bump = (s, i, col, dir) => {
@@ -350,7 +345,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       {wc.steppers && <button aria-label={t('Decrease')} onClick={() => bump(s, i, col, -1)}><Icon name="minus" /></button>}
       <span className="val">{col.f === 'w'
         ? <MixedWeightField decimal value={s.w ?? ''} unit={S.unit} exerciseId={entry.id} onChange={(v, guard) => onField(i, 'w', v, guard)} />
-        : <NumberField decimal={col.dec} nullable={col.opt} value={viewOf(col, s[col.f]) ?? ''}
+        : <NumberField decimal={col.dec} nullable={col.opt} aria-label={col.hd} value={viewOf(col, s[col.f]) ?? (col.opt ? null : '')}
           onChange={v => onField(i, col.f, col.store ? col.store(v) : v)} />}</span>
       {wc.steppers && <button aria-label={t('Increase')} onClick={() => bump(s, i, col, 1)}><Icon name="plus" /></button>}
     </div>
@@ -502,7 +497,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
           // as RIR 0 wherever effort is read, unless a rating was logged on the set. A timed
           // per-side pair is one set, so both halves get it.
           !warm && mode !== 'cardio' && { icon: 'gauge', label: t('Taken to failure'), sub: t('Nothing left in the tank'), on: isFailureSet(s), onClick: () => toggleFailureAt(i) },
-          // Cardio's effort lives here, not in a column (the third one is the incline): RPE only,
+          // Cardio's effort lives here rather than in a column: RPE only,
           // whatever the profile logs, since reps in reserve mean nothing on a treadmill. Stored as
           // `rpe` on the set, which the fatigue model already reads (recovery.js via rirOf).
           !warm && cardio && { icon: 'gauge', label: t('How hard it felt'), sub: s.rpe != null ? t(EFFORT.rpe.hd) + ' ' + fmtNum(s.rpe) : t('Not rated yet'), onClick: () => effortPickerSheet('rpe', s.rpe ?? null, nv => onField(i, 'rpe', nv), { cardio: true }) },
@@ -649,7 +644,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   // from. The button's own label speaks for it, so a screen reader hears it with the set number.
   const failMark = s => isFailureSet(s) ? <span className="failmark" aria-hidden="true">{t('F')}</span> : null
   const failSay = (s, label) => isFailureSet(s) ? label + ', ' + t('Taken to failure') : label
-  const plainRow = (s, i) => (
+  const plainRow = (s, i) => <>
     <div ref={el => onSetRowRef?.(i, el)} className={'setrow' + (s.done ? ' done' : '') + (col3 ? ' eff3' : '') + (timed ? ' timed' : '')}>
       <button type="button" className="n" aria-label={failSay(s, sideTagOf(s) ? t('Set {0} ({1})', setNumOf(s, i), sideTagOf(s)) : t('Set {0}', setNumOf(s, i)))} aria-describedby={optsId} title={t('More')} onClick={() => openSetMenu(s, i)}>{setNumOf(s, i)}{failMark(s)}</button>
       {/* Both words sit in the pill's one grid cell (::before/::after, hidden), so Left and
@@ -665,7 +660,14 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
         onClick={() => onStartTimed(i)}><Icon name="play" /></button>}
       <Check checked={s.done} label={sideTagOf(s) ? t('Set {0} ({1}) done', setNumOf(s, i), sideTagOf(s)) : t('Set {0} done', setNumOf(s, i))} onChange={() => onToggle(i)} />
     </div>
-  )
+    {cardio && (inclineFits(ex) || s.speed != null || s.incline != null) && <details className="small dim" style={{ marginBottom: 8 }}>
+      <summary>{t('More')}</summary>
+      <div className="row cfgrow">
+        {s.speed != null && <Stepper label={speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')} ariaLabel="speed" value={toSpeed(s.speed, speedUnit)} step={0.5} onChange={v => onField(i, 'speed', fromSpeed(v, speedUnit))} />}
+        {(inclineFits(ex) || s.incline != null) && <Stepper label={t('Incline (%)')} ariaLabel="incline" value={s.incline ?? null} nullable step={INCLINE_STEP} max={40} onChange={v => onField(i, 'incline', clampIncline(v))} />}
+      </div>
+    </details>}
+  </>
   // Swipe on sets (v1.3.11, Settings → Workout): a set row swiped toward the start of the line is
   // removed with an Undo, toward the end copied below itself. Off, the row is the plain row it
   // was, and the Cards swipe works from it again. The row closes whenever its exercise's rows
@@ -1300,7 +1302,10 @@ function ActiveWorkout() {
   const addSet = idx => mutEntry(idx, e => {
     const l = e.sets[e.sets.length - 1]
     const m = modeOf({ ...(e.target || {}), id: e.id })
-    if (m === 'cardio') e.sets.push({ min: l ? l.min : (e.target.min || 20), speed: l ? l.speed : (e.target.speed || 8), ...inclineFrom(l || e.target), done: false })
+    if (m === 'cardio') {
+      const source = l || e.target
+      e.sets.push({ ...(source.min > 0 ? { min: source.min } : {}), ...(source.speed != null ? { speed: source.speed } : {}), ...inclineFrom(source), done: false })
+    }
     else if (m === 'time') {
       const sec = l ? l.sec : (e.target.sec || 45)
       const w = l ? (l.w || 0) : (e.target.weight || 0)
@@ -1924,7 +1929,7 @@ function ActiveWorkout() {
   // The time is the watch's: the phone may hear of the set much later (lib/finish-workout.js
   // sessionEnd reads the sets' times). The watch's Finish runs the phone's Finish and save.
   useEffect(() => bindWatchActions({
-    setDone: (idx, i, { w, r, sec, side, at, hr, rpe, rir, source }) => {
+    setDone: (idx, i, { w, r, sec, min, side, at, hr, rpe, rir, source }) => {
       if (useStore.getState().S.active?.editingWorkoutId) return   // a saved workout being edited is not the session
       const now = useStore.getState().S.active?.entries?.[idx]?.sets?.[i]
       // One side of a per-side set (a unilateral exercise): that side's numbers and its own tick.
@@ -1951,6 +1956,7 @@ function ActiveWorkout() {
         if (w != null) set.w = w
         if (r != null) set.r = r
         if (sec != null) set.sec = sec   // a hold: the seconds it lasted on the watch
+        if (min != null) set.min = min   // cardio: actual elapsed time, in the phone's minutes
         if (eff) { delete set.rpe; delete set.rir; set[eff[0]] = eff[1] }
       })
       const restBefore = useUI.getState().timer

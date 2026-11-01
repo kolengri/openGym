@@ -21,7 +21,7 @@ export default function GarminCloudUploadButton({ workout }) {
   const upload = async () => {
     setBusy(true); setError(false)
     try { await uploadGarminWorkout(useStore, workout.id, { retry: job?.error === 'unknown_result' }) }
-    catch { setError(true) }
+    catch (failure) { setError(failure?.code || 'upload_failed') }
     finally { setBusy(false) }
   }
   return <div style={{ marginTop: 10 }}>
@@ -34,7 +34,7 @@ export default function GarminCloudUploadButton({ workout }) {
     {(error || job?.status === 'failed') && <p className="small muted" role="alert">
       {job?.error === 'unknown_result' ? t('Garmin may already have received this workout. Check Connect before retrying.')
         : ['session_changed', 'content_changed'].includes(job?.error) ? t('This workout has a receipt from another connection or different file. Check Garmin Connect; automatic replay is blocked.')
-          : ['receipt_limit', 'storage_unavailable'].includes(job?.error) ? t('The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.')
+          : ['receipt_limit', 'storage_unavailable'].includes(error || job?.error) ? t('The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.')
         : !state.garminCloudSessionId ? t('Connect Garmin in Settings before uploading.') : t('Garmin upload failed. Reconnect or retry.')}
     </p>}
   </div>

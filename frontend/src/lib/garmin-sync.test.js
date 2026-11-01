@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { configureGarmin, garminDevices, garminHeartRate, garminSnapshot, garminStatus, isGarminEvent, receiveGarminHeartRate, _resetGarminForTest, _setGarminPluginForTest } from './garmin-sync.js'
+import { configureGarmin, garminConnection, garminDevices, garminHeartRate, garminSnapshot, garminStatus, isGarminEvent, receiveGarminHeartRate, _resetGarminForTest, _setGarminPluginForTest } from './garmin-sync.js'
 import { applyEvents, bindWatchAppActions, bindWatchActions, buildSnapshot, drainWatchEvents, patchSetIn, startWatchSync, _resetWatchSync, _setWatchPluginForTest } from './watch-sync.js'
 
 beforeEach(() => { localStorage.clear(); _resetGarminForTest(); _resetWatchSync() })
@@ -13,6 +13,29 @@ const snapshot = () => ({ v: 1, unit: 'kg', restSec: 60, ready: { private: true 
 const event = (id, type = 'setDone', extra = {}) => ({ id, type, wid: 'workout-1', at: 1800000000000, entryIdx: 0, exId: '0025', setIdx: 0, ...extra })
 
 describe('Garmin snapshot boundary', () => {
+  it('returns measured whole seconds unchanged after the minutes round trip', () => {
+    for (const seconds of [31, 62, 123]) {
+      const S = { unit: 'kg', restSec: 60, routines: [], workouts: [], active: snapshot().active }
+      S.active.entries = [{ id: 'run', target: { mode: 'cardio', min: 1 }, sets: [{ min: seconds / 60, done: true }, { min: 1, done: false }] }]
+      const out = garminSnapshot(buildSnapshot(S), { sourceActive: S.active })
+      expect(out.active.entries[0].sets[0].sec).toBe(seconds)
+    }
+  })
+  it('sends cardio minutes as a seconds target without changing the phone row', () => {
+    const S = { unit: 'kg', restSec: 60, routines: [], workouts: [], active: snapshot().active }
+    S.active.entries = [{ id: 'run', target: { mode: 'cardio', km: 5 }, sets: [{ min: 12.5, speed: 8, incline: 3, done: false }] }]
+    const out = garminSnapshot(buildSnapshot(S), { sourceActive: S.active })
+    expect(out.active.entries[0]).toMatchObject({ mode: 'cardio', goalKm: 5, sets: [{ sec: 750, done: false }] })
+    expect(S.active.entries[0].sets[0]).toEqual({ min: 12.5, speed: 8, incline: 3, done: false })
+  })
+  it('allows a distance-only goal without making up a time target or measured distance', () => {
+    const S = { unit: 'kg', restSec: 60, routines: [], workouts: [], active: snapshot().active }
+    S.active.entries = [{ id: 'run', target: { mode: 'cardio', km: 5 }, sets: [{ done: false }] }]
+    const out = garminSnapshot(buildSnapshot(S), { sourceActive: S.active })
+    expect(out.active.entries[0].goalKm).toBe(5)
+    expect(out.active.entries[0].sets[0].sec).toBeNull()
+    expect(out.active.entries[0].sets[0].km).toBeUndefined()
+  })
   it('sends only the current workout and explicit watch preferences', () => {
     const out = garminSnapshot(snapshot())
     expect(out.active.entries[0].sets).toEqual([{ w: 40, r: 8, done: false }])
@@ -50,6 +73,10 @@ describe('Garmin snapshot boundary', () => {
 
 describe('live heart rate', () => {
   const at = 1800000000000
+  it.each([undefined, null])('has no sample or previous sample without a workout: %s', wid => {
+    expect(garminHeartRate(wid, at)).toBeNull()
+    expect(garminConnection(wid, at)).toMatchObject({ hasWorkout: false, sample: null, hadSample: false })
+  })
   it('accepts only current, valid samples for this exact workout and expires them', () => {
     expect(receiveGarminHeartRate({ wid: 'other', bpm: 120, at }, 'workout-1', at)).toBe(false)
     expect(receiveGarminHeartRate({ wid: 'workout-1', bpm: 900, at }, 'workout-1', at)).toBe(false)

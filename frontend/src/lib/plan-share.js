@@ -11,7 +11,7 @@
 import { EXIDX, canonicalExId, isBodyweightEq, isCustomEx } from './exercises.js'
 import { cleanBackups } from './routine-backups.js'
 import { cleanUrl } from './media-refs.js'
-import { modeOf, exLine, MAX_PLANNED_WARMUPS } from './history.js'
+import { modeOf, exLine, cardioLabel, MAX_PLANNED_WARMUPS } from './history.js'
 import { deriveSessionName } from './session-merge.js'
 import { isPyramid, normalizePyramid, normalizePyramidRest, normalizePyramidWeight } from './pyramid.js'
 import { isBackoff } from './backoff.js'
@@ -20,7 +20,7 @@ import { MAX_TRIPLE_SETS } from './progression.js'
 import { uid, todayISO, DAYN, weekOrder, weekStartOf, exCount, routineCount } from './format.js'
 import { t, exerciseNameFor, exerciseNameClass } from './i18n-core.js'
 import { convertWeight } from './units.js'
-import { fmtSpeed, speedUnitOf } from './speed.js'
+import { speedUnitOf } from './speed.js'
 import { clampIncline, hasIncline } from './incline.js'
 import { MUSCLES, inMuscleOrder } from './muscles.js'
 import { SG_NAME_MAX } from './superset-meta.js'
@@ -80,6 +80,7 @@ function cleanEx(e) {
     // arrive as reps with no target (#640).
     o.mode = 'cardio'
     if (e.min != null) o.min = e.min
+    if (e.km != null) o.km = e.km
     if (e.speed != null) o.speed = e.speed
     if (hasIncline(e)) o.incline = clampIncline(e.incline)
   } else if (mode === 'time') {
@@ -375,7 +376,7 @@ function schemeParts(e, unit, speedUnit) {
   const sets = e.sets || 1
   const mode = modeOf(e)
   if (mode === 'cardio') {
-    const body = `${e.min || 20} min @ ${fmtSpeed(e.speed || 8, speedUnit)}`
+    const body = cardioLabel(e, speedUnit)
     return [sets > 1 ? `${sets} × ${body}` : body]
   }
   const line = exLine({ ...e, reps: e.reps ?? 10 }, unit, speedUnit)

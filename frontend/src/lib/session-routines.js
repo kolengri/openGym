@@ -76,7 +76,11 @@ function copiedEntry(entry, source) {
   const cfg = { ...defaults, ...target, id: entry?.id, sets: Math.max(1, setsFromRows({ ...defaults, ...target }, work.length) || 1), warmupSets: rows.filter(isWarmupRow).length }
   const mode = modeOf(cfg)
   if (mode === 'time' && row) Object.assign(cfg, { sec: row.sec ?? cfg.sec, weight: row.w ?? cfg.weight ?? 0 })
-  else if (mode === 'cardio' && row) Object.assign(cfg, { min: row.min ?? cfg.min, speed: row.speed ?? cfg.speed })
+  else if (mode === 'cardio') {
+    // A distance-only session must not pick up the new-exercise duration default when copied.
+    if (target.min == null && row?.min == null) delete cfg.min
+    if (row) for (const key of ['min', 'km', 'speed']) if (row[key] != null) cfg[key] = row[key]
+  }
   else if (mode === 'reps') {
     const reps = row && isPerSide(cfg) ? perSideReps(row, cfg) : positive(row?.r)
     if (reps != null) cfg.reps = reps

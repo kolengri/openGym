@@ -2754,4 +2754,10 @@ export default {
   "Last night average": "ค่าเฉลี่ยเมื่อคืน",
   "Unit not verified; original Garmin value.": "ยังไม่ได้ยืนยันหน่วย เป็นค่าดั้งเดิมจาก Garmin",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "เป้าหมายเวลา (นาที)",
+  "Distance goal (km)": "เป้าหมายระยะทาง (กม.)",
+  "Distance (km)": "ระยะทาง (กม.)",
+  "Set a time or distance goal. Zero leaves a goal off.": "ตั้งเป้าหมายเวลาหรือระยะทาง ค่าเป็นศูนย์จะปิดเป้าหมายนั้น",
+
 }

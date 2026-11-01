@@ -40,6 +40,16 @@ afterEach(() => {
 })
 
 describe('a set ticked on the watch', () => {
+  it('stores measured Garmin cardio minutes and preserves speed and incline on replay', () => {
+    act(() => useStore.getState().update(s => {
+      s.active.entries = [{ id: 'run', target: { mode: 'cardio' }, sets: [{ min: 20, speed: 8, incline: 3, done: false }] }]
+    }))
+    const ev = { id: 'cardio-garmin', type: 'setDone', source: 'garmin', wid: 'w-watch', exId: 'run', entryIdx: 0, setIdx: 0, sec: 753, at: Date.now(), hr: { avg: 135, max: 150 } }
+    act(() => applyEvents([ev, ev], () => useStore.getState()))
+    const set = useStore.getState().S.active.entries[0].sets[0]
+    expect(set).toMatchObject({ min: 12.55, speed: 8, incline: 3, done: true, hr: { avg: 135, max: 150 } })
+    expect(set.sec).toBeUndefined()
+  })
   it('resumes a Garmin pause from the phone and resumes the rest timer', () => {
     act(() => {
       useStore.getState().update(s => { s.active.watchPaused = true })

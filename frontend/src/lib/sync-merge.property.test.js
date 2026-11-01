@@ -81,6 +81,23 @@ const RUNS = { numRuns: Number(process.env.PROPERTY_RUNS) || 150 }
 const histories = n => fc.array(fc.array(op, { maxLength: 8 }), { minLength: n, maxLength: n })
 
 describe('merging copies of one account', () => {
+  it('a no-op correction cannot revive stale sets after another copy deletes the workout', () => {
+    // CI seed -5891068: A saves the existing 60 kg unchanged after B adds a set and C deletes
+    // w0. The no-op must not count as an edit newer than C's deletion, whichever copies meet first.
+    const histories = [
+      [{ k: 'add', ex: 'bench', d: '2026-10-01', w: 20, r: 1 }, { k: 'fix', pick: 0, w: 60 }],
+      [{ k: 'set', pick: 0, w: 20, r: 1 }],
+      [{ k: 'del', pick: 0 }],
+    ]
+    const [A, B, C] = histories.map((ops, dev) => play(base(), ops, dev, []))
+    const expected = view(A)
+    expected.workouts = expected.workouts.filter(w => w.id !== 'w0')
+    for (const [a, b, c] of [[A, B, C], [A, C, B], [B, A, C], [B, C, A], [C, A, B], [C, B, A]]) {
+      expect(view(merge(merge(a, b), c))).toEqual(expected)
+      expect(view(merge(a, merge(b, c)))).toEqual(expected)
+    }
+  })
+
   it('the order two copies meet in does not matter', () => {
     fc.assert(fc.property(histories(2), ([oa, ob]) => {
       const A = play(base(), oa, 0, []), B = play(base(), ob, 1, [])

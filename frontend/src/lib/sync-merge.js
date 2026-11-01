@@ -1119,7 +1119,15 @@ export function stampChange(prev, next, wall = Date.now()) {
   for (const w of list(next.workouts)) {
     if (!w || typeof w !== 'object' || w.id == null || w._ts == null) continue
     const old = before.get(w.id)
-    if (old && w._ts !== old._ts) stampEntry(old, w, now)
+    if (old && w._ts !== old._ts) {
+      // Saving unchanged data is not a workout edit. A fresh `_ts` without a changed field
+      // could beat a deletion while its stale fields revive data that an earlier merge dropped.
+      // Keep the previous edit time; a deliberate add-back has its own deletion stamp below.
+      if (sameEntry(old, w)) {
+        if (old._ts == null) delete w._ts
+        else w._ts = old._ts
+      } else stampEntry(old, w, now)
+    }
   }
   // Settings maps whose entries carry their own stamp (mergeStampedMap): an entry the change
   // re-stamped takes the change's time.

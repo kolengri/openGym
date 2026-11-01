@@ -1188,6 +1188,23 @@ describe('progression guidance', () => {
 // the same reps source and the same stamped target, so saving "2 × 10" over a session carried at
 // 15 opens 10s, and the target the session is judged by says what the rows say.
 describe('progression settings rebuild the rows like a session start', () => {
+  it('changes cardio goals while preserving completed duration and distance results', async () => {
+    const done = { min: 18.5, km: 4.8, speed: 8, incline: 3, done: true, at: 12345 }
+    await mount([exercise('2138', [true, false], {
+      target: { sets: 2, mode: 'cardio', min: 20, km: 5 },
+      sets: [done, { min: 20, done: false }],
+    })])
+    await click(container.querySelector('.exhd button[aria-label="More"]'))
+    const settings = menuItemsOf(mocks.menuSheet.mock.calls.at(-1)[0]).find(item => item.label === 'Exercise settings')
+    await act(async () => settings.onClick())
+    const save = mocks.exConfigSheet.mock.calls.at(-1)[2]
+    await act(async () => save({ sets: 2, mode: 'cardio', min: 25, km: 6 }))
+    const entry = mocks.S.active.entries[0]
+    expect(entry.target).toMatchObject({ mode: 'cardio', min: 25, km: 6 })
+    expect(entry.sets[0]).toEqual(done)
+    expect(entry.sets[1]).toEqual({ min: 25, done: false })
+  })
+
   const history = [{
     d: '2026-08-27',
     entries: [{ id: 'plain-bench', target: { sets: 2, reps: 15, weight: 40 }, sets: [{ w: 40, r: 15, done: true }, { w: 40, r: 15, done: true }] }],

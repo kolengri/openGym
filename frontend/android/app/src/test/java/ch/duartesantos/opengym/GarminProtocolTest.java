@@ -12,6 +12,26 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 public class GarminProtocolTest {
+    @Test public void cardioTargetsSurviveTheSnapshotBoundary() throws Exception {
+        JSONObject input = new JSONObject(snapshot());
+        JSONObject cardio = input.getJSONObject("active").getJSONArray("entries").getJSONObject(0);
+        cardio.put("mode", "cardio").put("goalKm", 5.5);
+        cardio.getJSONArray("sets").getJSONObject(0).put("sec", 1200);
+        JSONObject actual = GarminProtocol.snapshot(input.toString(), 8).getJSONObject("state")
+            .getJSONObject("active").getJSONArray("entries").getJSONObject(0);
+        assertEquals(5.5, actual.getDouble("goalKm"), 0.00001);
+        assertEquals(1200, actual.getJSONArray("sets").getJSONObject(0).getInt("sec"));
+        Map<?, ?> wire = GarminProtocol.wire(actual);
+        assertTrue(wire.get("goalKm") instanceof Double);
+        Map<?, ?> decoded = (Map<?, ?>) IQMessageHelper.INSTANCE.convertToJava(Serializer.deserialize(Serializer.serialize(wire)).get(0));
+        assertEquals(5.5, ((Number) decoded.get("goalKm")).doubleValue(), 0.00001);
+        cardio.put("goalKm", -1);
+        assertThrows(IllegalArgumentException.class, () -> GarminProtocol.snapshot(input.toString(), 9));
+    }
+    @Test public void jsonDecimalNormalizationRetainsSafeNumericBounds() throws Exception {
+        assertThrows(IllegalArgumentException.class, () -> GarminProtocol.parse("{\"n\":9007199254740991.1}"));
+        assertThrows(IllegalArgumentException.class, () -> GarminProtocol.parse("{\"n\":-9007199254740991.1}"));
+    }
     @Test public void cardioWarmupDoesNotBlockFollowingStrengthExercises() throws Exception {
         JSONObject input = new JSONObject(snapshot());
         JSONArray entries = input.getJSONObject("active").getJSONArray("entries");

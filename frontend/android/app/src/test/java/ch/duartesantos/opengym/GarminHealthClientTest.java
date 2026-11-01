@@ -156,7 +156,21 @@ public class GarminHealthClientTest {
         failure("invalid_response", 200, "<html>PRIVATE</html>");
         failure("invalid_response", 200, "{} []");
         failure("invalid_response", 200, "42");
-        failure("auth_required", 200, "{\"privacyProtected\":true}");
+    }
+
+    @Test public void privateMetricDoesNotRevokeTheSharedUploadSession() throws Exception {
+        Fixture fixture = new Fixture();
+        fixture.body = "{\"privacyProtected\":true,\"reading\":42}";
+        GarminCloudStore store = connected();
+        String session = store.sessionId();
+        JSONObject result = new GarminHealthClient(fixture).read(store, session, DAY, "weight");
+        assertEquals("unavailable", result.getString("status"));
+        assertFalse(result.has("data"));
+        assertFalse(result.has("error"));
+        assertTrue(store.connected());
+        assertEquals(session, store.sessionId());
+        assertEquals(TOKEN, store.token());
+        assertSame(JSONObject.NULL, GarminHealthClient.payload(new GarminHealthClient.Response(200, fixture.body)));
     }
 
     @Test public void preservesNumericUnitsZeroNullAndAllSafeTimeSeriesAndTemperatureFields() throws Exception {

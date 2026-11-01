@@ -232,12 +232,13 @@ function itemsOf(w, exOf) {
       const len = mode === 'cardio' ? min * 60000
         : mode === 'time' ? sec * 1000
           : Math.min(SET_MAX_MS, Math.max(SET_MIN_MS, reps * REP_MS))
-      if (!(len > 0)) return
+      const km = mode === 'cardio' ? (row.km != null && Number.isFinite(Number(row.km)) && row.km >= 0 ? Number(row.km) : (Number(row.speed) || 0) * min / 60) : 0
+      if (!(len > 0 || km > 0)) return
       items.push({
         ex, mode, category, len, chained, at: Number.isFinite(at) ? at : null,
         reps: mode === 'reps' && reps > 0 ? reps : null,
         w: mode === 'cardio' ? null : Number(row.w) || 0,
-        km: mode === 'cardio' ? (Number(row.speed) || 0) * min / 60 : 0,
+        km,
       })
     }
     for (const s of entry.sets || []) {
@@ -305,10 +306,12 @@ export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr, 
   if (!Number.isFinite(startMs)) throw new Error('This workout has no date')
   let endMs = Number.isFinite(w?.end) && w.end > startMs ? w.end : startMs
   const items = itemsOf(w, exOf)
+  // Distance-only results belong in the totals, but provide no set duration to place.
+  const timedItems = items.filter(x => x.len > 0)
   const cardioOnly = items.length > 0 && items.every(x => x.mode === 'cardio')
   // A workout with no end of its own lasts as long as its sets do.
-  if (endMs <= startMs) endMs = startMs + items.reduce((n, x) => n + x.len, 0) + Math.max(0, items.length - 1) * 60000
-  const placed = placeItems(items, startMs, endMs)
+  if (endMs <= startMs) endMs = startMs + timedItems.reduce((n, x) => n + x.len, 0) + Math.max(0, timedItems.length - 1) * 60000
+  const placed = placeItems(timedItems, startMs, endMs)
   endMs = Math.max(endMs, ...placed.map(x => x.end))
   const T0 = fitTime(startMs), T1 = fitTime(endMs)
   const elapsedMs = Math.max(0, endMs - startMs)
@@ -353,11 +356,16 @@ export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr, 
 
   const laps = []
   if (cardioOnly) {
-    // A lap per cardio set: its time, its distance and its speed, the way a watch splits a run.
-    placed.forEach(x => {
-      const ms = x.end - x.start
-      laps.push({ start: x.start, end: x.end, ms, meters: x.km * 1000, speed: ms > 0 ? x.km * 1000 / (ms / 1000) : 0 })
-    })
+    if (timedItems.length < items.length) {
+      // Use the workout's own span when an interval has no measured duration.
+      laps.push({ start: startMs, end: endMs, ms: elapsedMs, meters, speed: undefined })
+    } else {
+      // A lap per cardio set: its time, its distance and its speed, the way a watch splits a run.
+      placed.forEach(x => {
+        const ms = x.end - x.start
+        laps.push({ start: x.start, end: x.end, ms, meters: x.km * 1000, speed: ms > 0 ? x.km * 1000 / (ms / 1000) : 0 })
+      })
+    }
   } else {
     let index = 0
     const setMsg = (s, e, type, x) => msgs.push({ global: MSG.set, fields: [
@@ -393,7 +401,7 @@ export function workoutFitMessages(w, { unit = 'kg', version = '', exOf = exOr, 
     [2, 'uint32', T0], [5, 'enum', sport[0]], [6, 'enum', sport[1]],
     [7, 'uint32', elapsedMs], [8, 'uint32', elapsedMs],
     [9, 'uint32', meters != null ? meters * 100 : undefined],
-    [14, 'uint16', cardioOnly && meters && elapsedMs > 0 ? meters / (elapsedMs / 1000) * 1000 : undefined],
+    [14, 'uint16', cardioOnly && timedItems.length === items.length && meters && elapsedMs > 0 ? meters / (elapsedMs / 1000) * 1000 : undefined],
     [25, 'uint16', 0], [26, 'uint16', laps.length],
   ] })
   // local_timestamp: the same moment on the wall clock where the workout happened.

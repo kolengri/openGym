@@ -10,6 +10,7 @@ import Toybox.Time;
 import Toybox.Timer;
 import Toybox.WatchUi;
 import Toybox.Attention;
+import Toybox.UserProfile;
 
 class OpenGymApp extends Application.AppBase {
     var model;
@@ -18,6 +19,7 @@ class OpenGymApp extends Application.AppBase {
     var recordingWid = null;
     var recordingStatus = "";
     var heartRate = null;
+    var heartRateZones = null;
     var viewWidth = null;
     var viewHeight = null;
     var busy = false;
@@ -53,6 +55,7 @@ class OpenGymApp extends Application.AppBase {
         alerts = new WorkoutAlerts();
         sender = new GymConnectionListener(self);
         Communications.registerForPhoneAppMessages(method(:onPhone));
+        refreshHeartRateZones();
         Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
         Sensor.enableSensorEvents(method(:onSensor));
         tickTimer = new Timer.Timer();
@@ -61,6 +64,12 @@ class OpenGymApp extends Application.AppBase {
         tick();
     }
     function getInitialView() { return [new WorkoutView(self), new WorkoutDelegate(self)]; }
+    function refreshHeartRateZones() {
+        try {
+            var zones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
+            heartRateZones = WorkoutDashboard.validZones(zones) ? zones : null;
+        } catch (ex) { heartRateZones = null; }
+    }
     // Foreground app setting only. Do not change global device lock preferences or
     // continually override input settings from the timer/sensor callbacks.
     function enableTouch() {

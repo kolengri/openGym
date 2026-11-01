@@ -131,6 +131,7 @@ export { DATA_CATEGORIES } from './categories.js';
 export const modeOf = (cfg, ex) => {
   const m = cfg && cfg.mode;
   if (m === 'reps' || m === 'time' || m === 'cardio') return m;
+  if (cfg?.min != null || cfg?.km != null || cfg?.speed != null) return 'cardio';
   return ex && ex.bp === 'cardio' ? 'cardio' : 'reps';
 };
 
@@ -200,7 +201,7 @@ function cleanEx(e) {
   const mode = modeOf(e, LIB_BY_ID.get(e.id));
   o.mode = mode;
   const put = (k, v) => { if (num(v) !== undefined) o[k] = v; };
-  if (mode === 'cardio') { put('min', e.min); put('speed', e.speed); }
+  if (mode === 'cardio') { put('min', e.min); put('km', e.km); put('speed', e.speed); }
   else if (mode === 'time') { put('sec', e.sec); if (e.weight) put('weight', e.weight); }
   else { put('reps', e.reps); if (e.weight) put('weight', e.weight); }
   if (policy(e.prog)) o.prog = e.prog;
@@ -241,6 +242,7 @@ export function canonicalPlan(S) {
           reps: mode === 'reps' ? (e.reps || 0) : 0,
           sec: mode === 'time' ? (e.sec || 0) : 0,
           min: mode === 'cardio' ? (e.min || 0) : 0,
+          km: mode === 'cardio' ? (e.km || 0) : 0,
           speed: mode === 'cardio' ? (e.speed || 0) : 0,
           weight: mode === 'cardio' ? 0 : (e.weight || 0),
           prog: e.prog || '', inc: e.inc || 0, repsMin: e.repsMin || 0, repsMax: e.repsMax || 0,
@@ -360,7 +362,8 @@ export const ASK_SESSIONS = 8;
 const fmtSet = s => {
   const eff = s.rir != null ? '@RIR' + s.rir : s.rpe != null ? '@RPE' + s.rpe : s.failure === true && !isWarmupSet(s) ? '@failure' : '';
   if (s.sec != null) return s.sec + 's' + eff;
-  if (s.min != null) return s.min + 'min' + (s.speed != null ? '/' + s.speed : '') + eff;
+  if (s.min != null || s.km != null) return [s.min != null ? s.min + 'min' : null, s.km != null ? s.km + 'km' : null]
+    .filter(v => v != null).join('+') + (s.speed != null ? '/' + s.speed : '') + eff;
   return (s.w != null ? s.w + 'x' : '') + (s.r != null ? s.r : '?') + eff;
 };
 
@@ -369,14 +372,19 @@ function cleanSet(s) {
   const o = { done: !!s.done };
   if (isWarmupSet(s)) o.warmup = true;
   else if (s.failure === true) o.failure = true;
-  for (const k of ['w', 'r', 'sec', 'min', 'speed', 'rir', 'rpe']) if (num(s[k]) !== undefined) o[k] = s[k];
+  for (const k of ['w', 'r', 'sec', 'min', 'km', 'speed', 'rir', 'rpe']) if (num(s[k]) !== undefined) o[k] = s[k];
   return o;
 }
 const entriesOf = w => list(w.entries).filter(en => en && typeof en === 'object');
 const setsOf = en => list(en.sets).filter(s => s && typeof s === 'object');
-const targetOf = en => (en.target && typeof en.target === 'object'
-  ? { sets: num(en.target.sets), reps: num(en.target.reps), sec: num(en.target.sec), weight: num(en.target.weight) }
-  : null);
+const targetOf = en => {
+  if (!en.target || typeof en.target !== 'object') return null;
+  const target = { sets: num(en.target.sets), reps: num(en.target.reps), sec: num(en.target.sec), weight: num(en.target.weight) };
+  if (modeOf(en.target, LIB_BY_ID.get(en.id)) === 'cardio') {
+    for (const k of ['min', 'km', 'speed']) if (num(en.target[k]) !== undefined) target[k] = en.target[k];
+  }
+  return target;
+};
 
 /** One older workout as a summary: what was done, the top set, whether targets were hit. */
 function compactWorkout(w) {
@@ -389,16 +397,19 @@ function compactWorkout(w) {
     entries: entriesOf(w).map(en => {
       const sets = setsOf(en).filter(s => !isWarmupSet(s)).map(cleanSet);
       const done = sets.filter(s => s.done);
+      const cardioMetric = modeOf(en.target, LIB_BY_ID.get(en.id)) === 'cardio'
+        ? (done.some(s => s.km > 0) ? 'km' : 'min') : null;
+      const score = s => cardioMetric ? (Number(s[cardioMetric]) || 0) : (s.w || 0) * (s.r || 0) + (s.sec || 0);
       let top = null;
       done.forEach(s => {
-        if (!top || (s.w || 0) * (s.r || 0) + (s.sec || 0) > (top.w || 0) * (top.r || 0) + (top.sec || 0)) top = s;
+        if (!top || score(s) > score(top)) top = s;
       });
       const target = targetOf(en);
       return {
         id: ident(en.id),
         name: libraryName(en.id),
         done: done.length + '/' + sets.length,
-        ...(target ? { target: fmtSet({ w: target.weight, r: target.reps, sec: target.sec }) } : {}),
+        ...(target ? { target: fmtSet({ w: target.weight, r: target.reps, sec: target.sec, min: target.min, km: target.km, speed: target.speed }) } : {}),
         ...(top ? { top: fmtSet(top) } : {})
       };
     })

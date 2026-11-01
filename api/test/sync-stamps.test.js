@@ -140,6 +140,19 @@ test('an older app saving a routine keeps the pyramid it does not know', () => {
   assert.ok(next.routines[0]._f.ex >= NOW);   // its weight change is still an edit of its own
 });
 
+test('stamped writers can clear a cardio distance goal while legacy writers preserve it', () => {
+  const cur = stored();
+  cur.routines[0].ex = [{ id: '2138', sets: 1, mode: 'cardio', min: 20, km: 5 }];
+  for (const stamped of [true, false]) {
+    const next = clone(cur);
+    delete next.routines[0].ex[0].km;
+    next.routines[0].ex[0].min = 25;
+    stampPut(cur, next, { overRead: true, stamped, now: NOW });
+    assert.equal(next.routines[0].ex[0].min, 25);
+    assert.equal(next.routines[0].ex[0].km, stamped ? undefined : 5);
+  }
+});
+
 test('an older app keeps the fields it does not know everywhere: settings, entries, sets', () => {
   const cur = stored();
   cur.accentCustom = '#ff00aa'; cur.showRir = true;

@@ -2740,4 +2740,10 @@ export default {
   "Last night average": "Середнє за минулу ніч",
   "Unit not verified; original Garmin value.": "Одиницю вимірювання не підтверджено; початкове значення Garmin.",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "Ціль за часом (хв)",
+  "Distance goal (km)": "Ціль за дистанцією (км)",
+  "Distance (km)": "Дистанція (км)",
+  "Set a time or distance goal. Zero leaves a goal off.": "Укажіть ціль за часом або дистанцією. Нуль вимикає відповідну ціль.",
+
 }

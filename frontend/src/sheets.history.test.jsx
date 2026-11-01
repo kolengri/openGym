@@ -44,6 +44,18 @@ afterEach(() => {
 })
 
 describe('exercise history sheet', () => {
+  it('shows a distance-only cardio chart and record in kilometers', () => {
+    const cardio = (i, km) => ({ ...session(i, []), entries: [{ id: '2138',
+      target: { mode: 'cardio', min: 99, km: 99 }, sets: [{ km, done: true }] }] })
+    useStore.setState(s => ({ S: { ...s.S, workouts: [cardio(0, 4.8), cardio(2, 5.2)] } }))
+    exerciseHistorySheet('2138')
+    const host = renderTop()
+    expect(host.querySelector('.chart svg')).toBeTruthy()
+    expect(host.textContent).toMatch(/Best:\s*5\.2 km/)
+    expect(host.textContent).not.toContain('0 min')
+    expect([...host.querySelectorAll('.list .item .ss')].map(row => row.textContent)).toEqual(['5.2 km', '4.8 km'])
+  })
+
   it('shows an empty state instead of a chart when nothing was logged', () => {
     exerciseHistorySheet(EX)
     const host = renderTop()

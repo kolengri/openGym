@@ -2745,4 +2745,10 @@ export default {
   'Last night average': 'Среднее за ночь',
   'Unit not verified; original Garmin value.': 'Единица не подтверждена; исходное значение Garmin.',
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "Цель по времени (мин)",
+  "Distance goal (km)": "Цель по дистанции (км)",
+  "Distance (km)": "Дистанция (км)",
+  "Set a time or distance goal. Zero leaves a goal off.": "Укажите цель по времени или дистанции. Ноль отключает соответствующую цель.",
+
 }

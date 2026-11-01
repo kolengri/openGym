@@ -75,3 +75,34 @@ it('disables disconnect during a connected active workout', async () => {
   await render(<GarminCloudSettings />)
   expect(button('Disconnect Garmin Connect').disabled).toBe(true)
 })
+
+it('keeps the local binding and auto-upload choice when status storage fails, and allows a status retry', async () => {
+  useStore.getState().update(s => { s.garminCloudSessionId = 'synthetic-session'; s.garminCloudAuto = true })
+  bridge.status.mockRejectedValueOnce(Object.assign(new Error('synthetic unreadable store'), { code: 'storage_unavailable' }))
+  await render(<GarminCloudSettings />)
+  expect(host.textContent).toContain('The local Garmin upload journal needs attention.')
+  expect(host.textContent).not.toContain('Garmin Connect is not connected')
+  expect(button('Sign in to Garmin Connect')).toBeUndefined()
+  expect(useStore.getState().S.garminCloudSessionId).toBe('synthetic-session')
+  expect(useStore.getState().S.garminCloudAuto).toBe(true)
+  expect(bridge.connect).not.toHaveBeenCalled()
+  expect(bridge.disconnect).not.toHaveBeenCalled()
+  bridge.status.mockResolvedValue({ available: true, connected: true, sessionId: 'synthetic-session' })
+  await act(async () => { button('Retry').click() })
+  expect(host.textContent).toContain('Connected to Garmin Connect')
+  expect(host.querySelector('[aria-label="Upload new workouts automatically"]').getAttribute('aria-checked')).toBe('true')
+})
+
+it.each([undefined, 'network_error'])('reports storage failure for a manual upload without asking the user to reconnect: %s', async previousError => {
+  const w = { id: 'synthetic-finished', start: 1800000000000, end: 1800000060000, entries: [{ id: '0025', sets: [{ done: true, r: 8, w: 40 }] }] }
+  if (previousError) w.garminCloudUpload = { status: 'failed', error: previousError, sessionId: 'synthetic-session' }
+  useStore.getState().update(s => { s.garminCloudSessionId = 'synthetic-session'; s.workouts.push(w) })
+  bridge.status.mockRejectedValue(Object.assign(new Error('synthetic storage failure'), { code: 'storage_unavailable' }))
+  await render(<GarminCloudUploadButton workout={w} />)
+  await act(async () => { button(previousError ? 'Retry Garmin upload' : 'Upload to Garmin Connect').click() })
+  expect(host.querySelector('[role="alert"]').textContent).toContain('The local Garmin upload journal needs attention.')
+  expect(host.querySelector('[role="alert"]').textContent).not.toContain('Garmin upload failed. Reconnect or retry.')
+  expect(bridge.upload).not.toHaveBeenCalled()
+  expect(useStore.getState().S.workouts[0].garminCloudUpload).toEqual(w.garminCloudUpload)
+  expect(useStore.getState().S.garminCloudSessionId).toBe('synthetic-session')
+})

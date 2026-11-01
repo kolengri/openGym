@@ -53,6 +53,7 @@ const stamp = ms => {
  * gets more, as many as our importer needs to read the same speed back (it rounds to 0.01 km/h).
  */
 function distanceKm(s) {
+  if (s.km != null && Number.isFinite(Number(s.km)) && s.km >= 0) return n(s.km)
   const min = Number(s.min) || 0, speed = Number(s.speed) || 0
   const km = speed * min / 60
   if (!(km > 0)) return '0'
@@ -96,7 +97,7 @@ export function workoutRows(S, { from = null, to = null } = {}) {
       let no = 0, noteLeft = e.note || ''
       // The entry's note rides on its first row only: the importer keeps one note per exercise.
       const push = cells => { rows.push([...head, ...exCells, ...cells, noteLeft]); noteLeft = '' }
-      const cardio = s => !(s.r > 0) && (s.min > 0 || s.speed > 0)
+      const cardio = s => !(s.r > 0) && (s.min > 0 || s.km > 0 || s.speed > 0)
       for (const s of e.sets || []) {
         if (!hasCompletedWork(s)) continue
         no++

@@ -66,7 +66,7 @@ describe('setLabel', () => {
 
   it('reads a legacy set with no config exactly as before', () => {
     expect(setLabel(LIFT, { w: 0, r: 0 })).toBe('0×0')
-    expect(setLabel(CARDIO, {})).toBe('0 min @ 0 km/h')
+    expect(setLabel(CARDIO, {})).toBe('–')
   })
 
   // A target built without an id (a freestyle one) and without a mode used to fall back to reps,
@@ -85,7 +85,7 @@ describe('setLabel', () => {
     // no target at all: the catalogue's cardio entry is body weight, so the load reads as added
     expect(setLabel(CARDIO, { w: 50, r: 10 })).toBe('+50 × 10')
     expect(setLabel(CARDIO, { min: 20, speed: 9, r: 0 }, { sets: 1 })).toBe('20 min @ 9 km/h')
-    expect(setLabel(CARDIO, { w: 50, r: 10 }, { mode: 'cardio' })).toBe('0 min @ 0 km/h')
+    expect(setLabel(CARDIO, { w: 50, r: 10 }, { mode: 'cardio' })).toBe('–')
   })
 
   it('appends RIR when present, including a valid 0', () => {
@@ -326,7 +326,7 @@ describe('logging effort across a session', () => {
 describe('defaultConfig', () => {
   it('gives each mode a sensible starting point', () => {
     expect(defaultConfig(LIFT)).toEqual({ sets: 3, reps: 10, weight: 0, mode: 'reps' })
-    expect(defaultConfig(CARDIO)).toEqual({ sets: 1, min: 20, speed: 8 })
+    expect(defaultConfig(CARDIO)).toEqual({ sets: 1, mode: 'cardio', min: 20 })
     expect(defaultConfig(LIFT, 'time')).toEqual({ sets: 3, sec: 45, weight: 0, mode: 'time' })
   })
   it('seeds the bodyweight flag from the catalogue, and only when it is true', () => {

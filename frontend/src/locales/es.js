@@ -2743,4 +2743,10 @@ export default {
   "Last night average": "Promedio de la última noche",
   "Unit not verified; original Garmin value.": "Unidad sin verificar; valor original de Garmin.",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "Objetivo de tiempo (min)",
+  "Distance goal (km)": "Objetivo de distancia (km)",
+  "Distance (km)": "Distancia (km)",
+  "Set a time or distance goal. Zero leaves a goal off.": "Define un objetivo de tiempo o distancia. Cero desactiva ese objetivo.",
+
 }

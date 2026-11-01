@@ -44,6 +44,7 @@ function titleRowsUseNativeMeasurementsAndStayBetweenHeaderAndFields(logger) {
 (:test)
 class RenderFixture extends TouchFixtureApp {
     var heartRate = null;
+    var heartRateZones = null;
     function initialize(w) { TouchFixtureApp.initialize(w); recordingStatus = "Recording FIT"; }
     function enableTouch() {}
 }
@@ -51,10 +52,19 @@ class RenderFixture extends TouchFixtureApp {
 (:test)
 function nativeDashboardRendersLongNamesNoticesAlertsAndIdle(logger) {
     var settings = System.getDeviceSettings(); var w = settings.screenWidth; var h = settings.screenHeight;
-    var bitmap = Graphics.createBufferedBitmap({:width=>w,:height=>h,:palette=>[Graphics.COLOR_BLACK,Graphics.COLOR_WHITE,Graphics.COLOR_GREEN,Graphics.COLOR_DK_GRAY]}).get();
+    // Match the native display format: AMOLED fonts carry anti-aliasing masks.
+    var bitmap = Graphics.createBufferedBitmap({:width=>w,:height=>h}).get();
     var dc = bitmap.getDc(); var app = new RenderFixture(w); var view = new WorkoutView(app);
     app.model.active()["entries"][0]["name"] = "Подъём гантелей через стороны стоя с паузой в верхней точке";
     view.onUpdate(dc);
+    app.heartRateZones = [90,110,130,150,170,190]; app.heartRate = 142; view.onUpdate(dc);
+    app.heartRate = 112; view.onUpdate(dc);
+    var phases = ["1/10 L","10/10 R","1/10 Л","10/10 П"];
+    for (var i=0; i<phases.size(); i++) {
+        var phase = view.phaseLabel(dc,phases[i],true);
+        Test.assert(phase.find(phases[i]) != null);
+        Test.assert(dc.getTextWidthInPixels(phase,view.smallFont) <= w*0.29);
+    }
     Test.assertEqual(app.viewWidth,w); Test.assertEqual(app.viewHeight,h);
     Test.assert(app.model.startSet(app.now())); view.onUpdate(dc);
     Test.assert(app.model.setDone(app.now()+2000)); view.onUpdate(dc);
@@ -66,6 +76,26 @@ function nativeDashboardRendersLongNamesNoticesAlertsAndIdle(logger) {
     app.timerAlert = null;
     var idle = WorkoutFixtures.snapshot(2); idle["state"]["active"] = null;
     Test.assert(app.model.snapshot(idle,app.now())); view.onUpdate(dc);
+    return true;
+}
+
+(:test)
+function localizedExerciseTitlesRetainNativeGlyphCoverage(logger) {
+    var settings = System.getDeviceSettings(); var w = settings.screenWidth; var h = settings.screenHeight;
+    var bitmap = Graphics.createBufferedBitmap({:width=>w,:height=>h}).get();
+    var dc = bitmap.getDc(); var app = new RenderFixture(w); var view = new WorkoutView(app);
+    view.fonts(w);
+    Test.assertEqual(view.fontForTitle("Lat pulldown",false),view.titleFont);
+    Test.assertEqual(view.fontForTitle("Тяга блока",true),view.smallFont);
+    var names = ["Bankdrücken","Élévations latérales","Wiosłowanie","Πιέσεις πάγκου","ベンチプレス","卧推","ضغط الصدر","Café raise"];
+    for (var i=0; i<names.size(); i++) {
+        Test.assertEqual(view.fontForTitle(names[i],false),Graphics.FONT_XTINY);
+        Test.assertEqual(view.fontForTitle(names[i],true),Graphics.FONT_XTINY);
+        app.model.active()["entries"][0]["name"] = names[i]; view.onUpdate(dc);
+    }
+    // Exercise the native-font overflow path without encroaching on the HR strip.
+    app.model.active()["entries"][0]["name"] = "Élévations latérales avec haltères et pause en position haute";
+    view.onUpdate(dc);
     return true;
 }
 

@@ -18,7 +18,7 @@ import { exOr } from './exercises.js'
 
 // Real ids from the catalogue, so `eq`/`bp` are whatever the dataset actually says rather than
 // whatever this test assumed. 0001 is a bodyweight sit-up; the others are looked up the same way.
-const IDS = ['0001', '0025', '0043', 'no-such-exercise']
+const IDS = ['0001', '0025', '0043', 'no-such-exercise', '2138']
 
 const CONFIGS = [
   {},
@@ -34,7 +34,15 @@ const CONFIGS = [
   { side: false },
   { side: true, bodyweight: true, mode: 'reps' },
   { reps: 8, sets: 3 },
-  { repsMax: 20, reps: 12 }
+  { repsMax: 20, reps: 12 },
+  { min: 20 },
+  { km: 5 },
+  { speed: 8 },
+  { km: 0 },
+  { min: null, km: null, speed: null },
+  { mode: 'reps', km: 5 },
+  { mode: 'time', km: 5 },
+  { mode: 'nonsense', km: 5 }
 ]
 
 describe('server/client reading rules agree', () => {

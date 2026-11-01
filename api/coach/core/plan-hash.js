@@ -11,10 +11,11 @@
  * against.
  */
 export function hashPlan(plan) {
+  // Keep fingerprints of legacy plans unchanged; distance adds a token only when enabled.
   const canon = JSON.stringify({
     routines: (plan?.routines || []).map(r => [r.id, r.name, r.prog, (r.ex || []).map(e =>
       [e.id, e.mode, e.sets, e.reps, e.sec, e.min, e.speed, e.weight, e.prog, e.inc,
-        e.repsMin, e.repsMax, e.bodyweight, e.side, e.sg].join(':')
+        e.repsMin, e.repsMax, e.bodyweight, e.side, e.sg].join(':') + (Number(e.km) > 0 ? ':km=' + e.km : '')
     )]),
     // `plan` is a canonicalPlan output, so each day is already a routine-id list. `{1:['r1']}`
     // → "1=r1", byte-identical to the pre-upgrade fingerprint; `{3:['r2','r3']}` → "3=r2+r3".

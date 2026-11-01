@@ -20,7 +20,9 @@ Garmin applied-event IDs are bounded in `S.garminAppliedEvents`, inside the same
 
 Each set carries effective `restSec`, including explicit zero, resolved by the phone's existing set, exercise, warmup and pyramid helpers. Each entry carries effective `sideRestSec` (zero by default for rep sides). The watch respects contiguous superset rounds, skips rest after the final workout set and before a following unit's warmup, and preserves an existing rest when selecting an exercise. Side-switch rests retain `kind: 'switch'` through pause and acknowledgement.
 
-- `setDone`: `exId`, `entryIdx`, `setIdx`, optional `w`, `r`, `sec`, `side: 'L'|'R'`, `hr: {avg,max}`. Mark done, never toggle off on replay. For timed sets record elapsed seconds; refuse unsupported set shapes instead of inventing repetitions.
+Cardio entries may carry `goalKm` (0–10000 kilometers), copied from the phone's planned target. It is display-only: completing a timer does not claim a measured distance. Cardio without a time target still supports an elapsed stopwatch, pause, restart recovery and completion.
+
+- `setDone`: `exId`, `entryIdx`, `setIdx`, optional `w`, `r`, `sec`, `side: 'L'|'R'`, `hr: {avg,max}`. Mark done, never toggle off on replay. Timed sets and cardio record elapsed seconds in `sec`; the phone converts cardio to its native `min` field, including late events for saved workouts, while preserving speed and incline. Cardio snapshot rows carry planned minutes converted to `sec`. Refuse unsupported set shapes instead of inventing repetitions.
 - `setHr`: same set identity and optional `hr` / `restHr` aggregates.
 - `selectExercise`: `exId`, `entryIdx` (absolute selection, not relative next; retry-safe).
 - `pause`: `paused` boolean and `rest` (null or the resulting watch rest with `endsAt`, `left`, `paused`, optional `total`, `forIdx`, `forSet`, `kind: 'switch'`). Restore the watch's absolute rest state instead of pausing at message-receipt time; delayed/offline pause and resume retain the same remaining seconds. Pause/resume watch recording; no fabricated workout duration changes.

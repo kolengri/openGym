@@ -2746,4 +2746,10 @@ export default {
   "Last night average": "Előző éjszakai átlag",
   "Unit not verified; original Garmin value.": "A mértékegység nincs ellenőrizve; eredeti Garmin-érték.",
 
+  // Cardio goals and logged distance.
+  "Time goal (min)": "Időcél (perc)",
+  "Distance goal (km)": "Távolságcél (km)",
+  "Distance (km)": "Távolság (km)",
+  "Set a time or distance goal. Zero leaves a goal off.": "Adj meg idő- vagy távolságcélt. A nulla kikapcsolja az adott célt.",
+
 }
