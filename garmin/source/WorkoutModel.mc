@@ -27,21 +27,38 @@ module GymData {
     // Upper bound for CIQ's serialized dictionary, including UTF-8 and type tags.
     // Refuse oversize input, never truncate a running workout.
     function size(v, depth) {
+        return measuredSize(v, depth, {});
+    }
+    // A save splits the same immutable tree into pages. Reuse subtree and UTF-8 sizes
+    // within that save instead of walking the entire workout for every split.
+    function measuredSize(v, depth, sizes) {
         if (depth > 10) { return 999999; }
         if (v == null || v instanceof Boolean) { return 5; }
         if (number(v)) { return 12; }
-        if (v instanceof String) { return 5 + v.toUtf8Array().size(); }
+        if (sizes != null && sizes.hasKey(v)) {
+            var known = sizes[v];
+            // A subtree measured deeper is also valid here. Recheck a shared object
+            // reached deeper than before so caching cannot bypass the nesting limit.
+            if (depth <= known[0]) { return known[1]; }
+        }
+        if (v instanceof String) {
+            var bytes = 5 + v.toUtf8Array().size();
+            if (sizes != null) { sizes[v] = [depth, bytes]; }
+            return bytes;
+        }
         var n = 5;
         if (v instanceof Array) {
-            for (var i = 0; i < v.size(); i++) { n += size(v[i], depth + 1); }
+            for (var i = 0; i < v.size(); i++) { n += measuredSize(v[i], depth + 1, sizes); }
+            if (sizes != null) { sizes[v] = [depth, n]; }
             return n;
         }
         if (v instanceof Dictionary) {
             var keys = v.keys();
             for (var j = 0; j < keys.size(); j++) {
                 if (!(keys[j] instanceof String)) { return 999999; }
-                n += size(keys[j], depth + 1) + size(v[keys[j]], depth + 1);
+                n += measuredSize(keys[j], depth + 1, sizes) + measuredSize(v[keys[j]], depth + 1, sizes);
             }
+            if (sizes != null) { sizes[v] = [depth, n]; }
             return n;
         }
         return 999999;
@@ -121,6 +138,15 @@ class WorkoutModel {
         project();
     }
     function active() { return state == null ? null : state["active"]; }
+    function checkpoint() {
+        // The phone base is immutable: snapshot replaces it and project copies it
+        // before applying commands. Copy only mutable journal fields for rollback.
+        var saved = {}; var keys = data.keys();
+        for (var i=0; i<keys.size(); i++) {
+            var key = keys[i]; saved[key] = key.equals("base") ? data[key] : GymData.copy(data[key]);
+        }
+        return saved;
+    }
     function wid() { return active() == null ? null : active()["id"]; }
     function ended(id) {
         var items4 = data["ended"]; for (var idx4 = 0; idx4 < items4.size(); idx4++) { var item = items4[idx4]; if (item["wid"].equals(id)) { return true; } }

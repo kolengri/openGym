@@ -34,6 +34,7 @@ class OpenGymApp extends Application.AppBase {
     var txStarted = 0l;
     var store;
     var storageFatal = false;
+    var recordingPending = false;
     function initialize() { AppBase.initialize(); }
     function now() { return Time.now().value().toLong() * 1000l; }
     function onStart(state) as Void {
@@ -51,7 +52,10 @@ class OpenGymApp extends Application.AppBase {
             storageFatal = true; notice = "Storage recovery failed. Keep app data.";
             model = new WorkoutModel(null, "recovery");
         }
-        if (!storageFatal) { persist(); }
+        // A loaded journal is already durable. Do not rewrite the full workout
+        // during startup or again in the first timer tick.
+        lastPersistAt = now();
+        if (!storageFatal && saved == null) { persist(); }
         alerts = new WorkoutAlerts();
         sender = new GymConnectionListener(self);
         Communications.registerForPhoneAppMessages(method(:onPhone));
@@ -60,8 +64,7 @@ class OpenGymApp extends Application.AppBase {
         Sensor.enableSensorEvents(method(:onSensor));
         tickTimer = new Timer.Timer();
         tickTimer.start(method(:tick), 1000, true);
-        reconcileRecording();
-        tick();
+        recordingPending = true;
     }
     function getInitialView() { return [new WorkoutView(self), new WorkoutDelegate(self)]; }
     function refreshHeartRateZones() {
@@ -79,14 +82,14 @@ class OpenGymApp extends Application.AppBase {
     }
     function persist() {
         if (storageFatal) { return false; }
-        try { store.save(model.data); return true; }
+        try { store.save(model.data); lastPersistAt = now(); return true; }
         catch (ex) { notice = "Storage full. Reconnect phone."; return false; }
     }
     // A failed storage write rolls back the entire command before FIT side effects
     // or transport. A visible completion must always have a durable event ID.
     function action(type) {
         if (storageFatal) { return false; }
-        var previous = GymData.copy(model.data);
+        var previous = model.checkpoint();
         var ok = false;
         if (type.equals("startSet")) { ok = model.startSet(now()); }
         else if (type.equals("setDone")) { ok = model.setDone(now()); }
@@ -98,7 +101,7 @@ class OpenGymApp extends Application.AppBase {
             model = new WorkoutModel(previous, "");
             ok = false;
         }
-        if (ok) { timerAlert = null; reconcileRecording(); updateAlerts(now()); flush(); }
+        if (ok) { timerAlert = null; recordingPending = true; updateAlerts(now()); flush(); }
         WatchUi.requestUpdate();
         return ok;
     }
@@ -106,7 +109,7 @@ class OpenGymApp extends Application.AppBase {
     function receive(payload) {
         if (storageFatal) { return; }
         if (!(payload instanceof Dictionary) || payload["v"] != 1) { return; }
-        var previous = GymData.copy(model.data);
+        var previous = model.checkpoint();
         var reported = hello();
         var ok = false;
         if (GymData.is(payload["kind"],"snapshot")) { ok = model.snapshot(payload, now()); }
@@ -120,7 +123,9 @@ class OpenGymApp extends Application.AppBase {
             var sameWid = (reported["wid"] == null && current["wid"] == null) || GymData.is(reported["wid"], current["wid"]);
             if (reported["seq"] != current["seq"] || !sameWid || reported["pending"] != current["pending"]) { lastHelloAt = 0l; }
         }
-        reconcileRecording();
+        // Recording claims have their own durable save. Run them on the timer,
+        // after this snapshot's transaction returns, to stay within Solar's watchdog budget.
+        recordingPending = true;
         updateAlerts(now());
         WatchUi.requestUpdate();
     }
@@ -144,7 +149,10 @@ class OpenGymApp extends Application.AppBase {
     }
     function tick() as Void {
         var at = now();
-        if (recording != null && (model.wid() == null || !recordingWid.equals(model.wid()))) { reconcileRecording(); }
+        if (recordingPending || (recording != null && (model.wid() == null || !recordingWid.equals(model.wid())))) {
+            recordingPending = false;
+            reconcileRecording();
+        }
         // Recover transport if the phone vanished without a callback.
         if (busy && at - txStarted > 15000) { busy = false; }
         if (!busy && at - lastHelloAt >= 30000) {
@@ -179,11 +187,19 @@ class OpenGymApp extends Application.AppBase {
     function recordingClaim(id) {
         return model.recordingClaim(id);
     }
+    function recordingDiscarded() {
+        var ended = model.data["ended"];
+        for (var i=0; i<ended.size(); i++) {
+            if (ended[i]["wid"].equals(recordingWid)) { return ended[i]["discard"]; }
+        }
+        return false;
+    }
     function reconcileRecording() {
         if (recording != null && (model.wid() == null || !recordingWid.equals(model.wid()))) {
-            var discard = false;
-            var items3 = model.data["ended"]; for (var idx3 = 0; idx3 < items3.size(); idx3++) { var e = items3[idx3]; if (e["wid"].equals(recordingWid)) { discard = e["discard"]; } }
-            completeRecording(discard);
+            completeRecording(recordingDiscarded());
+            // Finish the previous FIT before claiming the next one, in a separate callback.
+            recordingPending = model.wid() != null;
+            return;
         }
         var id = model.wid();
         if (id == null) { return; }
@@ -225,16 +241,16 @@ class OpenGymApp extends Application.AppBase {
             recordingStatus = ok ? (discard ? "FIT discarded" : "FIT saved") : "FIT completion failed";
             if (claim != null) { claim["phase"] = ok ? "ended" : "interrupted"; }
         } catch (ex) { recordingStatus = "FIT completion interrupted"; if (claim != null) { claim["phase"] = "interrupted"; } }
-        persist();
+        // The durable terminal intent already prevents duplicate FIT effects.
+        // Persist the final diagnostic phase with the next normal journal save.
     }
     function onStop(state) as Void {
         if (tickTimer != null) { tickTimer.stop(); }
         Sensor.enableSensorEvents(null);
         Sensor.setEnabledSensors([]);
-        persist();
         // Save the partial recording on deliberate app exit. Workout and pending
         // events survive; subsequent launches visibly report interruption.
-        completeRecording(false);
+        if (recording == null) { persist(); } else { completeRecording(recordingDiscarded()); }
     }
 }
 

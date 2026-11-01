@@ -1,8 +1,13 @@
 # Dashboard label font
 
-The unmodified `IBMPlexMono-Medium.woff2` originates from Google Fonts' IBM Plex
+The `IBMPlexMono-Medium.woff2` originates from Google Fonts' IBM Plex
 Mono family (IBM, SIL Open Font License 1.1). The bundled OFL.txt contains the
 copyright and license terms. Source: https://github.com/google/fonts/tree/main/ofl/ibmplexmono
+
+The WOFF2 is a lossless conversion of the full
+[`IBMPlexMono-Medium.ttf`](https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Medium.ttf),
+not a web subset. The generator rejects missing code points instead of baking
+the font's replacement boxes into otherwise valid bitmap records.
 
 The source contains the Latin and Cyrillic glyphs used in the English/Russian
 dashboard. The generated bitmap assets are named OpenGym Mono. Four sizes keep

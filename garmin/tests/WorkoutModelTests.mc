@@ -76,6 +76,27 @@ function newerSnapshotRebasesPendingCommands(logger) {
 }
 
 (:test)
+function checkpointRetainsImmutableBaseAndIsolatesMutableJournal(logger) {
+    var m = WorkoutFixtures.model();
+    Test.assert(m.startSet(1000000l)); m.sample(120,1001000l);
+    var saved = m.checkpoint();
+    Test.assert(m.pause(1002000l));
+    Test.assert(m.next(1003000l));
+    m.claimRecording("workout-a");
+    var incoming = WorkoutFixtures.snapshot(2); incoming["state"]["active"]["id"] = "workout-b";
+    Test.assert(m.snapshot(incoming,1004000l));
+    var restored = new WorkoutModel(saved,"unused");
+    Test.assertEqual(restored.data["seq"],1);
+    Test.assertEqual(restored.wid(),"workout-a");
+    Test.assertEqual(restored.data["outbox"].size(),0);
+    Test.assertEqual(restored.data["ended"].size(),0);
+    Test.assertEqual(restored.data["recordings"].size(),0);
+    Test.assert(restored.data["timing"]["pausedAt"] == null);
+    Test.assertEqual(restored.data["hr"]["sum"],120);
+    return true;
+}
+
+(:test)
 function ackNeedsPersistedSnapshotFence(logger) {
     var m = WorkoutFixtures.model();
     Test.assert(m.setDone(1000000l));
@@ -507,6 +528,55 @@ function journalRebootAndInterruptedWriteKeepLastCommit(logger) {
     storage.failAfter = null; store.save(m.data);
     restored = new WorkoutModel(new GymStore(storage).load(),"unused");
     Test.assertEqual(restored.active()["cur"],1);
+    return true;
+}
+
+(:test)
+function fullEightExerciseWorkoutJournalSurvivesSaveAndReboot(logger) {
+    var snapshot = WorkoutFixtures.snapshot(1); var entries = [];
+    for (var i=0; i<8; i++) {
+        var rows = [];
+        for (var j=0; j<3; j++) {
+            rows.add({"w"=>51.7515,"r"=>10,"sec"=>null,"done"=>false,"warmup"=>false,"restSec"=>90});
+        }
+        entries.add({"id"=>"exercise-"+i.toString(),
+            "name"=>"Жим Штанги Лёжа На Наклонной Скамье (Barbell Incline Bench Press)",
+            "mode"=>"reps","restSec"=>90,"sideRestSec"=>0,"bodyweight"=>false,
+            "perSide"=>false,"step"=>2.5,"sets"=>rows});
+    }
+    snapshot["state"]["active"]["entries"] = entries;
+    var model = new WorkoutModel(null,"full-workout-test");
+    Test.assert(model.snapshot(snapshot,1000000l));
+    var storage = new TestStorage(); var store = new GymStore(storage);
+    store.save(model.data);
+    Test.assert(storage.largest < 8192);
+    var restored = new WorkoutModel(new GymStore(storage).load(),"unused");
+    Test.assertEqual(restored.active()["entries"].size(),8);
+    Test.assertEqual(restored.active()["entries"][7]["sets"][2]["w"],51.7515);
+    Test.assertEqual(restored.active()["entries"][0]["name"],"Жим Штанги Лёжа На Наклонной Скамье (Barbell Incline Bench Press)");
+    return true;
+}
+
+(:test)
+function cachedSizesPreserveUtf8AndNestingLimits(logger) {
+    var shared = {"name"=>"Жим лёжа","sets"=>[{"w"=>51.7515,"r"=>10,"done"=>false}]};
+    var cache = {};
+    Test.assertEqual(GymData.measuredSize(shared,0,cache),GymData.size(shared,0));
+    var deeper = shared;
+    for (var i=0; i<10; i++) { deeper = {"next"=>deeper}; }
+    Test.assert(GymData.size(deeper,0) > 48000);
+    Test.assert(GymData.measuredSize(deeper,0,cache) > 48000);
+    return true;
+}
+
+(:test)
+function cyclicStoragePagesFailWithoutGrowingTheCallStack(logger) {
+    var storage = new TestStorage();
+    storage.values["gym-head"] = {"slot"=>"a","root"=>0};
+    storage.values["gym-a-0"] = {"kind"=>"item","part"=>0};
+    var failed = false;
+    try { new GymStore(storage).load(); } catch (ex) { failed = true; }
+    Test.assert(failed);
     return true;
 }
 

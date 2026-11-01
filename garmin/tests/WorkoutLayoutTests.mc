@@ -58,7 +58,12 @@ function nativeDashboardRendersLongNamesNoticesAlertsAndIdle(logger) {
     app.model.active()["entries"][0]["name"] = "Подъём гантелей через стороны стоя с паузой в верхней точке";
     view.onUpdate(dc);
     app.heartRateZones = [90,110,130,150,170,190]; app.heartRate = 142; view.onUpdate(dc);
-    app.heartRate = 112; view.onUpdate(dc);
+    var samples = [25,89,90,111,142,160,180,200,250,null];
+    for (var sample=0; sample<samples.size(); sample++) {
+        app.heartRate = samples[sample]; view.onUpdate(dc);
+    }
+    app.model.active()["entries"][0]["name"] = "Рычажная Растяжка Икр (С Блинами) [Lever Calf Stretch]";
+    view.onUpdate(dc);
     var phases = ["1/10 L","10/10 R","1/10 Л","10/10 П"];
     for (var i=0; i<phases.size(); i++) {
         var phase = view.phaseLabel(dc,phases[i],true);
@@ -125,6 +130,56 @@ class PhoneStatusFixture extends OpenGymApp {
     function persist() { return durable; }
     function reconcileRecording() {}
     function updateAlerts(at) {}
+}
+
+(:test)
+class DeferredRecordingFixture extends PhoneStatusFixture {
+    var reconciliations = 0;
+    function initialize() { PhoneStatusFixture.initialize(); }
+    function reconcileRecording() { reconciliations += 1; }
+}
+
+(:test)
+function recordingSaveRunsAfterTheSnapshotOrCommandCallback(logger) {
+    var app = new DeferredRecordingFixture();
+    app.receive(WorkoutFixtures.snapshot(2));
+    Test.assert(app.recordingPending);
+    Test.assertEqual(app.reconciliations,0);
+    app.tick();
+    Test.assertEqual(app.reconciliations,1);
+    Test.assert(!app.recordingPending);
+    app.tick();
+    Test.assertEqual(app.reconciliations,1);
+    Test.assert(app.action("startSet"));
+    Test.assertEqual(app.reconciliations,1);
+    app.tick();
+    Test.assertEqual(app.reconciliations,2);
+    return true;
+}
+
+(:test)
+class ShutdownRecordingFixture extends PhoneStatusFixture {
+    var discarded = null;
+    function initialize() { PhoneStatusFixture.initialize(); recording = {}; recordingWid = model.wid(); }
+    function completeRecording(discard) { discarded = discard; recording = null; }
+}
+
+(:test)
+function exitBeforeRecordingTickHonorsDurableDiscard(logger) {
+    var local = new ShutdownRecordingFixture();
+    Test.assert(local.action("discard")); Test.assert(local.recordingPending);
+    local.onStop(null); Test.assertEqual(local.discarded,true);
+    var phone = new ShutdownRecordingFixture();
+    var snap = WorkoutFixtures.snapshot(2);
+    snap["state"]["active"] = null; snap["state"]["discarded"] = ["workout-a"];
+    phone.receive(snap); Test.assert(phone.recordingPending);
+    phone.onStop(null); Test.assertEqual(phone.discarded,true);
+    var active = new ShutdownRecordingFixture();
+    active.onStop(null); Test.assertEqual(active.discarded,false);
+    var failed = new ShutdownRecordingFixture(); failed.durable = false;
+    Test.assert(!failed.action("discard"));
+    failed.onStop(null); Test.assertEqual(failed.discarded,false);
+    return true;
 }
 
 (:test)

@@ -76,21 +76,28 @@ class WorkoutView extends WatchUi.View {
         var w = dc.getWidth(); var h = dc.getHeight(); var y = h*0.13; var height = dc.getFontHeight(smallFont);
         var colors = [0xa6afb9,0x6dbbff,0x99df80,0xffb35b,0xff7781];
         var zone = WorkoutDashboard.zone(app.heartRate,app.heartRateZones);
-        var color = zone == null ? SUBTLE : colors[zone-1];
+        var color = zone == null || zone == 0 ? SUBTLE : colors[zone-1];
         var bpm = app.heartRate == null ? "--" : WorkoutControls.decimal(app.heartRate);
         icon(dc,"heart",w*0.31,y+height*0.5,w*0.034,color);
         dc.setColor(color,Graphics.COLOR_TRANSPARENT); dc.drawText(w*0.35,y,smallFont,bpm,Graphics.TEXT_JUSTIFY_LEFT);
+        if (zone != null) { text(dc,w*0.23,y,"Z"+zone.toString(),smallFont,color,w*0.10); }
         text(dc,w*0.63,y,phase,smallFont,INK,w*0.29);
-        var barW = w*0.069; var gap = w*0.012; var start = (w-5*barW-4*gap)/2; var bottom = h*0.375;
-        var known = WorkoutDashboard.validZones(app.heartRateZones) && app.heartRate != null;
+        var barW = w*0.069; var gap = w*0.012; var start = (w-5*barW-4*gap)/2; var bottom = h*0.385;
+        var known = zone != null;
         for (var i=0; showZones && i<5; i++) {
             var selected = zone == i+1; var barH = h*(selected ? 0.026 : 0.014);
             var x = start+i*(barW+gap); var top = bottom-barH;
             dc.setColor(known ? colors[i] : TRACK,Graphics.COLOR_TRANSPARENT); dc.fillRoundedRectangle(x,top,barW,barH,2);
             if (selected) {
                 dc.setColor(0xfff4df,Graphics.COLOR_TRANSPARENT); dc.drawRoundedRectangle(x,top,barW,barH,2);
-                dc.fillPolygon([[x+barW/2-w*0.0065,bottom+w*0.008],[x+barW/2+w*0.0065,bottom+w*0.008],[x+barW/2,bottom+w*0.0145]]);
             }
+        }
+        if (showZones && known) {
+            // Z0 sits before the scale; never mislabel a below-zone reading as Z1.
+            var pointerX = zone == 0 ? start-w*0.027 : start+(zone-1)*(barW+gap)+barW/2;
+            var tip = bottom-h*0.030;
+            dc.setColor(0xfff4df,Graphics.COLOR_TRANSPARENT);
+            dc.fillPolygon([[pointerX-w*0.012,tip-h*0.018],[pointerX+w*0.012,tip-h*0.018],[pointerX,tip]]);
         }
         var pending = app.model.data["outbox"].size();
         if (pending > 0) {

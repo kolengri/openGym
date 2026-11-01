@@ -25,8 +25,9 @@ module WorkoutLayout {
     }
     // Width of the narrowest chord crossed by this text row, with an inset.
     function roundWidth(w, h, y, height) {
-        var top = Math.abs(2.0*y/h-1);
-        var bottom = Math.abs(2.0*(y+height)/h-1);
+        // Numeric.abs() works before CIQ 6.0.3; Math.abs() crashes older firmware.
+        var top = (2.0*y/h-1).abs();
+        var bottom = (2.0*(y+height)/h-1).abs();
         var edge = top > bottom ? top : bottom;
         if (edge >= 1) { return 0; }
         return (w*Math.sqrt(1-edge*edge)-w*0.04).toNumber();
