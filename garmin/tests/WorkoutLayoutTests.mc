@@ -58,7 +58,12 @@ function nativeDashboardRendersLongNamesNoticesAlertsAndIdle(logger) {
     app.model.active()["entries"][0]["name"] = "Подъём гантелей через стороны стоя с паузой в верхней точке";
     view.onUpdate(dc);
     app.heartRateZones = [90,110,130,150,170,190]; app.heartRate = 142; view.onUpdate(dc);
-    app.heartRate = 112; view.onUpdate(dc);
+    var samples = [25,89,90,111,142,160,180,200,250,null];
+    for (var sample=0; sample<samples.size(); sample++) {
+        app.heartRate = samples[sample]; view.onUpdate(dc);
+    }
+    app.model.active()["entries"][0]["name"] = "Рычажная Растяжка Икр (С Блинами) [Lever Calf Stretch]";
+    view.onUpdate(dc);
     var phases = ["1/10 L","10/10 R","1/10 Л","10/10 П"];
     for (var i=0; i<phases.size(); i++) {
         var phase = view.phaseLabel(dc,phases[i],true);

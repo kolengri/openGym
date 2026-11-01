@@ -17,6 +17,10 @@ CHARS = "".join(chr(c) for c in range(32, 127)) + "".join(chr(c) for c in range(
 
 def build(name, size):
     source = TTFont(SOURCE)
+    cmap = source.getBestCmap()
+    missing = [f"U+{ord(char):04X}" for char in CHARS if ord(char) not in cmap]
+    if missing:
+        raise ValueError("Source font is missing advertised glyphs: " + ", ".join(missing))
     source.flavor = None
     ttf = BytesIO()
     source.save(ttf)

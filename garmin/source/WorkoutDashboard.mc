@@ -11,7 +11,9 @@ module WorkoutDashboard {
         return true;
     }
     function zone(bpm, zones) {
-        if (!GymData.value(bpm,25,250) || !validZones(zones) || bpm < zones[0]) { return null; }
+        if (!GymData.value(bpm,25,250) || !validZones(zones)) { return null; }
+        // A valid reading below the configured first zone is known, not missing.
+        if (bpm < zones[0]) { return 0; }
         for (var i=1; i<zones.size(); i++) { if (bpm <= zones[i]) { return i; } }
         return 5;
     }

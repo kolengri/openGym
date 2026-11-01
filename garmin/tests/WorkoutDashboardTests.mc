@@ -5,7 +5,10 @@ function configuredHeartRateZonesHandleBoundariesAndMissingData(logger) {
     var zones = [90,110,130,150,170,190];
     Test.assert(WorkoutDashboard.validZones(zones));
     Test.assert(WorkoutDashboard.zone(null,zones) == null);
-    Test.assert(WorkoutDashboard.zone(89,zones) == null);
+    Test.assertEqual(WorkoutDashboard.zone(25,zones),0);
+    Test.assertEqual(WorkoutDashboard.zone(89,zones),0);
+    Test.assert(WorkoutDashboard.zone(24,zones) == null);
+    Test.assert(WorkoutDashboard.zone(251,zones) == null);
     Test.assertEqual(WorkoutDashboard.zone(90,zones),1);
     Test.assertEqual(WorkoutDashboard.zone(110,zones),1);
     Test.assertEqual(WorkoutDashboard.zone(111,zones),2);
