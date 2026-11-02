@@ -6,7 +6,7 @@ import { api } from '../lib/api.js'
 import { t } from '../lib/i18n.js'
 import { deviceId } from '../lib/push.js'
 import { MOBILE, nativePlatform } from '../lib/mobile.js'
-import { armRestAlert, bindNativeRest, disarmRestAlert, holdRestAlert, toneNative } from '../lib/rest-alert.js'
+import { armRestAlert, bindNativeRest, disarmRestAlert, holdRestAlert, completeWorkAlert, toneNative } from '../lib/rest-alert.js'
 import { useStore } from './useStore.js'
 import { REST_MAX } from '../lib/duration.js'
 import { accentValue } from '../lib/accent.js'
@@ -108,7 +108,7 @@ const runWork = (set, get) => {
   workTick = () => {
     const wk = get().work
     if (!wk) return
-    const left = Math.max(wk.overtime ? -MAX_WORK_OVERTIME_SEC : 0, Math.round((wk.endsAt - Date.now()) / 1000))
+    const left = Math.max(wk.overtime ? -MAX_WORK_OVERTIME_SEC : 0, Math.ceil((wk.endsAt - Date.now()) / 1000))
     const seenLive = !document.hidden && pageHiddenAt === null
     if (!document.hidden) pageHiddenAt = null
     if (left === wk.left) return
@@ -119,6 +119,10 @@ const runWork = (set, get) => {
         endTone(snd, endSound)
         alertBuzz([200, 100, 200]); get().flashTimer()
       }
+      if (!wk.alerted) completeWorkAlert(wk.endsAt, {
+        chimed: seenLive, sound: !!snd, tone: endSound, vibrate: st.vibrate !== false,
+        alarmBuzz: st.vibrate !== false && !!st.vibrateOnSilent,
+      })
       if (wk.overtime && left > -MAX_WORK_OVERTIME_SEC) { set({ work: { ...wk, left, alerted: true } }); return }
       const done = workDone || ownerDone(wk)
       get().stopWork()
@@ -549,8 +553,8 @@ export function restoreWork(now = Date.now()) {
   const total = Math.round(Number(saved.total))
   const drop = () => { try { ls.removeItem(WORK_KEY) } catch { /* nothing to drop */ } return false }
   if (!(total > 0) || !(saved.endsAt > 0) || !ownerSet(saved.owner)) return drop()
-  const wk = { left: total, total, endsAt: saved.endsAt, label: saved.label || '', overtime: !!saved.overtime, ...(saved.alerted ? { alerted: true } : {}), owner: saved.owner }
-  const left = Math.round((saved.endsAt - now) / 1000)
+  const wk = { left: total, total, endsAt: saved.endsAt, label: saved.label || '', overtime: !!saved.overtime, ...(saved.alerted && saved.endsAt <= now ? { alerted: true } : {}), owner: saved.owner }
+  const left = Math.ceil((saved.endsAt - now) / 1000)
   // Over while the app was away: held to the end (overtime past the target is not known, and
   // the target is what was planned), with no chime for an end nobody was there for.
   if (left <= 0 && !(wk.overtime && left > -MAX_WORK_OVERTIME_SEC)) {
@@ -570,7 +574,9 @@ restoreWork()
 // service first, then mirror that into the in-app timer. skip ends it. Seconds round up, as the
 // notification's clock does, so a pause in the last half second still holds a second here.
 bindNativeRest(ev => {
-  if (!ev) return
+  const timer = useUI.getState().timer
+  const wid = useStore.getState().S.active?.id
+  if (!ev || !timer?.nativeKey || !wid || String(ev.wid) !== String(wid) || ev.timerKey !== timer.nativeKey) return
   if (ev.type === 'skip') { useUI.getState().stopRest(); return }
   const left = Math.ceil((ev.leftMs || 0) / 1000)
   if (!(left > 0)) return

@@ -117,6 +117,17 @@ export function armRestAlert(at, opts = {}) {
   })
 }
 
+// Natural work completion is queued before clearing/replacing the timer. It must not be
+// dropped by a later arm/cancel, and carries its own sound settings if the alarm already ended.
+export function completeWorkAlert(at, opts = {}) {
+  if (!MOBILE || !(at > 0) || at > Date.now()) return Promise.resolve(false)
+  return enqueue(async () => {
+    const p = await restPlugin()
+    if (p?.platform !== 'android') return false
+    try { await p.RestAlert.complete({ at, ...opts }); return true } catch { return false }
+  })
+}
+
 export function disarmRestAlert() {
   token++
   if (!MOBILE) return

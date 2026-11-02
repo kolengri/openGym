@@ -109,10 +109,14 @@ public class RestTimerService extends Service {
         lastStartId = startId;
         String action = intent == null ? null : intent.getAction();
         if (RestAlert.ACTION_RESTORE.equals(action)) {
+            if (!wid.equals(text(intent, "wid", "")) || !timerKey.equals(text(intent, "timerKey", ""))) {
+                showOrStop();
+                return restartMode();
+            }
             if (running && !paused && endsAt <= System.currentTimeMillis()) clearTimer();
             if (intent.getBooleanExtra("restoreRest", true)) {
                 if (running && controls) emit(paused ? "pause" : "adjust");
-                else RestAlertPlugin.emit("skip", 0, 0, 0, false);
+                else RestAlertPlugin.emit("skip", 0, 0, 0, false, timerKey, wid);
             }
             if (running && !paused) { holdCpuUntilEnd(); handler.removeCallbacks(tick); tick.run(); }
             persist();
@@ -149,9 +153,9 @@ public class RestTimerService extends Service {
             ink = intent.getIntExtra("ink", ink);
             persist();
             showOrStop();
-            if (active && sameWorkout && intent.getBooleanExtra("reconcile", false)) {
+            if (active && sameWorkout && timerKey.equals(text(intent, "timerKey", "")) && intent.getBooleanExtra("reconcile", false)) {
                 if (running && controls) emit(paused ? "pause" : "adjust");
-                else if (!running && intent.getBooleanExtra("hasRest", false)) RestAlertPlugin.emit("skip", 0, 0, 0, false);
+                else if (!running && intent.getBooleanExtra("hasRest", false)) RestAlertPlugin.emit("skip", 0, 0, 0, false, timerKey, wid);
             }
             return restartMode();
         }
@@ -313,7 +317,7 @@ public class RestTimerService extends Service {
     private void reachEnd() {
         running = false;
         holdCpuBriefly();
-        RestAlert.fireFromCountdown(getApplicationContext(), endsAt);
+        RestAlert.fireFromCountdown(getApplicationContext(), endsAt, !controls);
     }
 
     /**
@@ -360,14 +364,14 @@ public class RestTimerService extends Service {
     private void finishSkip() {
         if (!controls) return;
         clearTimer();
-        RestAlertPlugin.emit("skip", 0, 0, 0, false);
+        RestAlertPlugin.emit("skip", 0, 0, 0, false, timerKey, wid);
         persist();
         showOrStop();
     }
 
     private void emit(String type) {
         long left = paused ? pausedLeft : Math.max(0, endsAt - System.currentTimeMillis());
-        RestAlertPlugin.emit(type, endsAt, totalMs, left, paused, timerKey);
+        RestAlertPlugin.emit(type, endsAt, totalMs, left, paused, timerKey, wid);
     }
 
     private void show() {
@@ -403,6 +407,8 @@ public class RestTimerService extends Service {
             if (!timerKey.equals(state.getStringExtra("timerKey"))) return false;
             Intent i = new Intent(app, RestTimerService.class).setAction(RestAlert.ACTION_RESTORE);
             i.putExtra("restoreRest", rest);
+            i.putExtra("wid", wid);
+            i.putExtra("timerKey", timerKey);
             if (Build.VERSION.SDK_INT >= 26) app.startForegroundService(i);
             else app.startService(i);
             return true;

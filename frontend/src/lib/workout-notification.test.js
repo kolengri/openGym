@@ -52,7 +52,7 @@ describe('Android workout notification lifetime', () => {
     // A rest tick/pause is native timer state; it never creates another workout card.
     const count = updateWorkoutNotification.mock.calls.length
     s.useUI.setState({ timer: { endsAt: Date.now() + 90000, left: 90, total: 90 } })
-    s.useUI.setState({ timer: { left: 80, total: 90, paused: true } })
+    s.useUI.setState({ timer: { left: 80, total: 90, paused: true, nativeKey: 'rest-b' } })
     expect(updateWorkoutNotification).toHaveBeenCalledTimes(count)
     s.useStore.setState({ S: state(null) })
     expect(updateWorkoutNotification).toHaveBeenLastCalledWith(null)
@@ -72,10 +72,10 @@ describe('Android workout notification lifetime', () => {
   it('reconciles native Pause/Skip on resume even when workout metadata did not change', async () => {
     const s = stores()
     stop = await startWorkoutNotificationSync(s)
-    s.useUI.setState({ timer: { left: 80, total: 90, paused: true } })
+    s.useUI.setState({ timer: { left: 80, total: 90, paused: true, nativeKey: 'rest-b' } })
     Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'visible' })
     document.dispatchEvent(new Event('visibilitychange'))
-    expect(updateWorkoutNotification).toHaveBeenLastCalledWith(expect.objectContaining({ reconcile: true, hasRest: true }))
+    expect(updateWorkoutNotification).toHaveBeenLastCalledWith(expect.objectContaining({ reconcile: true, hasRest: true, wid: 'w1', timerKey: 'rest-b' }))
     stop(); stop = null
     const count = updateWorkoutNotification.mock.calls.length
     s.useStore.setState({ S: state(null) })
@@ -87,4 +87,18 @@ describe('Android workout notification lifetime', () => {
     expect(updateWorkoutNotification).not.toHaveBeenCalled()
     expect(armRestAlert).not.toHaveBeenCalled()
   })
+})
+
+
+it('does not cancel a naturally ended work alarm while clearing work or replacing it with rest', async () => {
+  vi.useFakeTimers()
+  try {
+    const s = stores()
+    stop = await startWorkoutNotificationSync(s)
+    s.useUI.setState({ work: { endsAt: Date.now() + 1000, total: 1, label: 'Plank' } })
+    vi.advanceTimersByTime(1000)
+    s.useUI.setState({ work: null })
+    s.useUI.setState({ timer: { nativeKey: 'next-rest', left: 90 } })
+    expect(disarmRestAlert).not.toHaveBeenCalled()
+  } finally { vi.useRealTimers() }
 })

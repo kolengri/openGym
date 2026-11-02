@@ -11,6 +11,7 @@ vi.mock('../lib/mobile.js', async importOriginal => ({ ...(await importOriginal(
 vi.mock('../lib/rest-alert.js', () => ({
   armRestAlert: vi.fn(() => Promise.resolve(true)),
   holdRestAlert: vi.fn(),
+  completeWorkAlert: vi.fn(),
   disarmRestAlert: vi.fn(),
   bindNativeRest: vi.fn(cb => { h.native = cb }),
   toneNative: vi.fn(() => Promise.resolve(true)),
@@ -21,7 +22,7 @@ vi.mock('../lib/api.js', () => ({ api: vi.fn(() => Promise.resolve({ ok: true })
 import { useUI } from './useUI.js'
 import { useStore } from './useStore.js'
 import { api } from '../lib/api.js'
-import { armRestAlert, disarmRestAlert, holdRestAlert } from '../lib/rest-alert.js'
+import { armRestAlert, disarmRestAlert, holdRestAlert, completeWorkAlert } from '../lib/rest-alert.js'
 import { beep, chime } from '../lib/sound.js'
 import { toneNative } from '../lib/rest-alert.js'
 
@@ -33,20 +34,21 @@ const hide = hidden => {
 const pushes = () => api.mock.calls.filter(([p]) => p === '/api/push/rest-timer').map(([, o]) => JSON.parse(o.body).seconds)
 // What the notification's buttons send (RestTimerService.emit).
 const fromNotification = (type, leftSec, totalSec, paused = false) =>
-  h.native({ type, leftMs: leftSec * 1000, totalMs: totalSec * 1000, endsAt: paused ? 0 : Date.now() + leftSec * 1000, paused })
+  h.native({ wid: useStore.getState().S.active?.id, timerKey: useUI.getState().timer?.nativeKey, type, leftMs: leftSec * 1000, totalMs: totalSec * 1000, endsAt: paused ? 0 : Date.now() + leftSec * 1000, paused })
 
 let originalSettings
 beforeEach(() => {
   h.platform = 'android'
   vi.useFakeTimers()
   originalSettings = useStore.getState().S
-  useStore.setState({ S: { ...originalSettings, sound: true, timerFlash: false }, user: null })
+  useStore.setState({ S: { ...originalSettings, sound: true, timerFlash: false, active: { id: 'workout', entries: [] } }, user: null })
   useUI.setState({ timer: null, timerFlashId: 0 })
-  for (const f of [armRestAlert, holdRestAlert, disarmRestAlert, beep, chime, api, toneNative]) f.mockClear()
+  for (const f of [armRestAlert, holdRestAlert, disarmRestAlert, completeWorkAlert, beep, chime, api, toneNative]) f.mockClear()
   hide(false)
 })
 afterEach(() => {
   useUI.getState().stopRest()
+  useUI.getState().stopWork()
   useStore.setState({ S: originalSettings, user: null })
   hide(false)
   vi.useRealTimers()
@@ -228,14 +230,60 @@ describe('the notification’s own buttons', () => {
   it('a pause in the last half second still holds a second, so the bar does not end under it', () => {
     useUI.getState().startRest(10)
     vi.advanceTimersByTime(9_600)
-    h.native({ type: 'pause', leftMs: 400, totalMs: 10_000, endsAt: 0, paused: true })
+    h.native({ wid: useStore.getState().S.active?.id, timerKey: useUI.getState().timer?.nativeKey, type: 'pause', leftMs: 400, totalMs: 10_000, endsAt: 0, paused: true })
     vi.advanceTimersByTime(5_000)
     expect(useUI.getState().timer).toMatchObject({ left: 1, paused: true })
   })
 
   it('Skip ends the rest in the app', () => {
     useUI.getState().startRest(90)
-    h.native({ type: 'skip' })
+    fromNotification('skip', 0, 0)
     expect(useUI.getState().timer).toBe(null)
+  })
+})
+
+
+describe('native timer identity', () => {
+  it.each(['skip', 'pause', 'adjust'])('rejects delayed %s from an older rest', type => {
+    useUI.getState().startRest(60)
+    const oldKey = useUI.getState().timer.nativeKey
+    useUI.getState().startRest(90)
+    const current = useUI.getState().timer
+    const cancels = disarmRestAlert.mock.calls.length
+    h.native({ type, wid: 'workout', timerKey: oldKey, leftMs: 10000, totalMs: 60000, paused: true })
+    expect(useUI.getState().timer).toBe(current)
+    expect(disarmRestAlert).toHaveBeenCalledTimes(cancels)
+  })
+  it.each(['skip', 'pause', 'adjust'])('rejects %s from another workout or without identity', type => {
+    useUI.getState().startRest(90)
+    const current = useUI.getState().timer
+    h.native({ type, wid: 'old-workout', timerKey: current.nativeKey, leftMs: 10000 })
+    h.native({ type, leftMs: 10000 })
+    expect(useUI.getState().timer).toBe(current)
+  })
+})
+
+describe('natural work completion handoff', () => {
+  it('does not end when hidden in the final 400 ms, and hands completion over before starting a rest', () => {
+    const done = vi.fn(() => {
+      expect(completeWorkAlert).toHaveBeenCalledExactlyOnceWith(end, expect.objectContaining({ chimed: false }))
+      useUI.getState().startRest(90)
+    })
+    useUI.getState().startWork(10, 'Plank', done)
+    const end = useUI.getState().work.endsAt
+    vi.advanceTimersByTime(9600)
+    hide(true)
+    expect(useUI.getState().work).toMatchObject({ left: 1 })
+    expect(completeWorkAlert).not.toHaveBeenCalled()
+    vi.advanceTimersByTime(400)
+    expect(done).toHaveBeenCalledTimes(1)
+    expect(useUI.getState().work).toBeNull()
+    expect(toneNative).not.toHaveBeenCalled()
+  })
+  it('does not hand off an early finish', () => {
+    useUI.getState().startWork(10, 'Plank', vi.fn())
+    vi.advanceTimersByTime(9600)
+    useUI.getState().finishWorkEarly()
+    expect(completeWorkAlert).not.toHaveBeenCalled()
   })
 })

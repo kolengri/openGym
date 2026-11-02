@@ -47,11 +47,7 @@ public class RestAlertPlugin extends Plugin {
         return inFront;
     }
 
-    static void emit(String type, long endsAt, long totalMs, long leftMs, boolean paused) {
-        emit(type, endsAt, totalMs, leftMs, paused, "");
-    }
-
-    static void emit(String type, long endsAt, long totalMs, long leftMs, boolean paused, String timerKey) {
+    static void emit(String type, long endsAt, long totalMs, long leftMs, boolean paused, String timerKey, String wid) {
         if (instance == null) return;
         JSObject data = new JSObject();
         data.put("type", type);
@@ -60,6 +56,7 @@ public class RestAlertPlugin extends Plugin {
         data.put("leftMs", leftMs);
         data.put("paused", paused);
         data.put("timerKey", timerKey);
+        data.put("wid", wid);
         instance.notifyListeners("rest", data);
     }
 
@@ -119,6 +116,7 @@ public class RestAlertPlugin extends Plugin {
         Intent i = new Intent(app, RestTimerService.class).setAction(RestAlert.ACTION_WORKOUT);
         i.putExtra("active", Boolean.TRUE.equals(call.getBoolean("active", Boolean.FALSE)));
         i.putExtra("reconcile", Boolean.TRUE.equals(call.getBoolean("reconcile", Boolean.FALSE)));
+        i.putExtra("timerKey", call.getString("timerKey", ""));
         i.putExtra("hasRest", Boolean.TRUE.equals(call.getBoolean("hasRest", Boolean.FALSE)));
         i.putExtra("wid", call.getString("wid", ""));
         i.putExtra("workoutTitle", call.getString("title", "openGym"));
@@ -172,6 +170,21 @@ public class RestAlertPlugin extends Plugin {
             return;
         }
         RestAlert.playNow(ctx.getApplicationContext(), call.getString("kind", "chime"));
+        call.resolve();
+    }
+
+    /** A natural work end must survive a following rest replacing its alarm. */
+    @PluginMethod
+    public void complete(PluginCall call) {
+        Context ctx = getContext();
+        if (ctx == null) { call.reject("no context"); return; }
+        long at = number(call, "at", 0);
+        if (at <= 0 || at > System.currentTimeMillis()) { call.reject("work has not ended"); return; }
+        RestAlert.completeWork(ctx.getApplicationContext(), at,
+                Boolean.TRUE.equals(call.getBoolean("chimed", Boolean.FALSE)),
+                Boolean.TRUE.equals(call.getBoolean("sound", Boolean.FALSE)), call.getString("tone", "chime"),
+                !Boolean.FALSE.equals(call.getBoolean("vibrate", Boolean.TRUE)),
+                Boolean.TRUE.equals(call.getBoolean("alarmBuzz", Boolean.FALSE)));
         call.resolve();
     }
 

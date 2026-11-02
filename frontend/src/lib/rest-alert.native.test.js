@@ -401,3 +401,23 @@ describe('the notification permission never holds the rest alarm back', () => {
     expect(h.request).not.toHaveBeenCalled()
   })
 })
+
+
+describe('natural work completion bridge ordering', () => {
+  it('hands a due completion to Android before cancellation and a following rest arm', async () => {
+    const alert = await import('./rest-alert.js')
+    await alert.armRestAlert(Date.now() + 1000, { controls: false })
+    const completion = alert.completeWorkAlert(Date.now() - 1, { chimed: false, sound: true })
+    alert.disarmRestAlert()
+    await alert.armRestAlert(Date.now() + 90000)
+    await expect(completion).resolves.toBe(true)
+    expect(h.calls.slice(-3)).toEqual(['complete', 'cancel', 'schedule'])
+  })
+  it('rejects an early completion and leaves iOS unchanged', async () => {
+    const alert = await import('./rest-alert.js')
+    await expect(alert.completeWorkAlert(Date.now() + 400)).resolves.toBe(false)
+    h.platform = 'ios'
+    await expect(alert.completeWorkAlert(Date.now() - 1)).resolves.toBe(false)
+    expect(h.calls).not.toContain('complete')
+  })
+})

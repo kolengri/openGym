@@ -36,7 +36,7 @@ export async function startWorkoutNotificationSync({ useStore, useUI }) {
     if (json === last && !reconcile) return
     last = json
     const timer = useUI.getState().timer
-    updateWorkoutNotification(snapshot ? { ...snapshot, reconcile, hasRest: !!timer && !timer.ready } : null)
+    updateWorkoutNotification(snapshot ? { ...snapshot, reconcile, hasRest: !!timer && !timer.ready, timerKey: timer?.nativeKey || '' } : null)
       .then(ok => { if (!ok && last === json) last = null })
   }
   const syncWork = () => {
@@ -54,7 +54,9 @@ export async function startWorkoutNotificationSync({ useStore, useUI }) {
         sound: !!S.sound, tone: restSoundOf(S), vibrate: S.vibrate !== false,
         alarmBuzz: S.vibrate !== false && !!S.vibrateOnSilent,
       })
-    } else if (previous) disarmRestAlert()
+    // A natural end is handed to native by runWork before clearing the work state.
+    // Only an early stop cancels its alarm; a following rest can safely replace it.
+    } else if (previous > Date.now()) disarmRestAlert()
   }
   const offStore = useStore.subscribe(() => { send(); syncWork() })
   const offUI = useUI.subscribe((s, prev) => { if (s.work !== prev.work) syncWork() })

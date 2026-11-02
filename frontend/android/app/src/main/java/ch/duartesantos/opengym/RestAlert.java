@@ -70,7 +70,7 @@ public final class RestAlert {
     private static final long[] VIBRATE = new long[] {0, 200, 100, 200, 100, 400};
 
     private static AudioTrack current;
-    private static long firedFor;
+    private static final CompletionGate completionGate = new CompletionGate();
 
     private RestAlert() {}
 
@@ -96,6 +96,7 @@ public final class RestAlert {
         intent.putExtra("importance", importance == null ? "high" : importance);
         intent.putExtra("localOnly", localOnly);
         intent.putExtra("at", at);
+        intent.putExtra("workTimer", !controls);
         PendingIntent pi = PendingIntent.getBroadcast(ctx, id, intent, FLAGS);
         AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
         boolean exact = canExact(am);
@@ -146,7 +147,7 @@ public final class RestAlert {
      * (on an emulator it came 50 seconds after a 90-second rest), so the countdown sounds the end
      * and the alarm is only the fallback for a countdown that was not running.
      */
-    static void fireFromCountdown(Context ctx, long at) {
+    static void fireFromCountdown(Context ctx, long at, boolean workTimer) {
         cancelAlarmOnly(ctx, NOTIFICATION_ID);
         Intent intent = alarmIntent(ctx);
         intent.putExtra("id", NOTIFICATION_ID);
@@ -157,19 +158,57 @@ public final class RestAlert {
         intent.putExtra("alarmBuzz", lastAlarmBuzz);
         intent.putExtra("channelId", lastChannel);
         intent.putExtra("at", at);
+        intent.putExtra("workTimer", workTimer);
         new Thread(() -> fire(ctx, intent), "opengym-rest").start();
     }
 
-    /** One alert per end: the countdown and an exact alarm reach the same end in the same instant. */
-    private static synchronized boolean claim(long at) {
-        if (at > 0 && at == firedFor) return false;
-        firedFor = at;
-        return true;
+    static void completeWork(Context ctx, long at, boolean chimed, boolean sound, String tone, boolean vibrate, boolean alarmBuzz) {
+        if (chimed) {
+            completionGate.claim(at); // The visible page already owns this end signal.
+            completeCountdown(ctx, at);
+            return;
+        }
+        Intent intent = alarmIntent(ctx);
+        intent.putExtra("at", at);
+        intent.putExtra("sound", sound);
+        intent.putExtra("tone", tone);
+        intent.putExtra("vibrate", vibrate);
+        intent.putExtra("alarmBuzz", alarmBuzz);
+        intent.putExtra("workCompletion", true);
+        new Thread(() -> fire(ctx, intent), "opengym-work").start();
+    }
+
+    /** Shared by alarm/countdown callbacks and the explicit work handoff. No Android runtime
+     * is needed to check the visibility transition and deduplication ordering. */
+    static final class CompletionGate {
+        enum Outcome { DUPLICATE, PAGE, NATIVE }
+        private long firedFor;
+
+        synchronized boolean claim(long at) {
+            if (at > 0 && at == firedFor) return false;
+            firedFor = at;
+            return true;
+        }
+
+        synchronized Outcome begin(long at, boolean foreground, boolean workTimer, boolean explicitWork) {
+            boolean page = foreground && !explicitWork;
+            // Only work has a later JS completion handoff. An ordinary rest must consume its
+            // claim even on screen, so a second dispatched callback cannot sound after hiding.
+            if (!(page && workTimer) && !claim(at)) return Outcome.DUPLICATE;
+            return page ? Outcome.PAGE : Outcome.NATIVE;
+        }
     }
 
     /** Runs off the main thread. Holds the CPU until the tone has finished. */
     public static void fire(Context ctx, Intent intent) {
-        if (!claim(intent.getLongExtra("at", 0))) return;
+        CompletionGate.Outcome outcome = completionGate.begin(intent.getLongExtra("at", 0),
+                RestAlertPlugin.appInFront(), intent.getBooleanExtra("workTimer", false),
+                intent.getBooleanExtra("workCompletion", false));
+        if (outcome == CompletionGate.Outcome.DUPLICATE) return;
+        if (outcome == CompletionGate.Outcome.PAGE) {
+            completeCountdown(ctx, intent.getLongExtra("at", 0));
+            return;
+        }
         PowerManager.WakeLock cpu = null;
         try {
             PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
@@ -177,14 +216,6 @@ public final class RestAlert {
             cpu.acquire(10_000);
         } catch (Exception ignored) { /* tone still attempts without the lock */ }
         try {
-            // The app is on screen: the page has chimed, buzzed and flashed the end itself, and
-            // its bar says Ready. A tone and a banner on top would say it twice. Asking the page
-            // to hush this alarm instead raced it: the page's last tick and this alarm land in
-            // the same few milliseconds, and whichever came first decided.
-            if (RestAlertPlugin.appInFront()) {
-                completeCountdown(ctx, intent.getLongExtra("at", 0));
-                return;
-            }
             boolean vibrate = intent.getBooleanExtra("vibrate", true);
             boolean alarmBuzz = vibrate && intent.getBooleanExtra("alarmBuzz", false);
             // The workout card stays quiet. Its end signal is played directly, never as a
