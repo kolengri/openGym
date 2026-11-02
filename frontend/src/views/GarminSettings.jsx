@@ -5,9 +5,11 @@ import { configureGarmin, garminDevices, garminStatus, garminConnection, onGarmi
 import GarminCloudSettings from '../components/GarminCloudSettings.jsx'
 import { GarminConnectionDetails } from '../components/GarminLiveStatus.jsx'
 import { useStore } from '../store/useStore.js'
+import { isOn } from '../lib/modules.js'
 
 export default function GarminSettingsPage() {
   const wid = useStore(s => s.S.active?.id)
+  const watchOn = useStore(s => isOn(s.S, 'watch'))
   const [status, setStatus] = useState(null)
   const [devices, setDevices] = useState([])
   const [selected, setSelected] = useState('')
@@ -51,6 +53,7 @@ export default function GarminSettingsPage() {
   return <>
     <Section className="garmin-settings">
       <Row icon="watch" title={t('Garmin')} subtitle={line} />
+      {!watchOn && <p className="small muted">{t('Your watch stops getting workouts while Watch is off. It stays paired.')}</p>}
       {status?.enabled && <GarminConnectionDetails connection={garminConnection(wid)} />}
       {status?.deviceName && <p className="small muted" style={{ padding: '0 16px', overflowWrap: 'anywhere' }}>{status.deviceName}</p>}
       {!status?.enabled && devices.length > 0 && <SelectRow icon="watch" title={t('Select a watch')} value={selected}

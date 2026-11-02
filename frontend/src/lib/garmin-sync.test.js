@@ -278,3 +278,24 @@ describe('explicit connection', () => {
     expect(bridge.configure).toHaveBeenCalledExactlyOnceWith({ enabled: true, deviceId: 'synthetic' })
   })
 })
+
+describe('beta11 with per-exercise phone units', () => {
+  it('keeps profile-unit wire numbers while the shared watch snapshot uses pinned units', () => {
+    const S = { unit: 'kg', restSec: 60, workouts: [], exUnit: { '0025': { unit: 'lb', _ts: 1 } }, active: snapshot().active }
+    const phoneWatch = buildSnapshot(S)
+    expect(phoneWatch.active.entries[0].unit).toBe('lb')
+    expect(phoneWatch.active.entries[0].sets[0].w).toBeCloseTo(88.185, 2)
+    const wire = garminSnapshot(buildSnapshot(S, { exerciseUnits: false }), { sourceActive: S.active })
+    expect(wire.active.unit).toBe('kg')
+    expect(wire.active.entries[0].sets[0].w).toBe(40)
+    expect(wire.active.entries[0]).not.toHaveProperty('unit')
+  })
+  it('translates incoming Garmin profile weights into the shared handler’s exercise unit', () => {
+    const S = { unit: 'kg', restSec: 60, workouts: [], exUnit: { '0025': { unit: 'lb', _ts: 1 } }, active: snapshot().active }
+    const setDone = vi.fn()
+    const stop = bindWatchActions({ setDone })
+    applyEvents([event('pinned-garmin', 'setDone', { w: 45, source: 'garmin' })], () => ({ S }))
+    expect(setDone).toHaveBeenCalledWith(0, 0, expect.objectContaining({ w: 99.208, source: 'garmin' }))
+    stop()
+  })
+})

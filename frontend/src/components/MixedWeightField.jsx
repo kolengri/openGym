@@ -3,7 +3,9 @@ import { useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
 import { Button, NumberField, Segmented } from './ui.jsx'
 import { baseWeightFor } from '../lib/plates.js'
-import { fmtPlate } from '../lib/format.js'
+import { cleanNum, fmtPlate } from '../lib/format.js'
+import { exUnitOf, exView } from '../lib/ex-unit.js'
+import { sessionGymView } from '../lib/gym-inventory.js'
 import { t } from '../lib/i18n.js'
 
 export const LB_PER_KG = 2.2046226218
@@ -20,15 +22,16 @@ export function weightTargetGuard(store) {
   const initial = store.getState()
   const owner = initial.user?.id ?? null, unit = initial.S.unit, wid = initial.S.active?.id
   const entries = JSON.stringify(initial.S.active?.entries)
+  const pins = JSON.stringify(initial.S.exUnit)
   let valid = true
   const same = state => (state.user?.id ?? null) === owner && state.S.unit === unit &&
-    state.S.active?.id === wid && JSON.stringify(state.S.active?.entries) === entries
+    state.S.active?.id === wid && JSON.stringify(state.S.exUnit) === pins && JSON.stringify(state.S.active?.entries) === entries
   let stop = null
   const listen = () => { stop ||= store.subscribe(state => { if (!same(state)) valid = false }) }
   const dispose = () => { stop?.(); stop = null }
   listen()
   return { listen, dispose, matches: s => valid && same(store.getState()) && s?.unit === unit &&
-    s?.active?.id === wid && JSON.stringify(s?.active?.entries) === entries }
+    s?.active?.id === wid && JSON.stringify(s?.exUnit) === pins && JSON.stringify(s?.active?.entries) === entries }
 }
 
 // Keep the exact profile-unit value separate from the rounded conversion preview. A unit
@@ -85,17 +88,17 @@ function Calculator({ value, unit, barWeight, onApply, close, guard }) {
   </div>
 }
 
-/** The logged number stays in the profile's unit; conversion is an explicit per-row action. */
+/** Edits use the exercise's displayed unit; the caller stores them in the profile's unit. */
 export default function MixedWeightField({ value, onChange, unit, exerciseId }) {
   const open = () => {
     const initial = useStore.getState()
-    if (initial.S.unit !== unit) return
-    const base = exerciseId ? baseWeightFor(initial.S, exerciseId) : 0
+    if (exUnitOf(initial.S, exerciseId) !== unit) return
+    const base = exerciseId ? baseWeightFor(exView(sessionGymView(initial.S), exerciseId), exerciseId) : 0
     const guard = weightTargetGuard(useStore)
     useUI.getState().openSheet(close => <Calculator value={value} unit={unit} barWeight={base} guard={guard}
       close={close} onApply={onChange} />)
   }
-  const displayed = typeof value === 'number' ? Math.round(value * 100) / 100 : value
+  const displayed = cleanNum(value)
   const readout = displayed === '' || displayed == null ? '–' : displayed
   return <button type="button" className="weight-value" aria-label={`${t('Weight calculator')}: ${readout} ${unit}`} title={t('Weight calculator')} onClick={open}>
     {readout}

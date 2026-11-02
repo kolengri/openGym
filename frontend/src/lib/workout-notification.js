@@ -28,9 +28,9 @@ export async function startWorkoutNotificationSync({ useStore, useUI }) {
   if (!MOBILE || await nativePlatform() !== 'android') return () => {}
   let last = null, workEnd = null
   const send = (reconcile = false) => {
-    const { S, ready } = useStore.getState()
+    const { S, ready, tourSandbox } = useStore.getState()
     // Boot restores the private phone copy asynchronously; an empty copy must not end it.
-    if (!ready) return
+    if (!ready || tourSandbox) return
     const snapshot = buildWorkoutNotification(S)
     const json = JSON.stringify(snapshot)
     if (json === last && !reconcile) return
@@ -40,9 +40,11 @@ export async function startWorkoutNotificationSync({ useStore, useUI }) {
       .then(ok => { if (!ok && last === json) last = null })
   }
   const syncWork = () => {
-    if (!useStore.getState().ready) return
+    if (!useStore.getState().ready || useStore.getState().tourSandbox) return
     const { S } = useStore.getState()
-    const work = S.active && !S.active.editingWorkoutId ? useUI.getState().work : null
+    const running = S.active && !S.active.editingWorkoutId ? useUI.getState().work : null
+    // Automatic work owns its complete native forecast, including after restoration.
+    const work = running?.paused || running?.auto ? null : running
     const end = work?.endsAt || null
     if (end === workEnd) return
     const previous = workEnd

@@ -1,6 +1,7 @@
 import { MOBILE, isAndroid } from './mobile.js'
 import { stravaWorkoutFit } from './strava-export.js'
 import { toBase64 } from './media-store-fs.js'
+import { isOn } from './modules.js'
 
 let pluginPromise = null
 let draining = null
@@ -31,7 +32,7 @@ export function garminCloudErrorMessage(code) {
 /** Actual Bluetooth samples only. Missing/offline intervals are never filled in. */
 export function appendGarminCloudHeartRate(state, sample) {
   const active = state.active
-  if (state.garminCloudAuto !== true || !active || active.id !== sample?.wid ||
+  if (state.garminCloudAuto !== true || !isOn(state, 'health') || !active || active.id !== sample?.wid ||
     !Number.isFinite(sample.at) || sample.at < active.start || !Number.isFinite(sample.bpm) || sample.bpm < 25 || sample.bpm > 250) return false
   const rows = active.garminHrSamples ||= []
   if (rows.length && sample.at <= rows[rows.length - 1][0]) return false
@@ -93,7 +94,7 @@ function nextJob(state) {
   return state.S.workouts?.find(w => {
     const job = w.garminCloudUpload
     return completed(w) && job && ['pending', 'uploading'].includes(job.status) &&
-      job.sessionId === state.S.garminCloudSessionId && (job.manual || state.S.garminCloudAuto === true)
+      job.sessionId === state.S.garminCloudSessionId && (job.manual || (state.S.garminCloudAuto === true && isOn(state.S, 'health')))
   })
 }
 
@@ -105,12 +106,13 @@ export function drainGarminCloudUploads(store) {
     if (!p) return
     while (store.getState().ready !== false) {
       const initial = store.getState()
+      if (initial.tourSandbox) return
       const workout = nextJob(initial)
       if (!workout) return
       const owner = ownerOf(initial)
       const sessionId = initial.S.garminCloudSessionId
       const wid = workout.id
-      const belongs = () => ownerOf(store.getState()) === owner && store.getState().S.garminCloudSessionId === sessionId
+      const belongs = () => !store.getState().tourSandbox && ownerOf(store.getState()) === owner && store.getState().S.garminCloudSessionId === sessionId
       const patch = fields => {
         if (!belongs()) return
         store.getState().update(s => {
@@ -138,7 +140,7 @@ export function drainGarminCloudUploads(store) {
         const latest = store.getState().S
         const latestWorkout = latest.workouts.find(w => w.id === wid)
         if (latestWorkout?.garminCloudUpload?.sessionId !== sessionId || latestWorkout.garminCloudUpload.status !== 'uploading') return
-        if (workout.garminCloudUpload.manual !== true && latest.garminCloudAuto !== true) { patch({ status: 'pending' }); return }
+        if (workout.garminCloudUpload.manual !== true && (latest.garminCloudAuto !== true || !isOn(latest, 'health'))) { patch({ status: 'pending' }); return }
         if (initial.S.stravaShareWeights === true && latest.stravaShareWeights !== true) {
           patch({ status: 'pending' })
           continue
@@ -187,7 +189,7 @@ export async function startGarminCloudSync(store) {
     const state = store.getState()
     if (state.ready === false) return
     const eligible = w => w.garminCloudUpload?.status === 'failed' && w.garminCloudUpload.error === 'network_error' &&
-      w.garminCloudUpload.sessionId === state.S.garminCloudSessionId && (w.garminCloudUpload.manual || state.S.garminCloudAuto === true)
+      w.garminCloudUpload.sessionId === state.S.garminCloudSessionId && (w.garminCloudUpload.manual || (state.S.garminCloudAuto === true && isOn(state.S, 'health')))
     if (state.S.workouts?.some(eligible)) state.update(s => { s.workouts.filter(eligible).forEach(w => { w.garminCloudUpload.status = 'pending' }) })
     kick()
   }

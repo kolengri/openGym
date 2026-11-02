@@ -188,3 +188,25 @@ it('never awaits the then property of the native Capacitor plugin proxy', async 
   expect(bridge.then).not.toHaveBeenCalled()
   expect(bridge.upload).toHaveBeenCalledOnce()
 })
+
+it('pauses automatic jobs while Health is off and resumes them without resetting the link', async () => {
+  const store = storeOf({ modules: { health: false } })
+  const job = store.getState().S.workouts[0]
+  queueGarminCloudUpload(store.getState().S, job)
+  await drainGarminCloudUploads(store)
+  expect(bridge.upload).not.toHaveBeenCalled()
+  expect(job.garminCloudUpload.status).toBe('pending')
+  store.getState().update(s => { s.modules.health = true })
+  await drainGarminCloudUploads(store)
+  expect(bridge.upload).toHaveBeenCalledTimes(1)
+  expect(bridge.disconnect).not.toHaveBeenCalled()
+})
+
+it('never submits a tour practice workout to Garmin Connect', async () => {
+  const store = storeOf()
+  queueGarminCloudUpload(store.getState().S, store.getState().S.workouts[0])
+  store.getState().tourSandbox = true
+  await drainGarminCloudUploads(store)
+  expect(bridge.status).not.toHaveBeenCalled()
+  expect(bridge.upload).not.toHaveBeenCalled()
+})

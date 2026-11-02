@@ -257,6 +257,7 @@ public class RestTimerService extends Service {
             handler.removeCallbacks(tick);
             releaseCpu();
             RestAlert.cancelAlarmOnly(this, RestAlert.NOTIFICATION_ID);
+            RestAlert.clearChain(this, endsAt);
         } else {
             endsAt = System.currentTimeMillis() + pausedLeft;
             paused = false;
@@ -277,6 +278,7 @@ public class RestTimerService extends Service {
      */
     private void hold(long leftMs, long total) {
         if (leftMs <= 0) return;
+        RestAlert.clearChain(this, endsAt);
         paused = true;
         pausedLeft = leftMs;
         if (total > 0) totalMs = total;
@@ -363,8 +365,11 @@ public class RestTimerService extends Service {
 
     private void finishSkip() {
         if (!controls) return;
+        boolean chained = RestAlert.hasCues();
+        long now = System.currentTimeMillis();
         clearTimer();
-        RestAlertPlugin.emit("skip", 0, 0, 0, false, timerKey, wid);
+        RestAlertPlugin.emit("skip", now, 0, 0, false, timerKey, wid);
+        if (chained) RestAlert.fireFromCountdown(getApplicationContext(), now, false);
         persist();
         showOrStop();
     }
@@ -416,6 +421,7 @@ public class RestTimerService extends Service {
     }
 
     private void clearTimer() {
+        RestAlert.clearChain(this, endsAt);
         running = false;
         paused = false;
         endsAt = 0;

@@ -4,6 +4,7 @@ import { useStore } from '../store/useStore.js'
 import { t } from '../lib/i18n.js'
 import { connectGarminCloud, disconnectGarminCloud, garminCloudErrorMessage, garminCloudStatus } from '../lib/garmin-cloud.js'
 import GarminHealthSettings from './GarminHealthSettings.jsx'
+import { isOn } from '../lib/modules.js'
 
 export default function GarminCloudSettings() {
   const state = useStore(s => s.S)
@@ -70,6 +71,7 @@ export default function GarminCloudSettings() {
     <p className="small muted">{t('Heart-rate samples received from the watch are included. Bluetooth or sleeping-phone gaps are not reconstructed.')}</p>
     {error && <p className="small muted" role="alert">{t(garminCloudErrorMessage(error))}</p>}
     </div>
-    <GarminHealthSettings connected={connected} />
+    {isOn(state, 'health') ? <GarminHealthSettings connected={connected} />
+      : <p className="small muted">{t('{0} stops syncing while Health is off. Nothing is disconnected, and it catches up once Health is back.', 'Garmin Connect')}</p>}
   </Section>
 }

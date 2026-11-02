@@ -102,3 +102,13 @@ it('does not cancel a naturally ended work alarm while clearing work or replacin
     expect(disarmRestAlert).not.toHaveBeenCalled()
   } finally { vi.useRealTimers() }
 })
+
+it('does not replace the native workout card or arm timers for tour practice', async () => {
+  const s = stores()
+  s.useStore.setState({ tourSandbox: true })
+  const end = Date.now() + 30000
+  s.useUI.setState({ work: { endsAt: end, total: 30, left: 30, label: 'Practice' } })
+  stop = await startWorkoutNotificationSync(s)
+  expect(updateWorkoutNotification).not.toHaveBeenCalled()
+  expect(armRestAlert).not.toHaveBeenCalled()
+})
