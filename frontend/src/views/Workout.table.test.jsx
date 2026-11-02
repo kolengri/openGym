@@ -177,4 +177,45 @@ describe('compact workout table', () => {
     S.workouts = []; routine.ex[0].weight = 32.5
     expect(buildSessionEntries(S, routine)[0].sets[0]).toMatchObject({ w: 32.5, r: 10, done: false })
   })
+
+  it.each([false, true])('provides clickable navigation with chips disabled (superset: %s)', grouped => {
+    mount(entry(), { wc: { exerciseChips: false } })
+    act(() => useStore.getState().update(s => {
+      if (grouped) {
+        s.active.entries[0].sg = 'pair'
+        s.active.entries.push(entry(undefined, { id: '0031', sg: 'pair' }))
+      }
+      s.active.entries.push(entry(undefined, { id: '0047' }))
+    }))
+    expect(host.querySelector('.wchips')).toBeNull()
+    click(host.querySelector('[aria-label="Workout options"]'))
+    click([...host.querySelectorAll('.menu-item')].find(el => el.querySelector('.tt')?.textContent === 'Exercises'))
+    const choices = host.querySelectorAll('.sheet .menu-item')
+    expect(choices).toHaveLength(2)
+    click(choices[1])
+    expect(useStore.getState().S.active.cur).toBe(grouped ? 2 : 1)
+    expect(editor()).toBeNull()
+    expect(useStore.getState().S.active.entries.every(e => e.sets.every(s => !s.done))).toBe(true)
+    expect([...host.querySelectorAll('button')].some(el => ['Prev', 'Next'].includes(el.textContent.trim()))).toBe(false)
+  })
+
+  it('ignores navigation from a menu belonging to a replaced workout', () => {
+    mount(entry(), { wc: { exerciseChips: false } })
+    act(() => useStore.getState().update(s => { s.active.entries.push(entry(undefined, { id: '0047' })) }))
+    click(host.querySelector('[aria-label="Workout options"]'))
+    click([...host.querySelectorAll('.menu-item')].find(el => el.querySelector('.tt')?.textContent === 'Exercises'))
+    act(() => useStore.getState().update(s => { s.active.id = 'replacement' }))
+    click(host.querySelectorAll('.sheet .menu-item')[1])
+    expect(useStore.getState().S.active.cur).toBe(0)
+  })
+
+  it('navigates back to the former current unit if a rest advanced while the menu was open', () => {
+    mount(entry(), { wc: { exerciseChips: false } })
+    act(() => useStore.getState().update(s => { s.active.entries.push(entry(undefined, { id: '0047' })) }))
+    click(host.querySelector('[aria-label="Workout options"]'))
+    click([...host.querySelectorAll('.menu-item')].find(el => el.querySelector('.tt')?.textContent === 'Exercises'))
+    act(() => useStore.getState().update(s => { s.active.cur = 1 }))
+    click(host.querySelectorAll('.sheet .menu-item')[0])
+    expect(useStore.getState().S.active.cur).toBe(0)
+  })
 })

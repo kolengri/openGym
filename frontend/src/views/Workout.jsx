@@ -1794,12 +1794,27 @@ function ActiveWorkout() {
   // session away: that is the Finish sheet's (#751).
   // Layout here stays this session's own (s.active.workoutView); the settings sheet's Layout is
   // the saved one.
+  const openExerciseNavigation = () => {
+    const active = useStore.getState().S.active
+    if (!active) return
+    const structure = a => JSON.stringify(a.entries.map(e => [e.id, e.rid, e.sg]))
+    const owner = structure(active)
+    menuSheet({ title: t('Exercises'), items: supersetUnits(active.entries).map((unit, i) => ({
+      label: `${i + 1}. ` + unit.map(idx => exerciseNameText(exOr(active.entries[idx].id))).join(' + '),
+      on: unit.includes(active.cur),
+      onClick: () => {
+        const fresh = useStore.getState().S.active
+        if (fresh?.id === active.id && structure(fresh) === owner) pickChip({ unit })
+      },
+    })) })
+  }
   const openViewMenu = () => menuSheet({
     sections: [
       { items: [
         { icon: 'gear', accent: true, chevron: true, label: t('Workout settings'),
           sub: [S.restSec > 0 ? t('{0} rest', fmtRest(S.restSec)) : t('No rest timer'), S.sound ? t('Sound') : t('Silent')].join(' · '),
           onClick: workoutSettingsSheet },
+        !listMode && !wc.exerciseChips && units.length > 1 && { icon: 'list', chevron: true, label: t('Exercises'), onClick: openExerciseNavigation },
       ] },
       { items: [
         A.backfill && A.entries.length > 0 && { icon: 'checkCircle', label: t('Mark all sets done'), onClick: markAllDone },
@@ -2326,7 +2341,7 @@ function ActiveWorkout() {
       else window.setTimeout(go, 0)
       return
     }
-    if (chip.unit.includes(cur)) return
+    if (chip.unit.includes(useStore.getState().S.active?.cur)) return
     update(s => { if (s.active) s.active.cur = chip.unit[0] })
   }
   // What the session hits so far (#670). It rides at the end of the chip row, which is taller
