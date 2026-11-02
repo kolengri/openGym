@@ -247,8 +247,8 @@ export const DEF = {
   // 'plan' opens at the routine's own sets × reps and lets history and progression decide the
   // weight; 'last' carries the reps over from the last session, the way it always worked before,
   // and the weight too for an exercise with progression off (nothing else decides it).
-  // Absent reads as 'plan' too, which is what the MCP bridge sees on a raw state file.
-  startFrom: 'plan',
+  // Last session is the default; an explicit 'plan' keeps the routine's prescribed reps.
+  startFrom: 'last',
   // Warm-ups that build themselves from the work weight (Settings → Workout, lib/warmup-ramp.js):
   // 'off', 'compounds' or 'all'. Absent reads as off, the way every plan worked before.
   warmupAuto: 'off',

@@ -59,6 +59,7 @@ const mocks = vi.hoisted(() => {
     },
   })
   state.uiSnapshot = () => ({
+    openSheet: content => { state.sheet = content; state.render?.() },
     timer: state.timer,
     work: state.work,
     startRest: state.startRest,
@@ -145,6 +146,12 @@ let dom
 let root
 let container
 
+function renderScene() {
+  mocks.render = renderScene
+  const close = () => { mocks.sheet = null; renderScene() }
+  root.render(<><Workout />{mocks.sheet?.(close)}</>)
+}
+
 function exercise(id, sets, extra = {}) {
   return {
     id,
@@ -189,9 +196,9 @@ function installDom() {
 }
 
 async function mount(entries, cur = 0, overrides = {}) {
-  mocks.S = workout(entries, cur, overrides)
+  mocks.S = workout(entries, cur, { ...(mocks.inlineLayout ? { workoutView: 'list' } : {}), ...overrides })
   installDom()
-  await act(async () => { root.render(React.createElement(Workout)) })
+  await act(async () => { renderScene() })
 }
 
 async function unmount() {
@@ -208,17 +215,32 @@ async function toggleSet(index) {
   await act(async () => { checkbox.dispatchEvent(new dom.Event('click', { bubbles: true })) })
 }
 
-async function pressNext() {
-  const button = [...container.querySelectorAll('button')]
-    .find(button => button.textContent.trim() === 'Next')
-  expect(button).toBeTruthy()
-  await act(async () => { button.dispatchEvent(new dom.Event('click', { bubbles: true })) })
+async function swipeNext() {
+  const surface = container.querySelector('[data-testid="workout-swipe-surface"]')
+  expect(surface).toBeTruthy()
+  surface.getBoundingClientRect = () => ({ width: 360 })
+  const oldMatchMedia = globalThis.matchMedia
+  globalThis.matchMedia = () => ({ matches: true })
+  try {
+    for (const [type, x] of [['pointerdown', 300], ['pointermove', 200], ['pointerup', 100]]) {
+      const event = new dom.Event(type, { bubbles: true, cancelable: true })
+      Object.assign(event, { pointerId: 1, pointerType: 'touch', clientX: x, clientY: 100 })
+      await act(async () => { surface.dispatchEvent(event) })
+    }
+  } finally {
+    if (oldMatchMedia === undefined) delete globalThis.matchMedia
+    else globalThis.matchMedia = oldMatchMedia
+  }
 }
 
 const buttonNamed = name => container.querySelector(`button[aria-label="${name}"]`)
 const click = async element => {
   expect(element).toBeTruthy()
   await act(async () => { element.dispatchEvent(new dom.Event('click', { bubbles: true })) })
+}
+
+async function openCardEditor(index = 0) {
+  await click(container.querySelectorAll('.set-table-edit')[index])
 }
 
 async function pressProgression(index = 0) {
@@ -239,7 +261,7 @@ async function requestDiscard() {
 }
 
 async function rerender() {
-  await act(async () => { root.render(React.createElement(Workout)) })
+  await act(async () => { renderScene() })
 }
 
 async function addExerciseThroughSheets(ex = { id: 'added-exercise' }, cfg = { mode: 'reps', sets: 1, reps: 5, weight: 0 }) {
@@ -267,10 +289,12 @@ async function flushFrame() {
 
 async function rerenderAt(cur) {
   mocks.S.active.cur = cur
-  await act(async () => { root.render(React.createElement(Workout)) })
+  await act(async () => { renderScene() })
 }
 
 beforeEach(() => {
+  mocks.sheet = null
+  mocks.inlineLayout = false
   vi.clearAllMocks()
   mocks.user = null
   mocks.timer = null
@@ -384,7 +408,7 @@ describe('Workout set completion flow', () => {
     expect(mocks.startRest).not.toHaveBeenCalled()
   })
 
-  it('auto-captures a completed weighted exercise without prompting, leaving navigation to Next', async () => {
+  it('auto-captures a completed weighted exercise without prompting, leaving navigation to a swipe', async () => {
     await mount([exercise('plain-bench', [false]), exercise('next', [false])])
 
     await toggleSet(0)
@@ -394,12 +418,12 @@ describe('Workout set completion flow', () => {
     expect(mocks.S.active.cur).toBe(0)
     expect(mocks.startRest).toHaveBeenCalledWith(90, expect.any(Number), { forSet: expect.any(Number) })
 
-    await pressNext()
+    await swipeNext()
 
     expect(mocks.S.active.cur).toBe(1)
   })
 
-  it('auto-captures superset members without prompting, then leaves the completed unit for Next', async () => {
+  it('auto-captures superset members without prompting, then leaves the completed unit for a swipe', async () => {
     const group = 'superset-1'
     await mount([
       exercise('superset-a', [false], { sg: group }),
@@ -418,7 +442,7 @@ describe('Workout set completion flow', () => {
     expect(mocks.S.active.cur).toBe(1)
     expect(mocks.startRest).toHaveBeenCalledWith(90, expect.any(Number), { forSet: expect.any(Number) })
 
-    await pressNext()
+    await swipeNext()
 
     expect(mocks.S.active.cur).toBe(2)
   })
@@ -706,6 +730,8 @@ describe('adding an exercise to a block kept out of progression', () => {
 })
 
 describe('active workout weight controls', () => {
+  // This suite covers the retained inline fields/guidance in List layout.
+  beforeEach(() => { mocks.inlineLayout = true })
   const press = async (label, selector) => {
     const control = container.querySelector(selector)
     const button = control?.querySelector(`button[aria-label="${label}"]`)
@@ -750,13 +776,16 @@ describe('active workout weight controls', () => {
       sets: [{ w: 0, r: 8, done: false }],
     })], 0, { workoutView })
 
-    expect(container.querySelector('.sethead').textContent).toContain('Added (kg)')
-    await press('Increase', '.setrow .stp.w')
+    if (workoutView === 'cards') await openCardEditor()
+    const heading = () => container.querySelector(workoutView === 'cards' ? '.workout-set-editor' : '.sethead').textContent
+    const weightCell = workoutView === 'cards' ? '.workout-set-editor .stp' : '.setrow .stp.w'
+    expect(heading()).toContain('Added (kg)')
+    await press('Increase', weightCell)
     expect(mocks.S.active.entries[0].sets[0]).toMatchObject({ w: 1, r: 8 })
-    await press('Decrease', '.setrow .stp.w')
+    await press('Decrease', weightCell)
     expect(mocks.S.active.entries[0].sets[0].w).toBe(0)
-    expect(container.querySelector('.sethead').textContent).toContain('Added (kg)')
-    await press('Increase', '.setrow .stp.w')
+    expect(heading()).toContain('Added (kg)')
+    await press('Increase', weightCell)
     expect(mocks.S.active.entries[0].sets[0]).toMatchObject({ w: 1, r: 8 })
   })
 
@@ -858,8 +887,8 @@ describe('a hold a rest displaced', () => {
     await handBack(3)
     expect(mocks.S.active.entries[0].sets[0].planSec).toBe(30)
 
-    // The seconds stepper on a timed row is the '.stp.w' one (the first column).
-    const button = container.querySelector('.setrow .stp.w button[aria-label="Increase"]')
+    await openCardEditor()
+    const button = container.querySelector('.workout-set-editor .stp button[aria-label="Increase"]')
     expect(button).toBeTruthy()
     await act(async () => { button.dispatchEvent(new dom.Event('click', { bubbles: true })) })
     await rerender()
@@ -1089,6 +1118,8 @@ describe('Workout live-presence "left" signal when the page goes away', () => {
 })
 
 describe('progression guidance', () => {
+  // This suite covers the retained inline fields/guidance in List layout.
+  beforeEach(() => { mocks.inlineLayout = true })
   it('labels the visible outcome with the policy that calculated it', async () => {
     await mount([exercise('plain-bench', [false, false, false], {
       plan: {
@@ -1209,7 +1240,7 @@ describe('progression guidance', () => {
 
     await act(async () => {
       save({ ...entry.target, prog: 'double', repsMin: 3 })
-      root.render(React.createElement(Workout))
+      renderScene()
     })
 
     const saved = mocks.S.active.entries[0]
@@ -1224,7 +1255,7 @@ describe('progression guidance', () => {
     await unmount()
     mocks.S = persisted
     installDom()
-    await act(async () => { root.render(React.createElement(Workout)) })
+    await act(async () => { renderScene() })
     expect(container.querySelector('.progline')?.textContent)
       .toContain('Double progression · Top of the rep range in every set. 2.5 kg more, back to 3 reps.')
   })
@@ -1251,6 +1282,8 @@ describe('progression settings rebuild the rows like a session start', () => {
     expect(entry.sets[1]).toEqual({ min: 25, done: false })
   })
 
+  // This suite covers the retained inline fields/guidance in List layout.
+  beforeEach(() => { mocks.inlineLayout = true })
   const history = [{
     d: '2026-08-27',
     entries: [{ id: 'plain-bench', target: { sets: 2, reps: 15, weight: 40 }, sets: [{ w: 40, r: 15, done: true }, { w: 40, r: 15, done: true }] }],
@@ -1265,7 +1298,7 @@ describe('progression settings rebuild the rows like a session start', () => {
   }
 
   it('opens the plan\'s reps and stamps the prescription into the target', async () => {
-    const saved = await saveTen({ workouts: history })
+    const saved = await saveTen({ startFrom: 'plan', workouts: history })
     expect(saved.sets.map(s => [s.w, s.r])).toEqual([[42.5, 10], [42.5, 10]])
     expect(saved.target).toMatchObject({ id: 'plain-bench', sets: 2, reps: 10, weight: 42.5 })
     expect(saved.plan.kind).toBe('up')
@@ -1298,6 +1331,8 @@ describe('progression settings rebuild the rows like a session start', () => {
 // progression's raised session, or a bodyweight climb, as the plan: "Plan changed", the raise
 // undone within the session, the climb started again at the next one (#275).
 describe('saving progression settings unchanged', () => {
+  // This suite covers the retained inline fields/guidance in List layout.
+  beforeEach(() => { mocks.inlineLayout = true })
   const BENCH = '0025'    // barbell bench press
   const PUSHUP = '0662'   // push-up
   const rows = entry => entry.sets.filter(s => !isWarmupRow(s)).map(s => [s.w, s.r])
@@ -1445,6 +1480,8 @@ describe('effort cell (colour-coded RIR/RPE quick picker)', () => {
     } finally { _setLangState('en', null, null, null) }
   })
 
+  // This suite covers the retained inline fields/guidance in List layout.
+  beforeEach(() => { mocks.inlineLayout = true })
   // A rep exercise whose sets can carry an effort rating. `rir` per set is optional — an
   // unrated set simply omits the key, which is what the empty cell has to represent.
   const effExercise = (rirs) => ({
@@ -1462,10 +1499,10 @@ describe('effort cell (colour-coded RIR/RPE quick picker)', () => {
     el.classList.contains('effcell-stp') ? el.querySelector('.val') : el)
 
   async function mountEffort(rirs, scale = 'rir') {
-    mocks.S = workout([effExercise(rirs)])
+    mocks.S = workout([effExercise(rirs)], 0, { workoutView: 'list' })
     mocks.S.effort = scale
     installDom()
-    await act(async () => { root.render(React.createElement(Workout)) })
+    await act(async () => { renderScene() })
   }
 
   it('shows the effort column only when the profile logs a scale', async () => {
@@ -1513,8 +1550,9 @@ describe('effort cell (colour-coded RIR/RPE quick picker)', () => {
       sets: [{ w: 60, r: 5, done: false, rpe: 8 }],
     }])
     mocks.S.effort = 'rpe'
+    mocks.S.workoutView = 'list'
     installDom()
-    await act(async () => { root.render(React.createElement(Workout)) })
+    await act(async () => { renderScene() })
     expect(effCells()[0].textContent).toBe('8')
     // RPE 8 == RIR 2 == yellow: the colour is the effort, independent of the scale shown
     expect(effCellList()[0].getAttribute('style')).toContain('--yellow')
@@ -1586,13 +1624,13 @@ describe('superset flow survives an exercise being removed mid-session', () => {
     await act(async () => {
       mocks.S.active.entries.splice(0, 1)
       mocks.S.active.cur = 0
-      root.render(React.createElement(Workout))
+      renderScene()
     })
     mocks.startRest.mockClear()
 
     // First member of the group: real progress, so the flow advances to the partner.
     await toggleSet(0)
-    await act(async () => { root.render(React.createElement(Workout)) })
+    await act(async () => { renderScene() })
     expect(mocks.S.active.cur).toBe(1)
 
     // Partner closes the round (each still has a second set), which is what starts the rest.
@@ -2341,10 +2379,11 @@ describe('workout list view', () => {
   })
 })
 
-// The card slid in during a swipe is the card that lands (renderPreview). Rendered without the
-// progression line, it grew by that line the moment it snapped into place.
-it('shows the progression line on the card a swipe slides in, as the card itself will', async () => {
+// The card slid in during a swipe is the card that lands (renderPreview). Its compact plan
+// and table must already be present before the swipe commits.
+it('shows the compact plan on the card a swipe slides in, as the card itself will', async () => {
   const planned = id => exercise(id, [false], {
+    planned: { sets: 1, reps: 5, weight: 60 },
     plan: { policy: 'linear', kind: 'up', weight: 62.5, why: ['Every rep last time. {0} {1} more.', 2.5, 'kg'] },
   })
   await mount([planned('plain-bench'), planned('plain-row')])
@@ -2358,7 +2397,9 @@ it('shows the progression line on the card a swipe slides in, as the card itself
   await pointer('pointermove', 150)
   const preview = container.querySelector('.workout-swipe-preview')
   expect(preview).toBeTruthy()
-  expect(preview.querySelector('.progline')).toBeTruthy()
+  expect(preview.querySelector('.planline').textContent).toBe('Plan: 1 × 5 · 60 kg')
+  expect(preview.querySelector('.set-table-row')).toBeTruthy()
+  expect(preview.querySelector('.progline')).toBeNull()
   await pointer('pointercancel', 150)
 })
 
@@ -2384,7 +2425,7 @@ async function swipeToNext() {
   const slidIn = markup(preview)
   await pointer('pointerup', 150)
   await act(async () => { await new Promise(r => setTimeout(r, 260)) })   // SwipeCards' 200 ms slide
-  await act(async () => { root.render(React.createElement(Workout)) })
+  await act(async () => { renderScene() })
   return { preview, slidIn, landed: markup(container.querySelector('.workout-swipe-card')) }
 }
 
@@ -2484,22 +2525,22 @@ describe('the plan line', () => {
 
   it('shows the plan quietly when the rows are the plan', async () => {
     await mount([planned()])
-    expect(line()).toBe('Plan: 2 × 10')
+    expect(line()).toBe('Plan: 2 × 10 · 60 kg')
   })
 
   it('says when progression moved the sets or reps', async () => {
-    await mount([planned({ target: { mode: 'reps', sets: 3, reps: 10, weight: 0, bodyweight: true } })])
+    await mount([planned({ target: { mode: 'reps', sets: 3, reps: 10, weight: 0, bodyweight: true } })], 0, { workoutView: 'list' })
     expect(line()).toBe('Plan: 2 × 10 · today 3 × 10')
   })
 
   it('says when the reps were carried over from the last session', async () => {
-    await mount([planned({ carried: true, sets: [{ w: 62.5, r: 15, done: false }, { w: 62.5, r: 15, done: false }] })])
+    await mount([planned({ carried: true, sets: [{ w: 62.5, r: 15, done: false }, { w: 62.5, r: 15, done: false }] })], 0, { workoutView: 'list' })
     expect(line()).toBe('Plan: 2 × 10 · reps from your last session')
   })
 
   it('reads a double-progression aim inside the range as the plan', async () => {
     await mount([planned({ planned: { sets: 3, reps: 12, repsMin: 8, weight: 40 }, target: { mode: 'reps', sets: 3, reps: 11, repsMin: 8, weight: 40 } })])
-    expect(line()).toBe('Plan: 3 × 8–12')
+    expect(line()).toBe('Plan: 3 × 8–12 · 40 kg')
   })
 
   it('stays in compact view, where the last-time recap and progression line go', async () => {
@@ -2510,9 +2551,9 @@ describe('the plan line', () => {
 
   it('sits next to a "Last time" that reads this routine\'s own last session (#216)', async () => {
     const session = (d, rid, w, r) => ({ d, routineIds: [rid], entries: [{ id: 'plain-bench', rid, target: { reps: r, weight: w }, sets: [{ w, r, done: true }] }] })
-    await mount([planned({ rid: 'A' })], 0, { workouts: [session('2026-08-24', 'A', 60, 10), session('2026-08-26', 'B', 40, 15)] })
-    expect(container.textContent).toContain('60×10')
-    expect(container.textContent).not.toContain('40×15')
+    await mount([planned({ rid: 'A' })], 0, { workoutView: 'list', workouts: [session('2026-08-24', 'A', 60, 10), session('2026-08-26', 'B', 40, 15)] })
+    expect(container.querySelector('.refline').textContent).toContain('60×10')
+    expect(container.querySelector('.refline').textContent).not.toContain('40×15')
   })
 
   it('reads a pyramid as its targets, like the routine row (#367)', async () => {
@@ -2770,7 +2811,7 @@ describe('list layout: only what is left to do (Discord request, #241)', () => {
     await unmount()
     mocks.S = saved
     installDom()
-    await act(async () => { root.render(React.createElement(Workout)) })
+    await act(async () => { renderScene() })
     expect(container.querySelectorAll('.wl-summary').length).toBe(2)
     expect(ticks()).toHaveLength(1)
   })
@@ -3074,15 +3115,15 @@ describe('workout controls: the more menu and the set menu', () => {
     mocks.timer = null
   })
 
-  // #523: "Skip completed exercises" makes Next hop over a finished exercise in Cards.
-  it('with skip completed on, Next hops over a finished exercise; off, it steps to it', async () => {
+  // #523: "Skip completed exercises" makes a swipe hop over a finished exercise in Cards.
+  it('with skip completed on, a swipe hops over a finished exercise; off, it steps to it', async () => {
     const three = () => [exercise('plain-bench', [false]), exercise('plain-row', [true, true]), exercise('plain-curl', [false])]
     await mount(three(), 0, { skipCompleted: true })
-    await pressNext()
+    await swipeNext()
     expect(mocks.S.active.cur).toBe(2)
     await unmount()
     await mount(three(), 0)
-    await pressNext()
+    await swipeNext()
     expect(mocks.S.active.cur).toBe(1)
   })
 
@@ -3222,7 +3263,7 @@ describe('workout controls: the more menu and the set menu', () => {
   it('makes a per-side set a warm-up and back, both sides kept', async () => {
     const side = (l, r) => ({ w: 20, r: l + r, done: false, sides: { L: { w: 20, r: l, done: false }, R: { w: 20, r: r, done: false } } })
     await mount([{ id: 'plain-lunge', target: { mode: 'reps', reps: 10, weight: 20, side: true }, sets: [side(5, 5), side(4, 6)] }])
-    const openSet = async k => { await act(async () => { container.querySelectorAll('button.n')[k].dispatchEvent(new dom.Event('click', { bubbles: true })) }) }
+    const openSet = async k => { await act(async () => { container.querySelectorAll('.set-table-row button.n')[k * 2].dispatchEvent(new dom.Event('click', { bubbles: true })) }) }
     await openSet(1)
     await act(async () => { item('Make it a warm-up set').onClick() })
     const sets = () => mocks.S.active.entries[0].sets
@@ -3245,8 +3286,9 @@ describe('workout controls: the more menu and the set menu', () => {
 
   it('drops the +/- buttons when steppers are off and keeps the number field', async () => {
     await mount([exercise('plain-bench', [false])], 0, { wc: { steppers: false } })
-    expect(container.querySelector('.setrow .stp button[aria-label="Increase"]')).toBeNull()
-    expect(container.querySelector('.setrow .stp.plain .num')).toBeTruthy()
+    await openCardEditor()
+    expect(container.querySelector('.workout-set-editor .stp button[aria-label="Increase"]')).toBeNull()
+    expect(container.querySelector('.workout-set-editor .stp.plain .num')).toBeTruthy()
   })
 })
 
@@ -3255,7 +3297,8 @@ describe('workout controls: the more menu and the set menu', () => {
 describe('effort rating auto-ends the set', () => {
   // Open the effort picker for set `index` and return the onPick callback the cell handed it.
   async function openEffortPicker(index = 0) {
-    const cell = container.querySelectorAll('.setrow .effcell.is-empty, .setrow .effcell-stp .val')[index]
+    await openCardEditor(index)
+    const cell = container.querySelector('.workout-set-editor .set-effort-value')
     expect(cell).toBeTruthy()
     await act(async () => { cell.dispatchEvent(new dom.Event('click', { bubbles: true })) })
     const call = mocks.effortPickerSheet.mock.calls.at(-1)
@@ -3309,8 +3352,11 @@ describe('per-side effort completion', () => {
         { w: 20, r: 16, done: false, sides: { L: side(), R: side() } },
       ],
     })], 0, { effort: scale })
-    const cells = container.querySelectorAll('.side-rows .effcell.is-empty')
-    await act(async () => { cells[0].dispatchEvent(new dom.Event('click', { bubbles: true })) })
+    const openSide = async index => {
+      await openCardEditor(index)
+      await click(container.querySelector('.workout-set-editor .set-effort-value'))
+    }
+    await openSide(0)
     const leftPick = mocks.effortPickerSheet.mock.calls.at(-1)[2]
     await act(async () => { leftPick(scale === 'rir' ? 2 : 8) })
     let set = mocks.S.active.entries[0].sets[0]
@@ -3321,7 +3367,7 @@ describe('per-side effort completion', () => {
     await act(async () => { leftPick(3); leftPick(null) })
     expect(mocks.S.active.entries[0].sets[0].sides.L.done).toBe(true)
     expect(mocks.S.active.entries[0].sets[0].sides.L[scale]).toBeUndefined()
-    await act(async () => { cells[1].dispatchEvent(new dom.Event('click', { bubbles: true })) })
+    await openSide(1)
     const rightPick = mocks.effortPickerSheet.mock.calls.at(-1)[2]
     await act(async () => { rightPick(scale === 'rir' ? 0 : 10) })
     set = mocks.S.active.entries[0].sets[0]
@@ -3364,6 +3410,8 @@ describe('Workout exercise tags', () => {
 })
 
 describe('set-row column header', () => {
+  // This suite covers the retained inline fields/guidance in List layout.
+  beforeEach(() => { mocks.inlineLayout = true })
   // The L/R rows carry a badge in front of the weight cell that a straight row does not have, so
   // the shared header needs to know it is sitting over per-side rows to offset its columns (QA C5).
   it('marks the header of a per-side exercise so the CSS can offset it by the L/R badge', async () => {
@@ -3434,6 +3482,8 @@ describe('set-row column header', () => {
 // #173: the line under an exercise holds the rows against the last time in this routine, or
 // against the best set of the exercise; tapping the line switches, for every exercise.
 describe('the reference line: last time or best set', () => {
+  // This suite covers the retained inline fields/guidance in List layout.
+  beforeEach(() => { mocks.inlineLayout = true })
   const session = (d, rid, w, r) => ({ d, start: Date.parse(d + 'T18:00:00'), routineIds: [rid], entries: [{ id: 'plain-bench', rid, target: { reps: r, weight: w }, sets: [{ w, r, done: true }] }] })
   const history = [session('2026-08-10', 'B', 80, 5), session('2026-08-24', 'A', 60, 10), session('2026-08-26', 'A', 55, 8)]
   const line = () => container.querySelector('.refline')

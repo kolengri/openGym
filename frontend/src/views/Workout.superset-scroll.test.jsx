@@ -31,6 +31,7 @@ const mocks = vi.hoisted(() => {
     update: mut => { const next = structuredClone(state.S); mut(next); state.S = next },
   })
   state.uiSnapshot = () => ({
+    openSheet: content => { state.sheet = content; state.render?.() },
     timer: state.timer, work: state.work,
     startRest: state.startRest, stopRest: state.stopRest, stopWork: state.stopWork,
     shiftRestOwner: vi.fn(), startWork: state.startWork, toast: state.toast,
@@ -64,6 +65,12 @@ vi.mock('../lib/api.js', () => ({
 
 let dom, root, container
 
+function renderScene() {
+  mocks.render = renderScene
+  const close = () => { mocks.sheet = null; renderScene() }
+  root.render(<><Workout />{mocks.sheet?.(close)}</>)
+}
+
 // The ids are real library ones so the card has names to show.
 const lifted = (id, sg) => ({
   id, sg,
@@ -94,7 +101,7 @@ async function mount(entries, cur = 0, active = {}, prep = null) {
   }
   installDom()
   prep?.()   // anything the first render must already find on the DOM: the screen's geometry
-  await act(async () => { root.render(React.createElement(Workout)) })
+  await act(async () => { renderScene() })
 }
 
 async function press(button) {
@@ -104,9 +111,10 @@ async function press(button) {
 
 // The mocked store is a plain snapshot with nothing subscribed to it, so a change reaches the
 // DOM only on the next render. Tests that read the screen ask for one.
-const rerender = () => act(async () => { root.render(React.createElement(Workout)) })
+const rerender = () => act(async () => { renderScene() })
 
 beforeEach(() => {
+  mocks.sheet = null
   mocks.timer = null; mocks.work = null
   // The default runs a queued scroll at once; a test that defers one must not leak that into the next.
   mocks.afterScrollRestore.mockReset(); mocks.afterScrollRestore.mockImplementation(fn => { fn(); return () => {} })
@@ -140,7 +148,8 @@ describe('the superset card after a rating', () => {
     await mount(superset(), 0)
     mocks.S = { ...mocks.S, effort: kind }; await rerender()
     const seen = watchScrolls()
-    await press(container.querySelector('.setrow:not(.done) .effcell.is-empty'))
+    await press(container.querySelector('.setrow:not(.done) .set-table-edit'))
+    await press(container.querySelector('.workout-set-editor .set-effort-value'))
     const [pickedKind, , pick] = effortPickerSheet.mock.calls.at(-1)
     expect(pickedKind).toBe(kind)
     // The picker closes in this same commit: Modals.jsx hands the page back later.
@@ -174,7 +183,8 @@ describe('the superset card after a rating', () => {
     await mount(superset(), 0)
     mocks.S = { ...mocks.S, effort: 'rir' }; await rerender()
     const seen = watchScrolls()
-    await press(container.querySelector('.setrow:not(.done) .effcell.is-empty'))
+    await press(container.querySelector('.setrow:not(.done) .set-table-edit'))
+    await press(container.querySelector('.workout-set-editor .set-effort-value'))
     const [, , pick] = effortPickerSheet.mock.calls.at(-1)
     const cancel = vi.fn(); const queued = []
     mocks.afterScrollRestore.mockImplementationOnce(fn => { queued.push(fn); return cancel })
@@ -280,7 +290,8 @@ describe('the superset card after a rating', () => {
     await mount([lifted('0025', 'g'), lifted('0025', 'g'), lifted('0001')], 0, {}, () => rowsAt(400))
     mocks.S = { ...mocks.S, effort: 'rir' }; await rerender()
     const seen = watchScrolls()
-    await press(container.querySelector('.setrow:not(.done) .effcell.is-empty'))
+    await press(container.querySelector('.setrow:not(.done) .set-table-edit'))
+    await press(container.querySelector('.workout-set-editor .set-effort-value'))
     const [, , pick] = effortPickerSheet.mock.calls.at(-1)
     mocks.scrollRestorePending.mockImplementation(() => true)
     const queued = []

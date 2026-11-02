@@ -167,7 +167,7 @@ describe('converting the numbers to lb', () => {
 
 describe('changes kept aside by a forced sign-out', () => {
   it('carry the planned-sessions setting and the edited routine, and bring both back on the next sign-in', async () => {
-    signedIn(withPlan({ workouts: [] }))
+    signedIn({ ...withPlan({ workouts: [] }), startFrom: 'plan' })
     localStorage.setItem('gym_sync', JSON.stringify({ rev: 1, ts: 100 }))
     api.mockResolvedValueOnce({ rev: 1 })   // a check in step: the fingerprint of rev 1 is taken
     window.dispatchEvent(new Event('online'))
@@ -181,7 +181,7 @@ describe('changes kept aside by a forced sign-out', () => {
     api.mockReset()
     api.mockRejectedValue(netError())
     expect(await useStore.getState().signOut({ force: true })).toEqual({ owed: true, count: 2, stashed: true })
-    expect(useStore.getState().S.startFrom).toBe('plan')   // the copy is gone …
+    expect(useStore.getState().S.startFrom).toBe('last')   // the copy is gone …
     const [kept] = Object.values(JSON.parse(localStorage.getItem('gym_stash')))
     expect(kept.state.startFrom).toBe('last')              // … and kept here
     expect(kept.state.routines).toEqual([edited])

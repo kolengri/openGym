@@ -1312,6 +1312,7 @@ function ExerciseDetail({ ex, close }) {
   // Merge into… is offered for your own exercise, or a catalogue one with something logged or
   // planned to move.
   const canMerge = !ex.missing && (isCustomEx(ex) || (() => { const p = mergePreview(st, ex.id, null); return p.workouts + p.routines > 0 })())
+  const muscleLoad = muscleWeightsOf(ex)
   const flipFav = () => {
     let on = false
     update(s => { on = toggleFav(s, ex.id) })
@@ -1330,6 +1331,10 @@ function ExerciseDetail({ ex, close }) {
       {detailTags(ex).map(tg => <span key={tg.key} className={'tag' + (tg.acc ? ' acc' : '')}>{tg.icon && <Icon name={tg.icon} />}{tg.label}</span>)}
     </div>
     <ExerciseAliasesEditor key={ex.id} ex={ex} />
+    {Object.values(muscleLoad).some(w => w > 0) && <section className="exercise-muscle-map" aria-label={t('Muscles')}>
+      <h4 className="sec">{t('Muscles')}</h4>
+      <BodyMap load={muscleLoad} body={st.body} />
+    </section>}
     {descFor(ex) && <div className="exnote">{descFor(ex)}</div>}
     {/* One line of text that wraps as a sentence: as a flex row, the last session became a
         separate column beside "Best: 105 kg" once it wrapped (design review 1.4.5). */}

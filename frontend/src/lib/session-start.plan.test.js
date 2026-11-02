@@ -13,7 +13,7 @@ const BENCH = '0025'   // barbell bench press — loaded, 2.5 kg step
 const work = e => e.sets.filter(s => !isWarmupRow(s))
 const reps = e => work(e).map(s => s.r)
 const clone = v => JSON.parse(JSON.stringify(v))
-const state = (routines, extra = {}) => ({ unit: 'kg', exWeights: {}, routines: clone(routines), workouts: [], week: {}, dayPlan: {}, ...extra })
+const state = (routines, extra = {}) => ({ startFrom: 'plan', unit: 'kg', exWeights: {}, routines: clone(routines), workouts: [], week: {}, dayPlan: {}, ...extra })
 const cfgOf = (st, rid, exId = BENCH) => st.routines.find(r => r.id === rid).ex.find(c => c.id === exId)
 const start = (st, rids) => buildCombinedEntries(st, rids).entries
 

@@ -56,6 +56,16 @@ describe('exercise history sheet', () => {
     expect([...host.querySelectorAll('.list .item .ss')].map(row => row.textContent)).toEqual(['5.2 km', '4.8 km'])
   })
 
+  it('shows a muscle map when the exercise itself is opened', async () => {
+    exerciseDetailSheet(EXIDX['0025'])
+    const host = renderTop()
+    await act(async () => { await import('./lib/body-paths.js') })
+    const map = host.querySelector('.exercise-muscle-map')
+    expect(map?.getAttribute('aria-label')).toBe('Muscles')
+    expect(map.querySelectorAll('svg')).toHaveLength(2)
+    expect(map.querySelector('.bm-m.l4')).toBeTruthy()
+  })
+
   it('shows an empty state instead of a chart when nothing was logged', () => {
     exerciseHistorySheet(EX)
     const host = renderTop()

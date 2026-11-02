@@ -1394,6 +1394,26 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
 .sethead .eff-sp{text-align:center}
 .sethead .ck-sp{width:30px;flex:none}
 .setrow{display:flex;align-items:center;gap:8px;padding:7px 0;position:relative}
+/* Comparisons live below their own input without taking width from its tap targets. */
+.setrow:has(.set-comparison){padding-bottom:25px}
+.setrow-side .setrow.side:has(.set-comparison){padding-bottom:22px}
+.setrow .stp.compared{position:relative;overflow:visible}
+.set-comparison{position:absolute;inset-inline:0;top:100%;height:18px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap;pointer-events:none}
+.set-previous{color:var(--label-3)}
+.set-delta.up{color:var(--green)}
+.set-delta.down{color:var(--red)}
+.setrow.done:has(.set-comparison),.setrow.side.done:has(.set-comparison){opacity:1}
+/* Stay inside SwipeRow's clip, below the number circle, without narrowing the inputs. */
+.set-effort-marker{position:absolute;inset-inline-start:2px;bottom:4px;display:flex;flex-direction:column;gap:2px;pointer-events:none}
+.set-effort-marker i{width:20px;height:3px;border-radius:2px}
+.set-effort-marker .previous{opacity:.45}
+.recent-exercise-history{margin-top:12px}
+.recent-exercise-history>.row{flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.recent-exercise-history h3{font-size:14px;margin:0}
+.recent-history-link{display:flex;align-items:center;gap:4px;min-height:36px;color:var(--acc);font-size:12px;text-align:start}
+.recent-history-list{list-style:none;margin:0;padding:0}
+.recent-history-list li{padding:8px 0;border-top:var(--hair) solid var(--sep)}
+.recent-history-sets{margin-top:3px;overflow-wrap:anywhere;unicode-bidi:plaintext}
 .setrow+.setrow::before{
   content:'';position:absolute;inset-inline-start:32px;inset-inline-end:0;top:0;height:var(--hair);background:var(--sep);
 }
@@ -3308,3 +3328,44 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
   .kpis .tile{padding:10px 11px}
   .kpis .tile .v{font-size:var(--fs-title3)}
 }
+
+/* Cards keep logging on one quiet row; the existing controls live in the set editor. */
+.workout-set-table .set-table-head{display:grid;grid-template-columns:24px 1.4fr 1fr 44px;align-items:center;gap:8px;padding:0 0 6px;font-size:11px;color:var(--label-3)}
+.workout-set-table .set-table-head.timed{grid-template-columns:24px 1.4fr 1fr 32px 44px}
+.workout-set-table .setrow.set-table-row{min-height:64px;padding:8px 0;border-top:var(--hair) solid var(--sep);gap:8px;opacity:1}
+.workout-set-table .setrow.set-table-row::before{display:none}
+.workout-set-table .set-table-row .n{width:24px;min-width:24px;height:44px;background:transparent;color:var(--label-3);font-size:13px;font-weight:400;border:0;border-radius:0}
+.set-table-edit{display:flex;align-items:center;flex:1;min-width:0;min-height:48px;gap:8px;text-align:start;background:transparent}
+.set-table-value{display:flex;align-items:baseline;gap:5px;flex:1.4;min-width:0;font-size:28px;font-weight:550;line-height:1.2;letter-spacing:-.025em;font-variant-numeric:tabular-nums;color:var(--label-3)}
+.set-table-value:last-child{flex:1}
+.set-table-row.done .set-table-value{color:var(--label)}
+.set-comparison.delta-only{position:static;inset:auto;height:auto;display:inline-flex;justify-content:start;font-size:11px;line-height:1;letter-spacing:0}
+.workout-set-table .set-table-row .chk{flex:none;width:44px;height:44px;border:0;background:transparent;box-shadow:none;position:relative;color:transparent}
+.workout-set-table .set-table-row .chk::before{content:'';position:absolute;inset:9px;border:1.5px solid var(--label-3);border-radius:50%}
+.workout-set-table .set-table-row .chk.on{color:var(--surface)}
+.workout-set-table .set-table-row .chk.on::before{border-color:var(--green);background:var(--green)}
+.workout-set-table .set-table-row .chk svg{position:relative;width:17px;height:17px;z-index:1}
+.workout-set-table .set-table-row .set-effort-marker{inset-inline-start:-12px;top:15px;bottom:15px;flex-direction:row;gap:2px}
+.workout-set-table .set-effort-marker i{width:4px;height:auto}
+.workout-set-table .set-effort-marker i.previous{width:2px}
+.workout-set-table .setrow-side{gap:8px}
+.workout-set-table .setrow-side>.n{display:none}
+.workout-set-table .side-rows{min-width:0;flex:1}
+.workout-set-editor h3{margin-bottom:4px}
+.workout-set-field{padding:14px 0;border-bottom:var(--hair) solid var(--sep)}
+.workout-set-field>label{display:block;font-size:13px;color:var(--label-2)}
+.workout-set-field>.stp{margin-top:8px;min-height:56px;background:transparent;border:0;box-shadow:none}
+.workout-set-field>.stp>.val{font-size:38px}
+.workout-set-field>.stp>.val .num{font-size:38px;text-align:center}
+.workout-set-field>.stp>.val .weight-value{font-size:38px}
+.workout-set-field>.stp>button{width:48px;height:48px;flex:none;border-radius:10px;background:var(--surface-2);font-size:24px}
+.workout-set-field>.set-comparison{display:flex;justify-content:center;margin-top:4px}
+.workout-set-editor>.btn{margin-top:16px;width:100%}
+.set-effort-value{display:flex;align-items:center;gap:10px;width:100%;min-height:54px;margin-top:8px;padding:10px;border-radius:12px;background:var(--surface-2);text-align:start;font-size:13px}
+.set-effort-badge{display:flex;align-items:center;justify-content:center;flex:none;min-width:32px;height:32px;padding:0 4px;border-radius:8px;background:var(--sep);color:white;font-size:15px;font-weight:650;font-variant-numeric:tabular-nums}
+.set-effort-description{flex:1;min-width:0;overflow-wrap:anywhere}
+.set-effort-value>svg{flex:none;color:var(--label-3);font-size:12px}
+@media(max-width:360px){.set-table-value{font-size:24px}.workout-set-table .set-table-head,.set-table-edit,.workout-set-table .setrow.set-table-row{gap:6px}}
+.recent-exercise-history summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;cursor:pointer;font-size:13px;list-style:none}
+.recent-exercise-history summary::-webkit-details-marker{display:none}
+.recent-exercise-history details[open]>summary{margin-bottom:8px}
