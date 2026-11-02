@@ -51,11 +51,13 @@ describe('workout comparisons', () => {
 
   it('shows signed differences and updates them as the user edits, including a return to baseline', () => {
     mount([row(35, 9, { done: false })])
+    expect(host.querySelector('.set-delta')).toBeNull()
+    act(() => host.querySelector('.set-table-row .chk').click())
     expect(host.querySelector('.set-delta.up')?.textContent).toBe('+5')
     expect(host.querySelector('.set-delta.down')?.textContent).toBe('−1')
     act(() => useStore.getState().update(s => { s.active.entries[0].sets[0].w = 30 }))
     expect(host.querySelectorAll('.set-delta')).toHaveLength(1)
-    expect(host.querySelector('.set-previous')?.textContent).toBe('30')
+    expect(host.querySelector('.set-previous')).toBeNull()
   })
 
   it('also renders numeric and effort comparisons in Focus', () => {

@@ -29,6 +29,7 @@ const mocks = vi.hoisted(() => {
     },
   })
   state.uiSnapshot = () => ({
+    openSheet: content => { state.sheet = content; state.render?.() },
     timer: null,
     work: null,
     startRest: state.startRest,
@@ -77,6 +78,12 @@ let dom
 let root
 let container
 
+function renderScene() {
+  mocks.render = renderScene
+  const close = () => { mocks.sheet = null; renderScene() }
+  root.render(<><Workout />{mocks.sheet?.(close)}</>)
+}
+
 function exercise(id, sets, extra = {}) {
   return {
     id,
@@ -110,7 +117,7 @@ function installDom() {
 async function mount(entries, cur = 0) {
   mocks.S = workout(entries, cur)
   installDom()
-  await act(async () => { root.render(React.createElement(Workout)) })
+  await act(async () => { renderScene() })
 }
 
 async function unmount() {
@@ -121,15 +128,19 @@ async function unmount() {
   dom = null
 }
 
-// The +/- controls live in `.stp` cells, one per editable column. For a plain reps set the
-// order is [weight, reps]; this returns the Increase/Decrease button for a given column of a
-// given set row inside a given exercise block (addressed by its data-exidx wrapper).
-function stepperButton(exidx, setRow, col, direction) {
+// Cards open their fields in the set editor. Keep that editor open for repeated taps, so its
+// render-time snapshot becomes stale when the mocked store clones state on every write.
+// For a plain reps set the column order is [weight, reps].
+async function stepperButton(exidx, setRow, col, direction) {
   const block = container.querySelector(`[data-exidx="${exidx}"]`)
   expect(block).toBeTruthy()
   const row = block.querySelectorAll('.setrow')[setRow]
   expect(row).toBeTruthy()
-  const cell = row.querySelectorAll('.stp')[col]
+  if (mocks.editorRow !== row) {
+    await tap(row.querySelector('.set-table-edit'))
+    mocks.editorRow = row
+  }
+  const cell = container.querySelectorAll('.workout-set-editor .stp')[col]
   expect(cell).toBeTruthy()
   return cell.querySelector(`button[aria-label="${direction}"]`)
 }
@@ -140,6 +151,8 @@ async function tap(button) {
 }
 
 beforeEach(() => {
+  mocks.sheet = null
+  mocks.editorRow = null
   vi.clearAllMocks()
 })
 
@@ -156,7 +169,7 @@ describe('superset stepper — one tap moves one step', () => {
       exercise('row', [false], { sg: 'group' }),
     ])
 
-    await tap(stepperButton(0, 0, 0, 'Increase'))
+    await tap(await stepperButton(0, 0, 0, 'Increase'))
 
     expect(mocks.S.active.entries[0].sets[0].w).toBe(62.5)
   })
@@ -170,9 +183,9 @@ describe('superset stepper — one tap moves one step', () => {
       exercise('row', [false], { sg: 'group' }),
     ])
 
-    await tap(stepperButton(0, 0, 1, 'Increase'))
-    await tap(stepperButton(0, 0, 1, 'Increase'))
-    await tap(stepperButton(0, 0, 1, 'Increase'))
+    await tap(await stepperButton(0, 0, 1, 'Increase'))
+    await tap(await stepperButton(0, 0, 1, 'Increase'))
+    await tap(await stepperButton(0, 0, 1, 'Increase'))
 
     expect(mocks.S.active.entries[0].sets[0].r).toBe(8)
   })
@@ -186,8 +199,8 @@ describe('superset stepper — one tap moves one step', () => {
       exercise('row', [false], { sg: 'group' }),
     ])
 
-    await tap(stepperButton(0, 0, 1, 'Increase'))
-    await tap(stepperButton(1, 0, 1, 'Increase'))
+    await tap(await stepperButton(0, 0, 1, 'Increase'))
+    await tap(await stepperButton(1, 0, 1, 'Increase'))
 
     expect(mocks.S.active.entries[0].sets[0].r).toBe(6)
     expect(mocks.S.active.entries[1].sets[0].r).toBe(6)
@@ -200,7 +213,7 @@ describe('superset stepper — one tap moves one step', () => {
       exercise('row', [false], { sg: 'group' }),
     ])
 
-    await tap(stepperButton(0, 0, 0, 'Decrease'))
+    await tap(await stepperButton(0, 0, 0, 'Decrease'))
 
     expect(mocks.S.active.entries[0].sets[0].w).toBe(57.5)
   })

@@ -21,10 +21,10 @@ const plank = () => ({ id: '1001', target: { mode: 'time', sets: 2, sec: 10 }, s
 let root
 let container
 
-function renderWorkout(entries) {
+function renderWorkout(entries, workoutView = 'cards') {
   const S = clone(DEF)
   S.sound = true
-  S.active = { id: 'hold-test', d: '2026-09-23', start: Date.now(), routineId: null, name: 'Hold', bw: null, cur: 0, entries }
+  S.active = { id: 'hold-test', d: '2026-09-23', start: Date.now(), routineId: null, name: 'Hold', bw: null, cur: 0, entries, workoutView }
   useStore.setState({ S, user: null })
   container = document.createElement('div')
   document.body.appendChild(container)
@@ -132,7 +132,7 @@ describe('a per-side hold', () => {
   })
 
   it('Left and Right pills carry both words, so they are one width (#322)', () => {
-    renderWorkout([sidePlank()])
+    renderWorkout([sidePlank()], 'list')
     const pills = [...container.querySelectorAll('.sidepill')]
     expect(pills.map(p => p.textContent)).toEqual(['Left', 'Right', 'Left', 'Right'])
     for (const p of pills) expect([p.dataset.l, p.dataset.r]).toEqual(['Left', 'Right'])

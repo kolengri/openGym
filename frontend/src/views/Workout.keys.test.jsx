@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client'
 import { MemoryRouter } from 'react-router-dom'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Workout from './Workout.jsx'
+import Modals from '../components/Modals.jsx'
 import { DEF, useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
 
@@ -31,7 +32,7 @@ function renderWorkout(entries, cur = 0, extra = {}) {
   container = document.createElement('div')
   document.body.appendChild(container)
   root = createRoot(container)
-  act(() => root.render(<MemoryRouter initialEntries={['/workout']}><Workout /></MemoryRouter>))
+  act(() => root.render(<MemoryRouter initialEntries={['/workout']}><Workout /><Modals /></MemoryRouter>))
 }
 
 const press = (key, target = document.body) => {
@@ -157,7 +158,8 @@ describe('workout keys (issue #133)', () => {
 
   it('keys typed into a set\'s field stay in the field', () => {
     renderWorkout([entry('1001', [false, false]), entry('1002', [false])])
-    const input = container.querySelector('.setrow input')
+    act(() => container.querySelector('.set-table-edit').click())
+    const input = container.querySelector('.workout-set-editor input')
     expect(input).toBeTruthy()
     input.focus()
     for (const key of [' ', 'Enter', 'ArrowRight']) expect(press(key, input).defaultPrevented).toBe(false)
