@@ -13,18 +13,11 @@ import { isAssisted } from './exercises.js'
 import { sessionHistory } from './backfill.js'
 
 /**
- * Where a planned session's reps come from (Settings → During a workout). 'plan', the default:
- * the routine's own sets × reps, with history and the progression policy deciding the weight —
- * and a policy that moves reps (double progression, bodyweight, a timed hold) still moving them
- * from there. 'last': the reps you logged last time, the way every planned session opened before
- * this setting existed. A profile saved before it, or one that never chose, reads as 'plan'.
- *
- * An exercise whose progression is off has no prescription, so its rows open at the routine's own
- * weight and reps. 'last' sends those to last time's weight and reps too (the weight as well as
- * the reps, since no policy is there to decide it). A deload or rehab routine (`noProg`) keeps the
- * routine's numbers.
+ * Planned sessions start from the last completed session by default. An explicit 'plan'
+ * keeps the routine's reps; progression still owns any values it prescribes. A deload or
+ * rehab routine always keeps its own numbers rather than carrying a regular session over.
  */
-export const startsFromLast = st => st?.startFrom === 'last'
+export const startsFromLast = st => st?.startFrom !== 'plan'
 
 /**
  * One planned exercise, built the way a session builds it: the prescription, the rows it opens

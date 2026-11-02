@@ -86,10 +86,10 @@ const choose = label => {
 }
 
 describe('Settings — planned sessions start from', () => {
-  it('reads an older profile without the setting as the plan', () => {
+  it('defaults a profile without the setting to the last session', () => {
     mount()
     expect(row()).toBeTruthy()
-    expect(row().textContent).toContain('Your plan')
+    expect(row().textContent).toContain('Your last session')
   })
 
   it('switches to the last session and back, writing startFrom to the store', () => {

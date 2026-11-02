@@ -610,13 +610,10 @@ export default function Settings({ page = null, find = null, via = null, entryKe
       const setWc = (k, v) => update(s => { s.wc = { ...workoutControls(s), [k]: v } })
       return <>
         <Section title={t('Sessions and timed sets')}>
-          {/* Whose reps a planned session opens with (lib/session-start.js). The plan's by default:
-              the routine is what you said you would do, and history and progression decide the
-              weight. The other choice is the old behaviour, reps carried over from last time, and
-              the weight too for an exercise with progression off. Absent (an older profile) reads
-              as the plan. */}
+          {/* History seeds weight and reps by default; an explicit plan choice is preserved.
+              Progression and excluded routines keep their own prescriptions. */}
           <SelectRow icon="clipboard" iconTint="var(--green)" title={t('Planned sessions start from')}
-            value={S.startFrom === 'last' ? 'last' : 'plan'} onChange={v => update(s => { s.startFrom = v })}
+            value={S.startFrom === 'plan' ? 'plan' : 'last'} onChange={v => update(s => { s.startFrom = v })}
             options={[
               { value: 'plan', label: t('Your plan'), subtitle: t('The routine’s sets and reps. Your history decides the weight.') },
               { value: 'last', label: t('Your last session'), subtitle: t('The reps you logged last time in that routine, carried over. With progression off, the weight too.') },

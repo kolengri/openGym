@@ -195,11 +195,22 @@ async function toggleSet(index) {
   await act(async () => { checkbox.dispatchEvent(new dom.Event('click', { bubbles: true })) })
 }
 
-async function pressNext() {
-  const button = [...container.querySelectorAll('button')]
-    .find(button => button.textContent.trim() === 'Next')
-  expect(button).toBeTruthy()
-  await act(async () => { button.dispatchEvent(new dom.Event('click', { bubbles: true })) })
+async function swipeNext() {
+  const surface = container.querySelector('[data-testid="workout-swipe-surface"]')
+  expect(surface).toBeTruthy()
+  surface.getBoundingClientRect = () => ({ width: 360 })
+  const oldMatchMedia = globalThis.matchMedia
+  globalThis.matchMedia = () => ({ matches: true })
+  try {
+    for (const [type, x] of [['pointerdown', 300], ['pointermove', 200], ['pointerup', 100]]) {
+      const event = new dom.Event(type, { bubbles: true, cancelable: true })
+      Object.assign(event, { pointerId: 1, pointerType: 'touch', clientX: x, clientY: 100 })
+      await act(async () => { surface.dispatchEvent(event) })
+    }
+  } finally {
+    if (oldMatchMedia === undefined) delete globalThis.matchMedia
+    else globalThis.matchMedia = oldMatchMedia
+  }
 }
 
 const buttonNamed = name => container.querySelector(`button[aria-label="${name}"]`)
@@ -354,7 +365,7 @@ describe('Workout set completion flow', () => {
     expect(mocks.startRest).not.toHaveBeenCalled()
   })
 
-  it('auto-captures a completed weighted exercise without prompting, leaving navigation to Next', async () => {
+  it('auto-captures a completed weighted exercise without prompting, leaving navigation to a swipe', async () => {
     await mount([exercise('plain-bench', [false]), exercise('next', [false])])
 
     await toggleSet(0)
@@ -364,12 +375,12 @@ describe('Workout set completion flow', () => {
     expect(mocks.S.active.cur).toBe(0)
     expect(mocks.startRest).toHaveBeenCalledWith(90, expect.any(Number), { forSet: expect.any(Number) })
 
-    await pressNext()
+    await swipeNext()
 
     expect(mocks.S.active.cur).toBe(1)
   })
 
-  it('auto-captures superset members without prompting, then leaves the completed unit for Next', async () => {
+  it('auto-captures superset members without prompting, then leaves the completed unit for a swipe', async () => {
     const group = 'superset-1'
     await mount([
       exercise('superset-a', [false], { sg: group }),
@@ -388,7 +399,7 @@ describe('Workout set completion flow', () => {
     expect(mocks.S.active.cur).toBe(1)
     expect(mocks.startRest).toHaveBeenCalledWith(90, expect.any(Number), { forSet: expect.any(Number) })
 
-    await pressNext()
+    await swipeNext()
 
     expect(mocks.S.active.cur).toBe(2)
   })
@@ -1202,7 +1213,7 @@ describe('progression settings rebuild the rows like a session start', () => {
   }
 
   it('opens the plan\'s reps and stamps the prescription into the target', async () => {
-    const saved = await saveTen({ workouts: history })
+    const saved = await saveTen({ startFrom: 'plan', workouts: history })
     expect(saved.sets.map(s => [s.w, s.r])).toEqual([[42.5, 10], [42.5, 10]])
     expect(saved.target).toMatchObject({ id: 'plain-bench', sets: 2, reps: 10, weight: 42.5 })
     expect(saved.plan.kind).toBe('up')
@@ -2392,8 +2403,8 @@ describe('the plan line', () => {
   it('sits next to a "Last time" that reads this routine\'s own last session (#216)', async () => {
     const session = (d, rid, w, r) => ({ d, routineIds: [rid], entries: [{ id: 'plain-bench', rid, target: { reps: r, weight: w }, sets: [{ w, r, done: true }] }] })
     await mount([planned({ rid: 'A' })], 0, { workouts: [session('2026-08-24', 'A', 60, 10), session('2026-08-26', 'B', 40, 15)] })
-    expect(container.textContent).toContain('60×10')
-    expect(container.textContent).not.toContain('40×15')
+    expect(container.querySelector('.refline').textContent).toContain('60×10')
+    expect(container.querySelector('.refline').textContent).not.toContain('40×15')
   })
 
   it('reads a pyramid as its targets, like the routine row (#367)', async () => {
@@ -2949,15 +2960,15 @@ describe('workout controls: the more menu and the set menu', () => {
     mocks.timer = null
   })
 
-  // #523: "Skip completed exercises" makes Next hop over a finished exercise in Cards.
-  it('with skip completed on, Next hops over a finished exercise; off, it steps to it', async () => {
+  // #523: "Skip completed exercises" makes a swipe hop over a finished exercise in Cards.
+  it('with skip completed on, a swipe hops over a finished exercise; off, it steps to it', async () => {
     const three = () => [exercise('plain-bench', [false]), exercise('plain-row', [true, true]), exercise('plain-curl', [false])]
     await mount(three(), 0, { skipCompleted: true })
-    await pressNext()
+    await swipeNext()
     expect(mocks.S.active.cur).toBe(2)
     await unmount()
     await mount(three(), 0)
-    await pressNext()
+    await swipeNext()
     expect(mocks.S.active.cur).toBe(1)
   })
 
