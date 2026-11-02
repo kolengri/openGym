@@ -37,6 +37,10 @@
 @supports not (color: color-mix(in srgb, red 50%, blue)){.focus-set.complete .stp .num:disabled,.focus-set.locked .stp .num:disabled,.focus-set.complete .focus-timed strong,.focus-set.locked .focus-timed strong{color:var(--surface-3)!important;-webkit-text-fill-color:var(--surface-3)!important}}
 .focus-lock-note{margin:-4px 2px 2px;color:var(--label-2);font-size:var(--fs-caption);line-height:1.35}
 .focus-effort{width:100%;margin-top:16px}
+.focus-comparison{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:10px}
+.focus-comparison>div{display:flex;align-items:center;gap:6px}
+.focus-comparison .set-comparison{position:static;height:auto;gap:5px}
+.focus-comparison .set-effort-marker{position:static;flex-direction:column}
 .focus-card>.btn.primary{margin-top:18px;min-height:48px}
 .focus-secondary{display:grid;grid-template-columns:1fr 44px;gap:8px;margin-top:8px}
 .focus-secondary>.iconbtn{width:44px;height:44px;border:1px solid var(--sep);border-radius:8px}

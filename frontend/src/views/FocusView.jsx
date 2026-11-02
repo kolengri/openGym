@@ -27,6 +27,9 @@ import './FocusView.css'
 import { youtubeSearchUrl } from '../lib/youtube.js'
 import { openExternal } from '../components/CustomMedia.jsx'
 import { isOn } from '../lib/modules.js'
+import { sessionHistory } from '../lib/backfill.js'
+import { previousWorkSets, previousSetAt } from '../lib/workout-comparison.js'
+import { SetComparison, SetEffortMarker } from '../components/SetComparison.jsx'
 
 const firstIncomplete = entry => {
   const index = entry.sets.findIndex(set => !set.done)
@@ -127,7 +130,8 @@ export default function FocusView({
   const speedUnit = speedUnitOf(S)
   const entry = S.active.entries[entryIdx]
   const ex = exOr(entry.id)
-  const last = lastEntryFor(S, entry.id)
+  const H = sessionHistory(S)
+  const last = lastEntryFor(H, entry.id, entry.rid)
   const pinnedNote = pinnedNoteFor(S, entry.id)
   const guidance = progressionGuidance(entry.plan)
   // Exercise operations use indexes, so their local-only epoch discards stale pointers instead
@@ -141,6 +145,7 @@ export default function FocusView({
   const locked = !set.done && setIdx > firstOpenSet
   const readOnly = set.done || locked
   const mode = modeOf({ ...(entry.target || {}), id: entry.id })
+  const previous = previousSetAt(entry, setIdx, previousWorkSets(H, entry))
   const effort = effortOf(S)
   const effortField = EFFORT[effort]?.f
   const effortValue = effortField ? set[effortField] ?? null : null
@@ -183,6 +188,22 @@ export default function FocusView({
   const drops = dropsOf(set).length ? dropsOf(set) : Array.isArray(set.drops) ? set.drops : []
   const bursts = clustersOf(set).length ? clustersOf(set) : Array.isArray(set.clusters) ? set.clusters : []
 
+  const comparison = (current, before) => {
+    if (!before) return null
+    const fields = mode === 'cardio'
+      ? [['min', t('Duration (min)')], ['speed', speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')]]
+      : mode === 'time' ? [['sec', t('Seconds')], ['w', t('Load ({0})', S.unit)]]
+        : [['w', t('Load ({0})', S.unit)], ['r', t('Reps')]]
+    return <div className="focus-comparison">
+      <span className="small dim">{t('Last time')}</span>
+      {fields.filter(([field]) => before[field] != null && current[field] != null).map(([field, label]) => <div key={field}>
+        <span className="small dim">{label}</span>
+        <SetComparison current={current} previous={before} field={field} exerciseId={entry.id}
+          view={field === 'speed' ? v => toSpeed(v, speedUnit) : undefined} />
+      </div>)}
+      <SetEffortMarker current={current} previous={before} />
+    </div>
+  }
   const sideFields = side => {
     const sideSet = set.sides[side]
     const change = (field, value) => onMutateSet(setIdx, row => setSideField(row, side, field, value))
@@ -200,6 +221,7 @@ export default function FocusView({
         onChange={value => change('w', value)} />
       <Stepper label={t('Reps')} ariaLabel="reps" value={sideSet.r || 0} step={1} decimal={false} disabled={readOnly || sideSet.done}
         onChange={value => change('r', value)} />
+      {comparison(sideSet, previous?.sides?.[side])}
       <div className="focus-extras">
         {sideDrops.map((drop, index) => <div className="focus-extra" key={`drop-${index}`}>
           <span>{t('Drop {0}', index + 1)}</span>
@@ -354,6 +376,7 @@ export default function FocusView({
           </div> : <Stepper label={t('Reps')} ariaLabel="reps" value={set.r || 0} step={1} decimal={false} disabled={readOnly}
             onChange={value => onField(setIdx, 'r', value)} />}</>}
         </>}
+        {!isSideSet(set) && comparison(set, previous)}
         <div className="focus-extras">
           {drops.map((drop, index) => <div className="focus-extra" key={`drop-${index}`}>
             <span>{t('Drop {0}', index + 1)}</span>

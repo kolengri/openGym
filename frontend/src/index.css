@@ -1394,6 +1394,26 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
 .sethead .eff-sp{text-align:center}
 .sethead .ck-sp{width:30px;flex:none}
 .setrow{display:flex;align-items:center;gap:8px;padding:7px 0;position:relative}
+/* Comparisons live below their own input without taking width from its tap targets. */
+.setrow:has(.set-comparison){padding-bottom:25px}
+.setrow-side .setrow.side:has(.set-comparison){padding-bottom:22px}
+.setrow .stp.compared{position:relative;overflow:visible}
+.set-comparison{position:absolute;inset-inline:0;top:100%;height:18px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap;pointer-events:none}
+.set-previous{color:var(--label-3)}
+.set-delta.up{color:var(--green)}
+.set-delta.down{color:var(--red)}
+.setrow.done:has(.set-comparison),.setrow.side.done:has(.set-comparison){opacity:1}
+/* Stay inside SwipeRow's clip, below the number circle, without narrowing the inputs. */
+.set-effort-marker{position:absolute;inset-inline-start:2px;bottom:4px;display:flex;flex-direction:column;gap:2px;pointer-events:none}
+.set-effort-marker i{width:20px;height:3px;border-radius:2px}
+.set-effort-marker .previous{opacity:.45}
+.recent-exercise-history{margin-top:12px}
+.recent-exercise-history>.row{flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.recent-exercise-history h3{font-size:14px;margin:0}
+.recent-history-link{display:flex;align-items:center;gap:4px;min-height:36px;color:var(--acc);font-size:12px;text-align:start}
+.recent-history-list{list-style:none;margin:0;padding:0}
+.recent-history-list li{padding:8px 0;border-top:var(--hair) solid var(--sep)}
+.recent-history-sets{margin-top:3px;overflow-wrap:anywhere;unicode-bidi:plaintext}
 .setrow+.setrow::before{
   content:'';position:absolute;inset-inline-start:32px;inset-inline-end:0;top:0;height:var(--hair);background:var(--sep);
 }

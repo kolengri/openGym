@@ -19,7 +19,7 @@ const rowsOf = rid => S().active.entries.filter(e => e.rid === rid && e.id === B
 
 function install(routines, extra = {}) {
   const st = clone(DEF)
-  Object.assign(st, { routines, week: { 1: ['A'] }, active: null, workouts: [], weighIn: false }, extra)
+  Object.assign(st, { startFrom: 'plan', routines, week: { 1: ['A'] }, active: null, workouts: [], weighIn: false }, extra)
   useStore.setState({ S: st, user: null })
 }
 
