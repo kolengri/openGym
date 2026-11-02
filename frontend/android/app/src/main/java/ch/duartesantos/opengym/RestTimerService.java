@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.ServiceInfo;
 import android.os.Build;
 import android.os.Handler;
@@ -14,9 +15,9 @@ import android.os.Looper;
 import android.os.PowerManager;
 
 /**
- * Foreground while a rest is running. Shows one clock and one bar, and applies the same controls
- * as the in-app timer: pause, −15s, +15s, skip. The clock is a Chronometer the system runs; the
- * card is reposted every second only while the screen is on (for the bar), see RestCountdownPlan.
+ * One foreground card for the active workout. During a timer the system runs its Chronometer;
+ * only the visible progress bar needs per-second updates (RestCountdownPlan). Rest timers keep
+ * the in-app pause/−15s/+15s/skip controls; a timed work set has no rest controls.
  */
 public class RestTimerService extends Service {
     private final Handler handler = new Handler(Looper.getMainLooper());
@@ -25,6 +26,18 @@ public class RestTimerService extends Service {
     private long pausedLeft;
     private boolean paused;
     private boolean running;
+    private int lastStartId;
+    private boolean workoutActive;
+    private String wid = "";
+    private String workoutTitle = "openGym";
+    private String exercise = "";
+    private String detail = "";
+    private int done;
+    private int total;
+    private String timerTitle = "Rest";
+    private String timerKey = "";
+    private boolean controls = true;
+    private SharedPreferences saved;
     private String pauseLabel = "Pause";
     private String resumeLabel = "Resume";
     private String minusLabel = "\u2212 15s";
@@ -55,6 +68,11 @@ public class RestTimerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        saved = getSharedPreferences("workout-notification", MODE_PRIVATE);
+        restore();
+        RestAlert.restoreSettings(this);
+        // Remove a completion banner left by an older app shell; ID 41 owns this session.
+        ((android.app.NotificationManager) getSystemService(NOTIFICATION_SERVICE)).cancel(RestAlert.NOTIFICATION_ID);
         power = (PowerManager) getSystemService(POWER_SERVICE);
         screenOn = new BroadcastReceiver() {
             @Override
@@ -88,9 +106,70 @@ public class RestTimerService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        lastStartId = startId;
         String action = intent == null ? null : intent.getAction();
+        if (RestAlert.ACTION_RESTORE.equals(action)) {
+            if (!wid.equals(text(intent, "wid", "")) || !timerKey.equals(text(intent, "timerKey", ""))) {
+                showOrStop();
+                return restartMode();
+            }
+            if (running && !paused && endsAt <= System.currentTimeMillis()) clearTimer();
+            if (intent.getBooleanExtra("restoreRest", true)) {
+                if (running && controls) emit(paused ? "pause" : "adjust");
+                else RestAlertPlugin.emit("skip", 0, 0, 0, false, timerKey, wid);
+            }
+            if (running && !paused) { holdCpuUntilEnd(); handler.removeCallbacks(tick); tick.run(); }
+            persist();
+            showOrStop();
+            return restartMode();
+        }
+        if (intent == null) {
+            // START_STICKY does not redeliver the last command (which may have been Pause).
+            // Recover the resulting state instead; a paused timer never restarts its clock.
+            if (running && !paused && endsAt > System.currentTimeMillis()) {
+                holdCpuUntilEnd();
+                tick.run();
+            } else if (running && !paused) {
+                running = false;
+                persist();
+            }
+            showOrStop();
+            return restartMode();
+        }
+        if (RestAlert.ACTION_WORKOUT.equals(action)) {
+            boolean active = intent.getBooleanExtra("active", false);
+            String nextWid = text(intent, "wid", "");
+            boolean sameWorkout = workoutActive && wid.equals(nextWid);
+            // A different session must not inherit a paused timer from the preceding workout.
+            if (!active || (workoutActive && !wid.equals(nextWid))) clearTimer();
+            workoutActive = active;
+            wid = nextWid;
+            workoutTitle = text(intent, "workoutTitle", "openGym");
+            exercise = text(intent, "exercise", "");
+            detail = text(intent, "detail", "");
+            done = intent.getIntExtra("done", 0);
+            total = intent.getIntExtra("total", 0);
+            accent = intent.getIntExtra("accent", accent);
+            ink = intent.getIntExtra("ink", ink);
+            persist();
+            showOrStop();
+            if (active && sameWorkout && timerKey.equals(text(intent, "timerKey", "")) && intent.getBooleanExtra("reconcile", false)) {
+                if (running && controls) emit(paused ? "pause" : "adjust");
+                else if (!running && intent.getBooleanExtra("hasRest", false)) RestAlertPlugin.emit("skip", 0, 0, 0, false, timerKey, wid);
+            }
+            return restartMode();
+        }
+        if (RestAlert.ACTION_CLEAR.equals(action) || RestAlert.ACTION_COMPLETE.equals(action)) {
+            // The tone runs off-thread: an old end finishing after a new rest started must
+            // not take the new timer down. CLEAR is the explicit Skip/stop from the page.
+            if (RestAlert.ACTION_CLEAR.equals(action)
+                    || (!paused && endsAt == intent.getLongExtra("endsAt", -1))) clearTimer();
+            persist();
+            showOrStop();
+            return restartMode();
+        }
         if (RestAlert.ACTION_ACCENT.equals(action)) {
-            if (!running) {
+            if (!running && !workoutActive) {
                 // Only this start: a countdown asked for right behind it must still come up.
                 stopSelf(startId);
                 return START_NOT_STICKY;
@@ -98,41 +177,49 @@ public class RestTimerService extends Service {
             accent = intent.getIntExtra("accent", accent);
             ink = intent.getIntExtra("ink", ink);
             RestAlert.setAccentColor(accent, ink);
+            persist();
             show();
-            return START_NOT_STICKY;
+            return restartMode();
         }
         if (RestAlert.ACTION_HOLD.equals(action)) {
+            if (!running && intent.getLongExtra("leftMs", 0) > 0) {
+                running = true;
+                controls = true;
+                timerKey = text(intent, "timerKey", "");
+            }
             if (running) hold(intent.getLongExtra("leftMs", 0), intent.getLongExtra("totalMs", 0));
-            else stopSelf(startId);
-            return START_NOT_STICKY;
+            else showOrStop();
+            return restartMode();
         }
         if (RestAlert.ACTION_SKIP.equals(action)) {
             finishSkip();
-            return START_NOT_STICKY;
+            return restartMode();
         }
         if (RestAlert.ACTION_PAUSE.equals(action)) {
-            if (running) togglePause();
-            return START_NOT_STICKY;
+            if (running && controls) togglePause();
+            return restartMode();
         }
         if (RestAlert.ACTION_MINUS.equals(action)) {
-            if (running) nudge(-15_000);
-            return START_NOT_STICKY;
+            if (running && controls) nudge(-15_000);
+            return restartMode();
         }
         if (RestAlert.ACTION_PLUS.equals(action)) {
-            if (running) nudge(15_000);
-            return START_NOT_STICKY;
+            if (running && controls) nudge(15_000);
+            return restartMode();
         }
         long nextEnd = intent == null ? 0 : intent.getLongExtra("endsAt", 0);
         if (nextEnd <= System.currentTimeMillis()) {
-            stopForegroundCompat();
-            stopSelf();
-            return START_NOT_STICKY;
+            showOrStop();
+            return restartMode();
         }
         endsAt = nextEnd;
         long passed = intent.getLongExtra("totalMs", 0);
         totalMs = passed > 0 ? passed : Math.max(1000, endsAt - System.currentTimeMillis());
         paused = false;
         running = true;
+        timerTitle = text(intent, "title", "Rest");
+        controls = intent.getBooleanExtra("controls", true);
+        timerKey = text(intent, "timerKey", "");
         holdCpuUntilEnd();
         pauseLabel = text(intent, "pause", pauseLabel);
         resumeLabel = text(intent, "resume", resumeLabel);
@@ -141,11 +228,12 @@ public class RestTimerService extends Service {
         skipLabel = text(intent, "skip", skipLabel);
         if (intent != null && intent.hasExtra("accent")) accent = intent.getIntExtra("accent", accent);
         if (intent != null && intent.hasExtra("ink")) ink = intent.getIntExtra("ink", ink);
+        persist();
         handler.removeCallbacks(tick);
         tick.run();
         // A foreground service must post its card now, whether or not the screen is on.
         if (running && !interactive()) show();
-        return START_NOT_STICKY;
+        return restartMode();
     }
 
     @Override
@@ -178,6 +266,7 @@ public class RestTimerService extends Service {
             tick.run();
         }
         show();
+        persist();
         emit("pause");
     }
 
@@ -193,6 +282,7 @@ public class RestTimerService extends Service {
         if (total > 0) totalMs = total;
         handler.removeCallbacks(tick);
         releaseCpu();
+        persist();
         show();
     }
 
@@ -216,19 +306,18 @@ public class RestTimerService extends Service {
             handler.post(tick);
         }
         show();
+        persist();
         emit("adjust");
     }
 
     /**
-     * The end, reached by this countdown. The alert (or, with the app on screen, just the end of
-     * this card) comes from RestAlert, which stops this service once it is up. The CPU is held
-     * until then (a short lock when the rest itself held none): letting go here could let the
-     * phone sleep before that alert holds its own, with the alarm already called off.
+     * The countdown reached its end. Keep the CPU until RestAlert takes its own short tone
+     * lock. It then returns this same card to workout state, retaining foreground priority.
      */
     private void reachEnd() {
         running = false;
         holdCpuBriefly();
-        RestAlert.fireFromCountdown(getApplicationContext(), endsAt);
+        RestAlert.fireFromCountdown(getApplicationContext(), endsAt, !controls);
     }
 
     /**
@@ -273,32 +362,115 @@ public class RestTimerService extends Service {
     }
 
     private void finishSkip() {
-        running = false;
-        handler.removeCallbacks(tick);
-        releaseCpu();
-        RestAlert.cancelAlarmOnly(this, RestAlert.NOTIFICATION_ID);
-        RestAlertPlugin.emit("skip", 0, 0, 0, false);
-        stopForegroundCompat();
-        stopSelf();
+        if (!controls) return;
+        clearTimer();
+        RestAlertPlugin.emit("skip", 0, 0, 0, false, timerKey, wid);
+        persist();
+        showOrStop();
     }
 
     private void emit(String type) {
         long left = paused ? pausedLeft : Math.max(0, endsAt - System.currentTimeMillis());
-        RestAlertPlugin.emit(type, endsAt, totalMs, left, paused);
+        RestAlertPlugin.emit(type, endsAt, totalMs, left, paused, timerKey, wid);
     }
 
     private void show() {
         try {
             long left = paused ? pausedLeft : Math.max(0, endsAt - System.currentTimeMillis());
-            Notification n = RestAlert.countdownNotification(
-                    this, left, totalMs, paused, pauseLabel, resumeLabel, minusLabel, plusLabel, skipLabel, accent, ink);
+            Notification n = running ? RestAlert.countdownNotification(
+                    this, left, totalMs, paused, pauseLabel, resumeLabel, minusLabel, plusLabel, skipLabel,
+                    accent, ink, workoutActive ? workoutTitle + " · " + timerTitle : timerTitle, exercise, detail, controls)
+                    : RestAlert.workoutNotification(this, workoutTitle, exercise, detail, done, total, accent);
             if (Build.VERSION.SDK_INT >= 34) {
                 startForeground(RestAlert.COUNTDOWN_ID, n, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
             } else {
                 startForeground(RestAlert.COUNTDOWN_ID, n);
             }
         } catch (Exception e) {
-            stopSelf();
+            stopSelf(lastStartId);
+        }
+    }
+
+    private int restartMode() { return workoutActive || running ? START_STICKY : START_NOT_STICKY; }
+
+    /** A freshly restored page must adopt native Pause/±15/Skip, not overwrite them. */
+    static boolean restoreTimer(Context context, String wid, String timerKey, boolean rest) {
+        if (wid == null || wid.isEmpty() || timerKey == null || timerKey.isEmpty()) return false;
+        Context app = context.getApplicationContext();
+        try {
+            String raw = app.getSharedPreferences("workout-notification", MODE_PRIVATE).getString("state", null);
+            if (raw == null) return false;
+            Intent state = Intent.parseUri(raw, 0);
+            if (!state.getBooleanExtra("workoutActive", false) || !wid.equals(state.getStringExtra("wid"))) return false;
+            // A newer rest may have reached JS storage before its bridge call ran. An old
+            // native Skip belongs only to its own timer, never to that pending new rest.
+            if (!timerKey.equals(state.getStringExtra("timerKey"))) return false;
+            Intent i = new Intent(app, RestTimerService.class).setAction(RestAlert.ACTION_RESTORE);
+            i.putExtra("restoreRest", rest);
+            i.putExtra("wid", wid);
+            i.putExtra("timerKey", timerKey);
+            if (Build.VERSION.SDK_INT >= 26) app.startForegroundService(i);
+            else app.startService(i);
+            return true;
+        } catch (Exception e) { return false; }
+    }
+
+    private void clearTimer() {
+        running = false;
+        paused = false;
+        endsAt = 0;
+        handler.removeCallbacks(tick);
+        releaseCpu();
+        RestAlert.cancelAlarmOnly(this, RestAlert.NOTIFICATION_ID);
+    }
+
+    private void showOrStop() {
+        if (workoutActive || running) show();
+        else { stopForegroundCompat(); stopSelf(lastStartId); }
+    }
+
+    private void persist() {
+        if (!workoutActive && !running) { saved.edit().remove("state").apply(); return; }
+        Intent state = new Intent();
+        state.putExtra("workoutActive", workoutActive).putExtra("wid", wid)
+                .putExtra("workoutTitle", workoutTitle).putExtra("exercise", exercise).putExtra("detail", detail)
+                .putExtra("done", done).putExtra("total", total).putExtra("accent", accent).putExtra("ink", ink)
+                .putExtra("running", running).putExtra("paused", paused).putExtra("endsAt", endsAt)
+                .putExtra("pausedLeft", pausedLeft).putExtra("totalMs", totalMs).putExtra("timerTitle", timerTitle)
+                .putExtra("timerKey", timerKey).putExtra("controls", controls).putExtra("pause", pauseLabel).putExtra("resume", resumeLabel)
+                .putExtra("minus", minusLabel).putExtra("plus", plusLabel).putExtra("skip", skipLabel);
+        saved.edit().putString("state", state.toUri(0)).apply();
+    }
+
+    private void restore() {
+        try {
+            String raw = saved.getString("state", null);
+            if (raw == null) return;
+            Intent state = Intent.parseUri(raw, 0);
+            workoutActive = state.getBooleanExtra("workoutActive", false);
+            wid = text(state, "wid", "");
+            workoutTitle = text(state, "workoutTitle", workoutTitle);
+            exercise = text(state, "exercise", "");
+            detail = text(state, "detail", "");
+            done = state.getIntExtra("done", 0);
+            total = state.getIntExtra("total", 0);
+            accent = state.getIntExtra("accent", accent);
+            ink = state.getIntExtra("ink", ink);
+            running = state.getBooleanExtra("running", false);
+            paused = state.getBooleanExtra("paused", false);
+            endsAt = state.getLongExtra("endsAt", 0);
+            pausedLeft = state.getLongExtra("pausedLeft", 0);
+            totalMs = state.getLongExtra("totalMs", 0);
+            timerTitle = text(state, "timerTitle", timerTitle);
+            controls = state.getBooleanExtra("controls", true);
+            timerKey = text(state, "timerKey", "");
+            pauseLabel = text(state, "pause", pauseLabel);
+            resumeLabel = text(state, "resume", resumeLabel);
+            minusLabel = text(state, "minus", minusLabel);
+            plusLabel = text(state, "plus", plusLabel);
+            skipLabel = text(state, "skip", skipLabel);
+        } catch (Exception e) {
+            android.util.Log.w("openGym", "workout notification state could not be restored", e);
         }
     }
 

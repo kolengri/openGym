@@ -7,6 +7,10 @@ import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest'
 vi.mock('../lib/api.js', () => ({ api: vi.fn(() => Promise.resolve({ ok: true })) }))
 vi.mock('../lib/sound.js', () => ({ beep: vi.fn(), chime: vi.fn(), vibrate: vi.fn(), alertBuzz: vi.fn() }))
 
+vi.mock('../lib/rest-alert.js', async original => ({ ...(await original()), completeWorkAlert: vi.fn() }))
+import { completeWorkAlert } from '../lib/rest-alert.js'
+import { chime } from '../lib/sound.js'
+
 import { useUI, restoreWork, WORK_KEY } from './useUI.js'
 import { useStore } from './useStore.js'
 
@@ -17,6 +21,7 @@ const owner = { idx: 1, i: 0, id: 'plank' }
 let original
 beforeEach(() => {
   vi.useFakeTimers()
+  vi.clearAllMocks()
   original = useStore.getState().S
   useStore.setState({ S: { ...original, sound: true, active: { id: 'a', entries: [
     { id: 'squat', sets: [{ w: 100, r: 5 }] },
@@ -86,4 +91,25 @@ describe('a hold across a reload', () => {
     localStorage.setItem(WORK_KEY, JSON.stringify({ endsAt: Date.now() + 30_000, total: 45, label: 'Plank', overtime: false, owner }))
     expect(restoreWork()).toBe(false)
   })
+})
+
+
+it.each([false, true])('restores the final 400 ms without completing early (overtime=%s)', overtime => {
+  const endsAt = Date.now() + 400
+  localStorage.setItem(WORK_KEY, JSON.stringify({ endsAt, total: 45, label: 'Plank', overtime, owner, alerted: true }))
+  expect(restoreWork()).toBe(true)
+  expect(useUI.getState().work).toMatchObject({ left: 1, endsAt, overtime })
+  expect(useUI.getState().work.alerted).not.toBe(true)
+  expect(plankSet().done).toBeUndefined()
+  vi.advanceTimersByTime(399)
+  expect(completeWorkAlert).not.toHaveBeenCalled()
+  expect(chime).not.toHaveBeenCalled()
+  vi.advanceTimersByTime(601)
+  expect(completeWorkAlert).toHaveBeenCalledExactlyOnceWith(endsAt, expect.objectContaining({ chimed: true }))
+  expect(chime).toHaveBeenCalledTimes(1)
+  if (overtime) {
+    expect(useUI.getState().work.alerted).toBe(true)
+    expect(useUI.getState().work.left === 0).toBe(true)
+  }
+  else expect(useUI.getState().work).toBeNull()
 })

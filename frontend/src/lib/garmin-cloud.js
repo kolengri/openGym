@@ -4,10 +4,29 @@ import { toBase64 } from './media-store-fs.js'
 
 let pluginPromise = null
 let draining = null
-const CODES = new Set(['auth_required', 'network_error', 'upload_failed', 'unknown_result', 'content_changed', 'invalid_fit', 'session_changed', 'storage_error', 'storage_unavailable', 'receipt_limit', 'cancelled'])
+const CODES = new Set(['auth_required', 'auth_expired', 'network_error', 'upload_failed', 'unknown_result', 'content_changed', 'invalid_fit', 'session_changed', 'storage_error', 'storage_unavailable', 'receipt_limit', 'cancelled'])
 const ownerOf = state => state.user?.id ?? null
 const errorCode = error => CODES.has(error?.code) ? error.code : 'upload_failed'
 const completed = w => w?.entries?.some(e => e.sets?.some(s => s?.done === true || s?.sides?.L?.done === true || s?.sides?.R?.done === true))
+
+/** Source-language keys shared by Settings and the workout's upload result. */
+export function garminCloudErrorMessage(code) {
+  const messages = {
+    auth_required: 'Sign in to Garmin Connect again in Settings. Your saved session was not accepted.',
+    auth_expired: 'Your Garmin Connect session has expired. Sign in again in Settings.',
+    network_error: 'Could not reach Garmin Connect. Check your connection and retry.',
+    upload_failed: 'Garmin rejected the upload. Check your access in Garmin Connect and try again later.',
+    invalid_fit: 'This workout could not be exported as a valid FIT file.',
+    unknown_result: 'Garmin may already have received this workout. Check Connect before retrying.',
+    session_changed: 'This profile is linked to another Garmin session. Check Garmin Connect before reconnecting this profile; automatic replay is blocked.',
+    content_changed: 'This workout has a receipt for a different FIT file. Check Garmin Connect; automatic replay is blocked.',
+    storage_error: 'The workout could not be saved on this phone. Check local storage and retry.',
+    storage_unavailable: 'The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.',
+    receipt_limit: 'The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.',
+    cancelled: 'The Garmin action was cancelled. Try again when you are ready.',
+  }
+  return messages[errorCode({ code })]
+}
 
 /** Actual Bluetooth samples only. Missing/offline intervals are never filled in. */
 export function appendGarminCloudHeartRate(state, sample) {
@@ -102,6 +121,7 @@ export function drainGarminCloudUploads(store) {
       try {
         const status = await p.status()
         if (!belongs()) return
+        if (status.error) throw Object.assign(new Error('Garmin storage is unavailable.'), { code: status.error })
         if (!status.connected) throw Object.assign(new Error('Sign in to Garmin Connect.'), { code: 'auth_required' })
         if (status.sessionId !== sessionId) throw Object.assign(new Error('Reconnect this profile to Garmin Connect.'), { code: 'session_changed' })
         // Disabling sharing after queueing also removes the weights. Enabling it later cannot
@@ -144,7 +164,10 @@ export function drainGarminCloudUploads(store) {
 export async function uploadGarminWorkout(store, wid, { retry = false } = {}) {
   const status = await garminCloudStatus()
   if (status.error) throw Object.assign(new Error('Garmin storage is unavailable.'), { code: status.error })
-  if (!status.connected || status.sessionId !== store.getState().S.garminCloudSessionId) throw Object.assign(new Error('Connect this profile to Garmin Connect first.'), { code: 'auth_required' })
+  if (!status.connected) throw Object.assign(new Error('Connect this profile to Garmin Connect first.'), { code: 'auth_required' })
+  if (status.sessionId !== store.getState().S.garminCloudSessionId) throw Object.assign(new Error('Connect this profile to its Garmin session.'), { code: 'session_changed' })
+  // Do not gate on authState here: native must resolve a durable receipt before checking expiry
+  // for a new POST. A lost successful callback remains recoverable after its token expires.
   if (!completed(store.getState().S.workouts.find(w => w.id === wid))) throw Object.assign(new Error('This workout has no completed sets.'), { code: 'invalid_fit' })
   store.getState().update(s => {
     const w = s.workouts.find(x => x.id === wid)

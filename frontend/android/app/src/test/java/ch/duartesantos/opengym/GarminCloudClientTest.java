@@ -29,7 +29,7 @@ public class GarminCloudClientTest {
         byte[] valid = fit(64);
         GarminCloudClient.validateFit(valid);
         byte[] corrupted = valid.clone(); corrupted[20] ^= 1;
-        assertThrows(GarminCloudClient.Failure.class, () -> GarminCloudClient.validateFit(corrupted));
+        assertEquals("invalid_fit", assertThrows(GarminCloudClient.Failure.class, () -> GarminCloudClient.validateFit(corrupted)).code);
         assertThrows(GarminCloudClient.Failure.class, () -> GarminCloudClient.validateFit(Arrays.copyOf(valid, valid.length - 1)));
         byte[] wrongMagic = valid.clone(); wrongMagic[9] = 'X';
         assertThrows(GarminCloudClient.Failure.class, () -> GarminCloudClient.validateFit(wrongMagic));

@@ -26,7 +26,7 @@ import android.util.Log;
 
 /**
  * Alarm for the rest between sets. The WebView timer does not run with the screen locked.
- * This posts a notification for the countdown and, when the rest ends, the end alert and tone.
+ * The workout service owns one ongoing card; the alarm plays only the end tone and buzz.
  * The shade shows it when notifications are allowed. The lock screen shows it only when
  * the user also allows notifications there.
  */
@@ -38,6 +38,10 @@ public final class RestAlert {
     static final String ACTION_SKIP = "ch.duartesantos.opengym.rest.SKIP";
     static final String ACTION_ACCENT = "ch.duartesantos.opengym.rest.ACCENT";
     static final String ACTION_HOLD = "ch.duartesantos.opengym.rest.HOLD";
+    static final String ACTION_WORKOUT = "ch.duartesantos.opengym.rest.WORKOUT";
+    static final String ACTION_CLEAR = "ch.duartesantos.opengym.rest.CLEAR";
+    static final String ACTION_COMPLETE = "ch.duartesantos.opengym.rest.COMPLETE";
+    static final String ACTION_RESTORE = "ch.duartesantos.opengym.rest.RESTORE";
     static final String CHANNEL_ID = "rest-over";
     /**
      * Settings → Vibrate off. Android keeps a channel's vibration as it was when the channel was
@@ -66,7 +70,7 @@ public final class RestAlert {
     private static final long[] VIBRATE = new long[] {0, 200, 100, 200, 100, 400};
 
     private static AudioTrack current;
-    private static long firedFor;
+    private static final CompletionGate completionGate = new CompletionGate();
 
     private RestAlert() {}
 
@@ -77,7 +81,7 @@ public final class RestAlert {
      */
     public static void schedule(Context ctx, long at, int id, String title, boolean sound, String tone, boolean vibrate,
                                 boolean alarmBuzz, String channelId, String visibility, String importance,
-                                boolean localOnly, String countdownTitle, long totalMs) {
+                                boolean localOnly, String countdownTitle, long totalMs, boolean controls, String timerKey) {
         alarmBuzz = vibrate && alarmBuzz;
         channelId = channelFor(channelId, vibrate);
         Intent intent = alarmIntent(ctx);
@@ -92,6 +96,7 @@ public final class RestAlert {
         intent.putExtra("importance", importance == null ? "high" : importance);
         intent.putExtra("localOnly", localOnly);
         intent.putExtra("at", at);
+        intent.putExtra("workTimer", !controls);
         PendingIntent pi = PendingIntent.getBroadcast(ctx, id, intent, FLAGS);
         AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
         boolean exact = canExact(am);
@@ -103,18 +108,14 @@ public final class RestAlert {
             exact = false;
         }
         if (!exact) Log.w("openGym", "exact alarms not allowed; the rest countdown sounds the end itself");
-        if (Build.VERSION.SDK_INT >= 26) {
-            NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-            String posted = alarmBuzz ? QUIET_CHANNEL_ID : channelId;
-            ensureChannel(ctx, nm, posted, importanceOf(importance), visibilityOf(visibility), !alarmBuzz && vibrate);
-        }
         lastAlertTitle = title == null ? "Rest over" : title;
         lastSound = sound;
         lastTone = tone == null ? "chime" : tone;
         lastVibrate = vibrate;
         lastAlarmBuzz = alarmBuzz;
         lastChannel = channelId;
-        startCountdown(ctx, at, totalMs, countdownTitle);
+        ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).edit().putString("alarm", intent.toUri(0)).apply();
+        startCountdown(ctx, at, totalMs, countdownTitle, controls, timerKey);
     }
 
     public static void setAccentColor(int accent, int ink) {
@@ -146,7 +147,7 @@ public final class RestAlert {
      * (on an emulator it came 50 seconds after a 90-second rest), so the countdown sounds the end
      * and the alarm is only the fallback for a countdown that was not running.
      */
-    static void fireFromCountdown(Context ctx, long at) {
+    static void fireFromCountdown(Context ctx, long at, boolean workTimer) {
         cancelAlarmOnly(ctx, NOTIFICATION_ID);
         Intent intent = alarmIntent(ctx);
         intent.putExtra("id", NOTIFICATION_ID);
@@ -157,19 +158,57 @@ public final class RestAlert {
         intent.putExtra("alarmBuzz", lastAlarmBuzz);
         intent.putExtra("channelId", lastChannel);
         intent.putExtra("at", at);
+        intent.putExtra("workTimer", workTimer);
         new Thread(() -> fire(ctx, intent), "opengym-rest").start();
     }
 
-    /** One alert per end: the countdown and an exact alarm reach the same end in the same instant. */
-    private static synchronized boolean claim(long at) {
-        if (at > 0 && at == firedFor) return false;
-        firedFor = at;
-        return true;
+    static void completeWork(Context ctx, long at, boolean chimed, boolean sound, String tone, boolean vibrate, boolean alarmBuzz) {
+        if (chimed) {
+            completionGate.claim(at); // The visible page already owns this end signal.
+            completeCountdown(ctx, at);
+            return;
+        }
+        Intent intent = alarmIntent(ctx);
+        intent.putExtra("at", at);
+        intent.putExtra("sound", sound);
+        intent.putExtra("tone", tone);
+        intent.putExtra("vibrate", vibrate);
+        intent.putExtra("alarmBuzz", alarmBuzz);
+        intent.putExtra("workCompletion", true);
+        new Thread(() -> fire(ctx, intent), "opengym-work").start();
+    }
+
+    /** Shared by alarm/countdown callbacks and the explicit work handoff. No Android runtime
+     * is needed to check the visibility transition and deduplication ordering. */
+    static final class CompletionGate {
+        enum Outcome { DUPLICATE, PAGE, NATIVE }
+        private long firedFor;
+
+        synchronized boolean claim(long at) {
+            if (at > 0 && at == firedFor) return false;
+            firedFor = at;
+            return true;
+        }
+
+        synchronized Outcome begin(long at, boolean foreground, boolean workTimer, boolean explicitWork) {
+            boolean page = foreground && !explicitWork;
+            // Only work has a later JS completion handoff. An ordinary rest must consume its
+            // claim even on screen, so a second dispatched callback cannot sound after hiding.
+            if (!(page && workTimer) && !claim(at)) return Outcome.DUPLICATE;
+            return page ? Outcome.PAGE : Outcome.NATIVE;
+        }
     }
 
     /** Runs off the main thread. Holds the CPU until the tone has finished. */
     public static void fire(Context ctx, Intent intent) {
-        if (!claim(intent.getLongExtra("at", 0))) return;
+        CompletionGate.Outcome outcome = completionGate.begin(intent.getLongExtra("at", 0),
+                RestAlertPlugin.appInFront(), intent.getBooleanExtra("workTimer", false),
+                intent.getBooleanExtra("workCompletion", false));
+        if (outcome == CompletionGate.Outcome.DUPLICATE) return;
+        if (outcome == CompletionGate.Outcome.PAGE) {
+            completeCountdown(ctx, intent.getLongExtra("at", 0));
+            return;
+        }
         PowerManager.WakeLock cpu = null;
         try {
             PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
@@ -177,36 +216,37 @@ public final class RestAlert {
             cpu.acquire(10_000);
         } catch (Exception ignored) { /* tone still attempts without the lock */ }
         try {
-            // The app is on screen: the page has chimed, buzzed and flashed the end itself, and
-            // its bar says Ready. A tone and a banner on top would say it twice. Asking the page
-            // to hush this alarm instead raced it: the page's last tick and this alarm land in
-            // the same few milliseconds, and whichever came first decided.
-            if (RestAlertPlugin.appInFront()) {
-                stopCountdown(ctx);
-                return;
-            }
-            pokeScreen(ctx);
             boolean vibrate = intent.getBooleanExtra("vibrate", true);
             boolean alarmBuzz = vibrate && intent.getBooleanExtra("alarmBuzz", false);
-            boolean shown = showNotification(ctx, intent, alarmBuzz);
-            // On silent the channel's buzz is muted; an alarm's is not (#375). The notification
-            // went out on the quiet channel, so this is the one buzz with the ringer on too.
+            // The workout card stays quiet. Its end signal is played directly, never as a
+            // second completion notification. Keep the user's normal/alarm vibration choice.
             if (alarmBuzz) buzz(ctx, VIBRATE);
-            // Settings → Vibrate off is off here too: without notifications this buzz is the alert.
-            else if (!shown && vibrate) vibrateFallback(ctx);
+            else if (vibrate) vibrateFallback(ctx);
             // Locked or in the background, the page does not play its chime, so this is the one:
             // the same sound as Settings → Sound picks for the page (RestTone.render).
             boolean play = intent.getBooleanExtra("sound", true);
             if (play) playSound(ctx, toneOf(intent));
-            // The countdown card is the foreground-service notification. Drop it once the
-            // "rest over" alert is up and the tone has played, including when the WebView is
-            // frozen. Not before the tone: the service is what keeps this process in the
-            // foreground, and a process that has just dropped out of it can be frozen or cut
-            // off mid-tone with the screen off.
-            stopCountdown(ctx);
+            // Keep foreground priority through the tone, then return the same card to the
+            // workout summary. The matching end guard leaves a newer countdown alone.
+            completeCountdown(ctx, intent.getLongExtra("at", 0));
         } finally {
             if (cpu != null && cpu.isHeld()) cpu.release();
         }
+    }
+
+    /** Restore the alarm options for notification controls after a sticky service restart. */
+    static void restoreSettings(Context ctx) {
+        try {
+            String saved = ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).getString("alarm", null);
+            if (saved == null) return;
+            Intent i = Intent.parseUri(saved, 0);
+            lastAlertTitle = i.getStringExtra("title");
+            lastSound = i.getBooleanExtra("sound", true);
+            lastTone = toneOf(i);
+            lastVibrate = i.getBooleanExtra("vibrate", true);
+            lastAlarmBuzz = i.getBooleanExtra("alarmBuzz", false);
+            lastChannel = i.getStringExtra("channelId");
+        } catch (Exception e) { Log.w("openGym", "rest alarm settings could not be restored", e); }
     }
 
     private static Intent alarmIntent(Context ctx) {
@@ -229,57 +269,6 @@ public final class RestAlert {
         return am.canScheduleExactAlarms();
     }
 
-    @SuppressWarnings("deprecation")
-    private static void pokeScreen(Context ctx) {
-        // Best effort so the notification is already lit. Newer Android builds ignore
-        // ACQUIRE_CAUSES_WAKEUP; the posted notification is what the shade still shows.
-        try {
-            PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
-            PowerManager.WakeLock screen = pm.newWakeLock(
-                    PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP,
-                    "opengym:rest-screen");
-            screen.acquire(3000);
-        } catch (Exception ignored) { /* */ }
-    }
-
-    @SuppressWarnings("deprecation")
-    private static boolean showNotification(Context ctx, Intent intent, boolean alarmBuzz) {
-        String title = intent.getStringExtra("title");
-        if (title == null || title.isEmpty()) title = "Rest’s over. Next set!";
-        // With the alarm buzz on, the notification itself stays still: the buzz comes from buzz().
-        boolean vibrate = intent.getBooleanExtra("vibrate", true) && !alarmBuzz;
-        String channelId = channelFor(intent.getStringExtra("channelId"), vibrate);
-        int id = intent.getIntExtra("id", NOTIFICATION_ID);
-        boolean localOnly = intent.getBooleanExtra("localOnly", false);
-        int visibility = visibilityOf(intent.getStringExtra("visibility"));
-        NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= 24 && !nm.areNotificationsEnabled()) return false;
-        ensureChannel(ctx, nm, channelId, importanceOf(intent.getStringExtra("importance")), visibility, vibrate);
-        Notification.Builder b = Build.VERSION.SDK_INT >= 26
-                ? new Notification.Builder(ctx, channelId)
-                : new Notification.Builder(ctx);
-        b.setSmallIcon(R.drawable.ic_stat_dumbbell)
-                .setContentTitle(title)
-                .setWhen(System.currentTimeMillis())
-                .setShowWhen(true)
-                .setAutoCancel(true)
-                .setCategory(Notification.CATEGORY_ALARM)
-                .setVisibility(visibility)
-                .setColor(lastAccent)
-                .setContentIntent(openApp(ctx));
-        // Android 8+ takes the vibration from the channel; before that, from the notification.
-        if (vibrate) b.setVibrate(VIBRATE);
-        if (Build.VERSION.SDK_INT >= 26) b.setOnlyAlertOnce(false);
-        else b.setPriority(Notification.PRIORITY_HIGH);
-        if (localOnly) b.setLocalOnly(true);
-        try {
-            nm.notify(id, b.build());
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
     /** The quiet channel when Vibrate is off, whatever channel the page named. */
     static String channelFor(String channelId, boolean vibrate) {
         if (!vibrate) return QUIET_CHANNEL_ID;
@@ -287,44 +276,10 @@ public final class RestAlert {
         return channelId;
     }
 
-    private static void ensureChannel(Context ctx, NotificationManager nm, String channelId, int importance, int visibility, boolean vibrate) {
-        if (Build.VERSION.SDK_INT < 26) return;
-        if (nm.getNotificationChannel(channelId) != null) return;
-        NotificationChannel channel = new NotificationChannel(
-                channelId, ctx.getString(vibrate ? R.string.rest_channel_name : R.string.rest_quiet_channel_name), importance);
-        channel.setDescription(ctx.getString(R.string.rest_channel_desc));
-        channel.setLockscreenVisibility(visibility);
-        if (vibrate) {
-            channel.enableVibration(true);
-            channel.setVibrationPattern(VIBRATE);
-        } else {
-            channel.enableVibration(false);
-            channel.setVibrationPattern(null);
-        }
-        // Silent on purpose. The beep is the in-app tone or playSound(), not a second ding
-        // from this channel.
-        channel.setSound(null, null);
-        nm.createNotificationChannel(channel);
-    }
-
     private static PendingIntent openApp(Context ctx) {
         Intent open = new Intent(ctx, MainActivity.class);
         open.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         return PendingIntent.getActivity(ctx, NOTIFICATION_ID + 1, open, FLAGS);
-    }
-
-    private static int importanceOf(String name) {
-        if ("max".equals(name)) return NotificationManager.IMPORTANCE_MAX;
-        if ("low".equals(name)) return NotificationManager.IMPORTANCE_LOW;
-        if ("min".equals(name)) return NotificationManager.IMPORTANCE_MIN;
-        if ("default".equals(name)) return NotificationManager.IMPORTANCE_DEFAULT;
-        return NotificationManager.IMPORTANCE_HIGH;
-    }
-
-    private static int visibilityOf(String name) {
-        if ("secret".equals(name)) return Notification.VISIBILITY_SECRET;
-        if ("private".equals(name)) return Notification.VISIBILITY_PRIVATE;
-        return Notification.VISIBILITY_PUBLIC;
     }
 
     @SuppressWarnings("deprecation")
@@ -400,10 +355,12 @@ public final class RestAlert {
         am.cancel(pi);
     }
 
-    static void startCountdown(Context ctx, long endsAt, long totalMs, String title) {
+    static void startCountdown(Context ctx, long endsAt, long totalMs, String title, boolean controls, String timerKey) {
         Intent i = new Intent(ctx, RestTimerService.class);
         i.putExtra("endsAt", endsAt);
         i.putExtra("totalMs", totalMs);
+        i.putExtra("controls", controls);
+        i.putExtra("timerKey", timerKey);
         i.putExtra("title", title == null || title.isEmpty() ? "Rest" : title);
         i.putExtra("pause", labPause);
         i.putExtra("resume", labResume);
@@ -422,8 +379,16 @@ public final class RestAlert {
 
     static void stopCountdown(Context ctx) {
         try {
-            ctx.stopService(new Intent(ctx, RestTimerService.class));
+            ctx.startService(new Intent(ctx, RestTimerService.class).setAction(ACTION_CLEAR));
         } catch (Exception ignored) { /* already gone */ }
+    }
+
+    private static void completeCountdown(Context ctx, long at) {
+        try {
+            Intent i = new Intent(ctx, RestTimerService.class).setAction(ACTION_COMPLETE);
+            i.putExtra("endsAt", at);
+            ctx.startService(i);
+        } catch (Exception ignored) { /* a sticky restart reconciles an expired countdown */ }
     }
 
     /**
@@ -434,7 +399,7 @@ public final class RestAlert {
     @SuppressWarnings("deprecation")
     static Notification countdownNotification(Context ctx, long leftMs, long totalMs, boolean paused,
                                               String pause, String resume, String minus, String plus, String skip,
-                                              int accent, int ink) {
+                                              int accent, int ink, String title, String exercise, String detail, boolean controls) {
         int max = (int) Math.max(1, Math.round(totalMs / 1000.0));
         int left = (int) Math.min(max, (Math.max(0, leftMs) + 999) / 1000);
         String clock = clock(left);
@@ -449,6 +414,11 @@ public final class RestAlert {
         RemoteViews expanded = new RemoteViews(ctx.getPackageName(), R.layout.rest_countdown_big);
         fillClock(expanded, clock, max, left, accent, paused, base);
         applyAccent(expanded, accent, ink);
+        expanded.setTextViewText(R.id.rest_exercise, exercise);
+        expanded.setViewVisibility(R.id.rest_exercise, exercise.isEmpty() ? View.GONE : View.VISIBLE);
+        expanded.setTextViewText(R.id.rest_detail, detail);
+        expanded.setViewVisibility(R.id.rest_detail, detail.isEmpty() ? View.GONE : View.VISIBLE);
+        expanded.setViewVisibility(R.id.rest_controls, controls ? View.VISIBLE : View.GONE);
         expanded.setTextViewText(R.id.rest_pause, paused ? resume : pause);
         expanded.setTextViewText(R.id.rest_minus, minus);
         expanded.setTextViewText(R.id.rest_plus, plus);
@@ -462,6 +432,7 @@ public final class RestAlert {
                 : new Notification.Builder(ctx);
         b.setSmallIcon(R.drawable.ic_stat_dumbbell)
                 .setShowWhen(false)
+                .setSubText(title)
                 .setOngoing(true)
                 .setCategory(Notification.CATEGORY_PROGRESS)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
@@ -484,6 +455,23 @@ public final class RestAlert {
         if (Build.VERSION.SDK_INT >= 31) {
             b.setForegroundServiceBehavior(Notification.FOREGROUND_SERVICE_IMMEDIATE);
         }
+        return b.build();
+    }
+
+    static Notification workoutNotification(Context ctx, String title, String exercise, String detail, int done, int total, int accent) {
+        NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+        ensureCountdownChannel(ctx, nm);
+        Notification.Builder b = Build.VERSION.SDK_INT >= 26
+                ? new Notification.Builder(ctx, COUNTDOWN_CHANNEL_ID) : new Notification.Builder(ctx);
+        String body = exercise + (detail.isEmpty() ? "" : "\n" + detail);
+        b.setSmallIcon(R.drawable.ic_stat_dumbbell)
+                .setContentTitle(title).setContentText(exercise.isEmpty() ? detail : exercise)
+                .setStyle(new Notification.BigTextStyle().bigText(body))
+                .setShowWhen(false).setOngoing(true).setOnlyAlertOnce(true)
+                .setCategory(Notification.CATEGORY_PROGRESS).setVisibility(Notification.VISIBILITY_PUBLIC)
+                .setColor(accent).setContentIntent(openApp(ctx)).setLocalOnly(true);
+        if (total > 0) b.setSubText(done + " / " + total).setProgress(total, done, false);
+        if (Build.VERSION.SDK_INT >= 31) b.setForegroundServiceBehavior(Notification.FOREGROUND_SERVICE_IMMEDIATE);
         return b.build();
     }
 
@@ -530,7 +518,14 @@ public final class RestAlert {
 
     private static void ensureCountdownChannel(Context ctx, NotificationManager nm) {
         if (Build.VERSION.SDK_INT < 26 || countdownChannelReady) return;
-        if (nm.getNotificationChannel(COUNTDOWN_CHANNEL_ID) != null) { countdownChannelReady = true; return; }
+        NotificationChannel existing = nm.getNotificationChannel(COUNTDOWN_CHANNEL_ID);
+        if (existing != null) {
+            existing.setName(ctx.getString(R.string.rest_countdown_channel_name));
+            existing.setDescription(ctx.getString(R.string.rest_channel_desc));
+            nm.createNotificationChannel(existing);
+            countdownChannelReady = true;
+            return;
+        }
         NotificationChannel channel = new NotificationChannel(
                 COUNTDOWN_CHANNEL_ID,
                 ctx.getString(R.string.rest_countdown_channel_name),

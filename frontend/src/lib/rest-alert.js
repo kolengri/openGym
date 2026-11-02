@@ -2,8 +2,8 @@
 //
 // The in-page countdown is a setInterval in the WebView. Android freezes that as soon as the
 // screen locks, so the beep never runs and nothing is posted. Scheduling a real alarm at
-// startRest() is what still fires with the screen off: the receiver posts the notification
-// and plays the end tone. The card in the notification shade is the in-app shape: clock plus
+// startRest() is what still fires with the screen off: the receiver plays the end tone.
+// Android keeps one workout card throughout the session. During timers it shows a clock plus
 // a shrinking bar. The lock screen shows it only when notifications are allowed and the
 // system is set to show them there.
 //
@@ -33,7 +33,7 @@ export function accentColors(key) {
   return { accent: argb(accent), ink: argb(ink) }
 }
 
-export function buildRestAlert({ at, title, countdownTitle, totalSec, accent, sound = true, classic = false, tone = null, vibrate = true, alarmBuzz = false, now = Date.now() } = {}) {
+export function buildRestAlert({ at, title, countdownTitle, totalSec, accent, sound = true, classic = false, tone = null, vibrate = true, alarmBuzz = false, controls = true, now = Date.now() } = {}) {
   if (typeof at !== 'number' || !(at > now)) return null
   // Settings → Sound (#306): one of lib/sound.js REST_SOUNDS; without one, `classic` decides, as before.
   const kind = Object.hasOwn(REST_SOUNDS, tone) ? tone : classic === true ? 'classic' : 'chime'
@@ -44,6 +44,7 @@ export function buildRestAlert({ at, title, countdownTitle, totalSec, accent, so
     channelId: vibrate ? REST_CHANNEL_ID : REST_QUIET_CHANNEL_ID,
     title: title || t('Rest’s over. Next set!'),
     countdownTitle: countdownTitle || t('Rest'),
+    controls: !!controls,
     pause: t('Pause'),
     resume: t('Resume'),
     minus: '− 15s',
@@ -88,9 +89,10 @@ const enqueue = fn => {
 // Anything but the phone app gets null and registers nothing.
 let pluginP = null
 const restPlugin = () => pluginP || (pluginP = (async () => {
-  if (!(await nativePlatform())) return null
+  const platform = await nativePlatform()
+  if (!platform) return null
   const { registerPlugin } = await import('@capacitor/core')
-  return { RestAlert: registerPlugin('RestAlert') }
+  return { RestAlert: registerPlugin('RestAlert'), platform }
 })().catch(() => null))
 
 // Resolves true only when the phone scheduled the end itself. Callers use false as
@@ -98,8 +100,11 @@ const restPlugin = () => pluginP || (pluginP = (async () => {
 export function armRestAlert(at, opts = {}) {
   if (!MOBILE) return Promise.resolve(false)
   const mine = ++token
-  const alert = buildRestAlert({ at, title: opts.title, countdownTitle: opts.countdownTitle, totalSec: opts.totalSec, accent: opts.accent, sound: opts.sound, classic: opts.classic === true, tone: opts.tone, vibrate: opts.vibrate !== false, alarmBuzz: !!opts.alarmBuzz })
+  const alert = buildRestAlert({ at, title: opts.title, countdownTitle: opts.countdownTitle, totalSec: opts.totalSec, accent: opts.accent, sound: opts.sound, classic: opts.classic === true, tone: opts.tone, vibrate: opts.vibrate !== false, alarmBuzz: !!opts.alarmBuzz, controls: opts.controls !== false })
   if (!alert) return Promise.resolve(false)
+  alert.restored = !!opts.restored
+  alert.wid = String(opts.wid || '')
+  alert.timerKey = String(opts.timerKey || '')
   // Outside the chain and never awaited: the alarm, its tone and the alarm buzz do not need the
   // notification permission, and a dialog left open while the phone is put away must not hold
   // the alarm back until the rest is long over.
@@ -112,6 +117,17 @@ export function armRestAlert(at, opts = {}) {
   })
 }
 
+// Natural work completion is queued before clearing/replacing the timer. It must not be
+// dropped by a later arm/cancel, and carries its own sound settings if the alarm already ended.
+export function completeWorkAlert(at, opts = {}) {
+  if (!MOBILE || !(at > 0) || at > Date.now()) return Promise.resolve(false)
+  return enqueue(async () => {
+    const p = await restPlugin()
+    if (p?.platform !== 'android') return false
+    try { await p.RestAlert.complete({ at, ...opts }); return true } catch { return false }
+  })
+}
+
 export function disarmRestAlert() {
   token++
   if (!MOBILE) return
@@ -120,15 +136,27 @@ export function disarmRestAlert() {
   })
 }
 
+// Separate from cancel(): ending/skipping a timer keeps the workout's single foreground card.
+// Use the same queue so a slow workout update cannot arrive after the workout was discarded.
+export function updateWorkoutNotification(workout) {
+  if (!MOBILE) return Promise.resolve(false)
+  if (workout) askNotifPermissionOnce()
+  return enqueue(async () => {
+    const p = await restPlugin()
+    if (p?.platform !== 'android') return false
+    try { await p.RestAlert.workout({ active: !!workout, ...workout }); return true } catch { return false }
+  })
+}
+
 // The rest was paused in the app (#193): the notification stops its clock at the time held and
 // offers Resume, and the alarm for the old end is called off. Resuming arms it again for the new
 // end like any other rest; time added or taken while paused holds it again at the new figure.
-export function holdRestAlert(leftSec, totalSec) {
+export function holdRestAlert(leftSec, totalSec, opts = {}) {
   token++
   if (!MOBILE) return
   enqueue(async () => {
     const p = await restPlugin()
-    if (p) await p.RestAlert.hold({ id: REST_ALERT_ID, leftMs: Math.max(1, leftSec) * 1000, totalMs: Math.max(1, totalSec) * 1000 })
+    if (p) await p.RestAlert.hold({ id: REST_ALERT_ID, leftMs: Math.max(1, leftSec) * 1000, totalMs: Math.max(1, totalSec) * 1000, restored: !!opts.restored, wid: String(opts.wid || ''), timerKey: String(opts.timerKey || '') })
   })
 }
 
@@ -237,6 +265,10 @@ async function deliver(alert) {
     importance: alert.importance,
     localOnly: alert.localOnly,
     countdownTitle: alert.countdownTitle,
+    controls: alert.controls,
+    restored: alert.restored,
+    wid: alert.wid,
+    timerKey: alert.timerKey,
     totalMs: alert.totalMs,
     pause: alert.pause,
     resume: alert.resume,

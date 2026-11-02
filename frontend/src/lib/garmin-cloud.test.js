@@ -22,6 +22,31 @@ beforeEach(() => {
   _setGarminCloudPluginForTest(bridge)
 })
 
+it('keeps an expired credential available for native lost-callback receipt reconciliation', async () => {
+  bridge.status.mockResolvedValue({ available: true, connected: true, sessionId: 'synthetic-session', authState: 'expired' })
+  const store = storeOf()
+  await uploadGarminWorkout(store, 'synthetic-workout')
+  expect(bridge.upload).toHaveBeenCalledOnce()
+  expect(store.getState().S.workouts[0].garminCloudUpload).toMatchObject({ status: 'uploaded', activityId: 'synthetic-activity' })
+})
+
+it('retains the distinct native expiry reason when a new POST is refused', async () => {
+  bridge.status.mockResolvedValue({ available: true, connected: true, sessionId: 'synthetic-session', authState: 'expired' })
+  bridge.upload.mockRejectedValue(Object.assign(new Error('synthetic expired claim'), { code: 'auth_expired' }))
+  const store = storeOf()
+  await uploadGarminWorkout(store, 'synthetic-workout')
+  expect(store.getState().S.workouts[0].garminCloudUpload).toMatchObject({ status: 'failed', error: 'auth_expired' })
+  expect(store.getState().S.garminCloudSessionId).toBe('synthetic-session')
+})
+
+it('classifies a manual profile/session mismatch without pretending credentials are missing', async () => {
+  bridge.status.mockResolvedValue({ available: true, connected: true, sessionId: 'another-synthetic-session' })
+  const store = storeOf()
+  await expect(uploadGarminWorkout(store, 'synthetic-workout')).rejects.toMatchObject({ code: 'session_changed' })
+  expect(bridge.upload).not.toHaveBeenCalled()
+  expect(store.getState().S.workouts[0].garminCloudUpload).toBeUndefined()
+})
+
 it('distinguishes unavailable native storage from a missing Garmin integration', async () => {
   bridge.status.mockRejectedValue(Object.assign(new Error('synthetic storage failure'), { code: 'storage_unavailable' }))
   expect(await garminCloudStatus()).toEqual({ available: true, connected: false, error: 'storage_unavailable' })

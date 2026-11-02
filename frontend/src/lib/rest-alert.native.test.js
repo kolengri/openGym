@@ -95,6 +95,31 @@ describe('the rest alert in a browser shell', () => {
 })
 
 describe('the rest alert in the Android app', () => {
+  it('serializes workout start, timer, cancel and workout end without waiting for notification permission', async () => {
+    h.platform = 'android'
+    h.perm = 'prompt'
+    h.request = vi.fn(() => new Promise(() => {}))
+    const calls = []
+    h.registerPlugin = vi.fn(() => new Proxy({}, {
+      get: (_, prop) => prop === 'then' ? () => new Promise(() => {}) : async data => {
+        if (prop !== 'addListener') calls.push([prop, data])
+        return prop === 'addListener' ? { remove: async () => {} } : undefined
+      },
+    }))
+    const alert = await import('./rest-alert.js')
+    const started = alert.updateWorkoutNotification({ wid: 'workout', title: 'Push' })
+    const timed = alert.armRestAlert(Date.now() + 45000, { totalSec: 45, controls: false })
+    alert.disarmRestAlert()
+    const ended = alert.updateWorkoutNotification(null)
+    await expect(started).resolves.toBe(true)
+    await timed
+    await expect(ended).resolves.toBe(true)
+    expect(calls.map(([method]) => method)).toEqual(['workout', 'schedule', 'cancel', 'workout'])
+    expect(calls[0][1]).toMatchObject({ active: true, wid: 'workout' })
+    expect(calls[1][1]).toMatchObject({ id: 42, controls: false })
+    expect(calls[3][1]).toEqual({ active: false })
+  })
+
   it('reaches the plugin without ever waiting on the proxy, and registers it once', async () => {
     h.platform = 'android'
     const alert = await import('./rest-alert.js')
@@ -137,6 +162,30 @@ describe('the rest alert in the Android app', () => {
     expect(schedule).toHaveBeenLastCalledWith(expect.objectContaining({ vibrate: true, channelId: 'rest-over' }))
     await alert.armRestAlert(Date.now() + 90_000, { totalSec: 90, vibrate: false })
     expect(schedule).toHaveBeenLastCalledWith(expect.objectContaining({ vibrate: false, channelId: 'rest-over-quiet' }))
+  })
+})
+
+describe('Android ongoing workout notification native contracts', () => {
+  const src = name => readFileSync(new URL(`../../android/app/src/main/java/ch/duartesantos/opengym/${name}.java`, import.meta.url), 'utf8')
+  const service = src('RestTimerService')
+  const alert = src('RestAlert')
+  it('uses the existing foreground ID through workout and timer states, and no separate completion post', () => {
+    expect(service.match(/startForeground\(RestAlert\.COUNTDOWN_ID, n/g)).toHaveLength(2)
+    expect(service).toMatch(/running \? RestAlert\.countdownNotification/)
+    expect(service).toMatch(/: RestAlert\.workoutNotification/)
+    expect(alert).not.toMatch(/\.notify\(/)
+    expect(alert).toMatch(/\.setOngoing\(true\)/)
+    expect(alert).toMatch(/\.setOnlyAlertOnce\(true\)/)
+  })
+  it('retains workout lifetime independently of timer completion and rejects a delayed old end', () => {
+    expect(service).toMatch(/workoutActive \|\| running \? START_STICKY : START_NOT_STICKY/)
+    expect(service).toMatch(/!paused && endsAt == intent\.getLongExtra\("endsAt", -1\)/)
+    expect(service).toMatch(/if \(workoutActive \|\| running\) show\(\)/)
+    expect(service).toMatch(/saved\.edit\(\)\.remove\("state"\)/)
+    expect(service).toMatch(/putExtra\("paused", paused\)/)
+    expect(service).toMatch(/RestAlert\.ACTION_RESTORE/)
+    expect(service).toMatch(/wid\.equals\(state\.getStringExtra\("wid"\)\)/)
+    expect(service).toMatch(/timerKey\.equals\(state\.getStringExtra\("timerKey"\)\)/)
   })
 })
 
@@ -205,13 +254,13 @@ describe('the Android side of Vibrate off', () => {
     expect(src('RestAlertPlugin')).toMatch(/call\.getBoolean\("vibrate", Boolean\.TRUE\)/)
   })
 
-  it('posts on a channel created without vibration, and only buzzes by hand when allowed to', () => {
+  it('keeps the ongoing channel quiet, and only buzzes by hand when allowed to', () => {
     expect(alert).toMatch(/QUIET_CHANNEL_ID = "rest-over-quiet"/)
     expect(alert).toMatch(/if \(!vibrate\) return QUIET_CHANNEL_ID;/)
     expect(alert).toMatch(/channel\.enableVibration\(false\)/)
-    expect(alert).toMatch(/if \(!shown && vibrate\) vibrateFallback\(ctx\);/)
-    expect(alert).toMatch(/if \(vibrate\) b\.setVibrate\(VIBRATE\);/)
-    expect(alert.match(/\.setVibrate\(/g)).toHaveLength(1)
+    expect(alert).toMatch(/else if \(vibrate\) vibrateFallback\(ctx\);/)
+    expect(alert).not.toMatch(/\.setVibrate\(/)
+    expect(alert).not.toMatch(/nm\.notify\(/)
   })
 
   it('keeps the flag for an end the countdown or a moved alarm fires', () => {
@@ -236,10 +285,10 @@ describe('the Android side of the alarm buzz (#375)', () => {
     expect(alert).toMatch(/setUsage\(AudioAttributes\.USAGE_ALARM\)/)
   })
 
-  it('posts the notification on the quiet channel then, so the ringer-on phone buzzes once', () => {
-    expect(alert).toMatch(/boolean vibrate = intent\.getBooleanExtra\("vibrate", true\) && !alarmBuzz;/)
+  it('signals once without posting an additional notification', () => {
     expect(alert).toMatch(/if \(alarmBuzz\) buzz\(ctx, VIBRATE\);/)
     expect(alert.match(/intent\.putExtra\("alarmBuzz", lastAlarmBuzz\);/g)).toHaveLength(2)
+    expect(alert).not.toMatch(/showNotification\(/)
   })
 })
 
@@ -350,5 +399,25 @@ describe('the notification permission never holds the rest alarm back', () => {
       await settle()
     }
     expect(h.request).not.toHaveBeenCalled()
+  })
+})
+
+
+describe('natural work completion bridge ordering', () => {
+  it('hands a due completion to Android before cancellation and a following rest arm', async () => {
+    const alert = await import('./rest-alert.js')
+    await alert.armRestAlert(Date.now() + 1000, { controls: false })
+    const completion = alert.completeWorkAlert(Date.now() - 1, { chimed: false, sound: true })
+    alert.disarmRestAlert()
+    await alert.armRestAlert(Date.now() + 90000)
+    await expect(completion).resolves.toBe(true)
+    expect(h.calls.slice(-3)).toEqual(['complete', 'cancel', 'schedule'])
+  })
+  it('rejects an early completion and leaves iOS unchanged', async () => {
+    const alert = await import('./rest-alert.js')
+    await expect(alert.completeWorkAlert(Date.now() + 400)).resolves.toBe(false)
+    h.platform = 'ios'
+    await expect(alert.completeWorkAlert(Date.now() - 1)).resolves.toBe(false)
+    expect(h.calls).not.toContain('complete')
   })
 })

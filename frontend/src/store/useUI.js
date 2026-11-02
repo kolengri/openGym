@@ -5,8 +5,8 @@ import { restSoundOf } from '../lib/rest-sounds.js'
 import { api } from '../lib/api.js'
 import { t } from '../lib/i18n.js'
 import { deviceId } from '../lib/push.js'
-import { MOBILE } from '../lib/mobile.js'
-import { armRestAlert, bindNativeRest, disarmRestAlert, holdRestAlert, toneNative } from '../lib/rest-alert.js'
+import { MOBILE, nativePlatform } from '../lib/mobile.js'
+import { armRestAlert, bindNativeRest, disarmRestAlert, holdRestAlert, completeWorkAlert, toneNative } from '../lib/rest-alert.js'
 import { useStore } from './useStore.js'
 import { REST_MAX } from '../lib/duration.js'
 import { accentValue } from '../lib/accent.js'
@@ -19,16 +19,18 @@ const pushRestTimer = sec => { if (useStore.getState().user) api('/api/push/rest
 const cancelPushRestTimer = () => { if (useStore.getState().user) api('/api/push/rest-timer/cancel', { method: 'POST', body: JSON.stringify({ deviceId: deviceId() }) }).catch(() => {}) }
 
 // Books the end of a rest with whatever can announce it while the app is not looking: in the
-// Android app a native alarm and the countdown notification, everywhere else (and wherever that
-// alarm could not be set) the server's push. The web build books the push at once, as before.
+// Android app a native alarm and one ongoing workout card; the end only beeps/buzzes. Elsewhere
+// the server's push can stand in for a missing native alarm. The web books its push at once.
 // A switch-sides pause (Workout.jsx SWITCH_SIDES_SEC) books no server push, whose words are "rest over":
 // it is ten seconds between the two sides of a hold, and the app is in your hand.
-const bookRestEnd = (endsAt, totalSec, kind) => {
+const bookRestEnd = (endsAt, totalSec, kind, restored = false) => {
   const switching = kind === 'switch'
   if (!MOBILE) { if (!switching) pushRestTimer(Math.max(1, Math.round((endsAt - Date.now()) / 1000))); return }
   const { S } = useStore.getState()
-  armRestAlert(endsAt, { title: switching ? t('Switch sides') : t('Rest’s over. Next set!'), countdownTitle: switching ? t('Switch sides') : t('Rest'), totalSec, accent: accentValue(S), sound: !!S.sound, classic: restSoundOf(S) === 'classic', tone: restSoundOf(S), vibrate: S.vibrate !== false, alarmBuzz: S.vibrate !== false && !!S.vibrateOnSilent })
-    .then(ok => {
+  armRestAlert(endsAt, { title: switching ? t('Switch sides') : t('Rest’s over. Next set!'), countdownTitle: switching ? t('Switch sides') : t('Rest'), totalSec, accent: accentValue(S), sound: !!S.sound, classic: restSoundOf(S) === 'classic', tone: restSoundOf(S), vibrate: S.vibrate !== false, alarmBuzz: S.vibrate !== false && !!S.vibrateOnSilent, restored, wid: S.active?.id, timerKey: useUI.getState().timer?.nativeKey })
+    .then(async ok => {
+      // Android ends are beep/buzz only, even when its alarm could not be booked.
+      if (!ok && await nativePlatform() === 'android') return
       // Only for the rest that asked: one skipped or moved since then has booked its own end.
       const tm = useUI.getState().timer
       if (!ok && !switching && tm && !tm.paused && !tm.ready && tm.endsAt === endsAt) pushRestTimer(Math.max(1, Math.round((endsAt - Date.now()) / 1000)))
@@ -59,6 +61,7 @@ const restAlertsOn = async reg => {
 }
 
 const maybeRestNotification = async () => {
+  if (MOBILE) return
   if (!notificationsSupported()) return
   if (!document.hidden && document.visibilityState !== 'hidden') return
   try {
@@ -105,7 +108,7 @@ const runWork = (set, get) => {
   workTick = () => {
     const wk = get().work
     if (!wk) return
-    const left = Math.max(wk.overtime ? -MAX_WORK_OVERTIME_SEC : 0, Math.round((wk.endsAt - Date.now()) / 1000))
+    const left = Math.max(wk.overtime ? -MAX_WORK_OVERTIME_SEC : 0, Math.ceil((wk.endsAt - Date.now()) / 1000))
     const seenLive = !document.hidden && pageHiddenAt === null
     if (!document.hidden) pageHiddenAt = null
     if (left === wk.left) return
@@ -116,6 +119,10 @@ const runWork = (set, get) => {
         endTone(snd, endSound)
         alertBuzz([200, 100, 200]); get().flashTimer()
       }
+      if (!wk.alerted) completeWorkAlert(wk.endsAt, {
+        chimed: seenLive, sound: !!snd, tone: endSound, vibrate: st.vibrate !== false,
+        alarmBuzz: st.vibrate !== false && !!st.vibrateOnSilent,
+      })
       if (wk.overtime && left > -MAX_WORK_OVERTIME_SEC) { set({ work: { ...wk, left, alerted: true } }); return }
       const done = workDone || ownerDone(wk)
       get().stopWork()
@@ -301,7 +308,7 @@ export const useUI = create((set, get) => ({
     // with no beep, no vibration and no flash. Each timer starts from where the page is now.
     pageHiddenAt = document.hidden ? Date.now() : null
     const endsAt = Date.now() + sec * 1000
-    set({ timer: { left: sec, total: sec, endsAt, forIdx, ...(forSet != null ? { forSet } : {}), ...(kind === 'switch' ? { kind } : {}) } })
+    set({ timer: { left: sec, total: sec, endsAt, nativeKey: uid(), forIdx, ...(forSet != null ? { forSet } : {}), ...(kind === 'switch' ? { kind } : {}) } })
     bookRestEnd(endsAt, sec, kind)
     runRest(set, get)
   },
@@ -313,12 +320,12 @@ export const useUI = create((set, get) => ({
     const left = rest.paused ? rest.left : Math.max(0, Math.ceil((rest.endsAt - Date.now()) / 1000))
     if (!(left > 0) || !Number.isFinite(left) || left > 86400) return
     get().abandonWork()
-    const timer = { left, total: Math.max(left, Number(rest.total) || left), endsAt: rest.endsAt,
+    const timer = { left, total: Math.max(left, Number(rest.total) || left), endsAt: rest.endsAt, nativeKey: uid(),
       ...(rest.forIdx != null ? { forIdx: rest.forIdx } : {}), ...(rest.forSet != null ? { forSet: rest.forSet } : {}),
       ...(rest.paused ? { paused: true } : {}), ...(rest.kind === 'switch' ? { kind: 'switch' } : {}) }
     pageHiddenAt = document.hidden ? Date.now() : null
     set({ timer })
-    if (timer.paused) holdRestAlert(left, timer.total)
+    if (timer.paused) holdRestAlert(left, timer.total, { timerKey: timer.nativeKey })
     else { bookRestEnd(timer.endsAt, timer.total, timer.kind); runRest(set, get) }
   },
   // Holding the rest where it is — a longer break than planned, a machine to wait for, a phone
@@ -379,10 +386,11 @@ export const useUI = create((set, get) => ({
   // first, and this brings the bar in the app to the same place — a pause stops the ticking here
   // too, a resume starts it again from the notification's end, and +15 s on a rest the app had
   // already called Ready opens it again. Nothing is sent back: the notification already shows it.
-  followNativeRest({ endsAt, left, total, paused }) {
+  followNativeRest({ endsAt, left, total, paused, nativeKey }) {
     const tm = get().timer
     const forIdx = tm?.forIdx
-    const kind = { ...(tm?.kind === 'switch' ? { kind: 'switch' } : {}), ...(tm?.forSet != null ? { forSet: tm.forSet } : {}) }
+    const key = nativeKey || tm?.nativeKey
+    const kind = { ...(key ? { nativeKey: key } : {}), ...(tm?.kind === 'switch' ? { kind: 'switch' } : {}), ...(tm?.forSet != null ? { forSet: tm.forSet } : {}) }
     if (paused) {
       stopRestTicking()
       set({ timer: { left, total, endsAt, forIdx, ...kind, paused: true } })
@@ -492,7 +500,7 @@ const saveRest = tm => {
   if (!ss) return
   try {
     if (!tm || tm.ready) { savedRestKey = null; ss.removeItem(REST_KEY); return }
-    const v = { endsAt: tm.endsAt, total: tm.total, forIdx: tm.forIdx ?? null, forSet: tm.forSet ?? null, kind: tm.kind || null, paused: !!tm.paused, left: tm.left }
+    const v = { endsAt: tm.endsAt, total: tm.total, nativeKey: tm.nativeKey, forIdx: tm.forIdx ?? null, forSet: tm.forSet ?? null, kind: tm.kind || null, paused: !!tm.paused, left: tm.left }
     const key = JSON.stringify({ ...v, left: v.paused ? v.left : null })
     if (key === savedRestKey && ss.getItem(REST_KEY) !== null) return
     ss.setItem(REST_KEY, JSON.stringify(v))
@@ -507,15 +515,15 @@ export function restoreRest(now = Date.now()) {
   const total = Math.round(Number(saved.total))
   const ok = useStore.getState().S?.active && total > 0 && (saved.paused ? saved.left > 0 : saved.endsAt > now)
   if (!ok) { try { ss.removeItem(REST_KEY) } catch { /* nothing to drop */ } return false }
-  const base = { total, forIdx: saved.forIdx ?? undefined, ...(saved.forSet != null ? { forSet: saved.forSet } : {}), ...(saved.kind === 'switch' ? { kind: 'switch' } : {}) }
+  const base = { total, nativeKey: saved.nativeKey || uid(), forIdx: saved.forIdx ?? undefined, ...(saved.forSet != null ? { forSet: saved.forSet } : {}), ...(saved.kind === 'switch' ? { kind: 'switch' } : {}) }
   if (saved.paused) {
     useUI.setState({ timer: { ...base, left: Math.round(saved.left), endsAt: saved.endsAt, paused: true } })
-    if (MOBILE) holdRestAlert(Math.round(saved.left), total)
+    if (MOBILE) holdRestAlert(Math.round(saved.left), total, { restored: true, wid: useStore.getState().S.active.id, timerKey: base.nativeKey })
     return true
   }
   pageHiddenAt = typeof document !== 'undefined' && document.hidden ? now : null
   useUI.setState({ timer: { ...base, left: Math.max(1, Math.round((saved.endsAt - now) / 1000)), endsAt: saved.endsAt } })
-  if (MOBILE) bookRestEnd(saved.endsAt, total, base.kind)
+  if (MOBILE) bookRestEnd(saved.endsAt, total, base.kind, true)
   runRest(useUI.setState, useUI.getState)
   return true
 }
@@ -545,8 +553,8 @@ export function restoreWork(now = Date.now()) {
   const total = Math.round(Number(saved.total))
   const drop = () => { try { ls.removeItem(WORK_KEY) } catch { /* nothing to drop */ } return false }
   if (!(total > 0) || !(saved.endsAt > 0) || !ownerSet(saved.owner)) return drop()
-  const wk = { left: total, total, endsAt: saved.endsAt, label: saved.label || '', overtime: !!saved.overtime, ...(saved.alerted ? { alerted: true } : {}), owner: saved.owner }
-  const left = Math.round((saved.endsAt - now) / 1000)
+  const wk = { left: total, total, endsAt: saved.endsAt, label: saved.label || '', overtime: !!saved.overtime, ...(saved.alerted && saved.endsAt <= now ? { alerted: true } : {}), owner: saved.owner }
+  const left = Math.ceil((saved.endsAt - now) / 1000)
   // Over while the app was away: held to the end (overtime past the target is not known, and
   // the target is what was planned), with no chime for an end nobody was there for.
   if (left <= 0 && !(wk.overtime && left > -MAX_WORK_OVERTIME_SEC)) {
@@ -566,10 +574,12 @@ restoreWork()
 // service first, then mirror that into the in-app timer. skip ends it. Seconds round up, as the
 // notification's clock does, so a pause in the last half second still holds a second here.
 bindNativeRest(ev => {
-  if (!ev) return
+  const timer = useUI.getState().timer
+  const wid = useStore.getState().S.active?.id
+  if (!ev || !timer?.nativeKey || !wid || String(ev.wid) !== String(wid) || ev.timerKey !== timer.nativeKey) return
   if (ev.type === 'skip') { useUI.getState().stopRest(); return }
   const left = Math.ceil((ev.leftMs || 0) / 1000)
   if (!(left > 0)) return
   const total = Math.max(left, Math.round((ev.totalMs || 0) / 1000))
-  useUI.getState().followNativeRest({ endsAt: ev.endsAt, left, total, paused: !!ev.paused })
+  useUI.getState().followNativeRest({ endsAt: ev.endsAt, left, total, paused: !!ev.paused, nativeKey: ev.timerKey })
 })

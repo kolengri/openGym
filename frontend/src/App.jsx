@@ -24,6 +24,7 @@ import { stampWorkout } from './lib/sync-merge.js'
 import { logWeighIn } from './lib/bodyweight.js'
 import { startWidgetSync } from './lib/widgets.js'
 import { startLiveActivitySync } from './lib/live-activity.js'
+import { startWorkoutNotificationSync } from './lib/workout-notification.js'
 import { useWakeLock } from './lib/wakelock.js'
 import { installViewportGuard } from './lib/viewport-guard.js'
 import { installChipDrag } from './lib/hchips.js'
@@ -428,14 +429,14 @@ export default function App() {
     startGarminCloudSync(useStore).then(fn => { if (stopped) fn(); else stop = fn }).catch(() => {})
     return () => { stopped = true; stop?.() }
   }, [])
-  // iPhone app: the Home Screen widgets and the workout's Live Activity (lib/widgets.js,
-  // lib/live-activity.js). Nothing at all on the web or on Android.
+  // Native workout surfaces: iPhone widgets/Live Activity, Android ongoing notification.
   useEffect(() => {
     if (!MOBILE) return
     const stops = [], gone = { v: false }
     const keep = fn => { if (gone.v) fn(); else stops.push(fn) }
     startWidgetSync({ useStore }).then(keep).catch(() => {})
     startLiveActivitySync({ useStore, useUI }).then(keep).catch(() => {})
+    startWorkoutNotificationSync({ useStore, useUI }).then(keep).catch(() => {})
     return () => { gone.v = true; stops.forEach(fn => fn()) }
   }, [])
   // Phone app: a tap on the gym reminder (lib/gym-reminder.js) opens the Start screen, or the

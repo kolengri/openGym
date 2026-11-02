@@ -1,6 +1,8 @@
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { parseHTML } from 'linkedom'
+import { Window } from 'happy-dom'
+import { readFileSync } from 'node:fs'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Workout from './Workout.jsx'
 import { api, beacon } from '../lib/api.js'
@@ -1343,6 +1345,62 @@ describe('saving progression settings unchanged', () => {
 })
 
 describe('effort cell (colour-coded RIR/RPE quick picker)', () => {
+  it.each(['en', 'ru', 'ar'])('keeps logged RPE controls responsive in %s, including completed and side rows', async lang => {
+    const { _setLangState } = await import('../lib/i18n-core.js')
+    const dict = lang === 'en' ? null : (await import(`../locales/${lang}.js`)).default
+    const css = readFileSync(new URL('../index.css', import.meta.url), 'utf8')
+    _setLangState(lang, dict, null, null)
+    try {
+      await mount([
+        exercise('plain-bench', [], { sets: [
+          { w: 102.5, r: 12, rpe: 8.5, done: true, type: 'dropset', drops: [{ w: 55, r: 8 }] },
+          { w: 102.5, r: 12, done: false },
+        ] }),
+        exercise('lunge', [], { sg: 'pair', target: { mode: 'reps', side: true }, sets: [
+          { w: 20, r: 10, done: false, sides: {
+            L: { w: 20, r: 10, rpe: 8, done: true },
+            R: { w: 20, r: 10, rpe: 8.5, done: false },
+          } },
+        ] }),
+        exercise('plain-row', [false], { sg: 'pair' }),
+      ], 0, { effort: 'rpe', workoutView: 'list' })
+
+      const steppers = [...container.querySelectorAll('.effcell-stp')]
+      expect(steppers).toHaveLength(3)
+      const { fmtNum } = await import('../lib/format.js')
+      expect(container.querySelector('.setrow.done .effcell-stp .val').textContent).toBe(fmtNum(8.5))
+      expect(container.querySelector('.setrow .stp.w .weight-value').textContent).toBe('102.5')
+      expect(container.querySelector('.subrow .weight-value').textContent).toBe('55')
+
+      // happy-dom applies the cascade and media queries, but does not lay out flex boxes.
+      // Check the actual rendered controls against the production CSS at each breakpoint.
+      for (const width of [320, 359, 360, 365, 368, 390, 412, 430]) {
+        const styled = new Window({ width })
+        try {
+          const style = styled.document.createElement('style')
+          style.textContent = css
+          styled.document.head.append(style)
+          styled.document.body.innerHTML = container.innerHTML
+          for (const cell of styled.document.querySelectorAll('.effcell-stp')) {
+            const buttons = cell.querySelectorAll('button:not(.val)')
+            expect(buttons).toHaveLength(2)
+            for (const button of buttons) {
+              const computed = styled.getComputedStyle(button)
+              expect(computed.display, `${lang}, ${width}px`).toBe(width < 360 ? 'none' : 'flex')
+              if (width >= 360) {
+                expect(computed.width).toBe('22px')
+                expect(computed.height).toBe('44px')
+                expect(computed.flexShrink).toBe('1')
+                expect(computed.minWidth).toBe(cell.closest('.side') && width < 430 ? '12px' : '16px')
+              }
+            }
+            expect(styled.getComputedStyle(cell.querySelector('.val')).display).toBe('flex')
+          }
+        } finally { await styled.happyDOM.close() }
+      }
+    } finally { _setLangState('en', null, null, null) }
+  })
+
   // A rep exercise whose sets can carry an effort rating. `rir` per set is optional — an
   // unrated set simply omits the key, which is what the empty cell has to represent.
   const effExercise = (rirs) => ({

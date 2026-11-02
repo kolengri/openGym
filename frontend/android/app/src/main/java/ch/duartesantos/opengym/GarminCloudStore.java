@@ -33,10 +33,21 @@ final class GarminCloudStore {
     }
 
     private final Storage storage;
+    private final java.util.function.LongSupplier now;
+    private final java.util.function.Function<String, byte[]> decodePayload;
     private JSONObject state;
 
     GarminCloudStore(Storage storage) throws Exception {
+        this(storage, System::currentTimeMillis, value -> android.util.Base64.decode(value,
+            android.util.Base64.URL_SAFE | android.util.Base64.NO_PADDING | android.util.Base64.NO_WRAP));
+    }
+
+    // Offline tests supply the clock and a standard JVM Base64url decoder, without Android stubs.
+    GarminCloudStore(Storage storage, java.util.function.LongSupplier now,
+                     java.util.function.Function<String, byte[]> decodePayload) throws Exception {
         this.storage = storage;
+        this.now = now;
+        this.decodePayload = decodePayload;
         String value = storage.read();
         state = value == null ? empty() : new JSONObject(value);
         if (state.getInt("v") != 1 || state.getJSONArray("receipts").length() > MAX_RECEIPTS)
@@ -69,6 +80,7 @@ final class GarminCloudStore {
     }
 
     boolean connected() { return GarminCloudClient.validToken(token()); }
+    String authState() { return GarminCloudClient.authState(token(), now.getAsLong(), decodePayload); }
     String sessionId() { return state.optString("session", null); }
     String token() { return state.optString("token", null); }
     String csrf() { return state.optString("csrf", null); }
@@ -76,6 +88,10 @@ final class GarminCloudStore {
     void requireSession(String session) throws GarminCloudClient.Failure {
         if (!connected() || !validSession(session) || !session.equals(sessionId()))
             throw new GarminCloudClient.Failure("auth_required");
+    }
+
+    private void requireUploadReady() throws GarminCloudClient.Failure {
+        if (authState().equals("expired")) throw new GarminCloudClient.Failure("auth_expired");
     }
 
     /** Durable nonce: all callers must use IO, including Activity lifecycle/result callbacks. */
@@ -182,10 +198,14 @@ final class GarminCloudStore {
             if (!entry.getString("status").equals("inflight"))
                 return new GarminCloudClient.Outcome(entry.getString("status"), entry.optString("activityId", null));
             if (!retryUnknown) throw new GarminCloudClient.Failure("unknown_result");
+            requireUploadReady();
             return null;
         }
+        // A terminal receipt above can reconcile a lost callback even after the JWT expires.
+        // Check readiness only before permitting a new POST; complete() keeps its generation fence.
         // Never evict even completed cross-generation guards: account identity is untrusted.
         if (receipts.length() >= MAX_RECEIPTS) throw new GarminCloudClient.Failure("receipt_limit");
+        requireUploadReady();
         receipts.put(new JSONObject().put("workout", key).put("sha", sha)
             .put("status", "inflight").put("generation", session));
         persist(next);
