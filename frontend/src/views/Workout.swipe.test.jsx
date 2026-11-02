@@ -6,6 +6,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Workout, { deleteActiveSet, undoDeleteSet, copyActiveSet, removeActiveExercise, _resetHintQuiet, HINT_QUIET_MS } from './Workout.jsx'
 import { DEF, useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
+import Modals from '../components/Modals.jsx'
 import { closeOpenRow } from '../lib/use-swipe-row.js'
 
 // Swipe on sets (v1.3.11): swipe toward the start removes a set with an Undo, toward the end
@@ -41,7 +42,7 @@ function render() {
   container = document.createElement('div')
   document.body.appendChild(container)
   root = createRoot(container)
-  act(() => root.render(<MemoryRouter><Workout /></MemoryRouter>))
+  act(() => root.render(<MemoryRouter><Workout /><Modals /></MemoryRouter>))
 }
 
 function pointer(target, type, x, y = 300, pointerType = 'touch') {
@@ -247,7 +248,7 @@ describe('the swipe on a rendered set row', () => {
   let widthSpy
   beforeEach(() => { widthSpy = vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockReturnValue(360) })
   afterEach(() => widthSpy.mockRestore())
-  const repsPlus = k => swrows()[k].querySelectorAll('button[aria-label="Increase"]')[1]
+  const editSet = k => swrows()[k].querySelector('.set-table-edit')
 
   it('wraps every set row when on, and none when off', () => {
     setActive([entry('1001', [row(80), row(80)])])
@@ -269,15 +270,19 @@ describe('the swipe on a rendered set row', () => {
     expect(container.querySelectorAll('.setrow')).toHaveLength(2)
   })
 
-  it('a tap on + is a tap, a swipe that starts on + does not press it', () => {
+  it('a tap opens the editor, a swipe that starts on its button does not open it', () => {
     setActive([entry('1001', [row(80), row(80)])])
     render()
-    pointer(repsPlus(0), 'pointerdown', 200)
-    pointer(repsPlus(0), 'pointerup', 200)
-    click(repsPlus(0))
+    pointer(editSet(0), 'pointerdown', 200)
+    pointer(editSet(0), 'pointerup', 200)
+    click(editSet(0))
+    expect(container.querySelector('.workout-set-editor')).toBeTruthy()
+    click(container.querySelectorAll('.workout-set-editor button[aria-label="Increase"]')[1])
     expect(sets()[0].r).toBe(9)
 
-    swipe(repsPlus(0), 200, 250)    // short: opens on Copy, nothing pressed
+    act(() => useUI.getState().closeSheet(useUI.getState().sheets[0].id))
+    swipe(editSet(0), 200, 250)    // short: opens on Copy, not the editor
+    expect(useUI.getState().sheets).toHaveLength(0)
     expect(sets()[0].r).toBe(9)
     expect(sets()).toHaveLength(2)
   })

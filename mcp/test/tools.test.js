@@ -1091,7 +1091,8 @@ describe('preview_session', () => {
     }]
   }]
 
-  test('reps are the routine\'s own by default, whatever was logged last time', () => {
+  test('reps follow the routine when the profile explicitly chooses the plan', () => {
+    S.startFrom = 'plan'
     only({ id: '0025', sets: 2, reps: 12, weight: 60 }, { workouts: fiveLastTime })
     const out = call('preview_session')
     const e = out.exercises[0]
@@ -1101,10 +1102,8 @@ describe('preview_session', () => {
     expect(e.changed).not.toContain('reps')
   })
 
-  test('reps carry from the last session when the profile starts planned sessions from it', () => {
+  test('reps carry from the last session by default', () => {
     only({ id: '0025', sets: 2, reps: 12, weight: 60 }, { workouts: fiveLastTime })
-    S.startFrom = 'last'
-    _seedStateForTests(S)
     const out = call('preview_session')
     const e = out.exercises[0]
     expect(out.starts_from).toBe('last_session')
@@ -1168,7 +1167,8 @@ describe('preview_session', () => {
     expect(r.exercises).toEqual([])
   })
 
-  test('with progression off the routine\'s own numbers open, whatever history says (matches session-start.js)', () => {
+  test('with progression off and plan selected, the routine’s own numbers open (matches session-start.js)', () => {
+    S.startFrom = 'plan'
     only({ id: '0025', sets: 3, reps: 8, weight: 50 }, {
       prog: 'off',
       exWeights: { '0025': { w: 72.5, d: '2026-07-20' } },

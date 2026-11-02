@@ -74,6 +74,7 @@ describe('buildSessionEntries', () => {
   // Linear and Greyskull used to open at last session's reps while the stamped target kept the
   // plan's, so a routine edited from 15 to 10 opened at 15 and read 15 ≥ 10 as a hit forever.
   const history = (reps, extra = {}) => ({
+    startFrom: 'plan',
     unit: 'kg', exWeights: {}, routines: [],
     workouts: [{ d: '2026-01-01', routineIds: ['r'], entries: [{ id: '0025', target: { sets: 2, reps: 15, weight: 40 }, sets: reps.map(r => ({ w: 40, r, done: true })) }] }],
     ...extra,
@@ -123,7 +124,7 @@ describe('buildSessionEntries', () => {
     const cfg = { id: '0025', sets: 1, reps: 16, weight: 20, side: true, prog: 'linear' }
     const side = (w, r) => ({ w, r, done: true })
     const st = {
-      unit: 'kg', exWeights: {}, routines: [],
+      startFrom: 'plan', unit: 'kg', exWeights: {}, routines: [],
       workouts: [{ d: '2026-01-01', routineIds: ['r'], entries: [{ id: '0025', target: { sets: 1, reps: 10, weight: 20, side: true }, sets: [
         { w: 22.5, r: 10, done: true, sides: { L: side(22.5, 5), R: side(20, 5) } },
       ] }] }],
