@@ -20,7 +20,7 @@ function mount(id, sets, more = {}) {
   if (root) unmount()
   const S = JSON.parse(JSON.stringify(DEF))
   S.active = {
-    id: 'incline-test', d: '2026-10-09', start: Date.now(), routineId: null, name: 'Cardio', bw: null, cur: 0, ...more,
+    id: 'incline-test', d: '2026-10-09', start: Date.now(), routineId: null, name: 'Cardio', bw: null, cur: 0, workoutView: 'list', ...more,
     entries: [{ id, target: { sets: 1, min: 20, speed: 5 }, sets }],
   }
   useStore.setState({ S, user: null })

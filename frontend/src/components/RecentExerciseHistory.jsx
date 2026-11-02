@@ -15,8 +15,9 @@ export default function RecentExerciseHistory({ history, exerciseId }) {
   if (!h.total) return null
   const unit = h.metric === 'weight' ? history.unit : h.metric === 'reps' ? t('reps') : h.metric === 'sec' ? 's' : t('min')
   return <section className="card recent-exercise-history" aria-label={t('Exercise history')}>
+    <details>
+    <summary>{t('Last {0} sessions', Math.min(5, h.total))}<Icon name="chevronDown" /></summary>
     <div className="row between">
-      <h3>{t('Last {0} sessions', Math.min(5, h.total))}</h3>
       <button type="button" className="recent-history-link" onClick={() => exerciseHistorySheet(exerciseId)}>
         {t('Exercise history')}<Icon name="chevronRight" />
       </button>
@@ -31,5 +32,6 @@ export default function RecentExerciseHistory({ history, exerciseId }) {
         <div className="small dim recent-history-sets">{s.sets.map(row => setLabel(exerciseId, row, s.target, speedUnitOf(history))).join(' · ')}</div>
       </li>)}
     </ol>
+    </details>
   </section>
 }
