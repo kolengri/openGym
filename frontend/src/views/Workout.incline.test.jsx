@@ -6,7 +6,9 @@ import { createRoot } from 'react-dom/client'
 import { MemoryRouter } from 'react-router-dom'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import Workout from './Workout.jsx'
+import Modals from '../components/Modals.jsx'
 import { DEF, useStore } from '../store/useStore.js'
+import { useUI } from '../store/useUI.js'
 
 vi.mock('../lib/sound.js', () => ({ beep: vi.fn(), vibrate: vi.fn(), alertBuzz: vi.fn(), unlock: vi.fn() }))
 vi.mock('../lib/api.js', () => ({ api: vi.fn(() => Promise.resolve({})) }))
@@ -18,6 +20,7 @@ let root, container
 
 function mount(id, sets, more = {}) {
   if (root) unmount()
+  useUI.setState({ sheets: [], timer: null, work: null })
   const S = JSON.parse(JSON.stringify(DEF))
   S.active = {
     id: 'incline-test', d: '2026-10-09', start: Date.now(), routineId: null, name: 'Cardio', bw: null, cur: 0, workoutView: 'list', ...more,
@@ -27,12 +30,13 @@ function mount(id, sets, more = {}) {
   container = document.createElement('div')
   document.body.appendChild(container)
   root = createRoot(container)
-  act(() => root.render(<MemoryRouter><Workout /></MemoryRouter>))
+  act(() => root.render(<MemoryRouter><Workout /><Modals /></MemoryRouter>))
 }
 function unmount() {
   act(() => root.unmount())
   container.remove()
   root = null
+  useUI.getState().closeAll()
 }
 afterEach(() => { if (root) unmount() })
 
@@ -40,6 +44,12 @@ const cells = () => container.querySelector('.setrow').querySelectorAll('.stp')
 const inclineCell = () => container.querySelector('input[aria-label="incline"]')?.closest('.stp') || null
 const stored = () => useStore.getState().S.active.entries[0].sets[0]
 const heads = () => [...container.querySelectorAll('.sethead span')].map(s => s.textContent).filter(Boolean)
+const openEditor = () => {
+  const edit = container.querySelector('.set-table-edit')
+  expect(edit).not.toBeNull()
+  act(() => edit.click())
+}
+const inclineInput = () => container.querySelector('#set-editor-incline, input[aria-label="incline"]')
 function type(input, value) {
   act(() => {
     Object.getOwnPropertyDescriptor(input.constructor.prototype, 'value').set.call(input, value)
@@ -51,7 +61,8 @@ describe('the incline column', () => {
   describe.each(['cards', 'list', 'compact', 'focus'])('%s incline drafts', workoutView => {
     it.each([TREADMILL, BIKE])('preserves fractional typing and clearing for exercise %s', id => {
       mount(id, [{ min: 20, ...(id === BIKE ? { incline: 3 } : {}), done: false }], { workoutView })
-      const input = () => container.querySelector('input[aria-label="incline"]')
+      if (workoutView === 'cards') openEditor()
+      const input = inclineInput
       for (const separator of ['.', ',']) {
         type(input(), '0')
         expect(input()).not.toBeNull()
@@ -73,16 +84,25 @@ describe('the incline column', () => {
           expect(stored().incline).toBe(0.5)
           type(input(), '')
         }
-      } else expect(input()).toBeNull()
+      } else {
+        if (workoutView === 'cards') {
+          expect(input().value).toBe('')
+          act(() => useUI.getState().closeAll())
+          openEditor()
+        }
+        expect(input()).toBeNull()
+      }
     })
   })
 
-  it('can add incline to a goals-only treadmill row in the regular and focus views', () => {
-    for (const workoutView of ['full', 'focus']) {
+  it('can add incline to a goals-only treadmill row in the cards and focus views', () => {
+    for (const workoutView of ['cards', 'focus']) {
       mount(TREADMILL, [{ min: 20, done: false }], { workoutView })
-      const input = container.querySelector('input[aria-label="incline"]')
+      if (workoutView === 'cards') openEditor()
+      const input = inclineInput()
       expect(input).not.toBeNull()
-      expect(input.closest('details').open).toBe(false)
+      expect(input.value).toBe('')
+      if (workoutView === 'focus') expect(input.closest('details').open).toBe(false)
       type(input, '4.5')
       expect(stored().incline).toBe(4.5)
       expect(stored().speed).toBeUndefined()

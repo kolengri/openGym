@@ -694,7 +694,10 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   const openRowEditor = (i, side) => {
     useUI.getState().openSheet(close => <WorkoutSetEditor entryIdx={entryIdx} index={i} side={side} cardio={cardio}
       owner={{ session: S.active.id, exercise: entry.id, routine: entry.rid, rows: entry.sets.length, number: setNumberAt(entry.sets, i), unit: S.unit, target: JSON.stringify(entry.target) }}
-      columns={[col1, col2, cardio ? inclineCol : null]} effort={cardio ? 'rpe' : mode === 'reps' && eff ? kind : null}
+      columns={[col1, col2,
+        cardio && entry.sets[i].speed != null ? { f: 'speed', step: 0.5, dec: true, hd: speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)'), view: v => toSpeed(v, speedUnit), store: v => fromSpeed(v, speedUnit) } : null,
+        cardio && (inclineFits(ex) || entry.sets[i].incline != null) ? { f: 'incline', step: INCLINE_STEP, dec: true, opt: true, max: 40, hd: t('Incline (%)'), store: clampIncline } : null,
+      ]} effort={cardio ? 'rpe' : mode === 'reps' && eff ? kind : null}
       previous={previousAt(i, side)} stepLoad={stepLoad} steppers={wc.steppers} close={close}
       onField={(field, value, guard) => side ? setSide(i, side, field, value, guard) : onField(i, field, value, guard)}
       onToggle={() => side ? onToggleSide(i, side) : onToggle(i)} onOptions={() => openSetMenu(entry.sets[i], i)} />)
@@ -704,10 +707,10 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     const displaySide = side || row.side
     const label = side ? t('Set {0} ({1})', setNumOf(row, i), side === 'L' ? t('Left') : t('Right'))
       : sideTagOf(row) ? t('Set {0} ({1})', setNumOf(row, i), sideTagOf(row)) : t('Set {0}', setNumOf(row, i))
-    return <div ref={el => !side && onSetRowRef?.(i, el)} className={'setrow set-table-row' + (s.done ? ' done' : '')}>
+    return <div ref={el => !side && onSetRowRef?.(i, el)} data-tour="set" className={'setrow set-table-row' + (s.done ? ' done' : '')}>
       {(eff || cardio) && <SetEffortMarker current={s} previous={previousAt(i, side)} kind={cardio ? 'rpe' : kind} />}
-      <button type="button" className="n" aria-label={failSay(row, label)} aria-describedby={optsId} title={t('More')} onClick={() => openSetMenu(row, i)}>
-        {setNumOf(row, i)}{displaySide ? ' ' + t(displaySide === 'L' ? 'L' : 'R') : ''}{failMark(row)}
+      <button type="button" className="n" aria-label={trendSay(i, failSay(row, label))} aria-describedby={optsId} title={t('More')} onClick={() => openSetMenu(row, i)}>
+        {setNumOf(row, i)}{displaySide ? ' ' + t(displaySide === 'L' ? 'L' : 'R') : ''}{failMark(row)}{trendMark(i)}
       </button>
       <button type="button" className="set-table-edit" aria-label={t('Edit') + ': ' + label} onClick={() => openRowEditor(i, side)}>
         {[col1, col2].filter(Boolean).map(col => <span className="set-table-value" key={col.f}>
@@ -716,7 +719,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
         </span>)}
       </button>
       {timed && !editing && <button className="setgo" aria-label={t('Start set')} disabled={s.done || !!working} onClick={() => onStartTimed(i)}><Icon name="play" /></button>}
-      <Check checked={s.done} label={side ? t('Set {0} ({1}) done', setNumOf(row, i), side === 'L' ? t('Left') : t('Right')) : sideTagOf(row) ? t('Set {0} ({1}) done', setNumOf(row, i), sideTagOf(row)) : t('Set {0} done', setNumOf(row, i))}
+      <Check checked={s.done} tour="tick" label={side ? t('Set {0} ({1}) done', setNumOf(row, i), side === 'L' ? t('Left') : t('Right')) : sideTagOf(row) ? t('Set {0} ({1}) done', setNumOf(row, i), sideTagOf(row)) : t('Set {0} done', setNumOf(row, i))}
         onChange={() => side ? onToggleSide(i, side) : onToggle(i)} />
     </div>
   }
@@ -726,7 +729,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     if (tableLayout) return tableRow(s, i, side)
     const sd = (s.sides && s.sides[side]) || { w: 0, r: 0, done: false }
     return <div className={'setrow side' + (sd.done ? ' done' : '') + (col3 ? ' eff3' : '')}>
-      <SetEffortMarker current={sd} previous={previousAt(i, side)} />
+      {eff && <SetEffortMarker current={sd} previous={previousAt(i, side)} kind={kind} />}
       <span className="sidetag" aria-hidden="true">{side === 'L' ? t('L') : t('R')}</span>
       {sideCell(sd, i, side, col1, 'w')}
       {col2 && sideCell(sd, i, side, col2, 'r')}
@@ -777,7 +780,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   const failSay = (s, label) => isFailureSet(s) ? label + ', ' + t('Taken to failure') : label
   const plainRow = (s, i) => tableLayout ? tableRow(s, i) : <>
     <div ref={el => onSetRowRef?.(i, el)} data-tour="set" className={'setrow' + (s.done ? ' done' : '') + (col3 ? ' eff3' : '') + (timed ? ' timed' : '')}>
-      <SetEffortMarker current={s} previous={previousAt(i)} />
+      {(eff || cardio) && <SetEffortMarker current={s} previous={previousAt(i)} kind={cardio ? 'rpe' : kind} />}
       <button type="button" className="n" aria-label={trendSay(i, failSay(s, sideTagOf(s) ? t('Set {0} ({1})', setNumOf(s, i), sideTagOf(s)) : t('Set {0}', setNumOf(s, i))))} aria-describedby={optsId} title={t('More')} onClick={() => openSetMenu(s, i)}>{setNumOf(s, i)}{failMark(s)}{trendMark(i)}</button>
       {/* Both words sit in the pill's one grid cell (::before/::after, hidden), so Left and
           Right are as wide as the longer of the two in every language and the inputs
@@ -875,7 +878,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       {t('From {0}:', fmtDate(pinnedNote.d, true))} {pinnedNote.note}
     </div>}
     {entry.note && <div className="exnote">{entry.note}</div>}
-    {tableLayout ? compactPlan && <div className="small dim planline" style={{ marginBottom: 4 }}>{t('Plan: {0}', exLine(compactPlan, S.unit, speedUnit))}</div> : planLine}
+    {cardio ? planLine : tableLayout ? compactPlan && <div className="small dim planline" style={{ marginBottom: 4 }}>{t('Plan: {0}', exLine(compactPlan, S.unit, speedUnit))}</div> : planLine}
     {!tableLayout && refLine}
     {!tableLayout && guidance && onProgressionSettings && <button type="button" className={'progline' + (plan.kind === 'deload' ? ' warn' : '')}
       aria-label={t('Open exercise settings')} onClick={onProgressionSettings}>

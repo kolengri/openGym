@@ -9,6 +9,7 @@ import { DEF, useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
 import { makeSideSet } from '../lib/workout-model.js'
 import { buildSessionEntries } from '../lib/session-start.js'
+import { withExUnit } from '../lib/ex-unit.js'
 
 vi.mock('../lib/sound.js', () => ({ beep: vi.fn(), vibrate: vi.fn(), alertBuzz: vi.fn(), unlock: vi.fn(), restOver: vi.fn() }))
 vi.mock('../lib/api.js', () => ({ api: vi.fn(() => Promise.resolve({})) }))
@@ -45,6 +46,11 @@ const click = el => { expect(el).toBeTruthy(); act(() => el.click()) }
 const live = () => useStore.getState().S.active.entries[0]
 const editor = () => host.querySelector('.workout-set-editor')
 const open = (index = 0) => click(host.querySelectorAll('.set-table-edit')[index])
+const type = (input, value) => act(() => {
+  expect(input).toBeTruthy()
+  Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(input, value)
+  input.dispatchEvent(new Event('input', { bubbles: true }))
+})
 const chooseEffort = value => {
   click(editor().querySelector('.set-effort-value'))
   const preset = [...host.querySelectorAll('.effpick .menu-item')].find(el => el.querySelector('.effpick-n')?.textContent === value)
@@ -80,6 +86,33 @@ describe('compact workout table', () => {
     click(editor().querySelector('.btn.primary'))
     expect(live().sets[0].done).toBe(true)
     expect(editor()).toBeNull()
+    expect(useUI.getState().timer).toBeNull()
+  })
+
+  it('edits a pinned lb load on a kg profile without closing the editor or converting stored values twice', () => {
+    mount(entry([row({ w: 20.41 }), row({ w: 20.41 })]), {
+      unit: 'kg', exUnit: withExUnit({}, BENCH, 'lb', 1),
+    })
+    expect(host.querySelector('.set-table-head').textContent).toContain('Weight (lb)')
+    expect(host.querySelector('.set-table-value > span').textContent).toBe('45')
+    open()
+    expect(editor()).not.toBeNull()
+    expect(editor().querySelector('.weight-value').getAttribute('aria-label')).toBe('Weight calculator: 45 lb')
+    expect(live().sets[0].w).toBe(20.41)
+
+    click(editor().querySelector('.weight-value'))
+    expect(host.querySelector('input[aria-label="Total weight"]').value).toBe('45')
+    expect(host.querySelector('.weight-calculator .weight-unit').textContent).toBe('lb')
+    type(host.querySelector('input[aria-label="Total weight"]'), '50')
+    click(host.querySelector('.weight-calculator .btn.primary'))
+    expect(live().sets.map(set => set.w)).toEqual([22.6796, 22.6796])
+    expect(editor()).not.toBeNull()
+    expect(editor().querySelector('.weight-value').textContent).toBe('50')
+
+    click(editor().querySelector('.workout-set-field [aria-label="Decrease"]'))
+    expect(live().sets[0]).toMatchObject({ w: 20.4117, r: 10, done: false })
+    expect(editor().querySelector('.weight-value').textContent).toBe('45')
+    expect(useStore.getState().S.unit).toBe('kg')
     expect(useUI.getState().timer).toBeNull()
   })
 
@@ -135,16 +168,35 @@ describe('compact workout table', () => {
     expect(live().sets[0].sides.L.done).toBe(false)
   })
 
-  it('preserves cardio speed units and incline controls in its editor', () => {
-    const cardio = { id: '2259', target: { mode: 'cardio', min: 15, speed: 8 }, sets: [{ min: 15, speed: 8, done: false }, { min: 15, speed: 8, done: false }] }
-    mount(cardio, { speedUnit: 'mph' }); open()
+  it('keeps a cardio goal visible separately from an unmeasured distance', () => {
+    mount({ id: '2259', target: { mode: 'cardio', sets: 1, min: 20, km: 5 }, sets: [{ min: 20, done: false }] })
+    expect(host.querySelector('.planline').textContent).toBe('Goal: 20 min · 5 km')
+    open()
+    expect(editor().querySelector('#set-editor-km').value).toBe('')
+    expect(live().sets[0].km).toBeUndefined()
+  })
+
+  it('shows cardio duration and distance while preserving secondary speed and nullable incline controls', () => {
+    const cardio = { id: '2259', target: { mode: 'cardio', min: 15, km: 3 }, sets: [{ min: 15, km: 3, speed: 8, done: false }, { min: 15, km: 3, speed: 8, done: false }] }
+    mount(cardio, { speedUnit: 'mph' })
+    expect([...host.querySelectorAll('.set-table-head > span')].map(el => el.textContent).filter(Boolean)).toEqual(['Duration (min)', 'Distance (km)'])
+    expect([...host.querySelector('.set-table-edit').querySelectorAll('.set-table-value > span')].map(el => el.textContent)).toEqual(['15', '3'])
+    open()
+    expect([...editor().querySelectorAll('label')].map(el => el.textContent)).toEqual(['Duration (min)', 'Distance (km)', 'Speed (mph)', 'Incline (%)'])
+    expect(editor().querySelector('#set-editor-min').value).toBe('15')
+    expect(editor().querySelector('#set-editor-km').value).toBe('3')
     expect(editor().querySelector('label[for="set-editor-speed"]').textContent).toBe('Speed (mph)')
     expect(editor().querySelector('#set-editor-speed').value).toBe('4.97')
-    const fields = editor().querySelectorAll('.workout-set-field')
-    click(fields[1].querySelector('[aria-label="Increase"]'))
+    click(editor().querySelector('#set-editor-km').closest('.workout-set-field').querySelector('[aria-label="Increase"]'))
+    expect(live().sets[0].km).toBe(3.1)
+    click(editor().querySelector('#set-editor-speed').closest('.workout-set-field').querySelector('[aria-label="Increase"]'))
     expect(live().sets[0].speed).toBe(8.8)
-    click(fields[2].querySelector('[aria-label="Increase"]'))
+    expect(editor().querySelector('#set-editor-incline').value).toBe('')
+    click(editor().querySelector('#set-editor-incline').closest('.workout-set-field').querySelector('[aria-label="Increase"]'))
     expect(live().sets[0].incline).toBe(.5)
+    type(editor().querySelector('#set-editor-incline'), '')
+    expect(live().sets[0].incline).toBeUndefined()
+    expect(live().sets[0].min).toBe(15)
     click(editor().querySelector('.btn.primary'))
     expect(live().sets[0].done).toBe(true)
   })

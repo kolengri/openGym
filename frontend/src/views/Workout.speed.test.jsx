@@ -6,7 +6,9 @@ import { createRoot } from 'react-dom/client'
 import { MemoryRouter } from 'react-router-dom'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import Workout from './Workout.jsx'
+import Modals from '../components/Modals.jsx'
 import { DEF, useStore } from '../store/useStore.js'
+import { useUI } from '../store/useUI.js'
 
 vi.mock('../lib/sound.js', () => ({ beep: vi.fn(), vibrate: vi.fn(), alertBuzz: vi.fn(), unlock: vi.fn() }))
 vi.mock('../lib/api.js', () => ({ api: vi.fn(() => Promise.resolve({})) }))
@@ -17,6 +19,7 @@ let root, container
 
 function mount(settings = {}) {
   if (root) unmount()
+  useUI.setState({ sheets: [], timer: null, work: null })
   const S = { ...JSON.parse(JSON.stringify(DEF)), workoutView: 'list', ...settings }
   S.active = {
     id: 'speed-test', d: '2026-09-23', start: Date.now(), routineId: null, name: 'Cardio', bw: null, cur: 0,
@@ -26,12 +29,13 @@ function mount(settings = {}) {
   container = document.createElement('div')
   document.body.appendChild(container)
   root = createRoot(container)
-  act(() => root.render(<MemoryRouter><Workout /></MemoryRouter>))
+  act(() => root.render(<MemoryRouter><Workout /><Modals /></MemoryRouter>))
 }
 function unmount() {
   act(() => root.unmount())
   container.remove()
   root = null
+  useUI.getState().closeAll()
 }
 afterEach(() => { if (root) unmount() })
 
@@ -56,7 +60,8 @@ describe('cardio speed in the set row', () => {
       act(() => useStore.getState().update(s => {
         s.active.entries[0] = { id: BIKE, target: { mode: 'cardio', sets: 1 }, sets: [{ done: false }] }
       }))
-      const input = () => container.querySelector(`input[aria-label="${label}"]`)
+      if (workoutView === 'cards') act(() => container.querySelector('.set-table-edit').click())
+      const input = () => container.querySelector(workoutView === 'cards' ? '#set-editor-' + field : `input[aria-label="${label}"]`)
       const type = value => act(() => {
         Object.getOwnPropertyDescriptor(input().constructor.prototype, 'value').set.call(input(), value)
         input().dispatchEvent(new Event('input', { bubbles: true }))

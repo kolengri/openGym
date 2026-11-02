@@ -191,7 +191,7 @@ export default function FocusView({
   const comparison = (current, before) => {
     if (!before) return null
     const fields = mode === 'cardio'
-      ? [['min', t('Duration (min)')], ['speed', speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')]]
+      ? [['min', t('Duration (min)')], ['km', t('Distance (km)')], ['speed', speedUnit === 'mph' ? t('Speed (mph)') : t('Speed (km/h)')]]
       : mode === 'time' ? [['sec', t('Seconds')], ['w', t('Load ({0})', S.unit)]]
         : [['w', t('Load ({0})', S.unit)], ['r', t('Reps')]]
     return <div className="focus-comparison">
@@ -201,7 +201,7 @@ export default function FocusView({
         <SetComparison current={current} previous={before} field={field} exerciseId={entry.id}
           view={field === 'speed' ? v => toSpeed(v, speedUnit) : undefined} />
       </div>)}
-      <SetEffortMarker current={current} previous={before} />
+      {(mode === 'cardio' || EFFORT[effort]) && <SetEffortMarker current={current} previous={before} kind={mode === 'cardio' ? 'rpe' : effort} />}
     </div>
   }
   const sideFields = side => {

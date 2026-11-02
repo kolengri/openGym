@@ -8,6 +8,7 @@ import { DEF, useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
 import { exerciseHistorySheet } from '../sheets.jsx'
 import { buildSessionEntries } from '../lib/session-start.js'
+import { withExUnit } from '../lib/ex-unit.js'
 
 vi.mock('../lib/sound.js', () => ({ beep: vi.fn(), vibrate: vi.fn(), alertBuzz: vi.fn(), unlock: vi.fn(), restOver: vi.fn() }))
 vi.mock('../lib/api.js', () => ({ api: vi.fn(() => Promise.resolve({})) }))
@@ -28,9 +29,9 @@ afterEach(() => {
   host?.remove()
   host = root = null
 })
-function mount(sets, patch = {}) {
+function mount(sets, patch = {}, extra = {}) {
   const S = { ...structuredClone(DEF), gifSize: 'off', effort: 'rir', workouts: [logged(22)], ...patch }
-  S.active = { id: 'live', d: '2026-11-02', start: Date.now(), cur: 0, entries: [entry(sets)] }
+  S.active = { id: 'live', d: '2026-11-02', start: Date.now(), cur: 0, entries: [entry(sets, extra)] }
   useStore.setState({ S, user: null })
   host = document.createElement('div')
   document.body.appendChild(host)
@@ -83,6 +84,12 @@ describe('workout comparisons', () => {
     expect(marker.querySelectorAll('i')).toHaveLength(2)
     expect(marker.querySelectorAll('i')[0].style.background).not.toBe(marker.querySelectorAll('i')[1].style.background)
   })
+
+  it.each(['cards', 'list', 'compact', 'focus'])('hides effort comparison when ratings are disabled in %s', workoutView => {
+    mount([row(35, 9, { rir: 2 })], { workoutView, effort: 'none', workouts: [logged(22, [row(30, 10, { rir: 4 })])] })
+    expect(host.querySelector('.set-effort-marker')).toBeNull()
+    expect(host.textContent).not.toContain('NONE')
+  })
 })
 
 describe('recent exercise history and swipe navigation', () => {
@@ -102,5 +109,31 @@ describe('recent exercise history and swipe navigation', () => {
     expect(host.querySelectorAll('.recent-history-list li')).toHaveLength(2)
     act(() => useStore.getState().update(s => { s.workouts = [] }))
     expect(host.querySelector('.recent-exercise-history')).toBeNull()
+  })
+
+  it('labels cardio session totals and the chart in kilometers when the latest session measures distance', () => {
+    const id = '2259'
+    const target = { mode: 'cardio', min: 20, km: 3 }
+    const workouts = [2, 3].map(n => ({ ...logged(n), entries: [{ id, target,
+      sets: [{ min: 10, km: n / 2, done: true }, { min: 10, km: n / 2, done: true }] }] }))
+    mount([{ min: 20, km: 3, done: false }], { workouts }, { id, target })
+    const recent = host.querySelector('.recent-exercise-history')
+    expect([...recent.querySelectorAll('li > .row > .dim')].map(el => el.textContent)).toEqual(['3 km', '2 km'])
+    expect(recent.querySelector('.recent-history-sets').textContent).toContain('1.5 km')
+    act(() => recent.querySelector('.chart-i').dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 340 })))
+    expect(recent.querySelector('.ctip').textContent).toContain('3 km')
+  })
+
+  it('shows recent loads, volume and chart values in a pinned exercise unit without changing kg history', () => {
+    mount([row(20.4117, 10, { done: false })], {
+      unit: 'kg', exUnit: withExUnit({}, BENCH, 'lb', 1),
+      workouts: [logged(2, [row(20.4117)]), logged(3, [row(22.6796)])],
+    })
+    const recent = host.querySelector('.recent-exercise-history')
+    expect([...recent.querySelectorAll('li > .row > .dim')].map(el => el.textContent)).toEqual(['500 lb', '450 lb'])
+    expect([...recent.querySelectorAll('.recent-history-sets')].map(el => el.textContent)).toEqual(['50×10', '45×10'])
+    act(() => recent.querySelector('.chart-i').dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 340 })))
+    expect(recent.querySelector('.ctip').textContent).toContain('50 lb')
+    expect(useStore.getState().S.workouts.map(w => w.entries[0].sets[0].w)).toEqual([20.4117, 22.6796])
   })
 })

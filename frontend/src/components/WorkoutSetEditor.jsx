@@ -5,6 +5,7 @@ import { rirOf, toScale } from '../lib/effort.js'
 import { exerciseNameText } from '../lib/format.js'
 import { t } from '../lib/i18n.js'
 import { exOr } from '../lib/exercises.js'
+import { exUnitOf, viewEntry, viewTarget } from '../lib/ex-unit.js'
 import MixedWeightField from './MixedWeightField.jsx'
 import SetEffortValue from './SetEffortValue.jsx'
 import { SetComparison } from './SetComparison.jsx'
@@ -16,12 +17,13 @@ import Icon from './Icon.jsx'
 export default function WorkoutSetEditor({ entryIdx, index, owner, columns, effort, side, cardio,
   previous, stepLoad, steppers, onField, onToggle, onOptions, close }) {
   const S = useStore(s => s.S)
+  const unit = exUnitOf(S, owner.exercise)
   const matchingEntry = state => {
     const entry = state.active?.entries[entryIdx]
-    return state.active?.id === owner.session && state.unit === owner.unit
+    return state.active?.id === owner.session && exUnitOf(state, owner.exercise) === owner.unit
       && entry?.id === owner.exercise && entry?.rid === owner.routine
-      && entry?.sets.length === owner.rows && JSON.stringify(entry.target) === owner.target
-      ? entry : null
+      && entry?.sets.length === owner.rows && JSON.stringify(viewTarget(state, owner.exercise, entry.target)) === owner.target
+      ? viewEntry(state, entry) : null
   }
   const entry = matchingEntry(S)
   const row = entry?.sets[index]
@@ -58,15 +60,15 @@ export default function WorkoutSetEditor({ entryIdx, index, owner, columns, effo
         const fresh = current()
         if (!fresh) return
         if (col.f === 'w') return field('w', stepLoad(fresh.w, col.step, dir))
-        change(Math.max(0, Math.round(((view(fresh[col.f]) || 0) + dir * (side && col.f === 'r' ? 1 : col.step)) * 100) / 100))
+        change(Math.min(col.max ?? Infinity, Math.max(0, Math.round(((view(fresh[col.f]) || 0) + dir * (side && col.f === 'r' ? 1 : col.step)) * 100) / 100)))
       }
       return <section className="workout-set-field" key={col.f}>
         {col.f === 'w' ? <div className="small dim">{col.hd}</div> : <label htmlFor={'set-editor-' + col.f}>{col.hd}</label>}
         <div className={'stp' + (steppers ? '' : ' plain')}>
           {steppers && <button type="button" aria-label={t('Decrease')} onClick={() => bump(-1)}><Icon name="minus" /></button>}
           <span className="val">{col.f === 'w'
-            ? <MixedWeightField value={set.w ?? ''} unit={S.unit} exerciseId={entry.id} onChange={(value, guard) => field('w', value, guard)} />
-            : <NumberField id={'set-editor-' + col.f} decimal={col.dec} nullable={col.opt} value={view(set[col.f]) ?? ''} onChange={change} />}</span>
+            ? <MixedWeightField value={set.w ?? ''} unit={unit} exerciseId={entry.id} onChange={(value, guard) => field('w', value, guard)} />
+            : <NumberField id={'set-editor-' + col.f} decimal={col.dec} nullable={col.opt} value={view(set[col.f]) ?? (col.opt ? null : '')} onChange={change} />}</span>
           {steppers && <button type="button" aria-label={t('Increase')} onClick={() => bump(1)}><Icon name="plus" /></button>}
         </div>
         <SetComparison current={set} previous={previous} field={col.f} exerciseId={entry.id} view={col.view} deltaOnly />
