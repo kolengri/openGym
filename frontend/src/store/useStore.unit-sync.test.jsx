@@ -115,3 +115,10 @@ describe('converting the unit while another device logs in the old one', () => {
     expect(useStore.getState().S.active.entries[0].sets[0].w).toBe(100)
   })
 })
+
+
+it('relabels timed weigh-ins without converting when the label-only option is chosen', () => {
+  useStore.setState({ S: { ...clone(KG), bodyweight: [{ d: TODAY, w: 80, t: 10, insUnit: 'kg', ins: [{ id: 'a', w: 80, t: 10 }] }] }, user: null, ready: false })
+  useStore.getState().setUnit('lb', { convert: false })
+  expect(useStore.getState().S.bodyweight[0]).toMatchObject({ w: 80, insUnit: 'lb', ins: [{ w: 80 }] })
+})

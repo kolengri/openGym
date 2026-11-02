@@ -5,6 +5,13 @@ import static ch.duartesantos.opengym.RestAlert.CompletionGate.Outcome.*;
 import org.junit.Test;
 
 public class RestCompletionGateTest {
+    @org.junit.Test
+    public void aCanceledOrReplacedAutomaticChainCannotAdvanceAfterItsTone() {
+        org.junit.Assert.assertTrue(RestAlert.CompletionGate.canAdvance(100, 100));
+        org.junit.Assert.assertFalse(RestAlert.CompletionGate.canAdvance(100, 0));
+        org.junit.Assert.assertFalse(RestAlert.CompletionGate.canAdvance(100, 200));
+        org.junit.Assert.assertFalse(RestAlert.CompletionGate.canAdvance(0, 0));
+    }
     @Test
     public void foregroundRestConsumesTheClaimBeforeTheSecondCallbackRunsInBackground() {
         RestAlert.CompletionGate gate = new RestAlert.CompletionGate();

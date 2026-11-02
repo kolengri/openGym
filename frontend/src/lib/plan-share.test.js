@@ -392,3 +392,18 @@ describe('parsePlan refuses a file that is not a plan in words', () => {
     try { parsePlan('{oops') } catch (e) { expect(e.code).toBe('not-plan') }
   })
 })
+
+
+it('imports pinned prescriptions exactly through both parse and bundle conversion paths', () => {
+  const raw = { opengym_plan: 1, name: 'Pinned', unit: 'kg', customEx: [], week: {}, exUnit: { '0025': 'kg' },
+    routines: [{ id: 'r', ex: [{ id: '0025', mode: 'reps', weight: 20, inc: 2.5, backoffStep: 2.5, warmup: [{ weight: 10, reps: 5 }], pyramid: [8, 5], pyramidWeight: [20, 25] }] }] }
+  for (const bundle of [parsePlan(raw, 'lb'), parsePlan(raw, 'kg'), raw]) {
+    const target = { unit: 'lb', routines: [], customEx: [], week: {} }
+    mergePlan(target, bundle)
+    const e = target.routines[0].ex[0]
+    expect(e.weight).toBeCloseTo(44.0925, 4)
+    expect(e.inc).toBe(5)
+    expect(e.backoffStep).toBe(5)
+    expect(e.pyramidWeight).toEqual([44.0925, 55.1156])
+  }
+})

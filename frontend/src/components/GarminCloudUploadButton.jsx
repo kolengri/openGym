@@ -6,6 +6,7 @@ import { garminCloudErrorMessage, garminCloudStatus, uploadGarminWorkout } from 
 
 export default function GarminCloudUploadButton({ workout }) {
   const state = useStore(s => s.S)
+  const tour = useStore(s => s.tourSandbox)
   const [available, setAvailable] = useState(false)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState(false)
@@ -14,7 +15,7 @@ export default function GarminCloudUploadButton({ workout }) {
     garminCloudStatus().then(s => { if (!stopped) setAvailable(s.available === true) })
     return () => { stopped = true }
   }, [])
-  if (!available || typeof workout.id !== 'string' || !workout.id) return null
+  if (tour || !available || typeof workout.id !== 'string' || !workout.id) return null
   const job = state.workouts.find(w => w.id === workout.id)?.garminCloudUpload
   const done = ['uploaded', 'duplicate'].includes(job?.status)
   const pending = job?.status === 'uploading'

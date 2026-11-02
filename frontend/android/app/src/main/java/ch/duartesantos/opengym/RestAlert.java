@@ -23,6 +23,8 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.os.VibratorManager;
 import android.util.Log;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * Alarm for the rest between sets. The WebView timer does not run with the screen locked.
@@ -60,6 +62,9 @@ public final class RestAlert {
     private static String labMinus = "\u2212 15s";
     private static String labPlus = "+ 15s";
     private static String labSkip = "Skip";
+    // Timed holds that run themselves (lib/auto-holds.js): the alerts after this one, as JSON
+    // [{ dt, title }], each dt in ms after this alert's own time. Empty: a plain rest.
+    private static String lastCues = "";
     private static int lastAccent = 0xFF30D158;
     private static int lastInk = 0xFF000000;
     static final int COUNTDOWN_ID = 41;
@@ -79,9 +84,9 @@ public final class RestAlert {
      * alarm, which silent mode lets through, and the notification goes out on the quiet channel so
      * a phone with its ringer on does not buzz twice.
      */
-    public static void schedule(Context ctx, long at, int id, String title, boolean sound, String tone, boolean vibrate,
+    public static synchronized void schedule(Context ctx, long at, int id, String title, boolean sound, String tone, boolean vibrate,
                                 boolean alarmBuzz, String channelId, String visibility, String importance,
-                                boolean localOnly, String countdownTitle, long totalMs, boolean controls, String timerKey) {
+                                boolean localOnly, String countdownTitle, long totalMs, boolean controls, String timerKey, String cues, boolean countdown) {
         alarmBuzz = vibrate && alarmBuzz;
         channelId = channelFor(channelId, vibrate);
         Intent intent = alarmIntent(ctx);
@@ -97,6 +102,7 @@ public final class RestAlert {
         intent.putExtra("localOnly", localOnly);
         intent.putExtra("at", at);
         intent.putExtra("workTimer", !controls);
+        intent.putExtra("cues", cues == null ? "" : cues);
         PendingIntent pi = PendingIntent.getBroadcast(ctx, id, intent, FLAGS);
         AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
         boolean exact = canExact(am);
@@ -114,8 +120,76 @@ public final class RestAlert {
         lastVibrate = vibrate;
         lastAlarmBuzz = alarmBuzz;
         lastChannel = channelId;
-        ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).edit().putString("alarm", intent.toUri(0)).apply();
-        startCountdown(ctx, at, totalMs, countdownTitle, controls, timerKey);
+        rememberAlarm(ctx, intent);
+        lastCues = cues == null ? "" : cues;
+        startCountdown(ctx, at, totalMs, countdownTitle, controls && countdown, timerKey);
+    }
+
+    /** Whether the alert booked now has more after it (a chain of holds that run themselves). */
+    static boolean hasCues() {
+        return lastCues != null && lastCues.length() > 2;
+    }
+
+    /**
+     * The next alert of a chain (see schedule), booked as this one rings: at its time after this
+     * one's, with the ones after it carried along. Alarm only, no countdown card. Nothing when the
+     * chain is over or the page called it off.
+     */
+    static synchronized void chainNext(Context ctx, Intent fired) {
+        long base = fired.getLongExtra("at", 0);
+        long scheduled = ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).getLong("chainAt", 0);
+        // A tone can finish after Skip, pause, discard, or a replacement timer. It must not
+        // resurrect that old automatic chain over the user's new choice.
+        if (!CompletionGate.canAdvance(base, scheduled)) return;
+        String cues = fired.getStringExtra("cues");
+        if (cues == null || cues.length() <= 2) return;
+        try {
+            JSONArray list = new JSONArray(cues);
+            if (list.length() == 0) return;
+            JSONObject first = list.getJSONObject(0);
+            long dt = Math.max(0, first.optLong("dt", 0));
+            long at = Math.max(base + dt, System.currentTimeMillis() + 250);
+            JSONArray rest = new JSONArray();
+            for (int i = 1; i < list.length(); i++) {
+                JSONObject c = list.getJSONObject(i);
+                JSONObject r = new JSONObject();
+                r.put("dt", Math.max(0, c.optLong("dt", 0) - dt));
+                r.put("title", c.optString("title", ""));
+                if (c.optBoolean("workTimer", false)) r.put("workTimer", true);
+                rest.put(r);
+            }
+            String title = first.optString("title", "");
+            Intent next = alarmIntent(ctx);
+            next.putExtra("id", NOTIFICATION_ID);
+            next.putExtra("title", title);
+            next.putExtra("sound", fired.getBooleanExtra("sound", lastSound));
+            next.putExtra("tone", fired.getStringExtra("tone") == null ? lastTone : fired.getStringExtra("tone"));
+            next.putExtra("vibrate", fired.getBooleanExtra("vibrate", lastVibrate));
+            next.putExtra("alarmBuzz", fired.getBooleanExtra("alarmBuzz", lastAlarmBuzz));
+            next.putExtra("channelId", fired.getStringExtra("channelId") == null ? lastChannel : fired.getStringExtra("channelId"));
+            next.putExtra("visibility", "public");
+            next.putExtra("importance", "high");
+            next.putExtra("localOnly", false);
+            next.putExtra("at", at);
+            next.putExtra("cues", rest.toString());
+            next.putExtra("workTimer", first.optBoolean("workTimer", false));
+            rememberAlarm(ctx, next);
+            lastAlertTitle = title;
+            lastCues = rest.toString();
+            PendingIntent pi = PendingIntent.getBroadcast(ctx, NOTIFICATION_ID, next, FLAGS);
+            AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
+            try {
+                if (canExact(am)) am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi);
+                else am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi);
+            } catch (SecurityException e) {
+                am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi);
+            }
+            // Advance the existing card as well as the alarm. The old tone's completion then
+            // sees a different deadline and cannot clear this next phase or cancel its alarm.
+            startCountdown(ctx, at, Math.max(1000, at - base), title, false, "");
+        } catch (Exception e) {
+            Log.w("openGym", "hold chain: next alert not booked", e);
+        }
     }
 
     public static void setAccentColor(int accent, int ink) {
@@ -131,7 +205,9 @@ public final class RestAlert {
         if (skip != null && !skip.isEmpty()) labSkip = skip;
     }
 
-    public static void cancel(Context ctx, int id) {
+    public static synchronized void cancel(Context ctx, int id) {
+        lastCues = "";
+        ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).edit().putLong("chainAt", 0).apply();
         stopCountdown(ctx);
         AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
         PendingIntent pi = PendingIntent.getBroadcast(ctx, id, alarmIntent(ctx), FLAGS);
@@ -147,8 +223,15 @@ public final class RestAlert {
      * (on an emulator it came 50 seconds after a 90-second rest), so the countdown sounds the end
      * and the alarm is only the fallback for a countdown that was not running.
      */
-    static void fireFromCountdown(Context ctx, long at, boolean workTimer) {
+    static synchronized void fireFromCountdown(Context ctx, long at, boolean workTimer) {
         cancelAlarmOnly(ctx, NOTIFICATION_ID);
+        try {
+            String saved = ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).getString("alarm", null);
+            Intent alarm = saved == null ? null : Intent.parseUri(saved, 0);
+            // A count-in hides the rest controls too, but only an actual hold defers its claim
+            // to the JS work-completion handoff. Keep that distinction across process restarts.
+            if (alarm != null && alarm.getLongExtra("at", 0) == at) workTimer = alarm.getBooleanExtra("workTimer", workTimer);
+        } catch (Exception ignored) { /* use the countdown's kind */ }
         Intent intent = alarmIntent(ctx);
         intent.putExtra("id", NOTIFICATION_ID);
         intent.putExtra("title", lastAlertTitle);
@@ -159,6 +242,8 @@ public final class RestAlert {
         intent.putExtra("channelId", lastChannel);
         intent.putExtra("at", at);
         intent.putExtra("workTimer", workTimer);
+        intent.putExtra("cues", lastCues);
+        rememberAlarm(ctx, intent);
         new Thread(() -> fire(ctx, intent), "opengym-rest").start();
     }
 
@@ -183,6 +268,10 @@ public final class RestAlert {
     static final class CompletionGate {
         enum Outcome { DUPLICATE, PAGE, NATIVE }
         private long firedFor;
+
+        static boolean canAdvance(long fired, long scheduled) {
+            return fired > 0 && fired == scheduled;
+        }
 
         synchronized boolean claim(long at) {
             if (at > 0 && at == firedFor) return false;
@@ -226,6 +315,8 @@ public final class RestAlert {
             // the same sound as Settings → Sound picks for the page (RestTone.render).
             boolean play = intent.getBooleanExtra("sound", true);
             if (play) playSound(ctx, toneOf(intent));
+            // Continue background holds without posting a second notification.
+            chainNext(ctx, intent);
             // Keep foreground priority through the tone, then return the same card to the
             // workout summary. The matching end guard leaves a newer countdown alone.
             completeCountdown(ctx, intent.getLongExtra("at", 0));
@@ -246,6 +337,7 @@ public final class RestAlert {
             lastVibrate = i.getBooleanExtra("vibrate", true);
             lastAlarmBuzz = i.getBooleanExtra("alarmBuzz", false);
             lastChannel = i.getStringExtra("channelId");
+            lastCues = i.getStringExtra("cues");
         } catch (Exception e) { Log.w("openGym", "rest alarm settings could not be restored", e); }
     }
 
@@ -322,7 +414,24 @@ public final class RestAlert {
         } catch (Exception ignored) { /* nothing else to fall back on here */ }
     }
 
-    static void updateAlarm(Context ctx, long at) {
+    private static void rememberAlarm(Context ctx, Intent intent) {
+        ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).edit()
+                .putString("alarm", intent.toUri(0)).putLong("chainAt", intent.getLongExtra("at", 0)).apply();
+    }
+
+    static synchronized void clearChain(Context ctx, long at) {
+        android.content.SharedPreferences saved = ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE);
+        if (saved.getLong("chainAt", 0) == at) saved.edit().putLong("chainAt", 0).apply();
+    }
+
+    /** Pause keeps the card, but no already-playing tone may continue its old forecast. */
+    static synchronized void holdAlarm(Context ctx, int id) {
+        lastCues = "";
+        ctx.getSharedPreferences("rest-alert", Context.MODE_PRIVATE).edit().putLong("chainAt", 0).apply();
+        cancelAlarmOnly(ctx, id);
+    }
+
+    static synchronized void updateAlarm(Context ctx, long at) {
         if (at <= System.currentTimeMillis()) {
             cancelAlarmOnly(ctx, NOTIFICATION_ID);
             return;
@@ -339,6 +448,10 @@ public final class RestAlert {
         intent.putExtra("importance", "high");
         intent.putExtra("localOnly", false);
         intent.putExtra("at", at);
+        // The chain's alerts are relative to this end, so a rest paused or lengthened on the card
+        // moves them with it.
+        intent.putExtra("cues", lastCues);
+        rememberAlarm(ctx, intent);
         PendingIntent pi = PendingIntent.getBroadcast(ctx, NOTIFICATION_ID, intent, FLAGS);
         AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
         try {
@@ -657,7 +770,7 @@ public final class RestAlert {
 
     /** Asks other apps to turn down for the tone. Returns what unduck needs, or null. */
     @SuppressWarnings("deprecation")
-    private static Object duck(AudioManager am, AudioAttributes attrs) {
+    static Object duck(AudioManager am, AudioAttributes attrs) {
         if (am == null) return null;
         try {
             if (Build.VERSION.SDK_INT >= 26) {
@@ -677,7 +790,7 @@ public final class RestAlert {
     }
 
     @SuppressWarnings("deprecation")
-    private static void unduck(AudioManager am, Object focus) {
+    static void unduck(AudioManager am, Object focus) {
         if (am == null || focus == null) return;
         try {
             if (Build.VERSION.SDK_INT >= 26 && focus instanceof AudioFocusRequest) am.abandonAudioFocusRequest((AudioFocusRequest) focus);

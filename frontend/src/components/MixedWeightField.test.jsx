@@ -102,3 +102,11 @@ it('rejects owner and unit A-B-A changes and checks the actual mutation candidat
   expect(guard.matches({ ...useStore.getState().S, active: { id: 'replacement' } })).toBe(false)
   guard.dispose()
 })
+
+it('invalidates an open calculator when the exercise unit changes and changes back', () => {
+  const guard = weightTargetGuard(useStore)
+  act(() => useStore.getState().update(s => { s.exUnit = { one: { unit: 'lb', _ts: 1 } } }))
+  act(() => useStore.getState().update(s => { s.exUnit = {} }))
+  expect(guard.matches(useStore.getState().S)).toBe(false)
+  guard.dispose()
+})

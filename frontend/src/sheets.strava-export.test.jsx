@@ -11,7 +11,7 @@ import { fitFileName, workoutFit } from './lib/fit-export.js'
 import { stravaWorkoutFit } from './lib/strava-export.js'
 
 const mounted = []
-const button = (host, text) => [...host.querySelectorAll('button')].find(b => b.textContent.trim() === text)
+const button = (host, text) => [...host.querySelectorAll('button, [role="button"]')].find(b => b.textContent.trim() === text || b.querySelector('.tt')?.textContent.trim() === text)
 function mount(element) {
   const host = document.createElement('div')
   document.body.appendChild(host)
@@ -23,7 +23,10 @@ function mount(element) {
 function detail(workout) {
   workoutDetailSheet(workout)
   const sheet = useUI.getState().sheets.at(-1)
-  return mount(sheet.render(() => useUI.getState().closeSheet(sheet.id)))
+  const host = mount(sheet.render(() => useUI.getState().closeSheet(sheet.id)))
+  act(() => host.querySelector('[data-tour="wd-options"]').click())
+  const options = useUI.getState().sheets.at(-1)
+  return mount(options.render(() => useUI.getState().closeSheet(options.id)))
 }
 const saved = {
   id: 'strava-test', d: '2026-09-15', name: 'Strength',
