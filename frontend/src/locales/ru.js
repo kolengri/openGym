@@ -1,5 +1,6 @@
 // Russian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Could not verify the Garmin account. Try signing in again later.": "Не удалось проверить аккаунт Garmin. Попробуйте войти заново позже.",
   'Sign in to Garmin Connect again in Settings. Your saved session was not accepted.': 'Войдите в Garmin Connect заново в настройках. Сервис не принял сохранённую сессию.',
   'Your Garmin Connect session has expired. Sign in again in Settings.': 'Сессия Garmin Connect истекла. Войдите заново в настройках.',
   'Garmin session expiration could not be checked.': 'Не удалось проверить срок действия сессии Garmin.',

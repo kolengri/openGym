@@ -8,6 +8,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.Intent;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.widget.RemoteViews;
 import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
@@ -17,14 +19,17 @@ import android.media.AudioTrack;
 import android.os.Build;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.view.View;
 import android.os.VibrationAttributes;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.os.VibratorManager;
 import android.util.Log;
+import androidx.core.app.NotificationCompat;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.function.Predicate;
 
 /**
  * Alarm for the rest between sets. The WebView timer does not run with the screen locked.
@@ -518,6 +523,27 @@ public final class RestAlert {
         String clock = clock(left);
         NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
         ensureCountdownChannel(ctx, nm);
+        // Live Updates cannot contain RemoteViews. Keep the existing layout on older Android;
+        // Android 16 uses the platform clock and standard actions so the timer can be promoted.
+        if (Build.VERSION.SDK_INT >= 36) {
+            String body = exercise + (detail.isEmpty() ? "" : "\n" + detail);
+            NotificationCompat.Builder b = ongoingNotification(ctx, title, accent)
+                    .setContentText(paused ? clock : exercise.isEmpty() ? detail : exercise)
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(
+                            paused ? clock + (body.isEmpty() ? "" : "\n" + body) : body))
+                    .setProgress(max, left, false);
+            if (!paused) {
+                b.setWhen(System.currentTimeMillis() + Math.max(0, leftMs) + 999)
+                        .setShowWhen(true).setUsesChronometer(true).setChronometerCountDown(true);
+            }
+            if (controls) {
+                b.addAction(0, paused ? resume : pause, control(ctx, ACTION_PAUSE, 51));
+                b.addAction(0, skip, control(ctx, ACTION_SKIP, 54));
+            }
+            NotificationCompat.Action settings = notificationSettingsAction(ctx);
+            if (settings != null) b.addAction(settings);
+            return b.build();
+        }
         // Running: the system counts the clock down itself (Chronometer), so the card needs no
         // repost per second for the time. Paused: a plain text, which cannot drift when the
         // shade redraws the card later.
@@ -568,24 +594,74 @@ public final class RestAlert {
         if (Build.VERSION.SDK_INT >= 31) {
             b.setForegroundServiceBehavior(Notification.FOREGROUND_SERVICE_IMMEDIATE);
         }
+        NotificationCompat.Action settings = notificationSettingsAction(ctx);
+        if (settings != null) b.addAction(0, settings.getTitle(), settings.getActionIntent());
         return b.build();
     }
 
     static Notification workoutNotification(Context ctx, String title, String exercise, String detail, int done, int total, int accent) {
         NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
         ensureCountdownChannel(ctx, nm);
-        Notification.Builder b = Build.VERSION.SDK_INT >= 26
-                ? new Notification.Builder(ctx, COUNTDOWN_CHANNEL_ID) : new Notification.Builder(ctx);
+        NotificationCompat.Builder b = ongoingNotification(ctx, title, accent);
         String body = exercise + (detail.isEmpty() ? "" : "\n" + detail);
-        b.setSmallIcon(R.drawable.ic_stat_dumbbell)
-                .setContentTitle(title).setContentText(exercise.isEmpty() ? detail : exercise)
-                .setStyle(new Notification.BigTextStyle().bigText(body))
+        b.setContentText(exercise.isEmpty() ? detail : exercise)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(body));
+        if (total > 0) b.setSubText(done + " / " + total).setProgress(total, done, false);
+        NotificationCompat.Action settings = notificationSettingsAction(ctx);
+        if (settings != null) b.addAction(settings);
+        return b.build();
+    }
+
+    private static NotificationCompat.Builder ongoingNotification(Context ctx, String title, int accent) {
+        NotificationCompat.Builder b = new NotificationCompat.Builder(ctx, COUNTDOWN_CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_stat_dumbbell).setContentTitle(title)
                 .setShowWhen(false).setOngoing(true).setOnlyAlertOnce(true)
                 .setCategory(Notification.CATEGORY_PROGRESS).setVisibility(Notification.VISIBILITY_PUBLIC)
-                .setColor(accent).setContentIntent(openApp(ctx)).setLocalOnly(true);
-        if (total > 0) b.setSubText(done + " / " + total).setProgress(total, done, false);
-        if (Build.VERSION.SDK_INT >= 31) b.setForegroundServiceBehavior(Notification.FOREGROUND_SERVICE_IMMEDIATE);
-        return b.build();
+                .setColor(accent).setContentIntent(openApp(ctx)).setLocalOnly(true)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        if (Build.VERSION.SDK_INT >= 31) b.setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE);
+        // AndroidX supports API 36; the equivalent platform builder API requires SDK 36.1.
+        // Promotion remains subject to the user's permission, channel settings and OEM rules.
+        if (Build.VERSION.SDK_INT >= 36) b.setRequestPromotedOngoing(true);
+        return b;
+    }
+
+    /** A direct activity PendingIntent also works with Android 12's notification trampoline ban. */
+    private static NotificationCompat.Action notificationSettingsAction(Context ctx) {
+        NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+        boolean promotionBlocked = Build.VERSION.SDK_INT >= 36 && nm != null && !nm.canPostPromotedNotifications();
+        Intent intent = notificationSettingsIntent(ctx, promotionBlocked);
+        ResolveInfo screen = intent == null ? null : ctx.getPackageManager().resolveActivity(intent, 0);
+        if (screen == null) return null;
+        // The Settings activity supplies its own localized label; no app-language guide is added.
+        return new NotificationCompat.Action(0, screen.loadLabel(ctx.getPackageManager()),
+                PendingIntent.getActivity(ctx, 55, intent, FLAGS));
+    }
+
+    static Intent notificationSettingsIntent(Context ctx, boolean promotionBlocked) {
+        return notificationSettingsIntent(ctx, promotionBlocked,
+                intent -> ctx.getPackageManager().resolveActivity(intent, 0) != null);
+    }
+
+    static Intent notificationSettingsIntent(Context ctx, boolean promotionBlocked, Predicate<Intent> canResolve) {
+        String pkg = ctx.getPackageName();
+        Intent[] candidates = {
+                Build.VERSION.SDK_INT >= 36 && promotionBlocked
+                        ? new Intent(Settings.ACTION_APP_NOTIFICATION_PROMOTION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, pkg) : null,
+                Build.VERSION.SDK_INT >= 26
+                        ? new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, pkg)
+                                .putExtra(Settings.EXTRA_CHANNEL_ID, COUNTDOWN_CHANNEL_ID) : null,
+                Build.VERSION.SDK_INT >= 26
+                        ? new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, pkg) : null,
+                new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", pkg, null)),
+                new Intent(Settings.ACTION_SETTINGS),
+        };
+        for (Intent intent : candidates) {
+            if (intent != null && canResolve.test(intent)) {
+                return intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            }
+        }
+        return null;
     }
 
     private static void fillClock(RemoteViews views, String clock, int max, int left, int accent,

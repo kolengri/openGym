@@ -1,5 +1,6 @@
 // Swedish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Could not verify the Garmin account. Try signing in again later.": "Det gick inte att verifiera Garmin-kontot. Försök logga in igen senare.",
   'Same muscle and exercise type. The movement may differ.': 'Samma muskel och övningstyp. Rörelsen kan skilja sig.',
   'Related muscles and exercise type. The movement may differ.': 'Närliggande muskler och samma övningstyp. Rörelsen kan skilja sig.',
   'Same muscle, different exercise type. Check suitability.': 'Samma muskel, annan övningstyp. Kolla att den passar.',

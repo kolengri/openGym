@@ -79,6 +79,39 @@ it.each([
   expect(host.textContent).not.toContain('Reconnect or retry')
 })
 
+it('keeps automatic uploads and health reads available when an expired session can renew', async () => {
+  bridge.status.mockResolvedValue({ available: true, connected: true, sessionId: 'synthetic-session', authState: 'expired', renewalAvailable: true })
+  useStore.getState().update(s => { s.garminCloudSessionId = 'synthetic-session'; s.garminCloudAuto = true })
+  await render(<GarminCloudSettings />)
+  expect(host.textContent).toContain('Connected to Garmin Connect')
+  expect(button('Sign in to Garmin Connect')).toBeUndefined()
+  expect(host.querySelector('[aria-label="Upload new workouts automatically"]').disabled).toBe(false)
+  expect(host.querySelector('[aria-label="Upload new workouts automatically"]').getAttribute('aria-checked')).toBe('true')
+  expect(button('Read Garmin health data').disabled).toBe(false)
+})
+
+it('shows sign-in immediately when a health read confirms that silent renewal was rejected', async () => {
+  const renewable = { available: true, connected: true, sessionId: 'synthetic-session', authState: 'expired', renewalAvailable: true }
+  bridge.status.mockResolvedValue(renewable)
+  bridge.healthMetrics = vi.fn(async () => ({ metrics: [{ id: 'weight', label: 'Weight' }] }))
+  bridge.readHealthArchive = vi.fn(async () => ({ record: null }))
+  bridge.readHealthMetric = vi.fn(async options => {
+    bridge.status.mockResolvedValue({ ...renewable, renewalAvailable: false })
+    return { date: options.date, metric: options.metric, status: 'error', error: 'auth_required' }
+  })
+  useStore.getState().update(s => { s.garminCloudSessionId = 'synthetic-session'; s.garminCloudAuto = true })
+  await render(<GarminCloudSettings />)
+  expect(button('Sign in to Garmin Connect')).toBeUndefined()
+  await act(async () => button('Read Garmin health data').click())
+  expect(bridge.status).toHaveBeenCalledTimes(2)
+  expect(button('Sign in to Garmin Connect').disabled).toBe(false)
+  expect(button('Read Garmin health data').disabled).toBe(true)
+  expect(host.querySelector('[aria-label="Upload new workouts automatically"]').disabled).toBe(true)
+  expect(host.textContent).not.toContain('Connected to Garmin Connect')
+  expect(useStore.getState().S.garminCloudSessionId).toBe('synthetic-session')
+  expect(useStore.getState().S.garminCloudAuto).toBe(true)
+})
+
 it('localizes the expired-session reason in Russian', async () => {
   await setLang('ru')
   bridge.status.mockResolvedValue({ available: true, connected: true, sessionId: 'synthetic-session', authState: 'expired' })

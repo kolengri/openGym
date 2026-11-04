@@ -1,5 +1,6 @@
 // Thai UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Could not verify the Garmin account. Try signing in again later.": "ไม่สามารถยืนยันบัญชี Garmin ได้ โปรดลองลงชื่อเข้าใช้อีกครั้งในภายหลัง",
   "Same muscle and exercise type. The movement may differ.": "กล้ามเนื้อและประเภทการออกกำลังกายเดียวกัน การเคลื่อนไหวอาจต่างกัน",
   "Related muscles and exercise type. The movement may differ.": "กล้ามเนื้อที่เกี่ยวข้องและประเภทการออกกำลังกายเดียวกัน การเคลื่อนไหวอาจต่างกัน",
   "Same muscle, different exercise type. Check suitability.": "กล้ามเนื้อเดียวกัน แต่ประเภทการออกกำลังกายต่างกัน โปรดตรวจสอบความเหมาะสม",

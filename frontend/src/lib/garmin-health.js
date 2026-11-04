@@ -73,7 +73,8 @@ export async function syncGarminHealth(store, { start, end, archive = garminHeal
       const result = await readGarminHealthMetric({ sessionId, date, metric: metric.id })
       check()
       if (result?.date !== date || result.metric !== metric.id || !['available', 'unavailable', 'error'].includes(result.status)) throw new Error('invalid_response')
-      if (result.status === 'error' && ['auth_required', 'rate_limited', 'storage_unavailable'].includes(result.error)) throw new Error(result.error)
+      if (result.status === 'error' && ['auth_required', 'auth_expired', 'network_error', 'cancelled', 'session_changed',
+        'profile_unavailable', 'rate_limited', 'storage_unavailable'].includes(result.error)) throw new Error(result.error)
       const previous = await archive.read(owner, date, metric.id)
       check()
       // A failed/empty late response never replaces an earlier successful observation.

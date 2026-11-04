@@ -29,12 +29,14 @@ public final class GarminCloudPlugin extends Plugin {
     static JSObject status(GarminCloudStore store) {
         // connected is credential presence, retained for receipt reconciliation. The UI uses
         // authState to distinguish an expired session without mistaking it for a storage failure.
-        JSObject result = new JSObject().put("available", true).put("connected", store.connected()).put("authState", store.authState());
+        JSObject result = new JSObject().put("available", true).put("connected", store.connected())
+            .put("authState", store.authState()).put("renewalAvailable", store.renewalAvailable());
         if (store.connected()) result.put("sessionId", store.sessionId());
         return result;
     }
 
     @PluginMethod public void connect(PluginCall call) {
+        GarminCloudRenewal.cancelPending();
         GarminCloudStore.IO.execute(() -> {
             if (connectingNonce != null) { reject(call, "auth_required"); return; }
             try {
@@ -76,7 +78,8 @@ public final class GarminCloudPlugin extends Plugin {
             }
             if (result.getResultCode() != Activity.RESULT_OK) {
                 try { GarminCloudStore.open(getContext()).cancelLogin(nonce); } catch (Exception ignored) { /* Fail closed. */ }
-                reject(origin, "cancelled"); return;
+                String error = result.getData() == null ? null : result.getData().getStringExtra(GarminCloudLoginActivity.ERROR);
+                reject(origin, safeLoginError(error)); return;
             }
             try {
                 GarminCloudStore store = GarminCloudStore.open(getContext());
@@ -87,6 +90,7 @@ public final class GarminCloudPlugin extends Plugin {
     }
 
     @PluginMethod public void disconnect(PluginCall call) {
+        GarminCloudRenewal.cancelPending();
         GarminCloudStore.IO.execute(() -> {
             String previous = connectingNonce;
             connectingNonce = null;
@@ -141,11 +145,13 @@ public final class GarminCloudPlugin extends Plugin {
     }
 
     @PluginMethod public void readHealthMetric(PluginCall call) {
+        long renewalLease = GarminCloudRenewal.lease();
         GarminCloudStore.IO.execute(() -> {
             String metric = call.getString("metric"), date = call.getString("date"), session = call.getString("sessionId");
             try {
                 GarminCloudStore store = GarminCloudStore.open(getContext());
-                org.json.JSONObject result = readHealthOnce(store, session, date, metric, new GarminHealthClient());
+                org.json.JSONObject result = readHealthOnce(store, session, date, metric, new GarminHealthClient(),
+                    GarminCloudRenewal.forOperation(getContext(), renewalLease));
                 call.resolve(new JSObject(result.toString()));
             } catch (Exception failure) {
                 String code = failure instanceof GarminCloudClient.Failure ? ((GarminCloudClient.Failure) failure).code : "storage_unavailable";
@@ -158,15 +164,19 @@ public final class GarminCloudPlugin extends Plugin {
     /** Shared by the bridge and offline repeated-read/session-persistence tests. IO-owned. */
     static org.json.JSONObject readHealthOnce(GarminCloudStore store, String session, String date,
                                               String metric, GarminHealthClient client) throws Exception {
-        try { return client.read(store, session, date, metric); }
+        return readHealthOnce(store, session, date, metric, client, GarminCloudSession.UNAVAILABLE);
+    }
+
+    static org.json.JSONObject readHealthOnce(GarminCloudStore store, String session, String date,
+                                              String metric, GarminHealthClient client, GarminCloudSession.Renewal renewal) throws Exception {
+        try { return GarminCloudSession.readHealth(store, session, date, metric, client, renewal); }
         catch (GarminCloudClient.Failure failure) {
-            if (failure.code.equals("auth_required") && session != null && session.equals(store.sessionId()))
-                store.invalidate();
             return GarminHealthClient.error(metric, date, failure.code);
         }
     }
 
     @PluginMethod public void upload(PluginCall call) {
+        long renewalLease = GarminCloudRenewal.lease();
         GarminCloudStore.IO.execute(() -> {
             if (connectingNonce != null) { reject(call, "auth_required"); return; }
             GarminCloudStore store;
@@ -179,7 +189,8 @@ public final class GarminCloudPlugin extends Plugin {
                 store = GarminCloudStore.open(getContext());
                 resolve(call, uploadOnce(store, call.getString("sessionId"), workout,
                     GarminCloudClient.sha256(fit), Boolean.TRUE.equals(call.getBoolean("retryUnknown", false)),
-                    () -> new GarminCloudClient().upload(fit, call.getString("filename"), store.token(), store.csrf())));
+                    () -> new GarminCloudClient().upload(fit, call.getString("filename"), store.token(), store.csrf()),
+                    GarminCloudRenewal.forOperation(getContext(), renewalLease)));
             } catch (GarminCloudClient.Failure failure) { reject(call, failure.code); }
             catch (Exception ignored) { reject(call, "storage_unavailable"); }
         });
@@ -190,17 +201,13 @@ public final class GarminCloudPlugin extends Plugin {
     /** Receipt/readiness ordering is shared by the native bridge and offline no-POST tests. */
     static GarminCloudClient.Outcome uploadOnce(GarminCloudStore store, String session, String workout,
                                                String sha, boolean retryUnknown, Upload upload) throws Exception {
-        boolean wasUnknown = store.uncertain(workout);
-        GarminCloudClient.Outcome receipt = store.begin(session, workout, sha, retryUnknown);
-        if (receipt != null) return receipt;
-        GarminCloudClient.Outcome result;
-        try { result = upload.send(); }
-        catch (GarminCloudClient.Failure failure) {
-            throw new GarminCloudClient.Failure(recordUploadFailure(store, workout, wasUnknown, failure));
-        }
-        try { store.complete(workout, result); }
-        catch (Exception ignored) { throw new GarminCloudClient.Failure("unknown_result"); }
-        return result;
+        return uploadOnce(store, session, workout, sha, retryUnknown, upload, GarminCloudSession.UNAVAILABLE);
+    }
+
+    static GarminCloudClient.Outcome uploadOnce(GarminCloudStore store, String session, String workout,
+                                               String sha, boolean retryUnknown, Upload upload,
+                                               GarminCloudSession.Renewal renewal) throws Exception {
+        return GarminCloudSession.upload(store, session, workout, sha, retryUnknown, upload, renewal);
     }
 
     /** IO-owned failure transition; never discard an earlier ambiguous upload receipt. */
@@ -209,10 +216,9 @@ public final class GarminCloudPlugin extends Plugin {
         if (!failure.code.equals("unknown_result")) {
             try {
                 if (!wasUnknown) store.definitelyFailed(workout);
-                if (failure.code.equals("auth_required")) store.invalidate();
             } catch (Exception ignored) { return "unknown_result"; }
         }
-        return wasUnknown && !failure.code.equals("auth_required") ? "unknown_result" : failure.code;
+        return wasUnknown ? "unknown_result" : failure.code;
     }
 
     private void resolve(PluginCall call, GarminCloudClient.Outcome receipt) {
@@ -222,4 +228,10 @@ public final class GarminCloudPlugin extends Plugin {
     }
 
     private void reject(PluginCall call, String code) { call.reject(code, code); }
+
+    private static String safeLoginError(String code) {
+        if ("network_error".equals(code) || "auth_required".equals(code) || "profile_unavailable".equals(code)
+            || "storage_unavailable".equals(code) || "rate_limited".equals(code)) return code;
+        return code == null || "cancelled".equals(code) ? "cancelled" : "profile_unavailable";
+    }
 }

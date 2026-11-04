@@ -171,8 +171,7 @@ final class GarminHealthClient {
     JSONObject read(GarminCloudStore store, String session, String date, String metric) throws Exception {
         store.requireSession(session);
         String currentDate = today();
-        if (!METRICS.containsKey(metric)) throw new GarminCloudClient.Failure("invalid_metric");
-        validateDate(date, currentDate);
+        validateRead(date, metric);
         Metric item = METRICS.get(metric);
         String name = store.displayName();
         if (item.template.contains("{name}") && !validDisplayName(name)) {
@@ -201,6 +200,20 @@ final class GarminHealthClient {
 
     void confirmSession(String token, String csrf) throws GarminCloudClient.Failure {
         payload(transport.get(PROFILE_URL, token, csrf));
+    }
+
+    static void validateRead(String date, String metric) throws GarminCloudClient.Failure {
+        if (!METRICS.containsKey(metric)) throw new GarminCloudClient.Failure("invalid_metric");
+        validateDate(date, today());
+    }
+
+    /** Hash only the authoritative account identifier; never retain or bridge the profile body. */
+    String accountBinding(String token, String csrf) throws GarminCloudClient.Failure {
+        Object profile = payload(transport.get(PROFILE_URL, token, csrf));
+        String name = profile instanceof JSONObject ? ((JSONObject) profile).optString("displayName", null) : null;
+        if (!validDisplayName(name)) throw new GarminCloudClient.Failure("profile_unavailable");
+        try { return GarminCloudClient.sha256(name.getBytes(StandardCharsets.UTF_8)); }
+        catch (Exception ignored) { throw new GarminCloudClient.Failure("profile_unavailable"); }
     }
 
     static JSONObject envelope(String metric, String date, String status) throws Exception {

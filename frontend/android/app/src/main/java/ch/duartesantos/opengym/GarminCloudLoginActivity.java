@@ -37,6 +37,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /** Official Garmin pages in a plain WebView. It has no Capacitor bridge or JavaScript interface. */
 public final class GarminCloudLoginActivity extends Activity {
     static final String NONCE = "garminLoginNonce";
+    static final String ERROR = "garminLoginError";
     private static WeakReference<GarminCloudLoginActivity> active = new WeakReference<>(null);
     private String nonce;
     private WebView web;
@@ -127,11 +128,11 @@ public final class GarminCloudLoginActivity extends Activity {
             }
         });
         // A fresh official login prevents a previous WebView session selecting another account silently.
-        clearGarminCookies(() -> {
+        checkAuthorization(() -> clearGarminCookies(() -> {
             checkAuthorization(() -> {
                 if (!closing && !isFinishing() && !isDestroyed() && web != null) web.loadUrl("https://connect.garmin.com/app/");
             });
-        });
+        }));
     }
 
     private void captureSession(String url) {
@@ -145,18 +146,21 @@ public final class GarminCloudLoginActivity extends Activity {
         web.stopLoading();
         title.setText("Saving Garmin connection…");
         GarminCloudStore.IO.execute(() -> {
-            boolean saved;
-            try { GarminCloudStore.saveLogin(getApplicationContext(), nonce, token, csrf); saved = true; }
-            catch (Exception ignored) { saved = false; }
-            boolean success = saved;
+            String failure = null;
+            try {
+                String binding = new GarminHealthClient().accountBinding(token, csrf);
+                CookieManager.getInstance().flush();
+                GarminCloudStore.open(getApplicationContext()).finishLogin(nonce, token, csrf, binding);
+            } catch (GarminCloudClient.Failure rejected) { failure = rejected.code; }
+            catch (Exception ignored) { failure = "storage_unavailable"; }
+            String error = failure;
             runOnUiThread(() -> {
                 if (closing || isFinishing() || isDestroyed()) return;
-                clearGarminCookies(() -> {
-                    if (closing || isFinishing() || isDestroyed()) return;
-                    closing = true;
-                    if (success) setResult(RESULT_OK, new Intent().putExtra(NONCE, nonce));
-                    finish();
-                });
+                // Keep official SSO cookies for renewal after restart; explicit cancel/change clears them.
+                closing = true;
+                setResult(error == null ? RESULT_OK : RESULT_CANCELED,
+                    new Intent().putExtra(NONCE, nonce).putExtra(ERROR, error));
+                finish();
             });
         });
     }

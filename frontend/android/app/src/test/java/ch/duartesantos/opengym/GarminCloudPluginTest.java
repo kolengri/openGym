@@ -49,14 +49,14 @@ public class GarminCloudPluginTest {
             () -> after.begin(session, "workout", SHA, false)).code);
     }
 
-    @Test public void unauthorizedUploadStillInvalidatesCredentialsDurably() throws Exception {
+    @Test public void definiteUnauthorizedUploadPreservesNativeIdentityForRenewal() throws Exception {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         GarminCloudStore store = connected(disk);
         store.begin(store.sessionId(), "workout", SHA, false);
         assertEquals("auth_required", failure(store, 401, false));
         GarminCloudStore restarted = new GarminCloudStore(disk);
-        assertFalse(restarted.connected());
-        assertNull(restarted.token());
+        assertTrue(restarted.connected());
+        assertEquals(TOKEN, restarted.token());
         assertFalse(restarted.uncertain("workout"));
     }
 
@@ -65,9 +65,9 @@ public class GarminCloudPluginTest {
         GarminCloudStore store = connected(disk);
         String original = store.sessionId();
         store.begin(original, "workout", SHA, false);
-        assertEquals("auth_required", failure(store, 401, true));
+        assertEquals("unknown_result", failure(store, 401, true));
         GarminCloudStore restarted = new GarminCloudStore(disk);
-        assertFalse(restarted.connected());
+        assertTrue(restarted.connected());
         assertTrue(restarted.uncertain("workout"));
         restarted.login(TOKEN, null);
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,

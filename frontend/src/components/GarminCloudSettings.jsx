@@ -15,7 +15,7 @@ export default function GarminCloudSettings() {
   useEffect(() => { let stopped = false; garminCloudStatus().then(s => { if (!stopped) setStatus(s) }); return () => { stopped = true } }, [statusAttempt])
   if (!status?.available) return null
   const linked = status.connected && status.sessionId === state.garminCloudSessionId
-  const expired = linked && status.authState === 'expired'
+  const expired = linked && status.authState === 'expired' && status.renewalAvailable !== true
   const connected = linked && !expired
   const saveSettings = async () => {
     try { await useStore.getState().saveNow() }
@@ -71,7 +71,7 @@ export default function GarminCloudSettings() {
     <p className="small muted">{t('Heart-rate samples received from the watch are included. Bluetooth or sleeping-phone gaps are not reconstructed.')}</p>
     {error && <p className="small muted" role="alert">{t(garminCloudErrorMessage(error))}</p>}
     </div>
-    {isOn(state, 'health') ? <GarminHealthSettings connected={connected} />
+    {isOn(state, 'health') ? <GarminHealthSettings connected={connected} onStatusChange={() => setStatusAttempt(value => value + 1)} />
       : <p className="small muted">{t('{0} stops syncing while Health is off. Nothing is disconnected, and it catches up once Health is back.', 'Garmin Connect')}</p>}
   </Section>
 }

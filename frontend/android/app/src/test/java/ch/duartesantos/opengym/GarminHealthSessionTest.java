@@ -60,15 +60,17 @@ public class GarminHealthSessionTest {
         assertEquals("uploaded", new GarminCloudStore(disk).begin(session, "workout", "b".repeat(64), false).status);
     }
 
-    @Test public void confirmedAccountUnauthorizedStillInvalidatesCredentialsAndKeepsUnknownUploadReceipt() throws Exception {
+    @Test public void confirmedAccountUnauthorizedRetainsIdentityAndUnknownReceiptWhileRequiringLoginWithoutRenewalMaterial() throws Exception {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         GarminCloudStore store = connected(disk);
         String session = store.sessionId();
         store.begin(session, "queued", "a".repeat(64), false);
         Transport transport = new Transport(); transport.profileStatus = 401;
-        assertEquals("auth_required", read(store, session, transport, "ecg").getString("error"));
+        assertEquals("auth_expired", read(store, session, transport, "ecg").getString("error"));
         GarminCloudStore restarted = new GarminCloudStore(disk);
-        assertFalse(restarted.connected());
+        assertTrue(restarted.connected());
+        assertEquals(session, restarted.sessionId());
+        assertEquals("expired", restarted.authState());
         assertTrue(restarted.uncertain("queued"));
         assertEquals(2, transport.urls.size());
     }
@@ -119,12 +121,13 @@ public class GarminHealthSessionTest {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         GarminCloudStore store = connected(disk);
         Transport transport = new Transport(); transport.profileStatus = 401;
-        assertEquals("auth_required", read(store, store.sessionId(), transport, "heart_rate").getString("error"));
-        assertFalse(new GarminCloudStore(disk).connected());
+        assertEquals("auth_expired", read(store, store.sessionId(), transport, "heart_rate").getString("error"));
+        assertTrue(new GarminCloudStore(disk).connected());
+        assertEquals("expired", new GarminCloudStore(disk).authState());
         assertEquals(List.of(GarminHealthClient.PROFILE_URL), transport.urls);
     }
 
-    @Test public void uploadUnauthorizedOnlyLogsOutAfterPrimaryAccountConfirmationAndNeverReplaysPost() throws Exception {
+    @Test public void uploadUnauthorizedRequiresLoginOnlyAfterAccountConfirmationAndNeverReplaysPost() throws Exception {
         for (int status : new int[]{200, 204, 401, 403, 429, 500}) {
             GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
             GarminCloudStore store = connected(disk);
@@ -137,8 +140,10 @@ public class GarminHealthSessionTest {
                     return GarminCloudClient.response(401, null,
                         () -> new GarminHealthClient(transport).confirmSession(TOKEN, "synthetic-csrf"));
                 }));
-            assertEquals(status == 401 ? "auth_required" : "upload_failed", failure.code);
-            assertEquals(status != 401, new GarminCloudStore(disk).connected());
+            assertEquals(status == 401 ? "auth_expired" : "upload_failed", failure.code);
+            assertTrue(new GarminCloudStore(disk).connected());
+            assertEquals(session, new GarminCloudStore(disk).sessionId());
+            assertEquals(status == 401 ? "expired" : "unknown", new GarminCloudStore(disk).authState());
             assertEquals(1, posts[0]);
             assertEquals(List.of(GarminHealthClient.PROFILE_URL), transport.urls);
             assertFalse(store.uncertain("upload"));

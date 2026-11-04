@@ -1,5 +1,6 @@
 // Hindi UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Could not verify the Garmin account. Try signing in again later.": "Garmin खाते की पुष्टि नहीं हो सकी। बाद में फिर से साइन इन करने की कोशिश करें।",
   "Same muscle and exercise type. The movement may differ.": "समान मांसपेशी और व्यायाम का प्रकार। गति अलग हो सकती है।",
   "Related muscles and exercise type. The movement may differ.": "संबंधित मांसपेशियाँ और समान व्यायाम प्रकार। गति अलग हो सकती है।",
   "Same muscle, different exercise type. Check suitability.": "समान मांसपेशी, अलग व्यायाम प्रकार। उपयुक्तता जाँचें।",

@@ -42,6 +42,34 @@ it('keeps reading disabled before an explicit Garmin connection', async () => {
   expect(button('Read Garmin health data').disabled).toBe(true)
   expect(bridge.readHealthMetric).not.toHaveBeenCalled()
 })
+
+it.each(['unmount', 'session', 'profile'])('does not refresh connection status after the initiating %s changes', async change => {
+  let finish
+  bridge.readHealthMetric.mockImplementation(options => new Promise(resolve => { finish = () => resolve({ ...options, status: 'error', error: 'auth_required' }) }))
+  const changed = vi.fn()
+  await act(async () => root.render(<GarminHealthSettings connected onStatusChange={changed} />))
+  await act(async () => { button('Read Garmin health data').click() })
+  expect(finish).toBeTypeOf('function')
+  await act(async () => {
+    if (change === 'unmount') root.render(null)
+    else if (change === 'session') useStore.getState().update(s => { s.garminCloudSessionId = 'another-session' })
+    else useStore.setState({ user: { id: 'another-profile' } })
+    finish()
+  })
+  expect(changed).not.toHaveBeenCalled()
+})
+it.each([
+  ['auth_expired', 'Your Garmin Connect session has expired.'],
+  ['network_error', 'Check your connection and retry.'],
+  ['profile_unavailable', 'Could not verify the Garmin account.'],
+])('shows the native renewal failure and stops the health batch: %s', async (error, message) => {
+  bridge.healthMetrics.mockResolvedValue({ metrics: [{ id: 'body_composition', label: 'Body composition' }, { id: 'sleep', label: 'Sleep' }] })
+  bridge.readHealthMetric.mockImplementation(async o => ({ date: o.date, metric: o.metric, status: 'error', error }))
+  await act(async () => root.render(<GarminHealthSettings connected />))
+  await act(async () => button('Read Garmin health data').click())
+  expect(bridge.readHealthMetric).toHaveBeenCalledOnce()
+  expect(host.querySelector('[role="alert"]').textContent).toContain(message)
+})
 it('shows archived health cards while disconnected without starting health requests', async () => {
   rows.set(todayISO() + 'body_composition', { date: todayISO(), metric: 'body_composition', status: 'available', data: { dateWeightList: [{ date: '2026-10-19T12:00:00', weight: 78257 }] } })
   await act(async () => root.render(<GarminHealthSettings connected={false} />))

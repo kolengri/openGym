@@ -1,4 +1,5 @@
 export default {
+  "Could not verify the Garmin account. Try signing in again later.": "無法驗證 Garmin 帳戶。請稍後再嘗試登入。",
   "Same muscle and exercise type. The movement may differ.": "相同肌群與動作類型。運動方式可能不同。",
   "Related muscles and exercise type. The movement may differ.": "相關肌群與相同動作類型。運動方式可能不同。",
   "Same muscle, different exercise type. Check suitability.": "相同肌群，不同動作類型。請確認是否合適。",
