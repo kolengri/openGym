@@ -1,5 +1,7 @@
 // French UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "La connexion à Garmin est incomplète. Réessayez de vous connecter.",
+  "Garmin could not authorize this phone. Try signing in again later.": "Garmin n’a pas pu autoriser ce téléphone. Réessayez de vous connecter plus tard.",
   "Could not verify the Garmin account. Try signing in again later.": "Impossible de vérifier le compte Garmin. Réessaie de te connecter plus tard.",
   "Same muscle and exercise type. The movement may differ.": "Même muscle et même type d’exercice. Le mouvement peut différer.",
   "Related muscles and exercise type. The movement may differ.": "Muscles associés et même type d’exercice. Le mouvement peut différer.",

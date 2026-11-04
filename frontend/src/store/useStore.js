@@ -367,6 +367,16 @@ function loadState() {
 // so a profile created from such a copy takes it at once, like one holding a workout.
 const hasData = st => !!((st.workouts || []).length || (st.routines || []).length || (st.bodyweight || []).length || (st.customEx || []).length || (st.measurements || []).length || Object.values(st.exAliases || {}).some(v => Array.isArray(v) && v.length))
 
+// Credentials belong to this phone. A remote profile or backup cannot replace its native
+// session binding or enable uploads here; workout receipt bindings remain untouched.
+const carryGarminCloudBinding = (local, incoming) => {
+  for (const key of ['garminCloudSessionId', 'garminCloudAuto']) {
+    if (Object.hasOwn(local, key)) incoming[key] = local[key]
+    else delete incoming[key]
+  }
+  return incoming
+}
+
 // Decide whether a pulled account state may replace the local saved state. A local active workout
 // is deliberately carried forward: the server stores completed/saved state, while the in-progress
 // session belongs to the device that is currently running it.
@@ -374,7 +384,7 @@ export function restoredStateFor(local, remote, dirty = false) {
   if (!remote || (hasData(local) && (dirty || (remote._ts || 0) < (local._ts || 0)))) return null
   const next = sanitizeAccent(Object.assign(clone(DEF), remote))
   if (local.active) next.active = local.active
-  return next
+  return carryGarminCloudBinding(local, next)
 }
 
 export const useStore = create((set, get) => {
@@ -780,6 +790,7 @@ export const useStore = create((set, get) => {
     }
     if (legacy) clearLegacy()
     const merged = Object.assign(clone(DEF), mergeStates(local, remote))
+    carryGarminCloudBinding(local, merged)
     merged.active = carryActive(local, merged)
     // A pass of this app's rotation that the merge left complete (each copy finished a session of
     // it, or one copy's refill lost to the other's older queue) starts its next pass here, as the
@@ -1199,7 +1210,7 @@ export const useStore = create((set, get) => {
     const S = get().S
     let merged = S
     for (const k of keys) merged = all[k].adopt ? mergeStates(merged, all[k].state, { prefer: 'a' }) : mergeStates(merged, all[k].state)
-    merged = Object.assign(clone(DEF), merged)
+    merged = carryGarminCloudBinding(S, Object.assign(clone(DEF), merged))
     // A kept running workout comes back in the unit of the copy it joins: the account may have
     // switched to lb (converting every weight) since it was kept in kg.
     merged.active = S.active || keys.map(k => carryActive(all[k].state, merged)).find(Boolean) || null
@@ -1260,6 +1271,7 @@ export const useStore = create((set, get) => {
     }
     const takeServer = () => {
       const copy = sanitizeAccent(Object.assign(clone(DEF), state))
+      carryGarminCloudBinding(get().S, copy)
       copy.active = carryActive(get().S, copy)
       if (rev != null) adopt(copy, rev)
       else { dropSync(); persist(copy, false, false); markOwed(false) }
@@ -1313,6 +1325,7 @@ export const useStore = create((set, get) => {
     if (keep) {
       const S = get().S
       const merged = Object.assign(clone(DEF), mergeStates(state, S, { prefer: 'a' }))
+      carryGarminCloudBinding(S, merged)
       merged.active = carryActive(S, merged)
       // The account's plan wins; a day it has nothing planned for takes the device's.
       for (const f of ['week', 'dayPlan']) {
@@ -1332,6 +1345,7 @@ export const useStore = create((set, get) => {
     if (later) {
       const S = get().S
       const merged = Object.assign(clone(DEF), mergeStates(S, later, { prefer: 'a' }))
+      carryGarminCloudBinding(S, merged)
       merged.active = S.active || null
       persist(merged, false)
       if (rev != null) writeSync(rev, 0, state?._wid)
@@ -1595,7 +1609,7 @@ export const useStore = create((set, get) => {
       importRead = null
       const server = read?.state || null
       const now = Math.max(Date.now(), highestStamp(cur) + 1, highestStamp(server) + 1, highestStamp(backup) + 1)
-      const next = sanitizeAccent(Object.assign(clone(DEF), backup))
+      const next = carryGarminCloudBinding(cur, sanitizeAccent(Object.assign(clone(DEF), backup)))
       // A workout running here lives on this device only: no backup and no server copy holds it,
       // so the import keeps it (in the backup's unit). Only with none running does a backup taken
       // mid-workout bring its own session back. Both the replace and "Merge them in" dropped it.
@@ -1603,6 +1617,7 @@ export const useStore = create((set, get) => {
       // No account: "Merge them in" joins this copy's own entries into the backup's.
       if (mergeWith?.device && !uid) {
         const merged = keepReset(cur, Object.assign(clone(DEF), mergeStates(next, cur, { prefer: 'a' })))
+        carryGarminCloudBinding(cur, merged)
         stampRestore(merged, [cur, next], now)
         merged._ts = now
         merged.active = carryActive({ unit: next.unit, active: running }, merged)
@@ -1624,6 +1639,7 @@ export const useStore = create((set, get) => {
       // The merge keeps the backup's reset stamp (prefer); a later one this copy or the server's
       // holds stays, as it does on a replace.
       const merged = keepReset(others, keepReset(cur, Object.assign(clone(DEF), mergeStates(next, others, { prefer: 'a' }))))
+      carryGarminCloudBinding(cur, merged)
       stampRestore(merged, [cur, mergeWith.state, next], now)
       merged._ts = now
       merged.active = carryActive({ unit: next.unit, active: running }, merged)
@@ -1816,7 +1832,7 @@ export const useStore = create((set, get) => {
           if (!serverMoved) { if (changed) await get().pushState(); else confirmed(S); return }
           if (!state) { writeSync(rev, 0); if (hasData(S)) await get().pushState(); return }
           if (!descends) { mergeInto(S, state, rev); pushPending = false; await get().pushState(); return }
-          if (!changed) { const next = sanitizeAccent(Object.assign(clone(DEF), state)); next.active = carryActive(S, next); adopt(next, rev); confirmed(get().S); return }
+          if (!changed) { const next = carryGarminCloudBinding(S, sanitizeAccent(Object.assign(clone(DEF), state))); next.active = carryActive(S, next); adopt(next, rev); confirmed(get().S); return }
           mergeInto(S, state, rev)
           pushPending = false
           await get().pushState()

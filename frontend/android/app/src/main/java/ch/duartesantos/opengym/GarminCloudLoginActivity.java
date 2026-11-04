@@ -6,8 +6,6 @@ import java.lang.ref.WeakReference;
 import android.graphics.Color;
 import android.net.http.SslError;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.CookieManager;
@@ -43,24 +41,20 @@ public final class GarminCloudLoginActivity extends Activity {
     private WebView web;
     private TextView title;
     private boolean saving, closing;
-    private final Handler main = new Handler(Looper.getMainLooper());
-    private final Runnable cookieCheck = new Runnable() {
-        @Override public void run() {
-            if (web == null || saving || closing || isFinishing() || isDestroyed()) return;
-            captureSession(web.getUrl());
-            if (!saving) main.postDelayed(this, 1000);
-        }
-    };
+    private GarminCloudAuth.LoginAttempt attempt;
+    private long loginLease;
 
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         nonce = getIntent().getStringExtra(NONCE);
+        loginLease = GarminCloudRenewal.lease();
         GarminCloudLoginActivity previous = active.get();
         if (previous != null && previous != this) previous.dismiss();
         active = new WeakReference<>(this);
         setResult(RESULT_CANCELED, new Intent().putExtra(NONCE, nonce));
         if (!GarminCloudStore.validSession(nonce)) { closing = true; super.finish(); return; }
+        attempt = new GarminCloudAuth.LoginAttempt(nonce);
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setBackgroundColor(Color.WHITE);
@@ -100,13 +94,15 @@ public final class GarminCloudLoginActivity extends Activity {
         });
         web.setWebViewClient(new WebViewClient() {
             @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return !GarminCloudClient.allowedLoginUrl(request.getUrl().toString());
+                return captureTicket(request.getUrl().toString(), request.getMethod(), request.isForMainFrame())
+                    || !GarminCloudClient.allowedLoginUrl(request.getUrl().toString());
             }
             @Override public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                return !GarminCloudClient.allowedLoginUrl(url);
+                return captureTicket(url, "GET", true) || !GarminCloudClient.allowedLoginUrl(url);
             }
             @Override public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-                if (request.isForMainFrame() && !GarminCloudClient.allowedLoginUrl(request.getUrl().toString()))
+                if (captureTicket(request.getUrl().toString(), request.getMethod(), request.isForMainFrame())
+                    || (request.isForMainFrame() && !GarminCloudClient.allowedLoginUrl(request.getUrl().toString())))
                     return new WebResourceResponse("text/plain", "UTF-8", new java.io.ByteArrayInputStream(new byte[0]));
                 return null;
             }
@@ -115,9 +111,9 @@ public final class GarminCloudLoginActivity extends Activity {
                 title.setText("Garmin Connect · " + android.net.Uri.parse(url).getHost());
             }
             @Override public void onPageFinished(WebView view, String url) {
-                captureSession(url);
-                main.removeCallbacks(cookieCheck);
-                if (!saving && GarminCloudClient.allowedLoginUrl(url)) main.postDelayed(cookieCheck, 1000);
+                // This callback runs after loading, so a ticket observed here may already be consumed.
+                if (!saving && !closing && attempt.incompletePage(url))
+                    finishResult("auth_incomplete");
             }
             @Override public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 handler.cancel();
@@ -130,39 +126,49 @@ public final class GarminCloudLoginActivity extends Activity {
         // A fresh official login prevents a previous WebView session selecting another account silently.
         checkAuthorization(() -> clearGarminCookies(() -> {
             checkAuthorization(() -> {
-                if (!closing && !isFinishing() && !isDestroyed() && web != null) web.loadUrl("https://connect.garmin.com/app/");
+                if (!closing && !isFinishing() && !isDestroyed() && web != null) web.loadUrl(GarminCloudAuth.SIGN_IN);
             });
         }));
     }
 
-    private void captureSession(String url) {
-        if (saving || closing || isDestroyed() || !GarminCloudClient.completedLoginUrl(url)
-            || web == null || !GarminCloudClient.completedLoginUrl(web.getUrl())) return;
-        String cookies = CookieManager.getInstance().getCookie("https://connect.garmin.com/app/");
-        String token = GarminCloudClient.cookie(cookies, "JWT_WEB");
-        String csrf = GarminCloudClient.cookie(cookies, "connect-csrf-token");
-        if (!GarminCloudClient.validToken(token) || !GarminCloudClient.validCsrf(csrf)) return;
+    /** Claim synchronously, block the service GET, then move native exchange onto serial IO. */
+    private boolean captureTicket(String url, String method, boolean mainFrame) {
+        if (!mainFrame || !"GET".equals(method) || GarminCloudAuth.serviceTicket(url) == null) return false;
+        String ticket = attempt.claim(url, method, true);
+        if (ticket != null) runOnUiThread(() -> exchangeTicket(ticket));
+        // Also block duplicate navigation after another hook has already claimed this attempt.
+        return true;
+    }
+
+    private void exchangeTicket(String ticket) {
+        if (saving || closing || isFinishing() || isDestroyed() || !attempt.active()) return;
         saving = true;
         web.stopLoading();
         title.setText("Saving Garmin connection…");
         GarminCloudStore.IO.execute(() -> {
             String failure = null;
             try {
-                String binding = new GarminHealthClient().accountBinding(token, csrf);
-                CookieManager.getInstance().flush();
-                GarminCloudStore.open(getApplicationContext()).finishLogin(nonce, token, csrf, binding);
+                GarminCloudAuth.completeLogin(GarminCloudStore.open(getApplicationContext()), attempt, ticket,
+                    new GarminCloudAuth(), () -> GarminCloudRenewal.checkLease(loginLease));
             } catch (GarminCloudClient.Failure rejected) { failure = rejected.code; }
             catch (Exception ignored) { failure = "storage_unavailable"; }
             String error = failure;
             runOnUiThread(() -> {
                 if (closing || isFinishing() || isDestroyed()) return;
-                // Keep official SSO cookies for renewal after restart; explicit cancel/change clears them.
-                closing = true;
-                setResult(error == null ? RESULT_OK : RESULT_CANCELED,
-                    new Intent().putExtra(NONCE, nonce).putExtra(ERROR, error));
-                finish();
+                // Renewal uses the DI refresh grant. Do not retain a second browser login session.
+                clearGarminCookies(() -> finishResult(error));
             });
         });
+    }
+
+    private void finishResult(String error) {
+        if (closing || isFinishing() || isDestroyed()) return;
+        closing = true;
+        attempt.cancel();
+        if (web != null) web.stopLoading();
+        setResult(error == null ? RESULT_OK : RESULT_CANCELED,
+            new Intent().putExtra(NONCE, nonce).putExtra(ERROR, error));
+        finish();
     }
 
     private void checkAuthorization(Runnable pending) {
@@ -177,9 +183,7 @@ public final class GarminCloudLoginActivity extends Activity {
             runOnUiThread(() -> {
                 if (closing || isFinishing() || isDestroyed()) return;
                 if (saved) {
-                    closing = true;
-                    setResult(RESULT_OK, new Intent().putExtra(NONCE, nonce));
-                    finish();
+                    clearGarminCookies(() -> finishResult(null));
                 } else if (!valid) dismiss();
                 else pending.run();
             });
@@ -193,6 +197,7 @@ public final class GarminCloudLoginActivity extends Activity {
 
     private void dismiss() {
         closing = true;
+        if (attempt != null) attempt.cancel();
         if (web != null) web.stopLoading();
         super.finish();
     }
@@ -205,6 +210,8 @@ public final class GarminCloudLoginActivity extends Activity {
     private void cancelLogin() {
         if (closing) return;
         closing = true;
+        if (attempt != null) attempt.cancel();
+        GarminCloudRenewal.cancelPending();
         if (web != null) web.stopLoading();
         GarminCloudStore.IO.execute(() -> {
             try { GarminCloudStore.open(getApplicationContext()).cancelLogin(nonce); }
@@ -221,7 +228,7 @@ public final class GarminCloudLoginActivity extends Activity {
     }
 
     @Override protected void onDestroy() {
-        main.removeCallbacks(cookieCheck);
+        if (attempt != null) attempt.cancel();
         if (active.get() == this) active.clear();
         if (web != null) {
             ((ViewGroup) web.getParent()).removeView(web);

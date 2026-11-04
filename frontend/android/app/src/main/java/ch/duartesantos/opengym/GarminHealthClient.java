@@ -207,15 +207,6 @@ final class GarminHealthClient {
         validateDate(date, today());
     }
 
-    /** Hash only the authoritative account identifier; never retain or bridge the profile body. */
-    String accountBinding(String token, String csrf) throws GarminCloudClient.Failure {
-        Object profile = payload(transport.get(PROFILE_URL, token, csrf));
-        String name = profile instanceof JSONObject ? ((JSONObject) profile).optString("displayName", null) : null;
-        if (!validDisplayName(name)) throw new GarminCloudClient.Failure("profile_unavailable");
-        try { return GarminCloudClient.sha256(name.getBytes(StandardCharsets.UTF_8)); }
-        catch (Exception ignored) { throw new GarminCloudClient.Failure("profile_unavailable"); }
-    }
-
     static JSONObject envelope(String metric, String date, String status) throws Exception {
         // Invalid input cannot cause an unbounded/error-body echo through the bridge.
         return new JSONObject().put("metric", metric != null && metric.length() <= 64 ? metric : "")

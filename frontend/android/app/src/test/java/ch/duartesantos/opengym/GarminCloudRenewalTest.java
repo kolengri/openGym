@@ -8,11 +8,11 @@ import org.json.JSONObject;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/** Production orchestration with deterministic browser/HTTP seams; no real account or network. */
+/** Production orchestration with deterministic refresh/HTTP seams; no real account or network. */
 public class GarminCloudRenewalTest {
     private static final long NOW = 1800000000000L;
-    private static final String SHA = "a".repeat(64), ACCOUNT = "b".repeat(64);
-    private static final String OLD = token(1800000001), FRESH = token(1800007200);
+    private static final String SHA = "a".repeat(64);
+    private static final String OLD = token(1800000120), FRESH = token(1800007200);
     private static String token(long expiry) {
         return "e30." + Base64.getUrlEncoder().withoutPadding().encodeToString(
             ("{\"exp\":" + expiry + "}").getBytes(StandardCharsets.UTF_8)) + ".synthetic";
@@ -22,14 +22,15 @@ public class GarminCloudRenewalTest {
     }
     private static GarminCloudStore login(GarminCloudStoreTest.Disk disk, AtomicLong clock) throws Exception {
         GarminCloudStore store = open(disk, clock);
-        store.finishLogin(store.startLogin(), OLD, "old-csrf", ACCOUNT);
+        store.finishLogin(store.startLogin(), GarminCloudStoreTest.credentials(OLD));
         return store;
     }
     private static GarminCloudSession.Renewal renewal(AtomicInteger count) {
         return previous -> {
             count.incrementAndGet();
-            assertEquals(OLD, previous);
-            return new GarminCloudSession.Credentials(FRESH, "fresh-csrf", ACCOUNT);
+            assertEquals(OLD, previous.token);
+            assertEquals("synthetic-refresh", previous.refreshToken);
+            return new GarminCloudSession.Credentials(FRESH, "fresh-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L);
         };
     }
 
@@ -48,7 +49,8 @@ public class GarminCloudRenewalTest {
         GarminCloudStore after = open(disk, clock);
         assertEquals("uploaded", result.status);
         assertEquals(FRESH, after.token());
-        assertEquals("fresh-csrf", after.csrf());
+        assertEquals("fresh-refresh", after.refreshToken());
+        assertNull(after.csrf());
         assertEquals(session, after.sessionId());
         assertEquals(session, new JSONObject(disk.value).getJSONArray("receipts").getJSONObject(0).getString("generation"));
         assertEquals(1, renewals.get());
@@ -56,7 +58,7 @@ public class GarminCloudRenewalTest {
         GarminCloudPlugin.uploadOnce(after, session, "next-workout", SHA, false,
             () -> new GarminCloudClient.Outcome("duplicate", null), renewal(renewals));
         assertEquals(1, renewals.get());
-        assertFalse(GarminCloudPlugin.status(after).toString().contains(ACCOUNT));
+        assertFalse(GarminCloudPlugin.status(after).toString().contains("fresh-refresh"));
     }
 
     @Test public void terminalAndUnknownReceiptsResolveBeforeRenewalEvenWhenExpired() throws Exception {
@@ -78,7 +80,7 @@ public class GarminCloudRenewalTest {
         assertTrue(store.uncertain("unknown"));
     }
 
-    @Test public void wrongAccountCannotReplaceCredentialsOrSendWorkout() throws Exception {
+    @Test public void differentRefreshClientCannotReplaceCredentialsOrSendWorkout() throws Exception {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         AtomicLong clock = new AtomicLong(NOW);
         GarminCloudStore store = login(disk, clock);
@@ -88,7 +90,7 @@ public class GarminCloudRenewalTest {
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
             () -> GarminCloudPlugin.uploadOnce(store, session, "workout", SHA, false,
                 () -> { posts.incrementAndGet(); return new GarminCloudClient.Outcome("uploaded", "123"); },
-                previous -> new GarminCloudSession.Credentials(FRESH, "fresh-csrf", "c".repeat(64)))).code);
+                previous -> new GarminCloudSession.Credentials(FRESH, "fresh-refresh", "GARMIN_CONNECT_MOBILE_IOS_DI", 1800007200000L))).code);
         GarminCloudStore after = open(disk, clock);
         assertEquals(OLD, after.token());
         assertEquals(session, after.sessionId());
@@ -110,7 +112,7 @@ public class GarminCloudRenewalTest {
                 renewals.incrementAndGet();
                 if (failure.equals("persistence")) {
                     disk.fail = true;
-                    return new GarminCloudSession.Credentials(FRESH, "fresh-csrf", ACCOUNT);
+                    return new GarminCloudSession.Credentials(FRESH, "fresh-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L);
                 }
                 throw new GarminCloudClient.Failure(failure);
             };
@@ -293,14 +295,14 @@ public class GarminCloudRenewalTest {
                     try {
                         GarminCloudStore current = open(disk, clock);
                         current.disconnect();
-                        if (newerLogin) current.finishLogin(current.startLogin(), FRESH, "new-account-csrf", "c".repeat(64));
+                        if (newerLogin) current.finishLogin(current.startLogin(), new GarminCloudSession.Credentials(FRESH, "new-account-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L));
                     } catch (Exception failure) { throw new AssertionError(failure); }
-                    return new GarminCloudSession.Credentials(FRESH, "fresh-csrf", ACCOUNT);
+                    return new GarminCloudSession.Credentials(FRESH, "fresh-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L);
                 }, false)).code);
             GarminCloudStore current = open(disk, clock);
             assertEquals(newerLogin, current.connected());
             assertNotEquals(oldSession, current.sessionId());
-            if (newerLogin) assertEquals("new-account-csrf", current.csrf());
+            if (newerLogin) assertEquals("new-account-refresh", current.refreshToken());
         }
     }
 
@@ -310,11 +312,11 @@ public class GarminCloudRenewalTest {
         GarminCloudStore store = login(disk, clock);
         String session = store.sessionId();
         GarminCloudStore stale = open(disk, clock);
-        store.finishRenewal(session, OLD, FRESH, "fresh-csrf", ACCOUNT);
+        store.finishRenewal(session, GarminCloudStoreTest.credentials(OLD), new GarminCloudSession.Credentials(FRESH, "fresh-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L));
         assertEquals("cancelled", assertThrows(GarminCloudClient.Failure.class,
-            () -> stale.finishRenewal(session, OLD, token(1800010000), "stale-csrf", ACCOUNT)).code);
+            () -> stale.finishRenewal(session, GarminCloudStoreTest.credentials(OLD), new GarminCloudSession.Credentials(token(1800010000), "stale-refresh", GarminCloudAuth.CLIENT_ID, 1800010000000L))).code);
         assertEquals(FRESH, open(disk, clock).token());
-        assertEquals("fresh-csrf", open(disk, clock).csrf());
+        assertEquals("fresh-refresh", open(disk, clock).refreshToken());
     }
 
     @Test public void revokedOperationCannotRenewCommitOrPostEvenBeforeDurableDisconnectRuns() throws Exception {
@@ -327,9 +329,9 @@ public class GarminCloudRenewalTest {
             AtomicInteger posts = new AtomicInteger();
             GarminCloudSession.Renewal revoked = new GarminCloudSession.Renewal() {
                 boolean cancelled = !revokeDuringFetch;
-                @Override public GarminCloudSession.Credentials fetch(String previous) {
+                @Override public GarminCloudSession.Credentials fetch(GarminCloudSession.Credentials previous) {
                     cancelled = true;
-                    return new GarminCloudSession.Credentials(FRESH, "fresh-csrf", ACCOUNT);
+                    return new GarminCloudSession.Credentials(FRESH, "fresh-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L);
                 }
                 @Override public void check() throws GarminCloudClient.Failure {
                     if (cancelled) throw new GarminCloudClient.Failure("cancelled");
@@ -357,15 +359,20 @@ public class GarminCloudRenewalTest {
         assertEquals(before, disk.value);
     }
 
-    @Test public void accountBindingRequiresAnAuthoritativeProfileAndNeverReturnsItsBody() throws Exception {
-        GarminHealthClient client = new GarminHealthClient((url, token, csrf) -> {
-            assertEquals(GarminHealthClient.PROFILE_URL, url);
-            return new GarminHealthClient.Response(200, "{\"displayName\":\"synthetic-account\",\"email\":\"private@example.invalid\"}");
-        });
-        assertEquals(GarminCloudClient.sha256("synthetic-account".getBytes(StandardCharsets.UTF_8)), client.accountBinding(OLD, "old-csrf"));
-        for (int status : new int[]{204, 403, 500}) {
-            GarminHealthClient unavailable = new GarminHealthClient((url, token, csrf) -> new GarminHealthClient.Response(status, null));
-            assertThrows(GarminCloudClient.Failure.class, () -> unavailable.accountBinding(OLD, "old-csrf"));
-        }
+    @Test public void rotatedRefreshGrantFencesAStaleResultEvenWhenAccessTokenDidNotChange() throws Exception {
+        GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
+        AtomicLong clock = new AtomicLong(NOW);
+        GarminCloudStore store = login(disk, clock);
+        String session = store.sessionId();
+        GarminCloudStore stale = open(disk, clock);
+        GarminCloudSession.Credentials previous = store.credentials();
+        store.finishRenewal(session, previous,
+            new GarminCloudSession.Credentials(OLD, "rotated-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L));
+        assertEquals("cancelled", assertThrows(GarminCloudClient.Failure.class,
+            () -> stale.finishRenewal(session, previous,
+                new GarminCloudSession.Credentials(FRESH, "stale-refresh", GarminCloudAuth.CLIENT_ID, 1800007200000L))).code);
+        assertEquals(OLD, open(disk, clock).token());
+        assertEquals("rotated-refresh", open(disk, clock).refreshToken());
+        assertEquals(session, open(disk, clock).sessionId());
     }
 }

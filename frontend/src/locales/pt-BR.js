@@ -4,6 +4,8 @@
 import pt from './pt.js'
 
 export const PT_BR_OVERRIDES = {
+  "Garmin sign-in did not finish. Try signing in again.": "O login no Garmin não foi concluído. Tente entrar novamente.",
+  "Garmin could not authorize this phone. Try signing in again later.": "O Garmin não conseguiu autorizar este celular. Tente entrar novamente mais tarde.",
   "Could not verify the Garmin account. Try signing in again later.": "Não foi possível verificar a conta Garmin. Tente entrar novamente mais tarde.",
   'Set a time or distance goal. Zero leaves a goal off.': 'Defina um objetivo de tempo ou distância. Zero desativa esse objetivo.',
   'The search finds it by these too. Separate them with commas.': 'A busca também encontra o exercício por estes. Separe com vírgulas.',

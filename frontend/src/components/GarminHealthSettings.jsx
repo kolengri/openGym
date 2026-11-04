@@ -84,7 +84,7 @@ export default function GarminHealthSettings({ connected, onStatusChange }) {
     } catch (e) { if (belongs()) setError(e.message === 'invalid_date' ? 'invalid_date' : 'storage_error') }
     finally { stop(); if (controller.current === abort) controller.current = null; if (mounted.current) setBusy(false) }
   }
-  const message = ['auth_required', 'auth_expired', 'network_error', 'cancelled', 'session_changed', 'profile_unavailable', 'storage_unavailable'].includes(error)
+  const message = ['auth_required', 'auth_expired', 'auth_exchange_failed', 'network_error', 'cancelled', 'session_changed', 'profile_unavailable', 'storage_unavailable'].includes(error)
     ? garminCloudErrorMessage(error)
     : error === 'rate_limited' ? 'Garmin is limiting requests. Try again later.'
       : error === 'invalid_date' ? 'Choose a date range of up to 7 days.'

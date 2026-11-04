@@ -158,3 +158,16 @@ describe('importing a backup with no account (local mode, a guest)', () => {
     expect(ids(useStore.getState().S.workouts)).toEqual(['w1', 'w2'])
   })
 })
+
+
+it.each([[false, 'replace'], [true, 'replace'], [false, 'device'], [true, 'device'], [false, 'server'], [true, 'server']])('keeps this phone’s Garmin binding when importing a foreign backup (bound=%s, mode=%s)', (bound, mode) => {
+  const cur = { ...clone(DEF), garminCloudAuto: bound }
+  if (bound) cur.garminCloudSessionId = 'phone-A'
+  useStore.setState({ S: cur, user: mode === 'server' ? { id: 'u1' } : null, ready: true })
+  const backup = { ...clone(BACKUP), garminCloudSessionId: 'phone-B', garminCloudAuto: true }
+  backup.workouts[0].garminCloudUpload = { sessionId: 'phone-B', status: 'pending' }
+  useStore.getState().importBackup(backup, { mergeWith: mode === 'device' ? { device: true } : mode === 'server' ? { state: clone(SERVER), rev: 7 } : undefined })
+  expect(useStore.getState().S.garminCloudSessionId).toBe(bound ? 'phone-A' : undefined)
+  expect(useStore.getState().S.garminCloudAuto).toBe(bound)
+  expect(useStore.getState().S.workouts[0].garminCloudUpload.sessionId).toBe('phone-B')
+})

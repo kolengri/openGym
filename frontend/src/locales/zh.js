@@ -1,5 +1,7 @@
 // Simplified Chinese UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "Garmin 登录未完成。请重新登录。",
+  "Garmin could not authorize this phone. Try signing in again later.": "Garmin 无法授权此手机。请稍后重新登录。",
   "Could not verify the Garmin account. Try signing in again later.": "无法验证 Garmin 账户。请稍后再尝试登录。",
   "Same muscle and exercise type. The movement may differ.": "相同肌群和动作类型。运动方式可能不同。",
   "Related muscles and exercise type. The movement may differ.": "相关肌群和相同动作类型。运动方式可能不同。",

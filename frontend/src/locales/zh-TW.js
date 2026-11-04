@@ -1,4 +1,6 @@
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "Garmin 登入未完成。請重新登入。",
+  "Garmin could not authorize this phone. Try signing in again later.": "Garmin 無法授權此手機。請稍後重新登入。",
   "Could not verify the Garmin account. Try signing in again later.": "無法驗證 Garmin 帳戶。請稍後再嘗試登入。",
   "Same muscle and exercise type. The movement may differ.": "相同肌群與動作類型。運動方式可能不同。",
   "Related muscles and exercise type. The movement may differ.": "相關肌群與相同動作類型。運動方式可能不同。",

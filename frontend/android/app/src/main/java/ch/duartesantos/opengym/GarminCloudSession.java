@@ -5,13 +5,14 @@ import org.json.JSONObject;
 /** IO-owned renewal policy shared by the native bridge and deterministic failure tests. */
 final class GarminCloudSession {
     static final class Credentials {
-        final String token, csrf, accountBinding;
-        Credentials(String token, String csrf, String accountBinding) {
-            this.token = token; this.csrf = csrf; this.accountBinding = accountBinding;
+        final String token, refreshToken, clientId;
+        final long expiresAt;
+        Credentials(String token, String refreshToken, String clientId, long expiresAt) {
+            this.token = token; this.refreshToken = refreshToken; this.clientId = clientId; this.expiresAt = expiresAt;
         }
     }
     interface Renewal {
-        Credentials fetch(String previousToken) throws GarminCloudClient.Failure;
+        Credentials fetch(Credentials previous) throws GarminCloudClient.Failure;
         default void check() throws GarminCloudClient.Failure { }
     }
     static final Renewal UNAVAILABLE = previous -> { throw new GarminCloudClient.Failure("auth_expired"); };
@@ -19,16 +20,17 @@ final class GarminCloudSession {
     static boolean ready(GarminCloudStore store, String session, Renewal renewal, boolean force) throws Exception {
         store.requireSession(session);
         renewal.check();
+        if (!store.diSession()) throw new GarminCloudClient.Failure("auth_expired");
         if (!force && !store.renewalDue()) return false;
         if (!store.renewalAvailable()) throw new GarminCloudClient.Failure("auth_expired");
-        String previousToken = store.token();
+        Credentials previous = store.credentials();
         try {
-            Credentials fresh = renewal.fetch(previousToken);
+            Credentials fresh = renewal.fetch(previous);
             renewal.check();
-            store.finishRenewal(session, previousToken, fresh.token, fresh.csrf, fresh.accountBinding);
+            store.finishRenewal(session, previous, fresh);
         } catch (GarminCloudClient.Failure failure) {
-            // Only an unambiguous expired SSO session/account mismatch requires interactive login.
-            // Offline/timeouts keep the old credentials and browser renewal cookies for retry.
+            // Only an unambiguous rejected refresh grant/client mismatch requires interactive login.
+            // Offline/timeouts keep the access/refresh credentials for retry.
             if (failure.code.equals("auth_required") || failure.code.equals("session_changed")) {
                 store.reload();
                 if (session.equals(store.sessionId())) store.rejectAuthentication(true);

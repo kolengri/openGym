@@ -33,7 +33,7 @@ export default function GarminCloudSettings() {
     try {
       const result = await connectGarminCloud()
       if (!belongs()) { await disconnectGarminCloud(); return }
-      if (!result.connected || !result.sessionId) throw Object.assign(new Error('Sign-in was not completed.'), { code: 'auth_required' })
+      if (!result.connected || !result.sessionId) throw Object.assign(new Error('Sign-in was not completed.'), { code: 'auth_incomplete' })
       useStore.getState().update(s => { s.garminCloudSessionId = result.sessionId; s.garminCloudAuto = false })
       await saveSettings()
       if ((useStore.getState().user?.id ?? null) === owner && useStore.getState().S.garminCloudSessionId === result.sessionId) setStatus({ ...result, available: true })
@@ -61,6 +61,7 @@ export default function GarminCloudSettings() {
     {!connected && !status.error && <Button disabled={busy || !!state.active} onClick={connect}>{t('Sign in to Garmin Connect')}</Button>}
     {linked && <Button disabled={busy || !!state.active} onClick={disconnect}>{t('Disconnect Garmin Connect')}</Button>}
     </div>
+    {error && <p className="small muted" role="alert">{t(garminCloudErrorMessage(error))}</p>}
     <Row title={t('Upload new workouts automatically')} subtitle={t('Automatic upload is available after signing in. Change this setting between workouts.')}>
       <Switch aria-label={t('Upload new workouts automatically')} checked={state.garminCloudAuto === true} disabled={!connected || !!state.active || busy}
         onChange={value => useStore.getState().update(s => { s.garminCloudAuto = value })} />
@@ -69,7 +70,6 @@ export default function GarminCloudSettings() {
     <p className="small muted">{t('When enabled, openGym uploads completed workouts to Garmin Connect and stops separate FIT recording on the watch to avoid duplicate activities. Garmin may forward uploads to linked services such as Strava.')}</p>
     <p className="small muted">{t('Garmin Connect uploads use your Strava weight-sharing preference. Sensor recordings from other apps are unchanged.')}</p>
     <p className="small muted">{t('Heart-rate samples received from the watch are included. Bluetooth or sleeping-phone gaps are not reconstructed.')}</p>
-    {error && <p className="small muted" role="alert">{t(garminCloudErrorMessage(error))}</p>}
     </div>
     {isOn(state, 'health') ? <GarminHealthSettings connected={connected} onStatusChange={() => setStatusAttempt(value => value + 1)} />
       : <p className="small muted">{t('{0} stops syncing while Health is off. Nothing is disconnected, and it catches up once Health is back.', 'Garmin Connect')}</p>}

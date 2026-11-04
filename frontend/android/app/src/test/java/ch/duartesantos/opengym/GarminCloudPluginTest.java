@@ -9,7 +9,7 @@ public class GarminCloudPluginTest {
 
     private GarminCloudStore connected(GarminCloudStoreTest.Disk disk) throws Exception {
         GarminCloudStore store = new GarminCloudStore(disk);
-        store.login(TOKEN, "synthetic-csrf");
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         return store;
     }
 
@@ -29,7 +29,8 @@ public class GarminCloudPluginTest {
         assertTrue(restarted.connected());
         assertEquals(session, restarted.sessionId());
         assertEquals(TOKEN, restarted.token());
-        assertEquals("synthetic-csrf", restarted.csrf());
+        assertEquals("synthetic-refresh", restarted.refreshToken());
+        assertNull(restarted.csrf());
         assertFalse(restarted.uncertain("workout"));
         assertNull(restarted.begin(session, "workout", SHA, false));
     }
@@ -69,7 +70,7 @@ public class GarminCloudPluginTest {
         GarminCloudStore restarted = new GarminCloudStore(disk);
         assertTrue(restarted.connected());
         assertTrue(restarted.uncertain("workout"));
-        restarted.login(TOKEN, null);
+        restarted.login(GarminCloudStoreTest.credentials(TOKEN));
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
             () -> restarted.begin(restarted.sessionId(), "workout", SHA, true)).code);
     }

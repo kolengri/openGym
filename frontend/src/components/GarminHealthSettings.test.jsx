@@ -59,6 +59,7 @@ it.each(['unmount', 'session', 'profile'])('does not refresh connection status a
   expect(changed).not.toHaveBeenCalled()
 })
 it.each([
+  ['auth_exchange_failed', 'Garmin could not authorize this phone. Try signing in again later.'],
   ['auth_expired', 'Your Garmin Connect session has expired.'],
   ['network_error', 'Check your connection and retry.'],
   ['profile_unavailable', 'Could not verify the Garmin account.'],

@@ -202,3 +202,19 @@ it.each([undefined, 'network_error'])('reports storage failure for a manual uplo
   expect(useStore.getState().S.workouts[0].garminCloudUpload).toEqual(w.garminCloudUpload)
   expect(useStore.getState().S.garminCloudSessionId).toBe('synthetic-session')
 })
+
+
+it.each([
+  ['auth_incomplete', 'Garmin sign-in did not finish.'],
+  ['auth_exchange_failed', 'Garmin could not authorize this phone.'],
+])('shows the safe %s login failure beside the sign-in action', async (code, expected) => {
+  bridge.connect.mockRejectedValue(Object.assign(new Error('private response must not be displayed'), { code }))
+  await render(<GarminCloudSettings />)
+  await act(async () => { button('Sign in to Garmin Connect').click() })
+  const alert = host.querySelector('[role="alert"]')
+  expect(alert.textContent).toContain(expected)
+  expect(alert.nextElementSibling.textContent).toContain('Upload new workouts automatically')
+  expect(host.textContent).not.toContain('private response')
+  expect(useStore.getState().S.garminCloudSessionId).toBeUndefined()
+  expect(button('Sign in to Garmin Connect').disabled).toBe(false)
+})

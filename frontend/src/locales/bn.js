@@ -1,5 +1,7 @@
 // Bengali UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "Garmin-এ সাইন ইন সম্পূর্ণ হয়নি। আবার সাইন ইন করার চেষ্টা করুন।",
+  "Garmin could not authorize this phone. Try signing in again later.": "Garmin এই ফোনকে অনুমোদন দিতে পারেনি। পরে আবার সাইন ইন করার চেষ্টা করুন।",
   "Could not verify the Garmin account. Try signing in again later.": "Garmin অ্যাকাউন্ট যাচাই করা যায়নি। পরে আবার সাইন ইন করার চেষ্টা করুন।",
   "Same muscle and exercise type. The movement may differ.": "একই পেশি ও ব্যায়ামের ধরন। নড়াচড়া ভিন্ন হতে পারে।",
   "Related muscles and exercise type. The movement may differ.": "সম্পর্কিত পেশি ও একই ব্যায়ামের ধরন। নড়াচড়া ভিন্ন হতে পারে।",

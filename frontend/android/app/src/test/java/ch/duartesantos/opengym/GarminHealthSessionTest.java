@@ -27,7 +27,7 @@ public class GarminHealthSessionTest {
     }
     private GarminCloudStore connected(GarminCloudStoreTest.Disk disk) throws Exception {
         GarminCloudStore store = new GarminCloudStore(disk);
-        store.login(TOKEN, "synthetic-csrf");
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         return store;
     }
     private JSONObject read(GarminCloudStore store, String session, Transport transport, String metric) throws Exception {
@@ -97,7 +97,7 @@ public class GarminHealthSessionTest {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         GarminCloudStore store = connected(disk);
         String stale = store.sessionId();
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         Transport transport = new Transport();
         assertEquals("auth_required", read(store, stale, transport, "ecg").getString("error"));
         assertTrue(new GarminCloudStore(disk).connected());
@@ -143,7 +143,7 @@ public class GarminHealthSessionTest {
             assertEquals(status == 401 ? "auth_expired" : "upload_failed", failure.code);
             assertTrue(new GarminCloudStore(disk).connected());
             assertEquals(session, new GarminCloudStore(disk).sessionId());
-            assertEquals(status == 401 ? "expired" : "unknown", new GarminCloudStore(disk).authState());
+            assertEquals(status == 401 ? "expired" : "ready", new GarminCloudStore(disk).authState());
             assertEquals(1, posts[0]);
             assertEquals(List.of(GarminHealthClient.PROFILE_URL), transport.urls);
             assertFalse(store.uncertain("upload"));

@@ -1,5 +1,7 @@
 // Hungarian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "A Garmin-bejelentkezés nem fejeződött be. Próbálj újra bejelentkezni.",
+  "Garmin could not authorize this phone. Try signing in again later.": "A Garmin nem tudta engedélyezni ezt a telefont. Próbálj később újra bejelentkezni.",
   "Could not verify the Garmin account. Try signing in again later.": "Nem sikerült ellenőrizni a Garmin-fiókot. Próbálj később újra bejelentkezni.",
   "Same muscle and exercise type. The movement may differ.": "Azonos izom és gyakorlattípus. A mozgás eltérhet.",
   "Related muscles and exercise type. The movement may differ.": "Kapcsolódó izmok és azonos gyakorlattípus. A mozgás eltérhet.",

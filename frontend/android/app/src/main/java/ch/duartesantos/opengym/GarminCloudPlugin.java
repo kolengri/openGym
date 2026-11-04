@@ -231,7 +231,8 @@ public final class GarminCloudPlugin extends Plugin {
 
     private static String safeLoginError(String code) {
         if ("network_error".equals(code) || "auth_required".equals(code) || "profile_unavailable".equals(code)
-            || "storage_unavailable".equals(code) || "rate_limited".equals(code)) return code;
+            || "storage_unavailable".equals(code) || "rate_limited".equals(code)
+            || "auth_incomplete".equals(code) || "auth_exchange_failed".equals(code)) return code;
         return code == null || "cancelled".equals(code) ? "cancelled" : "profile_unavailable";
     }
 }

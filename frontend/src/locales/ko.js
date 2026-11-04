@@ -1,5 +1,7 @@
 // Korean UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "Garmin 로그인이 완료되지 않았습니다. 다시 로그인해 주세요.",
+  "Garmin could not authorize this phone. Try signing in again later.": "Garmin에서 이 휴대폰을 인증하지 못했습니다. 나중에 다시 로그인해 주세요.",
   "Could not verify the Garmin account. Try signing in again later.": "Garmin 계정을 확인하지 못했습니다. 나중에 다시 로그인해 주세요.",
   "Same muscle and exercise type. The movement may differ.": "같은 근육과 운동 유형입니다. 동작은 다를 수 있습니다.",
   "Related muscles and exercise type. The movement may differ.": "관련 근육과 같은 운동 유형입니다. 동작은 다를 수 있습니다.",
