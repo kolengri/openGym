@@ -6,7 +6,7 @@ import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
-const PAGES = ['Admin', 'History', 'CheckIn', 'Measurements', 'CoachSetup', 'Muscles', 'ProgressPhotos', 'StructuralBalance']
+const PAGES = ['Admin', 'History', 'CheckIn', 'Measurements', 'Muscles', 'ProgressPhotos', 'StructuralBalance']
 
 const titleAfterBack = name => {
   const src = readFileSync(fileURLToPath(new URL(`./${name}.jsx`, import.meta.url)), 'utf8')
@@ -16,6 +16,14 @@ const titleAfterBack = name => {
 }
 
 describe('the title beside a page back button', () => {
+  it('CoachSetup uses the shared settings back-navigation and title classes', () => {
+    const src = readFileSync(fileURLToPath(new URL('./CoachSetup.jsx', import.meta.url)), 'utf8')
+    expect(src).toContain('className="sp-nav"')
+    expect(src).toContain('className="sp-back" data-back="/settings"')
+    expect(src).toContain('<h1 className="sp-title">')
+    expect(src).not.toMatch(/<h1 style=\{\{[^}]*fontSize/)
+  })
+
   for (const name of PAGES) {
     it(`${name}: 12 px from the button, at the shared title size`, () => {
       const head = titleAfterBack(name)

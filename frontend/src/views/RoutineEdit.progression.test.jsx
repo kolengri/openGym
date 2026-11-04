@@ -46,6 +46,16 @@ afterEach(() => {
 })
 
 describe('routine progression wording (#294)', () => {
+  it('shows exercises first and opens the advanced progression controls on request', () => {
+    renderRoutine({ ex: [{ id: '0025', sets: 3, reps: 5, weight: 60 }] })
+    const fold = container.querySelector('.planning-progression')
+    expect(fold.open).toBe(false)
+    expect(container.querySelector('.routine-list').compareDocumentPosition(fold) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    act(() => fold.querySelector('summary').click())
+    expect(fold.open).toBe(true)
+    expect(rowTitled('Deload routine').querySelector('[role="switch"]')).toBeTruthy()
+  })
+
   it('names the switch for what it is: a deload routine, whose workouts do not count', () => {
     renderRoutine({})
     expect(rowTitled('Exclude from automatic progression')).toBeUndefined()

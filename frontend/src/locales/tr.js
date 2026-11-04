@@ -1,5 +1,9 @@
 // Turkish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "Veriler",
+  "Connections": "Bağlantılar",
+  "App": "Uygulama",
+  "No programmes yet.": "Henüz program yok.",
   "Garmin sign-in did not finish. Try signing in again.": "Garmin oturumu açılamadı. Tekrar giriş yapmayı deneyin.",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin bu telefonu yetkilendiremedi. Daha sonra tekrar giriş yapmayı deneyin.",
   "Could not verify the Garmin account. Try signing in again later.": "Garmin hesabı doğrulanamadı. Daha sonra tekrar giriş yapmayı deneyin.",

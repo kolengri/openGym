@@ -399,7 +399,20 @@ function Run({ at, flow = 'tour' }) {
       // The screen first (a navigation can land a frame or two later): an element of the same
       // name on the screen being left is not the one this stop means.
       if (route && pathRef.current !== route && Date.now() - started < anchorWait) { tm = setTimeout(look, 30); return }
+      if (step.panel) {
+        const panel = findAnchor('stats-panel-' + step.panel)
+        if (panel && panel.getAttribute('aria-pressed') === 'false') {
+          panel.click()
+          tm = setTimeout(look, 30)
+          return
+        }
+      }
       const el = findAnchor(step.anchor)
+      if (el) {
+        for (let parent = el.parentElement; parent; parent = parent.parentElement) {
+          if (parent.tagName === 'DETAILS') parent.open = true
+        }
+      }
       if (!el && step.anchor && Date.now() - started < anchorWait) { tm = setTimeout(look, 60); return }
       if (step.skip && passOver(step, ctxNow())) { go(dirRef.current); return }
       // Not there after all: an optional stop is passed over, any other one speaks from the middle.

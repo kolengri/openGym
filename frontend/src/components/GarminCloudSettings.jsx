@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 import { useEffect, useState } from 'react'
 import { Button, Row, Section, Switch } from './ui.jsx'
 import { useStore } from '../store/useStore.js'
@@ -50,7 +51,8 @@ export default function GarminCloudSettings() {
     } catch (failure) { setError(failure?.code || 'upload_failed') }
     finally { setBusy(false) }
   }
-  return <Section className="garmin-cloud-settings" title={t('Garmin Connect uploads')} footer={t('Sign in on Garmin’s own page. openGym keeps the resulting session only on this phone.')}>
+  return <>
+  <Section className="garmin-cloud-settings" title={t('Garmin Connect uploads')} footer={t('Sign in on Garmin’s own page. openGym keeps the resulting session only on this phone.')}>
     <Row icon="watch" title="Garmin Connect" subtitle={status.error
       ? t('The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.')
       : expired ? t(garminCloudErrorMessage('auth_expired'))
@@ -68,10 +70,14 @@ export default function GarminCloudSettings() {
     </Row>
     <div className="garmin-help">
     <p className="small muted">{t('When enabled, openGym uploads completed workouts to Garmin Connect and stops separate FIT recording on the watch to avoid duplicate activities. Garmin may forward uploads to linked services such as Strava.')}</p>
+    <details className="settings-disclosure">
+      <summary>{t('Details')}</summary>
     <p className="small muted">{t('Garmin Connect uploads use your Strava weight-sharing preference. Sensor recordings from other apps are unchanged.')}</p>
     <p className="small muted">{t('Heart-rate samples received from the watch are included. Bluetooth or sleeping-phone gaps are not reconstructed.')}</p>
+    </details>
     </div>
+  </Section>
     {isOn(state, 'health') ? <GarminHealthSettings connected={connected} onStatusChange={() => setStatusAttempt(value => value + 1)} />
       : <p className="small muted">{t('{0} stops syncing while Health is off. Nothing is disconnected, and it catches up once Health is back.', 'Garmin Connect')}</p>}
-  </Section>
+  </>
 }

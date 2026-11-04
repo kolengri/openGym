@@ -68,6 +68,19 @@ const headings = () => [...host.querySelectorAll('h4.sec')].map(h => h.firstChil
 const subtitle = () => host.querySelector('.hdr .sub').textContent
 
 describe('Plan — How you train', () => {
+  it('keeps the week visible before the mode setting is opened', () => {
+    mount()
+    const fold = host.querySelector('.planning-mode')
+    expect(fold.open).toBe(false)
+    expect(fold.querySelector('summary').textContent).toContain('Fixed Week')
+    expect(host.querySelectorAll('.plan-week .plan-day')).toHaveLength(7)
+    expect(host.querySelector('.plan-week .bm-mini-wrap')).toBeTruthy()
+    click(fold.querySelector('summary'))
+    expect(fold.open).toBe(true)
+    pickMode('Rotation')
+    expect(mocks.S.scheduleMode).toBe('rotation')
+  })
+
   it('nothing saved: Fixed Week with the weekdays, and no rotation buttons of its own', () => {
     mount()
     expect(selectedMode()).toBe('Fixed Week')

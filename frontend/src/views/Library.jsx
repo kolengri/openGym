@@ -1,3 +1,4 @@
+import '../styles/progress-refinement.css'
 import { useDeferredValue, useMemo, useRef, useState } from 'react'
 import { useUI } from '../store/useUI.js'
 import { useNavigate } from 'react-router-dom'
@@ -16,6 +17,16 @@ import { Button } from '../components/ui.jsx'
 import { tappable, useRevealActiveChip } from '../lib/use-sheet-keyboard.js'
 import { useAutoMore } from '../lib/use-auto-more.js'
 import { isFav, sortFavouritesFirst, sortYoursFirst, usageOf } from '../lib/favourites.js'
+
+// Split only the canonical suffix emitted by exerciseNameFor. English-only names, custom
+// names and the user's choice to hide English remain exactly as configured.
+function libraryName(ex) {
+  const label = exerciseNameFor(ex)
+  for (const suffix of [' (' + ex.n + ')', ' \u2068(' + ex.n + ')\u2069']) {
+    if (label.endsWith(suffix) && label !== ex.n) return { primary: label.slice(0, -suffix.length), secondary: ex.n }
+  }
+  return { primary: label, secondary: null }
+}
 
 export default function Library() {
   const nav = useNavigate()
@@ -55,7 +66,7 @@ export default function Library() {
     const opts = equipmentOf(pool)
     return { catOpts: by.opts, catOn: by.on, eqOpts: opts, eqOn: opts.includes(e) ? e : '' }
   }
-  const openFilters = () => useUI.getState().openSheet(close => <LibraryFilters close={close} cat={catOn} eq={eqOn} filtersFor={filtersFor}
+  const openFilters = () => useUI.getState().openSheet(close => <LibraryFilters close={close} onMuscles={() => { close(); nav('/muscles') }} cat={catOn} eq={eqOn} filtersFor={filtersFor}
     onChange={(c, e) => { setCat(c); setEq(e); setShown(40) }} />)
   // A live count at the end of the search field while a search or filter narrows the list
   // (idea and first version: GitLab !31) — how many are left, before scrolling to find out.
@@ -69,11 +80,12 @@ export default function Library() {
     : []
   const row = e => {
     const best = bestWeightFor(S, e.id)
+    const name = libraryName(e)
     // The row is not a button: its name is, stretched over the row (.tap-main), with Add to my plan
     // a sibling above it (card dismiss pass), so neither tap can land on the other.
     return <div key={e.id} className="item tap-host">
       <Thumb ex={e} />
-      <button type="button" className="grow item-open tap-main" aria-haspopup="dialog" onClick={() => exerciseDetailSheet(e)}><span className={`tt ${exerciseNameClass(e)}`}>{isFav(S, e.id) && <Icon name="starFill" className="fav-star" />}{exerciseNameFor(e)}</span><span className="ss capitalize">{t(MUSCLE_NAME[e.tg] || e.tg || e.bp)} · {t(e.eq)}</span></button>
+      <button type="button" className="grow item-open tap-main" aria-haspopup="dialog" onClick={() => exerciseDetailSheet(e)}><span className={`tt ${exerciseNameClass(e)}`}>{isFav(S, e.id) && <Icon name="starFill" className="fav-star" />}{name.primary}</span>{name.secondary && <span className="ss lib-english" lang="en" dir="ltr">{name.secondary}</span>}<span className="ss capitalize">{t(MUSCLE_NAME[e.tg] || e.tg || e.bp)} · {t(e.eq)}</span></button>
       {best > 0 && <span className="tag acc">{fmtNum(best)}</span>}
       {/* a quiet trailing button (P7): the accent stays on the one action of the screen */}
       <button type="button" className="iconbtn lib-add" aria-label={t('Add to my plan')} title={t('Add to my plan')}
@@ -81,17 +93,22 @@ export default function Library() {
     </div>
   }
 
-  return <>
+  return <div className="progress-refinement progress-library">
     <div className="hdr lib-hdr"><div><h1>{t('Exercises')}</h1></div>
-      <Button size="sm" variant="tinted" icon="figureStrength" onClick={() => nav('/muscles')}>{t('By muscle')}</Button>
+      <div className="row progress-header-actions">
+        <button type="button" className="iconbtn" data-tour="lib-new" aria-label={t('Create your own exercise')} title={t('Create your own exercise')} onClick={() => customExSheet(null, ex => exerciseDetailSheet(ex), q.trim())}><Icon name="plus" /></button>
+      </div>
       <div className="sub lib-count">{ownCount
         ? tn('{1} animated exercises + 1 of your own', '{1} animated exercises + {0} of your own', ownCount, EXDB.length)
         : t('{0} exercises with animations', EXDB.length)}</div>
     </div>
-    <div className="search-row" data-tour="lib-search" style={{ marginBottom: 10 }}><div className={'search' + (narrowed ? ' has-count' : '') + (q ? ' has-clear' : '')}><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
-      <input className="input" placeholder={t('Search…')} value={q} onChange={e => { setQ(e.target.value); setShown(40) }} />
+    <div className="search-row lib-search-tools" data-tour="lib-search"><div className={'search' + (narrowed ? ' has-count' : '') + (q ? ' has-clear' : '')}><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+      <input className="input" aria-label={t('Search…')} placeholder={t('Search…')} value={q} onChange={e => { setQ(e.target.value); setShown(40) }} />
       {narrowed && <span className="search-count" role="status" aria-label={exCount(f.length)}>{fmtNum(f.length)}</span>}
       {q && <button className="clear" onClick={() => { setQ(''); setShown(40) }} aria-label={t('Clear')}><Icon name="xmark" /></button>}</div>
+      <button type="button" className={'iconbtn lib-search-filter' + (sheetOn ? ' on' : '')} aria-label={t('Filters') + (sheetOn ? ': ' + sheetOn : '')} aria-haspopup="dialog" onClick={openFilters}>
+        <Icon name="slider" />{sheetOn ? <span className="lib-fn">{sheetOn}</span> : null}
+      </button>
       <ExerciseViewToggle /></div>
     {profile && <div className="small dim row" style={{ margin: '-4px 2px 10px', gap: 6, alignItems: 'center' }}>
       <Icon name="kettlebell" style={{ fontSize: 'var(--fs-footnote)' }} />
@@ -108,38 +125,36 @@ export default function Library() {
         fallback above drops it only for the current view if the new body part has nothing under
         it, without forgetting the choice. */}
     <div className="chips lib-filters" data-tour="lib-filters" ref={bpStrip}>
-      <button type="button" className={'chip nocap ichip lib-fbtn' + (sheetOn ? ' on' : '')} aria-haspopup="dialog" onClick={openFilters}>
-        <Icon name="slider" />{t('Filters')}{sheetOn ? <span className="lib-fn">{sheetOn}</span> : null}
-      </button>
       {catOn && <button type="button" className="chip on ichip" aria-label={t('Clear') + ': ' + t(catOn)} onClick={() => { setCat(''); setShown(40) }}>{t(catOn)}<Icon name="xmark" /></button>}
       {eqOn && <button type="button" className="chip on ichip" aria-label={t('Clear') + ': ' + t(eqOn)} onClick={() => { setEq(''); setShown(40) }}>{t(eqOn)}<Icon name="xmark" /></button>}
       {BODYPARTS.map(b => <button key={b} className={'chip' + (bp === b ? ' on ichip' : '')} aria-pressed={bp === b}
         onClick={() => { setBp(bp === b ? '' : b); setShown(40) }}>{t(b)}{bp === b && <Icon name="xmark" />}</button>)}
     </div>
     <div className={'list' + (S.exerciseView === 'cards' ? ' ex-grid' : '')}>
-      <div className="item ex-new" data-tour="lib-new" {...tappable(() => customExSheet(null, ex => exerciseDetailSheet(ex), q.trim()))}>
+      {q.trim() && f.length === 0 && <div className="item ex-new" {...tappable(() => customExSheet(null, ex => exerciseDetailSheet(ex), q.trim()))}>
         <div className="thumb thumb-x"><Icon name="plusCircle" /></div>
-        <div className="grow"><div className="tt">{t('Create your own exercise')}</div><div className="ss">{t('name + body part, and a photo or video if you like')}</div></div><Icon name="plus" className="chev" />
-      </div>
+        <div className="grow"><div className="tt">{t('Create your own exercise')}</div><div className="ss">{q.trim()}</div></div><Icon name="plus" className="chev" />
+      </div>}
       {f.slice(0, shown).map(row)}
       {f.length === 0 && !similar.length && <div className="empty"><div className="ico"><Icon name="magnifier" /></div>{t('No match')}</div>}
       {similar.length > 0 && <h4 className="sec similar-label">{f.length ? t('Similar exercises') : t('No exact match. These come close:')}</h4>}
       {similar.map(row)}
     </div>
     {f.length > shown && <><div style={{ height: 10 }} /><Button ref={moreRef} onClick={() => setShown(s => s + 40)}>{t('Show more')}</Button></>}
-  </>
+  </div>
 }
 
 
 // The Library's Filters sheet (P7): the kind of exercise and the equipment, as wrapping chips. Every
 // tap filters the list behind it at once; Done only closes.
-function LibraryFilters({ close, cat, eq, filtersFor, onChange }) {
+function LibraryFilters({ close, onMuscles, cat, eq, filtersFor, onChange }) {
   const [c, setC] = useState(cat)
   const [e, setE] = useState(eq)
   const { catOpts, catOn, eqOpts, eqOn } = filtersFor(c, e)
   const set = (nc, ne) => { setC(nc); setE(ne); onChange(nc, ne) }
   return <div className="lib-fsheet">
     <h3>{t('Filters')}</h3>
+    <Button variant="ghost" icon="figureStrength" trailingIcon="chevronRight" onClick={onMuscles}>{t('By muscle')}</Button>
     {catOpts.length > 1 && <>
       <h4 className="sec">{t('Exercise type')}</h4>
       <div className="chips wrap">

@@ -112,10 +112,14 @@ describe('logging body measurements', () => {
       { d: '2026-09-15', t: 2, waist: 90, chest: null, bodyFat: null, other: [] },
     ] })
     const screen = render(<Measurements />)
-    const del = screen.querySelectorAll('button[aria-label="Delete"]')
-    expect(del).toHaveLength(2)
-    act(() => del[0].click())           // newest first: 2026-09-15
-    expect(entries()).toHaveLength(2)   // nothing gone before the answer
+    const menus = screen.querySelectorAll('.measure-history button[aria-haspopup="dialog"]')
+    expect(menus).toHaveLength(2)
+    expect(screen.querySelector('button[aria-label="Delete"]')).toBeNull()
+    act(() => menus[0].click())           // newest first: 2026-09-15
+    expect(entries()).toHaveLength(2)
+    const menu = topSheet()
+    act(() => menu.querySelector('.menu-item').click())
+    expect(entries()).toHaveLength(2)   // nothing gone before the confirmation
     click(topSheet(), 'Delete')
     expect(entries().map(e => e.d)).toEqual(['2026-09-01'])
   })

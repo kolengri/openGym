@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 // Settings → Modules (v1.4.4): whole feature areas on and off (lib/modules.js has the rules).
 //
 // A preset row on top (Just training, Training and body, Everything, or Custom once the switches
@@ -95,7 +96,7 @@ export default function ModulesPage() {
     ...PRESETS.map(p => ({ value: p.id, label: pc[p.id][0], subtitle: pc[p.id][1] })),
     { value: 'custom', label: t('Custom'), subtitle: t('Your own mix. Flip the switches below.') },
   ]
-  return <div className="modules">
+  return <div className="modules settings-refined">
     <p className="sect-f modules-intro">{t('Switch off what you don’t use. Nothing gets deleted: switch it back on and it’s all still there.')}</p>
     <Section footer={preset === 'custom' ? t('{0} of {1} modules on.', onCount(S), MODULES.length) : null}>
       <SelectRow icon="slider" iconTint="var(--blue)" title={t('Start from')} sheetTitle={t('Modules')}

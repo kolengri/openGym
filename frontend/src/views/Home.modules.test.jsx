@@ -35,6 +35,21 @@ const mountWith = (modules, extra = {}) => {
 const heads = () => [...host.querySelectorAll('.card-head-title')].map(el => el.textContent)
 
 describe('Home follows the modules', () => {
+  it('prioritizes today and the week, then folds motivation without changing module preferences', () => {
+    mountWith(undefined, { challengesFold: true })
+    const todayRow = host.querySelector('[data-tour="today"]')
+    const week = host.querySelector('.week')
+    const motivation = host.querySelector('.home-motivation')
+    expect(todayRow.compareDocumentPosition(week) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(motivation.open).toBe(false)
+    expect(host.querySelector('.bw-head').compareDocumentPosition(motivation) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    act(() => motivation.querySelector('summary').click())
+    expect(motivation.open).toBe(true)
+    expect(heads().some(h => /week streak/.test(h))).toBe(true)
+    expect(useStore.getState().S.challengesFold).toBe(true)
+    expect(useStore.getState().S.modules).toBeUndefined()
+  })
+
   it('Everything: the weight card, the check-in and the streak are there', () => {
     mountWith(undefined)
     expect(heads()).toContain('Body weight')

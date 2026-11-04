@@ -34,7 +34,7 @@ function render() {
   act(() => root.render(<Library />))
   return host
 }
-const names = host => [...host.querySelectorAll('.item .tt')].map(el => el.textContent).slice(1)   // drop "Create your own"
+const names = host => [...host.querySelectorAll('.item-open .tt')].map(el => el.textContent)
 const cssSource = readFileSync(resolve(process.cwd(), 'src/index.css'), 'utf8')
 
 beforeEach(() => {
@@ -53,7 +53,7 @@ describe('Library favourites', () => {
     const shown = names(host)
     expect(shown.slice(0, 2)).toEqual(plain.filter(n => fav.includes(n)))
     expect(shown.slice(2)).toEqual(plain.filter(n => !fav.includes(n)))
-    const rows = [...host.querySelectorAll('.item')].slice(1)
+    const rows = [...host.querySelectorAll('.item')].filter(el => el.querySelector('.item-open'))
     expect(rows[0].querySelector('.fav-star')).not.toBeNull()
     expect(rows[2].querySelector('.fav-star')).toBeNull()
   })
@@ -100,7 +100,7 @@ describe('Library exercise-name casing per language', () => {
       _setLangState(lang, {}, null, pack)
       // Starred so they render on the first page: a partial pack may not cover the first rows.
       mocks.S.favEx = Object.keys(pack).slice(0, 3)
-      const rows = [...render().querySelectorAll('.item .tt')].slice(1)   // drop "Create your own"
+      const rows = [...render().querySelectorAll('.item-open .tt')]
       expect(rows.length).toBeGreaterThan(0)
       const translated = rows.filter(el => Object.values(pack).some(n => el.textContent.startsWith(n)))
       expect(translated.length, lang).toBeGreaterThan(0)
@@ -185,5 +185,40 @@ describe('Library similar exercises', () => {
     expect(label(host)).toBe('Similar exercises')
     const all = names(host)
     expect(new Set(all).size).toBe(all.length)
+  })
+})
+
+
+describe('Library refinement actions and bilingual names', () => {
+  afterEach(() => _setLangState('en', {}, null, null))
+
+  it('puts creation in the header and offers the search text after an empty search', async () => {
+    const { customExSheet } = await import('../sheets.jsx')
+    const host = render()
+    expect(host.querySelector('.list .ex-new')).toBeNull()
+    act(() => host.querySelector('.hdr [aria-label="Create your own exercise"]').click())
+    expect(customExSheet).toHaveBeenLastCalledWith(null, expect.any(Function), '')
+    const input = host.querySelector('.search input')
+    act(() => {
+      Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(input, 'qwxzqwxz')
+      input.dispatchEvent(new Event('input', { bubbles: true }))
+    })
+    expect(host.querySelector('.list .ex-new')).toBeTruthy()
+    act(() => host.querySelector('.list .ex-new').click())
+    expect(customExSheet).toHaveBeenLastCalledWith(null, expect.any(Function), 'qwxzqwxz')
+  })
+
+  it('places only enabled English names on a separate isolated line', () => {
+    const ex = EXDB[0]
+    _setLangState('ru', {}, null, { [ex.id]: 'переведённое название' })
+    let host = render()
+    expect(host.querySelector('.item-open .tt').textContent).toBe('переведённое название')
+    expect(host.querySelector('.lib-english').textContent).toBe(ex.n)
+    expect(host.querySelector('.lib-english').getAttribute('dir')).toBe('ltr')
+    act(() => mounted.splice(0).forEach(root => root.unmount()))
+    _setLangState('ru', {}, null, { [ex.id]: 'переведённое название' }, true, true)
+    host = render()
+    expect(host.querySelector('.item-open .tt').textContent).toBe(ex.n)
+    expect(host.querySelector('.lib-english')).toBeNull()
   })
 })

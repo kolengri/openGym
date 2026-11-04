@@ -163,7 +163,7 @@ describe('exercise rows with a trailing button', () => {
     expect(row.getAttribute('role')).toBeNull()
     act(() => row.querySelector('.wd-thumb').click())
     expect(sheets()).toBe(2)
-    expect(renderTop().textContent).not.toContain('Exercise history')
+    expect(renderTop().querySelector('.exercise-detail')).not.toBeNull()
     act(() => useUI.getState().closeSheet(useUI.getState().sheets.at(-1).id))
     act(() => row.querySelector('.tap-main').click())
     expect(sheets()).toBe(2)

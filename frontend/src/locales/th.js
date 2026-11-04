@@ -1,5 +1,9 @@
 // Thai UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "ข้อมูล",
+  "Connections": "การเชื่อมต่อ",
+  "App": "แอป",
+  "No programmes yet.": "ยังไม่มีโปรแกรม",
   "Garmin sign-in did not finish. Try signing in again.": "การลงชื่อเข้าใช้ Garmin ยังไม่เสร็จสมบูรณ์ โปรดลองลงชื่อเข้าใช้อีกครั้ง",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin ไม่สามารถอนุญาตโทรศัพท์เครื่องนี้ได้ โปรดลองลงชื่อเข้าใช้อีกครั้งในภายหลัง",
   "Could not verify the Garmin account. Try signing in again later.": "ไม่สามารถยืนยันบัญชี Garmin ได้ โปรดลองลงชื่อเข้าใช้อีกครั้งในภายหลัง",

@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 // Mobile build only, first launch: the choice useStore.boot() couldn't make on its own — keep
 // everything on this device, or connect to a self-hosted openGym server instead. See
 // lib/remote.js for the pairing flow this hands off to.
@@ -144,9 +145,8 @@ export default function MobileOnboarding() {
     <div style={{ fontSize: 54, display: 'flex', justifyContent: 'center', color: 'var(--acc-ink)' }}><Icon name="dumbbell" /></div>
     <h1 className="t-large" style={{ fontWeight: 700, margin: '10px 0 4px' }}>openGym</h1>
   </>
-  const wrap = { display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '78vh', textAlign: 'center' }
   return (
-    <div className="narrow" style={wrap}>
+    <div className="narrow guided-refined first-launch-refined">
       {head}
       <div className="muted" style={{ marginBottom: 34 }}>{t('How do you want to use openGym?')}</div>
       <Button variant="primary" icon="lock" onClick={() => chooseLocalMode()}>{t('Use on this device')}</Button>

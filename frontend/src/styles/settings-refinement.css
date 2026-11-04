@@ -1,0 +1,68 @@
+/* Scoped refinements for settings and guided screens. Shared primitives keep their behavior. */
+.settings-refined .sect { margin-block-end: 24px; }
+.settings-refined .sp-root-row,
+.settings-refined .module-row { min-height: 56px; }
+.settings-refined .sp-root-row .lrow-i,
+.settings-refined .module-row .lrow-i,
+.integrations-refined .intg-open .lrow-i {
+  color: var(--label-2);
+  background: var(--surface-2);
+}
+.settings-refined .sp-avatar { width: 44px; height: 44px; font-size: 24px; background: var(--surface-2); }
+.settings-refined .sp-avatar.on { background: var(--acc-soft); color: var(--acc-ink); }
+.settings-refined .sp-acct .lrow-t { font-size: var(--fs-body); }
+.settings-refined .sp-back,
+.settings-refined .intg-act,
+.guided-refined .iconbtn,
+.guided-refined .ob-skip,
+.guided-refined .chip,
+.coach-refined .iconbtn,
+.coach-refined .qchip { min-width: 44px; min-height: 44px; }
+.settings-refined .intg-act { white-space: normal; overflow-wrap: anywhere; max-width: 36%; }
+.settings-refined .lrow-m,
+.settings-refined .lrow-v { min-width: 0; }
+.settings-refined .lrow-t,
+.settings-refined .lrow-s { overflow-wrap: anywhere; }
+.settings-disclosure { color: var(--label-2); font-size: var(--fs-subhead); }
+.settings-disclosure > summary {
+  min-height: 44px;
+  padding: 12px 16px;
+  line-height: 1.4;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.settings-disclosure > summary:focus-visible { outline: 2px solid var(--acc); outline-offset: -2px; border-radius: var(--r-card); }
+.settings-disclosure[open] > summary { color: var(--label); }
+.garmin-refined .garmin-actions { gap: 8px; }
+.garmin-refined .garmin-error,
+.garmin-cloud-settings [role="alert"] { margin: 0; padding: 0 16px 16px; color: var(--red-ink); overflow-wrap: anywhere; }
+.garmin-help-disclosure { margin-block-end: 24px; border-radius: var(--r-card); background: var(--surface); }
+.garmin-help-disclosure .sect { margin-block-end: 0; }
+.garmin-help .settings-disclosure > summary { padding-inline: 0; }
+.garmin-help .settings-disclosure p + p { margin-block-start: 12px; }
+.garmin-health-controls { padding: 12px 16px 16px; }
+.garmin-health-controls > p { line-height: 1.5; margin: 0 0 16px; }
+.garmin-health-controls .measure-date { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-block-end: 8px; }
+.garmin-health-controls input { min-width: 0; min-height: 44px; max-width: 70%; }
+.garmin-health-controls > .btn { margin-block: 8px; }
+.garmin-health-controls [role="alert"] { color: var(--red-ink); margin-block: 8px 16px; overflow-wrap: anywhere; }
+.garmin-health-controls [role="status"] { overflow-wrap: anywhere; }
+.garmin-health-archive { margin-block-start: 16px; border-block-start: 1px solid var(--sep); }
+.garmin-health-archive > summary { padding-inline: 0; }
+.garmin-health-archive dl > div { flex-wrap: wrap; }
+.garmin-health-archive dd { max-width: 100%; }
+.guided-refined .ob-top { align-items: center; min-height: 44px; }
+.guided-refined .ob-h { overflow-wrap: anywhere; }
+.guided-refined .ob-skip { padding-inline: 8px; }
+.guided-refined input,
+.guided-refined select { min-height: 44px; }
+.first-launch-refined { display: flex; flex-direction: column; justify-content: center; min-height: 78svh; text-align: center; padding-block: 24px; }
+.first-launch-refined > .btn { min-height: 48px; }
+.first-launch-refined > .btn:last-child:not(.primary) { background: transparent; color: var(--label-2); }
+.coach-refined .chat-hdr h1 { font-size: var(--fs-body); font-weight: 600; }
+.coach-refined .chips-row { gap: 8px; }
+@media (max-width: 360px) {
+  .settings-refined .intg-open { padding-inline: 12px; gap: 8px; }
+  .settings-refined .intg-act { margin-inline-end: 8px; padding-inline: 10px; }
+  .guided-refined .ob-top { gap: 8px; }
+}

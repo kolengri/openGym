@@ -1,5 +1,9 @@
 // Arabic UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "البيانات",
+  "Connections": "الاتصالات",
+  "App": "التطبيق",
+  "No programmes yet.": "لا توجد برامج بعد.",
   "Garmin sign-in did not finish. Try signing in again.": "لم يكتمل تسجيل الدخول إلى Garmin. حاول تسجيل الدخول مرة أخرى.",
   "Garmin could not authorize this phone. Try signing in again later.": "تعذّر على Garmin منح الإذن لهذا الهاتف. حاول تسجيل الدخول مرة أخرى لاحقًا.",
   "Could not verify the Garmin account. Try signing in again later.": "تعذّر التحقق من حساب Garmin. حاول تسجيل الدخول مجددًا لاحقًا.",

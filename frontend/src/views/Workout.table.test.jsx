@@ -58,6 +58,14 @@ const chooseEffort = value => {
 }
 
 describe('compact workout table', () => {
+  it('exposes failure and trend on the focused edit button without visible set numbers', () => {
+    mount(entry([row({ w: 35, done: true, failure: true })]))
+    const edit = host.querySelector('.set-table-edit')
+    expect(edit.getAttribute('aria-label')).toBe('Edit: Set 1, Taken to failure, 5 kg more than last time')
+    expect(host.querySelector('.set-table-status').getAttribute('aria-hidden')).toBe('true')
+    expect(host.querySelector('.set-table-row .n')).toBeNull()
+  })
+
   it('keeps the program alongside historical starting values without inline fields or counters', () => {
     mount()
     expect(host.querySelector('.planline').textContent).toBe('Plan: 3 × 10 · 32.5 kg')
@@ -190,7 +198,7 @@ describe('compact workout table', () => {
   it('edits and completes only the chosen unilateral side', () => {
     const target = { mode: 'reps', sets: 2, reps: 10, weight: 30, side: true }
     mount(entry([makeSideSet(row()), makeSideSet(row())], { target }))
-    expect([...host.querySelectorAll('.set-table-row .n')].map(el => el.textContent)).toEqual(['1 L', '1 R', '2 L', '2 R'])
+    expect([...host.querySelectorAll('.set-table-row .set-table-status')].map(el => el.textContent)).toEqual(['L', 'R', 'L', 'R'])
     open(1)
     expect(editor().textContent).toContain('Right')
     chooseEffort('8')
@@ -244,10 +252,10 @@ describe('compact workout table', () => {
     expect(live().sets[0].done).toBe(true)
   })
 
-  it('keeps set numbers and sides visible for every timed unilateral hold', () => {
+  it('keeps side labels without visible set numbers for every timed unilateral hold', () => {
     const sets = ['L', 'R', 'L', 'R'].map(side => ({ sec: 30, w: 0, side, done: false }))
     mount({ id: '1001', target: { mode: 'time', sec: 30, sets: 2, side: true }, sets })
-    expect([...host.querySelectorAll('.set-table-row .n')].map(el => el.textContent)).toEqual(['1 L', '1 R', '2 L', '2 R'])
+    expect([...host.querySelectorAll('.set-table-row .set-table-status')].map(el => el.textContent)).toEqual(['L', 'R', 'L', 'R'])
     open(1)
     expect(editor().querySelector('h3').textContent).toBe('Set 1 · Right')
     click(editor().querySelector('.btn.primary'))

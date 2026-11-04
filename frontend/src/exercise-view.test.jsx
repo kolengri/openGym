@@ -67,10 +67,13 @@ describe('exercise list or cards', () => {
     expect(isCards(render(<Library />))).toBe(false)
   })
 
-  it('keeps "Create your own exercise" a full-width row above the cards', () => {
+  it('keeps creation in the header so the card grid starts with exercises', () => {
     setView('cards')
-    const first = render(<Library />).querySelector('.list.ex-grid > .item')
-    expect(first.classList.contains('ex-new')).toBe(true)
+    const host = render(<Library />)
+    expect(host.querySelector('.hdr [data-tour="lib-new"]').getAttribute('aria-label')).toBe('Create your own exercise')
+    const first = host.querySelector('.list.ex-grid > .item')
+    expect(first.classList.contains('ex-new')).toBe(false)
+    expect(first.querySelector('.item-open')).not.toBeNull()
   })
 
   it('picker: follows the same setting and switches it beside its own search, by muscle too', () => {

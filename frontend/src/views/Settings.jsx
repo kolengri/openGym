@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 import { useEffect, useRef, useState, forwardRef, useSyncExternalStore } from 'react'
 import { useNavigate, useParams, useLocation, Navigate } from 'react-router-dom'
 import { useStore, DEF, hasData } from '../store/useStore.js'
@@ -61,7 +62,7 @@ import { DeleteAccountRow } from '../components/DeleteAccount.jsx'
 import { warmupAutoOf } from '../lib/warmup-ramp.js'
 import { Section, Row, SelectRow, Switch, Segmented, Button, TextField, SearchField } from '../components/ui.jsx'
 import { POLICIES_FOR, POLICY_NAME, POLICY_DESC, profileRule } from '../lib/progression.js'
-import { PAGES, ROOT_GROUPS, pageVisible, searchSettings, pageTrail } from './settings-pages.js'
+import { PAGES, ROOT_GROUPS, ROOT_GROUP_TITLES, pageVisible, searchSettings, pageTrail } from './settings-pages.js'
 import { platformNow } from '../lib/platform-now.js'
 import { pathBefore } from '../lib/nav.js'
 import WatchSettingsPage from './WatchSettings.jsx'
@@ -1276,7 +1277,7 @@ export default function Settings({ page = null, find = null, via = null, entryKe
   /* ---------------- a page ---------------- */
   if (page && pages[page]) {
     const parent = PAGES[page].parent
-    return <div className="narrow" ref={body}>
+    return <div className="narrow settings-refined" ref={body}>
       <div className="sp-nav">
         {/* Named by what it says ("Settings", "Workout"), so a voice command for the visible
             word finds it; the chevron is hidden from assistive tech. */}
@@ -1318,7 +1319,7 @@ function SettingsRoot({ ctx, preview, open, user, sync, home, go, entryKey }) {
   // it the admin dashboard has no Coach card to land on.
   const config = useStore(s => s.config)
   const adminCoach = !MOBILE && !DEMO && !!user?.admin && coachAvailable(config, user) && (!ctx.mod || ctx.mod('coach'))
-  return <div className="narrow">
+  return <div className="narrow settings-refined">
     <div className="sp-nav">
       <button className="sp-back" data-back="/home" onClick={home} aria-label={t('Home')}><Icon name="chevronLeft" /><span>{t('Home')}</span></button>
     </div>
@@ -1339,14 +1340,14 @@ function SettingsRoot({ ctx, preview, open, user, sync, home, go, entryKey }) {
           <Icon name="chevronRight" className="lrow-c" />
         </button>
       </Section>
-      {ROOT_GROUPS.map(g => g.filter(id => pageVisible(id, ctx))).filter(g => g.length).map(g => (
-        <Section key={g[0]}>
+      {ROOT_GROUPS.map((group, index) => ({ ids: group.filter(id => pageVisible(id, ctx)), title: ROOT_GROUP_TITLES[index] })).filter(g => g.ids.length).map(({ ids: g, title }) => (
+        <Section key={title} title={t(title)}>
           {g.map(id => <Row key={id} icon={PAGES[id].icon} iconTint={PAGES[id].tint} title={t(PAGES[id].title)}
             value={preview[id]?.() || null} accessory="chevron" onClick={() => open(id)} className="sp-root-row" tour={'settings-' + id} />)}
-          {/* The phone app sets up its own Coach on the Coach page beside Look; in a hosted app the
+          {/* The phone app sets up its own Coach in Connections; in a hosted app the
               Coach is the server's, set up by an admin on the admin dashboard. Its admins get the
               same row, in the same place, straight to that card; nobody else has anything to set. */}
-          {g[0] === 'look' && adminCoach && <Row icon={PAGES.coach.icon} iconTint={PAGES.coach.tint} title={t(PAGES.coach.title)}
+          {g.includes('integrations') && adminCoach && <Row icon={PAGES.coach.icon} iconTint={PAGES.coach.tint} title={t(PAGES.coach.title)}
             value={t('Admin')} accessory="chevron" onClick={() => nav('/admin', { state: { section: 'coach' } })} className="sp-root-row" />}
         </Section>
       ))}

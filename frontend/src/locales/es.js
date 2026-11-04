@@ -1,5 +1,9 @@
 // Spanish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "Datos",
+  "Connections": "Conexiones",
+  "App": "Aplicación",
+  "No programmes yet.": "Aún no hay programas.",
   "Garmin sign-in did not finish. Try signing in again.": "El inicio de sesión en Garmin no se completó. Inténtalo de nuevo.",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin no pudo autorizar este teléfono. Intenta iniciar sesión de nuevo más tarde.",
   "Could not verify the Garmin account. Try signing in again later.": "No se pudo verificar la cuenta de Garmin. Intenta iniciar sesión de nuevo más tarde.",

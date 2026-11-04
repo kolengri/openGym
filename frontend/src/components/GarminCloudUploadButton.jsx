@@ -4,7 +4,7 @@ import { useStore } from '../store/useStore.js'
 import { t } from '../lib/i18n.js'
 import { garminCloudErrorMessage, garminCloudStatus, uploadGarminWorkout } from '../lib/garmin-cloud.js'
 
-export default function GarminCloudUploadButton({ workout }) {
+export default function GarminCloudUploadButton({ workout, compact = false }) {
   const state = useStore(s => s.S)
   const tour = useStore(s => s.tourSandbox)
   const [available, setAvailable] = useState(false)
@@ -26,13 +26,13 @@ export default function GarminCloudUploadButton({ workout }) {
     catch (failure) { setError(failure?.code || 'upload_failed') }
     finally { setBusy(false) }
   }
-  return <div className="garmin-cloud-upload">
+  return <div className={"garmin-cloud-upload" + (compact ? " compact" : "")}>
     <Button icon="arrowUp" disabled={done || pending || busy} onClick={upload}>
       {done ? t(job.status === 'duplicate' ? 'Already in Garmin Connect' : 'Uploaded to Garmin Connect')
         : busy || pending ? t('Uploading to Garmin Connect…')
           : job?.status === 'failed' ? t('Retry Garmin upload') : t('Upload to Garmin Connect')}
     </Button>
-    {!job && <p className="small muted">{t('Use this for workouts that are not already in Garmin Connect.')}</p>}
+    {!compact && !job && <p className="small muted">{t('Use this for workouts that are not already in Garmin Connect.')}</p>}
     {failureCode && <p className="small muted" role="alert">{t(garminCloudErrorMessage(failureCode))}</p>}
     {job?.error === 'unknown_result' && failureCode !== 'unknown_result' && <p className="small muted" role="alert">
       {t(garminCloudErrorMessage('unknown_result'))}

@@ -93,7 +93,7 @@ export default function WorkoutMediaSection({ w, hint = false }) {
 
   return <div className="wmedia">
     <div className="small muted wmedia-h">{t('Photos & videos')}</div>
-    {(list.length > 0 || setVideos.length > 0 || showAdd) && <div className="wmedia-grid">
+    {(list.length > 0 || setVideos.length > 0 || showAdd) && <div className={'wmedia-grid' + (!list.length && !setVideos.length ? ' empty' : '')}>
       {list.map((m, i) => (
         <button key={m.hash} type="button" className="wmedia-item" data-swipe-ignore
           aria-label={t('Photo or video {0} of {1}', i + 1, list.length)}

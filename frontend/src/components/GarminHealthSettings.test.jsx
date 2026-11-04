@@ -34,7 +34,9 @@ it('reads explicit health data, reports progress and shows archived metrics', as
   expect(bridge.readHealthMetric).toHaveBeenCalledOnce()
   expect(useStore.getState().S.bodyweight[0].w).toBe(78.3)
   expect(host.textContent).toContain('Available: 1. No data: 0. Errors: 0. Weigh-ins added: 1.')
-  expect(host.querySelector('summary').textContent).toBe('Body composition')
+  expect(host.querySelector('.garmin-health-archive > summary').textContent).toBe('Saved readings')
+  expect(host.querySelector('.garmin-health-archive').open).toBe(false)
+  expect(host.querySelector('.garmin-health-archive details > summary').textContent).toBe('Body composition')
   expect(button('Export Garmin health data')).toBeTruthy()
 })
 it('keeps reading disabled before an explicit Garmin connection', async () => {
@@ -102,7 +104,8 @@ it('exports earlier saved days even when the final day has no readings', async (
     input.dispatchEvent(new Event('change', { bubbles: true }))
     input.dispatchEvent(new Event('input', { bubbles: true }))
   })
-  expect(host.querySelector('summary')).toBeNull()
+  expect(host.querySelector('.garmin-health-archive details')).toBeNull()
+  host.querySelector('.garmin-health-archive').open = true
   await act(async () => button('Export Garmin health data').click())
   expect(shareExport).toHaveBeenCalledOnce()
   expect(JSON.parse(shareExport.mock.calls[0][0]).readings).toEqual([rows.get(day + 'body_composition')])

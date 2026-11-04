@@ -1,5 +1,9 @@
 // Ukrainian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "Дані",
+  "Connections": "Підключення",
+  "App": "Застосунок",
+  "No programmes yet.": "Поки немає програм.",
   "Garmin sign-in did not finish. Try signing in again.": "Вхід у Garmin не завершено. Спробуйте ввійти ще раз.",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin не зміг авторизувати цей телефон. Спробуйте ввійти пізніше.",
   "Could not verify the Garmin account. Try signing in again later.": "Не вдалося перевірити обліковий запис Garmin. Спробуйте ввійти знову пізніше.",

@@ -40,13 +40,14 @@ afterEach(() => {
 })
 
 describe('finish summary: Share', () => {
-  it('sits beside the way out, which still comes right after the numbers', async () => {
+  it('sits below the way out, which still comes right after the numbers', async () => {
     act(() => finishWorkoutNow())
     renderTopSheet()
     await settle()
     const row = host.querySelector('.fin-actions')
     expect(row).toBeTruthy()
-    const [done, share] = row.querySelectorAll('button')
+    const done = row.querySelector('button')
+    const share = host.querySelector('[data-fin-share]')
     expect(done.textContent).toBe('Nice!')
     expect(share.textContent).toBe('Share')
     // Nothing but the numbers and the records list between the title and the way out.
@@ -69,7 +70,7 @@ describe('finish summary: Share', () => {
     expect(labels).toEqual(['Story 9:16', 'Square 1:1', 'Dark', 'Light'])
   })
 
-  it('keeps a failed Garmin upload and its retry message outside the Done and Share row', async () => {
+  it('keeps a failed Garmin upload and its retry message in the secondary actions below Done', async () => {
     const status = vi.fn(async () => ({ available: true, connected: false }))
     _setGarminCloudPluginForTest({ status })
     act(() => finishWorkoutNow())
@@ -79,11 +80,13 @@ describe('finish summary: Share', () => {
     renderTopSheet()
     await settle()
     const row = host.querySelector('.fin-actions')
-    const [done, share] = row.querySelectorAll('button')
+    const done = row.querySelector('button')
+    const share = host.querySelector('[data-fin-share]')
     const upload = host.querySelector('.garmin-cloud-upload')
-    expect([...row.children]).toEqual([done, share])
-    expect(row.nextElementSibling).toBe(upload)
-    expect(upload.parentElement).toBe(row.parentElement)
+    expect([...row.children]).toEqual([done])
+    expect(row.nextElementSibling).toBe(upload.parentElement)
+    expect(upload.parentElement.classList.contains('fin-secondary-actions')).toBe(true)
+    expect(upload.parentElement.contains(share)).toBe(true)
     expect(upload.querySelector('[role="alert"]').textContent).toContain('Your saved session was not accepted.')
     expect(upload.querySelector('button').textContent).toBe('Retry Garmin upload')
     await act(async () => { upload.querySelector('button').click() })

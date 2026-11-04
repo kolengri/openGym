@@ -1,5 +1,9 @@
 // Bengali UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "ডেটা",
+  "Connections": "সংযোগ",
+  "App": "অ্যাপ",
+  "No programmes yet.": "এখনও কোনো প্রোগ্রাম নেই।",
   "Garmin sign-in did not finish. Try signing in again.": "Garmin-এ সাইন ইন সম্পূর্ণ হয়নি। আবার সাইন ইন করার চেষ্টা করুন।",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin এই ফোনকে অনুমোদন দিতে পারেনি। পরে আবার সাইন ইন করার চেষ্টা করুন।",
   "Could not verify the Garmin account. Try signing in again later.": "Garmin অ্যাকাউন্ট যাচাই করা যায়নি। পরে আবার সাইন ইন করার চেষ্টা করুন।",

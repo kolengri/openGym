@@ -2118,7 +2118,7 @@ body.no-tabbar #timer.countin{box-shadow:inset 0 var(--hair) 0 var(--acc),0 -10p
 .share-card img{max-height:52vh}
 .share-opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .share-opts .seg{flex:1 1 140px;min-width:0}
-/* The finish summary's way out and its Share, side by side right under the numbers. */
+/* The primary way out remains directly below the results. */
 .fin-actions{display:flex;gap:10px}
 .fin-actions>.btn{width:auto;flex:1 1 0;min-width:0;white-space:normal}
 .garmin-cloud-upload{margin-top:10px;min-width:0;text-align:start}
@@ -3372,3 +3372,38 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .recent-exercise-history summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;cursor:pointer;font-size:13px;list-style:none}
 .recent-exercise-history summary::-webkit-details-marker{display:none}
 .recent-exercise-history details[open]>summary{margin-bottom:8px}
+
+/* Compact training tables keep both effort readings inside the swipe clipping box. */
+.workout-set-table .set-table-head{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) 44px;padding-inline-start:20px}
+.workout-set-table .set-table-head.timed{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) 32px 44px}
+.workout-set-table .setrow.set-table-row{padding-inline-start:20px}
+.workout-set-table .set-table-row .set-effort-marker{inset-inline-start:2px;top:12px;bottom:12px;gap:3px}
+.workout-set-table .set-effort-marker i.previous{width:4px;opacity:1}
+.set-table-status{position:absolute;inset-inline-start:20px;top:0;font-size:10px;color:var(--label-2);display:flex;gap:3px}
+.set-table-status:empty{display:none}
+.detail-heading{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
+.detail-heading h3{flex:1;min-width:0;margin:0;overflow-wrap:anywhere}
+.detail-actions{display:flex;flex-shrink:0;gap:2px}
+.detail-actions .iconbtn{width:44px;height:44px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wd-sets{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px}
+.wd-sets .wd-set{white-space:normal;font-variant-numeric:tabular-nums}
+.wd-time{display:inline-flex;align-items:center;gap:4px}
+.wd-time .icn{flex-shrink:0}
+.detail-disclosure{margin:16px 0;border-top:1px solid var(--sep)}
+.detail-disclosure>summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;cursor:pointer;list-style:none}
+.detail-disclosure>summary::after{content:'⌄';color:var(--label-3)}
+.detail-disclosure[open]>summary::after{transform:rotate(180deg)}
+.detail-disclosure>summary::-webkit-details-marker{display:none}
+.workout-detail-options{margin-top:16px}
+.workout-detail-options .garmin-cloud-upload.compact{padding:0;margin:0;border-bottom:1px solid var(--sep)}
+.garmin-cloud-upload.compact .btn{justify-content:flex-start;background:transparent;min-height:56px;text-align:start}
+.garmin-cloud-upload.compact p{padding:0 16px 12px;margin:0}
+.wmedia-grid.empty{display:block}
+.wmedia-grid.empty .wmedia-add{aspect-ratio:auto;width:100%;min-height:48px;height:auto;display:flex;flex-direction:row;justify-content:flex-start;gap:10px;border:0;padding:12px;background:var(--surface-2)}
+.exercise-detail .exercise-muscle-map{margin:12px 0}
+.exercise-detail .exercise-muscle-map .bm-v{max-height:220px}
+
+.fin-secondary-actions{display:flex;flex-direction:column;gap:4px;margin-top:12px;text-align:start}
+.fin-secondary-actions>.btn,.fin-secondary-actions .garmin-cloud-upload>.btn{justify-content:flex-start;text-align:start}
+.fin-secondary-actions .garmin-cloud-upload{margin:0}

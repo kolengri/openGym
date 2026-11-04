@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 // Mobile build only: how the Coach should run on this phone.
 //
 // Two answers. "Use my self-hosted openGym" hands the whole thing to the paired server — the
@@ -151,10 +152,10 @@ export default function CoachSetup() {
     : coachLocal?.mode === 'byok' ? t('Runs on this phone with your own API key')
     : t('Off. Choose how the Coach should run.')
 
-  return <div className="narrow">
-    <div className="hdr">
-      <button className="iconbtn" data-back="/settings" onClick={() => nav('/settings')} aria-label={t('Back')}><Icon name="chevronLeft" /></button>
-      <div style={{ flex: 1, marginInlineStart: 12 }}><h1>{t('AI Coach')}</h1></div>
+  return <div className="narrow settings-refined guided-refined">
+    <div className="sp-nav">
+      <button className="sp-back" data-back="/settings" onClick={() => nav('/settings')}><Icon name="chevronLeft" /><span>{t('Settings')}</span></button>
+      <h1 className="sp-title">{t('AI Coach')}</h1>
     </div>
 
     <Section title={t('How should the Coach run?')} footer={current}>

@@ -38,7 +38,7 @@ function renderTop() {
   const sheet = useUI.getState().sheets.at(-1)
   return render(sheet.render(() => useUI.getState().closeSheet(sheet.id)))
 }
-const rows = host => host.querySelectorAll('.list > .item').length - 1   // drop "Create your own"
+const rows = host => host.querySelectorAll('.list > .item:not(.ex-new)').length
 const showMore = host => [...host.querySelectorAll('button')].find(b => b.textContent === 'Show more')
 
 beforeEach(() => {

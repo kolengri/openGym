@@ -233,10 +233,18 @@ describe('the Coach chat', () => {
     expect(byText(/Review my training/)).toBeFalsy()
   })
 
-  it('offers the comparison only when the instance allows it', async () => {
+  it('keeps comparison in the menu only when the instance allows it', async () => {
+    const openMenu = async () => {
+      await click(container.querySelector('button[aria-label="More"]'))
+      const render = mocks.openSheet.mock.calls.at(-1)[0]
+      await act(async () => root.render(render(vi.fn())))
+    }
     await mount(null)
-    expect(byText(/^Compare$/)).toBeFalsy()
+    await openMenu()
+    expect(byText(/^Compare with others here/)).toBeFalsy()
     await mount(null, null, { community: true })
-    expect(byText(/^Compare$/)).toBeTruthy()
+    expect(byText(/^Compare$/)).toBeFalsy()
+    await openMenu()
+    expect(byText(/^Compare with others here/)).toBeTruthy()
   })
 })

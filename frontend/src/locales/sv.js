@@ -1,5 +1,9 @@
 // Swedish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "Data",
+  "Connections": "Anslutningar",
+  "App": "App",
+  "No programmes yet.": "Inga program ännu.",
   "Garmin sign-in did not finish. Try signing in again.": "Garmin-inloggningen slutfördes inte. Försök logga in igen.",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin kunde inte auktorisera den här telefonen. Försök logga in igen senare.",
   "Could not verify the Garmin account. Try signing in again later.": "Det gick inte att verifiera Garmin-kontot. Försök logga in igen senare.",

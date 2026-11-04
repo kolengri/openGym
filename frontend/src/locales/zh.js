@@ -1,5 +1,9 @@
 // Simplified Chinese UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Data": "数据",
+  "Connections": "连接",
+  "App": "应用",
+  "No programmes yet.": "暂无计划。",
   "Garmin sign-in did not finish. Try signing in again.": "Garmin 登录未完成。请重新登录。",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin 无法授权此手机。请稍后重新登录。",
   "Could not verify the Garmin account. Try signing in again later.": "无法验证 Garmin 账户。请稍后再尝试登录。",

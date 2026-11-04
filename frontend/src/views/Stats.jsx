@@ -1,3 +1,4 @@
+import '../styles/progress-refinement.css'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
@@ -489,65 +490,30 @@ export function ExerciseTimeCard({ S }) {
   </div>
 }
 
-// The sticky index over Stats (redesign 1.4.5, P5): Overview, Body, Lifts and, when there is any,
-// Effort. A tap scrolls to that part and puts it in the address (#/stats?section=lifts, so the
-// part can be linked and comes back on reload); scrolling moves the highlight along. The address
-// is rewritten with replaceState, not a router navigation, so the app's own scroll restore for a
-// route change never fights the scroll the tap just started.
+// Panels keep their content mounted, so chart ranges and drill-down choices survive switching.
+// Existing section links and browser history continue to select the same content on refresh.
 const sectionOfHash = () => (/[?&]section=([a-z]+)/.exec(typeof window === 'undefined' ? '' : window.location.hash || '') || [])[1] || ''
-export function StatsIndex({ sections }) {
-  const asked = sectionOfHash()
-  const [cur, setCur] = useState(sections.some(x => x.value === asked) ? asked : 'overview')
-  const quietUntil = useRef(0)   // the scroll a tap started is not the reader's: hold the spy
-  const go = (v, smooth = true) => {
-    setCur(v)
-    quietUntil.current = Date.now() + 900
-    const behavior = smooth ? 'smooth' : 'auto'
-    if (v === 'overview') window.scrollTo?.({ top: 0, behavior })
-    else document.getElementById('stats-' + v)?.scrollIntoView?.({ block: 'start', behavior })
+const panelOfHash = () => sectionOfHash() || (/[?&]focus=weekly-volume\b/.test(typeof window === 'undefined' ? '' : window.location.hash || '') ? 'lifts' : 'overview')
+export function StatsIndex({ sections, value, onChange }) {
+  const positions = useRef({})
+  const frame = useRef(0)
+  useEffect(() => () => window.cancelAnimationFrame(frame.current), [])
+  const go = v => {
+    positions.current[value] = window.scrollY
+    onChange(v)
+    window.cancelAnimationFrame(frame.current)
+    frame.current = window.requestAnimationFrame(() => window.scrollTo?.({ top: positions.current[v] || 0, behavior: 'auto' }))
     try {
-      const base = (window.location.hash || '#/stats').split('?')[0]
-      window.history.replaceState(window.history.state, '', base + (v === 'overview' ? '' : '?section=' + v))
-    } catch { /* a sandboxed frame: the scroll is what matters */ }
+      const [base, query = ''] = (window.location.hash || '#/stats').split('?')
+      const params = new URLSearchParams(query)
+      if (v === 'overview' && !params.has('focus')) params.delete('section')
+      else params.set('section', v)
+      const next = params.toString()
+      window.history.replaceState(window.history.state, '', base + (next ? '?' + next : ''))
+    } catch { /* A sandboxed frame can still switch the visible panel. */ }
   }
-  useEffect(() => {
-    if (!asked || asked === 'overview' || !sections.some(x => x.value === asked)) return
-    // Once now, and once more when the cards above have drawn their charts and grown: the first
-    // jump alone landed a screen short. Not again if the reader has started scrolling by then.
-    const frame = window.requestAnimationFrame(() => go(asked, false))
-    let moved = false
-    const mark = () => { moved = true }
-    window.addEventListener('touchstart', mark, { passive: true, once: true })
-    window.addEventListener('wheel', mark, { passive: true, once: true })
-    const settle = window.setTimeout(() => { if (!moved) go(asked, false) }, 450)
-    return () => { window.cancelAnimationFrame(frame); window.clearTimeout(settle); window.removeEventListener('touchstart', mark); window.removeEventListener('wheel', mark) }
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    let raf = 0
-    const spy = () => {
-      raf = 0
-      if (Date.now() < quietUntil.current) return
-      // A sheet pins the body (Modals.jsx): scrollY is 0 and the page as tall as the screen, which
-      // read as "at the very bottom" and moved the highlight to Effort behind every sheet opened
-      // from Stats (Ranges, About you). The pinned page has not moved; leave the highlight.
-      if (document.body.style.position === 'fixed') return
-      const bar = document.querySelector('.stats-index')
-      const line = (bar ? bar.getBoundingClientRect().bottom : 0) + 24
-      let on = 'overview'
-      for (const x of sections) {
-        const el = document.getElementById('stats-' + x.value)
-        if (el && el.getBoundingClientRect().top <= line) on = x.value
-      }
-      // the last part may be too short to reach the line: at the very bottom it is the one read
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) on = sections[sections.length - 1].value
-      setCur(c => (c === on ? c : on))
-    }
-    const onScroll = () => { if (!raf) raf = window.requestAnimationFrame(spy) }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => { window.removeEventListener('scroll', onScroll); if (raf) window.cancelAnimationFrame(raf) }
-  }, [sections.length]) // eslint-disable-line react-hooks/exhaustive-deps
-  return <nav className="stats-index" aria-label={t('Stats')}>
-    <Segmented className="stats-index-seg" value={cur} onChange={v => go(v)} options={sections} />
+  return <nav className="stats-index progress-panel-index" aria-label={t('Stats')}>
+    <Segmented className="stats-index-seg" value={value} onChange={go} options={sections.map(section => ({ ...section, tour: 'stats-panel-' + section.value }))} />
   </nav>
 }
 
@@ -555,6 +521,13 @@ export default function Stats() {
   const nav = useNavigate()
   const S = useStore(s => s.S)
   const [range, setRange] = useState(90)
+  const [activePanel, setActivePanel] = useState(panelOfHash)
+  useEffect(() => {
+    const syncPanel = () => setActivePanel(panelOfHash())
+    window.addEventListener('hashchange', syncPanel)
+    window.addEventListener('popstate', syncPanel)
+    return () => { window.removeEventListener('hashchange', syncPanel); window.removeEventListener('popstate', syncPanel) }
+  }, [])
   // Plan's "Weekly muscle volume" row lands here (/stats?focus=weekly-volume): the Muscles card
   // opens on Planned and scrolls into view. The router is a HashRouter, so the query sits in the
   // hash; the scroll waits a frame for the page's own scroll-to-top on navigation to happen first.
@@ -867,6 +840,7 @@ export default function Stats() {
     { value: 'lifts', label: t('Lifts') },
     ...(hasEffortSect ? [{ value: 'effort', label: t('Effort') }] : []),
   ]
+  const panel = sections.some(x => x.value === activePanel) ? activePanel : 'overview'
   const recent = [...workouts].reverse().slice(0, RECENT_ROWS)
   const wrapped = motivationOn ? wrappedYears(S).slice(0, 4) : []
   const thisYear = new Date().getFullYear()
@@ -888,82 +862,16 @@ export default function Stats() {
     <div className="sect-b stats-links" data-stats-links>{linkRows}</div>
   </>
 
-  return <>
+  return <div className="progress-refinement progress-stats">
     <div className="hdr"><SeasonDeco spot="stats-hdr" /><div><h1>{t('Stats')}</h1><div className="sub">{t('Progress & history')}</div></div>
       <div className="row" style={{ gap: 8 }}>
         <button className="iconbtn" onClick={reportSheet} aria-label={t('Performance report')} title={t('Performance report')}><Icon name="note" /></button>
         <button className="iconbtn" data-tour="stats-history" onClick={() => nav('/history')} aria-label={t('History')}><Icon name="history" /></button>
       </div></div>
 
-    {/* The page in four parts (redesign 1.4.5, P5), each with its own heading, and a sticky index
-        that jumps to them and follows the scroll. It is still one page: every card is where a
-        scroll finds it. /stats?section=lifts (and body, effort) opens on that part. */}
-    <StatsIndex sections={sections} />
+    <StatsIndex sections={sections} value={panel} onChange={setActivePanel} />
 
-    <section className="stats-sect" id="stats-overview" data-stats-sect="overview" aria-label={t('Overview')}>
-    {/* The headline numbers as one divided card: three across, the lifetime total under them at
-        full width (a few hundred sessions make a long number). The week streak is not a tile any
-        more: it is the card right below, once. */}
-    <div className={'kpis' + (bodyOn ? '' : ' two')} data-tour="stats-tiles">
-      <div className="tile"><div className="l">{t('Workouts')}</div><div className="v">{workouts.length}</div></div>
-      <div className="tile"><div className="l">{t('This month')}</div><div className="v">{monthW}</div></div>
-      {bodyOn && <div className="tile"><div className="l">{t('Weight 30d')}</div><div className="v" style={{ color: bwDelta30 === null ? 'inherit' : bwDeltaColor(bwDelta30, (lastBW(S) || {}).w || 0) }}>{bwDelta30 === null ? '–' : (bwDelta30 > 0 ? '+' : '') + fmtNum(bwDelta30) + ' ' + S.unit}</div></div>}
-      {/* Everything ever lifted (Discord): imports included, warm-ups only when the profile
-          counts them (#719). */}
-      {lifetime > 0 && <div className="tile wide" data-lifetime-volume><SeasonDeco spot="stats-tile" /><div className="l">{t('Lifted in total')}</div><div className="v">{fmtVol(Math.round(lifetime), S.unit)}</div></div>}
-    </div>
-
-    {workouts.length > 0 && motivationOn && <StreakCard info={streak} />}
-    {/* The month's challenges and the trophy shelf (lib/challenges.js), folded to one line. */}
-    {workouts.length > 0 && motivationOn && <ChallengesStatsCard S={S} />}
-
-    <div className="card">
-      <SeasonDeco spot="stats-heatmap" />
-      <h2>{t('Activity (last 12 months)')}</h2>
-      <Heatmap
-        S={S}
-        metric={S.heatmapMetric === 'vol' ? 'vol' : 'time'}
-        onMetricChange={metric => useStore.getState().update(s => { s.heatmapMetric = metric })}
-        onDay={iso => { const ws = workouts.filter(w => workoutDay(w) === iso); if (ws.length === 1) workoutDetailSheet(ws[0]); else if (ws.length) calendarSheet(iso); else dayOverrideSheet(iso) }}
-      />
-    </div>
-
-    {workouts.length > 0 && <>
-      <div className="row between stats-list-h">
-        <h4 className="sec" style={{ margin: 0 }}>{t('Recent workouts')}</h4>
-        <Button size="sm" variant="ghost" trailingIcon="chevronRight" onClick={() => nav('/history')}>{t('All')} {workouts.length}</Button>
-      </div>
-      <div className="list">{recent.map(w => <WorkoutRow key={w.id} w={w} onClick={() => workoutDetailSheet(w)} />)}</div>
-    </>}
-
-    </section>
-
-    {bodyOn && <section className="stats-sect" id="stats-body" data-stats-sect="body" aria-labelledby="stats-h-body">
-      <h2 className="stats-sect-h" id="stats-h-body">{t('Body')}</h2>
-    <div className="card">
-      <div className="row between bw-head" style={{ marginBottom: 8 }}>
-        <h2 style={{ margin: 0 }}>{t('Body weight')}</h2>
-        <div className="row" style={{ gap: 8 }}>
-          <Button size="sm" icon="target" style={S.targetW ? { color: 'var(--gold-ink)' } : undefined} onClick={goalSheet}>{S.targetW ? fmtNum(S.targetW) : t('Goal')}</Button>
-          <Button size="sm" icon="plus" onClick={() => bwSheet()}>{t('Log')}</Button>
-        </div>
-      </div>
-      <Segmented className="seg-range" value={range} onChange={setRange}
-        options={rangeOptions()} />
-      <div className="chart"><LineChart points={bwPts} h={160} unit={S.unit} goal={S.targetW} /></div>
-      {/* the weekly rate and, with one set, how it sits in its corridor (#759) */}
-      {S.bodyweight.length > 0 && <WeightRate S={S} />}
-      {/* every weigh-in, week by week with its average (Discord 'Weight') */}
-      {S.bodyweight.length > 0 && <div className="row" style={{ justifyContent: 'flex-end', marginTop: 4 }}>
-        <Button size="sm" variant="ghost" trailingIcon="chevronRight" onClick={weighInsSheet}>{t('All weigh-ins')}</Button>
-      </div>}
-      <SeasonDeco spot="stats-web" />
-    </div>
-      {statsLinks}
-    </section>}
-
-    <section className="stats-sect" id="stats-lifts" data-stats-sect="lifts" aria-labelledby="stats-h-lifts">
-      <h2 className="stats-sect-h" id="stats-h-lifts">{t('Lifts')}</h2>
+    <section className="stats-sect progress-panel" id="stats-overview" data-stats-sect="overview" hidden={panel !== 'overview'} aria-label={t('Overview')}>
     <div className="card" data-tour="stats-records">
       <SeasonDeco spot="stats-peek" />
       <h2>{t('Exercise progress')}</h2>
@@ -1030,6 +938,71 @@ export default function Stats() {
         })}</div>
       </> : <div className="muted small">{t('Finish your first workout and your progress curves will show up here.')}</div>}
     </div>
+    {/* The headline numbers as one divided card: three across, the lifetime total under them at
+        full width (a few hundred sessions make a long number). The week streak is not a tile any
+        more: it is the card right below, once. */}
+    <div className={'kpis' + (bodyOn ? '' : ' two')} data-tour="stats-tiles">
+      <div className="tile"><div className="l">{t('Workouts')}</div><div className="v">{workouts.length}</div></div>
+      <div className="tile"><div className="l">{t('This month')}</div><div className="v">{monthW}</div></div>
+      {bodyOn && <div className="tile"><div className="l">{t('Weight 30d')}</div><div className="v" style={{ color: bwDelta30 === null ? 'inherit' : bwDeltaColor(bwDelta30, (lastBW(S) || {}).w || 0) }}>{bwDelta30 === null ? '–' : (bwDelta30 > 0 ? '+' : '') + fmtNum(bwDelta30) + ' ' + S.unit}</div></div>}
+      {/* Everything ever lifted (Discord): imports included, warm-ups only when the profile
+          counts them (#719). */}
+      {lifetime > 0 && <div className="tile wide" data-lifetime-volume><SeasonDeco spot="stats-tile" /><div className="l">{t('Lifted in total')}</div><div className="v">{fmtVol(Math.round(lifetime), S.unit)}</div></div>}
+    </div>
+
+    <div className="card">
+      <SeasonDeco spot="stats-heatmap" />
+      <h2>{t('Activity (last 12 months)')}</h2>
+      <Heatmap
+        S={S}
+        metric={S.heatmapMetric === 'vol' ? 'vol' : 'time'}
+        onMetricChange={metric => useStore.getState().update(s => { s.heatmapMetric = metric })}
+        onDay={iso => { const ws = workouts.filter(w => workoutDay(w) === iso); if (ws.length === 1) workoutDetailSheet(ws[0]); else if (ws.length) calendarSheet(iso); else dayOverrideSheet(iso) }}
+      />
+    </div>
+
+    {workouts.length > 0 && <>
+      <div className="row between stats-list-h">
+        <h4 className="sec" style={{ margin: 0 }}>{t('Recent workouts')}</h4>
+        <Button size="sm" variant="ghost" trailingIcon="chevronRight" onClick={() => nav('/history')}>{t('All')} {workouts.length}</Button>
+      </div>
+      <div className="list">{recent.map(w => <WorkoutRow key={w.id} w={w} onClick={() => workoutDetailSheet(w)} />)}</div>
+    </>}
+
+    {workouts.length > 0 && motivationOn && <details className="progress-motivation">
+      <summary>{t('Motivation')}<Icon name="chevronDown" /></summary>
+      <StreakCard info={streak} />
+      <ChallengesStatsCard S={S} />
+    </details>}
+
+    </section>
+
+    {bodyOn && <section className="stats-sect" id="stats-body" data-stats-sect="body" hidden={panel !== 'body'} aria-labelledby="stats-h-body">
+      <h2 className="stats-sect-h" id="stats-h-body">{t('Body')}</h2>
+    <div className="card">
+      <div className="row between bw-head" style={{ marginBottom: 8 }}>
+        <h2 style={{ margin: 0 }}>{t('Body weight')}</h2>
+        <div className="row" style={{ gap: 8 }}>
+          <Button size="sm" icon="target" style={S.targetW ? { color: 'var(--gold-ink)' } : undefined} onClick={goalSheet}>{S.targetW ? fmtNum(S.targetW) : t('Goal')}</Button>
+          <Button size="sm" icon="plus" onClick={() => bwSheet()}>{t('Log')}</Button>
+        </div>
+      </div>
+      <Segmented className="seg-range" value={range} onChange={setRange}
+        options={rangeOptions()} />
+      <div className="chart"><LineChart points={bwPts} h={160} unit={S.unit} goal={S.targetW} /></div>
+      {/* the weekly rate and, with one set, how it sits in its corridor (#759) */}
+      {S.bodyweight.length > 0 && <WeightRate S={S} />}
+      {/* every weigh-in, week by week with its average (Discord 'Weight') */}
+      {S.bodyweight.length > 0 && <div className="row" style={{ justifyContent: 'flex-end', marginTop: 4 }}>
+        <Button size="sm" variant="ghost" trailingIcon="chevronRight" onClick={weighInsSheet}>{t('All weigh-ins')}</Button>
+      </div>}
+      <SeasonDeco spot="stats-web" />
+    </div>
+      {statsLinks}
+    </section>}
+
+    <section className="stats-sect" id="stats-lifts" data-stats-sect="lifts" hidden={panel !== 'lifts'} aria-labelledby="stats-h-lifts">
+      <h2 className="stats-sect-h" id="stats-h-lifts">{t('Lifts')}</h2>
     {(workouts.length > 0 || Object.keys(loadOfWeeklyPlan(S)).length > 0) && <MusclesCard S={S} planFocus={planFocus} />}
     {/* Beginner to Elite for the main lifts (lib/strength-level.js); hidden without a weigh-in. */}
     {workouts.length > 0 && on('strength') && <StrengthLevelsCard S={S} />}
@@ -1037,10 +1010,10 @@ export default function Stats() {
     {!bodyOn && statsLinks}
     </section>
 
-    {hasEffortSect && <section className="stats-sect" id="stats-effort" data-stats-sect="effort" aria-labelledby="stats-h-effort">
+    {hasEffortSect && <section className="stats-sect" id="stats-effort" data-stats-sect="effort" hidden={panel !== 'effort'} aria-labelledby="stats-h-effort">
       <h2 className="stats-sect-h" id="stats-h-effort">{t('Effort')}</h2>
     {effortCard && <EffortCard S={S} />}
     {timeCard && <ExerciseTimeCard S={S} />}
     </section>}
-  </>
+  </div>
 }

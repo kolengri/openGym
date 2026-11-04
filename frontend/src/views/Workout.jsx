@@ -711,10 +711,10 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       : sideTagOf(row) ? t('Set {0} ({1})', setNumOf(row, i), sideTagOf(row)) : t('Set {0}', setNumOf(row, i))
     return <div ref={el => !side && onSetRowRef?.(i, el)} data-tour="set" className={'setrow set-table-row' + (s.done ? ' done' : '')}>
       {(eff || cardio) && <SetEffortMarker current={s} previous={previousAt(i, side)} kind={cardio ? 'rpe' : kind} />}
-      <button type="button" className="n" aria-label={trendSay(i, failSay(row, label))} aria-describedby={optsId} title={t('More')} onClick={() => openSetMenu(row, i)}>
-        {setNumOf(row, i)}{displaySide ? ' ' + t(displaySide === 'L' ? 'L' : 'R') : ''}{failMark(row)}{trendMark(i)}
-      </button>
-      <button type="button" className="set-table-edit" aria-label={t('Edit') + ': ' + label} onClick={() => openRowEditor(i, side)}>
+      <span className="set-table-status" aria-hidden="true">
+        {displaySide && t(displaySide === 'L' ? 'L' : 'R')}{isWarmupRow(row) && t('Warm-up')}{failMark(row)}{trendMark(i)}
+      </span>
+      <button type="button" className="set-table-edit" aria-label={t('Edit') + ': ' + trendSay(i, failSay(row, label))} onClick={() => openRowEditor(i, side)}>
         {[col1, col2].filter(Boolean).map(col => <span className="set-table-value" key={col.f}>
           <span>{s[col.f] == null ? '–' : fmtNum(viewOf(col, s[col.f]))}</span>
           {s.done && <SetComparison current={s} previous={previousAt(i, side)} field={col.f} exerciseId={entry.id} view={col.view} deltaOnly />}
@@ -894,7 +894,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     <div className={'card' + (tableLayout ? ' workout-set-table' : '')} style={{ marginTop: 10, marginBottom: 0 }}>
       {/* the header carries the same eff3/timed sizing as the rows, or the labels drift off their
           columns; over L/R rows it also has to skip the side badge that sits in front of the weight cell */}
-      {tableLayout ? <div className={'set-table-head' + (timed ? ' timed' : '')}><span className="n-sp" /><span>{col1.hd}</span><span>{col2.hd}</span>{timed && <span className="ck-sp" />}<span className="ck-sp" /></div> : <div className={'sethead' + (col3 ? ' eff3' : '') + (timed ? ' timed' : '') + (perSide ? ' per-side' : '') + (wc.steppers ? '' : ' plain')}><span className="n-sp" /><span className="w-sp">{col1.hd}</span>{col2 && <span className="r-sp">{col2.hd}</span>}{col3 && <span className={col3.eff ? 'eff-sp' : 'r-sp'}>{col3.hd}</span>}{timed && <span className="ck-sp" />}<span className="ck-sp" /></div>}
+      {tableLayout ? <div className={'set-table-head' + (timed ? ' timed' : '')}><span>{col1.hd}</span><span>{col2.hd}</span>{timed && <span className="ck-sp" />}<span className="ck-sp" /></div> : <div className={'sethead' + (col3 ? ' eff3' : '') + (timed ? ' timed' : '') + (perSide ? ' per-side' : '') + (wc.steppers ? '' : ' plain')}><span className="n-sp" /><span className="w-sp">{col1.hd}</span>{col2 && <span className="r-sp">{col2.hd}</span>}{col3 && <span className={col3.eff ? 'eff-sp' : 'r-sp'}>{col3.hd}</span>}{timed && <span className="ck-sp" />}<span className="ck-sp" /></div>}
       <span id={optsId} className="vh">{t('Options: copy, remove')}</span>
       {entry.sets.map((s, i) => {
         const warm = isWarmupRow(s)

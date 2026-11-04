@@ -19,6 +19,7 @@ import Media, { Thumb } from './components/Media.jsx'
 import CustomMediaField from './components/CustomMediaField.jsx'
 import WorkoutMediaSection, { workoutMediaCount } from './components/WorkoutMedia.jsx'
 import GarminCloudUploadButton from './components/GarminCloudUploadButton.jsx'
+import RecentExerciseHistory from './components/RecentExerciseHistory.jsx'
 import { queueGarminCloudUpload } from './lib/garmin-cloud.js'
 import { FormVideosSection } from './components/SetVideo.jsx'
 import { workoutSetVideos } from './lib/set-videos.js'
@@ -1318,7 +1319,7 @@ function ExerciseDetail({ ex, close }) {
     update(s => { on = toggleFav(s, ex.id) })
     toast(on ? t('Added to favourites') : t('Removed from favourites'))
   }
-  return <>
+  return <div className="exercise-detail">
     <div className="row between" style={{ gap: 8, alignItems: 'flex-start' }}>
       <h3 className={'exdetail-name ' + exerciseNameClass(ex)}>{exerciseNameFor(ex)}</h3>
       <button className={'iconbtn fav-btn' + (fav ? ' on' : '')} aria-pressed={fav}
@@ -1326,15 +1327,15 @@ function ExerciseDetail({ ex, close }) {
         <Icon name={fav ? 'starFill' : 'star'} />
       </button>
     </div>
-    <Media ex={ex} />
+    <Media ex={ex} minimizable />
     <div className="row" style={{ gap: 6, flexWrap: 'wrap', margin: '10px 0' }}>
       {detailTags(ex).map(tg => <span key={tg.key} className={'tag' + (tg.acc ? ' acc' : '')}>{tg.icon && <Icon name={tg.icon} />}{tg.label}</span>)}
     </div>
-    <ExerciseAliasesEditor key={ex.id} ex={ex} />
     {Object.values(muscleLoad).some(w => w > 0) && <section className="exercise-muscle-map" aria-label={t('Muscles')}>
       <h4 className="sec">{t('Muscles')}</h4>
       <BodyMap load={muscleLoad} body={st.body} />
     </section>}
+    <RecentExerciseHistory history={sessionHistory(st)} exerciseId={ex.id} />
     {descFor(ex) && <div className="exnote">{descFor(ex)}</div>}
     {/* One line of text that wraps as a sentence: as a flex row, the last session became a
         separate column beside "Best: 105 kg" once it wrapped (design review 1.4.5). */}
@@ -1346,6 +1347,8 @@ function ExerciseDetail({ ex, close }) {
     {nfcOK && !ex.missing && <Button icon="nfc" style={{ marginTop: 4 }} onClick={() => nfcExerciseSheet(ex)}>{t('Write NFC sticker for this exercise')}</Button>}
     {/* Edit is an ordinary button with the others; Delete waits at the very end, apart (P6). */}
     {isCustomEx(ex) && <Button icon="pencil" style={{ marginTop: 8 }} onClick={() => { close(); customExSheet(ex) }}>{t('Edit')}</Button>}
+    <details className="detail-disclosure"><summary>{t('Equipment')}</summary>
+    <ExerciseAliasesEditor key={ex.id} ex={ex} />
     {modeOf({ id: ex.id }) === 'reps' && <>
       <div data-tour="ex-unit"><h4 className="sec">{t('Weight unit')}</h4>
       <ExUnitRow ex={ex} /></div>
@@ -1362,6 +1365,7 @@ function ExerciseDetail({ ex, close }) {
     </>}
     {/* Beginner to Elite for the main lifts, from the best estimated 1RM against body weight
         (lib/strength-level.js). Hidden without a weigh-in. */}
+    </details>
     <StrengthLevelBlock exId={ex.id} />
     {/* No one-rep max on an assistance machine: the load is the help you were given, so the
         calculator would answer "your 1RM is 23 kg" about a number that gets smaller as you get
@@ -1390,7 +1394,7 @@ function ExerciseDetail({ ex, close }) {
         <Icon name="trash" className="ex-del-i" /><span className="lrow-m"><span className="lrow-t">{t('Delete exercise')}</span></span>
       </button>
     </div>}
-  </>
+  </div>
 }
 export const exerciseDetailSheet = ex => ui().openSheet(close => <ExerciseDetail ex={ex} close={close} />)
 
@@ -3102,6 +3106,7 @@ function WorkoutDetail({ w, close }) {
   // The session note is editable here rather than only at the finish sheet: what you want to
   // record about a session is often clearer once you have looked at what you actually did.
   const [note, setNote] = useState(w.note || '')
+  const [noteOpen, setNoteOpen] = useState(!!w.note)
   // A note written here is an edit of the saved workout, stamped for the sync to keep it over an
   // older copy of the same workout (stampWorkout) — and only when it changed, since a stamp
   // outranks what another device wrote since.
@@ -3145,10 +3150,7 @@ function WorkoutDetail({ w, close }) {
     const unit = exUnitOf(st, e.id)
     const shown = ve.sets.map((s, j) => [s, j]).filter(([s]) => hasCompletedWork(s))
     if (!shown.length) return t('no sets')
-    return shown.map(([s, j], k) => <Fragment key={j}>
-      {k > 0 && '  ·  '}
-      <span className="wd-set">{setLabel(e.id, s, e.target, speedUnitOf(st)) + hrLabel(s)}{trends[j] && <span className={'settrend inline ' + (trends[j].dir > 0 ? 'up' : trends[j].dir < 0 ? 'down' : 'same')} role="img" aria-label={trendLabel(trends[j], unit)} title={trendLabel(trends[j], unit)}>{trendGlyph(trends[j])}</span>}{setNoteOf(s) && <Icon name="note" className="setnote-mark" role="img" aria-hidden="false" aria-label={t('Note: {0}', setNoteOf(s))} />}</span>
-    </Fragment>)
+    return shown.map(([s, j]) => <span key={j} className="wd-set">{setLabel(e.id, s, e.target, speedUnitOf(st)) + hrLabel(s)}{trends[j] && <span className={'settrend inline ' + (trends[j].dir > 0 ? 'up' : trends[j].dir < 0 ? 'down' : 'same')} role="img" aria-label={trendLabel(trends[j], unit)} title={trendLabel(trends[j], unit)}>{trendGlyph(trends[j])}</span>}{setNoteOf(s) && <Icon name="note" className="setnote-mark" role="img" aria-hidden="false" aria-label={t('Note: {0}', setNoteOf(s))} />}</span>)
   }
   // Every set's note of an entry, numbered the way the workout numbers its rows (warm-ups apart).
   const setNotesOf = e => (e.sets || []).map((s, i) => ({ i, s })).filter(x => setNoteOf(x.s) && hasCompletedWork(x.s)).map(({ i, s }) => {
@@ -3164,8 +3166,8 @@ function WorkoutDetail({ w, close }) {
       {ex && <button type="button" className="wd-thumb" aria-label={t('Details')} aria-haspopup="dialog" onClick={() => exerciseDetailSheet(ex)}><Thumb ex={ex} /></button>}
       <button type="button" className="grow item-open tap-main" aria-haspopup="dialog" onClick={() => exerciseHistorySheet(e.id)}><span className={`tt ${exerciseNameClass(ex)}`} style={{ fontWeight: 600 }}>{nameOf(e)} {w.prs && w.prs.includes(e.id) && <span className="pr"><Icon name="trophy" />PR</span>}</span>
         {/* An exercise in a unit of its own (#657) reads in it, and says which. */}
-        <span className="ss">{detailSets(e)}{exUnitTag(st, e.id)}</span>
-        {times[i] > 0 && <span className="small dim" style={{ marginTop: 3 }}>
+        <span className="ss wd-sets">{detailSets(e)}{exUnitTag(st, e.id)}</span>
+        {times[i] > 0 && <span className="small dim wd-time" style={{ marginTop: 3 }}>
           <Icon name="timer" style={{ fontSize: 'var(--fs-caption)', marginInlineEnd: 4, verticalAlign: '-1px' }} />{fmtDur(Math.max(times[i], 60000))}
         </span>}
         {e.note && <span className="small dim" style={{ marginTop: 3 }}>
@@ -3276,9 +3278,18 @@ function WorkoutDetail({ w, close }) {
   const groups = sessionSections(w.entries)
   const grouped = groups.length > 1 || (groups[0] && groups[0].rid && (w.routineIds || []).length > 1)
   return <>
-    <h3>{w.name}</h3>
+    <div className="detail-heading">
+      <h3>{w.name}</h3>
+      <div className="detail-actions">
+        <button type="button" className="iconbtn" data-tour="wd-edit" title={t('Edit workout')} aria-label={t('Edit workout')} disabled={!!st.active} onClick={() => {
+          flushNote()
+          try { update(state => { editCompletedSession(state, w) }); closeThenNav(close, '/workout') }
+          catch (error) { toast(t(error.message)) }
+        }}><Icon name="pencil" /><span className="sr-only">{t('Edit workout')}</span></button>
+        <button type="button" className="iconbtn" title={t('Repeat today')} aria-label={t('Repeat today')} disabled={!!st.active} onClick={() => { flushNote(); repeatWorkout(w, close) }}><Icon name="reset" /><span className="sr-only">{t('Repeat today')}</span></button>
+      </div>
+    </div>
     <div className="muted small" style={{ marginBottom: 12 }}>{[fmtDate(w.d, true), ...durPart(w.end - w.start), fmtVol(sessionVolume(w, st), st.unit), ...(w.bw ? [fmtNum(w.bw) + ' ' + st.unit] : [])].join(' · ')}</div>
-    <GarminCloudUploadButton workout={w} />
     {grouped ? groups.map(g => {
       const r = g.rid ? st.routines.find(x => x.id === g.rid) : null
       const items = g.items.map(i => w.entries[i])
@@ -3296,30 +3307,15 @@ function WorkoutDetail({ w, close }) {
     }) : entryRows(groups[0]?.units || [])}
     {/* Progress photos and form-check videos: added and removed right here, on the saved record. */}
     <WorkoutMediaSection w={w} />
-    <div className="small muted" style={{ margin: '4px 0 6px' }}>{t('Session note')}</div>
+    <details className="detail-disclosure workout-note" open={noteOpen} onToggle={event => setNoteOpen(event.currentTarget.open)}>
+    <summary>{t('Session note')}</summary>
     <textarea ref={noteRef} className="input" rows={2} maxLength={NOTE_MAX} value={note} data-tour="wd-note"
       placeholder={t('How the session went as a whole.')}
       onFocus={onNoteFocus} onChange={e => setNote(e.target.value)} onBlur={saveNote} />
-    <div style={{ height: 14 }} />
+    </details>
     {st.active && <p className="small muted">{t('Finish the current workout first.')}</p>}
-    {/* The editor starts from the record as it is, so a note typed here goes in first — the same
-        flush the date row does, and the unmount hook then has nothing left to write over it. */}
-    <Button icon="pencil" data-tour="wd-edit" disabled={!!st.active} onClick={() => {
-      flushNote()
-      try { update(state => { editCompletedSession(state, w) }); closeThenNav(close, '/workout') }
-      catch (error) { toast(t(error.message)) }
-    }}>{t('Edit workout')}</Button>
-    <div style={{ height: 8 }} />
-    {/* The same exercises again, today, as a new session (#58): the rows read what was logged
-        in this workout. The record itself stays as it is. */}
-    <Button icon="reset" disabled={!!st.active} onClick={() => {
-      flushNote()
-      repeatWorkout(w, close)
-    }}>{t('Repeat today')}</Button>
-    <div style={{ height: 10 }} />
-    {/* Everything else a past workout can do, once in a while each, behind one row (v1.4.4): it
-        used to be eight more buttons down the sheet. */}
-    <div className="list menu-list">
+    <div className="list menu-list workout-detail-options">
+      <GarminCloudUploadButton workout={w} compact />
       <div className="item menu-item menu-more" data-tour="wd-options" aria-haspopup="dialog" {...tappable(openOptions)}>
         <span className="lrow-i"><Icon name="more" /></span>
         <div className="grow"><div className="tt">{t('Workout options')}</div>
@@ -3441,14 +3437,14 @@ function Calendar({ start, close }) {
 export const calendarSheet = start => ui().openSheet(close => <Calendar start={start} close={close} />)
 
 /* shared small workout row (used in lists) */
-export function WorkoutRow({ w, onClick, tour }) {
+export function WorkoutRow({ w, onClick, tour, summary }) {
   const st = useStore(s => s.S)
   const glyph = glyphOf((st.routines.find(r => r.id === w.routineId) || {}).emoji)
   const mediaN = workoutMediaCount(w)
   return <div className="item" data-tour={tour} {...tappable(onClick)}>
     <span className="lrow-i" style={{ width: 34, height: 34, borderRadius: 8, fontSize: 19 }}><Icon name={glyph} /></span>
     <div className="grow"><div className="tt">{w.name}</div>
-      <div className="ss">{[fmtDate(w.d, true), ...durPart(w.end - w.start), tn('{0} set', '{0} sets', setsDone(w)), fmtVol(sessionVolume(w, st), st.unit)].join(' · ')}</div></div>
+      <div className="ss">{summary ?? [fmtDate(w.d, true), ...durPart(w.end - w.start), tn('{0} set', '{0} sets', setsDone(w)), fmtVol(sessionVolume(w, st), st.unit)].join(' · ')}</div></div>
     {mediaN > 0 && <span className="wrow-media" title={tn('{0} photo or video', '{0} photos or videos', mediaN)} aria-label={tn('{0} photo or video', '{0} photos or videos', mediaN)}><Icon name="image" />{mediaN}</span>}
     {w.prs && w.prs.length > 0 && <span className="pr"><Icon name="trophy" />{w.prs.length} PR</span>}
     <Icon name="chevronRight" className="chev" />
@@ -4056,13 +4052,13 @@ function FinishSummary({ w, prs, e1prs = [], additions = [], close }) {
     </div>}
     {/* Done is one tap away right under the numbers: the body map, what's next and the photo
         corner sit below it for whoever wants them, nobody has to scroll to leave (Discord). */}
-    <div className="fin-actions">
-      <Button variant="primary" onClick={() => closeThenNav(close, '/home')}>{t('Nice!')}</Button>
+    <div className="fin-actions"><Button variant="primary" onClick={() => closeThenNav(close, '/home')}>{t('Nice!')}</Button></div>
+    <div className="fin-secondary-actions">
       {/* The workout as a picture for a Story or a chat (components/ShareCard.jsx), the same
           card History's Share as image makes. */}
       {isOn(st, 'motivation') && <Button variant="tinted" icon="share" data-fin-share onClick={() => shareWorkoutSheet(S().workouts.find(x => x.id === w.id) || w)}>{t('Share')}</Button>}
+      <GarminCloudUploadButton workout={w} />
     </div>
-    <GarminCloudUploadButton workout={w} />
     <div style={{ height: 14 }} />
     <h4 className="sec" style={{ textAlign: 'start' }}>{t('What you just trained')}</h4>
     <BodyMap load={loadOfWorkouts([w])} body={st.body} />

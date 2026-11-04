@@ -23,7 +23,7 @@ export function SetEffortMarker({ current, previous, kind = 'rir' }) {
   const reading = value => `${kind.toUpperCase()} ${fmtNum(toScale(kind, value))}`
   const label = [now != null && reading(now), before != null && `${t('Last time')}: ${reading(before)}`].filter(Boolean).join(' · ')
   return <span className="set-effort-marker" role="img" aria-label={label} title={label}>
-    <i style={{ background: effortColor(now) || 'var(--sep)' }} />
+    <i className="current" style={{ background: effortColor(now) || 'var(--sep)' }} />
     {before != null && <i className="previous" style={{ background: effortColor(before) }} />}
   </span>
 }

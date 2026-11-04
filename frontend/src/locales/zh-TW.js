@@ -1,4 +1,8 @@
 export default {
+  "Data": "資料",
+  "Connections": "連線",
+  "App": "應用程式",
+  "No programmes yet.": "尚無課表。",
   "Garmin sign-in did not finish. Try signing in again.": "Garmin 登入未完成。請重新登入。",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin 無法授權此手機。請稍後重新登入。",
   "Could not verify the Garmin account. Try signing in again later.": "無法驗證 Garmin 帳戶。請稍後再嘗試登入。",

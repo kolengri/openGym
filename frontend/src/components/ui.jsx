@@ -132,6 +132,7 @@ export function Segmented({ options, value, onChange, className = '', tour, aria
       {options.map(o => (
         <button
           key={o.value}
+          data-tour={o.tour}
           className={o.value === value ? 'on' : ''}
           aria-pressed={o.value === value}
           onClick={() => onChange(o.value)}

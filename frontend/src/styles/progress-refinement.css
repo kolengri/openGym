@@ -1,0 +1,91 @@
+/* Scoped refinements for progress views and the exercise catalogue. */
+.progress-refinement .hdr { gap: 8px; }
+.progress-refinement .hdr > div { min-width: 0; }
+.progress-refinement .iconbtn { width: 44px; height: 44px; }
+.progress-refinement .iconbtn::before { inset: 0; }
+.progress-refinement .btn { min-height: 44px; }
+.progress-refinement .seg button { min-height: 44px; }
+.progress-refinement .seg button::before { inset: 0; }
+.progress-header-actions { flex: none; gap: 4px; }
+.progress-record-actions { display: flex; gap: 8px; margin-block-end: 16px; }
+.progress-record-actions > .btn { width: auto; }
+.progress-date-heading,
+.progress-history .history-month {
+  font-size: var(--fs-footnote);
+  font-weight: 600;
+  color: var(--label-2);
+  margin: 0 0 8px;
+}
+
+/* Fixed metric slots let dates, duration, sets and volume scan vertically. PR and media
+   badges are the existing shared renderer, with their original emphasis and counts. */
+.progress-history .history-months { background: none; overflow: visible; }
+.progress-history .history-month { margin: 24px 2px 8px; text-transform: capitalize; }
+.progress-history .history-month:first-child { margin-block-start: 0; }
+.progress-history .history-months > .item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  gap: 8px;
+  min-height: 72px;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: 0;
+}
+.progress-history .history-months > .item > .lrow-i { display: none; }
+.progress-history .history-months > .item > .grow { display: contents; }
+.progress-history .history-months > .item .tt { grid-column: 1; grid-row: 1; }
+.progress-history .history-months > .item .ss { grid-column: 1 / -1; grid-row: 2; }
+.progress-history .history-months > .item > .wrow-media { grid-column: 2; grid-row: 1; }
+.progress-history .history-months > .item > .pr { grid-column: 3; grid-row: 1; }
+.progress-history .history-months > .item > .pr { white-space: nowrap; }
+.progress-history .history-months > .item > .chev { grid-column: 4; grid-row: 1; }
+.progress-history .history-months .tt { white-space: normal; overflow-wrap: anywhere; }
+.progress-history .history-months .ss { white-space: normal; }
+.progress-history .history-metrics {
+  display: grid;
+  grid-template-columns: minmax(80px, 1.4fr) minmax(40px, .7fr) minmax(54px, .9fr) minmax(64px, 1fr);
+  gap: 4px 8px;
+  font-variant-numeric: tabular-nums;
+  margin-block-start: 4px;
+}
+.progress-history .history-metrics > span { min-width: 0; overflow-wrap: anywhere; }
+.progress-history .history-metrics > span:not(:first-child) { text-align: end; }
+
+/* Panels remain mounted for range/chart state, while hidden panels leave layout and focus. */
+.progress-stats .stats-sect[hidden] { display: none; }
+.progress-stats .stats-sect + .stats-sect { margin-block-start: 0; }
+.progress-stats .progress-panel-index { margin-block-end: 16px; }
+.progress-stats .progress-motivation { margin-block: 16px; }
+.progress-stats .progress-motivation > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 8px 12px;
+  background: var(--surface);
+  border-radius: var(--r-card);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.progress-stats .progress-motivation > summary::-webkit-details-marker { display: none; }
+.progress-stats .progress-motivation[open] > summary { margin-block-end: 12px; }
+.progress-stats .progress-motivation[open] > summary .icn { transform: rotate(180deg); }
+
+.progress-library .lib-search-tools { gap: 8px; margin-block-end: 12px; align-items: center; }
+.progress-library .lib-search-tools > .search { flex: 1; min-width: 0; }
+.progress-library .lib-search-filter { position: relative; }
+.progress-library .lib-search-filter.on { color: var(--acc-ink); background: var(--acc-soft); }
+.progress-library .lib-search-filter .lib-fn { position: absolute; inset-block-start: -2px; inset-inline-end: -2px; }
+.progress-library .lib-filters { margin-block-end: 16px; }
+.progress-library .lib-filters .chip { min-height: 44px; }
+.progress-library .lib-filters .chip::before { inset: 0; }
+.progress-library .lib-english { color: var(--label-2); text-align: start; text-transform: none; unicode-bidi: isolate; }
+.progress-library .item-open { min-width: 0; }
+.progress-library .item-open .tt { white-space: normal; overflow-wrap: anywhere; }
+.progress-measurements .measure-history { margin-block-end: 8px; }
+
+@media (max-width: 360px) {
+  .progress-history .history-metrics { grid-template-columns: minmax(76px, 1.2fr) minmax(38px, .65fr) minmax(48px, .8fr) minmax(56px, 1fr); column-gap: 4px; }
+  .progress-library .lib-search-tools { gap: 4px; }
+}

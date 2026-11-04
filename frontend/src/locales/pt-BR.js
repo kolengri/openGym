@@ -4,6 +4,10 @@
 import pt from './pt.js'
 
 export const PT_BR_OVERRIDES = {
+  "Data": "Dados",
+  "Connections": "Conexões",
+  "App": "Aplicativo",
+  "No programmes yet.": "Ainda não há programas.",
   "Garmin sign-in did not finish. Try signing in again.": "O login no Garmin não foi concluído. Tente entrar novamente.",
   "Garmin could not authorize this phone. Try signing in again later.": "O Garmin não conseguiu autorizar este celular. Tente entrar novamente mais tarde.",
   "Could not verify the Garmin account. Try signing in again later.": "Não foi possível verificar a conta Garmin. Tente entrar novamente mais tarde.",

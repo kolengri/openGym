@@ -1,6 +1,7 @@
+import '../styles/settings-refinement.css'
 import { useEffect, useRef, useState } from 'react'
 import { useStore } from '../store/useStore.js'
-import { Button } from './ui.jsx'
+import { Button, Section } from './ui.jsx'
 import { t } from '../lib/i18n.js'
 import { todayISO } from '../lib/format.js'
 import { shareExport } from '../lib/mobile.js'
@@ -89,8 +90,8 @@ export default function GarminHealthSettings({ connected, onStatusChange }) {
     : error === 'rate_limited' ? 'Garmin is limiting requests. Try again later.'
       : error === 'invalid_date' ? 'Choose a date range of up to 7 days.'
         : error === 'no_saved_readings' ? 'No saved health readings in this period.' : 'Could not read Garmin health data. Try again.'
-  return <div style={{ marginTop: 20 }}>
-    <h4>{t('Garmin health data')}</h4>
+  return <Section className="garmin-health-settings" title={t('Garmin health data')}>
+    <div className="garmin-health-controls">
     <p className="small muted">{t('Read all supported health metrics available to your Garmin account. Missing data stays missing. Weight readings are added without replacing manually logged weights.')}</p>
     <label className="measure-date"><span>{t('From')}</span><input aria-label={t('From')} type="date" className="field" value={start} max={end} min="2000-01-01" disabled={busy} onChange={e => setStart(e.target.value)} /></label>
     <label className="measure-date"><span>{t('To')}</span><input aria-label={t('To')} type="date" className="field" value={end} min={start} max={todayISO()} disabled={busy} onChange={e => setEnd(e.target.value)} /></label>
@@ -99,8 +100,10 @@ export default function GarminHealthSettings({ connected, onStatusChange }) {
     {progress && <p className="small" role="status">{progress.date} · {t(progress.label)} · {progress.completed}/{progress.total}<br />{t('Available: {0}. No data: {1}. Errors: {2}. Weigh-ins added: {3}.', progress.available, progress.unavailable, progress.error, progress.weighIns)}</p>}
     {error && <p className="small muted" role="alert">{t(message)}</p>}
     <GarminHealthSummary records={records} unit={unit} date={end} loading={loading} />
-    {records.length > 0 && <>
-      <h4>{t('Saved readings')} · {end}</h4>
+    <details className="settings-disclosure garmin-health-archive">
+      <summary>{t('Saved readings')}</summary>
+      {records.length > 0 && <>
+      <h4>{end}</h4>
       {records.map(record => <details key={record.metric} style={{ marginBottom: 10 }}>
         <summary>{t(record.label)}</summary>
         <dl style={{ fontSize: 12, overflowWrap: 'anywhere' }}>{healthDisplayRows(record.data).map(([key, value], i) => <div key={i} style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}><dt>{key}</dt><dd style={{ margin: 0 }}>{value}</dd></div>)}</dl>
@@ -108,5 +111,7 @@ export default function GarminHealthSettings({ connected, onStatusChange }) {
     </>}
     {catalog.length > 0 && <Button onClick={exportReadings} disabled={busy}>{t('Export Garmin health data')}</Button>}
     <p className="small muted">{t('Detailed readings stay in a separate private archive on this phone. Use Export Garmin health data to back them up. Values retain Garmin’s original fields and units; unavailable units are not guessed.')}</p>
-  </div>
+    </details>
+    </div>
+  </Section>
 }

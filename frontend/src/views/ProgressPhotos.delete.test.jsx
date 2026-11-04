@@ -23,22 +23,35 @@ const state = () => ({
 })
 
 let host, root
+const menuRoots = []
 beforeEach(() => {
   localStorage.clear()
   useStore.setState({ S: state(), user: null, ready: true })
   host = document.createElement('div'); document.body.appendChild(host); root = createRoot(host)
 })
-afterEach(() => { act(() => root.unmount()); host.remove(); useUI.getState().closeAll?.() })
+afterEach(() => { act(() => menuRoots.splice(0).forEach(r => r.unmount())); act(() => root.unmount()); host.remove(); useUI.getState().closeAll?.() })
 
 const button = label => [...host.querySelectorAll('button')].find(b => b.getAttribute('aria-label') === label || b.textContent === label)
 const media = id => useStore.getState().S.workouts.find(w => w.id === id).media
+
+const askRemove = () => {
+  act(() => button('More').click())
+  const sheet = useUI.getState().sheets.at(-1)
+  const menuHost = document.createElement('div')
+  document.body.appendChild(menuHost)
+  const menuRoot = createRoot(menuHost)
+  menuRoots.push(menuRoot)
+  act(() => menuRoot.render(sheet.render(() => useUI.getState().closeSheet(sheet.id))))
+  expect(menuHost.querySelector('.menu-item').textContent).toBe('Remove')
+  act(() => menuHost.querySelector('.menu-item').click())
+}
 
 describe('removing a progress photo', () => {
   it('asks first, takes it off that workout only, and Undo puts it back in its place', () => {
     const p = progressPhotosOf(useStore.getState().S).find(x => x.w.id === 'w1' && x.m.hash === ref(2).hash)
     let closed = 0
     act(() => root.render(<PhotoView p={p} close={() => { closed++ }} />))
-    act(() => button('Remove').click())          // the trash in the bar
+    askRemove()          // the menu opens the confirmation
     expect(host.textContent).toContain('Remove this photo or video?')
     act(() => [...host.querySelectorAll('.mviewer-ask button')].find(b => b.textContent === 'Remove').click())
     expect(closed).toBe(1)
@@ -55,7 +68,7 @@ describe('removing a progress photo', () => {
     const before = structuredClone(useStore.getState().S.workouts)
     const p = progressPhotosOf(useStore.getState().S)[0]
     act(() => root.render(<PhotoView p={p} close={() => {}} />))
-    act(() => button('Remove').click())
+    askRemove()
     act(() => button('Cancel').click())
     expect(useStore.getState().S.workouts).toEqual(before)
   })
@@ -68,7 +81,7 @@ describe('photos filed under a day (#557)', () => {
     expect(photos.map(p => p.d)).toEqual(['2026-10-05', '2026-10-03', '2026-10-01', '2026-10-01', '2026-10-01'])
     const p = photos.find(x => x.day)
     act(() => root.render(<PhotoView p={p} close={() => {}} />))
-    act(() => button('Remove').click())
+    askRemove()
     act(() => [...host.querySelectorAll('.mviewer-ask button')].find(b => b.textContent === 'Remove').click())
     expect(useStore.getState().S.dayPhotos[ref(7).hash]).toEqual({ _ts: expect.any(Number) })
     act(() => useUI.getState().runToastAction())

@@ -35,6 +35,9 @@ describe('Garmin connection settings', () => {
     await render()
     expect(h.configure).not.toHaveBeenCalled()
     expect(button('Connect').disabled).toBe(false)
+    const maintenance = button('Install on the watch').closest('details')
+    expect(maintenance.open).toBe(false)
+    maintenance.open = true
     await act(async () => button('Install on the watch').click())
     expect(h.store).toHaveBeenCalledOnce()
     await act(async () => button('Connect').click())

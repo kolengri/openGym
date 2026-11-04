@@ -155,7 +155,7 @@ describe('CoachSetup — "use my self-hosted openGym"', () => {
 
   it('Back returns to Settings', async () => {
     await mount()
-    await click(host.querySelector('.hdr .iconbtn'))
+    await click(host.querySelector('[data-back="/settings"]'))
     expect(mocks.nav).toHaveBeenCalledWith('/settings')
   })
 })

@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 // Phone app, first start: the permission steps between the onboarding choice and the app
 // (lib/onboarding-perms.js decides which are due). One step per screen with a single Continue
 // that always goes on to the OS dialog (App Review 5.1.1(iv): no way to skip the real ask from
@@ -46,7 +47,7 @@ export default function PermissionSteps() {
     setI(i + 1)
   }
   const c = (COPY[step.id] || (() => ({ icon: 'info', title: step.id, body: '', lines: [] })))()
-  return <div className="narrow" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '78vh', textAlign: 'center' }}>
+  return <div className="narrow guided-refined first-launch-refined">
     <div style={{ fontSize: 54, display: 'flex', justifyContent: 'center', color: 'var(--acc-ink)' }}><Icon name={c.icon} /></div>
     <div className="dim small" style={{ marginTop: 12, textTransform: 'uppercase', letterSpacing: '.06em' }}>{t('One quick thing')}</div>
     <h1 className="t-large" style={{ fontWeight: 700, margin: '6px 0 10px' }}>{c.title}</h1>

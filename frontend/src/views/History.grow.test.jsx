@@ -90,4 +90,18 @@ describe('History grows as it is scrolled', () => {
     const host = mount(History)
     expect(rows(host)).toBe(150)
   })
+  it('groups visible rows by month without hiding PR counts or the header add action', () => {
+    install(70)
+    useStore.getState().update(s => { s.workouts.at(-1).prs = [{ id: 'a' }, { id: 'b' }] })
+    const host = mount(History)
+    expect([...host.querySelectorAll('.history-month')].map(h => h.textContent)).toHaveLength(3)
+    expect(host.querySelector('.list .item .pr').textContent).toContain('2 PR')
+    expect(host.querySelector('.hdr [data-tour="history-add"]').getAttribute('aria-label')).toBe('Log a past workout')
+    expect(host.querySelectorAll('.history-metrics')).toHaveLength(PAGE)
+    const metrics = host.querySelector('.history-metrics')
+    expect(metrics.children).toHaveLength(4)
+    expect(metrics.textContent).toContain('0 sets')
+    expect(metrics.textContent).toContain('0 kg')
+  })
+
 })

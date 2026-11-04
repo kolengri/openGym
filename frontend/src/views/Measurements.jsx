@@ -1,3 +1,4 @@
+import '../styles/progress-refinement.css'
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
@@ -15,7 +16,7 @@ import { t } from '../lib/i18n.js'
 import LineChart from '../components/LineChart.jsx'
 import Icon from '../components/Icon.jsx'
 import { Button, NumberField, Section, Segmented, SelectRow, Switch, TextField } from '../components/ui.jsx'
-import { confirmSheet } from '../sheets.jsx'
+import { confirmSheet, menuSheet } from '../sheets.jsx'
 
 // Every write leaves the list in its one-entry-per-day shape (normalizeMeasurementsState).
 const update = (fn, ...rest) => useStore.getState().update(s => { fn(s); normalizeMeasurementsState(s) }, ...rest)
@@ -213,13 +214,18 @@ export default function Measurements() {
     onConfirm: () => { update(state => { state.measurements = state.measurements.filter(e => e.d !== entry.d) }); toast(t('Measurements deleted')) },
   })
 
-  return <div className="narrow">
+  return <div className="narrow progress-refinement progress-measurements">
     <div className="hdr">
       <button className="iconbtn" data-back="/stats" onClick={() => nav('/stats')} aria-label={t('Stats')}><Icon name="chevronLeft" /></button>
       <div style={{ flex: 1, marginInlineStart: 12 }}><h1>{t('Body measurements')}</h1><div className="sub">{t('Circumference & composition')}</div></div>
-      <button className="iconbtn" onClick={manageMeasurementsSheet} aria-label={t('Choose measurements')}><Icon name="gear" /></button>
+      <button className="iconbtn" aria-label={t('More')} aria-haspopup="dialog" onClick={() => menuSheet({ title: t('Body measurements'), items: [
+        { icon: 'gear', label: t('Choose measurements'), onClick: manageMeasurementsSheet },
+      ] })}><Icon name="more" /></button>
     </div>
 
+    <div className="progress-record-actions">
+      <Button variant="primary" icon="plus" onClick={() => measurementLogSheet()}>{t('Log measurements')}</Button>
+    </div>
     <div className="card">
       <div className="row between" style={{ marginBottom: 10 }}>
         <div>
@@ -227,7 +233,6 @@ export default function Measurements() {
           <div className="big" style={{ marginTop: 3 }}>{latest ? <>{fmtNum(latest.y)} <span className="muted" style={{ fontSize: 'var(--fs-callout)' }}>{unit}</span></> : '–'}</div>
           {delta != null && delta !== 0 && <div className="small" style={{ marginTop: 3, color: 'var(--label-2)' }}>{delta > 0 ? '+' : ''}{withUnit(delta, unit)} {t('since previous')}</div>}
         </div>
-        <Button size="sm" icon="plus" onClick={() => measurementLogSheet()}>{t('Log')}</Button>
       </div>
       {available.length > 0 && <div className="sect-b measure-select"><SelectRow
         title={t('Measurement')} sheetTitle={t('Choose measurement')} value={key} onChange={setSelected}
@@ -245,7 +250,6 @@ export default function Measurements() {
 
     <div className="row between" style={{ margin: '18px 2px 10px' }}>
       <h4 className="sec" style={{ margin: 0 }}>{t('Measurement history')}</h4>
-      <Button size="sm" variant="ghost" icon="gear" onClick={manageMeasurementsSheet}>{t('Fields')}</Button>
     </div>
     {recent.length ? <div className="list">{recent.map(entry => {
       const count = MEASUREMENT_KEYS.filter(k => entry[k] != null).length + (entry.other || []).filter(o => o.value != null).length
@@ -255,7 +259,9 @@ export default function Measurements() {
           <div><b>{fmtDate(entry.d, true)}</b><div className="small dim" style={{ marginTop: 2 }}>{t(count === 1 ? '{0} measurement' : '{0} measurements', count)}</div></div>
           <div className="row" style={{ gap: 4 }}>
             <button className="iconbtn" onClick={() => measurementLogSheet(entry.d)} aria-label={t('Edit')}><Icon name="pencil" /></button>
-            <button className="iconbtn" style={{ color: 'var(--red)' }} onClick={() => remove(entry)} aria-label={t('Delete')}><Icon name="trash" /></button>
+            <button className="iconbtn" aria-label={t('More') + ': ' + fmtDate(entry.d, true)} aria-haspopup="dialog" onClick={() => menuSheet({ title: fmtDate(entry.d, true), items: [
+              { icon: 'trash', label: t('Delete'), danger: true, onClick: () => remove(entry) },
+            ] })}><Icon name="more" /></button>
           </div>
         </div>
         {previewFields.length > 0 && <div className="measure-preview">{previewFields.map(({ field: f, value }) => <span key={f.key}>{t(f.label)} <b>{withUnit(value, fieldUnit(f, S.unit))}</b></span>)}</div>}
