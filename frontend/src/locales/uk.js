@@ -1,5 +1,8 @@
 // Ukrainian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "Вхід у Garmin не завершено. Спробуйте ввійти ще раз.",
+  "Garmin could not authorize this phone. Try signing in again later.": "Garmin не зміг авторизувати цей телефон. Спробуйте ввійти пізніше.",
+  "Could not verify the Garmin account. Try signing in again later.": "Не вдалося перевірити обліковий запис Garmin. Спробуйте ввійти знову пізніше.",
   "Same muscle and exercise type. The movement may differ.": "Той самий м’яз і тип вправи. Рух може відрізнятися.",
   "Related muscles and exercise type. The movement may differ.": "Пов’язані м’язи й той самий тип вправи. Рух може відрізнятися.",
   "Same muscle, different exercise type. Check suitability.": "Той самий м’яз, інший тип вправи. Перевірте, чи вона підходить.",

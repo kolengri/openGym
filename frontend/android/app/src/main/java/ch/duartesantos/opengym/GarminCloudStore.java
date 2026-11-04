@@ -54,7 +54,9 @@ final class GarminCloudStore {
             throw new IllegalStateException("Invalid Garmin storage");
         String token = state.optString("token", "");
         if (!token.isEmpty() && (!GarminCloudClient.validToken(token)
-            || !GarminCloudClient.validCsrf(csrf()) || !validSession(sessionId())))
+            || !GarminCloudClient.validCsrf(csrf()) || !validSession(sessionId())
+            || (diSession() && (!GarminCloudAuth.validRefresh(refreshToken())
+                || !GarminCloudAuth.validClient(clientId()) || state.optLong("expiresAt", 0) <= 0))))
             throw new IllegalStateException("Invalid Garmin storage");
         JSONArray receipts = state.getJSONArray("receipts");
         // Migrate the old session-scoped journal without forgetting its original owner.
@@ -80,10 +82,28 @@ final class GarminCloudStore {
     }
 
     boolean connected() { return GarminCloudClient.validToken(token()); }
-    String authState() { return GarminCloudClient.authState(token(), now.getAsLong(), decodePayload); }
+    boolean diSession() { return "di".equals(state.optString("authType")); }
+    String authState() {
+        if (!connected()) return "missing";
+        // Legacy cookie credentials are retained only to reconcile the durable receipt journal.
+        if (!diSession() || state.optBoolean("authRejected")) return "expired";
+        return state.optLong("expiresAt", 0) <= now.getAsLong() ? "expired" : "ready";
+    }
+    boolean renewalAvailable() {
+        return diSession() && GarminCloudAuth.validRefresh(refreshToken()) && GarminCloudAuth.validClient(clientId())
+            && !state.optBoolean("renewalRejected");
+    }
+    boolean renewalDue() {
+        return authState().equals("expired") || state.optLong("expiresAt", 0) - now.getAsLong() <= 60000;
+    }
     String sessionId() { return state.optString("session", null); }
     String token() { return state.optString("token", null); }
     String csrf() { return state.optString("csrf", null); }
+    String refreshToken() { return state.optString("refreshToken", null); }
+    String clientId() { return state.optString("clientId", null); }
+    GarminCloudSession.Credentials credentials() {
+        return new GarminCloudSession.Credentials(token(), refreshToken(), clientId(), state.optLong("expiresAt", 0));
+    }
 
     void requireSession(String session) throws GarminCloudClient.Failure {
         if (!connected() || !validSession(session) || !session.equals(sessionId()))
@@ -117,26 +137,60 @@ final class GarminCloudStore {
         return connected() && sameLoginNonce(nonce, state.optString("loginResultNonce", null));
     }
 
-    void finishLogin(String nonce, String token, String csrf) throws Exception {
+    /** The token grant is persisted before optional profile/health requests can run. */
+    void finishLogin(String nonce, GarminCloudSession.Credentials credentials) throws Exception {
+        reload();
         if (!pendingLogin(nonce)) throw new GarminCloudClient.Failure("cancelled");
-        saveCredentials(token, csrf, nonce);
+        saveCredentials(credentials, nonce);
     }
 
-    // Package seam for offline store tests; production login always uses finishLogin's nonce fence.
-    void login(String token, String csrf) throws Exception { saveCredentials(token, csrf, null); }
+    // Package seam for native store tests. Production always uses the durable nonce fence.
+    void login(GarminCloudSession.Credentials credentials) throws Exception { saveCredentials(credentials, null); }
 
-    private void saveCredentials(String token, String csrf, String nonce) throws Exception {
-        if (!GarminCloudClient.validToken(token) || !GarminCloudClient.validCsrf(csrf))
-            throw new GarminCloudClient.Failure("auth_required");
+    private void saveCredentials(GarminCloudSession.Credentials credentials, String nonce) throws Exception {
+        validateCredentials(credentials);
         JSONObject next = withoutCredentials(copy());
-        next.put("token", token).put("session", UUID.randomUUID().toString());
-        if (csrf != null) next.put("csrf", csrf);
+        putCredentials(next, credentials).put("session", UUID.randomUUID().toString());
         if (nonce != null) next.put("loginResultNonce", nonce);
         persist(next);
     }
 
+    private static JSONObject putCredentials(JSONObject next, GarminCloudSession.Credentials credentials) throws Exception {
+        return next.put("authType", "di").put("token", credentials.token).put("refreshToken", credentials.refreshToken)
+            .put("clientId", credentials.clientId).put("expiresAt", credentials.expiresAt);
+    }
+
+    private static void validateCredentials(GarminCloudSession.Credentials credentials) throws GarminCloudClient.Failure {
+        if (credentials == null || !GarminCloudClient.validToken(credentials.token)
+            || !GarminCloudAuth.validRefresh(credentials.refreshToken) || !GarminCloudAuth.validClient(credentials.clientId)
+            || credentials.expiresAt <= 0) throw new GarminCloudClient.Failure("auth_exchange_failed");
+    }
+
+    /** The refresh grant identifies the account; generation and old-grant fences prevent replacement. */
+    void finishRenewal(String session, GarminCloudSession.Credentials previous, GarminCloudSession.Credentials fresh) throws Exception {
+        reload();
+        requireSession(session);
+        if (!renewalAvailable() || !previous.token.equals(token()) || !previous.refreshToken.equals(refreshToken())
+            || !previous.clientId.equals(clientId())) throw new GarminCloudClient.Failure("cancelled");
+        validateCredentials(fresh);
+        if (!previous.clientId.equals(fresh.clientId)) throw new GarminCloudClient.Failure("session_changed");
+        if (fresh.expiresAt <= now.getAsLong()) throw new GarminCloudClient.Failure("auth_expired");
+        JSONObject next = putCredentials(copy(), fresh);
+        next.remove("authRejected");
+        next.remove("renewalRejected");
+        persist(next);
+    }
+
+    void rejectAuthentication(boolean renewalRejected) throws Exception {
+        JSONObject next = copy().put("authRejected", true);
+        if (renewalRejected) next.put("renewalRejected", true);
+        persist(next);
+    }
+
+    void reload() throws Exception { state = new GarminCloudStore(storage, now, decodePayload).state; }
+
     private JSONObject withoutCredentials(JSONObject next) {
-        for (String key : new String[]{"token", "csrf", "session", "displayName", "loginNonce", "loginResultNonce"})
+        for (String key : new String[]{"token", "csrf", "session", "displayName", "loginNonce", "loginResultNonce", "accountBinding", "authRejected", "renewalRejected", "authType", "refreshToken", "clientId", "expiresAt"})
             next.remove(key);
         return next;
     }
@@ -183,13 +237,12 @@ final class GarminCloudStore {
         return index >= 0 && receipts.getJSONObject(index).getString("status").equals("inflight");
     }
 
-    /** Writes the uncertainty marker before the caller is permitted to start the POST. */
-    GarminCloudClient.Outcome begin(String session, String workout, String sha, boolean retryUnknown) throws Exception {
+    /** Reconcile terminal/ambiguous receipts before any renewal, network access or marker write. */
+    GarminCloudClient.Outcome inspectUpload(String session, String workout, String sha, boolean retryUnknown) throws Exception {
         requireSession(session);
         if (sha == null || !sha.matches("[a-f0-9]{64}")) throw new GarminCloudClient.Failure("upload_failed");
         String key = workoutKey(workout);
-        JSONObject next = copy();
-        JSONArray receipts = next.getJSONArray("receipts");
+        JSONArray receipts = state.getJSONArray("receipts");
         int index = find(receipts, key);
         if (index >= 0) {
             JSONObject entry = receipts.getJSONObject(index);
@@ -198,14 +251,24 @@ final class GarminCloudStore {
             if (!entry.getString("status").equals("inflight"))
                 return new GarminCloudClient.Outcome(entry.getString("status"), entry.optString("activityId", null));
             if (!retryUnknown) throw new GarminCloudClient.Failure("unknown_result");
-            requireUploadReady();
             return null;
         }
         // A terminal receipt above can reconcile a lost callback even after the JWT expires.
         // Check readiness only before permitting a new POST; complete() keeps its generation fence.
         // Never evict even completed cross-generation guards: account identity is untrusted.
         if (receipts.length() >= MAX_RECEIPTS) throw new GarminCloudClient.Failure("receipt_limit");
+        return null;
+    }
+
+    /** Writes the uncertainty marker before the caller is permitted to start the POST. */
+    GarminCloudClient.Outcome begin(String session, String workout, String sha, boolean retryUnknown) throws Exception {
+        GarminCloudClient.Outcome receipt = inspectUpload(session, workout, sha, retryUnknown);
+        if (receipt != null) return receipt;
         requireUploadReady();
+        JSONObject next = copy();
+        JSONArray receipts = next.getJSONArray("receipts");
+        String key = workoutKey(workout);
+        if (find(receipts, key) >= 0) return null;
         receipts.put(new JSONObject().put("workout", key).put("sha", sha)
             .put("status", "inflight").put("generation", session));
         persist(next);
@@ -239,11 +302,6 @@ final class GarminCloudStore {
     }
 
     static GarminCloudStore open(Context context) throws Exception { return new GarminCloudStore(new EncryptedStorage(context)); }
-
-    static void saveLogin(Context context, String nonce, String token, String csrf) throws Exception {
-        // An unreadable journal is never cleared to accept new credentials or a replay.
-        open(context).finishLogin(nonce, token, csrf);
-    }
 
     private static final class EncryptedStorage implements Storage {
         private static final String KEY_ALIAS = "opengym-garmin-cloud-v1";

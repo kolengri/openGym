@@ -1,5 +1,8 @@
 // Arabic UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin sign-in did not finish. Try signing in again.": "لم يكتمل تسجيل الدخول إلى Garmin. حاول تسجيل الدخول مرة أخرى.",
+  "Garmin could not authorize this phone. Try signing in again later.": "تعذّر على Garmin منح الإذن لهذا الهاتف. حاول تسجيل الدخول مرة أخرى لاحقًا.",
+  "Could not verify the Garmin account. Try signing in again later.": "تعذّر التحقق من حساب Garmin. حاول تسجيل الدخول مجددًا لاحقًا.",
   "Same muscle and exercise type. The movement may differ.": "نفس العضلة ونوع التمرين. قد تختلف الحركة.",
   "Related muscles and exercise type. The movement may differ.": "عضلات مرتبطة ونفس نوع التمرين. قد تختلف الحركة.",
   "Same muscle, different exercise type. Check suitability.": "نفس العضلة ونوع تمرين مختلف. تحقق من الملاءمة.",

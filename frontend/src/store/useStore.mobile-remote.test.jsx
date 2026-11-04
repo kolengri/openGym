@@ -633,3 +633,24 @@ describe('the first-start permission steps (views/PermissionSteps.jsx)', () => {
     expect(useStore.getState().permSteps).toBe(true)
   })
 })
+
+
+describe('device-local Garmin connection during profile hydration', () => {
+  it.each([undefined, 'phone-B'])('retains the local binding when the newer server binding is %s', async remoteSession => {
+    pairedPhone()
+    const local = { ...JSON.parse(localStorage.getItem('gym_state_v1')), garminCloudSessionId: 'phone-A', garminCloudAuto: true }
+    localStorage.setItem('gym_state_v1', JSON.stringify(local))
+    localStorage.setItem('gym_synced_fp', JSON.stringify(syncFingerprint(local)))
+    h.files.set('DATA/opengym-state.json', JSON.stringify(local))
+    const remote = { ...clone(SERVER_STATE), _rev: 6, _ts: 2000, garminCloudAuto: false }
+    if (remoteSession) remote.garminCloudSessionId = remoteSession
+    remote.workouts.push({ ...workout('foreign', '2026-09-19'), garminCloudUpload: { sessionId: 'phone-B', status: 'pending' } })
+    const srv = serverWith(remote)
+    const store = await freshStore()
+    await store.getState().boot()
+    expect(store.getState().S.garminCloudSessionId).toBe('phone-A')
+    expect(store.getState().S.garminCloudAuto).toBe(true)
+    expect(store.getState().S.workouts.find(w => w.id === 'foreign').garminCloudUpload.sessionId).toBe('phone-B')
+    expect(srv.puts).toHaveLength(0)
+  })
+})

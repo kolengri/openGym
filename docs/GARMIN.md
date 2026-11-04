@@ -28,6 +28,10 @@ For updates of an already installed **openGym Garmin**, install the APK over tha
 
 In **Settings → Garmin → Garmin Connect uploads**, sign in on Garmin's own page, including any MFA challenge. The browser session on a desktop is separate from the Android app's login. The password is not passed to openGym JavaScript or stored by this integration. Android captures the resulting Garmin session natively and encrypts it with AndroidKeyStore in app-private no-backup storage. WebView authentication storage is excluded from Android cloud backup and device transfer.
 
+Android code 41 exchanges the official sign-in callback for native Garmin DI access and refresh tokens. It saves the encrypted token pair before any optional profile request; a profile-read failure cannot discard a completed sign-in. Refresh uses the saved refresh token without reopening a browser, changing the local session identifier or clearing upload receipts. Browser cookies are cleared after successful sign-in and disconnect. Network failures retain the token pair for retry; a rejected refresh requires an interactive sign-in. Users updating from code 40 or earlier must sign in once to replace the old browser-cookie session. This integration uses unofficial Garmin endpoints: local tests do not establish that a real account will accept the callback or upload.
+
+The connection and automatic-upload preference belong to this phone. Syncing a profile or importing a backup cannot bind this phone to another device’s Garmin session or enable its uploads. Historical workout receipt bindings remain unchanged.
+
 Enable **Upload new workouts automatically** between workouts. Completing a new workout queues its detailed FIT in the same saved state as the workout. While this mode is enabled, the companion still exchanges controls and live HR but does not start a separate native FIT recording. This avoids two upload sources for the same session. Changing this mode during a workout is disabled.
 
 An existing completed workout also has **Upload to Garmin Connect**. Use it only for an activity that is not already in Connect. Importing a GymUp/openGym backup does not automatically publish historical workouts. A confirmed native receipt survives app restart and a lost JavaScript callback. An ambiguous network outcome is not retried automatically: check Connect before explicitly retrying, since Garmin may have accepted the original request.
@@ -41,6 +45,10 @@ This uses Garmin's **unofficial** ordinary activity-upload endpoint, based on th
 The standalone **Export for Strava (.fit)** button remains available. It generates a file; Android sharing to Strava may open an ordinary post rather than import a workout. It is not the automatic upload route. A separate direct Strava API client is not required for the Garmin route.
 
 On Android, a paused Garmin workout can also be resumed from its status row on the phone. The current HR display expires when samples stop arriving; it never presents an old value as a live reading.
+
+## Active Android workout notifications
+
+Android 16 and later request a promoted ongoing notification for the active workout and rest timer. The rest card uses the system countdown clock with Pause/Resume and Skip; time adjustment remains available in the app. Older Android versions retain the custom countdown controls. The notification's settings action opens its Android promotion or channel settings. Existing channel sound, vibration and importance preferences are preserved. Promotion permission and Samsung's background/minimized notification filters can still control placement; an application cannot override those user settings.
 
 ## Read health data
 

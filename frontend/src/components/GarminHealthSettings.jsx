@@ -4,11 +4,11 @@ import { Button } from './ui.jsx'
 import { t } from '../lib/i18n.js'
 import { todayISO } from '../lib/format.js'
 import { shareExport } from '../lib/mobile.js'
-import { garminHealthMetrics } from '../lib/garmin-cloud.js'
+import { garminCloudErrorMessage, garminHealthMetrics } from '../lib/garmin-cloud.js'
 import { garminHealthArchive, healthDays, healthDisplayRows, syncGarminHealth } from '../lib/garmin-health.js'
 import GarminHealthSummary from './GarminHealthSummary.jsx'
 
-export default function GarminHealthSettings({ connected }) {
+export default function GarminHealthSettings({ connected, onStatusChange }) {
   const owner = useStore(s => s.user?.id ?? null)
   const unit = useStore(s => s.S.unit)
   const [start, setStart] = useState(todayISO)
@@ -38,10 +38,24 @@ export default function GarminHealthSettings({ connected }) {
   }, [owner, end, catalog, busy])
   const read = async () => {
     const abort = new AbortController(); controller.current = abort
+    const initial = useStore.getState(), session = initial.S.garminCloudSessionId
+    let valid = true
+    const stop = useStore.subscribe((state, previous) => {
+      if ((state.user?.id ?? null) !== (previous.user?.id ?? null) || state.S.garminCloudSessionId !== previous.S.garminCloudSessionId) {
+        valid = false; abort.abort()
+      }
+    })
+    const belongs = () => valid && mounted.current && !abort.signal.aborted &&
+      (initial.user?.id ?? null) === (useStore.getState().user?.id ?? null) && useStore.getState().S.garminCloudSessionId === session
     setBusy(true); setError(null); setProgress(null)
-    try { await syncGarminHealth(useStore, { start, end, signal: abort.signal, progress: p => { if (mounted.current && !abort.signal.aborted) setProgress(p) } }) }
-    catch (e) { if (mounted.current && !abort.signal.aborted) setError(e.message) }
-    finally { if (mounted.current) setBusy(false) }
+    try { await syncGarminHealth(useStore, { start, end, signal: abort.signal, progress: p => { if (belongs()) setProgress(p) } }) }
+    catch (e) { if (belongs()) setError(e.message) }
+    finally {
+      stop()
+      if (controller.current === abort) controller.current = null
+      if (mounted.current) setBusy(false)
+      if (belongs()) onStatusChange?.()
+    }
   }
   const exportReadings = async () => {
     const abort = new AbortController(); controller.current = abort
@@ -70,7 +84,8 @@ export default function GarminHealthSettings({ connected }) {
     } catch (e) { if (belongs()) setError(e.message === 'invalid_date' ? 'invalid_date' : 'storage_error') }
     finally { stop(); if (controller.current === abort) controller.current = null; if (mounted.current) setBusy(false) }
   }
-  const message = error === 'auth_required' || error === 'session_changed' ? 'Connect Garmin in Settings before uploading.'
+  const message = ['auth_required', 'auth_expired', 'auth_exchange_failed', 'network_error', 'cancelled', 'session_changed', 'profile_unavailable', 'storage_unavailable'].includes(error)
+    ? garminCloudErrorMessage(error)
     : error === 'rate_limited' ? 'Garmin is limiting requests. Try again later.'
       : error === 'invalid_date' ? 'Choose a date range of up to 7 days.'
         : error === 'no_saved_readings' ? 'No saved health readings in this period.' : 'Could not read Garmin health data. Try again.'

@@ -40,7 +40,7 @@ public class GarminCloudAuthTest {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         AtomicLong now = new AtomicLong(NOW);
         GarminCloudStore store = store(disk, now);
-        store.login(token("{\"exp\":1800000000}"), null);
+        store.login(GarminCloudStoreTest.credentials(token("{\"exp\":1800000000}")));
         String before = disk.value;
         AtomicInteger posts = new AtomicInteger();
         assertEquals("auth_expired", assertThrows(GarminCloudClient.Failure.class,
@@ -60,12 +60,12 @@ public class GarminCloudAuthTest {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         AtomicLong now = new AtomicLong(NOW);
         GarminCloudStore store = store(disk, now);
-        store.login(token("{\"exp\":1800000001}"), null);
+        store.login(GarminCloudStoreTest.credentials(token("{\"exp\":1800000120}")));
         String session = store.sessionId();
         AtomicInteger posts = new AtomicInteger();
         GarminCloudPlugin.uploadOnce(store, session, "workout", SHA, false, () -> {
             posts.incrementAndGet();
-            now.addAndGet(2000); // The simulated POST crossed the local expiry boundary.
+            now.addAndGet(121000); // The simulated POST crossed the local expiry boundary.
             return new GarminCloudClient.Outcome("uploaded", "123");
         });
         GarminCloudStore restarted = store(disk, now);
@@ -83,16 +83,16 @@ public class GarminCloudAuthTest {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         AtomicLong now = new AtomicLong(NOW);
         GarminCloudStore store = store(disk, now);
-        store.login(token("{\"exp\":1800000001}"), null);
+        store.login(GarminCloudStoreTest.credentials(token("{\"exp\":1800000120}")));
         String session = store.sessionId();
         store.begin(session, "workout", SHA, false);
-        now.addAndGet(2000);
+        now.addAndGet(121000);
         assertEquals("unknown_result", assertThrows(GarminCloudClient.Failure.class,
             () -> store.begin(session, "workout", SHA, false)).code);
         assertEquals("auth_expired", assertThrows(GarminCloudClient.Failure.class,
             () -> store.begin(session, "workout", SHA, true)).code);
         assertTrue(store.uncertain("workout"));
-        store.login(token("{\"exp\":1800000001}"), null);
+        store.login(GarminCloudStoreTest.credentials(token("{\"exp\":1800000120}")));
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
             () -> store.begin(store.sessionId(), "workout", SHA, true)).code);
     }
@@ -101,7 +101,7 @@ public class GarminCloudAuthTest {
         for (int status : new int[]{200, 202}) {
             GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
             GarminCloudStore store = store(disk, new AtomicLong(NOW));
-            store.login(token("{\"exp\":1800000001}"), null);
+            store.login(GarminCloudStoreTest.credentials(token("{\"exp\":1800000120}")));
             AtomicInteger posts = new AtomicInteger();
             GarminCloudPlugin.Upload send = () -> {
                 posts.incrementAndGet();
@@ -120,9 +120,9 @@ public class GarminCloudAuthTest {
         GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
         AtomicLong now = new AtomicLong(NOW);
         GarminCloudStore store = store(disk, now);
-        store.login(token("{\"exp\":1800000001}"), null);
+        store.login(GarminCloudStoreTest.credentials(token("{\"exp\":1800000120}")));
         for (int i = 0; i < GarminCloudStore.MAX_RECEIPTS; i++) store.begin(store.sessionId(), "workout-" + i, SHA, false);
-        now.addAndGet(2000);
+        now.addAndGet(121000);
         assertEquals("receipt_limit", assertThrows(GarminCloudClient.Failure.class,
             () -> GarminCloudPlugin.uploadOnce(store, store.sessionId(), "new-workout", SHA, false,
                 () -> { fail("A full journal must never permit a POST"); return null; })).code);

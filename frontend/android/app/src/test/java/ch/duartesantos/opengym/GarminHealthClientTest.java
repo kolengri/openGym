@@ -28,7 +28,7 @@ public class GarminHealthClientTest {
     }
     private GarminCloudStore connected() throws Exception {
         GarminCloudStore store = new GarminCloudStore(new GarminCloudStoreTest.Disk());
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         return store;
     }
     private void failure(String code, int status, String body) {
@@ -82,7 +82,7 @@ public class GarminHealthClientTest {
         GarminHealthClient client = new GarminHealthClient(fixture);
         GarminCloudStore store = connected();
         String old = store.sessionId();
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         assertEquals("auth_required", assertThrows(GarminCloudClient.Failure.class,
             () -> client.read(store, old, DAY, "weight")).code);
         assertThrows(GarminCloudClient.Failure.class, () -> client.read(store, null, DAY, "weight"));
@@ -115,7 +115,7 @@ public class GarminHealthClientTest {
         assertFalse(result.toString().contains("test/name"));
         client.read(store, store.sessionId(), DAY, "steps");
         assertEquals(3, fixture.urls.size());
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         assertNull(store.displayName());
         client.read(store, store.sessionId(), DAY, "resting_heart_rate");
         assertEquals(5, fixture.urls.size());
@@ -220,10 +220,11 @@ public class GarminHealthClientTest {
 
     @Test public void sharedGetHeadersContainNativeAuthOnlyAndNoMultipartOrCallerHeaders() throws Exception {
         Map<String, String> headers = GarminCloudClient.authHeaders(TOKEN, "csrf");
-        assertEquals("JWT_WEB=" + TOKEN, headers.get("Cookie"));
+        assertEquals("Bearer " + TOKEN, headers.get("Authorization"));
+        assertFalse(headers.containsKey("Cookie"));
         assertFalse(headers.containsKey("Content-Type"));
-        assertFalse(headers.containsKey("Authorization"));
-        assertEquals("csrf", headers.get("connect-csrf-token"));
+        assertEquals("Android", headers.get("X-Garmin-Client-Platform"));
+        assertFalse(headers.containsKey("connect-csrf-token"));
         assertThrows(GarminCloudClient.Failure.class, () -> GarminCloudClient.authHeaders("bad\r\nInjected:yes", null));
     }
 

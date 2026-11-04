@@ -24,9 +24,19 @@ public class GarminCloudStoreTest {
         }
     }
 
+    static GarminCloudSession.Credentials credentials(String token) {
+        long expires = 4102444800000L;
+        try {
+            String payload = new String(java.util.Base64.getUrlDecoder().decode(token.split("\\.")[1]), java.nio.charset.StandardCharsets.UTF_8);
+            Object exp = new JSONObject(payload).opt("exp");
+            if (exp instanceof Number) expires = ((Number) exp).longValue() * 1000;
+        } catch (Exception ignored) { /* A server-supplied expiry is independent of JWT parsing. */ }
+        return new GarminCloudSession.Credentials(token, "synthetic-refresh", GarminCloudAuth.CLIENT_ID, expires);
+    }
+
     private GarminCloudStore connected(Disk disk) throws Exception {
         GarminCloudStore store = new GarminCloudStore(disk);
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         return store;
     }
 
@@ -39,9 +49,10 @@ public class GarminCloudStoreTest {
         assertFalse(session.contains("synthetic"));
         GarminCloudStore restarted = new GarminCloudStore(disk);
         assertEquals(session, restarted.sessionId());
-        restarted.login(TOKEN, "csrf");
+        restarted.login(GarminCloudStoreTest.credentials(TOKEN));
         assertNotEquals(session, restarted.sessionId());
-        assertEquals("csrf", restarted.csrf());
+        assertEquals("synthetic-refresh", restarted.refreshToken());
+        assertNull(restarted.csrf());
     }
 
     @Test public void durableReceiptPreventsPostAfterLostCallbackAndRejectsChangedContent() throws Exception {
@@ -81,7 +92,7 @@ public class GarminCloudStoreTest {
         String old = store.sessionId();
         store.begin(old, "workout", SHA, false);
         store.complete("workout", new GarminCloudClient.Outcome("uploaded", "123"));
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         assertEquals("auth_required", assertThrows(GarminCloudClient.Failure.class,
             () -> store.begin(old, "workout", SHA, true)).code);
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
@@ -158,8 +169,8 @@ public class GarminCloudStoreTest {
         GarminCloudStore store = connected(disk);
         for (String workout : new String[]{"", "a".repeat(129), "bad\nidentifier", "bad\nmultiple\ncontrols"})
             assertThrows(GarminCloudClient.Failure.class, () -> store.begin(store.sessionId(), workout, SHA, false));
-        assertThrows(GarminCloudClient.Failure.class, () -> store.login("invalid", null));
-        assertThrows(GarminCloudClient.Failure.class, () -> store.login(TOKEN, "bad;cookie"));
+        assertThrows(GarminCloudClient.Failure.class, () -> store.login(GarminCloudStoreTest.credentials("invalid")));
+        assertThrows(GarminCloudClient.Failure.class, () -> store.login(new GarminCloudSession.Credentials(TOKEN, "bad\nrefresh", GarminCloudAuth.CLIENT_ID, 4102444800000L)));
     }
     @Test public void unknownReceiptSurvivesDisconnectReloginAndCannotCrossGenerations() throws Exception {
         Disk disk = new Disk();
@@ -170,7 +181,7 @@ public class GarminCloudStoreTest {
         assertFalse(store.connected());
         assertTrue(new GarminCloudStore(disk).uncertain("unknown"));
         store = new GarminCloudStore(disk);
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         GarminCloudStore active = new GarminCloudStore(disk);
         for (boolean retry : new boolean[]{false, true}) {
             assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
@@ -192,7 +203,7 @@ public class GarminCloudStoreTest {
         disk.value = legacy.toString();
         GarminCloudStore restarted = new GarminCloudStore(disk);
         restarted.invalidate();
-        restarted.login(TOKEN, null);
+        restarted.login(GarminCloudStoreTest.credentials(TOKEN));
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
             () -> restarted.begin(restarted.sessionId(), "legacy", SHA, true)).code);
         assertEquals(original, new JSONObject(disk.value).getJSONArray("receipts").getJSONObject(0).getString("generation"));
@@ -206,12 +217,12 @@ public class GarminCloudStoreTest {
         store.disconnect();
         GarminCloudStore restarted = new GarminCloudStore(disk);
         assertEquals("cancelled", assertThrows(GarminCloudClient.Failure.class,
-            () -> restarted.finishLogin(first, TOKEN, null)).code);
+            () -> restarted.finishLogin(first, GarminCloudStoreTest.credentials(TOKEN))).code);
         String second = restarted.startLogin();
         assertNotEquals(first, second);
         assertEquals("cancelled", assertThrows(GarminCloudClient.Failure.class,
-            () -> restarted.finishLogin(first, TOKEN, null)).code);
-        restarted.finishLogin(second, TOKEN, null);
+            () -> restarted.finishLogin(first, GarminCloudStoreTest.credentials(TOKEN))).code);
+        restarted.finishLogin(second, GarminCloudStoreTest.credentials(TOKEN));
         String activeSession = restarted.sessionId();
         assertTrue(new GarminCloudStore(disk).loginResultMatches(second));
         assertFalse(restarted.loginResultMatches(first));
@@ -226,11 +237,11 @@ public class GarminCloudStoreTest {
         GarminCloudStore store = connected(disk);
         String first = store.startLogin();
         GarminCloudStore recreated = new GarminCloudStore(disk);
-        recreated.finishLogin(first, TOKEN, null);
+        recreated.finishLogin(first, GarminCloudStoreTest.credentials(TOKEN));
         assertTrue(new GarminCloudStore(disk).loginResultMatches(first));
         String second = recreated.startLogin();
         assertFalse(new GarminCloudStore(disk).loginResultMatches(first));
-        recreated.finishLogin(second, TOKEN, null);
+        recreated.finishLogin(second, GarminCloudStoreTest.credentials(TOKEN));
         assertFalse(recreated.loginResultMatches(first));
         recreated.cancelLogin(second);
         assertFalse(new GarminCloudStore(disk).connected());
@@ -253,7 +264,7 @@ public class GarminCloudStoreTest {
         disk.fail = false;
         store.disconnect();
         assertEquals("cancelled", assertThrows(GarminCloudClient.Failure.class,
-            () -> store.finishLogin(nonce, TOKEN, null)).code);
+            () -> store.finishLogin(nonce, GarminCloudStoreTest.credentials(TOKEN))).code);
         assertTrue(new GarminCloudStore(disk).uncertain("guard"));
     }
 
@@ -261,7 +272,7 @@ public class GarminCloudStoreTest {
         Disk disk = new Disk();
         GarminCloudStore store = connected(disk);
         store.begin(store.sessionId(), "old", SHA, false);
-        store.login(TOKEN, null);
+        store.login(GarminCloudStoreTest.credentials(TOKEN));
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
             () -> store.complete("old", new GarminCloudClient.Outcome("uploaded", "123"))).code);
         assertEquals("session_changed", assertThrows(GarminCloudClient.Failure.class,
@@ -279,7 +290,7 @@ public class GarminCloudStoreTest {
         assertFalse(GarminCloudStore.sameLoginNonce(null, newCall));
         assertFalse(GarminCloudStore.sameLoginNonce("", ""));
         assertTrue(GarminCloudStore.sameLoginNonce(newCall, newCall));
-        store.finishLogin(newCall, TOKEN, null);
+        store.finishLogin(newCall, GarminCloudStoreTest.credentials(TOKEN));
         assertTrue(store.loginResultMatches(newCall));
         assertFalse(store.loginResultMatches(oldCall));
     }

@@ -64,13 +64,18 @@ it('rejects an A-B-A profile switch before storing an awaited result', async () 
   await expect(syncGarminHealth(store, { start: date, end: date, archive })).rejects.toThrow('session_changed')
   expect(archive.write).not.toHaveBeenCalled()
 })
-it('stops after authentication failure or rate limiting', async () => {
-  for (const error of ['auth_required', 'rate_limited']) {
-    bridge.readHealthMetric.mockResolvedValue({ date, metric: 'body_composition', status: 'error', error })
-    await expect(syncGarminHealth(storeOf(), { start: date, end: date, archive })).rejects.toThrow(error)
-  }
-  expect(bridge.readHealthMetric).toHaveBeenCalledTimes(2)
+it.each(['auth_required', 'auth_expired', 'auth_exchange_failed', 'network_error', 'cancelled', 'session_changed', 'profile_unavailable', 'rate_limited', 'storage_unavailable'])(
+  'stops the batch after one global session failure without overwriting saved data: %s', async error => {
+  bridge.healthMetrics.mockResolvedValue({ metrics: [{ id: 'body_composition', label: 'Body composition' }, { id: 'sleep', label: 'Sleep' }] })
+  const saved = composition()
+  rows.set(date + 'body_composition', saved)
+  bridge.readHealthMetric.mockResolvedValue({ date, metric: 'body_composition', status: 'error', error })
+  const progress = vi.fn()
+  await expect(syncGarminHealth(storeOf(), { start: date, end: date, archive, progress })).rejects.toThrow(error)
+  expect(progress).not.toHaveBeenCalled()
+  expect(bridge.readHealthMetric).toHaveBeenCalledTimes(1)
   expect(archive.write).not.toHaveBeenCalled()
+  expect(rows.get(date + 'body_composition')).toEqual(saved)
 })
 it('cancels between calls and keeps the already saved partial archive', async () => {
   bridge.healthMetrics.mockResolvedValue({ metrics: [{ id: 'body_composition', label: 'Body composition' }, { id: 'sleep', label: 'Sleep' }] })

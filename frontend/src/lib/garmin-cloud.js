@@ -5,7 +5,7 @@ import { isOn } from './modules.js'
 
 let pluginPromise = null
 let draining = null
-const CODES = new Set(['auth_required', 'auth_expired', 'network_error', 'upload_failed', 'unknown_result', 'content_changed', 'invalid_fit', 'session_changed', 'storage_error', 'storage_unavailable', 'receipt_limit', 'cancelled'])
+const CODES = new Set(['auth_incomplete', 'auth_exchange_failed', 'auth_required', 'auth_expired', 'network_error', 'profile_unavailable', 'rate_limited', 'upload_failed', 'unknown_result', 'content_changed', 'invalid_fit', 'session_changed', 'storage_error', 'storage_unavailable', 'receipt_limit', 'cancelled'])
 const ownerOf = state => state.user?.id ?? null
 const errorCode = error => CODES.has(error?.code) ? error.code : 'upload_failed'
 const completed = w => w?.entries?.some(e => e.sets?.some(s => s?.done === true || s?.sides?.L?.done === true || s?.sides?.R?.done === true))
@@ -13,9 +13,13 @@ const completed = w => w?.entries?.some(e => e.sets?.some(s => s?.done === true 
 /** Source-language keys shared by Settings and the workout's upload result. */
 export function garminCloudErrorMessage(code) {
   const messages = {
+    auth_incomplete: 'Garmin sign-in did not finish. Try signing in again.',
+    auth_exchange_failed: 'Garmin could not authorize this phone. Try signing in again later.',
     auth_required: 'Sign in to Garmin Connect again in Settings. Your saved session was not accepted.',
     auth_expired: 'Your Garmin Connect session has expired. Sign in again in Settings.',
     network_error: 'Could not reach Garmin Connect. Check your connection and retry.',
+    profile_unavailable: 'Could not verify the Garmin account. Try signing in again later.',
+    rate_limited: 'Garmin is limiting requests. Try again later.',
     upload_failed: 'Garmin rejected the upload. Check your access in Garmin Connect and try again later.',
     invalid_fit: 'This workout could not be exported as a valid FIT file.',
     unknown_result: 'Garmin may already have received this workout. Check Connect before retrying.',

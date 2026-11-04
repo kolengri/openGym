@@ -42,7 +42,7 @@ import { youtubeSearchUrl } from '../lib/youtube.js'
 import { openExternal } from '../components/CustomMedia.jsx'
 import { startFlow, exercisePicker, exConfigSheet, exerciseDetailSheet, finishWorkout, exitWorkoutEdit, workoutCompleteSheet, confirmSheet, exerciseNoteSheet, sessionNoteSheet, renameWorkoutSheet, swapActiveWorkoutExercise, barWeightSheet, menuSheet, effortPickerSheet, exerciseHistorySheet, addRoutineToSessionSheet, finishWorkoutSheet, finishWorkoutNow, swapActiveWorkoutToBackup, setNoteSheet } from '../sheets.jsx'
 import { afterScrollRestore, scrollRestorePending } from '../components/Modals.jsx'
-import { effortColor } from '../lib/effort.js'
+import { effortColor, rirOf, toScale } from '../lib/effort.js'
 import Elapsed from '../components/Elapsed.jsx'
 import LiveHeartRate from '../components/LiveHeartRate.jsx'
 import Icon from '../components/Icon.jsx'
@@ -704,6 +704,8 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   }
   const tableRow = (row, i, side) => {
     const s = side ? row.sides[side] : row
+    const ratingKind = eff ? cardio ? 'rpe' : mode === 'reps' ? kind : null : null
+    const ratingRir = ratingKind && (s.rir != null || s.rpe != null) ? rirOf(s) : null
     const displaySide = side || row.side
     const label = side ? t('Set {0} ({1})', setNumOf(row, i), side === 'L' ? t('Left') : t('Right'))
       : sideTagOf(row) ? t('Set {0} ({1})', setNumOf(row, i), sideTagOf(row)) : t('Set {0}', setNumOf(row, i))
@@ -717,6 +719,9 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
           <span>{s[col.f] == null ? '–' : fmtNum(viewOf(col, s[col.f]))}</span>
           {s.done && <SetComparison current={s} previous={previousAt(i, side)} field={col.f} exerciseId={entry.id} view={col.view} deltaOnly />}
         </span>)}
+        {ratingRir != null && <span className="set-table-effort" style={{ color: effortColor(ratingRir) }}>
+          {ratingKind.toUpperCase()} {fmtNum(toScale(ratingKind, ratingRir))}
+        </span>}
       </button>
       {timed && !editing && <button className="setgo" aria-label={t('Start set')} disabled={s.done || !!working} onClick={() => onStartTimed(i)}><Icon name="play" /></button>}
       <Check checked={s.done} tour="tick" label={side ? t('Set {0} ({1}) done', setNumOf(row, i), side === 'L' ? t('Left') : t('Right')) : sideTagOf(row) ? t('Set {0} ({1}) done', setNumOf(row, i), sideTagOf(row)) : t('Set {0} done', setNumOf(row, i))}

@@ -2,11 +2,12 @@
 // The finish summary's Share (v1.4.5): right next to the way out, which stays right under the
 // numbers, and it opens the same picture sheet as History's "Share as image".
 import React, { act } from 'react'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createRoot } from 'react-dom/client'
 import { DEF, useStore } from './store/useStore.js'
 import { useUI } from './store/useUI.js'
 import { finishWorkoutNow } from './sheets.jsx'
+import { _setGarminCloudPluginForTest } from './lib/garmin-cloud.js'
 
 const clone = v => JSON.parse(JSON.stringify(v))
 const mounted = []
@@ -24,6 +25,7 @@ const settle = () => act(async () => {})
 beforeEach(() => {
   globalThis.IS_REACT_ACT_ENVIRONMENT = true
   localStorage.clear()
+  _setGarminCloudPluginForTest(null)
   useUI.setState({ sheets: [], timer: null, work: null })
   const st = clone(DEF)
   st.routines = [{ id: 'r1', name: 'Push A', ex: [{ id: '0025', sets: 1, reps: 5, weight: 60 }] }]
@@ -32,6 +34,7 @@ beforeEach(() => {
   useStore.setState({ S: st, user: null })
 })
 afterEach(() => {
+  _setGarminCloudPluginForTest(null)
   mounted.splice(0).forEach(r => act(() => r.unmount()))
   document.body.innerHTML = ''
 })
@@ -64,5 +67,33 @@ describe('finish summary: Share', () => {
     expect(host.querySelector('h3').textContent).toBe('Share workout')
     const labels = [...host.querySelectorAll('.share-opts button')].map(b => b.textContent)
     expect(labels).toEqual(['Story 9:16', 'Square 1:1', 'Dark', 'Light'])
+  })
+
+  it('keeps a failed Garmin upload and its retry message outside the Done and Share row', async () => {
+    const status = vi.fn(async () => ({ available: true, connected: false }))
+    _setGarminCloudPluginForTest({ status })
+    act(() => finishWorkoutNow())
+    act(() => useStore.getState().update(s => {
+      s.workouts[0].garminCloudUpload = { status: 'failed', error: 'auth_required' }
+    }))
+    renderTopSheet()
+    await settle()
+    const row = host.querySelector('.fin-actions')
+    const [done, share] = row.querySelectorAll('button')
+    const upload = host.querySelector('.garmin-cloud-upload')
+    expect([...row.children]).toEqual([done, share])
+    expect(row.nextElementSibling).toBe(upload)
+    expect(upload.parentElement).toBe(row.parentElement)
+    expect(upload.querySelector('[role="alert"]').textContent).toContain('Your saved session was not accepted.')
+    expect(upload.querySelector('button').textContent).toBe('Retry Garmin upload')
+    await act(async () => { upload.querySelector('button').click() })
+    expect(status).toHaveBeenCalledTimes(2)
+    expect(upload.querySelector('[role="alert"]').textContent).toContain('Your saved session was not accepted.')
+    const before = useUI.getState().sheets.length
+    act(() => share.click())
+    expect(useUI.getState().sheets).toHaveLength(before + 1)
+    act(() => useUI.getState().closeSheet(useUI.getState().sheets.at(-1).id))
+    act(() => done.click())
+    expect(useUI.getState().sheets).toHaveLength(0)
   })
 })

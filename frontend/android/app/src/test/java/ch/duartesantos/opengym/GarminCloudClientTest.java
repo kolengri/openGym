@@ -58,17 +58,17 @@ public class GarminCloudClientTest {
         assertTrue(GarminCloudClient.filename("a".repeat(1024)).length() <= 104);
     }
 
-    @Test public void usesOnlyVerifiedJwtFallbackHeaders() throws Exception {
+    @Test public void usesBearerAndPinnedNativeHeadersWithoutBrowserCredentials() throws Exception {
         Map<String, String> headers = GarminCloudClient.headers("synthetic.payload.signature", null, "boundary");
-        assertEquals("JWT_WEB=synthetic.payload.signature", headers.get("Cookie"));
-        assertEquals("https://connect.garmin.com", headers.get("Origin"));
-        assertEquals("https://connect.garmin.com/modern/", headers.get("Referer"));
-        assertEquals("NT", headers.get("NK"));
-        assertEquals("connectapi.garmin.com", headers.get("DI-Backend"));
-        assertFalse(headers.containsKey("Authorization"));
+        assertEquals("Bearer synthetic.payload.signature", headers.get("Authorization"));
+        assertEquals("GCM-Android-5.23", headers.get("User-Agent"));
+        assertEquals("Android", headers.get("X-Garmin-Client-Platform"));
+        assertEquals("10861", headers.get("X-Garmin-Paired-App-Version"));
+        assertEquals("GC5", headers.get("X-GCExperience"));
+        assertFalse(headers.containsKey("Cookie"));
+        assertFalse(headers.containsKey("Origin"));
+        assertFalse(headers.containsKey("Referer"));
         assertFalse(headers.containsKey("connect-csrf-token"));
-        assertFalse(headers.containsValue("GCM-iOS-5.7.2.1"));
-        assertEquals("csrf", GarminCloudClient.headers("synthetic.payload.signature", "csrf", "boundary").get("connect-csrf-token"));
         assertThrows(GarminCloudClient.Failure.class, () -> GarminCloudClient.headers("bad\r\nHeader: value", null, "boundary"));
         assertThrows(GarminCloudClient.Failure.class, () -> GarminCloudClient.headers("synthetic.payload.signature", "bad\r\nvalue", "boundary"));
     }

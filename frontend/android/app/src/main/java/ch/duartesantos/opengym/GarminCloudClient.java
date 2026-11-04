@@ -144,14 +144,22 @@ final class GarminCloudClient {
 
     static Map<String, String> authHeaders(String token, String csrf) throws Failure {
         if (!validToken(token) || !validCsrf(csrf)) throw new Failure("auth_required");
+        Map<String, String> headers = nativeHeaders();
+        headers.put("Authorization", "Bearer " + token);
+        return headers;
+    }
+
+    static Map<String, String> nativeHeaders() {
         Map<String, String> headers = new LinkedHashMap<>();
         headers.put("Accept", "application/json");
-        headers.put("NK", "NT");
-        headers.put("Origin", "https://connect.garmin.com");
-        headers.put("Referer", "https://connect.garmin.com/modern/");
-        headers.put("DI-Backend", "connectapi.garmin.com");
-        headers.put("Cookie", "JWT_WEB=" + token);
-        if (csrf != null) headers.put("connect-csrf-token", csrf);
+        headers.put("User-Agent", "GCM-Android-5.23");
+        headers.put("X-Garmin-User-Agent", "com.garmin.android.apps.connectmobile/5.23; ; Google/sdk_gphone64_arm64/google; Android/33; Dalvik/2.1.0");
+        headers.put("X-Garmin-Paired-App-Version", "10861");
+        headers.put("X-Garmin-Client-Platform", "Android");
+        headers.put("X-App-Ver", "10861");
+        headers.put("X-Lang", "en");
+        headers.put("X-GCExperience", "GC5");
+        headers.put("Accept-Language", "en-US,en;q=0.9");
         return headers;
     }
 
@@ -162,6 +170,20 @@ final class GarminCloudClient {
         body.write(fit);
         body.write(("\r\n--" + boundary + "--\r\n").getBytes(StandardCharsets.US_ASCII));
         return body.toByteArray();
+    }
+
+    interface SessionProbe { void check() throws Failure; }
+
+    /** A definite upload rejection is never replayed automatically to check authentication. */
+    static Outcome response(int status, String body, SessionProbe probe) throws Failure {
+        if (status != 401) return response(status, body);
+        try { probe.check(); }
+        catch (Failure failure) {
+            if (failure.code.equals("auth_required")) throw failure;
+            // The POST definitely failed. An inconclusive GET must neither erase the session
+            // nor become network_error, which the queue would automatically retry.
+        }
+        throw new Failure("upload_failed");
     }
 
     static Outcome response(int status, String body) throws Failure {
@@ -212,7 +234,8 @@ final class GarminCloudClient {
             try (OutputStream out = connection.getOutputStream()) { out.write(body); }
             int status = connection.getResponseCode();
             // These statuses have an unambiguous meaning without consuming a possibly huge HTML body.
-            if (status < 200 || status >= 300) return response(status, null);
+            if (status < 200 || status >= 300)
+                return response(status, null, () -> new GarminHealthClient().confirmSession(token, csrf));
             try (InputStream in = connection.getInputStream(); ByteArrayOutputStream bytes = new ByteArrayOutputStream()) {
                 byte[] chunk = new byte[4096];
                 int count;
