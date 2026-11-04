@@ -91,8 +91,8 @@ if (project.findProperty('garmin') == 'true') {
     android.productFlavors.create('garmin') {
         dimension = "channel"
         applicationIdSuffix ".garmin"
-        versionCode 38
-        versionName "1.4.4-garmin.11"
+        versionCode 39
+        versionName "1.4.4-garmin.12"
         buildConfigField "String", "CHANNEL", '"garmin"'
         buildConfigField "boolean", "BACKGROUND_LOCATION", "true"
     }

@@ -184,7 +184,15 @@ final class GarminHealthClient {
             store.cacheDisplayName(session, name);
         }
         String url = endpoint(metric, date, currentDate, name);
-        Object data = payload(transport.get(url, store.token(), store.csrf()));
+        Response response = transport.get(url, store.token(), store.csrf());
+        if (response.status == 401) {
+            // A health service (including the separate ECG host) can reject this metric without
+            // revoking the Connect session. Only a 401 from the account endpoint proves logout.
+            // A failed/ambiguous probe keeps credentials; it never retries the metric request.
+            payload(transport.get(PROFILE_URL, store.token(), store.csrf()));
+            throw new GarminCloudClient.Failure("health_failed");
+        }
+        Object data = payload(response);
         Object clean = sanitize(data, 0, new int[]{0});
         JSONObject result = envelope(metric, date, hasData(clean) ? "available" : "unavailable");
         if (hasData(clean)) result.put("data", clean);

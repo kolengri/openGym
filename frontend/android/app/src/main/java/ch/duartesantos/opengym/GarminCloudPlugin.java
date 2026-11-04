@@ -143,20 +143,27 @@ public final class GarminCloudPlugin extends Plugin {
     @PluginMethod public void readHealthMetric(PluginCall call) {
         GarminCloudStore.IO.execute(() -> {
             String metric = call.getString("metric"), date = call.getString("date"), session = call.getString("sessionId");
-            GarminCloudStore store = null;
             try {
-                store = GarminCloudStore.open(getContext());
-                org.json.JSONObject result = new GarminHealthClient().read(store, session, date, metric);
+                GarminCloudStore store = GarminCloudStore.open(getContext());
+                org.json.JSONObject result = readHealthOnce(store, session, date, metric, new GarminHealthClient());
                 call.resolve(new JSObject(result.toString()));
             } catch (Exception failure) {
                 String code = failure instanceof GarminCloudClient.Failure ? ((GarminCloudClient.Failure) failure).code : "storage_unavailable";
-                if (code.equals("auth_required") && store != null && session != null && session.equals(store.sessionId())) {
-                    try { store.invalidate(); } catch (Exception ignored) { code = "storage_unavailable"; }
-                }
                 try { call.resolve(new JSObject(GarminHealthClient.error(metric, date, code).toString())); }
                 catch (Exception ignored) { reject(call, "health_failed"); }
             }
         });
+    }
+
+    /** Shared by the bridge and offline repeated-read/session-persistence tests. IO-owned. */
+    static org.json.JSONObject readHealthOnce(GarminCloudStore store, String session, String date,
+                                              String metric, GarminHealthClient client) throws Exception {
+        try { return client.read(store, session, date, metric); }
+        catch (GarminCloudClient.Failure failure) {
+            if (failure.code.equals("auth_required") && session != null && session.equals(store.sessionId()))
+                store.invalidate();
+            return GarminHealthClient.error(metric, date, failure.code);
+        }
     }
 
     @PluginMethod public void upload(PluginCall call) {
