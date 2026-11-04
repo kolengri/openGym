@@ -51,6 +51,13 @@ public class GarminHealthSessionTest {
         }
         assertEquals(5, transport.urls.size()); // Three reads, rejected ECG, one auth probe.
         assertEquals(GarminHealthClient.PROFILE_URL, transport.urls.get(2));
+        // A later workout export must not be blocked by the unrelated health endpoint either.
+        assertTrue(GarminCloudPlugin.status(store).getBoolean("connected"));
+        GarminCloudClient.Outcome upload = GarminCloudPlugin.uploadOnce(store, session, "workout", "b".repeat(64), false,
+            () -> new GarminCloudClient.Outcome("uploaded", "synthetic-activity"));
+        assertEquals("uploaded", upload.status);
+        assertEquals("synthetic-activity", upload.activityId);
+        assertEquals("uploaded", new GarminCloudStore(disk).begin(session, "workout", "b".repeat(64), false).status);
     }
 
     @Test public void confirmedAccountUnauthorizedStillInvalidatesCredentialsAndKeepsUnknownUploadReceipt() throws Exception {
@@ -115,5 +122,39 @@ public class GarminHealthSessionTest {
         assertEquals("auth_required", read(store, store.sessionId(), transport, "heart_rate").getString("error"));
         assertFalse(new GarminCloudStore(disk).connected());
         assertEquals(List.of(GarminHealthClient.PROFILE_URL), transport.urls);
+    }
+
+    @Test public void uploadUnauthorizedOnlyLogsOutAfterPrimaryAccountConfirmationAndNeverReplaysPost() throws Exception {
+        for (int status : new int[]{200, 204, 401, 403, 429, 500}) {
+            GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
+            GarminCloudStore store = connected(disk);
+            String session = store.sessionId();
+            Transport transport = new Transport(); transport.profileStatus = status;
+            int[] posts = {0};
+            GarminCloudClient.Failure failure = assertThrows(GarminCloudClient.Failure.class,
+                () -> GarminCloudPlugin.uploadOnce(store, session, "upload", "c".repeat(64), false, () -> {
+                    posts[0]++;
+                    return GarminCloudClient.response(401, null,
+                        () -> new GarminHealthClient(transport).confirmSession(TOKEN, "synthetic-csrf"));
+                }));
+            assertEquals(status == 401 ? "auth_required" : "upload_failed", failure.code);
+            assertEquals(status != 401, new GarminCloudStore(disk).connected());
+            assertEquals(1, posts[0]);
+            assertEquals(List.of(GarminHealthClient.PROFILE_URL), transport.urls);
+            assertFalse(store.uncertain("upload"));
+        }
+    }
+
+    @Test public void offlineUploadAuthProbeKeepsCredentialsAndDoesNotQueueAnAutomaticNetworkRetry() throws Exception {
+        GarminCloudStoreTest.Disk disk = new GarminCloudStoreTest.Disk();
+        GarminCloudStore store = connected(disk);
+        Transport transport = new Transport(); transport.offline = true;
+        GarminCloudClient.Failure failure = assertThrows(GarminCloudClient.Failure.class,
+            () -> GarminCloudPlugin.uploadOnce(store, store.sessionId(), "upload", "d".repeat(64), false,
+                () -> GarminCloudClient.response(401, null,
+                    () -> new GarminHealthClient(transport).confirmSession(TOKEN, "synthetic-csrf"))));
+        assertEquals("upload_failed", failure.code);
+        assertTrue(new GarminCloudStore(disk).connected());
+        assertEquals(1, transport.urls.size());
     }
 }

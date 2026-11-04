@@ -128,6 +128,36 @@ describe('compact workout table', () => {
     expect(editor()).toBeNull()
     expect(useUI.getState().sheets).toHaveLength(0)
     expect(useUI.getState().timer).not.toBeNull()
+    expect(host.querySelector('.set-table-effort').textContent.trim()).toBe('RPE 9.5')
+    expect(host.querySelector('.set-table-effort').style.color).toBe('var(--red)')
+  })
+
+  it.each([
+    ['rpe', { rpe: 8 }, 'RPE 8', 'var(--yellow)'],
+    ['rir', { rir: 0 }, 'RIR 0', 'var(--purple)'],
+    ['rir', { rpe: 8 }, 'RIR 2', 'var(--yellow)'],
+    ['rpe', { rir: 0.5 }, 'RPE 9.5', 'var(--red)'],
+  ])('shows a compact logged rating in the selected %s scale', (effort, rating, expected, color) => {
+    mount(entry([row({ ...rating, done: true }), row()]), { effort })
+    const set = host.querySelector('.set-table-row')
+    const badge = set.querySelector('.set-table-effort')
+    expect(badge.textContent.trim()).toBe(expected)
+    expect(badge.style.color).toBe(color)
+    expect(set.querySelectorAll('button button')).toHaveLength(0)
+    expect(set.querySelectorAll('.set-table-value > span')[0].textContent).toBe('30')
+    expect(set.querySelectorAll('.set-table-value > span')[1].textContent).toBe('10')
+    click(badge)
+    expect(editor()).not.toBeNull()
+    expect(live().sets[0].done).toBe(true)
+  })
+
+  it('omits compact ratings for unrated sets and when effort is disabled', () => {
+    mount(entry([row(), row({ f: true }), row({ rpe: 8 })]))
+    expect([...host.querySelectorAll('.set-table-row')].map(el => el.querySelector('.set-table-effort')?.textContent.trim() ?? null))
+      .toEqual([null, null, 'RPE 8'])
+    act(() => useStore.getState().update(s => { s.effort = 'none' }))
+    expect(host.querySelector('.set-table-effort')).toBeNull()
+    expect(live().sets[2].rpe).toBe(8)
   })
 
   it('clears a rating without undoing completion', () => {
@@ -166,6 +196,8 @@ describe('compact workout table', () => {
     chooseEffort('8')
     expect(live().sets[0].sides.R).toMatchObject({ done: true, rpe: 8 })
     expect(live().sets[0].sides.L.done).toBe(false)
+    expect([...host.querySelectorAll('.set-table-row')].map(el => el.querySelector('.set-table-effort')?.textContent.trim() ?? null))
+      .toEqual([null, 'RPE 8', null, null])
   })
 
   it('keeps a cardio goal visible separately from an unmeasured distance', () => {

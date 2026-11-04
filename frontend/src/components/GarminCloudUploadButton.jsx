@@ -26,7 +26,7 @@ export default function GarminCloudUploadButton({ workout }) {
     catch (failure) { setError(failure?.code || 'upload_failed') }
     finally { setBusy(false) }
   }
-  return <div style={{ marginTop: 10 }}>
+  return <div className="garmin-cloud-upload">
     <Button icon="arrowUp" disabled={done || pending || busy} onClick={upload}>
       {done ? t(job.status === 'duplicate' ? 'Already in Garmin Connect' : 'Uploaded to Garmin Connect')
         : busy || pending ? t('Uploading to Garmin Connect…')

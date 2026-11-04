@@ -3278,6 +3278,7 @@ function WorkoutDetail({ w, close }) {
   return <>
     <h3>{w.name}</h3>
     <div className="muted small" style={{ marginBottom: 12 }}>{[fmtDate(w.d, true), ...durPart(w.end - w.start), fmtVol(sessionVolume(w, st), st.unit), ...(w.bw ? [fmtNum(w.bw) + ' ' + st.unit] : [])].join(' · ')}</div>
+    <GarminCloudUploadButton workout={w} />
     {grouped ? groups.map(g => {
       const r = g.rid ? st.routines.find(x => x.id === g.rid) : null
       const items = g.items.map(i => w.entries[i])
@@ -3294,7 +3295,6 @@ function WorkoutDetail({ w, close }) {
       </div>
     }) : entryRows(groups[0]?.units || [])}
     {/* Progress photos and form-check videos: added and removed right here, on the saved record. */}
-    <GarminCloudUploadButton workout={w} />
     <WorkoutMediaSection w={w} />
     <div className="small muted" style={{ margin: '4px 0 6px' }}>{t('Session note')}</div>
     <textarea ref={noteRef} className="input" rows={2} maxLength={NOTE_MAX} value={note} data-tour="wd-note"
@@ -4058,11 +4058,11 @@ function FinishSummary({ w, prs, e1prs = [], additions = [], close }) {
         corner sit below it for whoever wants them, nobody has to scroll to leave (Discord). */}
     <div className="fin-actions">
       <Button variant="primary" onClick={() => closeThenNav(close, '/home')}>{t('Nice!')}</Button>
-      <GarminCloudUploadButton workout={w} />
       {/* The workout as a picture for a Story or a chat (components/ShareCard.jsx), the same
           card History's Share as image makes. */}
       {isOn(st, 'motivation') && <Button variant="tinted" icon="share" data-fin-share onClick={() => shareWorkoutSheet(S().workouts.find(x => x.id === w.id) || w)}>{t('Share')}</Button>}
     </div>
+    <GarminCloudUploadButton workout={w} />
     <div style={{ height: 14 }} />
     <h4 className="sec" style={{ textAlign: 'start' }}>{t('What you just trained')}</h4>
     <BodyMap load={loadOfWorkouts([w])} body={st.body} />

@@ -164,6 +164,20 @@ final class GarminCloudClient {
         return body.toByteArray();
     }
 
+    interface SessionProbe { void check() throws Failure; }
+
+    /** A definite upload rejection is never replayed automatically to check authentication. */
+    static Outcome response(int status, String body, SessionProbe probe) throws Failure {
+        if (status != 401) return response(status, body);
+        try { probe.check(); }
+        catch (Failure failure) {
+            if (failure.code.equals("auth_required")) throw failure;
+            // The POST definitely failed. An inconclusive GET must neither erase the session
+            // nor become network_error, which the queue would automatically retry.
+        }
+        throw new Failure("upload_failed");
+    }
+
     static Outcome response(int status, String body) throws Failure {
         if (status == 401) throw new Failure("auth_required");
         // A forbidden upload does not establish that the saved session is invalid.
@@ -212,7 +226,8 @@ final class GarminCloudClient {
             try (OutputStream out = connection.getOutputStream()) { out.write(body); }
             int status = connection.getResponseCode();
             // These statuses have an unambiguous meaning without consuming a possibly huge HTML body.
-            if (status < 200 || status >= 300) return response(status, null);
+            if (status < 200 || status >= 300)
+                return response(status, null, () -> new GarminHealthClient().confirmSession(token, csrf));
             try (InputStream in = connection.getInputStream(); ByteArrayOutputStream bytes = new ByteArrayOutputStream()) {
                 byte[] chunk = new byte[4096];
                 int count;

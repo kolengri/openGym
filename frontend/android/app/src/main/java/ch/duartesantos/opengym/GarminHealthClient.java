@@ -189,7 +189,7 @@ final class GarminHealthClient {
             // A health service (including the separate ECG host) can reject this metric without
             // revoking the Connect session. Only a 401 from the account endpoint proves logout.
             // A failed/ambiguous probe keeps credentials; it never retries the metric request.
-            payload(transport.get(PROFILE_URL, store.token(), store.csrf()));
+            confirmSession(store.token(), store.csrf());
             throw new GarminCloudClient.Failure("health_failed");
         }
         Object data = payload(response);
@@ -197,6 +197,10 @@ final class GarminHealthClient {
         JSONObject result = envelope(metric, date, hasData(clean) ? "available" : "unavailable");
         if (hasData(clean)) result.put("data", clean);
         return result;
+    }
+
+    void confirmSession(String token, String csrf) throws GarminCloudClient.Failure {
+        payload(transport.get(PROFILE_URL, token, csrf));
     }
 
     static JSONObject envelope(String metric, String date, String status) throws Exception {
