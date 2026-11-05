@@ -910,8 +910,6 @@ export default function Stats() {
         subtitle={exCurrent[id].mx > 0 ? fmtNum(exCurrent[id].shown ?? exCurrent[id].mx) + ' ' + exCurrent[id].unit : null}
         accessory="chevron" onClick={() => exerciseHistorySheet(id)} />)}</div>
     </>}
-    <div className="sect-b overview-history"><Row icon="history" title={t('History')}
-      subtitle={tn('{0} workout', '{0} workouts', workouts.length)} accessory="chevron" onClick={() => nav('/history')} /></div>
     {workouts.length > 0 && motivationOn && <details className="progress-motivation">
       <summary><Icon name="trophy" /><span>{t('Motivation')}</span><Icon name="chevronDown" /></summary>
       <StreakCard info={streak} />
@@ -933,7 +931,6 @@ export default function Stats() {
 
     <div className="card">
       <SeasonDeco spot="stats-heatmap" />
-      <h2>{t('Activity (last 12 months)')}</h2>
       <Heatmap
         S={S}
         metric={S.heatmapMetric === 'vol' ? 'vol' : 'time'}

@@ -24,7 +24,7 @@ const routines = [{ id: 'r1', name: 'Push', emoji: null, ex: [{ id: '0025' }] }]
 let host, root
 beforeEach(() => {
   globalThis.IS_REACT_ACT_ENVIRONMENT = true
-  nav.mockClear(); startFlow.mockClear()
+  nav.mockClear(); startFlow.mockClear(); workoutDetailSheet.mockClear()
   host = document.createElement('div')
   document.body.appendChild(host)
   root = createRoot(host)
@@ -87,7 +87,8 @@ describe('Home — the way to the Start screen when a plan already owns today', 
     mount()
     const row = host.querySelector('.today-row')
     expect(row.querySelector('.ttl').textContent).toBe('Push')
-    expect(row.querySelector('.tag').textContent).toBe('Edit')
+    expect(row.querySelector('.tag')).toBeNull()
+    expect(row.querySelector('.planning-today-action').textContent).toBe('Edit')
     act(() => { row.dispatchEvent(new MouseEvent('click', { bubbles: true })) })
     expect(nav).toHaveBeenCalledWith('/workout')
   })
@@ -109,6 +110,27 @@ describe('Home — the way to the Start screen when a plan already owns today', 
     mount()
     const row = host.querySelector('.today-row')
     expect(row.querySelector('.ttl').textContent).toBe('Push')
-    expect(row.querySelector('.tag').textContent).toBe('Resume')
+    expect(row.querySelector('.tag').textContent).toBe('Running now')
+    expect(row.querySelector('.planning-today-action').textContent).toBe('Resume')
   })
+})
+
+it('shows the planned Start action once inside Today, with its muscle map', () => {
+  setS(); mount()
+  const row = host.querySelector('.today-row')
+  expect(row.querySelector('.planning-today-status .tag')).toBeNull()
+  expect(row.querySelector('.planning-today-action').textContent).toBe('Start')
+  expect(row.querySelector('.planning-today-title .bm-mini-wrap')).toBeTruthy()
+})
+it('shows the GitHub-style activity map on Home and opens an actual trained day', () => {
+  const workout = { id: 'map-day', d: todayISO(), start: Date.now() - 3600000, end: Date.now(), entries: [] }
+  setS({ workouts: [workout] }); mount()
+  const map = host.querySelector('.home-activity')
+  expect(map.querySelectorAll('.hm-col')).toHaveLength(53)
+  const today = [...map.querySelectorAll('.hm-c')].find(cell => cell.title.startsWith(todayISO()))
+  act(() => today.click())
+  expect(workoutDetailSheet).toHaveBeenCalledWith(workout)
+  expect(startFlow).not.toHaveBeenCalled()
+  act(() => [...map.querySelectorAll('.seg button')].find(button => button.textContent === 'Volume').click())
+  expect(useStore.getState().S.heatmapMetric).toBe('vol')
 })

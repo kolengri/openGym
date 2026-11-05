@@ -3474,3 +3474,7 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .workout-set-table .swrow { border-radius: 0; }
 .workout-set-table .swfront { background: var(--bg); }
 .workout-set-table .set-table-head.rated > span:nth-child(3) { text-align: center; }
+
+.workout-media-viewer > .row { align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.workout-media-viewer h3 { flex: 1; min-width: 0; }
+.workout-media-viewer .iconbtn { flex: none; }

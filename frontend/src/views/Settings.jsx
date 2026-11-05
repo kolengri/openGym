@@ -653,12 +653,10 @@ export default function Settings({ page = null, find = null, via = null, entryKe
               onChange={v => update(s => { s.keepAwake = v })} />
           </Row>
         )}
-        {/* 'full'/'mini' is also what the tap-toggle on the workout animation writes; 'off' hides
-            workout media entirely (library, detail sheet and picker thumbs are unaffected).
-            Legacy/unknown values read as 'full'. */}
+        {/* Legacy full values now use the compact workout preview; enlargement is temporary. */}
         <SelectRow icon="image" iconTint="var(--teal)" title={t('Exercise animations')}
-            options={[{ value: 'full', label: t('Full') }, { value: 'mini', label: t('Small') }, { value: 'off', label: t('Hidden') }]}
-            value={S.gifSize === 'mini' || S.gifSize === 'off' ? S.gifSize : 'full'}
+            options={[{ value: 'mini', label: t('Small') }, { value: 'off', label: t('Hidden') }]}
+            value={S.gifSize === 'off' ? 'off' : 'mini'}
             onChange={v => update(s => { s.gifSize = v })} />
         {/* Store apps: how sharp the animations are, from packs this device downloads. Per device,
             never synced: the profile is not touched (components/Animations.jsx). */}

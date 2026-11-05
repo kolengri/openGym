@@ -294,7 +294,7 @@ describe('Home — a session pinned to a day', () => {
 describe('Home — the today row follows today\'s plan, not just the last session', () => {
   const today = todayISO()
   const at = (id, start, name) => ({ id: 'w-' + id + start, d: today, start, end: start + 1000, routineIds: id ? [id] : [], routineId: id, name: name || routines.find(r => r.id === id).name, entries: [] })
-  const tag = () => host.querySelector('.today-row .tag')?.textContent
+  const tag = () => host.querySelector('.today-row .tag')?.textContent || host.querySelector('.today-row .planning-today-action')?.textContent
 
   it('a queue session done today: the row offers the next one, like the progress row', () => {
     setS({ workouts: [at('d1', Date.now() - 3600000)] })

@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
-import { effectiveRoutines, effectiveRoutineIds, nextTrainingDay, lastBW, setsDoneActive, setsDone, sessionVolume, workoutDuration } from '../lib/history.js'
+import { effectiveRoutines, effectiveRoutineIds, workoutDay, nextTrainingDay, lastBW, setsDoneActive, setsDone, sessionVolume, workoutDuration } from '../lib/history.js'
 import { streakInfo } from '../lib/streak.js'
 import { StreakFlame, StreakMeta, StreakParty } from '../components/Streak.jsx'
 import { fmtNum, fmtBodyWeight, fmtDate, todayISO, isoOf, weekStartOf, weekDayOffset, DAYS, DAYN, durPart, fmtVol, exCount } from '../lib/format.js'
 import { t, tn, dateLocale } from '../lib/i18n.js'
 import { bwSheet, goalSheet, dayOverrideSheet, calendarSheet, startFlow, starterPlanSheet, bwDeltaColor, weighInsSheet, workoutDetailSheet, menuSheet } from '../sheets.jsx'
+import Heatmap from '../components/Heatmap.jsx'
 import LineChart from '../components/LineChart.jsx'
 import Icon from '../components/Icon.jsx'
 import CardHead from '../components/CardHead.jsx'
@@ -36,6 +37,7 @@ export default function Home() {
   const nav = useNavigate()
   const S = useStore(s => s.S)
   const user = useStore(s => s.user)
+  const update = useStore(s => s.update)
   // The banner switched off and the sync stuck: a dot on the gear (Settings → Show connection status).
   const trouble = useConnectionTrouble()
   const [weekOffset, setWeekOffset] = useState(0)
@@ -165,15 +167,16 @@ export default function Home() {
       {progChip && <button type="button" className="chip ichip prog-chip" onClick={() => nav('/plan/programmes')}><Icon name="calendar" /><span>{progChip}</span></button>}
       <button type="button" className="today-row" data-tour="today" onClick={onToday}>
         <span className={'planning-today-status' + (doneToday && !S.active ? ' is-done' : '')}>
-          <Icon name={S.active ? (editingSaved ? 'pencil' : 'play') : doneToday ? 'checkCircle' : routine ? 'calendar' : 'moon'} />
-          <span className="tag">{S.active ? (editingSaved ? t('Edit') : t('Resume')) : doneToday ? t('Done') : routine ? t('Start') : t('Rest day')}</span>
+          {S.active && !editingSaved ? <><Icon name="play" /><span className="tag">{t('Running now')}</span></>
+            : doneToday && !S.active ? <><Icon name="checkCircle" /><span className="tag">{t('Done')}</span></> : null}
+        </span>
+        <span className="planning-today-title"><span className="ttl">{S.active ? S.active.name : doneToday ? doneToday.name || t('Workout done') : routine ? todayName : t('Rest day')}</span>
           {!S.active && !doneToday && routine && <MiniBodyMap routines={todayRoutines} body={S.body} />}
         </span>
-        <span className="ttl">{S.active ? S.active.name : doneToday ? doneToday.name || t('Workout done') : routine ? todayName : t('Rest day')}</span>
-        <span className="planning-today-meta">{S.active
+        {(S.active || doneToday || routine) && <span className="planning-today-meta">{S.active
           ? tn('{0} set', '{0} sets', setsDoneActive(S.active))
           : doneToday ? [durPart(workoutDuration(doneToday)).join(''), tn('{0} set', '{0} sets', setsDone(doneToday)), fmtVol(sessionVolume(doneToday, S), S.unit)].filter(Boolean).join(' · ')
-          : routine ? exCount(todayRoutines.reduce((n, r) => n + r.ex.length, 0)) + (todayOvr ? ' · ' + t('rescheduled') : '') : t('Choose a different workout')}</span>
+          : routine ? exCount(todayRoutines.reduce((n, r) => n + r.ex.length, 0)) + (todayOvr ? ' · ' + t('rescheduled') : '') : ''}</span>}
         <span className="planning-today-action">{S.active ? (editingSaved ? t('Edit') : t('Resume')) : doneToday ? t('Open workout') : routine ? t('Start') : t('Choose a different workout')}</span>
       </button>
       <SeasonDeco spot="home-hero" />
@@ -262,6 +265,18 @@ export default function Home() {
 
     {/* The streak opens its calendar from its text (CardHead open); the weekly-sets line and the
         party banner are buttons of their own beside it, not inside a card that is a button. */}
+    <section className="home-activity" aria-labelledby="home-activity-heading">
+      <h4 id="home-activity-heading" className="sec">{t('Activity (last 12 months)')}</h4>
+      <Heatmap S={S} metric={S.heatmapMetric === 'vol' ? 'vol' : 'time'}
+        onMetricChange={metric => update(s => { s.heatmapMetric = metric })}
+        onDay={iso => {
+          const workouts = S.workouts.filter(w => workoutDay(w) === iso)
+          if (workouts.length === 1) workoutDetailSheet(workouts[0])
+          else if (workouts.length) calendarSheet(iso)
+          else dayOverrideSheet(iso)
+        }} />
+    </section>
+
     {on('motivation') ? <details className="planning-fold home-motivation" open={motivationOpen} onToggle={event => {
       const open = event.currentTarget.open
       setMotivationOpen(open)

@@ -200,3 +200,11 @@
 .planning-home .queue-session-name { min-width: 0; overflow-wrap: anywhere; font-size: var(--fs-body); }
 .planning-home .queue-list .chip > span:last-child { max-width: 8em; font-size: var(--fs-caption); text-align: end; overflow-wrap: anywhere; }
 .planning-home .queue-status.status-duplicate { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.planning-home .planning-today-status:empty { display: none; }
+.planning-home .planning-today-title { display: flex; align-items: center; gap: 12px; }
+.planning-home .planning-today-title .ttl { flex: 1; min-width: 0; }
+.planning-home .planning-today-title .bm-mini-wrap { display: flex; flex: none; }
+.planning-home .home-activity { margin-block: 20px; min-width: 0; }
+.planning-home .home-activity > .sec { margin-bottom: 8px; }
+.planning-home .home-activity .hm-wrap { max-width: 100%; }

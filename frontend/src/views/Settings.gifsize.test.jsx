@@ -71,11 +71,11 @@ const rowTitled = title => [...host.querySelectorAll('.lrow')].find(r => r.query
 const current = title => rowTitled(title).querySelector('.lrow-v').textContent
 
 describe('Settings — exercise animations', () => {
-  it('offers Full / Small / Hidden and writes gifSize to the store', () => {
+  it('offers compact previews or hidden media and writes the choice', () => {
     mount()
     const choices = picker.open(rowTitled('Exercise animations'))
-    expect(choices.labels).toEqual(['Full', 'Small', 'Hidden'])
-    expect(choices.selected).toBe('Full')
+    expect(choices.labels).toEqual(['Small', 'Hidden'])
+    expect(choices.selected).toBe('Small')
     choices.choose('Hidden')
     expect(mocks.S.gifSize).toBe('off')
     mount()
@@ -84,10 +84,10 @@ describe('Settings — exercise animations', () => {
     expect(mocks.S.gifSize).toBe('mini')
   })
 
-  it('shows a legacy/absent value as Full', () => {
+  it('maps legacy full and absent values to compact previews', () => {
     delete mocks.S.gifSize
     mount()
-    expect(current('Exercise animations')).toBe('Full')
-    expect(picker.open(rowTitled('Exercise animations')).selected).toBe('Full')
+    expect(current('Exercise animations')).toBe('Small')
+    expect(picker.open(rowTitled('Exercise animations')).selected).toBe('Small')
   })
 })

@@ -251,7 +251,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     return { ...setClusterAt(row, ci, { r: v }), r: Math.max(0, (row.r || 0) + delta) }
   })
   const ex = exOr(entry.id)
-  const thumb = !dense && S.gifSize === 'mini' && hasWorkoutMedia(ex)
+  const thumb = !dense && S.gifSize !== 'off' && hasWorkoutMedia(ex, entry.target?.notes)
   const mode = modeOf({ ...(entry.target || {}), id: entry.id })
   const cardio = mode === 'cardio'
   const timed = mode === 'time'
@@ -838,7 +838,10 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
         first set is on screen without scrolling; a tap brings the full animation back. */}
     {!dense && !thumb && <Media ex={ex} notes={entry.target?.notes} key={entry.id} compact={compact} minimizable />}
     <div className="row between exhd" style={{ marginBottom: 6 }}>
-      {thumb && <WorkoutThumb ex={ex} onExpand={() => update(s => { s.gifSize = 'full' })} />}
+      {thumb && <WorkoutThumb ex={ex} onExpand={() => useUI.getState().openSheet(close => <div className="workout-media-viewer">
+        <div className="row between"><h3><ExerciseName ex={ex} /></h3><button type="button" className="iconbtn" aria-label={t('Close')} onClick={close}><Icon name="xmark" /></button></div>
+        <Media ex={ex} notes={entry.target?.notes} />
+      </div>)} />}
       <div style={{ flex: 1, minWidth: 0, fontSize: (compact || dense) ? 'var(--fs-body)' : 'var(--fs-title3)', fontWeight: 600, letterSpacing: '-.02em', lineHeight: 1.2 }} className={exerciseNameClass(ex)}><ExerciseName ex={ex} /></div>
       <div className="row" style={{ gap: 2, flex: 'none' }}>
         {entry.note && <button className="iconbtn" aria-label={t('Note')} title={t('Note')} style={{ color: 'var(--acc-ink)' }}

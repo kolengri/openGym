@@ -196,12 +196,11 @@ export default function Plan() {
       <Schedule S={S} update={update} nav={nav} mode={mode} />
       <Section className="planning-destinations">
         <Row icon="dumbbell" title={t('Routines')} subtitle={routineCount(S.routines.length)} accessory="chevron" onClick={() => setView('routines')} />
-        <Row icon="calendar" title={t('Programmes')} subtitle={t('Your routines as a block of weeks, with starter programmes to try.')} accessory="chevron" onClick={() => nav('/plan/programmes')} />
       </Section>
     {/* Weekly muscle volume is analysis: it moved to Stats, next to Muscle balance. Stats only
         shows that card once there is a routine, so the link waits for one too. */}
     {S.routines.length > 0 && <Section className="plan-link">
-      <Row icon="chart" iconTint="var(--indigo)" title={t('Weekly muscle volume')} subtitle={t('Now in Stats, next to Muscle balance')}
+      <Row icon="chart" iconTint="var(--indigo)" title={t('Weekly muscle volume')}
         accessory="chevron" onClick={() => nav('/stats?focus=weekly-volume')} />
     </Section>}
     </>}

@@ -20,8 +20,8 @@ export default function RecentExerciseHistory({ history, exerciseId, initialOpen
   return <section className="recent-exercise-history" aria-label={t('Exercise history')}>
     <div className="row between recent-history-heading">
       <h3>{t('Exercise history')}</h3>
-      <button type="button" className="recent-history-link" data-exercise-history-link onClick={() => exerciseHistorySheet(exerciseId)}>
-        {t('History')}<Icon name="chevronRight" />
+      <button type="button" className="recent-history-link" aria-label={t('Exercise history')} data-exercise-history-link onClick={() => exerciseHistorySheet(exerciseId)}>
+        {t('All')}<Icon name="chevronRight" />
       </button>
     </div>
     {points.length === 1 && <div className="recent-history-single"><time dateTime={points[0].d}>{fmtDate(points[0].d, true)}</time><strong>{fmtNum(points[0].y)} <span>{unit}</span></strong></div>}

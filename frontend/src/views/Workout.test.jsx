@@ -3849,16 +3849,22 @@ describe('the workout screen chrome (v1.3.11)', () => {
     ])
   })
 
-  it('shows a thumbnail instead of the animation when animations are Small, and a tap brings it back', async () => {
-    await mount([exercise('plain-bench', [false])], 0, { gifSize: 'mini' })
+  it.each(['mini', 'full', undefined])('opens media temporarily from the header for legacy preference %s', async gifSize => {
+    await mount([exercise('plain-bench', [false])], 0, { gifSize })
+    expect(container.querySelector('.workout-media-viewer')).toBeNull()
     const thumb = container.querySelector('.wthumb')
     expect(thumb).toBeTruthy()
     await click(thumb)
-    expect(mocks.S.gifSize).toBe('full')
+    expect(container.querySelector('.workout-media-viewer')).toBeTruthy()
+    expect(mocks.S.gifSize).toBe(gifSize)
+    await click(container.querySelector('.workout-media-viewer button[aria-label="Close"]'))
+    expect(container.querySelector('.workout-media-viewer')).toBeNull()
+    expect(container.querySelector('.wthumb')).toBeTruthy()
+    expect(mocks.S.gifSize).toBe(gifSize)
   })
 
-  it('has no thumbnail with full animations, or in the compact layout', async () => {
-    await mount([exercise('plain-bench', [false])], 0, { gifSize: 'full' })
+  it('keeps media hidden when disabled or when the compact layout omits previews', async () => {
+    await mount([exercise('plain-bench', [false])], 0, { gifSize: 'off' })
     expect(container.querySelector('.wthumb')).toBeNull()
     await unmount()
     await mount([exercise('plain-bench', [false])], 0, { gifSize: 'mini', active: { workoutView: 'compact' } })
