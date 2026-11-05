@@ -3459,3 +3459,18 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .picker-filter-toggle .dim { min-width: 0; overflow-wrap: anywhere; }
 .picker-filters .chip { min-height: 44px; }
 .picker-filters .chip::before { inset: 0; }
+
+/* The logging surface is a table, with history below it rather than nested cards. */
+.workout-set-table.card { padding: 0; background: transparent; border-radius: 0; }
+.recent-exercise-history { padding-block: 12px; border-top: var(--hair) solid var(--sep); background: transparent; }
+.recent-history-single { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-height: 36px; font-size: var(--fs-footnote); }
+.recent-history-single time { color: var(--label-2); }
+.recent-history-single strong { font-size: var(--fs-title3); font-weight: 600; font-variant-numeric: tabular-nums; }
+.recent-history-single strong span { font-size: var(--fs-footnote); font-weight: 400; color: var(--label-2); }
+.recent-history-chart { margin-block: 4px; }
+.recent-history-unit { text-align: end; }
+.recent-history-chart .chart-i > svg { display: block; width: 100%; height: auto; }
+
+.workout-set-table .swrow { border-radius: 0; }
+.workout-set-table .swfront { background: var(--bg); }
+.workout-set-table .set-table-head.rated > span:nth-child(3) { text-align: center; }

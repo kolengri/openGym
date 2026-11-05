@@ -188,3 +188,15 @@
 
 .planning-home .wday .dot.ovr { background: transparent; border: 1px solid var(--orange); }
 .planning-routine .routine-list .swrow-item { border-radius: 0; }
+
+/* Rotation uses aligned rows so long routine names never create uneven pills. */
+.planning-home .queue > .row { flex-wrap: wrap; gap: 4px 12px; }
+.planning-home .queue-list { display: grid; }
+.planning-home .queue-list .chip { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; width: 100%; min-height: 44px; gap: 8px; margin: 0; padding: 10px 0; border-radius: 0; border: 0; border-bottom: var(--hair) solid var(--sep); background: transparent; color: var(--label); text-align: start; white-space: normal; box-shadow: none; }
+.planning-home .queue-list .chip::before { inset: 0; }
+.planning-home .queue-list .chip.on { color: var(--acc); background: transparent; }
+.planning-home .queue-session-icon { display: flex; align-items: center; justify-content: center; }
+.planning-home .queue-session-icon .icn { width: 16px; height: 16px; }
+.planning-home .queue-session-name { min-width: 0; overflow-wrap: anywhere; font-size: var(--fs-body); }
+.planning-home .queue-list .chip > span:last-child { max-width: 8em; font-size: var(--fs-caption); text-align: end; overflow-wrap: anywhere; }
+.planning-home .queue-status.status-duplicate { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

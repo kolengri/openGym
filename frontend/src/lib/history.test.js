@@ -620,6 +620,18 @@ describe('buildSets', () => {
       .toEqual([{ min: 25, speed: 9, done: false }])
   })
 
+  it('seeds cardio distance from history, then the programme, including recorded zero', () => {
+    const cfg = { id: CARDIO, sets: 1, min: 15, km: 1.9 }
+    const withRow = row => ({ exWeights: {}, workouts: [{ d: '2026-01-01', entries: [{ id: CARDIO, target: { mode: 'cardio' }, sets: [{ min: 15, ...row, done: true }] }] }] })
+    expect(buildSets(emptyS, cfg)[0]).toMatchObject({ min: 15, km: 1.9, done: false })
+    expect(buildSets(withRow({ km: 2 }), cfg)[0].km).toBe(2)
+    expect(buildSets(withRow({}), cfg)[0].km).toBe(1.9)
+    expect(buildSets(withRow({ km: 0 }), cfg)[0].km).toBe(0)
+    expect(buildSets(withRow({ km: 2 }), { ...cfg, km: 0 })[0].km).toBe(2)
+    expect(buildSets(withRow({ km: 2 }), cfg, { useTarget: true })[0].km).toBe(1.9)
+    expect(buildSets(withRow({ km: -1 }), cfg)[0].km).toBe(1.9)
+  })
+
   it('carries last time\'s numbers forward within the same mode', () => {
     const S = { exWeights: {}, workouts: [{ d: '2026-01-01', entries: [{ id: LIFT, target: { mode: 'time' }, sets: [{ sec: 70, w: 10, done: true }] }] }] }
     expect(buildSets(S, { id: LIFT, mode: 'time', sets: 2, sec: 45, weight: 0 }))

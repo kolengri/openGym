@@ -17,14 +17,15 @@ export default function RecentExerciseHistory({ history, exerciseId, initialOpen
     .filter(s => s.value != null).map(s => ({ t: s.t, d: s.d, y: s.value })), [h])
   if (!h.total) return null
   const unit = h.metric === 'weight' ? view.unit : h.metric === 'reps' ? t('reps') : h.metric === 'sec' ? 's' : h.metric === 'km' ? 'km' : t('min')
-  return <section className="card recent-exercise-history" aria-label={t('Exercise history')}>
+  return <section className="recent-exercise-history" aria-label={t('Exercise history')}>
     <div className="row between recent-history-heading">
-      <h3>{t('Last {0} sessions', Math.min(5, h.total))}</h3>
+      <h3>{t('Exercise history')}</h3>
       <button type="button" className="recent-history-link" data-exercise-history-link onClick={() => exerciseHistorySheet(exerciseId)}>
         {t('History')}<Icon name="chevronRight" />
       </button>
     </div>
-    {points.length > 0 && <LineChart points={points} h={100} unit={unit} />}
+    {points.length === 1 && <div className="recent-history-single"><time dateTime={points[0].d}>{fmtDate(points[0].d, true)}</time><strong>{fmtNum(points[0].y)} <span>{unit}</span></strong></div>}
+    {points.length > 1 && <div className="chart recent-history-chart"><div className="recent-history-unit small dim">{unit}</div><LineChart points={points} h={80} unit={unit} /></div>}
     <details open={open} onToggle={event => setOpen(event.currentTarget.open)}>
     <summary>{t('Details')}<Icon name="chevronDown" /></summary>
     <ol className="recent-history-list">

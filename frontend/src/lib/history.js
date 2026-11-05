@@ -620,7 +620,10 @@ function buildWorkSets(S, cfg, options = {}) {
       // The grade is last time's when it had one, else the routine's own (set in the exercise's
       // settings, Discord "can not set incline"): a flat walk last time never hides it.
       const source = prev || cfg
-      sets.push({ ...(source.min > 0 ? { min: source.min } : {}), ...(source.speed != null ? { speed: source.speed } : {}), ...inclineFrom(hasIncline(prev) ? prev : cfg), done: false })
+      // Distance is recorded independently of time/speed. Preserve a measured zero, and
+      // use the programme only when this row has no valid distance to carry forward.
+      const km = Number.isFinite(prev?.km) && prev.km >= 0 ? prev.km : cfg.km
+      sets.push({ ...(source.min > 0 ? { min: source.min } : {}), ...(Number.isFinite(km) && km >= 0 ? { km } : {}), ...(source.speed != null ? { speed: source.speed } : {}), ...inclineFrom(hasIncline(prev) ? prev : cfg), done: false })
     }
     return sets
   }

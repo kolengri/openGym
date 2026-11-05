@@ -1285,7 +1285,7 @@ describe('progression settings rebuild the rows like a session start', () => {
     const entry = mocks.S.active.entries[0]
     expect(entry.target).toMatchObject({ mode: 'cardio', min: 25, km: 6 })
     expect(entry.sets[0]).toEqual(done)
-    expect(entry.sets[1]).toEqual({ min: 25, done: false })
+    expect(entry.sets[1]).toEqual({ min: 25, km: 6, done: false })
   })
 
   // This suite covers the retained inline fields/guidance in List layout.
