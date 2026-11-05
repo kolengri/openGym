@@ -12,10 +12,10 @@ import {
   measurementUnitLabel, zeroIsReading,
 } from '../lib/measurements.js'
 import { fmtDate, fmtNum, todayISO, uid } from '../lib/format.js'
-import { t } from '../lib/i18n.js'
+import { t, dateLocale } from '../lib/i18n.js'
 import LineChart from '../components/LineChart.jsx'
 import Icon from '../components/Icon.jsx'
-import { Button, NumberField, Section, Segmented, SelectRow, Row, Switch, TextField } from '../components/ui.jsx'
+import { Button, NumberField, Section, Segmented, SelectRow, Row, openSelectSheet, Switch, TextField } from '../components/ui.jsx'
 import { confirmSheet, menuSheet } from '../sheets.jsx'
 
 // Every write leaves the list in its one-entry-per-day shape (normalizeMeasurementsState).
@@ -26,6 +26,14 @@ const toast = message => useUI.getState().toast(message)
 const fieldUnit = (field, profileUnit) => measurementUnitLabel(measurementUnit(profileUnit, field))
 const unitOptions = units => units.map(value => ({ value, label: value === 'none' ? t('No unit') : value }))
 const withUnit = (value, unit) => unit ? fmtNum(value) + ' ' + unit : fmtNum(value)
+// Provenance is optional. Never derive a source or measurement time from the sync stamp.
+export function measurementProvenance(entry) {
+  const source = typeof entry?.source === 'string' ? entry.source.trim() : ''
+  const at = entry?.at == null || entry.at === '' ? NaN : new Date(entry.at).getTime()
+  const time = Number.isFinite(at) ? new Date(at).toLocaleTimeString(dateLocale(), { hour: '2-digit', minute: '2-digit' }) : ''
+  return [source ? t(source) : '', time].filter(Boolean).join(' · ')
+}
+
 const shownValue = (entry, field, profileUnit) => {
   const value = measurementValue(entry, field.key)
   if (value == null) return null
@@ -203,6 +211,7 @@ export default function Measurements() {
   const unit = fieldUnit(field, S.unit)
   const all = key ? measurementSeries(S, key) : []
   const latest = all.at(-1)
+  const latestEntry = latest ? S.measurements.find(entry => entry.d === latest.d) : null
   const previous = all.at(-2)
   const delta = latest && previous ? Math.round((latest.y - previous.y) * 10) / 10 : null
   const recent = [...S.measurements].reverse()
@@ -224,12 +233,15 @@ export default function Measurements() {
       ] })}><Icon name="more" /></button>
     </div>
 
+    <Segmented className="progress-body-tabs" value="measurements" onChange={value => nav(value === 'weight' ? '/stats?section=body' : value === 'measurements' ? '/measurements' : value === 'health' ? '/health' : '/progress-photos')}
+      options={[{ value: 'weight', label: t('Weight') }, { value: 'measurements', label: t('Measurements') }, { value: 'health', label: t('Health') }, { value: 'photos', label: t('Photos') }]} />
     <div className="measure-metric">
-      {available.length > 0 && <div className="sect-b measure-select"><SelectRow
-        title={t('Measurement')} sheetTitle={t('Choose measurement')} value={key} onChange={setSelected}
-        options={available.map(f => ({ value: f.key, label: t(f.label) }))} />
-      </div>}
-      <div className="big measure-current">{latest ? <>{fmtNum(latest.y)}{unit && <> <span>{unit}</span></>}</> : '–'}</div>
+      <Row title={field ? t(field.label) : t('Body measurements')} subtitle={t('Choose measurement')}
+        value={<span className="big measure-current">{latest ? <>{fmtNum(latest.y)}{unit && <> <span>{unit}</span></>}</> : '–'}</span>}
+        accessory={available.length ? 'chevron' : 'none'} onClick={available.length ? () => openSelectSheet({
+          title: t('Choose measurement'), value: key, onChange: setSelected,
+          options: available.map(f => ({ value: f.key, label: t(f.label) })),
+        }) : undefined} />
     </div>
     <Segmented className="seg-range" value={range} onChange={setRange}
       options={[{ value: 30, label: '1M' }, { value: 90, label: '3M' }, { value: 365, label: '1Y' }, { value: 0, label: t('All') }]} />
@@ -239,7 +251,7 @@ export default function Measurements() {
     </div>
     {latest && <p className="small dim measure-caption">
       {delta != null && delta !== 0 && <>{delta > 0 ? '+' : ''}{withUnit(delta, unit)} {t('since previous')} · </>}
-      {fmtDate(latest.d, true)}
+      {fmtDate(latest.d, true)}{measurementProvenance(latestEntry) && <> · {measurementProvenance(latestEntry)}</>}
     </p>}
 
     {!available.length && <div className="card">
@@ -255,7 +267,7 @@ export default function Measurements() {
       const value = field ? shownValue(entry, field, S.unit) : null
       return <div className="measure-history" key={entry.d}>
         <button type="button" className="measure-history-open" onClick={() => measurementLogSheet(entry.d)} aria-label={t('Edit') + ': ' + fmtDate(entry.d, true)}>
-          <span className="grow"><b>{fmtDate(entry.d, true)}</b><span className="small dim">{t(count === 1 ? '{0} measurement' : '{0} measurements', count)}</span></span>
+          <span className="grow"><b>{fmtDate(entry.d, true)}</b><span className="small dim">{t(count === 1 ? '{0} measurement' : '{0} measurements', count)}{measurementProvenance(entry) && <> · {measurementProvenance(entry)}</>}</span></span>
           <span className="measure-preview"><b>{value == null ? '–' : withUnit(value, unit)}</b></span>
           <Icon name="chevronRight" className="chev" />
         </button>

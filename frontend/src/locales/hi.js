@@ -1,5 +1,13 @@
 // Hindi UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "वर्कआउट खोलें",
+  "Strength block": "शक्ति प्रशिक्षण खंड",
+  "Upper / lower": "ऊपरी / निचला शरीर",
+  "Linear 5×5": "रैखिक 5×5",
+  "Recorded": "दर्ज किया गया",
+  "Calculated": "गणना की गई",
+  "Measurements": "शरीर के माप",
+  "Photos": "फ़ोटो",
   "Garmin Connect must be ready before reading health data.": "स्वास्थ्य डेटा पढ़ने से पहले Garmin Connect तैयार होना चाहिए।",
   "Data": "डेटा",
   "Connections": "कनेक्शन",

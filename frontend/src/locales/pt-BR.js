@@ -4,6 +4,14 @@
 import pt from './pt.js'
 
 export const PT_BR_OVERRIDES = {
+  "Open workout": "Abrir treino",
+  "Strength block": "Bloco de força",
+  "Upper / lower": "Superior / inferior",
+  "Linear 5×5": "Linear 5×5",
+  "Recorded": "Registrado",
+  "Calculated": "Calculado",
+  "Measurements": "Medidas",
+  "Photos": "Fotos",
   "Garmin Connect must be ready before reading health data.": "O Garmin Connect precisa estar pronto antes de ler os dados de saúde.",
   "Data": "Dados",
   "Connections": "Conexões",

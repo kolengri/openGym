@@ -218,7 +218,6 @@ export default function CoachChat() {
   return <div className="narrow chat coach-refined">
     <div className="chat-hdr">
       <button className="iconbtn" data-back="/plan" onClick={() => nav('/plan')} aria-label={t('Back')}><Icon name="chevronLeft" /></button>
-      <div className="chat-av"><Icon name="sparkles" /></div>
       <div className="grow">
         <h1>{t('Coach')}</h1>
         <div className={'chat-st' + (job ? ' live' : '')}>{status}</div>
@@ -247,8 +246,9 @@ export default function CoachChat() {
 
     <div className="composer">
       {idle && !busy && <div className="chips-row">
-        <button className="qchip" onClick={askReview}><Icon name="sparkles" />{t('Review my training')}</button>
-        {!!lastWorkout && <button className="qchip" onClick={askDebrief}><Icon name="checkCircle" />{t('Last workout')}</button>}
+        {lastWorkout
+          ? <button className="qchip" onClick={askDebrief}><Icon name="checkCircle" />{t('Last workout')}</button>
+          : <button className="qchip" onClick={askReview}><Icon name="sparkles" />{t('Review my training')}</button>}
       </div>}
       <div className={'composer-in' + (expanded ? ' tall' : '')}>
         <ChatInput value={text} onChange={setText} onSend={send} placeholder={placeholder} disabled={!!job}

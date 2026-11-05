@@ -18,14 +18,15 @@ export default function RecentExerciseHistory({ history, exerciseId, initialOpen
   if (!h.total) return null
   const unit = h.metric === 'weight' ? view.unit : h.metric === 'reps' ? t('reps') : h.metric === 'sec' ? 's' : h.metric === 'km' ? 'km' : t('min')
   return <section className="card recent-exercise-history" aria-label={t('Exercise history')}>
-    <details open={open} onToggle={event => setOpen(event.currentTarget.open)}>
-    <summary>{t('Last {0} sessions', Math.min(5, h.total))}<Icon name="chevronDown" /></summary>
-    <div className="row between">
-      <button type="button" className="recent-history-link" onClick={() => exerciseHistorySheet(exerciseId)}>
-        {t('Exercise history')}<Icon name="chevronRight" />
+    <div className="row between recent-history-heading">
+      <h3>{t('Last {0} sessions', Math.min(5, h.total))}</h3>
+      <button type="button" className="recent-history-link" data-exercise-history-link onClick={() => exerciseHistorySheet(exerciseId)}>
+        {t('History')}<Icon name="chevronRight" />
       </button>
     </div>
-    {points.length > 1 && <LineChart points={points} h={100} unit={unit} />}
+    {points.length > 0 && <LineChart points={points} h={100} unit={unit} />}
+    <details open={open} onToggle={event => setOpen(event.currentTarget.open)}>
+    <summary>{t('Details')}<Icon name="chevronDown" /></summary>
     <ol className="recent-history-list">
       {h.sessions.map(s => <li key={s.id}>
         <div className="row between small">

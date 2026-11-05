@@ -262,7 +262,8 @@ describe('Home — a session pinned to a day', () => {
     expect(chips()[2].className).toBe('chip on')
     expect(status()).toBe('Next: US W1 D3, today')
     // Home reads any per-date override on today as a reschedule — a pin is one.
-    expect(todayTitle()).toBe('US W1 D3 · rescheduled')
+    expect(todayTitle()).toBe('US W1 D3')
+    expect(host.querySelector('.planning-today-meta').textContent).toContain('rescheduled')
   })
 
   it('every session pinned ahead: no chip is lit, the line names the soonest with its day, today rests', () => {
@@ -315,7 +316,7 @@ describe('Home — the today row follows today\'s plan, not just the last sessio
     const wd = new Date(today + 'T12:00:00').getDay()
     setS({ queue: null, week: { [wd]: ['own'] }, workouts: [at('own', Date.now() - 3600000)] })
     mount()
-    expect(todayTitle()).toBe('Core (done)')
+    expect(todayTitle()).toBe('Core')
     expect(tag()).toBe('Done')
   })
 
@@ -324,7 +325,7 @@ describe('Home — the today row follows today\'s plan, not just the last sessio
     setS({ queue: null, week: { [wd]: ['own'], [(wd + 2) % 7]: ['d2'] }, workouts: [at('own', Date.now() - 3600000)] })
     mount()
     const next = host.querySelector('.planning-next')
-    expect(todayTitle()).toBe('Core (done)')
+    expect(todayTitle()).toBe('Core')
     expect(next.textContent).toContain('US W1 D2')
     expect(host.querySelector('.planning-today').contains(next)).toBe(false)
   })

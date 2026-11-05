@@ -700,6 +700,8 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
         cardio && (inclineFits(ex) || entry.sets[i].incline != null) ? { f: 'incline', step: INCLINE_STEP, dec: true, opt: true, max: 40, hd: t('Incline (%)'), store: clampIncline } : null,
       ]} effort={cardio ? 'rpe' : mode === 'reps' && eff ? kind : null}
       previous={previousAt(i, side)} stepLoad={stepLoad} steppers={wc.steppers} close={close}
+      onNote={() => setNoteSheet(entryIdx, setSpanAt(entry.sets, i)[0], t('Set {0}', setNumOf(entry.sets[i], i)))}
+      onRest={!editing ? () => openSetRest(i) : null} restLabel={ownSetRest(entry.sets[setSpanAt(entry.sets, i)[0]]) == null ? fmtRest(setRestDefault(i)) : fmtRest(ownSetRest(entry.sets[setSpanAt(entry.sets, i)[0]]))}
       onField={(field, value, guard) => side ? setSide(i, side, field, value, guard) : onField(i, field, value, guard)}
       onToggle={() => side ? onToggleSide(i, side) : onToggle(i)} onOptions={() => openSetMenu(entry.sets[i], i)} />)
   }

@@ -1306,9 +1306,8 @@ export function detailTags(ex) {
 
 function ExerciseDetail({ ex, close }) {
   useLang() // the description and steps arrive in their own chunk the first time a sheet asks
-  // The best and last time in the exercise's own weight unit (#657).
+  // Personal records use the exercise's own weight unit (#657).
   const st = exView(useStore(s => s.S), ex.id)
-  const last = lastEntryFor(st, ex.id)
   const best = bestWeightFor(st, ex.id, currentDbLoad(st, ex.id))
   const fav = isFav(st, ex.id)
   const [tab, setTab] = useState('technique')
@@ -1323,12 +1322,57 @@ function ExerciseDetail({ ex, close }) {
     toast(on ? t('Added to favourites') : t('Removed from favourites'))
   }
   return <div className="exercise-detail">
-    <div className="row between" style={{ gap: 8, alignItems: 'flex-start' }}>
+    <div className="row between exercise-detail-heading" style={{ gap: 8, alignItems: 'flex-start' }}>
       <h3 className={'exdetail-name ' + exerciseNameClass(ex)}><ExerciseName ex={ex} /></h3>
       <button className={'iconbtn fav-btn' + (fav ? ' on' : '')} aria-pressed={fav}
         aria-label={fav ? t('Remove from favourites') : t('Add to favourites')} onClick={flipFav}>
         <Icon name={fav ? 'starFill' : 'star'} />
       </button>
+      <details className="exercise-detail-menu">
+        <summary className="iconbtn" aria-label={t('Equipment')} title={t('Equipment')}><Icon name="more" /></summary>
+        <div className="exercise-detail-menu-panel">
+          <div className="row between"><h4 className="sec">{t('Equipment')}</h4><button type="button" className="iconbtn" aria-label={t('Close')} onClick={event => { event.currentTarget.closest('details').open = false }}><Icon name="xmark" /></button></div>
+
+    <ExerciseAliasesEditor key={ex.id} ex={ex} />
+    {modeOf({ id: ex.id }) === 'reps' && <>
+      <div data-tour="ex-unit"><h4 className="sec">{t('Weight unit')}</h4>
+      <ExUnitRow ex={ex} /></div>
+      <h4 className="sec">{t('Plate loading')}</h4>
+      <BarWeightEditor ex={ex} extra={t('You still log the total weight. This only feeds the plate line under each set.')} />
+      {canHaveStack(ex) && <><h4 className="sec">{t('Weight stack')}</h4><StackEditor ex={ex} /></>}
+    </>}
+    {/* The exercise's own default meaning of its weight (S.dbLoad), stamped like the loading
+        above. A routine can still pick its own on the exercise's settings. */}
+    {isBellEx(ex) && <>
+      <h4 className="sec">{t('Weight means')}</h4>
+      <DbLoadPicker ex={ex} value={dbLoadFor(st, ex.id)}
+        onChange={v => update(s => { s.dbLoad = withDbLoad(s.dbLoad, ex.id, v) })} />
+    </>}
+    {/* A sticker on the machine that jumps to this exercise in a workout (components/Nfc.jsx). */}
+    {nfcOK && !ex.missing && <Button icon="nfc" style={{ marginTop: 4 }} onClick={() => nfcExerciseSheet(ex)}>{t('Write NFC sticker for this exercise')}</Button>}
+    {/* Edit is an ordinary button with the others; Delete waits at the very end, apart (P6). */}
+    {isCustomEx(ex) && <Button icon="pencil" style={{ marginTop: 8 }} onClick={() => { close(); customExSheet(ex) }}>{t('Edit')}</Button>}
+
+
+    {/* The catalogue is community-edited (catalogue/README.md): a wrong muscle, a clumsy step or a
+        missing translation is one tap from an issue that already names the exercise. */}
+    {!isCustomEx(ex) && !ex.missing && <a className="small dim exfix-link" target="_blank" rel="noopener"
+      href={'https://github.com/DuarteSantos8/openGym/issues/new?template=exercise.yml&exercise=' + encodeURIComponent(ex.id + ', ' + ex.n)}>
+      <Icon name="pencil" /> {t('Suggest a fix for this exercise')}</a>}
+    {/* Destructive actions stay last in the settings menu and retain their confirmations. */}
+    {canMerge && <div className="sect-b ex-del">
+      <button type="button" className="lrow tap" onClick={() => mergeExerciseFlow(ex, close)}>
+        <Icon name="merge" className="ex-del-i ex-merge-i" /><span className="lrow-m"><span className="lrow-t">{t('Merge into…')}</span></span>
+      </button>
+    </div>}
+    {isCustomEx(ex) && <div className="sect-b ex-del">
+      <button type="button" className="lrow tap danger" onClick={() => deleteCustomEx(ex, close)}>
+        <Icon name="trash" className="ex-del-i" /><span className="lrow-m"><span className="lrow-t">{t('Delete exercise')}</span></span>
+      </button>
+    </div>}
+
+        </div>
+      </details>
     </div>
     <Segmented className="exercise-detail-tabs" value={tab} onChange={setTab} options={[
       { value: 'technique', label: t('How to') },
@@ -1350,62 +1394,23 @@ function ExerciseDetail({ ex, close }) {
     {Object.values(muscleLoad).some(w => w > 0) && <section className="exercise-muscle-map" aria-label={t('Muscles')}>
       <h4 className="sec">{t('Muscles')}</h4>
       <BodyMap load={muscleLoad} body={st.body} />
+      <dl className="exercise-muscle-legend">
+        {[['primary', 1], ['secondary', 0]].map(([label, primary]) => {
+          const names = Object.entries(muscleLoad).filter(([, weight]) => primary ? weight === 1 : weight > 0 && weight < 1).map(([muscle]) => t(MUSCLE_NAME[muscle] || muscle))
+          return names.length > 0 && <div key={label}><dt>{t(label)}</dt><dd>{names.join(', ')}</dd></div>
+        })}
+      </dl>
     </section>}
     <StrengthLevelBlock exId={ex.id} />
       </section>
       <section hidden={tab !== 'history'} data-exercise-panel="history">
     <RecentExerciseHistory history={sessionHistory(st)} exerciseId={ex.id} initialOpen />
     {best > 0 && <div className="small ex-best"><Icon name="trophy" style={{ fontSize: 14, color: 'var(--gold-ink)' }} />{t('Best:')} <b className="accent" style={{ whiteSpace: 'nowrap' }}>{fmtNum(best)} {st.unit}</b></div>}
-    {last && <Button icon="history" data-exercise-history-link style={{ marginTop: 4 }} onClick={() => exerciseHistorySheet(ex.id)}>{t('History')}</Button>}
     {!isCardio(ex) && !isAssisted(ex) && <OneRM ex={ex} />}
       </section>
     </div>
     <Button variant="primary" icon="plus" style={{ margin: '10px 0 4px' }} onClick={() => addToRoutineSheet(ex)}>{t('Add to my plan')}</Button>
 
-    {/* A sticker on the machine that jumps to this exercise in a workout (components/Nfc.jsx). */}
-    {nfcOK && !ex.missing && <Button icon="nfc" style={{ marginTop: 4 }} onClick={() => nfcExerciseSheet(ex)}>{t('Write NFC sticker for this exercise')}</Button>}
-    {/* Edit is an ordinary button with the others; Delete waits at the very end, apart (P6). */}
-    {isCustomEx(ex) && <Button icon="pencil" style={{ marginTop: 8 }} onClick={() => { close(); customExSheet(ex) }}>{t('Edit')}</Button>}
-
-    <details className="detail-disclosure"><summary>{t('Equipment')}</summary>
-    <ExerciseAliasesEditor key={ex.id} ex={ex} />
-    {modeOf({ id: ex.id }) === 'reps' && <>
-      <div data-tour="ex-unit"><h4 className="sec">{t('Weight unit')}</h4>
-      <ExUnitRow ex={ex} /></div>
-      <h4 className="sec">{t('Plate loading')}</h4>
-      <BarWeightEditor ex={ex} extra={t('You still log the total weight. This only feeds the plate line under each set.')} />
-      {canHaveStack(ex) && <><h4 className="sec">{t('Weight stack')}</h4><StackEditor ex={ex} /></>}
-    </>}
-    {/* The exercise's own default meaning of its weight (S.dbLoad), stamped like the loading
-        above. A routine can still pick its own on the exercise's settings. */}
-    {isBellEx(ex) && <>
-      <h4 className="sec">{t('Weight means')}</h4>
-      <DbLoadPicker ex={ex} value={dbLoadFor(st, ex.id)}
-        onChange={v => update(s => { s.dbLoad = withDbLoad(s.dbLoad, ex.id, v) })} />
-    </>}
-    {/* Beginner to Elite for the main lifts, from the best estimated 1RM against body weight
-        (lib/strength-level.js). Hidden without a weigh-in. */}
-    </details>
-
-    {/* The catalogue is community-edited (catalogue/README.md): a wrong muscle, a clumsy step or a
-        missing translation is one tap from an issue that already names the exercise. */}
-    {!isCustomEx(ex) && !ex.missing && <a className="small dim exfix-link" target="_blank" rel="noopener"
-      href={'https://github.com/DuarteSantos8/openGym/issues/new?template=exercise.yml&exercise=' + encodeURIComponent(ex.id + ', ' + ex.n)}>
-      <Icon name="pencil" /> {t('Suggest a fix for this exercise')}</a>}
-    {/* The end of the sheet: what makes this exercise go away. Merge into… (#656,
-        lib/exercise-merge.js) moves its history and plans onto another and then deletes or hides
-        it, so it sits here with Delete, above it, rather than between History and the settings
-        (1.4.5 features pass). Delete stays the last row, red and on its own (P6). Both ask. */}
-    {canMerge && <div className="sect-b ex-del">
-      <button type="button" className="lrow tap" onClick={() => mergeExerciseFlow(ex, close)}>
-        <Icon name="merge" className="ex-del-i ex-merge-i" /><span className="lrow-m"><span className="lrow-t">{t('Merge into…')}</span></span>
-      </button>
-    </div>}
-    {isCustomEx(ex) && <div className="sect-b ex-del">
-      <button type="button" className="lrow tap danger" onClick={() => deleteCustomEx(ex, close)}>
-        <Icon name="trash" className="ex-del-i" /><span className="lrow-m"><span className="lrow-t">{t('Delete exercise')}</span></span>
-      </button>
-    </div>}
   </div>
 }
 export const exerciseDetailSheet = ex => ui().openSheet(close => <ExerciseDetail ex={ex} close={close} />)
@@ -1803,7 +1808,7 @@ function ExercisePicker({ onPick, title, close, like, actionIcon, backups }) {
     : []
   // The name opens the config sheet, stretched over the row; the quick add is its sibling (card dismiss pass).
   const pickRow = e => <div key={e.id} className="item tap-host">
-        <Thumb ex={e} /><button type="button" className="grow item-open tap-main" onClick={() => onPick(e)}><span className={`tt ${exerciseNameClass(e)}`}>{isFav(st, e.id) && <Icon name="starFill" className="fav-star" />}{exerciseNameFor(e)}</span><span className="ss capitalize">{t(MUSCLE_NAME[e.tg] || e.tg || e.bp)} · {t(e.eq)}</span></button>
+        <Thumb ex={e} /><button type="button" className="grow item-open tap-main" onClick={() => onPick(e)}><span className={`tt ${exerciseNameClass(e)}`}>{isFav(st, e.id) && <Icon name="starFill" className="fav-star" />}<ExerciseName ex={e} /></span><span className="ss capitalize">{t(MUSCLE_NAME[e.tg] || e.tg || e.bp)} · {t(e.eq)}</span></button>
         {/* Accent tag = already in a routine/log ("Chosen"); the yellow star by the name = favourite. */}
         {usage[e.id] && <span className="tag acc"><Icon name="starFill" /></span>}
         {/* A "+" or "swap" glyph reads as "commit this now" — it used to just open the same detail sheet as
@@ -1847,6 +1852,8 @@ function ExercisePicker({ onPick, title, close, like, actionIcon, backups }) {
         {showAll ? t('Filter by "{0}"', profile.name) : t('Show all equipment')}
       </button>
     </div>}
+    <details className="picker-filters">
+      <summary className="picker-filter-toggle"><Icon name="slider" />{t('Filters')}{(bp || eqOn || catOn) && <span className="dim"> · {[bp === SAME ? t('Same muscle: {0}', t(MUSCLE_NAME[likeTg] || likeTg)) : bp === '★' ? t('Chosen') : bp === '☆' ? t('Favourites') : bp && t(bp), catOn && t(catOn), eqOn && t(eqOn)].filter(Boolean).join(' · ')}</span>}</summary>
     {/* Changing muscle group keeps the equipment filter: if it still has exercises under the new
         group the filter stays applied, and if not the eqOn fallback above drops it for this view
         without forgetting the choice (issue #71). The favourites/chosen chips still clear it —
@@ -1866,6 +1873,7 @@ function ExercisePicker({ onPick, title, close, like, actionIcon, backups }) {
       <button className={'chip nocap' + (!eqOn ? ' on' : '')} onClick={() => { setEq(''); setShown(50) }}>{t('Any equipment')}</button>
       {eqOpts.map(x => <button key={x} className={'chip' + (eqOn === x ? ' on' : '')} onClick={() => { setEq(x); setShown(50) }}>{t(x)}</button>)}
     </div>}
+    </details>
     {/* The slot's planned substitutes, first, while nothing is typed: the plan already knows. */}
     {backupList.length > 0 && !q.trim() && <>
       <h4 className="sec">{t('Your backups')}</h4>
@@ -3118,7 +3126,7 @@ function WorkoutDetail({ w, close }) {
   // The session note is editable here rather than only at the finish sheet: what you want to
   // record about a session is often clearer once you have looked at what you actually did.
   const [note, setNote] = useState(w.note || '')
-  const [noteOpen, setNoteOpen] = useState(!!w.note)
+  const [noteOpen, setNoteOpen] = useState(false)
   // A note written here is an edit of the saved workout, stamped for the sync to keep it over an
   // older copy of the same workout (stampWorkout) — and only when it changed, since a stamp
   // outranks what another device wrote since.
@@ -3319,6 +3327,7 @@ function WorkoutDetail({ w, close }) {
     }) : entryRows(groups[0]?.units || [])}
     {/* Progress photos and form-check videos: added and removed right here, on the saved record. */}
     <WorkoutMediaSection w={w} />
+    {!noteOpen && note && <p className="workout-note-preview">{note}</p>}
     <details className="detail-disclosure workout-note" open={noteOpen} onToggle={event => setNoteOpen(event.currentTarget.open)}>
     <summary>{t('Session note')}</summary>
     <textarea ref={noteRef} className="input" rows={2} maxLength={NOTE_MAX} value={note} data-tour="wd-note"

@@ -94,7 +94,7 @@ describe('Settings: your own accent colour', () => {
     expect(mocks.S.accentCustom).toBe('#ff00aa')
     expect(setRestAccent).toHaveBeenCalledWith('#ff00aa')
     mount()
-    expect(host.querySelector('.lrow-v').textContent).toBe('Your own color')
+    expect([...host.querySelectorAll('.lrow')].find(row => row.querySelector('.lrow-t')?.textContent === 'Accent color').querySelector('.lrow-v').textContent).toBe('Your own color')
     expect(own().classList.contains('on')).toBe(true)
     expect(own().style.background).toContain('#ff00aa')
   })
@@ -171,7 +171,7 @@ describe('Settings: your own accent colour', () => {
   it('ignores a value that is not a colour', () => {
     mocks.S.accent = 'custom'; mocks.S.accentCustom = 'red;}'
     mount()
-    expect(host.querySelector('.lrow-v').textContent).toBe('Green')
+    expect([...host.querySelectorAll('.lrow')].find(row => row.querySelector('.lrow-t')?.textContent === 'Accent color').querySelector('.lrow-v').textContent).toBe('Green')
     expect(own().classList.contains('unset')).toBe(true)
   })
 

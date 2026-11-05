@@ -15,7 +15,7 @@ import Icon from './Icon.jsx'
 // The editor uses the workout's existing field and completion handlers. A checkbox and a
 // rating still conclude a set through the same rest/advance flow as the other layouts.
 export default function WorkoutSetEditor({ entryIdx, index, owner, columns, effort, side, cardio,
-  previous, stepLoad, steppers, onField, onToggle, onOptions, close }) {
+  previous, stepLoad, steppers, onField, onToggle, onOptions, onNote, onRest, restLabel, close }) {
   const S = useStore(s => s.S)
   const unit = exUnitOf(S, owner.exercise)
   const matchingEntry = state => {
@@ -75,10 +75,15 @@ export default function WorkoutSetEditor({ entryIdx, index, owner, columns, effo
     </div>
     <div className="small dim">{exerciseNameText(exOr(entry.id))}</div>
     {columns.filter(Boolean).slice(0, 2).map(renderField)}
-    {columns.filter(Boolean).length > 2 && <details className="detail-disclosure"><summary>{t('Advanced')}</summary>{columns.filter(Boolean).slice(2).map(renderField)}</details>}
     {effort && <section className="workout-set-field"><div className="small dim">{effort.toUpperCase()}</div>
       <SetEffortValue kind={effort} value={toScale(effort, rirOf(set))} onClick={rate} cardio={cardio} />
     </section>}
+    <details className="detail-disclosure set-editor-advanced"><summary>{t('Advanced')}</summary>
+      {columns.filter(Boolean).slice(2).map(renderField)}
+      {onNote && <Button variant="ghost" icon="note" onClick={() => { if (current()) { close(); onNote() } }}>{t('Note')}</Button>}
+      {onRest && <Button variant="ghost" icon="timer" onClick={() => { if (current()) { close(); onRest() } }}>{t('Rest after this set')}{restLabel && <span className="small dim"> · {restLabel}</span>}</Button>}
+      <Button variant="ghost" icon="more" onClick={() => { if (current()) { close(); onOptions() } }}>{t('More')}</Button>
+    </details>
     <Button variant="primary" onClick={done}>{t('Done')}</Button>
   </div>
 }

@@ -7,6 +7,13 @@ import {
 } from './measurements.js'
 
 describe('body measurements', () => {
+  it('retains supplied import provenance without inventing it for manual or legacy entries', () => {
+    const imported = normalizeMeasurementEntry({ d: '2026-11-05', waist: 82, source: 'Strong', at: '2026-11-05T08:30:00Z' })
+    expect(imported).toMatchObject({ source: 'Strong', at: '2026-11-05T08:30:00Z', waist: 82 })
+    const manual = normalizeMeasurementEntry({ d: '2026-11-05', waist: 82, source: '', at: 'unknown' })
+    expect(manual).not.toHaveProperty('source')
+    expect(manual).not.toHaveProperty('at')
+  })
   it('creates a complete entry with nulls instead of ambiguous zeroes', () => {
     const e = emptyMeasurement('2026-08-11', [{ id: 'knee', name: 'Around knees' }])
     expect(Object.keys(e).filter(k => MEASUREMENT_KEYS.includes(k))).toEqual(MEASUREMENT_KEYS)

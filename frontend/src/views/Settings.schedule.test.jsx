@@ -5,6 +5,7 @@
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { createPickerHarness } from './test-picker.js'
 import Settings from './Settings.jsx'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
@@ -57,18 +58,18 @@ const baseS = over => ({
   queue: null, rotation: null, scheduleMode: null, active: null, ...over,
 })
 
-let host, root
+let host, root, picker
 beforeEach(() => {
+  picker = createPickerHarness()
   host = document.createElement('div'); document.body.appendChild(host); root = createRoot(host)
   mocks.nav = vi.fn(); confirmSheet.mockClear()
 })
-afterEach(() => { act(() => root.unmount()); host.remove() })
+afterEach(() => { picker.destroy(); act(() => root.unmount()); host.remove() })
 
 const mount = over => { mocks.S = baseS(over); act(() => root.render(<Settings page="plan" />)) }
-// the two-option Segmented rendered by the How you train row
-const seg = () => [...host.querySelectorAll('button')].filter(b => ['Fixed Week', 'Rotation'].includes(b.textContent))
-const pick = label => act(() => seg().find(b => b.textContent === label).dispatchEvent(new MouseEvent('click', { bubbles: true })))
-const selected = () => seg().find(b => b.className.includes('on'))?.textContent
+const modeRow = () => [...host.querySelectorAll('.lrow')].find(r => r.querySelector('.lrow-t')?.textContent === 'How you train')
+const pick = label => picker.open(modeRow()).choose(label)
+const selected = () => modeRow().querySelector('.lrow-v')?.textContent
 const buildRow = () => [...host.querySelectorAll('.lrow')].find(r => r.textContent.includes('Build your loop in Plan'))
 
 describe('Settings — How you train (Plan & schedule)', () => {
@@ -95,7 +96,8 @@ describe('Settings — How you train (Plan & schedule)', () => {
   it('a planner-written queue makes How you train read-only text, not a control to flip', () => {
     // No rotationId, and no S.rotation to match it against — this app does not own the queue.
     mount({ queue: { ids: ['a', 'b'], since: Date.now(), startsOn: todayISO(), label: 'US W1' } })
-    expect(seg()).toEqual([])
+    expect(modeRow().tagName).toBe('DIV')
+    expect(modeRow().getAttribute('aria-disabled')).toBeNull()
     expect(host.textContent).toContain('Externally managed')
   })
 

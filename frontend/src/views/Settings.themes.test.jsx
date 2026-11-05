@@ -4,8 +4,8 @@
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { createPickerHarness } from './test-picker.js'
 import Settings from './Settings.jsx'
-import { bindUI } from '../components/ui.jsx'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
@@ -51,13 +51,9 @@ vi.mock('../sheets.jsx', () => ({
 // The Settings view reads the build-time version constant at render time.
 globalThis.__APP_VERSION__ ??= 'test'
 
-// SelectRow opens its choices through the bound UI store; capture the sheet to render it here.
-let sheet = null
-bindUI({ getState: () => ({ openSheet: render => { sheet = render; return { close: () => {} } } }) })
-
-let host, root
+let host, root, picker
 beforeEach(() => {
-  sheet = null
+  picker = createPickerHarness()
   mocks.S = {
     unit: 'kg', restSec: 90, restPauseSec: 15, sound: false, effort: 'none',
     gifSize: 'full', workouts: [], routines: [], exWeights: {},
@@ -69,14 +65,15 @@ beforeEach(() => {
   root = createRoot(host)
 })
 afterEach(() => {
+  picker.destroy()
   act(() => root.unmount())
   host.remove()
 })
 
 const mount = (page = 'themes') => act(() => root.render(<Settings page={page} />))
 const rowOf = title => [...host.querySelectorAll('.lrow')].find(r => r.querySelector('.lrow-t')?.textContent === title)
-const pressed = () => [...rowOf('Halloween').querySelectorAll('.seg button')].find(b => b.getAttribute('aria-pressed') === 'true')?.textContent
-const press = label => act(() => { [...rowOf('Halloween').querySelectorAll('.seg button')].find(b => b.textContent === label).click() })
+const pressed = () => rowOf('Halloween').querySelector('.lrow-v')?.textContent
+const press = label => picker.open(rowOf('Halloween')).choose(label)
 const footer = () => host.querySelector('.sect-f')?.textContent
 const at = (y, m, d) => { vi.useFakeTimers({ toFake: ['Date'] }); vi.setSystemTime(new Date(y, m - 1, d, 12)) }
 afterEach(() => vi.useRealTimers())

@@ -8,6 +8,7 @@ import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Library from './Library.jsx'
 import { EXDB } from '../lib/exercises.js'
+import { useUI } from '../store/useUI.js'
 import { CASED_NAME_LANGS, EXERCISE_NAME_LANGS, _setLangState } from '../lib/i18n-core.js'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
@@ -35,6 +36,14 @@ function render() {
   return host
 }
 const names = host => [...host.querySelectorAll('.item-open .tt')].map(el => el.textContent)
+const chooseBodyPart = (host, label) => {
+  act(() => host.querySelector('.lib-search-filter').click())
+  const sheet = useUI.getState().sheets.at(-1)
+  const holder = document.createElement('div'); document.body.appendChild(holder)
+  const root = createRoot(holder); mounted.push(root)
+  act(() => root.render(sheet.render(() => {})))
+  act(() => [...holder.querySelectorAll('.lib-body-parts button')].find(button => button.textContent === label).click())
+}
 const cssSource = readFileSync(resolve(process.cwd(), 'src/index.css'), 'utf8')
 
 beforeEach(() => {
@@ -66,9 +75,9 @@ describe('Library favourites', () => {
   it('keeps the header button reachable without shredding the title', () => {
     expect(cssSource).toContain('.hdr>div{min-width:0}')
     expect(cssSource).toContain('.hdr>.btn{flex:none}')
-    // the page title is --fs-large, which drops from 34 to 30 px on phone widths (P1 type scale)
+    // The compact approved title scale still preserves normal word wrapping.
     expect(cssSource).toMatch(/\.hdr h1\{font-size:var\(--fs-large\)/)
-    expect(cssSource).toMatch(/@media \(max-width:420px\)\{:root\{--fs-large:1\.875rem\}\}/)
+    expect(cssSource).toMatch(/--fs-large:1\.375rem/)
     const h1 = cssSource.match(/^\.hdr h1\{([^}]*)\}/m)
     expect(h1?.[1]).toContain('overflow-wrap:break-word')
     expect(h1[1]).not.toContain('overflow-wrap:anywhere')
@@ -80,8 +89,7 @@ describe('Library favourites', () => {
     const legs = EXDB.find(e => e.bp !== 'chest')
     mocks.S.favEx = [chest[4].id, legs.id]
     const host = render()
-    const chip = [...host.querySelectorAll('.chips .chip')].find(b => b.textContent === 'chest')
-    act(() => chip.click())
+    chooseBodyPart(host, 'chest')
     const shown = names(host)
     expect(shown[0]).toBe(chest[4].n)
     expect(shown).not.toContain(legs.n)
@@ -118,7 +126,7 @@ describe('Library browse tabs', () => {
     const other = EXDB.find(e => e.bp !== 'chest')
     mocks.S.favEx = [chest[0].id, other.id]
     const host = render()
-    act(() => [...host.querySelectorAll('.lib-filters button')].find(b => b.textContent === 'chest').click())
+    chooseBodyPart(host, 'chest')
     choose(host, 'Favourites')
     expect(names(host)).toEqual([chest[0].n])
     search(host, chest[0].n + ' qwxz')
@@ -126,7 +134,7 @@ describe('Library browse tabs', () => {
     expect(names(host)).toEqual([chest[0].n])
     choose(host, 'All')
     expect(host.querySelector('.search input').value).toBe(chest[0].n + ' qwxz')
-    expect(host.querySelector('.lib-filters button[aria-pressed="true"]').textContent).toBe('chest')
+    expect(host.querySelector('.lib-filters button').textContent).toBe('chest')
   })
 
   it('shows an empty personal list without falling back to catalogue entries', () => {
@@ -248,6 +256,8 @@ describe('Library refinement actions and bilingual names', () => {
     const { customExSheet } = await import('../sheets.jsx')
     const host = render()
     expect(host.querySelector('.list .ex-new')).toBeNull()
+    expect(host.querySelector('.list [aria-label="Add to my plan"]')).toBeNull()
+    expect(host.querySelector('.list .item .chev')).toBeTruthy()
     act(() => host.querySelector('.hdr [aria-label="Create your own exercise"]').click())
     expect(customExSheet).toHaveBeenLastCalledWith(null, expect.any(Function), '')
     const input = host.querySelector('.search input')

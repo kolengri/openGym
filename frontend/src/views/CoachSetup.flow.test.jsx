@@ -13,6 +13,7 @@
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { createPickerHarness } from './test-picker.js'
 import CoachSetup from './CoachSetup.jsx'
 import { getApiKey, setApiKey, clearApiKey } from '../lib/coach-secrets.js'
 import { localModels, localForget } from '../lib/coach-local.js'
@@ -59,8 +60,9 @@ vi.mock('../lib/coach-local.js', () => ({
 }))
 vi.mock('./MobileOnboarding.jsx', () => ({ ConnectSheet: () => <div className="connect-sheet" /> }))
 
-let host, root
+let host, root, picker
 beforeEach(() => {
+  picker = createPickerHarness()
   mocks.mobile = true
   mocks.user = { uid: 'u1', name: 'Ana' }
   mocks.config = { coach: { enabled: true } }
@@ -75,7 +77,7 @@ beforeEach(() => {
   vi.mocked(localForget).mockReset().mockResolvedValue({ ok: true })
   host = document.createElement('div'); document.body.appendChild(host); root = createRoot(host)
 })
-afterEach(() => { act(() => root.unmount()); host.remove() })
+afterEach(() => { picker.destroy(); act(() => root.unmount()); host.remove() })
 
 const mount = async () => { await act(async () => { root.render(<CoachSetup />) }) }
 const settle = async () => { await act(async () => { for (let i = 0; i < 6; i++) await Promise.resolve() }) }
@@ -83,18 +85,14 @@ const settle = async () => { await act(async () => { for (let i = 0; i < 6; i++)
 const all = sel => [...host.querySelectorAll(sel)]
 const rowTitled = title => all('.lrow').find(r => r.querySelector('.lrow-t')?.textContent === title)
 const btn = text => all('.btn').find(b => b.textContent.trim() === text)
-const chip = label => all('.chip').find(b => b.textContent.trim() === label)
+const chooseProvider = label => picker.open(rowTitled('Provider')).choose(label)
 const field = type => all('input').find(i => (i.getAttribute('type') || 'text') === type)
 const click = el => { expect(el).toBeTruthy(); return act(() => el.click()) }
 const typeIn = (el, value) => act(() => {
   Object.getOwnPropertyDescriptor(el.constructor.prototype, 'value').set.call(el, value)
   el.dispatchEvent(new Event('input', { bubbles: true }))
 })
-const pickModel = value => act(() => {
-  const el = host.querySelector('select')
-  Object.getOwnPropertyDescriptor(el.constructor.prototype, 'value').set.call(el, value)
-  el.dispatchEvent(new Event('change', { bubbles: true }))
-})
+const pickModel = value => { const choices = picker.open(rowTitled('Model')); choices.choose(value || choices.labels[0]) }
 const openByok = async () => { await click(rowTitled('Bring my own API key')) }
 
 describe('CoachSetup — where it runs at all', () => {
@@ -163,8 +161,8 @@ describe('CoachSetup — "use my self-hosted openGym"', () => {
 describe('CoachSetup — bringing your own key', () => {
   it('offers exactly the providers the shared table lists, Anthropic first', async () => {
     await mount(); await openByok()
-    expect(all('.chip').map(c => c.textContent)).toEqual(Object.values(HTTP_PROVIDERS).map(p => p.label))
-    expect(chip('Anthropic API').classList.contains('on')).toBe(true)
+    expect(picker.open(rowTitled('Provider')).labels).toEqual(Object.values(HTTP_PROVIDERS).map(p => p.label))
+    expect(rowTitled('Provider').querySelector('.lrow-v').textContent).toBe('Anthropic API')
   })
 
   it('names every category the payload is built from, in that order, and where it would go', async () => {
@@ -178,7 +176,7 @@ describe('CoachSetup — bringing your own key', () => {
   it('shows an endpoint field only for the OpenAI-compatible provider', async () => {
     await mount(); await openByok()
     expect(host.textContent).not.toContain('Endpoint')
-    await click(chip('OpenAI-compatible endpoint'))
+    chooseProvider('OpenAI-compatible endpoint')
     expect(host.textContent).toContain('Endpoint')
     expect(field('text').getAttribute('placeholder')).toBe('https://ollama.example.com')
     // With nothing typed there is no host to name, so the line falls back to the provider.
@@ -213,7 +211,7 @@ describe('CoachSetup — bringing your own key', () => {
 
   it('the OpenAI-compatible endpoint needs no key at all', async () => {
     await mount(); await openByok()
-    await click(chip('OpenAI-compatible endpoint'))
+    chooseProvider('OpenAI-compatible endpoint')
     typeIn(field('text'), 'https://ollama.lan:11434/')
     await click(btn('List models')); await settle()
     expect(mocks.toast).not.toHaveBeenCalled()
@@ -222,7 +220,7 @@ describe('CoachSetup — bringing your own key', () => {
 
   it('turns down a base URL that is not one, before anything is loaded', async () => {
     await mount(); await openByok()
-    await click(chip('OpenAI-compatible endpoint'))
+    chooseProvider('OpenAI-compatible endpoint')
     const cases = [
       ['ollama.lan', 'not a valid URL'],
       // host:port with no scheme parses as a scheme of its own ("ollama.lan:"), so it lands on
@@ -246,7 +244,7 @@ describe('CoachSetup — bringing your own key', () => {
     // endpoint, empty means the default. `compatible` has none, so the screen refuses it here
     // rather than sending "List models" out with nowhere to go and failing at the adapter.
     await mount(); await openByok()
-    await click(chip('OpenAI-compatible endpoint'))
+    chooseProvider('OpenAI-compatible endpoint')
     await click(btn('List models')); await settle()
     expect(mocks.toast).toHaveBeenCalledWith('Enter the endpoint URL')
     expect(localModels).not.toHaveBeenCalled()
@@ -267,9 +265,9 @@ describe('CoachSetup — listing the models', () => {
 
     expect(all('.card .small').map(s => s.textContent))
       .toEqual(['Loading the exercise catalogue…', 'Checking the endpoint…', 'Ready'])
-    const select = host.querySelector('select')
-    expect([...select.options].map(o => o.value)).toEqual(['', 'claude-opus-5', 'claude-haiku-4'])
-    expect(select.value).toBe('claude-opus-5')
+    const choices = picker.open(rowTitled('Model'))
+    expect(choices.labels).toEqual(['(claude-opus-5)', 'claude-opus-5', 'claude-haiku-4'])
+    expect(choices.selected).toBe('claude-opus-5')
     expect(btn('Save and use the Coach')).toBeTruthy()
     expect(btn('List models')).toBeTruthy()                 // still there, to re-list
   })
@@ -278,8 +276,8 @@ describe('CoachSetup — listing the models', () => {
     vi.mocked(localModels).mockResolvedValue({ ok: true, models: ['qwen3-27b'] })
     await withKey()
     await click(btn('List models')); await settle()
-    expect(host.querySelector('select').value).toBe('')
-    expect(host.querySelector('select option').textContent).toBe('(claude-opus-5)')
+    expect(picker.open(rowTitled('Model')).selected).toBe('(claude-opus-5)')
+    expect(rowTitled('Model').querySelector('.lrow-v').textContent).toBe('(claude-opus-5)')
   })
 
   it('an endpoint that will not answer clears the progress and says why', async () => {
@@ -288,7 +286,7 @@ describe('CoachSetup — listing the models', () => {
     await click(btn('List models')); await settle()
     expect(mocks.toast).toHaveBeenCalledWith('Could not reach the provider: connection refused')
     expect(host.querySelector('.card')).toBe(null)
-    expect(host.querySelector('select')).toBe(null)
+    expect(rowTitled('Model')).toBeUndefined()
     expect(btn('List models').disabled).toBe(false)          // and you can try again
   })
 
@@ -311,23 +309,23 @@ describe('CoachSetup — listing the models', () => {
     vi.mocked(localModels).mockResolvedValue({ ok: true, models: ['claude-opus-5'] })
     await withKey()
     await click(btn('List models')); await settle()
-    expect(host.querySelector('select')).toBeTruthy()
+    expect(rowTitled('Model')).toBeTruthy()
 
-    await click(chip('Google Gemini'))
-    expect(host.querySelector('select')).toBe(null)
+    chooseProvider('Google Gemini')
+    expect(rowTitled('Model')).toBeUndefined()
     expect(btn('Save and use the Coach')).toBeUndefined()
 
     vi.mocked(localModels).mockResolvedValue({ ok: true, models: [HTTP_PROVIDERS.gemini.defaultModel] })
     await click(btn('List models')); await settle()
     expect(localModels).toHaveBeenLastCalledWith({ provider: 'gemini', baseUrl: null }, 'sk-1')
-    expect(host.querySelector('select').value).toBe(HTTP_PROVIDERS.gemini.defaultModel)
+    expect(rowTitled('Model').querySelector('.lrow-v').textContent).toBe(HTTP_PROVIDERS.gemini.defaultModel)
   })
 })
 
 describe('CoachSetup — saving', () => {
   const listed = async (provider, models, { key = 'sk-1', baseUrl } = {}) => {
     await mount(); await openByok()
-    if (provider) await click(chip(HTTP_PROVIDERS[provider].label))
+    if (provider) chooseProvider(HTTP_PROVIDERS[provider].label)
     if (baseUrl != null) typeIn(field('text'), baseUrl)
     if (key) typeIn(field('password'), key)
     vi.mocked(localModels).mockResolvedValue({ ok: true, models })
@@ -449,7 +447,7 @@ describe('CoachSetup — turning it off', () => {
   it('starts the key picker on the provider the phone was already using', async () => {
     mocks.coachLocal = { mode: 'byok', provider: 'openai', model: 'gpt-5.6' }
     await mount(); await openByok()
-    expect(chip('OpenAI API').classList.contains('on')).toBe(true)
+    expect(rowTitled('Provider').querySelector('.lrow-v').textContent).toBe('OpenAI API')
     expect(field('password').getAttribute('placeholder')).toBe('sk-…')
   })
 })

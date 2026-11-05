@@ -1,5 +1,13 @@
 // Swedish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Öppna träningspass",
+  "Strength block": "Styrkeblock",
+  "Upper / lower": "Överkropp / underkropp",
+  "Linear 5×5": "Linjär 5×5",
+  "Recorded": "Registrerat",
+  "Calculated": "Beräknat",
+  "Measurements": "Mått",
+  "Photos": "Bilder",
   "Garmin Connect must be ready before reading health data.": "Garmin Connect måste vara redo innan hälsodata kan läsas.",
   "Data": "Data",
   "Connections": "Anslutningar",

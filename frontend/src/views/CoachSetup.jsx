@@ -24,7 +24,7 @@ import { DATA_CATEGORIES } from '../../../api/coach/core/categories.js'
 import { ConnectSheet } from './MobileOnboarding.jsx'
 import { AiConsentSection } from '../components/CoachConsentSheet.jsx'
 import Icon from '../components/Icon.jsx'
-import { Section, Row, Button, TextField } from '../components/ui.jsx'
+import { Section, Row, SelectRow, Button, TextField } from '../components/ui.jsx'
 
 // Literal t() calls, so check-source-strings sees the three lines; t(s) over a list of keys hid them.
 const STEPS = () => [t('Loading the exercise catalogue…'), t('Checking the endpoint…'), t('Ready')]
@@ -152,7 +152,7 @@ export default function CoachSetup() {
     : coachLocal?.mode === 'byok' ? t('Runs on this phone with your own API key')
     : t('Off. Choose how the Coach should run.')
 
-  return <div className="narrow settings-refined guided-refined">
+  return <div className="narrow settings-refined guided-refined coach-refined">
     <div className="sp-nav">
       <button className="sp-back" data-back="/settings" onClick={() => nav('/settings')}><Icon name="chevronLeft" /><span>{t('Settings')}</span></button>
       <h1 className="sp-title">{t('AI Coach')}</h1>
@@ -173,10 +173,10 @@ export default function CoachSetup() {
 
     {choice === 'byok' && <>
       <Section title={t('Provider')}>
-        <div className="row" style={{ flexWrap: 'wrap', gap: 7, padding: '8px 12px' }}>
-          {HTTP_PROVIDER_IDS.map(id => <button key={id} className={'chip' + (id === provider ? ' on' : '')} disabled={busy}
-            onClick={() => setProvider(id)}>{HTTP_PROVIDERS[id].label}</button>)}
-        </div>
+        <SelectRow title={t('Provider')} disabled={busy}
+          value={provider} onChange={setProvider}
+          options={HTTP_PROVIDER_IDS.map(id => ({ value: id, label: HTTP_PROVIDERS[id].label }))} />
+
       </Section>
 
       {meta.baseUrl && <Section title={t('Endpoint')}
@@ -212,17 +212,17 @@ export default function CoachSetup() {
       </div>}
 
       {models && <Section title={t('Model')}>
-        <div style={{ padding: '8px 12px' }}>
-          <select className="input" value={model} disabled={busy} onChange={e => setModel(e.target.value)} style={{ width: '100%' }}>
-            <option value="">{meta.defaultModel ? `(${meta.defaultModel})` : t('Pick a model')}</option>
-            {models.map(m => <option key={m} value={m}>{m}</option>)}
-          </select>
-        </div>
+        <SelectRow title={t('Model')} disabled={busy}
+          value={model} onChange={setModel}
+          options={[{ value: '', label: meta.defaultModel ? `(${meta.defaultModel})` : t('Pick a model') }, ...models.map(m => ({ value: m, label: m }))]} />
+
       </Section>}
 
       {/* The server's admin card, for the person who owns this phone: in BYOK mode there is no
           other profile, so the limits protect nobody but the account already holding the key. */}
-      <Section title={t('Advanced')}>
+      <details className="settings-disclosure coach-advanced">
+        <summary>{t('Advanced')}</summary>
+      <Section>
         <LimitRow label={t('Max output tokens')} hint={t('The ceiling on one answer. Reasoning models count its hidden thinking against it, so raise it if a plan is cut off.')}
           value={limits.maxOutputTokens} min={COACH_LIMITS.maxOutputTokens.min} max={COACH_LIMITS.maxOutputTokens.max}
           onChange={v => editLimit('maxOutputTokens', v)} onCommit={() => commitLimit('maxOutputTokens')} />
@@ -233,6 +233,7 @@ export default function CoachSetup() {
           value={limits.maxMessageLen} min={COACH_LIMITS.maxMessageLen.min} max={COACH_LIMITS.maxMessageLen.max}
           onChange={v => editLimit('maxMessageLen', v)} onCommit={() => commitLimit('maxMessageLen')} />
       </Section>
+      </details>
 
       <div className="row" style={{ gap: 8, flexWrap: 'wrap' }}>
         {!models
@@ -256,14 +257,10 @@ const hostOf = url => { try { return new URL(url).host } catch { return '' } }
 // field on the right, clamped and saved when it is left rather than on every keystroke — a
 // floor applied mid-typing turns a just-typed "1" into "1024".
 function LimitRow({ label, hint, value, min, max, onChange, onCommit }) {
-  return <div className="row between" style={{ gap: 12, padding: '10px 12px', alignItems: 'flex-start' }}>
-    <div style={{ minWidth: 0 }}>
-      <div style={{ fontWeight: 500 }}>{label}</div>
-      <div className="muted small">{hint}</div>
-    </div>
-    <div style={{ width: 118, flex: 'none' }}>
+  return <Row className="coach-limit-row" title={label} subtitle={hint}>
+    <div className="coach-limit-value">
       <TextField type="number" inputMode="numeric" min={min} max={max} value={value}
         onChange={e => onChange(e.target.value)} onBlur={onCommit} />
     </div>
-  </div>
+  </Row>
 }

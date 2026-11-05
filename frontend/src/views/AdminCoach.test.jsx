@@ -18,6 +18,7 @@
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { createPickerHarness } from './test-picker.js'
 import AdminCoach from './AdminCoach.jsx'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
@@ -93,9 +94,10 @@ const status = (over = {}) => ({
 
 /* ------------------------------- harness ------------------------------- */
 
-let host, root, sheetHost, sheetRoot
+let host, root, sheetHost, sheetRoot, picker
 
 beforeEach(() => {
+  picker = createPickerHarness()
   mocks.calls.length = 0
   mocks.sheets.length = 0
   mocks.confirmSheet.mockClear()
@@ -111,7 +113,7 @@ beforeEach(() => {
   host = document.createElement('div'); document.body.appendChild(host); root = createRoot(host)
   sheetHost = document.createElement('div'); document.body.appendChild(sheetHost); sheetRoot = createRoot(sheetHost)
 })
-afterEach(() => {
+afterEach(() => { picker.destroy();
   act(() => root.unmount()); host.remove()
   act(() => sheetRoot.unmount()); sheetHost.remove()
 })
@@ -128,7 +130,7 @@ const removeConfirmed = async () => {
   expect(ask, 'Remove should have opened a confirm').toBeTruthy()
   await act(async () => { await ask.onConfirm() })
 }
-const chip = label => [...host.querySelectorAll('button.chip')].find(b => b.textContent.startsWith(label))
+const rowTitled = title => [...host.querySelectorAll('.lrow')].find(r => r.querySelector('.lrow-t')?.textContent === title)
 const master = () => host.querySelector('[role="switch"]')
 const sent = path => mocks.calls.filter(c => c.path === path)
 
@@ -142,14 +144,6 @@ const blurWith = async (el, value) => {
     await new Promise(r => setTimeout(r, 0))
   })
 }
-const pick = async (el, value) => {
-  await act(async () => {
-    Object.getOwnPropertyDescriptor(el.constructor.prototype, 'value').set.call(el, value)
-    el.dispatchEvent(new Event('change', { bubbles: true }))
-    await new Promise(r => setTimeout(r, 0))
-  })
-}
-
 // Opens the last sheet the screen asked for into its own root and returns it.
 const openLastSheet = async () => {
   expect(mocks.sheets.length).toBeGreaterThan(0)
@@ -281,13 +275,14 @@ describe('AdminCoach — removing the stored credential (irreversible: the key i
 })
 
 describe('AdminCoach — switching provider', () => {
-  it('posts the chip\'s provider id and drops the previous test result with it', async () => {
+  it('posts the chosen provider id and drops the previous test result with it', async () => {
     await mount()
     await tap(btn('Test the Coach'))
     expect(host.textContent).toContain('Passed')
 
     mocks.routes['/api/admin/coach'] = status({ provider: 'openai', model: 'gpt-4o' })
-    await tap(chip('OpenAI-compatible'))
+    picker.open(rowTitled('Provider')).choose('OpenAI-compatible')
+    await settle()
     expect(sent('/api/admin/coach/config').at(-1).body).toEqual({ provider: 'compatible' })
     // A "Passed" banner from the provider you just switched away from would be a lie.
     expect(host.querySelector('.adm-result')).toBeFalsy()
@@ -295,8 +290,9 @@ describe('AdminCoach — switching provider', () => {
 
   it('marks the providers that already hold a key, so switching is visibly not a reset', async () => {
     await mount()
-    expect(chip('Claude').textContent).toContain('key saved')
-    expect(chip('OpenAI').textContent).not.toContain('key saved')
+    const choices = picker.open(rowTitled('Provider'))
+    expect(choices.textFor('Claude')).toContain('key saved')
+    expect(choices.textFor('OpenAI')).not.toContain('key saved')
   })
 })
 
@@ -386,8 +382,8 @@ describe('AdminCoach — model', () => {
   it('picking from the served list writes that model', async () => {
     mocks.routes['/api/admin/coach'] = status({ knownModels: ['claude-haiku-4', 'claude-sonnet-4'] })
     await mount()
-    const select = host.querySelector('select.adm-select')
-    await pick(select, 'claude-haiku-4')
+    picker.open(rowTitled('Model')).choose('claude-haiku-4')
+    await settle()
     expect(sent('/api/admin/coach/config')).toEqual([
       { path: '/api/admin/coach/config', method: 'POST', body: { model: 'claude-haiku-4' } }
     ])
@@ -396,7 +392,9 @@ describe('AdminCoach — model', () => {
   it('picking the blank "Default" row clears the model rather than writing an empty string as a name', async () => {
     mocks.routes['/api/admin/coach'] = status({ knownModels: ['claude-haiku-4', 'claude-sonnet-4'], models: { anthropic: 'claude-haiku-4' }, model: 'claude-haiku-4' })
     await mount()
-    await pick(host.querySelector('select.adm-select'), '')
+    const choices = picker.open(rowTitled('Model'))
+    choices.choose(choices.labels[0])
+    await settle()
     expect(sent('/api/admin/coach/config')[0].body).toEqual({ model: '' })
   })
 
@@ -415,9 +413,9 @@ describe('AdminCoach — model', () => {
       model: 'claude-3-opus',
     })
     await mount()
-    const select = host.querySelector('select.adm-select')
-    expect([...select.options].map(o => o.value)).toContain('claude-3-opus')
-    expect(select.value).toBe('claude-3-opus')
+    const choices = picker.open(rowTitled('Model'))
+    expect(choices.labels).toContain('claude-3-opus (not in the list)')
+    expect(choices.selected).toBe('claude-3-opus (not in the list)')
     // …and the summary line and the control must not disagree with each other.
     const hint = [...host.querySelectorAll('.adm-step-t')].find(e => e.textContent.startsWith('Model'))
     expect(hint.textContent).toContain('claude-3-opus')
@@ -437,13 +435,13 @@ describe('AdminCoach — model', () => {
   it('"List models" replaces the free-text box with the provider\'s own list and counts it', async () => {
     mocks.routes['/api/admin/coach/models'] = { ok: true, models: ['m1', 'm2', 'm3'] }
     await mount()
-    expect(host.querySelector('select.adm-select')).toBeFalsy()
+    expect(rowTitled('Model')).toBeUndefined()
     await tap(btn('List models'))
     expect(sent('/api/admin/coach/models')).toEqual([
       { path: '/api/admin/coach/models', method: 'POST', body: {} }
     ])
     expect(mocks.toast).toHaveBeenCalledWith('3 models')
-    expect([...host.querySelector('select.adm-select').options].map(o => o.value)).toEqual(['', 'm1', 'm2', 'm3'])
+    expect(picker.open(rowTitled('Model')).labels).toEqual(['Default (claude-sonnet-4)', 'm1', 'm2', 'm3'])
   })
 
   it('a refused list keeps the free-text box and shows the provider\'s reason, never an empty dropdown', async () => {
@@ -451,7 +449,7 @@ describe('AdminCoach — model', () => {
     await mount()
     await tap(btn('List models'))
     expect(mocks.toast).toHaveBeenCalledWith('401 invalid x-api-key')
-    expect(host.querySelector('select.adm-select')).toBeFalsy()
+    expect(rowTitled('Model')).toBeUndefined()
   })
 
   it('a refused list with no reason still says something an operator can act on', async () => {
@@ -467,7 +465,7 @@ describe('AdminCoach — model', () => {
     await tap(btn('List models'))
     expect(mocks.toast).toHaveBeenCalledWith('HTTP 504')
     expect(btn('List models').disabled).toBe(false)
-    expect(host.querySelector('select.adm-select')).toBeFalsy()
+    expect(rowTitled('Model')).toBeUndefined()
   })
 })
 

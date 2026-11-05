@@ -99,4 +99,17 @@ describe('Stats sections (P5)', () => {
     expect(host.querySelector('#stats-lifts').hidden).toBe(false)
     expect(index()[1].getAttribute('aria-pressed')).toBe('true')
   })
+
+  it('uses one period for each panel and keeps body logging in the shared header location', () => {
+    mount()
+    expect(host.querySelectorAll('#stats-lifts .exercise-period')).toHaveLength(1)
+    expect(host.querySelector('[data-muscles] [aria-label^="Period:"]')).toBeNull()
+    expect(host.querySelectorAll('#stats-effort .effort-period').length).toBeLessThanOrEqual(1)
+    expect(host.querySelector('.effort-card .seg-range')).toBeNull()
+    act(() => index()[2].click())
+    expect(host.querySelector('.hdr [aria-label="Log body weight"]')).toBeTruthy()
+    expect(host.querySelectorAll('#stats-body .progress-body-tabs button')).toHaveLength(4)
+    expect(host.querySelectorAll('#stats-body .seg-range')).toHaveLength(1)
+    expect(host.querySelector('#stats-body .weight-history')).toBeTruthy()
+  })
 })

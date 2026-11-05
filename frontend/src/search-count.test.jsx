@@ -31,10 +31,20 @@ function type(el, value) {
   Object.getOwnPropertyDescriptor(el.constructor.prototype, 'value').set.call(el, value)
   el.dispatchEvent(new Event('input', { bubbles: true }))
 }
-const chip = (host, text) => [...host.querySelectorAll('.chips .chip')].find(b => b.textContent.trim() === text)
+const chip = (host, text) => {
+  const filters = host.querySelector('.lib-search-filter')
+  if (filters) {
+    act(() => filters.click())
+    const sheet = renderTopSheet()
+    return [...sheet.querySelectorAll('.chips .chip')].find(b => b.textContent.trim() === text)
+  }
+  const disclosure = host.querySelector('.picker-filters')
+  if (disclosure && !disclosure.open) disclosure.querySelector('summary').click()
+  return [...host.querySelectorAll('.chips .chip')].find(b => b.textContent.trim() === text)
+}
 // Every body part again: the picker's "All" chip, or in the Library (one filter row since 1.4.5,
 // P7) a second tap on the chosen body part.
-const allParts = host => chip(host, 'All') || host.querySelector('.lib-filters .chip.on[aria-pressed="true"]')
+const allParts = host => host.querySelector('.lib-filters button[aria-label^="Clear:"]') || chip(host, 'All')
 const count = host => host.querySelector('.search .search-count')
 
 beforeEach(() => {
@@ -70,7 +80,7 @@ describe('exercise search result count', () => {
       expect(count(host).textContent).toBe('1')
       expect(host.textContent).toContain('Custom shoulder press')
       act(() => type(input, 'Zentara lift'))
-      act(() => chip(host, 'neck').click())
+      { const neck = chip(host, 'neck'); act(() => neck.click()) }
       expect(count(host).textContent).toBe('0')
       act(() => allParts(host).click())
       expect(count(host).textContent).toBe('1')
@@ -106,7 +116,7 @@ describe('exercise search result count', () => {
 
     it(`${where}: counts a body-part filter too, and reads "1 exercise" for one`, () => {
       const host = open()
-      act(() => chip(host, 'neck').click())
+      { const neck = chip(host, 'neck'); act(() => neck.click()) }
       const neck = EXDB.filter(e => e.bp === 'neck').length
       expect(Number(count(host).textContent)).toBe(neck)
       const one = EXDB.find(e => searchExercises(EXDB, e.n).length === 1)

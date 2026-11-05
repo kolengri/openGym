@@ -108,3 +108,83 @@
 @media (max-width: 359px) {
   .planning-home .planning-calendar .week { margin-inline: calc(6px - var(--pad)); }
 }
+
+/* Approved composition: a full Today block, followed by quiet activity. */
+.planning-home .hdr { gap: 8px; }
+.planning-home .hdr > div:first-of-type { min-width: 0; flex: 1; }
+.planning-home-header-actions { gap: 0; flex: none; }
+.planning-home .planning-calendar { margin-block: 0 16px; }
+.planning-home .planning-calendar .wkleft { font-size: var(--fs-caption); text-align: center; }
+.planning-home .planning-today-heading { min-height: 44px; }
+.planning-home .planning-today-heading .sec { margin: 0; }
+.planning-home .planning-today-heading .iconbtn { width: 44px; height: 44px; }
+.planning-home .planning-today > .today-row { display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 16px; border: 0; border-radius: 12px; }
+.planning-home .planning-today-status { display: flex; align-items: center; gap: 6px; color: var(--label-2); font-size: var(--fs-footnote); }
+.planning-home .planning-today-status .tag { background: none; color: inherit; padding: 0; font-size: inherit; }
+.planning-home .planning-today-status.is-done { color: var(--green); }
+.planning-home .planning-today-status .bm-mini-wrap { margin-inline-start: auto; }
+.planning-home .planning-today .today-row .ttl { display: block; overflow: visible; margin: 0; font-size: 1.25rem; line-height: 1.25; text-transform: none; }
+.planning-home .planning-today-meta { color: var(--label-2); font-size: var(--fs-footnote); line-height: 1.4; }
+.planning-home .planning-today-action { display: grid; place-items: center; min-height: 44px; margin-top: 4px; padding: 8px 12px; border-radius: 10px; background: var(--acc); color: var(--on-acc); font-size: var(--fs-subhead); font-weight: 600; }
+.planning-home .planning-next { min-height: 60px; margin-bottom: 20px; }
+.planning-home .planning-weight > summary { min-height: 60px; }
+.planning-home .checkin-card { min-height: 56px; display: flex; align-items: center; }
+.planning-home .checkin-card .card-head { width: 100%; }
+.planning-home .recovery-hint { padding: 12px; }
+.planning-home .recovery-hint .card-head-title { font-size: var(--fs-subhead); font-weight: 500; }
+.planning-home .recovery-hint .card-head-g { width: 30px; height: 30px; font-size: var(--fs-title2); color: var(--label-2); }
+.planning-home .recovery-hint .lbl2 { font-size: var(--fs-caption); }
+.planning-home .home-motivation > summary .ss { display: block; color: var(--label-2); font-size: var(--fs-caption); font-weight: 400; margin-top: 3px; }
+
+/* A single navigation level, then the compact planning-mode row and grouped week. */
+.planning-plan .planning-mode > summary .grow { display: flex; flex-direction: column; gap: 3px; }
+.planning-plan .planning-mode > summary .ss { color: var(--label-2); font-size: var(--fs-caption); font-weight: 400; }
+.planning-plan .plan-week { gap: 0; background: var(--surface); border-radius: 12px; overflow: hidden; }
+.planning-plan .plan-day { border-radius: 0; min-height: 64px; padding: 8px 12px; background: transparent; }
+.planning-plan .plan-day + .plan-day { border-top: 1px solid var(--sep); }
+.planning-plan .plan-day .plan-day-n { flex: none; min-width: 30px; width: 30px; background: none; font-size: var(--fs-caption); color: var(--label-2); }
+.planning-plan .plan-day .plan-day-n.today { color: var(--acc-ink); }
+.planning-plan .planning-rest { min-height: 44px; padding-block: 4px; }
+.planning-plan .planning-rest .tt { font-weight: 400; }
+.planning-plan .planning-destinations { margin-top: 20px; }
+.planning-plan .planning-routines-back { padding-inline: 0; background: none; }
+
+/* The catalogue carries short titles and factual week/day/progression metadata. */
+.planning-programmes .planning-programme-empty { padding: 0; }
+.planning-programmes .planning-programme-empty p { margin: 0 0 12px; }
+.planning-programmes .sect:has(.planning-programme-empty) .sect-b { background: none; padding: 0; }
+.planning-programmes .planning-starters .lrow { min-height: 64px; padding-block: 10px; }
+.planning-programmes .prog-run { padding: 12px; }
+.planning-programmes .prog-run .prog-name { font-size: var(--fs-subhead); font-weight: 500; }
+.planning-programmes .prog-run .lbl2 { font-size: var(--fs-caption); }
+.planning-programmes .prog-bar { height: 3px; margin-block: 10px; }
+
+/* Goal rows stay compact; Edit reveals the same accessible reorder/link controls. */
+.planning-routine .hdr .input { min-height: 44px; padding-block: 8px; background: none; border: 0; }
+.planning-routine .planning-routine-count { margin-inline: 12px; margin-top: 0; }
+.planning-routine .planning-progression { margin-block: 4px 16px; }
+.planning-routine .planning-progression > summary { flex-wrap: nowrap; }
+.planning-routine .planning-progression .planning-mode-value { max-width: 52%; overflow-wrap: anywhere; }
+.planning-routine .routine-ex-h { margin-block: 4px 6px; }
+.planning-routine .routine-ex-h .sec { margin: 0; }
+.planning-routine-list-actions { gap: 4px; }
+.planning-routine-list-actions .iconbtn { width: 44px; height: 44px; }
+.planning-routine .plan-textbtn { min-height: 44px; }
+.planning-routine .routine-list { gap: 0; border-radius: 12px; background: var(--surface); overflow: hidden; }
+.planning-routine .routine-list .item { border-radius: 0; padding: 10px 12px; min-height: 68px; gap: 10px; }
+.planning-routine .routine-drag-row + .routine-drag-row { border-top: 1px solid var(--sep); }
+.planning-routine .routine-list .thumb { width: 42px; height: 42px; flex: none; }
+.planning-routine .routine-list .item-open { min-width: 0; }
+.planning-routine .routine-list .ss { margin-top: 4px; }
+.planning-routine:not(.is-editing) .re-rail { display: none; }
+.planning-routine:not(.is-editing) .planning-superset-help { display: none; }
+.planning-routine .planning-routine-add { margin-top: 12px; }
+.planning-routine .planning-routine-coverage { margin-block: 16px; }
+.planning-routine.is-editing .routine-list .thumb { width: 32px; height: 32px; }
+.planning-routine.is-editing .routine-list .item { padding-inline: 8px; gap: 6px; }
+
+.planning-routine .planning-progression > summary .grow { min-width: 0; }
+.planning-routine .planning-progression > summary .ss { display: block; margin-top: 3px; font-weight: 400; color: var(--label-2); font-size: var(--fs-caption); line-height: 1.4; }
+
+.planning-home .wday .dot.ovr { background: transparent; border: 1px solid var(--orange); }
+.planning-routine .routine-list .swrow-item { border-radius: 0; }

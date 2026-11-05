@@ -51,7 +51,7 @@ export const ROOT_GROUPS = [
   ['data'],
   ['modules', 'units', 'look', 'about'],
 ]
-export const ROOT_GROUP_TITLES = ['Training', 'Connections', 'Data', 'App']
+export const ROOT_GROUP_TITLES = ['Workout', 'Connections', 'Data', 'App']
 
 /**
  * Whether a page exists for this device and profile. Reminders need a push server (signed in) or

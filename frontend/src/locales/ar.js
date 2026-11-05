@@ -1,5 +1,13 @@
 // Arabic UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "فتح التمرين",
+  "Strength block": "مرحلة القوة",
+  "Upper / lower": "الجزء العلوي / السفلي",
+  "Linear 5×5": "خطي 5×5",
+  "Recorded": "مسجّل",
+  "Calculated": "محسوب",
+  "Measurements": "القياسات",
+  "Photos": "الصور",
   "Garmin Connect must be ready before reading health data.": "يجب أن يكون Garmin Connect جاهزًا قبل قراءة البيانات الصحية.",
   "Data": "البيانات",
   "Connections": "الاتصالات",

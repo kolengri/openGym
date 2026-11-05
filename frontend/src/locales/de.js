@@ -1,5 +1,13 @@
 // German UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Training öffnen",
+  "Strength block": "Kraftblock",
+  "Upper / lower": "Oberkörper / Unterkörper",
+  "Linear 5×5": "Linear 5×5",
+  "Recorded": "Erfasst",
+  "Calculated": "Berechnet",
+  "Measurements": "Maße",
+  "Photos": "Fotos",
   "Garmin Connect must be ready before reading health data.": "Garmin Connect muss bereit sein, bevor Gesundheitsdaten gelesen werden können.",
   "Data": "Daten",
   "Connections": "Verbindungen",

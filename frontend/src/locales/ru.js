@@ -1,5 +1,13 @@
 // Russian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Открыть тренировку",
+  "Strength block": "Силовой блок",
+  "Upper / lower": "Верх / низ",
+  "Linear 5×5": "Линейная 5×5",
+  "Recorded": "Записано",
+  "Calculated": "Рассчитано",
+  "Measurements": "Замеры",
+  "Photos": "Фото",
   "Garmin Connect must be ready before reading health data.": "Перед чтением данных здоровья Garmin Connect должен быть готов к работе.",
   "Data": "Данные",
   "Connections": "Подключения",

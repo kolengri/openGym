@@ -9,8 +9,7 @@ import { DAYS, exerciseNameText, fmtNum, todayISO, weekOrder, weekStartOf } from
 import { confirmSheet, exportProgrammeFile, menuSheet } from '../sheets.jsx'
 import Icon from '../components/Icon.jsx'
 import '../styles/planning-refinement.css'
-import EmptyState from '../components/EmptyState.jsx'
-import { Button, NumberField, Row, Section, Stepper, Switch } from '../components/ui.jsx'
+import { Button, NumberField, Row, Section, Segmented, Stepper, Switch } from '../components/ui.jsx'
 import { effortOf, modeOf, isBw } from '../lib/history.js'
 import { exOr } from '../lib/exercises.js'
 import { weightIncrement } from '../lib/progression.js'
@@ -25,9 +24,9 @@ import {
 
 // Names and blurbs as t() literals, for check-source-strings.mjs (see lib/starter.js).
 const STARTER_COPY = {
-  'strength-4': () => ({ name: t('Strength block, 4 weeks'), about: t('Three days on the 5×5 routines, a little heavier every week, then a light week to bounce back.') }),
-  'hypertrophy-6': () => ({ name: t('Upper / lower by effort, 6 weeks'), about: t('Four days. Your progression picks the weights, the effort climbs to RPE 9, then a deload.') }),
-  'linear-12': () => ({ name: t('Linear 5×5 style, 12 weeks'), about: t('Three days of plain linear progression, with a deload every fourth week.') }),
+  'strength-4': () => ({ title: t('Strength block'), name: t('Strength block, 4 weeks'), about: t('Three days on the 5×5 routines, a little heavier every week, then a light week to bounce back.') }),
+  'hypertrophy-6': () => ({ title: t('Upper / lower'), name: t('Upper / lower by effort, 6 weeks'), about: t('Four days. Your progression picks the weights, the effort climbs to RPE 9, then a deload.') }),
+  'linear-12': () => ({ title: t('Linear 5×5'), name: t('Linear 5×5 style, 12 weeks'), about: t('Three days of plain linear progression, with a deload every fourth week.') }),
 }
 
 const RPES = [6, 7, 7.5, 8, 8.5, 9, 9.5, 10]
@@ -79,7 +78,7 @@ function RunningCard({ S, nav }) {
   return <div className="card prog-run">
     <div className="row between" style={{ gap: 8 }}>
       <div style={{ minWidth: 0 }}>
-        <div className="lbl2">{t('Running now')}</div>
+        <div className="lbl2">{st.done ? t('Done') : st.paused ? t('Paused') : t('Running now')}</div>
         <div className="ttl prog-name">{p.name || t('Programme')}</div>
       </div>
       <span className="tag acc">{programmeChip(S)}</span>
@@ -137,21 +136,20 @@ export default function Programmes() {
       <button className="iconbtn" data-back="/plan" onClick={() => nav('/plan')} aria-label={t('Plan')}><Icon name="chevronLeft" /></button>
       <div style={{ flex: 1, margin: '0 12px', minWidth: 0 }}><h1>{t('Programmes')}</h1></div>
     </div>
+    <Segmented className="plan-views" value="programmes" onChange={value => { if (value !== 'schedule') return; try { localStorage.setItem('gym_plan_view', 'schedule') } catch { /* private mode */ } nav('/plan') }} options={[{ value: 'schedule', label: t('Schedule') }, { value: 'programmes', label: t('Programmes') }]} />
     <RunningCard S={S} nav={nav} />
     <Section title={t('Your programmes')}>
       {list.length ? list.map(p => <Row key={p.id} icon="calendar" title={p.name || t('Programme')} accessory="chevron"
         subtitle={tn('{0} week', '{0} weeks', p.weeks.length) + (p.id === runningId ? ' · ' + t('running') : '')}
         onClick={() => nav('/plan/prog/' + p.id)} />)
-        : <EmptyState className="in-sect" text={t('No programmes yet.')}>
-          <Button variant="tinted" icon="plus" onClick={create}>{t('New programme')}</Button>
-        </EmptyState>}
+        : <div className="planning-programme-empty"><p className="small muted">{t('No programmes yet.')}</p><Button variant="primary" icon="plus" onClick={create}>{t('New programme')}</Button></div>}
     </Section>
     {list.length > 0 && <Button variant="tinted" icon="plus" onClick={create}>{t('New programme')}</Button>}
-    <Section title={t('Starter programmes')} footer={t('Each adds its own routines, so your plan stays as it is until you start it.')}>
+    <Section title={t('Starter programmes')} className="planning-starters">
       {starterProgrammeOptions().map(o => {
         const c = STARTER_COPY[o.id]()
-        return <Row key={o.id} icon="clipboard" title={c.name} accessory="chevron"
-          subtitle={tn('{0} day a week', '{0} days a week', o.days) + ' · ' + (o.id === 'hypertrophy-6' ? t('RPE') : o.id === 'strength-4' ? '%1RM' : t('Progression'))}
+        return <Row key={o.id} icon="clipboard" title={c.title} accessory="chevron"
+          subtitle={tn('{0} week', '{0} weeks', o.weeks) + ' · ' + tn('{0} day a week', '{0} days a week', o.days) + ' · ' + (o.id === 'hypertrophy-6' ? rpeText(9, S) : o.id === 'strength-4' ? '%1RM' : t('Progression'))}
           onClick={() => useUI.getState().openSheet(close => <>
             <h3>{c.name}</h3>
             <p className="muted">{c.about}</p>

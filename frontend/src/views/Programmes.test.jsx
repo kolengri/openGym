@@ -53,12 +53,22 @@ const button = text => [...host.querySelectorAll('button')].find(b => b.textCont
 const click = el => act(() => el.click())
 
 describe('the programme list', () => {
+  it('keeps the active tab unchanged and switches to Schedule explicitly', () => {
+    localStorage.setItem('gym_plan_view', 'programmes')
+    render(<Programmes />)
+    click(host.querySelectorAll('.plan-views button')[1])
+    expect(mocks.navs).toEqual([])
+    expect(localStorage.getItem('gym_plan_view')).toBe('programmes')
+    click(host.querySelectorAll('.plan-views button')[0])
+    expect(mocks.navs).toEqual(['/plan'])
+    expect(localStorage.getItem('gym_plan_view')).toBe('schedule')
+  })
   it('opens starter details without writing, then adds its own routines on Add', () => {
     render(<Programmes />)
     expect(host.textContent).toContain('No programmes yet.')
-    expect(button('Strength block, 4 weeks').textContent).toContain('3 days a week · %1RM')
+    expect(button('Strength block').textContent).toContain('4 weeks · 3 days a week · %1RM')
     expect(host.textContent).not.toContain('Three days on the 5×5 routines')
-    click(button('Strength block, 4 weeks'))
+    click(button('Strength block'))
     expect(Object.values(mocks.S.programmes)).toHaveLength(0)
     expect(mocks.navs).toEqual([])
     const close = vi.fn()

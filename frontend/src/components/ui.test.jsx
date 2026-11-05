@@ -2,7 +2,7 @@
 import React, { act, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { Slider, Stepper, NumberField, numWidthCh, SLIDER_GRAB_PX } from './ui.jsx'
+import { Slider, Stepper, NumberField, SelectRow, bindUI, numWidthCh, SLIDER_GRAB_PX } from './ui.jsx'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
@@ -27,6 +27,18 @@ function pointer(target, type, { x = 0, y = 0, button = 0 } = {}) {
   act(() => target.dispatchEvent(event))
   return event
 }
+
+it('keeps a disabled picker reason and current value visible without opening a sheet', () => {
+  const openSheet = vi.fn()
+  bindUI({ getState: () => ({ openSheet }) })
+  act(() => root.render(<SelectRow title="Effort" subtitle="Finish the current workout first." value="rir" options={[{ value: 'rir', label: 'RIR' }]} onChange={vi.fn()} disabled />))
+  const picker = host.querySelector('button')
+  expect(picker.disabled).toBe(true)
+  expect(picker.textContent).toContain('Finish the current workout first.')
+  expect(picker.textContent).toContain('RIR')
+  act(() => picker.click())
+  expect(openSheet).not.toHaveBeenCalled()
+})
 
 describe('Slider', () => {
   // 300px track from x=100 to x=400 over 0..300 so 1px == 1 unit

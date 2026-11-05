@@ -1,5 +1,13 @@
 // Korean UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "운동 열기",
+  "Strength block": "근력 훈련 단계",
+  "Upper / lower": "상체 / 하체",
+  "Linear 5×5": "선형 5×5",
+  "Recorded": "기록값",
+  "Calculated": "계산값",
+  "Measurements": "신체 치수",
+  "Photos": "사진",
   "Garmin Connect must be ready before reading health data.": "건강 데이터를 읽기 전에 Garmin Connect가 준비되어 있어야 합니다.",
   "Data": "데이터",
   "Connections": "연결",

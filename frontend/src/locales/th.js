@@ -1,5 +1,13 @@
 // Thai UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "เปิดการฝึก",
+  "Strength block": "ช่วงฝึกความแข็งแรง",
+  "Upper / lower": "ส่วนบน / ส่วนล่าง",
+  "Linear 5×5": "เชิงเส้น 5×5",
+  "Recorded": "บันทึกแล้ว",
+  "Calculated": "คำนวณแล้ว",
+  "Measurements": "สัดส่วนร่างกาย",
+  "Photos": "รูปภาพ",
   "Garmin Connect must be ready before reading health data.": "Garmin Connect ต้องพร้อมก่อนอ่านข้อมูลสุขภาพ",
   "Data": "ข้อมูล",
   "Connections": "การเชื่อมต่อ",

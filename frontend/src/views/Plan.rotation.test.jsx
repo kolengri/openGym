@@ -85,7 +85,7 @@ describe('Plan — How you train', () => {
     mount()
     expect(selectedMode()).toBe('Fixed Week')
     expect(headings()).toContain('This week')
-    expect(subtitle()).toBe('Your weekly routine')
+    expect(host.querySelector('.hdr .sub')).toBeNull()
     expect(rows()).toEqual([])
     // the old duplicate controls are gone: the mode control is the one way in and out
     expect(byLabel('Build a rotation instead')).toBeUndefined()
@@ -103,7 +103,7 @@ describe('Plan — How you train', () => {
     expect(headings()).not.toContain('This week')
     expect(host.textContent).toContain('No rotation yet.')
     // the subtitle stops saying "weekly" once you train in a loop
-    expect(subtitle()).toBe('Your routines in a loop')
+    expect(host.querySelector('.hdr .sub')).toBeNull()
   })
 
   it('the loop header can wrap so Add never runs off a 320 px screen', async () => {
@@ -354,13 +354,14 @@ describe('Plan — Schedule extras', () => {
   it('switches to Routines and remembers it for next time', () => {
     mount()
     const seg = label => [...host.querySelectorAll('.plan-views button')].find(b => b.textContent === label)
-    click(seg('Routines'))
+    click([...host.querySelectorAll('.planning-destinations button')].find(b => b.querySelector('.lrow-t').textContent === 'Routines'))
     expect(localStorage.getItem('gym_plan_view')).toBe('routines')
     expect(host.querySelector('.plan-mode')).toBe(null)
     expect(host.querySelector('.plan-routines')).toBeTruthy()
     act(() => root.unmount()); root = createRoot(host)
     act(() => root.render(<Plan />))
-    expect(seg('Routines').className).toContain('on')
+    expect(host.querySelector('.planning-routines-back')).toBeTruthy()
+    expect([...host.querySelectorAll('.plan-views button')].map(b => b.textContent)).toEqual(['Schedule', 'Programmes'])
     click(seg('Schedule'))
     expect(localStorage.getItem('gym_plan_view')).toBe('schedule')
     expect(host.querySelector('.plan-mode')).toBeTruthy()

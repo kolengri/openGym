@@ -1,5 +1,5 @@
 import '../styles/progress-refinement.css'
-import { useDeferredValue, useMemo, useRef, useState } from 'react'
+import { useDeferredValue, useMemo, useState } from 'react'
 import { useUI } from '../store/useUI.js'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
@@ -9,24 +9,15 @@ import { activeProfile, exAvailable } from '../lib/equipment.js'
 import { bestWeightFor } from '../lib/history.js'
 import { fmtNum, exCount } from '../lib/format.js'
 import { t, tn, exerciseNameFor, exerciseNameClass } from '../lib/i18n.js'
+import { exerciseNameParts } from '../components/ExerciseName.jsx'
 import { Thumb } from '../components/Media.jsx'
-import { exerciseDetailSheet, addToRoutineSheet, customExSheet } from '../sheets.jsx'
+import { exerciseDetailSheet, customExSheet } from '../sheets.jsx'
 import Icon from '../components/Icon.jsx'
 import ExerciseViewToggle from '../components/ExerciseViewToggle.jsx'
 import { Button, Segmented } from '../components/ui.jsx'
-import { tappable, useRevealActiveChip } from '../lib/use-sheet-keyboard.js'
+import { tappable } from '../lib/use-sheet-keyboard.js'
 import { useAutoMore } from '../lib/use-auto-more.js'
 import { isFav, sortFavouritesFirst, sortYoursFirst, usageOf } from '../lib/favourites.js'
-
-// Split only the canonical suffix emitted by exerciseNameFor. English-only names, custom
-// names and the user's choice to hide English remain exactly as configured.
-function libraryName(ex) {
-  const label = exerciseNameFor(ex)
-  for (const suffix of [' (' + ex.n + ')', ' \u2068(' + ex.n + ')\u2069']) {
-    if (label.endsWith(suffix) && label !== ex.n) return { primary: label.slice(0, -suffix.length), secondary: ex.n }
-  }
-  return { primary: label, secondary: null }
-}
 
 export default function Library() {
   const nav = useNavigate()
@@ -38,7 +29,6 @@ export default function Library() {
   const [cat, setCat] = useState('')
   const [showAll, setShowAll] = useState(false)   // ignore the active equipment profile for this session
   const [shown, setShown] = useState(40)
-  const bpStrip = useRef(null)
   const moreRef = useAutoMore(() => setShown(s => s + 40))
   const profile = activeProfile(S)
   // Your own exercises, counted the way the list below shows them (allExercises puts every
@@ -60,18 +50,17 @@ export default function Library() {
   const narrowedList = eqOn ? eqFiltered.filter(e => e.eq === eqOn) : eqFiltered
   const usage = useMemo(() => (q.trim() ? usageOf(S) : null), [q, S.routines, S.workouts])
   const f = usage ? sortYoursFirst(narrowedList, S, usage) : sortFavouritesFirst(narrowedList, S)
-  useRevealActiveChip(bpStrip, bp)
   // Type and equipment live in the Filters sheet (P7). It works out its own options from the same
   // search and body part, so a choice it offers is never a dead end either.
-  const sheetOn = (catOn ? 1 : 0) + (eqOn ? 1 : 0)
-  const filtersFor = (c, e) => {
-    const by = byCategory(inPart, c)
+  const sheetOn = (bp ? 1 : 0) + (catOn ? 1 : 0) + (eqOn ? 1 : 0)
+  const filtersFor = (c, e, part = bp) => {
+    const by = byCategory(searchExercises(browsePool.filter(ex => !part || ex.bp === part), q), c)
     const pool = (profile && !showAll) ? by.list.filter(x => exAvailable(S, x)) : by.list
     const opts = equipmentOf(pool)
     return { catOpts: by.opts, catOn: by.on, eqOpts: opts, eqOn: opts.includes(e) ? e : '' }
   }
-  const openFilters = () => useUI.getState().openSheet(close => <LibraryFilters close={close} onMuscles={() => { close(); nav('/muscles') }} cat={catOn} eq={eqOn} filtersFor={filtersFor}
-    onChange={(c, e) => { setCat(c); setEq(e); setShown(40) }} />)
+  const openFilters = () => useUI.getState().openSheet(close => <LibraryFilters close={close} onMuscles={() => { close(); nav('/muscles') }} cat={catOn} eq={eqOn} bp={bp} filtersFor={filtersFor}
+    onChange={(c, e, part) => { setCat(c); setEq(e); setBp(part); setShown(40) }} />)
   // A live count at the end of the search field while a search or filter narrows the list
   // (idea and first version: GitLab !31) — how many are left, before scrolling to find out.
   const narrowed = !!(browse !== 'all' || q.trim() || bp || eqOn || catOn)
@@ -84,16 +73,14 @@ export default function Library() {
     : []
   const row = e => {
     const best = bestWeightFor(S, e.id)
-    const name = libraryName(e)
+    const name = exerciseNameParts(e)
     // The row is not a button: its name is, stretched over the row (.tap-main), with Add to my plan
     // a sibling above it (card dismiss pass), so neither tap can land on the other.
     return <div key={e.id} className="item tap-host">
       <Thumb ex={e} />
       <button type="button" className="grow item-open tap-main" aria-haspopup="dialog" onClick={() => exerciseDetailSheet(e)}><span className={`tt ${exerciseNameClass(e)}`}>{isFav(S, e.id) && <Icon name="starFill" className="fav-star" />}{name.primary}</span>{name.secondary && <span className="ss lib-english" lang="en" dir="ltr">{name.secondary}</span>}<span className="ss capitalize">{t(MUSCLE_NAME[e.tg] || e.tg || e.bp)} · {t(e.eq)}</span></button>
       {best > 0 && <span className="tag acc">{fmtNum(best)}</span>}
-      {/* a quiet trailing button (P7): the accent stays on the one action of the screen */}
-      <button type="button" className="iconbtn lib-add" aria-label={t('Add to my plan')} title={t('Add to my plan')}
-        onClick={() => addToRoutineSheet(e)}><Icon name="plus" /></button>
+      <Icon name="chevronRight" className="chev" />
     </div>
   }
 
@@ -110,7 +97,7 @@ export default function Library() {
       <input className="input" aria-label={t('Search…')} placeholder={t('Search…')} value={q} onChange={e => { setQ(e.target.value); setShown(40) }} />
       {narrowed && <span className="search-count" role="status" aria-label={exCount(f.length)}>{fmtNum(f.length)}</span>}
       {q && <button className="clear" onClick={() => { setQ(''); setShown(40) }} aria-label={t('Clear')}><Icon name="xmark" /></button>}</div>
-      <button type="button" className={'iconbtn lib-search-filter' + (sheetOn ? ' on' : '')} aria-label={t('Filters') + (sheetOn ? ': ' + sheetOn : '')} aria-haspopup="dialog" onClick={openFilters}>
+      <button type="button" data-tour="lib-filters" className={'iconbtn lib-search-filter' + (sheetOn ? ' on' : '')} aria-label={t('Filters') + (sheetOn ? ': ' + sheetOn : '')} aria-haspopup="dialog" onClick={openFilters}>
         <Icon name="slider" />{sheetOn ? <span className="lib-fn">{sheetOn}</span> : null}
       </button>
       <ExerciseViewToggle /></div>
@@ -123,20 +110,12 @@ export default function Library() {
         {showAll ? t('Filter by "{0}"', profile.name) : t('Show all equipment')}
       </button>
     </div>}
-    {/* One row of filters (redesign 1.4.5, P7), where there were three: Filters opens the sheet with
-        the kind of exercise and the equipment, any choice made there sits beside it as a chip you
-        can clear, then the body parts. Nothing is filled while nothing is chosen, and a chosen chip
-        is a neutral fill, not the accent. Tapping the chosen body part again shows them all (the
-        old "All" chip). Changing body part keeps the equipment filter (issue #71): the eqOn
-        fallback above drops it only for the current view if the new body part has nothing under
-        it, without forgetting the choice. */}
-    <div className="chips lib-filters" data-tour="lib-filters" ref={bpStrip}>
+    {(bp || catOn || eqOn) && <div className="chips lib-filters">
+      {bp && <button type="button" className="chip on ichip" aria-label={t('Clear') + ': ' + t(bp)} onClick={() => { setBp(''); setShown(40) }}>{t(bp)}<Icon name="xmark" /></button>}
       {catOn && <button type="button" className="chip on ichip" aria-label={t('Clear') + ': ' + t(catOn)} onClick={() => { setCat(''); setShown(40) }}>{t(catOn)}<Icon name="xmark" /></button>}
       {eqOn && <button type="button" className="chip on ichip" aria-label={t('Clear') + ': ' + t(eqOn)} onClick={() => { setEq(''); setShown(40) }}>{t(eqOn)}<Icon name="xmark" /></button>}
-      {BODYPARTS.map(b => <button key={b} className={'chip' + (bp === b ? ' on ichip' : '')} aria-pressed={bp === b}
-        onClick={() => { setBp(bp === b ? '' : b); setShown(40) }}>{t(b)}{bp === b && <Icon name="xmark" />}</button>)}
-    </div>
-    <div className={'list' + (S.exerciseView === 'cards' ? ' ex-grid' : '')}>
+    </div>}
+    <div className={'list lib-results' + (S.exerciseView === 'cards' ? ' ex-grid' : '')}>
       {q.trim() && f.length === 0 && <div className="item ex-new" {...tappable(() => customExSheet(null, ex => exerciseDetailSheet(ex), q.trim()))}>
         <div className="thumb thumb-x"><Icon name="plusCircle" /></div>
         <div className="grow"><div className="tt">{t('Create your own exercise')}</div><div className="ss">{q.trim()}</div></div><Icon name="plus" className="chev" />
@@ -153,14 +132,20 @@ export default function Library() {
 
 // The Library's Filters sheet (P7): the kind of exercise and the equipment, as wrapping chips. Every
 // tap filters the list behind it at once; Done only closes.
-function LibraryFilters({ close, onMuscles, cat, eq, filtersFor, onChange }) {
+function LibraryFilters({ close, onMuscles, cat, eq, bp, filtersFor, onChange }) {
   const [c, setC] = useState(cat)
   const [e, setE] = useState(eq)
-  const { catOpts, catOn, eqOpts, eqOn } = filtersFor(c, e)
-  const set = (nc, ne) => { setC(nc); setE(ne); onChange(nc, ne) }
+  const [part, setPart] = useState(bp)
+  const { catOpts, catOn, eqOpts, eqOn } = filtersFor(c, e, part)
+  const set = (nc, ne, nb = part) => { setC(nc); setE(ne); setPart(nb); onChange(nc, ne, nb) }
   return <div className="lib-fsheet">
     <h3>{t('Filters')}</h3>
     <Button variant="ghost" icon="figureStrength" trailingIcon="chevronRight" onClick={onMuscles}>{t('By muscle')}</Button>
+    <h4 className="sec">{t('Body')}</h4>
+    <div className="chips wrap lib-body-parts">
+      <button type="button" className={'chip' + (!part ? ' on' : '')} aria-pressed={!part} onClick={() => set(c, e, '')}>{t('All')}</button>
+      {BODYPARTS.map(value => <button type="button" key={value} className={'chip' + (part === value ? ' on' : '')} aria-pressed={part === value} onClick={() => set(c, e, value)}>{t(value)}</button>)}
+    </div>
     {catOpts.length > 1 && <>
       <h4 className="sec">{t('Exercise type')}</h4>
       <div className="chips wrap">
@@ -177,6 +162,6 @@ function LibraryFilters({ close, onMuscles, cat, eq, filtersFor, onChange }) {
     </>}
     <div style={{ height: 16 }} />
     <Button variant="primary" onClick={close}>{t('Done')}</Button>
-    {(catOn || eqOn) && <Button variant="ghost" className="dim" style={{ marginTop: 6 }} onClick={() => set('', '')}>{t('Clear filters')}</Button>}
+    {(part || catOn || eqOn) && <Button variant="ghost" className="dim" style={{ marginTop: 6 }} onClick={() => set('', '', '')}>{t('Clear filters')}</Button>}
   </div>
 }

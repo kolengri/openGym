@@ -151,7 +151,7 @@ export default function CoachIntake() {
   const dots = STEPS.filter(s => s !== 'consent')
   const dotIndex = dots.indexOf(key)
 
-  return <div className="narrow ob guided-refined">
+  return <div className="narrow ob guided-refined coach-refined">
     <div className="ob-top">
       <button className="iconbtn" data-back={step ? '' : editing ? '/coach' : '/plan'} onClick={back} aria-label={t('Back')}><Icon name="chevronLeft" /></button>
       {key !== 'consent' && <div className="ob-dots">

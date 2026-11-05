@@ -34,7 +34,7 @@ function mount({ workouts = [], ...settings } = {}) {
 afterEach(() => { act(() => root.unmount()); host.remove(); vi.restoreAllMocks(); mocks.history.mockClear(); window.history.replaceState(null, '', '#/') })
 const overview = () => host.querySelector('#stats-overview')
 const values = () => [...overview().querySelectorAll('.overview-summary b')].map(el => el.textContent)
-const chart = () => mocks.charts.filter(c => c.h === 170).at(-1)
+const chart = () => mocks.charts.filter(c => c.h === 128).at(-1)
 const click = el => act(() => el.click())
 const pressRange = label => click([...overview().querySelectorAll('.overview-range button')].find(b => b.textContent === label))
 const history = () => [session(400, 60), session(60, 40), session(10, 100, [{ w: 40, r: 10, done: true, phase: 'warmup', warmup: true }]), session(3, 120, [{ w: 500, r: 5, done: false }])]

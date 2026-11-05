@@ -1,5 +1,13 @@
 // Hungarian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Edzés megnyitása",
+  "Strength block": "Erőblokk",
+  "Upper / lower": "Felsőtest / alsótest",
+  "Linear 5×5": "Lineáris 5×5",
+  "Recorded": "Rögzített",
+  "Calculated": "Számított",
+  "Measurements": "Méretek",
+  "Photos": "Fotók",
   "Garmin Connect must be ready before reading health data.": "Az egészségügyi adatok olvasásához a Garmin Connectnek készen kell állnia.",
   "Data": "Adatok",
   "Connections": "Kapcsolatok",

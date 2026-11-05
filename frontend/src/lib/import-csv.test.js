@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
+import { bodyCSV } from './export-csv.js'
 import { workoutVolume } from './history.js'
-import { parseWhen, parseWorkoutCSV, parseBodyweight, mergeImport } from './import-csv.js'
+import { parseWhen, parseWorkoutCSV, parseBodyweight, parseImport, mergeImport } from './import-csv.js'
 
 const CSV = [
   'Date,Exercise,Weight,Reps,Set Type',
@@ -9,6 +10,16 @@ const CSV = [
   '8 Aug 2026,Bench Press,80,5,Working',
   '2026/08/08,Bench Press,85,3,Working',
 ].join('\n')
+
+it('keeps supplied measurement source and reading time through import normalization', () => {
+  const state = { unit: 'kg', bodyweight: [], measurements: [], customMeasurements: [] }
+  const parsed = { kind: 'bodyweight', source: 'Strong', bodyweight: [], measurements: [
+    { d: '2026-11-05', at: '2026-11-05T08:30:00Z', values: { waist: 82 }, other: [] },
+  ] }
+  expect(mergeImport(state, parsed).measurements).toBe(1)
+  expect(state.measurements[0]).toMatchObject({ d: '2026-11-05', source: 'Strong', at: '2026-11-05T08:30:00Z', waist: 82 })
+  expect(mergeImport(state, parsed).measurements).toBe(0)
+})
 
 describe('CSV warm-up provenance', () => {
   it('retains the imported warm-up phase and excludes it from topW', () => {
@@ -296,5 +307,29 @@ describe('impossible dates and numbers', () => {
   it('body weight drops future days and impossible weights', () => {
     const parsed = parseBodyweight('Date,Weight (kg)\n2026-01-01,70\n2026-01-02,-70\n2026-01-03,9000\n2099-01-01,70', { unit: 'kg' })
     expect(parsed.bodyweight.map(b => b.d)).toEqual(['2026-01-01'])
+  })
+})
+
+
+describe('body import origin from the actual parser', () => {
+  it('recognizes an openGym body export and retains measurements through merge', () => {
+    const original = { unit: 'kg', bodyweight: [{ d: '2026-11-05', w: 80 }], measurements: [{ d: '2026-11-05', waist: 82 }] }
+    const parsed = parseImport(bodyCSV(original), { unit: 'kg' })
+    expect(parsed.source).toBe('openGym')
+    const state = { unit: 'kg', bodyweight: [], measurements: [], customMeasurements: [] }
+    mergeImport(state, parsed)
+    expect(state.measurements[0]).toMatchObject({ waist: 82, source: 'openGym' })
+    expect(mergeImport(state, parsed).measurements).toBe(0)
+  })
+  it('identifies actual Apple Health XML without attributing generic CSV to Apple', () => {
+    const apple = parseImport('<HealthData><Record type="HKQuantityTypeIdentifierBodyMass" unit="kg" value="80" startDate="2026-11-05 08:30:00 +0000" /></HealthData>', { unit: 'kg' })
+    expect(apple.source).toBe('Apple Health')
+    expect(apple.bodyweight[0].w).toBe(80)
+    const unknown = parseImport('Date,Weight\n2026-11-05,80', { unit: 'kg' })
+    expect(unknown.source).toBe('CSV import')
+    const state = { unit: 'kg', bodyweight: [], measurements: [], customMeasurements: [] }
+    mergeImport(state, unknown)
+    expect(state.bodyweight[0].w).toBe(80)
+    expect(state.measurements).toEqual([])
   })
 })

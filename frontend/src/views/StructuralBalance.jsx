@@ -1,8 +1,10 @@
+import '../styles/progress-refinement.css'
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
 import { exOr } from '../lib/exercises.js'
 import { t, exerciseNameFor, exerciseNameClass } from '../lib/i18n.js'
+import { fmtDate } from '../lib/format.js'
 import Icon from '../components/Icon.jsx'
 import { Button, Segmented } from '../components/ui.jsx'
 import { exercisePicker, bwSheet } from '../sheets.jsx'
@@ -41,16 +43,17 @@ export default function StructuralBalance() {
     const picker = exercisePicker(ex => { setOverride(role, ex.id); picker.close() }, { title: t('Change exercise') })
   }
 
-  return <>
+  return <div className="progress-refinement progress-balance">
     <div className="hdr"><button className="iconbtn" data-back="/stats" onClick={() => nav('/stats')} aria-label={t('Stats')}><Icon name="chevronLeft" /></button>
       <div style={{ flex: 1, marginInlineStart: 12 }}><h1>{t('Structural balance')}</h1>
-        <div className="sub">{t('Compare your lifts against a published ratio table to find the weak link.')}</div></div></div>
+      </div></div>
 
     <Segmented className="seg-range" value={templateId}
       onChange={id => update(s => { s.balanceTemplate = id })}
       options={TEMPLATE_LIST.map(tpl => ({ value: tpl.id, label: t(tpl.label) }))} />
 
-    <div className="card">
+    <p className="small dim balance-caption">{t('Compare your lifts against a published ratio table to find the weak link.')}</p>
+    <div className="card balance-results">
       {results.map(r => {
         const role = template.roles.find(role => role.id === r.roleId)
         const view = balanceStatusView(r.status, r.needsAnchor)
@@ -73,6 +76,7 @@ export default function StructuralBalance() {
                 <span className="small dim" style={{ display: 'block' }}>
                   <span className={exId ? exerciseNameClass(exOr(exId)) : ''} data-exercise-name>{name}</span>{r.isOverridden ? ` · ${t('Custom')}` : ''}
                 </span>
+                {r.current?.d && <time className="small dim balance-date" dateTime={String(r.current.d).slice(0, 10)}>{fmtDate(String(r.current.d).slice(0, 10), true, true)}</time>}
                 {r.needsBodyweight && <span className="small" data-needs-bodyweight style={{ display: 'block', color: 'var(--label-2)' }}>
                   {t('Log your body weight to score this lift.')}
                 </span>}
@@ -94,5 +98,5 @@ export default function StructuralBalance() {
         )
       })}
     </div>
-  </>
+  </div>
 }

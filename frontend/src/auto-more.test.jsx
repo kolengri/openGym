@@ -89,7 +89,9 @@ describe('lists load their next page as you scroll', () => {
     const count = bp => EXDB.filter(e => e.bp === bp).length
     const bp = BODYPARTS.filter(b => count(b) > 40).sort((a, b) => count(a) - count(b))[0]
     const host = render(<Library />)
-    act(() => [...host.querySelectorAll('.chips .chip')].find(c => c.textContent === bp).click())
+    act(() => host.querySelector('.lib-search-filter').click())
+    const filters = renderTop()
+    act(() => [...filters.querySelectorAll('.chips .chip')].find(c => c.textContent === bp).click())
     for (let i = 0; i < 10 && showMore(host); i++) comeIntoView()
     expect(rows(host)).toBe(count(bp))
     expect(showMore(host)).toBeUndefined()

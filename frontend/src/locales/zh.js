@@ -1,5 +1,13 @@
 // Simplified Chinese UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "打开训练",
+  "Strength block": "力量训练阶段",
+  "Upper / lower": "上肢 / 下肢",
+  "Linear 5×5": "线性 5×5",
+  "Recorded": "已记录",
+  "Calculated": "已计算",
+  "Measurements": "身体围度",
+  "Photos": "照片",
   "Garmin Connect must be ready before reading health data.": "读取健康数据前，Garmin Connect 必须准备就绪。",
   "Data": "数据",
   "Connections": "连接",

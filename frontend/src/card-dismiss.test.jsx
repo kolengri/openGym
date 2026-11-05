@@ -115,19 +115,17 @@ describe('Home: the streak card and check-in', () => {
 })
 
 describe('exercise rows with a trailing button', () => {
-  it('Library: Add to my plan does not open the exercise, the name does', () => {
+  it('Library: browsing opens details without committing or nested controls', () => {
     const host = render(<Library />)
-    const row = [...host.querySelectorAll('.list .item.tap-host')][0]
+    const row = host.querySelector('.list .item.tap-host')
     expect(row.getAttribute('role')).toBeNull()
-    act(() => row.querySelector('.lib-add').click())
-    const afterAdd = useUI.getState().sheets.slice()
-    expect(afterAdd.length).toBeLessThanOrEqual(1)
-    if (afterAdd.length) expect(renderTop().querySelector('.exdetail-name')).toBeNull()
-    useUI.setState({ sheets: [] })
+    expect(row.querySelector('.lib-add')).toBeNull()
     act(() => row.querySelector('.tap-main').click())
     expect(sheets()).toBe(1)
-    expect(renderTop().querySelector('.exdetail-name')).not.toBeNull()
+    const detail = renderTop()
+    expect(detail.querySelector('.exdetail-name')).not.toBeNull()
     expect(nestedInteractive(host)).toEqual([])
+    expect(nestedInteractive(detail)).toEqual([])
   })
   it('the add-exercise picker: the quick add commits, the name opens the config, never both', () => {
     const onPick = vi.fn()

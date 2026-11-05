@@ -154,4 +154,18 @@ describe('logging body measurements', () => {
     expect(field(form, 'Waist').value).toBe('')
     expect(field(form, 'Chest').value).toBe('100')
   })
+  it('shows imported provenance and an actual timestamp without turning edit stamps into measurement times', () => {
+    seed({ measurements: [
+      { d: '2026-09-01', t: Date.now(), waist: 92, chest: null, bodyFat: null, other: [] },
+      { d: '2026-09-15', source: 'Apple Health', at: '2026-09-15T08:12:00', waist: 90, chest: null, bodyFat: null, other: [] },
+    ] })
+    const screen = render(<Measurements />)
+    const rows = screen.querySelectorAll('.measure-history-open')
+    expect(rows[0].textContent).toContain('Apple Health')
+    expect(rows[0].textContent).toContain('08:12')
+    expect(rows[1].textContent).not.toContain('Apple Health')
+    expect(rows[1].textContent).not.toMatch(/\d{2}:\d{2}/)
+    expect(screen.querySelector('.measure-caption').textContent).toContain('Apple Health')
+  })
+
 })

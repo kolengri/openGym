@@ -1,5 +1,13 @@
 // Turkish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Antrenmanı aç",
+  "Strength block": "Kuvvet bloğu",
+  "Upper / lower": "Üst / alt vücut",
+  "Linear 5×5": "Doğrusal 5×5",
+  "Recorded": "Kaydedilen",
+  "Calculated": "Hesaplanan",
+  "Measurements": "Ölçümler",
+  "Photos": "Fotoğraflar",
   "Garmin Connect must be ready before reading health data.": "Sağlık verileri okunmadan önce Garmin Connect hazır olmalıdır.",
   "Data": "Veriler",
   "Connections": "Bağlantılar",

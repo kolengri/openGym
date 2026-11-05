@@ -34,6 +34,7 @@ import { fatigueStateOf, fatigueRecoveryMs, fmtRecoveryIn } from '../lib/recover
 import { e1rmSeries, best1RM, formulaOf } from '../lib/onerm.js'
 import { currentDbLoad, workoutAs } from '../lib/dumbbells.js'
 import { maxRepsSeries } from '../lib/pyramid.js'
+import { readingsOf } from '../lib/weigh-ins.js'
 import { weighInAt } from '../lib/bodyweight.js'
 import { perSetSessions, perSetLines, dropOffSet } from '../lib/per-set.js'
 import { relativeSeries } from '../lib/relative-strength.js'
@@ -195,11 +196,12 @@ const SET_STATUS = { below: () => t('room for more'), in: () => t('in range'), a
    (a week, or the weekly average of a longer window), Planned the sets your plan programs in a
    week. This week's plan rides along on the Completed bars as a tick, so the old "11/11 · 100%"
    is still there to read. Fatigue and Strength stay one tap away in the same card. */
-function MusclesCard({ S, planFocus = false }) {
+function MusclesCard({ S, planFocus = false, period }) {
   const nav = useNavigate()
   const [view, setView] = useState('sets')
   const [mode, setMode] = useState(planFocus ? 'planned' : 'done')
-  const [win, setWin] = useState(7)
+  const [localWin, setWin] = useState(7)
+  const win = period ?? localWin
   const [weekOffset, setWeekOffset] = useState(0)
   const [hard, setHard] = useState(false)
   const [sel, setSel] = useState(null)
@@ -287,7 +289,7 @@ function MusclesCard({ S, planFocus = false }) {
       <div className="mus-ctl">
         <Segmented className="seg-inline mus-mode" value={mode} onChange={v => { setMode(v); reset() }}
           options={[{ value: 'done', label: t('Completed') }, { value: 'planned', label: t('Planned') }]} />
-        {!planned && <MenuButton title={t('Period')} value={win} options={periodOpts} onChange={v => { setWin(v); setWeekOffset(0); reset() }} />}
+        {!planned && period == null && <MenuButton title={t('Period')} value={win} options={periodOpts} onChange={v => { setWin(v); setWeekOffset(0); reset() }} />}
       </div>
       {planned
         ? <div className="mus-cap small dim">{t('Planned sets per week, from your plan.')}</div>
@@ -394,14 +396,13 @@ function detrainedRows(strength, workouts, now, strengthHint) {
 // opacity on the one ink, so the ramp needs no colour-mix fallback. Sets past the hard line are
 // grey, as their bars were.
 const EFFORT_RAMP = [1, 0.72, 0.5, 0.34]
-function EffortCard({ S }) {
-  const [win, setWin] = useState(90)
+function EffortCard({ S, period = 90 }) {
+  const win = period
+  const [evidence, setEvidence] = useState('recorded')
   const kind = displayScale(S)
   const hd = scaleName(kind)
-  // Every set without a logged rating is estimated (the same precedence fatigue scoring uses:
-  // logged effort first, Epley-inverse estimate against the 90-day anchor second), so the
-  // average always speaks for the whole training, not just the rated subset. Estimates never
-  // override a real rating, so a fully rated window still reads exactly its logged numbers.
+  // Keep the fatigue model's estimates available as a separate evidence view. Logged effort
+  // remains the default dataset, and an unrated set never receives a recorded score.
   const opts = useMemo(() => ({ unit: S.unit, bodyweightKg: profileBodyweightKg(S) }), [S.unit, S.bodyweight])
   const anchors = useMemo(
     () => anchorsByWorkout(S.workouts, opts),
@@ -418,10 +419,14 @@ function EffortCard({ S }) {
       return r
     }
   }, [anchors, opts])
-  const sum = effortSummary(S, win, resolve)
-  const weeks = effortWeeks(S, win, resolve)
-  const hist = effortHistogram(S, win, resolve)
-  const estimated = sum.est > 0
+  // Recorded readings and model estimates are separate datasets, never a blended score.
+  const estimatedOnly = (s, w, e) => rirOf(s) == null ? resolve(s, w, e) : null
+  const read = evidence === 'calculated' ? estimatedOnly : rirOf
+  const sum = effortSummary(S, win, read)
+  const weeks = effortWeeks(S, win, read)
+  const hist = effortHistogram(S, win, read)
+  const estimated = evidence === 'calculated'
+  const coverage = effortSummary(S, win, resolve)
   // The week's set count rides along in the tooltip, because the pair is the reading:
   // volume up with effort up is fatigue piling up, volume up with effort flat is adaptation.
   const pts = weeks.map(w => ({ t: w.t, y: toScale(kind, w.rir), note: t('{0} sets', w.sets) }))
@@ -433,9 +438,10 @@ function EffortCard({ S }) {
 
   return <div className="card effort-card">
     <h2>{t('Effort')} <span className="dim">· {t('how close to failure')}{estimated ? ' · ' + t('estimated') : ''}</span></h2>
-    <Segmented className="seg-range" value={win} onChange={setWin}
-      options={[{ value: 30, label: '30d' }, { value: 90, label: '90d' }, { value: 365, label: '1Y' }, { value: 0, label: t('All') }]} />
-    {sum.rated === 0 && sum.est === 0 ? <div className="muted small">{t('No rated sets in this period.')}</div> : <>
+    <Segmented className="effort-evidence" value={evidence} onChange={setEvidence}
+      options={[{ value: 'recorded', label: t('Recorded') }, { value: 'calculated', label: t('Calculated') }]} />
+    <p className="small dim effort-coverage">{t('{0} rated · {1} estimated of {2} sets', coverage.rated, coverage.est, coverage.done)}</p>
+    {sum.rated === 0 && sum.est === 0 ? <div className="muted small">{t(estimated ? 'No data yet' : 'No rated sets in this period.')}</div> : <>
       {/* One figure leads (the average); the share of hard sets is its sentence, in ink, not a
           second headline in yellow competing with it. */}
       <div className="effort-head">
@@ -445,7 +451,7 @@ function EffortCard({ S }) {
       <div className="small effort-sub">
         {sum.hardPct != null && <><b>{Math.round(sum.hardPct * 100)}%</b> {t('at {0} {1} or harder', hd, fmtNum(toScale(kind, HARD_RIR)))} · </>}
         <span className="dim">{estimated
-          ? t('{0} rated · {1} estimated of {2} sets', sum.rated, sum.est, sum.done)
+          ? t('Calculated') + ' · ' + t('{0} sets', sum.est)
           : t('{0} of {1} finished sets rated', sum.rated, sum.done)}</span>
       </div>
       {effortOf(S) === 'none' && <div className="small effort-off">
@@ -472,8 +478,9 @@ function EffortCard({ S }) {
 // (lib/exercise-time.js): the rest before a set and the setup count, so it is what an exercise
 // costs in a workout. Only workouts with tick times count; imported history has none.
 const TIME_ROWS = 6
-export function ExerciseTimeCard({ S }) {
-  const [win, setWin] = useState(90)
+export function ExerciseTimeCard({ S, period }) {
+  const [localWin, setWin] = useState(90)
+  const win = period ?? localWin
   const [all, setAll] = useState(false)
   const rows = useMemo(() => exerciseTimeRows(S.workouts, rangeStart(win)), [S.workouts, win])
   const shown = all ? rows : rows.slice(0, TIME_ROWS)
@@ -481,7 +488,7 @@ export function ExerciseTimeCard({ S }) {
   const nameOf = id => (EXIDX[id] ? exerciseNameFor(EXIDX[id]) : id)
   return <div className="card" data-exercise-time>
     <h2>{t('Time per exercise')} <span className="dim">· {t('Average time a session, counted from when its sets were ticked.')}</span></h2>
-    <Segmented className="seg-range" value={win} onChange={v => { setWin(v); setAll(false) }} options={rangeOptions()} />
+    {period == null && <Segmented className="seg-range" value={win} onChange={v => { setWin(v); setAll(false) }} options={rangeOptions()} />}
     {rows.length ? <div className="sbar-list">{shown.map(r => <BarRow key={r.id} fill={max ? r.avg / max : 0}
       label={nameOf(r.id)} labelClass={exerciseNameClass(EXIDX[r.id])}
       value={fmtDur(Math.max(r.avg, 60000))}
@@ -542,6 +549,7 @@ export default function Stats() {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   const [exId, setExId] = useState(null)
   const [exMetric, setExMetric] = useState('top')
+  const [effortRange, setEffortRange] = useState(90)
   // What the Body weight view measures the lift by: 'e1rm' (default) or the heaviest set.
   const [relBasis, setRelBasis] = useState('e1rm')
   // Exercise progress over a date range (issue #511), All by default. Only the chart follows it:
@@ -662,7 +670,7 @@ export default function Stats() {
   const exHist = [...new Set(workouts.flatMap(w => w.entries.map(e => e.id)))].filter(id => EXIDX[id] || nameOf(id) !== id)
   const exCurrent = Object.fromEntries(exHist.map(id => [id, currentOf(id)]))
   exHist.sort((a, b) => exCurrent[b].mx - exCurrent[a].mx || nameOf(a).localeCompare(nameOf(b)))
-  const overviewExercises = exHist.filter(id => overviewWorkouts.some(w => metricDataOf(w, id).rows.length)).slice(0, 3)
+  const overviewExercises = exHist.filter(id => overviewWorkouts.some(w => metricDataOf(w, id).rows.length)).slice(0, 2)
   const curEx = exId && exHist.includes(exId) ? exId : exHist[0] || null
   // A completed reps work row is authoritative for strength metrics, even when the parent
   // target also contains timed/cardio work. Entries without reps rows use their selected mode.
@@ -875,8 +883,9 @@ export default function Stats() {
   </>
 
   return <div className="progress-refinement progress-stats">
-    <div className="hdr"><SeasonDeco spot="stats-hdr" /><div><h1>{t('Stats')}</h1><div className="sub">{t('Progress & history')}</div></div>
+    <div className="hdr"><SeasonDeco spot="stats-hdr" /><div><h1>{t('Stats')}</h1></div>
       <div className="row" style={{ gap: 8 }}>
+        {panel === 'body' && <button className="iconbtn" onClick={() => bwSheet()} aria-label={t('Log body weight')} title={t('Log body weight')}><Icon name="plus" /></button>}
         <button className="iconbtn" onClick={reportSheet} aria-label={t('Performance report')} title={t('Performance report')}><Icon name="note" /></button>
         <button className="iconbtn" data-tour="stats-history" onClick={() => nav('/history')} aria-label={t('History')}><Icon name="history" /></button>
       </div></div>
@@ -892,7 +901,7 @@ export default function Stats() {
     </div>
     <div className="card overview-volume" data-overview-volume>
       <h2>{t('Volume ({0})', S.unit)}</h2>
-      <div className="chart"><LineChart points={volumePoints} h={170} unit={S.unit} /></div>
+      <div className="chart"><LineChart points={volumePoints} h={128} unit={S.unit} /></div>
     </div>
     {overviewExercises.length > 0 && <>
       <h4 className="sec">{t('Exercises')}</h4>
@@ -962,7 +971,7 @@ export default function Stats() {
             }} />
           {exOpts.length > 1 && <SelectRow title={t('Chart')} value={exMetricValue} onChange={pickMetric} options={exOpts} />}
         </div>
-        <Segmented className="seg-range" value={exRange} onChange={setExRange} options={rangeOptions()} />
+        <Segmented className="seg-range exercise-period" value={exRange} onChange={setExRange} options={[{ value: 7, label: t('Week') }, ...rangeOptions()]} />
         <div className="chart">
           {rangeTooShort
             ? <div className="empty small">{t('Fewer than two workouts in this period. Pick a longer one.')}</div>
@@ -1010,28 +1019,36 @@ export default function Stats() {
             <span className="ex-day-e">{rir != null && <span className="ex-eff" style={{ '--m': 1 - Math.min(4, Math.max(0, rir)) / 4 }}>{hd} {fmtNum(toScale(kind, rir))}</span>}</span>
           </div>
         })}</div>
-      </> : <div className="muted small">{t('Finish your first workout and your progress curves will show up here.')}</div>}
+      </> : <div className="muted small">{t('Finish your first workout and your progress curves will show up here.')}<Segmented className="seg-range exercise-period" value={exRange} onChange={setExRange} options={[{ value: 7, label: t('Week') }, ...rangeOptions()]} /></div>}
     </div>
-    {(workouts.length > 0 || Object.keys(loadOfWeeklyPlan(S)).length > 0) && <MusclesCard S={S} planFocus={planFocus} />}
+    {(workouts.length > 0 || Object.keys(loadOfWeeklyPlan(S)).length > 0) && <MusclesCard S={S} planFocus={planFocus} period={exRange} />}
     {/* Beginner to Elite for the main lifts (lib/strength-level.js); hidden without a weigh-in. */}
     {workouts.length > 0 && on('strength') && <StrengthLevelsCard S={S} />}
-    {!effortOn && timeCard && <ExerciseTimeCard S={S} />}
+    {!effortOn && timeCard && <ExerciseTimeCard S={S} period={exRange} />}
     {!bodyOn && statsLinks}
     </section>
 
     {bodyOn && <section className="stats-sect" id="stats-body" data-stats-sect="body" hidden={panel !== 'body'} aria-labelledby="stats-h-body">
       <h2 className="stats-sect-h" id="stats-h-body">{t('Body')}</h2>
+    <Segmented className="progress-body-tabs" value="weight" onChange={value => nav(value === 'weight' ? '/stats?section=body' : value === 'measurements' ? '/measurements' : value === 'health' ? '/health' : '/progress-photos')}
+      options={[{ value: 'weight', label: t('Weight') }, { value: 'measurements', label: t('Measurements') }, { value: 'health', label: t('Health') }, { value: 'photos', label: t('Photos') }]} />
+
     <div className="card">
       <div className="row between bw-head" style={{ marginBottom: 8 }}>
         <h2 style={{ margin: 0 }}>{t('Body weight')}</h2>
         <div className="row" style={{ gap: 8 }}>
           <Button size="sm" icon="target" style={S.targetW ? { color: 'var(--gold-ink)' } : undefined} onClick={goalSheet}>{S.targetW ? fmtNum(S.targetW) : t('Goal')}</Button>
-          <Button size="sm" icon="plus" onClick={() => bwSheet()}>{t('Log')}</Button>
         </div>
       </div>
       <Segmented className="seg-range" value={range} onChange={setRange}
         options={rangeOptions()} />
       <div className="chart"><LineChart points={bwPts} h={160} unit={S.unit} goal={S.targetW} /></div>
+      <h4 className="sec">{t('History')}</h4>
+      <div className="sect-b weight-history">{S.bodyweight.filter(b => range === 0 || weighInAt(b) > now - range * 86400000).slice(-5).reverse().map(b => {
+        const sources = [...new Set(readingsOf(b).map(reading => reading.src).filter(Boolean))]
+        const source = sources.map(value => value === 'garmin' ? t('Garmin Connect') : value === 'import' ? t('Imported') : value === 'health' ? t('Health') : value).join(' · ')
+        return <Row key={b.d} title={fmtDate(b.d, true)} subtitle={source || null} value={fmtBodyWeight(b.w) + ' ' + S.unit} accessory="chevron" onClick={weighInsSheet} />
+      })}</div>
       {/* the weekly rate and, with one set, how it sits in its corridor (#759) */}
       {S.bodyweight.length > 0 && <WeightRate S={S} />}
       {/* every weigh-in, week by week with its average (Discord 'Weight') */}
@@ -1045,8 +1062,9 @@ export default function Stats() {
 
     {hasEffortSect && <section className="stats-sect" id="stats-effort" data-stats-sect="effort" hidden={panel !== 'effort'} aria-labelledby="stats-h-effort">
       <h2 className="stats-sect-h" id="stats-h-effort">{t('Effort')}</h2>
-    {effortCard && <EffortCard S={S} />}
-    {timeCard && <ExerciseTimeCard S={S} />}
+    <Segmented className="seg-range effort-period" value={effortRange} onChange={setEffortRange} options={rangeOptions()} />
+    {effortCard && <EffortCard S={S} period={effortRange} />}
+    {timeCard && <ExerciseTimeCard S={S} period={effortRange} />}
     </section>}
   </div>
 }

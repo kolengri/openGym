@@ -3,6 +3,7 @@ import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Settings from './Settings.jsx'
+import { createPickerHarness } from './test-picker.js'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
@@ -48,8 +49,9 @@ vi.mock('../sheets.jsx', () => ({
 // The Settings view reads the build-time version constant at render time.
 globalThis.__APP_VERSION__ ??= 'test'
 
-let host, root
+let host, root, picker
 beforeEach(() => {
+  picker = createPickerHarness()
   mocks.S = {
     unit: 'kg', restSec: 90, restPauseSec: 15, sound: false, effort: 'none',
     gifSize: 'full', workouts: [], routines: [], exWeights: {},
@@ -59,32 +61,33 @@ beforeEach(() => {
   root = createRoot(host)
 })
 afterEach(() => {
+  picker.destroy()
   act(() => root.unmount())
   host.remove()
 })
 
 const mount = () => act(() => root.render(<Settings page="workout" />))
-const segButton = label => [...host.querySelectorAll('.seg button')].find(b => b.textContent === label)
+const rowTitled = title => [...host.querySelectorAll('.lrow')].find(r => r.querySelector('.lrow-t')?.textContent === title)
+const current = title => rowTitled(title).querySelector('.lrow-v').textContent
 
 describe('Settings — exercise animations', () => {
   it('offers Full / Small / Hidden and writes gifSize to the store', () => {
     mount()
-    expect(segButton('Full')).toBeTruthy()
-    expect(segButton('Small')).toBeTruthy()
-    expect(segButton('Hidden')).toBeTruthy()
-    expect(segButton('Full').getAttribute('aria-pressed')).toBe('true')
-    act(() => { segButton('Hidden').click() })
+    const choices = picker.open(rowTitled('Exercise animations'))
+    expect(choices.labels).toEqual(['Full', 'Small', 'Hidden'])
+    expect(choices.selected).toBe('Full')
+    choices.choose('Hidden')
     expect(mocks.S.gifSize).toBe('off')
     mount()
-    expect(segButton('Hidden').getAttribute('aria-pressed')).toBe('true')
-    act(() => { segButton('Small').click() })
+    expect(current('Exercise animations')).toBe('Hidden')
+    picker.open(rowTitled('Exercise animations')).choose('Small')
     expect(mocks.S.gifSize).toBe('mini')
   })
 
   it('shows a legacy/absent value as Full', () => {
     delete mocks.S.gifSize
     mount()
-    expect(segButton('Full').getAttribute('aria-pressed')).toBe('true')
-    expect(segButton('Hidden').getAttribute('aria-pressed')).toBe('false')
+    expect(current('Exercise animations')).toBe('Full')
+    expect(picker.open(rowTitled('Exercise animations')).selected).toBe('Full')
   })
 })

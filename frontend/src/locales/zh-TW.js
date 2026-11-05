@@ -1,4 +1,12 @@
 export default {
+  "Open workout": "開啟訓練",
+  "Strength block": "肌力訓練階段",
+  "Upper / lower": "上肢 / 下肢",
+  "Linear 5×5": "線性 5×5",
+  "Recorded": "已記錄",
+  "Calculated": "已計算",
+  "Measurements": "身體圍度",
+  "Photos": "照片",
   "Garmin Connect must be ready before reading health data.": "讀取健康資料前，Garmin Connect 必須準備就緒。",
   "Data": "資料",
   "Connections": "連線",

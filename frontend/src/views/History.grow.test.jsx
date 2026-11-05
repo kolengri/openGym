@@ -2,6 +2,7 @@
 // History renders its rows a page at a time as the list is scrolled (performance round 2): a
 // 400-workout history used to render every row on each open. Coming back renders as many rows as
 // before, so the page can land where it was scrolled to.
+import { readFileSync } from 'node:fs'
 import React, { act } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createRoot } from 'react-dom/client'
@@ -103,6 +104,19 @@ describe('History grows as it is scrolled', () => {
     expect(metrics.textContent).toContain('0 sets')
     expect(host.querySelector('.history-volume').textContent).toBe('0 kg')
     expect(metrics.children[1].textContent).toBe('1h 0m')
+  })
+
+  it('keeps fixed metadata columns independently of PR badges and media', () => {
+    const css = readFileSync(process.cwd() + '/src/styles/progress-refinement.css', 'utf8')
+    const rule = css.match(/\.progress-history \.history-metrics \{([^}]+)\}/)[1]
+    expect(rule).toContain('display: grid')
+    expect(rule).toContain('grid-template-columns:')
+    expect(rule).not.toContain('flex-wrap')
+    install(2)
+    useStore.getState().update(s => { s.workouts.at(-1).prs = [{ id: 'a' }, { id: 'b' }] })
+    const host = mount(History)
+    expect([...host.querySelectorAll('.history-metrics')].map(row => row.children.length)).toEqual([3, 3])
+    expect(host.querySelector('.item .pr').textContent).toContain('2 PR')
   })
 
 })
