@@ -3395,7 +3395,7 @@ describe('Workout exercise tags', () => {
     const { registerCustom } = await import('../lib/exercises.js')
     registerCustom([{ id: 'cqa1', n: 'QA Custom Thrust', bp: 'upper legs', eq: 'barbell', custom: true, tg: 'gluteal', sm: [], primaries: ['gluteal'], secondaries: [], muscleGroups: ['gluteal'] }])
     try {
-      await mount([exercise('cqa1', [false])])
+      await mount([exercise('cqa1', [false])], 0, { workoutView: 'list' })
       const tags = [...container.querySelectorAll('.tag')].map(tag => tag.textContent.trim())
       expect(tags).toContain('Glutes')
       expect(tags).not.toContain('gluteal')
@@ -3409,7 +3409,7 @@ describe('Workout exercise tags', () => {
     const { default: de } = await import('../locales/de.js')
     _setLangState('de', de, null, null)
     try {
-      await mount([exercise('1160', [false])])
+      await mount([exercise('1160', [false])], 0, { workoutView: 'list' })
       const tags = [...container.querySelectorAll('.tag')].map(tag => tag.textContent.trim())
       expect(tags).toContain('Herz-Kreislauf')
       expect(tags).not.toContain('Cardiovascular system')

@@ -52,26 +52,29 @@ export default function GarminCloudSettings() {
     finally { setBusy(false) }
   }
   return <>
-  <Section className="garmin-cloud-settings" title={t('Garmin Connect uploads')} footer={t('Sign in on Garmin’s own page. openGym keeps the resulting session only on this phone.')}>
-    <Row icon="watch" title="Garmin Connect" subtitle={status.error
+  <Section className="garmin-cloud-settings" title={t('Garmin Connect uploads')}>
+    <Row icon="cloud" title="Garmin Connect" subtitle={status.error
       ? t('The local Garmin upload journal needs attention. Reconnecting cannot reset its duplicate protection.')
       : expired ? t(garminCloudErrorMessage('auth_expired'))
         : linked && status.authState === 'unknown' ? t('Garmin session expiration could not be checked.')
           : t(connected ? 'Connected to Garmin Connect' : 'Garmin Connect is not connected')} />
-    <div className="garmin-actions">
+    {(status.error || !connected) && <div className="garmin-actions">
     {status.error && <Button onClick={() => setStatusAttempt(value => value + 1)}>{t('Retry')}</Button>}
-    {!connected && !status.error && <Button disabled={busy || !!state.active} onClick={connect}>{t('Sign in to Garmin Connect')}</Button>}
-    {linked && <Button disabled={busy || !!state.active} onClick={disconnect}>{t('Disconnect Garmin Connect')}</Button>}
-    </div>
+    {!connected && !status.error && <Button variant="primary" disabled={busy || !!state.active} onClick={connect}>{t('Sign in to Garmin Connect')}</Button>}
+    </div>}
     {error && <p className="small muted" role="alert">{t(garminCloudErrorMessage(error))}</p>}
-    <Row title={t('Upload new workouts automatically')} subtitle={t('Automatic upload is available after signing in. Change this setting between workouts.')}>
+    <Row title={t('Upload new workouts automatically')} subtitle={(!connected || !!state.active || busy) ? t('Automatic upload is available after signing in. Change this setting between workouts.') : undefined}>
       <Switch aria-label={t('Upload new workouts automatically')} checked={state.garminCloudAuto === true} disabled={!connected || !!state.active || busy}
         onChange={value => useStore.getState().update(s => { s.garminCloudAuto = value })} />
     </Row>
     <div className="garmin-help">
     <p className="small muted">{t('When enabled, openGym uploads completed workouts to Garmin Connect and stops separate FIT recording on the watch to avoid duplicate activities. Garmin may forward uploads to linked services such as Strava.')}</p>
     <details className="settings-disclosure">
-      <summary>{t('Details')}</summary>
+      <summary>{t('Advanced')}</summary>
+    {linked && <div className="garmin-account-actions">
+      <Button disabled={busy || !!state.active} onClick={disconnect}>{t('Disconnect Garmin Connect')}</Button>
+    </div>}
+    <p className="small muted">{t('Sign in on Garmin’s own page. openGym keeps the resulting session only on this phone.')}</p>
     <p className="small muted">{t('Garmin Connect uploads use your Strava weight-sharing preference. Sensor recordings from other apps are unchanged.')}</p>
     <p className="small muted">{t('Heart-rate samples received from the watch are included. Bluetooth or sleeping-phone gaps are not reconstructed.')}</p>
     </details>

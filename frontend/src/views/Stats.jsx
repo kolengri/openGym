@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
 import { dayPhotosOf } from '../lib/day-photos.js'
 import { EXIDX, matchExercise, betterWeight, isAssisted } from '../lib/exercises.js'
-import { lastBW, setLabel, modeOf, effortOf, entriesForExercise, metricEntriesForExercise, metricModeForEntry, bestWeightForEntry, completedRepsOf, workoutDay, workoutAt, lifetimeVolume } from '../lib/history.js'
+import { lastBW, setLabel, modeOf, effortOf, entriesForExercise, metricEntriesForExercise, metricModeForEntry, bestWeightForEntry, completedRepsOf, workoutDay, workoutAt, lifetimeVolume, sessionVolume, setsDone } from '../lib/history.js'
 import { fmtNum, fmtBodyWeight, fmtDate, fmtVol, fmtDur, todayISO, isoOf, weekKey, weekStartOf, exerciseNameText } from '../lib/format.js'
 import { entryTimes, exerciseTimeRows } from '../lib/exercise-time.js'
 import { speedUnitOf, speedLabel, toSpeed } from '../lib/speed.js'
-import { t, exerciseNameFor, exerciseNameClass, getLang } from '../lib/i18n.js'
+import { t, tn, exerciseNameFor, exerciseNameClass, getLang } from '../lib/i18n.js'
 import { bwSheet, goalSheet, calendarSheet, dayOverrideSheet, workoutDetailSheet, exerciseHistorySheet, WorkoutRow, bwDeltaColor, weighInsSheet } from '../sheets.jsx'
 import LineChart from '../components/LineChart.jsx'
+import ExerciseName from '../components/ExerciseName.jsx'
 import WeightRate from '../components/WeightRate.jsx'
 import Heatmap from '../components/Heatmap.jsx'
 import { SeasonDeco } from '../components/Seasonal.jsx'
@@ -521,6 +522,8 @@ export default function Stats() {
   const nav = useNavigate()
   const S = useStore(s => s.S)
   const [range, setRange] = useState(90)
+  const [overviewRange, setOverviewRange] = useState(30)
+  const overviewFrom = useMemo(() => rangeStart(overviewRange), [overviewRange])
   const [activePanel, setActivePanel] = useState(panelOfHash)
   useEffect(() => {
     const syncPanel = () => setActivePanel(panelOfHash())
@@ -560,6 +563,14 @@ export default function Stats() {
   const workouts = S.workouts
   const monthW = workouts.filter(w => workoutDay(w)?.slice(0, 7) === todayISO().slice(0, 7)).length
   const lifetime = lifetimeVolume(S)
+  // Summary and line use the same sessions and the profile's existing volume rules.
+  const overviewWorkouts = workouts.filter(w => Number.isFinite(workoutAt(w)) && workoutAt(w) >= overviewFrom && workoutAt(w) <= now)
+  const overviewSets = overviewWorkouts.reduce((sum, w) => sum + setsDone(w), 0)
+  const overviewVolume = overviewWorkouts.reduce((sum, w) => sum + sessionVolume(w, S), 0)
+  const volumePoints = useMemo(() => S.workouts
+    .filter(w => Number.isFinite(workoutAt(w)) && workoutAt(w) >= overviewFrom && workoutAt(w) <= Date.now())
+    .map(w => ({ t: workoutAt(w), d: workoutDay(w), y: sessionVolume(w, S), note: w.name }))
+    .sort((a, b) => a.t - b.t), [S, overviewFrom])
   // The streak with its best run, freezes and badges (lib/streak.js).
   const streak = streakInfo(S)
 
@@ -651,6 +662,7 @@ export default function Stats() {
   const exHist = [...new Set(workouts.flatMap(w => w.entries.map(e => e.id)))].filter(id => EXIDX[id] || nameOf(id) !== id)
   const exCurrent = Object.fromEntries(exHist.map(id => [id, currentOf(id)]))
   exHist.sort((a, b) => exCurrent[b].mx - exCurrent[a].mx || nameOf(a).localeCompare(nameOf(b)))
+  const overviewExercises = exHist.filter(id => overviewWorkouts.some(w => metricDataOf(w, id).rows.length)).slice(0, 3)
   const curEx = exId && exHist.includes(exId) ? exId : exHist[0] || null
   // A completed reps work row is authoritative for strength metrics, even when the parent
   // target also contains timed/cardio work. Entries without reps rows use their selected mode.
@@ -836,8 +848,8 @@ export default function Stats() {
   const hasEffortSect = effortCard || (effortOn && timeCard)
   const sections = [
     { value: 'overview', label: t('Overview') },
+    { value: 'lifts', label: t('Exercises') },
     ...(bodyOn ? [{ value: 'body', label: t('Body') }] : []),
-    { value: 'lifts', label: t('Lifts') },
     ...(hasEffortSect ? [{ value: 'effort', label: t('Effort') }] : []),
   ]
   const panel = sections.some(x => x.value === activePanel) ? activePanel : 'overview'
@@ -872,6 +884,68 @@ export default function Stats() {
     <StatsIndex sections={sections} value={panel} onChange={setActivePanel} />
 
     <section className="stats-sect progress-panel" id="stats-overview" data-stats-sect="overview" hidden={panel !== 'overview'} aria-label={t('Overview')}>
+    <Segmented className="seg-range overview-range" value={overviewRange} onChange={setOverviewRange} options={rangeOptions()} />
+    <div className="overview-summary" data-tour="stats-tiles">
+      <div><span>{t('Workouts')}</span><b>{fmtNum(overviewWorkouts.length)}</b></div>
+      <div><span>{t('Sets')}</span><b>{fmtNum(overviewSets)}</b></div>
+      <div><span>{t('Volume')}</span><b>{fmtVol(Math.round(overviewVolume), S.unit)}</b></div>
+    </div>
+    <div className="card overview-volume" data-overview-volume>
+      <h2>{t('Volume ({0})', S.unit)}</h2>
+      <div className="chart"><LineChart points={volumePoints} h={170} unit={S.unit} /></div>
+    </div>
+    {overviewExercises.length > 0 && <>
+      <h4 className="sec">{t('Exercises')}</h4>
+      <div className="sect-b overview-exercises">{overviewExercises.map(id => <Row key={id}
+        icon="dumbbell" title={<ExerciseName ex={EXIDX[id]} fallback={nameOf(id)} className={EXIDX[id] ? exerciseNameClass(EXIDX[id]) : undefined} />}
+        subtitle={exCurrent[id].mx > 0 ? fmtNum(exCurrent[id].shown ?? exCurrent[id].mx) + ' ' + exCurrent[id].unit : null}
+        accessory="chevron" onClick={() => exerciseHistorySheet(id)} />)}</div>
+    </>}
+    <div className="sect-b overview-history"><Row icon="history" title={t('History')}
+      subtitle={tn('{0} workout', '{0} workouts', workouts.length)} accessory="chevron" onClick={() => nav('/history')} /></div>
+    {workouts.length > 0 && motivationOn && <details className="progress-motivation">
+      <summary><Icon name="trophy" /><span>{t('Motivation')}</span><Icon name="chevronDown" /></summary>
+      <StreakCard info={streak} />
+      <ChallengesStatsCard S={S} />
+    </details>}
+    <details className="progress-activity progress-motivation">
+      <summary><Icon name="calendar" /><span>{t('Activity (last 12 months)')}</span><Icon name="chevronDown" /></summary>
+    {/* The headline numbers as one divided card: three across, the lifetime total under them at
+        full width (a few hundred sessions make a long number). The week streak is not a tile any
+        more: it is the card right below, once. */}
+    <div className={'kpis' + (bodyOn ? '' : ' two')}>
+      <div className="tile"><div className="l">{t('Workouts')}</div><div className="v">{workouts.length}</div></div>
+      <div className="tile"><div className="l">{t('This month')}</div><div className="v">{monthW}</div></div>
+      {bodyOn && <div className="tile"><div className="l">{t('Weight 30d')}</div><div className="v" style={{ color: bwDelta30 === null ? 'inherit' : bwDeltaColor(bwDelta30, (lastBW(S) || {}).w || 0) }}>{bwDelta30 === null ? '–' : (bwDelta30 > 0 ? '+' : '') + fmtNum(bwDelta30) + ' ' + S.unit}</div></div>}
+      {/* Everything ever lifted (Discord): imports included, warm-ups only when the profile
+          counts them (#719). */}
+      {lifetime > 0 && <div className="tile wide" data-lifetime-volume><SeasonDeco spot="stats-tile" /><div className="l">{t('Lifted in total')}</div><div className="v">{fmtVol(Math.round(lifetime), S.unit)}</div></div>}
+    </div>
+
+    <div className="card">
+      <SeasonDeco spot="stats-heatmap" />
+      <h2>{t('Activity (last 12 months)')}</h2>
+      <Heatmap
+        S={S}
+        metric={S.heatmapMetric === 'vol' ? 'vol' : 'time'}
+        onMetricChange={metric => useStore.getState().update(s => { s.heatmapMetric = metric })}
+        onDay={iso => { const ws = workouts.filter(w => workoutDay(w) === iso); if (ws.length === 1) workoutDetailSheet(ws[0]); else if (ws.length) calendarSheet(iso); else dayOverrideSheet(iso) }}
+      />
+    </div>
+
+    {workouts.length > 0 && <>
+      <div className="row between stats-list-h">
+        <h4 className="sec" style={{ margin: 0 }}>{t('Recent workouts')}</h4>
+        <Button size="sm" variant="ghost" trailingIcon="chevronRight" onClick={() => nav('/history')}>{t('All')} {workouts.length}</Button>
+      </div>
+      <div className="list">{recent.map(w => <WorkoutRow key={w.id} w={w} onClick={() => workoutDetailSheet(w)} />)}</div>
+    </>}
+
+    </details>
+    </section>
+
+    <section className="stats-sect" id="stats-lifts" data-stats-sect="lifts" hidden={panel !== 'lifts'} aria-labelledby="stats-h-lifts">
+      <h2 className="stats-sect-h" id="stats-h-lifts">{t('Exercises')}</h2>
     <div className="card" data-tour="stats-records">
       <SeasonDeco spot="stats-peek" />
       <h2>{t('Exercise progress')}</h2>
@@ -938,43 +1012,11 @@ export default function Stats() {
         })}</div>
       </> : <div className="muted small">{t('Finish your first workout and your progress curves will show up here.')}</div>}
     </div>
-    {/* The headline numbers as one divided card: three across, the lifetime total under them at
-        full width (a few hundred sessions make a long number). The week streak is not a tile any
-        more: it is the card right below, once. */}
-    <div className={'kpis' + (bodyOn ? '' : ' two')} data-tour="stats-tiles">
-      <div className="tile"><div className="l">{t('Workouts')}</div><div className="v">{workouts.length}</div></div>
-      <div className="tile"><div className="l">{t('This month')}</div><div className="v">{monthW}</div></div>
-      {bodyOn && <div className="tile"><div className="l">{t('Weight 30d')}</div><div className="v" style={{ color: bwDelta30 === null ? 'inherit' : bwDeltaColor(bwDelta30, (lastBW(S) || {}).w || 0) }}>{bwDelta30 === null ? '–' : (bwDelta30 > 0 ? '+' : '') + fmtNum(bwDelta30) + ' ' + S.unit}</div></div>}
-      {/* Everything ever lifted (Discord): imports included, warm-ups only when the profile
-          counts them (#719). */}
-      {lifetime > 0 && <div className="tile wide" data-lifetime-volume><SeasonDeco spot="stats-tile" /><div className="l">{t('Lifted in total')}</div><div className="v">{fmtVol(Math.round(lifetime), S.unit)}</div></div>}
-    </div>
-
-    <div className="card">
-      <SeasonDeco spot="stats-heatmap" />
-      <h2>{t('Activity (last 12 months)')}</h2>
-      <Heatmap
-        S={S}
-        metric={S.heatmapMetric === 'vol' ? 'vol' : 'time'}
-        onMetricChange={metric => useStore.getState().update(s => { s.heatmapMetric = metric })}
-        onDay={iso => { const ws = workouts.filter(w => workoutDay(w) === iso); if (ws.length === 1) workoutDetailSheet(ws[0]); else if (ws.length) calendarSheet(iso); else dayOverrideSheet(iso) }}
-      />
-    </div>
-
-    {workouts.length > 0 && <>
-      <div className="row between stats-list-h">
-        <h4 className="sec" style={{ margin: 0 }}>{t('Recent workouts')}</h4>
-        <Button size="sm" variant="ghost" trailingIcon="chevronRight" onClick={() => nav('/history')}>{t('All')} {workouts.length}</Button>
-      </div>
-      <div className="list">{recent.map(w => <WorkoutRow key={w.id} w={w} onClick={() => workoutDetailSheet(w)} />)}</div>
-    </>}
-
-    {workouts.length > 0 && motivationOn && <details className="progress-motivation">
-      <summary>{t('Motivation')}<Icon name="chevronDown" /></summary>
-      <StreakCard info={streak} />
-      <ChallengesStatsCard S={S} />
-    </details>}
-
+    {(workouts.length > 0 || Object.keys(loadOfWeeklyPlan(S)).length > 0) && <MusclesCard S={S} planFocus={planFocus} />}
+    {/* Beginner to Elite for the main lifts (lib/strength-level.js); hidden without a weigh-in. */}
+    {workouts.length > 0 && on('strength') && <StrengthLevelsCard S={S} />}
+    {!effortOn && timeCard && <ExerciseTimeCard S={S} />}
+    {!bodyOn && statsLinks}
     </section>
 
     {bodyOn && <section className="stats-sect" id="stats-body" data-stats-sect="body" hidden={panel !== 'body'} aria-labelledby="stats-h-body">
@@ -1000,15 +1042,6 @@ export default function Stats() {
     </div>
       {statsLinks}
     </section>}
-
-    <section className="stats-sect" id="stats-lifts" data-stats-sect="lifts" hidden={panel !== 'lifts'} aria-labelledby="stats-h-lifts">
-      <h2 className="stats-sect-h" id="stats-h-lifts">{t('Lifts')}</h2>
-    {(workouts.length > 0 || Object.keys(loadOfWeeklyPlan(S)).length > 0) && <MusclesCard S={S} planFocus={planFocus} />}
-    {/* Beginner to Elite for the main lifts (lib/strength-level.js); hidden without a weigh-in. */}
-    {workouts.length > 0 && on('strength') && <StrengthLevelsCard S={S} />}
-    {!effortOn && timeCard && <ExerciseTimeCard S={S} />}
-    {!bodyOn && statsLinks}
-    </section>
 
     {hasEffortSect && <section className="stats-sect" id="stats-effort" data-stats-sect="effort" hidden={panel !== 'effort'} aria-labelledby="stats-h-effort">
       <h2 className="stats-sect-h" id="stats-h-effort">{t('Effort')}</h2>

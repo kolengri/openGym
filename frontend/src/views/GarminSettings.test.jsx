@@ -29,6 +29,7 @@ describe('Garmin connection settings', () => {
       error: 'Garmin send failed (FAILURE_DEVICE_NOT_CONNECTED). Open Garmin Connect and reconnect the watch.' }
     await render()
     expect(host.querySelector('[role="alert"]').textContent).toBe(h.status.error)
+    expect(host.querySelector('[role="alert"]').closest('details')).toBeNull()
     expect(host.textContent).not.toContain('GitHub')
   })
   it('requires an explicit connect action, then offers disconnect and opening the watch app', async () => {
@@ -42,7 +43,8 @@ describe('Garmin connection settings', () => {
     expect(h.store).toHaveBeenCalledOnce()
     await act(async () => button('Connect').click())
     expect(h.configure).toHaveBeenCalledExactlyOnceWith({ enabled: true, deviceId: 'synthetic' })
-    expect(button('Disconnect')).toBeTruthy()
+    expect(button('Disconnect').closest('details')).toBe(maintenance)
+    expect(button('Open on the watch').closest('details')).toBeNull()
     await act(async () => button('Open on the watch').click())
     expect(h.open).toHaveBeenCalledTimes(1)
     await act(async () => button('Disconnect').click())

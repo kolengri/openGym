@@ -1,5 +1,6 @@
 // Hindi UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "स्वास्थ्य डेटा पढ़ने से पहले Garmin Connect तैयार होना चाहिए।",
   "Data": "डेटा",
   "Connections": "कनेक्शन",
   "App": "ऐप",

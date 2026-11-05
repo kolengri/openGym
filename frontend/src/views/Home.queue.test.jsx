@@ -16,7 +16,7 @@ import { setLang } from '../lib/i18n.js'
 vi.mock('react-router-dom', () => ({ useNavigate: () => () => {} }))
 vi.mock('../sheets.jsx', () => ({
   starterPlanSheet: vi.fn(), bwSheet: vi.fn(), goalSheet: vi.fn(), dayOverrideSheet: vi.fn(),
-  calendarSheet: vi.fn(), startFlow: vi.fn(), bwDeltaColor: () => '',
+  calendarSheet: vi.fn(), startFlow: vi.fn(), bwDeltaColor: () => '', weighInsSheet: vi.fn(),
 }))
 
 const routines = [
@@ -108,14 +108,14 @@ describe('Home — coach week progress row', () => {
     expect(startFlow).not.toHaveBeenCalled()
   })
 
-  it('before startsOn it says when the week starts, and the today row points at that day', () => {
+  it('before startsOn it says when the week starts, and the next-session row points at that day', () => {
     const startsOn = daysFromToday(2)
     setS({ queue: queue({ startsOn }) })
     mount()
     expect(status()).toBe('Next week starts ' + fmtDate(startsOn, true))
     expect(chipTexts()[0]).toBe('US W1 D1Up next')
     expect(todayTitle()).toBe('Rest day')
-    expect(host.querySelector('.today-row .ss').textContent).toMatch(/^Next session: \w+, US W1 D1$/)
+    expect(host.querySelector('.planning-next .tt').textContent).toMatch(/^Next session: \w+, US W1 D1$/)
   })
 
   it('a rotation-managed queue never names a weekday on its empty gap — the row above already says what is next', () => {
@@ -317,6 +317,16 @@ describe('Home — the today row follows today\'s plan, not just the last sessio
     mount()
     expect(todayTitle()).toBe('Core (done)')
     expect(tag()).toBe('Done')
+  })
+
+  it('keeps the next fixed session separate after today is completed', () => {
+    const wd = new Date(today + 'T12:00:00').getDay()
+    setS({ queue: null, week: { [wd]: ['own'], [(wd + 2) % 7]: ['d2'] }, workouts: [at('own', Date.now() - 3600000)] })
+    mount()
+    const next = host.querySelector('.planning-next')
+    expect(todayTitle()).toBe('Core (done)')
+    expect(next.textContent).toContain('US W1 D2')
+    expect(host.querySelector('.planning-today').contains(next)).toBe(false)
   })
 
   it('Start new pass after a session today: the pass runs today, from its first session', () => {

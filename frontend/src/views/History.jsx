@@ -8,7 +8,7 @@ import { Button } from '../components/ui.jsx'
 import Icon from '../components/Icon.jsx'
 import EmptyState from '../components/EmptyState.jsx'
 import { fmtDate, durPart, fmtVol } from '../lib/format.js'
-import { setsDone, sessionVolume } from '../lib/history.js'
+import { setsDone, sessionVolume, workoutDuration } from '../lib/history.js'
 import { dayNoteOf } from '../lib/day-notes.js'
 import { reportSheet } from '../components/ReportSheet.jsx'
 
@@ -56,10 +56,9 @@ export default function History() {
       {r.w ? <WorkoutRow w={r.w} tour={i === 0 ? 'history-row' : undefined} onClick={() => workoutDetailSheet(r.w)}
         summary={<span className="history-metrics">
           <span>{fmtDate(r.d, true)}</span>
-          <span>{durPart(r.w.end - r.w.start).join('')}</span>
+          <span>{durPart(workoutDuration(r.w)).join('') || '–'}</span>
           <span>{tn('{0} set', '{0} sets', setsDone(r.w))}</span>
-          <span>{fmtVol(sessionVolume(r.w, S), S.unit)}</span>
-        </span>} />
+        </span>} trailing={<span className="history-volume">{fmtVol(sessionVolume(r.w, S), S.unit)}</span>} />
         : <DayNoteRow iso={r.d} note={r.note} />}
     </Fragment>)}</div>
       {more && <div ref={end} aria-hidden="true" style={{ height: 1 }} />}</>

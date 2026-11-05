@@ -23,6 +23,7 @@ const entry = (sets = [row(), row(), row()], extra = {}) => ({ id: BENCH,
 const past = { id: 'past', d: '2026-10-22', entries: [entry([row({ done: true })])] }
 let host, root
 beforeEach(() => {
+  vi.useFakeTimers()
   useUI.getState().stopRest()
   useUI.getState().stopWork()
   useUI.setState({ sheets: [], timer: null, work: null })
@@ -31,6 +32,10 @@ afterEach(() => {
   if (root) act(() => root.unmount())
   useUI.getState().stopRest()
   useUI.getState().stopWork()
+  // Closing an open sheet during unmount schedules the keyboard scroll handover.
+  // Finish it while this test's DOM still exists.
+  act(() => vi.runOnlyPendingTimers())
+  vi.useRealTimers()
   host?.remove()
   host = root = null
 })
@@ -162,7 +167,7 @@ describe('compact workout table', () => {
   it('omits compact ratings for unrated sets and when effort is disabled', () => {
     mount(entry([row(), row({ f: true }), row({ rpe: 8 })]))
     expect([...host.querySelectorAll('.set-table-row')].map(el => el.querySelector('.set-table-effort')?.textContent.trim() ?? null))
-      .toEqual([null, null, 'RPE 8'])
+      .toEqual(['', '', 'RPE 8'])
     act(() => useStore.getState().update(s => { s.effort = 'none' }))
     expect(host.querySelector('.set-table-effort')).toBeNull()
     expect(live().sets[2].rpe).toBe(8)
@@ -205,7 +210,7 @@ describe('compact workout table', () => {
     expect(live().sets[0].sides.R).toMatchObject({ done: true, rpe: 8 })
     expect(live().sets[0].sides.L.done).toBe(false)
     expect([...host.querySelectorAll('.set-table-row')].map(el => el.querySelector('.set-table-effort')?.textContent.trim() ?? null))
-      .toEqual([null, 'RPE 8', null, null])
+      .toEqual(['', 'RPE 8', '', ''])
   })
 
   it('keeps a cardio goal visible separately from an unmeasured distance', () => {
@@ -219,7 +224,7 @@ describe('compact workout table', () => {
   it('shows cardio duration and distance while preserving secondary speed and nullable incline controls', () => {
     const cardio = { id: '2259', target: { mode: 'cardio', min: 15, km: 3 }, sets: [{ min: 15, km: 3, speed: 8, done: false }, { min: 15, km: 3, speed: 8, done: false }] }
     mount(cardio, { speedUnit: 'mph' })
-    expect([...host.querySelectorAll('.set-table-head > span')].map(el => el.textContent).filter(Boolean)).toEqual(['Duration (min)', 'Distance (km)'])
+    expect([...host.querySelectorAll('.set-table-head > span')].map(el => el.textContent).filter(Boolean)).toEqual(['Duration (min)', 'Distance (km)', 'RPE'])
     expect([...host.querySelector('.set-table-edit').querySelectorAll('.set-table-value > span')].map(el => el.textContent)).toEqual(['15', '3'])
     open()
     expect([...editor().querySelectorAll('label')].map(el => el.textContent)).toEqual(['Duration (min)', 'Distance (km)', 'Speed (mph)', 'Incline (%)'])

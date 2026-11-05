@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { exerciseHistory } from '../lib/exercise-history.js'
 import { fmtDate, fmtNum, fmtVol } from '../lib/format.js'
 import { setLabel } from '../lib/history.js'
@@ -9,7 +9,8 @@ import { exerciseHistorySheet } from '../sheets.jsx'
 import LineChart from './LineChart.jsx'
 import Icon from './Icon.jsx'
 
-export default function RecentExerciseHistory({ history, exerciseId }) {
+export default function RecentExerciseHistory({ history, exerciseId, initialOpen = false }) {
+  const [open, setOpen] = useState(initialOpen)
   const view = exView(history, exerciseId)
   const h = useMemo(() => exerciseHistory(view, exerciseId, { limit: 5 }), [view.workouts, view.dbLoad, view.volumeWarmups, exerciseId])
   const points = useMemo(() => h.sessions.slice().reverse()
@@ -17,7 +18,7 @@ export default function RecentExerciseHistory({ history, exerciseId }) {
   if (!h.total) return null
   const unit = h.metric === 'weight' ? view.unit : h.metric === 'reps' ? t('reps') : h.metric === 'sec' ? 's' : h.metric === 'km' ? 'km' : t('min')
   return <section className="card recent-exercise-history" aria-label={t('Exercise history')}>
-    <details>
+    <details open={open} onToggle={event => setOpen(event.currentTarget.open)}>
     <summary>{t('Last {0} sessions', Math.min(5, h.total))}<Icon name="chevronDown" /></summary>
     <div className="row between">
       <button type="button" className="recent-history-link" onClick={() => exerciseHistorySheet(exerciseId)}>

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useStore } from '../store/useStore.js'
 import { Button, Section } from './ui.jsx'
 import { t } from '../lib/i18n.js'
-import { todayISO } from '../lib/format.js'
+import { fmtDate, todayISO } from '../lib/format.js'
 import { shareExport } from '../lib/mobile.js'
 import { garminCloudErrorMessage, garminHealthMetrics } from '../lib/garmin-cloud.js'
 import { garminHealthArchive, healthDays, healthDisplayRows, syncGarminHealth } from '../lib/garmin-health.js'
@@ -92,14 +92,18 @@ export default function GarminHealthSettings({ connected, onStatusChange }) {
         : error === 'no_saved_readings' ? 'No saved health readings in this period.' : 'Could not read Garmin health data. Try again.'
   return <Section className="garmin-health-settings" title={t('Garmin health data')}>
     <div className="garmin-health-controls">
-    <p className="small muted">{t('Read all supported health metrics available to your Garmin account. Missing data stays missing. Weight readings are added without replacing manually logged weights.')}</p>
-    <label className="measure-date"><span>{t('From')}</span><input aria-label={t('From')} type="date" className="field" value={start} max={end} min="2000-01-01" disabled={busy} onChange={e => setStart(e.target.value)} /></label>
-    <label className="measure-date"><span>{t('To')}</span><input aria-label={t('To')} type="date" className="field" value={end} min={start} max={todayISO()} disabled={busy} onChange={e => setEnd(e.target.value)} /></label>
-    <Button disabled={!connected || busy} onClick={read}>{t('Read Garmin health data')}</Button>
+    <Button className="garmin-health-read" icon="heart" disabled={!connected || busy} onClick={read}>{t('Read Garmin health data')}</Button>
+    {!connected && <p className="small muted garmin-health-reason">{t('Garmin Connect must be ready before reading health data.')}</p>}
     {busy && controller.current && <Button onClick={() => controller.current.abort()}>{t('Cancel')}</Button>}
     {progress && <p className="small" role="status">{progress.date} · {t(progress.label)} · {progress.completed}/{progress.total}<br />{t('Available: {0}. No data: {1}. Errors: {2}. Weigh-ins added: {3}.', progress.available, progress.unavailable, progress.error, progress.weighIns)}</p>}
     {error && <p className="small muted" role="alert">{t(message)}</p>}
     <GarminHealthSummary records={records} unit={unit} date={end} loading={loading} />
+    <details className="settings-disclosure garmin-health-period">
+      <summary><span>{t('From')} · {t('To')}</span><span>{start === end ? fmtDate(end, false, true) : `${fmtDate(start, false, true)} – ${fmtDate(end, false, true)}`}</span></summary>
+    <label className="measure-date"><span>{t('From')}</span><input aria-label={t('From')} type="date" className="field" value={start} max={end} min="2000-01-01" disabled={busy} onChange={e => setStart(e.target.value)} /></label>
+    <label className="measure-date"><span>{t('To')}</span><input aria-label={t('To')} type="date" className="field" value={end} min={start} max={todayISO()} disabled={busy} onChange={e => setEnd(e.target.value)} /></label>
+    <p className="small muted">{t('Read all supported health metrics available to your Garmin account. Missing data stays missing. Weight readings are added without replacing manually logged weights.')}</p>
+    </details>
     <details className="settings-disclosure garmin-health-archive">
       <summary>{t('Saved readings')}</summary>
       {records.length > 0 && <>

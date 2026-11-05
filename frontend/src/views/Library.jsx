@@ -3,7 +3,7 @@ import { useDeferredValue, useMemo, useRef, useState } from 'react'
 import { useUI } from '../store/useUI.js'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
-import { EXDB, BODYPARTS, allExercises, equipmentOf, byCategory, searchExercises, similarExercises } from '../lib/exercises.js'
+import { EXDB, BODYPARTS, allExercises, isCustomEx, equipmentOf, byCategory, searchExercises, similarExercises } from '../lib/exercises.js'
 import { MUSCLE_NAME } from '../lib/muscles.js'
 import { activeProfile, exAvailable } from '../lib/equipment.js'
 import { bestWeightFor } from '../lib/history.js'
@@ -13,7 +13,7 @@ import { Thumb } from '../components/Media.jsx'
 import { exerciseDetailSheet, addToRoutineSheet, customExSheet } from '../sheets.jsx'
 import Icon from '../components/Icon.jsx'
 import ExerciseViewToggle from '../components/ExerciseViewToggle.jsx'
-import { Button } from '../components/ui.jsx'
+import { Button, Segmented } from '../components/ui.jsx'
 import { tappable, useRevealActiveChip } from '../lib/use-sheet-keyboard.js'
 import { useAutoMore } from '../lib/use-auto-more.js'
 import { isFav, sortFavouritesFirst, sortYoursFirst, usageOf } from '../lib/favourites.js'
@@ -31,6 +31,7 @@ function libraryName(ex) {
 export default function Library() {
   const nav = useNavigate()
   const S = useStore(s => s.S)
+  const [browse, setBrowse] = useState('all')
   const [q, setQ] = useState('')
   const [bp, setBp] = useState('')
   const [eq, setEq] = useState('')
@@ -43,7 +44,10 @@ export default function Library() {
   // Your own exercises, counted the way the list below shows them (allExercises puts every
   // custom entry in front of the catalogue; deleting one removes it from customEx outright).
   const ownCount = (S.customEx || []).filter(c => c && c.id).length
-  const inPart = searchExercises(allExercises(S).filter(e => !bp || e.bp === bp), q)
+  const catalogue = allExercises(S)
+  const browsePool = catalogue.filter(e => browse === 'favourites' ? isFav(S, e.id)
+    : browse === 'own' ? isCustomEx(e) || (S.customEx || []).includes(e) : true)
+  const inPart = searchExercises(browsePool.filter(e => !bp || e.bp === bp), q)
   // Kind of exercise (strength, stretching, cardio...), the same fallback as equipment below: a
   // choice the search or body part has narrowed away is ignored for now, never a dead end.
   const { opts: catOpts, on: catOn, list: base } = byCategory(inPart, cat)
@@ -70,13 +74,13 @@ export default function Library() {
     onChange={(c, e) => { setCat(c); setEq(e); setShown(40) }} />)
   // A live count at the end of the search field while a search or filter narrows the list
   // (idea and first version: GitLab !31) — how many are left, before scrolling to find out.
-  const narrowed = !!(q.trim() || bp || eqOn || catOn)
+  const narrowed = !!(browse !== 'all' || q.trim() || bp || eqOn || catOn)
   // Close but not exact (a typo too many, most of the words, a similar name), under the results
   // once they are all on screen, so a search almost never ends on "No match".
   // Worked out a beat behind the typing (useDeferredValue): the list itself never waits for it.
   const qLate = useDeferredValue(q)
   const similar = q.trim() && qLate === q && f.length <= shown
-    ? similarExercises(allExercises(S).filter(e => (!bp || e.bp === bp) && (!profile || showAll || exAvailable(S, e))), q, f, f.length ? 12 : 30)
+    ? similarExercises(browsePool.filter(e => (!bp || e.bp === bp) && (!profile || showAll || exAvailable(S, e))), q, f, f.length ? 12 : 30)
     : []
   const row = e => {
     const best = bestWeightFor(S, e.id)
@@ -110,6 +114,8 @@ export default function Library() {
         <Icon name="slider" />{sheetOn ? <span className="lib-fn">{sheetOn}</span> : null}
       </button>
       <ExerciseViewToggle /></div>
+    <Segmented className="lib-browse" value={browse} onChange={value => { setBrowse(value); setShown(40) }}
+      options={[{ value: 'all', label: t('All') }, { value: 'favourites', label: t('Favourites') }, { value: 'own', label: t('My own') }]} />
     {profile && <div className="small dim row" style={{ margin: '-4px 2px 10px', gap: 6, alignItems: 'center' }}>
       <Icon name="kettlebell" style={{ fontSize: 'var(--fs-footnote)' }} />
       {showAll ? t('Showing all equipment') : t('Showing what you have in "{0}"', profile.name)}

@@ -151,12 +151,14 @@ export default function MobileOnboarding() {
       <div className="muted" style={{ marginBottom: 34 }}>{t('How do you want to use openGym?')}</div>
       <Button variant="primary" icon="lock" onClick={() => chooseLocalMode()}>{t('Use on this device')}</Button>
       <div style={{ height: 10 }} />
-      <Button icon="cloud" onClick={() => useUI.getState().openSheet(close => <ConnectSheet close={close} />)}>{t('Connect to my server')}</Button>
+      <Button variant="ghost" icon="cloud" onClick={() => useUI.getState().openSheet(close => <ConnectSheet close={close} />)}>{t('Connect to my server')}</Button>
       <div className="dim small" style={{ marginTop: 26, lineHeight: 1.5 }}>
         {t('Local keeps everything on this phone. Connecting syncs to your own openGym server instead. You can switch later in Settings.')}
       </div>
-      <div style={{ height: 18 }} />
-      <Button icon="gear" onClick={() => openCfAccess()}>{t('Connection settings')}</Button>
+      <details className="settings-disclosure first-launch-advanced">
+        <summary>{t('Advanced')}</summary>
+        <Button icon="gear" onClick={() => openCfAccess()}>{t('Connection settings')}</Button>
+      </details>
     </div>
   )
 }

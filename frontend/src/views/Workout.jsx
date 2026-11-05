@@ -1,5 +1,6 @@
 import { SetComparison, SetEffortMarker } from '../components/SetComparison.jsx'
 import RecentExerciseHistory from '../components/RecentExerciseHistory.jsx'
+import ExerciseName from '../components/ExerciseName.jsx'
 import WorkoutSetEditor from '../components/WorkoutSetEditor.jsx'
 import { previousWorkSets, previousSetAt } from '../lib/workout-comparison.js'
 import MixedWeightField from '../components/MixedWeightField.jsx'
@@ -714,13 +715,13 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       <span className="set-table-status" aria-hidden="true">
         {displaySide && t(displaySide === 'L' ? 'L' : 'R')}{isWarmupRow(row) && t('Warm-up')}{failMark(row)}{trendMark(i)}
       </span>
-      <button type="button" className="set-table-edit" aria-label={t('Edit') + ': ' + trendSay(i, failSay(row, label))} onClick={() => openRowEditor(i, side)}>
+      <button type="button" className={'set-table-edit' + (ratingKind ? ' rated' : '')} aria-label={t('Edit') + ': ' + trendSay(i, failSay(row, label))} onClick={() => openRowEditor(i, side)}>
         {[col1, col2].filter(Boolean).map(col => <span className="set-table-value" key={col.f}>
           <span>{s[col.f] == null ? '–' : fmtNum(viewOf(col, s[col.f]))}</span>
           {s.done && <SetComparison current={s} previous={previousAt(i, side)} field={col.f} exerciseId={entry.id} view={col.view} deltaOnly />}
         </span>)}
-        {ratingRir != null && <span className="set-table-effort" style={{ color: effortColor(ratingRir) }}>
-          {ratingKind.toUpperCase()} {fmtNum(toScale(ratingKind, ratingRir))}
+        {ratingKind && <span className="set-table-effort" style={ratingRir != null ? { color: effortColor(ratingRir) } : undefined}>
+          {ratingRir != null && <><span className="vh">{ratingKind.toUpperCase()} </span>{fmtNum(toScale(ratingKind, ratingRir))}</>}
         </span>}
       </button>
       {timed && !editing && <button className="setgo" aria-label={t('Start set')} disabled={s.done || !!working} onClick={() => onStartTimed(i)}><Icon name="play" /></button>}
@@ -836,7 +837,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     {!dense && !thumb && <Media ex={ex} notes={entry.target?.notes} key={entry.id} compact={compact} minimizable />}
     <div className="row between exhd" style={{ marginBottom: 6 }}>
       {thumb && <WorkoutThumb ex={ex} onExpand={() => update(s => { s.gifSize = 'full' })} />}
-      <div style={{ flex: 1, minWidth: 0, fontSize: (compact || dense) ? 'var(--fs-body)' : 'var(--fs-title3)', fontWeight: 600, letterSpacing: '-.02em', lineHeight: 1.2 }} className={exerciseNameClass(ex)}>{exerciseNameFor(ex)}</div>
+      <div style={{ flex: 1, minWidth: 0, fontSize: (compact || dense) ? 'var(--fs-body)' : 'var(--fs-title3)', fontWeight: 600, letterSpacing: '-.02em', lineHeight: 1.2 }} className={exerciseNameClass(ex)}><ExerciseName ex={ex} /></div>
       <div className="row" style={{ gap: 2, flex: 'none' }}>
         {entry.note && <button className="iconbtn" aria-label={t('Note')} title={t('Note')} style={{ color: 'var(--acc-ink)' }}
           onClick={() => exerciseNoteSheet(entryIdx)}><Icon name="note" /></button>}
@@ -859,7 +860,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     {/* compact view drops everything from here to the sets card — it is all still on the ⋯ menu
         (note, details, history, bar weight, progression) or is display-only (tags, "last time"). */}
     {!dense && <>
-    <div className="row" style={{ gap: 6, flexWrap: 'wrap', marginBottom: 8 }}>
+    {!tableLayout && <div className="row" style={{ gap: 6, flexWrap: 'wrap', marginBottom: 8 }}>
       {cardio && <span className="tag acc"><Icon name="figureRun" />{t('Cardio')}</span>}
       {/* A unilateral exercise is logged per side directly (the L/R rows below for reps, a
           "Left"/"Right" tag on each doubled row for a timed hold), so the old "{n} per side"
@@ -869,7 +870,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       {(ex.tg || ex.bp) && <span className="tag">{t(MUSCLE_NAME[ex.tg] || ex.tg || ex.bp)}</span>}
       {ex.eq && <span className="tag">{t(ex.eq)}</span>}
       {best > 0 && <span className="tag nocap">{t('Best:')} {fmtNum(best)} {S.unit}</span>}
-    </div>
+    </div>}
     {/* Three notes can apply to one exercise and they are not interchangeable, so each keeps its
         own line and its own icon: the plan's instruction (cfg.note, from the routine), the
         standing fact about the movement (exNotes), and the message you pinned to yourself last
@@ -894,7 +895,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     <div className={'card' + (tableLayout ? ' workout-set-table' : '')} style={{ marginTop: 10, marginBottom: 0 }}>
       {/* the header carries the same eff3/timed sizing as the rows, or the labels drift off their
           columns; over L/R rows it also has to skip the side badge that sits in front of the weight cell */}
-      {tableLayout ? <div className={'set-table-head' + (timed ? ' timed' : '')}><span>{col1.hd}</span><span>{col2.hd}</span>{timed && <span className="ck-sp" />}<span className="ck-sp" /></div> : <div className={'sethead' + (col3 ? ' eff3' : '') + (timed ? ' timed' : '') + (perSide ? ' per-side' : '') + (wc.steppers ? '' : ' plain')}><span className="n-sp" /><span className="w-sp">{col1.hd}</span>{col2 && <span className="r-sp">{col2.hd}</span>}{col3 && <span className={col3.eff ? 'eff-sp' : 'r-sp'}>{col3.hd}</span>}{timed && <span className="ck-sp" />}<span className="ck-sp" /></div>}
+      {tableLayout ? <div className={'set-table-head' + (timed ? ' timed' : '') + (eff && (cardio || mode === 'reps') ? ' rated' : '')}><span>{col1.hd}</span><span>{col2.hd}</span>{eff && (cardio || mode === 'reps') && <span>{cardio ? 'RPE' : kind.toUpperCase()}</span>}{timed && <span className="ck-sp" />}<span className="ck-sp" /></div> : <div className={'sethead' + (col3 ? ' eff3' : '') + (timed ? ' timed' : '') + (perSide ? ' per-side' : '') + (wc.steppers ? '' : ' plain')}><span className="n-sp" /><span className="w-sp">{col1.hd}</span>{col2 && <span className="r-sp">{col2.hd}</span>}{col3 && <span className={col3.eff ? 'eff-sp' : 'r-sp'}>{col3.hd}</span>}{timed && <span className="ck-sp" />}<span className="ck-sp" /></div>}
       <span id={optsId} className="vh">{t('Options: copy, remove')}</span>
       {entry.sets.map((s, i) => {
         const warm = isWarmupRow(s)

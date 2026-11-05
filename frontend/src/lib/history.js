@@ -144,7 +144,8 @@ const effortTail = s => {
 // entry or a workout entry); passing an id alone keeps the old body-part behaviour.
 // `speedUnit` is the profile's (lib/speed.js speedUnitOf); without one a cardio set reads km/h.
 const EXPLICIT_MODES = new Set(['reps', 'time', 'cardio'])
-export function setLabel(id, s, cfg, speedUnit) {
+export function setLabel(id, s, cfg, speedUnit, { includeEffort = true } = {}) {
+  const rating = row => includeEffort ? effortTail(row) : ''
   // The id is the caller's when the config does not carry one: a freestyle target is built
   // without it, and modeOf would then fall back to 'reps' and print a run as "0×0".
   const c = cfg ? { ...cfg, id: cfg.id ?? id } : { id }
@@ -203,12 +204,12 @@ export function setLabel(id, s, cfg, speedUnit) {
     const partial = s.sides.L.done !== s.sides.R.done
     return ['L', 'R'].map(key => {
       const side = s.sides[key]
-      return `${t(key)} ${partial && !side.done ? '–' : oneSide(side) + effortTail(side)}`
+      return `${t(key)} ${partial && !side.done ? '–' : oneSide(side) + rating(side)}`
     }).join(' · ') + fail
   }
   // Bodyweight reads as what you did — "12", or "+10 × 12" once there is a belt involved —
   // rather than "0×12", which says a set was performed with no weight and means nothing.
-  return oneSide(s) + fail + effortTail(s)
+  return oneSide(s) + fail + rating(s)
 }
 // Default config for a freshly added exercise. A catalogue hold starts timed; `modeOf` itself is
 // left alone, so an entry saved without a mode (a plank logged as reps) still reads as it did.

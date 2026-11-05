@@ -153,13 +153,14 @@ describe('exercise history sheet', () => {
   it('is reachable from the exercise detail sheet once there is history', () => {
     exerciseDetailSheet(EXIDX[EX])
     const before = renderTop()
-    expect([...before.querySelectorAll('button')].some(b => b.textContent === 'History')).toBe(false)
+    expect(before.querySelector('[data-exercise-history-link]')).toBeNull()
 
     useStore.setState(s => ({ S: { ...s.S, workouts: [session(0, [{ w: 60, r: 5, done: true }])] } }))
     useUI.setState({ sheets: [] })
     exerciseDetailSheet(EXIDX[EX])
     const host = renderTop()
-    const btn = [...host.querySelectorAll('button')].find(b => b.textContent === 'History')
+    act(() => { [...host.querySelectorAll('.exercise-detail-tabs button')].find(b => b.textContent === 'History').click() })
+    const btn = host.querySelector('[data-exercise-history-link]')
     expect(btn).toBeTruthy()
     act(() => { btn.click() })
     expect(useUI.getState().sheets).toHaveLength(2)

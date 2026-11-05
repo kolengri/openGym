@@ -19,6 +19,8 @@ import Media, { Thumb } from './components/Media.jsx'
 import CustomMediaField from './components/CustomMediaField.jsx'
 import WorkoutMediaSection, { workoutMediaCount } from './components/WorkoutMedia.jsx'
 import GarminCloudUploadButton from './components/GarminCloudUploadButton.jsx'
+import ExerciseName from './components/ExerciseName.jsx'
+import LoggedSetSummary from './components/LoggedSetSummary.jsx'
 import RecentExerciseHistory from './components/RecentExerciseHistory.jsx'
 import { queueGarminCloudUpload } from './lib/garmin-cloud.js'
 import { FormVideosSection } from './components/SetVideo.jsx'
@@ -1309,6 +1311,7 @@ function ExerciseDetail({ ex, close }) {
   const last = lastEntryFor(st, ex.id)
   const best = bestWeightFor(st, ex.id, currentDbLoad(st, ex.id))
   const fav = isFav(st, ex.id)
+  const [tab, setTab] = useState('technique')
   const nfcOK = useNfcSupported()
   // Merge into… is offered for your own exercise, or a catalogue one with something logged or
   // planned to move.
@@ -1321,32 +1324,49 @@ function ExerciseDetail({ ex, close }) {
   }
   return <div className="exercise-detail">
     <div className="row between" style={{ gap: 8, alignItems: 'flex-start' }}>
-      <h3 className={'exdetail-name ' + exerciseNameClass(ex)}>{exerciseNameFor(ex)}</h3>
+      <h3 className={'exdetail-name ' + exerciseNameClass(ex)}><ExerciseName ex={ex} /></h3>
       <button className={'iconbtn fav-btn' + (fav ? ' on' : '')} aria-pressed={fav}
         aria-label={fav ? t('Remove from favourites') : t('Add to favourites')} onClick={flipFav}>
         <Icon name={fav ? 'starFill' : 'star'} />
       </button>
     </div>
+    <Segmented className="exercise-detail-tabs" value={tab} onChange={setTab} options={[
+      { value: 'technique', label: t('How to') },
+      { value: 'muscles', label: t('Muscles') },
+      { value: 'history', label: t('History') },
+    ]} />
+    <div className="exercise-detail-panels">
+      <section hidden={tab !== 'technique'} data-exercise-panel="technique">
     <Media ex={ex} minimizable />
     <div className="row" style={{ gap: 6, flexWrap: 'wrap', margin: '10px 0' }}>
       {detailTags(ex).map(tg => <span key={tg.key} className={'tag' + (tg.acc ? ' acc' : '')}>{tg.icon && <Icon name={tg.icon} />}{tg.label}</span>)}
     </div>
+    {descFor(ex) && <div className="exnote">{descFor(ex)}</div>}
+    {instrFor(ex).length > 0 &&<><h4 className="sec">{t('How to')}{getLang() !== 'en' && !instrTranslated(ex) && <span className="dim" style={{ textTransform: 'none', letterSpacing: 0 }}> · {t('instructions in English')}</span>}</h4><ol className="steps-list">{instrFor(ex).map((s, i) => <li key={i}>{s}</li>)}</ol></>}
+    <FormVideosSection exId={ex.id} />
+    {youtubeSearchUrl(ex) && <Button variant="ghost" icon="play" style={{ marginTop: 6 }} onClick={() => openExternal(youtubeSearchUrl(ex))}>{t('Watch on YouTube')}</Button>}
+      </section>
+      <section hidden={tab !== 'muscles'} data-exercise-panel="muscles">
     {Object.values(muscleLoad).some(w => w > 0) && <section className="exercise-muscle-map" aria-label={t('Muscles')}>
       <h4 className="sec">{t('Muscles')}</h4>
       <BodyMap load={muscleLoad} body={st.body} />
     </section>}
-    <RecentExerciseHistory history={sessionHistory(st)} exerciseId={ex.id} />
-    {descFor(ex) && <div className="exnote">{descFor(ex)}</div>}
-    {/* One line of text that wraps as a sentence: as a flex row, the last session became a
-        separate column beside "Best: 105 kg" once it wrapped (design review 1.4.5). */}
-    {best > 0 && <div className="small ex-best"><Icon name="trophy" style={{ fontSize: 14, color: 'var(--gold-ink)' }} />{t('Best:')} <b className="accent" style={{ whiteSpace: 'nowrap' }}>{fmtNum(best)} {st.unit}</b>{last ? <span className="muted">{` · ${t('last')} ${fmtDate(last.d)}: ${last.sets.map(s => setLabel(ex.id, s, last.target, speedUnitOf(st))).join(', ')}`}</span> : ''}</div>}
+    <StrengthLevelBlock exId={ex.id} />
+      </section>
+      <section hidden={tab !== 'history'} data-exercise-panel="history">
+    <RecentExerciseHistory history={sessionHistory(st)} exerciseId={ex.id} initialOpen />
+    {best > 0 && <div className="small ex-best"><Icon name="trophy" style={{ fontSize: 14, color: 'var(--gold-ink)' }} />{t('Best:')} <b className="accent" style={{ whiteSpace: 'nowrap' }}>{fmtNum(best)} {st.unit}</b></div>}
+    {last && <Button icon="history" data-exercise-history-link style={{ marginTop: 4 }} onClick={() => exerciseHistorySheet(ex.id)}>{t('History')}</Button>}
+    {!isCardio(ex) && !isAssisted(ex) && <OneRM ex={ex} />}
+      </section>
+    </div>
     <Button variant="primary" icon="plus" style={{ margin: '10px 0 4px' }} onClick={() => addToRoutineSheet(ex)}>{t('Add to my plan')}</Button>
-    {last && <Button icon="history" style={{ marginTop: 4 }} onClick={() => exerciseHistorySheet(ex.id)}>{t('History')}</Button>}
-    <FormVideosSection exId={ex.id} />
+
     {/* A sticker on the machine that jumps to this exercise in a workout (components/Nfc.jsx). */}
     {nfcOK && !ex.missing && <Button icon="nfc" style={{ marginTop: 4 }} onClick={() => nfcExerciseSheet(ex)}>{t('Write NFC sticker for this exercise')}</Button>}
     {/* Edit is an ordinary button with the others; Delete waits at the very end, apart (P6). */}
     {isCustomEx(ex) && <Button icon="pencil" style={{ marginTop: 8 }} onClick={() => { close(); customExSheet(ex) }}>{t('Edit')}</Button>}
+
     <details className="detail-disclosure"><summary>{t('Equipment')}</summary>
     <ExerciseAliasesEditor key={ex.id} ex={ex} />
     {modeOf({ id: ex.id }) === 'reps' && <>
@@ -1366,15 +1386,7 @@ function ExerciseDetail({ ex, close }) {
     {/* Beginner to Elite for the main lifts, from the best estimated 1RM against body weight
         (lib/strength-level.js). Hidden without a weigh-in. */}
     </details>
-    <StrengthLevelBlock exId={ex.id} />
-    {/* No one-rep max on an assistance machine: the load is the help you were given, so the
-        calculator would answer "your 1RM is 23 kg" about a number that gets smaller as you get
-        stronger (issue #232). Cardio has none for the same kind of reason. */}
-    {!isCardio(ex) && !isAssisted(ex) && <OneRM ex={ex} />}
-    {instrFor(ex).length > 0 &&<><h4 className="sec">{t('How to')}{getLang() !== 'en' && !instrTranslated(ex) && <span className="dim" style={{ textTransform: 'none', letterSpacing: 0 }}> · {t('instructions in English')}</span>}</h4><ol className="steps-list">{instrFor(ex).map((s, i) => <li key={i}>{s}</li>)}</ol></>}
-    {/* A YouTube search for the exercise, opened after the tap and only then (lib/youtube.js). A
-        video link of the exercise's own stays first, in the media above. */}
-    {youtubeSearchUrl(ex) && <Button variant="ghost" icon="play" style={{ marginTop: 6 }} onClick={() => openExternal(youtubeSearchUrl(ex))}>{t('Watch on YouTube')}</Button>}
+
     {/* The catalogue is community-edited (catalogue/README.md): a wrong muscle, a clumsy step or a
         missing translation is one tap from an issue that already names the exercise. */}
     {!isCustomEx(ex) && !ex.missing && <a className="small dim exfix-link" target="_blank" rel="noopener"
@@ -3150,7 +3162,7 @@ function WorkoutDetail({ w, close }) {
     const unit = exUnitOf(st, e.id)
     const shown = ve.sets.map((s, j) => [s, j]).filter(([s]) => hasCompletedWork(s))
     if (!shown.length) return t('no sets')
-    return shown.map(([s, j]) => <span key={j} className="wd-set">{setLabel(e.id, s, e.target, speedUnitOf(st)) + hrLabel(s)}{trends[j] && <span className={'settrend inline ' + (trends[j].dir > 0 ? 'up' : trends[j].dir < 0 ? 'down' : 'same')} role="img" aria-label={trendLabel(trends[j], unit)} title={trendLabel(trends[j], unit)}>{trendGlyph(trends[j])}</span>}{setNoteOf(s) && <Icon name="note" className="setnote-mark" role="img" aria-hidden="false" aria-label={t('Note: {0}', setNoteOf(s))} />}</span>)
+    return shown.map(([s, j]) => <LoggedSetSummary key={j} exerciseId={e.id} set={s} target={e.target} speedUnit={speedUnitOf(st)} effortKind={modeOf({ ...e.target, id: e.id }) === 'cardio' ? 'rpe' : effortOf(st)}>{trends[j] && <span className={'settrend inline ' + (trends[j].dir > 0 ? 'up' : trends[j].dir < 0 ? 'down' : 'same')} role="img" aria-label={trendLabel(trends[j], unit)} title={trendLabel(trends[j], unit)}>{trendGlyph(trends[j])}</span>}{setNoteOf(s) && <Icon name="note" className="setnote-mark" role="img" aria-hidden="false" aria-label={t('Note: {0}', setNoteOf(s))} />}</LoggedSetSummary>)
   }
   // Every set's note of an entry, numbered the way the workout numbers its rows (warm-ups apart).
   const setNotesOf = e => (e.sets || []).map((s, i) => ({ i, s })).filter(x => setNoteOf(x.s) && hasCompletedWork(x.s)).map(({ i, s }) => {
@@ -3164,12 +3176,12 @@ function WorkoutDetail({ w, close }) {
     // (.tap-main), and the picture is its own button above it for the exercise's details.
     return <div key={i} className="row wd-ex tap-host" style={{ alignItems: 'flex-start' }}>
       {ex && <button type="button" className="wd-thumb" aria-label={t('Details')} aria-haspopup="dialog" onClick={() => exerciseDetailSheet(ex)}><Thumb ex={ex} /></button>}
-      <button type="button" className="grow item-open tap-main" aria-haspopup="dialog" onClick={() => exerciseHistorySheet(e.id)}><span className={`tt ${exerciseNameClass(ex)}`} style={{ fontWeight: 600 }}>{nameOf(e)} {w.prs && w.prs.includes(e.id) && <span className="pr"><Icon name="trophy" />PR</span>}</span>
+      <button type="button" className="grow item-open tap-main" aria-haspopup="dialog" onClick={() => exerciseHistorySheet(e.id)}><span className={`tt wd-ex-title ${exerciseNameClass(ex)}`} style={{ fontWeight: 600 }}><ExerciseName ex={ex} fallback={nameOf(e)} /> {w.prs && w.prs.includes(e.id) && <span className="pr"><Icon name="trophy" />PR</span>}</span>
         {/* An exercise in a unit of its own (#657) reads in it, and says which. */}
-        <span className="ss wd-sets">{detailSets(e)}{exUnitTag(st, e.id)}</span>
         {times[i] > 0 && <span className="small dim wd-time" style={{ marginTop: 3 }}>
           <Icon name="timer" style={{ fontSize: 'var(--fs-caption)', marginInlineEnd: 4, verticalAlign: '-1px' }} />{fmtDur(Math.max(times[i], 60000))}
         </span>}
+        <span className="ss wd-sets">{detailSets(e)}{exUnitTag(st, e.id)}</span>
         {e.note && <span className="small dim" style={{ marginTop: 3 }}>
           {e.notePin && <Icon name="pin" style={{ fontSize: 'var(--fs-caption)', marginInlineEnd: 4, verticalAlign: '-1px', color: 'var(--gold-ink)' }} />}{e.note}
         </span>}
@@ -3278,7 +3290,7 @@ function WorkoutDetail({ w, close }) {
   const groups = sessionSections(w.entries)
   const grouped = groups.length > 1 || (groups[0] && groups[0].rid && (w.routineIds || []).length > 1)
   return <>
-    <div className="detail-heading">
+    <div className="detail-heading workout-detail-heading">
       <h3>{w.name}</h3>
       <div className="detail-actions">
         <button type="button" className="iconbtn" data-tour="wd-edit" title={t('Edit workout')} aria-label={t('Edit workout')} disabled={!!st.active} onClick={() => {
@@ -3437,7 +3449,7 @@ function Calendar({ start, close }) {
 export const calendarSheet = start => ui().openSheet(close => <Calendar start={start} close={close} />)
 
 /* shared small workout row (used in lists) */
-export function WorkoutRow({ w, onClick, tour, summary }) {
+export function WorkoutRow({ w, onClick, tour, summary, trailing }) {
   const st = useStore(s => s.S)
   const glyph = glyphOf((st.routines.find(r => r.id === w.routineId) || {}).emoji)
   const mediaN = workoutMediaCount(w)
@@ -3447,6 +3459,7 @@ export function WorkoutRow({ w, onClick, tour, summary }) {
       <div className="ss">{summary ?? [fmtDate(w.d, true), ...durPart(w.end - w.start), tn('{0} set', '{0} sets', setsDone(w)), fmtVol(sessionVolume(w, st), st.unit)].join(' · ')}</div></div>
     {mediaN > 0 && <span className="wrow-media" title={tn('{0} photo or video', '{0} photos or videos', mediaN)} aria-label={tn('{0} photo or video', '{0} photos or videos', mediaN)}><Icon name="image" />{mediaN}</span>}
     {w.prs && w.prs.length > 0 && <span className="pr"><Icon name="trophy" />{w.prs.length} PR</span>}
+    {trailing}
     <Icon name="chevronRight" className="chev" />
   </div>
 }

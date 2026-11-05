@@ -59,7 +59,7 @@ export const STEPS = [
   { id: 'go-stats', route: '/home', anchor: 'tab-stats', go: '/stats' },
   { id: 'stats', route: '/stats', panel: 'overview', anchor: 'stats-tiles' },
   { id: 'stats-body', route: '/stats', panel: 'lifts', anchor: 'stats-body', when: c => c.balance, optional: true },
-  { id: 'stats-records', route: '/stats', panel: 'overview', anchor: 'stats-records', when: c => c.workouts, optional: true },
+  { id: 'stats-records', route: '/stats', panel: 'lifts', anchor: 'stats-records', when: c => c.workouts, optional: true },
   { id: 'go-home', route: '/stats', anchor: 'tab-home', go: '/home' },
   { id: 'go-settings', route: '/home', anchor: 'settings-gear', go: '/settings' },
   { id: 'look', route: '/settings', anchor: 'settings-look' },

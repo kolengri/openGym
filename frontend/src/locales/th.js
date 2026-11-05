@@ -1,5 +1,6 @@
 // Thai UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "Garmin Connect ต้องพร้อมก่อนอ่านข้อมูลสุขภาพ",
   "Data": "ข้อมูล",
   "Connections": "การเชื่อมต่อ",
   "App": "แอป",

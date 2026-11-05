@@ -4,6 +4,7 @@
 import pt from './pt.js'
 
 export const PT_BR_OVERRIDES = {
+  "Garmin Connect must be ready before reading health data.": "O Garmin Connect precisa estar pronto antes de ler os dados de saúde.",
   "Data": "Dados",
   "Connections": "Conexões",
   "App": "Aplicativo",

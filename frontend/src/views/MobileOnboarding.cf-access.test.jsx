@@ -5,6 +5,7 @@
 import React, { act } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createRoot } from 'react-dom/client'
+import { useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
 import { _setLangState } from '../lib/i18n-core.js'
 
@@ -13,7 +14,7 @@ vi.mock('../lib/cf-access.js', () => ({
   loadCfAccess: async () => cf.stored,
   saveCfAccess: (...a) => cf.save(...a)
 }))
-import { CfAccessSheet } from './MobileOnboarding.jsx'
+import MobileOnboarding, { CfAccessSheet } from './MobileOnboarding.jsx'
 
 let root, host
 const type = (el, value) => act(() => {
@@ -65,4 +66,37 @@ describe('CfAccessSheet', () => {
     expect(host.querySelector('input').value).toBe('https://gym.example.com')
     expect(note()).toContain('gym.example.com')
   })
+})
+
+it('keeps the two startup choices reachable and connection maintenance behind Advanced', async () => {
+  const chooseLocalMode = vi.fn()
+  useStore.setState({ chooseLocalMode })
+  await act(async () => root.render(<MobileOnboarding />))
+  expect(button('Use on this device').classList.contains('primary')).toBe(true)
+  expect(button('Connect to my server').classList.contains('primary')).toBe(false)
+  expect(button('Use on this device').closest('details')).toBeNull()
+  expect(button('Connect to my server').closest('details')).toBeNull()
+  const advanced = button('Connection settings').closest('details')
+  expect(advanced.open).toBe(false)
+  expect(advanced.querySelector('summary').textContent).toBe('Advanced')
+  await act(async () => button('Use on this device').click())
+  expect(chooseLocalMode).toHaveBeenCalledOnce()
+  await act(async () => button('Connect to my server').click())
+  expect(useUI.getState().sheets).toHaveLength(1)
+  const pairingSheet = useUI.getState().sheets[0]
+  await act(async () => root.render(pairingSheet.render(() => useUI.getState().closeSheet(pairingSheet.id))))
+  expect(button('Lost access?')).toBeTruthy()
+  expect(button('Cloudflare Access')).toBeTruthy()
+  expect(button('Lost access?').closest('details')).toBeNull()
+  await act(async () => {
+    useUI.getState().closeAll()
+    root.render(<MobileOnboarding />)
+  })
+  host.querySelector('.first-launch-advanced').open = true
+  await act(async () => button('Connection settings').click())
+  expect(useUI.getState().sheets).toHaveLength(1)
+  const connectionSheet = useUI.getState().sheets[0]
+  await act(async () => root.render(connectionSheet.render(() => useUI.getState().closeSheet(connectionSheet.id))))
+  expect(button('Save')).toBeTruthy()
+  expect(host.querySelector('input[type="password"]')).toBeTruthy()
 })

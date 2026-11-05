@@ -26,18 +26,43 @@
 .planning-mode-value + .planning-fold-chevron { margin-inline-start: 0; }
 .planning-fold-content { padding: 0 10px 1px; }
 
-.planning-home .planning-today > .today-row { margin-top: 0; padding: 12px; }
-.planning-home .planning-today .prog-chip { margin-bottom: 10px; }
-.planning-home .planning-today > .row.between { margin-top: 8px; }
-.planning-home .planning-today .week { gap: 0; overflow-x: auto; }
+.planning-home .planning-calendar { margin-block: -8px 18px; }
+.planning-home .planning-week-heading { min-height: 44px; }
+.planning-home .planning-calendar .week { gap: 0; }
 .planning-home .wday { min-width: 44px; flex-shrink: 0; padding-block: 4px; }
 .planning-home .wday .num { width: 31px; height: 31px; margin: 2px auto; display: grid; place-items: center; }
-/* The selected date stays circular; planned and completed markers remain separate below it. */
+/* Selection and workout state use separate shapes, including in RTL. */
 .planning-home .wday.today .num { border-radius: 50%; }
 .planning-home .wday .dot.plan { background: transparent; border: 1px solid var(--label-2); }
 .planning-home .wday .dot.done { background: var(--acc); border: 1px solid var(--acc); }
-.planning-home .planning-history { display: flex; margin-inline-start: auto; }
-.planning-home .checkin-card { padding-block: 10px; }
+.planning-home .planning-calendar .wkleft { margin-block: 8px 0; }
+.planning-home .planning-today { padding: 0; background: none; margin-bottom: 16px; }
+.planning-home .planning-today > .today-row { margin-top: 0; padding: 16px; background: var(--surface); min-height: 88px; }
+.planning-home .planning-today .today-row .ttl { font-size: var(--fs-title3); font-weight: 600; }
+.planning-home .planning-today .prog-chip { margin-bottom: 10px; }
+.planning-home .planning-next { margin-bottom: 20px; }
+.planning-home .planning-history { margin-bottom: 0; border-end-start-radius: 0; border-end-end-radius: 0; }
+.planning-home :is(.planning-next, .planning-history) .grow { min-width: 0; }
+.planning-home :is(.planning-next, .planning-history) :is(.tt, .ss) { display: block; overflow-wrap: anywhere; }
+.planning-home :is(.planning-next, .planning-history) .ss { margin-top: 3px; }
+.planning-home .planning-weight-row { position: relative; background: var(--surface); margin-bottom: 0; }
+.planning-home .planning-weight { min-width: 0; }
+.planning-home .planning-weight > summary { display: flex; align-items: center; gap: 12px; padding: 10px 12px; padding-inline-end: 96px; min-height: 64px; list-style: none; cursor: pointer; border-top: 1px solid var(--sep); }
+.planning-home .planning-weight > summary::-webkit-details-marker { display: none; }
+.planning-home .planning-weight > summary .grow { min-width: 0; }
+.planning-home .planning-weight > summary :is(.card-head-title, .ss) { display: block; }
+.planning-home .planning-weight > summary .ss { margin-top: 3px; font-size: var(--fs-footnote); color: var(--label-2); }
+.planning-home .planning-weight > summary .card-head-title { font-weight: 500; }
+.planning-home .planning-weight > summary:focus-visible { outline: 2px solid var(--acc); outline-offset: -2px; }
+.planning-home .planning-weight[open] .planning-fold-chevron { transform: rotate(180deg); }
+.planning-home .planning-weight-log { position: absolute; inset-inline-end: 4px; top: 10px; max-width: 88px; }
+.planning-home .planning-weight-detail { padding: 10px 16px 16px; }
+.planning-home .planning-weight-detail .big { font-size: var(--fs-title2); font-weight: 600; }
+.planning-home .checkin-card { padding: 12px; border-start-start-radius: 0; border-start-end-radius: 0; }
+.planning-home .checkin-card .lbl2 { display: none; }
+.planning-home .checkin-card .card-head-g { width: 30px; height: 30px; font-size: var(--fs-title2); }
+.planning-home:not(:has(.checkin-card)) .planning-weight-row { border-end-start-radius: var(--r-card); border-end-end-radius: var(--r-card); margin-bottom: 12px; }
+.planning-home:not(:has(.checkin-card, .planning-weight-row)) .planning-history { border-end-start-radius: var(--r-card); border-end-end-radius: var(--r-card); margin-bottom: 12px; }
 .planning-home .home-motivation { margin-top: 18px; }
 .planning-home .home-motivation > summary { min-height: 52px; }
 .planning-home .home-motivation .card:last-child { margin-bottom: 10px; }
@@ -81,5 +106,5 @@
 
 /* Seven 44px day targets stay visible on the narrowest phone, inside the viewport. */
 @media (max-width: 359px) {
-  .planning-home .planning-today .week { margin-inline: -26px; overflow-x: visible; }
+  .planning-home .planning-calendar .week { margin-inline: calc(6px - var(--pad)); }
 }

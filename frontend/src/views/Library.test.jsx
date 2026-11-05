@@ -88,6 +88,58 @@ describe('Library favourites', () => {
   })
 })
 
+describe('Library browse tabs', () => {
+  const choose = (host, label) => act(() => [...host.querySelectorAll('.lib-browse button')].find(b => b.textContent === label).click())
+  const search = (host, value) => act(() => {
+    const input = host.querySelector('.search input')
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(input, value)
+    input.dispatchEvent(new Event('input', { bubbles: true }))
+  })
+
+  it('filters favourites and custom exercises while leaving stored preferences unchanged', () => {
+    const own = { id: 'custom-press', n: 'My press', bp: 'chest', tg: 'pectorals', eq: 'dumbbell', custom: true }
+    const legacy = { id: 'legacy-press', n: 'Legacy press', bp: 'chest', tg: 'pectorals', eq: '' }
+    mocks.S.customEx = [own, legacy]
+    mocks.S.favEx = [EXDB[0].id, own.id]
+    const original = structuredClone(mocks.S)
+    const host = render()
+    choose(host, 'Favourites')
+    expect(names(host)).toEqual([own.n, EXDB[0].n])
+    expect(host.querySelectorAll('.fav-star')).toHaveLength(2)
+    choose(host, 'My own')
+    expect(names(host)).toEqual([own.n, legacy.n])
+    choose(host, 'All')
+    expect(names(host).length).toBe(40)
+    expect(mocks.S).toEqual(original)
+  })
+
+  it('keeps search and body-part selection when switching tabs and scopes similar results', () => {
+    const chest = EXDB.filter(e => e.bp === 'chest')
+    const other = EXDB.find(e => e.bp !== 'chest')
+    mocks.S.favEx = [chest[0].id, other.id]
+    const host = render()
+    act(() => [...host.querySelectorAll('.lib-filters button')].find(b => b.textContent === 'chest').click())
+    choose(host, 'Favourites')
+    expect(names(host)).toEqual([chest[0].n])
+    search(host, chest[0].n + ' qwxz')
+    expect(host.querySelector('.similar-label')).toBeTruthy()
+    expect(names(host)).toEqual([chest[0].n])
+    choose(host, 'All')
+    expect(host.querySelector('.search input').value).toBe(chest[0].n + ' qwxz')
+    expect(host.querySelector('.lib-filters button[aria-pressed="true"]').textContent).toBe('chest')
+  })
+
+  it('shows an empty personal list without falling back to catalogue entries', () => {
+    const host = render()
+    choose(host, 'Favourites')
+    expect(names(host)).toEqual([])
+    expect(host.querySelector('.empty').textContent).toContain('No match')
+    choose(host, 'My own')
+    expect(names(host)).toEqual([])
+    expect(host.querySelector('.hdr [data-tour="lib-new"]')).toBeTruthy()
+  })
+})
+
 // #290 took the title-casing off every translated name; the packs stored lower-case then read
 // lower-case down the whole list. Only German's own casing is left alone.
 describe('Library exercise-name casing per language', () => {

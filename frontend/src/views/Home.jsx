@@ -103,8 +103,8 @@ export default function Home() {
   // Ownership, not mere presence of a rotationId: a stale id left over from a rebuilt rotation
   // would otherwise still read as "this app manages it" (lib/rotation.js).
   const managedQueue = !!liveQ && !!S.rotation && liveQ.rotationId === S.rotation.id
-  // On a rest day, saying when you train next beats leaving the row as a full stop.
-  const next = !S.active && !todayRoutines.length && !(rotating && !plannerQueue) ? nextTrainingDay(S, todayISO()) : null
+  // Keep the next fixed session in view, including after today has been completed.
+  const next = !S.active && !(rotating && !plannerQueue) ? nextTrainingDay(S, todayISO()) : null
   // The streak card's fraction: this calendar week's workouts over the weekdays with a plan, or,
   // in a coach week, the queue's sessions and your own days together (lib/queue.js weekTally).
   const tally = weekTally(S, todayISO())
@@ -131,6 +131,27 @@ export default function Home() {
       <button className="iconbtn" data-tour="settings-gear" onClick={() => nav('/settings')} aria-label={trouble ? t('Settings') + ', ' + t('Connection problem') : t('Settings')}><Icon name="gear" />{trouble && <span className="tab-dot" aria-hidden="true" />}</button>
     </div>
 
+    <div className="planning-calendar">
+      {/* A coach week runs by order, not by weekday, so its progress row stands in for the
+          seven dots (components/QueueRow.jsx). The today row below stays as it is: the queue's
+          next session reaches it through effectiveRoutineIds like any planned routine. */}
+      {rotating ? (queue ? <QueueRow S={S} today={todayISO()} onStart={onQueueStart} managed={managedQueue} /> : <div className="empty">
+        {t('No rotation yet. Add routines to it in Plan.')}
+        <div style={{ marginTop: 10 }}><Button size="sm" variant="tinted" onClick={() => nav('/plan')}>{t('Set up in Plan')}</Button></div>
+      </div>) : <>
+        <div className="row between planning-week-heading">
+          <button className="iconbtn" style={{ width: 44, height: 44, fontSize: 'var(--fs-subhead)' }} onClick={() => setWeekOffset(w => w - 1)} aria-label={t('Previous week')}><Icon name="chevronLeft" /></button>
+          <div className="small muted" style={{ fontWeight: 500 }}>{wkLabel}</div>
+          <button className="iconbtn" style={{ width: 44, height: 44, fontSize: 'var(--fs-subhead)' }} onClick={() => setWeekOffset(w => w + 1)} aria-label={t('Next week')}><Icon name="chevronRight" /></button>
+        </div>
+        <div className="week">{strip}</div>
+      </>}
+      {/* The week's plan as a countdown (#753, lib/week-left.js): "2 of 4 left this week". */}
+      {left && <div className={'small dim wkleft' + (left.left > 0 ? '' : ' done')}>
+        {left.left > 0 ? tn('{0} of {1} left this week', '{0} of {1} left this week', left.left, left.of) : t('All done this week. Nice.')}
+      </div>}
+    </div>
+
     <div className="card planning-today">
       {/* A running programme (lib/programmes.js) wrote this week's plan: where it stands, one tap from its screen. */}
       {progChip && <button type="button" className="chip ichip prog-chip" onClick={() => nav('/plan/programmes')}><Icon name="calendar" /><span>{progChip}</span></button>}
@@ -152,7 +173,6 @@ export default function Home() {
             <div className="ttl">{S.active ? (editingSaved ? S.active.name : t('{0} (in progress)', S.active.name))
               : doneToday ? (doneToday.name ? t('{0} (done)', doneToday.name) : t('Workout done'))
               : routine ? todayName : t('Rest day')}{todayOvr && routine && !doneToday ? ' · ' + t('rescheduled') : ''}</div>
-            {next && !doneToday && <div className="ss">{t('Next session: {0}, {1}', t(DAYN[next.weekday]), next.routine.name)}</div>}
           </div>
         </div>
         {S.active ? <span className="tag" style={{ color: 'var(--orange)', background: 'color-mix(in srgb,var(--orange) 16%,transparent)' }}>{editingSaved ? t('Edit') : t('Resume')}</span>
@@ -160,7 +180,6 @@ export default function Home() {
           : routine ? <span className="row" style={{ gap: 8 }}><MiniBodyMap routines={todayRoutines} body={S.body} /><span className="tag acc">{t('Start')}</span></span>
           : <Icon name="plus" className="chev" />}
       </div>
-      {doneToday && <Button size="sm" variant="ghost" icon="history" className="planning-history" onClick={() => nav('/history')}>{t('History')}</Button>}
       {/* The row above starts today's plan in one tap, and so does the Start button in the tab
           bar — which is the whole problem when you want something else. Both jump straight into
           the planned session whenever there is one, so the Start screen (a freestyle session,
@@ -172,38 +191,20 @@ export default function Home() {
           {t('Choose a different workout')}
         </Button>
       </div>}
-      {/* A coach week runs by order, not by weekday, so its progress row stands in for the
-          seven dots (components/QueueRow.jsx). The today row above stays as it is: the queue's
-          next session reaches it through effectiveRoutineIds like any planned routine. */}
-      {rotating ? (queue ? <QueueRow S={S} today={todayISO()} onStart={onQueueStart} managed={managedQueue} /> : <div className="empty">
-        {t('No rotation yet. Add routines to it in Plan.')}
-        <div style={{ marginTop: 10 }}><Button size="sm" variant="tinted" onClick={() => nav('/plan')}>{t('Set up in Plan')}</Button></div>
-      </div>) : <>
-        <div className="row between" style={{ marginBottom: 8 }}>
-          <button className="iconbtn" style={{ width: 44, height: 44, fontSize: 'var(--fs-subhead)' }} onClick={() => setWeekOffset(w => w - 1)} aria-label={t('Previous week')}><Icon name="chevronLeft" /></button>
-          <div className="small muted" style={{ fontWeight: 500 }}>{wkLabel}</div>
-          <button className="iconbtn" style={{ width: 44, height: 44, fontSize: 'var(--fs-subhead)' }} onClick={() => setWeekOffset(w => w + 1)} aria-label={t('Next week')}><Icon name="chevronRight" /></button>
-        </div>
-        <div className="week">{strip}</div>
-      </>}
-      {/* The week's plan as a countdown (#753, lib/week-left.js): "2 of 4 left this week". */}
-      {left && <div className={'small dim wkleft' + (left.left > 0 ? '' : ' done')}>
-        {left.left > 0 ? tn('{0} of {1} left this week', '{0} of {1} left this week', left.left, left.of) : t('All done this week. Nice.')}
-      </div>}
       <SeasonDeco spot="home-hero" />
     </div>
 
-    {/* What has rested and what is still recovering, kindly (lib/recovery-hint.js). */}
-    {on('health') && <RecoveryHint S={S} />}
+    {next && <button type="button" className="item planning-next" onClick={() => dayOverrideSheet(next.iso)}>
+      <span className="lrow-i"><Icon name="calendar" /></span>
+      <span className="grow"><span className="tt">{t('Next session: {0}, {1}', t(DAYN[next.weekday]), next.routines.map(r => r.name).join(' + '))}</span></span>
+      <Icon name="chevronRight" className="chev" />
+    </button>}
 
-    {/* Jump to the gym check-in cards (QR membership codes). Shown here as a quick tap on
-        arrival at the gym; folds away per user via the "Gym check-in" switch in Settings. */}
-    {on('checkin') && (
-      <div className="card tap-host checkin-card">
-        <CardHead icon="qr" tint="var(--blue)" eyebrow={t('At the gym')} title={t('Check in')} open={{ onClick: () => nav('/checkin') }}
-          action={<Icon name="chevronRight" className="chev" />} />
-      </div>
-    )}
+    <button type="button" className="item planning-history" onClick={() => nav('/history')}>
+      <span className="lrow-i"><Icon name="history" /></span>
+      <span className="grow"><span className="tt">{t('History')}</span><span className="ss">{tn('{0} workout total', '{0} workouts total', S.workouts.length)}</span></span>
+      <Icon name="chevronRight" className="chev" />
+    </button>
 
     {!S.routines.length && !S.active && (
       <div className="card">
@@ -213,10 +214,16 @@ export default function Home() {
       </div>
     )}
 
-    {on('body') && S.showWeightCard !== false && <div className="card">
-      {/* one trailing action, Log; the goal lives with the goal line and the weigh-ins below (P2) */}
-      <CardHead icon="scale" tint="var(--teal)" title={t('Body weight')} className="bw-head"
-        action={<Button size="sm" icon="plus" onClick={() => bwSheet()}>{t('Log')}</Button>} />
+    {on('body') && S.showWeightCard !== false && <div className="planning-weight-row">
+      <details className="planning-weight">
+        <summary className="bw-head">
+          <span className="lrow-i"><Icon name="scale" /></span>
+          <span className="grow"><span className="card-head-title">{t('Body weight')}</span>
+            {bw && <span className="ss">{fmtBodyWeight(bw.w)} {S.unit}{delta ? ' · ' + (delta > 0 ? '+' : '−') + fmtBodyWeight(Math.abs(delta)) : ''}</span>}
+          </span>
+          <Icon name="chevronDown" className="planning-fold-chevron" />
+        </summary>
+        <div className="planning-weight-detail">
       {bw ? <>
         <div className="row" style={{ gap: 8, alignItems: 'baseline' }}>
           <div className="big">{fmtBodyWeight(bw.w)} <span className="muted" style={{ fontSize: 'var(--fs-callout)' }}>{S.unit}</span></div>
@@ -249,7 +256,22 @@ export default function Home() {
           : t("No weigh-ins yet. Log your weight to start the curve (we also ask before every workout).")}</div>
         <Button size="sm" variant="ghost" icon="target" className="bw-goal" style={{ marginTop: 6, ...(S.targetW ? { color: 'var(--gold-ink)' } : {}) }} onClick={goalSheet}>{S.targetW ? fmtNum(S.targetW) : t('Goal')}</Button>
       </>}
+        </div>
+      </details>
+      <Button size="sm" variant="ghost" icon="plus" className="planning-weight-log" onClick={() => bwSheet()}>{t('Log')}</Button>
     </div>}
+
+    {/* Jump to the gym check-in cards (QR membership codes). Shown here as a quick tap on
+        arrival at the gym; folds away per user via the "Gym check-in" switch in Settings. */}
+    {on('checkin') && (
+      <div className="card tap-host checkin-card">
+        <CardHead icon="qr" tint="var(--blue)" eyebrow={t('At the gym')} title={t('Check in')} open={{ onClick: () => nav('/checkin') }}
+          action={<Icon name="chevronRight" className="chev" />} />
+      </div>
+    )}
+
+    {/* Recovery shares the quieter activity area beneath the training plan. */}
+    {on('health') && <RecoveryHint S={S} />}
 
     <SeasonDeco spot="home-advent" />
 

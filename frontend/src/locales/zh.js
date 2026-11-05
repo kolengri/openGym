@@ -1,5 +1,6 @@
 // Simplified Chinese UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "读取健康数据前，Garmin Connect 必须准备就绪。",
   "Data": "数据",
   "Connections": "连接",
   "App": "应用",

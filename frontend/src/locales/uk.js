@@ -1,5 +1,6 @@
 // Ukrainian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "Перед читанням даних здоров’я Garmin Connect має бути готовий до роботи.",
   "Data": "Дані",
   "Connections": "Підключення",
   "App": "Застосунок",

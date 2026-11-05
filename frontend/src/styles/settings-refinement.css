@@ -40,11 +40,25 @@
 .garmin-help-disclosure .sect { margin-block-end: 0; }
 .garmin-help .settings-disclosure > summary { padding-inline: 0; }
 .garmin-help .settings-disclosure p + p { margin-block-start: 12px; }
-.garmin-health-controls { padding: 12px 16px 16px; }
+.garmin-health-controls { padding: 0 16px 16px; }
 .garmin-health-controls > p { line-height: 1.5; margin: 0 0 16px; }
 .garmin-health-controls .measure-date { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-block-end: 8px; }
 .garmin-health-controls input { min-width: 0; min-height: 44px; max-width: 70%; }
 .garmin-health-controls > .btn { margin-block: 8px; }
+.garmin-health-controls > .garmin-health-read { justify-content: flex-start; min-height: 48px; text-align: start; background: transparent; padding-inline: 0; color: var(--acc-ink); }
+.garmin-health-controls > .garmin-health-read:disabled { color: var(--label-2); }
+.garmin-health-controls > .garmin-health-reason { margin-block: 0 12px; }
+.garmin-health-settings .garmin-health-summary { margin-block-start: 8px; }
+.garmin-health-settings .garmin-health-summary h4 { margin-block: 0 4px; }
+.garmin-health-settings .garmin-health-summary-grid { gap: 8px; margin-block: 12px; }
+.garmin-health-settings .garmin-health-summary-card { padding: 12px; }
+.garmin-health-settings .garmin-health-summary-value { margin-block-start: 4px; font-size: var(--fs-title3); }
+.garmin-health-period { border-block-start: 1px solid var(--sep); }
+.garmin-health-period > summary { padding-inline: 0; }
+.garmin-health-period > summary span + span { margin-inline-start: 8px; color: var(--label); font-variant-numeric: tabular-nums; }
+.garmin-health-period > p { line-height: 1.5; }
+.garmin-account-actions { margin-block-end: 12px; }
+.garmin-account-actions .btn { min-height: 44px; }
 .garmin-health-controls [role="alert"] { color: var(--red-ink); margin-block: 8px 16px; overflow-wrap: anywhere; }
 .garmin-health-controls [role="status"] { overflow-wrap: anywhere; }
 .garmin-health-archive { margin-block-start: 16px; border-block-start: 1px solid var(--sep); }
@@ -58,7 +72,10 @@
 .guided-refined select { min-height: 44px; }
 .first-launch-refined { display: flex; flex-direction: column; justify-content: center; min-height: 78svh; text-align: center; padding-block: 24px; }
 .first-launch-refined > .btn { min-height: 48px; }
-.first-launch-refined > .btn:last-child:not(.primary) { background: transparent; color: var(--label-2); }
+.first-launch-refined > .btn.ghost { color: var(--label-2); }
+.first-launch-advanced { margin-block-start: 18px; }
+.first-launch-advanced > summary { display: list-item; width: fit-content; margin-inline: auto; }
+.first-launch-advanced .btn { min-height: 44px; }
 .coach-refined .chat-hdr h1 { font-size: var(--fs-body); font-weight: 600; }
 .coach-refined .chips-row { gap: 8px; }
 @media (max-width: 360px) {

@@ -1,5 +1,6 @@
 // Russian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "Перед чтением данных здоровья Garmin Connect должен быть готов к работе.",
   "Data": "Данные",
   "Connections": "Подключения",
   "App": "Приложение",

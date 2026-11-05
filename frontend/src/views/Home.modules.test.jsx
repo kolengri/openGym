@@ -35,12 +35,19 @@ const mountWith = (modules, extra = {}) => {
 const heads = () => [...host.querySelectorAll('.card-head-title')].map(el => el.textContent)
 
 describe('Home follows the modules', () => {
-  it('prioritizes today and the week, then folds motivation without changing module preferences', () => {
+  it('puts the compact calendar before today and keeps optional activity quiet without changing preferences', () => {
     mountWith(undefined, { challengesFold: true })
     const todayRow = host.querySelector('[data-tour="today"]')
     const week = host.querySelector('.week')
     const motivation = host.querySelector('.home-motivation')
-    expect(todayRow.compareDocumentPosition(week) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(week.compareDocumentPosition(todayRow) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(week.closest('.planning-today')).toBeNull()
+    const weight = host.querySelector('.planning-weight')
+    expect(weight.open).toBe(false)
+    expect(weight.querySelector('summary').textContent).toContain('80')
+    expect(todayRow.compareDocumentPosition(weight) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    act(() => weight.querySelector('summary').click())
+    expect(weight.open).toBe(true)
     expect(motivation.open).toBe(false)
     expect(host.querySelector('.bw-head').compareDocumentPosition(motivation) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     act(() => motivation.querySelector('summary').click())

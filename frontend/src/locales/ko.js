@@ -1,5 +1,6 @@
 // Korean UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "건강 데이터를 읽기 전에 Garmin Connect가 준비되어 있어야 합니다.",
   "Data": "데이터",
   "Connections": "연결",
   "App": "앱",

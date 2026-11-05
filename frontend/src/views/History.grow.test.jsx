@@ -99,9 +99,10 @@ describe('History grows as it is scrolled', () => {
     expect(host.querySelector('.hdr [data-tour="history-add"]').getAttribute('aria-label')).toBe('Log a past workout')
     expect(host.querySelectorAll('.history-metrics')).toHaveLength(PAGE)
     const metrics = host.querySelector('.history-metrics')
-    expect(metrics.children).toHaveLength(4)
+    expect(metrics.children).toHaveLength(3)
     expect(metrics.textContent).toContain('0 sets')
-    expect(metrics.textContent).toContain('0 kg')
+    expect(host.querySelector('.history-volume').textContent).toBe('0 kg')
+    expect(metrics.children[1].textContent).toBe('1h 0m')
   })
 
 })

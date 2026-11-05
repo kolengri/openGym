@@ -1,4 +1,5 @@
 export default {
+  "Garmin Connect must be ready before reading health data.": "讀取健康資料前，Garmin Connect 必須準備就緒。",
   "Data": "資料",
   "Connections": "連線",
   "App": "應用程式",

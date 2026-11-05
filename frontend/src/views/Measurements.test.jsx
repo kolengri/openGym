@@ -123,4 +123,35 @@ describe('logging body measurements', () => {
     click(topSheet(), 'Delete')
     expect(entries().map(e => e.d)).toEqual(['2026-09-01'])
   })
+
+  it('puts adding in the header and edits a day by tapping its compact history row', () => {
+    seed({ measurements: [{ d: '2026-09-15', waist: 90, chest: 100, bodyFat: null, other: [] }] })
+    const screen = render(<Measurements />)
+    expect(screen.querySelector('.hdr [aria-label="Log measurements"]')).toBeTruthy()
+    const row = screen.querySelector('.measure-history-open')
+    expect(row.textContent).toContain('2 measurements')
+    expect(row.querySelector('.measure-preview').textContent).toBe('90 cm')
+    act(() => row.click())
+    const form = topSheet()
+    expect(field(form, 'Waist').value).toBe('90')
+    setValue(field(form, 'Waist'), '88')
+    click(form, 'Save')
+    expect(entries()).toHaveLength(1)
+    expect(entries()[0]).toMatchObject({ d: '2026-09-15', waist: 88, chest: 100 })
+    expect(row.querySelector('.measure-preview').textContent).toBe('88 cm')
+  })
+
+  it('leaves a missing selected measurement as a gap while keeping that day editable', () => {
+    seed({ measurements: [
+      { d: '2026-09-01', waist: 92, chest: null, bodyFat: null, other: [] },
+      { d: '2026-09-15', waist: null, chest: 100, bodyFat: null, other: [] },
+    ] })
+    const screen = render(<Measurements />)
+    const values = [...screen.querySelectorAll('.measure-history .measure-preview')].map(el => el.textContent)
+    expect(values).toEqual(['–', '92 cm'])
+    act(() => screen.querySelector('.measure-history-open').click())
+    const form = topSheet()
+    expect(field(form, 'Waist').value).toBe('')
+    expect(field(form, 'Chest').value).toBe('100')
+  })
 })

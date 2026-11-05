@@ -1,5 +1,6 @@
 // Spanish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "Garmin Connect debe estar listo antes de leer los datos de salud.",
   "Data": "Datos",
   "Connections": "Conexiones",
   "App": "Aplicación",

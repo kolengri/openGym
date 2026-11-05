@@ -1,5 +1,6 @@
 // Turkish UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Garmin Connect must be ready before reading health data.": "Sağlık verileri okunmadan önce Garmin Connect hazır olmalıdır.",
   "Data": "Veriler",
   "Connections": "Bağlantılar",
   "App": "Uygulama",

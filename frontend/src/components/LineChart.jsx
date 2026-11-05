@@ -69,6 +69,7 @@ export default function LineChart({ points, h = 150, unit = '', color = 'var(--a
 
   const gridlines = []
   if (axes) {
+    const yTicks = []
     const range = ymax - ymin, raw = range / 3
     const pow = Math.pow(10, Math.floor(Math.log10(raw)))
     let step = 10 * pow
@@ -77,10 +78,16 @@ export default function LineChart({ points, h = 150, unit = '', color = 'var(--a
       // Snapped to the step, so adding it up never drifts, and `|| 0` turns the -0 that
       // Math.ceil gives a range just under zero into a plain 0 instead of a "-0" label.
       const v = Math.round(v0 / step) * step || 0
+      yTicks.push({ v, label: tickPrefix + formatValue(v) })
+    }
+    // Leave room for formatted volume ticks, including grouping separators. The
+    // fixed gutter used for small loads clips five-digit session totals.
+    P.l = Math.max(P.l, ...yTicks.map(tick => 10 + tick.label.length * 6))
+    for (const { v, label } of yTicks) {
       const y = Y(v)
       gridlines.push(<g key={'y' + v}>
         <line x1={P.l} y1={y} x2={W - P.r} y2={y} stroke="var(--sep-op)" strokeWidth="1" />
-        <text x={P.l - 5} y={y + 3.5} textAnchor="end" fontSize="9.5" fill="var(--label-2)">{tickPrefix}{formatValue(v)}</text>
+        <text x={P.l - 5} y={y + 3.5} textAnchor="end" fontSize="9.5" fill="var(--label-2)">{label}</text>
       </g>)
     }
     const d0 = new Date(t0), d1 = new Date(t1)

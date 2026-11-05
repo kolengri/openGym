@@ -53,10 +53,9 @@ export default function GarminSettingsPage() {
 
   return <div className="settings-refined garmin-refined">
     <Section className="garmin-settings" title={t('Watch')}>
-      <Row icon="watch" title={t('Garmin')} subtitle={line} />
+      <Row icon="watch" title={status?.deviceName || t('Garmin')} subtitle={line} />
       {!watchOn && <p className="small muted">{t('Your watch stops getting workouts while Watch is off. It stays paired.')}</p>}
       {status?.enabled && <GarminConnectionDetails connection={garminConnection(wid)} />}
-      {status?.deviceName && <p className="small muted" style={{ padding: '0 16px', overflowWrap: 'anywhere' }}>{status.deviceName}</p>}
       {!status?.enabled && devices.length > 0 && <SelectRow icon="watch" title={t('Select a watch')} value={selected}
         options={devices.map(d => ({ value: d.id, label: d.name }))} onChange={setSelected} />}
       {!status?.enabled && status?.available && !devices.length && <p className="muted small">{t('No Garmin watches found. Pair your watch in Garmin Connect, then try again.')}</p>}
@@ -68,9 +67,7 @@ export default function GarminSettingsPage() {
             await p?.bridge.openOnWatch()
           } catch { setError(t('Garmin connection failed. Try again.')) }
         }}>{t('Open on the watch')}</Button>}
-        <Button variant={status?.enabled ? undefined : "primary"} disabled={busy || (!status?.enabled && (!selected || !status?.available))} onClick={() => connect(!status?.enabled)}>
-          {status?.enabled ? t('Disconnect') : t('Connect')}
-        </Button>
+        {!status?.enabled && <Button variant="primary" disabled={busy || !selected || !status?.available} onClick={() => connect(!status?.enabled)}>{t('Connect')}</Button>}
 
       </div>
       {(error || status?.error) && <p className="garmin-error small" role="alert">{error || (status.installed === false
@@ -78,6 +75,7 @@ export default function GarminSettingsPage() {
       <details className="settings-disclosure">
         <summary>{t('Advanced')}</summary>
         <div className="garmin-actions">
+        {status?.enabled && <Button disabled={busy} onClick={() => connect(!status?.enabled)}>{t('Disconnect')}</Button>}
         <Button disabled={busy || !status?.available} onClick={async () => {
           try {
             const { garminPlugin } = await import('../lib/garmin-sync.js')

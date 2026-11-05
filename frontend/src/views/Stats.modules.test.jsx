@@ -38,7 +38,7 @@ const links = () => [...host.querySelectorAll('[data-stats-links] .lrow-t')].map
 describe('Stats follows the modules', () => {
   it('Everything: Body and Effort in the index, the weight tile, the streak, the links under Body', () => {
     mount(undefined)
-    expect(parts()).toEqual(['Overview', 'Body', 'Lifts', 'Effort'])
+    expect(parts()).toEqual(['Overview', 'Exercises', 'Body', 'Effort'])
     expect(kpis()).toContain('Weight 30d')
     expect(host.querySelector('#stats-body [data-stats-links]')).toBeTruthy()
     expect(links()).toContain('Body measurements')
@@ -48,7 +48,7 @@ describe('Stats follows the modules', () => {
   it('Just training: no Body, no Effort, no streak; Structural balance moves to the end of Lifts', () => {
     mount(presetModules('training'))
     // Effort stays in "Just training": the part is there
-    expect(parts()).toEqual(['Overview', 'Lifts', 'Effort'])
+    expect(parts()).toEqual(['Overview', 'Exercises', 'Effort'])
     expect(host.querySelector('#stats-body')).toBeFalsy()
     expect(kpis()).not.toContain('Weight 30d')
     expect(host.querySelector('.kpis.two')).toBeTruthy()
