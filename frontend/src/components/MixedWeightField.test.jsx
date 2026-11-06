@@ -14,7 +14,7 @@ beforeEach(() => {
   host = document.createElement('div'); document.body.appendChild(host); root = createRoot(host)
   change = vi.fn()
 })
-afterEach(() => { act(() => { root.unmount(); modalRoot?.unmount() }); host.remove(); modalHost?.remove(); modalRoot = null })
+afterEach(() => { act(() => { root.unmount(); modalRoot?.unmount() }); host.remove(); modalHost?.remove(); modalRoot = null; vi.useRealTimers() })
 const click = text => act(() => [...modalHost.querySelectorAll('button')].find(b => b.textContent.trim() === text).click())
 const enter = (name, value) => act(() => {
   const input = modalHost.querySelector(`input[aria-label="${name}"]`)
@@ -26,7 +26,7 @@ function open(unit = 'kg') {
   act(() => root.render(<MixedWeightField value={60} unit={unit} onChange={change} />))
   act(() => host.querySelector('button').click())
   const sheet = useUI.getState().sheets.at(-1)
-  modalHost = document.createElement('div'); document.body.appendChild(modalHost); modalRoot = createRoot(modalHost)
+  modalHost = document.createElement('div'); modalHost.className = 'sheet'; document.body.appendChild(modalHost); modalRoot = createRoot(modalHost)
   act(() => modalRoot.render(<React.StrictMode>{sheet.render(() => useUI.getState().closeSheet(sheet.id))}</React.StrictMode>))
 }
 
@@ -54,6 +54,38 @@ it('applies a kg bar and the combined lb plates on one side without counting the
   act(() => modalHost.querySelector('input[aria-label="Plates on one side"]').closest('.weight-calc-input').querySelector('button').click())
   enter('Plates on one side', '45'); click('Apply')
   expect(change).toHaveBeenCalledWith(60.8233, expect.any(Function))
+})
+it('waits for the sheet entrance before focusing without browser panning', () => {
+  vi.useFakeTimers()
+  open()
+  const input = modalHost.querySelector('input')
+  const focus = vi.spyOn(input, 'focus')
+  expect(document.activeElement).not.toBe(input)
+  act(() => vi.advanceTimersByTime(399))
+  expect(focus).not.toHaveBeenCalled()
+  act(() => vi.advanceTimersByTime(1))
+  expect(focus).toHaveBeenCalledWith({ preventScroll: true })
+  expect(document.activeElement).toBe(input)
+})
+it('keeps bar and plate inputs in the keyboard-aware sheet as the visual viewport shrinks', () => {
+  const previous = Object.getOwnPropertyDescriptor(window, 'visualViewport')
+  const viewport = Object.assign(new EventTarget(), { height: window.innerHeight, offsetTop: 0 })
+  Object.defineProperty(window, 'visualViewport', { configurable: true, value: viewport })
+  try {
+    open(); click('Bar and plates')
+    expect(modalHost.querySelector('.weight-calculator.kb-lift')).toBeTruthy()
+    const input = modalHost.querySelector('input[aria-label="Plates on one side"]')
+    act(() => input.focus())
+    viewport.height = 340
+    act(() => viewport.dispatchEvent(new Event('resize')))
+    expect(modalHost.style.getPropertyValue('--picker-keyboard-bottom')).toBe(`${window.innerHeight - 340}px`)
+    expect(modalHost.style.getPropertyValue('--picker-visual-height')).toBe('340px')
+    enter('Bar weight', '20'); enter('Plates on one side', '10'); click('Apply')
+    expect(change).toHaveBeenCalledWith(40, expect.any(Function))
+  } finally {
+    if (previous) Object.defineProperty(window, 'visualViewport', previous)
+    else delete window.visualViewport
+  }
 })
 it('does not apply a calculator left open across a workout switch', () => {
   open(); useStore.getState().update(s => { s.active = { id: 'different-session' } }); click('Apply')

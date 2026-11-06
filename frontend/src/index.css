@@ -3445,11 +3445,11 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .workout-note-preview{white-space:pre-wrap;overflow-wrap:anywhere;font-size:var(--fs-body);line-height:1.5;margin:16px 0 8px}
 
 .chips.workout-progress-strip{gap:6px;padding:0 2px;margin:0;min-height:44px}
-.workout-progress-strip .wchip{min-width:44px;width:44px;height:44px;padding:0;border-radius:8px;background:transparent;box-shadow:none}
+.workout-progress-strip .wchip,.workout-progress-strip .wchip.cur{min-width:44px;width:44px;height:44px;padding:0;border-radius:8px;background:transparent;box-shadow:none}
 .workout-progress-strip .wchip::before{content:'';position:absolute;inset-inline:2px;top:18px;height:4px;border-radius:4px;background:var(--sep)}
 .workout-progress-strip .wchip.done::before{background:var(--green)}
 .workout-progress-strip .wchip.partial::before{background:linear-gradient(to right,var(--orange) 50%,var(--sep) 50%)}
-.workout-progress-strip .wchip.cur::before{height:6px;top:17px;background:var(--acc)}
+.workout-progress-strip .wchip.cur::before{background:var(--acc)}
 .workout-progress-strip .wchip:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
 .workout-progress-strip .wchip .icn{position:absolute;inset-block-end:2px;opacity:.7;width:10px;height:10px}
 
