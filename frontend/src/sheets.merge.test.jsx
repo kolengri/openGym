@@ -71,10 +71,12 @@ describe('Merge into… (#656)', () => {
     expect(button(renderTop(), 'Merge into…')).toBeUndefined()
   })
 
-  it('sits at the end of the sheet with Delete, Delete last (1.4.5 features pass)', () => {
+  it('keeps Merge and Delete last inside the exercise action menu', () => {
     exerciseDetailSheet(custom)
     const detail = renderTop()
-    const all = [...detail.querySelectorAll('button')]
+    act(() => detail.querySelector('details.exercise-detail-menu summary').click())
+    const menu = detail.querySelector('.exercise-detail-menu-panel')
+    const all = [...menu.querySelectorAll('button')]
     const merge = button(detail, 'Merge into…'), del = button(detail, 'Delete exercise')
     expect(merge.closest('.ex-del')).not.toBeNull()
     expect(all.indexOf(merge)).toBeGreaterThan(all.indexOf(button(detail, 'Edit')))

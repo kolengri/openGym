@@ -11,7 +11,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
-const h = vi.hoisted(() => ({ MOBILE: true, display: 'prompt', after: 'granted', finish: vi.fn(), requests: 0, health: { status: 'unsupported', granted: false, platform: null }, healthOn: false, enable: [] }))
+const h = vi.hoisted(() => ({ MOBILE: true, platform: 'ios', display: 'prompt', after: 'granted', finish: vi.fn(), requests: 0, health: { status: 'unsupported', granted: false, platform: null }, healthOn: false, enable: [] }))
+vi.mock('../lib/platform-now.js', () => ({ platformNow: () => h.platform }))
 vi.mock('../lib/mobile.js', () => ({ get MOBILE() { return h.MOBILE }, nativePlatform: async () => (h.MOBILE ? 'ios' : null) }))
 vi.mock('@capacitor/local-notifications', () => ({
   LocalNotifications: {
@@ -38,7 +39,7 @@ const { NOTIF_ASKED_KEY, _resetNotifAsk } = await import('../lib/rest-alert.js')
 
 let host, root
 beforeEach(() => {
-  Object.assign(h, { MOBILE: true, display: 'prompt', after: 'granted', requests: 0, health: { status: 'unsupported', granted: false, platform: null }, healthOn: false, enable: [] })
+  Object.assign(h, { MOBILE: true, platform: 'ios', display: 'prompt', after: 'granted', requests: 0, health: { status: 'unsupported', granted: false, platform: null }, healthOn: false, enable: [] })
   h.finish.mockReset()
   localStorage.clear()
   _resetNotifAsk()
@@ -67,6 +68,8 @@ describe('the screen', () => {
     await mount()
     expect(host.textContent).toContain('Never miss the end of a rest')
     expect(host.textContent).toContain('Training reminders, only if you switch them on')
+    expect(host.querySelector('.onboarding-details').open).toBe(false)
+    expect(button('Continue').closest('details')).toBeNull()
     expect(host.textContent).not.toMatch(/—/)
     await click(button('Continue'))
     expect(h.requests).toBe(1)
@@ -141,5 +144,21 @@ describe('Apple Health, on the iPhone', () => {
     await mount()
     expect([...host.querySelectorAll('button')].map(b => b.textContent.trim())).toEqual(['Continue'])
     expect(host.textContent).not.toContain('Not now')
+  })
+})
+
+describe('Android notification setup', () => {
+  it('defers without asking native APIs or recording a granted permission', async () => {
+    h.platform = 'android'
+    await mount()
+    await click(button('Not now'))
+    expect(h.requests).toBe(0)
+    expect(h.enable).toHaveLength(0)
+    expect(h.display).toBe('prompt')
+    expect(h.healthOn).toBe(false)
+    expect(localStorage.getItem(NOTIF_ASKED_KEY)).toBeNull()
+    expect(JSON.parse(localStorage.getItem(SEEN_KEY))).toEqual(['notifications'])
+    expect(h.finish).toHaveBeenCalledOnce()
+    expect(await pendingSteps()).toEqual([])
   })
 })

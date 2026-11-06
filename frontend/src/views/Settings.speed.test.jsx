@@ -5,6 +5,7 @@ import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Settings from './Settings.jsx'
+import { createPickerHarness } from './test-picker.js'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
@@ -50,8 +51,9 @@ vi.mock('../sheets.jsx', () => ({
 // The Settings view reads the build-time version constant at render time.
 globalThis.__APP_VERSION__ ??= 'test'
 
-let host, root
+let host, root, picker
 beforeEach(() => {
+  picker = createPickerHarness()
   mocks.S = {
     unit: 'kg', restSec: 90, restPauseSec: 15, sound: false, effort: 'none',
     gifSize: 'full', workouts: [], routines: [], exWeights: {},
@@ -61,34 +63,36 @@ beforeEach(() => {
   root = createRoot(host)
 })
 afterEach(() => {
+  picker.destroy()
   act(() => root.unmount())
   host.remove()
 })
 
 const mount = () => act(() => root.render(<Settings page="units" />))
-const segButton = label => [...host.querySelectorAll('.seg button')].find(b => b.textContent === label)
+const rowTitled = title => [...host.querySelectorAll('.lrow')].find(r => r.querySelector('.lrow-t')?.textContent === title)
+const current = title => rowTitled(title).querySelector('.lrow-v').textContent
 
 describe('Settings — speed unit', () => {
   it('shows km/h for a kg profile and mph for a pound profile until one is chosen', () => {
     mount()
-    expect(segButton('km/h').getAttribute('aria-pressed')).toBe('true')
+    expect(current('Speed unit')).toBe('km/h')
     act(() => root.unmount())
     root = createRoot(host)
     mocks.S.unit = 'lb'
     mount()
-    expect(segButton('mph').getAttribute('aria-pressed')).toBe('true')
+    expect(current('Speed unit')).toBe('mph')
   })
 
   it('stores the choice and nothing else', () => {
     mocks.S.routines = [{ id: 'c', name: 'Cardio', ex: [{ id: '2138', sets: 1, min: 20, speed: 8 }] }]
     const before = structuredClone(mocks.S)
     mount()
-    act(() => { segButton('mph').click() })
+    picker.open(rowTitled('Speed unit')).choose('mph')
     expect(mocks.S.speedUnit).toBe('mph')
     expect({ ...mocks.S, speedUnit: undefined }).toEqual({ ...before, speedUnit: undefined })
     mount()
-    expect(segButton('mph').getAttribute('aria-pressed')).toBe('true')
-    act(() => { segButton('km/h').click() })
+    expect(current('Speed unit')).toBe('mph')
+    picker.open(rowTitled('Speed unit')).choose('km/h')
     expect(mocks.S.speedUnit).toBe('kmh')
   })
 })

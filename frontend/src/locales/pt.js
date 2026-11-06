@@ -1,5 +1,18 @@
 // Portuguese UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Abrir treino",
+  "Strength block": "Bloco de força",
+  "Upper / lower": "Superior / inferior",
+  "Linear 5×5": "Linear 5×5",
+  "Recorded": "Registado",
+  "Calculated": "Calculado",
+  "Measurements": "Medidas",
+  "Photos": "Fotografias",
+  "Garmin Connect must be ready before reading health data.": "O Garmin Connect tem de estar pronto antes de ler os dados de saúde.",
+  "Data": "Dados",
+  "Connections": "Ligações",
+  "App": "Aplicação",
+  "No programmes yet.": "Ainda não há programas.",
   "Garmin sign-in did not finish. Try signing in again.": "O início de sessão no Garmin não foi concluído. Tenta iniciar sessão novamente.",
   "Garmin could not authorize this phone. Try signing in again later.": "O Garmin não conseguiu autorizar este telemóvel. Tenta iniciar sessão novamente mais tarde.",
   "Could not verify the Garmin account. Try signing in again later.": "Não foi possível verificar a conta Garmin. Tenta iniciar sessão novamente mais tarde.",

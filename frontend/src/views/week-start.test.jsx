@@ -4,6 +4,7 @@
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { createPickerHarness } from './test-picker.js'
 import Settings from './Settings.jsx'
 import Plan from './Plan.jsx'
 
@@ -51,8 +52,9 @@ vi.mock('../sheets.jsx', () => ({
 
 globalThis.__APP_VERSION__ ??= 'test'
 
-let host, root
+let host, root, picker
 beforeEach(() => {
+  picker = createPickerHarness()
   mocks.S = {
     unit: 'kg', restSec: 90, restPauseSec: 15, sound: false, effort: 'none',
     gifSize: 'full', workouts: [], routines: [], exWeights: {}, week: {}, dayPlan: {},
@@ -62,11 +64,13 @@ beforeEach(() => {
   root = createRoot(host)
 })
 afterEach(() => {
+  picker.destroy()
   act(() => root.unmount())
   host.remove()
 })
 
-const segButton = label => [...host.querySelectorAll('.seg button')].find(b => b.textContent === label)
+const weekStartRow = () => [...host.querySelectorAll('.lrow')].find(r => r.querySelector('.lrow-t')?.textContent === 'Week starts on')
+const selected = () => weekStartRow().querySelector('.lrow-v').textContent
 const dayRows = () => [...host.querySelectorAll('.item .tt')].map(e => e.textContent)
 
 describe('Settings — week starts on', () => {
@@ -74,20 +78,20 @@ describe('Settings — week starts on', () => {
 
   it('offers Monday and Sunday and writes the getDay() index', () => {
     mount()
-    expect(segButton('Monday').getAttribute('aria-pressed')).toBe('true')
-    act(() => { segButton('Sunday').click() })
+    expect(selected()).toBe('Monday')
+    picker.open(weekStartRow()).choose('Sunday')
     expect(mocks.S.weekStart).toBe(0)
     mount()
-    expect(segButton('Sunday').getAttribute('aria-pressed')).toBe('true')
-    act(() => { segButton('Monday').click() })
+    expect(selected()).toBe('Sunday')
+    picker.open(weekStartRow()).choose('Monday')
     expect(mocks.S.weekStart).toBe(1)
   })
 
   it('shows a profile written before the setting existed as Monday', () => {
     delete mocks.S.weekStart
     mount()
-    expect(segButton('Monday').getAttribute('aria-pressed')).toBe('true')
-    expect(segButton('Sunday').getAttribute('aria-pressed')).toBe('false')
+    expect(selected()).toBe('Monday')
+    expect(picker.open(weekStartRow()).selected).toBe('Monday')
   })
 })
 

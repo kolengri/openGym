@@ -4,6 +4,19 @@
 import pt from './pt.js'
 
 export const PT_BR_OVERRIDES = {
+  "Open workout": "Abrir treino",
+  "Strength block": "Bloco de força",
+  "Upper / lower": "Superior / inferior",
+  "Linear 5×5": "Linear 5×5",
+  "Recorded": "Registrado",
+  "Calculated": "Calculado",
+  "Measurements": "Medidas",
+  "Photos": "Fotos",
+  "Garmin Connect must be ready before reading health data.": "O Garmin Connect precisa estar pronto antes de ler os dados de saúde.",
+  "Data": "Dados",
+  "Connections": "Conexões",
+  "App": "Aplicativo",
+  "No programmes yet.": "Ainda não há programas.",
   "Garmin sign-in did not finish. Try signing in again.": "O login no Garmin não foi concluído. Tente entrar novamente.",
   "Garmin could not authorize this phone. Try signing in again later.": "O Garmin não conseguiu autorizar este celular. Tente entrar novamente mais tarde.",
   "Could not verify the Garmin account. Try signing in again later.": "Não foi possível verificar a conta Garmin. Tente entrar novamente mais tarde.",

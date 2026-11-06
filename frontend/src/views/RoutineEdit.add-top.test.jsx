@@ -29,7 +29,7 @@ function mount(ex) {
   root = createRoot(host)
   act(() => root.render(<MemoryRouter initialEntries={['/plan/r/r1']}><Routes><Route path="/plan/r/:id" element={<RoutineEdit />} /></Routes></MemoryRouter>))
 }
-const addButton = () => [...host.querySelectorAll('button')].find(b => b.textContent.trim() === 'Add exercise')
+const addButton = () => host.querySelector('[data-tour="routine-add"]')
 const stored = () => useStore.getState().S.routines[0].ex
 
 beforeEach(() => { vi.clearAllMocks() })
@@ -42,11 +42,23 @@ describe('RoutineEdit — Add exercise at the top', () => {
     const firstRow = host.querySelector('[data-routine-row]')
     expect(add.compareDocumentPosition(firstRow) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     expect(add.closest('.routine-ex-h').querySelector('h4').textContent).toBe('Exercises')
-    // and there is only the one
-    expect([...host.querySelectorAll('button')].filter(b => b.textContent.trim() === 'Add exercise').length).toBe(1)
+    // The full-width action below the list preserves the approved primary action too.
+    expect([...host.querySelectorAll('button')].filter(b => b.textContent.trim() === 'Add exercise').length).toBe(2)
   })
 
-  it('is there on an empty routine too', () => {
+  it('exposes the existing reorder and superset controls through Edit', () => {
+    mount([{ id: '0025', sets: 3, mode: 'reps', reps: 5, weight: 80 }])
+    const edit = host.querySelector('.planning-routine-list-actions button[aria-pressed]')
+    expect(edit.getAttribute('aria-pressed')).toBe('false')
+    act(() => edit.click())
+    expect(edit.getAttribute('aria-pressed')).toBe('true')
+    expect(host.querySelector('.planning-routine').classList.contains('is-editing')).toBe(true)
+    expect(host.querySelector('button[aria-label="Move down"]')).toBeTruthy()
+    act(() => edit.click())
+    expect(edit.getAttribute('aria-pressed')).toBe('false')
+  })
+
+  it('is there on an empty routine too' , () => {
     mount([])
     expect(addButton()).toBeTruthy()
     expect(host.textContent).toContain('No exercises yet.')

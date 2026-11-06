@@ -16,7 +16,7 @@ import { setLang } from '../lib/i18n.js'
 vi.mock('react-router-dom', () => ({ useNavigate: () => () => {} }))
 vi.mock('../sheets.jsx', () => ({
   starterPlanSheet: vi.fn(), bwSheet: vi.fn(), goalSheet: vi.fn(), dayOverrideSheet: vi.fn(),
-  calendarSheet: vi.fn(), startFlow: vi.fn(), bwDeltaColor: () => '',
+  calendarSheet: vi.fn(), startFlow: vi.fn(), bwDeltaColor: () => '', weighInsSheet: vi.fn(),
 }))
 
 const routines = [
@@ -108,14 +108,14 @@ describe('Home — coach week progress row', () => {
     expect(startFlow).not.toHaveBeenCalled()
   })
 
-  it('before startsOn it says when the week starts, and the today row points at that day', () => {
+  it('before startsOn it says when the week starts, and the next-session row points at that day', () => {
     const startsOn = daysFromToday(2)
     setS({ queue: queue({ startsOn }) })
     mount()
     expect(status()).toBe('Next week starts ' + fmtDate(startsOn, true))
     expect(chipTexts()[0]).toBe('US W1 D1Up next')
     expect(todayTitle()).toBe('Rest day')
-    expect(host.querySelector('.today-row .ss').textContent).toMatch(/^Next session: \w+, US W1 D1$/)
+    expect(host.querySelector('.planning-next .tt').textContent).toMatch(/^Next session: \w+, US W1 D1$/)
   })
 
   it('a rotation-managed queue never names a weekday on its empty gap — the row above already says what is next', () => {
@@ -262,7 +262,8 @@ describe('Home — a session pinned to a day', () => {
     expect(chips()[2].className).toBe('chip on')
     expect(status()).toBe('Next: US W1 D3, today')
     // Home reads any per-date override on today as a reschedule — a pin is one.
-    expect(todayTitle()).toBe('US W1 D3 · rescheduled')
+    expect(todayTitle()).toBe('US W1 D3')
+    expect(host.querySelector('.planning-today-meta').textContent).toContain('rescheduled')
   })
 
   it('every session pinned ahead: no chip is lit, the line names the soonest with its day, today rests', () => {
@@ -293,7 +294,7 @@ describe('Home — a session pinned to a day', () => {
 describe('Home — the today row follows today\'s plan, not just the last session', () => {
   const today = todayISO()
   const at = (id, start, name) => ({ id: 'w-' + id + start, d: today, start, end: start + 1000, routineIds: id ? [id] : [], routineId: id, name: name || routines.find(r => r.id === id).name, entries: [] })
-  const tag = () => host.querySelector('.today-row .tag')?.textContent
+  const tag = () => host.querySelector('.today-row .tag')?.textContent || host.querySelector('.today-row .planning-today-action')?.textContent
 
   it('a queue session done today: the row offers the next one, like the progress row', () => {
     setS({ workouts: [at('d1', Date.now() - 3600000)] })
@@ -315,8 +316,18 @@ describe('Home — the today row follows today\'s plan, not just the last sessio
     const wd = new Date(today + 'T12:00:00').getDay()
     setS({ queue: null, week: { [wd]: ['own'] }, workouts: [at('own', Date.now() - 3600000)] })
     mount()
-    expect(todayTitle()).toBe('Core (done)')
+    expect(todayTitle()).toBe('Core')
     expect(tag()).toBe('Done')
+  })
+
+  it('keeps the next fixed session separate after today is completed', () => {
+    const wd = new Date(today + 'T12:00:00').getDay()
+    setS({ queue: null, week: { [wd]: ['own'], [(wd + 2) % 7]: ['d2'] }, workouts: [at('own', Date.now() - 3600000)] })
+    mount()
+    const next = host.querySelector('.planning-next')
+    expect(todayTitle()).toBe('Core')
+    expect(next.textContent).toContain('US W1 D2')
+    expect(host.querySelector('.planning-today').contains(next)).toBe(false)
   })
 
   it('Start new pass after a session today: the pass runs today, from its first session', () => {

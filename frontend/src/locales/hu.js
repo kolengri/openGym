@@ -1,5 +1,18 @@
 // Hungarian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Edzés megnyitása",
+  "Strength block": "Erőblokk",
+  "Upper / lower": "Felsőtest / alsótest",
+  "Linear 5×5": "Lineáris 5×5",
+  "Recorded": "Rögzített",
+  "Calculated": "Számított",
+  "Measurements": "Méretek",
+  "Photos": "Fotók",
+  "Garmin Connect must be ready before reading health data.": "Az egészségügyi adatok olvasásához a Garmin Connectnek készen kell állnia.",
+  "Data": "Adatok",
+  "Connections": "Kapcsolatok",
+  "App": "Alkalmazás",
+  "No programmes yet.": "Még nincsenek programok.",
   "Garmin sign-in did not finish. Try signing in again.": "A Garmin-bejelentkezés nem fejeződött be. Próbálj újra bejelentkezni.",
   "Garmin could not authorize this phone. Try signing in again later.": "A Garmin nem tudta engedélyezni ezt a telefont. Próbálj később újra bejelentkezni.",
   "Could not verify the Garmin account. Try signing in again later.": "Nem sikerült ellenőrizni a Garmin-fiókot. Próbálj később újra bejelentkezni.",

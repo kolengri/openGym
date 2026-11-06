@@ -10,11 +10,12 @@ const id = '2138'
 const empty = { exWeights: {}, workouts: [] }
 
 describe('cardio time and distance goals', () => {
-  it('starts time-only without an invented speed or measured distance', () => {
+  it('prefills a distance goal without inventing speed or completing the set', () => {
     const cfg = { id, ...defaultConfig(id) }
     expect(cfg).toEqual({ id, sets: 1, mode: 'cardio', min: 20 })
-    expect(buildSets(empty, { ...cfg, km: 5 })).toEqual([{ min: 20, done: false }])
-    expect(buildSets(empty, { id, sets: 1, mode: 'cardio', km: 5 })).toEqual([{ done: false }])
+    expect(buildSets(empty, cfg)).toEqual([{ min: 20, done: false }])
+    expect(buildSets(empty, { ...cfg, km: 5 })).toEqual([{ min: 20, km: 5, done: false }])
+    expect(buildSets(empty, { id, sets: 1, mode: 'cardio', km: 5 })).toEqual([{ km: 5, done: false }])
   })
 
   it('recognizes distance-only data and prints only goals or results actually present', () => {

@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
@@ -158,7 +159,7 @@ export default function IntegrationsPage({ android = false, ios = false }) {
     detailSheet(card, { act: () => act(card) })
   }
 
-  return <>
+  return <div className="settings-refined integrations-refined">
     <p className="sect-f intg-intro">{t('Only what you switch on talks to anything. The rest stays out of your way.')}</p>
     {server.error && <Section><Row icon="warning" iconTint="var(--orange)" title={t('Could not reach your server')} subtitle={t('Tap to try again')} onClick={() => server.load()} /></Section>}
     {dir.map(cat => <div key={cat.id}>
@@ -169,7 +170,7 @@ export default function IntegrationsPage({ android = false, ios = false }) {
     </div>)}
     <input ref={fileRef} type="file" accept=".csv,.xml,text/csv,text/xml" style={{ display: 'none' }}
       onChange={ev => { const f = ev.target.files[0]; if (f) importFromApp(f); ev.target.value = '' }} />
-  </>
+  </div>
 }
 
 const healthOn = h => !!(h && (h.on || h.readHr || h.readWeight))

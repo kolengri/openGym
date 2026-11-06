@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 // Settings → Modules (v1.4.4): whole feature areas on and off (lib/modules.js has the rules).
 //
 // A preset row on top (Just training, Training and body, Everything, or Custom once the switches
@@ -95,19 +96,25 @@ export default function ModulesPage() {
     ...PRESETS.map(p => ({ value: p.id, label: pc[p.id][0], subtitle: pc[p.id][1] })),
     { value: 'custom', label: t('Custom'), subtitle: t('Your own mix. Flip the switches below.') },
   ]
-  return <div className="modules">
-    <p className="sect-f modules-intro">{t('Switch off what you don’t use. Nothing gets deleted: switch it back on and it’s all still there.')}</p>
-    <Section footer={preset === 'custom' ? t('{0} of {1} modules on.', onCount(S), MODULES.length) : null}>
+  return <div className="modules settings-refined">
+    <Section footer={t('{0} of {1} modules on.', onCount(S), MODULES.length)}>
       <SelectRow icon="slider" iconTint="var(--blue)" title={t('Start from')} sheetTitle={t('Modules')}
         value={preset} onChange={pickPreset} options={options} />
     </Section>
     {GROUPS.map((g, gi) => <Section key={g.id} title={gc[g.id]}
       footer={gi === GROUPS.length - 1 ? t('Logging, plans, history, the exercise library and the basic stats are always on.') : null}>
       {MODULES.filter(m => m.group === g.id).map(m => (
-        <Row key={m.id} icon={m.icon} iconTint={m.tint} title={mc[m.id][0]} subtitle={mc[m.id][1]} className="module-row" tour={'module-' + m.id}>
+        <Row key={m.id} icon={m.icon} iconTint={m.tint} title={mc[m.id][0]} subtitle={isOn(S, m.id) ? t('On') : t('Off')} className="module-row" tour={'module-' + m.id}>
           <Switch aria-label={mc[m.id][0]} checked={isOn(S, m.id)} onChange={v => flip(m.id, v)} />
         </Row>
       ))}
     </Section>)}
+    <details className="settings-disclosure modules-details">
+      <summary>{t('Details')}</summary>
+      <p className="sect-f">{t('Switch off what you don’t use. Nothing gets deleted: switch it back on and it’s all still there.')}</p>
+      <dl className="modules-descriptions">
+        {MODULES.map(m => <div key={m.id}><dt>{mc[m.id][0]}</dt><dd>{mc[m.id][1]}</dd></div>)}
+      </dl>
+    </details>
   </div>
 }

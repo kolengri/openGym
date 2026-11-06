@@ -61,24 +61,21 @@
   --acc-ink: var(--acc);
 
   /* geometry */
-  --r-sm:8px; --r:12px; --r-lg:16px; --r-xl:22px; --r-card:14px;
+  --r-sm:8px; --r:12px; --r-lg:16px; --r-xl:22px; --r-card:12px;
   --pad:16px;
   --icon-stroke:1.7;
 
-  /* type scale (redesign 1.4.5, P1): the iPhone's text styles, in rem so a browser's text size
-     and zoom scale the words and the layout around them together. Every text size in the sheets
-     and the views is one of these; what stays in px is a glyph (an icon's size) or a display
-     figure inside a fixed box (the timer, a tile's number). Size, leading and tracking move as a
-     set: tighter as the type grows, a hair looser as it shrinks (APPLE §15). */
+  /* Compact approved mobile scale. Rem units retain the browser's text-size preference;
+     editable text controls keep a 16px floor independently of the reading hierarchy. */
   --fs-caption2:.6875rem;  /* 11: tab labels, badges */
-  --fs-caption:.75rem;     /* 12: meta, axis text, small labels */
-  --fs-footnote:.8125rem;  /* 13: subtitles, the small line over a title */
-  --fs-subhead:.9375rem;   /* 15: secondary lines, values */
-  --fs-callout:1rem;       /* 16: titles in dense lists, inputs */
-  --fs-body:1.0625rem;     /* 17: body and row titles */
-  --fs-title3:1.25rem;     /* 20: card titles, an exercise name */
-  --fs-title2:1.375rem;    /* 22: a lead line */
-  --fs-large:2.125rem;     /* 34: the page title (30 on a narrow phone, below) */
+  --fs-caption:.6875rem;  /* 11: metadata */
+  --fs-footnote:.75rem;   /* 12: secondary text */
+  --fs-subhead:.8125rem;  /* 13: compact controls */
+  --fs-callout:.875rem;   /* 14: list titles */
+  --fs-body:.875rem;      /* 14: reading text */
+  --fs-title3:1.125rem;   /* 18: exercise and card titles */
+  --fs-title2:1.25rem;    /* 20: a lead line */
+  --fs-large:1.375rem;    /* 22: page title */
   --lh-tight:1.06; --lh-title:1.2; --lh-body:1.29; --lh-small:1.38;
   --ls-large:-.028em; --ls-title:-.021em; --ls-body:-.01em; --ls-small:-.004em;
 
@@ -229,7 +226,7 @@ body{
    you can see, and a short page would scroll under them. */
 @media (display-mode: standalone){body{min-height:100lvh}}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;letter-spacing:inherit}
-input,select,textarea{font:inherit;color:var(--label);letter-spacing:inherit}
+input,select,textarea{font:inherit;font-size:1rem;font-size:max(1rem,var(--fs-body));color:var(--label);letter-spacing:inherit}
 img{max-width:100%}
 a{color:var(--acc-ink);text-decoration:none}
 :focus{outline:none}
@@ -360,25 +357,12 @@ button.conn:active{filter:brightness(1.12)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   .conn-bar{background:var(--bg)}
 }
-/* large title, the way a nav bar does it */
-.hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:8px 0 18px}
-/* The title block gives way, the button on the right never does: a flex item will not shrink
-   below its longest word, so "Упражнения" at 34px or "Hi Bartholomew_Jones" used to push the
-   gear / "By muscle" past the screen edge. Two things follow from letting it shrink. Below 420px
-   — every phone width we test — the title drops a step to 30px, because the 95 to 125px the
-   Library button leaves the Polish and Russian titles is less than half of "Ćwiczenia" or
-   "Упражнения" at 34px and they came apart into three lines; at 30px all 14 packs take two at
-   most. And a word that still does not fit is broken with overflow-wrap:break-word, which moves
-   the whole word to the next line first and breaks it only if it does not fit there either —
-   `anywhere` broke "Bartholomew_Jones" mid-word even at 412px, where a line of its own was
-   waiting for it. hyphens:auto goes with them: the hyphen costs a character's worth of width in
-   a box this tight, and that is what turned "Упражнения" into "Упра / жнен / ия". */
+/* Compact page heading: a shared title and one quiet action rail. */
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;margin:4px 0 20px}
 .hdr>div{min-width:0}
 .hdr>.btn{flex:none}
 .hdr>.hdr-actions{display:flex;align-items:center;gap:8px;flex:none}
-.hdr h1{font-size:var(--fs-large);line-height:var(--lh-tight);font-weight:700;letter-spacing:var(--ls-large);overflow-wrap:break-word}
-/* the page title drops a step on phone widths (the Library's header leaves it the least room) */
-@media (max-width:420px){:root{--fs-large:1.875rem}}
+.hdr h1{font-size:var(--fs-large);line-height:var(--lh-title);font-weight:600;letter-spacing:var(--ls-title);overflow-wrap:break-word}
 .hdr .sub{color:var(--label-2);font-size:var(--fs-subhead);letter-spacing:-.006em;margin-top:4px}
 /* Library: the count line runs under the title row at full width instead of beside the "By muscle"
    button, which left it ~200px on a phone: the catalogue count plus your own exercises stays one
@@ -389,8 +373,8 @@ button.conn:active{filter:brightness(1.12)}
 @media (max-width:360px){.hdr.lib-hdr>.sub.lib-count{white-space:normal;overflow:visible;text-overflow:clip}}
 
 .iconbtn{
-  width:36px;height:36px;border-radius:50%;flex:none;
-  background:var(--surface);color:var(--label);
+  width:44px;height:44px;border-radius:10px;flex:none;
+  background:transparent;color:var(--label-2);
   display:flex;align-items:center;justify-content:center;font-size:18px;
   transition:background var(--fast),transform var(--fast);
 }
@@ -401,6 +385,7 @@ button.conn:active{filter:brightness(1.12)}
    only grow vertically or the neighbour would steal the edge of the tap. */
 .iconbtn,.chip,.seg button,.helpbtn{position:relative}
 .iconbtn::before,.chip::before,.seg button::before,.helpbtn::before{content:'';position:absolute;inset:-6px}
+.iconbtn::before{inset:0}
 .seg button::before{inset:-6px 0}
 .iconbtn.on-ss{background:var(--acc-soft);color:var(--acc-ink)}
 .iconbtn:disabled{opacity:.32}
@@ -508,9 +493,9 @@ h4.sec{
 .lrow:has(.lrow-i)+.lrow:has(.lrow-i)::before{inset-inline-start:55px}
 .lrow.tap:active{background:var(--press-fill)}
 .lrow-i{
-  width:29px;height:29px;border-radius:7px;flex:none;font-size:18px;
+  width:25px;height:28px;border-radius:0;flex:none;font-size:18px;
   display:flex;align-items:center;justify-content:center;
-  background:var(--tint,var(--acc));color:#fff;
+  background:transparent;color:var(--label-2);
 }
 /* The title column never shrinks below its own longest word. With a basis of 0 and min-width:0 it
    only got what a capped value left over, and on a 320px phone "Progression" (96px) was painted over
@@ -544,6 +529,7 @@ h4.sec{
 .lrow-c{color:var(--label);font-size:var(--fs-subhead);flex:none;--icon-stroke:2.4}
 .lrow-k{color:var(--acc-ink);font-size:var(--fs-body);flex:none;--icon-stroke:2.4}
 .lrow.danger,.lrow.danger .lrow-t{color:var(--red)}
+.lrow.danger .lrow-i{color:var(--red)}
 /* A warning under a settings row reads at subtitle size: a sentence, not a row title. */
 .lrow.backup-lost .lrow-t{font-size:var(--fs-footnote);line-height:1.3;color:var(--label-2);letter-spacing:0}
 /* The Stats exercise name gets its own line so long names cannot run into the title.
@@ -570,7 +556,7 @@ h4.sec{
 /* -------------------------------------------------------------- buttons -- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:7px;width:100%;
-  padding:14px 18px;border-radius:var(--r);font-size:var(--fs-body);font-weight:600;
+  padding:12px 16px;min-height:44px;border-radius:var(--r);font-size:var(--fs-subhead);font-weight:600;
   letter-spacing:-.012em;background:var(--surface-2);color:var(--label);
   transition:transform var(--fast) var(--ease),background var(--fast),opacity var(--fast);
 }
@@ -900,7 +886,7 @@ body.chips-dragging *{cursor:inherit}
 /* --- text field --- */
 .field,.input{
   width:100%;background:var(--surface);border:none;border-radius:var(--r);
-  padding:13px 15px;font-size:var(--fs-body);letter-spacing:-.012em;outline:none;
+  padding:12px 14px;font-size:1rem;font-size:max(1rem,var(--fs-body));letter-spacing:-.012em;outline:none;
   transition:box-shadow var(--fast);
 }
 .field::placeholder,.input::placeholder{color:var(--label-3)}
@@ -1095,7 +1081,7 @@ body.chips-dragging *{cursor:inherit}
 .stp .val i{font-style:normal;font-size:var(--fs-caption);color:var(--label-2);flex:none}
 .stp .num{
   width:100%;min-width:0;text-align:center;background:none;border:none;outline:none;
-  font-size:var(--fs-body);font-weight:500;letter-spacing:-.012em;padding:0;
+  font-size:1rem;font-weight:500;letter-spacing:-.012em;padding:0;
   -moz-appearance:textfield;appearance:textfield;
   /* the field is the whole height of the stepper, not just its 18px text line, so a tap
      anywhere between the two buttons focuses it */
@@ -1410,6 +1396,9 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
 .recent-exercise-history{margin-top:12px}
 .recent-exercise-history>.row{flex-wrap:wrap;gap:8px;margin-bottom:8px}
 .recent-exercise-history h3{font-size:14px;margin:0}
+.recent-history-heading{align-items:center}
+.recent-history-heading h3{flex:1;min-width:0}
+.recent-history-heading .recent-history-link{min-height:44px;flex:none}
 .recent-history-link{display:flex;align-items:center;gap:4px;min-height:36px;color:var(--acc);font-size:12px;text-align:start}
 .recent-history-list{list-style:none;margin:0;padding:0}
 .recent-history-list li{padding:8px 0;border-top:var(--hair) solid var(--sep)}
@@ -1509,7 +1498,7 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
 .setrow.eff3 .stp.r,.sethead.eff3 .r-sp{flex:1.1}
 .setrow.eff3 .effcell,.sethead.eff3 .eff-sp{flex:.7 1 0}
 .setrow.eff3 .stp.w button,.setrow.eff3 .stp.r button{width:26px}
-.setrow.eff3 .stp .num{font-size:14px}
+.setrow.eff3 .stp .num{font-size:1rem}
 /* the same reserved widths as a plain row's, at the smaller font */
 .setrow.eff3 .stp.w,.sethead.eff3 .w-sp{--num:41px}
 .setrow.eff3 .stp.r,.sethead.eff3 .r-sp{--num:30px}
@@ -1526,7 +1515,7 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
 .effpick .menu-on.is-on{color:var(--bc)}
 .effpick .effpick-free{padding-inline-end:8px}
 .effpick .effpick-free .stp{flex:none;width:148px}
-.effpick .effpick-free .stp .num{font-size:var(--fs-body);font-weight:600}
+.effpick .effpick-free .stp .num{font-size:1rem;font-weight:600}
 .effpick .effpick-free .stp .num::placeholder{color:var(--label-3);font-weight:500}
 /* A ticked set fades back. Its parts fade, not the row: the number keeps full opacity and is drawn
    in the faded colours instead, so the set-vs-last arrow and the failure mark on it stay readable
@@ -1619,7 +1608,7 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
      buttons on) lost the per-side reps number the same way at 320 and 368 px (QA C2, C3) */
   .setrow-side .setrow.side{gap:4px}
   .setrow-side .setrow.side .sidetag{width:20px}
-  .setrow-side .setrow.side .stp .num{font-size:14px}
+  .setrow-side .setrow.side .stp .num{font-size:1rem}
   .setrow-side .setrow.side .stp.w,.sethead.per-side .w-sp{--num:41px}
   .setrow-side .setrow.side .stp.r,.sethead.per-side .r-sp{--num:30px}
   .setrow-side .side-rows .setrow.side .stp.w button,.setrow-side .side-rows .setrow.side .stp.r button{width:18px}
@@ -1674,13 +1663,13 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
      and a 13 px number — and it fits with two pixels to spare. Not with the buttons off (`plain`),
      where the number alone is the floor. */
   .setrow-side .setrow.side.eff3 .stp.w:not(.plain),.setrow-side .setrow.side.eff3 .stp.r:not(.plain),.sethead.per-side.eff3:not(.plain) .w-sp,.sethead.per-side.eff3:not(.plain) .r-sp{--btn-floor:16px}
-  .setrow-side .setrow.side.eff3 .stp .num{font-size:var(--fs-footnote)}
+  .setrow-side .setrow.side.eff3 .stp .num{font-size:1rem}
   .setrow-side .setrow.side.eff3 .stp.w,.sethead.per-side.eff3 .w-sp{--num:38px}
   .setrow-side .setrow.side.eff3 .stp.r,.sethead.per-side.eff3 .r-sp{--num:28px}
   /* A weighted timed hold has one control more than a straight row (the play button before the
      tick) and was 15 px over at 320 px with the full-size floors: seconds ("120") and the load
      ("102.5") at the 14 px size and 16 px button floors, as an effort row does. */
-  .setrow.timed .stp .num{font-size:14px}
+  .setrow.timed .stp .num{font-size:1rem}
   .setrow.timed .stp.w,.sethead.timed .w-sp{--num:30px}
   .setrow.timed .stp.r,.sethead.timed .r-sp{--num:41px}
   .setrow.timed .stp.w:not(.plain),.setrow.timed .stp.r:not(.plain),.sethead.timed:not(.plain) .w-sp,.sethead.timed:not(.plain) .r-sp{--btn-floor:16px}
@@ -1702,7 +1691,7 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
 .subrow .stp.mini+.stp.mini{--num:28px}
 .subrow .stp.mini button{width:26px;height:30px;flex:0 1 auto;min-width:16px}
 .subrow .stp.mini .val{min-width:var(--num)}
-.subrow .stp.mini .num{font-size:var(--fs-footnote);min-height:30px}
+.subrow .stp.mini .num{font-size:1rem;min-height:30px}
 .subrow .iconbtn{width:26px;height:26px;font-size:var(--fs-caption2);flex:none}
 /* label 46, two minis at their floors 70 + 60, the ✕ and three gaps: 252 px with the indent — the
    whole row at 320 px. The label starts under the number circle's inner edge there instead. */
@@ -1798,7 +1787,7 @@ button.whdr-gym{color:var(--acc-ink);cursor:pointer}
 .prog-actions.col{flex-direction:column;margin-top:16px}
 .prog-lift .lrow-t{font-size:var(--fs-subhead)}
 .prog-pct{flex:none;display:flex;align-items:baseline;gap:3px;background:var(--surface-2);border-radius:10px;padding:0 10px}
-.prog-pct .num{width:4ch;min-height:40px;text-align:end;background:none;border:none;outline:none;font-size:var(--fs-body);font-weight:500}
+.prog-pct .num{width:4ch;min-height:40px;text-align:end;background:none;border:none;outline:none;font-size:1rem;font-weight:500}
 .prog-pct i{font-style:normal;font-size:var(--fs-footnote);color:var(--label-2)}
 .lrow.prog-now .lrow-t{color:var(--acc-ink);font-weight:600}
 .prog-weeks .stp{flex:none;width:136px}
@@ -2118,7 +2107,7 @@ body.no-tabbar #timer.countin{box-shadow:inset 0 var(--hair) 0 var(--acc),0 -10p
 .share-card img{max-height:52vh}
 .share-opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .share-opts .seg{flex:1 1 140px;min-width:0}
-/* The finish summary's way out and its Share, side by side right under the numbers. */
+/* The primary way out remains directly below the results. */
 .fin-actions{display:flex;gap:10px}
 .fin-actions>.btn{width:auto;flex:1 1 0;min-width:0;white-space:normal}
 .garmin-cloud-upload{margin-top:10px;min-width:0;text-align:start}
@@ -3338,7 +3327,7 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .workout-set-table .setrow.set-table-row::before{display:none}
 .workout-set-table .set-table-row .n{width:24px;min-width:24px;height:44px;background:transparent;color:var(--label-3);font-size:13px;font-weight:400;border:0;border-radius:0}
 .set-table-edit{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-content:center;align-items:baseline;flex:1;min-width:0;min-height:48px;column-gap:8px;row-gap:2px;text-align:start;background:transparent}
-.set-table-value{display:flex;align-items:baseline;gap:5px;flex:1.4;min-width:0;font-size:28px;font-weight:550;line-height:1.2;letter-spacing:-.025em;font-variant-numeric:tabular-nums;color:var(--label-3)}
+.set-table-value{display:flex;align-items:baseline;gap:5px;flex:1.4;min-width:0;font-size:28px;font-weight:550;line-height:1.2;letter-spacing:-.025em;font-variant-numeric:tabular-nums;color:var(--label-2)}
 .set-table-value:last-child{flex:1}
 .set-table-row.done .set-table-value{color:var(--label)}
 .set-table-effort{grid-column:2;justify-self:start;padding:1px 4px;border-radius:4px;background:var(--surface-2);background:color-mix(in srgb,currentColor 15%,transparent);font-size:11px;font-weight:600;line-height:1.2;white-space:nowrap;font-variant-numeric:tabular-nums}
@@ -3372,3 +3361,120 @@ button.wl-summary{width:100%;padding:0 0 10px;text-align:start;border-radius:var
 .recent-exercise-history summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;cursor:pointer;font-size:13px;list-style:none}
 .recent-exercise-history summary::-webkit-details-marker{display:none}
 .recent-exercise-history details[open]>summary{margin-bottom:8px}
+
+/* Compact training tables keep both effort readings inside the swipe clipping box. */
+.workout-set-table .set-table-head{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) 44px;padding-inline-start:20px}
+.workout-set-table .set-table-head.timed{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) 32px 44px}
+.workout-set-table .setrow.set-table-row{padding-inline-start:20px}
+.workout-set-table .set-table-row .set-effort-marker{inset-inline-start:2px;top:12px;bottom:12px;gap:3px}
+.workout-set-table .set-effort-marker i.previous{width:4px;opacity:1}
+.set-table-status{position:absolute;inset-inline-start:20px;top:0;font-size:10px;color:var(--label-2);display:flex;gap:3px}
+.set-table-status:empty{display:none}
+.detail-heading{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
+.detail-heading h3{flex:1;min-width:0;margin:0;overflow-wrap:anywhere}
+.detail-actions{display:flex;flex-shrink:0;gap:2px}
+.detail-actions .iconbtn{width:44px;height:44px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wd-sets{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px}
+.wd-sets .wd-set{white-space:normal;font-variant-numeric:tabular-nums}
+.wd-time{display:inline-flex;align-items:center;gap:4px}
+.wd-time .icn{flex-shrink:0}
+.detail-disclosure{margin:16px 0;border-top:1px solid var(--sep)}
+.detail-disclosure>summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;cursor:pointer;list-style:none}
+.detail-disclosure>summary::after{content:'⌄';color:var(--label-3)}
+.detail-disclosure[open]>summary::after{transform:rotate(180deg)}
+.detail-disclosure>summary::-webkit-details-marker{display:none}
+.workout-detail-options{margin-top:16px}
+.workout-detail-options .garmin-cloud-upload.compact{padding:0;margin:0;border-bottom:1px solid var(--sep)}
+.garmin-cloud-upload.compact .btn{justify-content:flex-start;background:transparent;min-height:56px;text-align:start}
+.garmin-cloud-upload.compact p{padding:0 16px 12px;margin:0}
+.wmedia-grid.empty{display:block}
+.wmedia-grid.empty .wmedia-add{aspect-ratio:auto;width:100%;min-height:48px;height:auto;display:flex;flex-direction:row;justify-content:flex-start;gap:10px;border:0;padding:12px;background:var(--surface-2)}
+.exercise-detail .exercise-muscle-map{margin:12px 0}
+.exercise-detail .exercise-muscle-map .bm-v{max-height:220px}
+
+.fin-secondary-actions{display:flex;flex-direction:column;gap:4px;margin-top:12px;text-align:start}
+.fin-secondary-actions>.btn,.fin-secondary-actions .garmin-cloud-upload>.btn{justify-content:flex-start;text-align:start}
+.fin-secondary-actions .garmin-cloud-upload{margin:0}
+
+/* Canonical bilingual exercise names share one hierarchy across all exercise surfaces. */
+.exercise-name-lines,.item .item-open>.exercise-name-lines{display:inline-flex;flex-direction:column;gap:3px;min-width:0;max-width:100%;vertical-align:top}
+.exercise-name-primary{overflow-wrap:anywhere;line-height:1.25}
+.exercise-name-secondary{font-size:var(--fs-caption);font-weight:400;color:var(--label-2);line-height:1.35;text-transform:none;letter-spacing:0;overflow-wrap:anywhere;unicode-bidi:isolate}
+
+/* Approved training table: load, repetitions and the selected effort system align. */
+.workout-set-table .set-table-head.rated{grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr) minmax(0,.8fr) 44px}
+.workout-set-table .set-table-edit.rated{grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr) minmax(0,.8fr)}
+.workout-set-table .rated .set-table-effort{grid-column:3;grid-row:1;justify-self:center;align-self:center;font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.workout-set-table .set-table-value{min-width:0;flex-wrap:wrap;row-gap:0;font-size:clamp(22px,7vw,28px)}
+.exhd .exercise-name-lines{font-size:inherit}
+.exhd .exercise-name-secondary{font-size:var(--fs-caption)}
+/* Saved sets are rows of comparable readings, not a wrapped sentence. */
+.wd-ex{padding-block:16px;border-bottom:1px solid var(--sep);gap:10px}
+.wd-ex .wd-thumb,.wd-ex .wd-thumb .thumb{width:44px;height:44px;border-radius:10px}
+.wd-ex>.grow{min-width:0}
+.wd-ex-title{display:flex;align-items:flex-start;gap:8px;font-size:var(--fs-body);line-height:1.3}
+.wd-ex-title>.exercise-name-lines{flex:1}
+.wd-ex-title>.pr{flex:none;margin:0;font-size:11px}
+.wd-ex>.chev{font-size:12px}
+.wd-sets{display:flex;flex-direction:column;gap:0;margin-top:8px}
+.logged-set-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,.9fr);align-items:start;gap:6px;min-height:30px;padding-block:5px;font-variant-numeric:tabular-nums;line-height:1.35}
+.logged-set-row+.logged-set-row{border-top:1px solid var(--sep);border-top:1px solid color-mix(in srgb,var(--sep) 45%,transparent)}
+.logged-set-load{min-width:0;overflow-wrap:anywhere;color:var(--label)}
+.logged-set-effort{display:flex;flex-direction:column;min-width:0;font-size:var(--fs-caption);text-align:end}
+.logged-set-heart{display:flex;align-items:center;justify-content:flex-end;gap:3px;font-size:var(--fs-caption);color:var(--label-2);white-space:nowrap}
+.logged-set-heart .icn{font-size:11px;flex:none}
+.exercise-detail-tabs{margin:8px 0 16px}
+.exercise-detail-tabs button{min-height:44px}
+.exercise-detail-panels>section[hidden]{display:none}
+.exercise-detail-panels>section{min-height:100px}
+.exercise-detail .steps-list{font-size:var(--fs-subhead);line-height:1.5}
+.exercise-detail .recent-exercise-history{margin:0 0 12px}
+.exercise-detail-heading{position:relative}
+.exercise-detail-heading h3{flex:1;min-width:0}
+.exercise-detail-menu{flex:none}
+.exercise-detail-menu>summary{list-style:none;cursor:pointer}
+.exercise-detail-menu>summary::-webkit-details-marker{display:none}
+.exercise-detail-menu[open]>summary{background:var(--surface-2);color:var(--label)}
+.exercise-detail-menu-panel{position:absolute;inset-inline:0;top:100%;z-index:5;margin-top:8px;padding:16px;max-height:560px;max-height:min(65dvh,560px);overflow-y:auto;overscroll-behavior:contain;border-radius:var(--r);background:var(--surface-raised);box-shadow:0 8px 28px rgba(0,0,0,.32)}
+.exercise-detail-menu-panel>.row h4.sec{margin:0}
+.exercise-muscle-legend{display:grid;gap:10px;font-size:var(--fs-footnote);margin-top:12px}
+.exercise-muscle-legend>div{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px}
+.exercise-muscle-legend dt{color:var(--label-2);text-transform:capitalize}
+.exercise-muscle-legend dd{margin:0}
+.workout-note-preview{white-space:pre-wrap;overflow-wrap:anywhere;font-size:var(--fs-body);line-height:1.5;margin:16px 0 8px}
+
+.chips.workout-progress-strip{gap:6px;padding:0 2px;margin:0;min-height:44px}
+.workout-progress-strip .wchip,.workout-progress-strip .wchip.cur{min-width:44px;width:44px;height:44px;padding:0;border-radius:8px;background:transparent;box-shadow:none}
+.workout-progress-strip .wchip::before{content:'';position:absolute;inset-inline:2px;top:18px;height:4px;border-radius:4px;background:var(--sep)}
+.workout-progress-strip .wchip.done::before{background:var(--green)}
+.workout-progress-strip .wchip.partial::before{background:linear-gradient(to right,var(--orange) 50%,var(--sep) 50%)}
+.workout-progress-strip .wchip.cur::before{background:var(--acc)}
+.workout-progress-strip .wchip:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
+.workout-progress-strip .wchip .icn{position:absolute;inset-block-end:2px;opacity:.7;width:10px;height:10px}
+
+.picker-filters { margin-block: 8px 12px; }
+.picker-filter-toggle { display: flex; align-items: center; gap: 6px; min-height: 44px; cursor: pointer; font-size: var(--fs-body); list-style: none; }
+.picker-filter-toggle::-webkit-details-marker { display: none; }
+.picker-filter-toggle .dim { min-width: 0; overflow-wrap: anywhere; }
+.picker-filters .chip { min-height: 44px; }
+.picker-filters .chip::before { inset: 0; }
+
+/* The logging surface is a table, with history below it rather than nested cards. */
+.workout-set-table.card { padding: 0; background: transparent; border-radius: 0; }
+.recent-exercise-history { padding-block: 12px; border-top: var(--hair) solid var(--sep); background: transparent; }
+.recent-history-single { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-height: 36px; font-size: var(--fs-footnote); }
+.recent-history-single time { color: var(--label-2); }
+.recent-history-single strong { font-size: var(--fs-title3); font-weight: 600; font-variant-numeric: tabular-nums; }
+.recent-history-single strong span { font-size: var(--fs-footnote); font-weight: 400; color: var(--label-2); }
+.recent-history-chart { margin-block: 4px; }
+.recent-history-unit { text-align: end; }
+.recent-history-chart .chart-i > svg { display: block; width: 100%; height: auto; }
+
+.workout-set-table .swrow { border-radius: 0; }
+.workout-set-table .swfront { background: var(--bg); }
+.workout-set-table .set-table-head.rated > span:nth-child(3) { text-align: center; }
+
+.workout-media-viewer > .row { align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.workout-media-viewer h3 { flex: 1; min-width: 0; }
+.workout-media-viewer .iconbtn { flex: none; }

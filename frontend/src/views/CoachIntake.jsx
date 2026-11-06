@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 // The questionnaire — the first thing the Coach asks, the moment somebody first opens it.
 //
 // One question per screen, big targets, as little copy as the question allows. Only goal and
@@ -150,7 +151,7 @@ export default function CoachIntake() {
   const dots = STEPS.filter(s => s !== 'consent')
   const dotIndex = dots.indexOf(key)
 
-  return <div className="narrow ob">
+  return <div className="narrow ob guided-refined coach-refined">
     <div className="ob-top">
       <button className="iconbtn" data-back={step ? '' : editing ? '/coach' : '/plan'} onClick={back} aria-label={t('Back')}><Icon name="chevronLeft" /></button>
       {key !== 'consent' && <div className="ob-dots">

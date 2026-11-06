@@ -8,14 +8,15 @@ import React, { act } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createRoot } from 'react-dom/client'
 import { useStore } from '../store/useStore.js'
-import { startFlow } from '../sheets.jsx'
+import { startFlow, workoutDetailSheet, menuSheet } from '../sheets.jsx'
 import Home from './Home.jsx'
+import { todayISO } from '../lib/format.js'
 
 const nav = vi.fn()
 vi.mock('react-router-dom', () => ({ useNavigate: () => nav }))
 vi.mock('../sheets.jsx', () => ({
   starterPlanSheet: vi.fn(), bwSheet: vi.fn(), goalSheet: vi.fn(), dayOverrideSheet: vi.fn(),
-  calendarSheet: vi.fn(), startFlow: vi.fn(), bwDeltaColor: () => '', weighInsSheet: vi.fn(),
+  calendarSheet: vi.fn(), startFlow: vi.fn(), workoutDetailSheet: vi.fn(), menuSheet: vi.fn(), bwDeltaColor: () => '', weighInsSheet: vi.fn(),
 }))
 
 const routines = [{ id: 'r1', name: 'Push', emoji: null, ex: [{ id: '0025' }] }]
@@ -23,7 +24,7 @@ const routines = [{ id: 'r1', name: 'Push', emoji: null, ex: [{ id: '0025' }] }]
 let host, root
 beforeEach(() => {
   globalThis.IS_REACT_ACT_ENVIRONMENT = true
-  nav.mockClear(); startFlow.mockClear()
+  nav.mockClear(); startFlow.mockClear(); workoutDetailSheet.mockClear()
   host = document.createElement('div')
   document.body.appendChild(host)
   root = createRoot(host)
@@ -46,9 +47,21 @@ describe('Home — the way to the Start screen when a plan already owns today', 
   it('offers the door on a planned day, where the Start button would start the plan', () => {
     setS(); mount()
     expect(door()).toBeTruthy()
+    expect(host.querySelectorAll('.wday')).toHaveLength(7)
+    expect(host.querySelector('.wday.today').getAttribute('aria-label')).toContain('Planned')
   })
 
-  it('opens the Start screen without starting anything', () => {
+  it('keeps previous and next week reachable from the compact calendar header', () => {
+    setS(); mount()
+    act(() => host.querySelector('.planning-home-header-actions button[aria-haspopup="dialog"]').click())
+    const menu = menuSheet.mock.calls.at(-1)[0]
+    expect(menu.items.map(item => item.label)).toEqual(['Previous week', 'Next week'])
+    const todayNumbers = [...host.querySelectorAll('.wday .num')].map(n => n.textContent)
+    act(() => menu.items[0].onClick())
+    expect([...host.querySelectorAll('.wday .num')].map(n => n.textContent)).not.toEqual(todayNumbers)
+  })
+
+  it('opens the Start screen without starting anything' , () => {
     setS(); mount()
     act(() => { door().dispatchEvent(new MouseEvent('click', { bubbles: true })) })
     expect(nav).toHaveBeenCalledWith('/workout')
@@ -58,6 +71,9 @@ describe('Home — the way to the Start screen when a plan already owns today', 
   it('is still there on a rest day, where freestyle is the only thing left to start', () => {
     setS({ week: {} }); mount()
     expect(door()).toBeTruthy()
+    act(() => host.querySelector('.today-row').click())
+    expect(nav).toHaveBeenCalledWith('/workout')
+    expect(startFlow).not.toHaveBeenCalled()
   })
 
   it('goes away once a session is running — that screen resumes it, it does not choose', () => {
@@ -71,16 +87,50 @@ describe('Home — the way to the Start screen when a plan already owns today', 
     mount()
     const row = host.querySelector('.today-row')
     expect(row.querySelector('.ttl').textContent).toBe('Push')
-    expect(row.querySelector('.tag').textContent).toBe('Edit')
+    expect(row.querySelector('.tag')).toBeNull()
+    expect(row.querySelector('.planning-today-action').textContent).toBe('Edit')
     act(() => { row.dispatchEvent(new MouseEvent('click', { bubbles: true })) })
     expect(nav).toHaveBeenCalledWith('/workout')
   })
 
-  it('still reads a running session as in progress', () => {
+  it('opens the completed workout from the focused action, without starting another session', () => {
+    const workout = { id: 'done', name: 'Push', d: todayISO(), start: Date.now() - 3600000, end: Date.now(), routineIds: ['r1'], entries: [] }
+    setS({ workouts: [workout] }); mount()
+    const row = host.querySelector('.today-row')
+    expect(row.querySelector('.planning-today-action').textContent).toBe('Open workout')
+    expect(host.querySelector('.wday.today').getAttribute('aria-label')).toContain('Workout done')
+    expect(row.querySelector('.planning-today-meta').textContent).toContain('0 sets')
+    act(() => row.click())
+    expect(workoutDetailSheet).toHaveBeenCalledWith(workout)
+    expect(startFlow).not.toHaveBeenCalled()
+  })
+
+  it('still reads a running session as in progress' , () => {
     setS({ active: { id: 'a', name: 'Push', start: Date.now(), cur: 0, entries: [] } })
     mount()
     const row = host.querySelector('.today-row')
-    expect(row.querySelector('.ttl').textContent).toBe('Push (in progress)')
-    expect(row.querySelector('.tag').textContent).toBe('Resume')
+    expect(row.querySelector('.ttl').textContent).toBe('Push')
+    expect(row.querySelector('.tag').textContent).toBe('Running now')
+    expect(row.querySelector('.planning-today-action').textContent).toBe('Resume')
   })
+})
+
+it('shows the planned Start action once inside Today, with its muscle map', () => {
+  setS(); mount()
+  const row = host.querySelector('.today-row')
+  expect(row.querySelector('.planning-today-status .tag')).toBeNull()
+  expect(row.querySelector('.planning-today-action').textContent).toBe('Start')
+  expect(row.querySelector('.planning-today-title .bm-mini-wrap')).toBeTruthy()
+})
+it('shows the GitHub-style activity map on Home and opens an actual trained day', () => {
+  const workout = { id: 'map-day', d: todayISO(), start: Date.now() - 3600000, end: Date.now(), entries: [] }
+  setS({ workouts: [workout] }); mount()
+  const map = host.querySelector('.home-activity')
+  expect(map.querySelectorAll('.hm-col')).toHaveLength(53)
+  const today = [...map.querySelectorAll('.hm-c')].find(cell => cell.title.startsWith(todayISO()))
+  act(() => today.click())
+  expect(workoutDetailSheet).toHaveBeenCalledWith(workout)
+  expect(startFlow).not.toHaveBeenCalled()
+  act(() => [...map.querySelectorAll('.seg button')].find(button => button.textContent === 'Volume').click())
+  expect(useStore.getState().S.heatmapMetric).toBe('vol')
 })

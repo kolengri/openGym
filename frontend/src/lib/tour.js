@@ -16,6 +16,7 @@ const KEY = 'gym_tour_v1'
    `route`: the screen it is on; the tour goes there itself on Back, on a resume and on a jump
      (null: wherever the user is).
    `anchor`: the data-tour="..." of the element it points at (null: a card in the middle).
+   `panel`: an existing Stats panel to select through its normal control before finding the anchor.
    `go`: a way to another screen. The spotlight sits on the real control (a tab, the gear, a back
      button) and the stop waits for the user to tap it; "Show me" taps it for them. A string is a
      path, a RegExp matches one. A stop whose screen is already on is passed over.
@@ -56,9 +57,9 @@ export const STEPS = [
   { id: 'more', route: '/workout', anchor: 'workout-more', sandbox: 'practice' },
   { id: 'finish', route: '/workout', anchor: 'finish', sandbox: 'practice' },
   { id: 'go-stats', route: '/home', anchor: 'tab-stats', go: '/stats' },
-  { id: 'stats', route: '/stats', anchor: 'stats-tiles' },
-  { id: 'stats-body', route: '/stats', anchor: 'stats-body', when: c => c.balance, optional: true },
-  { id: 'stats-records', route: '/stats', anchor: 'stats-records', when: c => c.workouts, optional: true },
+  { id: 'stats', route: '/stats', panel: 'overview', anchor: 'stats-tiles' },
+  { id: 'stats-body', route: '/stats', panel: 'lifts', anchor: 'stats-body', when: c => c.balance, optional: true },
+  { id: 'stats-records', route: '/stats', panel: 'lifts', anchor: 'stats-records', when: c => c.workouts, optional: true },
   { id: 'go-home', route: '/stats', anchor: 'tab-home', go: '/home' },
   { id: 'go-settings', route: '/home', anchor: 'settings-gear', go: '/settings' },
   { id: 'look', route: '/settings', anchor: 'settings-look' },
@@ -127,7 +128,7 @@ const EDIT = [
   // Date & time, duration, sharing and Delete sit behind one row since v1.4.4 (was: e-date on its own button).
   { id: 'e-options', route: '/history', anchor: 'wd-options', sheet: true, sandbox: 'edit', lost: c => !c.sheets, back: 'e-row' },
   { id: 'e-back', route: '/history', anchor: 'history-back', go: '/stats', sandbox: 'edit' },
-  { id: 'e-measure', route: '/stats', anchor: 'stats-measure', sandbox: 'edit' },
+  { id: 'e-measure', route: '/stats', panel: 'body', anchor: 'stats-measure', sandbox: 'edit' },
   { id: 'e-routines', route: '/stats', anchor: 'tab-plan', sandbox: 'edit' },
   { id: 'e-cant', route: null, anchor: null, sandbox: 'edit' },
   { id: 'e-done', route: null, anchor: null },

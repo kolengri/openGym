@@ -1,3 +1,4 @@
+import '../styles/progress-refinement.css'
 // Every progress photo in one place, newest first: adding them, for today or an earlier day,
 // several at once; removing one; and a before/after comparison between any two.
 //
@@ -22,7 +23,8 @@ import { sameWorkout } from '../lib/workout-date.js'
 import { syncMedia } from '../lib/media-sync.js'
 import { useMediaPicker } from '../components/CustomMediaField.jsx'
 import { CustomThumb, MediaView, useMediaUrl } from '../components/CustomMedia.jsx'
-import { Button } from '../components/ui.jsx'
+import { Button, Segmented } from '../components/ui.jsx'
+import { menuSheet } from '../sheets.jsx'
 import DateField from '../components/DateField.jsx'
 import Icon from '../components/Icon.jsx'
 
@@ -107,7 +109,9 @@ export function PhotoView({ p, close }) {
     <div className="mviewer-bar">
       <button type="button" className="iconbtn" aria-label={t('Close')} onClick={close}><Icon name="xmark" /></button>
       <span className="mviewer-count">{fmtDate(p.d, true, true)}</span>
-      <button type="button" className="iconbtn" aria-label={t('Remove')} onClick={() => setAsking(a => !a)}><Icon name="trash" /></button>
+      <button type="button" className="iconbtn" aria-label={t('More')} aria-haspopup="dialog" onClick={() => menuSheet({ title: t('Photo'), items: [
+        { icon: 'trash', label: t('Remove'), danger: true, onClick: () => setAsking(true) },
+      ] })}><Icon name="more" /></button>
     </div>
     <div className="mviewer-stage"><MediaView m={p.m} cls="exmedia viewer" /></div>
     {asking && <div className="mviewer-ask">
@@ -159,8 +163,8 @@ function ProgressCompare({ a, b, close }) {
       {before.url && <img className="pp-img" src={before.url} alt="" draggable={false}
         style={{ clipPath: `inset(0 ${100 - pct}% 0 0)` }} />}
       <div className="pp-handle" style={{ insetInlineStart: pct + '%' }}><div className="pp-grip" /></div>
-      <div className="pp-label pp-label-before">{fmtDate(a.d, true)}</div>
-      <div className="pp-label pp-label-after">{fmtDate(b.d, true)}</div>
+      <div className="pp-label pp-label-before">{fmtDate(a.d, true, true)}</div>
+      <div className="pp-label pp-label-after">{fmtDate(b.d, true, true)}</div>
     </div>
   </div>
 }
@@ -262,21 +266,19 @@ export default function ProgressPhotos() {
     if (n.noRoom) toast(t('Your server keeps photos only on days with a workout. An update lets it keep them for any day.'))
   }
 
-  return <>
+  return <div className="progress-refinement progress-photos">
     <div className="hdr"><button className="iconbtn" data-back="/stats" onClick={() => nav('/stats')} aria-label={t('Stats')}><Icon name="chevronLeft" /></button>
       <div style={{ flex: 1, marginInlineStart: 12 }}><h1>{t('Progress photos')}</h1>
         <div className="sub">{tn('{0} photo', '{0} photos', photos.length)}</div></div>
+      {!comparing && showAdd && <button type="button" className="iconbtn" aria-label={busy ? t('Loading…') : t('Add photos')} title={t('Add photos')} disabled={!canAdd || busy} onClick={() => fileRef.current?.click()}><Icon name={busy ? 'image' : 'plus'} /></button>}
       {photos.length >= 2 && (comparing
         ? <Button size="sm" variant="ghost" onClick={cancelCompare}>{t('Cancel')}</Button>
         : <Button size="sm" variant="tinted" onClick={() => setComparing(true)}>{t('Compare')}</Button>)}
     </div>
 
-    {!comparing && showAdd && <div className="row" style={{ marginBottom: 16 }}>
-      <Button icon={busy ? 'image' : 'camera'} disabled={!canAdd || busy} onClick={() => fileRef.current?.click()}>
-        {busy ? t('Loading…') : t('Add photos')}
-      </Button>
-      <input ref={fileRef} type="file" accept="image/*" multiple hidden onChange={onFiles} />
-    </div>}
+    <Segmented className="progress-body-tabs" value="photos" onChange={value => nav(value === 'weight' ? '/stats?section=body' : value === 'measurements' ? '/measurements' : value === 'health' ? '/health' : '/progress-photos')}
+      options={[{ value: 'weight', label: t('Weight') }, { value: 'measurements', label: t('Measurements') }, { value: 'health', label: t('Health') }, { value: 'photos', label: t('Photos') }]} />
+    {!comparing && showAdd && <input ref={fileRef} type="file" accept="image/*" multiple hidden onChange={onFiles} />}
 
     {comparing && <div className="small dim" style={{ margin: '0 0 12px' }}>
       {picked.length < 2 ? t('Pick two photos to compare.') : t('Ready! Open the comparison.')}
@@ -288,14 +290,14 @@ export default function ProgressPhotos() {
         </div>
       : groups.map(g => (
         <div key={g.d} style={{ marginBottom: 18 }}>
-          <div className="small muted" style={{ marginBottom: 6 }}>{fmtDate(g.d, true, true)}</div>
+          <h2 className="progress-date-heading"><time dateTime={g.d}>{fmtDate(g.d, true, true)}</time></h2>
           <div className="wmedia-grid">
             {g.items.map(p => {
               const selected = picked.includes(p.key)
               return (
                 <button key={p.key} type="button" data-swipe-ignore
                   className={'wmedia-item' + (selected ? ' pp-selected' : '')}
-                  aria-label={fmtDate(p.d, true)}
+                  aria-label={fmtDate(p.d, true, true)}
                   onClick={() => (comparing ? toggle(p) : openPhotoView(p))}>
                   <CustomThumb ex={{ custom: true, media: p.m }} />
                   {selected && <span className="pp-check"><Icon name="check" /></span>}
@@ -309,5 +311,5 @@ export default function ProgressPhotos() {
     {comparing && picked.length === 2 && <div className="pp-cta">
       <Button variant="primary" onClick={runCompare}>{t('Compare')}</Button>
     </div>}
-  </>
+  </div>
 }

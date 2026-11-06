@@ -111,7 +111,28 @@ describe('workout detail', () => {
     expect(useUI.getState().sheets).toHaveLength(2)
     const detail = mountTopSheet()
     expect(detail.querySelector('.exdetail-name')).not.toBeNull()
-    expect(detail.textContent).not.toContain('Exercise history')
+    expect(detail.querySelector('.exercise-detail')).not.toBeNull()
+    expect(detail.querySelector('.recent-exercise-history')).not.toBeNull()
+  })
+
+  it.each(['Existing note', ''])('keeps an opened note editor open while replacing %s', async saved => {
+    const w = workout([], { note: saved })
+    useStore.setState(s => ({ S: { ...s.S, workouts: [w] } }))
+    workoutDetailSheet(w)
+    const host = mountTopSheet()
+    const details = host.querySelector('.workout-note')
+    await act(async () => { details.open = true; details.dispatchEvent(new Event('toggle')) })
+    const input = host.querySelector('textarea')
+    const type = async value => act(async () => {
+      Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set.call(input, value)
+      input.dispatchEvent(new Event('input', { bubbles: true }))
+    })
+    await type('')
+    expect(details.open).toBe(true)
+    await type('Replacement note')
+    expect(details.open).toBe(true)
+    await act(async () => { input.dispatchEvent(new FocusEvent('focusout', { bubbles: true })) })
+    expect(useStore.getState().S.workouts[0].note).toBe('Replacement note')
   })
 
   it('copies the workout as text, with the note as it stands in the box', async () => {

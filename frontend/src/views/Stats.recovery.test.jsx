@@ -202,14 +202,12 @@ function viewButton(text) {
   return buttonWithText(muscleCard(), text)
 }
 
-// The period of the Sets view is a menu button since the stats redesign ("Period: Week"); it opens
-// the shared picker sheet, mounted here by Modals.
-const periodButton = () => [...muscleCard().querySelectorAll('button')].find(b => (b.getAttribute('aria-label') || '').startsWith('Period:'))
+// One period control in Exercises drives both the exercise chart and muscle comparison.
+const periodText = text => ({ '30d': '1M', '90d': '3M' }[text] || text)
 async function pickPeriod(text) {
-  await click(periodButton())
-  await click([...document.querySelector('#modal-root').querySelectorAll('.sect-b button')].find(b => b.textContent.trim() === text))
+  await click(buttonWithText(container.querySelector('.exercise-period'), periodText(text)))
 }
-const expectPeriod = text => expect(periodButton()?.getAttribute('aria-label')).toBe('Period: ' + text)
+const expectPeriod = text => expect(container.querySelector('.exercise-period button.on')?.textContent).toBe(periodText(text))
 
 async function click(button) {
   expect(button, `expected a button named ${button?.textContent || 'unknown'}`).toBeTruthy()
@@ -240,7 +238,7 @@ describe('Stats muscle recovery view runtime', () => {
   it('dispatches real clicks through Balance, Fatigue, and Strength and preserves selection', async () => {
     await mountStats()
     expectPressed(viewButton('Sets'))
-    expectPeriod('Week')
+    expectPeriod('All')
 
     await pickPeriod('30d')
     await click(buttonWithText(muscleCard(), 'All'))
@@ -388,8 +386,11 @@ describe('Stats estimated effort', () => {
     const head = effortHead()
     expect(head, 'expected an Effort card for estimable history').toBeTruthy()
     // Six self-anchored sets estimate RIR 0: a real average with an honest badge.
-    expect(head.textContent).toContain('estimated')
+    expect(head.textContent).not.toContain('estimated')
+    expect(container.textContent).toContain('No rated sets in this period.')
     expect(container.textContent).toContain('0 rated')
+    await click(buttonWithText(container.querySelector('.effort-evidence'), 'Calculated'))
+    expect(head.textContent).toContain('estimated')
   })
 
   // The summary, the weekly curve and the histogram share one reading per set.
@@ -399,6 +400,7 @@ describe('Stats estimated effort', () => {
     ])])
     resolveSetRir.mockClear()
     await mountStats()
+    await click(buttonWithText(container.querySelector('.effort-evidence'), 'Calculated'))
     expect(effortHead().textContent).toContain('estimated')
     const sets = resolveSetRir.mock.calls.map(c => c[0])
     expect(sets.length).toBeGreaterThan(0)
@@ -432,21 +434,24 @@ describe('Stats estimated effort', () => {
     await mountStats()
     const card = effortHead()?.closest('.card')
     expect(card, 'expected an Effort card for failure-marked imports').toBeTruthy()
-    expect(effortHead().textContent).toContain('estimated')
+    expect(effortHead().textContent).not.toContain('estimated')
+    expect(card.querySelector('.stat-v').textContent).toBe('0 RIR')
+    expect(card.querySelector('.effort-sub b').textContent).toBe('100%')
     // Six imported failures plus estimates for the eighteen unrated sets.
     expect(card.textContent).toContain('6 rated · 18 estimated of 24 sets')
-    // The average speaks for the whole training, not just the failures.
+    // Logged failures remain recorded; estimates are a separate dataset, never assigned to them.
+    const zeroBin = [...card.querySelectorAll('.sstack-legend li')]
+      .find(li => li.querySelector('.slegend-l')?.textContent.trim() === 'RIR 0')
+    expect(zeroBin?.querySelector('.slegend-v').textContent).toMatch(/^6 · /)
+    await click(buttonWithText(card.querySelector('.effort-evidence'), 'Calculated'))
+    expect(effortHead().textContent).toContain('estimated')
     const avg = card.querySelector('.stat-v').textContent.trim()
     expect(avg).toMatch(/RIR$/)
     expect(parseFloat(avg)).toBeGreaterThan(0)
     expect(card.querySelector('.effort-sub b').textContent).not.toBe('100%')
-    // The failures stay a visible share at the hard end of the stacked bar's key.
-    const zeroBin = [...card.querySelectorAll('.sstack-legend li')]
-      .find(li => li.querySelector('.slegend-l')?.textContent.trim() === 'RIR 0')
-    expect(zeroBin?.querySelector('.slegend-v').textContent).toMatch(/^6 · /)
 
     // The resolver applies on every window, not just the default 90d.
-    await click(buttonWithText(card.querySelector('.seg'), '30d'))
+    await click(buttonWithText(container.querySelector('.effort-period'), '1M'))
     expect(card.textContent).toContain('2 rated · 6 estimated of 8 sets')
   })
 })

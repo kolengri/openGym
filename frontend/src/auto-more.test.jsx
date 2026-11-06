@@ -38,7 +38,7 @@ function renderTop() {
   const sheet = useUI.getState().sheets.at(-1)
   return render(sheet.render(() => useUI.getState().closeSheet(sheet.id)))
 }
-const rows = host => host.querySelectorAll('.list > .item').length - 1   // drop "Create your own"
+const rows = host => host.querySelectorAll('.list > .item:not(.ex-new)').length
 const showMore = host => [...host.querySelectorAll('button')].find(b => b.textContent === 'Show more')
 
 beforeEach(() => {
@@ -89,7 +89,9 @@ describe('lists load their next page as you scroll', () => {
     const count = bp => EXDB.filter(e => e.bp === bp).length
     const bp = BODYPARTS.filter(b => count(b) > 40).sort((a, b) => count(a) - count(b))[0]
     const host = render(<Library />)
-    act(() => [...host.querySelectorAll('.chips .chip')].find(c => c.textContent === bp).click())
+    act(() => host.querySelector('.lib-search-filter').click())
+    const filters = renderTop()
+    act(() => [...filters.querySelectorAll('.chips .chip')].find(c => c.textContent === bp).click())
     for (let i = 0; i < 10 && showMore(host); i++) comeIntoView()
     expect(rows(host)).toBe(count(bp))
     expect(showMore(host)).toBeUndefined()

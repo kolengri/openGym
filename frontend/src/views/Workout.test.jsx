@@ -243,6 +243,12 @@ async function openCardEditor(index = 0) {
   await click(container.querySelectorAll('.set-table-edit')[index])
 }
 
+async function openSetOptions(index = 0) {
+  if (!container.querySelector('.set-table-edit')) return click(container.querySelectorAll('button.n')[index])
+  await openCardEditor(index)
+  await click(container.querySelector('.workout-set-editor button[aria-label="More"]'))
+}
+
 async function pressProgression(index = 0) {
   const button = container.querySelectorAll('.progline')[index]
   expect(button).toBeTruthy()
@@ -1279,7 +1285,7 @@ describe('progression settings rebuild the rows like a session start', () => {
     const entry = mocks.S.active.entries[0]
     expect(entry.target).toMatchObject({ mode: 'cardio', min: 25, km: 6 })
     expect(entry.sets[0]).toEqual(done)
-    expect(entry.sets[1]).toEqual({ min: 25, done: false })
+    expect(entry.sets[1]).toEqual({ min: 25, km: 6, done: false })
   })
 
   // This suite covers the retained inline fields/guidance in List layout.
@@ -3127,16 +3133,16 @@ describe('workout controls: the more menu and the set menu', () => {
     expect(mocks.S.active.cur).toBe(1)
   })
 
-  it('opens a per-set menu from the set number with drop, burst and remove', async () => {
+  it('opens a per-set menu through the row editor with drop, burst and remove', async () => {
     await mount([exercise('plain-bench', [false, false])])
-    await act(async () => { container.querySelector('button[aria-label="Set 2"]').dispatchEvent(new dom.Event('click', { bubbles: true })) })
+    await openSetOptions(1)
     expect(menuItemsOf(lastMenu()).map(it => it.label)).toEqual(['Taken to failure', 'Drop set', 'Rest-pause burst', 'Copy this set', 'Film this set', 'Note', 'Make it a warm-up set', 'Rest after this set', 'Remove this set'])
     expect(item('Make it a warm-up set').icon).toBe('sunrise')
 
     await act(async () => { item('Drop set').onClick() })
     expect(mocks.S.active.entries[0].sets[1].drops?.length).toBe(1)
 
-    await act(async () => { container.querySelector('button[aria-label="Set 2"]').dispatchEvent(new dom.Event('click', { bubbles: true })) })
+    await openSetOptions(1)
     await act(async () => { item('Remove this set').onClick() })
     expect(mocks.S.active.entries[0].sets.length).toBe(1)
   })
@@ -3148,7 +3154,7 @@ describe('workout controls: the more menu and the set menu', () => {
       target: { mode: 'cardio', min: 30, speed: 5 },
       sets: [{ min: 30, speed: 5, done: true }],
     })], 0, { effort: 'rir' })
-    const openSet = async () => { await act(async () => { container.querySelector('button[aria-label="Set 1"]').dispatchEvent(new dom.Event('click', { bubbles: true })) }) }
+    const openSet = async () => { await openSetOptions(0) }
     await openSet()
     expect(item('Taken to failure')).toBeUndefined()
     expect(item('How hard it felt').sub).toBe('Not rated yet')
@@ -3170,7 +3176,7 @@ describe('workout controls: the more menu and the set menu', () => {
 
   it('offers no effort row on a lift, where the column already does it', async () => {
     await mount([exercise('plain-bench', [false])])
-    await act(async () => { container.querySelector('button[aria-label="Set 1"]').dispatchEvent(new dom.Event('click', { bubbles: true })) })
+    await openSetOptions(0)
     expect(item('How hard it felt')).toBeUndefined()
   })
 
@@ -3180,7 +3186,7 @@ describe('workout controls: the more menu and the set menu', () => {
       target: { mode: 'reps', reps: 6, weight: 125, bodyweight: false, restSec: 150 },
       sets: [{ w: 125, r: 6, done: false }, { w: 125, r: 6, done: false }, { w: 125, r: 6, done: false }, { w: 125, r: 6, done: false }],
     })])
-    const openSet = async label => { await act(async () => { container.querySelector(`button[aria-label="${label}"]`).dispatchEvent(new dom.Event('click', { bubbles: true })) }) }
+    const openSet = async label => openSetOptions(Number(label.match(/\d+/)[0]) - 1)
     await openSet('Set 1')
     expect(item('Rest after this set').sub).toBe('Default (2:30)')
     await act(async () => { item('Rest after this set').onClick() })
@@ -3216,20 +3222,22 @@ describe('workout controls: the more menu and the set menu', () => {
 
   it('has no set rest in the editor of a saved workout', async () => {
     await mount([exercise('plain-bench', [true, true])], 0, { active: { editingWorkoutId: 'saved' } })
-    await act(async () => { container.querySelector('button[aria-label="Set 1"]').dispatchEvent(new dom.Event('click', { bubbles: true })) })
+    await openSetOptions(0)
     expect(item('Rest after this set')).toBeFalsy()
   })
 
-  it('marks a set as taken to failure from its menu, with an F on its number, and back', async () => {
+  it('marks a set as taken to failure from its menu, with a visible F, and back', async () => {
     await mount([exercise('plain-bench', [false, false])])
-    const openSet = async label => { await act(async () => { container.querySelector(`button[aria-label="${label}"]`).dispatchEvent(new dom.Event('click', { bubbles: true })) }) }
+    const openSet = async label => openSetOptions(Number(label.match(/\d+/)[0]) - 1)
     await openSet('Set 2')
     expect(item('Taken to failure').on).toBe(false)
     await act(async () => { item('Taken to failure').onClick() })
     expect(mocks.S.active.entries[0].sets[1].failure).toBe(true)
     expect(mocks.S.active.entries[0].sets[0].failure).toBeUndefined()
     await rerender()
-    const n = container.querySelector('button[aria-label="Set 2, Taken to failure"]')
+    const edit = container.querySelector('.set-table-edit[aria-label="Edit: Set 2, Taken to failure"]')
+    expect(edit).not.toBeNull()
+    const n = edit.closest('.set-table-row').querySelector('.set-table-status')
     expect(n.querySelector('.failmark').textContent).toBe('F')
     await openSet('Set 2, Taken to failure')
     expect(item('Taken to failure').on).toBe(true)
@@ -3240,7 +3248,7 @@ describe('workout controls: the more menu and the set menu', () => {
   it('makes a work set a warm-up and back, and keeps one work set', async () => {
     await mount([exercise('plain-bench', [true, false])])
     // a warm-up's number button is "Set 1" too, so rows are picked by position
-    const openSet = async k => { await act(async () => { container.querySelectorAll('button.n')[k].dispatchEvent(new dom.Event('click', { bubbles: true })) }) }
+    const openSet = openSetOptions
     await openSet(1)
     await act(async () => { item('Make it a warm-up set').onClick() })
     const sets = () => mocks.S.active.entries[0].sets
@@ -3263,7 +3271,7 @@ describe('workout controls: the more menu and the set menu', () => {
   it('makes a per-side set a warm-up and back, both sides kept', async () => {
     const side = (l, r) => ({ w: 20, r: l + r, done: false, sides: { L: { w: 20, r: l, done: false }, R: { w: 20, r: r, done: false } } })
     await mount([{ id: 'plain-lunge', target: { mode: 'reps', reps: 10, weight: 20, side: true }, sets: [side(5, 5), side(4, 6)] }])
-    const openSet = async k => { await act(async () => { container.querySelectorAll('.set-table-row button.n')[k * 2].dispatchEvent(new dom.Event('click', { bubbles: true })) }) }
+    const openSet = k => openSetOptions(k * 2)
     await openSet(1)
     await act(async () => { item('Make it a warm-up set').onClick() })
     const sets = () => mocks.S.active.entries[0].sets
@@ -3387,7 +3395,7 @@ describe('Workout exercise tags', () => {
     const { registerCustom } = await import('../lib/exercises.js')
     registerCustom([{ id: 'cqa1', n: 'QA Custom Thrust', bp: 'upper legs', eq: 'barbell', custom: true, tg: 'gluteal', sm: [], primaries: ['gluteal'], secondaries: [], muscleGroups: ['gluteal'] }])
     try {
-      await mount([exercise('cqa1', [false])])
+      await mount([exercise('cqa1', [false])], 0, { workoutView: 'list' })
       const tags = [...container.querySelectorAll('.tag')].map(tag => tag.textContent.trim())
       expect(tags).toContain('Glutes')
       expect(tags).not.toContain('gluteal')
@@ -3401,7 +3409,7 @@ describe('Workout exercise tags', () => {
     const { default: de } = await import('../locales/de.js')
     _setLangState('de', de, null, null)
     try {
-      await mount([exercise('1160', [false])])
+      await mount([exercise('1160', [false])], 0, { workoutView: 'list' })
       const tags = [...container.querySelectorAll('.tag')].map(tag => tag.textContent.trim())
       expect(tags).toContain('Herz-Kreislauf')
       expect(tags).not.toContain('Cardiovascular system')
@@ -3833,7 +3841,7 @@ describe('the workout screen chrome (v1.3.11)', () => {
 
   it('groups the set menu: effort and what goes on top first, the phase and rest under More, Remove on its own', async () => {
     await mount([exercise('plain-bench', [false, false])])
-    await click(container.querySelector('button[aria-label="Set 1"]'))
+    await openSetOptions(0)
     expect(lastMenu().sections.map(g => g.more ? ['More', menuItemsOf({ sections: g.more }).map(it => it.label)] : g.items.filter(Boolean).map(it => it.label))).toEqual([
       ['Taken to failure', 'Drop set', 'Rest-pause burst', 'Copy this set', 'Film this set', 'Note'],
       ['More', ['Make it a warm-up set', 'Rest after this set']],
@@ -3841,16 +3849,22 @@ describe('the workout screen chrome (v1.3.11)', () => {
     ])
   })
 
-  it('shows a thumbnail instead of the animation when animations are Small, and a tap brings it back', async () => {
-    await mount([exercise('plain-bench', [false])], 0, { gifSize: 'mini' })
+  it.each(['mini', 'full', undefined])('opens media temporarily from the header for legacy preference %s', async gifSize => {
+    await mount([exercise('plain-bench', [false])], 0, { gifSize })
+    expect(container.querySelector('.workout-media-viewer')).toBeNull()
     const thumb = container.querySelector('.wthumb')
     expect(thumb).toBeTruthy()
     await click(thumb)
-    expect(mocks.S.gifSize).toBe('full')
+    expect(container.querySelector('.workout-media-viewer')).toBeTruthy()
+    expect(mocks.S.gifSize).toBe(gifSize)
+    await click(container.querySelector('.workout-media-viewer button[aria-label="Close"]'))
+    expect(container.querySelector('.workout-media-viewer')).toBeNull()
+    expect(container.querySelector('.wthumb')).toBeTruthy()
+    expect(mocks.S.gifSize).toBe(gifSize)
   })
 
-  it('has no thumbnail with full animations, or in the compact layout', async () => {
-    await mount([exercise('plain-bench', [false])], 0, { gifSize: 'full' })
+  it('keeps media hidden when disabled or when the compact layout omits previews', async () => {
+    await mount([exercise('plain-bench', [false])], 0, { gifSize: 'off' })
     expect(container.querySelector('.wthumb')).toBeNull()
     await unmount()
     await mount([exercise('plain-bench', [false])], 0, { gifSize: 'mini', active: { workoutView: 'compact' } })
@@ -3909,7 +3923,7 @@ describe('a set\'s own form video (v1.4.4)', () => {
 
   it('the set menu films the set, from the visible rows', async () => {
     await mount([exercise('plain-bench', [true, false])])
-    await click(container.querySelector('button[aria-label="Set 2"]'))
+    await openSetOptions(1)
     const film = label('Film this set')
     expect(film.sub).toBe('Check your form later')
     expect(lastMenuOf().sections[0].items.filter(Boolean).map(it => it.label)).toContain('Film this set')
@@ -3937,7 +3951,7 @@ describe('a set\'s own form video (v1.4.4)', () => {
     expect(container.querySelector('.fv-inline').getAttribute('data-at')).toBe('0:0')
     await click(container.querySelector('.fv-badge'))
     expect(container.querySelector('.fv-inline')).toBeNull()
-    await click(container.querySelector('button[aria-label="Set 1"]'))
+    await openSetOptions(0)
     expect(label('Film this set')).toBeUndefined()
     const watch = label('Watch your video')
     expect(watch.sub).toBe('0:07')

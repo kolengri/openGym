@@ -1,5 +1,18 @@
 // Simplified Chinese UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "打开训练",
+  "Strength block": "力量训练阶段",
+  "Upper / lower": "上肢 / 下肢",
+  "Linear 5×5": "线性 5×5",
+  "Recorded": "已记录",
+  "Calculated": "已计算",
+  "Measurements": "身体围度",
+  "Photos": "照片",
+  "Garmin Connect must be ready before reading health data.": "读取健康数据前，Garmin Connect 必须准备就绪。",
+  "Data": "数据",
+  "Connections": "连接",
+  "App": "应用",
+  "No programmes yet.": "暂无计划。",
   "Garmin sign-in did not finish. Try signing in again.": "Garmin 登录未完成。请重新登录。",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin 无法授权此手机。请稍后重新登录。",
   "Could not verify the Garmin account. Try signing in again later.": "无法验证 Garmin 账户。请稍后再尝试登录。",

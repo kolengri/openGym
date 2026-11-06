@@ -71,6 +71,21 @@ async function click(el) {
   expect(el).toBeTruthy()
   await act(async () => { el.dispatchEvent(new MouseEvent('click', { bubbles: true })); await flush() })
 }
+async function askReviewFromMenu() {
+  expect(container.querySelectorAll('.qchip')).toHaveLength(1)
+  expect(chip(/Last workout/)).toBeTruthy()
+  await click(container.querySelector('[aria-label="More"]'))
+  const render = mocks.openSheet.mock.calls.at(-1)[0]
+  const sheetHost = document.createElement('div')
+  document.body.append(sheetHost)
+  const sheetRoot = createRoot(sheetHost)
+  await act(async () => sheetRoot.render(render(() => {})))
+  const action = [...sheetHost.querySelectorAll('button')].find(b => b.querySelector('.lrow-t')?.textContent === 'Ask for a review')
+  await click(action)
+  await act(async () => sheetRoot.unmount())
+  sheetHost.remove()
+}
+
 async function mount() {
   installDom()
   await act(async () => { root.render(React.createElement(CoachChat)) })
@@ -104,7 +119,7 @@ describe('a Coach run settled on another device', () => {
   it('a run that really found nothing says so', async () => {
     mocks.S = state([routine])
     await mount()
-    await click(chip(/Review my training/))
+    await askReviewFromMenu()
     expect(replies()).toHaveLength(1)
     expect(replies()[0]).toMatchObject({ kind: 'nochange' })
   })
@@ -114,7 +129,7 @@ describe('a Coach run settled on another device', () => {
       mocks.S = state([routine])
       mocks.server.outcome = outcome
       await mount()
-      await click(chip(/Review my training/))
+      await askReviewFromMenu()
       await settle()
       expect(mocks.S.coach.chat.at(-1)).toMatchObject({ role: 'user', kind: 'text' })
       expect(replies()).toHaveLength(0)

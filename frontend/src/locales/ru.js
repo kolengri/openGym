@@ -1,5 +1,18 @@
 // Russian UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "Открыть тренировку",
+  "Strength block": "Силовой блок",
+  "Upper / lower": "Верх / низ",
+  "Linear 5×5": "Линейная 5×5",
+  "Recorded": "Записано",
+  "Calculated": "Рассчитано",
+  "Measurements": "Замеры",
+  "Photos": "Фото",
+  "Garmin Connect must be ready before reading health data.": "Перед чтением данных здоровья Garmin Connect должен быть готов к работе.",
+  "Data": "Данные",
+  "Connections": "Подключения",
+  "App": "Приложение",
+  "No programmes yet.": "Пока нет программ.",
   "Garmin sign-in did not finish. Try signing in again.": "Вход в Garmin не завершён. Попробуйте войти ещё раз.",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin не смог авторизовать этот телефон. Попробуйте войти ещё раз позже.",
   "Could not verify the Garmin account. Try signing in again later.": "Не удалось проверить аккаунт Garmin. Попробуйте войти заново позже.",

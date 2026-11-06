@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 import { useEffect, useRef, useState, forwardRef, useSyncExternalStore } from 'react'
 import { useNavigate, useParams, useLocation, Navigate } from 'react-router-dom'
 import { useStore, DEF, hasData } from '../store/useStore.js'
@@ -59,9 +60,9 @@ import { passwordOn, PasswordRow, openPasswordSignIn, openPasswordRegister } fro
 import { usePasskeys, PasskeysRow, DeviceLinkRow, openDeviceLinkRedeem, PairSheet } from '../components/Passkeys.jsx'
 import { DeleteAccountRow } from '../components/DeleteAccount.jsx'
 import { warmupAutoOf } from '../lib/warmup-ramp.js'
-import { Section, Row, SelectRow, Switch, Segmented, Button, TextField, SearchField } from '../components/ui.jsx'
+import { Section, Row, SelectRow, Switch, Button, TextField, SearchField } from '../components/ui.jsx'
 import { POLICIES_FOR, POLICY_NAME, POLICY_DESC, profileRule } from '../lib/progression.js'
-import { PAGES, ROOT_GROUPS, pageVisible, searchSettings, pageTrail } from './settings-pages.js'
+import { PAGES, ROOT_GROUPS, ROOT_GROUP_TITLES, pageVisible, searchSettings, pageTrail } from './settings-pages.js'
 import { platformNow } from '../lib/platform-now.js'
 import { pathBefore } from '../lib/nav.js'
 import WatchSettingsPage from './WatchSettings.jsx'
@@ -596,12 +597,12 @@ export default function Settings({ page = null, find = null, via = null, entryKe
       <Section title={t('Logging')}>
         {/* Two names for the same judgement, so the column asks in the scale you already think in.
             The (i) sits before the control: you read it on the way to the choice, not after it. */}
-        {on('effort') && <Row icon="gauge" iconTint="var(--purple)" title={t('Effort per set')}>
-          <button className="helpbtn" aria-label={t('What are RIR and RPE?')} onClick={effortHelpSheet}><Icon name="info" /></button>
-          <Segmented className="seg-inline"
+        {on('effort') && <div className="settings-picker-help">
+          <SelectRow icon="gauge" iconTint="var(--purple)" title={t('Effort per set')}
             options={[{ value: 'none', label: t('Off') }, { value: 'rir', label: t('RIR') }, { value: 'rpe', label: t('RPE') }]}
             value={effortOf(S)} onChange={v => update(s => { s.effort = v; delete s.showRir })} />
-        </Row>}
+          <button className="helpbtn" aria-label={t('What are RIR and RPE?')} onClick={effortHelpSheet}><Icon name="info" /></button>
+        </div>}
         {/* The line under each exercise that the rows are held against (#173). Tapping the line in
             a workout switches it too; this is where the choice can be found without knowing that. */}
         <SelectRow icon="history" iconTint="var(--blue)" title={t('Shown under each exercise')}
@@ -619,11 +620,9 @@ export default function Settings({ page = null, find = null, via = null, entryKe
         {/* One exercise at a time (cards with Prev/Next), the whole session stacked as a
             scrollable list, or that list stripped to just names and set rows (compact). Legacy or
             unknown values read as cards. The workout's ⋯ menu can override it for one session. */}
-        <Row icon="layout" iconTint="var(--blue)" title={t('Layout')}>
-          <Segmented className="seg-inline"
+        <SelectRow icon="layout" iconTint="var(--blue)" title={t('Layout')}
             options={[{ value: 'cards', label: t('Cards') }, { value: 'list', label: t('List') }, { value: 'compact', label: t('Compact') }, { value: 'focus', label: t('Focus') }]}
             value={layout} onChange={v => update(s => { s.workoutView = v })} />
-        </Row>
         {/* The saved side of the Layout menu's "Collapse completed exercises" (#241): on here, every
             session starts with it, and the menu still flips it for one session. Setting it here
             also drops a running session's own choice, so the switch does what it says right away. */}
@@ -654,15 +653,11 @@ export default function Settings({ page = null, find = null, via = null, entryKe
               onChange={v => update(s => { s.keepAwake = v })} />
           </Row>
         )}
-        {/* 'full'/'mini' is also what the tap-toggle on the workout animation writes; 'off' hides
-            workout media entirely (library, detail sheet and picker thumbs are unaffected).
-            Legacy/unknown values read as 'full'. */}
-        <Row icon="image" iconTint="var(--teal)" title={t('Exercise animations')}>
-          <Segmented className="seg-inline"
-            options={[{ value: 'full', label: t('Full') }, { value: 'mini', label: t('Small') }, { value: 'off', label: t('Hidden') }]}
-            value={S.gifSize === 'mini' || S.gifSize === 'off' ? S.gifSize : 'full'}
+        {/* Legacy full values now use the compact workout preview; enlargement is temporary. */}
+        <SelectRow icon="image" iconTint="var(--teal)" title={t('Exercise animations')}
+            options={[{ value: 'mini', label: t('Small') }, { value: 'off', label: t('Hidden') }]}
+            value={S.gifSize === 'off' ? 'off' : 'mini'}
             onChange={v => update(s => { s.gifSize = v })} />
-        </Row>
         {/* Store apps: how sharp the animations are, from packs this device downloads. Per device,
             never synced: the profile is not touched (components/Animations.jsx). */}
         <AnimationQualityRow />
@@ -806,11 +801,9 @@ export default function Settings({ page = null, find = null, via = null, entryKe
               onChange={v => { update(s => { s.spokenCues = v }); if (v) speak(sampleCue(S.unit), { rate: SPEECH_RATES[speechRateOf(S)] }) }} />
           </Row>
           {S.spokenCues === true && <>
-            <Row icon="speaker" iconTint="var(--teal)" title={t('Speaking rate')}>
-              <Segmented className="seg-inline"
-                options={[{ value: 'slow', label: t('Slow') }, { value: 'normal', label: t('Normal') }, { value: 'fast', label: t('Fast') }]}
+            <SelectRow icon="speaker" iconTint="var(--teal)" title={t('Speaking rate')}
+            options={[{ value: 'slow', label: t('Slow') }, { value: 'normal', label: t('Normal') }, { value: 'fast', label: t('Fast') }]}
                 value={speechRateOf(S)} onChange={v => { update(s => { s.speechRate = v }); speak(sampleCue(S.unit), { rate: SPEECH_RATES[v], queue: false }) }} />
-            </Row>
             {/* An action, not a page: no chevron, which promises somewhere to go. */}
             <Row icon="play" iconTint="var(--green)" title={t('Try it')}
               onClick={() => speak(sampleCue(S.unit), { rate: SPEECH_RATES[speechRateOf(S)], queue: false })} />
@@ -830,13 +823,11 @@ export default function Settings({ page = null, find = null, via = null, entryKe
       <Section>
         {/* Fixed Week (S.week) or Rotation (the live queue, lib/queue.js + lib/rotation.js).
             Derived from the queue, never stored. */}
-        <Row icon="repeat" iconTint="var(--orange)" title={t('How you train')}>
-          {externalQ
-            ? <span className="small dim">{t('Rotation')} · {t('Externally managed')}</span>
-            : <Segmented className="seg-inline"
-                options={[{ value: 'week', label: t('Fixed Week') }, { value: 'rotation', label: t('Rotation') }]}
-                value={mode} onChange={setScheduleMode} />}
-        </Row>
+        {externalQ
+          ? <Row icon="repeat" iconTint="var(--orange)" title={t('How you train')} value={<>{t('Rotation')} · {t('Externally managed')}</>} />
+          : <SelectRow icon="repeat" iconTint="var(--orange)" title={t('How you train')}
+              options={[{ value: 'week', label: t('Fixed Week') }, { value: 'rotation', label: t('Rotation') }]}
+              value={mode} onChange={setScheduleMode} />}
         {/* Rotation chosen with no loop running yet: the loop is built on Plan. */}
         {mode === 'rotation' && !liveQ && <Row icon="calendar" iconTint="var(--orange)" title={t('Build your loop in Plan')}
           accessory="chevron" onClick={() => nav('/plan')} />}
@@ -848,11 +839,9 @@ export default function Settings({ page = null, find = null, via = null, entryKe
             ...[1, 2, 3, 4, 5, 6, 7].map(n => ({ value: n, label: String(n) }))]} />}
         {/* Monday or Sunday: the Plan list, the Home strip, the calendar grid and every "this
             week" total follow it. Stored as a getDay() index (see lib/format.js). */}
-        <Row icon="calendar" iconTint="var(--orange)" title={t('Week starts on')}>
-          <Segmented className="seg-inline"
+        <SelectRow icon="calendar" iconTint="var(--orange)" title={t('Week starts on')}
             options={[{ value: MONDAY, label: t('Monday') }, { value: SUNDAY, label: t('Sunday') }]}
             value={weekStartOf(S)} onChange={v => update(s => { s.weekStart = v })} />
-        </Row>
       </Section>
       <Section>
         {/* The target range of weekly sets for each main muscle (lib/muscle-targets.js). */}
@@ -886,27 +875,21 @@ export default function Settings({ page = null, find = null, via = null, entryKe
         </>}
       </Section>
       <Section footer={t('Switching the unit offers to convert every stored weight.')}>
-        <Row icon="scale" iconTint="var(--teal)" title={t('Weight unit')}>
-          <Segmented className="seg-inline"
+        <SelectRow icon="scale" iconTint="var(--teal)" title={t('Weight unit')}
             options={[{ value: 'kg', label: 'kg' }, { value: 'lb', label: 'lb' }]}
             value={S.unit} onChange={v => switchUnit(v)} />
-        </Row>
         {/* Display only: one decimal reads fine for plate-loadable numbers, two for anyone whose
             per-side figure lands on .25 or .75, or who loads microplates (issue #139). Nothing is
             stored or rounded differently; lib/format.js fmtNum just prints what is already there. */}
-        <Row icon="ruler" iconTint="var(--teal)" title={t('Weight decimals')} subtitle={t('How precisely weights are shown.')}>
-          <Segmented className="seg-inline"
+        <SelectRow icon="ruler" iconTint="var(--teal)" title={t('Weight decimals')} subtitle={t('How precisely weights are shown.')}
             options={[{ value: 1, label: t('0.5') }, { value: 2, label: t('0.25') }]}
             value={S.wdec === 2 ? 2 : 1} onChange={v => update(s => { s.wdec = v })} />
-        </Row>
         {/* Cardio speed (Discord "miles per hour"). Unlike the weight unit this converts nothing:
             speeds stay stored in km/h and only what is shown and typed follows it (lib/speed.js).
             Until chosen it follows the weight unit, so a profile in pounds already reads mph. */}
-        <Row icon="figureRun" iconTint="var(--teal)" title={t('Speed unit')}>
-          <Segmented className="seg-inline"
+        <SelectRow icon="figureRun" iconTint="var(--teal)" title={t('Speed unit')}
             options={[{ value: 'kmh', label: 'km/h' }, { value: 'mph', label: 'mph' }]}
             value={speedUnitOf(S)} onChange={v => update(s => { s.speedUnit = v })} />
-        </Row>
         {/* Which formula turns a set into an estimated 1RM (Discord, #155): the exercise page,
             the 1RM chart and records all follow it. Formula names are people, not words. */}
         <SelectRow icon="chart" iconTint="var(--teal)" title={t('1RM formula')}
@@ -955,18 +938,14 @@ export default function Settings({ page = null, find = null, via = null, entryKe
 
     look: () => <>
       <Section footer={DEMO || MOBILE || !user ? undefined : t('synced with your profile')}>
-        <Row icon="moon" iconTint="var(--indigo)" title={t('Theme')}>
-          <Segmented
-            className="seg-inline"
+        <SelectRow icon="moon" iconTint="var(--indigo)" title={t('Theme')}
             options={[
               { value: 'dark', icon: 'moon', label: t('Dark') },
               { value: 'light', icon: 'sun', label: t('Light') },
               { value: 'system', icon: 'gear', label: t('System') },
             ]}
             value={S.theme || 'dark'}
-            onChange={v => update(s => { s.theme = v })}
-          />
-        </Row>
+            onChange={v => update(s => { s.theme = v })} />
         <div className="lrow" style={{ flexWrap: 'wrap', rowGap: 12, paddingBottom: 14 }}>
           <span className="lrow-i" style={{ '--tint': 'var(--purple)' }}><Icon name="palette" /></span>
           <span className="lrow-m"><span className="lrow-t">{t('Accent color')}</span></span>
@@ -976,26 +955,18 @@ export default function Settings({ page = null, find = null, via = null, entryKe
         {/* The home-screen icon: the phone's own, not synced; in the phone app only. */}
         {MOBILE && platformNow() && <AppIconRow />}
         {/* How the muscle map is drawn. The exercise drawings follow it until they are set below. */}
-        <Row icon="figureStrength" iconTint="var(--teal)" title={t('Body diagram')}>
-          <Segmented
-            className="seg-inline"
+        <SelectRow icon="figureStrength" iconTint="var(--teal)" title={t('Body diagram')}
             options={[{ value: 'male', label: t('Male') }, { value: 'female', label: t('Female') }]}
             value={S.body === 'female' ? 'female' : 'male'}
-            onChange={v => update(s => { s.body = v })}
-          />
-        </Row>
+            onChange={v => update(s => { s.body = v })} />
         {/* Which figure the exercise animations show where both exist (about 940 exercises; the
             rest are drawn once). Only the picture changes: the exercise and its id stay the same,
             so nothing logged is touched, on this device or any other. */}
-        <Row icon="figureStrength" iconTint="var(--teal)" title={t('Exercise drawings')}
-          subtitle={t('Where an exercise is drawn on both figures. Your workouts stay exactly as they are.')}>
-          <Segmented
-            className="seg-inline"
+        <SelectRow icon="figureStrength" iconTint="var(--teal)" title={t('Exercise drawings')}
+          subtitle={t('Where an exercise is drawn on both figures. Your workouts stay exactly as they are.')}
             options={[{ value: 'male', label: t('Male') }, { value: 'female', label: t('Female') }]}
             value={figureOf(S)}
-            onChange={v => update(s => { s.exFigure = v })}
-          />
-        </Row>
+            onChange={v => update(s => { s.exFigure = v })} />
       </Section>
       {/* Halloween and whatever comes after it (lib/seasonal.js), on a page of their own. */}
       {on('seasonal') && <Section>
@@ -1057,11 +1028,9 @@ export default function Settings({ page = null, find = null, via = null, entryKe
           : choice === 'off' ? t('Off, even in season. Fair enough.')
           : inSeason(th) ? t(th.during) : t(th.back)
         return <Section key={th.id} footer={note}>
-          <Row icon={th.icon} iconTint={th.tint} title={t(th.title)}>
-            <Segmented className="seg-inline"
-              options={[{ value: 'auto', label: t('Auto') }, { value: 'on', label: t('On') }, { value: 'off', label: t('Off') }]}
+          <SelectRow icon={th.icon} iconTint={th.tint} title={t(th.title)}
+            options={[{ value: 'auto', label: t('Auto') }, { value: 'on', label: t('On') }, { value: 'off', label: t('Off') }]}
               value={choice} onChange={v => set(th.id, v)} />
-          </Row>
           {th.colors && <Row icon="palette" iconTint="var(--purple)" title={t(th.colorsTitle)} subtitle={t(th.colorsNote)}>
             <Switch aria-label={t(th.colorsTitle)} checked={S.seasonal?.[th.id + 'Colors'] === true}
               onChange={v => set(th.id + 'Colors', v)} />
@@ -1276,7 +1245,7 @@ export default function Settings({ page = null, find = null, via = null, entryKe
   /* ---------------- a page ---------------- */
   if (page && pages[page]) {
     const parent = PAGES[page].parent
-    return <div className="narrow" ref={body}>
+    return <div className="narrow settings-refined" ref={body}>
       <div className="sp-nav">
         {/* Named by what it says ("Settings", "Workout"), so a voice command for the visible
             word finds it; the chevron is hidden from assistive tech. */}
@@ -1318,7 +1287,7 @@ function SettingsRoot({ ctx, preview, open, user, sync, home, go, entryKey }) {
   // it the admin dashboard has no Coach card to land on.
   const config = useStore(s => s.config)
   const adminCoach = !MOBILE && !DEMO && !!user?.admin && coachAvailable(config, user) && (!ctx.mod || ctx.mod('coach'))
-  return <div className="narrow">
+  return <div className="narrow settings-refined">
     <div className="sp-nav">
       <button className="sp-back" data-back="/home" onClick={home} aria-label={t('Home')}><Icon name="chevronLeft" /><span>{t('Home')}</span></button>
     </div>
@@ -1339,14 +1308,14 @@ function SettingsRoot({ ctx, preview, open, user, sync, home, go, entryKey }) {
           <Icon name="chevronRight" className="lrow-c" />
         </button>
       </Section>
-      {ROOT_GROUPS.map(g => g.filter(id => pageVisible(id, ctx))).filter(g => g.length).map(g => (
-        <Section key={g[0]}>
+      {ROOT_GROUPS.map((group, index) => ({ ids: group.filter(id => pageVisible(id, ctx)), title: ROOT_GROUP_TITLES[index] })).filter(g => g.ids.length).map(({ ids: g, title }) => (
+        <Section key={title} title={t(title)}>
           {g.map(id => <Row key={id} icon={PAGES[id].icon} iconTint={PAGES[id].tint} title={t(PAGES[id].title)}
             value={preview[id]?.() || null} accessory="chevron" onClick={() => open(id)} className="sp-root-row" tour={'settings-' + id} />)}
-          {/* The phone app sets up its own Coach on the Coach page beside Look; in a hosted app the
+          {/* The phone app sets up its own Coach in Connections; in a hosted app the
               Coach is the server's, set up by an admin on the admin dashboard. Its admins get the
               same row, in the same place, straight to that card; nobody else has anything to set. */}
-          {g[0] === 'look' && adminCoach && <Row icon={PAGES.coach.icon} iconTint={PAGES.coach.tint} title={t(PAGES.coach.title)}
+          {g.includes('integrations') && adminCoach && <Row icon={PAGES.coach.icon} iconTint={PAGES.coach.tint} title={t(PAGES.coach.title)}
             value={t('Admin')} accessory="chevron" onClick={() => nav('/admin', { state: { section: 'coach' } })} className="sp-root-row" />}
         </Section>
       ))}

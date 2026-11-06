@@ -1,0 +1,114 @@
+/* Scoped refinements for settings and guided screens. Shared primitives keep their behavior. */
+.settings-refined .sect { margin-block-end: 24px; }
+.settings-refined .sp-root-row,
+.settings-refined .module-row { min-height: 56px; }
+.settings-refined .sp-root-row .lrow-i,
+.settings-refined .module-row .lrow-i,
+.integrations-refined .intg-open .lrow-i {
+  color: var(--label-2);
+  background: transparent;
+}
+.settings-refined .sp-avatar { width: 44px; height: 44px; font-size: 24px; background: var(--surface-2); }
+.settings-refined .sp-avatar.on { background: var(--acc-soft); color: var(--acc-ink); }
+.settings-refined .sp-acct .lrow-t { font-size: var(--fs-body); }
+.settings-refined .sp-back,
+.settings-refined .intg-act,
+.guided-refined .iconbtn,
+.guided-refined .ob-skip,
+.guided-refined .chip,
+.coach-refined .iconbtn,
+.coach-refined .qchip { min-width: 44px; min-height: 44px; }
+.settings-refined .intg-act { white-space: normal; overflow-wrap: anywhere; max-width: 36%; }
+.settings-refined .lrow-m,
+.settings-refined .lrow-v { min-width: 0; }
+.settings-refined .lrow-t,
+.settings-refined .lrow-s { overflow-wrap: anywhere; }
+.settings-disclosure { color: var(--label-2); font-size: var(--fs-subhead); }
+.settings-disclosure > summary {
+  min-height: 44px;
+  padding: 12px 16px;
+  line-height: 1.4;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.settings-disclosure > summary:focus-visible { outline: 2px solid var(--acc); outline-offset: -2px; border-radius: var(--r-card); }
+.settings-disclosure[open] > summary { color: var(--label); }
+.garmin-refined .garmin-actions { gap: 8px; }
+.garmin-refined .garmin-error,
+.garmin-cloud-settings [role="alert"] { margin: 0; padding: 0 16px 16px; color: var(--red-ink); overflow-wrap: anywhere; }
+.garmin-help-disclosure { margin-block-end: 24px; border-radius: var(--r-card); background: var(--surface); }
+.garmin-help-disclosure .sect { margin-block-end: 0; }
+.garmin-help .settings-disclosure > summary { padding-inline: 0; }
+.garmin-help .settings-disclosure p + p { margin-block-start: 12px; }
+.garmin-health-controls { padding: 0 16px 16px; }
+.garmin-health-controls > p { line-height: 1.5; margin: 0 0 16px; }
+.garmin-health-controls .measure-date { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-block-end: 8px; }
+.garmin-health-controls input { min-width: 0; min-height: 44px; max-width: 70%; }
+.garmin-health-controls > .btn { margin-block: 8px; }
+.garmin-health-controls > .garmin-health-read { justify-content: flex-start; min-height: 48px; text-align: start; background: transparent; padding-inline: 0; color: var(--acc-ink); }
+.garmin-health-controls > .garmin-health-read:disabled { color: var(--label-2); }
+.garmin-health-controls > .garmin-health-reason { margin-block: 0 12px; }
+.garmin-health-settings .garmin-health-summary { margin-block-start: 8px; }
+.garmin-health-settings .garmin-health-summary h4 { margin-block: 0 4px; }
+.garmin-health-settings .garmin-health-summary-grid { gap: 8px; margin-block: 12px; }
+.garmin-health-settings .garmin-health-summary-card { padding: 12px; }
+.garmin-health-settings .garmin-health-summary-value { margin-block-start: 4px; font-size: var(--fs-title3); }
+.garmin-health-period { border-block-start: 1px solid var(--sep); }
+.garmin-health-period > summary { padding-inline: 0; }
+.garmin-health-period > summary span + span { margin-inline-start: 8px; color: var(--label); font-variant-numeric: tabular-nums; }
+.garmin-health-period > p { line-height: 1.5; }
+.garmin-account-actions { margin-block-end: 12px; }
+.garmin-account-actions .btn { min-height: 44px; }
+.garmin-health-controls [role="alert"] { color: var(--red-ink); margin-block: 8px 16px; overflow-wrap: anywhere; }
+.garmin-health-controls [role="status"] { overflow-wrap: anywhere; }
+.garmin-health-archive { margin-block-start: 16px; border-block-start: 1px solid var(--sep); }
+.garmin-health-archive > summary { padding-inline: 0; }
+.garmin-health-archive dl > div { flex-wrap: wrap; }
+.garmin-health-archive dd { max-width: 100%; }
+.guided-refined .ob-top { align-items: center; min-height: 44px; }
+.guided-refined .ob-h { overflow-wrap: anywhere; }
+.guided-refined .ob-skip { padding-inline: 8px; }
+.guided-refined input,
+.guided-refined select { min-height: 44px; }
+.first-launch-refined { display: flex; flex-direction: column; justify-content: center; min-height: 78svh; text-align: center; padding-block: 24px; }
+.first-launch-refined > .btn { min-height: 48px; }
+.first-launch-refined > .btn.ghost { color: var(--label-2); }
+.first-launch-advanced { margin-block-start: 18px; }
+.first-launch-advanced > summary { display: list-item; width: fit-content; margin-inline: auto; }
+.first-launch-advanced .btn { min-height: 44px; }
+.coach-refined .chips-row { gap: 8px; }
+@media (max-width: 360px) {
+  .settings-refined .intg-open { padding-inline: 12px; gap: 8px; }
+  .settings-refined .intg-act { margin-inline-end: 8px; padding-inline: 10px; }
+  .guided-refined .ob-top { gap: 8px; }
+}
+
+.modules-details { background: var(--surface); border-radius: var(--r-card); }
+.modules-descriptions { margin: 0; padding: 0 16px 16px; }
+.modules-descriptions > div + div { margin-block-start: 12px; }
+.modules-descriptions dt { font-size: var(--fs-subhead); font-weight: 600; }
+.modules-descriptions dd { margin: 4px 0 0; color: var(--label-2); font-size: var(--fs-footnote); line-height: 1.5; }
+.onboarding-details { margin-block-start: 12px; text-align: start; }
+.onboarding-details > summary { width: fit-content; margin-inline: auto; }
+.onboarding-benefits { display: grid; gap: 8px; padding-block: 8px; }
+.onboarding-benefits .row { gap: 10px; }
+.onboarding-benefits .icn { color: var(--label-2); flex: none; }
+.coach-refined .chat-hdr { gap: 8px; }
+.coach-refined .chat-hdr .iconbtn { flex: none; }
+.coach-refined .chips-row { flex-wrap: wrap; }
+.coach-refined .qchip { min-width: 0; max-width: 100%; white-space: normal; text-align: start; }
+.coach-refined .pcard-chg-v { flex-wrap: wrap; }
+.coach-refined .pcard-chg-v .tag { white-space: normal; overflow-wrap: anywhere; }
+.coach-limit-row .field { width: 100%; }
+.coach-limit-row > .coach-limit-value { width: 118px; max-width: 40%; flex: none; }
+.coach-advanced { margin-block-end: 24px; background: var(--surface); border-radius: var(--r-card); }
+.coach-advanced .sect { margin-block-end: 0; }
+
+.settings-picker-help { display: flex; align-items: center; border-block-end: 1px solid var(--sep); }
+.settings-picker-help > .lrow { flex: 1; min-width: 0; border-block-end: 0; }
+.settings-picker-help > .helpbtn { min-width: 44px; min-height: 44px; margin-inline-end: 8px; }
+
+/* One page-title scale across the three Coach entry points. */
+.coach-refined .sp-title,
+.coach-refined .chat-hdr h1,
+.coach-refined .ob-h { font-size: var(--fs-large); line-height: 1.2; overflow-wrap: anywhere; }

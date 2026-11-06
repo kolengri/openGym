@@ -30,16 +30,27 @@ const button = text => [...host.querySelectorAll('button')].find(b => b.textCont
 it('reads explicit health data, reports progress and shows archived metrics', async () => {
   await act(async () => root.render(<GarminHealthSettings connected />))
   expect(host.querySelector('input[aria-label="From"]').value).toBe(todayISO())
+  const period = host.querySelector('.garmin-health-period')
+  expect(period.open).toBe(false)
+  expect(host.querySelector('input[aria-label="From"]').closest('details')).toBe(period)
+  expect(button('Read Garmin health data').closest('details')).toBeNull()
+  expect(button('Read Garmin health data').compareDocumentPosition(host.querySelector('.garmin-health-summary')) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  expect(host.querySelector('.garmin-health-summary').compareDocumentPosition(period) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   await act(async () => button('Read Garmin health data').click())
   expect(bridge.readHealthMetric).toHaveBeenCalledOnce()
   expect(useStore.getState().S.bodyweight[0].w).toBe(78.3)
   expect(host.textContent).toContain('Available: 1. No data: 0. Errors: 0. Weigh-ins added: 1.')
-  expect(host.querySelector('summary').textContent).toBe('Body composition')
+  expect(host.querySelector('[role="status"]').closest('details')).toBeNull()
+  expect(host.querySelector('.garmin-health-archive > summary').textContent).toBe('Saved readings')
+  expect(host.querySelector('.garmin-health-archive').open).toBe(false)
+  expect(host.querySelector('.garmin-health-archive details > summary').textContent).toBe('Body composition')
   expect(button('Export Garmin health data')).toBeTruthy()
 })
 it('keeps reading disabled before an explicit Garmin connection', async () => {
   await act(async () => root.render(<GarminHealthSettings connected={false} />))
   expect(button('Read Garmin health data').disabled).toBe(true)
+  expect(host.querySelector('.garmin-health-reason').textContent).toBe('Garmin Connect must be ready before reading health data.')
+  expect(host.querySelector('.garmin-health-reason').closest('details')).toBeNull()
   expect(bridge.readHealthMetric).not.toHaveBeenCalled()
 })
 
@@ -70,13 +81,14 @@ it.each([
   await act(async () => button('Read Garmin health data').click())
   expect(bridge.readHealthMetric).toHaveBeenCalledOnce()
   expect(host.querySelector('[role="alert"]').textContent).toContain(message)
+  expect(host.querySelector('[role="alert"]').closest('details')).toBeNull()
 })
 it('shows archived health cards while disconnected without starting health requests', async () => {
   rows.set(todayISO() + 'body_composition', { date: todayISO(), metric: 'body_composition', status: 'available', data: { dateWeightList: [{ date: '2026-10-19T12:00:00', weight: 78257 }] } })
   await act(async () => root.render(<GarminHealthSettings connected={false} />))
   expect(host.querySelector('.garmin-health-summary').textContent).toContain('78.3 kg')
   expect(host.querySelector('time').dateTime).toBe('2026-10-19')
-  expect(host.querySelector('details').textContent).toContain('date Weight List')
+  expect(host.querySelector('.garmin-health-archive').textContent).toContain('date Weight List')
   expect(bridge.readHealthMetric).not.toHaveBeenCalled()
   await act(async () => useStore.setState({ S: { ...useStore.getState().S, unit: 'lb' } }))
   expect(host.querySelector('.garmin-health-summary').textContent).toContain('172.5 lb')
@@ -102,7 +114,8 @@ it('exports earlier saved days even when the final day has no readings', async (
     input.dispatchEvent(new Event('change', { bubbles: true }))
     input.dispatchEvent(new Event('input', { bubbles: true }))
   })
-  expect(host.querySelector('summary')).toBeNull()
+  expect(host.querySelector('.garmin-health-archive details')).toBeNull()
+  host.querySelector('.garmin-health-archive').open = true
   await act(async () => button('Export Garmin health data').click())
   expect(shareExport).toHaveBeenCalledOnce()
   expect(JSON.parse(shareExport.mock.calls[0][0]).readings).toEqual([rows.get(day + 'body_composition')])
@@ -120,7 +133,10 @@ for (const cancel of ['button', 'owner ABA', 'session ABA', 'unmount']) it(`does
   act(() => button('Export Garmin health data').click())
   if (cancel === 'unmount') act(() => root.render(null))
   await act(async () => {
-    if (cancel === 'button') button('Cancel').click()
+    if (cancel === 'button') {
+      expect(button('Cancel').closest('details')).toBeNull()
+      button('Cancel').click()
+    }
     if (cancel === 'owner ABA') { useStore.setState({ user: { id: 'other' } }); useStore.setState({ user: null }) }
     if (cancel === 'session ABA') {
       useStore.getState().update(s => { s.garminCloudSessionId = 'other' })

@@ -20,7 +20,7 @@ describe('routineFromSession', () => {
     expect(cfg).not.toHaveProperty('min')
     expect(cfg).not.toHaveProperty('speed')
     expect(rebuild(cfg).target.km).toBe(4.8)
-    expect(rebuild(cfg).sets).toEqual([{ done: false }])
+    expect(rebuild(cfg).sets).toEqual([{ km: 4.8, done: false }])
   })
 
   it('saves a per-side timed hold with its planned sets, not one per side row (#322)', () => {

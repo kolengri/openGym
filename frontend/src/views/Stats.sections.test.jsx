@@ -1,6 +1,5 @@
 // @vitest-environment happy-dom
-// Stats in four parts with a sticky index (redesign 1.4.5, P5): one page, each part with its
-// heading, an index that jumps there and writes the part into the address.
+// Stats panels preserve chart state and existing section links, including refresh and Back.
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, describe, expect, it, vi } from 'vitest'
@@ -35,7 +34,7 @@ describe('Stats sections (P5)', () => {
   it('groups the cards into parts with headings, the tour anchors inside them', () => {
     mount()
     const parts = index().map(b => b.textContent)
-    expect(parts.slice(0, 3)).toEqual(['Overview', 'Body', 'Lifts'])
+    expect(parts.slice(0, 3)).toEqual(['Overview', 'Exercises', 'Body'])
     // every part but the first has its heading, and Effort is offered only when its part is there
     expect([...host.querySelectorAll('.stats-sect-h')].map(h => h.textContent)).toEqual(parts.slice(1))
     expect(!!host.querySelector('#stats-effort')).toBe(parts.includes('Effort'))
@@ -43,14 +42,14 @@ describe('Stats sections (P5)', () => {
     expect(host.querySelector('#stats-lifts [data-tour="stats-records"]')).toBeTruthy()
     expect(host.querySelector('#stats-body [data-tour="stats-measure"]')).toBeTruthy()
   })
-  it('a tap marks the part, scrolls to it and puts it in the address', () => {
+  it('a tap selects only that panel and puts it in the address', () => {
     window.history.replaceState(null, '', '#/stats')
     mount()
-    const into = vi.fn()
-    host.querySelector('#stats-lifts').scrollIntoView = into
-    act(() => index()[2].click())
-    expect(index()[2].getAttribute('aria-pressed')).toBe('true')
-    expect(into).toHaveBeenCalled()
+    act(() => index()[1].click())
+    expect(index()[1].getAttribute('aria-pressed')).toBe('true')
+    expect(host.querySelector('#stats-lifts').hidden).toBe(false)
+    expect(host.querySelector('#stats-overview').hidden).toBe(true)
+    expect(host.querySelector('#stats-body').hidden).toBe(true)
     expect(window.location.hash).toBe('#/stats?section=lifts')
     act(() => index()[0].click())
     expect(window.location.hash).toBe('#/stats')
@@ -58,17 +57,59 @@ describe('Stats sections (P5)', () => {
   it('opens on the part the address names', () => {
     window.history.replaceState(null, '', '#/stats?section=body')
     mount()
-    expect(index()[1].getAttribute('aria-pressed')).toBe('true')
+    expect(index()[2].getAttribute('aria-pressed')).toBe('true')
   })
-  it('leaves the highlight alone while a sheet pins the page (it jumped to the last part)', async () => {
+  it('keeps the selected panel while a sheet pins the page or the reader scrolls', async () => {
     window.history.replaceState(null, '', '#/stats')
     mount()
     document.body.style.position = 'fixed'
-    await act(async () => { window.dispatchEvent(new Event('scroll')); await new Promise(r => setTimeout(r, 60)) })
+    await act(async () => { window.dispatchEvent(new Event('scroll')); await new Promise(r => setTimeout(r, 20)) })
     expect(index()[0].getAttribute('aria-pressed')).toBe('true')
     document.body.style.position = ''
-    await act(async () => { window.dispatchEvent(new Event('scroll')); await new Promise(r => setTimeout(r, 60)) })
-    // unpinned, the spy reads the page again (here every part sits at the top, so the last wins)
-    expect(index().at(-1).getAttribute('aria-pressed')).toBe('true')
+    await act(async () => { window.dispatchEvent(new Event('scroll')); await new Promise(r => setTimeout(r, 20)) })
+    expect(index()[0].getAttribute('aria-pressed')).toBe('true')
+  })
+
+  it('responds to browser history and keeps ranges and panel content mounted between switches', () => {
+    window.history.replaceState(null, '', '#/stats')
+    mount()
+    act(() => index()[1].click())
+    const chart = host.querySelector('[data-tour="stats-records"]')
+    const range = [...chart.querySelectorAll('.seg button')].find(b => b.textContent === '3M')
+    act(() => range.click())
+    act(() => index()[2].click())
+    expect(chart.closest('section').hidden).toBe(true)
+    act(() => {
+      window.history.replaceState(null, '', '#/stats?section=lifts')
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    })
+    expect(chart.closest('section').hidden).toBe(false)
+    expect(host.querySelector('[data-tour="stats-records"]')).toBe(chart)
+    expect(range.getAttribute('aria-pressed')).toBe('true')
+    act(() => {
+      window.history.replaceState(null, '', '#/stats?section=body')
+      window.dispatchEvent(new HashChangeEvent('hashchange'))
+    })
+    expect(host.querySelector('#stats-body').hidden).toBe(false)
+  })
+
+  it('opens the planned muscle view from the existing weekly-volume link', () => {
+    window.history.replaceState(null, '', '#/stats?focus=weekly-volume')
+    mount()
+    expect(host.querySelector('#stats-lifts').hidden).toBe(false)
+    expect(index()[1].getAttribute('aria-pressed')).toBe('true')
+  })
+
+  it('uses one period for each panel and keeps body logging in the shared header location', () => {
+    mount()
+    expect(host.querySelectorAll('#stats-lifts .exercise-period')).toHaveLength(1)
+    expect(host.querySelector('[data-muscles] [aria-label^="Period:"]')).toBeNull()
+    expect(host.querySelectorAll('#stats-effort .effort-period').length).toBeLessThanOrEqual(1)
+    expect(host.querySelector('.effort-card .seg-range')).toBeNull()
+    act(() => index()[2].click())
+    expect(host.querySelector('.hdr [aria-label="Log body weight"]')).toBeTruthy()
+    expect(host.querySelectorAll('#stats-body .progress-body-tabs button')).toHaveLength(4)
+    expect(host.querySelectorAll('#stats-body .seg-range')).toHaveLength(1)
+    expect(host.querySelector('#stats-body .weight-history')).toBeTruthy()
   })
 })

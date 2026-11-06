@@ -1,9 +1,10 @@
+import '../styles/settings-refinement.css'
 import { useEffect, useState } from 'react'
 import { useUI } from '../store/useUI.js'
 import { useStore } from '../store/useStore.js'
 import { api } from '../lib/api.js'
 import Icon from '../components/Icon.jsx'
-import { Button, Switch, TextArea, TextField } from '../components/ui.jsx'
+import { Button, SelectRow, Switch, TextArea, TextField } from '../components/ui.jsx'
 import { confirmSheet } from '../sheets.jsx'
 
 /* The operator's side of the Coach, laid out as a guided setup: one master switch, numbered
@@ -113,9 +114,9 @@ export default function AdminCoach() {
     setBusy(false)
   }
 
-  if (!d) return <div className="card"><div className="muted small">Loading Coach status…</div></div>
+  if (!d) return <div className="card coach-refined guided-refined"><div className="muted small">Loading Coach status…</div></div>
 
-  if (d.disabledByEnv) return <div className="card">
+  if (d.disabledByEnv) return <div className="card coach-refined guided-refined">
     <h2 style={{ margin: '0 0 6px' }}>AI Coach</h2>
     <div className="adm-lead">Force-disabled by <code>COACH_DISABLED</code> in the server's environment. Remove that variable and restart to configure the Coach here.</div>
   </div>
@@ -134,7 +135,7 @@ export default function AdminCoach() {
           : !d.runtime.ok ? 'On, but the provider can’t be reached. See the Test step.'
             : 'On'
 
-  // Chips, grouped.
+  // Provider choices keep their setup requirements and saved-key status in the picker.
   const groups = [
     { title: 'Paste an API key', hint: 'Plain HTTPS to the provider. Works on the default api image, nothing extra to install.', items: d.providers.filter(p => p.http) },
     { title: 'Runs a local AI runtime', hint: 'Needs the bigger api image built with --target coach.', items: d.providers.filter(p => RUNTIME_IDS.includes(p.id)) },
@@ -162,7 +163,7 @@ export default function AdminCoach() {
   const stepAt = () => { const i = idx++; return { open: i === (firstTodo === -1 ? -1 : firstTodo), stepKey: i + ':' + (i === firstTodo) } }
 
   // Off = a quiet, optional feature: one clean pitch and one button, no half-dimmed controls.
-  if (!d.enabled) return <div className="card">
+  if (!d.enabled) return <div className="card coach-refined guided-refined">
     <div className="adm-hero">
       <div className="adm-hero-av"><Icon name="sparkles" /></div>
       <h2>AI Coach</h2>
@@ -176,7 +177,7 @@ export default function AdminCoach() {
     </div>
   </div>
 
-  return <div className="card" style={{ borderColor: live ? 'var(--acc)' : undefined }}>
+  return <div className="card coach-refined guided-refined" style={{ borderColor: live ? 'var(--acc)' : undefined }}>
     <div className="row between" style={{ marginBottom: 2 }}>
       <h2 style={{ margin: 0 }}>AI Coach</h2>
       <Switch checked={!!d.enabled} disabled={busy} onChange={v => patch({ enabled: v })} />
@@ -195,16 +196,10 @@ export default function AdminCoach() {
       {/* ---------- provider ---------- */}
       <Step n={num()} title="Provider" hint={meta.label || 'Which AI answers the Coach'} done={step1Done} {...stepAt()}>
         <div className="adm-hint">Pick who answers. A key or token you save stays with its provider, so you can switch back and forth without pasting it again.</div>
-        {groups.map(g => !!g.items.length && <div key={g.title} className="adm-group">
-          <div className="adm-group-t">{g.title}</div>
-          <div className="adm-chips">
-            {g.items.map(p => <button key={p.id} className={'chip' + (p.id === d.provider ? ' on' : '')} disabled={busy}
-              onClick={() => { setTestResult(null); patch({ provider: p.id }) }}>
-              {p.label}{p.connected && <span className="adm-chip-key">key saved</span>}
-            </button>)}
-          </div>
-          <div className="adm-hint" style={{ margin: '6px 0 0' }}>{g.hint}</div>
-        </div>)}
+        <SelectRow title="Provider" value={d.provider} disabled={busy}
+          onChange={provider => { setTestResult(null); patch({ provider }) }}
+          options={groups.flatMap(g => g.items.map(p => ({ value: p.id, label: p.label, subtitle: [g.title, g.hint, p.connected ? 'key saved' : ''].filter(Boolean).join(' · ') })))} />
+
       </Step>
 
       {/* ---------- endpoint (compatible only) ---------- */}
@@ -275,11 +270,10 @@ export default function AdminCoach() {
         <div className="adm-field">
           <label>Model</label>
           {models && models.length
-            ? <select className="adm-select" value={chosenModel} disabled={busy} onChange={e => patch({ model: e.target.value })}>
-              <option value="">{meta.defaultModel ? `Default (${meta.defaultModel})` : 'Pick a model…'}</option>
-              {chosenModel && !models.includes(chosenModel) && <option value={chosenModel}>{chosenModel} (not in the list)</option>}
-              {models.map(m => <option key={m} value={m}>{m}</option>)}
-            </select>
+            ? <SelectRow title="Model" value={chosenModel} disabled={busy} onChange={model => patch({ model })}
+                options={[{ value: '', label: meta.defaultModel ? `Default (${meta.defaultModel})` : 'Pick a model…' },
+                  ...(chosenModel && !models.includes(chosenModel) ? [{ value: chosenModel, label: `${chosenModel} (not in the list)` }] : []),
+                  ...models.map(m => ({ value: m, label: m }))]} />
             : <TextField key={d.provider} defaultValue={chosenModel} placeholder={meta.defaultModel ? `Default: ${meta.defaultModel}` : needsEndpoint ? 'e.g. qwen2.5:3b, or press "List models"' : '(runtime default)'}
               onBlur={e => e.target.value !== chosenModel && patch({ model: e.target.value })} />}
         </div>
@@ -316,18 +310,18 @@ export default function AdminCoach() {
           <div className="adm-group-t">Limits</div>
           <div className="adm-hint">How many Coach runs are allowed per day. Every run is one request on the provider account above. 0 means no limit.</div>
           <div className="adm-kv"><span className="k">Per user, per day</span>
-            <span className="v"><input className="num" type="number" min="0" max="200" defaultValue={d.caps.perProfileDaily} disabled={busy}
+            <span className="v"><TextField className="num" type="number" min="0" max="200" defaultValue={d.caps.perProfileDaily} disabled={busy}
               onBlur={capBlur('perProfileDaily')} /></span></div>
           <div className="adm-kv"><span className="k">Whole instance, per day</span>
-            <span className="v"><input className="num" type="number" min="0" max="5000" defaultValue={d.caps.instanceDaily} disabled={busy}
+            <span className="v"><TextField className="num" type="number" min="0" max="5000" defaultValue={d.caps.instanceDaily} disabled={busy}
               onBlur={capBlur('instanceDaily')} /></span></div>
           <div className="adm-hint" style={{ marginTop: 10 }}>How long a chat message, refinement or review note can be. The chat composer and the server both enforce this.</div>
           <div className="adm-kv"><span className="k">Max message length</span>
-            <span className="v"><input className="num" type="number" min="200" max="4000" defaultValue={d.maxMessageLen} disabled={busy}
+            <span className="v"><TextField className="num" type="number" min="200" max="4000" defaultValue={d.maxMessageLen} disabled={busy}
               onBlur={e => +e.target.value !== d.maxMessageLen && patch({ maxMessageLen: +e.target.value })} /></span></div>
           <div className="adm-hint" style={{ marginTop: 10 }}>The ceiling on a single provider answer. Reasoning models — DeepSeek-style endpoints, or a "thinking" Gemini/OpenAI model — count their hidden reasoning against it, so a plan can fail with "the answer was cut off at the output limit" even though the plan itself is short. Raise it if that happens; keep it within the model's own output limit.</div>
           <div className="adm-kv"><span className="k">Max output tokens</span>
-            <span className="v"><input className="num" type="number" min="1024" max="65536" defaultValue={d.maxOutputTokens} disabled={busy}
+            <span className="v"><TextField className="num" type="number" min="1024" max="65536" defaultValue={d.maxOutputTokens} disabled={busy}
               onBlur={e => +e.target.value !== d.maxOutputTokens && patch({ maxOutputTokens: +e.target.value })} /></span></div>
 
           <div className="adm-group-t" style={{ marginTop: 14 }}>Compare with others</div>

@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import '../styles/progress-refinement.css'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
-import { t, tn } from '../lib/i18n.js'
+import { t, tn, dateLocale } from '../lib/i18n.js'
 import { WorkoutRow, DayNoteRow, workoutDetailSheet, logPastWorkoutSheet } from '../sheets.jsx'
 import { Button } from '../components/ui.jsx'
 import Icon from '../components/Icon.jsx'
 import EmptyState from '../components/EmptyState.jsx'
+import { fmtDate, durPart, fmtVol } from '../lib/format.js'
+import { setsDone, sessionVolume, workoutDuration } from '../lib/history.js'
 import { dayNoteOf } from '../lib/day-notes.js'
 import { reportSheet } from '../components/ReportSheet.jsx'
 
@@ -43,17 +46,24 @@ export default function History() {
     if (end.current) io.observe(end.current)
     return () => io.disconnect()
   }, [more, shown])
-  return <>
+  return <div className="progress-refinement progress-history">
     <div className="hdr"><button className="iconbtn" data-back="/stats" data-tour="history-back" onClick={() => nav('/stats')} aria-label={t('Stats')}><Icon name="chevronLeft" /></button>
       <div style={{ flex: 1, marginInlineStart: 12 }}><h1>{t('History')}</h1><div className="sub">{tn('{0} workout', '{0} workouts', S.workouts.length)}</div></div>
+      {rows.length > 0 && <button className="iconbtn" data-tour="history-add" onClick={logPastWorkoutSheet} aria-label={t('Log a past workout')} title={t('Log a past workout')}><Icon name="plus" /></button>}
       {S.workouts.length > 0 && <button className="iconbtn" onClick={reportSheet} aria-label={t('Performance report')} title={t('Performance report')}><Icon name="note" /></button>}</div>
-    {rows.length > 0 && <Button icon="plus" data-tour="history-add" onClick={logPastWorkoutSheet} style={{ marginBottom: 12 }}>{t('Log a past workout')}</Button>}
-    {rows.length ? <><div className="list">{(more ? rows.slice(0, shown) : rows).map((r, i) => r.w
-      ? <WorkoutRow key={r.w.id} w={r.w} tour={i === 0 ? 'history-row' : undefined} onClick={() => workoutDetailSheet(r.w)} />
-      : <DayNoteRow key={'note-' + r.d} iso={r.d} note={r.note} />)}</div>
+    {rows.length ? <><div className="list history-months">{(more ? rows.slice(0, shown) : rows).map((r, i, visible) => <Fragment key={r.w ? r.w.id : 'note-' + r.d}>
+      {(i === 0 || r.d.slice(0, 7) !== visible[i - 1].d.slice(0, 7)) && <h2 className="history-month">{new Date(r.d + 'T12:00:00').toLocaleDateString(dateLocale(), { month: 'long', year: 'numeric' })}</h2>}
+      {r.w ? <WorkoutRow w={r.w} tour={i === 0 ? 'history-row' : undefined} onClick={() => workoutDetailSheet(r.w)}
+        summary={<span className="history-metrics">
+          <span>{fmtDate(r.d, true)}</span>
+          <span>{durPart(workoutDuration(r.w)).join('') || '–'}</span>
+          <span>{tn('{0} set', '{0} sets', setsDone(r.w))}</span>
+        </span>} trailing={<span className="history-volume">{fmtVol(sessionVolume(r.w, S), S.unit)}</span>} />
+        : <DayNoteRow iso={r.d} note={r.note} />}
+    </Fragment>)}</div>
       {more && <div ref={end} aria-hidden="true" style={{ height: 1 }} />}</>
       : <EmptyState icon="history" text={t('No workouts yet. Your first one will land here.')}>
         <Button variant="tinted" icon="plus" data-tour="history-add" onClick={logPastWorkoutSheet}>{t('Log a past workout')}</Button>
       </EmptyState>}
-  </>
+  </div>
 }

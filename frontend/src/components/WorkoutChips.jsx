@@ -30,7 +30,7 @@ export default function WorkoutChips({ entries, cur, onPick }) {
     if (chip) revealChip(el, chip)
   }, [curKey, chips.length])
   if (!chips.length) return null
-  return <nav ref={strip} className="chips wchips" aria-label={t('Exercises in this workout')}>
+  return <nav ref={strip} className="chips wchips workout-progress-strip" aria-label={t('Exercises in this workout')}>
     {chips.map(c => {
       const names = c.unit.map(idx => exerciseNameText(exOr(entries[idx].id))).join(' + ')
       const label = c.unit.length > 1
@@ -39,7 +39,7 @@ export default function WorkoutChips({ entries, cur, onPick }) {
       return <button key={c.key} type="button" className={'wchip ' + c.state + (c.current ? ' cur' : '')}
         data-unit-key={c.key} aria-current={c.current ? 'step' : undefined} aria-label={label} title={names}
         onClick={() => onPick(c)}>
-        <span>{c.n}</span>{c.unit.length > 1 && <Icon name="link" />}
+        <span className="vh">{c.n}</span>{c.unit.length > 1 && <Icon name="link" />}
       </button>
     })}
   </nav>

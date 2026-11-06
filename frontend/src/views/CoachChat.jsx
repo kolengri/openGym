@@ -1,3 +1,4 @@
+import '../styles/settings-refinement.css'
 // The conversation with the Coach.
 //
 // Everything the Coach does happens here: your answers as the opening message, a typing
@@ -214,10 +215,9 @@ export default function CoachChat() {
     ? t('What should change?')
     : job ? t('Coach is thinking…') : t('Message the Coach…')
 
-  return <div className="narrow chat">
+  return <div className="narrow chat coach-refined">
     <div className="chat-hdr">
       <button className="iconbtn" data-back="/plan" onClick={() => nav('/plan')} aria-label={t('Back')}><Icon name="chevronLeft" /></button>
-      <div className="chat-av"><Icon name="sparkles" /></div>
       <div className="grow">
         <h1>{t('Coach')}</h1>
         <div className={'chat-st' + (job ? ' live' : '')}>{status}</div>
@@ -246,10 +246,9 @@ export default function CoachChat() {
 
     <div className="composer">
       {idle && !busy && <div className="chips-row">
-        <button className="qchip" onClick={askReview}><Icon name="sparkles" />{t('Review my training')}</button>
-        {!!lastWorkout && <button className="qchip" onClick={askDebrief}><Icon name="checkCircle" />{t('Last workout')}</button>}
-        {!!(S.routines || []).length && <button className="qchip" onClick={pickRoutine}><Icon name="wrench" />{t('Improve a routine')}</button>}
-        {community && <button className="qchip" onClick={showCohort}><Icon name="person" />{t('Compare')}</button>}
+        {lastWorkout
+          ? <button className="qchip" onClick={askDebrief}><Icon name="checkCircle" />{t('Last workout')}</button>
+          : <button className="qchip" onClick={askReview}><Icon name="sparkles" />{t('Review my training')}</button>}
       </div>}
       <div className={'composer-in' + (expanded ? ' tall' : '')}>
         <ChatInput value={text} onChange={setText} onSend={send} placeholder={placeholder} disabled={!!job}

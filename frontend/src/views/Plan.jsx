@@ -31,6 +31,7 @@ import {
   chooseRotation, chooseFixedWeek, sequenceOf, isSimpleSequence, segmentAt, REST,
 } from '../lib/rotation.js'
 import { isOn } from '../lib/modules.js'
+import '../styles/planning-refinement.css'
 
 // Plan has two views (v1.3.11): Schedule (how you train, and when) and Routines (what you
 // train). The last one you looked at comes back: a per-device convenience, never synced, so it
@@ -173,24 +174,36 @@ export default function Plan() {
   // A running programme wrote the schedule below (lib/programmes.js); the strip says whose it is.
   const progChip = programmeChip(S)
 
-  return <div className="narrow plan">
+  return <div className="narrow plan planning-plan">
     <div className="hdr">
       <SeasonDeco spot="header-bats" />
-      <div><h1>{t('Plan')}</h1><div className="sub">{mode === 'rotation' ? t('Your routines in a loop') : t('Your weekly routine')}</div></div>
+      <div><h1>{t('Plan')}</h1></div>
       <div className="hdr-actions">
-        {showCoach && <Button size="sm" variant="tinted" icon="sparkles" onClick={() => nav('/coach')}>{t('Coach')}</Button>}
+        {showCoach && <button type="button" className="iconbtn" aria-label={t('Coach')} onClick={() => nav('/coach')}><Icon name="sparkles" /><span className="sr-only">{t('Coach')}</span></button>}
         <button className="iconbtn" data-tour="plan-menu" onClick={openMenu} aria-label={t('Plan options')} title={t('Plan options')}><Icon name="share" /></button>
       </div>
     </div>
     <input ref={fileRef} type="file" accept="application/json,.json" onChange={pickFile} hidden />
-    <Segmented className="plan-views" tour="plan-views" value={view} onChange={setView}
-      options={[{ value: 'schedule', label: t('Schedule') }, { value: 'routines', label: t('Routines') }]} />
+    <Segmented className="plan-views" tour="plan-views" value="schedule" onChange={v => v === 'programmes' ? nav('/plan/programmes') : setView('schedule')}
+      options={[{ value: 'schedule', label: t('Schedule') }, { value: 'programmes', label: t('Programmes') }]} />
     {progChip && <button type="button" className="prog-strip" onClick={() => nav('/plan/programmes')}>
       <Icon name="calendar" /><span className="grow">{S.programmes?.[S.programme?.id]?.name || t('Programme')}</span><span className="tag acc">{progChip}</span>
     </button>}
-    {view === 'routines'
-      ? <Routines S={S} update={update} nav={nav} />
-      : <Schedule S={S} update={update} nav={nav} mode={mode} />}
+    {view === 'routines' ? <>
+      <Row className="planning-routines-back" icon="chevronLeft" title={t('Schedule')} onClick={() => setView('schedule')} />
+      <Routines S={S} update={update} nav={nav} />
+    </> : <>
+      <Schedule S={S} update={update} nav={nav} mode={mode} />
+      <Section className="planning-destinations">
+        <Row icon="dumbbell" title={t('Routines')} subtitle={routineCount(S.routines.length)} accessory="chevron" onClick={() => setView('routines')} />
+      </Section>
+    {/* Weekly muscle volume is analysis: it moved to Stats, next to Muscle balance. Stats only
+        shows that card once there is a routine, so the link waits for one too. */}
+    {S.routines.length > 0 && <Section className="plan-link">
+      <Row icon="chart" iconTint="var(--indigo)" title={t('Weekly muscle volume')}
+        accessory="chevron" onClick={() => nav('/stats?focus=weekly-volume')} />
+    </Section>}
+    </>}
   </div>
 }
 
@@ -283,15 +296,14 @@ function Schedule({ S, update, nav, mode }) {
   // One weekday: what is on it at a glance, and a tap to change it (dayAssignSheet picks one
   // routine, several for a combined day, or a rest day).
   const dayRow = (d, rs = dayRoutines(d)) => {
-    return <div key={d} className="item plan-day" data-day={d} aria-label={t(DAYN[d])} {...tappable(() => dayAssignSheet(d))}>
+    return <div key={d} className={'item plan-day' + (rs.length ? '' : ' planning-rest')} data-day={d} aria-label={t(DAYN[d])} {...tappable(() => dayAssignSheet(d))}>
       <span className={'plan-day-n' + (d === todayDow ? ' today' : '')} aria-hidden="true">{t(DAYS[d])}</span>
-      <span className={'lrow-i' + (rs.length ? '' : ' rest')}><Icon name={rs.length ? glyphOf(rs[0].emoji) : 'moon'} /></span>
-      <div className="grow">
+            <div className="grow">
         <div className="tt">{rs.length ? deriveSessionName(rs.map(r => r.name)) : t('Rest day')}</div>
-        <div className="ss">{rs.length === 1 ? exCount(rs[0].ex.length) : rs.length ? routineCount(rs.length) : t('Tap to plan something')}</div>
+        {rs.length > 0 && <div className="ss">{rs.length === 1 ? exCount(rs[0].ex.length) : routineCount(rs.length)}</div>}
       </div>
       {rs.length > 0 && <MiniBodyMap routines={rs} body={S.body} tour="plan-body" />}
-      <Icon name="chevronRight" className="chev" />
+      {rs.length > 0 && <Icon name="chevronRight" className="chev" />}
     </div>
   }
   // Beside a loop, a weekday shows only what it adds to it: a routine that is in the loop already
@@ -304,19 +316,23 @@ function Schedule({ S, update, nav, mode }) {
   const editing = editLoop && !external
 
   return <>
-    <Section className="plan-mode" tour="plan-mode" footer={mode === 'rotation'
-      ? t('Routines in a loop. Whatever is next stays next until you train it, whatever the day.')
-      : t('The same routines on the same weekdays, every week.')}>
-      <Row icon="repeat" iconTint="var(--orange)" title={t('How you train')}>
-        {/* A planner's own queue is not this app's to switch off: text, not a control. */}
-        {external
-          ? <span className="small dim plan-mode-locked">{t('Rotation')} · {t('Externally managed')}</span>
-          : <Segmented className="seg-inline" value={mode} onChange={setMode}
-              options={[{ value: 'week', label: t('Fixed Week') }, { value: 'rotation', label: t('Rotation') }]} />}
-      </Row>
-      {/* a cobweb in the card's empty top corner, in season (components/Seasonal.jsx) */}
-      <SeasonDeco spot="plan-card" />
-    </Section>
+    <details className="planning-fold planning-mode">
+      <summary><Icon name="repeat" /><span className="grow">{mode === 'rotation' ? t('Rotation') : t('Fixed Week')}<span className="ss">{t('How you train')}</span></span><Icon name="chevronDown" className="planning-fold-chevron" /></summary>
+      <Section className="plan-mode" tour="plan-mode" footer={mode === 'rotation'
+        ? t('Routines in a loop. Whatever is next stays next until you train it, whatever the day.')
+        : t('The same routines on the same weekdays, every week.')}>
+        <Row icon="repeat" iconTint="var(--orange)" title={t('How you train')}>
+          {/* A planner's own queue is not this app's to switch off: text, not a control. */}
+          {external
+            ? <span className="small dim plan-mode-locked">{t('Rotation')} · {t('Externally managed')}</span>
+            : <Segmented className="seg-inline" value={mode} onChange={setMode}
+                options={[{ value: 'week', label: t('Fixed Week') }, { value: 'rotation', label: t('Rotation') }]} />}
+        </Row>
+        {/* a cobweb in the card's empty top corner, in season (components/Seasonal.jsx) */}
+        <SeasonDeco spot="plan-card" />
+        <p className="sect-f">{t('Want two routines on one day? Tap the day and pick both.')}</p>
+      </Section>
+    </details>
 
     {!S.routines.length && <EmptyState className="plan-empty" icon="clipboard" title={t('No routines yet.')} text={t('Make one, or grab the starter plan to get going.')}>
       <Button variant="tinted" icon="clipboard" onClick={starterPlanSheet}>{t('Load starter plan')}</Button>
@@ -334,7 +350,6 @@ function Schedule({ S, update, nav, mode }) {
     {mode === 'week' ? <>
       <h4 className="sec">{t('This week')}</h4>
       <div className="list plan-week" data-tour="plan-week">{weekOrder(ws).map(d => dayRow(d))}</div>
-      <p className="sect-f">{t('Want two routines on one day? Tap the day and pick both.')}</p>
     </> : <div className="rotation">
       <div className="row between plan-sec-h">
         <h4 className="sec">{t('The loop')}{external && <span className="tag" style={{ marginInlineStart: 8 }}>{t('Externally managed')}</span>}</h4>
@@ -401,12 +416,6 @@ function Schedule({ S, update, nav, mode }) {
       </>}
     </div>}
 
-    {/* Weekly muscle volume is analysis: it moved to Stats, next to Muscle balance. Stats only
-        shows that card once there is a routine, so the link waits for one too. */}
-    {S.routines.length > 0 && <Section className="plan-link">
-      <Row icon="chart" iconTint="var(--indigo)" title={t('Weekly muscle volume')} subtitle={t('Now in Stats, next to Muscle balance')}
-        accessory="chevron" onClick={() => nav('/stats?focus=weekly-volume')} />
-    </Section>}
   </>
 }
 

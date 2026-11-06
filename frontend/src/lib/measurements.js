@@ -73,6 +73,8 @@ export function emptyMeasurement(date, custom = []) {
 export function normalizeMeasurementEntry(raw = {}, custom = []) {
   const entry = emptyMeasurement(raw.d || '', custom)
   entry.t = Number.isFinite(+raw.t) ? +raw.t : entry.t
+  if (typeof raw.source === 'string' && raw.source.trim()) entry.source = raw.source.trim().slice(0, 120)
+  if (typeof raw.at === 'string' && Number.isFinite(Date.parse(raw.at))) entry.at = raw.at
   for (const key of MEASUREMENT_KEYS) entry[key] = valid(raw[key], key === 'bodyFat' ? '%' : null)
 
   const known = new Map(custom.map(c => [c.id, c]))
@@ -93,6 +95,8 @@ export function normalizeMeasurementEntry(raw = {}, custom = []) {
 // same check-in, not a reason to throw one away.
 function mergeMeasurementEntries(a, b) {
   const entry = { ...a, t: b.t }
+  if (b.source) entry.source = b.source
+  if (b.at) entry.at = b.at
   for (const key of MEASUREMENT_KEYS) entry[key] = b[key] ?? a[key]
   const other = new Map(a.other.map(o => [o.id, o]))
   for (const o of b.other) {

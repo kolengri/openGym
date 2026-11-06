@@ -1,4 +1,5 @@
 // @vitest-environment happy-dom
+import { createPickerHarness } from './test-picker.js'
 import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -31,6 +32,7 @@ vi.mock('./MobileOnboarding.jsx', () => ({ ConnectSheet: () => null }))
 
 const { default: CoachSetup } = await import('./CoachSetup.jsx')
 
+let picker
 const mounted = []
 function mount(el) {
   const host = document.createElement('div')
@@ -40,8 +42,8 @@ function mount(el) {
   act(() => root.render(el))
   return host
 }
-afterEach(() => { act(() => { mounted.splice(0).forEach(({ root, host }) => { root.unmount(); host.remove() }) }) })
-beforeEach(() => { mocks.toast.mockClear(); mocks.localModels.mockClear(); mocks.setCoachLocal.mockClear() })
+afterEach(() => { picker.destroy(); act(() => { mounted.splice(0).forEach(({ root, host }) => { root.unmount(); host.remove() }) }) })
+beforeEach(() => { picker = createPickerHarness(); mocks.toast.mockClear(); mocks.localModels.mockClear(); mocks.setCoachLocal.mockClear() })
 
 const settle = () => act(() => new Promise(r => setTimeout(r, 0)))
 const byText = (el, sel, text) => [...el.querySelectorAll(sel)].find(n => n.textContent === text)
@@ -54,7 +56,7 @@ async function openCompatible() {
   const page = mount(<CoachSetup />)
   await settle()
   act(() => rowByTitle(page, 'Bring my own API key').click())
-  act(() => byText(page, 'button.chip', 'OpenAI-compatible endpoint').click())
+  picker.open(rowByTitle(page, 'Provider')).choose('OpenAI-compatible endpoint')
   const endpoint = [...page.querySelectorAll('.sect')].find(s => s.querySelector('.sect-t')?.textContent === 'Endpoint')
   return { page, endpoint, input: endpoint.querySelector('input') }
 }
@@ -92,8 +94,7 @@ describe('CoachSetup and an http:// endpoint', () => {
     expect(mocks.localModels.mock.calls[0][0]).toMatchObject({ provider: 'compatible', baseUrl: 'https://ollama.example.com' })
 
     type(input, 'HTTP://ollama.example.com:11434')
-    const select = page.querySelector('select')
-    act(() => { select.value = 'llama3'; select.dispatchEvent(new Event('change', { bubbles: true })) })
+    picker.open(rowByTitle(page, 'Model')).choose('llama3')
     await act(async () => { byText(page, 'button', 'Save and use the Coach').click() })
     expect(mocks.setCoachLocal).not.toHaveBeenCalled()
     expect(mocks.toast).toHaveBeenLastCalledWith(expect.stringMatching(REFUSAL))

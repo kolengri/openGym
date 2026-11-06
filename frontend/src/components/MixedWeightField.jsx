@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useStore } from '../store/useStore.js'
 import { useUI } from '../store/useUI.js'
 import { Button, NumberField, Segmented } from './ui.jsx'
@@ -7,6 +7,7 @@ import { cleanNum, fmtPlate } from '../lib/format.js'
 import { exUnitOf, exView } from '../lib/ex-unit.js'
 import { sessionGymView } from '../lib/gym-inventory.js'
 import { t } from '../lib/i18n.js'
+import { useSheetKeyboard } from '../lib/use-sheet-keyboard.js'
 
 export const LB_PER_KG = 2.2046226218
 export const exactWeightIn = (value, from, to) => from === to ? value : to === 'lb' ? value * LB_PER_KG : value / LB_PER_KG
@@ -49,12 +50,12 @@ function useWeightAmount(initial, unit) {
   }
 }
 
-function WeightInput({ label, amount, autoFocus }) {
+function WeightInput({ label, amount }) {
   const id = useId()
   return <div className="weight-calc-field">
     <label htmlFor={id}>{label}</label>
     <div className="weight-calc-input">
-      <NumberField id={id} className="field" value={amount.input} onChange={amount.onChange} aria-label={label} autoFocus={autoFocus} />
+      <NumberField id={id} className="field" value={amount.input} onChange={amount.onChange} aria-label={label} />
       <button type="button" className="weight-unit" aria-label={t('Weight unit') + ': ' + amount.unit}
         onClick={() => amount.onUnitChange(amount.unit === 'kg' ? 'lb' : 'kg')}>{amount.unit}</button>
     </div>
@@ -63,6 +64,18 @@ function WeightInput({ label, amount, autoFocus }) {
 
 function Calculator({ value, unit, barWeight, onApply, close, guard }) {
   useEffect(() => { guard.listen(); return guard.dispose }, [guard])
+  const ref = useRef(null)
+  const onFocus = useSheetKeyboard(ref, true, { reveal: true })
+  useEffect(() => {
+    // Focus only after the .34s sheet entrance; native autofocus can pan a sheet mid-animation.
+    const timer = setTimeout(() => {
+      const form = ref.current
+      if (!form || form.contains(document.activeElement)) return
+      form.querySelector('input')?.focus({ preventScroll: true })
+      onFocus()
+    }, 400)
+    return () => clearTimeout(timer)
+  }, [onFocus])
   const [stale, setStale] = useState(false)
   const bar = useWeightAmount(barWeight, unit)
   const plates = useWeightAmount(0, unit)
@@ -71,10 +84,10 @@ function Calculator({ value, unit, barWeight, onApply, close, guard }) {
   const result = totalOnly
     ? Number.isFinite(total.value) && total.value >= 0 ? Math.round(total.value * 10000) / 10000 : null
     : mixedBarWeight({ bar: bar.value, barUnit: unit, plates: plates.value, plateUnit: unit, unit })
-  return <div className="weight-calculator">
+  return <div ref={ref} className="weight-calculator kb-lift" onFocusCapture={onFocus}>
     <h3>{t('Weight calculator')}</h3>
     <Segmented value={totalOnly ? 'total' : 'bar'} onChange={v => setTotalOnly(v === 'total')} options={[{ value: 'total', label: t('Total weight') }, { value: 'bar', label: t('Bar and plates') }]} />
-    {totalOnly ? <WeightInput label={t('Total weight')} amount={total} autoFocus /> : <>
+    {totalOnly ? <WeightInput label={t('Total weight')} amount={total} /> : <>
       <WeightInput label={t('Bar weight')} amount={bar} />
       <WeightInput label={t('Plates on one side')} amount={plates} />
       <p className="small muted">{t('Enter the combined plate weight on one side. Both sides are counted.')}</p>

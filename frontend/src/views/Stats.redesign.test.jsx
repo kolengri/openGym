@@ -61,6 +61,7 @@ afterEach(() => { act(() => root.unmount()); host.remove(); window.location.hash
 const mount = S => { mocks.S = S; act(() => root.render(<Stats />)) }
 const card = sel => host.querySelector(sel)
 const muscles = () => card('[data-muscles]')
+const mountWeekly = S => { mount(S); act(() => [...host.querySelectorAll('.exercise-period button')].find(button => button.textContent === 'Week').click()) }
 const rows = () => [...muscles().querySelectorAll('[data-muscle-volume]')]
 const rowOf = m => muscles().querySelector(`[data-muscle-volume="${m}"]`)
 const btn = (scope, text) => [...scope.querySelectorAll('button')].find(b => b.textContent.trim() === text)
@@ -71,7 +72,11 @@ describe('Stats redesign: Overview', () => {
     mount(Object.assign(clone(DEF), buildDemoState()))
     const overview = card('#stats-overview')
     const kpis = overview.querySelector('[data-tour="stats-tiles"]')
-    expect([...kpis.querySelectorAll('.tile .l')].map(l => l.textContent)).toEqual(['Workouts', 'This month', 'Weight 30d', 'Lifted in total'])
+    expect([...kpis.querySelectorAll(':scope > div > span')].map(l => l.textContent)).toEqual(['Workouts', 'Sets', 'Volume'])
+    expect(overview.querySelector('[data-overview-volume]')).toBeTruthy()
+    expect(overview.querySelector('.progress-motivation').open).toBe(false)
+    expect(overview.querySelector('.progress-activity').open).toBe(false)
+    expect(card('#stats-lifts [data-tour="stats-records"]')).toBeTruthy()
     expect(host.textContent.match(/Week streak/g)).toHaveLength(1)
     expect(host.querySelectorAll('[data-streak-card]')).toHaveLength(1)
     const fold = overview.querySelector('[data-challenge-shelf] .card-fold')
@@ -100,7 +105,7 @@ describe('Stats redesign: Muscles', () => {
   beforeEach(() => { vi.useFakeTimers({ toFake: ['Date'] }); vi.setSystemTime(new Date(2026, 8, 30, 12)) })
 
   it('is one card: the three lists of sets per muscle are gone', () => {
-    mount(small({ workouts: [done('2026-09-30', 'chest', 8)] }))
+    mountWeekly(small({ workouts: [done('2026-09-30', 'chest', 8)] }))
     expect(host.querySelectorAll('[data-muscles]')).toHaveLength(1)
     expect(host.querySelector('[data-weekly-sets]')).toBeNull()
     expect(host.querySelector('[data-weekly-muscle-volume]')).toBeNull()
@@ -109,7 +114,7 @@ describe('Stats redesign: Muscles', () => {
   })
 
   it('draws each main muscle against its range, five rows until Show more, the plan as a tick', () => {
-    mount(small({ workouts: [done('2026-09-30', 'chest', 8), done('2026-09-30', 'biceps', 3), done('2026-09-30', 'forearm', 2)] }))
+    mountWeekly(small({ workouts: [done('2026-09-30', 'chest', 8), done('2026-09-30', 'biceps', 3), done('2026-09-30', 'forearm', 2)] }))
     expect(rows().map(r => r.dataset.muscleVolume)).toEqual(['chest', 'biceps', 'triceps', 'deltoids', 'upper-back'])
     const chest = rowOf('chest')
     expect(chest.querySelector('.sbar-v').textContent).toBe('8 / 10–20')
@@ -126,14 +131,14 @@ describe('Stats redesign: Muscles', () => {
   })
 
   it('colours a fill by where it sits against the range, by class, never inline', () => {
-    mount(small({ workouts: [done('2026-09-30', 'chest', 14), done('2026-09-30', 'biceps', 30)] }))
+    mountWeekly(small({ workouts: [done('2026-09-30', 'chest', 14), done('2026-09-30', 'biceps', 30)] }))
     expect(rowOf('chest').classList.contains('in')).toBe(true)
     expect(rowOf('biceps').classList.contains('above')).toBe(true)
     for (const r of rows()) expect(r.querySelector('.sbar-f').style.background).toBe('')
   })
 
   it('switches to the plan: Planned counts the routines of a week, a running rotation too', () => {
-    mount(small({ week: { 1: ['push'], 3: 'push' } }))
+    mountWeekly(small({ week: { 1: ['push'], 3: 'push' } }))
     click(btn(muscles(), 'Planned'))
     expect(muscles().querySelector('[data-weekly-volume-comparison]').dataset.mode).toBe('planned')
     expect(rowOf('chest').querySelector('.sbar-v').textContent).toBe('24 / 10–20')
@@ -142,21 +147,21 @@ describe('Stats redesign: Muscles', () => {
     // no period and no week arrows: a plan is a week
     expect(pickerOptions(muscles(), 'Period')).toEqual([])
     act(() => root.unmount()); root = createRoot(host)
-    mount(small({ week: {}, queue: { ids: ['push'], since: Date.now(), startsOn: '2026-01-01', label: 'R' } }))
+    mountWeekly(small({ week: {}, queue: { ids: ['push'], since: Date.now(), startsOn: '2026-01-01', label: 'R' } }))
     click(btn(muscles(), 'Planned'))
     expect(rowOf('chest').querySelector('.sbar-v').textContent).toBe(`${loadOfWeeklyPlan(mocks.S).chest} / 10–20`)
   })
 
   it('says so when there is no plan', () => {
-    mount(small({ routines: [], week: {}, workouts: [done('2026-09-30', 'chest', 2)] }))
+    mountWeekly(small({ routines: [], week: {}, workouts: [done('2026-09-30', 'chest', 2)] }))
     click(btn(muscles(), 'Planned'))
     expect(muscles().textContent).toContain('No muscle volume planned.')
   })
 
   it('reads a longer period as sets a week on average, against the same range', () => {
-    mount(small({ workouts: [done('2026-09-30', 'chest', 6), done('2026-09-20', 'chest', 6)] }))
-    expect(pickerOptions(muscles(), 'Period')).toEqual(['Week', '30d', '90d', 'All'])
-    pickFrom(muscles(), 'Period', '30d')
+    mountWeekly(small({ workouts: [done('2026-09-30', 'chest', 6), done('2026-09-20', 'chest', 6)] }))
+    expect(muscles().querySelector('[aria-label^="Period"]')).toBeNull()
+    click(btn(host.querySelector('.exercise-period'), '1M'))
     expect(muscles().textContent).toContain('Average sets a week')
     expect(rowOf('chest').querySelector('.sbar-v').textContent).toBe(`${Math.round(12 / (30 / 7) * 10) / 10} / 10–20`)
     // the plan tick belongs to this week only
@@ -164,7 +169,7 @@ describe('Stats redesign: Muscles', () => {
   })
 
   it('steps back through the weeks and respects a Sunday week start', () => {
-    mount(small({ weekStart: 0, workouts: [done('2026-09-27', 'biceps', 1), done('2026-09-20', 'quadriceps', 4)] }))
+    mountWeekly(small({ weekStart: 0, workouts: [done('2026-09-27', 'biceps', 1), done('2026-09-20', 'quadriceps', 4)] }))
     const cmp = () => muscles().querySelector('[data-weekly-volume-comparison]')
     expect(cmp().dataset.week).toBe('2026-09-27')
     const next = () => muscles().querySelector('button[aria-label="Next week"]')
@@ -179,7 +184,7 @@ describe('Stats redesign: Muscles', () => {
   })
 
   it('lists an untrained muscle once: a row when it is on one, a quiet chip that opens its exercises when not', () => {
-    mount(small({ workouts: [done('2026-09-30', 'chest', 8)] }))
+    mountWeekly(small({ workouts: [done('2026-09-30', 'chest', 8)] }))
     const fold = muscles().querySelector('.mus-miss')
     expect(fold.getAttribute('aria-expanded')).toBe('false')
     expect(muscles().querySelectorAll('.mchip.miss')).toHaveLength(0)
@@ -194,7 +199,7 @@ describe('Stats redesign: Muscles', () => {
   })
 
   it('a muscle picked on the map shows its row, and its exercises when it was not trained', () => {
-    mount(small({ workouts: [done('2026-09-30', 'biceps', 3)] }))
+    mountWeekly(small({ workouts: [done('2026-09-30', 'biceps', 3)] }))
     click(muscles().querySelector('[data-map-muscle="chest"]'))
     expect(rows().map(r => r.dataset.muscleVolume)).toEqual(['chest'])
     const find = muscles().querySelector('[data-find-exercises="chest"]')
@@ -211,7 +216,7 @@ describe('Stats redesign: Muscles', () => {
     const orig = Element.prototype.scrollIntoView
     Element.prototype.scrollIntoView = scroll
     try {
-      mount(small())
+      mountWeekly(small())
       act(() => { vi.advanceTimersByTime(50) })
       expect(muscles().querySelector('[data-weekly-volume-comparison]').dataset.mode).toBe('planned')
       expect(scroll).toHaveBeenCalled()
@@ -219,7 +224,7 @@ describe('Stats redesign: Muscles', () => {
   })
 
   it('keeps the ranges one tap away, beside the key that explains them', () => {
-    mount(small({ workouts: [done('2026-09-30', 'chest', 8)] }))
+    mountWeekly(small({ workouts: [done('2026-09-30', 'chest', 8)] }))
     const key = muscles().querySelector('.mus-key')
     expect([...key.querySelectorAll('.slegend-l')].map(l => l.textContent)).toEqual(['Target range', 'Planned'])
     expect(btn(key, 'Ranges')).toBeTruthy()

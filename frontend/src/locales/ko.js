@@ -1,5 +1,18 @@
 // Korean UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "운동 열기",
+  "Strength block": "근력 훈련 단계",
+  "Upper / lower": "상체 / 하체",
+  "Linear 5×5": "선형 5×5",
+  "Recorded": "기록값",
+  "Calculated": "계산값",
+  "Measurements": "신체 치수",
+  "Photos": "사진",
+  "Garmin Connect must be ready before reading health data.": "건강 데이터를 읽기 전에 Garmin Connect가 준비되어 있어야 합니다.",
+  "Data": "데이터",
+  "Connections": "연결",
+  "App": "앱",
+  "No programmes yet.": "아직 프로그램이 없습니다.",
   "Garmin sign-in did not finish. Try signing in again.": "Garmin 로그인이 완료되지 않았습니다. 다시 로그인해 주세요.",
   "Garmin could not authorize this phone. Try signing in again later.": "Garmin에서 이 휴대폰을 인증하지 못했습니다. 나중에 다시 로그인해 주세요.",
   "Could not verify the Garmin account. Try signing in again later.": "Garmin 계정을 확인하지 못했습니다. 나중에 다시 로그인해 주세요.",

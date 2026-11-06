@@ -961,9 +961,10 @@ export function parseBodyweight(text, { unit = 'kg' } = {}) {
     day.push({ ...b, at })
     out.set(d, day)
   }
-  let fileUnit = '', source = 'Apple Health', measurements = []
+  let fileUnit = '', source = 'CSV import', measurements = []
 
   if (s.includes('HKQuantityTypeIdentifierBodyMass')) {
+    source = 'Apple Health'
     const re = /<Record[^>]*type="HKQuantityTypeIdentifierBodyMass"[^>]*>/g
     let m
     while ((m = re.exec(s))) {
@@ -1007,6 +1008,7 @@ export function parseBodyweight(text, { unit = 'kg' } = {}) {
     const dCol = map.date ?? map.startTime
     if (wCol === undefined || dCol === undefined) return { error: 'unrecognised' }
     measurements = bodyCsvMeasurements(rows)
+    if (String(rows[0][0]).trim().toLowerCase() === 'date' && /^weight_(kg|lb)$/.test(String(rows[0][1]).trim())) source = 'openGym'
     if (map.weightKg !== undefined) fileUnit = 'kg'
     else if (map.weightLb !== undefined) fileUnit = 'lb'
     for (let i = 1; i < rows.length; i++) {
@@ -1082,7 +1084,7 @@ const bodyOk = (w, u) => w > 0 && w <= (u === 'lb' ? MAX_BODY_KG / LB_TO_KG : MA
  * name, made with the column's unit if there is none; one whose unit is another kind than that
  * field's (kg into a % field) is left out rather than relabelled. Returns how many days came in.
  */
-function mergeMeasurements(S, days) {
+function mergeMeasurements(S, days, source) {
   normalizeMeasurementsState(S)
   const have = new Set(S.measurements.map(e => e.d))
   const fresh = days.filter(m => !have.has(m.d))
@@ -1096,6 +1098,8 @@ function mergeMeasurements(S, days) {
   let n = 0
   for (const m of fresh) {
     const entry = emptyMeasurement(m.d, S.customMeasurements)
+    if (source) entry.source = source
+    if (m.at) entry.at = m.at
     for (const [key, v] of Object.entries(m.values)) entry[key] = v
     for (const o of m.other) {
       const field = byName.get(o.name.toLowerCase())
@@ -1156,7 +1160,7 @@ export function mergeImport(S, parsed) {
       if (addWeighIn(S, { d: b.d, at: b.at || null, w: b.w, t: b.t, src: b.src || 'import', id: importReadingId(b) })) added++
     }
     const res = { added, skipped: parsed.bodyweight.length - added }
-    if (parsed.measurements?.length) res.measurements = mergeMeasurements(S, parsed.measurements)
+    if (parsed.measurements?.length) res.measurements = mergeMeasurements(S, parsed.measurements, parsed.source)
     return res
   }
   const have = new Set(S.workouts.map(w => w.d))

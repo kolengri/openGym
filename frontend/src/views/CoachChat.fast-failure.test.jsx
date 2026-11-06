@@ -72,6 +72,21 @@ async function click(el) {
   expect(el).toBeTruthy()
   await act(async () => { el.dispatchEvent(new MouseEvent('click', { bubbles: true })); await flush() })
 }
+async function askReviewFromMenu() {
+  expect(container.querySelectorAll('.qchip')).toHaveLength(1)
+  expect(chip(/Last workout/)).toBeTruthy()
+  await click(container.querySelector('[aria-label="More"]'))
+  const render = mocks.openSheet.mock.calls.at(-1)[0]
+  const sheetHost = document.createElement('div')
+  document.body.append(sheetHost)
+  const sheetRoot = createRoot(sheetHost)
+  await act(async () => sheetRoot.render(render(() => {})))
+  const action = [...sheetHost.querySelectorAll('button')].find(b => b.querySelector('.lrow-t')?.textContent === 'Ask for a review')
+  await click(action)
+  await act(async () => sheetRoot.unmount())
+  sheetHost.remove()
+}
+
 async function mount() {
   installDom()
   await act(async () => { root.render(React.createElement(CoachChat)) })
@@ -108,7 +123,7 @@ describe('a Coach run that fails before the first poll', () => {
     await mount()
     expect(replies()).toHaveLength(0)                         // opening the chat answers nothing old
 
-    await click(chip(/Review my training/))
+    await askReviewFromMenu()
     expect(mocks.S.coach.chat.at(-1)).toMatchObject({ role: 'coach', kind: 'error', text: FAILED })
     expect(mocks.S.coach.chat.at(-2)).toMatchObject({ role: 'user', kind: 'text' })
     expect(container.querySelector('.composer-cap').textContent).toBe('5 of 10 Coach runs used today')
@@ -116,7 +131,7 @@ describe('a Coach run that fails before the first poll', () => {
     await settle()
     expect(replies()).toHaveLength(1)                         // written once, not on every render
 
-    await click(chip(/Review my training/))
+    await askReviewFromMenu()
     expect(replies()).toHaveLength(2)
     expect(container.querySelector('.composer-cap').textContent).toBe('6 of 10 Coach runs used today')
   })
@@ -150,7 +165,7 @@ describe('a Coach run that fails before the first poll', () => {
     let release
     mocks.statusGate = new Promise(r => { release = r })
     await mount()
-    await click(chip(/Review my training/))
+    await askReviewFromMenu()
     expect(container.querySelector('.composer-cap').textContent).toBe('5 of 10 Coach runs used today')
     await act(async () => { release(); await flush() })
     expect(container.querySelector('.composer-cap').textContent).toBe('5 of 10 Coach runs used today')

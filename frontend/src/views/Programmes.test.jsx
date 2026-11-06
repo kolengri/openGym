@@ -7,7 +7,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
 const mocks = vi.hoisted(() => {
-  const state = { S: null, sheets: [], navs: [], confirm: null, toasts: [], params: {} }
+  const state = { S: null, sheets: [], navs: [], confirm: null, toasts: [], params: {}, menu: null }
   state.snapshot = () => ({
     S: state.S,
     update: mut => { const next = structuredClone(state.S); mut(next); state.S = next },
@@ -26,7 +26,7 @@ vi.mock('../store/useUI.js', () => {
   return { useUI }
 })
 vi.mock('react-router-dom', () => ({ useNavigate: () => to => mocks.navs.push(to), useParams: () => mocks.params }))
-vi.mock('../sheets.jsx', () => ({ confirmSheet: o => { mocks.confirm = o }, exportProgrammeFile: vi.fn() }))
+vi.mock('../sheets.jsx', () => ({ confirmSheet: o => { mocks.confirm = o }, exportProgrammeFile: vi.fn(), menuSheet: o => { mocks.menu = o } }))
 
 const { default: Programmes, ProgrammeEdit } = await import('./Programmes.jsx')
 
@@ -41,7 +41,7 @@ beforeEach(() => {
     unit: 'kg', weekStart: 1, workouts: [], exWeights: {}, dayPlan: {}, programmes: {}, programme: null,
     week: { 1: ['r1'] }, routines: [{ id: 'r1', name: 'Push', ex: [{ id: '0025', sets: 3, reps: 5, weight: 60 }] }],
   }
-  mocks.sheets = []; mocks.navs = []; mocks.confirm = null; mocks.toasts = []; mocks.params = {}
+  mocks.sheets = []; mocks.navs = []; mocks.confirm = null; mocks.toasts = []; mocks.params = {}; mocks.menu = null
   host = document.createElement('div')
   document.body.appendChild(host)
   root = createRoot(host)
@@ -53,10 +53,29 @@ const button = text => [...host.querySelectorAll('button')].find(b => b.textCont
 const click = el => act(() => el.click())
 
 describe('the programme list', () => {
-  it('adds a starter programme with its own routines and opens it', () => {
+  it('keeps the active tab unchanged and switches to Schedule explicitly', () => {
+    localStorage.setItem('gym_plan_view', 'programmes')
+    render(<Programmes />)
+    click(host.querySelectorAll('.plan-views button')[1])
+    expect(mocks.navs).toEqual([])
+    expect(localStorage.getItem('gym_plan_view')).toBe('programmes')
+    click(host.querySelectorAll('.plan-views button')[0])
+    expect(mocks.navs).toEqual(['/plan'])
+    expect(localStorage.getItem('gym_plan_view')).toBe('schedule')
+  })
+  it('opens starter details without writing, then adds its own routines on Add', () => {
     render(<Programmes />)
     expect(host.textContent).toContain('No programmes yet.')
-    click(button('Strength block, 4 weeks'))
+    expect(button('Strength block').textContent).toContain('4 weeks · 3 days a week · %1RM')
+    expect(host.textContent).not.toContain('Three days on the 5×5 routines')
+    click(button('Strength block'))
+    expect(Object.values(mocks.S.programmes)).toHaveLength(0)
+    expect(mocks.navs).toEqual([])
+    const close = vi.fn()
+    render(mocks.sheets.at(-1)(close))
+    expect(host.textContent).toContain('Three days on the 5×5 routines')
+    click(button('Add'))
+    expect(close).toHaveBeenCalledOnce()
     const [p] = Object.values(mocks.S.programmes)
     expect(p).toMatchObject({ src: 'strength-4', name: 'Strength block, 4 weeks' })
     expect(p.weeks).toHaveLength(4)
@@ -90,10 +109,29 @@ describe('a programme', () => {
     expect(mocks.S.week).toEqual({ 3: ['r2'] })
     render(<ProgrammeEdit />)
     expect(host.textContent).toContain('Week 1 of 2')
-    click(button('End programme'))
+    click(host.querySelector('button[aria-label="More"]'))
+    expect(mocks.menu.items.map(i => i.label)).toEqual(['Pause', 'End programme'])
+    act(() => mocks.menu.items.find(i => i.label === 'End programme').onClick())
     act(() => mocks.confirm.onConfirm())
     expect(mocks.S.week).toEqual({ 1: ['r1'] })
     expect(mocks.S.programme).toBeNull()
+  })
+
+  it('pauses and resumes the running programme through its context menu', () => {
+    seed()
+    render(<ProgrammeEdit />)
+    click(button('Start programme'))
+    act(() => mocks.confirm.onConfirm())
+    render(<ProgrammeEdit />)
+    click(host.querySelector('button[aria-label="More"]'))
+    act(() => mocks.menu.items.find(i => i.label === 'Pause').onClick())
+    expect(mocks.S.programme.pausedOn).toBe('2026-10-26')
+    render(<ProgrammeEdit />)
+    click(host.querySelector('button[aria-label="More"]'))
+    expect(mocks.menu.items.map(i => i.label)).toEqual(['Resume', 'End programme'])
+    act(() => mocks.menu.items.find(i => i.label === 'Resume').onClick())
+    expect(mocks.S.programme.pausedOn).toBeUndefined()
+    expect(mocks.S.week).toEqual({ 3: ['r2'] })
   })
 
   it('changes its length with the stepper', () => {

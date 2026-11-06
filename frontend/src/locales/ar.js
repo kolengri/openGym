@@ -1,5 +1,18 @@
 // Arabic UI strings. Keys are the English source strings (see lib/i18n.js).
 export default {
+  "Open workout": "فتح التمرين",
+  "Strength block": "مرحلة القوة",
+  "Upper / lower": "الجزء العلوي / السفلي",
+  "Linear 5×5": "خطي 5×5",
+  "Recorded": "مسجّل",
+  "Calculated": "محسوب",
+  "Measurements": "القياسات",
+  "Photos": "الصور",
+  "Garmin Connect must be ready before reading health data.": "يجب أن يكون Garmin Connect جاهزًا قبل قراءة البيانات الصحية.",
+  "Data": "البيانات",
+  "Connections": "الاتصالات",
+  "App": "التطبيق",
+  "No programmes yet.": "لا توجد برامج بعد.",
   "Garmin sign-in did not finish. Try signing in again.": "لم يكتمل تسجيل الدخول إلى Garmin. حاول تسجيل الدخول مرة أخرى.",
   "Garmin could not authorize this phone. Try signing in again later.": "تعذّر على Garmin منح الإذن لهذا الهاتف. حاول تسجيل الدخول مرة أخرى لاحقًا.",
   "Could not verify the Garmin account. Try signing in again later.": "تعذّر التحقق من حساب Garmin. حاول تسجيل الدخول مجددًا لاحقًا.",

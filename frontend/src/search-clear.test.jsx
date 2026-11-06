@@ -30,7 +30,17 @@ function type(el, value) {
   Object.getOwnPropertyDescriptor(el.constructor.prototype, 'value').set.call(el, value)
   el.dispatchEvent(new Event('input', { bubbles: true }))
 }
-const chip = (host, text) => [...host.querySelectorAll('.chips .chip')].find(b => b.textContent.trim() === text)
+const chip = (host, text) => {
+  const filters = host.querySelector('.lib-search-filter')
+  if (filters) {
+    act(() => filters.click())
+    const sheet = renderTopSheet()
+    return [...sheet.querySelectorAll('.chips .chip')].find(b => b.textContent.trim() === text)
+  }
+  const disclosure = host.querySelector('.picker-filters')
+  if (disclosure && !disclosure.open) disclosure.querySelector('summary').click()
+  return [...host.querySelectorAll('.chips .chip')].find(b => b.textContent.trim() === text)
+}
 const clear = host => host.querySelector('.search .clear')
 const count = host => host.querySelector('.search .search-count')
 
@@ -62,7 +72,7 @@ describe('exercise search clear button', () => {
 
     it(`${where}: clears only the text; a body-part filter keeps its count`, () => {
       const host = open()
-      act(() => chip(host, 'neck').click())
+      { const neck = chip(host, 'neck'); act(() => neck.click()) }
       act(() => type(host.querySelector('.search input'), 'stretch'))
       act(() => clear(host).click())
       expect(host.querySelector('.search input').value).toBe('')

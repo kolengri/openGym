@@ -3,6 +3,7 @@ import React, { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Settings from './Settings.jsx'
+import { createPickerHarness } from './test-picker.js'
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
@@ -48,8 +49,9 @@ vi.mock('../sheets.jsx', () => ({
 // The Settings view reads the build-time version constant at render time.
 globalThis.__APP_VERSION__ ??= 'test'
 
-let host, root
+let host, root, picker
 beforeEach(() => {
+  picker = createPickerHarness()
   mocks.S = {
     unit: 'kg', restSec: 90, restPauseSec: 15, sound: false, effort: 'none',
     gifSize: 'full', workouts: [], routines: [], exWeights: {},
@@ -59,31 +61,48 @@ beforeEach(() => {
   root = createRoot(host)
 })
 afterEach(() => {
+  picker.destroy()
   act(() => root.unmount())
   host.remove()
 })
 
 const mount = () => act(() => root.render(<Settings page="workout" />))
-const segButton = label => [...host.querySelectorAll('.seg button')].find(b => b.textContent === label)
+const rowTitled = title => [...host.querySelectorAll('.lrow')].find(r => r.querySelector('.lrow-t')?.textContent === title)
+const current = title => rowTitled(title).querySelector('.lrow-v').textContent
 
 describe('Settings — workout view', () => {
   it('offers Cards / List / Compact / Focus and writes workoutView to the store', () => {
     mount()
-    expect(['Cards', 'List', 'Compact', 'Focus'].every(label => segButton(label))).toBe(true)
-    expect(segButton('Cards').getAttribute('aria-pressed')).toBe('true')
-
+    const choices = picker.open(rowTitled('Layout'))
+    expect(choices.labels).toEqual(['Cards', 'List', 'Compact', 'Focus'])
+    expect(choices.selected).toBe('Cards')
     for (const [label, value] of [['List', 'list'], ['Compact', 'compact'], ['Focus', 'focus'], ['Cards', 'cards']]) {
-      act(() => { segButton(label).click() })
+      picker.open(rowTitled('Layout')).choose(label)
       expect(mocks.S.workoutView).toBe(value)
       mount()
-      expect(segButton(label).getAttribute('aria-pressed')).toBe('true')
+      expect(current('Layout')).toBe(label)
     }
   })
 
   it('shows a legacy/absent value as Cards', () => {
     mocks.S.workoutView = 'grid'
     mount()
-    expect(segButton('Cards').getAttribute('aria-pressed')).toBe('true')
-    expect(segButton('Focus').getAttribute('aria-pressed')).toBe('false')
+    expect(current('Layout')).toBe('Cards')
+    expect(picker.open(rowTitled('Layout')).selected).toBe('Cards')
   })
+})
+
+it('keeps the effort scale explanation separate from the picker and writes the selected scale', () => {
+  mocks.S.effort = 'rir'
+  mocks.S.showRir = true
+  mount()
+  expect(current('Effort per set')).toBe('RIR')
+  const help = host.querySelector('[aria-label="What are RIR and RPE?"]')
+  expect(help).toBeTruthy()
+  expect(help.closest('button')).toBe(help)
+  const choices = picker.open(rowTitled('Effort per set'))
+  expect(choices.labels).toEqual(['Off', 'RIR', 'RPE'])
+  choices.choose('RPE')
+  expect(mocks.S.effort).toBe('rpe')
+  expect(mocks.S.showRir).toBeUndefined()
 })

@@ -1,3 +1,4 @@
+import '../styles/progress-refinement.css'
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore.js'
@@ -11,11 +12,11 @@ import {
   measurementUnitLabel, zeroIsReading,
 } from '../lib/measurements.js'
 import { fmtDate, fmtNum, todayISO, uid } from '../lib/format.js'
-import { t } from '../lib/i18n.js'
+import { t, dateLocale } from '../lib/i18n.js'
 import LineChart from '../components/LineChart.jsx'
 import Icon from '../components/Icon.jsx'
-import { Button, NumberField, Section, Segmented, SelectRow, Switch, TextField } from '../components/ui.jsx'
-import { confirmSheet } from '../sheets.jsx'
+import { Button, NumberField, Section, Segmented, SelectRow, Row, openSelectSheet, Switch, TextField } from '../components/ui.jsx'
+import { confirmSheet, menuSheet } from '../sheets.jsx'
 
 // Every write leaves the list in its one-entry-per-day shape (normalizeMeasurementsState).
 const update = (fn, ...rest) => useStore.getState().update(s => { fn(s); normalizeMeasurementsState(s) }, ...rest)
@@ -25,6 +26,14 @@ const toast = message => useUI.getState().toast(message)
 const fieldUnit = (field, profileUnit) => measurementUnitLabel(measurementUnit(profileUnit, field))
 const unitOptions = units => units.map(value => ({ value, label: value === 'none' ? t('No unit') : value }))
 const withUnit = (value, unit) => unit ? fmtNum(value) + ' ' + unit : fmtNum(value)
+// Provenance is optional. Never derive a source or measurement time from the sync stamp.
+export function measurementProvenance(entry) {
+  const source = typeof entry?.source === 'string' ? entry.source.trim() : ''
+  const at = entry?.at == null || entry.at === '' ? NaN : new Date(entry.at).getTime()
+  const time = Number.isFinite(at) ? new Date(at).toLocaleTimeString(dateLocale(), { hour: '2-digit', minute: '2-digit' }) : ''
+  return [source ? t(source) : '', time].filter(Boolean).join(' · ')
+}
+
 const shownValue = (entry, field, profileUnit) => {
   const value = measurementValue(entry, field.key)
   if (value == null) return null
@@ -202,6 +211,7 @@ export default function Measurements() {
   const unit = fieldUnit(field, S.unit)
   const all = key ? measurementSeries(S, key) : []
   const latest = all.at(-1)
+  const latestEntry = latest ? S.measurements.find(entry => entry.d === latest.d) : null
   const previous = all.at(-2)
   const delta = latest && previous ? Math.round((latest.y - previous.y) * 10) / 10 : null
   const recent = [...S.measurements].reverse()
@@ -213,30 +223,36 @@ export default function Measurements() {
     onConfirm: () => { update(state => { state.measurements = state.measurements.filter(e => e.d !== entry.d) }); toast(t('Measurements deleted')) },
   })
 
-  return <div className="narrow">
+  return <div className="narrow progress-refinement progress-measurements">
     <div className="hdr">
       <button className="iconbtn" data-back="/stats" onClick={() => nav('/stats')} aria-label={t('Stats')}><Icon name="chevronLeft" /></button>
       <div style={{ flex: 1, marginInlineStart: 12 }}><h1>{t('Body measurements')}</h1><div className="sub">{t('Circumference & composition')}</div></div>
-      <button className="iconbtn" onClick={manageMeasurementsSheet} aria-label={t('Choose measurements')}><Icon name="gear" /></button>
+      <button className="iconbtn" aria-label={t('Log measurements')} title={t('Log measurements')} onClick={() => measurementLogSheet()}><Icon name="plus" /></button>
+      <button className="iconbtn" aria-label={t('More')} aria-haspopup="dialog" onClick={() => menuSheet({ title: t('Body measurements'), items: [
+        { icon: 'gear', label: t('Choose measurements'), onClick: manageMeasurementsSheet },
+      ] })}><Icon name="more" /></button>
     </div>
 
-    <div className="card">
-      <div className="row between" style={{ marginBottom: 10 }}>
-        <div>
-          <div className="muted small">{field ? t(field.label) : t('Body measurements')}</div>
-          <div className="big" style={{ marginTop: 3 }}>{latest ? <>{fmtNum(latest.y)} <span className="muted" style={{ fontSize: 'var(--fs-callout)' }}>{unit}</span></> : '–'}</div>
-          {delta != null && delta !== 0 && <div className="small" style={{ marginTop: 3, color: 'var(--label-2)' }}>{delta > 0 ? '+' : ''}{withUnit(delta, unit)} {t('since previous')}</div>}
-        </div>
-        <Button size="sm" icon="plus" onClick={() => measurementLogSheet()}>{t('Log')}</Button>
-      </div>
-      {available.length > 0 && <div className="sect-b measure-select"><SelectRow
-        title={t('Measurement')} sheetTitle={t('Choose measurement')} value={key} onChange={setSelected}
-        options={available.map(f => ({ value: f.key, label: t(f.label) }))} />
-      </div>}
-      <Segmented className="seg-range" value={range} onChange={setRange}
-        options={[{ value: 30, label: '1M' }, { value: 90, label: '3M' }, { value: 365, label: '1Y' }, { value: 0, label: t('All') }]} />
+    <Segmented className="progress-body-tabs" value="measurements" onChange={value => nav(value === 'weight' ? '/stats?section=body' : value === 'measurements' ? '/measurements' : value === 'health' ? '/health' : '/progress-photos')}
+      options={[{ value: 'weight', label: t('Weight') }, { value: 'measurements', label: t('Measurements') }, { value: 'health', label: t('Health') }, { value: 'photos', label: t('Photos') }]} />
+    <div className="measure-metric">
+      <Row title={field ? t(field.label) : t('Body measurements')} subtitle={t('Choose measurement')}
+        value={<span className="big measure-current">{latest ? <>{fmtNum(latest.y)}{unit && <> <span>{unit}</span></>}</> : '–'}</span>}
+        accessory={available.length ? 'chevron' : 'none'} onClick={available.length ? () => openSelectSheet({
+          title: t('Choose measurement'), value: key, onChange: setSelected,
+          options: available.map(f => ({ value: f.key, label: t(f.label) })),
+        }) : undefined} />
+    </div>
+    <Segmented className="seg-range" value={range} onChange={setRange}
+      options={[{ value: 30, label: '1M' }, { value: 90, label: '3M' }, { value: 365, label: '1Y' }, { value: 0, label: t('All') }]} />
+    <div className="card measure-chart">
+      <h2>{field ? t(field.label) : t('Body measurements')}{unit ? ', ' + unit : ''}</h2>
       <div className="chart"><LineChart points={points} h={170} unit={unit} color="var(--teal)" /></div>
     </div>
+    {latest && <p className="small dim measure-caption">
+      {delta != null && delta !== 0 && <>{delta > 0 ? '+' : ''}{withUnit(delta, unit)} {t('since previous')} · </>}
+      {fmtDate(latest.d, true)}{measurementProvenance(latestEntry) && <> · {measurementProvenance(latestEntry)}</>}
+    </p>}
 
     {!available.length && <div className="card">
       <div className="muted small">{t('Choose the measurements you want to track, then log your first check-in.')}</div>
@@ -245,21 +261,21 @@ export default function Measurements() {
 
     <div className="row between" style={{ margin: '18px 2px 10px' }}>
       <h4 className="sec" style={{ margin: 0 }}>{t('Measurement history')}</h4>
-      <Button size="sm" variant="ghost" icon="gear" onClick={manageMeasurementsSheet}>{t('Fields')}</Button>
     </div>
-    {recent.length ? <div className="list">{recent.map(entry => {
+    {recent.length ? <div className="list measure-history-list">{recent.map(entry => {
       const count = MEASUREMENT_KEYS.filter(k => entry[k] != null).length + (entry.other || []).filter(o => o.value != null).length
-      const previewFields = enabledMeasurementFields(S).map(f => ({ field: f, value: shownValue(entry, f, S.unit) })).filter(x => x.value != null).slice(0, 3)
-      return <div className="card measure-history" key={entry.d}>
-        <div className="row between">
-          <div><b>{fmtDate(entry.d, true)}</b><div className="small dim" style={{ marginTop: 2 }}>{t(count === 1 ? '{0} measurement' : '{0} measurements', count)}</div></div>
-          <div className="row" style={{ gap: 4 }}>
-            <button className="iconbtn" onClick={() => measurementLogSheet(entry.d)} aria-label={t('Edit')}><Icon name="pencil" /></button>
-            <button className="iconbtn" style={{ color: 'var(--red)' }} onClick={() => remove(entry)} aria-label={t('Delete')}><Icon name="trash" /></button>
-          </div>
-        </div>
-        {previewFields.length > 0 && <div className="measure-preview">{previewFields.map(({ field: f, value }) => <span key={f.key}>{t(f.label)} <b>{withUnit(value, fieldUnit(f, S.unit))}</b></span>)}</div>}
+      const value = field ? shownValue(entry, field, S.unit) : null
+      return <div className="measure-history" key={entry.d}>
+        <button type="button" className="measure-history-open" onClick={() => measurementLogSheet(entry.d)} aria-label={t('Edit') + ': ' + fmtDate(entry.d, true)}>
+          <span className="grow"><b>{fmtDate(entry.d, true)}</b><span className="small dim">{t(count === 1 ? '{0} measurement' : '{0} measurements', count)}{measurementProvenance(entry) && <> · {measurementProvenance(entry)}</>}</span></span>
+          <span className="measure-preview"><b>{value == null ? '–' : withUnit(value, unit)}</b></span>
+          <Icon name="chevronRight" className="chev" />
+        </button>
+        <button className="iconbtn" aria-label={t('More') + ': ' + fmtDate(entry.d, true)} aria-haspopup="dialog" onClick={() => menuSheet({ title: fmtDate(entry.d, true), items: [
+          { icon: 'trash', label: t('Delete'), danger: true, onClick: () => remove(entry) },
+        ] })}><Icon name="more" /></button>
       </div>
     })}</div> : <div className="empty small">{t('No measurements yet')}</div>}
+    <div className="sect-b measure-photos"><Row icon="image" title={t('Progress photos')} accessory="chevron" onClick={() => nav('/progress-photos')} /></div>
   </div>
 }
