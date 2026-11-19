@@ -46,14 +46,14 @@ it('applies total pounds to only this field in a kg profile', () => {
   open(); click('kg'); enter('Total weight', '100')
   expect(change).not.toHaveBeenCalled()
   click('Apply')
-  expect(change).toHaveBeenCalledWith(45.3592, expect.any(Function))
+  expect(change).toHaveBeenCalledWith(45.3592, expect.any(Function), null)
   expect(useStore.getState().S.unit).toBe('kg')
 })
 it('applies a kg bar and the combined lb plates on one side without counting the bar twice', () => {
   open(); click('Bar and plates'); enter('Bar weight', '20')
   act(() => modalHost.querySelector('input[aria-label="Plates on one side"]').closest('.weight-calc-input').querySelector('button').click())
   enter('Plates on one side', '45'); click('Apply')
-  expect(change).toHaveBeenCalledWith(60.8233, expect.any(Function))
+  expect(change).toHaveBeenCalledWith(60.8233, expect.any(Function), expect.objectContaining({ unit: 'kg' }))
 })
 it('waits for the sheet entrance before focusing without browser panning', () => {
   vi.useFakeTimers()
@@ -81,7 +81,7 @@ it('keeps bar and plate inputs in the keyboard-aware sheet as the visual viewpor
     expect(modalHost.style.getPropertyValue('--picker-keyboard-bottom')).toBe(`${window.innerHeight - 340}px`)
     expect(modalHost.style.getPropertyValue('--picker-visual-height')).toBe('340px')
     enter('Bar weight', '20'); enter('Plates on one side', '10'); click('Apply')
-    expect(change).toHaveBeenCalledWith(40, expect.any(Function))
+    expect(change).toHaveBeenCalledWith(40, expect.any(Function), expect.objectContaining({ unit: 'kg' }))
   } finally {
     if (previous) Object.defineProperty(window, 'visualViewport', previous)
     else delete window.visualViewport
@@ -101,7 +101,7 @@ it('defaults to the profile unit and toggles by converting the current number wi
   click('lb')
   expect(Number(input().value)).toBeCloseTo(60, 8)
   click('Apply')
-  expect(change).toHaveBeenCalledWith(60, expect.any(Function))
+  expect(change).toHaveBeenCalledWith(60, expect.any(Function), null)
 })
 
 for (const changeTarget of [

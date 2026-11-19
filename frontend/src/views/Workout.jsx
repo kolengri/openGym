@@ -146,6 +146,19 @@ const RTL_LETTER = /[֐-ࣿיִ-﷿ﹰ-﻿]/
 // enough to turn over, far shorter than the rest the set earns once both sides are held.
 const SWITCH_SIDES_SEC = 10
 
+// Commit calculator history with the guarded weight edit. Ordinary steppers carry no setup.
+function mutateWorkoutEntry(index, fn, guard, setup) {
+  useStore.getState().update(s => {
+    if (guard && !guard(s)) return
+    inEntryUnit(s, index, entry => fn(entry, s))
+    if (setup === undefined) return
+    const id = s.active.entries[index].id
+    const previous = s.weightCalculatorHistory?.[id]
+    const stamp = Math.max(Date.now(), (previous?._ts || 0) + 1)
+    s.weightCalculatorHistory = { ...s.weightCalculatorHistory, [id]: { setup, _ts: stamp } }
+  }, true)
+}
+
 function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSide, onField, onAddSet, onRemoveSet, onAddWarmup, onKeepWarmups, onAskCoach, onRemoveSetAt, onCopySetAt, onStartTimed, onPairPrev, onPairNext, onSetRowRef, onProgressionSettings, onRest, onNoProg, routineUpdate, onSwap, onSwapBackup, onMoveUp, onMoveDown, canMoveUp, canMoveDown, onRemoveExercise, busy }) {
   // The block reads the state as its exercise sees it (lib/ex-unit.js): in the exercise's own
   // weight unit when it has one (#657), so its rows, steppers, plates, owned weights, "last time"
@@ -169,7 +182,8 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   // Drops/bursts mutate the row in place — same card, not a new set with its own long rest.
   // A planned exercise (see the exercise's "Intensifier" config) arrives with these already
   // filled in by applyIntensifierPlan; these only add/edit/remove entries live from here on.
-  const mutSet = (i, fn, guard) => update(s => guard && !guard(s) ? undefined : inEntryUnit(s, entryIdx, e => { e.sets[i] = fn(e.sets[i]) }), true)
+  const mutSet = (i, fn, guard, setup) =>
+    mutateWorkoutEntry(entryIdx, e => { e.sets[i] = fn(e.sets[i]) }, guard, setup)
   // A row as it is now in the store (not the render's copy), in the exercise's unit.
   const liveRow = i => { const st = useStore.getState().S; return viewEntry(st, st.active?.entries[entryIdx])?.sets[i] }
   // Warm-up or work is the row's phase; switching it moves the row to the edge of the warm-ups.
@@ -225,15 +239,15 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
   // the row's aggregate (r/w/done/effort) in step via the model helper so every other reader
   // stays right. The done tick goes through onToggleSide → toggle() instead, so ticking a side
   // still fires the rest timer / auto-advance / workout-complete flow.
-  const setSide = (i, side, field, v, guard) => {
+  const setSide = (i, side, field, v, guard, setup) => {
     if (field !== 'w') return mutSet(i, row => markWarmupEdited(setSideField(row, side, field, v), field), guard)
-    update(s => guard && !guard(s) ? undefined : inEntryUnit(s, entryIdx, e => {
+    mutateWorkoutEntry(entryIdx, (e, s) => {
       const row = setSideField(e.sets[i], side, field, v)
       row.sides[side].weightOrigin = WEIGHT_ORIGIN_MANUAL
       e.sets[i] = markWarmupEdited(row, field)
       e.sets = cascadeWeight(e.sets, i, v, side, e.target?.backoffStep)
       rerampOpen(s, e, i)
-    }), true)
+    }, guard, setup)
   }
   // Drop/burst edits accept an optional `side` ('L'|'R'): present for a per-side row (edits that
   // one limb's drop/burst), absent for a straight row (edits the row's own).
@@ -243,8 +257,8 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     const removed = clustersOf(row)[ci]?.r || 0
     return { ...removeClusterAt(row, ci), r: Math.max(0, (row.r || 0) - removed) }
   })
-  const setDropField = (i, di, field, v, side, guard) => mutSet(i, row =>
-    isSideSet(row) ? setSideDropAt(row, side, di, { [field]: v }) : setDropAt(row, di, { [field]: v }), guard)
+  const setDropField = (i, di, field, v, side, guard, setup) => mutSet(i, row =>
+    isSideSet(row) ? setSideDropAt(row, side, di, { [field]: v }) : setDropAt(row, di, { [field]: v }), guard, setup)
   const setClusterField = (i, ci, v, side) => mutSet(i, row => {
     if (isSideSet(row)) return setSideClusterAt(row, side, ci, v)
     const delta = (Number(v) || 0) - (clustersOf(row)[ci]?.r || 0)
@@ -405,7 +419,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     <div className={'stp ' + cls + (wc.steppers ? '' : ' plain') + (previousAt(i)?.[col.f] != null ? ' compared' : '')}>
       {wc.steppers && <button aria-label={t('Decrease')} onClick={() => bump(s, i, col, -1)}><Icon name="minus" /></button>}
       <span className="val">{col.f === 'w'
-        ? <MixedWeightField decimal value={s.w ?? ''} unit={S.unit} exerciseId={entry.id} onChange={(v, guard) => onField(i, 'w', v, guard)} />
+        ? <MixedWeightField decimal value={s.w ?? ''} unit={S.unit} exerciseId={entry.id} onChange={(v, guard, setup) => onField(i, 'w', v, guard, setup)} />
         : <NumberField decimal={col.dec} nullable={col.opt} aria-label={col.hd} value={viewOf(col, s[col.f]) ?? (col.opt ? null : '')}
           onChange={v => onField(i, col.f, col.store ? col.store(v) : v)} />}</span>
       {wc.steppers && <button aria-label={t('Increase')} onClick={() => bump(s, i, col, 1)}><Icon name="plus" /></button>}
@@ -666,7 +680,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
     <div className={'stp ' + cls + (wc.steppers ? '' : ' plain') + (previousAt(i, side)?.[col.f] != null ? ' compared' : '')}>
       {wc.steppers && <button aria-label={t('Decrease')} onClick={() => sideBump(i, side, col, -1)}><Icon name="minus" /></button>}
       <span className="val">{col.f === 'w'
-        ? <MixedWeightField decimal value={sd.w ?? ''} unit={S.unit} exerciseId={entry.id} onChange={(v, guard) => setSide(i, side, 'w', v, guard)} />
+        ? <MixedWeightField decimal value={sd.w ?? ''} unit={S.unit} exerciseId={entry.id} onChange={(v, guard, setup) => setSide(i, side, 'w', v, guard, setup)} />
         : <NumberField decimal={col.dec} value={sd[col.f] ?? ''} onChange={v => setSide(i, side, col.f, v)} />}</span>
       {wc.steppers && <button aria-label={t('Increase')} onClick={() => sideBump(i, side, col, 1)}><Icon name="plus" /></button>}
       <SetComparison current={sd} previous={previousAt(i, side)} field={col.f} exerciseId={entry.id} />
@@ -702,7 +716,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       previous={previousAt(i, side)} stepLoad={stepLoad} steppers={wc.steppers} close={close}
       onNote={() => setNoteSheet(entryIdx, setSpanAt(entry.sets, i)[0], t('Set {0}', setNumOf(entry.sets[i], i)))}
       onRest={!editing ? () => openSetRest(i) : null} restLabel={ownSetRest(entry.sets[setSpanAt(entry.sets, i)[0]]) == null ? fmtRest(setRestDefault(i)) : fmtRest(ownSetRest(entry.sets[setSpanAt(entry.sets, i)[0]]))}
-      onField={(field, value, guard) => side ? setSide(i, side, field, value, guard) : onField(i, field, value, guard)}
+      onField={(field, value, guard, setup) => side ? setSide(i, side, field, value, guard, setup) : onField(i, field, value, guard, setup)}
       onToggle={() => side ? onToggleSide(i, side) : onToggle(i)} onOptions={() => openSetMenu(entry.sets[i], i)} />)
   }
   const tableRow = (row, i, side) => {
@@ -754,7 +768,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
       {dropsOf(sd).map((d, di) => (
         <div className="subrow" key={'d' + di}>
           <span className="subn">{t('Drop {0}', di + 1)}</span>
-          {miniStepper(d.w, loadStep, true, (v, guard) => setDropField(i, di, 'w', v, side, guard), true)}
+          {miniStepper(d.w, loadStep, true, (v, guard, setup) => setDropField(i, di, 'w', v, side, guard, setup), true)}
           {miniStepper(d.r, 1, false, v => setDropField(i, di, 'r', v, side))}
           <button className="iconbtn" aria-label={t('Remove drop')} onClick={() => removeDrop(i, di)}><Icon name="xmark" /></button>
         </div>
@@ -960,7 +974,7 @@ function ExerciseBlock({ entryIdx, compact, dense, editing, onToggle, onToggleSi
             {dropsOf(s).map((d, di) => (
               <div className="subrow" key={'d' + di}>
                 <span className="subn">{t('Drop {0}', di + 1)}</span>
-                {miniStepper(d.w, loadStep, true, (v, guard) => setDropField(i, di, 'w', v, undefined, guard), true)}
+                {miniStepper(d.w, loadStep, true, (v, guard, setup) => setDropField(i, di, 'w', v, undefined, guard, setup), true)}
                 {miniStepper(d.r, 1, false, v => setDropField(i, di, 'r', v))}
                 <button className="iconbtn" aria-label={t('Remove drop')} onClick={() => removeDrop(i, di)}><Icon name="xmark" /></button>
               </div>
@@ -1441,10 +1455,10 @@ function ActiveWorkout() {
 
   // An exercise with a unit of its own (#657) is changed in that unit, as it is shown and typed:
   // a weight from its row, a cascade, an added set or warm-up, the watch's numbers.
-  const mutEntry = (idx, fn, guard) => update(s => { if (guard && !guard(s)) return; inEntryUnit(s, idx, fn) }, true)
+  const mutEntry = mutateWorkoutEntry
   // Clearing an optional field drops the key rather than storing null, so a set only carries
   // what was actually logged — in the session, in history and in a backup.
-  const setField = (idx, i, field, v, guard) => mutEntry(idx, e => {
+  const setField = (idx, i, field, v, guard, setup) => mutEntry(idx, e => {
     if (v == null) delete e.sets[i][field]; else e.sets[i][field] = v
     // Typing a duration IS the new plan, the same way ticking the row ends it: a plan a displaced
     // hold put aside must not outrank what you just typed, or the field would read 45 and the ▶
@@ -1460,7 +1474,7 @@ function ActiveWorkout() {
     }
     // A warm-up you changed is yours from now on ("Your last session" carries it, #525).
     e.sets[i] = markWarmupEdited(e.sets[i], field)
-  }, guard)
+  }, guard, setup)
   const modeAt = idx => modeOf({ ...(A.entries[idx].target || {}), id: A.entries[idx].id })
   const addSet = idx => mutEntry(idx, e => {
     const l = e.sets[e.sets.length - 1]
@@ -1642,7 +1656,7 @@ function ActiveWorkout() {
     busy: working,
     onToggle: (i, onFocusProgress) => checkedToggle(idx, i, undefined, { onFocusProgress }),
     onToggleSide: (i, side, onFocusProgress) => checkedToggle(idx, i, side, { onFocusProgress }),
-    onField: (i, f, v, guard) => setField(idx, i, f, v, guard),
+    onField: (i, f, v, guard, setup) => setField(idx, i, f, v, guard, setup),
     onMutateSet: (i, fn) => mutEntry(idx, entry => { entry.sets[i] = fn(entry.sets[i]) }),
     onAddSet: () => addSet(idx),
     onRemoveSet: () => removeSet(idx),

@@ -90,7 +90,7 @@ const list = v => (Array.isArray(v) ? v : [])
 // The maps whose every entry carries its own edit time (mergeStampedMap). dayNotes is a day's
 // note on a day off (lib/day-notes.js), one entry per date.
 // dayPhotos is a progress photo filed under a day (lib/day-photos.js), one entry per photo.
-export const STAMPED_MAPS = ['balanceOverrides', 'loadKind', 'plates', 'dbLoad', 'dumbbells', 'stackWeights', 'exUnit', 'dayNotes', 'dayPhotos', 'exMerged']
+export const STAMPED_MAPS = ['balanceOverrides', 'loadKind', 'plates', 'dbLoad', 'dumbbells', 'stackWeights', 'exUnit', 'dayNotes', 'dayPhotos', 'exMerged', 'weightCalculatorHistory']
 
 /** The copy with the later `_ts`; on a tie the first argument (callers pass local first). */
 export const newerOf = (a, b) => ((b?._ts || 0) > (a?._ts || 0) ? b : a)
@@ -545,7 +545,9 @@ export function sinceReset(S, at, ids) {
     }
     for (const f of RESET_MAPS) {
       const gone = new Set(list(ids[f]).map(String))
-      if (isMap(S[f])) out[f] = clone(Object.fromEntries(Object.entries(S[f]).filter(([k]) => !gone.has(k))))
+      // Older clients do not know calculator keys when they stamp a profile reset.
+      const survives = ([k, v]) => !gone.has(k) && (f !== 'weightCalculatorHistory' || stampOf(v) > at)
+      if (isMap(S[f])) out[f] = clone(Object.fromEntries(Object.entries(S[f]).filter(survives)))
     }
   } else {
     const after = v => (Number(v) || 0) > at
@@ -719,7 +721,7 @@ function applyDeletions(S, deleted) {
 const OWN_MERGE = new Set([
   '_ts', '_rev', '_wid', '_wids', '_unstamped', '_prior', 'active', 'unit', 'unitSet', 'resetAt', 'resetIds', 'deleted', 'edited', 'undone', 'routineOrder',
   'workouts', 'routines', 'customEx', 'equipProfiles', 'gymCards', 'bodyweight', 'measurements', 'favEx',
-  'exWeights', 'balanceOverrides', 'loadKind', 'plates', 'dbLoad', 'dumbbells', 'stackWeights', 'exUnit', 'dayNotes', 'dayPhotos', 'exMerged',
+  'exWeights', ...STAMPED_MAPS,
 ])
 // Stamped per key instead of whole: one day of the plan, one exercise's note or bar, one programme
 // (lib/programmes.js; the running one, `programme`, is a plain setting).
@@ -1086,6 +1088,13 @@ export function stampReplace(next, others = [], now = Date.now()) {
   const known = {}
   for (const f of Object.keys(DEL_LISTS)) known[f] = others.flatMap(o => list(o?.[f])).filter(x => x != null)
   stampDeletions(known, next, now)
+  const calculatorKeys = new Set(others.flatMap(o => Object.keys(isMap(o?.weightCalculatorHistory) ? o.weightCalculatorHistory : {})))
+  const history = isMap(next.weightCalculatorHistory) ? next.weightCalculatorHistory : {}
+  // An omitted choice in a replacement is a stamped clear. A null setup still means Total.
+  const cleared = [...calculatorKeys].filter(k => !Object.hasOwn(history, k))
+  if (cleared.length) next.weightCalculatorHistory = {
+    ...history, ...Object.fromEntries(cleared.map(k => [k, { _ts: now }])),
+  }
   for (const f of ['workouts', 'routines', 'customEx', 'equipProfiles', 'gymCards']) {
     const versions = new Map()
     for (const o of others) for (const x of list(o?.[f])) if (x && typeof x === 'object' && x.id != null) versions.set(x.id, [...(versions.get(x.id) || []), x])
@@ -1110,6 +1119,7 @@ export function stampReplace(next, others = [], now = Date.now()) {
     for (const [k, v] of Object.entries(next[f])) {
       if (!isMap(v)) continue
       if (others.some(o => isMap(o?.[f]) && k in o[f] && !sameJSON({ ...o[f][k], _ts: 0 }, { ...v, _ts: 0 }))) v._ts = Math.max(stampOf(v), now)
+      else if (f === 'weightCalculatorHistory') v._ts = Math.max(stampOf(v), ...others.map(o => stampOf(o?.[f]?.[k])))
     }
   }
   return next

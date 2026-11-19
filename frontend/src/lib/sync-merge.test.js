@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { highestStamp, stampChange, keepReset, localExtras, mergeDeletions, stampDeletions, stampEdits, mergeBodyweight, mergeResetIds, mergeStampedMap, mergeStates, newerOf, resetIdsOf, RESET_ID_MAX, sinceReset, stampCustomEx, stampRoutines, stampWorkout, unionById } from './sync-merge.js'
+import { highestStamp, stampChange, keepReset, localExtras, mergeDeletions, stampDeletions, stampEdits, mergeBodyweight, mergeResetIds, mergeStampedMap, mergeStates, newerOf, resetIdsOf, RESET_ID_MAX, sinceReset, stampCustomEx, stampReplace, stampRoutines, stampWorkout, unionById } from './sync-merge.js'
 import { mergeImport } from './import-csv.js'
 import { convertBodyWeight, convertStateUnit, convertWeight } from './units.js'
 import { retimeWorkout } from './workout-date.js'
@@ -36,6 +36,40 @@ describe('newerOf / unionById / mergeBodyweight', () => {
 })
 
 describe('mergeStates', () => {
+  it('merges calculator history per exercise and keeps a newer total-weight choice', () => {
+    const setup = { unit: 'kg', bar: { value: 20, input: 20, unit: 'kg' }, plates: { value: 10, input: 10, unit: 'kg' } }
+    const oldHistory = base({ _ts: 300, weightCalculatorHistory: {
+      sq: { setup, _ts: 50 }, dl: { setup, _ts: 100 },
+    } })
+    const recentChoice = base({ _ts: 200, weightCalculatorHistory: { sq: { setup: null, _ts: 200 } } })
+    expect(mergeStates(oldHistory, recentChoice).weightCalculatorHistory).toEqual({
+      sq: { setup: null, _ts: 200 }, dl: { setup, _ts: 100 },
+    })
+  })
+
+  it('does not revive a pre-reset calculator choice when an offline device reconnects', () => {
+    const offline = base({ _ts: 500, weightCalculatorHistory: { sq: { setup: null, _ts: 50 } },
+      workouts: [workout('after-reset')] })
+    const reset = base({ _ts: 200, resetAt: 200, resetIds: { workouts: ['before-reset'] } })
+    const merged = mergeStates(reset, offline)
+    expect(merged.weightCalculatorHistory).toEqual({})
+    expect(merged.workouts.map(w => w.id)).toEqual(['after-reset'])
+  })
+
+  it('a replacement stamps calculator clears for known keys and preserves a later choice', () => {
+    const before = base({ _ts: 100, weightCalculatorHistory: { sq: { setup: null, _ts: 80 } } })
+    const replacement = base({ _ts: 200 })
+    stampReplace(replacement, [before], 200)
+    const oldDevice = { ...before, _ts: 300, workouts: [workout('offline')] }
+    expect(mergeStates(replacement, oldDevice).weightCalculatorHistory).toEqual({ sq: { _ts: 200 } })
+    const after = { ...oldDevice, weightCalculatorHistory: { sq: { setup: null, _ts: 300 } } }
+    expect(mergeStates(replacement, after).weightCalculatorHistory).toEqual(after.weightCalculatorHistory)
+
+    const olderClear = base({ _ts: 100, weightCalculatorHistory: { sq: { _ts: 60 } } })
+    stampReplace(olderClear, [replacement], 500)
+    expect(mergeStates(olderClear, oldDevice).weightCalculatorHistory).toEqual({ sq: { _ts: 200 } })
+  })
+
   const A = () => base({
     _ts: 200, restSec: 120, week: { 1: ['rA'] },
     workouts: [workout('w1'), workout('wA', '2026-09-03')],

@@ -33,7 +33,7 @@ export const numWidthCh = s => Math.max(1, [...s].reduce((n, c) => n + (c === '.
 // logged 0 is a set taken to failure). Those clear back to null instead of snapping to 0.
 // `fit` sizes the field to the digits on screen instead of filling its cell — for the big
 // weight read-out, where the unit sits right beside the number.
-export function NumberField({ value, onChange, decimal = true, nullable = false, fit = false, step, className = '', ...rest }) {
+export function NumberField({ value, onChange, decimal = true, nullable = false, fit = false, step, formatValue = cleanNum, className = '', ...rest }) {
   const [draft, setDraft] = useState(null)
   const committed = useRef(null)
   // Focus selects the number so typing replaces it. In WebKit (Safari, the iOS app) the release
@@ -55,8 +55,8 @@ export function NumberField({ value, onChange, decimal = true, nullable = false,
     setDraft(s)
     onChange(n)
   }
-  // Shown clean (lib/format.js cleanNum), so a stored 20.4117 never fills the field; typing replaces it.
-  const shown = draft ?? (typeof value === 'number' ? cleanNum(value, step) : (value ?? ''))
+  // By default show a rounded value. Typing replaces it with the draft.
+  const shown = draft ?? (typeof value === 'number' ? formatValue(value, step) : (value ?? ''))
   return (
     <input
       type="text"

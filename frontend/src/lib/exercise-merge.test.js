@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { mergeExercise, undoMerge, mergePreview, mergeBlocked, mergedInto, mergedAway, applyExerciseMerges } from './exercise-merge.js'
+import { mergeExercise, undoMerge, mergePreview, mergeBlocked, mergedInto, mergedAway, applyExerciseMerges, calculatorSetupFor } from './exercise-merge.js'
 import { mergeStates, stampChange } from './sync-merge.js'
 import { allExercises, EXIDX, registerCustom } from './exercises.js'
 
@@ -79,6 +79,21 @@ describe('merging an exercise into another (#656)', () => {
     expect(S.barWeights[BENCH]).toBe(15)
   })
 
+  test('calculator history follows an exercise merge and is restored by undo', () => {
+    const S = state()
+    const setup = { _ts: 100, setup: { unit: 'kg',
+      bar: { value: 20, input: 20, unit: 'kg' }, plates: { value: 10, input: 10, unit: 'kg' },
+    } }
+    S.weightCalculatorHistory = { [CUSTOM]: setup }
+    const { undo } = mergeExercise(S, CUSTOM, BENCH, { now: 1000 })
+    expect(calculatorSetupFor(S, BENCH)).toEqual(setup.setup)
+    const synced = clone(S)
+    undoMerge(S, undo, { now: 1100 })
+    const merged = mergeStates(S, synced)
+    expect(calculatorSetupFor(merged, CUSTOM)).toEqual(setup.setup)
+    expect(calculatorSetupFor(merged, BENCH)).toBeNull()
+  })
+
   test('a catalogue source is hidden from the lists instead of removed, and its name finds the target', () => {
     const S = state()
     mergeExercise(S, SQUAT, BENCH, { now: 1000 })
@@ -148,5 +163,23 @@ describe('a merge on one device, a workout on another', () => {
     const S = state()
     expect(applyExerciseMerges(S)).toBe(0)
     expect(S).toEqual(state())
+  })
+
+  test('an offline calculator setup moves to the merged exercise unless the target already has a choice', () => {
+    const phone = state()
+    const tablet = clone(phone)
+    const setup = { _ts: 1200, setup: { unit: 'kg',
+      bar: { value: 20, input: 20, unit: 'kg' }, plates: { value: 10, input: 10, unit: 'kg' },
+    } }
+    tablet.weightCalculatorHistory = { [CUSTOM]: setup }
+    mergeExercise(phone, CUSTOM, BENCH, { now: 1000 })
+    expect(calculatorSetupFor(mergeStates(phone, tablet), BENCH)).toEqual(setup.setup)
+    // A clean pull can bring the merge record and a still-unmodified source map.
+    expect(calculatorSetupFor({ ...phone, weightCalculatorHistory: tablet.weightCalculatorHistory }, BENCH)).toEqual(setup.setup)
+    const target = { setup: null, _ts: 1100 }
+    phone.weightCalculatorHistory = { [BENCH]: target }
+    expect(calculatorSetupFor(mergeStates(phone, tablet), BENCH)).toBeNull()
+    mergeExercise(phone, BENCH, SQUAT, { now: 1300 })
+    expect(calculatorSetupFor(mergeStates(phone, tablet), SQUAT)).toBeNull()
   })
 })

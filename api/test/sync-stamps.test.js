@@ -95,7 +95,7 @@ function mintSession(uid) {
   const payload = `${uid}:${Date.now() + 86400000}:0`;
   return payload + '.' + crypto.createHmac('sha256', SECRET).update(payload).digest('base64url');
 }
-test('PUT /api/data: an older app\'s push does not wipe the records, and its delete is stamped', async t => {
+test('PUT /api/data: older clients preserve edit records and calculator setups', async t => {
   const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'gym-stamps-'));
   fs.writeFileSync(path.join(dataDir, 'secret'), SECRET, { mode: 0o600 });
   fs.writeFileSync(path.join(dataDir, 'db.json'), JSON.stringify({ users: [{ id: 'u1', name: 'One', created: new Date().toISOString() }], creds: [], subs: [], invites: [] }));
@@ -118,6 +118,56 @@ test('PUT /api/data: an older app\'s push does not wipe the records, and its del
   const doc = (await get()).state;
   assert.equal(doc.deleted.workouts.w1, 1000);
   assert.ok(doc.deleted.workouts.w2 > 1000);
+
+  const history = { bench: { _ts: 20, setup: { unit: 'kg',
+    bar: { value: 20, input: 20, unit: 'kg' }, plates: { value: 10, input: 10, unit: 'kg' },
+  } } };
+  const saved = await put({ state: { ...doc, _ts: 20, weightCalculatorHistory: history },
+    baseRev: doc._rev, stamped: true, calculatorHistoryAware: true });
+  assert.equal(saved.status, 200);
+
+  const old = { ...doc, _ts: 30, restSec: 90 };
+  const conflict = await put({ state: old, baseRev: doc._rev, stamped: true });
+  assert.equal(conflict.status, 409);
+  assert.deepEqual(conflict.body.state.weightCalculatorHistory, history);
+  for (const snapshot of [undefined, { bench: { setup: null, _ts: 10 } }]) {
+    const baseRev = (await get()).rev;
+    const retry = await put({ state: { ...old, weightCalculatorHistory: snapshot }, baseRev, stamped: true });
+    assert.equal(retry.status, 200);
+    const pulled = await get();
+    assert.equal(pulled.rev, retry.body.rev + 1);
+    assert.equal(pulled.state.restSec, 90);
+    assert.deepEqual(pulled.state.weightCalculatorHistory, history);
+  }
+
+  // A backup replacement from a client that understands this map can clear it.
+  const replacement = await put({ state: { ...doc, weightCalculatorHistory: {} },
+    stamped: true, calculatorHistoryAware: true });
+  assert.equal(replacement.status, 200);
+  assert.deepEqual((await get()).state.weightCalculatorHistory, {});
+  // An older app does not bring the setup back from its stale echo after replacement.
+  const stale = await put({ state: { ...doc, weightCalculatorHistory: history }, stamped: true });
+  assert.equal(stale.status, 200);
+  assert.deepEqual((await get()).state.weightCalculatorHistory, {});
+
+  const restored = await put({ state: { ...doc, weightCalculatorHistory: history },
+    stamped: true, calculatorHistoryAware: true });
+  assert.equal(restored.status, 200);
+  const reset = await put({ state: { workouts: [], routines: [], resetAt: NOW },
+    baseRev: restored.body.rev, stamped: true });
+  assert.equal(reset.status, 200);
+  const cleared = await get();
+  assert.equal(cleared.state.weightCalculatorHistory, undefined);
+  assert.deepEqual(cleared.state.resetIds.weightCalculatorHistory, ['bench']);
+  const legacyAfterReset = await put({ state: { ...cleared.state, resetIds: { workouts: ['w2'] } },
+    baseRev: cleared.rev, stamped: true });
+  assert.equal(legacyAfterReset.status, 200);
+  const afterLegacySync = await get();
+  assert.deepEqual(afterLegacySync.state.resetIds, { workouts: ['w2'], weightCalculatorHistory: ['bench'] });
+  const secondReset = await put({ state: { workouts: [], routines: [], resetAt: NOW + 100 },
+    baseRev: afterLegacySync.rev, stamped: true });
+  assert.equal(secondReset.status, 200);
+  assert.deepEqual((await get()).state.resetIds, { weightCalculatorHistory: ['bench'] });
 });
 
 // RC review 2026-10-07: a v1.3.9 phone saving a routine rebuilt each exercise from the fields it

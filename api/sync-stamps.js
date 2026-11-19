@@ -64,17 +64,15 @@ const capStamps = m => {
   for (const k of ks.slice(0, ks.length - DELETED_MAX)) delete m[k];
   return m;
 };
+// Merged per key by the app, so never stamped here as a whole setting.
+export const STAMPED_MAPS = ['balanceOverrides', 'loadKind', 'plates', 'dbLoad', 'dumbbells', 'stackWeights', 'exUnit', 'dayNotes', 'dayPhotos', 'exMerged', 'weightCalculatorHistory'];
 const OWN_MERGE = new Set([
   '_ts', '_rev', '_wid', '_wids', '_unstamped', '_prior', 'active', 'unit', 'unitSet', 'resetAt', 'resetIds', 'deleted', 'edited', 'undone', 'routineOrder',
   'workouts', 'routines', 'customEx', 'equipProfiles', 'gymCards', 'bodyweight', 'measurements', 'favEx',
-  'exWeights', 'balanceOverrides', 'loadKind', 'plates', 'dbLoad', 'dumbbells', 'stackWeights', 'exUnit', 'dayNotes', 'dayPhotos', 'exMerged',
+  'exWeights', ...STAMPED_MAPS,
 ]);
 // `modules` (frontend lib/modules.js) per module, as the app stamps it.
 const PER_KEY = new Set(['week', 'dayPlan', 'exNotes', 'barWeights', 'exAliases', 'programmes', 'modules']);
-// The maps whose every entry carries its own edit time (sync-merge.js STAMPED_MAPS): merged per
-// key by the app, so never stamped here as a whole setting. dayNotes is a note per day off,
-// dayPhotos a progress photo filed under a day (#557), one entry per photo.
-export const STAMPED_MAPS = ['balanceOverrides', 'loadKind', 'plates', 'dbLoad', 'dumbbells', 'stackWeights', 'exUnit', 'dayNotes', 'dayPhotos', 'exMerged'];
 const ENTRY_META = new Set(['id', '_ts', '_f', '_u']);
 const ENTRY_LISTS = ['routines', 'customEx', 'equipProfiles', 'gymCards', 'workouts'];
 
@@ -586,7 +584,7 @@ function keepHeld(next, now) {
 const BOOKKEEPING = new Set(['_ts', '_f', '_u', '_rev', '_wid', '_wids', '_unstamped', '_prior', 'edited', 'deleted', 'undone']);
 const content = S => JSON.stringify(S, (k, v) => (BOOKKEEPING.has(k) ? undefined : v));
 
-export function stampPut(cur, next, { overRead = false, stamped = false, now = Date.now(), report = null } = {}) {
+export function stampPut(cur, next, { overRead = false, stamped = false, calculatorHistoryAware = false, now = Date.now(), report = null } = {}) {
   if (!next || typeof next !== 'object') return next;
   const t = Math.max(Number(now) || 0, highestStamp(cur) + 1, highestStamp(next) + 1);
   const reset = (Number(next.resetAt) || 0) > (Number(cur?.resetAt) || 0);
@@ -598,7 +596,27 @@ export function stampPut(cur, next, { overRead = false, stamped = false, now = D
   const prevOwn = isMap(cur?._unstamped) ? cur._unstamped : null;
   delete next._unstamped;
   delete next._prior;
+  const resetAt = Number(next.resetAt) || 0;
+  if (cur && resetAt && (reset || resetAt === Number(cur.resetAt))) {
+    // An older client does not enumerate calculator keys when it resets or merges reset IDs.
+    const known = list(cur.resetIds?.weightCalculatorHistory);
+    const cleared = reset && isMap(cur.weightCalculatorHistory) ? Object.keys(cur.weightCalculatorHistory) : [];
+    const sentIds = list(next.resetIds?.weightCalculatorHistory);
+    const ids = [...new Set([...known, ...sentIds, ...cleared])].slice(-20000);
+    if (!same(ids, sentIds)) {
+      next.resetIds = { ...next.resetIds, weightCalculatorHistory: ids };
+      if (report) report.changed = true;
+    }
+  }
+  if (reset && !calculatorHistoryAware) delete next.weightCalculatorHistory;
   if (cur && !reset) {
+    // Older clients may echo the map, but cannot edit or merge it. Their conflict retry can
+    // otherwise overwrite a newer calculator choice with an old snapshot or omit it altogether.
+    if (!calculatorHistoryAware && !same(cur.weightCalculatorHistory, next.weightCalculatorHistory)) {
+      if (Object.hasOwn(cur, 'weightCalculatorHistory')) next.weightCalculatorHistory = cur.weightCalculatorHistory;
+      else delete next.weightCalculatorHistory;
+      if (report) report.changed = true;
+    }
     const d = mergeDeletions(cur.deleted, next.deleted);
     if (d) next.deleted = d; else delete next.deleted;
     const e = mergeEdits(cur.edited, next.edited);
