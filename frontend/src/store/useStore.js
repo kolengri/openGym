@@ -206,6 +206,8 @@ export const DEF = {
   // (lib/ex-unit.js, issue #657). Shown and typed in that unit, still stored in the profile's.
   // Absent or null = the profile's unit. Stamped like dbLoad.
   exUnit: {},
+  // Last applied weight calculator setup per exercise, with explicit units for each input.
+  weightCalculatorHistory: {},
   // Gym check-in cards (see views/CheckIn.jsx). Each is a membership
   // code shown as a QR/barcode at the gym's turnstile — added by typing it, importing a photo
   // of the card, or scanning it. We only ever keep the code's VALUE, never a photo: the image
@@ -365,7 +367,7 @@ function loadState() {
 // weigh-ins and custom exercises. A custom exercise is all a new guest may have made — with its
 // photo or video, which the server counts as unreferenced until the state that names it lands —
 // so a profile created from such a copy takes it at once, like one holding a workout.
-const hasData = st => !!((st.workouts || []).length || (st.routines || []).length || (st.bodyweight || []).length || (st.customEx || []).length || (st.measurements || []).length || Object.values(st.exAliases || {}).some(v => Array.isArray(v) && v.length))
+const hasData = st => !!((st.workouts || []).length || (st.routines || []).length || (st.bodyweight || []).length || (st.customEx || []).length || (st.measurements || []).length || Object.values(st.exAliases || {}).some(v => Array.isArray(v) && v.length) || Object.keys(st.weightCalculatorHistory || {}).length)
 
 // Credentials belong to this phone. A remote profile or backup cannot replace its native
 // session binding or enable uploads here; workout receipt bindings remain untouched.
@@ -827,7 +829,7 @@ export const useStore = create((set, get) => {
     // An older app's owed copy over the revision it read: the server stamps what that app changed
     // against the copy it holds, exactly as it would for that app (api/sync-stamps.js).
     const legacy = readLegacy()
-    const body = { state: S, stamped: !(legacy && legacy.owner === get().user?.id) }
+    const body = { state: S, stamped: !(legacy && legacy.owner === get().user?.id), calculatorHistoryAware: true }
     if (asReplace != null) { body.baseRev = asReplace.rev; if (asReplace.wid) body.baseWid = asReplace.wid }
     else if (!force && base) { body.baseRev = base.rev; if (base.wid) body.baseWid = base.wid }
     try {

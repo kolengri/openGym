@@ -35,10 +35,10 @@ export default function WorkoutSetEditor({ entryIdx, index, owner, columns, effo
     const entry = matchingEntry(useStore.getState().S)
     return side ? entry?.sets[index]?.sides?.[side] : entry?.sets[index]
   }
-  const field = (key, value, guard) => {
+  const field = (key, value, guard, setup) => {
     if (current()) onField(key, value, st => {
       return !!matchingEntry(st) && (!guard || guard(st))
-    })
+    }, setup)
   }
   const done = () => { const fresh = current(); close(); if (fresh && !fresh.done) onToggle() }
   const rate = () => effortPickerSheet(effort, toScale(effort, rirOf(set)), value => {
@@ -61,7 +61,7 @@ export default function WorkoutSetEditor({ entryIdx, index, owner, columns, effo
       <div className={'stp' + (steppers ? '' : ' plain')}>
         {steppers && <button type="button" aria-label={t('Decrease')} onClick={() => bump(-1)}><Icon name="minus" /></button>}
         <span className="val">{col.f === 'w'
-          ? <MixedWeightField value={set.w ?? ''} unit={unit} exerciseId={entry.id} onChange={(value, guard) => field('w', value, guard)} />
+          ? <MixedWeightField value={set.w ?? ''} unit={unit} exerciseId={entry.id} onChange={(value, guard, setup) => field('w', value, guard, setup)} />
           : <NumberField id={'set-editor-' + col.f} decimal={col.dec} nullable={col.opt} value={view(set[col.f]) ?? (col.opt ? null : '')} onChange={change} />}</span>
         {steppers && <button type="button" aria-label={t('Increase')} onClick={() => bump(1)}><Icon name="plus" /></button>}
       </div>

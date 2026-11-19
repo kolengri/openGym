@@ -129,6 +129,22 @@ describe('compact workout table', () => {
     expect(useUI.getState().timer).toBeNull()
   })
 
+  it('keeps the applied bar and plate inputs when editing the next set in the table', () => {
+    mount()
+    open()
+    click(editor().querySelector('.weight-value'))
+    click([...host.querySelectorAll('.weight-calculator button')].find(b => b.textContent === 'Bar and plates'))
+    type(host.querySelector('input[aria-label="Bar weight"]'), '15.257')
+    type(host.querySelector('input[aria-label="Plates on one side"]'), '12.507')
+    click(host.querySelector('.weight-calculator .btn.primary'))
+    expect(live().sets[0].w).toBe(40.271)
+    act(() => useUI.getState().closeSheet(useUI.getState().sheets.at(-1).id))
+    open(1)
+    click(editor().querySelector('.weight-value'))
+    expect(host.querySelector('input[aria-label="Bar weight"]').value).toBe('15.257')
+    expect(host.querySelector('input[aria-label="Plates on one side"]').value).toBe('12.507')
+  })
+
   it('shows the selected rating with its original color and description and uses the original picker', () => {
     mount(entry([row({ rpe: 8 }), row(), row()]))
     open()

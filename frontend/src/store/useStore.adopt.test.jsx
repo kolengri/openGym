@@ -152,6 +152,23 @@ describe('adoptProfile — sign-in takes the server profile', () => {
     expect(puts()).toHaveLength(1)
     expect(puts()[0].state.workouts.map(w => w.id)).toEqual(['w9'])
   })
+
+  it('merges an owed calculator setup when rejoining the same account with no logged workouts yet', async () => {
+    const history = { '0025': { _ts: 900, setup: { unit: 'kg',
+      bar: { value: 20, input: 20, unit: 'kg' }, plates: { value: 10, input: 10, unit: 'kg' },
+    } } }
+    useStore.setState({ S: { ...clone(DEF), _ts: 900, weightCalculatorHistory: history }, ready: true })
+    localStorage.setItem('gym_owner', 'user-1')
+    localStorage.setItem('gym_dirty', '1')
+    useStore.getState().setUser({ id: 'user-1', name: 'Ana' }, { adopt: true })
+    api.mockResolvedValueOnce({ state: clone(server), rev: 4 })
+    api.mockResolvedValueOnce({ ok: true, rev: 5 })
+    const ask = vi.fn()
+    expect(await useStore.getState().adoptProfile(ask)).toMatchObject({ merged: true })
+    expect(ask).not.toHaveBeenCalled()
+    expect(puts()[0]).toMatchObject({ calculatorHistoryAware: true, state: { weightCalculatorHistory: history } })
+    expect(useStore.getState().S.weightCalculatorHistory).toEqual(history)
+  })
 })
 
 describe('offline and unsynced flags', () => {

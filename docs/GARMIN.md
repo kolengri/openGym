@@ -62,7 +62,7 @@ Date-range body-composition weight readings are converted from grams into the pr
 
 ## Mixed weight units
 
-Every workout load field has a **kg/lb** calculator. Enter a total in either unit, or select **Bar and plates** and enter the bar and combined plates on one side with independent kg/lb choices. The calculator counts both sides once and saves only the resulting total in the profile's configured unit. It never switches or converts the entire profile and does not change the logged number until Apply. Body-mass displays always round to tenths independently of the plate-weight decimal preference.
+Every workout load field has a **kg/lb** calculator. Enter a total in either unit, or select **Bar and plates** and enter the bar and combined plates on one side with independent kg/lb choices. **Apply** counts both sides once and logs the resulting total in the profile's configured unit. Garmin Android 48 remembers the last applied tab per exercise and restores the bar and plate values and units when you reopen the calculator. For synced profiles, use an updated paired API to protect those choices when older clients sync. Body-mass displays always round to tenths independently of the plate-weight decimal preference.
 
 ## Built-in Strength alternative
 

@@ -59,6 +59,36 @@ export function mergedAway(S) {
   return out.size ? out : null
 }
 
+// Keep each choice attached to the exercise it was saved for. A target inherits a source's
+// choice when it has none of its own. Reading the links also works immediately after sync or Undo.
+export function calculatorSetupFor(S, exerciseId) {
+  const history = S.weightCalculatorHistory
+  if (!isMap(history)) return null
+  if (history[exerciseId]?.setup !== undefined) return history[exerciseId].setup
+  const sources = new Map()
+  for (const [source, link] of Object.entries(S.exMerged || {})) {
+    if (!link?.into) continue
+    if (!sources.has(link.into)) sources.set(link.into, [])
+    sources.get(link.into).push(source)
+  }
+  const seen = new Set([exerciseId])
+  let level = [exerciseId]
+  while (level.length) {
+    const next = []
+    let choice
+    for (const target of level) for (const source of sources.get(target) || []) {
+      if (seen.has(source)) continue
+      seen.add(source)
+      next.push(source)
+      const entry = history[source]
+      if (entry?.setup !== undefined && (!choice || entry._ts > choice._ts)) choice = entry
+    }
+    if (choice) return choice.setup
+    level = next
+  }
+  return null
+}
+
 const exOf = (S, id) => list(S?.customEx).find(c => c?.id === id) || EXIDX[id] || null
 const entryHas = (w, id) => list(w?.entries).some(e => e?.id === id)
 const routineHas = (r, id) => list(r?.ex).some(c => c?.id === id || list(c?.subs).includes(id))
